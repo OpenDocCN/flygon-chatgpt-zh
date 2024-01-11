@@ -1,130 +1,188 @@
 - en: Chapter 4\. Advanced GPT-4 and ChatGPT Techniques
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第4章。GPT-4和ChatGPT的高级技术
 - en: Now that you are familiar with the basics of LLMs and the OpenAI API, it’s time
     to take your skills to the next level. This chapter covers powerful strategies
     that will enable you to harness the true potential of ChatGPT and GPT-4\. From
     prompt engineering, zero-shot learning, and few-shot learning to fine-tuning models
     for specific tasks, this chapter will give you all the knowledge you need to create
     any application you can imagine.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你已经熟悉了LLM的基础知识和OpenAI API，是时候将你的技能提升到下一个水平了。本章涵盖了强大的策略，将使你能够充分利用ChatGPT和GPT-4的潜力。从提示工程、零-shot学习和少-shot学习到为特定任务微调模型，本章将为你提供创建任何你能想象的应用所需的所有知识。
 - en: Prompt Engineering
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 提示工程
 - en: 'Before we dive into prompt engineering, let’s briefly review the chat model’s
     `completion` function, as this section will use it extensively. To make the code
     more compact, we define the function as follows:'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在深入研究提示工程之前，让我们简要回顾一下聊天模型的`completion`函数，因为本节将广泛使用它。为了使代码更紧凑，我们将定义该函数如下：
 - en: '[PRE0]'
+  id: totrans-4
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: This function receives a prompt and displays the completion result in the terminal.
     The model and the temperature are two optional features set by default, respectively,
     to GPT-4 and 0.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 该函数接收一个提示，并在终端显示完成的结果。模型和温度是两个可选的特性，默认分别设置为GPT-4和0。
 - en: 'To demonstrate prompt engineering, we will return to the example text “As Descartes
     said, I think therefore”. If this input is passed to GPT-4, it is natural for
     the model to complete the sentence by iteratively adding the most likely tokens:'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了演示提示工程，我们将回到示例文本“正如笛卡尔所说，我思故我在”。如果将此输入传递给GPT-4，模型自然会通过迭代添加最有可能的标记来完成句子：
 - en: '[PRE1]'
+  id: totrans-7
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: 'As a result, we get the following output message:'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们得到以下输出消息：
 - en: '[PRE2]'
+  id: totrans-9
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: '*Prompt engineering* is an emergent discipline focused on developing best practices
     for building optimal inputs for LLMs in order to produce desirable outputs as
     programmatically as possible. As an AI engineer, you must know how to interact
     with AI to obtain exploitable results for your apps, how to ask the right questions,
     and how to write quality prompts; all topics we will cover in this section.'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: '*提示工程*是一门新兴的学科，专注于制定构建LLM的最佳输入的最佳实践，以便尽可能以编程方式产生理想的输出。作为一名AI工程师，你必须知道如何与AI交互，以获取可利用的结果，如何提出正确的问题，以及如何编写高质量的提示；这些都是我们将在本节中涵盖的所有主题。'
 - en: It should be noted that prompt engineering can affect the cost of using the
     OpenAI API. The amount of money you will pay to use the API is proportional to
     the number of tokens you send to and receive from OpenAI. As mentioned in [Chapter 2](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis),
     use of the `max_token` parameter is highly recommended to avoid unpleasant surprises
     on your bills.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 应该注意，提示工程可能会影响使用OpenAI API的成本。你将支付的金额与你发送和接收的令牌数量成正比。如在[第2章](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis)中提到的，强烈建议使用`max_token`参数，以避免账单上的不愉快的惊喜。
 - en: Also note that you should consider the different parameters you can use in the
     `openai` methods, as you can get significantly different results with the same
     prompt if you use parameters like `temperature`, `top_p`, and `max_token`.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 还要注意，你应该考虑在`openai`方法中可以使用的不同参数，因为如果你使用`temperature`、`top_p`和`max_token`等参数，即使使用相同的提示，也可能得到显著不同的结果。
 - en: Designing Effective Prompts
+  id: totrans-13
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 设计有效的提示
 - en: 'A lot of tasks can be performed via prompts. They include summarization, text
     classification, sentiment analysis, and question answering. In all these tasks,
     it is common to define three elements in the prompt: a role, a context, and a
     task, as depicted in [Figure 4-1](#fig_1_an_effective_prompt).'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过提示可以执行许多任务。它们包括摘要、文本分类、情感分析和问题回答。在所有这些任务中，通常在提示中定义三个要素：角色、上下文和任务，如[图4-1](#fig_1_an_effective_prompt)所示。
 - en: '![](assets/dagc_0401.png)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0401.png)'
 - en: Figure 4-1\. An effective prompt
+  id: totrans-16
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图4-1。一个有效的提示
 - en: All three elements are not always necessary, and their order can be changed,
     but if your prompt is well constructed and the elements are well defined, you
     should get good results. Note that even when these three elements are used, for
     complex tasks you may need to use more advanced techniques, such as zero-shot
     learning, few-shot learning, and fine-tuning. These advanced techniques will be
     discussed later in this chapter.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这三个要素并非总是必要的，它们的顺序也可以改变，但如果你的提示构造得当，要素定义得当，你应该能够得到良好的结果。请注意，即使在使用这三个要素时，对于复杂的任务，你可能需要使用更高级的技术，如零-shot学习、少-shot学习和微调。这些高级技术将在本章后面讨论。
 - en: The context
+  id: totrans-18
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 上下文
 - en: The first essential element in a prompt is the context. When you write an input
     text for an LLM, you must detail the context as much as possible. To illustrate
     this, say you want to use GPT-4 to create an application that suggests the main
     course for lunch. In the following, we will compare the results we obtain with
     two different contexts. The first context will have little detail, and the second
     will have more detail.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示中的第一个基本要素是上下文。当你为LLM编写输入文本时，你必须尽可能详细地描述上下文。为了说明这一点，假设你想使用GPT-4创建一个应用程序，为午餐建议主菜。接下来，我们将比较在两种不同上下文下获得的结果。第一个上下文将有很少的细节，第二个将有更多的细节。
 - en: 'With a short input message such as:'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于一个简短的输入消息，比如：
 - en: '[PRE3]'
+  id: totrans-21
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'we get the following output message:'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到以下输出消息：
 - en: '[PRE4]'
+  id: totrans-23
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: 'Now, with more details about the context in the input message:'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，关于输入消息的上下文的更多细节：
 - en: '[PRE5]'
+  id: totrans-25
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: 'we get the following output message:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到以下输出消息：
 - en: '[PRE6]'
+  id: totrans-27
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: 'In the second example, the sentence is more detailed because the model has
     more context: it suggests a healthy vegetarian dish that is full of protein.'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第二个例子中，句子更加详细，因为模型有更多的上下文：它建议了一个富含蛋白质的健康素食菜肴。
 - en: 'The context guides GPT’s “thinking” to add value to its response. Building
     a prompt with a good context is an iterative process, often requiring trial-and-error
     steps. Identifying the essential points the context must contain is sometimes
@@ -132,213 +190,333 @@
     In the following example, we change the prompt: instead of asking the model to
     answer our question, we instruct it to ask questions about the context in an effort
     to achieve a better completion.'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 上下文指导GPT的“思考”，为其回应增加价值。构建具有良好上下文的提示是一个迭代的过程，通常需要试错步骤。有时确定上下文必须包含的要点是有些棘手的。为了确定可能的改进，您可以向GPT-4寻求建议。在以下示例中，我们改变了提示：不是要求模型回答我们的问题，而是指示它在努力实现更好的完成时询问上下文的问题。
 - en: 'With the following input message:'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用以下输入消息：
 - en: '[PRE7]'
+  id: totrans-31
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: 'we get the following questions from the GPT-4 model:'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们从GPT-4模型中得到以下问题：
 - en: '[PRE8]'
+  id: totrans-33
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: The questions asked by the model are often relevant. Based on these questions,
     you can update your context in your prompt. Therefore, we advise you to use this
     tip often when building your prompt.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型提出的问题通常是相关的。根据这些问题，您可以更新提示中的上下文。因此，我们建议您在构建提示时经常使用这个技巧。
 - en: The task
+  id: totrans-35
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 任务
 - en: The task defines your use of the GPT-4 model and should be well defined and
     specific. You should provide sufficient information for the task and use appropriate
     phrases in the prompt to guide the model to the desired outcome.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 任务定义了您对GPT-4模型的使用，并且应该明确定义和具体。您应该为任务提供足够的信息，并在提示中使用适当的短语来引导模型达到期望的结果。
 - en: 'In the preceding section, the task was for the model to suggest a main course
     for lunch. We can add details to that task to clarify what we want. Here, we ask
     the model to add a table with the ingredients and required quantities of each
     in grams:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 在前面的部分中，任务是让模型建议午餐的主菜。我们可以添加细节来澄清我们想要什么。在这里，我们要求模型添加一个表格，其中包含每种食材和所需数量（以克为单位）：
 - en: '[PRE9]'
+  id: totrans-38
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: 'The model gives us the following output:'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 该模型给出了以下输出：
 - en: '[PRE10]'
+  id: totrans-40
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: 'On the [OpenAI API example page](https://platform.openai.com/examples), there
     is a list with 48 examples of tasks that GPT models can perform, always with the
     associated prompt and a demo. While these examples use the GPT-3 models and the
     completion endpoint, the principle would be the same for the chat endpoint, and
     the examples nicely illustrate how to give a task to OpenAI models. We won’t go
     through all of them here, but here are a few of them:'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 在[OpenAI API示例页面](https://platform.openai.com/examples)上，有一个包含48个GPT模型可以执行的任务示例列表，始终与相关提示和演示一起。虽然这些示例使用了GPT-3模型和完成端点，但对于聊天端点原则是相同的，这些示例很好地说明了如何向OpenAI模型提供任务。我们不会在这里逐个讨论它们，但以下是其中的一些：
 - en: Grammar correction
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法纠正
 - en: Corrects sentences to standard English.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 纠正句子到标准英语。
 - en: 'Prompt:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示：
 - en: '[PRE11]'
+  id: totrans-45
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: Summarize for a second-grader
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 为二年级学生总结
 - en: Translates complex text into more straightforward concepts.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 将复杂的文本转化为更简单的概念。
 - en: 'Prompt:'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示：
 - en: '[PRE12]'
+  id: totrans-49
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: TL;DR summarization
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: TL;DR总结
 - en: TL;DR stands for “too long; didn’t read.” It has been observed that a text can
     be summarized by simply adding `T``l;dr` at the end.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: TL;DR代表“太长了；没读”。已经观察到，可以通过简单地在末尾添加`T``l;dr`来总结一段文本。
 - en: 'Prompt:'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示：
 - en: '[PRE13]'
+  id: totrans-53
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: Python to natural language
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: Python转自然语言
 - en: Explain a piece of Python code in a language people can understand.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 用人们能理解的语言解释一段Python代码。
 - en: 'Prompt:'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示：
 - en: '[PRE14]'
+  id: totrans-57
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE14]'
 - en: Calculate time complexity
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 计算时间复杂度
 - en: Find the time complexity of a function.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 找到函数的时间复杂度。
 - en: 'Prompt:'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示：
 - en: '[PRE15]'
+  id: totrans-61
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE15]'
 - en: Python bug fixer
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: Python错误修复程序
 - en: Fixes code containing a bug.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 修复包含错误的代码。
 - en: 'Prompt:'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示：
 - en: '[PRE16]'
+  id: totrans-65
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE16]'
 - en: SQL request
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: SQL请求
 - en: Simple SQL query building.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 简单的SQL查询构建。
 - en: 'Prompt:'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示：
 - en: '[PRE17]'
+  id: totrans-69
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE17]'
 - en: Analogy maker
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 类比制造者
 - en: Can make an analogy between two words.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以对两个单词进行类比。
 - en: 'Prompt:'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示：
 - en: '[PRE18]'
+  id: totrans-73
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE18]'
 - en: Summary notes
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 总结笔记
 - en: Summarize notes from a meeting.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 总结会议记录。
 - en: 'Prompt:'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示：
 - en: '[PRE19]'
+  id: totrans-77
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE19]'
 - en: The role
+  id: totrans-78
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 角色
 - en: 'A final way to influence the model while writing the prompt is to give it a
     role. Of course, the role and the context can be used independently, but using
     both increases your control over the model’s output. In the following example,
     we put the model in the role of a sports nutrition expert:'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 在撰写提示时影响模型的最后一种方法是给它一个角色。当然，角色和上下文可以独立使用，但同时使用可以增加您对模型输出的控制。在以下示例中，我们让模型扮演体育营养专家的角色：
 - en: '[PRE20]'
+  id: totrans-80
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE20]'
 - en: 'And we get the following result:'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们得到以下结果：
 - en: '[PRE21]'
+  id: totrans-82
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE21]'
 - en: As you’ve seen, prompts can be used to condition the probabilistic distribution
     set of LLMs such as GPT models. They can be seen as a guide that directs the model
     to produce a particular type of result. While there is no definitive structure
     for prompt design, a useful framework to consider is the combination of context,
     role, and task.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您所见，提示可以用来调整GPT模型等LLM的概率分布集。它们可以被视为指导模型产生特定类型结果的指南。虽然提示设计没有确定的结构，但一个有用的框架是上下文、角色和任务的组合。
 - en: It’s important to understand that this is just one approach, and prompts can
     be created without explicitly defining these elements. Some prompts may benefit
     from a different structure or require a more creative approach based on the specific
     needs of your application. Therefore, this context-role-task framework should
     not limit your thinking, but rather be a tool to help you effectively design your
     prompts when appropriate.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 重要的是要理解，这只是一种方法，提示可以在不明确定义这些元素的情况下创建。有些提示可能会受益于不同的结构，或者根据您的应用程序的特定需求需要更有创意的方法。因此，这个上下文-角色-任务框架不应限制您的思维，而应该是帮助您在适当时有效地设计提示的工具。
 - en: Thinking Step by Step
+  id: totrans-85
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 逐步思考
 - en: 'As we know, GPT-4 is not good for computation. It cannot compute 369 × 1,235:'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 众所周知，GPT-4不擅长计算。它无法计算369 × 1,235：
 - en: '[PRE22]'
+  id: totrans-87
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE22]'
 - en: 'We get the following answer: `454965`'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到以下答案：`454965`
 - en: The correct answer is 455,715\. Does GPT-4 not solve complex mathematical problems?
     Remember that the model formulates this answer by predicting each token in the
     answer sequentially, starting from the left. This means that GPT-4 generates the
@@ -346,17 +524,23 @@
     digit, and so on, until the complete answer is formed. The challenge here is that
     each number is predicted independent of the final correct value. GPT-4 considers
     numbers like tokens; there is no mathematical logic.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 正确答案是455,715。GPT-4不能解决复杂的数学问题吗？请记住，模型通过预测答案中的每个标记来逐个顺序生成答案，从左边开始。这意味着GPT-4首先生成最左边的数字，然后将其作为上下文的一部分来生成下一个数字，依此类推，直到形成完整的答案。这里的挑战是每个数字都是独立于最终正确值的预测。GPT-4将数字视为标记；没有数学逻辑。
 - en: Note
+  id: totrans-90
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: In [Chapter 5](ch05.html#advancing_llm_capabilities_with_the_langchain_fram),
     we’ll explore how OpenAI has enriched GPT-4 with plug-ins. An example is a calculator
     plug-in for providing accurate mathematical solutions.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 在[第5章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中，我们将探讨OpenAI如何通过插件丰富了GPT-4。一个例子是用于提供准确数学解决方案的计算器插件。
 - en: There is a trick to increasing the reasoning capacity of language models. For
     example, when asked to solve 369 × 1235, we can see that the model tries to answer
     directly in one shot. Consider that you probably won’t be able to solve this multiplication
@@ -364,15 +548,19 @@
     It is possible to encourage the model to make intermediate reasonings via the
     prompt. And like you with your pencil and paper, the model can solve more complex
     problems if you give it time to reason.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 有一个技巧可以增加语言模型的推理能力。例如，当要求解369×1235时，我们可以看到模型试图直接在一次尝试中回答。考虑到你可能也无法在没有铅笔和一张纸的帮助下解决这个乘法。可以通过提示来鼓励模型进行中间推理。就像你用铅笔和纸一样，如果给模型足够的时间来推理，它就可以解决更复杂的问题。
 - en: Adding “Let’s think step by step” at the end of the prompt has been empirically
     proven to enable the model to solve more complicated reasoning problems. This
     technique, called the *zero-shot-CoT strategy*, was introduced in the scientific
     paper [“Large Language Models Are Zero-Shot Reasoners”](https://oreil.ly/2tHHy)
     by Kojima et al., published in 2022\.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 在提示的末尾添加“让我们一步一步地思考”已经被实验证明能够使模型解决更复杂的推理问题。这种技术被称为*零射击CoT策略*，它是由Kojima等人在2022年发表的科学论文[“大型语言模型是零射击推理者”](https://oreil.ly/2tHHy)中介绍的。
 - en: '*CoT* stands for *chain of thought*; it refers here to the technique of using
     prompts that encourage the model to imitate step-by-step reasoning. The term *zero-shot*
     means the model does not rely on task-specific examples to perform this reasoning;
@@ -380,38 +568,54 @@
     such as few-shot learning (which we will examine shortly) that require the model
     to have seen examples of the task, zero-shot learning tries to generalize without
     needing task-specific examples.'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: '*CoT*代表*思维链*；它在这里指的是使用鼓励模型模仿逐步推理的提示技术。术语*零射击*意味着模型不依赖于特定任务的示例来执行这种推理；它准备好根据其一般训练来处理新任务。与需要模型看到任务示例的少量学习等技术不同（我们将很快讨论），零射击学习试图在不需要特定任务示例的情况下进行泛化。'
 - en: 'As we will see, with this sentence added to the prompt, the model begins to
     reason by breaking the problem into subproblems. As a result, it can take time
     to reason, allowing it to find solutions to problems it could not solve before
     in only one shot. Let’s see what happens if we change our input prompt:'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们将看到的，通过将这个句子添加到提示中，模型开始通过将问题分解为子问题来进行推理。因此，它可能需要时间来推理，从而能够找到以前只能在一次尝试中无法解决的问题的解决方案。让我们看看如果我们改变我们的输入提示会发生什么：
 - en: '[PRE23]'
+  id: totrans-96
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE23]'
 - en: 'We get the following output:'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到了以下输出：
 - en: '[PRE24]'
+  id: totrans-98
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE24]'
 - en: There has been a remarkable shift in the model’s approach. It now breaks down
     the primary problem into smaller, more manageable steps rather than trying to
     tackle the problem head-on.
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型的方法发生了显著的转变。它现在将主要问题分解为更小、更易管理的步骤，而不是试图直接解决问题。
 - en: Warning
+  id: totrans-100
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 警告
 - en: Despite prompting the model to “think step by step,” it is still crucial that
     you carefully evaluate its responses, as GPT-4 is not infallible. For a more complex
     computation such as 3,695 × 123,548, even with this trick the LLM is not able
     to find the correct solution.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管提示模型“一步一步地思考”是至关重要的，但您仍然需要仔细评估其响应，因为GPT-4并非万无一失。对于像3695×123548这样更复杂的计算，即使使用这个技巧，LLM也无法找到正确的解决方案。
 - en: Of course, it’s hard to tell from one example whether this trick generally works
     or whether we just got lucky. On benchmarks with various math problems, empirical
     experiments have shown that this trick significantly increased the accuracy of
@@ -420,71 +624,99 @@
     found it to be most beneficial for multistep arithmetic problems, problems involving
     symbolic reasoning, problems involving strategy, and other issues involving reasoning.
     It was not found to be useful for commonsense problems.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，很难从一个例子中判断这个技巧是否普遍有效，或者我们只是幸运。在各种数学问题的基准测试中，实证实验证明这个技巧显著提高了GPT模型的准确性。尽管这个技巧对大多数数学问题都有效，但并不适用于所有情况。《大型语言模型是零射击推理者》的作者发现，它对多步算术问题、涉及符号推理的问题、涉及策略的问题以及其他涉及推理的问题最有益。它并不适用于常识问题。
 - en: Implementing Few-Shot Learning
+  id: totrans-103
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 实施少量学习
 - en: '*Few-shot learning*, introduced in [“Language Models Are Few-Shot Learners”](https://oreil.ly/eSoRo)
     by Brown et al., refers to the ability of the LLM to generalize and produce valuable
     results with only a few examples in the prompt. With few-shot learning, you give
     a few examples of the task you want the model to perform, as illustrated in [Figure 4-2](#fig_2_a_prompt_containing_a_few_examples).
     These examples guide the model to process the desired output format.'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: '*少样本学习*，由Brown等人在《语言模型是少样本学习者》中介绍，指的是LLM仅凭少量示例就能概括和产生有价值的结果的能力。通过少样本学习，您可以给出您希望模型执行的任务的几个示例，如[图4-2](#fig_2_a_prompt_containing_a_few_examples)所示。这些示例指导模型处理所需的输出格式。'
 - en: '![](assets/dagc_0402.png)'
+  id: totrans-105
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0402.png)'
 - en: Figure 4-2\. A prompt containing a few examples
+  id: totrans-106
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图4-2。包含几个示例的提示
 - en: 'In this example, we ask the LLM to convert specific words into emojis. It is
     difficult to imagine the instructions to put in a prompt to do this task. But
     with few-shot learning, it’s easy. Give it examples, and the model will automatically
     try to reproduce them:'
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们要求LLM将特定单词转换为表情符号。很难想象要在提示中放入什么指令来执行这个任务。但是通过少样本学习，这很容易。给它一些示例，模型将自动尝试复制它们。
 - en: '[PRE25]'
+  id: totrans-108
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE25]'
 - en: 'From the preceding example, we get the following message as output:'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 从前面的例子中，我们得到以下消息作为输出：
 - en: '[PRE26]'
+  id: totrans-110
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE26]'
 - en: The few-shot learning technique gives examples of inputs with the desired outputs.
     Then, in the last line, we provide the prompt for which we want a completion.
     This prompt is in the same form as the earlier examples. Naturally, the language
     model will perform a completion operation considering the pattern of the examples
     given.
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 少样本学习技术提供了具有期望输出的输入示例。然后，在最后一行，我们提供了我们想要完成的提示。这个提示与之前的示例的形式相同。自然地，语言模型将根据给定示例的模式执行完成操作。
 - en: We can see that with only a few examples, the model can reproduce the instructions.
     By leveraging the extensive knowledge that LLMs have acquired in their training
     phase, they can quickly adapt and generate accurate answers based on only a few
     examples.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以看到，仅凭几个示例，模型就可以复制指令。通过利用LLM在训练阶段获得的广泛知识，它们可以快速适应并根据仅有的几个示例生成准确的答案。
 - en: Note
+  id: totrans-113
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: Few-shot learning is a powerful aspect of LLMs because it allows them to be
     highly flexible and adaptable, requiring only a limited amount of additional information
     to perform various tasks.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 少样本学习是LLM的一个强大方面，因为它使它们能够高度灵活和适应，只需要有限的额外信息就能执行各种任务。
 - en: When you provide examples in the prompt, it is essential to ensure that the
     context is clear and relevant. Clear examples improve the model’s ability to match
     the desired output format and execute the problem-solving process. Conversely,
     inadequate or ambiguous examples can lead to unexpected or incorrect results.
     Therefore, writing examples carefully and ensuring that they convey the correct
     information can significantly impact the model’s ability to perform the task accurately.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 当您在提示中提供示例时，确保上下文清晰和相关是至关重要的。清晰的示例可以提高模型匹配所需输出格式并执行解决问题的能力。相反，不充分或含糊的示例可能导致意外或不正确的结果。因此，仔细编写示例并确保它们传达正确的信息可以显著影响模型执行任务的准确性。
 - en: Another approach to guiding LLMs is *one-shot learning*. As its name indicates,
     in this case you provide only one example to help the model execute the task.
     Although this approach provides less guidance than few-shot learning, it can be
@@ -494,111 +726,161 @@
     API costs. However, for complex tasks or situations that require a deeper understanding
     of the desired outcome, few-shot learning might be a more suitable approach to
     ensure accurate results.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 引导LLM的另一种方法是*一样本学习*。顾名思义，在这种情况下，您只提供一个示例来帮助模型执行任务。尽管这种方法提供的指导比少样本学习少，但对于更简单的任务或者LLM已经对主题有相当多的背景知识的情况下，它可能是有效的。一样本学习的优势在于简单、更快的提示生成以及更低的计算成本和因此更低的API成本。然而，对于复杂的任务或需要更深入理解期望结果的情况，少样本学习可能是更适合的方法，以确保准确的结果。
 - en: Tip
+  id: totrans-117
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 提示
 - en: Prompt engineering has become a trending topic, and you will find many online
     resources to delve deeper into the subject. As an example, this [GitHub repository](https://github.com/f/awesome-chatgpt-prompts)
     contains a list of effective prompts that were contributed by more than 70 different
     users.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示工程已成为一个热门话题，您会发现许多在线资源来深入研究这个主题。例如，这个[GitHub存储库](https://github.com/f/awesome-chatgpt-prompts)包含了由70多个不同用户贡献的有效提示列表。
 - en: While this section explored various prompt engineering techniques that you can
     use individually, note that you can combine the techniques to obtain even better
     results. As a developer, it is your job to find the most effective prompt for
     your specific problem. Remember that prompt engineering is an iterative process
     of trial-and-error experimentation.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然本节探讨了各种可以单独使用的提示工程技术，请注意您可以结合这些技术以获得更好的结果。作为开发人员，您的工作是找到特定问题的最有效提示。请记住，提示工程是一个反复试验的迭代过程。
 - en: Improving Prompt Effectiveness
+  id: totrans-120
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 提高提示效果
 - en: We have seen several prompt engineering techniques that allow us to influence
     the behavior of the GPT models to get better results that meet our needs. We’ll
     end this section with a few more tips and tricks you can use in different situations
     when writing prompts for GPT models.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经看到了几种提示工程技术，可以影响GPT模型的行为，以获得满足我们需求的更好结果。我们将以一些在编写GPT模型提示时可以在不同情况下使用的技巧和窍门结束本节。
 - en: Instruct the model to ask more questions
+  id: totrans-122
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 指导模型提出更多问题
 - en: 'Ending prompts by asking the model if it understood the question and instructing
     the model to ask more questions is an effective technique if you are building
     a chatbot-based solution. You can add a text like this to the end of your prompts:'
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 以询问模型是否理解问题并指示模型提出更多问题来结束提示是一种有效的技术，如果你正在构建基于聊天机器人的解决方案。你可以在提示的末尾添加这样的文本：
 - en: '[PRE27]'
+  id: totrans-124
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE27]'
 - en: Format the output
+  id: totrans-125
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 格式化输出
 - en: 'Sometimes you’ll want to use the LLM output in a longer process: in such cases,
     the output format matters. For example, if you want a JSON output, the model tends
     to write in the output before and after the JSON block. If you add in the prompt
     `the output must be accepted by json.loads` then it tends to work better. This
     type of trick can be used in many situations.'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时候你会希望在更长的过程中使用LLM输出：在这种情况下，输出格式很重要。例如，如果你想要JSON输出，模型往往会在JSON块之前和之后写入输出。如果你在提示中添加“输出必须被json.loads接受”，那么它往往会工作得更好。这种技巧可以在许多情况下使用。
 - en: 'For example, with this script:'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，使用这个脚本：
 - en: '[PRE28]'
+  id: totrans-128
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE28]'
 - en: 'we get the following JSON block of code:'
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到了以下的JSON代码块：
 - en: '[PRE29]'
+  id: totrans-130
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE29]'
 - en: Repeat the instructions
+  id: totrans-131
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 重复指令
 - en: It has been found empirically that repeating instructions gives good results,
     especially when the prompt is long. The idea is to add to the prompt the same
     instruction several times, but formulated differently each time.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 经验表明，重复指令会产生良好的结果，特别是当提示很长时。思路是多次在提示中添加相同的指令，但每次都用不同的方式表达。
 - en: This can also be done with negative prompts.
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 这也可以通过负面提示来实现。
 - en: Use negative prompts
+  id: totrans-134
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 使用负面提示
 - en: 'Negative prompts in the context of text generation are a way to guide the model
     by specifying what you don’t want to see in the output. They act as constraints
     or guidelines to filter out certain types of responses. This technique is particularly
     useful when the task is complicated: models tend to follow instructions more precisely
     when the tasks are repeated several times in different ways.'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 在文本生成的背景下使用负面提示是一种指导模型的方式，指定你不希望在输出中看到的内容。它们作为约束或指导，用于过滤出某些类型的响应。当任务复杂时，这种技术特别有用：当任务以不同方式多次重复时，模型往往更精确地遵循指令。
 - en: Continuing with the previous example, we can insist on the output format with
     negative prompting by adding `Do not add anything before or after the json` `text.`.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 继续上一个例子，我们可以通过添加“不要在json之前或之后添加任何内容。”来坚持输出格式的负面提示。
 - en: 'In [Chapter 3](ch03.html#building_apps_with_gpt_4_and_chatgpt), we used negative
     prompting in the third project:'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 在[第3章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中的第三个项目中，我们使用了负面提示：
 - en: '[PRE30]'
+  id: totrans-138
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE30]'
 - en: Without this addition to the prompt, the model tended to not follow the instructions.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果没有这个提示的补充，模型往往不会遵循指令。
 - en: Add length constraints
+  id: totrans-140
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 添加长度约束
 - en: 'A length constraint is often a good idea: if you expect only a single-word
     answer or 10 sentences, add it to your prompt. This is what we did in [Chapter 3](ch03.html#building_apps_with_gpt_4_and_chatgpt)
     in the first project: we specified `LENGTH: 100 words` to generate an adequate
@@ -606,29 +888,39 @@
     `If you can answer the question: ANSWER, if you need more information: MORE, if
     you can not answer: OTHER. Only answer one` `word.`. Without that last sentence,
     the model would tend to formulate sentences rather than follow the instructions.'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 长度约束通常是一个好主意：如果你只期望得到一个单词的答案或10个句子，就把它添加到你的提示中。这就是我们在[第3章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中在第一个项目中所做的：我们指定了“长度：100个单词”来生成一篇合适的新闻文章。在第四个项目中，我们的提示也有一个长度指令：“如果你可以回答问题：ANSWER，如果你需要更多信息：MORE，如果你无法回答：OTHER。只回答一个”“单词”。如果没有最后一句，模型会倾向于形成句子，而不是遵循指令。
 - en: Fine-Tuning
+  id: totrans-142
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 微调
 - en: OpenAI provides many ready-to-use GPT models. Although these models excel at
     a broad array of tasks, fine-tuning them for specific tasks or contexts can further
     enhance their performance.
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI提供了许多现成的GPT模型。虽然这些模型在各种任务上表现出色，但对特定任务或情境进行微调可以进一步提高它们的性能。
 - en: Getting Started
+  id: totrans-144
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 入门
 - en: 'Let’s imagine that you want to create an email response generator for your
     company. As your company works in a specific industry with a particular vocabulary,
     you want the generated email responses to retain your current writing style. There
     are two strategies for doing this: either you can use the prompt engineering techniques
     introduced earlier to force the model to output the text you want, or you can
     fine-tune an existing model. This section explores the second technique.'
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设你想为你的公司创建一个电子邮件回复生成器。由于你的公司在特定行业中使用特定词汇，你希望生成的电子邮件回复保留你当前的写作风格。有两种策略可以做到这一点：要么你可以使用之前介绍的提示工程技术来强制模型输出你想要的文本，要么你可以对现有模型进行微调。本节探讨了第二种技术。
 - en: For this example, you must collect a large number of emails containing data
     about your particular business domain, inquiries from customers, and responses
     to those inquiries. You can then use this data to fine-tune an existing model
@@ -640,36 +932,50 @@
     an existing LLM, it is possible to create a highly customized and specialized
     email response generator tailored explicitly to the language patterns and words
     used in your particular business.
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于这个例子，你必须收集大量包含有关你特定业务领域的数据的电子邮件，客户的询问以及对这些询问的回复。然后，你可以使用这些数据对现有模型进行微调，以学习你公司特定的语言模式和词汇。微调后的模型本质上是从OpenAI提供的原始模型中构建的新模型，其中模型的内部权重被调整以适应你的特定问题，使得新模型在类似于它在微调数据集中看到的示例的任务上提高了准确性。通过微调现有的LLM，可以创建一个高度定制和专门针对你特定业务中使用的语言模式和词汇的电子邮件回复生成器。
 - en: '[Figure 4-3](#fig_3_the_fine_tuning_process) illustrates the fine-tuning process
     in which a dataset from a specific domain is used to update the internal weights
     of an existing GPT model. The objective is for the new fine-tuned model to make
     better predictions in the particular domain than the original GPT model. It should
     be emphasized that this is a *new model*. This new model is on the OpenAI servers:
     as before, you must use the OpenAI APIs to use it, as it cannot be accessed locally.'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图4-3](#fig_3_the_fine_tuning_process)说明了微调过程，其中使用特定领域的数据集来更新现有GPT模型的内部权重。目标是使新的微调模型在特定领域比原始GPT模型做出更好的预测。应该强调的是这是一个*新模型*。这个新模型在OpenAI服务器上：与以前一样，您必须使用OpenAI的API来使用它，因为它无法在本地访问。'
 - en: '![](assets/dagc_0403.png)'
+  id: totrans-148
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0403.png)'
 - en: Figure 4-3\. The fine-tuning process
+  id: totrans-149
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图4-3。微调过程
 - en: Note
+  id: totrans-150
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: Even after you have fine-tuned an LLM with your own specific data, the new model
     remains on OpenAI’s servers. You’ll interact with it through OpenAI’s APIs, not
     locally.
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使您使用自己的特定数据对LLM进行了微调，新模型仍然保留在OpenAI的服务器上。您将通过OpenAI的API与其进行交互，而不是在本地。
 - en: Adapting GPT base models for domain-specific needs
+  id: totrans-152
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 为特定领域的需求调整GPT基础模型
 - en: 'Currently, fine-tuning is only available for the `davinci`, `curie`, `babbage`,
     and `ada` base models. Each of these offers a trade-off between accuracy and required
     resources. As a developer, you can select the most appropriate model for your
@@ -678,8 +984,10 @@
     the larger models, `curie` and `davinci`, offer more advanced language processing
     and generation capabilities, making them ideal for more complex tasks in which
     higher accuracy is critical.'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 目前，微调仅适用于`davinci`、`curie`、`babbage`和`ada`基础模型。每个模型在准确性和所需资源之间都有一个权衡。作为开发者，您可以为您的应用程序选择最合适的模型：较小的模型，如`ada`和`babbage`，可能对于简单任务或资源有限的应用程序来说更快速和更具成本效益，而较大的模型`curie`和`davinci`提供了更先进的语言处理和生成能力，使它们成为更复杂任务的理想选择，其中更高的准确性至关重要。
 - en: These are the original models that are not part of the InstructGPT family of
     models. For example, they did not benefit from a reinforcement learning phase
     with a human in the loop. By fine-tuning these base models—for example, adjusting
@@ -688,20 +996,28 @@
     of the InstructGPT family, they do provide a strong foundation for building specialized
     applications by leveraging their pretrained language processing and generation
     capabilities.
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些是不属于InstructGPT模型系列的原始模型。例如，它们没有从人类在循环中进行强化学习阶段中受益。通过微调这些基础模型，例如根据自定义数据集调整其内部权重，您可以将它们定制为特定任务或领域。尽管它们没有InstructGPT系列的处理和推理能力，但它们通过利用其预训练的语言处理和生成能力为构建专门应用程序提供了坚实的基础。
 - en: Note
+  id: totrans-155
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: For fine-tuning, you must use the base models; it is not possible to use the
     instructed models.
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于微调，您必须使用基础模型；不可能使用指导模型。
 - en: Fine-tuning versus few-shot learning
+  id: totrans-157
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 微调与少样本学习
 - en: Fine-tuning is a process of *retraining* an existing model on a set of data
     from a specific task to improve its performance and make its answers more accurate.
     In fine-tuning, you update the internal parameters of the model. As we saw before,
@@ -709,16 +1025,20 @@
     its input prompt, which guides the model to produce desired results based on these
     few examples. With few-shot learning, the internal parameters of the model are
     not modified.
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 微调是一种*重新训练*现有模型的过程，以改善其性能并使其答案更准确。在微调中，您更新模型的内部参数。正如我们之前所看到的，少样本学习通过其输入提示向模型提供有限数量的良好示例，从而引导模型基于这些少量示例产生期望的结果。通过少样本学习，模型的内部参数不会被修改。
 - en: Both fine-tuning and few-shot learning can serve to enhance GPT models. Fine-tuning
     produces a highly specialized model that can provide more accurate and contextually
     relevant results for a given task. This makes it an ideal choice for cases in
     which a large amount of data is available. This customization ensures that the
     generated content is more closely aligned with the target domain’s specific language
     patterns, vocabulary, and tone.
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 微调和少样本学习都可以用来增强GPT模型。微调产生了一个高度专业化的模型，可以为特定任务提供更准确和上下文相关的结果。这使其成为在大量数据可用的情况下的理想选择。这种定制确保生成的内容更符合目标领域的特定语言模式、词汇和语气。
 - en: Few-shot learning is a more flexible and data-efficient approach because it
     does not require retraining the model. This technique is beneficial when limited
     examples are available or rapid adaptation to different tasks is needed. Few-shot
@@ -726,8 +1046,10 @@
     making it a versatile and practical option for many use cases. Another essential
     criterion for choosing between the two methods is that using and training a model
     that uses fine-tuning is more expensive.
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 少样本学习是一种更灵活和数据高效的方法，因为它不需要重新训练模型。当只有有限的示例可用或需要快速适应不同任务时，这种技术是有益的。少样本学习允许开发者快速原型设计和尝试各种任务，使其成为许多用例的多功能和实用选择。选择两种方法之间的另一个重要标准是，使用和训练使用微调的模型更昂贵。
 - en: Fine-tuning methods often require vast amounts of data. The lack of available
     examples often limits the use of this type of technique. To give you an idea of
     the amount of data needed for fine-tuning, you can assume that for relatively
@@ -743,38 +1065,54 @@
     may need hundreds of thousands or even millions of examples. This fine-tuning
     scale can lead to significant performance improvements and better model adaptation
     to the specific domain.
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 微调方法通常需要大量数据。可用示例的缺乏经常限制了这种类型技术的使用。为了让您了解微调所需的数据量，您可以假设对于相对简单的任务或仅需要进行轻微调整时，您可以通过几百个输入提示及其相应的期望完成示例来获得良好的微调结果。这种方法适用于预训练的GPT模型在任务上表现良好，但需要轻微调整以更好地与目标领域对齐的情况。然而，对于更复杂的任务或在您的应用程序需要更多定制的情况下，您的模型可能需要使用成千上万个示例进行训练。例如，这可以对应我们之前提出的用例，即自动回复符合您写作风格的电子邮件。您还可以针对非常专业的任务进行微调，这种情况下，您的模型可能需要数十万甚至数百万个示例。这种微调规模可以带来显著的性能改进，并更好地适应特定领域。
 - en: Note
+  id: totrans-162
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: '*Transfer learning* applies knowledge learned from one domain to a different
     but related environment. Therefore, you may sometimes hear the term *transfer
     learning* in relation to fine-tuning.'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '*迁移学习*将从一个领域学到的知识应用到不同但相关的环境中。因此，您有时可能会听到与微调相关的*迁移学习*术语。'
 - en: Fine-Tuning with the OpenAI API
+  id: totrans-164
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用OpenAI API进行微调
 - en: This section guides you through the process of tuning an LLM using the OpenAI
     API. We will explain how to prepare your data, upload datasets, and create a fine-tuned
     model using the API.
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 本节将指导您如何使用OpenAI API调整LLM的过程。我们将解释如何准备您的数据，上传数据集，并使用API创建一个经过微调的模型。
 - en: Preparing your data
+  id: totrans-166
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 准备您的数据
 - en: 'To update an LLM model, it is necessary to provide a dataset with examples.
     The dataset should be in a JSONL file in which each row corresponds to a pair
     of prompts and completions:'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 要更新LLM模型，需要提供一个包含示例的数据集。数据集应该是一个JSONL文件，其中每一行对应一个提示和完成的配对：
 - en: '[PRE31]'
+  id: totrans-168
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE31]'
 - en: A JSONL file is a text file, with each line representing a single JSON object.
     You can use it to store large amounts of data efficiently. OpenAI provides a tool
     that helps you generate this training file. This tool can take various file formats
@@ -782,162 +1120,239 @@
     prompt and completion column/key, and that they output a training JSONL file ready
     to be sent for the fine-tuning process. This tool also validates and gives suggestions
     to improve the quality of your data.
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: JSONL文件是一个文本文件，每行代表一个单独的JSON对象。您可以使用它来高效地存储大量数据。OpenAI提供了一个工具，帮助您生成这个训练文件。该工具可以接受各种文件格式作为输入（CSV、TSV、XLSX、JSON或JSONL），只要它们包含提示和完成列/键，并且输出一个准备好发送进行微调过程的训练JSONL文件。该工具还会验证并提供建议，以改善您的数据质量。
 - en: 'Run this tool in your terminal using the following line of code:'
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 在您的终端中使用以下代码行运行此工具：
 - en: '[PRE32]'
+  id: totrans-171
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE32]'
 - en: The application will make a series of suggestions to improve the result of the
     final file; you can accept them or not. You can also specify the option `-q`,
     which auto-accepts all suggestions.
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 该应用程序将提出一系列建议，以改善最终文件的结果；您可以接受或拒绝这些建议。您还可以指定选项`-q`，自动接受所有建议。
 - en: Note
+  id: totrans-173
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: This `openai` tool was installed and available in your terminal when you executed
     `pip install openai`.
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 当您执行`pip install openai`时，此`openai`工具已安装并在您的终端中可用。
 - en: If you have enough data, the tool will ask whether dividing the data into training
     and validation sets is necessary. This is a recommended practice. The algorithm
     will use the training data to modify the model’s parameters during fine-tuning.
     The validation set can measure the model’s performance on a dataset that has not
     been used to update the parameters.
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您有足够的数据，该工具将询问是否有必要将数据分成训练集和验证集。这是一种推荐的做法。算法将使用训练数据在微调过程中修改模型的参数。验证集可以衡量模型在未用于更新参数的数据集上的性能。
 - en: Fine-tuning an LLM benefits from using high-quality examples, ideally reviewed
     by experts. When fine-tuning with preexisting datasets, ensure that the data is
     screened for offensive or inaccurate content, or examine random samples if the
     dataset is too large to review all entries manually.
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 对LLM进行微调有赖于使用高质量的示例，最好由专家审查。在使用预先存在的数据集进行微调时，确保数据经过筛查，排除冒犯性或不准确的内容，或者如果数据集太大无法手动审核所有条目，则检查随机样本。
 - en: Making your data available
+  id: totrans-177
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 使您的数据可用
 - en: 'Once your dataset with the training examples is prepared, you need to upload
     it to the OpenAI servers. The OpenAI API provides different functions to manipulate
     files. Here are the most important ones:'
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦您准备好带有训练示例的数据集，您需要将其上传到OpenAI服务器。OpenAI API提供了不同的功能来操作文件。以下是最重要的功能：
 - en: 'Uploading a file:'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 上传文件：
 - en: '[PRE33]'
+  id: totrans-180
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE33]'
 - en: 'Two parameters are mandatory: `file` and `purpose`. Set `purpose` to `fine-tune`.
     This validates the downloaded file format for fine-tuning. The output of this
     function is a dictionary in which you can retrieve the `file_id` in the `id` field.
     Currently, the total file size can be up to 1 GB. For more, you need to contact
     OpenAI.'
+  id: totrans-181
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 有两个必填参数：`file`和`purpose`。将`purpose`设置为`fine-tune`。这将验证用于微调的下载文件格式。此函数的输出是一个字典，您可以从中检索`id`字段中的`file_id`。目前，总文件大小可达1GB。如需更多，请联系OpenAI。
 - en: 'Deleting a file:'
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: 删除文件：
 - en: '[PRE34]'
+  id: totrans-183
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE34]'
 - en: 'One parameter is mandatory: `file_id`.'
+  id: totrans-184
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一个参数是必需的：`file_id`。
 - en: 'Listing all uploaded files:'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 列出所有上传的文件：
 - en: '[PRE35]'
+  id: totrans-186
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE35]'
 - en: It can be helpful to retrieve the ID of a file, for example, when you start
     the fine-tuning process.
+  id: totrans-187
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 例如，在开始微调过程时，检索文件的ID可能会有所帮助。
 - en: Creating a fine-tuned model
+  id: totrans-188
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 创建一个经过精细调整的模型
 - en: Fine-tuning an uploaded file is a straightforward process. The endpoint `openai.FineTune.create()`
     creates a job on the OpenAI servers to refine a specified model from a given dataset.
     The response of this function contains the details of the queued job, including
     the status of the job, the `fine_tune_id`, and the name of the model at the end
     of the process.
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 对上传的文件进行微调是一个简单的过程。端点`openai.FineTune.create()`在OpenAI服务器上创建一个作业，以从给定数据集中细化指定的模型。此函数的响应包含排队作业的详细信息，包括作业的状态、`fine_tune_id`和过程结束时模型的名称。
 - en: The main input parameters are described in [Table 4-1](#table-4-1).
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 主要输入参数在[表4-1](#table-4-1)中描述。
 - en: Table 4-1\. Parameters for `openai.FineTune.create()`
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 表4-1。`openai.FineTune.create()`的参数
 - en: '| Field name | Type | Description |'
+  id: totrans-192
   prefs: []
   type: TYPE_TB
+  zh: '|字段名称|类型|描述|'
 - en: '| --- | --- | --- |'
+  id: totrans-193
   prefs: []
   type: TYPE_TB
+  zh: '|---|---|---|'
 - en: '| `training_file` | String | This is the only mandatory parameter containing
     the `file_id` of the uploaded file. Your dataset must be formatted as a JSONL
     file. Each training example is a JSON object with the keys `prompt` and `completion`.
     |'
+  id: totrans-194
   prefs: []
   type: TYPE_TB
+  zh: '|`training_file`|字符串|这是包含上传文件的`file_id`的唯一必填参数。您的数据集必须格式化为JSONL文件。每个训练示例都是一个具有`prompt`和`completion`键的JSON对象。|'
 - en: '| `model` | String | This specifies the base model used for fine-tuning. You
     can select `ada`, `babbage`, `curie`, `davinci`, or a previously tuned model.
     The default base model is `curie`. |'
+  id: totrans-195
   prefs: []
   type: TYPE_TB
+  zh: '|`模型`|字符串|这指定了用于微调的基础模型。您可以选择`ada`、`babbage`、`curie`、`davinci`或先前调整的模型。默认的基础模型是`curie`。|'
 - en: '| `validation_file` | String | This contains the `file_id` of the uploaded
     file with the validation data. If you provide this file, the data will be used
     to generate validation metrics periodically during fine-tuning. |'
+  id: totrans-196
   prefs: []
   type: TYPE_TB
+  zh: '|`validation_file`|字符串|这包含具有验证数据的上传文件的`file_id`。如果提供此文件，数据将用于在微调过程中定期生成验证指标。|'
 - en: '| `suffix` | String | This is a string of up to 40 characters that is added
     to your custom model name. |'
+  id: totrans-197
   prefs: []
   type: TYPE_TB
+  zh: '|`后缀`|字符串|这是一个最多40个字符的字符串，添加到您的自定义模型名称中。|'
 - en: Listing fine-tuning jobs
+  id: totrans-198
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 列出微调作业
 - en: 'It is possible to obtain a list of all the fine-tuning jobs on the OpenAI servers
     via the following function:'
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以通过以下函数在OpenAI服务器上获取所有微调作业的列表：
 - en: '[PRE36]'
+  id: totrans-200
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE36]'
 - en: The result is a dictionary that contains information on all the refined models.
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: 结果是一个包含所有精细调整模型信息的字典。
 - en: Canceling a fine-tuning job
+  id: totrans-202
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 取消微调作业
 - en: 'It is possible to immediately interrupt a job running on OpenAI servers via
     the following function:'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以通过以下函数立即中断在OpenAI服务器上运行的作业：
 - en: '[PRE37]'
+  id: totrans-204
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE37]'
 - en: 'This function has only one mandatory parameter: `fine_tune_id`. The `fine_tune_id`
     parameter is a string that starts with `ft-`; for example, `ft-Re12otqdRaJ(...)`.
     It is obtained after the creation of your job with the function `openai.FineTune.​cre⁠ate()`.
     If you have lost your `fine_tune_id`, you can retrieve it with `openai.FineTune.list()`.'
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: 此功能只有一个必填参数：`fine_tune_id`。`fine_tune_id`参数是一个以`ft-`开头的字符串；例如，`ft-Re12otqdRaJ(...)
+    `。它是在使用`openai.FineTune.​cre⁠ate()`函数创建作业后获得的。如果您丢失了`fine_tune_id`，可以使用`openai.FineTune.list()`来检索它。
 - en: Fine-Tuning Applications
+  id: totrans-206
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 微调应用
 - en: Fine-tuning offers a powerful way to enhance the performance of models across
     various applications. This section looks at several use cases in which fine-tuning
     has been effectively deployed. Take inspiration from these examples! Perhaps you
@@ -945,12 +1360,16 @@
     is more expensive than other techniques based on prompt engineering, and therefore,
     it will not be necessary for most of your situations. But when it is, this technique
     can significantly improve your results.
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 微调提供了一种强大的方式来增强各种应用程序中模型的性能。本节将介绍几种已经有效部署微调的用例。从这些例子中获得灵感！也许您在您的用例中有相同类型的问题。再次提醒，微调比基于提示工程的其他技术更昂贵，因此在大多数情况下并不是必需的。但是当需要时，这种技术可以显著改善您的结果。
 - en: Legal document analysis
+  id: totrans-208
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 法律文件分析
 - en: In this use case, an LLM is used to process legal texts and extract valuable
     information. These documents are often written with specific jargon, which makes
     it difficult for nonspecialists to understand these types of texts. We already
@@ -961,18 +1380,24 @@
     of a particular topic or for a specific type of end user, the model can process
     the intricacies of legal language better and become more adept at performing tasks
     related to that particular type of end user.
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，LLM用于处理法律文件并提取有价值的信息。这些文件通常使用特定行话编写，这使得非专业人士难以理解这些类型的文本。我们已经在[第1章](ch01.html#gpt_4_and_chatgpt_essentials)中看到，当在统一律师考试上进行测试时，GPT-4的得分位于90分位数。在这种情况下，微调可以使模型专门针对特定领域和/或允许其协助非专业人士参与法律流程。通过在特定主题的法律语料库上对LLM进行微调，或者针对特定类型的最终用户，模型可以更好地处理法律语言的复杂性，并更擅长执行与特定类型最终用户相关的任务。
 - en: Fine-tuning an LLM with a large amount of data to analyze legal documents can
     potentially significantly improve the model’s performance in these tasks by allowing
     it to better process the nuances of legal language that are often beyond the capabilities
     of prompt engineering techniques.
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过使用大量数据对LLM进行微调，以分析法律文件，可以显著提高模型在这些任务中的性能，使其能够更好地处理通常超出提示工程技术能力范围的法律语言的细微差别。
 - en: Automated code review
+  id: totrans-211
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 自动代码审查
 - en: In this use case, fine-tuning can help the model analyze and suggest improvements
     for developer-written code. This requires training the model on a dataset comprising
     code snippets and comments, enabling the model to process language-specific syntax,
@@ -982,21 +1407,29 @@
     use fine-tuning to train the model on a specific task such as code review, and
     build a project for your own code with specific standards or dedicated to a particular
     programming framework.
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种用例中，微调可以帮助模型分析并提出开发人员编写的代码的改进建议。这需要在包含代码片段和注释的数据集上训练模型，使模型能够处理特定语言的语法、语义和最佳实践。请注意，这个用例类似于GitHub的Copilot工具，该工具旨在通过实时提供代码和整个函数的建议来帮助开发人员编写代码。您可以使用微调来训练模型执行特定任务，如代码审查，并为自己的代码构建一个符合特定标准或专门用于特定编程框架的项目。
 - en: 'As an example of an input file for this use case, your JSONL file could contain
     pairs of code and their corresponding review comments. This would help the model
     learn how to provide accurate and relevant feedback on code quality. One line
     of the JSONL file could be something like this:'
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为这种用例的输入文件的一个例子，您的JSONL文件可以包含代码和相应的审查评论对。这将帮助模型学习如何提供准确和相关的代码质量反馈。JSONL文件的一行可能是这样的：
 - en: '[PRE38]'
+  id: totrans-214
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE38]'
 - en: Financial document summarization
+  id: totrans-215
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 财务文件摘要
 - en: In financial document synthesis, a fine-tuned LLM can generate concise and accurate
     summaries of financial documents, such as earnings reports, financial statements,
     and analyst reports. By fine-tuning a language model on a dataset related explicitly
@@ -1004,21 +1437,29 @@
     the terminology and context of these documents. For example, the model could take
     a detailed report about an interest rate increase by a central bank and condense
     it into a brief yet informative summary.
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 在财务文件合成中，经过微调的LLM可以生成财务文件的简洁准确摘要，如收益报告、财务报表和分析报告。通过在与财务记录明确相关的数据集上微调语言模型，生成的模型可以更准确地理解这些文件的术语和上下文。例如，该模型可以将央行利率上调的详细报告压缩成简洁而富有信息的摘要。
 - en: 'To adjust an existing model to get better summaries of financial documents,
     you need to already have a large number of sample summaries. Then you have to
     provide the model with a JSONL file containing pairs of financial documents and
     their ideal summaries. For example:'
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: 要调整现有模型以获得更好的财务文件摘要，您需要已经有大量样本摘要。然后，您需要向模型提供一个包含财务文件及其理想摘要对的JSONL文件。例如：
 - en: '[PRE39]'
+  id: totrans-218
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE39]'
 - en: Technical document translation
+  id: totrans-219
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 技术文件翻译
 - en: Using fine-tuning to translate technical documents can significantly improve
     the performance of a base model compared to what you can obtain with few-shot
     learning. The main reason is that technical documents often contain specialized
@@ -1029,12 +1470,16 @@
     to prepare a JSONL file containing your training data. For the use case of technical
     document translation, the contents of this file would include translations of
     technical texts into the target language.
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用微调来翻译技术文件可以显著提高基础模型的性能，与少量样本学习相比。主要原因是技术文件通常包含专业词汇和复杂的句子结构，少量样本学习无法有效处理。基础模型是未经调整的GPT-3模型，如InstructGPT-3模型，使用强化学习和人类反馈技术。要使用它们，需要进行微调。要调整现有的基础模型，您需要准备一个包含训练数据的JSONL文件。对于技术文件翻译的用例，该文件的内容将包括将技术文本翻译成目标语言的内容。
 - en: News article generation for niche topics
+  id: totrans-221
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 针对利基主题的新闻文章生成
 - en: 'In this use case, a fine-tuned model could generate high-quality, engaging,
     and contextually relevant news articles for highly specialized topics that the
     base model probably would not have seen enough of to be accurate. As with all
@@ -1042,71 +1487,100 @@
     to write articles. For that, you need to have at your disposal many articles written
     on that specific niche topic. This data will be used to create the JSONL file
     containing prompt-completion pairs. Here is a small example:'
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种用例中，经过微调的模型可以为高度专业化的主题生成高质量、引人入胜和与上下文相关的新闻文章，这些主题基础模型可能没有足够的数据来准确生成。与所有其他用例一样，您需要创建一个训练数据集，以使您的模型专门用于撰写文章。为此，您需要准备许多关于特定利基主题的文章。这些数据将用于创建包含提示-完成对的JSONL文件。以下是一个小例子：
 - en: '[PRE40]'
+  id: totrans-223
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE40]'
 - en: Generating and Fine-Tuning Synthetic Data for an Email Marketing Campaign
+  id: totrans-224
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 为电子邮件营销活动生成和微调合成数据
 - en: In this example, we will make a text generation tool for an email marketing
     agency that utilizes targeted content to create personalized email campaigns for
     businesses. The emails are designed to engage audiences and promote products or
     services.
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们将为电子邮件营销机构制作一个文本生成工具，利用定向内容为企业创建个性化的电子邮件营销活动。这些电子邮件旨在吸引受众并推广产品或服务。
 - en: Let’s assume that our agency has a client in the payment processing industry
     who has asked to help them run a direct email marketing campaign to offer stores
     a new payment service for ecommerce. The email marketing agency decides to use
     fine-tuning techniques for this project. Our email marketing agency will need
     a large amount of data to do this fine-tuning.
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们的机构有一个支付处理行业的客户，他们要求帮助他们运行直接电子邮件营销活动，为电子商务提供新的支付服务。电子邮件营销机构决定为这个项目使用微调技术。我们的电子邮件营销机构将需要大量数据来进行微调。
 - en: In our case, we will need to generate the data synthetically for demonstration
     purposes, as you will see in the next subsection. Usually, the best results are
     obtained with data from human experts, but in some cases, synthetic data generation
     can be a helpful solution.
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的情况下，我们需要为演示目的合成生成数据，正如您将在下一小节中看到的。通常，最好的结果是使用人类专家的数据，但在某些情况下，合成数据生成可能是一个有用的解决方案。
 - en: Creating a synthetic dataset
+  id: totrans-228
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 创建合成数据集
 - en: In the following example, we create artificial data from GPT-3.5 Turbo. To do
     this, we will specify in a prompt that we want promotional sentences to sell the
     ecommerce service to a specific merchant. The merchant is characterized by a sector
     of activity, the city where the store is located, and the size of the store. We
     get promotional sentences by sending the prompts to GPT-3.5 Turbo via the function
     `chat_completion`, defined earlier.
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 在以下示例中，我们从GPT-3.5 Turbo创建人工数据。为此，我们将在提示中指定要将促销句子发送给特定商家以销售电子商务服务。商家的特征是活动领域、商店所在城市和商店的大小。我们通过将提示发送到之前定义的`chat_completion`函数中的GPT-3.5
+    Turbo来获得促销句子。
 - en: 'We start our script by defining three lists that correspond respectively to
     the type of shop, the cities where the stores are located, and the size of the
     stores:'
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们通过定义三个列表来开始我们的脚本，分别对应于商店类型、商店所在的城市和商店的大小：
 - en: '[PRE41]'
+  id: totrans-231
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE41]'
 - en: 'Then we define the first prompt in a string. In this prompt, the role, context,
     and task are well defined, as they were constructed using the prompt engineering
     techniques described earlier in this chapter. In this string, the three values
     between the braces are replaced with the corresponding values later in the code.
     This first prompt is used to generate the synthetic data:'
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们在一个字符串中定义第一个提示。在此提示中，角色、上下文和任务都很明确，因为它们是使用本章前面描述的提示工程技术构建的。在此字符串中，大括号中的三个值将在代码中稍后替换为相应的值。这个第一个提示用于生成合成数据：
 - en: '[PRE42]'
+  id: totrans-233
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE42]'
 - en: '``The following prompt contains only the values of the three variables, separated
     by commas. It is not used to create the synthetic data; only for fine-tuning:'
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下提示仅包含三个变量的值，用逗号分隔。它不用于创建合成数据；仅用于微调：
 - en: '[PRE43]'
+  id: totrans-235
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE43]'
 - en: 'Then comes the main part of the code, which iterates over the three value lists
     we defined earlier. We can see that the code of the block in the loop is straightforward.
     We replace the values in the braces of the two prompts with the appropriate values.
@@ -1114,56 +1588,80 @@
     an advertisement saved in `response_txt`. The `sub_prompt` and `response_txt`
     variables are then added to the *out_openai_completion.csv* file, our training
     set for fine-tuning:'
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后是代码的主要部分，它迭代我们之前定义的三个值列表。我们可以看到循环中的代码块很简单。我们用两个提示的大括号中的值替换为适当的值。变量`prompt`与函数`chat_completion`一起使用，以生成保存在`response_txt`中的广告。然后将`sub_prompt`和`response_txt`变量添加到*out_openai_completion.csv*文件中，这是我们微调的训练集。
 - en: '[PRE44]'
+  id: totrans-237
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE44]'
 - en: 'Note that for each combination of characteristics, we produce three examples.
     To maximize the model’s creativity, we set the temperature to `1`. At the end
     of this script, we have a Pandas table stored in the file *out_openai_completion.csv*.
     It contains 162 observations, with two columns containing the prompt and the corresponding
     completion. Here are the first two lines of this file:'
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，对于每种特征组合，我们生成三个示例。为了最大化模型的创造力，我们将温度设置为`1`。在此脚本结束时，我们有一个存储在*out_openai_completion.csv*文件中的Pandas表。它包含162个观察结果，其中有两列包含提示和相应的完成。这个文件的前两行如下：
 - en: '[PRE45]'
+  id: totrans-239
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE45]'
 - en: 'We can now call the tool to generate the training file from *out_openai_completion.csv*
     as follows:'
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们可以调用工具从*out_openai_completion.csv*生成训练文件，如下所示：
 - en: '[PRE46]'
+  id: totrans-241
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE46]'
 - en: 'As you can see in the following lines of code, this tool makes suggestions
     for improving our prompt-completion pairs. At the end of this text, it even gives
     instructions on how to continue the fine-tuning process and advice on using the
     model to make predictions once the fine-tuning process is complete:'
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您在以下代码行中所看到的，这个工具提出了改进我们提示-完成对的建议。在文本的结尾，它甚至提供了如何继续微调过程以及在微调过程完成后如何使用模型进行预测的建议。
 - en: '[PRE47]'
+  id: totrans-243
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE47]'
 - en: At the end of this process, a new file called *out_openai_completion_prepared.jsonl*
     is available and ready to be sent to the OpenAI servers to run the fine-tuning
     process.
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: 在此过程结束时，将会有一个名为*out_openai_completion_prepared.jsonl*的新文件可供使用，并准备好发送到OpenAI服务器以运行微调过程。
 - en: Note that, as explained in the message of the function, the prompt has been
     modified by adding the string `->` at the end, and a suffix ending with `\n` has
     been added to all completions.``  ``### Fine-tuning a model with the synthetic
     dataset
+  id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，如函数消息中所解释的，提示已被修改，末尾添加了字符串`->`，并且所有完成都添加了以`\n`结尾的后缀。### 使用合成数据集微调模型
 - en: 'The following code uploads the file and does the fine-tuning. In this example,
     we will use `davinci` as the base model, and the name of the resulting model will
     have `direct_marketing` as a suffix:'
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下代码上传文件并进行微调。在此示例中，我们将使用`davinci`作为基础模型，生成的模型名称将以`direct_marketing`作为后缀：
 - en: '[PRE48]'
+  id: totrans-247
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE48]'
 - en: 'This will start the update process of the `davinci` model with our data. This
     fine-tuning process can take some time, but when it is finished, you will have
     a new model adapted for your task. The time needed for this fine-tuning is mainly
@@ -1171,148 +1669,220 @@
     tokens in your examples, and the base model you have chosen. To give you an idea
     of the time needed for fine-tuning, in our example it took less than five minutes.
     However, we have seen some cases in which fine-tuning took more than 30 minutes:'
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将启动`davinci`模型的更新过程，使用我们的数据。这个微调过程可能需要一些时间，但完成后，您将拥有一个适合您任务的新模型。微调所需的时间主要取决于数据集中的示例数量、示例中的标记数量以及您选择的基础模型。为了让您了解微调所需的时间，我们的示例中不到五分钟就完成了。但是，我们也看到一些情况下微调需要超过30分钟：
 - en: '[PRE49]'
+  id: totrans-249
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE49]'
 - en: '[PRE50]'
+  id: totrans-250
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE50]'
 - en: Warning
+  id: totrans-251
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 警告
 - en: As the message in the terminal explains, you will break the connection to the
     OpenAI servers by typing Ctrl+C in the command line, but this will not interrupt
     the fine-tuning process.
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如终端中的消息所解释的那样，您可以通过在命令行中键入Ctrl+C来断开与OpenAI服务器的连接，但这不会中断微调过程。
 - en: 'To reconnect to the server and get back the status of a running fine-tuning
     job, you can use the following command, `fine_tunes.follow`, where `fine_tune_id`
     is the ID of the fine-tuning job:'
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh: 要重新连接到服务器并获取正在运行的微调作业的状态，可以使用以下命令`fine_tunes.follow`，其中`fine_tune_id`是微调作业的ID：
 - en: '[PRE51]'
+  id: totrans-254
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE51]'
 - en: 'This ID is given when you create the job. In our earlier example, our `fine_tune_id`
     is `ft-mMsm(...)`. If you lose your `fine_tune_id`, it is possible to display
     all models via:'
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: 当您创建工作时，会得到此ID。在我们之前的示例中，我们的`fine_tune_id`是`ft-mMsm(...) `。如果您丢失了`fine_tune_id`，可以通过以下方式显示所有模型：
 - en: '[PRE52]'
+  id: totrans-256
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE52]'
 - en: 'To immediately cancel a fine-tune job, use this:'
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: 要立即取消微调作业，请使用此命令：
 - en: '[PRE53]'
+  id: totrans-258
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE53]'
 - en: 'And to delete a fine-tune job, use this:'
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: 要删除微调作业，请使用此命令：
 - en: '[PRE54]'
+  id: totrans-260
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE54]'
 - en: Using the fine-tuned model for text completion
+  id: totrans-261
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 使用微调模型进行文本完成
 - en: Once your new model is built, it can be accessed in different ways to make new
     completions. The easiest way to test it is probably via the Playground. To access
     your models in this tool, you can search for them in the drop-down menu on the
     righthand side of the Playground interface (see [Figure 4-4](#fig_4_using_the_fine_tuned_model_in_the_playground)).
     All your fine-tuned models are at the bottom of this list. Once you select your
     model, you can use it to make predictions.
+  id: totrans-262
   prefs: []
   type: TYPE_NORMAL
+  zh: 构建新模型后，可以通过不同的方式访问它以进行新的完成。测试它的最简单方法可能是通过游乐场。要在此工具中访问您的模型，可以在游乐场界面右侧的下拉菜单中搜索它们（请参见[图4-4](#fig_4_using_the_fine_tuned_model_in_the_playground)）。所有您微调的模型都在此列表的底部。选择模型后，可以使用它进行预测。
 - en: '![](assets/dagc_0404.png)'
+  id: totrans-263
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0404.png)'
 - en: Figure 4-4\. Using the fine-tuned model in the Playground
+  id: totrans-264
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图4-4。在游乐场中使用微调模型
 - en: We used the fine-tuned LLM in the following example with the input prompt `Hotel,
     New York, small ->`. Without further instructions, the model automatically generated
     an advertisement to sell an ecommerce payment service for a small hotel in New
     York.
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在以下示例中使用了微调的LLM，输入提示为`Hotel, New York, small ->`。没有进一步的说明，模型自动生成了一则广告，以出售纽约的小型酒店的电子商务支付服务。
 - en: We already obtained excellent results with a small dataset comprising only 162
     examples. For a fine-tuning task, it is generally recommended to have several
     hundred instances, ideally several thousand. In addition, our training set was
     generated synthetically when ideally it should have been written by a human expert
     in marketing.
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经使用了一个仅包含162个示例的小数据集获得了出色的结果。对于微调任务，通常建议有几百个实例，最好是几千个。此外，我们的训练集是通过合成生成的，理想情况下应该由营销专家编写。
 - en: 'To use it with the OpenAI API, we proceed as before with `openai.Completion.​cre⁠ate()`,
     except that we need to use the name of our new model as an input parameter. Don’t
     forget to end all your prompts with `->` and to set `\n` as stop words:'
+  id: totrans-267
   prefs: []
   type: TYPE_NORMAL
+  zh: 要将其与OpenAI API一起使用，我们按照以前的方式进行，使用`openai.Completion.​cre⁠ate()`，只是需要使用我们的新模型的名称作为输入参数。不要忘记以`->`结束所有提示，并将`\n`设置为停用词：
 - en: '[PRE55]'
+  id: totrans-268
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE55]'
 - en: 'We obtain the following answer:'
+  id: totrans-269
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到了以下答案：
 - en: '[PRE56]'
+  id: totrans-270
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE56]'
 - en: As we have shown, fine-tuning can enable Python developers to tailor LLMs to
     their unique business needs, especially in dynamic domains such as our email marketing
     example. It’s a powerful approach to customizing the language models you need
     for your applications. Ultimately, this can easily help you serve your customers
     better and drive business growth.``  ``## Cost of Fine-Tuning
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们所展示的，微调可以使Python开发人员根据其独特的业务需求定制LLM，特别是在我们的电子邮件营销示例等动态领域。这是一种定制语言模型的强大方法，可以帮助您更好地为客户服务并推动业务增长。``  ``##微调成本
 - en: The use of fine-tuned models is costly. First you have to pay for the training,
     and once the model is ready, each prediction will cost you a little more than
     if you had used the base models provided by OpenAI.
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用微调模型是昂贵的。首先，您必须为培训付费，一旦模型准备就绪，每次预测都会比使用OpenAI提供的基本模型多一点。
 - en: Pricing is subject to change, but at the time of this writing, it looks like
     [Table 4-2](#table-4-2).
+  id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: 价格可能会有所变化，但在撰写本文时，看起来像是[表4-2](#table-4-2)。
 - en: Table 4-2\. Pricing for fine-tuning models at the time of this book’s writing
+  id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: 表4-2。撰写本书时微调模型的定价
 - en: '| Model | Training | Usage |'
+  id: totrans-275
   prefs: []
   type: TYPE_TB
+  zh: '|模型|培训|用法|'
 - en: '| --- | --- | --- |'
+  id: totrans-276
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- | --- |'
 - en: '| `ada` | $0.0004 per 1,000 tokens | $0.0016 per 1,000 tokens |'
+  id: totrans-277
   prefs: []
   type: TYPE_TB
+  zh: '| `ada` |每1,000个标记0.0004美元|每1,000个标记0.0016美元|'
 - en: '| `babbage` | $0.0006 per 1,000 tokens | $0.0024 per 1,000 tokens |'
+  id: totrans-278
   prefs: []
   type: TYPE_TB
+  zh: '| `babbage` |每1,000个标记0.0006美元|每1,000个标记0.0024美元|'
 - en: '| `curie` | $0.0030 per 1,000 tokens | $0.0120 per 1,000 tokens |'
+  id: totrans-279
   prefs: []
   type: TYPE_TB
+  zh: '| `curie` |每1,000个标记0.0030美元|每1,000个标记0.0120美元|'
 - en: '| `davinci` | $0.0300 per 1,000 tokens | $0.1200 per 1,000 tokens |'
+  id: totrans-280
   prefs: []
   type: TYPE_TB
+  zh: '| `davinci` |每1,000个标记0.0300美元|每1,000个标记0.1200美元|'
 - en: As a point of comparison, the price of the `gpt-3.5-turbo` model is $0.002 per
     1,000 tokens. As already mentioned, `gpt-3.5-turbo` has the best cost-performance
     ratio.
+  id: totrans-281
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为比较，`gpt-3.5-turbo`模型的价格为每1,000个标记0.002美元。如前所述，`gpt-3.5-turbo`具有最佳的性价比。
 - en: To get the latest prices, visit the [OpenAI pricing page](https://openai.com/pricing).``  ``#
     Summary
+  id: totrans-282
   prefs: []
   type: TYPE_NORMAL
+  zh: 要获取最新价格，请访问[OpenAI定价页面](https://openai.com/pricing)。``  ``#摘要
 - en: This chapter discussed advanced techniques to unlock the full potential of GPT-4
     and ChatGPT and provided key actionable takeaways to improve the development of
     applications using LLMs.
+  id: totrans-283
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章讨论了解锁GPT-4和ChatGPT的全部潜力的高级技术，并提供了关键的可操作的要点，以改进使用LLM开发应用程序。
 - en: Developers can benefit from understanding prompt engineering, zero-shot learning,
     few-shot learning, and fine-tuning to create more effective and targeted applications.
     We explored how to create effective prompts by considering the context, task,
@@ -1321,52 +1891,76 @@
     complex tasks. In addition, we discussed the flexibility and adaptability that
     few-shot learning offers, highlighting its data-efficient nature and ability to
     adapt to different tasks quickly.
+  id: totrans-284
   prefs: []
   type: TYPE_NORMAL
+  zh: 开发人员可以通过了解prompt工程、零-shot学习、few-shot学习和微调来创建更有效和有针对性的应用程序。我们探讨了如何通过考虑上下文、任务和角色来创建有效的提示，从而实现与模型更精确的交互。通过逐步推理，开发人员可以鼓励模型更有效地推理和处理复杂任务。此外，我们讨论了few-shot学习提供的灵活性和适应性，突出了其数据高效的特性和快速适应不同任务的能力。
 - en: '[Table 4-3](#table-4-3) provides a quick summary of all these techniques, when
     to use them, and how they compare.'
+  id: totrans-285
   prefs: []
   type: TYPE_NORMAL
+  zh: '[表4-3](#table-4-3)提供了所有这些技术的快速摘要，何时使用它们以及它们的比较。'
 - en: Table 4-3\. A comparison of different techniques
+  id: totrans-286
   prefs: []
   type: TYPE_NORMAL
+  zh: 表4-3。不同技术的比较
 - en: '|  | Zero-shot learning | Few-shot learning | Prompt engineering tricks | Fine-tuning
     |'
+  id: totrans-287
   prefs: []
   type: TYPE_TB
+  zh: '|  | 零-shot学习 | few-shot学习 | prompt工程技巧 | 微调 |'
 - en: '| --- | --- | --- | --- | --- |'
+  id: totrans-288
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- | --- | --- | --- |'
 - en: '| Definition | Predicting unseen tasks without prior examples | Prompt includes
     examples of inputs and desired output | Detailed prompt that can include context,
     role, and tasks, or tricks such as “think step by step” | Model is further trained
     on a smaller, specific dataset; prompts used are simple |'
+  id: totrans-289
   prefs: []
   type: TYPE_TB
+  zh: '| 定义 | 预测没有先前示例的未见任务 | 提示包括输入和期望的输出示例 | 可包括上下文、角色和任务的详细提示，或者“逐步思考”等技巧 | 模型在更小、更具体的数据集上进一步训练；使用的提示很简单
+    |'
 - en: '| Use case | Simple tasks | Well-defined but complex tasks, usually with specific
     output format | Creative, complex tasks | Highly complex tasks |'
+  id: totrans-290
   prefs: []
   type: TYPE_TB
+  zh: '| 用例 | 简单任务 | 定义明确但复杂的任务，通常具有特定的输出格式 | 创造性、复杂的任务 | 高度复杂的任务 |'
 - en: '| Data | Requires no additional example data | Requires a few examples | Quantity
     of data depends on the prompt engineering technique | Requires a large training
     dataset |'
+  id: totrans-291
   prefs: []
   type: TYPE_TB
+  zh: '| 数据 | 不需要额外的示例数据 | 需要一些示例 | 数据量取决于prompt工程技术 | 需要大型训练数据集 |'
 - en: '| Pricing | Usage: pricing per token (input + output) | Usage: pricing per
     token (input + output); can lead to long prompts | Usage: pricing per token (input
     + output), can lead to long prompts | Training: Usage: pricing per token (input
     + output) is about 80 times more expensive for fine-tuned `davinci` compared to
     GPT-3.5 Turbo. This means that fine-tuning is financially preferable if other
     techniques lead to a prompt 80 times as long. |'
+  id: totrans-292
   prefs: []
   type: TYPE_TB
+  zh: '| 定价 | 使用：每个令牌（输入+输出）的定价 | 使用：每个令牌（输入+输出）的定价；可能导致长提示 | 使用：每个令牌（输入+输出）的定价，可能导致长提示
+    | 训练：使用：每个令牌（输入+输出）的定价，与GPT-3.5 Turbo相比，fine-tuned `davinci`大约贵80倍。这意味着如果其他技术导致提示长度增加80倍，经济上更倾向于进行微调。
+    |'
 - en: '| Conclusion | Use by default | If zero-shot learning does not work because
     the output needs to be particular, use few-shot learning. | If zero-shot learning
     does not work because the task is too complex, try prompt engineering. | If you
     have a very specific and large dataset and the other solutions do not give good
     enough results, this should be used as a last resort. |'
+  id: totrans-293
   prefs: []
   type: TYPE_TB
+  zh: '| 结论 | 默认使用 | 如果零-shot学习不起作用，因为输出需要特定的话，使用few-shot学习。 | 如果零-shot学习不起作用，因为任务太复杂，尝试prompt工程。
+    | 如果您有一个非常具体和大型的数据集，其他解决方案效果不够好，这应该作为最后的手段。 |'
 - en: To ensure success in building LLM applications, developers should experiment
     with other techniques and evaluate the model’s responses for accuracy and relevance.
     In addition, developers should be aware of LLM’s computational limitations and
@@ -1374,12 +1968,16 @@
     advanced techniques and continually refining their approach, developers can create
     powerful and innovative applications that unlock the true potential of GPT-4 and
     ChatGPT.
+  id: totrans-294
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了确保构建LLM应用程序的成功，开发人员应该尝试其他技术，并评估模型的响应是否准确和相关。此外，开发人员应该意识到LLM的计算限制，并相应地调整他们的提示以获得更好的结果。通过整合这些先进技术并不断完善他们的方法，开发人员可以创建功能强大和创新的应用程序，释放GPT-4和ChatGPT的真正潜力。
 - en: 'In the next chapter, you will discover two additional ways to integrate LLM
     capabilities into your applications: plug-ins and the LangChain framework. These
     tools enable developers to create innovative applications, access up-to-date information,
     and simplify the development of applications that integrate LLMs. We will also
     provide insight into the future of LLMs and their impact on app development.``'
+  id: totrans-295
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，您将发现将LLM功能集成到您的应用程序中的另外两种方法：插件和LangChain框架。这些工具使开发人员能够创建创新的应用程序，访问最新信息，并简化集成LLM的应用程序的开发。我们还将提供关于LLM未来及其对应用程序开发的影响的见解。

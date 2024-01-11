@@ -1,0 +1,4620 @@
+- en: '[CHAPTER 5](toc.xhtml#c05)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Advanced GPT Prompt Engineering Techniques](toc.xhtml#c05)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](toc.xhtml#s361a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Recalling our prior discussions, we have delved into ChatGPT-enabled AI capabilities
+    in *[Chapter 2, CapabilityGPT – An Enterprise AI-Capability Framework for ChatGPT](c02.xhtml)*,
+    and examined their transformative impact for enterprise roles in *[Chapter 3](c03.xhtml),
+    The Impact of ChatGPT on the Enterprise*. We have also seen in *[Chapter 4, Architecture
+    Patterns enabled by GPT-Models](c04.xhtml)*, how these advanced capabilities,
+    when combined with the right solution architecture patterns, can lead to a new
+    generation of intelligent systems. Central to harnessing these AI capabilities
+    is the practice of prompt engineering, the technique of effectively communicating
+    with GPT models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Prompt engineering is pivotal regardless of the context—be it simple interactions
+    with the ChatGPT chatbot, developing specialized applications with GPT at their
+    core, or leveraging GPT-enhanced enterprise solutions like Microsoft Copilot.
+    It’s the process of crafting precise, contextually relevant prompts that allow
+    us to produce the desired response from the model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are three major techniques, Instruction Prompting, Query Prompting and
+    Multi Agent Prompting, each addressing unique challenges and scenarios when communicating
+    with GPT models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We commence our exploration with the **Instruction Prompting**. Anchored firmly
+    on the CapabilityGPT framework introduced in *[Chapter 2](c02.xhtml)*, this technique
+    presents a structured approach for conveying specific tasks or actions to a GPT
+    model. The subsequent in-depth dissection will navigate through its three variants:
+    Single Instruction, Instruction Sequence, and Pseudo-Code Instructions. Their
+    efficacy is then brought to light through real-world examples that accentuate
+    their pragmatic applications.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next, we transition to **Query Prompting**, a useful technique in explorative
+    and analytical scenarios, also when faced with ambiguity and incomplete information.
+    Throughout this section we distinguish between various query types, including
+    information-seeking, comparative, predictive and counterfactual queries and present
+    detailed examples for each query type.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, we delve into **Multi-Agent Prompting**. At its core, this technique
+    excels in situations where tasks cannot be strictly defined upfront, requiring
+    the expertise of multiple AI agents and their effective collaboration. This section
+    offers a definition of the underlying concepts and provides detailed practical
+    examples in an enterprise context.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is important to note that the prompt engineering techniques discussed in
+    this chapter are specific to GPT models from ChatGPT onwards, which, as of now,
+    include only ChatGPT and GPT-4.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](toc.xhtml#s362a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In this chapter, the following topics will be covered:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Instruction Prompting
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Query Prompting
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Multi-Agent Prompting
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Instruction Prompting](toc.xhtml#s363a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this section, we first explore the Instruction Prompt Pattern, a precision-guided
+    blueprint for GPT model interactions. We then present multiple practical examples
+    illustrating its application in enterprise scenarios.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Instruction Prompt Pattern](toc.xhtml#s364a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The Instruction Prompt Pattern, building upon the AI capability framework introduced
+    in *[Chapter 2, CapabilityGPT – An Enterprise AI-Capability Framework for ChatGPT](c02.xhtml)*,
+    presents a methodical approach to guide GPT models toward producing in-depth,
+    context-aware, and precise outputs. Let us delve into the each pattern component:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Expert Persona**: This fundamental element delineates the expertise and role
+    the GPT model should exhibit in its responses. The expert persona can be conceived
+    as an individual or a team embodying diverse but complementary skill sets:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**For individual personas**: The emphasis is on a singular professional skill
+    set, such as a “business analyst at a marketing firm” or an “AI agent specialized
+    in data analysis.” In such cases, the model channels expertise and perspective
+    grounded in that specific role, utilizing its pre-trained knowledge to respond
+    with the requisite professional background and contextual understanding.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**For team personas**: Such as a “collaborative team of a teacher, a student,
+    and a parent” or a “cross-functional team comprising a developer, a designer,
+    and a project manager,” encompass a synergy of varied perspectives and experiences.
+    Here, the GPT model seeks to facilitate a collaborative approach, bearing in mind
+    the distinctive insights each role contributes.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Context**: This component includes external or user-provided information
+    that guides a GPT model toward more accurate and appropriate responses. It could
+    involve background information or specific details about a scenario; for example,
+    ‘Our company launched three marketing campaigns in the last quarter.’ Context
+    significantly assists in orienting a GPT model’s understanding and response and
+    also helps in reducing the risk of hallucination, which is the generation of information
+    not grounded in the provided input or its pre-training data.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Task Specification**: This component serves as the detailed instruction defining
+    what action or series of actions a GPT model needs to undertake. The nature and
+    structure of the instruction can vary depending on task complexity, the precision
+    required, and whether the task involves a single step or multiple steps. There
+    are three distinct formats for such instructions:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Single Instruction**: These instructions align with the AI capabilities defined
+    in the CapabilityGPT framework[¹](#ftn1a), directing a GPT model to harness its
+    diverse capabilities such as Assessment, Classification, or Communication. For
+    instance, an instruction could be: ‘Assess the performance of these campaigns
+    and identify areas for improvement.’'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Instruction Sequence**: This format involves a series of instructions, each
+    corresponding to a specific AI capability. The sequence guides a GPT model through
+    multiple tasks that aim to solve complex problems or achieve detailed objectives.
+    Each instruction acts as a stage in the overall task progression, with the output
+    of one serving as the input for the next. An example would be: ‘1\. Extract the
+    quarterly sales data from the provided financial report. 2\. Identify any sales
+    trends or patterns from the extracted data. 3\. Based on the identified trends,
+    forecast the sales for the next quarter.’'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Pseudo-Code Instructions**: Pseudo-code bridges natural language and programming
+    languages, offering a high-level depiction of an algorithm without adhering to
+    strict programming syntax. This ensures clear and precise instructions for a GPT
+    model. With pseudo-code, structures like ‘if-then-else’ conditions and ‘for’ or
+    ‘while’ loops can be seamlessly integrated, enabling the model to tackle complex,
+    multi-step tasks efficiently and unambiguously. A pertinent example would be:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: FOR each paragraph in the article
+  prefs: []
+  type: TYPE_NORMAL
+- en: IF the paragraph contains the word “important”
+  prefs: []
+  type: TYPE_NORMAL
+- en: EXTRACT main idea of the paragraph
+  prefs: []
+  type: TYPE_NORMAL
+- en: ENDIF
+  prefs: []
+  type: TYPE_NORMAL
+- en: ENDFOR
+  prefs: []
+  type: TYPE_NORMAL
+- en: COMPILE extracted ideas into a brief summary
+  prefs: []
+  type: TYPE_NORMAL
+- en: RETURN the summary
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Execution Rules**: The execution rules offer potential directives to guide
+    a GPT model’s thought process and decision-making throughout its task execution.
+    These rules encompass problem-solving methods, data collection techniques, ethical
+    considerations, collaboration practices, and evolutionary principles. They can
+    apply to an entire instruction sequence or differ for each instruction step. Each
+    category of rules contains specific examples to further clarify their intent and
+    application. Here is a breakdown:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Problem Solving and Reasoning:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Let us think step** **by** **step’**: Ensures that a GPT model executes
+    a stepwise thought process and documents each step as context before producing
+    the final output.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Let us first understand the problem and devise a plan to solve it. Then,
+    let us carry out the plan and solve the problem step by step’:** A GPT model is
+    directed to generate an action plan for the task and then adhere to this plan,
+    executing each action sequentially.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Consider all potential solutions’:** Encourages a GPT model to explore multiple
+    solutions and not focus only on the most obvious or the first one it identifies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Weigh pros and cons before deciding’:** Instructs a GPT model to evaluate
+    the benefits and downsides of each solution or approach, ensuring a more balanced
+    decision-making process.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Start by listing potential outcomes’:** Directs a GPT model to begin its
+    thought process by enumerating possible results or scenarios before diving deeper
+    into the analysis.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Systematically reference available data’:** Instructs the model to meticulously
+    cross-check every piece of information at its disposal, ensuring no detail is
+    overlooked during the reasoning process.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Update hypotheses with new insights’:** Prompts the model to refine its
+    initial predictions or conclusions as more data or context is provided, encouraging
+    adaptability in the reasoning process.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Data Collection:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Carefully ask me informative questions to maximize your information about
+    this event, so that, when you have all the answers, you can do X’:** Ensures that
+    a GPT model asks the most effective questions to maximize information gain.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Each** **time ask one question only without giving an answer’:** Constrains
+    a GPT model to ask one question at a time, allowing subsequent questions to build
+    on previous responses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Verify data integrity before proceeding’:** Encourages the model to ensure
+    the information it gathers is accurate, complete, and not corrupted or misleading.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Adherence to Ethical/Moral Standards:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Eliminate** **specific** **biases’:** Instructs the model to proactively
+    avoid any forms of biases — be it demographic, socioeconomic, cultural, racial,
+    gender-based, etc. — when generating outputs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Rej****ect** **personally identifiable information (PII)’:** Ensures a GPT
+    model does not accept any PII data in the prompt.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Promote fairness and inclusion’:** Directs the model to produce outputs
+    that are equitable and inclusive, representing diverse perspectives and avoiding
+    marginalization.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Avoid harmful or offensive content’:** Instructs the model to filter out
+    any content that might be harmful, misleading, or offensive to any individual
+    or group.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Recognize and disclose limitations’:** Encourages the model to acknowledge
+    its limitations and, where appropriate, offer disclaimers or advise users to seek
+    expert opinions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Collaboration Rules**: In the context of a task executed by a team of expert
+    personas, collaboration rules guide the interaction and synergy among different
+    personas to foster constructive and balanced dialogue. Here, we detail rules that
+    encourage structured collaboration:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Perform Collaborative Synthesis’:** Encourages the team of expert personas
+    to work collaboratively, integrating their individual insights into a coherent
+    response. For instance, a teacher, student, and parent can pool their unique perspectives
+    to construct a multi-faceted solution on AI-based learning.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Take a Role-Based Perspective’:** Encourages each member of the expert persona
+    team to provide input from their role-specific viewpoint, fostering a richer understanding
+    of the issue at hand.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Build Consensus’:** Directs the expert persona team to work towards finding
+    common ground, encouraging a harmonized approach that respects and integrates
+    the viewpoints of all team members.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Resolve Conflicts’:** Guides the team to navigate and resolve disagreements
+    efficiently, facilitating a collaborative environment where different perspectives
+    can coexist harmoniously.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Application of Evolutionary Principles**: Guides a GPT model to harness evolutionary[²](#ftn2a)
+    methods, which mimic natural selection processes to iteratively refine solutions,
+    in generating or refining outputs. When employing these principles, the user should
+    specify:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Use this initial solution: <solution>’:** Directs a GPT model to begin its
+    evolutionary process from a specified starting point. For instance, when generating
+    a slogan for a new sports car, one might commence with “Green and fast. No contradiction
+    anymore”.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Perform <number> evolutionary steps’:** Instructs the model on the exact
+    count of refinements it should carry out. As an illustration, for refining a slogan,
+    the model might be directed to undergo 20 evolutionary steps.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Evaluate by this fitness function <function description>’:** Commands the
+    model to appraise its outputs based on set criteria. In the realm of slogan creation,
+    this function could be measured based on the slogan’s catchiness or its relevance
+    in a modern ecological context.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Output Constraints**: These define the conditions that a GPT model’s generated
+    output must fulfill. They can refer to the format, sequence, inclusion or exclusion
+    of certain elements, size of the output, and/or other factors. The constraints
+    could be something like: ‘The output should be a structured report with clear
+    sections for each campaign’s performance and suggested improvements. The total
+    output should not exceed 500 words.’'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Reference Cases**: Case-based reasoning (CBR) is a methodology wherein approaches
+    to new challenges are derived by drawing parallels to previously encountered situations
+    and their outcomes. It involves choosing relevant reference cases and adapting
+    them to address the current challenge described in the context section. They capture
+    a broad spectrum of real-world scenarios across different domains and are categorized
+    into three main types:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Problem-Solution Cases:** Descriptions that detail a specific problem faced
+    by an entity and the subsequent solution or intervention implemented to address
+    it.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Example 1 (Retail):**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Problem:** MegaStore noticed that their E-commerce website had a high cart
+    abandonment rate, especially on mobile devices.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Solution:** MegaStore redesigned their mobile checkout process, simplifying
+    steps, and integrating more efficient and popular mobile payment methods. This
+    led to a 25% reduction in cart abandonment within two months.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Example 2 (Human Resources):**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Problem:** TechCorp realized that its employee turnover rate was increasing
+    year over year, especially among junior-level employees.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Solution:** TechCorp implemented a mentorship program, pairing junior employees
+    with seasoned professionals. They also introduced flexible work hours and continuous
+    learning opportunities. Within a year, turnover rates decreased by 20%.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Input-Output Cases:** Pairs of specific inputs and their corresponding GPT-generated
+    outputs'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Example 1 (Media Monitoring):**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Input:** “At the annual conference, CEO John Smith announced a partnership
+    with GlobalTech to innovate new AI solutions.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Output (Event Data Extraction):** Event: Partnership Announcement; Participants:
+    CEO John Smith, GlobalTech; Context: Annual conference; Objective: Innovate new
+    AI solutions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Example 2 (Energy Sector):**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Input:** Increased consumption trends during winters and new regulatory policies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Output (Event Prediction):** Based on increased consumption trends and new
+    regulatory policies, a rise in energy prices is anticipated during the upcoming
+    winter months.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Chain-of-Thought Cases:** Detailed sequences where an initial input undergoes
+    a series of logical or reasoning steps to arrive at a specific output.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Example 1 (****Supply Chain Management** **-** **Inventory Reordering****):**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Input:** Current month’s data: 500 units sold, 200 units returned, 50 units
+    damaged in transit, 1000 units in stock, lead time for replenishment 3 weeks,
+    average weekly sales 150 units.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Chain-of-Thought:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Calculate Net Sales: Subtract returned units from units sold: 500 - 200 = 300
+    units.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Assess Current Inventory: Account for net sales and damaged units from the
+    stock: 1000 (starting stock) − 300 (net sales) − 50 (damaged) = 650 units.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Predict Future Inventory: Considering average weekly sales and current stock:
+    650 (current stock) - (3 weeks × 150 units/week) = 200 units expected after 3
+    weeks.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Determine Replenishment Urgency: If the lead time is 3 weeks, by the time the
+    stock is replenished, only 200 units would be left. Therefore, replenishment has
+    to occur within a week to avoid being out of stock before the end of the replenishment
+    period.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Evaluate Optimal Reorder Quantity: Considering sales trends, return rates,
+    and potential damages, a buffer for unexpected damages is prudent. Reordering
+    (3 weeks × 150 units/week + 100 units buffer) = 550 units seems appropriate.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Output:** To maintain healthy stock levels over the next month and account
+    for unforeseen circumstances, a reorder of 550 units is advised within a week.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Example 2 (Banking - Classification Case):**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Input:** A loan application with details: Applicant Age: 29, Annual Income:
+    $85,000, Employment Status: Full-time, Credit Score: 680, Existing Debt: $20,000.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Chain-of-Thought:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Assess Age and its impact on loan risk.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Evaluate Annual Income in relation to potential loan size.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Check Employment Status for financial stability.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Review Credit Score for creditworthiness.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Analyze Existing Debt vs. Income to understand the financial burden.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Output:** The applicant falls under the “Moderate Risk” category for loan
+    approval.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**External Capabilities**: A GPT model can further harness the power of both
+    plugins and external tools[³](#ftn3a) to enhance its functionalities:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Plugins**: These are specialized extensions originally introduced for the
+    ChatGPT ecosystem. They focus on driving business efficiency, enabling data-driven
+    decision-making, and fostering intelligent automation. Key categories include
+    exploratory data analysis, document understanding, AI, and browsing.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**External Tools**: Representing a catalog of functionalities that are available
+    through specified interfaces, these tools facilitate interactions between a GPT
+    model and other AI platforms, search engines, or backend systems. Each tool is
+    defined by a detailed specification including performed task type, argument types,
+    result type, and functionality.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The Instruction Prompt Pattern is particularly useful under the following conditions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Complex problem-solving is needed**: In scenarios where tasks are multifaceted
+    and require intricate solutions, the pattern ensures a systematic approach, breaking
+    down complex tasks into manageable steps for clarity and efficacy.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Precision is imperative:** For tasks where accuracy and exactness are paramount,
+    the Instruction Prompt Pattern’s detailed task specification and execution rules
+    guide the model to produce precise and context-aware responses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Special expertise is demanded**: If the context requires varied professional
+    skills, choosing between individual and team personas can cater to the specific
+    expertise needed – be it from a singular professional or a collaborative team.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Structured outputs are desired:** When the desired result must adhere to
+    a particular format or structure, the output constraints component guarantees
+    that AI-generated content meets the defined requirements.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Case-Based Reasoning is valuable**: In situations where drawing parallels
+    to past scenarios can provide valuable insights, the pattern’s reference cases
+    offer a methodology to approach new challenges with prior knowledge.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Single Instruction Examples](toc.xhtml#s365a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The following showcases highlight the diverse abilities of ChatGPT-4 in processing
+    single-instruction prompts while leveraging the components of the instruction
+    pattern. These examples traverse the realms of project reviews, stakeholder management,
+    and sales forecasting. Each prompt showcases a distinct AI capability[⁴](#ftn4a)
+    of ChatGPT-4:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Project Review**: Evaluating a completed project, two assessment prompts
+    are compared, with one providing a concise summary and the other a detailed analysis
+    identifying areas for improvement and recommendations. The comparison reveals
+    that specifying components like Persona, Execution Rules, and Output Constraints
+    from the Instruction Prompt pattern for the **Assessment** capability yields a
+    more detailed, specific, and professional result.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Stakeholder Management**: Here ChatGPT-4 acts as a product manager, persuading
+    executives to support one of three product options using an argumentation framework[⁵](#ftn5a).
+    It aligns product features with stakeholder interests, suggests a phased development
+    approach for all products and promotes a balanced product development strategy.
+    This is achieved by using the **Creation** capability to develop several chains
+    of argumentative reasoning.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Sales Forecasting**: Finally ChatGPT-4 demonstrates predictive skills in
+    forecasting future sales for an organic skincare product line, considering historical
+    sales data, observed patterns, and future market expectations. It generates a
+    basic sales forecast in natural language for upcoming months using its **Prediction**
+    capability, aiding in strategic planning for inventory management and marketing
+    efforts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Project Review](toc.xhtml#s366a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Let us begin by evaluating a completed project using a report from its project
+    manager as an example of the **Assessment** capability:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.1.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.1](#fig5_1):** Project Review'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is the report:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Project Report: Development of “XYZ” Mobile App*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Project Scope: The aim was to design and implement a fully functioning mobile
+    app for our client, XYZ Inc., to boost customer interaction and user experience.
+    Key features included a user-friendly interface, secure payment gateway, and customer
+    support functionality.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Schedule: The project was scheduled for 12 months, starting from August 1,
+    2022, and completing by July 31, 2023\. It was segmented into four phases: Planning
+    (2 months), Development (5 months), Testing (3 months), and Deployment (2 months).*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Cost: The budget set was $500,000, but due to some unforeseen complexities
+    during the development and testing phase, the project exceeded the estimated cost
+    by 15%, making the final cost $575,000.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Quality: Despite time and cost overruns, the project met the quality expectations
+    as per the agreement. User testing scored an average of 4.5 out of 5, indicating
+    satisfaction with the app’s usability and functionality.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Resources: The project team consisted of a Project Manager, two Software Developers,
+    a UI/UX designer, a Quality Assurance Specialist, and a Business Analyst. However,
+    a high turnover rate during the development phase led to a minor delay in project
+    delivery.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Risks: Two significant risks were encountered:*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Budget overrun due to unforeseen complexities in development, which was managed
+    by reallocating budget from the marketing reserve.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Delays caused by resource turnover were mitigated by hiring temporary experienced
+    resources to stay on schedule.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Referring to the report, an intuitive prompt for ChatGPT-4 could be:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*‘Perform an end-to-end assessment based on the project report above.’*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The response is as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Project Assessment Summary: Development of “XYZ” Mobile App*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Objective and Scope: The project effectively fulfilled its objective of designing
+    and implementing a fully functioning mobile app with features such as a user-friendly
+    interface, secure payment gateway, and customer support functionality.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Timeline: The project adhered to the outlined timeline of 12 months, despite
+    experiencing a minor delay due to high staff turnover during the development phase.
+    The allocation of project phases seems reasonable given the complexity of the
+    tasks involved.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Budget: The project exceeded the initially estimated budget by 15% ($75,000),
+    largely due to unforeseen complexities during the development and testing phases.
+    While this overrun was managed by reallocating the budget from the marketing reserve,
+    this is a clear area for improvement in future projects. Better contingency planning
+    and risk management could have anticipated some of these extra costs.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Quality: Quality measures show a positive outcome. The app achieved high user
+    satisfaction scores in testing, suggesting that despite budget and resource challenges,
+    the final product was of high quality.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Resources: The project team composition was generally suitable for the project’s
+    needs. However, a high turnover rate indicates potential issues in project management,
+    team morale, or other organizational challenges. This resource instability had
+    a tangible impact, causing delays in project delivery.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Risk Management: Risks were identified and managed, but the identification
+    could have been more proactive, specifically concerning the budget and human resources.
+    While mitigations were in place (reallocating budget, hiring temporary resources),
+    it would be beneficial to analyze these issues to prevent recurrence in future
+    projects.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Recommendations for future projects:*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Enhance project cost estimation and contingency planning to prevent budget
+    overruns.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Strengthen team management and retention strategies to reduce turnover during
+    critical project phases.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Improve risk identification processes, considering both internal and external
+    potential risks more comprehensively in the planning phase.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Overall, the project can be considered successful as it delivered on its key
+    objectives and resulted in a high-quality product that was received well by the
+    users. However, the overruns in time and budget, coupled with resource instability,
+    indicate areas that could benefit from closer attention and refinement in future
+    projects. These improvements could lead to more predictable, smoother project
+    execution and may result in cost savings.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'However, using the Instruction Prompt pattern, the prompt would be formulated
+    as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Expert Persona**: *“You are a senior project manager skilled in project assessment”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Context:** *“Below there is a description of a completed project on the development
+    of a mobile app”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Instruction:** *“Perform an end-to-end assessment of the project”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Execution Rules:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: “Make sure you cover the project’s scope, schedule, cost, quality, resources,
+    communications, risks, procurements, and stakeholder management.”
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: “Make sure to take a very critical neutral stance and challenge the report created
+    by the project manager responsible to deliver the project.”
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Output Constraints:** *“Output must be in the form of a structured report
+    with clear headings for each assessment factor”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The resulting output from ChatGPT-4 is as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Project Assessment Report: Development of “XYZ” Mobile App*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Project Scope: The project aimed to design and implement a mobile app with
+    a user-friendly interface, a secure payment gateway, and customer support functionality.
+    However, the description of the project scope seems too generic and lacks detailed
+    insight into its complexity. It would be beneficial to include specifics on the
+    platform(s) the app was developed for, the expected level of user interaction,
+    and the scale of customer support required. The number of features, their complexity,
+    and any limitations should also be explicitly stated to avoid scope creep.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Schedule: The project adhered to the 12-month timeframe, though it experienced
+    minor delays due to resource turnover. It would be crucial to evaluate if sufficient
+    contingency time were built into the original project schedule to accommodate
+    unforeseen delays. The planning phase seems proportionate, however, the development
+    phase taking nearly half the project duration raises questions about efficiency
+    and approach. Furthermore, deployment’s two-month timeline might be lengthy -
+    a post-mortem evaluation should ascertain if this could be streamlined for future
+    projects.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Cost: The project experienced a cost overrun of 15%, primarily attributed
+    to unforeseen complexities during the development and testing phase. This raises
+    concerns about the project’s initial cost estimation and risk assessment process.
+    Did the project budget include a contingency fund for unexpected costs? If not,
+    it should be incorporated into future projects. Also, the reallocation of funds
+    from the marketing reserve may have consequences on the project’s visibility and
+    customer outreach.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Quality: The project appears to have met its quality objectives, evidenced
+    by user testing scores. However, an average score does not provide a comprehensive
+    picture. A breakdown of scores related to specific aspects of the app, such as
+    usability, design, functionality, and security would offer a deeper understanding.
+    Furthermore, was there any mechanism to manage and monitor quality throughout
+    the project lifecycle, or was it only gauged through user testing at the end?*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Resources: The team composition was fairly comprehensive for a project of
+    this nature. However, the high turnover rate is alarming. What were the causes
+    behind this? Were these related to project management, company culture, or market
+    conditions? It is important to investigate this to mitigate similar occurrences
+    in the future. Moreover, hiring temporary resources might have affected the overall
+    team synergy and output quality.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Risks: The report mentions two significant risks - budget overrun and delays
+    due to resource turnover. It would be worthwhile to analyze the risk identification,
+    assessment, and mitigation strategies employed in the project. Were these risks
+    identified upfront? If not, why were they missed? Did the project have a risk
+    management plan in place? Understanding these factors will strengthen the risk
+    management approach for future projects.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Procurements: No information was provided on procurement for this project.
+    Did it involve any subcontracting or procurement of third-party services, tools,
+    or technologies? If so, what was the procurement strategy and how effectively
+    was it managed? Transparency on this front would contribute to a more comprehensive
+    project assessment.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Stakeholder Management: The report does not provide any insights into stakeholder
+    management. Information about stakeholder identification, their roles, expectations,
+    and the communication strategy would be crucial to understand the project’s success
+    from all perspectives. Was there a structured approach to keep stakeholders informed
+    about project progress and challenges?*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*In conclusion, while the project resulted in a successful delivery of a high-quality
+    mobile app, there are significant areas for improvement. These include refining
+    the project scope, improving cost estimation and risk management, addressing resource
+    turnover, and enhancing transparency in procurement and stakeholder management.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Both assessment reports provide a review of the “XYZ” Mobile App project, but
+    they differ in their approaches, depth of analysis, and areas of focus as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Objective and Scope:** Both reports praise the project for meeting its objective.
+    The second report suggests refining the scope description for more specificity
+    and recommends enhancements.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Timeline:** The assessments concur on the maintained timeline with minor
+    hitches. The second assessment suggests a post-mortem evaluation to scrutinize
+    the phase durations further.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Budget:** The overrun budget is acknowledged in both reviews, highlighting
+    areas for improvement in financial planning and querying the allocation of contingency
+    and marketing funds in the second report.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Quality:** While the first report commends user satisfaction scores, the
+    second report seeks a deeper analysis of these scores and questions the project’s
+    quality management strategies.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Resources:** The reports note the high turnover rate, advocating for improved
+    team management strategies and a probe into the turnover causes and impacts by
+    the second report.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Risk Management:** The first report suggests better risk identification processes,
+    and the second one calls for a comprehensive review of risk management strategies
+    used in the project.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Procurements and Stakeholder Management:** The second report introduces new
+    considerations, recommending increased transparency in procurements and enhanced
+    stakeholder management.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In summary, both assessments concur on the project’s successful outcome. The
+    first report provides a concise, comprehensive summary, while the second offers
+    a more detailed and critical analysis, identifying additional areas for improvement
+    and offering more specific recommendations (while both prompts did not request
+    recommendations). When comparing the two, it becomes evident that incorporating
+    additional components from the Instruction Prompt pattern — like Persona, Execution
+    Rules, and Output Constraints — yields a more detailed, specific, and ultimately
+    more professional result.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Stakeholder Management](toc.xhtml#s367a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Let us proceed with an example in the Product Management area, which has to
+    deal with multiple stakeholders.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.2.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.2](#fig5_2):** Stakeholder Management'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The ensuing prompt is based on the **Creation** capability:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Expert Persona:** *“You are a product manager and argumentation expert”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Context:** *“You are under pressure to launch a new product.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*You have the following three options:*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Product A has the most features but would take the longest development time
+    and have the highest price.”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Product B has all basic features as a replacement for a successful product
+    C, which is no longer supported by market standards.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Product D appeals to a new generation of clients with its special technology
+    features.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Your stakeholders are the following Executives:*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*CTO (Chief Technology Officer) with a strong interest in applying new technologies.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*COO (Chief Operations Officer), who had developed Product C some years ago.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*CMO (Chief Marketing Officer), who wants to have a pipeline of rapidly developed
+    new products to keep up with the competition.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Instruction:** *“* *Develop several chains of argumentative reasoning (Creation)”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Execution Rules:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Try to convince as many stakeholders as possible,*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Minimize any potential dissatisfaction,*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Use an AI-argumentation framework.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The response generated by ChatGPT-4 for this prompt is as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Sure, I can assist you with that. We will use the AI argumentation framework
+    based on three main components: claim, evidence, and warrant. The claim is the
+    point or assertion we want to make, the evidence is the supporting information
+    for the claim, and the warrant connects the evidence with the claim, explaining
+    why the evidence supports the claim.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Let us make the argument for each product one by one:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Product A (Most Features, Long Development Time, High Price)*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Claim: Product A is the most comprehensive solution and would appeal to customers
+    looking for a feature-rich product, adding value in the long run.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Evidence: It has the most features, potentially fulfilling customer needs
+    better than any other product in the market.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Warrant: Despite its longer development time and higher price, the extensive
+    features of Product A could justify the price tag and attract a dedicated, quality-focused
+    user base. This would help us achieve a solid market presence and build our brand
+    reputation, which aligns with the CMO’s interest in differentiating us from the
+    competition.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Product B (Basic Features, Replacement for Product C)*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Claim: Product B is a direct successor to a previously successful product
+    C, ensuring continuity and catering to our existing user base.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Evidence: It is designed to replace product C, which is no longer supported
+    by market standards, implying that it fills a current gap in our product lineup.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Warrant: Updating our product lineup to match market standards is crucial.
+    This would maintain trust with our current users, ensuring that they do not feel
+    abandoned and preserving our market share. The COO would appreciate this strategy
+    as it minimizes risk and ensures stability.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Product D (New Technology, Appeals to New Generation)*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Claim: Product D represents innovation and caters to a new generation of clients,
+    opening up a potentially lucrative market segment.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Evidence: Its special technology features make it appealing to a new generation
+    of clients who value innovation and are comfortable with cutting-edge technology.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Warrant: By developing and launching Product D, we would not only appeal to
+    the CTO’s interest in applying new technologies but also align with the CMO’s
+    objective of keeping up with the competition. Despite being a new venture, the
+    potential returns from tapping into a younger, tech-savvy demographic could outweigh
+    the risks.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*In conclusion, each product has its own strengths and aligns with the interests
+    of different stakeholders. However, a balanced approach might involve developing
+    a roadmap that includes all three products in stages, which could address all
+    stakeholder concerns. We could prioritize development based on market demand,
+    technological readiness, and our strategic objectives.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this stakeholder management simulation, ChatGPT-4 acts as a product manager
+    proficient in argumentation, tasked with persuading a group of executives to support
+    one of three product options. Following the AI-argumentation framework, it strategically
+    develops chains of reasoning for each product, aligning the products’ features
+    with the specific interests of the stakeholders involved.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT-4 expertly navigates through the task, delineating the strengths and
+    potential market impacts of the products while catering to the stakeholders’ priorities.
+    It suggests a roadmap endorsing a phased development approach for all products
+    to potentially satisfy all stakeholders, thus promoting a harmonized path forward
+    in the product development strategy. The proposed plan ensures a well-rounded
+    approach that endeavors to balance varied stakeholder interests while advocating
+    for a robust product development trajectory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Sales Forecasting](toc.xhtml#s368a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this example, we delve into the **Prediction** capability of ChatGPT-4 with
+    a focus on sales forecasting. By analyzing an organic skincare product line, ChatGPT-4
+    will demonstrate its ability to project future sales.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.3.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.3](#fig5_3):** Sales Forecasting'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Leveraging historical sales data, observed sales patterns, and future market
+    expectations, the subsequent prompt will guide the model to generate a basic sales
+    forecast in natural language:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Expert Persona:** *You are a Sales forecasting expert.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Context:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*This is the sales history: The product, a line of organic skincare products,
+    was introduced to the market in January 2021\. Initial sales were slow, with only
+    50 units sold that month. To boost numbers, the company employed aggressive marketing
+    strategies, including social media campaigns and influencer partnerships. This
+    led to a gradual increase in sales, reaching 200 units per month by April 2021\.
+    Summer 2021 brought an unexpected surge in sales, peaking at 600 units in July,
+    thanks to a successful summer promotional campaign and the product’s suitability
+    for warm-season skincare. A slight dip followed in the fall, down to 400 units
+    per month, but sales rebounded during the holiday season in November and December
+    to an average of 550 units per month. January 2022 saw a minor slump to 350 units
+    due to post-holiday saturation and budget constraints. Sales then stabilized for
+    the first quarter at an average of 400 units per month. The launch of a new product
+    variant in April 2022 rejuvenated the sales, jumping to 700 units, and an average
+    of 650 units were maintained per month thereafter. By the end of July 2023, over
+    8,000 units had been sold, reflecting the product’s steady demand and growing
+    popularity. August 2023 marked a pivotal moment, with the company’s back-to-school
+    campaign driving sales to an all-time monthly high of 800 units. The success was
+    bolstered by a special promotional discount, strategic influencer partnerships,
+    and the ongoing popularity of the new product variant introduced earlier in the
+    year.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*These are the historical patterns observed since its market introduction:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Slow Sales in Initial Phase: After the introduction of a new product or a
+    variant, sales are usually slow initially, indicating a pattern of customers taking
+    time to adopt the new offering.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Fall Sales Dip: Historically, sales dip during the fall months. This pattern
+    is possibly related to changes in weather and the corresponding adjustments in
+    consumer skincare routines.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Holiday Sales Spike: Sales have consistently spiked during the holiday season
+    in November and December. This is likely due to an increase in gift purchases
+    and customers stocking up for winter skincare needs.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Post-Holiday Slump: Following the holiday season, a slump in sales is observed,
+    indicating a pattern of decreased purchasing behavior possibly due to market saturation
+    and consumer budget constraints post-holidays.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*These are the expectations for the rest of the year:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Seasonal Promotional Campaign: The marketing department has planned a significant
+    promotional campaign for the holiday season, which is expected to drive a considerable
+    increase in sales during that period.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*New Product Variants: The introduction of new product variants or extensions
+    throughout the year can contribute to a boost in sales, attracting both existing
+    customers interested in trying new things and new customers.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Market Expansion: The company is planning to expand its reach to new markets.
+    This move could potentially boost sales as it taps into a new customer base.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Rising Popularity: The product’s growing popularity and brand recognition,
+    fueled by positive customer reviews and effective marketing, are expected to sustain
+    and possibly accelerate sales growth in the future.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Economic Factors: Expected economic recovery and increased consumer spending
+    following global events could also lead to an increase in sales.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Instruction:** *Provide a sales forecast in natural language for the next
+    six months based on the sales history, the historical patterns, and the expectations
+    for the future (Prediction).*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT-4 responds to this prompt as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Based on the sales history, observed patterns, and future expectations, we
+    can provide the following sales forecast for the next six months:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*August 2023: August sales are already reported at an all-time high of 800
+    units, driven by back-to-school campaigns.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*September 2023: We typically observe a decline in sales during the fall season.
+    However, the high sales momentum from August and the continuous popularity of
+    the new product variant may mitigate this expected decrease. So, we could forecast
+    a slight dip, possibly to around 700 units.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*October 2023: The fall dip should continue as per historical patterns, but
+    the anticipated effect will be less pronounced due to the new product variant’s
+    continued influence. Let us project sales at around 650 units.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*November 2023: With the onset of the holiday season, we have historically
+    seen a surge in sales, and the company’s planned promotional campaign is expected
+    to augment this spike further. Based on previous year’s trends, the sales could
+    jump to around 800 units.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*December 2023: The holiday season continues into December, and if the promotional
+    campaign is as successful as expected, sales should continue their high trajectory.
+    The sales could potentially peak to 850 units, considering the product’s growing
+    popularity and the impact of the promotional campaign.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*January 2024: A post-holiday slump has been a consistent pattern. Consumers
+    are likely to be recovering from holiday spending and the market might experience
+    some saturation from the high sales of the preceding months. However, the effect
+    of the planned market expansion could help soften this drop. Hence, we could project
+    a dip to around 600 units.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Please note that these numbers are projections based on past trends and planned
+    activities. Other factors such as competitors’ activities, market dynamics, and
+    unforeseen events could impact the actual sales performance. Regular tracking
+    and adjustments of forecasts will be necessary to keep them accurate and relevant*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this sales forecasting example, ChatGPT-4 adopts the persona of a sales forecasting
+    expert with predictive skills. The instruction prompt establishes the context,
+    presenting the sales history of the organic skincare product line, highlighting
+    the observed patterns, and setting forth future expectations. ChatGPT-4 is then
+    tasked with forecasting sales for the subsequent months, considering the given
+    context.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT-4 adeptly processes the instruction and accomplishes it by taking into
+    account the sales data, historical patterns, and future expectations, resulting
+    in a basic forecast for the upcoming months. It outlines how each month’s sales
+    could potentially shape up, contributing to a strategic plan for managing inventory
+    and marketing efforts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Three further single instruction examples are presented in *Appendix A*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Resource Management**: In this example, we demonstrate the **Matchmaking**
+    capability of ChatGPT-4 in the domain of resource management. The system is prompted
+    to assign resources to projects based on their skills and project requirements.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Scenario-based Project Simulation**: Using another example in the project
+    management domain, we highlight the **Simulation** capability of ChatGPT-4\. It
+    is prompted to perform a project phase simulation based on the previous project
+    results.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Business Communication**: This final single-instruction example explores
+    business communication and summarization skills within the burgeoning carbon accounting
+    industry. The task will be guided by reference cases which demonstrate to ChatGPT-4
+    how the expected summary should look like leveraging its **Summarization** capability'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Instruction Sequence Examples](toc.xhtml#s369a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The subsequent examples illustrate the use of sequence-based instruction prompts
+    with ChatGPT-4 for employee coaching and sentiment analysis for product reviews.
+    Each example highlights a unique set of AI capabilities of ChatGPT-4:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**New Employee Coaching:** This first example showcases the **Assessment**
+    and **Recommendation** capabilities of ChatGPT-4 in the HR domain. The system
+    is instructed to evaluate a new employee situation and suggest suitable measures
+    to prevent potential attrition, all guided by reference cases.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Sentiment Analysis for Product Reviews:** Then we cover the realm of sentiment
+    analysis for product reviews to demonstrate the capabilities of ChatGPT-4 in **Information
+    Extraction and Analytics**, **Cause-effect Analysis**, and **Classification**.
+    The system is tasked with performing sentiment classification on a product review
+    in three consecutive steps.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[New Employee Coaching](toc.xhtml#s370a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This example focuses on a two-step instruction sequence that guides an HR Manager
+    in the fashion retail industry to evaluate a new employee situation and suggest
+    appropriate measures to prevent potential attrition:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.4.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.4](#fig5_4):** New Employee Coaching'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Expert Persona***: You are an HR Manager in a fashion retailer, specialized
+    in employee attrition avoidance. You have vast experience in managing a variety
+    of employee cases and finding solutions to diverse challenges.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Context:** *Your new case pertains to James, a recently hired junior merchandiser.
+    James, having joined the company just a few weeks ago, was already showing signs
+    of disaffection. Despite having a promising start during the orientation period,
+    his enthusiasm seemed to wane rapidly. He was often quiet during team meetings,
+    unresponsive to team activities, and his work lacked the energy and thoroughness
+    one might expect from a newcomer.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Instruction Sequence:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Assess the new case based on the reference cases below. Always make comparisons
+    between the new case and the reference cases and what you have learned from them.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Based on the assessment results recommend specific HR-actions to take to prevent
+    attrition*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Reference Cases:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Problem-Solution Case 1:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Problem:** *New Sales Representative Integration Sophia, a recent hire as
+    a sales representative, was initially energetic and eager to contribute to our
+    fashion retailer. However, a few weeks into her role, Sophia began showing signs
+    of disengagement. She seemed unsure about her responsibilities and struggled with
+    building rapport with her colleagues. Her performance, too, was inconsistent,
+    showing a lack of understanding of her role.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Solution:** *We quickly recognized these signs and implemented a structured
+    onboarding program tailored to Sophia’s role. The program included training sessions
+    to help her understand her responsibilities and product knowledge. Alongside this,
+    we introduced her to a mentor from her team who guided her through the daily processes
+    and answered her questions. The mentor also introduced her to other team members,
+    helping her build connections. Over time, Sophia’s confidence and engagement with
+    her team grew, and her performance significantly improved. She appreciated the
+    mentorship and the structured guidance that helped her transition smoothly into
+    her role.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Problem-Solution Case 2:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Problem:** *New Designer’s Cultural Fit Mark, a talented designer, joined
+    our company with an impressive portfolio. However, within a month, Mark seemed
+    distant and uninvolved. His designs lacked enthusiasm, and he rarely contributed
+    to team discussions, indicating a struggle to fit into the company culture. To
+    help Mark, we initiated a culture fit program.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Solution:** *We organized regular team-building activities, encouraging Mark
+    to share his ideas and interact more openly with his colleagues. We also organized
+    sessions to discuss our company’s values and culture, aiming to create an inclusive
+    environment where Mark felt comfortable expressing his creativity. Mark slowly
+    started to come out of his shell, actively participating in team meetings and
+    his designs began reflecting the creativity we had seen during his hiring process.
+    The culture fit program was successful, not only for Mark but also for fostering
+    a sense of unity and inclusivity within the team.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Problem-Solution Case 3:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Problem:** *New Logistics Manager’s Role Clarity Denise, a newly recruited
+    logistics manager, showed great potential during her interview process. But after
+    her initial weeks, her contributions became sporadic, her work lacked attention
+    to detail, and her presence in team meetings was negligible. It became evident
+    that Denise was not clear about her role and what was expected of her.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Solution:** *In response, we revised her job description, clearly outlining
+    her duties, responsibilities, and the benchmarks for performance. We set up weekly
+    meetings for the first two months to provide regular feedback, discuss her progress,
+    and recognize her accomplishments. As a result, Denise’s performance improved
+    significantly, she took ownership of her role, and her contributions to team meetings
+    became invaluable. She expressed gratitude for the clear communication and the
+    consistent feedback, which made her transition into the new role smooth and stress-free.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'In response to the given prompt, ChatGPT-4 generates the following output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Assessment:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*James’s situation is comparable to the reference cases to some extent. Like
+    Sophia (Reference Case 1), he started with enthusiasm, but his motivation dwindled
+    quickly. However, Sophia’s issues stemmed from her lack of understanding about
+    her role, while James’ problems seem more tied to his engagement with the team
+    and the energy in his work, which seems closer to Mark’s situation (Reference
+    Case 2). Denise’s situation (Reference Case 3) also bears some resemblance as
+    her contributions were inconsistent, which is a symptom that James is displaying
+    as well. However, Denise’s problem was due to a lack of role clarity, which does
+    not appear to be James’s issue.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Recommendations:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Initiate a Personalized Onboarding Program: James might benefit from a structured
+    program similar to Sophia’s. Despite his experience, he may need more clarity
+    and hands-on experience in the tasks and responsibilities specific to his role
+    in this company. Pairing him with a mentor might help him gain confidence and
+    improve the thoroughness of his work.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Promote Team-Building Activities: James’ unresponsiveness to team activities
+    and quiet demeanor during meetings could indicate a difficulty in integrating
+    with the team, akin to Mark’s issue. Regular team-building activities could encourage
+    him to engage more with his colleagues, improving his enthusiasm and energy at
+    work.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Offer Regular Feedback and Recognition: The approach taken with Denise could
+    also be applied to James’s case. Regular feedback sessions could help clarify
+    performance expectations and give him a platform to express any concerns or uncertainties
+    he might be experiencing. Acknowledging his accomplishments, no matter how small,
+    can also help boost his motivation.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Employee Engagement Survey: Conduct a survey to gauge James’ level of engagement.
+    This can provide insights into whether he is feeling undervalued, unchallenged,
+    or unmotivated, which might be leading to his disengagement.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*One-on-One Meetings: Personal interaction with James may provide deeper insights
+    into his situation. It is possible there are issues outside work that are affecting
+    his performance. It is crucial to maintain open lines of communication to understand
+    what might be driving his disaffection.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In this employee coaching simulation, ChatGPT-4 assumes the role of an HR manager
+    specializing in preventing attrition at a fashion retail company. Tasked with
+    analyzing a recent hire’s fading engagement through a two-step instruction process,
+    it compares the new situation with reference cases to find potential solutions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Leveraging insights from past experiences detailed in the reference cases, ChatGPT-4
+    suggests a nuanced strategy to retain the new employee, James. It pinpoints a
+    potential disconnect with the team and recommends a personalized onboarding program
+    and team-building activities to foster better engagement and prevent attrition.
+    The response effectively delineates a strategy, providing a roadmap to support
+    James in his early days at the company.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Sentiment Analysis](toc.xhtml#s371a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Let us continue with an example of an instruction sequence prompt that involves
+    three steps to carry out a product review sentiment analysis:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.5.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.5](#fig5_5):** Sentiment Analysis'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Expert Persona:** *You are an expert for sentiment classification of movie
+    reviews.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Context:** *The StreamSmith V35 Bluetooth headphones are an ambitious attempt
+    at creating an accessible, high-quality audio experience. However, despite their
+    many positive qualities, they fall just short of the mark, earning a solid 3 out
+    of 5 stars. The build quality of the V35s is admirable, as they have a comfortable
+    fit with a premium look and feel. Moreover, the long battery life is a standout
+    feature, providing hours of uninterrupted use on a single charge. StreamSmith’s
+    gesture control system is also intuitive, making the operation effortless. Additionally,
+    the company’s commitment to sustainable packaging is commendable. On the other
+    hand, where the V35s disappoint is their sound quality, which is notably less
+    impressive than competitors in the same price range. There is a noticeable lack
+    of depth in the low-end frequencies, making the bass sound slightly hollow. The
+    higher tones also seem to lack clarity, creating an overall flat soundstage. This,
+    coupled with occasional connectivity issues, detracts from what could have been
+    a truly stellar audio experience. Overall, the StreamSmith V35s represent a promising
+    step forward, especially in terms of design and user interface. However, for the
+    audiophile, these headphones might not be the first choice. If StreamSmith focuses
+    on improving their sound quality and connection stability, their future products
+    could pose a serious challenge to established players in the market.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Instruction Sequence:** *Perform sentiment classification on the product
+    review in these three steps:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**First,** *present clues (i.e., keywords, phrases, contextual information,
+    semantic relations, semantic meaning, tones, references) that support the sentiment
+    determination of input (Information Extraction & Analytics).*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Second,** *deduce a diagnostic reasoning process from premises (i.e., clues,
+    input) that supports the sentiment determination. (Cause-effect Analysis).*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Third,** *determine the overall sentiment of the movie review as Positive
+    or Negative considering the clues from step 1, the reasoning process in step 2
+    and the movie review (Classification).”*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In response to the given prompt, ChatGPT-4 generates the following output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*“Here are the requested steps:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Information Extraction & Analytics:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Positive clues: “comfortable fit”, “premium look and feel”, “long battery
+    life”, “intuitive” gesture control, “commendable” sustainable packaging, “promising
+    step forward”, “serious challenge to established players”.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Negative clues: “fall just short of the mark”, “less impressive” sound quality,
+    “lack of depth” in low frequencies, “slightly hollow” bass, “lack of clarity”
+    in higher tones, “flat soundstage”, “occasional connectivity issues”.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Cause-effect Analysis:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The reviewer provides several positive aspects of the product, such as the
+    comfort and premium feel, battery life, intuitive controls, and sustainable packaging.
+    This indicates the company has put thought into many aspects of the user experience
+    and the product design.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*However, the negative aspects of the review focus on the core functionality
+    of the product, the sound quality and connectivity. This can be considered more
+    critical, given the nature of the product as headphones.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Though the reviewer acknowledges the product’s potential to challenge established
+    market players, they also note its current shortcomings, particularly for a critical
+    target audience - audiophiles.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Classification:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Overall, the sentiment of this review seems mixed, but leaning towards the
+    negative side, primarily due to the weight of the criticisms. Although there are
+    more positive than negative clues, the negatives touch on the core functionality
+    of the headphones - sound quality and stable connection, which can be seen as
+    more impactful. Thus, the review can be classified as somewhat negative.”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In this task, ChatGPT-4 embodies a sentiment analysis expert evaluating a review
+    of the StreamSmith V35 Bluetooth headphones. Following a three-step instruction
+    sequence, it first identifies positive and negative sentiments in the review.
+    Next, it performs a cause-effect analysis, scrutinizing the strengths and weaknesses
+    mentioned in the review, with a particular focus on essential functionalities
+    where the product fell short. Lastly, it classifies the overall sentiment as somewhat
+    negative, highlighting the substantial criticisms about the product’s core features.
+    The task showcases ChatGPT-4’s analytical approach to dissecting reviews for informed
+    decision-making.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Three further examples are presented in *Appendix A*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Instruction Sequence: Insurance Claim Processing**: The system is prompted
+    to execute a series of steps that involve question-asking, summarizing answers,
+    and assessing costs of the damage.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Instruction Sequence: Solution Architecture Analysis**: ChatGPT-4 examines
+    a given Azure OpenAI architecture, identifies components, pinpoints bottlenecks,
+    makes recommendations, and comes up with an implementation plan.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Pseudo Code Instructions: Real Estate Listing Comparison**: ChatGPT-4 ranks
+    office space listings based on criteria like size, price, location, and amenities.
+    It applies a scoring system, identifying and prioritizing top spaces, showcasing
+    its proficiency in real estate evaluations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Query Prompting](toc.xhtml#s372a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this section, we will first delve into the Query Prompt Pattern[⁶](#ftn6a),
+    another distinctive approach for interacting with GPT models. Following this,
+    we will explore a series of practical examples that highlight the application
+    of this pattern in various enterprise scenarios.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Query Prompt Pattern](toc.xhtml#s373a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The Query Prompt Pattern is an effective approach designed to guide GPT models
+    in generating insightful and accurate responses to various types of questions.
+    Here is how each component contributes:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Evidence**: This is the factual, situational, or background information provided
+    to a GPT model that serves as a reference for accurately interpreting and responding
+    to subsequent queries, helping to prevent the generation of ungrounded or irrelevant
+    outputs. For example, a company might present a GPT model with a detailed quarterly
+    financial report, to analyze and extract insightful information from it.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Reasoning Rules**: These are explicit rules that guide a GPT model in deriving
+    insights or conclusions from the provided evidence. In a business context, there
+    are various rules that may influence the analysis process. For instance, one rule
+    might articulate that “an increase in quarterly revenue indicates positive growth,”
+    which would guide the analysis of financial reports by highlighting favorable
+    trends in a company’s earnings over a set duration. Simultaneously, another rule
+    could propose that “a growth in market share is a potential indicator of a company’s
+    increasing competitiveness,” thereby focusing the investigation on market research
+    data to discern the firm’s performance relative to its industry peers.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fuzzy Logic**[⁷](#ftn7a) **Rules**: Fuzzy logic rules are used when dealing
+    with Fuzzy logic queries (see below), as they allow the model to handle situations
+    characterized by uncertainty and ambiguity. In a business scenario, the rule “if
+    the market feedback is predominantly positive, then the product is well-received”
+    might be applied to interpret a series of customer reviews.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Justification Requirements**: This emphasizes the need for the GPT model
+    to explain its conclusions. It can help validate the GPT model’s insights and
+    can be crucial for complex queries, where understanding its reasoning process
+    is essential. In a business scenario, this could involve justifying projections
+    for the next quarter based on patterns identified in the existing quarterly report.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Queries**: One or several categorized queries are formulated to leverage
+    the GPT model’s background knowledge acquired during pre-training, along with
+    the supplied evidence and reasoning rules, to generate comprehensive responses.
+    Here is how each query type operates:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Information-seeking queries**: This type of query directs the GPT model to
+    analyze and interpret the available evidence meticulously to respond to the questions
+    asked, without venturing into speculative or hypothetical scenarios. It is designed
+    to offer clear and direct answers grounded in the evidence presented. For instance,
+    it might involve asking the GPT model to identify the best-performing product
+    in Q1 from the provided sales data or calculate several non-disclosed KPIs from
+    a competitor’s financial report.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**As-is analysis queries**: This query type guides the GPT model to undertake
+    a deep, structured analysis of the available evidence to uncover relationships,
+    comparisons, and correlations through a detailed exploration of various angles:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Causal analysis**: It involves identifying cause-and-effect relationships
+    within the data points presented in the evidence. A company might inquire, “Based
+    on the data from the last two quarters, can we pinpoint the causes behind the
+    increase in product returns?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Comparative analysis**: This pathway encourages comparing different elements
+    or time frames to spot trends, similarities, or differences. An enterprise might
+    ask, “How does the performance of Product A compare to Product B over the last
+    fiscal year?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Correlation analysis**: It seeks to establish statistical associations between
+    different variables in the evidence. A firm might query, “Is there a discernible
+    correlation between our marketing spend and the number of new customers acquired
+    over the past year?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Predictive queries:** This query type prompts the GPT model to utilize the
+    provided evidence to foresee potential future events, encouraging predictions
+    that are grounded in reality while discouraging baseless speculation. This query
+    type explores various avenues of prediction:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Unconditional prediction**: Queries in this category guide the GPT model
+    to make predictions based directly on the available evidence without imposing
+    any hypothetical conditions. For example, a business might ask, “Considering our
+    monthly revenues as documented in the evidence, what can we expect our total revenue
+    to be at the end of this fiscal year?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Conditional prediction**: These queries involve hypothesizing about future
+    scenarios based on conditional statements or potential actions, guiding the model
+    to explore the ramifications of specific strategies or decisions. Essentially,
+    it employs “what-if” scenarios to anticipate the potential outcomes of varying
+    approaches, facilitating proactive planning and informed decision-making. Such
+    scenarios can range from strategic planning and risk management to policy changes
+    and technological advancements. For instance, a business might inquire, “If we
+    were to implement a more robust after-sales service, what impact could it potentially
+    have on our customer loyalty?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Guidance queries**: This query type directs the GPT model to conceptualize
+    possible strategies and advice grounded on the supplied evidence, leveraging its
+    analytical capabilities to aid businesses in strategizing improvements. It navigates
+    through two detailed pathways:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Advisory**: Here, the queries are geared towards offering expert advice based
+    on a practical analysis of the evidence, aiming to carve out potential strategies
+    suitable for the existing circumstances. A question in this category might be,
+    “Based on the reviews of our latest product, what should be our focus in order
+    to enhance user satisfaction?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Optimization**: This segment carves out the optimal strategies or solutions
+    within the given constraints, focusing on extracting the best possible outcomes
+    through a meticulous analysis of the current data and trends. For example, a company
+    might ask, “Given our current resources and market standing, what would be the
+    optimal pricing strategy for our upcoming product?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Counterfactual queries**: This query type encourages the GPT model to venture
+    into alternate realities, orchestrating an exploration of “what could have been.”
+    Through this, it devises narratives exploring diverse pathways and their potential
+    ramifications while crafting responses that are both speculative and grounded
+    in logical analysis. A business might query, “Had we reduced the price of our
+    service by 10% last year, what might have been the potential impact on our sales?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fuzzy Logic queries**: Employed in scenarios filled with uncertainty and
+    ambiguity, this query type utilizes fuzzy logic rules along with the provided
+    context to understand and navigate complex situations. For example, leveraging
+    a fuzzy logic rule like “if the feedback is mainly neutral, then the sentiment
+    is potentially mixed,” a business might seek insights into customer responses
+    to a new product launch, aiming to derive indicative intelligence where definite
+    conclusions are elusive.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The Query Prompt Pattern is a powerful tool for handling intricate analytical
+    and explorative problems and is best realized under the following conditions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Reliable evidence is available:** Factual and contextual data are the foundation
+    of all applied reasoning to generate realistic and relevant responses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Reasoning rules can be explicitly formulated:** Explicit rules steer the
+    model’s chain of thought transparently to derive insights from evidence.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**There is inherent ambiguity or uncertainty:** In these scenarios standard
+    logical reasoning techniques cannot be applied.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Justifications are key**: Explanations of the rationales behind the responses
+    are as important as the responses themselves.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Explorative query types are required:** Different categories of queries,
+    from information-seeking to predictive and counterfactual are needed to tackle
+    a complex business problem.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Query Examples](toc.xhtml#s374a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The forthcoming demonstrations put forward the application of varied query
+    prompts with ChatGPT-4 within the contexts of cosmetic products, supplier evaluation,
+    business forecasting, and system usability improvements:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Visual Inquiries about Cosmetic Products: Employing several information-seeking
+    queries, ChatGPT-4 acts as an image analysis expert, examining a visual prompt
+    of cosmetic products. It interprets artistic and emotional impressions conveyed
+    by the products’ arrangement, showcasing its skill in visual interpretation and
+    understanding of the beauty industry.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'New Supplier Evaluation: Using multiple comparative analysis queries, ChatGPT-4
+    evaluates five suppliers for ABC Corp on quality, pricing, delivery timeliness,
+    and customer satisfaction, showcasing its support for optimal supplier selection.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Predictive Business Analysis: Utilizing two predictive queries, ChatGPT-4 forecasts
+    revenue and market share growth of technology-based consumer products. It also
+    covers a scenario of increased investment, exploring financial and market penetration
+    implications.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Improving System Usability in Healthcare: Asking an advisory query, ChatGPT-4
+    provides strategies to address challenges with a new EHR system based on healthcare
+    staff feedback. It makes different suggestions to improve user satisfaction and
+    patient care efficiency.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Visual Inquiries about Cosmetic Products](toc.xhtml#s375a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Let’s examine an example in the domain of image analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.6.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.6](#fig5_6):** Visual Inquiries about Cosmetic Products'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This example uses an image provided via a web link as evidence, showcasing
+    an assortment of cosmetic products, and poses five specific information-seeking
+    questions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Evidence***:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*A high-resolution image showcasing various cosmetic products:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.7.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.7](#fig5_7):** Image of Cosmetic Products [6]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Reasoning Rules:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Each product on the image is distinct* and *represents a different cosmetic
+    item.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: A product is considered “on the image” if more than 50% of it is visible.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use the SceneExplain plugin.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Justification Requirements:** *Explain how you determined whether the specific
+    cosmetic product was on the image or not, and provide any relevant contextual
+    information based on the visibility, placement, or distinctiveness of the product.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Information-seeking queries:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Are there nail polish bottles? Which colors do they have? Are they reflecting
+    light?*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*How is the vanity mirror decorated? What does it express?*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*What kind of brushes are there and what do they convey?*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Is there lipstick? Where is it placed?*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*What is the overall impression of the image?*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Here are ChatGPT’s answers:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Based on the detailed explanation provided by SceneXplain, here are the answers
+    to your information-seeking queries:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Nail Polish Bottles: Yes, there are nail polish bottles in the image. They
+    are primarily in silver and black colors. These bottles are positioned close to
+    each other, and they catch the light, creating an elegant shimmer, which suggests
+    that they are reflecting light.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Vanity Mirror Decoration: The vanity mirror is sleek and silver. It reflects
+    the surrounding beauty items, showcasing essential makeup items such as lipstick,
+    eye shadow, and eyeliner. The mirror’s reflection offers a glimpse into the possibilities
+    for transformation and self-expression, emphasizing the transformative power of
+    makeup.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Brushes: There are makeup brushes scattered throughout the composition. These
+    brushes are portrayed as tools of artistry. Additionally, a brown container holds
+    a makeup brush, emphasizing its practicality and functionality. The brushes convey
+    a sense of readiness for makeup application and artistry.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Lipstick: Yes, there is lipstick in the image. It is displayed on the central
+    mirror, making it one of the prominent items in the composition.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Overall Impression: The overall impression of the image is one of beauty and
+    elegance. The meticulously arranged collection of cosmetics on a pristine white
+    surface portrays a well-curated ensemble of makeup products. Every element in
+    the composition, from the brushes to the cosmetics, contributes to a harmonious
+    balance, inviting viewers to explore the world of beauty and self-expression.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Justification*: *The determinations were made based on the detailed explanation
+    provided by SceneXplain, which analyzed the image and described its content in
+    depth. The visibility, placement, and distinctiveness of each product were considered
+    in the explanation, allowing for accurate answers to the queries*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this portrayal, ChatGPT-4, using the SceneXplain plugin, acts as an image
+    analysis expert, focusing on the details of cosmetic products in a visual prompt.
+    Beyond identifying items, it interprets artistic and emotional impressions conveyed
+    by the products’ arrangement. This highlights ChatGPT-4’s skill in visual interpretation
+    and its ability to offer insights into beauty and self-expression.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[New Supplier Evaluation](toc.xhtml#s376a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This example navigates through an evaluative process of various suppliers for
+    ABC Corp, where ChatGPT-4 systematically assesses and compares each supplier’s
+    performance based on quality, pricing, delivery timeliness, and customer satisfaction
+    to determine the most suitable candidate for procurement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.8.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.8](#fig5_8):** New Supplier Evaluation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is the prompt based using the comparative analysis query type:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Evidence***: Here are the performance reports on five suppliers that ABC
+    Corp is considering for procurement:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Supplier A:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Overview: Renowned for timely deliveries, Supplier A boasts a 98% on-time
+    delivery rate. They offer competitive pricing but have encountered three instances
+    of quality issues in the past six months. These issues were related to material
+    defects, leading to product returns.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer Satisfaction: Received a customer satisfaction score of 85 out of
+    100\. Feedback indicates satisfaction with delivery but concerns over occasional
+    quality inconsistencies.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Pricing: Prices are competitive, being 5% below the market average, which
+    appeals to budget-conscious clients.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Mitigation Measures: The supplier has initiated enhanced quality control measures
+    to address and prevent future quality issues.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Supplier B:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Overview: Supplier B offers premium quality products with no reported quality
+    issues. However, their prices are 15% above market average. They have a solid
+    reputation for quality, with a 95% on-time delivery rate.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer Satisfaction: Holds a high customer satisfaction score of 92 out
+    of 100, with particular praise for product quality and reliability.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Pricing: Premium pricing is justified by the superior quality and reliability
+    of products, catering to high-end market segments.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Mitigation Measures: The supplier offers flexible payment terms to alleviate
+    concerns regarding higher pricing.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Supplier C:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Overview: Supplier C offers the most economical pricing, being 10% below market
+    average, but has a lower on-time delivery rate of 88%. Two quality issues were
+    reported in the last year, related to packaging faults.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer Satisfaction: Holds a customer satisfaction score of 80 out of 100,
+    with the lower score attributed to delays and packaging concerns.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Pricing: The economical pricing strategy appeals to smaller businesses and
+    cost-sensitive segments.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Mitigation Measures: The supplier is investing in improved packaging technology
+    and logistics partnerships to enhance delivery timeliness and reduce defects.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Supplier D:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Overview: Supplier D maintains high-quality standards with only one reported
+    quality issue in the past year related to product finishing. They offer average
+    pricing and have a 90% on-time delivery rate.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer Satisfaction: Received a customer satisfaction score of 88 out of
+    100\. Clients appreciate the consistent quality but desire improvements in delivery
+    times.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Pricing: Prices are aligned with market averages, offering a balanced option
+    for a wide range of clients.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Mitigation Measures: The supplier has addressed the finishing issue and is
+    exploring logistics solutions to improve delivery times.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Supplier E:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Overview: Supplier E achieves an excellent balance between quality and price.
+    They record a 96% on-time delivery rate with two quality issues reported in the
+    last six months, both resolved promptly.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer Satisfaction: Holds a customer satisfaction score of 89 out of 100\.
+    The balance between quality, price, and delivery has been well-received, but some
+    clients suggest further enhancements in product features.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Pricing: The pricing strategy is competitive, with a 3% discount on bulk orders,
+    attracting a diverse clientele.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Mitigation Measures: The supplier is actively engaging with clients to understand
+    their needs and is investing in product development to introduce enhanced features.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Reasoning Rules:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Balanced Approach: A supplier that balances quality, pricing, and delivery
+    timeliness is generally preferable.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Quality Priority: Quality issues can lead to downstream problems; hence, suppliers
+    with fewer quality issues are more desirable.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Delivery Timeliness: On-time delivery is crucial for maintaining the supply
+    chain’s efficiency, so suppliers with higher on-time delivery rates are favored.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer Satisfaction: Higher customer satisfaction scores are indicative
+    of better overall supplier performance.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Justification Requirement:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*You should meticulously explain the reasoning behind any recommendations or
+    insights drawn regarding the selection of a supplier. It should consider all available
+    data points, weigh the significance of each factor, and clearly articulate how
+    these factors influence the overall assessment.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Comparison queries:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Balanced Approach Analysis:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How does each supplier balance quality, pricing, and delivery timeliness according
+    to the provided evidence?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Which supplier demonstrates the most effective balance among these factors,
+    and why?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Quality Priority Evaluation:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Can you identify and compare the number and severity of quality issues reported
+    for each supplier?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: How do these quality issues impact the desirability of each supplier, considering
+    the priority of quality in procurement?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Delivery Timeliness Assessment:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compare the on-time delivery rates of the five suppliers. Which supplier has
+    the highest on-time delivery rate, and how significantly does this influence their
+    overall performance?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Are there any suppliers whose lower on-time delivery rates might be a cause
+    for concern in maintaining supply chain efficiency?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer Satisfaction Comparison:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: How do the customer satisfaction scores for each supplier compare?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: What do these scores indicate about the overall performance of the suppliers,
+    and how heavily should these scores weigh in the final decision?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Recommendation and Justification:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Based on the assessments above, which supplier would you recommend ABC Corp
+    consider for procurement and why?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Are there any specific strengths or weaknesses in a supplier that significantly
+    influence your recommendation?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Can you provide a detailed justification for your recommendation, considering
+    all the evidence and reasoning rules provided?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Risk and Mitigation:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Are there any potential risks associated with your recommended supplier?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: How might ABC Corp mitigate these risks to ensure a successful partnership with
+    the chosen supplier?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT-4 answers as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Balanced Approach Analysis:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Supplier A balances competitive pricing (5% below market average) and high
+    on-time delivery rate (98%) but has had instances of quality issues.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Supplier B excels in quality with no reported issues and has a good on-time
+    delivery rate (95%), but its pricing is 15% above the market average.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Supplier C offers the most economical pricing (10% below average) but compromises
+    on both delivery rate (88%) and has had quality issues.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Supplier D presents a balanced approach with average pricing, a 90% on-time
+    delivery rate, and minimal quality issues.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Supplier E also achieves a good balance, with competitive pricing (including
+    bulk discounts), a 96% delivery rate, and prompt resolution of quality issues.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The most effective balance among quality, pricing, and delivery seems to be
+    achieved by Supplier E, offering competitive pricing, high delivery rates, and
+    quality with prompt resolution of issues.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Quality Priority Evaluation:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Supplier B stands out with no reported quality issues. Supplier D and Supplier
+    E have had minimal issues which were addressed, while Supplier A and Supplier
+    C have encountered more significant problems, with Supplier A having material
+    defects leading to returns.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Considering the priority of quality, Supplier B is the most desirable, but
+    Supplier D and Supplier E also present strong cases with their prompt resolutions.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Delivery Timeliness Assessment:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Supplier A has the highest on-time delivery rate at 98%, significantly influencing
+    their overall performance. Supplier C, with an 88% delivery rate, might pose concerns
+    in maintaining supply chain efficiency, especially when coupled with their quality
+    issues.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Customer Satisfaction Comparison:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Supplier B has the highest customer satisfaction score (92/100), indicative
+    of their excellent overall performance. These scores are crucial as they reflect
+    real-world performance and customer experience, thus should weigh significantly
+    in the final decision.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Recommendation and Justification:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Given all considerations, Supplier E would be a recommended choice for ABC
+    Corp. They demonstrate a balanced approach with competitive pricing, high delivery
+    rate, and minimal quality issues that were promptly resolved. Their customer satisfaction
+    score is also high, showing a good market response.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*While Supplier B has superior quality and customer satisfaction, their significantly
+    higher pricing might not appeal to all segments of the market. Supplier E’s balanced
+    approach would cater to a broader clientele and their willingness to enhance product
+    features indicates adaptability and customer orientation, which are valuable traits
+    in a supplier.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Risk and Mitigation:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The potential risks associated with Supplier E are the quality issues reported.
+    Even though they were resolved promptly, it’s essential to ensure such issues
+    are minimized. ABC Corp might mitigate these risks by conducting regular quality
+    audits and maintaining open communication lines for addressing any concerns promptly.
+    Additionally, as clients have suggested enhancements in product features, ABC
+    Corp should work closely with Supplier E on product development to meet customer
+    needs effectively.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*In conclusion, while all suppliers have their strengths and weaknesses, Supplier
+    E offers a balanced, adaptable, and customer-oriented approach that would likely
+    suit ABC Corp’s procurement needs. Regular oversight and collaborative development
+    would help mitigate the associated risks.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this scenario, ChatGPT-4 acts as a discerning consultant, analyzing the profiles
+    of five potential suppliers for ABC Corp. Utilizing a comprehensive approach,
+    it evaluates each supplier based on quality, pricing, delivery timeliness, and
+    customer satisfaction to identify the most advantageous partnership, for which
+    it also provides recommendations on how to overcome remaining challenges.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Predictive Business Analysis](toc.xhtml#s377a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This example embarks on a predictive business analysis scenario, where ChatGPT-4
+    examines the potential implications of TechPioneer’s recent SmartGadget launch,
+    exploring forecasted revenue and market share based on current trends and prospective
+    strategic initiatives.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.9.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.9](#fig5_9):** Predictive Business Analysis'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is the prompt using the predictive query type:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Evidence:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*TechPioneer, a leading tech company, recently launched a new product, SmartGadget.
+    The quarterly financial report reveals the following details:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The company’s revenue increased by 15% since the product’s release, amounting
+    to a total quarterly revenue of $1.15 million.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The market share experienced a growth of 5%, resulting in a current market
+    share of 20% in the smart gadget industry.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*SmartGadget received an average rating of 4.5 out of 5 based on customer reviews,
+    highlighting its innovative features and user-friendly interface.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The industry growth rate is currently stable at around 3% per quarter.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The marketing budget for SmartGadget was $100,000 in the last quarter.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Competitor analysis shows that rivals have maintained consistent market performance,
+    with no significant product launches planned for the next two quarters.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer feedback surveys indicate a high level of satisfaction with the product’s
+    current features, with a 70% likelihood of recommending SmartGadget to others.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Reasoning Rules:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*A sustained increase in quarterly revenue indicates potential long-term growth.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Positive product reviews correlate with high consumer satisfaction and can
+    lead to increased sales.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*An increase in market share can indicate growing competitiveness in the market.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Justification Requirements:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The model should justify its predictions by referencing specific data points
+    or trends identified in the provided evidence and by applying the reasoning rules.
+    It should also outline any assumptions made during the prediction.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Queries:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Unconditional Prediction:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Considering the detailed quarterly financial report, including the 15% increase
+    in revenue, the 5% increase in market share, and the positive product reviews
+    for SmartGadget, what quantitative predictions can be made for our total revenue
+    and market share at the end of this fiscal year?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Expected Justification: The model should calculate the projected revenue and
+    market share for the remaining quarters of the fiscal year, taking into account
+    the current growth rates, industry growth, and competitor landscape. The positive
+    product reviews and customer recommendation likelihood can be factored in to estimate
+    potential additional growth in sales.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Conditional Prediction:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*If TechPioneer decides to invest an additional 10% of SmartGadget’s current
+    quarterly revenue (i.e., an additional $115,000) in marketing and enhancing product
+    features based on user feedback, what is the quantitative impact that this could
+    potentially have on our total revenue and market share by the next fiscal year?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Expected Justification: The model should analyze the potential returns on
+    increased marketing investment and improved product features, considering the
+    existing market conditions, competitor activities, and customer preferences. It
+    should calculate the possible increase in sales and market share, factoring in
+    the current growth rates and industry dynamics.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT-4 answers as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Unconditional Prediction:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Calculating Projected Revenue:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Given the current quarterly revenue is $1.15 million with a growth of 15%,
+    to project the revenue for the rest of the fiscal year, we’ll calculate the revenue
+    for the next three quarters.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Q2 Revenue = 1.15M * (1 + 0.15) = 1.3225M*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Q3 Revenue = 1.3225M * (1 + 0.15) = 1.520875M*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Q4 Revenue = 1.520875M * (1 + 0.15) = 1.74900625M*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Total Projected Revenue for the Fiscal Year: 1.15M + 1.3225M + 1.520875M +
+    1.74900625M = $5.74238125 million*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Calculating Projected Market Share:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Given the current market share is 20% with a growth of 5%, we project the
+    market share for the next three quarters as follows:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Q2 Market Share = 20% + 5% = 25%*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Q3 Market Share = 25% + 5% = 30%*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Q4 Market Share = 30% + 5% = 35%*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*These projections assume a linear growth, which may be simplistic given market
+    dynamics, competition, and saturation points, but without additional data, this
+    is a reasonable approximation.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Conditional Prediction:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Impact of Additional Investment:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Assuming an additional investment of $115,000 (10% of current quarterly revenue)
+    in marketing and product enhancement, there could be an increment in both revenue
+    and market share. However, calculating the exact impact is challenging without
+    specific data on return on investment (ROI) for marketing and product enhancements.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Let’s assume a conservative estimate that every dollar invested in marketing
+    and enhancement could generate an additional $5 in revenue, giving a ROI of 5.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Additional Revenue per Quarter = $115,000 * 5 = $575,000*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The total additional revenue for the next fiscal year would be $575,000 *
+    4 (quarters) = $2.3 million.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The new projected revenue for the next fiscal year would be $5.74138125 million
+    + $2.3 million = $8.04138125 million.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Market Share:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The additional investment could potentially attract more customers, thereby
+    increasing the market share. Assuming the additional investment results in a 2%
+    extra growth in market share per quarter:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Q2 Market Share = 25% + 2% = 27%*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Q3 Market Share = 30% + 2% = 32%,*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Q4 Market Share = 35% + 2% = 37%*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*These estimates are based on several assumptions and should be validated with
+    more specific data on market dynamics, customer behavior, and the effectiveness
+    of marketing and product enhancements.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*In conclusion, while the unconditional prediction provides a straightforward
+    projection based on current growth rates, the conditional prediction involves
+    more variables and assumptions, specifically regarding the ROI of additional investments
+    and their impact on market share.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this predictive business analysis, ChatGPT-4 skillfully combines financial
+    figures and market-oriented metrics to assess the future trajectory of TechPioneer’s
+    SmartGadget. It forecasts potential growth in revenue and market share, providing
+    a holistic view of the product’s impact on the company’s standing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additionally, ChatGPT-4 evaluates a conditional scenario, exploring the implications
+    of increased investment on financial outcomes and market penetration, thus highlighting
+    strategic opportunities for growth.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Improving System Usability in Healthcare](toc.xhtml#s378a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This scenario involves ChatGPT-4 analyzing staff feedback to optimize the usability
+    of a newly implemented Electronic Health Record (EHR) system within a healthcare
+    organization. The aim is to address specific concerns, enhance user experience
+    and patient care, while ensuring regulatory compliance and data security.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.10.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.10](#fig5_10):** Improving System Usability in Healthcare'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is the prompt utilizing the advisory query type:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Evidence:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*A healthcare organization has recently implemented a new Electronic Health
+    Record (EHR) system across its network of hospitals. Initial feedback from different
+    staff members indicates the following challenges:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Nurse Emma: Reports difficulty navigating through multiple screens to access
+    patient information, leading to increased time spent on the system and decreased
+    interaction with patients.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Dr. Johnson: Faces challenges with system responsiveness and has experienced
+    instances of data not being saved properly, causing concerns about data accuracy
+    and reliability.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Administrator Mike: Struggles with generating reports efficiently, as the
+    system lacks intuitive features for report customization, affecting administrative
+    workflow.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*IT Specialist Clara: Raises concerns about the system’s integration with other
+    software in use, leading to potential data synchronization issues.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*These challenges have resulted in an increase in time spent on documentation
+    and a decrease in time available for direct patient care.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Reasoning Rules:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Usability Improvement:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Addressing specific issues reported by different staff members leads to improved
+    system usability.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Resolving challenges related to navigation, responsiveness, and integration
+    enhances overall user experience and satisfaction.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Patient Care Enhancement:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Decreasing time spent on system documentation increases time available for
+    patient care.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Efficient and reliable data management contributes to improved patient outcomes.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Justification Requirements:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The GPT model needs to justify its recommendations by addressing the specific
+    issues raised by Nurse Emma, Dr. Johnson, Administrator Mike, and IT Specialist
+    Clara. Additionally, the model should consider the potential trade-offs between
+    enhancing system usability and maintaining compliance with healthcare regulations
+    and data security.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Advisory Query**:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Given the specific challenges reported by Nurse Emma, Dr. Johnson, Administrator
+    Mike, and IT Specialist Clara with the new EHR system, what general advice can
+    be derived to address these individual concerns and similar concerns by other
+    employees and improve overall user satisfaction?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT-4 answers as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*User Training and* Support*:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Objective: Improve navigation proficiency and system utilization for staff.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Action: Conduct targeted training sessions, focusing on system navigation
+    for nurses and report generation for administrators.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Justification: This directly addresses Nurse Emma’s difficulty navigating
+    through multiple screens and Administrator Mike’s struggle with generating reports
+    efficiently.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*System Optimization:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Objective: Enhance system responsiveness and reliability.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Action: Identify and resolve bottlenecks and regularly update the system to
+    rectify issues related to data saving and responsiveness.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Justification: This is essential to tackle the challenges faced by Dr. Johnson
+    regarding system responsiveness and instances of data not being saved properly.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Enhanced Integration Capabilities:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Objective: Achieve seamless integration with other software in use.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Action: Collaborate with IT specialists and vendors to address integration
+    and data synchronization concerns.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Justification: IT Specialist Clara’s concern about the system’s integration
+    leading to potential data synchronization issues will be directly addressed through
+    this approach.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customizable Reporting Features:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Objective: Facilitate easier report customization to improve administrative
+    workflow.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Action: Work with EHR vendors to enhance report customization features based
+    on the feedback from administrative staff.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Justification: By developing intuitive features for report customization,
+    this advice addresses the specific issues reported by Administrator Mike, thus
+    contributing to administrative workflow improvement.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*By implementing these targeted strategies, the healthcare organization can
+    directly address the specific concerns raised by the staff, thereby improving
+    overall system usability and user satisfaction.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this advisory assessment, ChatGPT-4 provides targeted strategies addressing
+    specific challenges raised by healthcare staff with the new EHR system. The advice
+    is focused on system optimization, enhanced integration, customizable reporting,
+    and user training, aiming to improve user satisfaction and increase time available
+    for patient care.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Three further query examples are presented in Appendix A:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Safety Regulation Inquiries: Using several information-seeking queries, ChatGPT-4
+    interprets Personal Protective Equipment (PPE) safety regulations, analyzes consequences
+    of compromised gear, emphasizing immediate replacement of damaged PPE for worker
+    safety, showcasing its understanding of technical regulations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Counterfactual Exploration in HR Management: Through a counterfactual query,
+    ChatGPT-4 analyzes hypothetical outcomes of an earlier career development, focusing
+    on turnover, costs, morale, and reputation. The analysis underscores potential
+    benefits, savings, enhanced job satisfaction, and improved employer branding,
+    showcasing ChatGPT-4’s abilities in HR scenarios.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Supply Possibility Estimation: Applying a fuzzy logic query, ChatGPT-4 evaluates
+    delivery fulfillment possibilities of different suppliers for ACME Corp. based
+    on order sizes and fleet capacities. It navigates through fuzzy logic rules to
+    conclude that a supplier with many small trucks, offers the highest possibility
+    to fulfill a large order, showcasing the application of fuzzy logic in supply
+    chain scenarios.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Multi-Agent Prompting](toc.xhtml#s379a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this section, we first introduce the Multi-Agent[⁸](#ftn8a) Prompt Pattern
+    for multi-agent collaboration within a GPT model environment. We then provide
+    several practical examples to demonstrate the effective application of this pattern
+    in enterprise contexts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multi-Agent Prompt Pattern](toc.xhtml#s380a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The Multi-Agent Prompt Pattern is a pioneering approach, leveraging the multi-agent
+    capabilities of advanced GPT models. It cultivates an ecosystem where specialized
+    artificial agents, each with its distinct role and responsibility, collaborate
+    to achieve specific user-provided goals. The constituents of this pattern include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Agent Organization**: This specifies the AI agents involved. Each agent could
+    represent a different business function with unique skills. For instance, when
+    launching a new product, the agents might include a “Market Research Agent,” a
+    “Product Development Agent,” and a “Marketing and Sales Agent.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Agent Responsibilities**: This element lays out the roles for each agent.
+    For the product launch, the Market Research Agent might be responsible for gathering
+    market and customer insights, the Product Development Agent for overseeing product
+    design and manufacturing, and the Marketing and Sales Agent for driving the product’s
+    marketing strategy and sales efforts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Goal Specification**: This is the overall aim that the team of agents will
+    work towards. In our product launch scenario, the goal could be to “successfully
+    launch product X in the market and achieve Y sales in the first quarter.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Engagement Rules**: These are the rules that dictate how the agents interact
+    with each other, with humans, and with external tools or plugins. An Engagement
+    Rule for the product launch could be that the Product Development Agent should
+    first confirm the product’s readiness before the Marketing and Sales Agent starts
+    its campaign.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Constraints**: These are limitations or boundaries within which the agents
+    have to operate. For example, the product launch must align with regulatory compliance,
+    the marketing campaign should adhere to a set budget, and the product should be
+    ready for launch by a specific date.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Approach**: This describes the strategies or methods the agents will apply
+    to achieve the goal while potentially using external tools or plugins. For instance,
+    the agents could start with market research, then move to product development,
+    and finally focus on the marketing and sales efforts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The Multi-Agent Prompt Pattern advances the realm of AI-driven collaboration
+    through specialized interconnected agents and is particularly useful under the
+    following conditions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Ambiguity is present:** In cases where tasks are not clearly defined, a team
+    of agents can first establish a comprehensive task description, minimizing the
+    potential for misinterpretation or hallucination.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Deep expertise is required:** When tasks need specialized knowledge, agents
+    with specific expertise can provide detailed insights and generate component solutions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Diverse views are essential:** This approach thrives when varied perspectives
+    are crucial, ensuring a comprehensive and validated outcome through multiple viewpoints.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**High-Quality outcomes are a priority:** When there’s a demand for meticulous
+    quality assurance, having multiple agents perform independent checks can significantly
+    enhance the quality of the final output.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Adaptability is key:** In rapidly changing environments or tasks, the ability
+    of agents to modify plans in real-time can be invaluable.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Multi-Agent Prompt Examples](toc.xhtml#s381a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The subsequent narratives showcase the application of multi-agent prompts in
+    interactive scenarios, spanning project readiness assessments, sales data analysis,
+    and forewarning financial evaluation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Project Go-Live Check**: ChatGPT-4 functions as Planning, Execution, and
+    Orchestration Agents to assess Project X’s go-live readiness. It outlines essential
+    tasks, collects user insights on finer project details, and compiles a summarized
+    roadmap, facilitating a thoroughly prepared launch for Project X.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Sales Data Deep Dive**: In this scenario, we witness ChatGPT-4’s analytical
+    capabilities in unraveling a year’s worth of sales data from a wholesale dataset.
+    The system adopts the roles of Data Manager Agent, Data Processing Agent, and
+    Visualization Agent to extract significant trends and insights, providing a detailed
+    picture of sales performance and suggesting strategies for future enhancement.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Forewarning Financial Analysis**: ChatGPT-4, acting as Report Extractor,
+    Financial Analysis, and Presentation Agents, dissects the 2019 financial report
+    of JCPenney, a former US retailer.. It extracts crucial metrics, evaluates financial
+    indicators like liquidity and solvency, and visualizes data, offering insights
+    into JCP’s financial distress leading to its 2020 bankruptcy.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Project go-live check](toc.xhtml#s382a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this example, a multi-agent team collaborates to determine the readiness
+    of Project X for its go-live phase. As we delve into the narrative, you will see
+    this team, consisting of an Orchestration Agent, Planning Agent, and Execution
+    Agent, evaluating the project status with the help of an expert user, and planning
+    the necessary actions to ensure a successful go-live.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.11.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.11](#fig5_11):** Project go-live check'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let us look into the prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Agent Organization:** *You are a team consisting of an Orchestration Agent,
+    a Planning Agent, and an Execution Agent.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Agent Responsibilities:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Orchestration Agent: Acts as the central control unit to manage the flow of
+    tasks, oversee the collaboration between the Planning Agent and Execution Agent,
+    and produce a summary at the end.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Planning Agent: Responsible for devising task lists based on user-defined
+    goals and further breaking down complex tasks into more operational components.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Execution Agent: Directly handles the operation of tasks based on real user
+    inputs, ensuring they are completed, and results are documented.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Goal Specification:** *Ensure that project X is ready for go-live.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Engagement Rules:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The Orchestration Agent calls upon the Planning Agent to create a Task List
+    for the specified goal.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The Planning Agent breaks down the goal into 3-4 tasks,*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The Orchestration Agent then picks the next task and determines its complexity,
+    deciding if further planning is needed or if it can be processed directly.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*For tasks deemed complex, the Planning Agent is again engaged to break them
+    down. This breakdown is informed by both the overarching goal and any intermediate
+    results.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Operational tasks are directly sent to the Execution Agent for processing
+    and result documentation.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The Execution Agent must always ask the real user for input when starting
+    a task and can only move forward based on user inputs. It has to execute the following
+    protocol:*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Always ask me, the real user, 3 questions.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Only ask one question at a time and wait for my answer before you ask the
+    next question.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Carefully ask me informative questions to maximize your information about
+    this damage so that, when you have all the answers, you can summarize my answers
+    and use the summary as input for your task.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Once all tasks are either planned or executed, the Orchestration Agent is
+    responsible for creating a summary of all task outcomes.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Constraints:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The entire process should adhere strictly to the specified goal.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Each agent should operate strictly within its defined responsibilities, ensuring
+    no overlap or bypassing of protocols.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The task list should never be longer than 10 tasks.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Approach:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Begin with the specified goal and form an initial task list.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Iteratively handle tasks—breaking down those deemed complex and executing
+    the operational ones—all based on real user inputs.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Once all tasks have been addressed, a summary of results is presented to provide
+    a comprehensive view of the achievements.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The output of ChatGPT-4 is the following, which includes a conversation, where
+    the respective utterances are assigned to ChatGPT and the user, respectively:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Orchestration Agent*: *Welcome. Our main goal is to ensure that project X
+    is ready for go-live. I will start the process by calling upon the Planning Agent
+    to create an initial Task List for this specified goal.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Planning Agent*: *Noted. Breaking down the goal of ensuring project X is ready
+    for go-live, I propose the following tasks:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Assess the current status of project X.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Identify any gaps or pending items in the project.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Determine necessary resources and allocate them.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Conduct final testing and review.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Orchestration Agent*: *Let us begin with Task 1 - Assessing the current status
+    of project X. Given the nature of this task, I believe it is operational but requires
+    real user input. I will pass this task to the Execution Agent.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Execution Agent*: *Understood. I will begin executing the task by asking the
+    real user 3 questions about the current status of project X.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Question 1*: *Can you provide a brief overview of the current status of project
+    X?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*User: We finished integration testing and have no go-live-critical issues
+    anymore.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Execution Agent*: *Thank you for the input. I will continue with the next
+    question.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Question 2*: *Have all stakeholders approved the current state of project
+    X for the go-live phase?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*User: Yes.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Execution Agent*: *Great to hear that. Here is the third question.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Question 3*: *Are there any non-critical issues or enhancements that we should
+    be aware of before the go-live phase?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*User: There is one bug in an internal report, but we have a workaround. Then
+    some end users in production were not able to participate in trainings. Finally,
+    we have not yet done a full go-live simulation.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Execution Agent*: *Thank you for sharing this information. To summarize:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Integration testing is complete, and there are no go-live-critical issues.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*All stakeholders have given their approval for the go-live phase.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Current concerns include a bug in an internal report (with a workaround),
+    some end-users in production missing training, and the absence of a full go-live
+    simulation.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Orchestration Agent*: *With the current status of project X established, we’ll
+    move to the next task: Identify any gaps or pending items in the project. This
+    is a complex task as it involves various aspects of the project. I will pass it
+    to the Planning Agent for further breakdown.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Planning Agent*: *Based on the feedback from the real user and the current
+    task’s requirement, I will break down Task 2 into:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Address the bug in the internal report and implement the workaround.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Arrange catch-up training sessions for the end-users who missed them.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Plan and execute a full go-live simulation.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Orchestration Agent*: *Thank you, Planning Agent. We will start with the first
+    sub-task: Addressing the bug in the internal report and implementing the workaround.
+    Given its nature, I believe it is operational but will require more user input.
+    Execution Agent, please proceed.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Execution Agent*: *Understood. I will start by asking the user about the details
+    of the bug and workaround.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*……………………… (questions and answers omitted for reasons of brevity)*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Execution Agent*: *Understood. Summarizing the information:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*There is a bug in an internal report where it doesn’t include all required
+    data.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*An alternate report is available that provides the necessary data and functions
+    correctly.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The bug can be addressed post go-live.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Users have been informed about the issue and the alternate report, and they
+    are comfortable with the interim solution.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Orchestration Agent*: *Thank you for the clarity. Now, let us proceed to the
+    next sub-task: Arrange catch-up training sessions for the end-users who missed
+    them. This task is operational but requires user input. Execution Agent, please
+    continue.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*……… (remaining task-specific questions and answers omitted for reasons of
+    brevity)*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Orchestration Agent*: *We have now detailed plans and understandings for all
+    the sub-tasks derived from our primary goal of ensuring project X is ready for
+    go-live. Before concluding, I will quickly summarize our engagement:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Assessing Project Status:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Project X has completed integration testing with no go-live-critical issues.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*All stakeholders approved for the go-live phase.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Existing concerns include a report bug, missed training sessions, and pending
+    go-live simulation.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Addressing the Report Bug:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The report bug can be tackled post go-live.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*An alternate functioning report exists, and users are informed.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Arranging Catch-Up Training Sessions:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*20% of end-users need catch-up training on production order confirmation within
+    the next 2 weeks.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Resources for this training are available.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Planning Go-Live Simulation:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*A cut-over schedule will guide the simulation focusing on time-critical tasks.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Main challenges are around data migration: stocks, purchase orders, and production
+    orders.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*All required resources and tools are ready for this task.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*With these details, I believe we have a comprehensive plan to ensure project
+    X is ready for go-live. Would you like any further actions or assistance from
+    us?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*User: No. Thanks.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Orchestration Agent: You’re welcome! If you need any further assistance in
+    the future, do not hesitate to reach out. Best of luck with the go-live of project
+    X! Have a great day.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this go-live readiness task, ChatGPT-4 operates a three-tiered agent system
+    to analyze Project X’s launch preparedness. Initially, the **Planning Agent**
+    lists essential tasks like assessing current project status and identifying gaps
+    to offer a structured understanding of the project’s needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next, the **Execution Agent** dives into each task, collecting user insights
+    through a series of questions to understand finer project details, including existing
+    issues and training needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The **Orchestration Agent** oversees the entire collaborative process and finally
+    compiles the data and gives a summarized action plan for the go-live process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Sales Data Deep Dive](toc.xhtml#s383a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this interactive analysis, a multi-agent team collaborates to analyze the
+    sales data of an online wholesaler. The ensemble, comprising a Data Manager Agent,
+    Data Processing Agent, and Visualization Agent, works in unison to uncover trends,
+    insights, and actionable recommendations from the data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.12.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.12](#fig5_12):** Sales Data Deep Dive'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let us dive into the prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Agent Organization***: You consist of a Data Manager Agent, a Data Processing
+    Agent, and a Visualization Agent.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Agent Responsibilities:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Data Manager Agent: Receives the data set file, ensures its integrity, manages
+    data storage, and supervises the collaboration between the Data Processing Agent
+    and Visualization Agent. Also, consolidates a final analytics report.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Data Processing Agent: Given the data set, utilizes the code interpreter plugin
+    to clean, transform, and analyze the data. Extracts relevant statistics and patterns.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Visualization Agent: Uses tools like the advanced data analysis plugin to
+    create visual representations of the analyzed data, such as graphs, charts, and
+    heatmaps.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Goal Specification:** *Conduct a comprehensive analysis of sales data for
+    the last year of available data to identify trends, patterns, and areas of improvement.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Engagement Rules:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The Data Manager Agent first checks the integrity of the data set and ensures
+    it is ready for analysis.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The Data Processing Agent starts its work, utilizing the advanced data analysis
+    plugin to clean and analyze the data.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*For every significant finding, the Visualization Agent will create a visual
+    representation to better understand the data.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Once the data analysis is completed, the Visualization Agent presents its
+    visuals. The Data Manager Agent then drafts a report, presenting the most salient
+    points.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Constraints:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The agents must ensure that the data remains focused on the last year’s sales.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The agents should not overstep their defined roles and must always coordinate
+    with each other to ensure a coherent and impactful outcome.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The final report is strictly limited to 5 visual representations, capturing
+    only the most significant insights.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Approach:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Validate and prepare the sales data set for analysis.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Conduct focused data processing using the advanced data analysis plugin, emphasizing
+    data cleaning and statistical analysis.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Visualize findings using the advanced data analysis plugin, creating up to
+    5 visuals that highlight the most valuable insights regarding sales trends over
+    the last year.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Before proceeding with the analysis, the 2010/11 parts of an open-sourced dataset
+    `**online_retail_II.csv**` [7] was uploaded. ChatGPT-4 generates the following
+    response to this prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Data Manager Agent: I have received the file “online_retail_II.csv”. I will
+    start by checking the integrity of the dataset to ensure it’s ready for analysis.
+    Let us take a preliminary look at the data.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Data Manager Agent: The dataset “online_retail_II.csv” contains the following
+    columns:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Invoice: Invoice number*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*StockCode: Product code*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Description: Product description*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Quantity: Quantity of the product sold*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*InvoiceDate: Date and time when the transaction occurred.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Price: Price of the product*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer ID: Identifier for the customer*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Country: Country from where the purchase was made*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Next, I will check for any missing values in the dataset and provide a summary
+    of the data’s integrity.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Data Manager Agent: Based on the initial inspection, here is the status of
+    missing values:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Description: 1,454 missing values*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Customer ID: 135,080 missing values*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*These missing values will need to be addressed during the data processing
+    phase.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Before handing it over to the Data Processing Agent, let us ensure that the
+    data only focuses on sales from the last year. To do this, we will filter out
+    any records that fall outside this timeframe.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Data Manager Agent: The data has been successfully filtered to focus on sales
+    from December 9th, 2010, to December 9th, 2011, which is the last year of available
+    data.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*I am now handing over the dataset to the Data Processing Agent for further
+    cleaning, transformation, and analysis.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Data Processing Agent: Thank you. I will begin by addressing the missing values
+    and then proceed with the analytical tasks.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Data Processing Agent: The missing values have been addressed:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*For the “Description” column, missing values were replaced with “Unknown”.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*For the “Customer ID” column, missing values might represent guest checkouts
+    or non-registered users. These values were replaced with the placeholder “Guest”.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*To further analyze the data, I will begin by extracting the following insights:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The total sales for the last year.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The top 10 products by sales volume.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The top 10 customers by purchase value.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Monthly sales trends.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The distribution of sales across different countries.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Once I have processed these insights, I’ll pass on the information to the
+    Visualization Agent to create visual representations.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Let us start by calculating the total sales for the last year.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Data Processing Agent: The total sales for the last year amount to approximately
+    £8,011,676.51.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Next, I will identify the top 10 products by sales volume.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Data Processing Agent: Here are the top 10 products by sales volume for the
+    last year:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*WORLD WAR 2 GLIDERS ASSTD DESIGNS: 49,519 units*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*JUMBO BAG RED RETROSPOT: 43,708 units*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*ASSORTED COLOUR BIRD ORNAMENT: 33,902 units*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*…………* (omitted due to space reasons)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*I will now determine the top 10 customers based on their total purchase value.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Data Processing Agent: Here are the top 10 customers based on their total
+    purchase value for the last year:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Customer ID: 14646.0 - Total Purchase: £279,489.02*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Customer ID: 18102.0 - Total Purchase: £230,518.12*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Customer ID: 17450.0 - Total Purchase: £185,453.33*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*………….* (Omitted due to space reasons)'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Next, I will analyze the monthly sales trends for the last year.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ………………. (Omitted due to space reasons)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The data indicates a significant spike in sales during the months of September,
+    October, and November 2011.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Finally, I will analyze the distribution of sales across different countries.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ………………. (Omitted due to space reasons)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The United Kingdom overwhelmingly dominates the sales, followed by the Netherlands,
+    EIRE, Germany, and France.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*With the insights extracted, I will now hand over to the Visualization Agent
+    to create visual representations for a better understanding of the data.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Visualization Agent: Please create visuals for the following:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Monthly sales trends.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Distribution of sales across different countries (top 10 countries for clarity).*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Top 10 products by sales volume.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Top 10 customers by purchase value.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Remember, we are limited to 5 visual representations, so choose wisely to
+    capture the most significant insights.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.13.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.13](#fig5_13)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Visualization Agent: Here are the visual representations based on the insights:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Monthly Sales Trends: This chart displays the sales trends over the last year.
+    Sales peak in November and then drop in December.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Top 10 Countries by Sales: The UK is the dominant contributor to sales, followed
+    by the Netherlands, EIRE, Germany, and France.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Top 10 Products by Sales Volume: The “WORLD WAR 2 GLIDERS ASSTD DESIGNS” tops
+    the list, followed by the “JUMBO BAG RED RETROSPOT” and other products.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Top 10 Customers by Purchase Value: The chart showcases the top 10 customers
+    based on their total purchase value.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Data Manager Agent: With the visualizations in place, I will now draft a brief
+    report presenting the most salient points.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Sales Data Analysis Report*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Overview: The comprehensive analysis of the last year’s sales data provides
+    valuable insights into sales trends, product preferences, and customer behaviors.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Key Findings:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Total Sales: The total sales for the last year amounted to approximately £8,011,676.51.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Monthly Sales Trends: Sales witnessed a significant spike during the months
+    of September, October, and November 2011, with November being the highest sales
+    month. A drop was observed in December, possibly due to the holiday season.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Top Products: The most sold product was “WORLD WAR 2 GLIDERS ASSTD DESIGNS”
+    with 49,519 units, followed by “JUMBO BAG RED RETROSPOT” and “ASSORTED COLOUR
+    BIRD ORNAMENT”.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Top Customers: Customer with ID 14646.0 had the highest purchase value of
+    £279,489.02, followed by customers with IDs 18102.0 and 17450.0.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Sales Distribution by Country: The United Kingdom overwhelmingly dominated
+    the sales, contributing significantly more than any other country. The Netherlands,
+    EIRE, Germany, and France were also notable contributors.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Recommendations:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Focus on Peak Months: Given the sales trends, it would be beneficial to focus
+    on promotions and marketing campaigns during September to November, capitalizing
+    on the evident sales surge.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Product Analysis: Products like “WORLD WAR 2 GLIDERS ASSTD DESIGNS” and “JUMBO
+    BAG RED RETROSPOT” are high in demand. It might be beneficial to ensure their
+    availability and consider bundling them with other products for promotions.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Engage Top Customers: The top customers contribute a significant portion of
+    the sales. Implementing loyalty programs or personalized offers for them could
+    further enhance their purchasing behavior.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Expand in Other Countries: While the UK dominates sales, there’s potential
+    for growth in countries like the Netherlands, EIRE, and Germany. Tailored marketing
+    strategies for these regions could yield higher returns*.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Conclusion: The analysis provides a clear picture of the last year’s sales
+    performance. By leveraging these insights, strategic decisions can be made to
+    enhance sales and customer engagement in the upcoming year.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In this sales data analytics project, ChatGPT-4 divides into three specialized
+    agents to deep dive into the `**online_retail_II.csv**` sales data of one year.
+    Initially, the **Data Manager Agent** delineates analytical domains such as sales
+    trends and customer behaviors to facilitate a detailed examination of sales patterns.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then, the **Data Processing Agent** analyzes the 2010/11 segment of the data,
+    pinpointing top products and key customers while mapping sales distribution globally.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, the **Visualization Agent** translates the findings into visual data,
+    offering a holistic view of sales trends and opportunities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Forewarning Financial Analysis](toc.xhtml#s384a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this exploration, three AI agents collaboratively dissect the 2019 financial
+    report [8] of JCPenney, a prominent former US retailer. The Report Extractor,
+    Financial Analysis, and Presentation Agents combine their expertise to highlight
+    key financial challenges and indicators. Their insights offer a clear view of
+    JCPenney’s financial trajectory leading to its 2020 bankruptcy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.14.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.14](#fig5_14):** Forewarning Financial Analysis'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Dive in to understand this financial journey:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Agent Organization:** *The team consists of a Report Extractor Agent, a Financial
+    Analysis Agent, and a Presentation Agent.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Agent Responsibilities:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Report Extractor Agent: Receives the financial report, ensures its authenticity,
+    and uses the Ai PDF tool to extract relevant financial data and metrics. Supervises
+    the collaboration between the Financial Analysis Agent and Presentation Agent.
+    Also, consolidates a final bankruptcy risk assessment.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Financial Analysis Agent: Given the extracted data, evaluates the financial
+    health of the company, focusing on liquidity ratios, solvency ratios, and profitability
+    ratios. Determines the bankruptcy risk based on the analyzed metrics.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Presentation Agent: Uses the Noteable plugin to document the bankruptcy risk
+    assessment, including visual representations of key financial metrics.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Goal Specification:** *Assess the bankruptcy risk of a company based on its
+    financial report for the year 2020: [https://www.annualreports.com/HostedData/AnnualReportArchive/j/NYSE_JCP_2020.pdf](https://www.annualreports.com/HostedData/AnnualReportArchive/j/NYSE_JCP_2020.pdf)*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Engagement Rules:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The Report Extractor Agent first checks the authenticity of the financial
+    report and uses the Ai PDF tool to extract necessary financial data.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The Financial Analysis Agent starts its work, evaluating the company’s financial
+    health based on the extracted data.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*For every significant metric or finding, the Presentation Agent will use Noteable
+    to create a visual representation to better understand the financial health.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Once the bankruptcy risk assessment is completed, the Presentation Agent presents
+    its visuals. The Report Extractor Agent then drafts a summary, presenting the
+    most salient points.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Constraints:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The agents must ensure that the data remains focused on the financial report
+    for the year 2020.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The agents should not overstep their defined roles and must always coordinate
+    with each other to ensure a coherent and impactful outcome.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The final visualization is strictly limited to 5 visuals, capturing only the
+    most significant insights.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Approach:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Validate and extract financial data from the 2020 report using the Ai PDF
+    tool.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Conduct a focused financial analysis, emphasizing liquidity, solvency, and
+    profitability ratios.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Summarize findings using the Noteable tool, creating up to 5 visuals that
+    highlight the most valuable insights regarding the company’s bankruptcy risk.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The output of ChatGPT-4 is the following, which includes again short dialogues
+    between ChatGPT and the user:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Understood. Let’s break down the tasks and execute them step by step:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Report Extractor Agent Tasks:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Validate the authenticity of the financial report.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Extract necessary financial data using the Ai PDF tool.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Supervise the collaboration between the Financial Analysis Agent and Presentation
+    Agent.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Consolidate a final bankruptcy risk assessment.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Financial Analysis Agent Tasks:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Evaluate the company’s financial health based on the extracted data.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Focus on liquidity ratios, solvency ratios, and profitability ratios.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Determine the bankruptcy risk based on the analyzed metrics.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Presentation Agent Tasks:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Document the bankruptcy risk assessment using the Noteable plugin.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Create visual representations of key financial metrics.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Let’s start with the tasks of the*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Report Extractor Agent:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Task 1: Validate the authenticity of the financial report.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The financial report for the year 2020 from J. C. Penney Company, Inc. is
+    an official document filed with the United States Securities and Exchange Commission
+    (SEC). Hence, I conclude its authenticity.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Task 2: Extract necessary financial data using the Ai PDF tool.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*I’ll now proceed to extract the relevant financial data from the provided
+    PDF link.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Here are the highlights from the financial report for the year 2020:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Consolidated Balance Sheets: This section provides details about the company’s
+    assets, liabilities, and stockholders’ equity. It’s a snapshot of the company’s
+    financial position at a specific point in time.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Quote: “CONSOLIDATED BALANCE SHEETS (In millions, except share data) …”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Page: 43*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Consolidated Statements of Operations: This section provides an overview of
+    the company’s financial performance over a specific period, detailing revenues,
+    expenses, and net income or loss.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Quote: “CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except per share
+    data) …”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Page: 44*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Consolidated Statements of Comprehensive Income: This section provides a broader
+    view of the company’s financial performance, including all changes in equity.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Quote: “CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (LOSS) (In millions)
+    …”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Page: 45*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Consolidated Statements of Stockholders’ Equity: This section provides details
+    about changes in the company’s equity over a specific period.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Quote: “CONSOLIDATED STATEMENTS OF STOCKHOLDERS’ EQUITY (In millions, except
+    share data) …”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Page: 46*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Consolidated Statements of Cash Flows: This section provides information about
+    the company’s cash inflows and outflows over a specific period.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Quote: “CONSOLIDATED STATEMENTS OF CASH FLOWS (In millions) …”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Page: 47*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*We finished processing the whole document with the PDF Search plugin.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The document provided is the Annual Report for J. C. Penney Company, Inc.
+    for the fiscal year ended February 1, 2020\. Here are some key highlights from
+    the initial pages:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Company Overview:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*J. C. Penney Company, Inc. is a holding company with its principal operating
+    subsidiary being J. C. Penney Corporation, Inc. (JCP).*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*The company operates 846 department stores in 49 states and Puerto Rico as
+    of February 1, 2020.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*{shortened}*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Trademarks:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The company has registered several trademarks including JCPenney®, JCP®, Liz
+    Claiborne®, Worthington®, A.N.A A NEW APPROACH®, and many others.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Website Availability:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The company maintains an Internet website at www.jcp.com, which provides annual
+    reports, quarterly reports, current reports, and other relevant materials.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Suppliers:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The company has a diversified supplier base, both domestic and foreign, and
+    purchases merchandise from approximately 2,800 suppliers.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Employment:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*As of February 1, 2020, the company and its consolidated subsidiaries employed
+    approximately 90,000 full-time and part-time employees.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Executive Officers:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The report lists the executive officers of J. C. Penney Company, Inc. as of
+    March 16, 2020, including Jill Soltau (Chief Executive Officer), Bill Wafford
+    (Executive Vice President, Chief Financial Officer), Brynn L. Evanson (Executive
+    Vice President, Chief Human Resources Officer), and others.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Given this overview, I’ll proceed to extract relevant financial data and metrics
+    from the report.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*From the extracted data, we have references to the “Consolidated Statements
+    of Operations,” “Consolidated Statements of Comprehensive Income/(Loss),” and
+    “Consolidated Balance Sheets.” However, the exact financial figures and details
+    from these sections are not fully captured.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*To proceed, we can:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Attempt to extract specific financial metrics one by one.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Use the available data to provide a general overview and then proceed with
+    the Financial Analysis Agent’s tasks.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Which approach would you prefer?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*User: Attempt to extract one by one.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Report Extractor Agent: Alright, let’s start by extracting specific financial
+    metrics from the “Consolidated Statements of Operations.”*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*I’ll begin by attempting to extract the “Total Net Sales” for the year 2020
+    from the “Consolidated Statements of Operations.”*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*From the extracted data, we have the following financial metric related to
+    “Total Net Sales” for the year 2019:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Total Net Sales (2019): $10,716 million'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*{shortened}*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*From the extracted data, we have the following financial metric related to
+    “Gross Profit” for the year 2019:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Gross Profit (2019): Gross profit can be calculated as the difference between
+    the “Total Net Sales” and “Cost of Goods Sold”.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Gross Profit = Total Net Sales - Cost of Goods Sold*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Gross Profit = $10,716 million - $7,013 million = $3,703 million*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*{shortened}*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*From the extracted data, we have the following financial metric related to
+    “Total Current Assets” for the year 2019:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Total Current Assets (2019): $2,726 million*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*With this, we have extracted several key financial metrics from the 2019 financial
+    report.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Financial Analysis Agent:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*I proceed with the evaluation of the company’s financial health based on the
+    extracted data, focusing on liquidity ratios, solvency ratios, and profitability
+    ratios.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Let’s begin by calculating some of the key financial ratios to assess the
+    company’s financial health:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Liquidity Metrics:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Current Ratio: This ratio gauges the company’s capacity to settle its short-term
+    liabilities using its short-term assets. The formula is: Current Ratio = Total
+    Current Assets / Total Current Liabilities*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Solvency Metrics:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Debt to Equity Ratio: This metric indicates the proportion of equity and debt
+    the company employs to finance its assets. It’s calculated as: Debt to Equity
+    Ratio = Total Liabilities / Stockholders Equity*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Debt Ratio: This ratio measures the fraction of a company’s assets financed
+    by debt. The formula is: Debt Ratio = Total Liabilities / Total Assets*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Profitability Metrics:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Operating Margin: This metric showcases how much profit a company generates
+    from a dollar of sales after accounting for variable production costs. It’s defined
+    as: Operating Margin = Operating Income / Net Sales*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Equity Metrics:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Stockholders’ Equity: Represents the residual interest in the assets of the
+    entity after deducting liabilities. It’s calculated as: Stockholders Equity =
+    Total Assets - Total Liabilities*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Given the extracted data:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Total Current Assets (2019): $2,726 million*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Total Current Liabilities (2019): $1,932 million*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Total Liabilities (2019): $7,160 million*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Operating Income (2019): $118 million (calculated earlier)*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Net Sales (2019): $10,721 million (extracted earlier)*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Let’s start by calculating the liquidity, solvency, and profitability ratios
+    for JCP for the year 2019.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Based on the calculations, here are the key financial ratios for JCP for the
+    year 2019:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Liquidity Ratios:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Current Ratio: 1.41\. A current ratio above 1 indicates that the company has
+    more current assets than current liabilities, suggesting that it can pay off its
+    short-term obligations.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Solvency Ratios:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Debt to Equity Ratio: -2.86\. A negative debt to equity ratio indicates that
+    the company has negative stockholders’ equity, which is a concerning sign.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Debt Ratio: 1.54\. A debt ratio greater than 1 suggests that the company has
+    more liabilities than assets, indicating a higher level of financial risk.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Profitability Ratios:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Operating Margin: 1.1%. The operating margin of 1.1% indicates that for every
+    dollar of sales, the company makes a profit of 1.1 cents before interest and taxes.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Given these ratios, it’s evident that JCP faced financial challenges in 2019,
+    especially with its negative stockholders’ equity and high debt ratio.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Presentation Agent*: *I now visualize these ratios using the Noteable plugin
+    for a better understanding?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Here’s a visualization of the key financial ratios for JCP for the year 2019:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.15.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 5.15](#fig5_15)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Current Ratio: A value above 1 indicates that the company can cover its short-term
+    obligations.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Debt to Equity Ratio: A negative value is a concerning sign, indicating negative
+    stockholders’ equity.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Debt Ratio: A value greater than 1 suggests that the company has more liabilities
+    than assets.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Operating Margin: Represents the percentage of profit the company makes on
+    its sales before interest and taxes.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Given the financial ratios and the extracted data, we can conclude that JCP
+    faced significant financial challenges in 2019\. The negative stockholders’ equity
+    and high debt ratio are particularly concerning.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Here’s a summary of the most salient points from our analysis of JCP’s financial
+    report for the year 2019:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Liquidity:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Current Ratio: 1.41*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*JCP had more current assets than current liabilities, suggesting that it could
+    cover its short-term obligations. However, a ratio closer to 1 indicates potential
+    liquidity concerns.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Solvency:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Debt to Equity Ratio: -2.86\. The negative debt to equity ratio is a significant
+    red flag, indicating that JCP had negative stockholders’ equity. This suggests
+    that the company had more liabilities than assets, which is a concerning sign
+    of financial distress.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Debt Ratio: 1.54\. A debt ratio greater than 1 indicates that the company
+    had more liabilities than assets, further emphasizing the high level of financial
+    risk.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Profitability:*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Operating Margin: 1.1%. The low operating margin indicates that for every
+    dollar of sales, JCP made a profit of just 1.1 cents before interest and taxes.
+    This slim margin suggests that the company had limited room for error and was
+    vulnerable to any downturns or unexpected expenses.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Overall Assessment: JCP faced significant financial challenges in 2019\. The
+    negative stockholders’ equity, high debt ratio, and slim operating margin are
+    all indicators of financial distress. These metrics suggest that the company was
+    in a precarious financial position, with limited flexibility to navigate challenges.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*In conclusion, based on the financial ratios and metrics from the 2019 report,
+    JCP was at a high risk of financial instability, which could lead to bankruptcy
+    if not addressed.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In our detailed examination of JCP’s 2019 financial report, ChatGPT-4 operated
+    through three specialized agents. The **Report Extractor Agent** initiated the
+    process, extracting essential financial metrics from the report, and laying a
+    foundation for a comprehensive analysis. The **Financial Analysis Agent** took
+    over, evaluating liquidity, solvency, and profitability metrics. The analysis
+    unveiled significant financial challenges, with several indicators pointing towards
+    potential financial distress. To make these insights more accessible, the **Presentation
+    Agent** transformed the data into visual representations, offering a clearer view
+    of JCP’s financial health.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It’s crucial to note that JCPenney declared bankruptcy in 2020\. The insights
+    from our analysis foreshadowed this outcome, emphasizing the importance of in-depth
+    financial assessments based on Generative AI technology.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Two further multi-agent examples are presented in *Appendix A*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Eco-friendly Motorbike Design Simulation**: ChatGPT-4 operates as Goal Analysis
+    Agent, Expertise Agents, and Communication Agent to traverse a design simulation
+    for an eco-friendly motorbike. Engaging the user, it delineates design goals,
+    explores user insights on features, and presents a consolidated strategy for effective
+    design and market introduction.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Research on Raw Materials**: ChatGPT-4, functioning as Research Coordinator,
+    Data Collection, and Analysis Agents, delves into Chile’s lithium sector. It establishes
+    key research areas, gathers information from reputable sources, and provides a
+    concise summary of opportunities and challenges in Chile’s lithium exploration
+    landscape.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusion](toc.xhtml#s385a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: After delving into the intricacies of Advanced GPT Prompt Engineering Techniques,
+    it is evident that mastering the art of crafting structured prompts is paramount
+    to harnessing the extensive capabilities of GPT models. Three distinct prompting
+    techniques, Instruction, Query and Multi-Agent Prompting, enable GPT modes to
+    generate specific, context-rich, and expert-level outputs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With a comprehensive understanding of Advanced GPT Prompt Engineering Techniques
+    gained, we are now well-equipped to explore how these principles can be applied
+    to design prompt-based intelligent assistants, the focus of our next chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key Points](toc.xhtml#s386a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: AI models like ChatGPT and GPT-4 are transformative across diverse sectors;
+    however, their efficacy in a professional context hinges on the adept use of advanced
+    prompting techniques to ensure consistency, performance, and high-quality output.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Instruction Prompting, rooted in the CapabilityGPT framework, emphasizes structured
+    communication through a form of natural language programming. It introduces three
+    distinct variants: Single Instruction, Instruction Sequence, and Pseudo-Code Instructions,
+    each aligned to specific AI capabilities. It is ideal for tasks with explicit
+    specifications, a sequential rule-based approach, and structured outputs reliant
+    on special expertise and case-based knowledge.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Query Prompting facilitates analytical synthesis, blending evidence, reasoning
+    rules, and various query types to navigate through intricate explorations, including
+    ambiguous settings and “what-if’’ scenario simulations. This technique emphasizes
+    justifications, guiding the GPT model to provide rational, evidence-based responses,
+    aiding in a comprehensive understanding of generated insights.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Multi-Agent Prompting leverages the advanced capabilities of GPT models to create
+    and operate a collaborative ecosystem of specialized artificial agents. Each agent
+    assumes distinct roles and responsibilities in dynamic and cross-functional business
+    problem-solving, navigating through tasks with agility and adaptability. This
+    technique thrives in scenarios with a traditionally high degree of human collaboration,
+    enabling a rich integration of diverse perspectives and expertise.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Expertise in Advanced Prompt Engineering Techniques amplifies the operational
+    effectiveness and consistency of GPT models across multiple use cases and hence
+    increases their benefits for the enterprise.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: ____________________
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[¹](#ftn1) CapabilityGPT is described in detail in *[Chapter 2, CapabilityGPT
+    – An Enterprise AI-Capability Framework for ChatGPT](c02.xhtml)*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[²](#ftn2) Evolutionary computing is a set of algorithms inspired by biological
+    evolution principles to solve optimization and search problems. It utilizes techniques
+    such as mutation, selection, and crossover to evolve solutions over generations
+    based on a defined fitness function. Techniques include evolutionary algorithms,
+    genetic programming, and more.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[³](#ftn3) Both plugins and external tools are introduced as extensions of
+    ChatGPT-4 in *[Chapter 1, From GPT-1 to ChatGPT-4: The Evolution Towards Generative
+    Artificial Intelligence](c01.xhtml)*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁴](#ftn4) For a more in-depth understanding of these AI capabilities, please
+    refer to *[Chapter 2, CapabilityGPT – An Enterprise AI-Capability Framework for
+    ChatGPT](c02.xhtml).*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁵](#ftn5) An argumentation framework or methodology refers to a structured
+    approach to presenting and analyzing arguments. It provides a systematic way to
+    construct, evaluate, and understand arguments by breaking them down into their
+    essential components and relationships. The goal is to ensure that arguments are
+    clear, logical, and persuasive.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁶](#ftn6) The query prompt pattern is based on the question answering capability
+    introduced in *[Chapter 2, CapabilityGPT – An Enterprise AI-Capability Framework
+    for ChatGPT](c02.xhtml)*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁷](#ftn7) Fuzzy logic is a system of logic allowing for degrees of truth.
+    Unlike binary logic, which is strictly true or false, fuzzy logic handles ambiguity
+    and uncertainty, making it useful for business scenarios with incomplete or contradictory
+    information.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁸](#ftn8) A multi-agent system (MAS) consists of multiple interacting agents,
+    which are designed to achieve individual or collective goals. These agents can
+    operate autonomously, communicate with each other, and even adapt or learn from
+    their environment. A single agent is a software component designed to perform
+    specific tasks, often autonomously and in interaction with other agents, systems,
+    or users.'
+  prefs: []
+  type: TYPE_NORMAL

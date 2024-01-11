@@ -1,0 +1,4214 @@
+- en: '[CHAPTER 4](toc.xhtml#c04)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Architecture Patterns enabled by GPT-Models](toc.xhtml#c04)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](toc.xhtml#s225a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Building on the foundations laid in our previous chapter, where we explored
+    the transformative impact of our AI-capability framework, CapabilityGPT, across
+    various enterprise roles, we now turn our focus to the underlying solution architectures..
+    In this chapter, we delve into advanced patterns for creating high-quality GPT-driven
+    systems, encompassing both conversational and autonomous solutions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Before we dive into the individual patterns, we first introduce the concept
+    of an **Architecture Pattern** in the respective subchapter. Here we break down
+    the core components of these patterns, including their layers, workflows, quality
+    aspects, and potential use cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'With this foundation, we organize the rest of the chapter into four main sections,
+    each focusing on a distinct category of architecture patterns:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Foundational Conversational Patterns (A)**: These include the basic components
+    of GPT-driven conversational systems, laying the groundwork for all further enhancements
+    and integrations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Conversational Patterns with External Tool Integration (B):** These demonstrate
+    advanced solution designs integrating GPT models with enterprise applications
+    and search engines during a conversation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Conversational Patterns with Fine-tuned Models (C):** These showcase specific
+    designs that leverage retrained models, based on GPT-technology or open source,
+    to generate more accurate and domain-specific responses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Agent Patterns (D):** These delve into the architectural integration of specialized
+    agents[¹](#ftn1a) with GPT-models, focusing on automation, adaptation, and collaboration.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Each section provides a detailed examination of the patterns, complete with
+    their workflows and potential use cases, offering a comprehensive understanding
+    of how to deploy GPT models effectively across various conversational contexts,
+    tool integrations, collaboration settings, and automation scenarios.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We conclude the chapter with insights and guidelines on selecting the most appropriate
+    architecture pattern for different application needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](toc.xhtml#s226a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In this chapter, the following topics will be covered:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Architecture Pattern Definition
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Foundational Conversational Patterns
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Conversational Patterns with External Tool Integration
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Conversational Patterns with Fine-tuned Models
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Agent Patterns
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Recommendations for Architecture Patterns
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Architecture Pattern Definition](toc.xhtml#s227a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The term **Architecture Pattern** refers to a general, reusable solution to
+    a recurring design problem in a given context. It provides an abstract framework
+    that outlines the subsystems or components involved, their responsibilities, and
+    how they interact. Architecture patterns facilitate system design by providing
+    proven solutions, improving developer efficiency, and reducing potential design
+    risks. They consist of the following elements:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Components by Layer**: Each pattern operates within a layered system to ensure
+    separation of concerns and maintainability. Each layer hosts specific components
+    performing distinct functions. A common layered structure includes a User Experience
+    Layer, an Application Layer, and an AI Layer. The specific components within these
+    layers vary depending on the pattern, but all play crucial roles in system operations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Workflow**: The workflow describes the sequence of operations that occur
+    when the system is running, from the point of user input to the generated response.
+    This also includes any intermediate steps such as pre-processing, prompt generation,
+    response filtering, and so on, as dictated by the specific architecture pattern.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Enterprise Integration**: The architecture patterns form an integral part
+    of a larger organizational IT landscape. As such, they must establish a harmonious
+    interaction with existing enterprise applications, databases, and knowledge repositories.
+    Each pattern details the means and degree of this integration, and the subsequent
+    implications it has on the system’s functionality.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Output Quality**: This refers to the relevance, accuracy, and usability of
+    the system’s generated responses. The quality can be influenced by several factors,
+    such as the usage of response filters for quality checks, the application of grounding
+    and enrichment processes for better context, or the employment of multiple GPT
+    models for optimized responses. Each pattern outlines the mechanisms impacting
+    the output quality and their effects on the system’s response accuracy and relevance.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Performance**: This denotes the efficiency and speed of the system’s operations.
+    The performance can vary based on task complexity, the number of employed GPT
+    models, the extent of application integrations, and the type of tasks executed.
+    Each pattern details its performance characteristics, discussing factors that
+    affect its computational efficiency and response speed.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Use Cases**: Each architecture pattern is designed to meet specific needs
+    or solve particular problems. The use cases provide practical examples of situations
+    where each pattern might be the best fit. These can range from basic Q&A bots
+    to more sophisticated, context-aware solutions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In the subsequent sections, we will apply this structure to describe various
+    GPT-driven architecture patterns, each addressing a unique set of requirements.
+    By the end, you should have a comprehensive understanding of these patterns to
+    be able to choose the most suitable one for your specific needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Foundational Conversational Patterns](toc.xhtml#s228a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This section delves into four foundational architecture patterns for building
+    conversational systems powered by GPT models. Each pattern represents an increasing
+    level of sophistication, offering different degrees of interaction, knowledge
+    integration, and quality control:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Basic Conversation (A1):** This pattern delineates the fundamental structure
+    for an end-to-end conversational solution utilizing a GPT model. This solution
+    processes user queries and generates responses, offering straightforward functionality
+    ideal for Q&A interactions and basic user engagement activities.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Grounded Conversation (A2):** This pattern extends the basic GPT-driven solution
+    by integrating a knowledge base, thereby enriching a GPT model’s capabilities
+    with domain-specific knowledge. The improved response quality and relevance make
+    it suitable for situations that require more nuanced, context-aware interactions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Mixed-initiative Conversation (A3):** This pattern introduces an interactive,
+    GPT-powered solution that’s designed to not only respond to user queries but also
+    to generate queries or provide instructions. This additional interactivity fosters
+    user engagement and delivers a more dynamic conversational experience.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Quality-controlled Conversation (A4):** This advanced pattern presents a
+    quality-controlled conversational solution, featuring a secondary GPT model as
+    a critic. This critic evaluates the primary model’s responses, facilitating an
+    iterative feedback loop that progressively improves the response quality. It’s
+    an ideal pattern for applications where the quality of generated responses is
+    paramount.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In the subsequent subchapters, we will dive deeper into each pattern, providing
+    detailed descriptions, workflow explanations, and real-world use cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[A1 Basic Conversation](toc.xhtml#s229a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern describes a basic architectural setup for implementing a GPT-based
+    chatbot in an enterprise environment. It leverages the power of a GPT model to
+    generate meaningful responses to user queries while maintaining a user-friendly
+    interface (see *[Figure 4.1](#fig4_1)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.1.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.1](#fig4_1):** Basic conversation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s230a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer primarily focuses on how users interact with the solution. It employs
+    a Standard Chatbot User Interface, which could be a simple text box or a more
+    advanced user interface with voice and avatar capabilities. This layer is responsible
+    for capturing user input (utterances) and presenting responses from the AI layer
+    in an understandable and user-friendly manner.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s231a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer bridges the user experience and AI layers. It performs the critical
+    function of converting the raw user input into a format suitable for a GPT model
+    (prompt generation) and filtering the generated responses based on the enterprise’s
+    rules and requirements (response filtering).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt Generator: This component translates user utterances into appropriate
+    prompts for a GPT model. First, it selects a predefined prompt template[²](#ftn2a),
+    which matches the user input. Then it instantiates the template with the details
+    from the input. An example is shown here:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Input by a Service Agent: “A key customer keeps raining unjustified complaints.
+    Today we received another such complaint. Can we reject it, or do we need to accept
+    it due to the customer’s importance?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Resulting Prompt for a GPT model:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '“Expert Persona: You are a customer relations specialist at a company that
+    values both customer satisfaction and fair policies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Context: A service agent provided the following information ‘A key customer
+    keeps raining unjustified complaints. Today we received another such complaint.
+    Can we reject it, or do we need to accept it due to the customer’s importance?’.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Task Specification:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Summarize the decision-relevant aspects of the complaint.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Determine whether it is justified or unjustified based on company standards
+    and past interactions.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Weigh the importance of this customer against the fairness of accepting or rejecting
+    the complaint.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Execution Rules:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Ensure that all decisions are made with respect to company guidelines and ethical
+    standards.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Prioritize the long-term relationship with the customer, while also upholding
+    the integrity and reputation of the company.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Take into consideration any patterns in the customer’s past complaints.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Output Constraints:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Provide a reasoned decision on whether to accept or reject the complaint in
+    a concise response no longer than 150 words.”
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Response Filtering: Each generated response is checked against a set of criteria
+    such as appropriateness, relevance, completeness, and coherence. If a response
+    passes these checks, it is sent back to the user through the User Experience Layer.
+    Otherwise, a default message is displayed.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s232a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: At the core of this pattern is the AI layer, which utilizes a GPT model as a
+    response generator. This layer accepts the processed prompts from the Application
+    Layer and leverages the knowledge embedded in the pre-trained GPT model to generate
+    responses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s233a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The User interacts with the Chatbot Interface by inputting a question or command.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Application Layer takes the user input and translates it into a prompt suitable
+    for a GPT model, based on a repository of prompt templates.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The AI Layer, specifically a GPT model, generates a response based on the given
+    prompt.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Application Layer receives the response and applies filters to check if
+    it meets the defined criteria.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If the response passes the filter, it is sent back to the user through the User
+    Experience Layer. If it fails the filter, a default message is displayed to the
+    user.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s234a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The Basic Conversation pattern neither interacts with enterprise applications
+    nor taps into an internal knowledge base. Furthermore, while the system does consider
+    the conversation history as context, it predominantly depends on the information
+    supplied by the user. As a result, the system’s responses are confined to the
+    knowledge instilled in the AI model during its training phase. Such responses
+    are general and lack enrichment with organization-specific insights or real-time
+    data from enterprise applications and databases, posing a considerable constraint
+    for many applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s235a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern offers decent output quality for straightforward and generic inquiries,
+    a quality it owes primarily to the power of advanced GPT models. Additionally,
+    basic quality checks are implemented within the response filter, which aids in
+    maintaining the appropriateness, relevance, and accuracy of the generated responses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s236a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern stands out in computational performance due to its minimalistic
+    design. With a single interaction between the user and GPT model per input, it
+    ensures quick responses and lower computational load. This streamlined approach
+    enables the system to handle larger volumes of user queries efficiently thus,
+    increasing the scalability.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s237a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Given the basic nature of this pattern, it’s suitable for simple Q&A tasks,
+    where there is no need for contextual understanding or access to a dedicated knowledge
+    base. It can be employed in scenarios like simple FAQ bots, prompt-response systems,
+    or basic user engagement activities. It is not intended for tasks requiring complex
+    dialogue management, context-aware responses, or access to a dynamic, and up-to-date
+    knowledge base.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[A2 Grounded Conversation](toc.xhtml#s238a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This architecture pattern enhances the capabilities of the basic chatbot, by
+    combining the flexibility of GPT models with domain-specific knowledge and data
+    from the organization’s existing systems (see *[Figure 4.2](#fig4_2)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.2.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.2](#fig4_2):** Grounded conversation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s239a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer is the same as in the A1 pattern.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s240a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This layer acts as a bridge between the User Experience and AI layers. It houses
+    the following components:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Enterprise Applications and Databases**: These are sources for enterprise-specific
+    data and can be accessed via API calls.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Pre-Processor**: This component retrieves relevant data from enterprise applications
+    and databases, and queries a knowledge base, enriching the user’s input. Any required
+    quality checks and transformations into text format are also performed here.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Prompt Generator**: This component takes the enriched user input from the
+    Pre-Processor, and converts it into a prompt format that the used GPT model can
+    understand and process.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Response Filter**: This component evaluates a GPT model’s responses against
+    certain criteria, such as relevance, appropriateness, completeness, and coherency,
+    like the basic pattern. If a response fails these checks, a default message is
+    returned to the user.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s241a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This layer is integral to AI-driven interactions. It comprises two essential
+    components: a GPT model and an internal knowledge base.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Knowledge Base**: Positioned within the AI layer alongside a GPT model, the
+    knowledge base is a reservoir of domain-specific knowledge. This knowledge base,
+    typically in the form of a document database[³](#ftn3a), graph database[⁴](#ftn4a),
+    or vector database[⁵](#ftn5a), provides an added layer of industry and/or organization-specific
+    detail.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**GPT Model**: It generates coherent and contextually relevant responses by
+    utilizing the enriched prompts supplied by the Application Layer. Notably, the
+    model applies its pre-training knowledge to the combined input from the user,
+    the enterprise data sources and the knowledge base.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s242a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The User interacts with the Chatbot Interface, providing input or asking questions.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Pre-Processor in the Application Layer fetches any necessary data from enterprise
+    applications and databases, based on the original user input.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Pre-Processor then sifts through the knowledge base, searching for pertinent
+    information related to the user’s input. It could employ a traditional keyword-based
+    search for direct matches, or, in the case of an underlying vector database, a
+    semantic search relying on the similarity of vector encodings of search query
+    and candidate documents for a broader, context-aware match.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Pre-Processor further refines the supplemented input through tasks like
+    data cleansing, normalization, removal of personally identifiable information
+    (PII), and partitioning of long texts into manageable chunks to adhere to the
+    input size limitations of the underlying GPT model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The enriched input is then transformed into a prompt suitable for a GPT model
+    by the Prompt Generator.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The AI Layer, or a GPT model, generates a response based on the prompt.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Response Filter checks this response against predefined criteria.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If the response passes the filters, it is relayed back to the user through the
+    User Experience Layer. If it fails, a default message is provided to the user.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow Example](toc.xhtml#s243a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Imagine you have recently installed a smart lightbulb in your living room, but
+    it’s not turning on. Seeking quick help, you reach out to the manufacturer’s tech
+    support chatbot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Your interaction is: “My living room’s smart light bulb isn’t turning on.”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here’s how the pattern workflow could play out, where the step numbers of the
+    example correspond to the steps in the general workflow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**User Interaction**: You’ve told the chatbot about your smart lightbulb problem.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Fetching Necessary Data**: Immediately, the Pre-Processor consults the manufacturer’s
+    database to determine the exact model and version of the lightbulb you own, along
+    with its installation date and any associated devices.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Sifting Through the Knowledge Base**: Using the details about your specific
+    lightbulb model, the Pre-Processor searches the knowledge base—a digital troubleshooting
+    manual—for relevant guidance tailored for your bulb model.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Refining Input**: The Pre-Processor ensures the instructions are in an order
+    that’s easy to follow, stripping out any technical jargon to make it user-friendly.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Prompt Creation**: This is where the chatbot prepares the question or context
+    for its main brain. Incorporating the troubleshooting steps, the prompt might
+    look something like this: “Given that the ‘ABC Model’ lightbulb isn’t turning
+    on, and based on the troubleshooting steps which suggest checking the bulb’s power
+    source, verifying its compatibility with the switch, and ensuring the app settings
+    are correct, how would you guide the user through these steps in a clear and empathetic
+    manner?”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Response Generation**: With this detailed prompt, the chatbot’s brain (a
+    GPT model) generates a coherent and helpful response that navigates you through
+    the steps.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Checking the Response**: A Response Filter evaluates the chatbot’s answer,
+    ensuring clarity and hitting all the vital troubleshooting points.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Delivering the Answer**: Once validated, the chatbot responds: “I’m sorry
+    to hear about the issue with your lightbulb. Let’s try these steps for your ‘ABC
+    Model’:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: First, make sure the bulb is securely screwed into the socket and receiving
+    power.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Check if the switch or outlet you’re using is compatible with smart devices.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Open the associated app and ensure the bulb’s settings are configured correctly.
+    If you continue to face issues after these steps, please get in touch with our
+    technical team.”
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s244a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The Grounded Conversation pattern features robust enterprise data integration
+    via API calls. It also accesses a knowledge base to enhance the input with relevant
+    domain-specific knowledge. This level of integration allows the system to utilize
+    the resources and functions of the organization’s existing IT infrastructure,
+    enriching the chatbot’s responses with organizational knowledge and context-awareness.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s245a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The pattern enhances the output quality by grounding and enriching the prompts
+    with enterprise knowledge and data. A GPT model’s context-awareness and its capacity
+    to generate more nuanced and tailored responses are both improved by integrating
+    enterprise applications, databases, and a knowledge base to supplement user input.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Further enhancing the quality of the prompts, the architecture employs pre-processing
+    steps such as data cleansing and normalization. These steps eliminate potential
+    inaccuracies and inconsistencies in the user’s input and standardize the data,
+    ensuring it is in a suitable format for a GPT model to process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The pattern also incorporates an output filtering process, similar in principle
+    to the one in the Basic Conversation pattern (A1). However, given the higher initial
+    quality of the responses due to enriched prompts, the output filter can now focus
+    on more specific quality checks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s246a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The Grounded Conversation pattern demonstrates more computational complexity
+    and less efficiency compared to the Basic Conversation pattern due to the inclusion
+    of additional pre-processing steps and integrations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s247a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern is appropriate for scenarios that require more nuanced responses
+    that leverage internal, domain-specific knowledge, as well as data from enterprise
+    applications and databases. It’s suitable for enterprises aiming to provide dynamic,
+    context-aware responses such as customer support for specific products or services,
+    internal employee assistance, or even personalized user interactions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[A3 Mixed-initiative Conversation](toc.xhtml#s248a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern offers an advanced configuration of a GPT-based chatbot with interactive
+    capabilities. It enhances the typical user-driven interactions by system-initiated
+    questions or instructions to collect information or collaboratively execute a
+    process (see *[Figure 4.3](#fig4_3)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.3.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.3](#fig4_3):** Mixed-initiative conversation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s249a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer now supports mixed initiative conversations using a chatbot user
+    interface.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s250a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In addition to the components of the previous pattern, two new components are
+    introduced here:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Question/Instruction Filter**: This new component filters the questions or
+    instructions generated by a GPT model. Only those fulfilling certain criteria
+    are passed on to the user.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**User Input Provider**: This component captures user’s responses to the GPT-generated
+    questions or instructions, feeding them back into the GPT-model.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s251a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer remains the same as in the Grounded Conversation pattern (A2), hosting
+    a GPT model and a knowledge base.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s252a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The User interacts with the Chatbot Interface, providing input or asking questions.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Pre-Processor in the Application Layer consults the enterprise data sources
+    and knowledge base, enriches the user’s input and performs any other required
+    data preparation tasks.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The augmented input is converted into a suitable prompt for a GPT model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: A GPT model can generate questions/instructions for the user or a response,
+    based on the prompt.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: GPT-generated questions/instructions are filtered and, if fulfilling the criteria,
+    are passed to the user.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The user provides respective feedback, which is captured by the User Input Provider
+    and passed on to a GPT model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Finally, a GPT model generates a response, which is then evaluated by the Response
+    Filter.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If the response passes the filters, it is relayed back to the user. If it fails,
+    a default message is shown.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s253a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern offers the same level of enterprise integration as the Grounded
+    Conversation pattern (A2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s254a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The output quality is higher than in A2 due to additional user input received
+    for the questions asked by a GPT model resulting in better contextualized prompts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s255a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The performance during each conversational turn is the same as for A2, while
+    the conversation itself is extended due to the additional questions asked by a
+    GPT model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s256a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This architecture type is well-suited for complex, interactive scenarios that
+    require dynamic, context-aware responses and user input. Possible applications
+    include advanced customer service, interactive user engagement, guided troubleshooting,
+    and personalized recommendations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[A4 Quality-controlled Conversation](toc.xhtml#s257a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This pattern outlines a sophisticated chatbot architecture which enhances the
+    conversation quality by using two GPT models: one serving as the primary response
+    generator and the other acting as a critic. This configuration offers an iterative
+    feedback mechanism for quality control to improve the chatbot’s responses based
+    on the feedback provided by the GPT critic (see *[Figure 4.4](#fig4_4)*).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.4.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.4](#fig4_4):** Quality-controlled conversation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s258a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The User Experience Layer remains consistent with the Basic Conversation pattern
+    (A1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s259a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This layer includes the same types of components as in the **Grounded Conversation**
+    pattern (A2), but with some differences in functionality:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Prompt Generator**: This component also generates correction prompts when
+    needed, based on the feedback from the GPT critic. This functionality enables
+    a feedback loop that iteratively improves the quality of the responses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Response Filter**: Compared with the **Grounded Conversation** pattern, the
+    filtering criteria are now more specific due to the detailed feedback from the
+    GPT critic, making the evaluation of responses more context-sensitive and rigorous.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s260a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This layer hosts two GPT models: one as the main response generator and the
+    other as a critic, along with a knowledge base.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Response Generator**: This GPT model generates responses based on the prompts,
+    leveraging both its pre-training knowledge and the input derived from the internal
+    knowledge base and the enterprise data sources.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**GPT Critic**: This GPT model reviews the generated responses for quality.
+    It evaluates the prompt and response, and produces feedback on the quality of
+    the response. To ensure a high standard of response, the GPT Critic checks each
+    generated response against a more detailed set of criteria, which includes appropriateness,
+    relevance, factual accuracy, correct reasoning, and potential hallucinations.
+    The nature of the critique can vary based on the specific setup. If the same model
+    and context used by the Response Generator were also used by the GPT Critic, this
+    could lead to a form of self-critique. In this scenario, the model would essentially
+    evaluate its own output. However, if a different model or context were used in
+    the critique process, this would introduce a new level of independent review,
+    thus resulting in a separate critique. This could help provide additional checks
+    and balances to ensure the quality of the generated responses. Responses and feedback
+    from past iterations could also be included into future prompts for the response
+    generator to make it learn from past mistakes.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s261a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The User interacts with the Chatbot Interface, providing input or asking questions.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Pre-Processor enriches the user’s input with data from the internal knowledge
+    base and enterprise data sources, and carries out necessary data preparation tasks.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The augmented input is transformed into a suitable prompt for a GPT model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The GPT Response Generator produces a response based on the prompt.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The prompt and response are fed into the GPT Critic, which provides feedback
+    on the quality of the response.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The quality feedback is checked. If all criteria are fulfilled, the original
+    response is relayed back to the user. If not, a request for a correction prompt
+    is sent to the Prompt Generator.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The correction prompt is fed back into the GPT Response Generator, and a new
+    iteration starts.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The process terminates after the critic provides feedback, which passes the
+    response filter or after a predefined number of iterations have been completed
+    unsuccessfully.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s262a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern offers the same level of enterprise integration as the Grounded
+    pattern (A2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s263a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The grounding and enriching of prompts with enterprise data and knowledge is
+    a feature maintained from previous patterns, which ensures that the generation
+    of responses are grounded in an enterprise-specific context.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unique to this pattern, the GPT critic reviews the responses from the GPT response
+    generator. It evaluates the prompt, and the response generated, providing feedback
+    that is used by the response filter to improve the quality of the responses in
+    an iterative feedback loop. This process helps ensure the relevance, coherence,
+    and overall quality of the responses, as they are continually refined until they
+    meet predefined quality standards.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s264a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The Quality-controlled Conversation pattern introduces a significant increase
+    in computational complexity compared to the previous patterns, due to the addition
+    of a second GPT model that acts as a critic. This GPT critic reviews each response
+    generated by the first GPT model, adding a new level of computational load. Moreover,
+    the iterative feedback loop mechanism, which improves the quality of responses
+    based on the critic’s feedback, also adds additional processing time by the response
+    generator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s265a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern is well-suited for scenarios that require high-quality, context-aware
+    responses. The feedback loop mechanism ensures that the responses are iteratively
+    improved until they meet the defined quality standards. This could be particularly
+    useful in customer support systems, healthcare advisory assistants, financial
+    advisory services, or any other field where the quality of the response is of
+    paramount importance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[B Conversational Patterns with External Tool Integration](toc.xhtml#s266a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this section, we delve into two more advanced architecture patterns for GPT-driven
+    chatbots. These patterns leverage the power of OpenAI’s GPT model, while integrating
+    external tools and advanced methods of guiding the chatbot’s reasoning process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Basic Tool-integrated Conversation (B1):** In continuation of the respective
+    section in the introductory chapter (*Access to External Tools in GPT-Models*),
+    the first pattern outlines an architecture where a conversational solution interacts
+    with enterprise applications via API calls. These interactions are embedded into
+    the entire conversation and dynamically triggered based on respective user input,
+    extending the solution’s capabilities from text generation to performing enterprise
+    tasks.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Chain-of-Thought-guided Conversation using Tools (B2):** The second pattern
+    introduces a structure integrating Chain-of-Thought (CoT) Demonstrations[⁶](#ftn6a)
+    with tool-specific API calls. This configuration ensures a fluid incorporation
+    of tool actions within the solution’s reasoning process, allowing it to pause,
+    perform actions using external tools, and continue the conversation based on the
+    results. This advanced interaction model is particularly beneficial for more complex
+    tasks, which require reasoning during the dialogue.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Advanced Tool-integrated Conversation (B3):** Going a step further than the
+    Basic Tool-integrated Conversation (B1), the third pattern deploys a GPT model
+    as both a contextual planner and a response generator. While B1 focuses on direct
+    interactions with external tools triggered by user input, B3 introduces a layer
+    of planning that determines a logical sequence of operations. The outcome is a
+    richer and more adaptive conversational experience, moving beyond mere task execution
+    to strategic task orchestration.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The following sections will elaborate on these patterns, discussing their individual
+    components, workflows, and potential use cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[B1 Basic Tool-integrated Conversation](toc.xhtml#s267a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern outlines an architecture where a GPT-enabled chatbot engages in
+    user interactions, which require the execution of specific functions provided
+    by enterprise applications, databases and knowledge bases via APIs. This allows
+    the chatbot to extend its capabilities beyond merely generating human-like text,
+    enabling it to perform external tasks during the conversation (see *[Figure 4.5](#fig4_5)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.5.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.5](#fig4_5):** Basic tool-integrated conversation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s268a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer is unchanged from the **Grounded Conversation** pattern (A2), providing
+    a Standard Chatbot User Interface for user interactions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s269a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Serving as the bridge between the User Experience and AI layers, this layer
+    contains several components: Tool API Specifications, enterprise applications
+    and databases, user prompt generator, response filter, response classification,
+    extraction & execution of API-call, and verbalization prompt generator.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Tool API Specifications**: This component holds the specifications for the
+    APIs of the various tools that the conversational application can interact with.
+    A specification typically has these four elements.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**API Name**: The API name provides an abstract of the API. It helps a GPT
+    model to link user instructions to this API and serves as an entry for the extraction
+    and execution component. The name should be clear and precise in natural language,
+    and avoid ambiguity with other API names like *check_order_status* to check the
+    status of an order in a backend system.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Parameter List**: The parameter list for an API includes the input parameters
+    and return value, and each parameter has a parameter name, parameter description,
+    data type, and default value. This information assists the used GPT model in correctly
+    filling the parameters in the corresponding positions with the appropriate format.
+    For the check_order_status example the parameters could be the following:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Input Parameters:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**order_id***:* integer, the unique identifier for an order placed in the system.
+    This is used to look up the specific order and retrieve its current status.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Return Value:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**order_status***:* string, denotes the current status of the order. Common
+    values can include Pending, Processing, Shipped, Delivered, Canceled, and so on.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**expected_delivery_date***:* date (optional), the estimated delivery date
+    for orders that are in Shipped status.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**reason***:* string (optional), if the order is Canceled, this will provide
+    a reason for the cancellation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**API Description**: Compared to the API name, the API description contains
+    more information about what the API does, how it works, what are its inputs and
+    outputs, and any potential errors or exceptions that may be raised. The respective
+    example for *check_order_status* could be: *This function allows for the retrieval
+    of the current status pertaining to a specific order, achieved through the use
+    of the order’s unique ID. Upon querying, the system will respond with the status
+    of the order and may also offer additional details such as the expected delivery
+    date or the reason behind an order cancellation.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Usage Example** (Optional): Providing a usage example for complex APIs can
+    help demonstrate how the API can be used, while it may not be necessary for simple
+    APIs. For the order status check an example could look like this: *Users can request
+    the status of an order with the ID “12345678”. The response may inform them that
+    the order is “Shipped” and offer a corresponding expected delivery date.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Enterprise Applications and Databases**: These provide the external tools
+    via API calls and can include any functional backend system like HR, Finance or
+    Procurement, but also search engines or specialized ML-models.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**User Prompt Generator**: This component translates the user’s input into
+    a suitable prompt for a GPT model.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Response Classification**: This component identifies and classifies GPT-generated
+    responses into two types:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: final response to the user request or
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: intermediate response containing a function call.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: A function call is identified if the response includes a `**function_call**`
+    field.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Extraction & Execution of API-Call**: When a function call response is identified,
+    this component extracts the necessary details from the function call field, selects
+    the appropriate tool to be used based on the tool API specifications and executes
+    the API call with the chosen tool. A tool can be any functionality within an enterprise
+    application, database or knowledge base.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Verbalization Prompt Generator**: This component leverages the existing context
+    (user prompt and function call response) and adds a function prompt, which contains
+    the results of the previous function call converted into text format. A GPT model
+    then translates these results into a response to the user in natural language.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Response Filter**: This component checks the final GPT responses to the user
+    for appropriateness, relevance, completeness, and coherence.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s270a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer hosts GPT models, which have been trained on conversational data
+    that includes tool-specific API-function calls (so far only specific versions
+    of GPT-3.5 Turbo and GPT-4). These models can generate either user responses or
+    function call responses based on the prompts they receive.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It also includes a knowledge base with the same capabilities as in previous
+    patterns.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s271a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The User interacts with the chatbot interface, providing input or asking questions.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The user’s input is translated into an initial prompt for a GPT model, which
+    also includes the tool API specifications.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The response is then classified as either a user response or a function call
+    response.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If it’s a user response, it’s forwarded to the response filter, where it is
+    vetted for relevance, accuracy, and appropriateness and forwarded to the user
+    (positive check results) or replaced by a default message (negative check results).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If it is a function call response in the format that defines an API call, the
+    ‘Extraction & Execution of API-Call’ component executes the API call to the specified
+    enterprise application, data base, or knowledge base.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The results of the API call are used by the Verbalization Prompt Generator to
+    generate a function prompt for a GPT model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: A GPT model generates a user response translating the API call results into
+    natural language.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: This process repeats with each new user prompt until the conversation concludes.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow Example](toc.xhtml#s272a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Let us walk through an example using this pattern. Here, we will use the scenario
+    of a user reaching out to an online bookstore’s chatbot to inquire about the status
+    of their order:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Your interaction is: “Can you tell me the status of my order with ID 98765432?”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here’s how the chatbot pattern workflow assists, where the step numbers of
+    the example correspond to the steps in the general workflow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'User Interaction: You ask the chatbot about the status of your order by providing
+    the order ID.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Initial Prompt Creation: The prompt generator translates your question into
+    a suitable prompt for a GPT model: “User wants to know the status of order with
+    ID 98765432 based on the tool API specification for check_order_status.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Response Classification: A GPT model interprets the prompt and identifies that
+    this requires a function call to the bookstore’s system, specifically the check_order_status
+    function.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'User or Function Call Decision: Since the response indicates a function call,
+    the system skips user response generation and proceeds to the next step.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'API Execution: Using the details provided, the system fetches information from
+    the bookstore’s system. It uses the check_order_status API with the order ID 98765432
+    to get the current status and other details of the order.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Verbalization Prompt Creation: With the result from the bookstore’s system,
+    a function prompt is generated for a GPT model, which contains the current status
+    and other details of the order.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Generating User Response: A GPT model then crafts a coherent response based
+    on this prompt, which might be: “Your order with ID 98765432 has been shipped!
+    You can expect its delivery by August 28, 2023.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Conversation Continuation or Conclusion: The chatbot delivers this message
+    to you. The conversation continues if you have more questions or concludes if
+    your inquiry has been satisfied.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s273a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The Tool-integrated Conversation pattern features a significant level of enterprise
+    integration. The architecture is closely tied with enterprise applications and
+    databases that offer specific functionalities accessible through APIs. This design
+    facilitates near-real-time integration, allowing the chatbot to execute tasks,
+    fetch data, and generate responses based on these operations. Furthermore, this
+    pattern can also potentially access knowledge bases if they are available via
+    APIs, extending the range of data sources the chatbot can draw from during conversations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s274a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern significantly improves output quality by grounding and enriching
+    user prompts dynamically with task output from backend systems. The decision,
+    when to call a backend system is taken by the GPT model based on user input and
+    not by a preprocessor like in the **Grounded pattern** (A2). The results of these
+    tasks then provide detailed and accurate contexts for the GPT model, when it is
+    actually used as a response generator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s275a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern introduces more computational complexity and latency due to the
+    extra steps involved in interacting with enterprise applications and databases
+    through APIs, classifying the responses, and generating verbalization prompts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s276a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern excels in process-oriented scenarios that demand several interactions
+    with enterprise applications and databases based on user input. It’s also ideal
+    for customer service bots that need to interact with enterprise applications and
+    databases to fetch or update user data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[B2 Chain-of-Thought-guided Conversation using Tools](toc.xhtml#s277a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern represents an architecture of a GPT-based chatbot that combines
+    Chain-of-Thought (CoT) Demonstrations and interaction with specific functions
+    provided by enterprise applications and databases via API calls [3]. CoT Demonstrations
+    help in designing more effective prompts that showcase logical reasoning chains
+    to a GPT model, enhancing its ability to maintain a consistent, logical sequence
+    of responses or actions over a series of interactions (see *[Figure 4.6](#fig4_6)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.6.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.6](#fig4_6):** Chain-of-Thought-guided conversation using tools'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s278a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer is unchanged from the **Grounded Conversation** pattern (A2), providing
+    a Standard Chatbot User Interface for user interactions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s279a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The application layer plays a critical role in mediating the chatbot’s reasoning
+    process and its interactions with enterprise applications and databases. It comprises
+    several components: CoT demonstrations, enterprise applications and databases,
+    Tool API specifications, initial prompt generator, response filter, response classification,
+    function name/input extraction & API call, and continuation prompt generator.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Chain-of-Thought (CoT) Demonstrations**: These are demonstrations of desired
+    thought processes for the chatbot, used to augment the user’s input.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Enterprise Applications and Databases**: These house the specific tool functionalities
+    that the chatbot interacts with via API calls.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Tool API Specifications**: This component holds the specifications for various
+    tools within the enterprise applications and databases that the chatbot can interact
+    with.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Initial Prompt Generator**: This component translates the user’s input, augmented
+    with tool API specifications and CoT demonstrations, into an initial prompt for
+    a GPT model, with instructions to stop when a tool trigger is generated.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Response Filter**: This component checks the responses generated by a GPT
+    model against defined criteria.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Response Classification**: This component classifies GPT-generated responses
+    into user responses or tool calls.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Tool Name/Input Extraction and API Call**: When a tool trigger is identified
+    in a response, this component extracts the tool name and input, executes the tool
+    call, and appends the results to the reasoning process.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Continuation Prompt Generator**: This component generates continuation prompts
+    for a GPT model by combining the original prompt, intermediate responses, and
+    tool results.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s280a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer hosts the knowledge base and a GPT model which is responsible for
+    generating intermediate and final responses to user prompts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s281a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The User interacts with the Chatbot Interface, providing input or making requests.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The user’s input is augmented with the relevant tool API Specifications from
+    the enterprise applications and databases and matching CoT Demonstrations.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The augmented input is translated into an initial prompt for a GPT model, instructing
+    it to stop when a tool trigger is generated.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: A GPT model generates an intermediate response, which is then classified as
+    a user response or a function call.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If the response contains a tool trigger, the tool name and input are extracted,
+    and the respective function call is executed on the specified application, database
+    or knowledge base.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The results of the function call are appended to the reasoning process.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: GPT is called again with a continuation prompt (original prompt + intermediate
+    response + tool result) to continue the conversation.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Steps 4–7 repeat until all tool-using steps in the reasoning process have been
+    completed.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The final response is generated, checked by the response filter, and passed
+    on to the user.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s282a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The enterprise integration for this pattern is equivalent to that in the **Tool-integrated
+    Conversation** pattern (B1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s283a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The output quality of this pattern is also comparable to the previous pattern.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s284a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The performance of this pattern is worse than in the Tool-integrated Conversation
+    pattern due to repeated continuation prompting each time a function call needs
+    to be performed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s285a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern is particularly effective for complex use cases that require a
+    step-by-step reasoning process and integration with external tools. It can be
+    used to create sophisticated chatbots that not only answer queries but also perform
+    multi-step tasks, solve complex problems, or guide users through a process while
+    interacting with external tools or services. Examples include IT support chatbots,
+    virtual assistants for complex software applications, or training systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[B3 Advanced Tool-integrated Conversation](toc.xhtml#s286a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This evolved architecture pattern harnesses a GPT model in two capacities:
+    as a planner and as a response generator. As a planner it translates user inputs
+    into task sequences, which are executed in an orchestrated manner, and as a response
+    generator it uses the output of each task to generate contextualized user responses
+    (refer to *[Figure 4.7](#fig4_7)*).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.7.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.7](#fig4_7):** Advanced tool-integrated conversation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s287a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This remains unchanged compared with the B1 pattern, offering a consistent user-chatbot
+    interaction interface.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s288a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This layer uses the following components from the B1 pattern:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Tool API Specifications, which now could also include composition instructions
+    to a GPT model on how to combine multiple APIs to accomplish complex user requests.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Extraction & Execution of API-Call
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Enterprise Applications and Databases
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Response Filter
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'In addition, it introduces several planning-specific components:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Planning Prompt Generator**: This component converts the user’s input into
+    a prompt that asks a GPT model to generate a plan or sequence of tasks.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Plan Execution**: Once a plan is generated by a GPT model, this component
+    systematically extracts and acts on each task in the sequence.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**User Response Prompt Generator**: It replaces the Verbalization Prompt Generator.
+    This component compiles the results into a new prompt for a GPT model to produce
+    a comprehensive and human-understandable response, after all tasks in the plan
+    are executed.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s289a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This layer includes a knowledge base as before and a GPT model in two different
+    roles:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Planner**: Given a planning prompt, a GPT model outlines a logical sequence
+    of tasks with their respective API-Calls that need to be executed to satisfy the
+    user’s request.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**User Response Generator**: After all tasks in the plan are executed and results
+    are compiled, a GPT model takes the compiled results and crafts them into a comprehensive
+    and human-understandable response for the user.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s290a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The User interacts with the chatbot interface.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Planning Prompt Generator translates the user’s request into a planning
+    prompt for a GPT model, which also includes the tool API specifications.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: GPT, in its Planner role, interprets the planning prompt and generates a sequence
+    of tasks with API calls for each task. The first task has a fully specified API-Call,
+    while subsequent tasks have placeholders in their respective API-Calls
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Plan Execution component extracts the API call of the first task and sends
+    it to the API-Call Execution component, which processes it and returns the API-Call
+    Results.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Plan Execution component updates the results for the first task in the task
+    sequence and resubmits it to GPT as Planner.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: A GPT model keeps the already executed tasks in the plan and regenerates the
+    task sequence immediately following the last executed task.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Plan Execution component moves to the next task in the sequence, sending
+    it to the API-Execution module, from where it gets the results back again.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Afterwards, it updates the plan and resubmits it to a GPT model. This loop continues
+    until all tasks in the plan are executed.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Post completion of all tasks, the Plan Execution components forward all the
+    intermediate and final results to the User Response Prompt Generator.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The User Response Prompt Generator frames a prompt for a GPT model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: GPT, in its Response Generator role, produces a detailed and user-friendly response.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Response Filter vets this final response, ensuring its quality and relevance.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The user receives the filtered response and continues the interaction if needed.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow Example](toc.xhtml#s291a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Let’s imagine a user wants to host a birthday party for a friend in a local
+    park and needs some assistance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Your interaction is: “I want to organize a birthday party for my friend, Mark,
+    in Central Park next Saturday. Can you help?”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how this pattern would come into play. The step numbers in the example
+    are different due to the iteration over the planned task sequence:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'User Interaction: You express your intent to the chatbot about planning a birthday
+    party for your friend in Central Park.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Planning Prompt Creation: The chatbot, through the Planning Prompt Generator,
+    reformulates your request to: “Generate a plan for organizing a birthday party
+    in Central Park next Saturday.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Plan Generation by GPT: A GPT model, donning its Planner role, interprets the
+    planning prompt and lays out a multi-step task sequence:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Task 1: Verify the availability of Central Park for events next Saturday.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Task 2: Reserve a suitable spot in Central Park.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Task 3: List nearby bakeries for a birthday cake.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Task 4: Recommend local entertainment or performers for hire.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Task 5: Provide a weather forecast for next Saturday.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Plan Execution - Task 1: The system first checks Central Park’s availability
+    for events on the specified date using an events API.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Updating & Resubmission: Assuming the park is available, the plan moves forward
+    and is resubmitted to GPT for the next sequence.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Plan Execution - Task 2: The system then reserves a spot in Central Park suitable
+    for a birthday gathering, employing the reservations API.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Plan Execution - Task 3: The chatbot accesses a local directory API, listing
+    a few top-rated bakeries nearby for a potential cake order.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Plan Execution - Task 4: The system, tapping into another local services API,
+    offers a few entertainment options like magicians, musicians, or party entertainers
+    available for hire.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Plan Execution - Task 5: The system provides a weather forecast for next Saturday
+    using a weather API to ensure preparations account for potential rain or shine.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Compile Results: All the intermediate outcomes, that is., park availability,
+    reservation confirmation, bakery list, entertainment suggestions, and weather
+    forecast, are consolidated.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'User Response Prompt Creation: A prompt is generated, collating all the data:
+    “Convert the findings from Central Park’s availability, reservation, bakeries
+    list, entertainment options, and the weather forecast into a coherent user response.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Crafting User Response: GPT, in its User Response Generator capacity, constructs
+    the message: “Central Park is available next Saturday! I’ve reserved a spot for
+    Mark’s birthday. Here are top 3 bakeries nearby: [Bakery Names]. For entertainment,
+    consider hiring [Entertainer Names]. Also, the weather forecast suggests it’ll
+    be sunny. Happy planning!”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Response Filtering: This detailed response is checked for coherence and clarity.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Final User Interaction: You’re presented with the thorough plan and resources,
+    allowing you to proceed with the preparations or continue the interaction for
+    more specific details.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s292a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The Advanced Tool-integrated Conversation pattern showcases an even more profound
+    level of enterprise integration. By leveraging GPT’s planning capabilities, it
+    can dynamically and interactively construct sequences of tasks that harness the
+    functionalities of various enterprise applications and databases. This design
+    allows for adaptive interactions, ensuring that the sequence of tasks and responses
+    is continually refined based on evolving user input.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s293a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The quality of the output in this pattern is notably superior due to the addition
+    of dynamic planning and iterative execution of tasks. Instead of solely relying
+    on initial context, a GPT model can adapt its approach based on the outcomes of
+    previous tasks and the respective user responses. This iterative and adaptive
+    process ensures that the conversation remains more relevant and is consistently
+    refined to best address the user’s needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s294a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: While this pattern offers significant benefits in terms of output quality and
+    enterprise integration, it also introduces further computational overhead. The
+    iterative planning, execution, and replanning processes add latency to the overall
+    response time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s295a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Given the enhanced capabilities of the B3 pattern, its use cases extend to
+    more complex and dynamic scenarios:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Process Automation Bots**: Ideal for guiding users through complex, multi-step
+    processes like onboarding, troubleshooting, or service provisioning. As each step
+    is completed, the bot can adapt its guidance based on the outcomes.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Dynamic Querying Systems**: For situations where a user’s request requires
+    fetching and processing data from multiple sources in a specific sequence, for
+    example, generating a detailed report that spans multiple enterprise applications.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Advanced Customer Service Bots**: Beyond simple data retrieval, these bots
+    can execute sequences of tasks like updating multiple records, initiating processes,
+    and then reporting back the results, all in a single user interaction.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Interactive Tutorials and Guided Learning**: Bots that can adapt the learning
+    path based on user responses, test results, or other criteria, ensuring a tailored
+    learning experience.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Integrated Business Intelligence Tools**: For business users who need a sequence
+    of data retrieval, analysis, and visualization tasks from different enterprise
+    tools to generate insights.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[C Conversational Patterns with Fine-tuned Models](toc.xhtml#s296a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This section introduces two advanced patterns that harness the potential of
+    GPT in synergy with fine-tuned models for end-to-end conversational solutions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Conversation using Fine-tuned Model (C1):** This pattern utilizes a GPT model
+    to generate training data, which is used to fine-tune a commercial or open-source
+    language model. The conversational solution then employs this fine-tuned model
+    to craft responses for the user, supplemented with enterprise knowledge and data.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Conversation using Two Models (C2):** This pattern leverages both a fine-tuned
+    model and a pre-trained GPT model in its operation. The output from the fine-tuned
+    model is utilized to enhance the user input with context-specific data. This provides
+    a GPT model with higher input quality, resulting in more precise and contextually
+    relevant responses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The detailed descriptions of these architecture patterns, including their structure,
+    workflow, and potential use cases, follow.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[C1 Conversation with fine-tuned model](toc.xhtml#s297a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern outlines an architecture for a GPT-driven conversational solution
+    that leverages a database along with GPT to create training data. This data is
+    used to fine-tune a pre-existing language model which subsequently handles user
+    interactions (refer to *[Figure 4.8](#fig4_8)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.8.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.8](#fig4_8):** Conversation using fine-tuned model'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s298a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer is equivalent to the **Grounded Conversation** pattern (A2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s299a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer also includes the same components as in the A2 pattern.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s300a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The AI layer encompasses several key components:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Knowledge Base for Augmentation: It is used during run-time to supplement the
+    AI’s knowledge.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Pre-trained Language Model: This is a general-purpose model trained on vast
+    amounts of data to understand language but not specialized for any particular
+    task.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Fine-tuned Language Model: Using the foundation set by the pre-trained model,
+    this version is further trained or fine-tuned on specific datasets. This can be
+    for targeted tasks such as following instructions or facilitating conversations,
+    enhancing its accuracy and relevance for these tasks.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'GPT-model as a Training-data Generator: It utilizes a GPT model’s capabilities
+    to generate training data, simulating various scenarios or dialogues. Users should
+    note a crucial licensing stipulation: Outputs derived from OpenAI’s services must
+    not be used to create models in competition with OpenAI. It’s also worth highlighting
+    that licensing terms are dynamic and may change periodically. For the most current
+    information, always refer to OpenAI’s official documentation or terms of service.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Database for Training-data Generation: A curated source from which a GPT model
+    extracts and processes information to generate training data.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'When considering fine-tuning solutions, enterprises today have the option of
+    utilizing commercial models provided by OpenAI or a selection of noteworthy open-source
+    models:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Commercial Models from OpenAI:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'GPT-3.5 Turbo: OpenAI offers fine-tuning capabilities for GPT-3.5 Turbo. Early
+    evaluations suggest that a fine-tuned version of GPT-3.5 Turbo can achieve performance
+    levels comparable to base GPT-4 models in specific narrow tasks. Emphasizing safety,
+    training data for fine-tuning is subjected to OpenAI’s Moderation API, which is
+    based on GPT-4.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'GPT Base, babbage-002 and davinci-002: These models are the recent additions
+    from OpenAI with 16K context window size, available for both standard and fine-tuned
+    applications.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Open-Source Models (pre-trained on 1 trillion tokens):'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'MosaicML’s MPT-30B: An open-source model boasting 30 billion parameters. It
+    surpasses the capabilities of MPT-7B and GPT-3, featuring a context window size
+    of 8000 tokens. The model is available in two distinct versions: MPT-30B-Instruct,
+    tailored for instruction fine-tuning, and MPT-30B-Chat, crafted for chatbot development.
+    MosaicML’s platform also provides options for customization and deployment.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Falcon LLM by the Technology Innovation Institute: Based in Abu Dhabi, this
+    open-source model is equipped with 40 billion parameters and offers a context
+    length of 2000 tokens. Additionally, the Falcon-40B-Instruct variant is available,
+    designed explicitly for instruction-based fine-tuning.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'OpenLLaMA: Serving as the open-source counterpart of Meta AI’s LLaMA, it offers
+    models in 3B, 7B, and 13B parameter configurations, each accompanied by a 4000-token
+    context window. Contrasting Meta’s research-exclusive LLaMA, OpenLLaMA is engineered
+    for commercial application and supports fine-tuning.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Open-Source Models (pre-trained on 2 trillion tokens):'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Llama 2 by Meta: A more recent release, Llama 2 is available in configurations
+    of 7B, 13B, and 70B parameters. It has a context length of 4000 tokens—twice the
+    capacity of its predecessor, Llama 1\. The Llama-2-chat variants have undergone
+    further refinement using 100K public instruction datasets and have been influenced
+    by over a million human preferences to bolster interaction safety and utility.
+    Commercial utilization and fine-tuning are permitted under Llama 2’s licensing.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'After selecting the pre-trained model, it needs to be fine-tuned for specific
+    enterprise tasks. Our approach covers data curation, preprocessing, training data
+    generation using GPT, model training, and evaluation, all illustrated with practical
+    examples. This method ensures the models are effectively tailored to the task
+    at hand:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Data Curation:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Definition: The primary step involves gathering and curating a domain-specific
+    database. The selected data should be representative of the specific task and
+    should provide a solid base for the subsequent steps.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Examples:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Collection of customer support tickets for creating an IT-support chatbot.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Accumulation of process logs to assist in forecasting process outcomes.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Aggregation of email histories for developing a communication classifier.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Gathering of sales transaction data to develop a product recommendation system.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Compilation of employee onboarding queries and answers to identify common questions
+    and responses.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Pre-processing:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Definition: Processing the curated data to make it ready for machine learning
+    tasks. This involves data cleaning, transformation, or other domain-specific operations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Examples:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Cleaning support tickets to remove any personal customer information.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Structuring and organizing process logs to track stages of execution.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Categorizing email histories based on their subject and content.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Normalizing sales transaction data, such as harmonizing product descriptions,
+    to account for seasonal or promotional spikes.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Collating employee onboarding queries and answers to form a comprehensive database.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Training Data Generation using a GPT model:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Definition: Leveraging a GPT model to produce labeled or structured data based
+    on the pre-processed information.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Examples:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Simulating IT-support Dialogues: By inputting customer support tickets into
+    a GPT model, entire dialogues are generated that simulate how a customer query
+    would be handled by an IT-support desk.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Predicting Process Outcomes: A GPT model, when provided with partial executions
+    of a process, generates potential outcomes, which can be used as training data.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Email Classification with GPT: By feeding GPT models with email histories,
+    the model can generate classification tags, such as ‘complaint’, ‘query’, or ‘feedback’.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Product Recommendations Simulation: By processing sales data through GPT, we
+    can simulate customer purchasing patterns and derive possible product recommendations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Question and Answer Generation for HR: GPT can generate question and answer
+    pairs related to the onboarding process, forming a diverse dataset.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Model Fine-tuning:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Definition: Using the generated dataset to train or fine-tune a model specific
+    to the task at hand.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Examples:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Train a chatbot model with the simulated IT-support dialogues to handle customer
+    interactions.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Train a model to predict process outcomes using the GPT-derived outcomes.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Train a classifier to categorize emails based on the tags generated by GPT.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Train a recommendation engine using the GPT-simulated customer purchasing patterns.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Creating a standard Q&A chatbot that finds similar questions to new inquiries
+    and displays the respective answers using the GPT-generated Q&A pairs.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Evaluation and Iteration:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Definition: Assessing the performance of the trained model and iterating over
+    the process if necessary to achieve optimal outcomes.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Examples:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Comparing chatbot responses with expert-provided answers to evaluate chatbot
+    efficacy.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Measuring the accuracy of the process outcome predictions against actual outcomes.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Evaluating the email classifier’s accuracy by comparing it against manual labels.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Testing the recommendation engine’s suggestions against real-world customer
+    feedback.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Reviewing the HR chatbot’s answers by comparing them with the GPT-generated
+    dataset to ensure accuracy and relevancy.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Each step is meticulously designed to ensure the selected pre-trained model
+    is adapted precisely to domain-specific needs, driving efficient and accurate
+    outcomes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s301a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: After fine-tuning the workflow is identical to the one for the A2 pattern.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s302a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern offers the same level of enterprise integration as in A2.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s303a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern displays an improved output quality compared to the A2 pattern.
+    This enhancement arises from the application of domain-specific knowledge during
+    the fine-tuning process, which allows the system to provide more accurate and
+    relevant responses within a specific domain.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Like the A2 pattern, it also enriches user prompts with information from the
+    enterprise data sources and employs an output filtering process to ensure the
+    generated responses’ relevance and appropriateness.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s304a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern imposes a considerable computational load primarily during the
+    training phase, where the model is fine-tuned on domain-specific data. While there
+    is ongoing research on its optimization, the process of generating training data
+    and fine-tuning the pre-trained language model is still computationally intensive,
+    requiring significant resources such as processing power, memory, and time. It
+    may also need a large amount of domain-specific data to achieve the desired level
+    of performance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once the model is fine-tuned, the operational computational cost is similar
+    to other patterns that involve translating user utterances into prompts, generating
+    responses, and filtering these responses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: However, one significant advantage of the Fine-tuned Conversation pattern is
+    that it often results in a model that is smaller than a general-purpose model.
+    This reduced size can lower the computational cost for each inference (response
+    generation), improve speed, and potentially allow for local deployment, eliminating
+    the need for access via a cloud platform and therefore potentially reduce the
+    response time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s305a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This pattern is particularly useful in scenarios where specific, domain-related
+    knowledge is vital. These might include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**High Complexity Domains with Rich Examples**: Fields like life science or
+    engineering where standard language models might not offer the required depth
+    or accuracy in their outputs. Particularly in situations where the availability
+    of numerous complex and specialized examples surpasses the capacity of a standard
+    prompt, fine-tuning becomes essential.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**High-Stakes Environments**: Situations where precision is critical, as inaccuracies
+    can lead to significant consequences. Examples include medical diagnoses, financial
+    forecasting, or legal advisories where an incorrect interpretation or recommendation
+    can have grave repercussions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Customized** **Experiences** **and** **Tone**: Instances demanding tailored
+    interactions or adjustments to cater to distinct user demographics, as well as
+    establishments striving to reflect their unique brand voice in model outputs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fast-Changing Domains**: Domains where the knowledge landscape rapidly evolves,
+    and constant model retraining offers an advantage over relying on external tools
+    or preprocessing. Examples might include the tech industry with frequent software
+    updates or news outlets covering rapidly developing events.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Steerability, Consistency and Output Formatting**: For businesses requiring
+    enhanced control over the model’s behavior, such as maintaining specific language
+    outputs or ensuring consistent response formats. This is vital for scenarios like
+    code completions or composing API calls.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Efficient Prompt Utilization**: Fine-tuning can reduce the necessity for
+    lengthy prompts, when the original prompt and its response are predicted from
+    a shortcut in the fine.tuning dataset.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[C2 Conversation using Two Models](toc.xhtml#s306a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern details an architecture for a GPT-enabled conversational solution
+    that deploys a fine-tuned model in synergy with a pre-trained model to produce
+    user responses [4] (refer to *[Figure 4.9](#fig4_9)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.9.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.9](#fig4_9):** Conversation using two models'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s307a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer utilizes a Standard Chatbot User Interface for user interactions,
+    potentially enhanced by voice and avatar functionalities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s308a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The application layer comprises two prompt generators, a response filter, and
+    enterprise applications and databases:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Enterprise Applications and Databases: These are internal tools and data sources.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Prompt Generator 1: This component interprets the user’s utterance and calls
+    the relevant APIs of the enterprise applications and databases, integrating the
+    returned data into an initial prompt for the fine-tuned model.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Prompt Generator 2: This takes the input and output of the fine-tuned model,
+    calls necessary APIs from the enterprise applications and databases again if required,
+    and forms a new prompt for the pre-trained GPT model to generate the final response.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Response Filter: This component checks the final response against various criteria
+    to ensure that it’s appropriate and relevant to the user’s query.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s309a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer comprises a pre-trained model, a fine-tuned model, GPT as training-data
+    generator, GPT as response generator, and a knowledge base.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The fine-tuning process is identical to the process described in the previous
+    pattern.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s310a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'User Interaction to Initial Prompt Creation: The user communicates their query
+    to the system. Prompt Generator 1 comprehends this input, liaising with backend
+    system APIs to assimilate necessary data. This combined information forms an initial
+    prompt tailored for the fine-tuned model.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Fine-tuned Model Interaction: The fine-tuned model, specialized in its domain
+    of expertise, evaluates the initial prompt and produces a concise yet informed
+    output.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Prompt for Pre-trained GPT Model: Prompt Generator 2 amalgamates the input
+    and the output from the fine-tuned model. It may further enhance the data by consulting
+    additional backend APIs, culminating in a well-rounded prompt designed for the
+    pre-trained GPT model.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Generating Final Response: The pre-trained GPT model, equipped with a broader
+    understanding, crafts a comprehensive and articulate response based on the received
+    prompt.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Response Filtering: The resultant message undergoes scrutiny against certain
+    standards of relevance and appropriateness. On clearing this assessment, it is
+    delivered to the user, but failing the check results in a default response being
+    displayed.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow Example](toc.xhtml#s311a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Using this pattern, let us outline an example scenario where a user wants to
+    purchase a laptop and needs advice on the best options available based on their
+    specific needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Your interaction is: “I’m looking for a laptop suitable for graphic design
+    tasks. My budget is $1500\. What do you recommend?”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here’s how the C2 pattern would be employed, with the step numbers of the example
+    aligning with the steps in the general workflow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'User Interaction to Initial Prompt Creation: After expressing your requirement,
+    Prompt Generator 1 interprets your query. It calls the backend system’s API to
+    fetch available laptops within the price range and their specifications. This
+    information is integrated into an initial prompt, which could be: “Provide suitable
+    laptop recommendations within $1500, prioritizing graphic design capabilities.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Fine-tuned Model Interaction: The fine-tuned model, trained specifically to
+    understand electronic products and user requirements, might generate a concise
+    list: “Consider the [Laptop Brand A] with [Spec A] priced at $1400, or [Laptop
+    Brand B] with [Spec B] priced at $1450\. Both are suitable for graphic design.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Prompt for Pre-trained GPT Model: Prompt Generator 2 takes the input and the
+    output from the fine-tuned model, possibly calling additional backend APIs (maybe
+    for user reviews or availability), resulting in a prompt for the pre-trained GPT
+    model: “Given the user’s graphic design requirements and a budget of $1500, and
+    considering the recommended laptops [Laptop Brand A] with [Spec A] priced at $1400
+    and [User Review A] and [Laptop Brand B] with [Spec B], priced at $1450 and [User
+    Review B], craft a detailed and persuasive response.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Generating Final Response: The pre-trained GPT model processes the comprehensive
+    prompt, producing an elaborate reply: “Based on your needs and budget, I’d recommend
+    the [Laptop Brand A] which boasts [Spec A], perfect for graphic design tasks and
+    is well under your budget at $1400\. It’s been highly rated by users, especially
+    for its [specific feature]. Another great option is the [Laptop Brand B] priced
+    at $1450, offering [Spec B] and has also received positive feedback from graphic
+    designers. Both are available for purchase now. Which one interests you?”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Response Filtering: This detailed response is vetted to ensure it meets the
+    appropriateness and relevance criteria. If it passes, the message is relayed to
+    you. If not, you’d see a generic response, perhaps something like: “Sorry, I couldn’t
+    process your request. Please try again.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s312a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this pattern, enterprise integration is achieved twice by incorporating enterprise
+    applications and databases into the Application Layer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The two Prompt Generators in the Application Layer are designed to call the
+    relevant APIs of the enterprise applications and databases directly. ‘Prompt Generator
+    1’ utilizes data returned from these API calls to form an initial enriched prompt
+    for the fine-tuned model. Similarly, ‘Prompt Generator 2’ may call additional
+    APIs from the enterprise applications and databases, integrating the returned
+    data into a new prompt for the pre-trained GPT model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s313a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The “Conversation using Two Models” pattern improves output quality by leveraging
+    the unique strengths of both fine-tuned and pre-trained models. It uses the fine-tuned
+    model’s capacity for specialized, context-aware responses, and the general versatility
+    of the pre-trained GPT model. This synergy of models facilitates an adaptable
+    and context-specific response generation that can cater to a variety of conversational
+    scenarios.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Like in the **Grounded Conversation** pattern (A2), this architecture also includes
+    the prompt grounding and enriching aspect, utilizing data from enterprise applications
+    and databases to refine and inform the prompts provided to the AI models. This
+    grounding process is executed twice in this pattern, once for each model, which
+    allows for a deeper, and more intricate understanding of the user’s intent.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s314a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The computational demand of the ‘Conversation using Two Models’ pattern is higher,
+    as it involves two separate language models for each user interaction. The first
+    computational load is the fine-tuning of the model, which is done offline and
+    can be computationally expensive as described for the previous pattern.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The second, and potentially more significant, computational load arises during
+    the interaction itself. Every user prompt is processed twice, first by the fine-tuned
+    model and then by the pre-trained GPT model. Both of these steps require CPU or
+    GPU resources and take a certain amount of time. Additionally, the application
+    layer processes, such as calling APIs from enterprise applications and databases
+    potentially twice and generating enriched prompts, also contribute to the computational
+    load.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s315a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This dual-model pattern shines in environments that demand a specialized and
+    a general model working in tandem. Potential scenarios include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Multistage Query Resolution: In domains like IT support, the first model can
+    quickly diagnose an issue based on a user’s problem description, and the second
+    can offer detailed step-by-step solutions that are more user-friendly.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Data-Enriched Product Recommendations: In e-commerce, the first model can identify
+    and list products based on user preferences, while the second model can cross-reference
+    the shortlist with user reviews, ratings, or trending data to provide a more comprehensive
+    recommendation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Legal Consultation: Initially, the first model can identify relevant laws or
+    precedents based on a user’s query, and the second model can explain them in layman’s
+    terms, ensuring comprehension.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Financial Planning: Initially, the first model can provide a financial overview
+    or strategy based on the user’s financial situation, and the second model can
+    delve deeper into specifics like investment opportunities, risks, and detailed
+    budgeting.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Educational Content Creation: The first model can outline a learning module
+    or lesson plan based on a curriculum, and the second can develop detailed content,
+    activities, and assessments.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[D1 Agent Patterns](toc.xhtml#s316a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In this section, we delve into specialized agent patterns that harness GPT
+    integration, highlighting their distinct architectural facets and application
+    functionalities. The focus is on automation, adaptability, and user collaboration:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Batch Automation Agent (D1):** This agent first pre-processes data and then
+    executes a two-step loop: processing each augmented data record and guiding a
+    GPT model through sequential instructions, where the outcome of one instruction
+    provides the input to the next one until the sequence is fully processed.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Orchestration Agent (D2):** Central to this pattern is the Orchestration
+    Agent seamlessly linking users, GPT models, applications, databases, and knowledge
+    bases. The orchestration can be achieved via a workflow prompt or a program.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Collaboration Agent (D3):** Pivotal to this pattern is the collaboration
+    agent, which aligns multiple users and a GPT model in a dynamic cooperative setting.
+    Through the Collaboration Repository, each GPT interaction is driven by an evolving
+    context, which consists of prompts by multiple users and the previous model outputs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Multi-Agent Cooperation (D4)**: In this design, multiple agents work together
+    to achieve a given user goal jointly. The Planning Agent decomposes the goal into
+    tasks and derives expert agent profiles accordingly. The Orchestration Agent then
+    creates and manages Expert Agents based on these profiles, while the Expert Agents
+    execute their designated tasks towards achieving the user’s goal.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[D1 Batch Automation Agent](toc.xhtml#s317a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This pattern showcases a GPT-centric system steered by a Batch Automation Agent.
+    Data records sourced from enterprise applications and databases are enriched via
+    a knowledge base. The agent then employs a dual-loop mechanism: iterating over
+    each enriched record and guiding GPT through a sequence of prompts. Results from
+    one prompt inform the next. Post-processing makes the outputs ready to be displayed
+    by the user interface (refer to *[Figure 4.10](#fig4_10)*).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.10.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.10](#fig4_10):** Batch automation agent'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s318a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Displays the results of the batch-processed outputs and facilitates user interaction
+    through a chatbot or web user interface.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s319a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This layer is comprised of the Pre-Processor, Enterprise Applications and Databases,
+    a Batch Automation Agent, and a Post-Processor:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Enterprise Applications and Databases: The enterprise applications and databases
+    serve as the primary source of raw data records.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Pre-Processor: The pre-processor performs the same steps as in the conversation
+    pattern, but this time for an entire batch of data records.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Batch Automation Agent: This agent employs a dual-loop mechanism: the outer
+    loop processes each data record in the batch, and the inner loop iteratively feeds
+    a sequence of enriched prompts related to the current record into a GPT model.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Post Processor: Once the Batch Automation Agent has produced batched responses,
+    the post-processor formats these for display in the user experience layer.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s320a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The AI layer has the same functionality as in the Grounded Conversation Pattern
+    (A2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s321a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Enterprise Applications and Databases provide batches of data records.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The pre-processor, leveraging the knowledge base, creates enriched data records.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'The Batch Automation Agent employs its dual-loop mechanism: for each enriched
+    record in the batch (outer loop), it processes a sequence of prompts (inner loop)
+    to a GPT model.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The post-processor organizes the batch output for optimal display.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The user experience layer visualizes the formatted output.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow Example](toc.xhtml#s322a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Imagine a rental car company, wants to process the vast number of customer reviews
+    they receive daily about their car rentals and service. The goal is to categorize
+    these reviews and present them in a categorized, summarized, user-friendly format
+    for their branch managers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is an example workflow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Source Data Collection: The company’s Rental Management System and feedback
+    portals, acting as the Enterprise Applications and Databases, gather the day’s
+    customer reviews, aggregating a batch of several hundred feedback entries.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Data Enrichment: The Pre-Processor takes each review and uses an internal knowledge
+    base to add context. For instance, a review stating, “The car’s AC wasn’t working”
+    might be enriched to: “Customer found the air conditioning of the [Car Model]
+    rented from [Specific Branch] faulty.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Dual-Loop Data Processing:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Outer Loop: The Batch Automation Agent starts processing each enriched review.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Inner Loop:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'First Prompt: “Given the review ‘[Enriched Review]’, determine its sentiment
+    (positive, neutral, negative) and the primary concern category (for example, vehicle
+    condition, customer service, pricing, booking process).”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Second Prompt: “Based on the sentiment and category identified, create a concise
+    summary suitable for branch managerial review.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '(Note: Depending on the system’s design, further prompts can be added to extract
+    more nuanced information.)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Data Formatting: Once a GPT model has processed all the reviews, the post-processor
+    structures the batched summaries. Reviews are grouped by branch, car model, and
+    concern category. The data is prepared for optimal visualization, possibly by
+    generating charts showcasing recurrent issues or a leaderboard ranking branches
+    by positive feedback.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Visualization and User Interaction: The User Experience Layer displays these
+    structured summaries on an interactive dashboard. Branch managers can delve into
+    specific feedback categories, view individual reviews, or ask more detailed questions
+    through an integrated chatbot.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s323a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Equates to the integration level of the **Grounded Conversation** pattern (A2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s324a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The Batch Automation Agent’s dual-loop mechanism, while maintaining continuity
+    and context, poses a challenge: the risk of error accumulation. If one prompt
+    in the sequence generates an inaccurate or suboptimal response, subsequent prompts
+    might build upon this error, potentially compounding inaccuracies. This emphasizes
+    the importance of ensuring the precision of each individual prompt to maintain
+    the overall quality of the responses.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s325a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: While the dual-loop nature might introduce complexities, the batch processing
+    approach aims for efficiency. Batch processing inherently has a latency until
+    the entire batch completes, but the results are comprehensive and the process
+    runs autonomously without user involvement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s326a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This architectural pattern is apt for scenarios demanding advanced batched
+    knowledge-based automation. Especially prominent in Knowledge Management domains,
+    it provides a robust solution for the swift processing, categorization, and representation
+    of voluminous data. Notable applications include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Information Extraction: Diving into extensive documents to unearth pertinent
+    insights, this functionality is especially invaluable in sectors such as research,
+    law, or journalism.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Data Transformations and Quality Management: With the ability to integrate
+    data from different formats and structures, and finding redundancies, inconsistencies,
+    it enables the use of standard analytics tools.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Process Analysis: By examining patterns extracted from diverse event logs,
+    it offers actionable insights that aid in refining workflows. This is especially
+    beneficial for industries that hinge on intricate process metrics.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Advanced Data Mining: By employing methodologies like Association rule mining
+    and cluster analysis on unstructured data, the architecture is capable of deciphering
+    patterns and insights that might elude traditional analysis.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Automatic Tagging: By enhancing search results and fortifying recommendations,
+    this feature streamlines user experience, tagging content automatically based
+    on the content’s nature.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[D2 Orchestration Agent](toc.xhtml#s327a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: At the heart of this architecture is the orchestrated workflow, designed to
+    guide user-GPT engagements from initiation to conclusion. The Orchestration Agent,
+    central to this workflow, integrates users, GPT models, applications, databases,
+    and knowledge bases (see *[Figure 4.11](#fig4_11)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.11.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.11](#fig4_11):** Orchestration agent'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s328a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This layer is where multiple users connect with the system. They might use chatbots
+    or a web interface. They provide requests, see their tasks and get responses from
+    GPT models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s329a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Divided into three main components, this layer orchestrates the flow of tasks
+    and interactions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Orchestration Agent: The pivotal component exists in two variants:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Program-based Agent: Used for static workflows coded in a suitable programming
+    language like Python or Java[⁷](#ftn7a) to control sequential task execution.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Prompt-based Agent: Suitable for dynamic workflows that involve planning, execution,
+    and adaption. It employs workflow prompts integrated with external tools, reminiscent
+    of the architecture patterns B1 - B3.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Enterprise Applications and Databases: These are the enterprise-specific tools
+    and data sources that the agent leverages.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Information Retrieval Tools: This includes public tools, like search engines
+    or websites, that the system utilizes to contextualize subsequent prompts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s330a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This layer encompasses:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Main GPT model in two potential roles:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Response Generator for Specific Workflow Tasks (in program-based orchestration):
+    In this capacity, a GPT model responds to task-specific prompts defined within
+    a scripted workflow.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Workflow Engine (in prompt-based orchestration): Here a GPT model takes on
+    a broader role, managing the flow and execution of tasks through workflow prompts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Knowledge Base: This component provides both long-term and short-term memory
+    functionalities and hence goes beyond the static repository role it played in
+    previous patterns:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Long-term Memory: This part stores a variety of knowledge, differentiated into
+    various categories based on the origin and nature of the information:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Learned Knowledge: This comprises insights and information generated from previous
+    interactions where GPT models have responded. It forms an evolving body of knowledge,
+    continuously enriched through monitoring and analyzing the outcomes of the GPT
+    model’s past responses, to foster a more nuanced understanding and improved performance
+    over time.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Retrieved Knowledge: This section stores data and information that have been
+    fetched from external resources during earlier operations, such as results from
+    searches in previous user engagements. It helps in preserving valuable findings
+    for future reference, avoiding repeated search operations for the same queries,
+    and ensuring consistent responses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Acquired Knowledge: This part of the memory houses knowledge that is often
+    curated and verified by Subject Matter Experts (SMEs). It represents a structured
+    and reliable repository of information, cultivated over time to provide a solid
+    foundation for the GPT model’s responses, ensuring that the output aligns well
+    with enterprise standards and expert validations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Short-term Memory: This part is designed to retain the results of intermediate
+    interactions with users, GPT models, enterprise applications, or search tools,
+    holding the data temporarily to facilitate cohesive and adaptive engagements through
+    the recall of recent interactions and computations. This memory is ephemeral and
+    is cleared out after a session ends or after a predefined period, maintaining
+    data relevancy and security.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'GPT-Critic: An auxiliary GPT model tasked with assessing the validity and quality
+    of the primary GPT model’s outputs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow with program-based orchestration agent](toc.xhtml#s331a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'User Request: Users describe their intended result.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Selection: Selection of a standard workflow based on the user request.
+    Examples are:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: One-step Search with Generative Task
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Semantic Search: Extracts relevant knowledge from the Knowledge Base.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Generative Task: Using a GPT model for content creation, summarization, or
+    answering queries.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Two-step Search with Generative Task:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Query Formulation: Uses a GPT model to produce API calls or search queries
+    when specific data is demanded.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Information Retrieval: Acquires the necessary data from external sources.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Knowledge Representation: Incorporates this data into the Knowledge Base.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Semantic Search: Extracts relevant knowledge from the Knowledge Base.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Generative Task: Using a GPT model for content creation, summarization, or
+    answering queries.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: One-step Backend Function Execution (similar to B1 pattern)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Information Collection from User (optional): Collects supplementary data from
+    the user if required.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Backend Function Call Generation: Creates executable application-level function
+    or calls.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Backend Function Call Execution: Executes previously generated application
+    function calls.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Backend Function Results Translation: Transforms the results from system-level
+    functions into user-friendly outputs or formats.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Multi-step Backend Function Execution
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Repetition of the three steps of the previous workflow for each backend system:
+    Sequentially performs the steps of function generation, execution, and result
+    translation for multiple backend processes.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Potentially user interactions between backend function calls: Engages users
+    between stages to gather more information or refine subsequent steps.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Interactive Content Creation
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Information Collection from User: Gathers necessary data from the user for
+    the content creation process.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Content Creation based on the collected information: Develops tailored content
+    based on the user-provided data.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Workflow Execution: Commences and oversees the complete sequence of steps chosen
+    during the previous “Workflow Selection” step.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Output Evaluation: Utilizes the GPT-Critic to inspect the output’s accuracy
+    and relevance, ensuring it matches the established criteria or user request.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Results Presentation: Displays the outcomes of the workflow to the users in
+    a comprehensible and user-friendly manner.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Workflow example with program-based orchestration](toc.xhtml#s332a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Imagine a digital platform designed for enterprises to locate and procure specialized
+    raw materials that are rare, environmentally sustainable, or have other unique
+    attributes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A manufacturing company is looking to source a sustainable type of rubber that’s
+    both durable and has a minimal environmental impact for a new line of eco-friendly
+    footwear.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is an example workflow matching the pattern workflow structure:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'User Request: The procurement manager of the manufacturer. logs into the digital
+    platform and specifies their need: sustainable, durable rubber, preferably with
+    certifications like Fair Trade or Rainforest Alliance.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Selection:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Considering the specific requirements of the manager, the system selects the
+    Two-step Search with Generative Task workflow.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Query Formulation: Using the manager’s input, the system formulates targeted
+    search queries like “sustainable durable rubber suppliers with certifications”.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Information Retrieval: The system leverages web crawlers to navigate industry
+    databases, supplier directories, forums, and relevant sustainability-focused websites
+    to identify potential suppliers.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Knowledge Representation: Extracted information, such as supplier profiles,
+    their certifications, client reviews, and material specifications, are structured
+    for easier analysis.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Semantic Search: The system assesses the organized data, prioritizing suppliers
+    that align closely with the manufacturer’s criteria.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Generative Task: If an ideal supplier isn’t identified, the system uses a GPT
+    model to draft inquiries or RfPs (Request for Proposals) to be sent out to promising
+    suppliers or industry contacts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Workflow Execution:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The program-based agent governs the sequence of operations, ensuring that relevant
+    and accurate supplier information is sourced from the web.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Output Evaluation:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The GPT-Critic reviews the shortlist of suppliers and the RFPs to confirm they
+    match the manufacturer’s specifications.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Inconsistencies, if found, might initiate a new iteration of the “Information
+    Retrieval” step or a revision of the search criteria.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Results Presentation:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The buyer receives a curated list of potential suppliers with all relevant details
+    like certifications, past client reviews, and contact information.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The generated RFPs are made available, ready to be sent out to the prospective
+    suppliers for a more detailed proposal.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The buyer can choose to engage with a supplier directly, request samples, or
+    send out RFPs for competitive bids.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow with prompt-based orchestration agent](toc.xhtml#s333a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'User Request: Users describe their intended result.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Prompt Pattern Selection: Selection of a workflow prompt pattern based
+    on the user request. An example of a respective pattern is given in [chapter 6](c06.xhtml)
+    in the section ‘Adaptive Business Process Management.’'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Prompt Execution: Executing the workflow by using a GPT model as workflow
+    engine. It would generate requests for API function calls (like in the B1 pattern)
+    and user input (like in the A3 pattern), when required by the workflow. The orchestration
+    agent would handle these requests and feed the results back into a GPT model to
+    continue the workflow. The workflow terminates when a specific stop condition
+    in the prompt is achieved, or the user stops it.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Output Evaluation: The GPT Critic examines the workflow’s output to ensure
+    it meets stipulated criteria.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Results Presentation: Once the workflow is finished, the results are showcased
+    to users in an easily interpretable format.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Workflow example with prompt-based orchestration](toc.xhtml#s334a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Imagine an e-commerce giant where a customer’s recent purchase of a smartwatch
+    arrived with a damaged screen:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'User Request: The customer accesses the complaint section and mentions: “I
+    received my smartwatch order, but the screen is cracked. I’d like a replacement
+    or refund. Order number: 567890.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Prompt Selection: Given the nature of the complaint, the system selects
+    the prompt for Adaptive Complaint Management Workflow:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Prompt Name: Adaptive Complaint Management Workflow'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Expert Persona: “As an AI trained in Adaptive Complaint Management for e-commerce,
+    you autonomously manage complaint resolution by determining and executing the
+    appropriate workflow. Interaction with the user is solely for capturing essential
+    details.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Context: “You’re assisting an e-commerce giant receiving myriad complaints
+    daily. Current complaint: [Captured Complaint Slot]. The complaint resolution
+    steps include:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Complaint Clarification: Understand the specifics of the complaint through
+    user interaction.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Design: Autonomously plans tasks to address the complaint.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Initiation & Execution: Start and complete the complaint tasks, asking
+    the user for required details.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Monitoring: Ensure resolution progresses smoothly and gather user
+    feedback.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Adaptation: Modify tasks based on unexpected scenarios or deviations.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Goal: Effectively navigate each complaint resolution phase, leveraging skills
+    such as communication, planning, and recommendation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Control & Constraints: Always respect privacy, seek necessary user inputs,
+    clarify decisions, and ensure outputs are actionable and follow best practices.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Instruction: Start with ‘Complaint Clarification’: Kindly share more about
+    the complaint [Captured Complaint Slot] for an effective resolution process.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Workflow Execution:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Complaint Clarification: The system asks, “Can you provide more specifics about
+    the damage? Was the packaging intact when it arrived?” The user responds, “The
+    packaging seemed fine, but the watch inside was damaged. Looks like a quality
+    control issue.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Design: Based on the user’s feedback, the system selects the Product
+    Replacement and Quality Assurance Workflow.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Verify the order.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Confirm the warranty.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Initiate a return and replacement process.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Ensure a quality check for the replacement product.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Workflow Initiation & Execution: The four workflow steps are executed:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Monitoring: As the replacement product is shipped, the user is notified
+    about the progress.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Workflow Adaptation: If there’s a delay or issue, the system adjusts the workflow,
+    notifying the user and offering solutions.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Output Evaluation: The GPT-Critic evaluates the entire resolution process,
+    ensuring that the complaint was addressed effectively, and all workflow steps
+    were adhered to.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Results Presentation: The customer is presented with a timeline of actions
+    taken, a tracking number for the replacement shipment, and an interface to give
+    feedback post-reception. They’re also offered a discount code for the inconvenience
+    in order to encourage future purchases.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s335a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern offers advanced enterprise integration due to the Orchestration
+    Agent’s capability to embed API-based functions in the entire workflow.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s336a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern enhances output quality by systematically grounding prompts with
+    context user input, knowledge, internal and external data, and prior GPT outputs.
+    The potential inclusion of multiple users provides an added layer of human discernment,
+    further refining the AI’s context-aware outputs. The GPT-Critic evaluates the
+    quality of AI-generated content, and its feedback is managed by the Orchestration
+    Agent to optimize output quality.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s337a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The computational performance of this pattern is intrinsically tied to the length
+    of the workflow. However, for most use cases, short to medium-length workflows
+    should suffice, balancing both efficiency and computational demands.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s338a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The dynamic capabilities and robust design of this pattern make it ideally
+    suited for a variety of applications. At its core, it is designed to manage two
+    primary kinds of workflows: static (scripted) and dynamic (adaptive).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Static workflows are the bedrock of routine operations, characterized by their
+    well-defined structure and predictable flow. Such workflows are typically automated
+    and follow pre-set scripts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Complex Content Creation:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Reports: Synthesizing data points into comprehensive reports, inclusive of
+    visual representations like charts and graphs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Newsletters: Periodically curating content from updates or relevant news, maintaining
+    a consistent layout.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Documentation: Generating structured documentation for various needs, ensuring
+    clarity for the target audience.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Information Collection:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Interviews: Utilizing templates and protocols to extract information from individuals
+    or groups systematically.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Interactive Reports: Gleaning and presenting data in interactive formats from
+    enterprise-specific systems or databases, ensuring data integrity and accuracy.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Websites: Automated search, reading, and summarization of content from relevant
+    websites.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Standard Workflows:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Requisitioning: Handling and automating standard requisition processes, from
+    request to approval.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Approval Cycles: Streamlining approval requests, reminders, and documentation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Inventory Management: Automating tasks related to stock checks, reorder levels,
+    and inventory valuation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'While this pattern effortlessly manages predictable operations, it also showcases
+    its adeptness in embracing more intricate, and adaptive challenges. Tasks that
+    come with incomplete specifications, require on-the-fly adjustments, or are dictated
+    by evolving user intents and unforeseen circumstances fall into this realm. Such
+    dynamic workflows demand a blend of planning, execution, re-evaluation, and adaptation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Task-oriented Dialogues: Adapting to evolving user intents, these agents design,
+    modify, and deploy dialogue plans, resulting in multifaceted interactions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Comprehensive Research: Segmenting a broad research objective into sub-goals
+    and conceptualizing and executing detailed strategies for each using diverse resources.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Exploratory Data Analysis: Agents develop an explorative strategy based on
+    an insight target, iterating over diverse data sources and tools.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Automated Troubleshooting: Upon understanding users’ issues, the system crafts
+    a diagnostic plan, which may include querying enterprise-specific tools, providing
+    guided solutions, or leveraging GPT for innovative remedies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Personalized Learning Paths: Customizing educational trajectories according
+    to students’ ambitions, meticulously choosing, sequencing, and recalibrating content
+    based on their progression and feedback.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[D3 Collaboration Agent](toc.xhtml#s339a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The essence of this pattern revolves around the Collaboration Agent, serving
+    as a dynamic conduit connecting users with a GPT model within an adaptive collaborative
+    space. By leveraging the Collaboration Repository, this design ensures that GPT’s
+    engagements are rooted in context and can be archived, revisited, or refined (see
+    *[Figure 4.12](#fig4_12))*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.12.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.12](#fig4_12):** Collaboration agent'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s340a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Through a chatbot or web UI, users can actively join any active collaboration,
+    contribute inputs, and collectively determine the trajectory and outcomes based
+    on the evolving content.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s341a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'It incorporates the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Enterprise Applications and Databases: These are tools and data sources used
+    during collaboration.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Collaboration Agent: This agent interacts with the Collaboration Repository
+    to retrieve or archive master prompts[⁸](#ftn8a), collaboration histories, summaries,
+    and results.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Collaboration Repository: A crucial storage that preserves master prompts,
+    in-depth collaboration histories, concise collaboration summaries, and both intermediate
+    and final results.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s342a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'This layer incorporates:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'GPT as Response Generator: Entrusted with delivering responses that are contextually
+    relevant.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Knowledge Base: Short-term and long-term memory like in the previous D2 pattern.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'GPT-Critic: A second GPT model ensuring that the outputs of the first GPT model
+    align with the desired quality standards.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s343a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: A user opts to kickstart or partake in an ongoing collaboration.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If beginning a new collaboration, the Collaboration Agent fetches the master
+    prompt corresponding to the chosen scenario from the Collaboration Repository.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For ongoing collaborations, the most recent collaboration history sets the stage.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Users consistently add prompts. After each user input, the Collaboration Agent
+    appends both the user’s prompt and the resultant GPT output to the active collaboration
+    history.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The GPT-Critic oversees and ensures the caliber of GPT’s responses.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: On concluding a collaboration, its summaries and results find a home within
+    the Collaboration Repository.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow Example](toc.xhtml#s344a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Imagine a car rental company that wants to evolve its vehicle maintenance strategy.
+    Collaborating with multiple stakeholders (technicians, fleet managers, customer
+    service reps, and even customers), they aim to gather insights, experiences, and
+    suggestions in an ongoing discussion using the Collaboration Agent.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Your task is: Moderate a collaborative discussion about improving vehicle maintenance
+    processes, taking into account diverse viewpoints, historical discussions, and
+    suggestions.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is an example workflow matching the pattern workflow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Initiation: A fleet manager decides to start a collaborative discussion titled,
+    “Enhancing our Vehicle Maintenance Strategy.”'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Collaboration Kickstart:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Collaboration Agent retrieves a generic master prompt from the Collaboration
+    Repository about car maintenance.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The prompt might read: “Discussion on best practices, challenges, and improvements
+    for car maintenance at our company.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Engagement in Ongoing Collaborations:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: As technicians, customer service representatives, and other stakeholders join,
+    they can view the ongoing discussion and contribute.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'For instance, a technician may add: “The routine checks are often superficial.
+    We need more in-depth diagnostics.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Immediately, a GPT model, drawing from the Knowledge Base, might suggest: “Consider
+    implementing a detailed bi-monthly diagnostic paired with routine checks. This
+    can identify underlying issues.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Each of these prompts and responses are appended to the active collaboration
+    history by the Collaboration Agent.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'User Contribution:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'A customer service representative could chime in: “Customers often report air
+    conditioning issues in the summer. Maybe we can have preemptive checks before
+    peak season?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'A GPT model might respond: “An annual AC service before summer can help. Additionally,
+    consider educating customers on optimal AC usage during the initial rental walkthrough.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Quality Oversight by GPT-Critic:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Suppose a customer contributes: “I once rented a car that broke down midway.
+    What’s the strategy for emergency situations?”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If a GPT model initially provides a vague answer like, “Cars should be maintained,”
+    the GPT-Critic might flag this as low-quality, prompting the model to produce
+    a more comprehensive response.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Collaboration Conclusion & Archival:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: After a week, the fleet manager decides to conclude the discussion.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The Collaboration Agent automatically generates a summary: “Key Takeaways from
+    the Discussion on Enhancing our Vehicle Maintenance Strategy.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: It includes points like implementing bi-monthly diagnostics, annual AC services
+    before summer, and possibly a strategy for emergency breakdowns.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: This summary and the entire discussion are archived in the Collaboration Repository
+    for future reference.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s345a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern offers the same level of enterprise integration as the **Grounded
+    Conversation** pattern (A2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s346a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Benefiting from the Collaboration Repository, the GPT model operates within
+    a rich context, which has inputs from multiple users with different perspectives
+    and the respective GPT outputs. The role of the GPT-Critic also helps in refining
+    the quality of outputs through checks and validations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s347a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The efficiency of this pattern is dependent on the depth and breadth of the
+    collaborative content. Yet, the handling of tasks by the Collaboration Agent,
+    leveraging the Collaboration Repository, ensures a fluid progression and uses
+    compute resources only after new collaborative input was received.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s348a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Ideally tailored for complex collaborative endeavors across varied contexts,
+    prominent applications encompass:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sequential Human-centric Workflows: In product development, this involves coordinating
+    teams from ideation to production. The collaboration agent ensures alignment at
+    each phase based on prior inputs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Projects: In event planning, the agent helps establish timelines, delegate
+    tasks, and collect logistical inputs. It suggests refinements based on ongoing
+    updates.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Sales Engagements: For market entry strategies, the agent consolidates market
+    research, competitor analysis, and client profiling.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Vendor Evaluations: When sourcing suppliers, the agent stores vendor profiles
+    and past interactions. Evaluators’ criteria, like cost or delivery timelines,
+    are matched against stored data for informed decisions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Innovation Frameworks: In tech innovation, stakeholders brainstorm on the platform.
+    The agent provides contextual feedback, pulling from past sessions or external
+    trends, assisting in crafting a coherent and creative strategy.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[D4 Multi-Agent Cooperation](toc.xhtml#s349a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The essence of this pattern is rooted in the notion of distributed intelligence.
+    By decentralizing tasks among a group of specialized agents [5], this pattern
+    creates a more streamlined and adaptive way to cater to complex user goals. This
+    dynamic ensemble of agents collaboratively harnesses various GPT models, ensuring
+    each task is addressed by the most suitable expert (see *[Figure 4.13](#fig4_13)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-4.13.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 4.13](#fig4_13):** Multi-agent cooperation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User Experience Layer](toc.xhtml#s350a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Mirroring the two previous patterns, this layer offers various interaction possibilities.
+    Through chatbot interfaces or web UIs, users can articulate intricate goals, which
+    then become the responsibility of a cooperative team of agents to accomplish and
+    may require further interactions with multiple users.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Application Layer](toc.xhtml#s351a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The components present here include::'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Agent Team: A cluster of specialized agents tasked with executing distinct
+    roles in achieving user goals. The team is composed of:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Planning Agent: Decomposes user-specified goals into actionable tasks and identifies
+    the ideal expert agent profile suited for each task.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Orchestration Agent: Initiates the expert agent creation process based on the
+    agent profile, starts the task sequence, activates the first expert agent, and
+    progressively moves through the tasks. This agent also supervises communication
+    between expert agents, ensuring seamless interactions with users, knowledge bases,
+    and other enterprise tools.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Expert Agents: Crafted dynamically, these agents embody the precise skills
+    required to execute specific tasks in the process to achieve the overall user
+    goal.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Enterprise Applications and Databases: These are the same as in the D2 pattern.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Information Retrieval Tools: These are also the same as in the D2 pattern.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Also similar to the D2 pattern, it’s worth noting that there are two distinct
+    types of Agent Teams within this architecture. While program-based agent teams
+    are illustrated in the diagram, there exists an alternative construct - prompt-based
+    agent teams. The intricacies and application of prompt-based agent teams will
+    be explored in *[Chapter 5, Advanced GPT Prompt Engineering Techniques](c05.xhtml)*,
+    and in [appendix 1](appa.xhtml) in the respective sections dedicated to multi-agent
+    prompts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[AI Layer](toc.xhtml#s352a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The following elements are integral to this layer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Knowledge Base: Akin to D2 storing both transient and persistent information.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'GPT model instantiated in different roles:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'GPT as Planner: Aligns with the Planning Agent, translating user goals into
+    a series of tasks.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'GPT as Orchestrator: Powers the Orchestration Agent, managing the sequencing
+    and delegation of tasks among expert agents.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'GPT as Expert: Empowers each Expert Agent, offering domain-specific knowledge
+    and expertise to execute its designated task.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Pattern Workflow](toc.xhtml#s353a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Users articulate a detailed goal they wish to attain.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Planning Agent processes this goal, translating it into a sequence of executable
+    tasks and identifying the ideal expert agent profile for each.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For each task, the Orchestration Agent creates the respective Expert Agent.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: With the tasks sequenced, the Orchestration Agent activates the first Expert
+    Agent and delegates the corresponding task.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The Expert Agent executes the task assigned to it.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Upon task completion, the Orchestration Agent moves to the subsequent task,
+    activating the next Expert Agent in line.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: This sequence is diligently followed until all tasks are addressed.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Throughout this process, the Orchestration Agent ensures smooth communication
+    among Expert Agents, as well as between them and other involved entities, such
+    as users, knowledge bases or databases.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Enterprise Integration](toc.xhtml#s354a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This pattern offers the same advanced enterprise integration as in the D2 pattern
+    as all agents have API-based function access to execute their tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output Quality](toc.xhtml#s355a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The output quality in D4 closely mirrors that of D2 when the final expert agent
+    evaluates the performance of all preceding expert agents. While there’s potential
+    to enhance the output quality by implementing quality assessments for each agent
+    involved (including the planning, orchestration, and expert agents), it’s crucial
+    to note that this enhancement might come at the cost of diminished performance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Performance](toc.xhtml#s356a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Performance is significantly influenced by the number of agents involved and
+    the extent of interactions they maintain among themselves and with users and enterprise
+    applications. As the number of agents increases, or as interactions become more
+    frequent and complex, there can be a corresponding impact on the system’s responsiveness
+    and efficiency.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Use Cases](toc.xhtml#s357a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Building on the foundational capabilities of the D2 pattern and enhancing them
+    with the sophistication of multi-agent cooperation, this D4 pattern is adeptly
+    equipped to handle a diverse range of applications, as demonstrated in the following
+    use cases:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Comprehensive Research:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Planning Agent: Understands the overarching research goal and segments it into
+    targeted research areas or questions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Orchestration Agent: Coordinates between expert agents, assigning them specific
+    research domains or tasks and ensuring seamless integration of their findings.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Expert Agents: Delve into their allocated domains, mining data, referencing
+    scholarly articles, and cross-referencing findings. Each might specialize in various
+    research methodologies or sources.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Exploratory Data Analysis:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Planning Agent: Defines the objectives of the data exploration based on desired
+    insights and outcomes.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Orchestration Agent: Organizes the flow of data, ensuring it moves between
+    the expert agents in an orderly manner and integrates their analyses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Expert Agents: Each agent could focus on specific datasets or analytical techniques.
+    For example, one agent might handle statistical analyses, while another focuses
+    on visualization or predictive modeling.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Automated Troubleshooting:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Planning Agent: Recognizes the reported problem and defines the diagnostic
+    steps.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Orchestration Agent: Manages the troubleshooting process, ensuring each step
+    is executed, gathering required data, and providing feedback.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Expert Agents: Specialize in different aspects of the problem. One might handle
+    software-related issues, another hardware diagnostics, and another could focus
+    on user experience or interface issues.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Personalized Learning Paths:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Planning Agent: Assesses the learner’s current knowledge level, preferences,
+    and long-term educational goals.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Orchestration Agent: Organizes the curriculum, schedules lessons, and ensures
+    the flow of content aligns with the learner’s progression.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Expert Agents: Specialize in different subjects or learning methodologies.
+    For instance, one could handle mathematics while another deals with literature.
+    Others might focus on experiential learning, multimedia content, or hands-on projects.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Software Development Assistance:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Planning Agent: Interprets requirements and breaks them down into features
+    or tasks.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Orchestration Agent: Manages dependencies and workflow.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Expert Agents: Suggest code snippets, run tests, debug issues, and even help
+    with deployment strategies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Consulting Tasks:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Planning Agent: Identifies client needs and breaks them down into actionable
+    insights or tasks.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Orchestration Agent: Schedules meetings, manages timelines, and ensures deliverables
+    are met.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Expert Agents: Dive into specifics, whether it’s market research, financial
+    modeling, or strategic planning, leveraging the best tools and resources for each
+    task.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Recommendations for Architecture Patterns](toc.xhtml#s358a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Having delved deep into the nuances and intricacies of various GPT-driven architecture
+    patterns, we are poised to present a set of curated recommendations. These insights,
+    drawn from the comprehensive descriptions and assessments, are tailored to guide
+    you in choosing the most fitting architecture for your specific needs:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Advanced Conversational Experience**: **Grounded Conversation** (A2) integrates
+    with enterprise systems to add contextual depth. **Mixed-Initiative Conversation**
+    (A3) fosters two-way interactivity, guiding user actions and queries, while **Quality-controlled
+    Conversation** (A4) ensures that all responses are checked by a second GPT-model
+    before showing them to the user.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Tool-driven Conversations**: **Tool-integrated Conversation** (B1) leverages
+    GPT models to interface seamlessly with external applications and databases via
+    APIs. **Chain-of-Thought-guided Conversation using Tools** (B2) enriches this
+    with reasoning demonstrations. Meanwhile, **Advanced Tool-integrated Conversation**
+    (B3) optimizes interactions with enterprise tools using dynamic task planning
+    based on the changing dialog context.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Specialized Conversations**: **Conversation using Fine-tuned Model** (C1)
+    employs a refined language model to generate precise responses, ideal for complex
+    domains and high-stakes environments. Meanwhile, **Conversation using Two Models**
+    (C2) combines the specificity of a fine-tuned model with the breadth of a pre-trained
+    GPT model, ensuring in-depth user interactions embedded into diverse conversational
+    scenarios.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Advanced Automation**: For intricate automation needs, patterns **Batch Automation
+    Agent** (D1), **Orchestration Agent** (D2), and **Multi-Agent Cooperation** (D4)
+    stand out. D1 emphasizes batched data processing, while D2 leverages sequential
+    orchestration for seamless interactions. D4 is especially suitable for environments
+    that demand high degrees of dynamic adaptability and task-specific expertise.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Assisted Collaboration**: For in-depth collaborative environments, patterns
+    **Collaboration Agent** (D3) and **Multi-Agent Cooperation** (D4) shine distinctly.
+    D3 excels in situations emphasizing continuous human-centric interactions, with
+    GPT managing and enhancing the entire collaboration process. On the other hand,
+    the D4 emphasizes scenarios where humans and task-specific agents work in unison,
+    combining their strengths for optimal outcomes'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Our exploration into GPT-driven architecture patterns has unveiled a diverse
+    array of solutions, each with its intrinsic merits. The right choice for your
+    organization or project hinges on your specific demands and limitations. Use this
+    analysis as a reference, guiding you to the architecture patterns that most align
+    with your objectives.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](toc.xhtml#s359a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: As we navigate through the varied landscape of GPT-driven architecture patterns,
+    it becomes evident how instrumental these systems can be in improving user interactions,
+    enhancing collaborative scenarios, and advancing automation processes. By providing
+    a diverse spectrum of patterns, each tailored to specific use cases and requirements,
+    we can unlock the full potential of AI capabilities to develop future conversational
+    systems and workflows that are efficient, adaptive, collaborative, and provide
+    rich user experience.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As we have established the versatility and adaptability of GPT through various
+    architectural patterns, it’s now time to delve deeper into the world of advanced
+    GPT prompt engineering techniques. These techniques will offer a profound understanding
+    on how to guide a GPT model for desired outcomes, especially in complex enterprise
+    scenarios. Let us now turn our focus to these structured prompting methods to
+    further unlock the extensive potential of GPT in advanced AI applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key Points](toc.xhtml#s360a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Versatility of GPT-Driven Architectures: Architecture patterns are versatile,
+    tailoring the deployment of GPT models to various conversational contexts, tool
+    integrations, and automation scenarios, proving them essential in enhancing user
+    engagement and streamlining information retrieval.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Layered System Approach: The use of a layered system approach in architecture
+    patterns ensures decoupling and maintainability, leading to more sustainable system
+    life-cycles.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Quality and Performance Trade-offs: Each pattern offers a unique blend of output
+    quality, performance, and enterprise integration, presenting a spectrum of choices
+    to meet varied requirements and use-cases.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Enterprise Integration: Seamless integration with enterprise applications and
+    databases, as seen in Tool-integrated Conversation and other patterns, can significantly
+    extend the capabilities of GPT-driven systems.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Precision and Breadth in Responses: Balancing specific knowledge with a broader
+    understanding, some architectures demonstrate the importance of model fine-tuning
+    in delivering accurate and comprehensive responses.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Advanced Automation: GPT-integrated architectures also demonstrate versatility
+    in various automation scenarios: batch processing of content, information workflow
+    orchestration, and project execution with multi-agent systems.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Collaborative Excellence: GPT models can be utilized to foster adaptive engagements
+    in collaborative settings, enabling unique blends of human-centric interactions
+    and multi-agent cooperation for jointly achieving complex goals.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: ____________________
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[¹](#ftn1) An agent is a software component designed to perform specific tasks,
+    often autonomously and in interaction with other agents, systems, or users.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[²](#ftn2) Prompt Templates are largely prefilled Prompt Patterns, which are
+    used to control GPT models and are introduced in *[Chapter 5, Advanced GPT Prompt
+    Engineering Techniques](c05.xhtml)*. Templates can be selected based on rules,
+    machine-learning models or via a selection prompt to a GPT model.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[³](#ftn3) A document database, also known as a document-oriented database
+    or a document store, is a type of non-relational database that is designed to
+    store, retrieve, and manage semi-structured information, for example text with
+    metadata, typically in standardized formats like JSON (Java Script Object Notation)
+    or XML (extensible markup language).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁴](#ftn4) A graph database, commonly known as a graph-oriented database or
+    graph engine, is also a form of non-relational database to capture, process, and
+    administer data modeled as networks, emphasizing nodes, edges, and attributes,
+    thereby enabling intricate interconnections and dependencies to be mapped, accessed,
+    and analyzed.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁵](#ftn5) A vector database is a specialized database system optimized for
+    storing and querying high-dimensional vector data, often representing texts like
+    documents, queries or interest profiles, and is commonly used in AI applications
+    for tasks like similarity searches or recommendations.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁶](#ftn6) In the context of GPT models like ChatGPT, a “Chain of Thought (CoT)”
+    refers to the model’s ability to maintain a coherent line of reasoning over a
+    sequence of sentences or exchanges. A CoT demonstration is an example of such
+    a reasoning chain.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁷](#ftn7) An implementation of this architecture pattern is exemplified in
+    [chapter 9](c09.xhtml), using the Java programming language.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁸](#ftn8) A master prompt defines the collaboration playbook for a given collaboration
+    scenario. Master prompts are covered in detail in *[chapter 6, Designing Prompt-based
+    Intelligent Assistants](c06.xhtml).*'
+  prefs: []
+  type: TYPE_NORMAL

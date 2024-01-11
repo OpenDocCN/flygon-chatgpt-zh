@@ -1,0 +1,2484 @@
+- en: '[CHAPTER 1](toc.xhtml#c01)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[From GPT-1 to ChatGPT-4: The Evolution Towards Generative AI](toc.xhtml#c01)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](toc.xhtml#s1a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this chapter, we trace the development of Generative Pre-trained Transformers
+    (GPT), from the beginnings of GPT-1 and GPT-2, through to more recent versions
+    such as ChatGPT and GPT-4.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We start with a look at the early GPT models in 2018/19, laying the foundation
+    for GPT-3, which generated human-like text for the first time in 2020, thanks
+    to its size and capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We then discuss InstructGPT, unveiled in early 2022\. This variant of GPT-3,
+    fine-tuned on large instruction datasets, broadened the execution of various text-based
+    tasks in the GPT domain. Then we proceed with ChatGPT, a breakthrough in Conversational
+    AI that immediately became the most successful AI application when launched in
+    November 2022.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Our attention then shifts to GPT-4 and its chat counterpart, ChatGPT-4\. This
+    model showcases a degree of Artificial General Intelligence (AGI) capabilities
+    like Learning and Adaptation, Advanced Reasoning, and Creativity and Innovation.
+    In March 2022, alongside the release of GPT-4, a suite of initial plugins was
+    introduced to enhance its functionalities. Over the subsequent months, new plugins
+    were added, broadening its range of Generative AI capabilities. By June of the
+    same year, the model’s potential was further expanded with the access to external
+    applications (tools). The subsequent integration of these models into enterprise
+    software began in the second half of 2023, underscoring their transformative impact
+    on business applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We wrap up this chapter by first delving into ChatGPT Enterprise, launched in
+    August 2023, a tailored offering by OpenAI designed to address the specific requirements
+    and concerns of the corporate sector. Subsequently, we examine the introduction
+    of native voice and image processing capabilities to ChatGPT in September 2023,
+    a significant advancement that enriches user interactions and underscores its
+    versatility as a comprehensive Generative AI tool. Finally, we highlight the notable
+    progress achieved by the launch of GPT-4 Turbo in November 2023, as well as the
+    emergence of AI-assistants and customizable GPTs, which are reshaping the landscape
+    of AI applications and enterprise solutions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*[Figure 1.1](#fig1_1)* offers a succinct overview of the journey of GPT models
+    thus far:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/figure-1.1-new-update.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 1.1](#fig1_1):** Evolution of GPT models'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](toc.xhtml#s2a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In this chapter, the following topics will be covered:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Early Generations of GPT
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: GPT-3
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: InstructGPT
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: GPT-4
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT-4 Plugins
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Access to External Tools
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Integration into Enterprise Software
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT Enterprise
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT Native Multi-modality
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: GPT-4 Turbo, Assistants and GPTs
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Early Generations of GPT: Charting the Course of AI Language Processing](toc.xhtml#s3a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Language Models are a groundbreaking innovation in Artificial Intelligence (AI).
+    They are AI systems designed to understand, generate, and interact with human
+    language, and their prowess is rooted in a special deep learning[¹](#ftn1a) architecture
+    known as Transformers, which were introduced in 2017\. Transformers employ a unique
+    attention mechanism, enabling them to discern the relevance of words within an
+    input sentence when generating an output sentence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Leveraging this pioneering approach, OpenAI, initially established as a non-profit
+    AI research laboratory[²](#ftn2a) in the US, launched the first Generative Pre-trained
+    Transformer (GPT-1) in 2018 with 117 million parameters[³](#ftn3a). The GPT-1
+    model employed a simplified left-to-right version of the Transformer architecture,
+    which enabled it to generate the next word in a text sequence based on the context
+    of the preceding words.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Throughout its training process, the model worked to predict the subsequent
+    word in a sentence, given a specific lookback window of previous words and their
+    respective degrees of importance for the new word. It compared this prediction
+    with the actual next word in reference texts from its dataset of 7000 books (BooksCorpus),
+    making adjustments to its internal mechanisms whenever discrepancies were identified.
+    When the predictions were accurate, no adjustments were needed. BooksCorpus was
+    chosen partly because the long passages of continuous text helped the model learn
+    to handle long-range dependencies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GPT-1 achieved notable improvements over previous models in tasks such as text
+    classification, natural language inference[⁴](#ftn4a), question answering, commonsense
+    reasoning, and semantic similarity[⁵](#ftn5a).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Following the success of GPT-1, OpenAI built on its accomplishments by introducing
+    GPT-2 in 2019\. This second iteration demonstrated a significant upscale in the
+    number of parameters, soaring from GPT-1’s 117 million to 1.5 billion. Additionally,
+    GPT-2 utilized a larger training dataset of 8 million web pages or 40GB of text,
+    which was over ten times larger than that of GPT-1.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GPT-2 introduced significant improvements over GPT-1, particularly in zero-shot
+    learning[⁶](#ftn6a) and text generation. The model can create high-quality synthetic
+    text based on any given input, adapting to the style and content seamlessly, allowing
+    for coherent and realistic text continuations on user-chosen topics. GPT-2 also
+    outperforms GPT-1 in other text generation tasks like translation and summarization,
+    as well as in text understanding tasks like question answering and reading comprehension.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[GPT-3: Pioneering Advanced Natural Language Processing in AI](toc.xhtml#s4a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: GPT-3, the third iteration of the Generative Pre-trained Transformer, was launched
+    by OpenAI in 2020 and showcased a further enormous increase in model size, featuring
+    175 billion parameters in its most extensive variant. This positioned it as the
+    largest language model of its time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is important to note that GPT-3 was trained on 300 billion tokens[⁷](#ftn7a)
+    or 570GB of text, from various datasets including CommonCrawl with approximately
+    6 billion crawled web documents, WebText2 with approximately 45 million web pages,
+    Wikipedia, and a large number of public domain books. The significant scale-up
+    resulted in capturing more intricate linguistic patterns and granted GPT-3 superior
+    text generation and understanding capabilities, rendering GPT-3 an evolutionary
+    leap beyond GPT-2.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GPT-3 distinguished itself with its advanced few-shot[⁸](#ftn8a) and one-shot[⁹](#ftn9a)
+    learning capabilities. Thus, GPT-3 was able to perform well on new tasks based
+    on limited examples, with only a handful, or even just one, input-output example
+    without the need for explicit re-training or fine-tuning on large domain-specific
+    datasets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Owing to its cutting-edge capabilities, GPT-3 could tackle a more extensive
+    array of tasks than GPT-2, from drafting emails and writing code to creating poetry
+    and answering nuanced questions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another critical area of improvement was GPT-3’s ability to generate more coherent
+    and contextually relevant text. It reduced the likelihood of producing nonsensical
+    or irrelevant responses, a noticeable improvement over GPT-2, which enhanced the
+    usability and overall user experience.
+  prefs: []
+  type: TYPE_NORMAL
+- en: OpenAI further expanded the impact of GPT-3 by introducing an Application Programming
+    Interface (API), making it more accessible to developers to integrate the model
+    into their applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[InstructGPT: A Stepping Stone toward Task-oriented AI](toc.xhtml#s5a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: InstructGPT, a fine-tuned version of GPT-3, marked a significant evolution in
+    the landscape of large language models as a result of OpenAI’s research. Launched
+    in early 2022, it received special recognition for its proficiency in interpreting
+    user instructions and largely avoiding unwanted content.
+  prefs: []
+  type: TYPE_NORMAL
+- en: InstructGPT’s training aimed to closely align the language model with both the
+    explicit and implicit intentions of users. The objective was to develop a model
+    that could effectively assist in accomplishing user tasks, while also being trained
+    to adhere to principles of veracity and safety, refraining from spreading false
+    or harmful content.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The model was trained employing reinforcement learning from human feedback
+    (RLHF). This comprehensive process consisted of five stages:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Data Labeling: The first stage involved recruiting a team of contractors, chosen
+    based on their performance in a screening test, to label the data.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Initial Supervised Learning: A large instruction-response dataset was created,
+    partially manually by the contractors, partially automatically by using the GPT-3
+    API and reviewing its results.. Then, the existing GPT-3 models were fine-tuned
+    using this dataset.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Creation of a Comparison Dataset: A separate dataset was assembled, where the
+    contractors ranked the responses of the previously trained model to a large set
+    of instructions.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Training the Preference Model: The comparison dataset was then used to train
+    a preference model, aiming to ‘guess’, which model answers the contractors liked
+    best.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Fine-Tuning the Supervised Model from Stage 2: With the preference model serving
+    as a reward function, the initial supervised model was further fine-tuned to ‘maximize
+    its reward’, meaning its likelihood to produce preferable answers.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The outcome was models more aligned with users’ intents and less likely to produce
+    unexpected or harmful outputs, marking a significant milestone in the evolution
+    of large language models. Its emphasis on improved instruction-following, task-specific
+    training, relevance of responses, and safety set a new benchmark.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT: A Revolution in Conversational AI](toc.xhtml#s6a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: ChatGPT, the succeeding generation of the Generative Pre-trained Transformer
+    models, represents a breakthrough in Conversational AI. Introduced in November
+    2022, it marks a substantial leap in AI’s capacity to engage in human-like dialogue
+    and interactive text generation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is designed to understand context, offer valuable insights, and carry out
+    detailed instructions embedded in dialogues, significantly enhancing the quality
+    of conversational experiences of traditional chatbots. Moreover, further emphasis
+    on safety reduces the potential for the generation of harmful or biased content.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To truly appreciate the evolution of ChatGPT, it’s essential to delve into
+    its training journey, which is based on the insights gained from the training
+    of its predecessor, InstructGPT. In the subsequent breakdown, we’ll explore four
+    pivotal steps in the development of ChatGPT. Each step will introduce an intermediate
+    or final model, detailing its:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Origin**: Understanding the lineage and roots of the model.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Data**: The data sources that informed and shaped the model’s knowledge.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Purpose**: The primary objectives and goals set for the model.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Method**: The techniques and methodologies employed to train the
+    model.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Here are the four steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**1\. Trained Model:** **code-davinci-002**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Origin**: GPT-3 davinci (175B parameters).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Data**: Billions of lines of public code sourced from GitHub.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Purpose**: Primarily focused on code-completion tasks, adept at understanding
+    and generating code snippets.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Method**: Self-supervised next word prediction.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**2\. Trained Model:** **text-davinci-002**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Origin**: code-davinci-002.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Data**: Combination of human-written demonstrations and model samples
+    with best ratings by human labelers on overall quality.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Purpose**: Learn to follow a large variety of instructions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Method**: Supervised instruction fine-tuning.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**3\. Trained Model:** **text-davinci-003**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Origin**: text-davinci-002.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Data**: Comparisons from humans.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Purpose**: Aim to produce even more accurate and human-like text during instruction
+    following.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Method**: Reinforcement Learning from Human Feedback (RLHF).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**4\. Trained Model:** **ChatGPT (gpt-3.5-turbo-0301)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Origin**: text-davinci-003.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Data**: Human AI trainers provided conversations in which they played
+    both sides — the user and an AI assistant, the InstructGPT dataset (transformed
+    into a dialogue format), and comparison data consisting of two or more model responses
+    ranked by quality by humans.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Purpose**: Specifically optimized for chat-based interactions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Training Method**: Reinforcement Learning from Human Feedback (RLHF)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Based on this training process, it can also be assumed that ChatGPT has the
+    same number of parameters, 175 billion, as its progenitor model, GPT-3.
+  prefs: []
+  type: TYPE_NORMAL
+- en: OpenAI extended the reach of ChatGPT by introducing two distinct API versions
+    tailored to cater to a variety of user requirements and interaction scenarios.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Firstly, in March 2023, GPT-3.5 Turbo was launched. This version emphasizes
+    enhanced steerability, allowing developers to effectively guide the model’s behavior
+    through system messages and define responsible usage parameters.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then, a subsequent version, GPT-3.5 Turbo-16k, was unveiled in June 2023\. As
+    an upgrade, it can handle up to 12000 words and provides a four times larger data
+    window for input and output than the standard version. This enhancement is particularly
+    useful in scenarios that require extended dialogues or the use of comprehensive
+    reference documents, as it enables the model to consider a larger quantity of
+    information when generating its responses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT has a widespread acceptance and impact on society. Within a mere two
+    months from its inception, ChatGPT garnered 100 million active users globally
+    - a milestone achieved at an unprecedented pace with 1 million users joining within
+    the first week [1].
+  prefs: []
+  type: TYPE_NORMAL
+- en: The spread of ChatGPT users spans 161 countries, making it a truly global phenomenon,
+    with the United States and India as its largest user bases. The model supports
+    and understands a large range of 95 natural languages besides English, broadening
+    its accessibility to an international audience. However, there are seven nations,
+    including China and Russia, where ChatGPT is not accessible.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In addition to natural languages, ChatGPT is capable of understanding and coding
+    in multiple programming languages, such as Python, JavaScript, C++, Java, and
+    SQL, which boosts its utility and appeal to developers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The platform’s users reveal a broad demographic spectrum, with approximately
+    40% of US adults aware of the platform; 64.53% of users fall into the young adult
+    category of 18-34 years, and the gender distribution is quite balanced, with 59.67%
+    of the users being male and 40.33% female. As for the traffic, over 88% is direct,
+    while a modest 4.22% is directed from social media platforms.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Looking forward, ChatGPT is forecasted to generate a revenue of $200 million
+    by the end of 2023 and is projected to reach $1 billion by 2024\. Its influence
+    is significantly observable in the job market, with around 80% of the US workforce
+    experiencing alterations to at least 10% of their work tasks due to GPT models,
+    and around 19% may see at least 50% of their tasks impacted. This influence spans
+    all wage levels, not just those in industries with higher recent productivity
+    growth. As these GPT models exhibit characteristics of general-purpose technologies,
+    they may have notable economic, social, and policy implications [2].
+  prefs: []
+  type: TYPE_NORMAL
+- en: In conclusion, ChatGPT’s impact extends beyond reshaping digital interaction.
+    Its extraordinary global adoption, high engagement levels, and profound influence
+    on a range of tasks underscore its success and potential for transforming enterprise
+    applications in the future.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[GPT-4: Navigating the Initial Pathway of Artificial General Intelligence](toc.xhtml#s7a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: GPT-4, the most advanced transformer model to date, represents a further significant
+    leap forward in AI capabilities. Although specific details have not been publicly
+    released, it is estimated that GPT-4 operates with approximately 1.8 trillion
+    parameters, ten times larger than GPT-3, pushing the boundaries of what AI models
+    can achieve. It uses a Mixture of Expert[^(10)](#ftn10a) (MoE) model with 16 experts,
+    each having about 111 billion parameters and was trained on approximately 13 trillion
+    tokens from various sources, including internet data, books, and research papers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Released initially as a chatbot version, known as ChatGPT Plus or ChatGPT-4,
+    in March 2023, it quickly gained recognition for its impressive ability to understand
+    and generate human-like text. Following this success, an API version was introduced
+    in July 2023, enhancing its range of tasks and applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: While its basic version, GPT-4-8k, is able to process up to 6,000 words, a more
+    advanced version, GPT-4-32k, is capable of working with as many as 25,000 words
+    or the equivalent of up to 50 pages.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GPT-4 demonstrates substantial progress in reducing hallucinations — instances
+    of generating inaccurate or irrelevant information, enhancing the quality of interaction
+    and user trust in the model. On the safety front, GPT-4 offers improved handling
+    and filtering of inappropriate inputs, ensuring safer, more responsible interactions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GPT-4 represents a substantial advancement in the pursuit of Artificial General
+    Intelligence (AGI) and moves beyond providing nuanced and precise responses in
+    complex conversational scenarios. It showcases competencies that edge closer to
+    human-like cognitive capabilities. In this comprehensive evaluation, we cover
+    GPT-4’s performance across 10 key AGI capabilities. These include Learning & Adaptation,
+    Transfer Learning, Advanced Reasoning, Creativity and Innovation, Natural Language
+    Understanding and Generation, Perception and Understanding, Intuitive Understanding
+    of Emotions, Autonomous Goal Setting and Planning, Collaboration and Cooperation,
+    and Ethics and Moral Reasoning (see *[Figure 1.2](#fig1_2)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.2.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 1.2](#fig1_2):** AGI-Capability Overview'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For each of these 10 capabilities, we will:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Define the capability within the context of AGI.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Discuss its importance within the enterprise context.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Evaluate GPT-4’s fulfillment of this capability.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Provide examples of GPT-4’s utilization of the capability in enterprise settings.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Explore GPT-4’s limitations or challenges when applying this capability.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Now, let us embark on this exploratory journey, beginning with the first AGI
+    capability:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Learning and Adaptation**![](images/Figure-1.3.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.3](#fig1_3):** Learning and Adaptation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: AGI is capable of learning from various sources of information
+    and experiences, adapting its knowledge and skills to new and changing environments.
+    This encompasses the ability to assimilate new information, evolve responses based
+    on feedback, and continuously update understanding over time, reflecting the dynamic
+    nature of businesses and markets.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: The ability to learn and adapt is a cornerstone of successful
+    business operations in a rapidly changing world. It facilitates the continual
+    improvement of processes, strategies, and interactions, enabling organizations
+    to stay competitive, innovative, and responsive to emerging trends and challenges.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: GPT-4 displays this AGI capability with the ability to acquire
+    knowledge from demonstrations, external sources, and user feedback, and to apply
+    this learning in future interactions. It is able to understand the context of
+    a conversation based on preceding text and adjust its responses to match the tone
+    or style of user inputs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Examples**: GPT-4 can dynamically address business queries by synthesizing
+    knowledge from a range of sources, such as offering insights on drug advancements
+    to pharmaceutical companies or regulatory compliance strategies to finance teams.
+    It adapts its suggestions based on specific industry needs, like recommending
+    e-commerce practices for certain demographics or devising remote work strategies
+    for HR departments. By analyzing both historical data and contemporary trends,
+    GPT-4 can assist firms in navigating disruptions, whether they’re related to supply
+    chain challenges, new market demographics, or industry shifts like the emergence
+    of electric vehicles.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: Despite these capabilities, GPT-4 can face challenges in learning
+    concepts that deviate significantly from its pre-training knowledge base, such
+    as counter-commonsense learning or understanding novel business models. It may
+    also struggle to adapt its responses in real-time to fast-evolving situations
+    or topics outside its training data.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Transfer Learning**![](images/Figure-1.4.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.4](#fig1_4):** Transfer Learning'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: AGI has the ability to apply knowledge and skills gained in
+    one domain to another domain, without requiring extensive retraining. In an enterprise,
+    this takes on the form of cross-disciplinary integration, which involves leveraging
+    knowledge and insights from different disciplines to solve complex problems.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: Transfer learning enables AGI to adapt to diverse contexts
+    and contribute to discussions on a wide range of topics. In an enterprise setting,
+    cross-disciplinary integration allows for the development of comprehensive solutions
+    and fosters innovation by integrating diverse perspectives and functions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: As an AGI capability, GPT-4 can transfer knowledge between
+    diverse domains without requiring explicit retraining, enhancing its application
+    across multiple subjects. This allows GPT-4 to excel at providing cross-disciplinary
+    insights due to its extensive, multi-domain knowledge base.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Examples**: GPT-4 can use its knowledge about animals and their characteristics
+    in a conversation about ecology or apply an understanding of statistics in a discussion
+    on sports analytics. In a business context, it can propose a solution to a marketing
+    challenge using insights from psychology and data science, strategize a product
+    design by integrating principles of engineering, aesthetics, and user experience,
+    or provide a comprehensive approach to improving company culture using insights
+    from HR, organizational psychology, and communication studies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: Maintaining accuracy when transferring knowledge between domains
+    with little overlap can be challenging for GPT-4, leading to potential inaccuracies
+    or irrelevant information generation. Similarly, while it can integrate knowledge
+    across fields, the depth of understanding in specialized areas might be limited.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Advanced Reasoning**![](images/Figure-1.5.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.5](#fig1_5):** Advanced Reasoning'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: Advanced reasoning in the context of AGI refers to the ability
+    to exhibit and combine diverse forms of human- and machine-level thinking:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Abductive Reasoning** is the method of generating a hypothesis that best
+    explains specific observations, frequently used in situations such as root cause
+    analysis.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Deductive Reasoning** draws specific conclusions from general statements
+    or premises.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Inductive Reasoning** builds broad generalizations from specific observations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Analogical Reasoning** derives insights from one situation (the source) by
+    comparing its similarities with another, often unrelated, situation (the target).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Commonsense Reasoning** enables the understanding and inference of basic,
+    shared knowledge that an average human being would know implicitly.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Algorithmic Reasoning** involves “thinking like a computer” to solve problems,
+    leveraging well-defined, iterative processes and conditional logic to arrive at
+    a solution.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: In business, advanced reasoning is essential. It is a capability
+    we use whether we are working towards efficiency or meeting revenue goals. On
+    a day-to-day basis, it plays a role in communications with colleagues, customers
+    and suppliers, helping to build understanding and trust. In project management,
+    reasoning assists in navigating challenges, finding solutions, and coordinating
+    with stakeholders. Overall, whether it is in strategy or daily tasks, advanced
+    reasoning in all its forms is a constant presence in an enterprise context.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: GPT-4’s adeptness in various forms of reasoning stems from
+    its extensive training methods. The next-word prediction task it was trained on
+    honed its abductive reasoning, facilitating the creation of plausible hypotheses
+    from observed contexts. Its grounding in deductive reasoning comes from exposure
+    to logical texts, enhancing its capacity to formulate logically consistent deductions.
+    Its proficiency in inductive reasoning is a result of statistical pattern recognition
+    from a massive dataset, allowing it to generalize from specific observations.
+    Moreover, its analogical and commonsense reasoning has been nurtured through the
+    vast training data, which featured a plethora of comparisons, everyday scenarios,
+    and relational structures. Finally, its pronounced algorithmic reasoning is attributed
+    to its training on millions of code examples and is further improved by recent
+    plugins for end-user programming[^(11)](#ftn11a).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Examples**:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Abductive Reasoning**: Noticing a sudden 30% dip in user activity on an e-commerce
+    site, one might employ abductive reasoning to hypothesize that a recent website
+    update introduced a disruptive bug. Similarly, a sharp decline in a specific product’s
+    sales could point to factors like a competitor’s product launch or recent bad
+    reviews. A 15% KPI decrease between quarters might be linked to a policy change
+    or market fluctuations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Deductive Reasoning**: Introducing a policy for additional quality checks
+    before shipping may reduce customer complaints at the expense of longer delivery
+    times, as per deductive reasoning. If a retailer’s goal is to boost online sales
+    by 20%, focusing on physical store ads might not be the best strategy. Similarly,
+    a halfway construction project already consuming 70% of the budget clearly indicates
+    potential overruns without extra funding.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Inductive Reasoning**: Analyzing five years of sales data showing November
+    and December spikes suggests a likely uptick next year too, a conclusion reached
+    through inductive reasoning. This approach can also uncover patterns in consumer
+    behavior for promotional opportunities and streamline business processes by analyzing
+    recurring execution patterns.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Analogical Reasoning**: A retail company might infer the potential success
+    of a loyalty program similar to a competitor’s using analogical reasoning. Likewise,
+    a tech firm might see the benefit of a subscription model, drawing parallels with
+    streaming services. Learning from the automobile sector, a food company might
+    employ waste-reducing strategies anticipating similar efficiency gains.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Commonsense Reasoning**: Common sense dictates delaying the launch of a new
+    ice cream flavor to a warmer month in cold climates. It can attribute a rise in
+    July customer inquiries to a summer campaign and weighs the pros and cons of a
+    coastal factory relocation, considering both shipping costs and property values.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Algorithmic Reasoning**: In software development, algorithmic reasoning aids
+    in crafting efficient systems and streamlining IT support. It also facilitates
+    ad-hoc problem-solving in business scenarios, helping in precise cost calculation
+    and project planning, and assists in deriving insights from large datasets for
+    strategic planning, albeit with a need for careful management to avoid data security
+    and bias issues.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: Despite its impressive reasoning capabilities, GPT-4 does have
+    significant limitations:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Abductive Reasoning**: GPT-4 may rely too heavily on its training data, leading
+    to biases and potentially incorrect hypotheses as it sometimes confuses correlation
+    with causation. Furthermore it lacks a deep understanding of causal relationships
+    in the real world, hindering its ability to reason profoundly in fields like physics
+    and engineering.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Deductive Reasoning**: GPT-4 can find complex scenarios, especially mathematical
+    contexts, challenging to navigate, sometimes resulting in logical errors or incorrect
+    approaches.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Inductive Reasoning**: The model might develop overly generalized theories
+    when faced with sparse or ambiguous data, limiting the accuracy of its inductions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Analogical Reasoning**: GPT-4 risks oversimplification when drawing parallels
+    between different situations, possibly leading to overgeneralized or inaccurate
+    recommendations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Commonsense Reasoning**: In complex or highly specific scenarios, GPT-4 might
+    not always apply commonsense reasoning effectively, resulting in responses that
+    lack depth or real-world context.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Algorithmic Reasoning**: Despite its training, GPT-4 can sometimes produce
+    incorrect or inefficient algorithms, particularly for complex, unseen problems,
+    demonstrating its constrained ability to innovate beyond its training parameters.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Creativity and Innovation**![](images/Figure-1.6.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.6](#fig1_6):** Creativity and Innovation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: AGI possesses the ability to generate new ideas, concepts,
+    and solutions by combining and recombining existing knowledge, thus displaying
+    creativity and innovation. In a business setting, this ability often entails the
+    generation of unique solutions or concepts and the capacity for out-of-the-box
+    thinking.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: Creativity fuels innovation, drives business growth, and differentiates
+    a company in a competitive market.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: Demonstrating an AGI capability, GPT-4 can generate creative
+    and innovative aspects and text, effectively introducing novel perspectives into
+    various discussions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Examples**: GPT-4’s ability to generate stories, poems, or innovative product
+    descriptions is an instance of its creative capability. Moreover, in an enterprise
+    context, GPT-4 can brainstorm novel product features based on a company’s existing
+    portfolio and market trends. It can propose unique marketing strategies drawing
+    from a range of successful campaigns in different industries, and it can suggest
+    innovative solutions to internal organizational challenges, such as improving
+    employee engagement or streamlining workflows. GPT-4 can also suggest unconventional
+    solutions to problems posed by users.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: GPT-4’s creativity is constrained by its training data, limiting
+    its ability to think “outside the box.” It struggles with handling entirely new
+    situations that have little in common with past experiences.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Natural Language Understanding and Generation**![](images/Figure-1.7.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.7](#fig1_7):** Natural Language Understanding and Generation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: AGI is able to comprehend and generate text in multiple human
+    languages, allowing for seamless communication and the understanding of complex,
+    nuanced ideas. This includes not only the literal understanding of language but
+    also the ability to infer intent, recognize context, and navigate subtleties such
+    as sarcasm, ambiguity, and culturally specific references.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: In the world of business, effective communication is key. The
+    ability to understand and generate natural language allows AGI to interact seamlessly
+    with users, comprehend complex queries, produce understandable outputs, and contribute
+    effectively to discussions, making it an invaluable tool in a variety of business
+    functions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: GPT-4 displays this AGI capability, demonstrating a sophisticated
+    understanding of and ability to generate natural language. This enables it to
+    comprehend complex concepts, engage in meaningful interactions, and produce human-like
+    responses, enhancing its versatility across various applications.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Examples**: GPT-4 can understand and generate responses to complex queries
+    in a wide range of languages, effectively simulating a human conversation. For
+    instance, it can help draft business communications, provide detailed responses
+    to customer queries, analyze, and summarize lengthy reports, or participate in
+    brainstorming sessions by generating creative ideas. It can also produce coherent
+    long-form text, such as drafting articles or blog posts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: Despite its proficiency, GPT-4’s understanding of language
+    can occasionally falter when confronted with ambiguous, colloquial, or culturally
+    specific language. It may also struggle with understanding and generating language
+    in contexts that require a deep understanding of the world beyond its training
+    data. Furthermore, while it can simulate a conversation, it doesn’t truly understand
+    language in the way humans do, and its responses are generated based on patterns
+    recognized in its training data rather than true comprehension.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Perception and Understanding**![](images/Figure-1.8.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.8](#fig1_8):** Perception and Understanding'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: AGI has the capacity to process and interpret sensory information
+    from the environment, such as visual, auditory, and tactile data. It would understand
+    and interpret different types of data, ranging from unstructured text to structured
+    databases and images, thereby making sense of the world in a manner similar to
+    humans.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: In a business context, perception and understanding capabilities
+    allow AGI to parse through vast amounts of data, filter out the noise, identify
+    patterns, and draw insights. This is critical for tasks such as analyzing customer
+    feedback, interpreting market trends, detecting anomalies in data, or making informed
+    decisions based on complex datasets.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: Displaying an AGI capability, GPT-4 can perceive and understand
+    text-, code-, image-, and audio-based data. With the help of plugins[^(12)](#ftn12a),
+    its capabilities are further extended to other modalities such as video and web
+    content.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Examples**: GPT-4 can interpret and generate code snippets, thus aiding in
+    software development. It can comprehend complex scientific papers, thereby assisting
+    in research tasks. It can understand abstract concepts described in the text,
+    which makes it useful in strategy development and decision-making. Furthermore
+    GPT-4 can extract information from images to generate product descriptions, answer
+    customer questions or find matching items. For audio-based tasks, GPT-4 can process
+    and transcribe recorded business meetings, efficiently summarizing the key points
+    and action items.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: While GPT-4 is proficient in processing text, code, image,
+    and audio inputs, its capabilities are not inherently designed for handling video
+    and tactile data. This means that, without additional plugins or specialized tools,
+    GPT-4 faces challenges in comprehending and analyzing video sequences, body language,
+    or physical interactions. Additionally, it may struggle with unusual or conflicting
+    perceptions, which it has likely not seen in its training data.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Intuitive Understanding of Emotions**![](images/Figure-1.9.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.9](#fig1_9):** Intuitive Understanding of Emotions'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: AGI is capable of recognizing and responding to human emotions,
+    allowing for improved human-machine interactions and empathy. This involves interpreting
+    textual and contextual cues to identify and comprehend underlying emotions in
+    various interpersonal situations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: Intuitive understanding of emotions is a critical aspect of
+    successful communication and relationship-building in any business setting. It
+    enables effective customer interactions, facilitates team dynamics, and promotes
+    a positive working environment.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: GPT-4 demonstrates this AGI capability by recognizing basic
+    emotions from textual cues, showing an ability to interpret and respond appropriately
+    to the sentiment in user inputs. It uses this ability to tailor its responses,
+    mimicking empathy in human-like interactions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Examples**: GPT-4 can detect emotions in user messages, adjusting its responses
+    based on the perceived sentiment. For instance, it can respond empathetically
+    to messages indicating distress or frustration, offering comforting or supportive
+    responses. It can also adapt its communication style based on the user’s mood,
+    such as adopting a more casual tone in response to a friendly message or a formal
+    tone for professional contexts. Additionally, GPT-4 could theoretically aid in
+    customer service scenarios, recognizing dissatisfaction in customer feedback and
+    suggesting remedial actions to enhance customer experience.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: While GPT-4 can recognize and respond to emotions based on
+    textual cues, its understanding is not as nuanced or accurate as a human’s. It
+    lacks the emotional intelligence to reason about emotions in a deeply human way.
+    It may also struggle with complex emotional states or situations that require
+    high emotional intelligence, as it does not truly experience emotions itself.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Autonomous Goal Setting and Planning**![](images/Figure-1.10.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.10](#fig1_10):** Autonomous Goal Setting and Planning'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: AGI is able to set its own goals and create plans to achieve
+    them, demonstrating self-motivation and self-direction. This ability to autonomously
+    strategize and enact purposeful plans is an integral component of self-regulation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: Autonomous goal setting and planning enable a system to work
+    independently, foreseeing potential challenges and strategizing solutions. This
+    capability can transform productivity by reducing human intervention and accelerating
+    decision-making processes, especially in tasks such as project management, strategic
+    planning, and achieving complex, long-term objectives.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: While GPT-4 does not fully exhibit this AGI capability, it
+    has made strides in goal-directed planning, being capable of generating action
+    plans based on user-provided goals and intermediate states of plan execution.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In the business world, GPT-4 can be a valuable ally for goal-driven tasks. For
+    instance, if a company aims to expand its market share, GPT-4 can draft a plan
+    involving competitor analysis, identification of untapped markets, and strategies
+    for product differentiation. Similarly, when presented with the objective of streamlining
+    internal processes, GPT-4 can propose a task sequence that includes automating
+    repetitive tasks, optimizing workflows, and suggesting tools for enhanced team
+    collaboration. Additionally, with a goal to improve customer satisfaction, GPT-4
+    can devise a plan involving analyzing customer feedback, suggesting improvements
+    to service protocols, and developing new customer engagement strategies.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: GPT-4’s capabilities are bound by its programming and lack
+    of self-motivation and self-direction, which can limit its autonomous functioning.
+    Although it can contribute significantly to achieving user-defined goals, GPT-4
+    cannot (and should not) independently formulate its own goals or modify them in
+    response to changing circumstances.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Collaboration and Cooperation**![](images/Figure-1.11.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.11](#fig1_11):** Collaboration and Cooperation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: AGI possesses the ability to work together with humans and
+    other AGI systems, enabling collaborative problem-solving and teamwork. This ability,
+    particularly in an enterprise setting, involves understanding, interpreting, and
+    predicting social cues, behaviors, and interactions within a group or community
+    — essential for managing teams, handling customer interactions, or navigating
+    any situation involving interpersonal relationships.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: Effective collaboration and cooperation, underpinned by adept
+    social understanding, are critical for a well-functioning business environment.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: GPT-4 displays this AGI capability by providing assistance
+    and generating responses in single-user settings. It also shows high proficiency
+    in social comprehension, allowing it to engage with human-like understanding and
+    responses in a range of social and business contexts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Examples**: GPT-4 can assist users in brainstorming sessions, contribute
+    to solving puzzles, or provide constructive feedback on written content. Additionally,
+    it can advise a manager on how to handle a conflict within a team based on the
+    personalities and dynamics involved, predict customer responses to a new marketing
+    campaign based on social and cultural trends, and provide guidance on improving
+    company culture based on an analysis of employee feedback.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: GPT-4’s understanding of multi-user settings and human dynamics
+    is limited, reducing its effectiveness in complex collaborative situations. Despite
+    its proficiency in social comprehension, it might not fully capture the subtleties
+    of human interactions, which can be nuanced and highly context-dependent.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Ethics and Moral Reasoning**![](images/Figure-1.12.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**[Figure 1.12](#fig1_12):** Ethics and Moral Reasoning'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Definition**: AGI is ideally designed to incorporate ethical principles and
+    moral reasoning, allowing it to make decisions and take actions in line with human
+    values and societal norms. In a business context, this involves understanding
+    and applying ethical principles when making decisions, which is crucial for maintaining
+    organizational integrity, corporate social responsibility, and public trust.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Importance**: Ethical decision-making underpins all aspects of corporate
+    conduct and directly influences public perception of a company. It is a vital
+    part of maintaining a *social license to operate*.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Fulfillment**: GPT-4 displays this AGI capability with the ability to conduct
+    basic moral reasoning based on the scenarios encountered in its training data.
+    While GPT-4 understands ethical principles, its application of these principles
+    is limited by its programming and the ethical frameworks provided to it.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Examples**: GPT-4 can identify harmful or offensive content, provide balanced
+    views on sensitive topics, or even suggest ethically acceptable alternatives in
+    a given situation. In a business context, it can assess the potential ethical
+    implications of a business decision, such as implementing a new data collection
+    policy. It can help draft a corporate social responsibility statement aligned
+    with a company’s values and commitments. GPT-4 can also evaluate a company’s operations
+    for potential ethical issues, like conflicts of interest or breaches of trust.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Limitation**: GPT-4’s understanding and application of complex ethical dilemmas
+    can be limited, and it might lack a deep understanding of human values and emotions.
+    Its ethical guidance is also inherently influenced by its training data and programmed
+    frameworks, which may not capture the full complexity and nuance of human ethics.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.13.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**[Figure 1.13](#fig1_13):** AGI-Capability Assessment of GPT-4'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In summary, GPT-4 shows remarkable proficiency in Natural Language Understanding
+    and Generation (6/6) and Advanced Reasoning (5/6). It also performs commendably
+    in Learning & Adaptation, Transfer Learning, Perception and Understanding and
+    Autonomous Goal Setting and Planning (4/6). GPT-4’s capabilities in Creativity
+    and Innovation, Collaboration and Cooperation, and Ethics and Moral Reasoning
+    are satisfactory (3/6), while its performance in Intuitive Understanding of Emotions
+    is too rudimentary (2/6). For a visual representation of these scores, please
+    refer to *[Figure 1.13](#fig1_13)*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT-4 Plugins](toc.xhtml#s8a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In March 2023, alongside its release, a suite of API-based integration plugins
+    was introduced by OpenAI to amplify the capabilities of ChatGPT-4, the chatbot
+    version of GPT-4\. Over the subsequent months, OpenAI and external providers continued
+    to roll out additional plugins, further enhancing the model’s versatility.
+  prefs: []
+  type: TYPE_NORMAL
+- en: OpenAI provides an online registration process for new ChatGPT-4 plugins, ensuring
+    quality and functionality. These plugins are currently free of charge and become
+    part of the ChatGPT-4 system, eliminating the need for separate license agreements.
+    Like any software tool, they should be evaluated for functionality, usability,
+    and potential benefits in a specific enterprise context.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The subsequent sections will delve into key plugin categories that hold particular
+    significance for businesses, ranging from end-user programming and content understanding
+    to content creation and software development. While there is a large number of
+    plugins tailored for individual consumers — addressing areas such as shopping,
+    career development, travel, and entertainment — the focus here is on those that
+    elevate business efficiency, facilitate data-driven decision-making, and champion
+    intelligent automation in a corporate environment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Following is a curated list of ChatGPT-4 plugin categories that are especially
+    advantageous for enterprises:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**End-User Programming**: These plugins are designed to facilitate exploratory
+    data analysis, visualization, database queries, website creation, machine learning,
+    and ad-hoc problem-solving for end users, even if they lack a computing background:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Basic Exploratory Data Analysis**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Spreadsheet-based Data Analysis**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Spreadsheet Pal and Spreadsheets AI**: Engage with spreadsheets, allowing
+    users to command data analysis, filtering, and visualization. Streamlines the
+    process of interacting with spreadsheet data and offers an enhanced experience.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Datasheet Chat and Chat with Excel**: Provides an interactive platform to
+    converse with spreadsheets. Designed for those who want a more intuitive way to
+    engage with their datasheets.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Data Visualizations**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**daigr.am**: Enables users to craft visual representations of data directly
+    within a chat interface. Suitable for those looking to analyze, track, or present
+    data in a visually compelling format.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Visualize Your Data**: Converts raw data into clear visuals and charts on
+    the fly. Tailored for users who need a quick and straightforward way to represent
+    their data visually.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Graph Constructor**: Assists in generating spider and bar graphs from provided
+    datasets. Designed for users who want specific types of visual data representations
+    rapidly.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**OpenAI’s Advanced Data Analysis**: This tool, previously called the Code
+    Interpreter, is suitable for both beginners and more experienced users and can
+    turn high-level descriptions into functional code. Here’s a closer look at its
+    features:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Complex Exploratory Data Analysis**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Question Answering**: Enables users to get answers to questions about a given
+    dataset.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Visualization**: Crafts visual representations of query results, making complex
+    information more digestible.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Statistical operations**: Equipped with a diverse array of tools to perform
+    flexible statistical analyses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Simple text analytics**: Facilitates text processing and evaluation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Machine Learning**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Model creation and execution**: Streamlines the processes of building and
+    running simple machine learning models.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Visualization**: Translates the outcomes of machine learning models into
+    visual formats.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Ad-hoc Problem Solving**: The plugin can also be used to solve one-time problems
+    algorithmically, similar to the NoCode[^(13)](#ftn13a) approach, while avoiding
+    a software development life cycle. Examples are:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Data-mapping**: It can transform a file in any input format to a requested
+    output format based on a verbal description of the mapping logic.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Supply-chain optimization**: Given a description of the constraints (e.g.,
+    limited stocks or resources) and the optimization goal (e.g., minimize costs or
+    delivery time), it systematically creates solution candidates and checks filter
+    conditions for each. Then, it ranks the candidates by their achievement of the
+    goal.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Cost calculation: Provided with the calculation logic in natural language and
+    the raw data as input files, it can perform an ad-hoc computation of the resulting
+    costs in an early sale or purchasing scenario.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Scenario-based planning: For a given description of a planning scenario (for
+    example, a project or series of workshops) along with known constraints, it can
+    compute an indicative schedule in the chat dialogue or as an output file.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Despite its comprehensive functionality, OpenAI’s Advanced Data Analysis does
+    have limitations. These include a limited number of Python libraries, constrained
+    computational resources, absence of persistent storage, and an inability to handle
+    graphical user interfaces and real-time interactions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Other Advanced Analytics Plugins**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Noteable**: Designed for both professional developers and data science newcomers,
+    Noteable offers functionalities akin to OpenAI Advanced Data Analysis. It streamlines
+    data exploration, visualization, and transformation, fostering collaborative efforts
+    among teams. With its deep learning capabilities and seamless internet integration,
+    users can craft advanced models and tap into online resources.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**AI Data Analyst**: AI Data Analyst provides a user-friendly interface to
+    delve into data without coding or complex queries. It manages data cleaning tasks,
+    including handling missing values and duplicates, and supports transformations
+    like normalization. Additionally, it offers statistical analysis, diverse visualization
+    options, and predictive modeling for both regression and classification.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Data Interpreter**: Data Interpreter facilitates data analysis using a secure
+    Python code interpreter. Users can upload datasets, ask questions in plain English,
+    or directly input Python code for intricate analyses. The platform supports a
+    broad spectrum of data tasks, from querying databases to visualizing results,
+    and allows for exporting insights for further utilization or reporting.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Database Queries**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**AI2sql**: Converts user-friendly language into database commands. Designed
+    for those who need to access databases but are unfamiliar with technical query
+    languages.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**AskYourDatabase**: Transforms user questions into database queries and provides
+    results in plain language. Aims to make databases more accessible to everyday
+    users.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Chat With Your Data**: Integrates knowledge graphs with a conversational
+    interface, allowing users to interact with their data seamlessly. Enables users
+    to converse with their data in natural language.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Simple** **Website Building**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**ABC Website Maker**: Takes user chat prompts and generates corresponding
+    website code. Streamlines the process of turning ideas into web applications.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**A A A Website Maker**: Assists in creating web applications and custom websites.
+    Tailored for users seeking a simple web development tool.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**WebDev**: Provides an environment to build, preview, and test websites directly
+    from chat interactions. Suitable for those who want to quickly prototype websites.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**B12 AI Websites**: Uses natural language descriptions to craft websites.
+    Designed for users who want a website without getting involved in the technicalities
+    of web design.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**General Application Development**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Back4App**: Facilitates the creation, deployment, and scaling of applications
+    using natural language. Designed for users who want to manage apps and associated
+    resources without diving deep into technical details.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Content Understanding**: This category comprises plugins designed to enhance
+    the user experience in managing and interacting with various content types, from
+    text-based documents to images and video:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Document Interaction and Question Answering**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Document AI and Talk with Docs**: Engage with various document formats, including
+    PDFs, text files, and PowerPoint presentations, to answer questions and provide
+    insights. Designed for users who need quick answers from their documents.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**AI PDF and AskYourPDF (Pro)**: Enhance document navigation, content accessibility,
+    and interactive engagement with PDF content. These tools are tailored for efficient
+    information extraction, especially in business documents, and provide accurate
+    fact-checking by referencing page numbers.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**ChatWithPDF and MixerBox ChatPDF**: Facilitate real-time interaction with
+    PDFs, offering robust search functionality and streamlined link sharing. These
+    plugins are suitable for those who require efficient information extraction and
+    collaboration with PDF books and other documents.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Ai Drive**: Provides an organized personal drive where users can chat with
+    their PDF files, get summaries, and have questions answered. A proper tool for
+    those who want to keep their PDF interactions organized and focused.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Website Understanding**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**ChatWithWebsite**: Engage with websites to answer questions using the capabilities
+    of magicform.ai. Ideal for users who need insights directly from web content.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Webpage Summarizer**: Input a website link and receive a concise summary.
+    Designed for those who want quick overviews of web content without extensive reading.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Image Understanding**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**ChatOCR**: Converts printed or handwritten documents into digital text using
+    OCR technology. Adequate for users who want to digitize and easily access information
+    from physical documents.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**SceneXplain**: Analyzes visual content to provide comprehensive interpretations
+    of images. Useful for users seeking insights into artistic styles, emotions, settings,
+    and historical contexts of images.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Pixellow**: Delivers insights from images and generates detailed captions
+    and descriptions. Designed for those who want a deeper understanding of visual
+    content.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Video Understanding**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Video Insights and AI Video Summarizer**: Analyzes YouTube videos to provide
+    summaries and answer questions about the content. Suitable for users who want
+    a quick overview or have specific queries about a video.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**MixerBox ChatVideo, Video Summary, and YT Summarizer**: Offers concise summaries
+    of YouTube videos. Designed for users looking for the main highlights or key points
+    of a video.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Video Captions**: Transcribes YouTube videos into text, enabling users to
+    ask questions, create chapters, and get summarized content. Useful for those who
+    prefer reading or need a written record of a video.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**vidIQ - Discover and YouTube Summaries**: Provides insights and summaries
+    for YouTube videos. Aimed at users who want to discover and understand video content
+    quickly.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Heterogeneous** **Content**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**SummarizeAnything.ai**: Converts extensive content from various sources into
+    concise summaries. Suitable for quick insights from YouTube, web pages, and PDFs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**OCR and Media Processing in OpenAI’s Advanced Data Analysis:** Handles optical
+    character recognition (OCR) tasks, audio processing, and other media-centric operations.
+    Useful for simple text extraction from images and basic media handling.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Information Retrieval and Understanding**: This suite of plugins is tailored
+    to streamline the retrieval and understanding of information from diverse sources.
+    They encompass web search, website scraping, question answering, and knowledge
+    management, ensuring users can efficiently find, digest, and utilize content:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Web Search**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**OpenAI Browse with Bing**: Uses Bing AI to browse the internet, fetch relevant
+    up-to-date information, and cite sources. It was deactivated for a couple of months
+    and now allows sites to control how they interact with ChatGPT.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Web Requests**: Offers direct access to platforms like Google and Wikipedia
+    within the chat interface. Fetches and presents relevant information based on
+    user queries.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**WebPilot**: Provides comprehensive web assistance, from searching and extracting
+    information to translating and simplifying content. It also offers navigation
+    tools for specific web interactions and content creation from URLs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**KeyMate.AI Search**: Uses AI-driven web crawling for enhanced search results.
+    Provides a user-friendly chat interface and customization options.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**BrowserOp**: Facilitates multi-web-page browsing in a single query, allowing
+    users to specify their information needs, whether from a particular website or
+    a broader topic.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**MixerBox WebSearchG**: Utilizes a customized search engine powered by Google
+    Search API to provide comprehensive internet searches, detailed web-page summaries,
+    and direct answers to specific questions about web content.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**BrowserPilot**: Delivers real-time search results across multiple URLs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**TotalQuery Search**: Taps into more than 70 search engines for comprehensive
+    web discovery.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**MindfulDataAI**: Facilitates recent searches using Google. Designed to provide
+    users with up-to-date information on current topics.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Website scraping**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Aaron Browser**: Scrapes data from multiple websites using real-time Google
+    search results. Designed for comprehensive internet crawling, content aggregation,
+    monitoring, and extraction.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Scrapee and Scraper**: Extracts content from any website by simply providing
+    a website link. Streamlines the process of web content retrieval for efficient
+    information gathering.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Web Question Answering**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Wikipedia**: Provides answers on general knowledge, current events, and breaking
+    news. Fetches up-to-date information directly from Wikipedia for reliable insights.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Wolfram ChatGPT**: Offers curated knowledge, real-time data, and visualizations
+    spanning various domains. Supports computations, mathematical problem-solving,
+    and delivers data visualizations from scientific to stock market information.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Knowledge Management**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Custom Knowledge**: Allows users to search through internal company documents,
+    Google Docs, and Confluence Pages. Delivers personalized answers by accessing
+    a range of linked documents.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**FileChat**: Specializes in file management, in-depth analysis, and rapid
+    information retrieval. Acts as a personal AI assistant, answering queries using
+    user-specific data.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**AskYourKG**: Helps users organize and interact with their knowledge (graph[^(14)](#ftn14a)).
+    Enables chat-based interaction with documents uploaded to specific websites, promoting
+    interactive document understanding.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Content Creation**: This collection of plugins offers users straightforward
+    solutions for generating various content types, from diagrams to videos. These
+    tools cover a range of content needs:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Diagram Creation**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Show Me**: Transform raw data and concepts into visualizations, from relationship
+    diagrams to timelines. Empower users to understand complex information, visualize
+    processes, and edit diagrams online, catering to diverse visualization needs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Whimsical, MixerBox, and Scrive Diagrams**: Specialize in crafting and showcasing
+    various diagrams, including flowcharts and mind maps. These tools enhance brainstorming
+    sessions and process detailing, adapting to diverse visualization needs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Diagrams, Eraser, and Draw**: Offer a range of functionalities from integrating
+    with visualization platforms to generating diagrams from both code and natural
+    language. They cater to a broad audience, from coders to visual enthusiasts.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**WizeCharts**: Focuses on delivering in-depth data visualization through customizable
+    charts, enabling users to create, edit, and share insights.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Document Creation**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Doc Maker and Doc Maker A+**: Specialize in rapid document generation, from
+    resumes and cover letters to proposals. These tools support a variety of formats
+    including PDF, DOCX, XLSX, CSV, and HTML, with an emphasis on producing higher-quality
+    documents with the A+ variant.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Doc Editor**: Focuses on quick document creation with robust editing capabilities,
+    streamlining the process of crafting and refining documents.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**WriteEasy and AISEO Article Writer**: Cater to content creation needs by
+    generating articles based on provided topics, links, or data. While WriteEasy
+    offers general article creation, AISEO Article Writer emphasizes producing search
+    engine result page-based, natural language processing-friendly content swiftly.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Presentation Creation**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Smart Slides and Present it**: ShowME: Specialize in swift PowerPoint presentation
+    generation. By simply inputting the requirements, these tools craft comprehensive
+    and downloadable PPTs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**MagicSlides.app**: Transforms ideas into presentations, streamlining the
+    process from conception to visualization.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Canva**: A versatile design tool that allows users to create a wide range
+    of visuals effortlessly, from presentations and logos to social media posts and
+    more.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Image Generation**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**MixerBox ImageGen**: Uses the DALL·E 2 technology to generate visuals from
+    textual descriptions, merging natural language understanding with computer vision.
+    With features like customizable formats, text overlays, and unique prompt suggestions,
+    it is a suitable tool for crafting images for diverse projects, from blogs to
+    websites.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Argil AI**: Simplifies the image generation process, eliminating the need
+    for intricate prompting. It’s designed for users seeking quick visual creation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Michelangelo**: Utilizes DALL-E 2 to produce images inspired by various art
+    styles. It is designed for those aiming to infuse artistic flair into their visuals.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Placid.app**: Acts as a design assistant, transforming templates into marketing
+    visuals. It’s tailored for users looking to elevate their marketing materials
+    with advanced graphics.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Story Creation**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Stories**: Enables users to craft visually rich stories complemented by text-generated
+    imagery. With features like font customization, animations, and direct social
+    media sharing, it is tailored to boost discoverability on search engines, broadening
+    the reach of stories to a global audience.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Video Generation**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Visla**: Employs AI to convert topics provided by users into engaging short
+    videos using accessible stock footage. By analyzing input text for key themes,
+    it selects appropriate video clips, images, and audio. Beyond content creation,
+    Visla optimizes search engine visibility with meta tags, descriptions, and keyword-rich
+    captions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**CapCut**: Transforms video concepts into reality by allowing AI to draft
+    a script, source fitting footage, and combine elements into a refined video. It
+    is designed for users seeking an intuitive video creation experience.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Process Automation**: These plugins offer users AI-driven solutions to simplify
+    and automate various tasks and interactions. From managing intricate tasks with
+    AI agents to integrating with thousands of apps, they aim to enhance efficiency
+    and productivity:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**AI Agents**: Simulates intelligent agents within ChatGPT that, upon receiving
+    a goal prompt, devise and execute strategic plans to increase productivity.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Zapier**: Interacts with over 5,000 apps directly within the ChatGPT interface.
+    By automating tasks across these platforms, it simplifies operations and the management
+    of multiple platforms.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**FakeAGI**: Automates objectives using AI agents that tackle tasks and record
+    outcomes in a Google spreadsheet. It is designed for users aiming for task management
+    support and documentation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Software Development**: These plugins are tailored for software development
+    and program-based data analysis. From exploring GitHub repositories and running
+    code in diverse languages to simplifying data processes, these tools aim to enhance
+    the coding experience and facilitate deeper understanding and collaboration:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**AskTheCode and ChatWith****Code**: Allow users to delve into GitHub repositories,
+    either by providing a specific URL to inquire about code aspects or by searching
+    based on a query. These tools bridge the gap between code exploration and understanding
+    directly within the chat interface.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**CoderPad and CodeRunner**: Offer a coding environment where users can run
+    code in over thirty programming languages with automatic setup, compile, save,
+    and even create visualizations like charts and graphs. They cater to both coding
+    and data visualization needs.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Noteable**: Simplifies data exploration, visualization, cleansing, and transformation,
+    enhancing team collaboration. With deep learning capabilities and access to online
+    libraries, it aids users in building advanced models and harnessing code updates
+    effectively.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Through the integration of plugins, ChatGPT-4 transcends its foundational role
+    as a text/code-based language model, emerging as a robust Generative AI tool adept
+    at handling additional key modalities like web content, images, and video. We
+    will cover this important aspect in more detail in the last subchapter on native
+    multi-modality. Other key capabilities added by plugins are End User Programming,
+    Information Retrieval, and Process Automation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Combining Interactions with Actions: Access to External Tools in GPT Models](toc.xhtml#s9a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: OpenAI’s GPT models, notably GPT-3.5-Turbo and GPT-4, underwent a major upgrade
+    in June 2023, allowing them to interact with external tools via the generation
+    of API function calls. Before delving deeper, it’s essential to draw a clear distinction
+    between plugins and this new feature. The previous subchapter extensively discussed
+    plugins, which are specific enhancements that need to be officially registered
+    with OpenAI. Once registered, these plugins become extensions of ChatGPT-4, available
+    to the ChatGPT user community.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In contrast, the integration of external tools offers a more flexible mechanism
+    to enable the cooperation of GPT models with any enterprise application. Examples
+    are ERP (Enterprise Resource Planning), CRM (Customer Relationship Management),
+    and SCM (Supply chain Management) systems. Expanding their reach further, GPT
+    models can also interface with enterprise-specific search engines, intranet sites,
+    databases, and specialized ML-models ensuring a seamless blend with organizational
+    IT-ecosystems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Developers can instruct GPT models like gpt-4-0613 and gpt-3.5-turbo-0613 to
+    generate specific function calls instead of natural language when certain conditions
+    are met. These models are skilled to check these conditions on each user input
+    and, if met, create the respective function calls that match the expected format.
+    The main program simply needs to execute the function call and handle its results,
+    which could involve another prompt to a GPT model to provide a summary in natural
+    language, which then could be displayed to the user.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In essence, this enhancement transforms GPT models into dynamic integrators
+    of enterprise applications, broadening the horizons of AI beyond mere language
+    processing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Integration into Enterprise Software](toc.xhtml#s10a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Standardized Enterprise Software plays a pivotal role in driving efficiency
+    and collaboration, particularly within large corporations. These comprehensive
+    software packages are extensively utilized due to their broad functionality, robustness,
+    scalability, and security.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With the continued advancement of Generative Artificial Intelligence, opportunities
+    have emerged for these software systems to further increase their capabilities
+    and value. Companies such as Microsoft, ServiceNow, SAP, and Atlassian, who develop
+    these software products, are exploring ways to integrate GPT models into their
+    offerings. Here, we describe these efforts and how they contribute to the transformation
+    of enterprise software solutions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The collaboration of Microsoft and OpenAI, which has been strategically nurtured
+    since 2019, is the primary example of how GPT-4 capabilities can be leveraged
+    by an existing productivity software suite, which is commonly used by an enterprise.
+    The year 2022 marked the beginning of the incorporation of OpenAI’s GPT models
+    into Microsoft’s enterprise products, a process that gained significant momentum
+    in 2023\. Here are the current key outcomes of this partnership:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**First and foremost, Microsoft offers OpenAI products inside its Azure cloud
+    offering:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Microsoft Azure ChatGPT** provides user privacy through isolation from OpenAI’s
+    operations and offers plugin support for the integration with other Azure services
+    and enterprise-specific data sources.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The **Azure OpenAI Service** integrates OpenAI’s pre-trained AI models and extends
+    existing Azure AI capabilities in natural language processing & computer vision.
+    The service offers features like the Chat Playground with GPT-3.5-Turbo and GPT-4
+    support, Legacy Playground with GPT-3, GPT-3.5, and Codex models, and a DALL-E
+    Playground. Additionally, there’s a “Bring Your Own Data” area for grounding GPT
+    models with enterprise data. The platform also provides deployment management
+    tools and content filter settings.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Then Microsoft’s Bing Chat Enterprise provides a similar user experience
+    as ChatGPT-4 with the Bing Browser plugin, while ensuring full organizational
+    data protection and simultaneous access to DALLE-E. Typical use cases are:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Content Creation and Modification:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Generate diverse business content from user prompts, such as emails, reports,
+    or process descriptions.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Adjust the tone or style of text, incorporating optimism, professionalism, or
+    various writing formats.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Improve existing writing by adding elements like brevity, formality, and creativity.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Image Generation and Customization:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Create and modify images directly from user prompts.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Explore various creation themes, including security, environmental consciousness,
+    and digital outlook.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Modify generated images by altering color schemes, styles, or background details.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Intuitive Interaction and Personalized Responses:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Search and interact using natural, conversational language, accommodating both
+    short and detailed inputs.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Ask complex questions and receive relevant answers, with the system maintaining
+    context for follow-up queries.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Customize the format of Bing’s responses using prompts, such as requesting bullet
+    points, tables, or simplified language.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Comparisons, Summaries, and Real-Time Information:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Conduct detailed comparisons and receive concise summaries of enterprises, technologies,
+    markets, etc.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Access near-real-time results for recent business events or breaking financial
+    news.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: View and revisit previously created content and images.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Other Microsoft products are AI-enhanced via the Copilot initiative. Here
+    is an overview:**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Microsoft **365’s Copilot** integrates fully into all office apps with GPT-based
+    features for automatic text creation in Word, exploratory data analysis in Excel,
+    and presentation automation in PowerPoint. Copilot improves communication efficiency
+    in Outlook and Teams by managing emails, summarizing threads, formulating responses,
+    and aiding in meeting organization.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Windows** also integrates **Copilot**, enabling task simplification across
+    various apps, while AI enhancements in the Paint and Photos apps introduce innovative
+    features and efficient media management. The Snipping Tool’s diverse content capture
+    and Clipchamp’s automated video creation capabilities offer enriched user interaction
+    and advanced content creation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Copilot in Viva Engage** offers conversation starters based on trending topics
+    and enhances the answers experience by refining questions and responses.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Integrated into **Power BI, Copilot** supports data interaction through exploratory
+    and ad-hoc analysis, offering visualizations, collaborative reporting, and data
+    storytelling.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Copilot in Power Automate** enables automation creation through natural language.
+    It understands user intent to create and modify flows, configure connections and
+    parameters, and answer product or flow-related questions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**‘Copilots in Power Apps** guide the creation of an app or bot. This process
+    encompasses creating and importing data tables, generating app screens and user
+    event handlers, summarizing user input, answering questions, and managing the
+    publishing of the app or bot.’'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Copilot in Microsoft Teams Phone** integrates with the Teams Phone system,
+    using GPT models to automatically summarize phone conversations, highlighting
+    key details and suggesting follow-up actions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Copilot in Teams Chat** enhances communication in Teams by leveraging GPT
+    to provide quick summaries of chat threads, allowing users to extract key decisions
+    and insights from their discussions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Microsoft Sales Copilot** is designed for sellers, streamlining CRM tasks
+    with GPT technology, identifying top sales opportunities, and reducing manual
+    work, enabling more effective sales strategies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Moving beyond Microsoft, other prominent players in the enterprise software
+    market have started to harness the power of AI through their collaborations with
+    OpenAI. As representative examples, ServiceNow, SAP, and Atlassian have made their
+    first steps in embedding AI capabilities into their platforms:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**ServiceNow** has integrated OpenAI’s Generative AI Controller and Now Assist
+    for Search into its platform through Microsoft’s Azure OpenAI Service. These additions
+    enhance workflow automation and user experiences, paving the way for future improvements
+    in productivity and innovation including chat response generation and incident
+    prioritization.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In collaboration with Microsoft, **SAP** is working to embed Microsoft’s AI
+    functionalities into its products, initially concentrating on merging SAP SuccessFactors
+    solutions with several Microsoft services including Azure OpenAI. This partnership
+    has already triggered innovative PoCs within the SAP community like automated
+    customer email responses and improved ticket management.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Atlassian** introduced Atlassian Intelligence, a **virtual teammate** utilizing
+    OpenAI’s large language models alongside its AI models. This tool offers features
+    like AI-powered summaries and a ChatGPT-like chatbot, aiming to enhance understanding
+    of work patterns and facilitate team collaboration.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In conclusion, the integration of OpenAI’s GPT models into enterprise software
+    is a testament to the transformative potential of AI. This move suggests that,
+    as more corporations adopt these enhanced solutions, we can expect impactful shifts
+    in the ways they use AI in their operations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT Enterprise](toc.xhtml#s11a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Historically, corporations have been wary of embracing new cloud-based technologies,
+    especially those that handle vast amounts of data like ChatGPT, primarily due
+    to concerns about data privacy, security, and integration with their existing
+    infrastructure. In August 2023 OpenAI introduced ChatGPT Enterprise, designed
+    to address these challenges:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Strengthened Security & Privacy**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Data Control**: Companies maintain complete authority over their data. Enterprise
+    data is not used for model training.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Robust Encryption**: Utilizing industry-leading encryption techniques, data
+    in transit is safeguarded using TLS 1.2+, a security protocol ensuring secure
+    data transfer. For data at rest, AES-256 encryption is applied, a symmetric encryption
+    standard regarded for its high security.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Adherence to Standards**: ChatGPT Enterprise is compliant with SOC 2 Type
+    1 — a standard assessing the policies, procedures, and controls of service providers.
+    Additionally, preparations are underway for Type 2 compliance, which involves
+    more rigorous and periodic auditing.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Domain Verification**: An added layer of security is provided to verify and
+    authenticate the enterprise’s domain, preventing unauthorized usage.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Facilitating Integration & Collaboration**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Data Synergy**: ChatGPT Enterprise announced it would offer features enabling
+    smooth interactions with typical corporate applications.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Shared Workflows**: Teams are empowered to create and distribute workflows
+    via shared chat templates.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**API Access**: Companies are provided with API credits to craft enterprise-specific
+    solutions, allowing for tailored AI-powered operations.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Single Sign-On (SSO)**: This feature simplifies user access and offers a
+    touch of added security.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Advanced Data Analysis Solution (see also the details in the *ChatGPT-4 plugins*
+    subchapter**)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Core Functionalities**: It supports a broad range of tasks including exploratory
+    data analysis, visualization, statistical operations, and text analytics.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Ad-hoc Problem Solving**: The tool is also adept at handling specific algorithmic
+    challenges, like data mapping, cost calculations, and scenario-based planning.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Improved** **Performance & Deployment**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Increased Efficiency with GPT-4**: The Enterprise version harnesses a GPT-4
+    model that operates at double the speed without limitations in the number of interactions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Extended Interactions**: Thanks to a 32k token context window, ChatGPT Enterprise
+    can handle extended dialogues and accommodate larger documents for in-depth discussions.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Deployment Tools**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Admin Console**: A dedicated console for seamless bulk member management.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Analytics Dashboard**: A tool for real-time usage insights, helping companies
+    understand how the system is being leveraged.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Looking Forward**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Self-service**: Plans are in motion for a ChatGPT Business model, aiming
+    to cater to smaller teams.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Power Tools**: Future iterations promise more robust Advanced Data Analysis
+    tools and specialized browsing features optimized for work settings.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Role-specific Solutions**: The roadmap includes tools specifically crafted
+    for roles such as data analysts, marketers, and customer support personnel, ensuring
+    a more bespoke experience.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: With the *ChatGPT Enterprise* offering, OpenAI has started to align its AI capabilities
+    with corporate demands, envisaging a balance of security, flexibility, and performance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT Native Multi-modality](toc.xhtml#s12a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: ChatGPT introduced native multi-modal capabilities in October 2023, including
+    voice and image interactions, enabling users to engage in conversations and discuss
+    visuals without the need for plugins.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Users can have voice conversations, with the system employing an advanced text-to-speech
+    model and Whisper, OpenAI’s speech recognition system, to facilitate interactive
+    dialogues. The voice feature offers five different voice options, developed in
+    collaboration with professional voice actors, and is available on iOS and Android
+    platforms.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Furthermore, ChatGPT can interpret and analyze images, which users can upload
+    directly through the platform. This feature, powered by a new multimodal GPT-4
+    model, GPT-4V (Vision), allows for a wide range of applications, including visual
+    diagnostics, question answering, code generation, and analytics. It is possible
+    to mix multiple text elements, images and images with markers in a single user
+    input to enable comparisons or analogies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In addition to these, OpenAI’s image generator, DALL·E 3, is now integrated
+    natively with ChatGPT, allowing users to generate tailored, detailed prompts that
+    bring ideas to life through images. The DALL·E 3 feature is available to ChatGPT
+    Plus and Enterprise customers, with a focus on safety and prevention of harmful
+    content generation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: OpenAI deployed these new capabilities while adhering to their standards for
+    safety and responsible usage. OpenAI also took measures to respect individuals’
+    privacy and limit ChatGPT’s ability to analyze and make direct statements about
+    people. Additionally, OpenAI enabled creators to opt their images out from the
+    training of future models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Building on the exploration of ChatGPT’s new multi-modality features and considering
+    the advancements discussed in the subchapter on plugins, the following table provides
+    an overview of the resulting Generative AI capabilities of ChatGPT. It indicates
+    both the native functions and those enhanced by plugins across various modalities,
+    showcasing the model’s adaptability and comprehensive functionality in tasks ranging
+    from text and code comprehension to advanced image and voice interactions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **Modality** | **Understanding** | **Creation** |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Text | Native & Plugins: Advanced comprehension and interpretation of textual
+    data. | Native & Plugins: Generation of coherent, contextually relevant text,
+    responses, and summaries. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Structured Data | Understanding of data in table or code format | Generation
+    of data in table or code format |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Image | Native & Plugins: Proficient comprehension of various images using
+    GPT-4V plus plugins | Native & Plugins: Native integration with DALL·E 3 for creative
+    visuals, along with plugin-supported visual content generation. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Video | Plugins: Enhanced interactions with and analysis of video content.
+    | Plugins: Facilitated generation and manipulation of video content. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Code | Native & Plugins: Comprehension of multiple programming languages
+    and GitHub repositories. | Native & Plugins: Generation and execution of code
+    snippets, database queries, and data analysis and visualization code |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Web Content | Plugins: Interpretation of web search results and scraped web
+    content. | Plugins: Generation of basic website designs and applications. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Audio | Native: Transcription of spoken words into text using Whisper, OpenAI’s
+    speech-to-text tool. | Native: Generation of human-like audio with synthetic voices.
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '**Table 1.1:** Multimodality in ChatGPT-4'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[GPT-4 Turbo, Assistants, and GPTs](toc.xhtml#s13a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In November 2023 OpenAI introduced GPT-4 Turbo, an advancement over the original
+    GPT-4 model. This new iteration stands out with its extensive 128k context window,
+    allowing it to process information equivalent to over 300 pages of text at once.
+    It is updated with world events knowledge until April 2023 and has been optimized
+    for cost, with input and output tokens being significantly cheaper than its predecessor.
+    In terms of functionality, GPT-4 Turbo enables the execution of multiple functions
+    from a single prompt and claims further accuracy improvements in following instructions,
+    especially beneficial for developers needing structured outputs like JSON (JavaScript
+    Object Notation). An additional feature is the ability to generate consistent
+    responses, which is especially useful in longer dialogues or the repetitive usage
+    of the same prompt with varying input data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Alongside GPT-4 Turbo, OpenAI released an updated version of GPT-3.5 Turbo with
+    an expanded 16K token context window and improved task performance. A new milestone
+    is the Assistants API, which facilitates the development of AI applications with
+    agent-like capabilities, leveraging plugins like Advanced Data Analysis and Web
+    Browsing, and advanced function calling. Moreover, the integration of DALL·E 3
+    and the new Text-to-Speech API allows developers to enhance their platforms with
+    advanced image generation and human-like speech synthesis capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another innovation are GPTs, customizable prompt-based applications that empower
+    prompt engineers to create specialized versions of ChatGPT to enable task-specific
+    functionalities like first-level IT-Support, negotiation assistance or report
+    creation. Prompt Engineers can use the GPT Builder to upload custom images, define
+    the GPT’s behavior, set welcome messages to establish initial interaction tone,
+    and provide task-specific prompt starters to guide user engagement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additionally, they can enrich the GPT’s knowledge base by uploading relevant
+    enterprise content, for example about products, markets, and policies. Previously
+    mentioned capabilities like Advanced Data Analysis, Web Browsing, and DALL·E Image
+    Generation also broaden the GPT’s operational scope. Custom Actions allow for
+    integration with third-party APIs, enabling GPTs to utilize external services
+    and data, very similar to the way standard GPT models integrate with external
+    tools.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The upcoming GPT Store will act as a hub for these innovative applications,
+    encouraging a community where prompt engineers can share their creations and potentially
+    earn revenue. OpenAI has placed a strong emphasis on privacy and safety, enacting
+    stringent policies to safeguard user data within these GPTs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, OpenAI offers GPT-4 fine-tuning for personalized model improvements,
+    with a dedicated program for large-scale customization. The Custom Models program
+    allows organizations to co-develop bespoke GPT-4 models, ensuring data privacy
+    and specificity to their operational needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](toc.xhtml#s14a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This chapter traced the evolution of Generative Pre-trained Transformers, from
+    the initial GPT-1 and GPT-2 to the innovative ChatGPT and the advanced GPT-4 with
+    AGI capabilities. We explored their transformative impact, the expansion of functionalities
+    through plugins, external tools, and integration into enterprise software. The
+    introduction of native multi-modal features and integration with DALL·E 3 and
+    Whisper enrich user interaction and broaden the model’s versatility, resulting
+    in comprehensive Generative AI capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the next chapter we will introduce a comprehensive AI-capability framework,
+    CapabilityGPT, to facilitate the systematic utilization of GPT models in an enterprise
+    context.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key Points](toc.xhtml#s15a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The early GPT models, GPT-1 and GPT-2, leveraged the potential of Transformer
+    models in natural language processing, paving the way for subsequent advancements
+    in the field.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: GPT-3 marked a significant leap forward with its massive model size and enhanced
+    capabilities, including its proficiency in learning from a few examples and applying
+    this knowledge across diverse tasks.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: InstructGPT was a critical advancement that enhanced task-oriented and instruction-based
+    responses, laying the groundwork for ChatGPT.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: ChatGPT revolutionized AI-human interaction with its ability to generate coherent
+    and contextually appropriate responses and its advanced instruction-following
+    capabilities, taking us closer to more natural and meaningful AI-human interactions.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: GPT-4 represents a significant milestone towards Artificial General Intelligence,
+    with proven capabilities for creation, transfer learning, advanced reasoning and
+    planning.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The introduction of plugins like Advanced Data Analysis, Web Search, or Image
+    Understanding has significantly enhanced ChatGPT-4’s Generative AI capabilities.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The innovative ability of GPT models to access external tools has broadened
+    the scope and reach of AI applications, especially in the area of Enterprise Applications.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The ongoing integration of GPT-4 into enterprise software platforms, especially
+    from OpenAI’s strategic partner Microsoft, is further extending the user base
+    of AI capabilities.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: OpenAI’s launch of ChatGPT Enterprise attempts to directly address the corporate
+    reservations about data security and integration.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: ChatGPT-4’s native voice and image processing features represent a further improvement
+    of its Generative AI capabilities, expanding the model’s versatility across various
+    tasks.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: GPT-4 Turbo advances the GPT series with a very large 128k token context window,
+    capable of processing information equivalent to over 300 pages of text in a single
+    prompt, and enhanced accuracy in instruction-following.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: GPTs, as customizable prompt-based applications allow prompt engineers to tailor
+    ChatGPT with task-specific functionalities, fostering a dynamic ecosystem for
+    sharing and monetization.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: ____________________
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[¹](#ftn1) Deep learning is a branch of machine learning that uses multi-layered
+    neural networks to learn transformation functions and patterns to produce desired
+    outputs from the input data.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[²](#ftn2) It was in 2019 that OpenAI introduced a for-profit arm to their
+    operation.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[³](#ftn3) Neural network parameters are like the brain’s memory of what it
+    has learned. They are values that the network adjusts as it learns from input-output
+    training data.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁴](#ftn4) Natural language inference (NLI) is the task of determining the
+    relationship between two sentences. For example, given a statement “All dogs bark”
+    and another statement “Some animals make noise,” we infer that the second statement
+    is a generalization of the first. In NLI, we classify the relationship between
+    such pairs of sentences as either “entailment” (one sentence logically follows
+    from the other), “contradiction” (the sentences oppose each other), or “neutral”
+    (the sentences are unrelated).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁵](#ftn5) Semantic similarity is about measuring how closely two sentences
+    or words share the same meaning. For example, “big” and “large” have high semantic
+    similarity because they both describe size.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁶](#ftn6) Zero-shot learning refers to a machine learning approach where a
+    model is able to perform tasks for which it hasn’t been explicitly trained. Instead
+    of relying on specific training data for every task, the model leverages its existing
+    knowledge, often derived from related tasks, to infer or generalize to new, unseen
+    tasks.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁷](#ftn7) In language models, a “token” can represent a single character,
+    part of a word, or an entire word. For example, “sunny day” might be tokenized
+    as [“sun”, “ny”, “ day”] or simply as [“sunny”, “day”]. Tokens help the model
+    process and generate text, and the way text is tokenized can influence its performance
+    and capabilities.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁸](#ftn8) In the context of machine learning, few-shot learning refers to
+    the ability of a system to generalize from a small number of examples — typically
+    less than five.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[⁹](#ftn9) One-shot learning is a special case of few-shot learning where the
+    system learns from just a single example.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[^(10)](#ftn10) A mixture of expert’s model is a machine learning architecture
+    where multiple specialized sub-models (experts) are trained to handle specific
+    regions or types of data, and an integration model determines the weight or contribution
+    of each expert for a given input, enabling adaptive and context-aware decision-making.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[^(11)](#ftn11) ChatGPT-4 Plugins for end-user programming will be discussed
+    in the next subchapter.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[^(12)](#ftn12) ChatGPT-4 plugins for multimodal content understanding will
+    be discussed in the next subchapter.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[^(13)](#ftn13) NoCode refers to the creation of digital products, like websites,
+    apps, or automated workflows, without having to write traditional computer code.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[^(14)](#ftn14) A knowledge graph (KG) is a structured representation of interconnected
+    information, where nodes represent entities and edges depict their relationships.
+    It captures semantic meaning, enabling enhanced understanding and navigation of
+    complex datasets for both humans and machines.'
+  prefs: []
+  type: TYPE_NORMAL

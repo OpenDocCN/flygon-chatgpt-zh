@@ -1,0 +1,2049 @@
+- en: '[CHAPTER 8](toc.xhtml#c08)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[LangChain: GPT Implementation Framework for Python](toc.xhtml#c08)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](toc.xhtml#s427a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This chapter discusses the use of Large Language Models (LLMs) like ChatGPT’s
+    *gpt-3.5-turbo* in Python and introduces a groundbreaking framework called LangChain
+    [12]. LangChain allows to implement all the 18 capabilities from the CapabilityGPT
+    framework through its specially designed components tailored for working with
+    LLMs. It increases the reliability of working with Large Language Models by allowing
+    to combine pre-learned models’ knowledge with real-time information. With LangChain,
+    LLMs can interact with diverse entities like databases, APIs, cloud platforms,
+    and other API-based resources, enabling them to accomplish specific goals. As
+    a result, LangChain simplifies and streamlines the process of developing comprehensive
+    applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chapter provides an explanation of the different components that make up
+    the framework. These components include Schema, Models, Data processing, Chains,
+    Memory Handling, and Agents. By exploring each of these components, the readers
+    will develop a comprehensive understanding of how LangChain functions as a whole.
+    To further enhance their understanding, we will also provide practical demonstrations
+    of how these components can be utilized through three example use cases. These
+    demonstrations will include snippets of Python code and detailed explanations
+    of each step involved.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first use case delves into how LangChain can benefit legal experts and enhance
+    their productivity and success by taking advantage of the creation and transformation
+    capabilities of LLMs from the GPT model family. We will present a practical example
+    that demonstrates the application of semantic search in helping lawyers find relevant
+    previous cases. This enables them to effectively prepare for upcoming trials,
+    ultimately improving their performance in the courtroom.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the second use case, we explore how LangChain enables seamless data retrieval
+    from various sources of text data. Specifically, we provide a solution that allows
+    automation specialists to engage in a chat conversation about a controller. To
+    provide a brief explanation, a controller is essentially a device that manages
+    a process to achieve and maintain desired parameters. For example, in a temperature
+    control system, a thermostat acts as a controller by monitoring the current temperature
+    and adjusting the heating or cooling equipment to maintain a set temperature.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The solution leverages foundational capabilities described in CapabilityGPT
+    framework such as question answering, communication, and summarization. The necessary
+    information for this conversation is provided in PDF format, which includes the
+    controller manual. LangChain simplifies the process of browsing through and utilizing
+    this information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The final example we propose focuses on real-time price checks, which can greatly
+    benefit businesses by keeping them well-informed and competitive. The chapter
+    delves into how LangChain’s agents combine the ability of LLMs to reason and the
+    tools’ ability to execute and provide accurate and up-to-date price information.
+    In this example the agent will leverage various GPT capabilities such as planning,
+    assessment, question answering, summarization and communication. This empowers
+    businesses to make informed decisions that align with the current market conditions,
+    ultimately improving their competitiveness and success.
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of this chapter, readers will have a comprehensive understanding
+    of how LangChain works and its potential applications. This knowledge will serve
+    as a foundation for further self-study, where readers can delve deeper into the
+    technical aspects and explore more advanced use cases. Whether you are a business
+    leader looking to optimize your operations, an IT professional interested in the
+    latest AI technologies, or an AI enthusiast eager to explore the possibilities,
+    this chapter will equip you with the knowledge needed to navigate the world of
+    LangChain.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](toc.xhtml#s428a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In this chapter, the following topics will be covered:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Introducing LangChain
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Components of LangChain:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Schema
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Models
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Data processing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Chains
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Memory Handling
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Agents
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Example 1: Preparation helper for lawyers'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Example 2: Chatting over controller manual'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Example 3: Current price checks using agents'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Introducing LangChain: Unlocking the Potential of Large Language Models](toc.xhtml#s429a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The power of LLMs is derived, among other factors, from their training on massive
+    amounts of data. However, it’s important to understand that LLMs are usually not
+    up-to-date. This is because they are trained on specific datasets, which may not
+    include the most recent information. Despite being trained on immense amounts
+    of data, LLMs may still struggle with specialized knowledge in certain areas.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additionally, they have limitations when it comes to processing large amounts
+    of text due to their token restrictions (the maximum token limit determines the
+    extent to which the model can process as input and generate as output). In some
+    cases, developing applications may require the use of different LLMs depending
+    on factors such as budget and requirements. This is where a comprehensive framework
+    like LangChain can be beneficial, as it offers a solution that caters to various
+    needs and budgets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The LangChain framework is a Python-based tool that enables the creation of
+    applications that fully utilize the capabilities of Large Language Models. It
+    provides all the necessary components for developing sophisticated applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: LangChain goes beyond being a simple interface for language models. It not only
+    allows us to utilize different language models but also interacts with a wide
+    range of entities such as databases, APIs, cloud platforms, and other API-based
+    resources. These interactions expand the capabilities of language models and enable
+    the creation of advanced applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: LangChain’s main pillars are components, use-case specific chains, and agents.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Components**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using Large Language Models in complex applications involves using specific
+    concepts. These include creating templates for prompts, making use of various
+    tools, accessing data sources and processing them, managing memory, etc. In LangChain,
+    these concepts are called components. Components are classes or functions that
+    make it easier to use these features. They are already built and ready for developers
+    to use. These components are designed to be easy to implement, whether you are
+    using LangChain for your whole project or just certain parts of it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Use-Case Specific Chains**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Chains enable the seamless integration of the above components in a structured
+    manner. They are particularly designed to maximize performance in specific scenarios.
+    The concept of chaining components together is both straightforward and impactful.
+    It greatly simplifies the implementation of complex applications, resulting in
+    improved ease of debugging, maintenance, and overall enhancement of applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Agents**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The framework is designed to be able to work in an agentic way. In everyday
+    life, an agent is someone or something that helps achieve a specific goal. In
+    LangChain, an agent can be thought of as an LLM that deconstructs a task into
+    smaller steps. Then it employs various tools and other LLMs to accomplish the
+    main objectives of the task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Setting up applications can be a complex and time-consuming task for developers.
+    However, with the use of components, chains, and agents, the process becomes significantly
+    easier and quicker. By utilizing these tools, developers are able to save valuable
+    time and effort, which allows them to focus more on the actual development and
+    customization of the application. This leads to improved productivity and faster
+    time-to-market.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Components of LangChain](toc.xhtml#s430a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: To effectively utilize LangChain, it is vital to get familiar with its main
+    elements. This section aims to give you a comprehensive overview of these components,
+    offering a solid basis for understanding how LangChain works.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Schema](toc.xhtml#s431a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Let’s discuss the fundamental data types you will encounter when using LangChain.
+    These include text, Chat Messages, Examples, and Documents. In the world of language
+    models, text serves as the primary mean of communication. LangChain, being a bridge
+    between LLMs and various entities, is specifically designed to prioritize text-based
+    interfaces.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With the rise in popularity of chat interfaces, certain model providers have
+    started offering specialized APIs that expect Chat Messages instead of plain text.
+    A Chat Message data type consists of two parts - the content field, which is typically
+    the text itself, and the user associated with it. Currently, LangChain supports
+    users such as System, Human, and AI, introducing different types of chat messages,
+    namely, SystemChatMessage (for Master Prompts), HumanChatMessage, and AIChatMessage.
+    This format is presently required for all language models from the GPT-3.5-turbo
+    and GPT-4 family.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another data type we might use is Example. It is an input and output pair that
+    represents the input to a function and the expected output of it. Examples are
+    often incorporated into prompts to better steer the answers provided by the LLM.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Lastly, LangChain utilizes Documents. A Document comprises unstructured data
+    referred to as page content, along with metadata that describes its attributes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Models I/O](toc.xhtml#s432a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The core of LangChain revolves around its models, which serve as the foundation
+    for the entire framework. These models provide the necessary elements and building
+    blocks for interaction. When discussing working with models we will look into
+    three parts: models, prompts and output parsers.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Language models](toc.xhtml#s433a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'LangChain provides two types of models: Language Models and Chat Models. Language
+    Models take raw input and output a string, while Chat Models take a list of Chat
+    Messages labeled as System, AI, and User as input, and generate another chat message
+    labeled as AI. The System role guides the model’s behavior by providing high-level
+    instructions and context that frame the entire interaction. The AI role interacts
+    with the user, responding to queries. Finally, the User role represents the individual
+    interacting with the model, giving instructions and engaging in the conversation.
+    Both Language Models and Chat Models have their own interface.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you need your application to work with both the Language and Chat Models,
+    LangChain has developed a solution called the Base Language Model. This interface
+    allows you to integrate with the models seamlessly. Additionally, if you want
+    to create your own custom wrapper for your own LLM or use one that is not supported
+    by LangChain, that option is also supported.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you want to display the response to a user as it is being generated, instead
+    of waiting for the entire answer to be generated and sending it all at once, you
+    can use special streaming classes. However, please note that streaming response
+    is only supported by certain models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Prompts](toc.xhtml#s434a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Effectively structured prompts hold the key to unlocking the vast potential
+    of GPT models. To adapt to different use cases, there is a range of prompt patterns
+    we may employ, such as Instruction Prompt, Instruction Sequence Prompt, Query
+    Prompt, Request Prompt, Cooperation Prompt, or other Special Prompts referred
+    to in the earlier *[Chapter 5, Advanced Prompt Engineering Techniques](c05.xhtml).*
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To simplify the process of creating prompts and effectively managing different
+    parts of them, LangChain introduces prompt templates. These templates serve as
+    a structured way to generate prompts consistently. They are essentially strings
+    that accept a set of parameters, which are then used by the model for processing.
+    Currently, in LangChain, these strings can be composed using two syntaxes: f-strings
+    and Jinja.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you decide to use a Chat Model, specifically a Chat Prompt Template should
+    be used. These templates are optimized for Chat Model inputs and differ from raw
+    strings, which are passed directly to the language model. In chat messages, each
+    message is associated with a role: System, User, or AI. Additionally, there are
+    few-shot prompt templates that allow the inclusion of examples in our prompts.
+    If the default prompt templates do not cover your specific needs, you can also
+    create custom prompt templates. For instance, you might want to create a prompt
+    template with dynamic instructions tailored to your language model. In such cases,
+    custom prompt templates offer flexibility and customization options.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Output parsers](toc.xhtml#s435a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Regardless of whether we are working with Language Models or Chat Models, they
+    all generate text as their output. To organize or structure this output in the
+    desired format, we make use of output parsers. These output parsers enable us
+    to obtain the output in various formats, such as comma-separated list, datetime,
+    enum, or JSON.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you wish to output multiple text fields of your choice, you can utilize the
+    Structured Output Parser. Another option is to use the Pydantic (JSON) parser,
+    which is more powerful. However, it requires an LLM with sufficient capacity to
+    generate well-formed JSON. It is worth noting that within certain model families,
+    some models excel at generating JSON while others may not perform as well. For
+    instance, models such as *text-davinci-003*, *gpt-3.5-turbo*, or *gpt-4* can consistently
+    generate well-structured JSON, whereas *text-curie-001’s* proficiency in this
+    regard significantly diminishes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additionally, there is an auto-fixing parser available. It automatically calls
+    another parser if the results from the initial one are incorrect or contain errors.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Data connection](toc.xhtml#s436a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: One of the main challenges in using standalone LLMs is their ability to only
+    access data that they were specifically trained on. To overcome this limitation
+    and enable them to work with up-to-date information, we must connect them to other
+    sources of data. Fortunately, LangChain provides effective components that facilitate
+    effortless interaction with diverse data sources (refer back to *[Chapter 4, Architecture
+    Patterns enabled by GPT-Models](c04.xhtml),* for an in-depth exploration of A2–A4
+    architecture patterns for accessing enterprise-specific data sources).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Data loaders](toc.xhtml#s437a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: An essential aspect of working with external data sources is the use of data
+    loaders. These loaders have the important task of loading different types of data
+    into a specific structure called the Document. The Document contains both the
+    text and the metadata associated with it. Several loaders have been created to
+    handle various data sources. These loaders make it convenient to load data from
+    for example, text files, CSV files, JSON files, GitBooks, Azure Blob Containers,
+    YouTube transcripts, and more. Using these loaders greatly simplifies data loading
+    processes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Data transformers](toc.xhtml#s438a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Once you have successfully imported your data into the Document objects, you
+    can begin the process of transforming it to suit your application’s needs. One
+    common type of transformation is partitioning the document into smaller sections
+    called chunks, which align with the context window of your chosen LLM. For example,
+    if you intend to use 4 chunks as context and allocate 2000 tokens for the context,
+    you may want to divide your documents into chunks of 500 tokens each. For English
+    text, 1 token is approximately 4 characters or 0.75 words.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additionally, you have the option to automatically extract features or metadata
+    associated with each chunk. These extracted details can then be utilized in various
+    tasks such as classification or summarization.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Text Embedding Models](toc.xhtml#s439a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Embedding means representing text as vectors and it is another method we can
+    consider when transforming Documents. The implementation of this method in LangChain
+    is straightforward and efficient. LangChain offers a standard interface that can
+    be utilized with various embedding model providers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is important to note that different embedding providers may employ different
+    techniques for embedding queries and documents. To address this, LangChain adopts
+    a similar approach and offers distinct methods for embedding each of them. By
+    doing so, LangChain ensures compatibility and flexibility when working with various
+    embedding providers, allowing users to seamlessly integrate their preferred embedding
+    techniques into their workflow.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Vector stores](toc.xhtml#s440a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Searching for specific information in a large amount of unstructured text is
+    a common use case for LangChain. To tackle this task, one approach is to start
+    by breaking down the unstructured text into Document-type chunks. These Documents
+    are then converted into lists of numbers (vectors) and stored in a special database
+    known as vector store.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To find the desired information, the query is also converted into a vector representation
+    and compared with each vector in the vector store. The selection process involves
+    identifying the documents that are most similar to the query. Similarity is calculated
+    utilizing metrics such as cosine similarity or Euclidean distance. Cosine similarity
+    determines the similarity between two vectors by measuring the cosine of the angle
+    between them, while Euclidean distance calculates the straight-line distance between
+    two points in space.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A vector store acts as a database where the vector representations of Documents
+    can be stored together with their metadata. What makes LangChain particularly
+    versatile is its compatibility with various open-source vector stores, as well
+    as its ability to integrate with different paid vector store providers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Retrievers](toc.xhtml#s441a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Once our similarity search is complete, we can utilize retrievers to retrieve
+    the documents that are pertinent to a query. Retriever functionality enables us
+    to effectively retrieve relevant documents based on our similarity search results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Chains](toc.xhtml#s442a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The previously mentioned features can be seen as additional capabilities that
+    offer convenience, but the true strength of LangChain lies in its chains. While
+    using Language Models alone is suitable for simple applications, the use of multiple
+    LLMs or a combination of LLMs and other components in a sequence is essential
+    for developing more complex applications. LangChain simplifies this process by
+    introducing chains.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are various types of chains. They are particularly designed to quickly
+    implement specific use cases, which is why they differ in complexity. The most
+    basic type is the LLM Chain, which consists of a prompt template and a Language
+    Model. The purpose of this chain is to format the given input values into a prompt,
+    execute the LLM using the prepared prompt, and finally return the output.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another commonly used chain is the Simple Sequential chain. In this type, a
+    series of calls are made to either the same or different Language Models after
+    the initial call. This is particularly useful when the output from one call needs
+    to be used as the input for another one (refer to C2, D1, and D2 patterns in *[Chapter
+    4, Architecture Patterns enabled by GPT-Models](c04.xhtml)* ).
+  prefs: []
+  type: TYPE_NORMAL
+- en: The RetrievalQA chain is one more popular type, which involves taking a question,
+    retrieving relevant documents using a retriever, and then providing those documents
+    as context to the LLM for answering the question. There is also the SQL Database
+    Chain, which is designed for answering questions over an SQL database, and the
+    Summarization Chain, which is used for summarizing multiple documents.
+  prefs: []
+  type: TYPE_NORMAL
+- en: These are just a few examples, but there are many more possibilities. Additionally,
+    users have the option to create their own customized chains by subclassing the
+    Chain class.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Memory](toc.xhtml#s443a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'By default, Large Language Models are designed to be stateless. This means
+    that each received query is treated independently, without any regard for previous
+    queries or conversations. However, in certain applications like virtual assistants,
+    it is important to have access to the context of the conversation in order to
+    better understand the user’s intent and provide a response that relates to previous
+    queries. In order to better comprehend this, let’s explore the following conversation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*User: What is estimated computing power of a brain?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*AI: The brain’s computing power is immensely complex and difficult to precisely
+    quantify, but some rough estimates suggest it could be in range of 10^18 to 10^26
+    floating-point operations per second (FLOPS).*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*User: Why is it difficult to quantify?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*AI: The statement „difficult to quantify” is common phrase used to describe
+    situation where …*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If a user asks about the estimated computing power of the brain, the AI model
+    may provide a general answer based on available knowledge. However, when the user
+    follows up with a question, the AI may struggle to understand the reference without
+    access to the previous interaction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The problem in the example is linked with coreference resolution. Coreference
+    resolution involves identifying words in a sentence that refer to the same thing.
+    In this case, the words “it” and “computing power” are examples of such words.
+    The lack of memory and statelessness of the Language Model resulted in irrelevant
+    answers. In order to resolve this problem, it is essential to manage the memory
+    of the complete conversation or at least a portion of it. LangChain provides methods
+    that assist in this endeavor. These methods provide a range of choices tailored
+    for different types of interactions. It is important to consider the token limit
+    for each call when passing data, as there may be constraints on the amount of
+    information that can be included. For instance, the entire conversation can be
+    passed to the next prompt if the interaction is expected to be brief, or a summarized
+    version can be used if the interaction is predicted to be lengthy. All these methods
+    enable the model to understand and respond to the conversation based on its context,
+    thereby improving its capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Agents](toc.xhtml#s444a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Sometimes, in order to serve the user, we need to determine the actions based
+    on unpredictable input. This is where an agent becomes useful. An agent acts as
+    a helpful assistant, not only carrying out tasks on our behalf but also considering
+    which subtasks need to be performed and in what order.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In LangChain, agents can be seen as LLMs that break down tasks into smaller
+    steps. They utilize various tools and other LLMs to achieve the ultimate objective
+    of the task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first component of an agent is the Orchestration Agent, in simple words
+    - “manager” LLM. This LLM handles all the cognitive processes, including devising
+    steps, analyzing outputs, adjusting plans if necessary, and determining the next
+    course of action.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Additionally, there are tools available to the agent. These tools can range
+    from a simple calculator to more advanced ones like other LLMs, the SERP (Search
+    Engine Results Page) API, or the JsonGetValueTool. There are also comprehensive
+    toolkits that contain multiple tools of the same category, such as the Zapier
+    Toolkit, OpenAPI Agent Toolkit, or JSON Agent Toolkit. Each tool is accompanied
+    by a descriptive text tag, which the “manager” LLM uses to understand if the tool
+    is suitable for the upcoming step.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In conclusion, an agent comprises a “manager” LLM that makes decisions regarding
+    subactions that need to be taken in order to complete tasks, and then uses a collection
+    of tools and toolkits that enable the execution of each step.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There are two types of agents as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Action agents**: These agents make decisions at each timestep based on the
+    outputs of all the previous tools. They are well-suited for handling small tasks
+    efficiently.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Plan-and-execute agents**: In contrast, plan-and-execute agents devise the
+    entire action plan in advance and do not alter the plan during the execution.
+    This type of agent is ideal for tackling complex tasks effectively.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: It is also possible to combine the two types by allowing a plan-and-execute
+    agent to utilize action agents for executing the plans. This hybrid approach enables
+    the agent to benefit from the strengths of both agent types.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Examples](toc.xhtml#s445a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: LangChain offers a remarkable collection of tools that drastically speed up
+    the development process. By utilizing various components such as chains and agents,
+    the overall process becomes easier and faster, saving time and effort. This allows
+    individuals to focus on understanding requirements and actually building the desired
+    solution. When using LangChain, there are numerous advantages to be gained. It
+    allows to fully leverage all the **C**apabilityGPT’s benefits - streamlined operations,
+    cost savings, improved decision-making, and many more. To fully comprehend the
+    potential of LangChain, let’s delve into its components by exploring real-world
+    examples.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Example 1: Preparation helper for lawyers](toc.xhtml#s446a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Now, let us explore a practical use case of LangChain in creating an application
+    to assist lawyers in their trial preparations. In order to effectively prepare,
+    lawyers often need to study past cases. However, it can be challenging to find
+    relevant cases that are similar to the one they are currently working on. Our
+    objective is to develop an application that can retrieve documents containing
+    past cases based on the lawyers’ descriptions of their specific needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, the application should be capable of listing all cases related
+    to defamation or financial loss. Relying solely on simple keyword searches may
+    not yield accurate results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To overcome this limitation, we will employ a more advanced method called semantic
+    search. In the following example, we will demonstrate a popular approach that
+    starts with embedding documents and the lawyers’ queries. Text embeddings are
+    numerical representations of text that enable machines to understand and process
+    natural language. They transform words or phrases into a list of numbers (vectors),
+    with semantically similar items possessing similar values.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In semantic search, this allows the system to match user’s queries with relevant
+    documents based on semantic similarity, not just keyword matches. By employing
+    text embeddings, systems can understand nuanced meanings and improve the relevance
+    of search results, providing a more efficient and effective search experience.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, once we have all documents embedded (converted into lists of numbers i.e.
+    vectors) and stored in a vector store, we embed the query and calculate semantic
+    closeness between the query and each of the documents. The measure we’ll use is
+    called cosine similarity which is a cosine of the angle between two vectors. The
+    documents with the highest cosine similarity will be our search results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Nonetheless, to illustrate the functionality of this application, we first need
+    to generate a set of sample civil cases that we can work with.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Content generation](toc.xhtml#s447a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Generating cases can be done using Language Models or Chat Models from the Model
+    component of LangChain. In this case, we will use a language model using OpenAI’s
+    GPT-3 family *text-003-davinci* model*.* To demonstrate the usage of output parsers
+    effectively, we will adopt a two-step approach. Initially, we will create a list
+    of distinct names that represent various content for each case.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Subsequently, using the same model, we will generate the contents for civil
+    cases and save them in a docx file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Generating a list of names](toc.xhtml#s448a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Let’s start with some useful imports and function definition:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain import PromptTemplate`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.llms import OpenAI`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.chains import LLMChain`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.output_parsers import CommaSeparatedListOutputParser`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from docx import Document`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from typing import List`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def generate_civil_cases_names() -> List[str]:`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this particular scenario, we aim to create approximately 60-80 names for
+    civil cases that will remain within the Open AI’s model token limit during a single
+    request. To achieve this, we will utilize the Python f-string. We will include
+    a variable called `**number_of_cases**` in case we want to modify the number that
+    specifies the desired quantity of generated cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`generate_civil_cases_names_template = “””`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`You are a lawyer and a legal expert. Generate {number_of_cases} civil cases
+    names.\n{format_instructions}`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`“””`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To achieve the desired output in a list format, we can utilize the LangChain’s
+    list parser. This parser is designed to return a list of comma-separated items.
+    However, there are two important steps to follow in order to obtain the correct
+    output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Step 1: Define format instructions for the prompt**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The first step involves calling the `**ComaSeparatedListOutputParser()**` class
+    object. This object will allow us to access the `**get_format_instructions**`
+    method. By calling this method on the object, we can retrieve the string with
+    format instructions that is later incorporated into our prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`output_parser = CommaSeparatedListOutputParser()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`format_instructions = output_parser.get_format_instructions()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Step 2: Format the actual output**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once we have obtained the output, we will proceed with formatting the text we
+    get from the model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s discuss the creation of a prompt. To utilize a prompt, we must create
+    an instance of the `**PromptTemplate**` class. This involves specifying the template,
+    input variable, and partial variables along with instructions for formatting:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`prompt = PromptTemplate(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`template=generate_civil_cases_names_template,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`input_variables=[“number_of_cases”],`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`partial_variables={“format_instructions”: format_instructions},`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In order to proceed, it is essential to define a model. For our purposes, we
+    utilize an Open AI model, although there exist numerous alternatives for consideration
+    that are supported by LangChain. The standard model within the OpenAI class object
+    is `**text-davinci-003**`. The `**temperature**` and `**max_tokens**` are parameters
+    that control the output of the model. `**Temperature**` determines the randomness
+    of the generated text, while `**max_tokens**` is the maximum number of tokens
+    to generate shared between the prompt and completion.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`model = OpenAI(temperature=0.9, max_tokens=4000)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The next step is to pass the input to the model:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`_input = prompt.format(number_of_cases=”80”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`output = model(_input)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Finally we are parsing the output in order to get a *List* object of civil
+    cases processes:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`list_of_processes = output_parser.parse(output)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`return list_of_processes`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now that we have a list of civil cases names, we will generate content.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Generating content of civil cases](toc.xhtml#s449a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'First, let’s create a directory for our civil cases:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def generate_civil_cases(list_of_processes):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if not os.path.exists(“civil_cases”):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`os.makedirs(“civil_cases”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We want to generate each of the civil cases in a reproducible way, which is
+    why we are again using a prompt template. We are using a Python f-string that
+    includes the variable `**civil_case_name**`, which will be changed with each iteration:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`generate_civil_case_template = “””`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`You are a lawyer and a legal expert. Generate content of civil case: {civil_case_name}.
+    Include title, full names of parties, background, claims, evidence, legal issues
+    and procedural status.`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`“””`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: When we’ve got simple use cases, using LLMs in isolation is fine. However, as
+    the application gets more complex, chaining LLMs may come in handy. Let’s see
+    how we can implement a simple `**LLMChain**` that takes in a prompt template,
+    formats it with the user input, and returns a response from an LLM.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`llm = OpenAI(temperature=0.9, max_tokens=4000)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`prompt = PromptTemplate(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`input_variables=[“civil_case_name”],`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`template=generate_civil_case_template,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`chain = LLMChain(llm=llm, prompt=prompt)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We are calling the chain in a loop in order to generate and save civil cases:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`for i, process in enumerate(list_of_processes, start=1):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`legal_process_content = chain.run(process)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`doc = Document()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`doc.add_paragraph(legal_process_content)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`doc.save(f”civil_cases/civil_case_{i}.docx”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is the complete code for reference:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain import PromptTemplate`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.llms import OpenAI`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.chains import LLMChain`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.output_parsers import CommaSeparatedListOutputParser`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from docx import Document`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from typing import List`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def generate_civil_cases_names() -> List[str]:`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`generate_civil_cases_names_template = “””`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`You are a lawyer and a legal expert. Generate {number_of_cases} civil cases
+    names.\n{format_instructions}`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`“””`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``output_parser = CommaSeparatedListOutputParser()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`format_instructions = output_parser.get_format_instructions()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`prompt = PromptTemplate(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`template=generate_civil_cases_names_template,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`input_variables=[“number_of_cases”],`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`partial_variables={“format_instructions”: format_instructions},`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`model = OpenAI(temperature=0.9, max_tokens=4000)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`_input = prompt.format(number_of_cases=”80”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`output = model(_input)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`list_of_processes = output_parser.parse(output)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``return list_of_processes`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def generate_civil_cases(list_of_processes):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if not os.path.exists(“civil_cases”):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`os.makedirs(“civil_cases”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``generate_civil_case_template = “””`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`You are a lawyer and a legal expert. Generate content of civil case: {civil_case_name}.
+    Include title, full names of parties, background, claims, evidence, legal issues
+    and procedural status.`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`“””`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`llm = OpenAI(temperature=0.9, max_tokens=4000)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`prompt = PromptTemplate(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`input_variables=[“civil_case_name”],`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`template=generate_civil_case_template,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`chain = LLMChain(llm=llm, prompt=prompt)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`for i, process in enumerate(list_of_processes, start=1):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`legal_process_content = chain.run(process)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`doc = Document()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`doc.add_paragraph(legal_process_content)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`doc.save(f”civil_cases/civil_case_{i}.docx”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if __name__ == “__main__”:`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`process_names = generate_civil_cases_names()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`generate_civil_cases(process_names)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The code begins by introducing the *generate_civil_cases_names* function. This
+    function utilizes LangChain’s `**PromptTemplate**` and the `**OpenAI**` model
+    to generate a list of case names. To ensure proper formatting, the output is then
+    processed with the `**output_parser**`. Following that, we have the `**generate_civil_cases**`
+    function which takes the generated list of case names as a parameter. Within this
+    function, `**LLMChain**` is employed to generate the content for each case individually
+    through an iterative process. The resulting cases will be used as input for the
+    subsequent section on semantic search.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Semantic search](toc.xhtml#s450a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Now that we have a database of civil cases, we want our application to be able
+    to perform a semantic search in order to return all cases that are relevant for
+    a lawyer that is preparing for a trial.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The idea is to take all the civil cases, and then use a model that converts
+    them into a vector representation (embeds them) and stores them in a special vector
+    database - vector store. For instance, once the lawyer inputs a query, for example,
+    *I look for cases about financial loss*, the following steps are going to be performed:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Converting query into vector representation - embedding the query
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Conducting similarity checks between embedded query and embedded civil cases
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Retrieving the relevant vectors from the database
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Embedding civil cases and storing them in Pinecone vector store](toc.xhtml#s451a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Let’s begin by importing the required libraries and modules:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.document_loaders import DirectoryLoader`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.vectorstores import Pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We are going to embed the documents using an Open AI embeddings model and then
+    store them in the Pinecone vector store.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The first thing to do is to load the civil cases. For this purpose the `**DirectoryLoader**`
+    class object will load all files into a specified directory. Note that by default,
+    the *DirectoryLoader* uses the `**UnstructuredLoader**` class to load the documents.
+    If you need to load a different (structured) type of document, you can use a different
+    loader class. For example, if you want to load Python source code files, you can
+    use the *PythonLoader* class:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def embed_and_store_documents():`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`loader = DirectoryLoader(“civil_cases”, glob=”*.docx”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`documents = loader.load()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s define the embeddings model:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`embeddings_model = OpenAIEmbeddings()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, let’s delve into the functionality of Pinecone. Pinecone acts as a vector
+    database, enabling us to store embedded data and send queries effectively. Before
+    using Pinecone, we need to create an index, which serves as a container for our
+    data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When creating a Pinecone index, we have to specify the similarity measure we
+    want to use, such as cosine similarity. This measure helps in finding the most
+    relevant vectors based on how close they are to the query in vector space. Additionally,
+    we need to define the dimensions of the vectors we are working with. In the case
+    of the OpenAI’s embedding model that we’ll use, *text-embedding-ada-002*, the
+    dimension of output vectors is 1536.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once the index is created, we can proceed by adding our API key and environment
+    name to the environmental variables. This step ensures that our Pinecone client
+    has the necessary authorization to access the database. Furthermore, we need to
+    provide the name of the index we created. This information enables us to initialize
+    the Pinecone client effectively, providing seamless interactions with the vector
+    store.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`pinecone.init(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`index_name = “legal-documents-search”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Finally, with this single line of code, all documents are going to be embedded
+    and stored in Pinecone. These kinds of ready-to-use pieces are the great power
+    of LangChain:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Pinecone.from_documents(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`documents, embeddings_model, index_name=index_name`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is the complete code for reference:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.document_loaders import DirectoryLoader`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.vectorstores import Pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def embed_and_store_documents():`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`loader = DirectoryLoader(“civil_cases”, glob=”*.docx”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`documents = loader.load()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`embeddings_model = OpenAIEmbeddings()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`pinecone.init(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`index_name = “legal-documents-search”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Pinecone.from_documents(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`documents, embeddings_model, index_name=index_name`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if __name__ == “__main__”:`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`embed_and_store_documents()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The code snippet begins by loading the civil cases using the `**DirectoryLoader**`.
+    This loader retrieves all files with a specified extension from the designated
+    directory. Afterward, we define the embeddings model and proceed to initialize
+    the Pinecone client. The final step entails embedding the loaded documents and
+    storing them in the Pinecone vector store with the aid of the client.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Similarity search and retrieving relevant data](toc.xhtml#s452a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The last part is retrieving the relevant data. First, we want to embed the
+    query that is asked by the lawyer and perform a similarity search. Once we find
+    the closest results, we want to return the names of the civil case files to the
+    user. Let’s start with necessary imports:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.vectorstores import Pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In order to embed the lawyer’s query we will again use embeddings model from
+    Open AI:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def retrieve_relevant_cases(query):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`embeddings_model = OpenAIEmbeddings()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Now that we have an existing index with our civil cases represented as vectors,
+    we can use the `**from_existing_index**` method to create a `**docsearch**` object
+    that we’ll use for the similarity check:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`index_name = “legal-documents-search”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`pinecone.init(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If we pass a query like `“Cases about financial loss”` to the *docsearch* object
+    calling *similarty_search* method, the following will happen: the query will be
+    embedded with the default model defined in the *OpenAIEmbeddings* object, similarity
+    search will be performed and all relevant documents will be returned:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`docs = docsearch.similarity_search(query)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Finally, as we are looking for specific documents, we want to return the names
+    of these documents that are stored in metadata:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`sources = [doc.metadata[“source”] for doc in docs]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is the complete code for retrieving relevant civil cases:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.vectorstores import Pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def retrieve_relevant_cases(query):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`embeddings_model = OpenAIEmbeddings()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`index_name = “legal-documents-search”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`pinecone.init(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`docs = docsearch.similarity_search(query)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`sources = [doc.metadata[“source”] for doc in docs]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`return sources`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if __name__ == “__main__”:`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`print(retrieve_relevant_cases(“Cases about financial loss”))`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The code snippet includes a function called `**retrieve_relevant_cases**` that
+    aims to get the appropriate cases. Initially, we define the embeddings model,
+    index name, and initialize the Pinecone client. Next, we create a *docsearch*
+    object for conducting similarity searches. Lastly, we extract the names of the
+    cases from the metadata of the returned documents.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Example 2: Internal knowledge QA for automation specialists - chatting over
+    a manual of a specific controller](toc.xhtml#s453a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: One common scenario for utilizing LLMs in a corporate environment involves extracting
+    data from various types of text documents, such as product specifications, usage
+    documentation, web pages, presentations, and internal documents. The main challenge
+    in these cases is dealing with a large volume of data and the inconsistency in
+    how different terms are used to refer to the same thing. A simple keyword search
+    is often insufficient, and understanding the semantic meaning of user questions
+    becomes crucial. To tackle this issue, LangChain offers a range of components
+    with effective strategies to address semantic search.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To illustrate the capabilities of LangChain, let’s consider an example where
+    we develop a tool for automation specialists to expedite the process of searching
+    through documentation. This tool will function as a chat mechanism, allowing the
+    specialists to ask questions about a specific controller. As a reminder, a controller
+    is a device that manages a process to achieve and maintain desired parameters.
+    For instance, in a chocolate manufacturing plant, a programmable logic controller
+    (PLC) acts as a controller by monitoring and controlling various equipment and
+    processes to maintain specific production parameters such as temperature, pressure,
+    and speed, ensuring optimal operation and product quality. The documentation for
+    such controllers can be extensive and encompass a significant amount of content.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The objective is to provide automation specialists with a chat interface that
+    enables them to quickly access the information they need for design and programming
+    purposes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Chunking the manual and loading it to the Pinecone vector store](toc.xhtml#s454a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Let’s explore the technical aspects of using LangChain for the implementation.
+    The controller’s manual is a 40-page PDF document, so our initial task is to load
+    the document. Since the entire document is too lengthy to input into our prompt,
+    we must devise a strategy to divide the document into manageable parts. To begin,
+    let’s consider some useful imports:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.text_splitter import RecursiveCharacterTextSplitter`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.vectorstores import Pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.document_loaders import PyPDFLoader`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Loading the manual is our next step. To accomplish this, we can utilize the
+    `**PyPDFLoader**` class, which is readily available and allows us to easily load
+    the document and save it as a *Document* object:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def embed_and_store_documents():`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`loader = PyPDFLoader(“Manual_MT655333.pdf”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`manual = loader.load_and_split()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Now that we have loaded the PDF file, we need to divide it into smaller sections.
+    In LangChain, there is a text splitter class called *RecursiveCharacterTextSplitter*
+    that can help us with this task. The splitter splits the text based on specific
+    characters, which are listed as follows: [“\n”, “\r”, “ “, „“]. The reason behind
+    this approach is to keep entire paragraphs together for as long as possible. This
+    increases the chances of getting strongly semantically related chunks of text.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chunk size refers to the maximum size of each section, as measured by the
+    length function. The overlap indicates how many tokens will be shared between
+    each adjacent section. The length function determines how the length of the sections
+    is calculated. By default, it counts the number of characters, but it is common
+    to use a token counter instead. The `**add_start_index**` parameter determines
+    whether the starting position of each section within the original document should
+    be included in the metadata.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`text_splitter = RecursiveCharacterTextSplitter(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`chunk_size=500,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`chunk_overlap=30,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`length_function=len,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`add_start_index=True,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In order to split the document into smaller parts, we can utilize the `**text_splitter**`
+    object and its `**split_documents**` method:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`documents = text_splitter.split_documents(documents=manual)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'After completing this step, we proceed to embed these chunks and post them
+    to the Pinecone vector store:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`embeddings_model = OpenAIEmbeddings()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`pinecone.init(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`index_name = ‘mt655333-manual’`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Pinecone.from_documents(documents, embeddings_model, index_name=index_name)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the full code for chunking, embedding, and pushing vectors to Pinecone
+    will appear:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.text_splitter import RecursiveCharacterTextSplitter`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.vectorstores import Pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.document_loaders import PyPDFLoader`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def embed_and_store_documents():`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`loader = PyPDFLoader(“Manual_MT655333.pdf”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`manual = loader.load_and_split()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`text_splitter = RecursiveCharacterTextSplitter(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`chunk_size=500,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`chunk_overlap=30,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`length_function=len,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`add_start_index=True,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`documents = text_splitter.split_documents(documents=manual)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``embeddings_model = OpenAIEmbeddings()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`pinecone.init(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`index_name = ‘mt655333-manual’`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Pinecone.from_documents(documents, embeddings_model, index_name=index_name)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if __name__ == ‘__main__’:`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`embed_and_store_documents()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The preceding code snippet uses `**PyPDFLoader**` to load the controller’s manual.
+    After that, it utilizes `**RecursiveCharacterTextSplitter**` to split the documents
+    into smaller chunks. Later on, it embeds these chunks and puts them in a vector
+    store with the usage of the Pinecone client. This allows us to have the documents
+    prepared for the next step, which involves performing a similarity search over
+    the manual.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Chatting over the controller’s manual - Conversational Retrieval Chain for
+    similarity search](toc.xhtml#s455a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Now let’s explore the implementation of a chat mechanism that allows automation
+    specialists to ask for information about the controller. To ensure a smooth conversation
+    flow, we must address the fact that subsequent queries may be related to previous
+    queries. To handle this, we need to effectively manage the conversation’s memory.
+    To retrieve relevant chunks of data and effectively handle chat history, we will
+    employ the `**ConversationalRetrievalQAchain**`. With this class, we will process
+    previous interactions and integrate them into the current chat.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.llms import OpenAI`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.chat_models import ChatOpenAI`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.chains import ConversationalRetrievalChain`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.vectorstores import Pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`pinecone.init(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def retrieve_controllers_info(query, chat_history):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`embeddings_model = OpenAIEmbeddings()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`index_name = “mt655333-manual”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`The following chain is created by using the `**from_llm**` method on the `**ConversationalRetrievalChain**`
+    class:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`qa = ConversationalRetrievalChain.from_llm(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`OpenAI(temperature=0),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`docsearch.as_retriever(),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`return_source_documents=True,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`condense_question_llm=ChatOpenAI(temperature=0, model=”gpt-3.5-turbo”),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`return qa({“question”: query, “chat_history”: chat_history})`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To get information about the source documents that were used to generate the
+    answer, we include an additional argument called `**return_source_documents**`
+    and set it to `**True**`. The last parameter, `**condense_question_llm**`, is
+    responsible for combining the chat history and query into a single query vector.
+    This allows us to use different models for condensing the question and answering
+    it. The models can be chosen based on their performance given a specific task
+    or costs of usage. The chain produces a tuple that includes the answer and a chat
+    history. The chat history is a list of tuples containing the queries and their
+    corresponding answers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Memory handling](toc.xhtml#s456a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The last step is to test the chain. It is important to note that in this case,
+    we must manage the memory during the chat session. At the start of each session,
+    we set the memory to an empty list. As each query is sent to the chat assistant,
+    we add to it a tuple containing the query and its corresponding answer to the
+    chat history list:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if __name__ == “__main__”:`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`chat_history = []`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`query = “Does MT65533 support autotuning?”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``result = retrieve_controllers_info(query, chat_history)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``print(result[“answer”])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`print(result[“source_documents”])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``chat_history.append((query, result[“answer”]))`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``query = “Which methods exactly?”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`result = retrieve_controllers_info(query, chat_history)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``print(result[“answer”])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`print(result[“source_documents”])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The following conversation is the outcome of the preceding backend application.
+    Furthermore, depending on the design, one might want to add relevant fragments
+    of the manual that are returned by the `**docsearch**` object.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Automation Specialist: Does MT65533 support autotuning?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*AI: Yes, the MT655333 controller supports auto-tuning techniques to determine
+    optimal control parameters automatically.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Automation Specialist: Which methods exactly?*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*AI: The MT65533 controller supports auto-tuning methods such as relay feedback,
+    Ziegler-Nichols forward control, adaptive control, and fuzzy logic control.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is the complete code for reference:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.llms import OpenAI`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.chat_models import ChatOpenAI`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.chains import ConversationalRetrievalChain`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.vectorstores import Pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import pinecone`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`pinecone.init(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`def retrieve_controllers_info(query, chat_history):`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`embeddings_model = OpenAIEmbeddings()`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`index_name = “mt655333-manual”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``qa = ConversationalRetrievalChain.from_llm(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`OpenAI(temperature=0),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`docsearch.as_retriever(),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`return_source_documents=True,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`condense_question_llm=ChatOpenAI(temperature=0, model=”gpt-3.5-turbo”),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`return qa({“question”: query, “chat_history”: chat_history})`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if __name__ == “__main__”:`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`chat_history = []`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`query = “Does MT65533 support autotuning?”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``result = retrieve_controllers_info(query, chat_history)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``print(result[“answer”])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`print(result[“source_documents”])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``chat_history.append((query, result[“answer”]))`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``query = “Which methods exactly?”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`result = retrieve_controllers_info(query, chat_history)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '``print(result[“answer”])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`print(result[“source_documents”])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This code snippet begins by initializing the Pinecone client and then defines
+    the `**retrieve_controllers_info**` function. This function accepts *query* and
+    *chat_history* as input parameters and utilizes the `**ConversationalRetrievalChain**`
+    to perform a similarity search over the vector store and generate an answer. In
+    the main function, the solution is tested by passing the `**query**` and `**chat_history**`
+    to the `**retrieve_controllers_info**` function. The management of conversation
+    memory is left to the discretion of the developer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Example 3: Market research using LangChain Agent](toc.xhtml#s457a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The following example illustrates how LangChain’s agents can be utilized to
+    carry out market research. This process entails comprehending the task, strategizing
+    execution, and implementing specific actions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For this example, we will employ LangChain’s agent component. We will empower
+    our agent with the capability to utilize SERP API as a search engine. SERP API
+    is essentially a tool that developers can utilize to access and extract data from
+    search engine result pages. The agent will leverage an Open AI model to plan all
+    necessary steps. It will identify the relevant data to search for, verify the
+    accuracy of the API’s output, and compile the results to deliver an answer to
+    the user.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Since LangChain provides all the necessary tools, the implementation of this
+    feature will be straightforward and uncomplicated. Let us begin by importing the
+    necessary modules and libraries:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.agents import load_tools`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.agents import initialize_agent`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.agents import AgentType`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.llms import OpenAI`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In order to use SERP API, we need to register at and get `**serp_api_key**`:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`serpapi_api_key = os.environ[‘SERPAPI_API_KEY’]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`llm = OpenAI(temperature=0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We are equipping the agent with the SERP API and an LLM. These tools empower
+    the agent to generate accurate and comprehensive answers:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`tools = load_tools([“serpapi”], llm=llm)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now that we have the list of tools ready, let’s use the `**zero-shot-react-agent**`.
+    This type of agent uses the *ReAct* [13] paradigm to determine the most suitable
+    tool based on the tool’s description. The *ReAct* gets its name from the combination
+    of the words *reasoning* and *acting*. This framework employs the reasoning component
+    to identify the tasks that need to be performed and evaluate the observations.
+    Then it utilizes the acting component to carry out tasks. *ReAct* is a general
+    paradigm to combine reasoning and acting with language models for solving diverse
+    language reasoning and decision-making tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To get started, we first need to initialize the agent. We do this by providing
+    it with a set of tools it can use, the reasoning LLM, and specifying the *ReAct*
+    agent type. Additionally, we can set the verbose parameter to determine whether
+    the agent should provide a step-by-step description of its actions. Once the agent
+    is initialized, we can then request it to solve a problem:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`agent.run(“What is a price of current best Lamborghini model?”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is the complete code for reference:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.agents import load_tools`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.agents import initialize_agent`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.agents import AgentType`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`from LangChain.llms import OpenAI`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`import os`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`serpapi_api_key = os.environ[“SERPAPI_API_KEY”]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`llm = OpenAI(temperature=0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`tools = load_tools([“serpapi”], llm=llm)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`agent = initialize_agent(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`agent.run(“What is a price of current best Lamborghini model?”)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'After initializing the agent and equipping it with tools we run it by using
+    the query: *What is the price of the latest Lamborghini model?* The agent then
+    begins its thought process and carries out a series of actions. These steps are
+    displayed as output, thanks to the verbose parameter that we previously set during
+    the initialization process:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Entering new AgentExecutor chain…`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`I should look up the current best Lamborghini model`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Action: Search`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Action Input: “current best Lamborghini model”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Observation: Best of the Current Lamborghini Model Lineup · Lamborghini Huracán
+    Evo RWD / STO · Lamborghini Aventador SVJ · Lamborghini Urus · Lamborghini Sián
+    · Awesome …`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Thought: I should look up the price of the Lamborghini Huracán Evo RWD / STO`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Action: Search`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Action Input: “Lamborghini Huracán Evo RWD / STO price”`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Observation: When it was launched, the Lamborghini Huracan STO coupe’s price
+    was $327,838 before taxes and delivery, and it’s up to around $335,000 for a 2023
+    model. Should …`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Thought: I now know the final answer`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Final Answer: The price of the Lamborghini Huracán Evo RWD / STO is around
+    $335,000 for a 2023 model.`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`> Finished chain.`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Determining the price of the top Lamborghini model is the task to be performed
+    by the agent. The agent starts with identifying the requested Lamborghini model,
+    which was described as “best”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once the model is identified, the agent uses the SERP API to conduct a thorough
+    search for specific information about its price and gather relevant data. It continuously
+    evaluates the output received from the API, carefully analyzing it to identify
+    missing information. To arrive at the correct answer, the agent relies on a combination
+    of reasoning and executing capabilities. This is what makes LangChain’s agents
+    so powerful. They have the ability to use tools and are equipped with LLMs that
+    allow them to make conclusions. By following this systematic approach, the agent
+    is able to determine the price of the top Lamborghini model with precision and
+    reliability. This showcases the impressive capabilities of LangChain’s agents,
+    making them a valuable tool for various use cases. Some other examples include
+    utilizing agents to create personalized dynamic pricing strategies, generating
+    risk assessments for individual stocks based on historical and market data, or
+    identifying market trends by analyzing news articles and social media posts relevant
+    to specific industries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](toc.xhtml#s458a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The LangChain framework is a powerful Python-based tool that unlocks the full
+    potential of Large Language Models for application development. This framework
+    offers a comprehensive set of components that empowers developers to create sophisticated
+    applications. By leveraging the use of components, chains, and agents, the development
+    process becomes more streamlined and efficient. This results in significant effort
+    savings, improved quality, standardization, and readability, ultimately leading
+    to increased productivity and faster time-to-market for organizations. LangChain
+    is a game-changing tool that can revolutionize the way businesses and professionals
+    harness all the capabilities of Large Language Models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As we conclude our chapter on LangChain, we have seen how this Python-based
+    framework excels in developing GPT-based applications. As we embark on the next
+    chapter, we will delve into `predictive-powers`, an exceptional, Java-based library
+    specially designed for building solutions that harness the power of LLMs - a continuation
+    of our exciting journey into the domain of generative AI.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key Points](toc.xhtml#s459a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: LangChain is a Python-based framework that allows developers to create applications
+    that maximize the potential of Large Language Models. It works with LLMs from
+    multiple vendors, including OpenAI, as well as custom-made models.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using LangChain contributes to improved quality, standardization and readability.
+    With its ready-to-use components, the process of developing comprehensive applications
+    is simplified and streamlined.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: By combining pre-learned knowledge with real-time or domain information, LangChain
+    enhances the capabilities and reliability of working with LLMs.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The framework consists of components like Schema, Models, Data processing, Chains,
+    Memory Handling, and Agents, which empower developers to work faster.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Chains are ready-to-use classes that allow stacking commands. They contribute
+    to increased efficiency for developers.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Agents are highly valuable in tasks that require independent reasoning, planning,
+    and execution actions, making it possible to create autonomous and powerful applications.[PRE0]`
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL

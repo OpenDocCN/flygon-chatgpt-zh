@@ -155,6 +155,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 个人角色：重点是单一的专业技能集，比如“营销公司的业务分析师”或“专门从事数据分析的AI代理”。在这种情况下，模型将利用其预训练的知识，以满足专业背景和情境理解的要求，发挥专业知识和观点。
 - en: '**For team personas**: Such as a “collaborative team of a teacher, a student,
     and a parent” or a “cross-functional team comprising a developer, a designer,
     and a project manager,” encompass a synergy of varied perspectives and experiences.
@@ -164,6 +165,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 团队角色：例如“教师、学生和家长的协作团队”或“由开发人员、设计师和项目经理组成的跨职能团队”，涵盖了多样化观点和经验的协同作用。在这里，GPT模型试图促进协作方法，牢记每个角色贡献的独特见解。
 - en: '**Context**: This component includes external or user-provided information
     that guides a GPT model toward more accurate and appropriate responses. It could
     involve background information or specific details about a scenario; for example,
@@ -175,6 +177,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 背景：这个组成部分包括引导GPT模型更准确和适当地回应的外部或用户提供的信息。它可能涉及背景信息或特定情景的细节；例如，“我们公司上季度推出了三个营销活动。”背景信息显著有助于定位GPT模型的理解和回应，并有助于减少幻觉的风险，即生成与提供的输入或其预训练数据不符的信息。
 - en: '**Task Specification**: This component serves as the detailed instruction defining
     what action or series of actions a GPT model needs to undertake. The nature and
     structure of the instruction can vary depending on task complexity, the precision
@@ -184,6 +187,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 任务规范：这个组成部分作为详细的指令，定义了GPT模型需要采取的行动或一系列行动。指令的性质和结构可能因任务复杂性、所需的精度以及任务是否涉及单个步骤或多个步骤而有所不同。这类指令有三种不同的格式：
 - en: '**Single Instruction**: These instructions align with the AI capabilities defined
     in the CapabilityGPT framework[¹](#ftn1a), directing a GPT model to harness its
     diverse capabilities such as Assessment, Classification, or Communication. For
@@ -193,6 +197,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单一指令：这些指令符合CapabilityGPT框架中定义的AI能力，指导GPT模型利用其多样化的能力，如评估、分类或沟通。例如，一条指令可能是：“评估这些广告活动的表现，并找出改进的方向。”
 - en: '**Instruction Sequence**: This format involves a series of instructions, each
     corresponding to a specific AI capability. The sequence guides a GPT model through
     multiple tasks that aim to solve complex problems or achieve detailed objectives.
@@ -205,6 +210,8 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 指令序列：这种格式涉及一系列指令，每个指令对应一个特定的AI能力。该序列指导GPT模型完成多个任务，旨在解决复杂问题或实现详细目标。每个指令都作为整体任务进展的一个阶段，其中一个指令的输出作为下一个指令的输入。一个例子是：“1.
+    从提供的财务报告中提取季度销售数据。2. 从提取的数据中识别任何销售趋势或模式。3. 根据识别的趋势，预测下一个季度的销售额。”
 - en: '**Pseudo-Code Instructions**: Pseudo-code bridges natural language and programming
     languages, offering a high-level depiction of an algorithm without adhering to
     strict programming syntax. This ensures clear and precise instructions for a GPT
@@ -215,34 +222,42 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 伪代码指令：伪代码将自然语言和编程语言联系起来，提供了算法的高级描述，而不必遵循严格的编程语法。这确保了对GPT模型的清晰和精确的指令。通过伪代码，诸如“if-then-else”条件和“for”或“while”循环等结构可以无缝集成，使模型能够高效而明确地处理复杂的多步任务。一个相关的例子是：
 - en: FOR each paragraph in the article
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于文章中的每个段落
 - en: IF the paragraph contains the word “important”
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果段落中包含“重要”一词
 - en: EXTRACT main idea of the paragraph
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 提取段落的主要思想
 - en: ENDIF
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果
 - en: ENDFOR
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 结束对于
 - en: COMPILE extracted ideas into a brief summary
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 将提取的想法编译成简要摘要
 - en: RETURN the summary
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回摘要
 - en: '**Execution Rules**: The execution rules offer potential directives to guide
     a GPT model’s thought process and decision-making throughout its task execution.
     These rules encompass problem-solving methods, data collection techniques, ethical
@@ -254,11 +269,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 执行规则：执行规则提供潜在的指导，引导GPT模型在任务执行过程中进行思考和决策。这些规则包括问题解决方法、数据收集技术、道德考虑、协作实践和进化原则。它们可以适用于整个指令序列，也可以针对每个指令步骤有所不同。每个规则类别都包含具体的示例，以进一步澄清其意图和应用。以下是详细说明：
 - en: '**Problem Solving and Reasoning:**'
   id: totrans-35
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 问题解决和推理：
 - en: '**‘Let us think step** **by** **step’**: Ensures that a GPT model executes
     a stepwise thought process and documents each step as context before producing
     the final output.'
@@ -1953,6 +1970,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**问题：** *新的物流经理角色明晰。新招聘的物流经理丹尼斯在面试过程中表现出了很大的潜力。但在最初的几周后，她的贡献变得零星，她的工作缺乏细节注意，她在团队会议上的存在几乎可以忽略不计。很明显，丹尼斯对她的角色和对她的期望不清楚。*'
 - en: '**Solution:** *In response, we revised her job description, clearly outlining
     her duties, responsibilities, and the benchmarks for performance. We set up weekly
     meetings for the first two months to provide regular feedback, discuss her progress,
@@ -1964,14 +1982,17 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**解决方案：** *作为回应，我们修改了她的工作描述，清楚地概述了她的职责、责任和绩效基准。我们在最初的两个月安排了每周一次的会议，以提供定期的反馈，讨论她的进展，并认可她的成就。结果，丹尼斯的表现显著提高，她承担起了自己的角色，并且她在团队会议上的贡献变得非常宝贵。她对清晰的沟通和持续的反馈表示感激，这使她顺利、无压力地过渡到新角色。*'
 - en: 'In response to the given prompt, ChatGPT-4 generates the following output:'
   id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为对给定提示的回应，ChatGPT-4生成了以下输出：
 - en: '*Assessment:*'
   id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: '*评估：*'
 - en: '*James’s situation is comparable to the reference cases to some extent. Like
     Sophia (Reference Case 1), he started with enthusiasm, but his motivation dwindled
     quickly. However, Sophia’s issues stemmed from her lack of understanding about
@@ -1984,10 +2005,12 @@
   id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: '*詹姆斯的情况在某种程度上与参考案例相似。像索菲亚（参考案例1）一样，他开始时充满热情，但他的动力迅速消退。然而，索菲亚的问题源于她对自己的角色的理解不足，而詹姆斯的问题似乎更多地与他与团队的参与和工作中的活力有关，这似乎更接近马克的情况（参考案例2）。丹尼斯的情况（参考案例3）也有些相似之处，因为她的贡献是不一致的，这也是詹姆斯所表现出的症状。然而，丹尼斯的问题是由于缺乏角色明晰，这似乎不是詹姆斯的问题。*'
 - en: '*Recommendations:*'
   id: totrans-267
   prefs: []
   type: TYPE_NORMAL
+  zh: '*建议：*'
 - en: '*Initiate a Personalized Onboarding Program: James might benefit from a structured
     program similar to Sophia’s. Despite his experience, he may need more clarity
     and hands-on experience in the tasks and responsibilities specific to his role
@@ -1997,6 +2020,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*启动个性化入职计划：詹姆斯可能会受益于一个类似索菲亚的结构化计划。尽管他有经验，但他可能需要更多在这家公司的角色特定任务和责任方面的明确性和实践经验。与导师合作可能有助于他增强信心，提高他工作的彻底性。*'
 - en: '*Promote Team-Building Activities: James’ unresponsiveness to team activities
     and quiet demeanor during meetings could indicate a difficulty in integrating
     with the team, akin to Mark’s issue. Regular team-building activities could encourage
@@ -2006,6 +2030,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*促进团队建设活动：詹姆斯对团队活动的不响应和在会议期间的沉默可能表明他在融入团队方面存在困难，类似于马克的问题。定期的团队建设活动可以鼓励他更多地与同事互动，提高他在工作中的热情和活力。*'
 - en: '*Offer Regular Feedback and Recognition: The approach taken with Denise could
     also be applied to James’s case. Regular feedback sessions could help clarify
     performance expectations and give him a platform to express any concerns or uncertainties
@@ -2015,6 +2040,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*提供定期反馈和认可：对丹尼斯采取的方法也可以应用于詹姆斯的情况。定期的反馈会话可以帮助澄清绩效期望，并给他一个表达任何可能存在的担忧或不确定性的平台。承认他的成就，无论多么小，也可以帮助提高他的动力。*'
 - en: '*Employee Engagement Survey: Conduct a survey to gauge James’ level of engagement.
     This can provide insights into whether he is feeling undervalued, unchallenged,
     or unmotivated, which might be leading to his disengagement.*'
@@ -2022,6 +2048,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*员工参与度调查：进行一项调查，以评估詹姆斯的参与度。这可以揭示他是否感到被低估、没有挑战或没有动力，这可能导致他的不参与。*'
 - en: '*One-on-One Meetings: Personal interaction with James may provide deeper insights
     into his situation. It is possible there are issues outside work that are affecting
     his performance. It is crucial to maintain open lines of communication to understand
@@ -2030,6 +2057,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*一对一会议：与詹姆斯的个人互动可能会更深入地了解他的情况。可能有一些工作外的问题影响了他的表现。保持开放的沟通渠道，了解是什么导致了他的不满至关重要。*'
 - en: In this employee coaching simulation, ChatGPT-4 assumes the role of an HR manager
     specializing in preventing attrition at a fashion retail company. Tasked with
     analyzing a recent hire’s fading engagement through a two-step instruction process,
@@ -2037,6 +2065,7 @@
   id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个员工辅导模拟中，ChatGPT-4扮演了一名专门负责预防时尚零售公司员工流失的人力资源经理的角色。通过一个两步指导过程，任务是分析最近一名新员工逐渐减少的参与度，通过比较新情况和参考案例来找到潜在的解决方案。
 - en: Leveraging insights from past experiences detailed in the reference cases, ChatGPT-4
     suggests a nuanced strategy to retain the new employee, James. It pinpoints a
     potential disconnect with the team and recommends a personalized onboarding program
@@ -2046,29 +2075,35 @@
   id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用参考案例中的过去经验，ChatGPT-4建议了一种细致的策略，以留住新员工詹姆斯。它指出了与团队的潜在脱节，并建议个性化的入职计划和团队建设活动，以促进更好的参与度并防止流失。该回应有效地勾勒出了一项策略，为詹姆斯在公司初期提供了支持。
 - en: '[Sentiment Analysis](toc.xhtml#s371a)'
   id: totrans-275
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[情感分析](toc.xhtml#s371a)'
 - en: 'Let us continue with an example of an instruction sequence prompt that involves
     three steps to carry out a product review sentiment analysis:'
   id: totrans-276
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们继续以一个包括三个步骤的指令序列提示的示例来进行产品评论情感分析：
 - en: '![](images/Figure-5.5.jpg)'
   id: totrans-277
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.5.jpg)'
 - en: '**[Figure 5.5](#fig5_5):** Sentiment Analysis'
   id: totrans-278
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图5.5](#fig5_5):** 情感分析'
 - en: '**Expert Persona:** *You are an expert for sentiment classification of movie
     reviews.*'
   id: totrans-279
   prefs: []
   type: TYPE_NORMAL
+  zh: '**专家角色：** *您是电影评论情感分类的专家。*'
 - en: '**Context:** *The StreamSmith V35 Bluetooth headphones are an ambitious attempt
     at creating an accessible, high-quality audio experience. However, despite their
     many positive qualities, they fall just short of the mark, earning a solid 3 out
@@ -2090,41 +2125,50 @@
   id: totrans-280
   prefs: []
   type: TYPE_NORMAL
+  zh: '**背景：** *StreamSmith V35蓝牙耳机是一个雄心勃勃的尝试，旨在创造一个易于获得的高质量音频体验。然而，尽管它们有许多积极的品质，但它们仅仅达到了标准，获得了坚实的3颗星。V35s的制造质量令人钦佩，因为它们具有舒适的贴合感和高级的外观和手感。此外，长时间的电池寿命是一个突出的特点，可以在单次充电中提供数小时的不间断使用。StreamSmith的手势控制系统也很直观，使操作变得轻松。此外，公司对可持续包装的承诺值得赞扬。另一方面，V35s让人失望的地方在于它们的音质，明显不如同价位的竞争对手令人印象深刻。低频的深度明显不足，使低音听起来略显空洞。高音也似乎缺乏清晰度，造成整体平坦的音场。再加上偶尔的连接问题，这减弱了本可以成为真正出色的音频体验。总的来说，StreamSmith
+    V35s代表了一个有前途的进步，特别是在设计和用户界面方面。然而，对于发烧友来说，这些耳机可能不是首选。如果StreamSmith专注于改善他们的音质和连接稳定性，他们未来的产品可能会对市场上的老牌竞争对手构成严峻挑战。*'
 - en: '**Instruction Sequence:** *Perform sentiment classification on the product
     review in these three steps:*'
   id: totrans-281
   prefs: []
   type: TYPE_NORMAL
+  zh: '**指令序列：** *在这三个步骤中对产品评论进行情感分类：*'
 - en: '**First,** *present clues (i.e., keywords, phrases, contextual information,
     semantic relations, semantic meaning, tones, references) that support the sentiment
     determination of input (Information Extraction & Analytics).*'
   id: totrans-282
   prefs: []
   type: TYPE_NORMAL
+  zh: '**第一步，** *提供支持输入情感确定的线索（例如关键词、短语、上下文信息、语义关系、语义含义、语气、引用）。*'
 - en: '**Second,** *deduce a diagnostic reasoning process from premises (i.e., clues,
     input) that supports the sentiment determination. (Cause-effect Analysis).*'
   id: totrans-283
   prefs: []
   type: TYPE_NORMAL
+  zh: '**第二步，** *从前提（例如线索、输入）中推断出支持情感确定的诊断推理过程。（因果分析）。*'
 - en: '**Third,** *determine the overall sentiment of the movie review as Positive
     or Negative considering the clues from step 1, the reasoning process in step 2
     and the movie review (Classification).”*'
   id: totrans-284
   prefs: []
   type: TYPE_NORMAL
+  zh: '**第三步，** *确定电影评论的整体情感，即考虑第1步的线索，第2步的推理过程和电影评论（分类）。*'
 - en: 'In response to the given prompt, ChatGPT-4 generates the following output:'
   id: totrans-285
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于给定的提示，ChatGPT-4生成了以下输出：
 - en: '*“Here are the requested steps:*'
   id: totrans-286
   prefs: []
   type: TYPE_NORMAL
+  zh: '*“以下是请求的步骤：*'
 - en: '*Information Extraction & Analytics:*'
   id: totrans-287
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*信息提取与分析：*'
 - en: '*Positive clues: “comfortable fit”, “premium look and feel”, “long battery
     life”, “intuitive” gesture control, “commendable” sustainable packaging, “promising
     step forward”, “serious challenge to established players”.*'
@@ -2132,6 +2176,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*积极线索：“舒适的贴合感”，“高级的外观和手感”，“长时间的电池寿命”，“直观的”手势控制，“值得赞扬的”可持续包装，“有前途的进步”，“对市场上的老牌竞争对手构成严峻挑战”。*'
 - en: '*Negative clues: “fall just short of the mark”, “less impressive” sound quality,
     “lack of depth” in low frequencies, “slightly hollow” bass, “lack of clarity”
     in higher tones, “flat soundstage”, “occasional connectivity issues”.*'
@@ -2139,11 +2184,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*负面线索：“仅仅达到标准”，音质“不如同价位的竞争对手令人印象深刻”，低频“深度不足”，低音“略显空洞”，高音“缺乏清晰度”，“平坦的音场”，“偶尔的连接问题”。*'
 - en: '*Cause-effect Analysis:*'
   id: totrans-290
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*因果分析：*'
 - en: '*The reviewer provides several positive aspects of the product, such as the
     comfort and premium feel, battery life, intuitive controls, and sustainable packaging.
     This indicates the company has put thought into many aspects of the user experience
@@ -2152,6 +2199,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 评论者提供了产品的几个积极方面，如舒适感和高级感、电池寿命、直观的控制和可持续包装。这表明公司在用户体验和产品设计的许多方面都考虑周到。
 - en: '*However, the negative aspects of the review focus on the core functionality
     of the product, the sound quality and connectivity. This can be considered more
     critical, given the nature of the product as headphones.*'
@@ -2159,6 +2207,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*然而，评论的负面方面集中在产品的核心功能上，即声音质量和连接。鉴于产品的性质是耳机，这可能被认为更为关键。*'
 - en: '*Though the reviewer acknowledges the product’s potential to challenge established
     market players, they also note its current shortcomings, particularly for a critical
     target audience - audiophiles.*'
@@ -2166,11 +2215,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*尽管评论者承认该产品有挑战已建立的市场参与者的潜力，但他们也指出了它目前的缺点，特别是对于一个关键的目标受众 - 音响发烧友。*'
 - en: '*Classification:*'
   id: totrans-294
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*分类：*'
 - en: '*Overall, the sentiment of this review seems mixed, but leaning towards the
     negative side, primarily due to the weight of the criticisms. Although there are
     more positive than negative clues, the negatives touch on the core functionality
@@ -2180,6 +2231,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*总的来说，这篇评论的情感似乎是复杂的，但更偏向于负面，主要是由于批评的重量。尽管积极的线索比负面的要多，但负面的触及了耳机的核心功能 - 声音质量和稳定连接，这可能更具影响力。因此，这篇评论可以被分类为有些负面。*'
 - en: In this task, ChatGPT-4 embodies a sentiment analysis expert evaluating a review
     of the StreamSmith V35 Bluetooth headphones. Following a three-step instruction
     sequence, it first identifies positive and negative sentiments in the review.
@@ -2192,10 +2244,12 @@
   id: totrans-296
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个任务中，ChatGPT-4扮演了一个情感分析专家，评估了对StreamSmith V35蓝牙耳机的评论。在一个三步指令序列之后，它首先确定评论中的积极和消极情绪。接下来，它进行因果分析，审查评论中提到的优点和缺点，特别关注产品功能的关键点。最后，它将整体情感分类为有些负面，突出了对产品核心功能的重大批评。这个任务展示了ChatGPT-4对评论进行分析以进行明智决策的分析方法。
 - en: 'Three further examples are presented in *Appendix A*:'
   id: totrans-297
   prefs: []
   type: TYPE_NORMAL
+  zh: 另外三个例子在*附录A*中呈现：
 - en: '**Instruction Sequence: Insurance Claim Processing**: The system is prompted
     to execute a series of steps that involve question-asking, summarizing answers,
     and assessing costs of the damage.'
@@ -2203,6 +2257,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**指令序列：保险理赔处理**：系统被提示执行一系列涉及提问、总结答案和评估损失成本的步骤。'
 - en: '**Instruction Sequence: Solution Architecture Analysis**: ChatGPT-4 examines
     a given Azure OpenAI architecture, identifies components, pinpoints bottlenecks,
     makes recommendations, and comes up with an implementation plan.'
@@ -2210,6 +2265,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**指令序列：解决方案架构分析**：ChatGPT-4审查给定的Azure OpenAI架构，识别组件，找出瓶颈，提出建议，并制定实施计划。'
 - en: '**Pseudo Code Instructions: Real Estate Listing Comparison**: ChatGPT-4 ranks
     office space listings based on criteria like size, price, location, and amenities.
     It applies a scoring system, identifying and prioritizing top spaces, showcasing
@@ -2218,11 +2274,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**伪代码指令：房地产列表比较**：ChatGPT-4根据大小、价格、位置和便利设施等标准对办公空间列表进行排名。它应用一个评分系统，识别和优先考虑顶级空间，展示了它在房地产评估方面的熟练程度。'
 - en: '[Query Prompting](toc.xhtml#s372a)'
   id: totrans-301
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查询提示](toc.xhtml#s372a)'
 - en: In this section, we will first delve into the Query Prompt Pattern[⁶](#ftn6a),
     another distinctive approach for interacting with GPT models. Following this,
     we will explore a series of practical examples that highlight the application
@@ -2230,17 +2288,20 @@
   id: totrans-302
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这一部分，我们将首先深入探讨查询提示模式[⁶](#ftn6a)，这是与GPT模型进行交互的另一种独特方法。随后，我们将探索一系列实际示例，突出展示了这种模式在各种企业场景中的应用。
 - en: '[Query Prompt Pattern](toc.xhtml#s373a)'
   id: totrans-303
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查询提示模式](toc.xhtml#s373a)'
 - en: 'The Query Prompt Pattern is an effective approach designed to guide GPT models
     in generating insightful and accurate responses to various types of questions.
     Here is how each component contributes:'
   id: totrans-304
   prefs: []
   type: TYPE_NORMAL
+  zh: 查询提示模式是一种有效的方法，旨在指导GPT模型生成对各种类型问题的见解深刻和准确的回答。以下是每个组件的贡献方式：
 - en: '**Evidence**: This is the factual, situational, or background information provided
     to a GPT model that serves as a reference for accurately interpreting and responding
     to subsequent queries, helping to prevent the generation of ungrounded or irrelevant
@@ -2250,6 +2311,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**证据**：这是向GPT模型提供的事实、情境或背景信息，用作准确解释和回应后续查询的参考，有助于防止生成无根据或无关的输出。例如，一家公司可能向GPT模型提供详细的季度财务报告，以便分析并从中提取有见地的信息。'
 - en: '**Reasoning Rules**: These are explicit rules that guide a GPT model in deriving
     insights or conclusions from the provided evidence. In a business context, there
     are various rules that may influence the analysis process. For instance, one rule
@@ -2263,6 +2325,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**推理规则**：这些是明确指导GPT模型从提供的证据中得出见解或结论的规则。在商业环境中，有各种规则可能会影响分析过程。例如，一个规则可能表明“季度收入增加表明积极增长”，这将通过突出公司收入在一定期间内的有利趋势来指导财务报告的分析。同时，另一个规则可能提出“市场份额增长是公司竞争力增强的潜在指标”，从而将调查重点放在市场研究数据上，以辨别公司相对于行业同行的表现。'
 - en: '**Fuzzy Logic**[⁷](#ftn7a) **Rules**: Fuzzy logic rules are used when dealing
     with Fuzzy logic queries (see below), as they allow the model to handle situations
     characterized by uncertainty and ambiguity. In a business scenario, the rule “if
@@ -2272,6 +2335,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 模糊逻辑规则：模糊逻辑规则用于处理模糊逻辑查询（见下文），因为它们允许模型处理不确定性和模糊性特征的情况。在商业场景中，规则“如果市场反馈主要是积极的，那么产品受到欢迎”可能被应用于解释一系列客户评论。
 - en: '**Justification Requirements**: This emphasizes the need for the GPT model
     to explain its conclusions. It can help validate the GPT model’s insights and
     can be crucial for complex queries, where understanding its reasoning process
@@ -2281,6 +2345,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 理由要求：这强调了GPT模型解释其结论的必要性。这有助于验证GPT模型的见解，在复杂查询中可能至关重要，其中理解其推理过程是必不可少的。在商业场景中，这可能涉及根据现有季度报告中识别的模式来验证下一季度的预测。
 - en: '**Queries**: One or several categorized queries are formulated to leverage
     the GPT model’s background knowledge acquired during pre-training, along with
     the supplied evidence and reasoning rules, to generate comprehensive responses.
@@ -2289,6 +2354,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查询：一个或多个分类的查询被制定，以利用GPT模型在预训练期间获得的背景知识，以及提供的证据和推理规则，生成全面的响应。以下是每种查询类型的操作方式：
 - en: '**Information-seeking queries**: This type of query directs the GPT model to
     analyze and interpret the available evidence meticulously to respond to the questions
     asked, without venturing into speculative or hypothetical scenarios. It is designed
@@ -2300,6 +2366,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信息查询：这种类型的查询指导GPT模型仔细分析和解释现有证据，以回答提出的问题，而不涉及投机或假设的情景。它旨在提供清晰直接的答案，基于提供的证据。例如，它可能涉及要求GPT模型从提供的销售数据中识别Q1中表现最好的产品，或者从竞争对手的财务报告中计算几个未公开的关键绩效指标。
 - en: '**As-is analysis queries**: This query type guides the GPT model to undertake
     a deep, structured analysis of the available evidence to uncover relationships,
     comparisons, and correlations through a detailed exploration of various angles:'
@@ -2307,6 +2374,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 现状分析查询：这种查询类型指导GPT模型对现有证据进行深入、结构化的分析，通过详细探索各种角度来揭示关系、比较和相关性。
 - en: '**Causal analysis**: It involves identifying cause-and-effect relationships
     within the data points presented in the evidence. A company might inquire, “Based
     on the data from the last two quarters, can we pinpoint the causes behind the
@@ -2315,6 +2383,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 因果分析：它涉及在提供的证据中识别数据点之间的因果关系。一个公司可能会询问：“根据过去两个季度的数据，我们能否找出产品退货增加背后的原因？”
 - en: '**Comparative analysis**: This pathway encourages comparing different elements
     or time frames to spot trends, similarities, or differences. An enterprise might
     ask, “How does the performance of Product A compare to Product B over the last
@@ -2323,6 +2392,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 比较分析：这种途径鼓励比较不同元素或时间框架，以发现趋势、相似之处或差异。一个企业可能会问：“在过去的财政年度里，产品A的表现与产品B相比如何？”
 - en: '**Correlation analysis**: It seeks to establish statistical associations between
     different variables in the evidence. A firm might query, “Is there a discernible
     correlation between our marketing spend and the number of new customers acquired
@@ -2331,6 +2401,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 相关性分析：它旨在建立证据中不同变量之间的统计关联。一个公司可能会查询：“我们的营销支出和过去一年新客户的数量之间是否存在明显的相关性？”
 - en: '**Predictive queries:** This query type prompts the GPT model to utilize the
     provided evidence to foresee potential future events, encouraging predictions
     that are grounded in reality while discouraging baseless speculation. This query
@@ -2339,6 +2410,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 预测性查询：这种查询类型促使GPT模型利用提供的证据预测潜在的未来事件，鼓励基于现实的预测，而抑制毫无根据的猜测。这种查询类型探索各种预测途径：
 - en: '**Unconditional prediction**: Queries in this category guide the GPT model
     to make predictions based directly on the available evidence without imposing
     any hypothetical conditions. For example, a business might ask, “Considering our
@@ -2348,6 +2420,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 无条件预测：这一类查询指导GPT模型基于现有证据直接进行预测，而不施加任何假设条件。例如，一个企业可能会问：“考虑到我们在证据中记录的月收入，我们可以预期本财政年度末的总收入会是多少？”
 - en: '**Conditional prediction**: These queries involve hypothesizing about future
     scenarios based on conditional statements or potential actions, guiding the model
     to explore the ramifications of specific strategies or decisions. Essentially,
@@ -2361,6 +2434,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 条件预测：这些查询涉及根据条件语句或潜在行动对未来情景进行假设，指导模型探索特定战略或决策的影响。基本上，它使用“假设”情景来预测不同方法的潜在结果，促进积极规划和知情决策。这些情景可以涵盖从战略规划和风险管理到政策变化和技术进步。例如，一个企业可能会询问：“如果我们实施更强大的售后服务，这可能对我们的客户忠诚度产生什么影响？”
 - en: '**Guidance queries**: This query type directs the GPT model to conceptualize
     possible strategies and advice grounded on the supplied evidence, leveraging its
     analytical capabilities to aid businesses in strategizing improvements. It navigates
@@ -2369,6 +2443,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**指导查询**：这种查询类型指导GPT模型构想可能的策略和建议，基于提供的证据，利用其分析能力来帮助企业制定改进策略。它通过两个详细的路径导航：'
 - en: '**Advisory**: Here, the queries are geared towards offering expert advice based
     on a practical analysis of the evidence, aiming to carve out potential strategies
     suitable for the existing circumstances. A question in this category might be,
@@ -2378,6 +2453,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**咨询**：在这里，查询旨在基于对证据的实际分析提供专家建议，旨在制定适合现有情况的潜在策略。这一类问题可能是：“根据我们最新产品的评论，我们应该专注于什么以提高用户满意度？”'
 - en: '**Optimization**: This segment carves out the optimal strategies or solutions
     within the given constraints, focusing on extracting the best possible outcomes
     through a meticulous analysis of the current data and trends. For example, a company
@@ -2387,6 +2463,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**优化**：这一部分制定了在给定约束条件下的最佳策略或解决方案，重点是通过对当前数据和趋势进行细致分析，提取最佳可能的结果。例如，一家公司可能会问：“考虑到我们目前的资源和市场地位，我们未来产品的最佳定价策略是什么？”'
 - en: '**Counterfactual queries**: This query type encourages the GPT model to venture
     into alternate realities, orchestrating an exploration of “what could have been.”
     Through this, it devises narratives exploring diverse pathways and their potential
@@ -2397,6 +2474,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**反事实查询**：这种查询类型鼓励GPT模型进入替代现实，策划“本可以是什么”的探索。通过这种方式，它制定了探索不同路径及其潜在影响的叙事，同时制定了既具有推测性又基于逻辑分析的回应。企业可能会询问：“如果去年我们将服务价格降低10％，对我们的销售可能会有什么潜在影响？”'
 - en: '**Fuzzy Logic queries**: Employed in scenarios filled with uncertainty and
     ambiguity, this query type utilizes fuzzy logic rules along with the provided
     context to understand and navigate complex situations. For example, leveraging
@@ -2408,35 +2486,41 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**模糊逻辑查询**：在充满不确定性和模糊性的情景中使用，这种查询类型利用模糊逻辑规则和提供的背景来理解和应对复杂情况。例如，利用模糊逻辑规则“如果反馈主要是中性的，那么情绪可能是混合的”，企业可能寻求对新产品推出的客户反应进行深入了解，旨在在确定性结论难以得出时获得指示性智能。'
 - en: 'The Query Prompt Pattern is a powerful tool for handling intricate analytical
     and explorative problems and is best realized under the following conditions:'
   id: totrans-323
   prefs: []
   type: TYPE_NORMAL
+  zh: 查询提示模式是处理复杂分析和探索性问题的强大工具，在以下条件下最好实现：
 - en: '**Reliable evidence is available:** Factual and contextual data are the foundation
     of all applied reasoning to generate realistic and relevant responses.'
   id: totrans-324
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**可靠的证据是可用的**：事实和背景数据是所有应用推理的基础，以生成现实和相关的回应。'
 - en: '**Reasoning rules can be explicitly formulated:** Explicit rules steer the
     model’s chain of thought transparently to derive insights from evidence.'
   id: totrans-325
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**推理规则可以明确制定**：明确的规则可以透明地引导模型的思维链，从证据中得出见解。'
 - en: '**There is inherent ambiguity or uncertainty:** In these scenarios standard
     logical reasoning techniques cannot be applied.'
   id: totrans-326
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**存在固有的模糊或不确定性**：在这些情景下，标准的逻辑推理技术无法应用。'
 - en: '**Justifications are key**: Explanations of the rationales behind the responses
     are as important as the responses themselves.'
   id: totrans-327
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**正当理由至关重要**：对回答背后的原因进行解释与回答本身一样重要。'
 - en: '**Explorative query types are required:** Different categories of queries,
     from information-seeking to predictive and counterfactual are needed to tackle
     a complex business problem.'
@@ -2444,17 +2528,20 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**需要探索性查询类型**：需要处理复杂业务问题的不同类别的查询，从寻求信息到预测和反事实等。'
 - en: '[Query Examples](toc.xhtml#s374a)'
   id: totrans-329
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查询示例](toc.xhtml#s374a)'
 - en: 'The forthcoming demonstrations put forward the application of varied query
     prompts with ChatGPT-4 within the contexts of cosmetic products, supplier evaluation,
     business forecasting, and system usability improvements:'
   id: totrans-330
   prefs: []
   type: TYPE_NORMAL
+  zh: 即将进行的演示展示了在化妆品、供应商评估、业务预测和系统可用性改进等背景下，使用ChatGPT-4的各种查询提示的应用：
 - en: 'Visual Inquiries about Cosmetic Products: Employing several information-seeking
     queries, ChatGPT-4 acts as an image analysis expert, examining a visual prompt
     of cosmetic products. It interprets artistic and emotional impressions conveyed
@@ -2464,6 +2551,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 关于化妆品的视觉查询：利用几个信息查询，ChatGPT-4充当图像分析专家，检查化妆品的视觉提示。它解释了产品布局传达的艺术和情感印象，展示了其在视觉解释和对美容行业的理解方面的技能。
 - en: 'New Supplier Evaluation: Using multiple comparative analysis queries, ChatGPT-4
     evaluates five suppliers for ABC Corp on quality, pricing, delivery timeliness,
     and customer satisfaction, showcasing its support for optimal supplier selection.'
@@ -2471,6 +2559,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 新供应商评估：使用多个比较分析查询，ChatGPT-4评估了ABC公司的五个供应商的质量、定价、交货及时性和客户满意度，展示了其对最佳供应商选择的支持。
 - en: 'Predictive Business Analysis: Utilizing two predictive queries, ChatGPT-4 forecasts
     revenue and market share growth of technology-based consumer products. It also
     covers a scenario of increased investment, exploring financial and market penetration
@@ -2479,6 +2568,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 预测业务分析：利用两个预测性查询，ChatGPT-4预测了基于技术的消费品的收入和市场份额增长。它还涵盖了增加投资的情景，探讨了财务和市场渗透的影响。
 - en: 'Improving System Usability in Healthcare: Asking an advisory query, ChatGPT-4
     provides strategies to address challenges with a new EHR system based on healthcare
     staff feedback. It makes different suggestions to improve user satisfaction and
@@ -2487,110 +2577,133 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 改善医疗保健系统的可用性：ChatGPT-4提出了根据医护人员反馈解决新电子病历系统挑战的策略。它提出了不同的建议，以提高用户满意度和患者护理效率。
 - en: '[Visual Inquiries about Cosmetic Products](toc.xhtml#s375a)'
   id: totrans-335
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[关于化妆品的视觉查询](toc.xhtml#s375a)'
 - en: Let’s examine an example in the domain of image analysis.
   id: totrans-336
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来看一个在图像分析领域的例子。
 - en: '![](images/Figure-5.6.jpg)'
   id: totrans-337
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.6.jpg)'
 - en: '**[Figure 5.6](#fig5_6):** Visual Inquiries about Cosmetic Products'
   id: totrans-338
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图5.6](#fig5_6)：** 关于化妆品的视觉查询'
 - en: 'This example uses an image provided via a web link as evidence, showcasing
     an assortment of cosmetic products, and poses five specific information-seeking
     questions:'
   id: totrans-339
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个例子使用了通过网页链接提供的图像作为证据，展示了各种化妆品，并提出了五个具体的信息查询问题：
 - en: '**Evidence***:*'
   id: totrans-340
   prefs: []
   type: TYPE_NORMAL
+  zh: '**证据***:*'
 - en: '*A high-resolution image showcasing various cosmetic products:*'
   id: totrans-341
   prefs: []
   type: TYPE_NORMAL
+  zh: '*展示各种化妆品的高分辨率图像：*'
 - en: '![](images/Figure-5.7.jpg)'
   id: totrans-342
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.7.jpg)'
 - en: '**[Figure 5.7](#fig5_7):** Image of Cosmetic Products [6]'
   id: totrans-343
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.7：化妆品图像[6]
 - en: '**Reasoning Rules:**'
   id: totrans-344
   prefs: []
   type: TYPE_NORMAL
+  zh: '**推理规则：**'
 - en: '*Each product on the image is distinct* and *represents a different cosmetic
     item.*'
   id: totrans-345
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*图像中的每种产品都是独特的*，*代表着不同的化妆品*。'
 - en: A product is considered “on the image” if more than 50% of it is visible.
   id: totrans-346
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 如果产品的50%以上可见，则认为产品“在图像上”。
 - en: Use the SceneExplain plugin.
   id: totrans-347
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用SceneExplain插件。
 - en: '**Justification Requirements:** *Explain how you determined whether the specific
     cosmetic product was on the image or not, and provide any relevant contextual
     information based on the visibility, placement, or distinctiveness of the product.*'
   id: totrans-348
   prefs: []
   type: TYPE_NORMAL
+  zh: '**理由要求：** *解释你是如何确定特定的化妆品是否在图像上，并根据产品的可见性、放置位置或独特性提供任何相关的背景信息。*'
 - en: '**Information-seeking queries:**'
   id: totrans-349
   prefs: []
   type: TYPE_NORMAL
+  zh: '**信息查询问题：**'
 - en: '*Are there nail polish bottles? Which colors do they have? Are they reflecting
     light?*'
   id: totrans-350
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*有指甲油瓶吗？它们是什么颜色？它们在反光吗？*'
 - en: '*How is the vanity mirror decorated? What does it express?*'
   id: totrans-351
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*梳妆镜是如何装饰的？它表达了什么？*'
 - en: '*What kind of brushes are there and what do they convey?*'
   id: totrans-352
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*有什么样的刷子，它们传达了什么？*'
 - en: '*Is there lipstick? Where is it placed?*'
   id: totrans-353
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*有口红吗？它放在哪里？*'
 - en: '*What is the overall impression of the image?*'
   id: totrans-354
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*图像的整体印象是什么？*'
 - en: 'Here are ChatGPT’s answers:'
   id: totrans-355
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是ChatGPT的答案：
 - en: '*Based on the detailed explanation provided by SceneXplain, here are the answers
     to your information-seeking queries:*'
   id: totrans-356
   prefs: []
   type: TYPE_NORMAL
+  zh: '*基于SceneXplain提供的详细解释，这里是你寻求信息的问题的答案：*'
 - en: '*Nail Polish Bottles: Yes, there are nail polish bottles in the image. They
     are primarily in silver and black colors. These bottles are positioned close to
     each other, and they catch the light, creating an elegant shimmer, which suggests
@@ -2599,6 +2712,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*指甲油瓶：是的，图像中有指甲油瓶。它们主要是银色和黑色。这些瓶子靠近彼此摆放，并且反射光线，产生优雅的闪光，这表明它们在反光。*'
 - en: '*Vanity Mirror Decoration: The vanity mirror is sleek and silver. It reflects
     the surrounding beauty items, showcasing essential makeup items such as lipstick,
     eye shadow, and eyeliner. The mirror’s reflection offers a glimpse into the possibilities
@@ -2608,6 +2722,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*梳妆镜装饰：梳妆镜造型时尚，银色。它反射周围的美容物品，展示了口红、眼影和眼线笔等必备化妆品。镜子的倒影展示了变身和自我表达的可能性，强调了化妆品的转化力量。*'
 - en: '*Brushes: There are makeup brushes scattered throughout the composition. These
     brushes are portrayed as tools of artistry. Additionally, a brown container holds
     a makeup brush, emphasizing its practicality and functionality. The brushes convey
@@ -2616,12 +2731,14 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*刷子：整个构图中散落着化妆刷。这些刷子被描绘为艺术的工具。此外，一个棕色容器装着一支化妆刷，强调了它的实用性和功能性。刷子传达了一种准备好进行化妆和艺术创作的感觉。*'
 - en: '*Lipstick: Yes, there is lipstick in the image. It is displayed on the central
     mirror, making it one of the prominent items in the composition.*'
   id: totrans-360
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*口红：是的，图像中有口红。它展示在中央镜子上，是构图中突出的物品之一。*'
 - en: '*Overall Impression: The overall impression of the image is one of beauty and
     elegance. The meticulously arranged collection of cosmetics on a pristine white
     surface portrays a well-curated ensemble of makeup products. Every element in
@@ -2631,6 +2748,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*整体印象：图像的整体印象是美丽和优雅的。在一块洁白的表面上精心摆放的化妆品展示了一个精心策划的化妆品系列。从刷子到化妆品的每个元素都对和谐平衡做出了贡献，邀请观众探索美丽和自我表达的世界。*'
 - en: '*Justification*: *The determinations were made based on the detailed explanation
     provided by SceneXplain, which analyzed the image and described its content in
     depth. The visibility, placement, and distinctiveness of each product were considered
@@ -2638,6 +2756,7 @@
   id: totrans-362
   prefs: []
   type: TYPE_NORMAL
+  zh: '*理由：* *这些决定是基于SceneXplain提供的详细解释而做出的，该解释分析了图像并深入描述了其内容。解释中考虑了每种产品的可见性、放置位置和独特性，从而能够准确回答问题*。'
 - en: In this portrayal, ChatGPT-4, using the SceneXplain plugin, acts as an image
     analysis expert, focusing on the details of cosmetic products in a visual prompt.
     Beyond identifying items, it interprets artistic and emotional impressions conveyed
@@ -2646,11 +2765,13 @@
   id: totrans-363
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个描绘中，ChatGPT-4使用SceneXplain插件作为图像分析专家，专注于视觉提示中化妆品的细节。除了识别物品，它还解释了产品布局传达的艺术和情感印象。这突显了ChatGPT-4在视觉解释方面的技能，以及其提供关于美丽和自我表达的见解的能力。
 - en: '[New Supplier Evaluation](toc.xhtml#s376a)'
   id: totrans-364
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[新供应商评估](toc.xhtml#s376a)'
 - en: This example navigates through an evaluative process of various suppliers for
     ABC Corp, where ChatGPT-4 systematically assesses and compares each supplier’s
     performance based on quality, pricing, delivery timeliness, and customer satisfaction
@@ -2839,28 +2960,33 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*平衡方法：一家平衡质量、定价和交货及时性的供应商通常更可取。*'
 - en: '*Quality Priority: Quality issues can lead to downstream problems; hence, suppliers
     with fewer quality issues are more desirable.*'
   id: totrans-397
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*质量优先：质量问题可能导致下游问题；因此，质量问题较少的供应商更受欢迎。*'
 - en: '*Delivery Timeliness: On-time delivery is crucial for maintaining the supply
     chain’s efficiency, so suppliers with higher on-time delivery rates are favored.*'
   id: totrans-398
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*交货及时性：准时交货对于保持供应链的效率至关重要，因此更青睐准时交货率更高的供应商。*'
 - en: '*Customer Satisfaction: Higher customer satisfaction scores are indicative
     of better overall supplier performance.*'
   id: totrans-399
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*客户满意度：更高的客户满意度分数表明整体供应商表现更好。*'
 - en: '**Justification Requirement:**'
   id: totrans-400
   prefs: []
   type: TYPE_NORMAL
+  zh: '**理由要求：**'
 - en: '*You should meticulously explain the reasoning behind any recommendations or
     insights drawn regarding the selection of a supplier. It should consider all available
     data points, weigh the significance of each factor, and clearly articulate how
@@ -2868,49 +2994,58 @@
   id: totrans-401
   prefs: []
   type: TYPE_NORMAL
+  zh: '*你应该仔细解释对于选择供应商的任何推荐或见解背后的推理。它应该考虑所有可用的数据点，权衡每个因素的重要性，并清楚地阐明这些因素如何影响整体评估。*'
 - en: '**Comparison queries:**'
   id: totrans-402
   prefs: []
   type: TYPE_NORMAL
+  zh: '**比较查询：**'
 - en: '*Balanced Approach Analysis:*'
   id: totrans-403
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*平衡方法分析：*'
 - en: How does each supplier balance quality, pricing, and delivery timeliness according
     to the provided evidence?
   id: totrans-404
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 根据提供的证据，每个供应商如何平衡质量、定价和交货及时性？
 - en: Which supplier demonstrates the most effective balance among these factors,
     and why?
   id: totrans-405
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 哪个供应商在这些因素中表现出最有效的平衡，为什么？
 - en: '*Quality Priority Evaluation:*'
   id: totrans-406
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*质量优先评估：*'
 - en: Can you identify and compare the number and severity of quality issues reported
     for each supplier?
   id: totrans-407
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你能否确定并比较每个供应商报告的质量问题的数量和严重程度？
 - en: How do these quality issues impact the desirability of each supplier, considering
     the priority of quality in procurement?
   id: totrans-408
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 考虑到采购中质量的优先级，这些质量问题如何影响每个供应商的吸引力？
 - en: '*Delivery Timeliness Assessment:*'
   id: totrans-409
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*交货及时性评估：*'
 - en: Compare the on-time delivery rates of the five suppliers. Which supplier has
     the highest on-time delivery rate, and how significantly does this influence their
     overall performance?
@@ -2918,115 +3053,136 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 比较五个供应商的准时交货率。哪个供应商的准时交货率最高，这对其整体表现有多大影响？
 - en: Are there any suppliers whose lower on-time delivery rates might be a cause
     for concern in maintaining supply chain efficiency?
   id: totrans-411
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 是否有任何供应商的较低的准时交货率可能会引起对维持供应链效率的担忧？
 - en: '*Customer Satisfaction Comparison:*'
   id: totrans-412
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*客户满意度比较：*'
 - en: How do the customer satisfaction scores for each supplier compare?
   id: totrans-413
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每个供应商的客户满意度分数如何比较？
 - en: What do these scores indicate about the overall performance of the suppliers,
     and how heavily should these scores weigh in the final decision?
   id: totrans-414
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 这些评分对供应商的整体表现有何指示，并且这些评分在最终决策中应该起多大的作用？
 - en: '*Recommendation and Justification:*'
   id: totrans-415
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*推荐和理由：*'
 - en: Based on the assessments above, which supplier would you recommend ABC Corp
     consider for procurement and why?
   id: totrans-416
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 根据上述评估，你会推荐ABC公司考虑采购哪个供应商，为什么？
 - en: Are there any specific strengths or weaknesses in a supplier that significantly
     influence your recommendation?
   id: totrans-417
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 是否有任何特定的供应商的优势或劣势，对你的推荐产生重大影响？
 - en: Can you provide a detailed justification for your recommendation, considering
     all the evidence and reasoning rules provided?
   id: totrans-418
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你能否提供详细的推荐理由，考虑到提供的所有证据和推理规则？
 - en: '*Risk and Mitigation:*'
   id: totrans-419
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*风险和减轻：*'
 - en: Are there any potential risks associated with your recommended supplier?
   id: totrans-420
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你推荐的供应商是否存在潜在风险？
 - en: How might ABC Corp mitigate these risks to ensure a successful partnership with
     the chosen supplier?
   id: totrans-421
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ABC公司如何减轻这些风险，以确保与所选供应商的成功合作？
 - en: 'ChatGPT-4 answers as follows:'
   id: totrans-422
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT-4的回答如下：
 - en: '*Balanced Approach Analysis:*'
   id: totrans-423
   prefs: []
   type: TYPE_NORMAL
+  zh: '*平衡方法分析：*'
 - en: '*Supplier A balances competitive pricing (5% below market average) and high
     on-time delivery rate (98%) but has had instances of quality issues.*'
   id: totrans-424
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*供应商A平衡了有竞争力的定价（低于市场平均价5%）和高的准时交货率（98%），但存在质量问题。*'
 - en: '*Supplier B excels in quality with no reported issues and has a good on-time
     delivery rate (95%), but its pricing is 15% above the market average.*'
   id: totrans-425
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*供应商B在质量方面表现出色，没有报告的问题，并且准时交货率良好（95%），但其定价高出市场平均价15%。*'
 - en: '*Supplier C offers the most economical pricing (10% below average) but compromises
     on both delivery rate (88%) and has had quality issues.*'
   id: totrans-426
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*供应商C提供最经济的定价（低于平均价10%），但在交货率（88%）上有所妥协，并且存在质量问题。*'
 - en: '*Supplier D presents a balanced approach with average pricing, a 90% on-time
     delivery rate, and minimal quality issues.*'
   id: totrans-427
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*供应商D采用了平衡的方法，定价平均，准时交货率90%，质量问题很少。*'
 - en: '*Supplier E also achieves a good balance, with competitive pricing (including
     bulk discounts), a 96% delivery rate, and prompt resolution of quality issues.*'
   id: totrans-428
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*供应商E也取得了良好的平衡，具有有竞争力的定价（包括批量折扣），96%的交货率，以及及时解决质量问题。*'
 - en: '*The most effective balance among quality, pricing, and delivery seems to be
     achieved by Supplier E, offering competitive pricing, high delivery rates, and
     quality with prompt resolution of issues.*'
   id: totrans-429
   prefs: []
   type: TYPE_NORMAL
+  zh: 在质量、定价和交货方面，供应商E似乎取得了最有效的平衡，提供有竞争力的定价、高的交货率和及时解决问题的质量。
 - en: '*Quality Priority Evaluation:*'
   id: totrans-430
   prefs: []
   type: TYPE_NORMAL
+  zh: '*质量优先评估：*'
 - en: '*Supplier B stands out with no reported quality issues. Supplier D and Supplier
     E have had minimal issues which were addressed, while Supplier A and Supplier
     C have encountered more significant problems, with Supplier A having material
@@ -3034,15 +3190,18 @@
   id: totrans-431
   prefs: []
   type: TYPE_NORMAL
+  zh: '*供应商B在没有报告的质量问题方面脱颖而出。供应商D和供应商E存在少量问题，并得到了解决，而供应商A和供应商C遇到了更严重的问题，供应商A存在导致退货的材料缺陷。*'
 - en: '*Considering the priority of quality, Supplier B is the most desirable, but
     Supplier D and Supplier E also present strong cases with their prompt resolutions.*'
   id: totrans-432
   prefs: []
   type: TYPE_NORMAL
+  zh: '*考虑到质量的优先级，供应商B是最理想的选择，但供应商D和供应商E也通过及时解决问题提出了强有力的案例。*'
 - en: '*Delivery Timeliness Assessment:*'
   id: totrans-433
   prefs: []
   type: TYPE_NORMAL
+  zh: '*交货及时性评估：*'
 - en: '*Supplier A has the highest on-time delivery rate at 98%, significantly influencing
     their overall performance. Supplier C, with an 88% delivery rate, might pose concerns
     in maintaining supply chain efficiency, especially when coupled with their quality
@@ -3050,10 +3209,12 @@
   id: totrans-434
   prefs: []
   type: TYPE_NORMAL
+  zh: 供应商A的准时交货率最高，达到98%，显著影响了他们的整体表现。供应商C的交货率为88%，可能在保持供应链效率方面存在问题，特别是当与他们的质量问题结合在一起时。
 - en: '*Customer Satisfaction Comparison:*'
   id: totrans-435
   prefs: []
   type: TYPE_NORMAL
+  zh: '*客户满意度比较:*'
 - en: '*Supplier B has the highest customer satisfaction score (92/100), indicative
     of their excellent overall performance. These scores are crucial as they reflect
     real-world performance and customer experience, thus should weigh significantly
@@ -3061,10 +3222,12 @@
   id: totrans-436
   prefs: []
   type: TYPE_NORMAL
+  zh: 供应商B的客户满意度得分最高（92/100），表明他们的整体表现优秀。这些得分至关重要，因为它们反映了现实世界的表现和客户体验，因此在最终决策中应该占据重要地位。
 - en: '*Recommendation and Justification:*'
   id: totrans-437
   prefs: []
   type: TYPE_NORMAL
+  zh: '*建议和理由:*'
 - en: '*Given all considerations, Supplier E would be a recommended choice for ABC
     Corp. They demonstrate a balanced approach with competitive pricing, high delivery
     rate, and minimal quality issues that were promptly resolved. Their customer satisfaction
@@ -3072,6 +3235,7 @@
   id: totrans-438
   prefs: []
   type: TYPE_NORMAL
+  zh: '*考虑所有因素，供应商E将是ABC公司的推荐选择。他们展示了一种平衡的方式，具有有竞争力的定价、高交货率，以及及时解决的最小质量问题。他们的客户满意度得分也很高，显示了良好的市场反应。*'
 - en: '*While Supplier B has superior quality and customer satisfaction, their significantly
     higher pricing might not appeal to all segments of the market. Supplier E’s balanced
     approach would cater to a broader clientele and their willingness to enhance product
@@ -3080,10 +3244,12 @@
   id: totrans-439
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然供应商B在质量和客户满意度方面表现优异，但他们显著更高的定价可能不会吸引市场的所有细分。供应商E的平衡方式将迎合更广泛的客户群体，他们愿意增强产品特性表明了适应性和客户导向，这是供应商的宝贵特质。
 - en: '*Risk and Mitigation:*'
   id: totrans-440
   prefs: []
   type: TYPE_NORMAL
+  zh: '*风险和缓解:*'
 - en: '*The potential risks associated with Supplier E are the quality issues reported.
     Even though they were resolved promptly, it’s essential to ensure such issues
     are minimized. ABC Corp might mitigate these risks by conducting regular quality
@@ -3094,6 +3260,7 @@
   id: totrans-441
   prefs: []
   type: TYPE_NORMAL
+  zh: 与供应商E相关的潜在风险是报告的质量问题。即使它们得到了及时解决，确保这类问题被最小化是至关重要的。ABC公司可以通过定期进行质量审核和保持开放的沟通渠道来及时解决任何问题，从而减轻这些风险。此外，由于客户建议增强产品特性，ABC公司应与供应商E密切合作，以有效满足客户需求。
 - en: '*In conclusion, while all suppliers have their strengths and weaknesses, Supplier
     E offers a balanced, adaptable, and customer-oriented approach that would likely
     suit ABC Corp’s procurement needs. Regular oversight and collaborative development
@@ -3101,6 +3268,7 @@
   id: totrans-442
   prefs: []
   type: TYPE_NORMAL
+  zh: '*总之，虽然所有供应商都有各自的优势和劣势，但供应商E提供了一种平衡、适应性和客户导向的方式，很可能适合ABC公司的采购需求。定期监督和合作开发将有助于减轻相关风险。*'
 - en: In this scenario, ChatGPT-4 acts as a discerning consultant, analyzing the profiles
     of five potential suppliers for ABC Corp. Utilizing a comprehensive approach,
     it evaluates each supplier based on quality, pricing, delivery timeliness, and
@@ -3109,11 +3277,13 @@
   id: totrans-443
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，ChatGPT-4充当睿智的顾问，分析了ABC公司五个潜在供应商的概况。利用全面的方法，它根据质量、定价、交货及时性和客户满意度评估每个供应商，以确定最有利的合作伙伴，并提供了如何克服剩余挑战的建议。
 - en: '[Predictive Business Analysis](toc.xhtml#s377a)'
   id: totrans-444
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[预测性业务分析](toc.xhtml#s377a)'
 - en: This example embarks on a predictive business analysis scenario, where ChatGPT-4
     examines the potential implications of TechPioneer’s recent SmartGadget launch,
     exploring forecasted revenue and market share based on current trends and prospective
@@ -3121,105 +3291,126 @@
   id: totrans-445
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个例子展示了一个预测性业务分析的场景，ChatGPT-4审查了TechPioneer最近推出的SmartGadget的潜在影响，探索了基于当前趋势和未来战略举措的预测收入和市场份额。
 - en: '![](images/Figure-5.9.jpg)'
   id: totrans-446
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.9.jpg)'
 - en: '**[Figure 5.9](#fig5_9):** Predictive Business Analysis'
   id: totrans-447
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图5.9](#fig5_9):** 预测性业务分析'
 - en: 'Here is the prompt using the predictive query type:'
   id: totrans-448
   prefs: []
   type: TYPE_NORMAL
+  zh: '这是使用预测性查询类型的提示:'
 - en: '**Evidence:**'
   id: totrans-449
   prefs: []
   type: TYPE_NORMAL
+  zh: '**证据:**'
 - en: '*TechPioneer, a leading tech company, recently launched a new product, SmartGadget.
     The quarterly financial report reveals the following details:*'
   id: totrans-450
   prefs: []
   type: TYPE_NORMAL
+  zh: '领先的科技公司TechPioneer最近推出了新产品SmartGadget。季度财务报告显示了以下细节:'
 - en: '*The company’s revenue increased by 15% since the product’s release, amounting
     to a total quarterly revenue of $1.15 million.*'
   id: totrans-451
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 自产品发布以来，公司的收入增长了15%，达到了总季度收入115万美元。
 - en: '*The market share experienced a growth of 5%, resulting in a current market
     share of 20% in the smart gadget industry.*'
   id: totrans-452
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*市场份额增长了5%，导致智能设备行业当前市场份额达到20%。*'
 - en: '*SmartGadget received an average rating of 4.5 out of 5 based on customer reviews,
     highlighting its innovative features and user-friendly interface.*'
   id: totrans-453
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*SmartGadget根据客户评价获得了平均4.5分的评分，突出了其创新特性和用户友好的界面。*'
 - en: '*The industry growth rate is currently stable at around 3% per quarter.*'
   id: totrans-454
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目前，智能设备行业的增长率稳定在每季度约3%。
 - en: '*The marketing budget for SmartGadget was $100,000 in the last quarter.*'
   id: totrans-455
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: SmartGadget的营销预算在上个季度为10万美元。
 - en: '*Competitor analysis shows that rivals have maintained consistent market performance,
     with no significant product launches planned for the next two quarters.*'
   id: totrans-456
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 竞争对手分析显示，竞争对手在市场表现上保持一致，未计划在接下来的两个季度推出重大产品。
 - en: '*Customer feedback surveys indicate a high level of satisfaction with the product’s
     current features, with a 70% likelihood of recommending SmartGadget to others.*'
   id: totrans-457
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*客户反馈调查显示，产品当前特性的满意度很高，有70%的可能性会向他人推荐SmartGadget。*'
 - en: '**Reasoning Rules:**'
   id: totrans-458
   prefs: []
   type: TYPE_NORMAL
+  zh: '**推理规则:**'
 - en: '*A sustained increase in quarterly revenue indicates potential long-term growth.*'
   id: totrans-459
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 持续增长的季度收入表明潜在的长期增长。
 - en: '*Positive product reviews correlate with high consumer satisfaction and can
     lead to increased sales.*'
   id: totrans-460
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 积极的产品评价与高消费者满意度相关，并可能导致销售增加。
 - en: '*An increase in market share can indicate growing competitiveness in the market.*'
   id: totrans-461
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 市场份额的增加可能表明市场竞争力的增强。
 - en: '**Justification Requirements:**'
   id: totrans-462
   prefs: []
   type: TYPE_NORMAL
+  zh: 理由要求：
 - en: '*The model should justify its predictions by referencing specific data points
     or trends identified in the provided evidence and by applying the reasoning rules.
     It should also outline any assumptions made during the prediction.*'
   id: totrans-463
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型应通过参考提供的证据中确定的具体数据点或趋势，并应用推理规则来证明其预测。它还应概述在预测过程中所做的任何假设。
 - en: '**Queries:**'
   id: totrans-464
   prefs: []
   type: TYPE_NORMAL
+  zh: 查询：
 - en: '**Unconditional Prediction:**'
   id: totrans-465
   prefs: []
   type: TYPE_NORMAL
+  zh: 无条件预测：
 - en: '*Considering the detailed quarterly financial report, including the 15% increase
     in revenue, the 5% increase in market share, and the positive product reviews
     for SmartGadget, what quantitative predictions can be made for our total revenue
@@ -3227,6 +3418,7 @@
   id: totrans-466
   prefs: []
   type: TYPE_NORMAL
+  zh: 考虑到详细的季度财务报告，包括收入增长15%，市场份额增长5%，以及SmartGadget的积极产品评价，对我们在本财政年度末的总收入和市场份额可以做出什么定量预测？
 - en: '*Expected Justification: The model should calculate the projected revenue and
     market share for the remaining quarters of the fiscal year, taking into account
     the current growth rates, industry growth, and competitor landscape. The positive
@@ -3235,10 +3427,12 @@
   id: totrans-467
   prefs: []
   type: TYPE_NORMAL
+  zh: 预期的理由：模型应计算财政年度剩余季度的预计收入和市场份额，考虑当前增长率、行业增长和竞争对手格局。积极的产品评价和客户推荐可能会被纳入估计销售潜在额外增长。
 - en: '**Conditional Prediction:**'
   id: totrans-468
   prefs: []
   type: TYPE_NORMAL
+  zh: 有条件预测：
 - en: '*If TechPioneer decides to invest an additional 10% of SmartGadget’s current
     quarterly revenue (i.e., an additional $115,000) in marketing and enhancing product
     features based on user feedback, what is the quantitative impact that this could
@@ -3246,6 +3440,7 @@
   id: totrans-469
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果TechPioneer决定根据用户反馈，额外投资SmartGadget当前季度收入的10%（即额外115,000美元）用于营销和增强产品特性，这可能对我们在下一个财政年度的总收入和市场份额产生的定量影响是什么？
 - en: '*Expected Justification: The model should analyze the potential returns on
     increased marketing investment and improved product features, considering the
     existing market conditions, competitor activities, and customer preferences. It
@@ -3254,76 +3449,93 @@
   id: totrans-470
   prefs: []
   type: TYPE_NORMAL
+  zh: 预期的理由：模型应分析增加营销投资和改进产品特性的潜在回报，考虑现有市场条件、竞争对手活动和客户偏好。它应计算销售和市场份额的可能增加，考虑当前增长率和行业动态。
 - en: 'ChatGPT-4 answers as follows:'
   id: totrans-471
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT-4的回答如下：
 - en: '*Unconditional Prediction:*'
   id: totrans-472
   prefs: []
   type: TYPE_NORMAL
+  zh: 无条件预测：
 - en: '*Calculating Projected Revenue:*'
   id: totrans-473
   prefs: []
   type: TYPE_NORMAL
+  zh: 计算预计收入：
 - en: '*Given the current quarterly revenue is $1.15 million with a growth of 15%,
     to project the revenue for the rest of the fiscal year, we’ll calculate the revenue
     for the next three quarters.*'
   id: totrans-474
   prefs: []
   type: TYPE_NORMAL
+  zh: 鉴于当前季度收入为115万美元，增长15%，为了预测财政年度剩余时间的收入，我们将计算接下来三个季度的收入。
 - en: '*Q2 Revenue = 1.15M * (1 + 0.15) = 1.3225M*'
   id: totrans-475
   prefs: []
   type: TYPE_NORMAL
+  zh: Q2收入=115万美元*（1+0.15）=1.3225百万美元
 - en: '*Q3 Revenue = 1.3225M * (1 + 0.15) = 1.520875M*'
   id: totrans-476
   prefs: []
   type: TYPE_NORMAL
+  zh: Q3收入=1.3225百万美元*（1+0.15）=1.520875百万美元
 - en: '*Q4 Revenue = 1.520875M * (1 + 0.15) = 1.74900625M*'
   id: totrans-477
   prefs: []
   type: TYPE_NORMAL
+  zh: Q4收入=1.520875百万美元*（1+0.15）=1.74900625百万美元
 - en: '*Total Projected Revenue for the Fiscal Year: 1.15M + 1.3225M + 1.520875M +
     1.74900625M = $5.74238125 million*'
   id: totrans-478
   prefs: []
   type: TYPE_NORMAL
+  zh: 财政年度的总预计收入：115万美元+1.3225百万美元+1.520875百万美元+1.74900625百万美元=5.74238125百万美元
 - en: '*Calculating Projected Market Share:*'
   id: totrans-479
   prefs: []
   type: TYPE_NORMAL
+  zh: 计算预计市场份额：
 - en: '*Given the current market share is 20% with a growth of 5%, we project the
     market share for the next three quarters as follows:*'
   id: totrans-480
   prefs: []
   type: TYPE_NORMAL
+  zh: 鉴于当前市场份额为20%，增长5%，我们预测未来三个季度的市场份额如下：
 - en: '*Q2 Market Share = 20% + 5% = 25%*'
   id: totrans-481
   prefs: []
   type: TYPE_NORMAL
+  zh: Q2市场份额=20%+5%=25%
 - en: '*Q3 Market Share = 25% + 5% = 30%*'
   id: totrans-482
   prefs: []
   type: TYPE_NORMAL
+  zh: Q3市场份额=25%+5%=30%
 - en: '*Q4 Market Share = 30% + 5% = 35%*'
   id: totrans-483
   prefs: []
   type: TYPE_NORMAL
+  zh: Q4市场份额=30%+5%=35%
 - en: '*These projections assume a linear growth, which may be simplistic given market
     dynamics, competition, and saturation points, but without additional data, this
     is a reasonable approximation.*'
   id: totrans-484
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些预测假设线性增长，这可能过于简单，考虑到市场动态、竞争和饱和点，但在没有额外数据的情况下，这是一个合理的近似。
 - en: '*Conditional Prediction:*'
   id: totrans-485
   prefs: []
   type: TYPE_NORMAL
+  zh: 有条件预测：
 - en: '*Impact of Additional Investment:*'
   id: totrans-486
   prefs: []
   type: TYPE_NORMAL
+  zh: 额外投资的影响：
 - en: '*Assuming an additional investment of $115,000 (10% of current quarterly revenue)
     in marketing and product enhancement, there could be an increment in both revenue
     and market share. However, calculating the exact impact is challenging without
@@ -3331,53 +3543,64 @@
   id: totrans-487
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设在营销和产品增强上额外投资115,000美元（当前季度收入的10%），可能会增加收入和市场份额。然而，在没有关于营销和产品增强的投资回报率（ROI）的具体数据的情况下，计算确切的影响是具有挑战性的。
 - en: '*Let’s assume a conservative estimate that every dollar invested in marketing
     and enhancement could generate an additional $5 in revenue, giving a ROI of 5.*'
   id: totrans-488
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设每投资一美元在营销和增强上都能产生额外5美元的收入，ROI为5。
 - en: '*Additional Revenue per Quarter = $115,000 * 5 = $575,000*'
   id: totrans-489
   prefs: []
   type: TYPE_NORMAL
+  zh: 每季度额外收入=115,000美元*5=575,000美元
 - en: '*The total additional revenue for the next fiscal year would be $575,000 *
     4 (quarters) = $2.3 million.*'
   id: totrans-490
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一个财政年度的总额外收入将是575,000美元*4（季度）=2.3百万美元。
 - en: '*The new projected revenue for the next fiscal year would be $5.74138125 million
     + $2.3 million = $8.04138125 million.*'
   id: totrans-491
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一个财政年度的新预计收入将是5.74138125百万美元+2.3百万美元=8.04138125百万美元。
 - en: '*Market Share:*'
   id: totrans-492
   prefs: []
   type: TYPE_NORMAL
+  zh: 市场份额：
 - en: '*The additional investment could potentially attract more customers, thereby
     increasing the market share. Assuming the additional investment results in a 2%
     extra growth in market share per quarter:*'
   id: totrans-493
   prefs: []
   type: TYPE_NORMAL
+  zh: 额外投资可能吸引更多客户，从而增加市场份额。假设额外投资导致每季度额外增长2%的市场份额：
 - en: '*Q2 Market Share = 25% + 2% = 27%*'
   id: totrans-494
   prefs: []
   type: TYPE_NORMAL
+  zh: '*Q2市场份额= 25% + 2% = 27%*'
 - en: '*Q3 Market Share = 30% + 2% = 32%,*'
   id: totrans-495
   prefs: []
   type: TYPE_NORMAL
+  zh: '*Q3市场份额= 30% + 2% = 32%*'
 - en: '*Q4 Market Share = 35% + 2% = 37%*'
   id: totrans-496
   prefs: []
   type: TYPE_NORMAL
+  zh: '*Q4市场份额= 35% + 2% = 37%*'
 - en: '*These estimates are based on several assumptions and should be validated with
     more specific data on market dynamics, customer behavior, and the effectiveness
     of marketing and product enhancements.*'
   id: totrans-497
   prefs: []
   type: TYPE_NORMAL
+  zh: '*这些估计是基于几个假设的，应该通过更具体的市场动态数据、客户行为和营销和产品增强的有效性来验证。*'
 - en: '*In conclusion, while the unconditional prediction provides a straightforward
     projection based on current growth rates, the conditional prediction involves
     more variables and assumptions, specifically regarding the ROI of additional investments
@@ -3385,6 +3608,7 @@
   id: totrans-498
   prefs: []
   type: TYPE_NORMAL
+  zh: '*总之，无条件预测基于当前增长率提供了一个直接的预测，而有条件预测涉及更多的变量和假设，特别是关于额外投资的投资回报率及其对市场份额的影响。*'
 - en: In this predictive business analysis, ChatGPT-4 skillfully combines financial
     figures and market-oriented metrics to assess the future trajectory of TechPioneer’s
     SmartGadget. It forecasts potential growth in revenue and market share, providing
@@ -3392,17 +3616,20 @@
   id: totrans-499
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个预测性的业务分析中，ChatGPT-4巧妙地结合了财务数据和市场导向的指标，评估了TechPioneer的SmartGadget未来的发展轨迹。它预测了收入和市场份额的潜在增长，提供了产品对公司地位的整体影响。
 - en: Additionally, ChatGPT-4 evaluates a conditional scenario, exploring the implications
     of increased investment on financial outcomes and market penetration, thus highlighting
     strategic opportunities for growth.
   id: totrans-500
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，ChatGPT-4评估了一种有条件的情景，探讨了增加投资对财务结果和市场渗透的影响，从而突出了增长的战略机会。
 - en: '[Improving System Usability in Healthcare](toc.xhtml#s378a)'
   id: totrans-501
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[在医疗保健中改善系统可用性](toc.xhtml#s378a)'
 - en: This scenario involves ChatGPT-4 analyzing staff feedback to optimize the usability
     of a newly implemented Electronic Health Record (EHR) system within a healthcare
     organization. The aim is to address specific concerns, enhance user experience
@@ -3410,28 +3637,34 @@
   id: totrans-502
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种情况涉及ChatGPT-4分析员工反馈，以优化医疗机构内新实施的电子健康记录（EHR）系统的可用性。目标是解决具体问题，提高用户体验和患者护理，同时确保符合法规和数据安全性。
 - en: '![](images/Figure-5.10.jpg)'
   id: totrans-503
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.10.jpg)'
 - en: '**[Figure 5.10](#fig5_10):** Improving System Usability in Healthcare'
   id: totrans-504
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图5.10](#fig5_10)：** 在医疗保健中改善系统可用性'
 - en: 'Here is the prompt utilizing the advisory query type:'
   id: totrans-505
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是使用咨询查询类型的提示：
 - en: '**Evidence:**'
   id: totrans-506
   prefs: []
   type: TYPE_NORMAL
+  zh: '**证据：**'
 - en: '*A healthcare organization has recently implemented a new Electronic Health
     Record (EHR) system across its network of hospitals. Initial feedback from different
     staff members indicates the following challenges:*'
   id: totrans-507
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个医疗机构最近在其医院网络中实施了新的电子健康记录（EHR）系统。不同员工的初步反馈表明存在以下挑战：
 - en: '*Nurse Emma: Reports difficulty navigating through multiple screens to access
     patient information, leading to increased time spent on the system and decreased
     interaction with patients.*'
@@ -3439,6 +3672,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*护士Emma：报告在浏览多个屏幕以获取患者信息时遇到困难，导致系统使用时间增加，与患者的互动减少。*'
 - en: '*Dr. Johnson: Faces challenges with system responsiveness and has experienced
     instances of data not being saved properly, causing concerns about data accuracy
     and reliability.*'
@@ -3446,6 +3680,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*医生约翰逊：面临系统响应性的挑战，并且出现数据未能正确保存的情况，引起对数据准确性和可靠性的担忧。*'
 - en: '*Administrator Mike: Struggles with generating reports efficiently, as the
     system lacks intuitive features for report customization, affecting administrative
     workflow.*'
@@ -3453,58 +3688,69 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*管理员迈克：在生成报告方面遇到困难，因为系统缺乏直观的报告定制功能，影响了管理工作流程。*'
 - en: '*IT Specialist Clara: Raises concerns about the system’s integration with other
     software in use, leading to potential data synchronization issues.*'
   id: totrans-511
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*IT专家克拉拉：对系统与其他正在使用的软件的集成提出了担忧，可能导致数据同步问题。*'
 - en: '*These challenges have resulted in an increase in time spent on documentation
     and a decrease in time available for direct patient care.*'
   id: totrans-512
   prefs: []
   type: TYPE_NORMAL
+  zh: '*这些挑战导致了文档编制时间的增加和可用于直接患者护理的时间的减少。*'
 - en: '**Reasoning Rules:**'
   id: totrans-513
   prefs: []
   type: TYPE_NORMAL
+  zh: '**推理规则：**'
 - en: '*Usability Improvement:*'
   id: totrans-514
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*可用性改进：*'
 - en: '*Addressing specific issues reported by different staff members leads to improved
     system usability.*'
   id: totrans-515
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*解决不同员工报告的具体问题有助于提高系统的可用性。*'
 - en: '*Resolving challenges related to navigation, responsiveness, and integration
     enhances overall user experience and satisfaction.*'
   id: totrans-516
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*解决与导航、响应和集成相关的挑战提高了整体用户体验和满意度。*'
 - en: '*Patient Care Enhancement:*'
   id: totrans-517
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*患者护理增强：*'
 - en: '*Decreasing time spent on system documentation increases time available for
     patient care.*'
   id: totrans-518
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*减少系统文档编制时间增加了可用于患者护理的时间。*'
 - en: '*Efficient and reliable data management contributes to improved patient outcomes.*'
   id: totrans-519
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*高效可靠的数据管理有助于改善患者结果。*'
 - en: '**Justification Requirements:**'
   id: totrans-520
   prefs: []
   type: TYPE_NORMAL
+  zh: '**证明要求：**'
 - en: '*The GPT model needs to justify its recommendations by addressing the specific
     issues raised by Nurse Emma, Dr. Johnson, Administrator Mike, and IT Specialist
     Clara. Additionally, the model should consider the potential trade-offs between
@@ -3513,10 +3759,12 @@
   id: totrans-521
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT模型需要通过解决护士Emma、医生约翰逊、管理员迈克和IT专家克拉拉提出的具体问题来证明其建议。此外，该模型还应考虑提高系统可用性与遵守医疗法规和数据安全性之间的潜在权衡。
 - en: '**Advisory Query**:'
   id: totrans-522
   prefs: []
   type: TYPE_NORMAL
+  zh: '**咨询查询：**'
 - en: '*Given the specific challenges reported by Nurse Emma, Dr. Johnson, Administrator
     Mike, and IT Specialist Clara with the new EHR system, what general advice can
     be derived to address these individual concerns and similar concerns by other
@@ -3524,26 +3772,31 @@
   id: totrans-523
   prefs: []
   type: TYPE_NORMAL
+  zh: '*鉴于护士Emma、医生约翰逊、管理员迈克和IT专家克拉拉对新EHR系统的具体挑战，可以得出什么一般建议来解决这些个人问题以及其他员工的类似问题，并提高整体用户满意度？*'
 - en: 'ChatGPT-4 answers as follows:'
   id: totrans-524
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT-4的回答如下：
 - en: '*User Training and* Support*:*'
   id: totrans-525
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*用户培训和支持：*'
 - en: '*Objective: Improve navigation proficiency and system utilization for staff.*'
   id: totrans-526
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目标：提高员工的导航能力和系统利用率。
 - en: '*Action: Conduct targeted training sessions, focusing on system navigation
     for nurses and report generation for administrators.*'
   id: totrans-527
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 行动：进行有针对性的培训，重点是护士的系统导航和行政人员的报告生成。
 - en: '*Justification: This directly addresses Nurse Emma’s difficulty navigating
     through multiple screens and Administrator Mike’s struggle with generating reports
     efficiently.*'
@@ -3551,44 +3804,52 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 理由：这直接解决了护士Emma在多个屏幕中导航的困难以及管理员Mike在高效生成报告方面的挣扎。
 - en: '*System Optimization:*'
   id: totrans-529
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 系统优化：
 - en: '*Objective: Enhance system responsiveness and reliability.*'
   id: totrans-530
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目标：提高系统的响应性和可靠性。
 - en: '*Action: Identify and resolve bottlenecks and regularly update the system to
     rectify issues related to data saving and responsiveness.*'
   id: totrans-531
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 行动：识别和解决瓶颈，并定期更新系统以纠正与数据保存和响应性相关的问题。
 - en: '*Justification: This is essential to tackle the challenges faced by Dr. Johnson
     regarding system responsiveness and instances of data not being saved properly.*'
   id: totrans-532
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 理由：这对于解决Dr. Johnson在系统响应性和数据未正确保存的情况下面临的挑战至关重要。
 - en: '*Enhanced Integration Capabilities:*'
   id: totrans-533
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 增强集成能力：
 - en: '*Objective: Achieve seamless integration with other software in use.*'
   id: totrans-534
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目标：实现与其他正在使用的软件的无缝集成。
 - en: '*Action: Collaborate with IT specialists and vendors to address integration
     and data synchronization concerns.*'
   id: totrans-535
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 行动：与IT专家和供应商合作，解决集成和数据同步方面的问题。
 - en: '*Justification: IT Specialist Clara’s concern about the system’s integration
     leading to potential data synchronization issues will be directly addressed through
     this approach.*'
@@ -3596,23 +3857,27 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 理由：IT专家Clara对系统集成可能导致潜在的数据同步问题的担忧将通过这种方法直接得到解决。
 - en: '*Customizable Reporting Features:*'
   id: totrans-537
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 可定制的报告功能：
 - en: '*Objective: Facilitate easier report customization to improve administrative
     workflow.*'
   id: totrans-538
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 目标：简化报告定制，以改善行政工作流程。
 - en: '*Action: Work with EHR vendors to enhance report customization features based
     on the feedback from administrative staff.*'
   id: totrans-539
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 行动：根据行政人员的反馈，与电子健康记录系统供应商合作，增强报告定制功能。
 - en: '*Justification: By developing intuitive features for report customization,
     this advice addresses the specific issues reported by Administrator Mike, thus
     contributing to administrative workflow improvement.*'
@@ -3620,12 +3885,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 理由：通过为报告定制开发直观的功能，这些建议解决了管理员Mike报告的具体问题，从而有助于改善行政工作流程。
 - en: '*By implementing these targeted strategies, the healthcare organization can
     directly address the specific concerns raised by the staff, thereby improving
     overall system usability and user satisfaction.*'
   id: totrans-541
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过实施这些有针对性的策略，医疗机构可以直接解决员工提出的具体问题，从而提高整体系统的可用性和用户满意度。
 - en: In this advisory assessment, ChatGPT-4 provides targeted strategies addressing
     specific challenges raised by healthcare staff with the new EHR system. The advice
     is focused on system optimization, enhanced integration, customizable reporting,
@@ -3634,10 +3901,12 @@
   id: totrans-542
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这份咨询评估中，ChatGPT-4提供了针对医护人员在新的电子健康记录系统中提出的具体挑战的有针对性策略。建议侧重于系统优化、增强集成、可定制的报告和用户培训，旨在提高用户满意度并增加用于患者护理的时间。
 - en: 'Three further query examples are presented in Appendix A:'
   id: totrans-543
   prefs: []
   type: TYPE_NORMAL
+  zh: 附录A中提供了三个进一步的查询示例：
 - en: 'Safety Regulation Inquiries: Using several information-seeking queries, ChatGPT-4
     interprets Personal Protective Equipment (PPE) safety regulations, analyzes consequences
     of compromised gear, emphasizing immediate replacement of damaged PPE for worker
@@ -3646,6 +3915,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 安全法规查询：使用几个信息查询，ChatGPT-4解释个人防护装备（PPE）安全法规，分析损坏装备的后果，强调立即更换损坏的PPE以确保工人安全，展示其对技术法规的理解。
 - en: 'Counterfactual Exploration in HR Management: Through a counterfactual query,
     ChatGPT-4 analyzes hypothetical outcomes of an earlier career development, focusing
     on turnover, costs, morale, and reputation. The analysis underscores potential
@@ -3655,6 +3925,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 人力资源管理中的反事实探索：通过反事实查询，ChatGPT-4分析了早期职业发展的假设结果，重点关注流失率、成本、士气和声誉。分析强调了潜在的好处、节省、增强的工作满意度和改善的雇主品牌形象，展示了ChatGPT-4在人力资源场景中的能力。
 - en: 'Supply Possibility Estimation: Applying a fuzzy logic query, ChatGPT-4 evaluates
     delivery fulfillment possibilities of different suppliers for ACME Corp. based
     on order sizes and fleet capacities. It navigates through fuzzy logic rules to
@@ -3665,11 +3936,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 供应可能性估计：通过应用模糊逻辑查询，ChatGPT-4评估了不同供应商对ACME Corp.的订单大小和车队容量的交付满足可能性。它通过模糊逻辑规则得出结论，表明拥有许多小卡车的供应商提供了满足大订单的最高可能性，展示了模糊逻辑在供应链场景中的应用。
 - en: '[Multi-Agent Prompting](toc.xhtml#s379a)'
   id: totrans-547
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[多智能体提示](toc.xhtml#s379a)'
 - en: In this section, we first introduce the Multi-Agent[⁸](#ftn8a) Prompt Pattern
     for multi-agent collaboration within a GPT model environment. We then provide
     several practical examples to demonstrate the effective application of this pattern
@@ -3677,11 +3950,13 @@
   id: totrans-548
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节中，我们首先介绍了GPT模型环境中多智能体协作的多智能体提示模式。然后，我们提供了几个实际示例，以展示这种模式在企业环境中的有效应用。
 - en: '[Multi-Agent Prompt Pattern](toc.xhtml#s380a)'
   id: totrans-549
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[多智能体提示模式](toc.xhtml#s380a)'
 - en: 'The Multi-Agent Prompt Pattern is a pioneering approach, leveraging the multi-agent
     capabilities of advanced GPT models. It cultivates an ecosystem where specialized
     artificial agents, each with its distinct role and responsibility, collaborate
@@ -3689,6 +3964,7 @@
   id: totrans-550
   prefs: []
   type: TYPE_NORMAL
+  zh: 多智能体提示模式是一种开创性的方法，利用先进的GPT模型的多智能体能力。它培养了一个生态系统，其中专门的人工智能代理，每个代理都有其独特的角色和责任，共同实现特定的用户提供的目标。这种模式的组成部分包括：
 - en: '**Agent Organization**: This specifies the AI agents involved. Each agent could
     represent a different business function with unique skills. For instance, when
     launching a new product, the agents might include a “Market Research Agent,” a
@@ -3697,6 +3973,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**代理组织：**这指定了涉及的AI代理。每个代理可以代表具有独特技能的不同业务功能。例如，当推出新产品时，代理可能包括“市场调研代理”，“产品开发代理”和“营销和销售代理”。'
 - en: '**Agent Responsibilities**: This element lays out the roles for each agent.
     For the product launch, the Market Research Agent might be responsible for gathering
     market and customer insights, the Product Development Agent for overseeing product
@@ -3706,6 +3983,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**代理责任：**这一元素为每个代理规定了角色。对于产品推出，市场调研代理可能负责收集市场和客户见解，产品开发代理负责监督产品设计和制造，营销和销售代理负责推动产品的营销策略和销售工作。'
 - en: '**Goal Specification**: This is the overall aim that the team of agents will
     work towards. In our product launch scenario, the goal could be to “successfully
     launch product X in the market and achieve Y sales in the first quarter.”'
@@ -3713,6 +3991,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**目标规定：**这是代理团队将努力实现的总体目标。在我们的产品推出场景中，目标可能是“成功推出X产品并在第一季度实现Y销售额”。'
 - en: '**Engagement Rules**: These are the rules that dictate how the agents interact
     with each other, with humans, and with external tools or plugins. An Engagement
     Rule for the product launch could be that the Product Development Agent should
@@ -3722,6 +4001,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**参与规则：**这些是规定代理如何相互交互，与人类以及与外部工具或插件交互的规则。产品推出的参与规则可能是产品开发代理在营销和销售代理开始其活动之前必须先确认产品的准备情况。'
 - en: '**Constraints**: These are limitations or boundaries within which the agents
     have to operate. For example, the product launch must align with regulatory compliance,
     the marketing campaign should adhere to a set budget, and the product should be
@@ -3730,6 +4010,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**约束：**这些是代理必须操作的限制或边界。例如，产品推出必须符合监管合规要求，营销活动应符合预算，产品应在特定日期前准备好推出。'
 - en: '**Approach**: This describes the strategies or methods the agents will apply
     to achieve the goal while potentially using external tools or plugins. For instance,
     the agents could start with market research, then move to product development,
@@ -3738,12 +4019,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**方法：**这描述了代理将应用的策略或方法，以实现目标，同时可能使用外部工具或插件。例如，代理可以从市场调研开始，然后转向产品开发，最后专注于营销和销售工作。'
 - en: 'The Multi-Agent Prompt Pattern advances the realm of AI-driven collaboration
     through specialized interconnected agents and is particularly useful under the
     following conditions:'
   id: totrans-557
   prefs: []
   type: TYPE_NORMAL
+  zh: 多智能体提示模式通过专门的互连代理推进了AI驱动的协作领域，并在以下情况下特别有用：
 - en: '**Ambiguity is present:** In cases where tasks are not clearly defined, a team
     of agents can first establish a comprehensive task description, minimizing the
     potential for misinterpretation or hallucination.'
@@ -3751,18 +4034,21 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**存在模糊性：**在任务不明确定义的情况下，一组代理可以首先建立全面的任务描述，最大限度地减少误解或幻觉的可能性。'
 - en: '**Deep expertise is required:** When tasks need specialized knowledge, agents
     with specific expertise can provide detailed insights and generate component solutions.'
   id: totrans-559
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**需要深入的专业知识：**当任务需要专业知识时，具有特定专业知识的代理可以提供详细的见解并生成组件解决方案。'
 - en: '**Diverse views are essential:** This approach thrives when varied perspectives
     are crucial, ensuring a comprehensive and validated outcome through multiple viewpoints.'
   id: totrans-560
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**多元化观点至关重要：**这种方法在关键时刻可以蓬勃发展，确保通过多个视角实现全面和经过验证的结果。'
 - en: '**High-Quality outcomes are a priority:** When there’s a demand for meticulous
     quality assurance, having multiple agents perform independent checks can significantly
     enhance the quality of the final output.'
@@ -3770,23 +4056,27 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**高质量的结果是首要任务：**当需要严格的质量保证时，让多个代理进行独立检查可以显著提高最终输出的质量。'
 - en: '**Adaptability is key:** In rapidly changing environments or tasks, the ability
     of agents to modify plans in real-time can be invaluable.'
   id: totrans-562
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**适应性至关重要：**在快速变化的环境或任务中，代理实时修改计划的能力是非常宝贵的。'
 - en: '[Multi-Agent Prompt Examples](toc.xhtml#s381a)'
   id: totrans-563
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[多智能体提示示例](toc.xhtml#s381a)'
 - en: 'The subsequent narratives showcase the application of multi-agent prompts in
     interactive scenarios, spanning project readiness assessments, sales data analysis,
     and forewarning financial evaluation:'
   id: totrans-564
   prefs: []
   type: TYPE_NORMAL
+  zh: 随后的叙述展示了多智能体提示在互动场景中的应用，涵盖了项目准备评估、销售数据分析和预警财务评估：
 - en: '**Project Go-Live Check**: ChatGPT-4 functions as Planning, Execution, and
     Orchestration Agents to assess Project X’s go-live readiness. It outlines essential
     tasks, collects user insights on finer project details, and compiles a summarized
@@ -3795,6 +4085,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**项目上线检查：**ChatGPT-4作为规划、执行和编排代理，评估项目X的上线准备情况。它概述了必要的任务，收集用户对项目细节的见解，并编制了一个总结的路线图，为项目X的充分准备上线提供了便利。'
 - en: '**Sales Data Deep Dive**: In this scenario, we witness ChatGPT-4’s analytical
     capabilities in unraveling a year’s worth of sales data from a wholesale dataset.
     The system adopts the roles of Data Manager Agent, Data Processing Agent, and
@@ -3804,6 +4095,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**销售数据深入挖掘：**在这种情况下，我们见证了ChatGPT-4在解开批发数据集一年销售数据的分析能力。系统扮演数据管理代理、数据处理代理和可视化代理的角色，提取重要趋势和见解，提供了销售业绩的详细画面，并提出了未来增强策略。'
 - en: '**Forewarning Financial Analysis**: ChatGPT-4, acting as Report Extractor,
     Financial Analysis, and Presentation Agents, dissects the 2019 financial report
     of JCPenney, a former US retailer.. It extracts crucial metrics, evaluates financial
@@ -4208,64 +4500,76 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*报告错误可以在上线后解决。*'
 - en: '*An alternate functioning report exists, and users are informed.*'
   id: totrans-641
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 存在一个备用的功能报告，并已通知用户。
 - en: '*Arranging Catch-Up Training Sessions:*'
   id: totrans-642
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*安排补课培训课程：*'
 - en: '*20% of end-users need catch-up training on production order confirmation within
     the next 2 weeks.*'
   id: totrans-643
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 20%的最终用户需要在接下来的2周内进行生产订单确认的补课培训。
 - en: '*Resources for this training are available.*'
   id: totrans-644
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*此培训的资源可用。*'
 - en: '*Planning Go-Live Simulation:*'
   id: totrans-645
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*规划上线模拟：*'
 - en: '*A cut-over schedule will guide the simulation focusing on time-critical tasks.*'
   id: totrans-646
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一个切换日程将指导模拟，重点关注时间关键的任务。
 - en: '*Main challenges are around data migration: stocks, purchase orders, and production
     orders.*'
   id: totrans-647
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*主要挑战在于数据迁移：库存、采购订单和生产订单。*'
 - en: '*All required resources and tools are ready for this task.*'
   id: totrans-648
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 所有必需的资源和工具都已准备就绪。
 - en: '*With these details, I believe we have a comprehensive plan to ensure project
     X is ready for go-live. Would you like any further actions or assistance from
     us?*'
   id: totrans-649
   prefs: []
   type: TYPE_NORMAL
+  zh: '*有了这些细节，我相信我们有一个全面的计划，确保项目X准备好上线。您是否需要我们提供进一步的行动或帮助？*'
 - en: '*User: No. Thanks.*'
   id: totrans-650
   prefs: []
   type: TYPE_NORMAL
+  zh: '*用户：不，谢谢。*'
 - en: '*Orchestration Agent: You’re welcome! If you need any further assistance in
     the future, do not hesitate to reach out. Best of luck with the go-live of project
     X! Have a great day.*'
   id: totrans-651
   prefs: []
   type: TYPE_NORMAL
+  zh: '**编排代理**：不客气！如果您将来需要任何进一步的帮助，请随时联系。祝项目X的上线顺利！祝您有一个美好的一天。'
 - en: In this go-live readiness task, ChatGPT-4 operates a three-tiered agent system
     to analyze Project X’s launch preparedness. Initially, the **Planning Agent**
     lists essential tasks like assessing current project status and identifying gaps
@@ -4273,22 +4577,26 @@
   id: totrans-652
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个上线准备任务中，ChatGPT-4操作一个三层代理系统来分析项目X的上线准备情况。最初，**规划代理**列出了评估当前项目状态和识别差距等基本任务，以提供对项目需求的结构化理解。
 - en: Next, the **Execution Agent** dives into each task, collecting user insights
     through a series of questions to understand finer project details, including existing
     issues and training needs.
   id: totrans-653
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，**执行代理**深入每个任务，通过一系列问题收集用户见解，以了解更精细的项目细节，包括现有问题和培训需求。
 - en: The **Orchestration Agent** oversees the entire collaborative process and finally
     compiles the data and gives a summarized action plan for the go-live process.
   id: totrans-654
   prefs: []
   type: TYPE_NORMAL
+  zh: '**编排代理**监督整个协作过程，最终编制数据并提供上线过程的摘要行动计划。'
 - en: '[Sales Data Deep Dive](toc.xhtml#s383a)'
   id: totrans-655
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[销售数据深度挖掘](toc.xhtml#s383a)'
 - en: In this interactive analysis, a multi-agent team collaborates to analyze the
     sales data of an online wholesaler. The ensemble, comprising a Data Manager Agent,
     Data Processing Agent, and Visualization Agent, works in unison to uncover trends,
@@ -4296,29 +4604,35 @@
   id: totrans-656
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个互动分析中，一个多代理团队合作分析在线批发商的销售数据。由数据管理代理、数据处理代理和可视化代理组成的合奏团队协同工作，以从数据中发现趋势、见解和可操作的建议。
 - en: '![](images/Figure-5.12.jpg)'
   id: totrans-657
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.12.jpg)'
 - en: '**[Figure 5.12](#fig5_12):** Sales Data Deep Dive'
   id: totrans-658
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图5.12](#fig5_12)：**销售数据深度挖掘'
 - en: 'Let us dive into the prompt:'
   id: totrans-659
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们深入了解提示：
 - en: '**Agent Organization***: You consist of a Data Manager Agent, a Data Processing
     Agent, and a Visualization Agent.*'
   id: totrans-660
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**代理组织**：您由数据管理代理、数据处理代理和可视化代理组成。'
 - en: '**Agent Responsibilities:**'
   id: totrans-661
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**代理责任：**'
 - en: '*Data Manager Agent: Receives the data set file, ensures its integrity, manages
     data storage, and supervises the collaboration between the Data Processing Agent
     and Visualization Agent. Also, consolidates a final analytics report.*'
@@ -4326,12 +4640,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*数据管理代理：接收数据集文件，确保其完整性，管理数据存储，并监督数据处理代理和可视化代理之间的协作。还整合最终的分析报告。*'
 - en: '*Data Processing Agent: Given the data set, utilizes the code interpreter plugin
     to clean, transform, and analyze the data. Extracts relevant statistics and patterns.*'
   id: totrans-663
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*数据处理代理：根据数据集，利用代码解释器插件来清理、转换和分析数据。提取相关的统计数据和模式。*'
 - en: '*Visualization Agent: Uses tools like the advanced data analysis plugin to
     create visual representations of the analyzed data, such as graphs, charts, and
     heatmaps.*'
@@ -4339,35 +4655,41 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*可视化代理：使用高级数据分析插件等工具来创建分析数据的视觉呈现，如图表和热图。*'
 - en: '**Goal Specification:** *Conduct a comprehensive analysis of sales data for
     the last year of available data to identify trends, patterns, and areas of improvement.*'
   id: totrans-665
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**目标规定：**进行对去年可用数据的销售数据的全面分析，以识别趋势、模式和改进领域。'
 - en: '**Engagement Rules:**'
   id: totrans-666
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**参与规则：**'
 - en: '*The Data Manager Agent first checks the integrity of the data set and ensures
     it is ready for analysis.*'
   id: totrans-667
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*数据管理代理首先检查数据集的完整性，并确保它准备好进行分析。*'
 - en: '*The Data Processing Agent starts its work, utilizing the advanced data analysis
     plugin to clean and analyze the data.*'
   id: totrans-668
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据处理代理开始工作，利用高级数据分析插件来清理和分析数据。
 - en: '*For every significant finding, the Visualization Agent will create a visual
     representation to better understand the data.*'
   id: totrans-669
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*对于每一个重要的发现，可视化代理将创建一个视觉呈现以更好地理解数据。*'
 - en: '*Once the data analysis is completed, the Visualization Agent presents its
     visuals. The Data Manager Agent then drafts a report, presenting the most salient
     points.*'
@@ -4375,44 +4697,52 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*一旦数据分析完成，可视化代理呈现其视觉效果。然后数据管理代理起草一份报告，呈现最显著的要点。*'
 - en: '**Constraints:**'
   id: totrans-671
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**约束：**'
 - en: '*The agents must ensure that the data remains focused on the last year’s sales.*'
   id: totrans-672
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代理必须确保数据集集中在去年的销售数据上。
 - en: '*The agents should not overstep their defined roles and must always coordinate
     with each other to ensure a coherent and impactful outcome.*'
   id: totrans-673
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代理不应超越其定义的角色，并且必须始终相互协调，以确保一个连贯和有影响力的结果。
 - en: '*The final report is strictly limited to 5 visual representations, capturing
     only the most significant insights.*'
   id: totrans-674
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最终报告严格限制为5个视觉呈现，仅捕捉最重要的见解。
 - en: '**Approach:**'
   id: totrans-675
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**方法：**'
 - en: '*Validate and prepare the sales data set for analysis.*'
   id: totrans-676
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*验证和准备销售数据集以进行分析。*'
 - en: '*Conduct focused data processing using the advanced data analysis plugin, emphasizing
     data cleaning and statistical analysis.*'
   id: totrans-677
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*使用高级数据分析插件进行集中的数据处理，强调数据清理和统计分析。*'
 - en: '*Visualize findings using the advanced data analysis plugin, creating up to
     5 visuals that highlight the most valuable insights regarding sales trends over
     the last year.*'
@@ -4420,252 +4750,303 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用高级数据分析插件可视化发现，创建最多5个视觉效果，突出过去一年销售趋势的最有价值的见解。
 - en: 'Before proceeding with the analysis, the 2010/11 parts of an open-sourced dataset
     `**online_retail_II.csv**` [7] was uploaded. ChatGPT-4 generates the following
     response to this prompt:'
   id: totrans-679
   prefs: []
   type: TYPE_NORMAL
+  zh: 在进行分析之前，2010/11年的开源数据集`online_retail_II.csv` [7]已上传。 ChatGPT-4对此提示生成以下响应：
 - en: '*Data Manager Agent: I have received the file “online_retail_II.csv”. I will
     start by checking the integrity of the dataset to ensure it’s ready for analysis.
     Let us take a preliminary look at the data.*'
   id: totrans-680
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据管理代理：我已收到文件“online_retail_II.csv”。我将首先检查数据集的完整性，以确保它准备好进行分析。让我们初步查看数据。
 - en: '*Data Manager Agent: The dataset “online_retail_II.csv” contains the following
     columns:*'
   id: totrans-681
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据管理代理：“online_retail_II.csv”数据集包含以下列：
 - en: '*Invoice: Invoice number*'
   id: totrans-682
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 发票：发票号码
 - en: '*StockCode: Product code*'
   id: totrans-683
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 库存代码：产品代码
 - en: '*Description: Product description*'
   id: totrans-684
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 描述：产品描述
 - en: '*Quantity: Quantity of the product sold*'
   id: totrans-685
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数量：产品的数量
 - en: '*InvoiceDate: Date and time when the transaction occurred.*'
   id: totrans-686
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 发票日期：交易发生的日期和时间。
 - en: '*Price: Price of the product*'
   id: totrans-687
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 价格：产品的价格
 - en: '*Customer ID: Identifier for the customer*'
   id: totrans-688
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 客户ID：客户的标识符
 - en: '*Country: Country from where the purchase was made*'
   id: totrans-689
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 国家：购买发生的国家。
 - en: '*Next, I will check for any missing values in the dataset and provide a summary
     of the data’s integrity.*'
   id: totrans-690
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我将检查数据集中是否有任何缺失值，并提供数据完整性的摘要。
 - en: '*Data Manager Agent: Based on the initial inspection, here is the status of
     missing values:*'
   id: totrans-691
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据管理代理：根据最初的检查，以下是缺失值的状态：
 - en: '*Description: 1,454 missing values*'
   id: totrans-692
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 描述：1,454个缺失值
 - en: '*Customer ID: 135,080 missing values*'
   id: totrans-693
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 客户ID：135,080个缺失值
 - en: '*These missing values will need to be addressed during the data processing
     phase.*'
   id: totrans-694
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些缺失值将在数据处理阶段进行处理。
 - en: '*Before handing it over to the Data Processing Agent, let us ensure that the
     data only focuses on sales from the last year. To do this, we will filter out
     any records that fall outside this timeframe.*'
   id: totrans-695
   prefs: []
   type: TYPE_NORMAL
+  zh: 在将其交给数据处理代理之前，让我们确保数据只关注去年的销售。为此，我们将过滤掉任何超出此时间范围的记录。
 - en: '*Data Manager Agent: The data has been successfully filtered to focus on sales
     from December 9th, 2010, to December 9th, 2011, which is the last year of available
     data.*'
   id: totrans-696
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据管理代理：数据已成功过滤，重点关注2010年12月9日至2011年12月9日的销售数据，这是可用数据的最后一年。
 - en: '*I am now handing over the dataset to the Data Processing Agent for further
     cleaning, transformation, and analysis.*'
   id: totrans-697
   prefs: []
   type: TYPE_NORMAL
+  zh: 我现在将数据集交给数据处理代理进行进一步的清洗、转换和分析。
 - en: '*Data Processing Agent: Thank you. I will begin by addressing the missing values
     and then proceed with the analytical tasks.*'
   id: totrans-698
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据处理代理：谢谢。我将首先解决缺失值问题，然后进行分析任务。
 - en: '*Data Processing Agent: The missing values have been addressed:*'
   id: totrans-699
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据处理代理：已解决缺失值问题：
 - en: '*For the “Description” column, missing values were replaced with “Unknown”.*'
   id: totrans-700
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对于“描述”列，缺失值已替换为“未知”。
 - en: '*For the “Customer ID” column, missing values might represent guest checkouts
     or non-registered users. These values were replaced with the placeholder “Guest”.*'
   id: totrans-701
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对于“客户ID”列，缺失值可能代表客人结账或非注册用户。这些值已替换为占位符“Guest”。
 - en: '*To further analyze the data, I will begin by extracting the following insights:*'
   id: totrans-702
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了进一步分析数据，我将开始提取以下见解：
 - en: '*The total sales for the last year.*'
   id: totrans-703
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 去年的总销售额。
 - en: '*The top 10 products by sales volume.*'
   id: totrans-704
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 销售量前10名的产品。
 - en: '*The top 10 customers by purchase value.*'
   id: totrans-705
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 购买价值前10名的客户。
 - en: '*Monthly sales trends.*'
   id: totrans-706
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 月销售趋势。
 - en: '*The distribution of sales across different countries.*'
   id: totrans-707
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 不同国家的销售分布。
 - en: '*Once I have processed these insights, I’ll pass on the information to the
     Visualization Agent to create visual representations.*'
   id: totrans-708
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦我处理了这些见解，我将把信息传递给可视化代理以创建可视化呈现。
 - en: '*Let us start by calculating the total sales for the last year.*'
   id: totrans-709
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们从计算去年的总销售额开始。
 - en: '*Data Processing Agent: The total sales for the last year amount to approximately
     £8,011,676.51.*'
   id: totrans-710
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据处理代理：去年的总销售额约为£8,011,676.51。
 - en: '*Next, I will identify the top 10 products by sales volume.*'
   id: totrans-711
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我将确定销售量前10名的产品。
 - en: '*Data Processing Agent: Here are the top 10 products by sales volume for the
     last year:*'
   id: totrans-712
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据处理代理：以下是去年销售量前10名的产品：
 - en: '*WORLD WAR 2 GLIDERS ASSTD DESIGNS: 49,519 units*'
   id: totrans-713
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: WORLD WAR 2 GLIDERS ASSTD DESIGNS：49,519个单位
 - en: '*JUMBO BAG RED RETROSPOT: 43,708 units*'
   id: totrans-714
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: JUMBO BAG RED RETROSPOT：43,708个单位
 - en: '*ASSORTED COLOUR BIRD ORNAMENT: 33,902 units*'
   id: totrans-715
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: ASSORTED COLOUR BIRD ORNAMENT：33,902个单位
 - en: '*…………* (omitted due to space reasons)'
   id: totrans-716
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: …………（由于空间原因省略）
 - en: '*I will now determine the top 10 customers based on their total purchase value.*'
   id: totrans-717
   prefs: []
   type: TYPE_NORMAL
+  zh: 我现在将确定基于其总购买价值的前10名客户。
 - en: '*Data Processing Agent: Here are the top 10 customers based on their total
     purchase value for the last year:*'
   id: totrans-718
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据处理代理：以下是去年基于其总购买价值的前10名客户：
 - en: '*Customer ID: 14646.0 - Total Purchase: £279,489.02*'
   id: totrans-719
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 客户ID：14646.0 - 总购买额：£279,489.02
 - en: '*Customer ID: 18102.0 - Total Purchase: £230,518.12*'
   id: totrans-720
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 客户ID：18102.0 - 总购买额：£230,518.12
 - en: '*Customer ID: 17450.0 - Total Purchase: £185,453.33*'
   id: totrans-721
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 客户ID：17450.0 - 总购买额：£185,453.33
 - en: '*………….* (Omitted due to space reasons)'
   id: totrans-722
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: …………（由于空间原因省略）
 - en: '*Next, I will analyze the monthly sales trends for the last year.*'
   id: totrans-723
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我将分析去年的月销售趋势。
 - en: ………………. (Omitted due to space reasons)
   id: totrans-724
   prefs: []
   type: TYPE_NORMAL
+  zh: ………………（由于空间原因省略）
 - en: '*The data indicates a significant spike in sales during the months of September,
     October, and November 2011.*'
   id: totrans-725
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据显示，2011年9月、10月和11月的销售出现了显著增长。
 - en: '*Finally, I will analyze the distribution of sales across different countries.*'
   id: totrans-726
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我将分析不同国家的销售分布。
 - en: ………………. (Omitted due to space reasons)
   id: totrans-727
   prefs: []
   type: TYPE_NORMAL
+  zh: ………………（由于空间原因省略）
 - en: '*The United Kingdom overwhelmingly dominates the sales, followed by the Netherlands,
     EIRE, Germany, and France.*'
   id: totrans-728
   prefs: []
   type: TYPE_NORMAL
+  zh: 英国在销售方面占据压倒性地位，其次是荷兰、爱尔兰、德国和法国。
 - en: '*With the insights extracted, I will now hand over to the Visualization Agent
     to create visual representations for a better understanding of the data.*'
   id: totrans-729

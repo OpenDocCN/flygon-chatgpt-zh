@@ -1,14 +1,18 @@
 - en: Chapter 2\. A Deep Dive into the GPT-4 and ChatGPT APIs
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第2章。深入了解GPT-4和ChatGPT的API
 - en: This chapter examines the GPT-4 and ChatGPT APIs in detail. The goal of this
     chapter is to give you a solid understanding of the use of these APIs so that
     you can effectively integrate them into your Python applications. By the end of
     this chapter, you will be well equipped to use these APIs and exploit their powerful
     capabilities in your own development projects.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章将详细介绍GPT-4和ChatGPT的API。本章的目标是让您对这些API的使用有扎实的理解，以便您可以有效地将它们集成到您的Python应用程序中。通过本章的学习，您将能够充分利用这些API在自己的开发项目中的强大功能。
 - en: We’ll start with an introduction to the OpenAI Playground. This will allow you
     to get a better understanding of the models before writing any code. Next, we
     will look at the OpenAI Python library. This includes the login information and
@@ -17,36 +21,50 @@
     This will ensure that you know how to interpret the data returned by these APIs.
     In addition, this chapter will cover considerations such as security best practices
     and cost management.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将从介绍OpenAI Playground开始。这将使您在编写任何代码之前更好地了解模型。接下来，我们将看看OpenAI Python库。这包括登录信息和一个简单的“Hello
+    World”示例。然后，我们将介绍创建和发送API请求的过程。我们还将看看如何管理API响应。这将确保您知道如何解释这些API返回的数据。此外，本章还将涵盖安全最佳实践和成本管理等考虑因素。
 - en: As we progress, you will gain practical knowledge that will be very useful in
     your journey as a Python developer working with GPT-4 and ChatGPT. All the Python
     code included in this chapter is available in [the book’s GitHub repository](https://oreil.ly/DevAppsGPT_GitHub).
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着我们的进展，您将获得实用的知识，这对您作为与GPT-4和ChatGPT一起使用的Python开发人员的旅程非常有用。本章中包含的所有Python代码都可以在[本书的GitHub存储库](https://oreil.ly/DevAppsGPT_GitHub)中找到。
 - en: Note
+  id: totrans-4
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: Before going any further, please check the [OpenAI usage policies](https://openai.com/policies/usage-policies),
     and if you don’t already have an account, create one on the [OpenAI home page](https://openai.com).
     You can also have a look at the other legal documentation on the [Terms and Policies
     page](https://openai.com/policies). The concepts introduced in [Chapter 1](ch01.html#gpt_4_and_chatgpt_essentials)
     are also essential for using the OpenAI API and libraries.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在继续之前，请查看[OpenAI使用政策](https://openai.com/policies/usage-policies)，如果您还没有帐户，请在[OpenAI主页](https://openai.com)上创建一个。您还可以查看[条款和政策页面](https://openai.com/policies)上的其他法律文件。[第1章](ch01.html#gpt_4_and_chatgpt_essentials)中介绍的概念对于使用OpenAI
+    API和库也是必不可少的。
 - en: Essential Concepts
+  id: totrans-6
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 基本概念
 - en: OpenAI offers several models that are designed for various tasks, and each one
     has its own pricing. On the following pages, you will find a detailed comparison
     of the available models and tips on how to choose which ones to use. It’s important
     to note that the purpose for which a model was designed—whether for text completion,
     chat, or editing—impacts how you would use its API. For instance, the models behind
     ChatGPT and GPT-4 are chat based and use a chat endpoint.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI提供了几种为各种任务设计的模型，每种模型都有自己的定价。在接下来的页面上，您将找到可用模型的详细比较以及如何选择使用哪些模型的提示。重要的是要注意，模型设计的目的——无论是用于文本完成、聊天还是编辑——都会影响您如何使用其API。例如，ChatGPT和GPT-4背后的模型是基于聊天的，并使用聊天端点。
 - en: The concept of prompts was introduced in [Chapter 1](ch01.html#gpt_4_and_chatgpt_essentials).
     Prompts are not specific to the OpenAI API but are the entry point for all LLMs.
     Simply put, prompts are the input text that you send to the model, and they are
@@ -54,8 +72,10 @@
     ChatGPT and GPT-4 models, prompts have a chat format, with the input and output
     messages stored in a list. We will explore the details of this prompt format in
     this chapter.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示的概念是在[第1章](ch01.html#gpt_4_and_chatgpt_essentials)中介绍的。提示不是特定于OpenAI API，但是所有LLM的入口点。简而言之，提示是您发送给模型的输入文本，用于指示模型执行特定任务。对于ChatGPT和GPT-4模型，提示具有聊天格式，输入和输出消息存储在列表中。我们将在本章中探讨此提示格式的详细信息。
 - en: 'The concept of tokens was also described in [Chapter 1](ch01.html#gpt_4_and_chatgpt_essentials).
     Tokens are words or parts of words. A rough estimate is that 100 tokens equal
     approximately 75 words for an English text. Requests to the OpenAI models are
@@ -64,68 +84,97 @@
     find more details on managing and controlling the number of input and output tokens
     in [“Using ChatGPT and GPT-4”](#using_chatgpt_and_gpt_4) and [“Using Other Text
     Completion Models”](#using_other_text_completion_models).'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 令牌的概念也在[第1章](ch01.html#gpt_4_and_chatgpt_essentials)中描述过。令牌是单词或单词的部分。粗略估计是，100个令牌大约相当于英文文本的75个单词。对OpenAI模型的请求是基于使用的令牌数量定价的：也就是说，对API的调用成本取决于输入文本和输出文本的长度。您将在“使用ChatGPT和GPT-4”和“使用其他文本完成模型”中找到有关管理和控制输入和输出令牌数量的更多详细信息。
 - en: These concepts are summarized in [Figure 2-1](#fig_1_essential_concepts_for_using_the_openai_api).
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些概念在[图2-1](#fig_1_essential_concepts_for_using_the_openai_api)中进行了总结。
 - en: '![](assets/dagc_0201.png)'
+  id: totrans-11
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0201.png)'
 - en: Figure 2-1\. Essential concepts for using the OpenAI API
+  id: totrans-12
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图2-1\. 使用OpenAI API的基本概念
 - en: Now that we have discussed the concepts, let’s move on to the details of the
     models.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经讨论了概念，让我们转向模型的细节。
 - en: Models Available in the OpenAI API
+  id: totrans-14
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: OpenAI API中可用的模型
 - en: The OpenAI API gives you access to [several models developed by OpenAI](https://platform.openai.com/docs/models).
     These models are available as a service over an API (through a direct HTTP call
     or a provided library), meaning that OpenAI runs the models on distant servers,
     and developers can simply send queries to them.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI API为您提供了访问[OpenAI开发的多个模型](https://platform.openai.com/docs/models)。这些模型可作为API的服务使用（通过直接的HTTP调用或提供的库），这意味着OpenAI在远程服务器上运行模型，开发人员只需向其发送查询。
 - en: Each model comes with a different set of features and pricing. In this section,
     we will look at the LLMs provided by OpenAI through its API. It is important to
     note that these models are proprietary, so you cannot directly modify the code
     to adapt the models to your needs. But as we will see later, you can fine-tune
     some of them on your specific data via the OpenAI API.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个模型都具有不同的功能和定价。在本节中，我们将看一下OpenAI通过其API提供的LLM。需要注意的是，这些模型是专有的，因此您不能直接修改代码以适应您的需求。但正如我们将在后面看到的，您可以通过OpenAI
+    API对其中一些模型进行特定数据的微调。
 - en: Note
+  id: totrans-17
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: Some older OpenAI models, including the GPT-2 model, are not proprietary. While
     you can download the GPT-2 model from [Hugging Face](https://oreil.ly/39Bu5) or
     [GitHub](https://oreil.ly/CYPN6), you cannot access it through the API.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些较旧的OpenAI模型，包括GPT-2模型，不是专有的。虽然您可以从[Hugging Face](https://oreil.ly/39Bu5)或[GitHub](https://oreil.ly/CYPN6)下载GPT-2模型，但无法通过API访问它。
 - en: 'Since many of the models provided by OpenAI are continually updated, it is
     difficult to give a complete list of them in this book; an updated list of models
     that OpenAI provides is available in the [online documentation](https://platform.openai.com/docs/models).
     Therefore, here we will focus on the most important models:'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于OpenAI提供的许多模型都在不断更新，因此在本书中很难给出完整的模型列表；OpenAI提供的模型的更新列表可在[在线文档](https://platform.openai.com/docs/models)中找到。因此，我们将重点放在最重要的模型上：
 - en: InstructGPT
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: InstructGPT
 - en: This family of models can process many single-turn completion tasks. The `text-ada-001`
     model is only capable of simple completion tasks but is also the fastest and least
     expensive model in the GPT-3 series. Both `text-babbage-001` and `text-curie-001`
     are a little more powerful but also more expensive. The `text-davinci-003` model
     can perform all completion tasks with excellent quality, but it is also the most
     expensive in the family of GPT-3 models.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 这一系列模型可以处理许多单轮完成任务。`text-ada-001`模型只能完成简单的完成任务，但也是GPT-3系列中最快速和最便宜的模型。`text-babbage-001`和`text-curie-001`稍微更强大，但也更昂贵。`text-davinci-003`模型可以以优秀的质量执行所有完成任务，但也是GPT-3模型系列中最昂贵的模型。
 - en: ChatGPT
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT
 - en: The model behind ChatGPT is `gpt-3.5-turbo`. As a chat model, it can take a
     series of messages as input and return an appropriately generated message as output.
     While the chat format of `gpt-3.5-turbo` is designed to facilitate multiturn conversations,
@@ -137,11 +186,15 @@
     receive 4,000 tokens as input. OpenAI also provides another model, called `gpt-3.5-turbo-16k`,
     with the same capabilities as the standard `gpt-3.5-turbo` model but with four
     times the context size.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT背后的模型是`gpt-3.5-turbo`。作为聊天模型，它可以将一系列消息作为输入，并返回一个适当生成的消息作为输出。虽然`gpt-3.5-turbo`的聊天格式旨在促进多轮对话，但也可以将其用于没有对话的单轮任务。在单轮任务中，`gpt-3.5-turbo`的性能与`text-davinci-003`相当，由于`gpt-3.5-turbo`的价格是后者的十分之一，性能几乎相当，建议您默认使用它进行单轮任务。`gpt-3.5-turbo`模型的上下文大小为4,000个标记，这意味着它可以接收4,000个标记作为输入。OpenAI还提供另一个模型，名为`gpt-3.5-turbo-16k`，具有与标准`gpt-3.5-turbo`模型相同的功能，但上下文大小增加了四倍。
 - en: GPT-4
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-4
 - en: 'This is the largest model released by OpenAI. It has also been trained on the
     most extensive multimodal corpus of text and images. As a result, it has knowledge
     and expertise in many domains. GPT-4 can follow complex natural language instructions
@@ -150,13 +203,17 @@
     size of 8,000 tokens, and `gpt-4-32k` has a context size of 32,000 tokens. A context
     of 32,000 represents approximately 24,000 words, which is a context of approximately
     40 pages.'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是OpenAI发布的最大模型。它还在最广泛的文本和图像多模态语料库上进行了训练。因此，它在许多领域都具有知识和专业知识。GPT-4能够遵循复杂的自然语言指令并准确解决困难问题。它可以用于具有高准确性的聊天和单轮任务。OpenAI提供了两个GPT-4模型：`gpt-4`的上下文大小为8,000个标记，`gpt-4-32k`的上下文大小为32,000个标记。32,000的上下文大约代表24,000个单词，大约相当于40页的上下文。
 - en: Both GPT-3.5 Turbo and GPT-4 are continually updated. When we refer to the models
     `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`, `gpt-4`, and `gpt-4-32k`, we are referring
     to the latest version of these models.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-3.5 Turbo和GPT-4都在不断更新。当我们提到`gpt-3.5-turbo`、`gpt-3.5-turbo-16k`、`gpt-4`和`gpt-4-32k`模型时，我们指的是这些模型的最新版本。
 - en: Developers often need more stability and visibility into the LLM version they
     are using in their applications. It can be difficult for developers to use model
     languages in which versions can change from one night to the next and can behave
@@ -164,8 +221,10 @@
     of these models are also available. At the time of this writing, the most recent
     snapshot versions were `gpt-3.5-turbo-0613`, `gpt-3.5-turbo-16k-0613`, `gpt-4-0613`,
     and `gpt-4-32k-0613`.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 开发人员通常需要更稳定和可见性的LLM版本，以在其应用程序中使用。对于开发人员来说，使用版本可能会在一夜之间发生变化，并且对于相同的输入提示可能会有不同的行为，这可能会很困难。出于这个目的，这些模型的静态快照版本也是可用的。在撰写本文时，最新的快照版本是`gpt-3.5-turbo-0613`、`gpt-3.5-turbo-16k-0613`、`gpt-4-0613`和`gpt-4-32k-0613`。
 - en: As discussed in [Chapter 1](ch01.html#gpt_4_and_chatgpt_essentials), OpenAI
     recommends using the InstructGPT series rather than the original GPT-3–based models.
     These models are still available in the API under the names `davinci`, `curie`,
@@ -175,82 +234,115 @@
     they are the only ones that can be fine-tuned to your data. At the time of this
     writing, OpenAI has announced that fine-tuning for GPT-3.5 Turbo and GPT-4 will
     be available in 2024.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如在[第1章](ch01.html#gpt_4_and_chatgpt_essentials)中讨论的，OpenAI建议使用InstructGPT系列而不是原始的基于GPT-3的模型。这些模型仍然在API中以`davinci`、`curie`、`babbage`和`ada`的名称提供。鉴于这些模型可能会提供奇怪、错误和误导性的答案，因此建议在使用时要谨慎。但是，这些模型仍然被使用，因为它们是唯一可以对您的数据进行微调的模型。在撰写本文时，OpenAI宣布GPT-3.5
+    Turbo和GPT-4的微调将在2024年推出。
 - en: Note
+  id: totrans-29
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: The SFT model (presented in [Chapter 1](ch01.html#gpt_4_and_chatgpt_essentials))
     obtained after the supervised fine-tuning stage, which did not go through the
     RLHF stage, is also available in the API under the name `davinci-instruct-beta`.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 在经过监督微调阶段获得的SFT模型（在[第1章](ch01.html#gpt_4_and_chatgpt_essentials)中介绍）也可以在API中以`davinci-instruct-beta`的名称使用。
 - en: Trying GPT Models with the OpenAI Playground
+  id: totrans-31
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 使用OpenAI Playground尝试GPT模型
 - en: An excellent way to test the different language models provided by OpenAI directly,
     without coding, is to use the OpenAI Playground, a web-based platform that allows
     you to quickly test the various LLMs provided by OpenAI on specific tasks. The
     Playground lets you write prompts, select the model, and easily see the output
     that is generated.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 直接测试OpenAI提供的不同语言模型的绝佳方法，而无需编码，是使用OpenAI Playground，这是一个基于Web的平台，允许您快速测试OpenAI提供的各种LLM在特定任务上的表现。Playground允许您编写提示，选择模型，并轻松查看生成的输出。
 - en: 'Here’s how to access the Playground:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 访问Playground的方法如下：
 - en: Navigate to the [OpenAI home page](https://openai.com) and click Developers,
     then Overview.
+  id: totrans-34
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到[OpenAI主页](https://openai.com)，单击开发人员，然后单击概述。
 - en: If you already have an account and are not logged in, click Login at the upper
     right of the screen. If you don’t have an account with OpenAI, you will need to
     create one in order to use the Playground and most of the OpenAI features. Click
     Sign Up at the upper right of the screen. Note that because there is a charge
     for the Playground and the API, you will need to provide a means of payment.
+  id: totrans-35
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 如果您已经有账户但未登录，请单击屏幕右上方的登录。如果您没有OpenAI账户，您需要创建一个才能使用Playground和大多数OpenAI功能。请单击屏幕右上方的注册。请注意，由于Playground和API会收费，因此您需要提供支付方式。
 - en: Once you are logged in, you will see the link to join the Playground at the
     upper left of the web page. Click the link, and you should see something similar
     to [Figure 2-2](#fig_2_the_openai_playground_interface_in_text_completion).
+  id: totrans-36
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 登录后，您将在网页的左上方看到加入Playground的链接。单击该链接，您应该会看到类似于[图2-2](#fig_2_the_openai_playground_interface_in_text_completion)的内容。
 - en: '![](assets/dagc_0202.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0202.png)'
 - en: Figure 2-2\. The OpenAI Playground interface in Text Completion mode
+  id: totrans-38
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图2-2. 文本完成模式下的OpenAI Playground界面
 - en: Note
+  id: totrans-39
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: The ChatGPT Plus option is independent of using the API or the Playground. If
     you have subscribed to the ChatGPT Plus service, you will still be charged for
     using the API and the Playground.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT Plus选项与使用API或Playground无关。如果您订阅了ChatGPT Plus服务，那么使用API和Playground仍会产生费用。
 - en: The main whitespace in the center of the interface is for your input message.
     After writing your message, click Submit to generate a completion to your message.
     In the example in [Figure 2-2](#fig_2_the_openai_playground_interface_in_text_completion),
     we wrote “As Descartes said, I think therefore”, and after we clicked Submit,
     the model completed our input with “I am”.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 界面中心的主要空白是用于输入消息的。在编写消息后，单击提交以生成消息的完成。在[图2-2](#fig_2_the_openai_playground_interface_in_text_completion)的示例中，我们写下“正如笛卡尔所说，我思故我在”，然后单击提交后，模型用“我是”完成了我们的输入。
 - en: Warning
+  id: totrans-42
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 警告
 - en: Every time you click Submit, your OpenAI account is billed for the usage. We
     give more information on prices later in this chapter, but as an example, this
     completion cost almost $0.0002\.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 每次单击提交，您的OpenAI账户都会收取使用费。我们将在本章后面提供有关价格的更多信息，但举例来说，这个完成大约花费了$0.0002。
 - en: There are many options around the sides of the interface. Let’s start at the
     bottom. To the right of the Submit button is an undo button [labeled (A) in the
     figure] that deletes the last generated text. In our case, it will delete “I am”.
@@ -258,25 +350,35 @@
     that was just deleted. This is followed by the history button [labeled (C)], which
     contains all your requests from the previous 30 days. Note that once you are in
     the history menu, it is easy to delete requests if necessary for privacy reasons.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 界面的各个部分都有许多选项。让我们从底部开始。在提交按钮的右侧是一个撤消按钮[图中标记为(A)]，用于删除最后生成的文本。在我们的情况下，它将删除“我是”。接下来是重新生成按钮[图中标记为(B)]，用于重新生成刚刚删除的文本。然后是历史按钮[标记为(C)]，其中包含了您在过去30天内的所有请求。请注意，一旦进入历史菜单，根据隐私原因，有必要时可以轻松删除请求。
 - en: The options panel on the right side of the screen provides various settings
     related to the interface and the chosen model. We will only explain some of these
     options here; others will be covered later in the book. The first drop-down list
     on the right is the Mode list [labeled (D)]. At the time of this writing, the
     available modes are Chat (default), Complete, and Edit.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 屏幕右侧的选项面板提供了与界面和所选模型相关的各种设置。我们只会在这里解释其中一些选项；其他选项将在本书的后面介绍。右侧的第一个下拉列表是模式列表[labeled
+    (D)]。在撰写本文时，可用的模式是Chat（默认）、Complete和Edit。
 - en: Note
+  id: totrans-46
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: Complete and Edit modes are marked as legacy at the time of this book’s writing
     and will probably disappear in January 2024\.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本书撰写时，Complete和Edit模式被标记为传统模式，并且可能会在2024年1月消失。
 - en: As demonstrated previously, the language model strives to complete the user’s
     input prompt seamlessly in the Playground’s default mode.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
 - en: '[Figure 2-3](#fig_3_the_openai_playground_interface_in_chat_mode) shows an
@@ -286,6 +388,7 @@
     we asked it to be a helpful assistant who loves cats. We also asked it to only
     talk about cats and to give short answers. The dialogue that results from having
     set these parameters is displayed in the center of the screen.'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
 - en: If you want to continue the dialogue with the system, click “Add message” [(F)],
@@ -293,12 +396,15 @@
     model on the right [(H)]; here we use GPT-4\. Note that not all models are available
     in all modes. For instance, only GPT-4 and GPT-3.5 Turbo are available in Chat
     mode.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
 - en: '![](assets/dagc_0203.png)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
 - en: Figure 2-3\. The OpenAI Playground interface in Chat mode
+  id: totrans-52
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
@@ -308,12 +414,15 @@
     who is going on a trip is given. The model is instructed to change the subject
     of the text to an old woman, and you can see that the result respects the instructions
     [(K)].
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
 - en: '![](assets/dagc_0204.png)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
 - en: Figure 2-4\. The OpenAI Playground interface in Edit mode
+  id: totrans-55
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
@@ -324,6 +433,7 @@
     that define the model’s behavior. We will not go into the details of these parameters
     here. Most of them will be explored when we closely examine how these different
     models work.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
 - en: At the top of the screen is the “Load a preset” drop-down list [(N)] and four
@@ -332,24 +442,30 @@
     but it is possible to make the model perform particular tasks by using appropriate
     prompts. [Figure 2-5](#fig_5_drop_down_list_of_examples) shows a list of common
     tasks the model can perform associated with an example of a preset.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
 - en: '![](assets/dagc_0205.png)'
+  id: totrans-58
   prefs: []
   type: TYPE_IMG
 - en: Figure 2-5\. Drop-down list of examples
+  id: totrans-59
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: It should be noted that the proposed presets define not only the prompt but
     also some options on the right side of the screen. For example, if you click Grammatical
     Standard English, you will see in the main window the prompt displayed in [Figure 2-6](#fig_6_example_prompt_for_grammatical_standard_english).
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
 - en: '![](assets/dagc_0206.png)'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
 - en: Figure 2-6\. Example prompt for Grammatical Standard English
+  id: totrans-62
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
@@ -358,6 +474,7 @@
     point, but you will always have to modify them to fit your problem. OpenAI also
     provides a [complete list of examples](https://platform.openai.com/examples) for
     different tasks.'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
 - en: Next to the “Load a preset” drop-down list in [Figure 2-4](#fig_4_the_openai_playground_interface_in_edit_mode)
@@ -366,6 +483,7 @@
     in the Playground. This Save button will save the current state of the Playground
     as a preset. You can give your preset a name and a description, and once saved,
     your preset will appear in the “Load a preset” drop-down list.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
 - en: 'The second-to-last button at the top of the interface is called “View code”
@@ -373,100 +491,127 @@
     You can request code in Python, Node.js, or cURL to interact directly with the
     OpenAI remote server in a Linux terminal. If the Python code of our example “As
     Descartes said, I think therefore” is asked, we get the following:'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE0]'
+  id: totrans-66
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: Now that you understand how to use the Playground to test OpenAI language models
     without coding, let’s discuss how to obtain and manage your API keys for OpenAI
     services.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
 - en: 'Getting Started: The OpenAI Python Library'
+  id: totrans-68
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: In this section, we’ll focus on how to use API keys in a small Python script,
     and we’ll perform our first test with this OpenAI API.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
 - en: OpenAI provides GPT-4 and ChatGPT as a service. This means users cannot have
     direct access to the models’ code and cannot run the models on their own servers.
     However, OpenAI manages the deployment and running of its models, and users can
     call these models as long as they have an account and a secret key.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
 - en: Before completing the following steps, make sure you are logged in on the [OpenAI
     web page](https://platform.openai.com/login?launch).
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
 - en: OpenAI Access and API Key
+  id: totrans-72
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: 'OpenAI requires you to have an API key to use its services. This key has two
     purposes:'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
 - en: It gives you the right to call the API methods.
+  id: totrans-74
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: It links your API calls to your account for billing purposes.
+  id: totrans-75
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: You must have this key in order to call the OpenAI services from your application.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
 - en: To obtain the key, navigate to the [OpenAI platform](https://platform.openai.com)
     page. In the upper-right corner, click your account name and then “View API keys,”
     as shown in [Figure 2-7](#fig_7_openai_menu_to_select_view_api_keys).
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
 - en: '![](assets/dagc_0207.png)'
+  id: totrans-78
   prefs: []
   type: TYPE_IMG
 - en: Figure 2-7\. OpenAI menu to select “View API keys”
+  id: totrans-79
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: When you are on the “API keys” page, click “Create new secret key” and make
     a copy of your key. This key is a long string of characters starting with *sk-*.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
 - en: Warning
+  id: totrans-81
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: Keep this key safe and secure because it is directly linked to your account,
     and a stolen key could result in unwanted costs.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
 - en: Once you have your key, the best practice is to export it as an environment
     variable. This will allow your application to access the key without writing it
     directly in your code. Here is how to do that.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
 - en: 'For Linux or Mac:'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE1]'
+  id: totrans-85
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: 'For Windows:'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE2]'
+  id: totrans-87
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: The preceding code snippets will set an environment variable and make your key
     available to other processes that are launched from the same shell session. For
     Linux systems, it is also possible to add this code directly to your *.bashrc*
     file. This will allow access to your environment variable in all your shell sessions.
     Of course, do not include these command lines in the code you push to a public
     repository.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
 - en: To permanently add/change an environment variable in Windows 11, press the Windows
@@ -474,116 +619,154 @@
     type **sysdm.cpl** to go to the System Properties panel. Then click the Advanced
     tab followed by the Environment Variables button. On the resulting screen, you
     can add a new environment variable with your OpenAI key.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
 - en: Tip
+  id: totrans-90
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: OpenAI provides a detailed [page on API key safety](https://oreil.ly/2Qobg).
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
 - en: Now that you have your key, it’s time to write your first “Hello World” program
     with the OpenAI API.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
 - en: “Hello World” Example
+  id: totrans-93
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: This section shows the first lines of code with the OpenAI Python library. We
     will start with a classic “Hello World” example to understand how OpenAI provides
     its services.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
 - en: 'Install the Python library with *pip*:'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE3]'
+  id: totrans-96
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'Next, access the OpenAI API in Python:'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE4]'
+  id: totrans-98
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: 'You will see the following output:'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE5]'
+  id: totrans-100
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: Congratulations! You just wrote your first program using the OpenAI Python library.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
 - en: Let’s go through the details of using this library.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
 - en: Tip
+  id: totrans-103
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: 'The OpenAI Python library also provides a command-line utility. The following
     code, running in a terminal, is equivalent to executing the previous “Hello World”
     example:'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE6]'
+  id: totrans-105
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: It is also possible to interact with the OpenAI API through HTTP requests or
     the official Node.js library, as well as other [community-maintained libraries](https://platform.openai.com/docs/libraries).
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
 - en: 'As you may have observed, the code snippet does not explicitly mention the
     OpenAI API key. This is because the OpenAI library is designed to automatically
     look for an environment variable named `OPENAI_API_KEY`. Alternatively, you can
     point the `openai` module at a file containing your key with the following code:'
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE7]'
+  id: totrans-108
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: 'Or you can manually set the API key within your code using the following method:'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE8]'
+  id: totrans-110
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: 'Our recommendation is to follow a widespread convention for environment variables:
     store your key in a *.env* file, which is removed from source control in the *.gitignore*
     file. In Python, you can then run the `load_dotenv` function to load the environment
     variables and import the *openai* library:'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE9]'
+  id: totrans-112
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: It is important to have the `openai` import declaration after loading the *.env*
     file; otherwise, the settings for OpenAI will not be applied correctly.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
 - en: Now that we’ve covered the basic concepts of ChatGPT and GPT-4, we can move
     on to the details of their use.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
 - en: Using ChatGPT and GPT-4
+  id: totrans-115
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: This section discusses how to use the model running behind ChatGPT and GPT-4
     with the OpenAI Python library.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
 - en: 'At the time of this writing, GPT 3.5 Turbo is the least expensive and most
     versatile model. Therefore, it is also the best choice for most use cases. Here
     is an example of its use:'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE10]'
+  id: totrans-118
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: In the preceding example, we used the minimum number of parameters—that is,
     the LLM used to do the prediction and the input messages. As you can see, the
     conversation format in the input messages allows multiple exchanges to be sent
@@ -592,51 +775,63 @@
     if the model has knowledge of this answer. The entire conversation must be sent
     each time to simulate a chat session. We will discuss this further in the next
     section.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
 - en: The GPT 3.5 Turbo and GPT-4 models are optimized for chat sessions, but this
     is not mandatory. Both models can be used for multiturn conversations and single-turn
     tasks. They also work well for traditional completion tasks if you specify a prompt
     asking for a completion.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
 - en: 'Both ChatGPT and GPT-4 use the same endpoint: `openai.ChatCompletion`. Changing
     the model ID allows developers to switch between GPT-3.5 Turbo and GPT-4 without
     any other code changes.'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
 - en: Input Options for the Chat Completion Endpoint
+  id: totrans-122
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: Let’s look in more detail at how to use the `openai.ChatCompletion` endpoint
     and its `create` method.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
 - en: Note
+  id: totrans-124
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: The `create` method lets users call OpenAI models. Other methods are available
     but aren’t helpful for interacting with the models. You can access the Python
     library code on OpenAI’s GitHub [Python library repository](https://oreil.ly/MQ2aQ).
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
 - en: Required input parameters
+  id: totrans-126
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
 - en: The `openai.ChatCompletion` endpoint and its `create` method have several input
     parameters, but only two are required, as outlined in [Table 2-1](#table-2-1).
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
 - en: Table 2-1\. Mandatory input parameters
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
 - en: '| Field name | Type | Description |'
+  id: totrans-129
   prefs: []
   type: TYPE_TB
 - en: '| --- | --- | --- |'
+  id: totrans-130
   prefs: []
   type: TYPE_TB
 - en: '| `model` | String | The ID of the model to use. Currently, the available models
@@ -645,118 +840,171 @@
     list of available models with another endpoint and method provided by OpenAI,
     `openai.Model.list()`. Note that not all available models are compatible with
     the `openai.ChatCompletion` endpoint. |'
+  id: totrans-131
   prefs: []
   type: TYPE_TB
 - en: '| `messages` | Array | An array of `message` objects representing a conversation.
     A `message` object has two attributes: `role` (possible values are `system`, `user`,
     and `assistant`) and `content` (a string with the conversation message). |'
+  id: totrans-132
   prefs: []
   type: TYPE_TB
 - en: 'A conversation starts with an optional system message, followed by alternating
     user and assistant messages:'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
 - en: The system message helps set the behavior of the assistant.
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 系统消息有助于设置助手的行为。
 - en: The user messages are the equivalent of a user typing a question or sentence
     in the ChatGPT web interface. They can be generated by the user of the application
     or set as an instruction.
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 用户消息相当于用户在ChatGPT网络界面中输入问题或句子。它们可以由应用程序的用户生成，也可以作为指令设置。
 - en: 'The assistant messages have two roles: either they store prior responses to
     continue the conversation or they can be set as an instruction to give examples
     of desired behavior. Models do not have any memory of past requests, so storing
     prior messages is necessary to give context to the conversation and provide all
     relevant information.'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 助手消息有两个作用：要么存储先前的响应以继续对话，要么可以设置为指令，以提供所需行为的示例。模型没有任何关于过去请求的记忆，因此存储先前的消息对于给对话提供上下文和提供所有相关信息是必要的。
 - en: Length of conversations and tokens
+  id: totrans-137
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 对话长度和令牌
 - en: 'As seen previously, the total length of the conversation will be correlated
     to the total number of tokens. This will have an impact on the following:'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 如前所述，对话的总长度将与令牌的总数相关。这将对以下内容产生影响：
 - en: Cost
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 成本
 - en: The pricing is by token.
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 价格是按令牌计费。
 - en: Timing
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 时间
 - en: The more tokens there are, the more time the response will take—up to a couple
     of minutes.
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 令牌越多，响应所需的时间就越长，最多可能需要几分钟。
 - en: The model working or not
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型是否工作。
 - en: The total number of tokens must be less than the model’s maximum limit. You
     can find examples of token limits in [“Considerations”](#considerations).
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 令牌的总数必须小于模型的最大限制。您可以在[“注意事项”](#considerations)中找到令牌限制的示例。
 - en: As you can see, it is necessary to carefully manage the length of the conversation.
     You can control the number of input tokens by managing the length of your messages
     and control the number of output tokens via the `max_tokens` parameter, as detailed
     in the next subsection.
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 如您所见，需要仔细管理对话的长度。您可以通过管理消息的长度来控制输入令牌的数量，并通过`max_tokens`参数来控制输出令牌的数量，详情请参见下一小节。
 - en: Tip
+  id: totrans-146
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 提示
 - en: OpenAI provides a library named [*tiktoken*](https://oreil.ly/zxRIi) that allows
     developers to count how many tokens are in a text string. We highly recommend
     using this library to estimate costs before making the call to the endpoint.
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI提供了一个名为[*tiktoken*](https://oreil.ly/zxRIi)的库，允许开发人员计算文本字符串中的令牌数量。我们强烈建议在调用端点之前使用此库来估算成本。
 - en: Additional optional parameters
+  id: totrans-148
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 额外的可选参数
 - en: OpenAI provides several other options to fine-tune how you interact with the
     library. We will not detail all the parameters here, but we recommend having a
     look at [Table 2-2](#table-2-2).
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI提供了其他几个选项来微调您与库的交互方式。我们不会在这里详细介绍所有参数，但我们建议查看[表2-2](#table-2-2)。
 - en: Table 2-2\. A selection of additional optional parameters
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 表2-2. 一些额外的可选参数
 - en: '| Field name | Type | Description |'
+  id: totrans-151
   prefs: []
   type: TYPE_TB
+  zh: '| 字段名称 | 类型 | 描述 |'
 - en: '| --- | --- | --- |'
+  id: totrans-152
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- | --- |'
 - en: '| `functions` | Array | An array of available functions. See [“From Text Completions
     to Functions”](#from_text_completions_to_functions) for more details on how to
     use `functions`. |'
+  id: totrans-153
   prefs: []
   type: TYPE_TB
+  zh: '| `functions` | 数组 | 可用函数的数组。有关如何使用`functions`的更多详细信息，请参见[“从文本完成到函数”](#from_text_completions_to_functions)。'
 - en: '| `function_call` | String or object | Controls how the model responds:'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '| `function_call` | 字符串或对象 | 控制模型的响应方式：'
 - en: '`none` means the model must respond to the user in a standard way.'
+  id: totrans-155
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`none` 表示模型必须以标准方式回应用户。'
 - en: '`{"name":"my_function"}` means the model must give an answer that uses the
     specified function.'
+  id: totrans-156
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`{"name":"my_function"}` 表示模型必须使用指定的函数来回答。'
 - en: '`auto` means the model can choose between a standard response to the user or
     a function defined in the `functions` array.'
+  id: totrans-157
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`auto` 表示模型可以在标准响应和`functions`数组中定义的函数之间进行选择。'
 - en: '|'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: '| `temperature` | Number (default: 1; accepted values: between 0 and 2) | A
     temperature of `0` means the call to the model will likely return the same completion
     for a given input. Even though the responses will be highly consistent, OpenAI
@@ -766,207 +1014,291 @@
     token. When the temperature parameter is set to `0`, the LLM will always choose
     the token with the highest probability. A higher temperature allows for more varied
     and creative outputs. |'
+  id: totrans-159
   prefs: []
   type: TYPE_TB
+  zh: '| `temperature` | 数字（默认值：1；接受的值：0到2之间） | 温度为`0`意味着对模型的调用可能会返回相同的输入完成。尽管响应将非常一致，OpenAI并不保证确定性输出。数值越高，完成的随机性就越大。LLMs通过逐个预测一系列令牌来生成答案。根据输入上下文，它们为每个潜在的令牌分配概率。当温度参数设置为`0`时，LLM将始终选择概率最高的令牌。较高的温度允许更多变化和创造性的输出。'
 - en: '| `n` | Integer (default: 1) | With this parameter, it is possible to generate
     multiple chat completions for a given input message. However, with a temperature
     of `0` as the input parameter, you will get multiple responses, but they will
     all be identical or very similar. |'
+  id: totrans-160
   prefs: []
   type: TYPE_TB
+  zh: '| `n` | 整数（默认值：1） | 使用此参数，可以为给定的输入消息生成多个聊天完成。但是，当输入参数的温度为`0`时，您将获得多个响应，但它们将完全相同或非常相似。'
 - en: '| `stream` | Boolean (default: false) | As its name suggests, this parameter
     will allow the answer to be in a stream format. This means partial messages will
     be sent gradually, like in the ChatGPT interface. This can make for a better user
     experience when the completions are long. |'
+  id: totrans-161
   prefs: []
   type: TYPE_TB
+  zh: '| `stream` | 布尔值（默认值：false） | 正如其名称所示，此参数将允许答案以流格式呈现。这意味着部分消息将逐渐发送，就像在ChatGPT界面中一样。当完成很长时，这可以提供更好的用户体验。'
 - en: '| `max_tokens` | Integer | This parameter signifies the maximum number of tokens
     to generate in the chat completion. This parameter is optional, but we highly
     recommend setting it as a good practice to keep your costs under control. Note
     that this parameter may be ignored or not respected if it is too high: the total
     length of the input and generated tokens is capped by the model’s token limitations.
     |'
+  id: totrans-162
   prefs: []
   type: TYPE_TB
+  zh: '| `max_tokens` | 整数 | 此参数表示在聊天完成中生成的最大标记数。此参数是可选的，但我们强烈建议设置它作为一个良好的实践，以控制您的成本。请注意，如果设置得太高，此参数可能会被忽略或不被尊重：输入和生成的标记的总长度受模型的标记限制限制。'
 - en: You can find more details and other parameters on the [official documentation
     page](https://platform.openai.com/docs/api-reference/chat).
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以在[官方文档页面](https://platform.openai.com/docs/api-reference/chat)上找到更多详细信息和其他参数。
 - en: Output Result Format for the Chat Completion Endpoint
+  id: totrans-164
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 聊天完成端点的输出结果格式
 - en: Now that you have the information you need to query chat-based models, let’s
     see how to use the results.
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在您已经获得了查询基于聊天的模型所需的信息，让我们看看如何使用结果。
 - en: 'Following is the complete response for the “Hello World” example:'
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是“Hello World”示例的完整响应：
 - en: '[PRE11]'
+  id: totrans-167
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: The generated output is detailed in [Table 2-3](#table-2-3).
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成的输出在[表2-3](#table-2-3)中详细说明。
 - en: Table 2-3\. Description of the output from the chat completion base models
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 表2-3。聊天完成基本模型的输出描述
 - en: '| Field name | Type | Description |'
+  id: totrans-170
   prefs: []
   type: TYPE_TB
+  zh: '| 字段名称 | 类型 | 描述 |'
 - en: '| --- | --- | --- |'
+  id: totrans-171
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- | --- |'
 - en: '| `choices` | Array of “choice” object | An array that contains the actual
     response of the model. By default, this array will only have one element, which
     can be changed with the parameter `n` (see [“Additional optional parameters”](#additional_optional_parameters)).
     This element contains the following:'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: '| `choices` | “choice”对象的数组 | 包含模型实际响应的数组。默认情况下，此数组将只有一个元素，可以使用参数`n`更改（参见[“附加可选参数”](#additional_optional_parameters)）。此元素包含以下内容：'
 - en: '`finish_reason` `-` `string`: The reason the answer from the model is finished.
     In our “Hello World” example, we can see the `finish_reason` is `stop`, which
     means we received the complete response from the model. If there is an error during
     the output generation, it will appear in this field.'
+  id: totrans-173
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`finish_reason` `-` `string`：模型答案完成的原因。在我们的“Hello World”示例中，我们可以看到`finish_reason`是`stop`，这意味着我们收到了模型的完整响应。如果在输出生成过程中出现错误，它将出现在此字段中。'
 - en: '`index` `-` `integer`: The index of the `choice` object from the `choices`
     array.'
+  id: totrans-174
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`index` `-` `integer`：`choices`数组中`choice`对象的索引。'
 - en: '`message` `-` `object`: Contains a `role` and either a `content` or a `function_call`.
     The `role` will always be `assistant`, and the `content` will include the text
     generated by the model. Usually we want to get this string: `response[''choices''][0]​[''mes⁠sage''][''content'']`.
     For details on how to use `function_call`, see [“From Text Completions to Functions”](#from_text_completions_to_functions).'
+  id: totrans-175
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`message` `-` `object`：包含`role`和`content`或`function_call`。`role`将始终是`assistant`，`content`将包括模型生成的文本。通常我们希望获得这个字符串：`response[''choices''][0]​[''mes⁠sage''][''content'']`。有关如何使用`function_call`的详细信息，请参见[“从文本完成到函数”](#from_text_completions_to_functions)。'
 - en: '|'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: '| `created` | Timestamp | The date in a timestamp format at the time of the
     generation. In our “Hello World” example, this timestamp translates to Monday,
     April 10, 2023 1:49:55 p.m. |'
+  id: totrans-177
   prefs: []
   type: TYPE_TB
+  zh: '| `created` | 时间戳 | 生成时的时间戳格式的日期。在我们的“Hello World”示例中，此时间戳对应于2023年4月10日星期一下午1:49:55。'
 - en: '| `id` | String | A technical identifier used internally by OpenAI. |'
+  id: totrans-178
   prefs: []
   type: TYPE_TB
+  zh: '| `id` | 字符串 | OpenAI内部使用的技术标识符。'
 - en: '| `model` | String | The model used. This is the same as the model set as input.
     |'
+  id: totrans-179
   prefs: []
   type: TYPE_TB
+  zh: '| `model` | 字符串 | 使用的模型。这与设置为输入的模型相同。'
 - en: '| `object` | String | Should always be `chat.completion` for GPT-4 and GPT-3.5
     models, as we are using the chat completion endpoint. |'
+  id: totrans-180
   prefs: []
   type: TYPE_TB
+  zh: '| `object` | 字符串 | 对于GPT-4和GPT-3.5模型，应始终为`chat.completion`，因为我们使用了聊天完成端点。'
 - en: '| `usage` | String | Gives information on the number of tokens used in this
     query and therefore gives you pricing information. The `prompt_tokens` represents
     the number of tokens used in the input, the `completion_tokens` is the number
     of tokens in the output, and as you might have guessed, `total_tokens` = `prompt_tokens`
     + `completion_tokens`. |'
+  id: totrans-181
   prefs: []
   type: TYPE_TB
+  zh: '| `usage` | 字符串 | 提供有关此查询中使用的标记数的信息，因此为您提供定价信息。`prompt_tokens`表示输入中使用的标记数，`completion_tokens`是输出中的标记数，正如您可能已经猜到的那样，`total_tokens`
+    = `prompt_tokens` + `completion_tokens`。'
 - en: Tip
+  id: totrans-182
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 提示
 - en: If you want to have multiple choices and use an `n` parameter higher than 1,
     you will see that the `prompt_tokens` value will not change, but the `completion_tokens`
     value will be roughly multiplied by `n`.
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您想要有多个选择并使用高于1的`n`参数，您会发现`prompt_tokens`值不会改变，但`completion_tokens`值将大致乘以`n`。
 - en: From Text Completions to Functions
+  id: totrans-184
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 从文本完成到函数
 - en: OpenAI introduced the possibility for its models to output a JSON object containing
     arguments to call functions. The model will not be able to call the function itself,
     but rather will convert a text input into an output format that can be executed
     programmatically by the caller.
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI引入了其模型输出一个包含调用函数参数的JSON对象的可能性。模型本身将无法调用函数，而是将文本输入转换为可以由调用者以编程方式执行的输出格式。
 - en: 'This is particularly useful when the result of the call to the OpenAI API needs
     to be processed by the rest of your code: instead of creating a complicated prompt
     to ensure that the model answers in a specific format that can be parsed by your
     code, you can use a function definition to convert natural language into API calls
     or database queries, extract structured data from text, and create chatbots that
     answer questions by calling external tools.'
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: 当OpenAI API的调用结果需要被您的代码的其余部分处理时，这是特别有用的：您可以使用函数定义将自然语言转换为API调用或数据库查询，从文本中提取结构化数据，并创建通过调用外部工具来回答问题的聊天机器人，而不是创建一个复杂的提示以确保模型以特定格式回答，这个格式可以被您的代码解析。
 - en: As you saw in [Table 2-2](#table-2-2), which details the input options for the
     chat completion endpoint, function definitions need to be passed as an array of
     function objects. The function object is detailed in [Table 2-4](#table-2-4).
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
 - en: Table 2-4\. Details of the function object
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
 - en: '| Field name | Type | Description |'
+  id: totrans-189
   prefs: []
   type: TYPE_TB
 - en: '| --- | --- | --- |'
+  id: totrans-190
   prefs: []
   type: TYPE_TB
 - en: '| `name` | String (required) | The name of the function. |'
+  id: totrans-191
   prefs: []
   type: TYPE_TB
 - en: '| `description` | String | The description of the function. |'
+  id: totrans-192
   prefs: []
   type: TYPE_TB
 - en: '| `parameters` | Object | The parameters expected by the function. These parameters
     are expected to be described in a [JSON Schema](http://json-schema.org) format.
     |'
+  id: totrans-193
   prefs: []
   type: TYPE_TB
 - en: 'As an example, imagine that we have a database that contains information relative
     to company products. We can define a function that executes a search against this
     database:'
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE12]'
+  id: totrans-195
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: 'Next, we define the specifications of the functions:'
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE13]'
+  id: totrans-197
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: 'We can then create a conversation and call the `openai.ChatCompletion` endpoint:'
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE14]'
+  id: totrans-199
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE14]'
 - en: 'The model has created a query that we can use. If we print the `function_call`
     object from the response, we get:'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE15]'
+  id: totrans-201
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE15]'
 - en: 'Next, we execute the function and continue the conversation with the result:'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE16]'
+  id: totrans-203
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE16]'
 - en: 'And finally, we extract the final response and obtain the following:'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE17]'
+  id: totrans-205
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE17]'
 - en: This simple example demonstrates how functions can be useful to build a solution
     that allows end users to interact in natural language with a database. The function
     definitions allow you to constrain the model to answer exactly as you want it
     to, and integrate its response into an application.
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
 - en: Using Other Text Completion Models
+  id: totrans-207
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -976,9 +1308,11 @@
     of both price and performance, it is helpful to know how to use the completion
     models, particularly for use cases such as fine-tuning, in which the GPT-3 completion
     models are the only choice.
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
 - en: Note
+  id: totrans-209
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
@@ -987,6 +1321,7 @@
     ones that can be fine-tuned. OpenAI will provide a solution for fine-tuning chat-based
     models by January 2024\. As it is not available yet, we do not have the necessary
     information to describe it here.
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
 - en: 'There is an important difference between text completion and chat completion:
@@ -994,50 +1329,65 @@
     As you can see in the following code snippet, the main difference with the `openai.ChatCompletion`
     endpoint is the prompt format. Chat-based models must be in conversation format;
     for completion, it is a single prompt:'
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE18]'
+  id: totrans-212
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE18]'
 - en: 'The preceding code snippet will output a completion similar to the following:'
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE19]'
+  id: totrans-214
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE19]'
 - en: The next section goes through the details of the text completion endpoint’s
     input options.
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
 - en: Input Options for the Text Completion Endpoint
+  id: totrans-216
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: The set of input options for `openai.Completion.create` is very similar to what
     we saw previously with the chat endpoint. In this section, we will discuss the
     main input parameters and consider the impact of the length of the prompt.
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
 - en: Main input parameters
+  id: totrans-218
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
 - en: The required input parameters and a selection of optional parameters that we
     feel are most useful are described in [Table 2-5](#table-2-5).
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
 - en: Table 2-5\. Required parameters and optional parameters for the text completion
     endpoint
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
 - en: '| Field name | Type | Description |'
+  id: totrans-221
   prefs: []
   type: TYPE_TB
 - en: '| --- | --- | --- |'
+  id: totrans-222
   prefs: []
   type: TYPE_TB
 - en: '| `model` | String (required) | ID of the model to use (the same as with `openai.ChatCompletion`).
     This is the only required option. |'
+  id: totrans-223
   prefs: []
   type: TYPE_TB
 - en: '| `prompt` | String or array (default: `<&#124;endoftext&#124;>`) | The prompt
@@ -1046,19 +1396,23 @@
     array of strings, array of tokens, or array of token arrays. If no prompt is provided
     to the model, it will generate text as if from the beginning of a new document.
     |'
+  id: totrans-224
   prefs: []
   type: TYPE_TB
 - en: '| `max_tokens` | Integer | The maximum number of tokens to generate in the
     chat completion. The default value of this parameter is `16`, which may be too
     low for some use cases and should be adjusted according to your needs. |'
+  id: totrans-225
   prefs: []
   type: TYPE_TB
 - en: '| `suffix` | String (default: null) | The text that comes after the completion.
     This parameter allows adding a suffix text. It also allows making insertions.
     |'
+  id: totrans-226
   prefs: []
   type: TYPE_TB
 - en: Length of prompts and tokens
+  id: totrans-227
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1066,9 +1420,11 @@
     the output you receive. For the input message, you must carefully manage the length
     of the prompt parameter, as well as the suffix if one is used. For the output
     you receive, use `max_tokens``.` It allows you to avoid unpleasant surprises.
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
 - en: Additional optional parameters
+  id: totrans-229
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1078,21 +1434,27 @@
     that you can control the output with the `temperature` or `n` parameter, control
     your costs with `max_tokens`, and use the `stream` option if you wish to have
     a better user experience with long completions.
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
 - en: Output Result Format for the Text Completion Endpoint
+  id: totrans-231
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: 'Now that you have all the information needed to query text-based models, you
     will find that the results are very similar to the chat endpoint results. Here
     is an example output for our “Hello World” example with the `davinci` model:'
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE20]'
+  id: totrans-233
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE20]'
 - en: Note
+  id: totrans-234
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
@@ -1100,58 +1462,73 @@
     is in the `choice` object: instead of having a message with `content` and `role`
     attributes, we have a simple `text` attribute containing the completion generated
     by the model.'
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
 - en: Considerations
+  id: totrans-236
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: 'You should consider two important things before using the APIs extensively:
     cost and data privacy.'
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
 - en: Pricing and Token Limitations
+  id: totrans-238
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: OpenAI keeps the pricing of its models listed on its [pricing page](https://openai.com/pricing).
     Note that OpenAI is not bound to maintain this pricing, and the costs may change
     over time.
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
 - en: At the time of this writing, the pricing is as shown in [Table 2-6](#table-2-6)
     for the OpenAI models used most often.
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
 - en: Table 2-6\. Pricing and token limitations per model
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
 - en: '| Family | Model | Pricing | Max tokens |'
+  id: totrans-242
   prefs: []
   type: TYPE_TB
 - en: '| --- | --- | --- | --- |'
+  id: totrans-243
   prefs: []
   type: TYPE_TB
 - en: '| Chat | `gpt-4` | Prompt: $0.03 per 1,000 tokensCompletion: $0.06 per 1,000
     tokens | 8,192 |'
+  id: totrans-244
   prefs: []
   type: TYPE_TB
 - en: '| Chat | `gpt-4-32k` | Prompt: $0.06 per 1,000 tokensCompletion: $0.012 per
     1,000 tokens | 32,768 |'
+  id: totrans-245
   prefs: []
   type: TYPE_TB
 - en: '| Chat | `gpt-3.5-turbo` | Prompt: $0.0015 per 1,000 tokensCompletion: $0.002
     per 1,000 tokens | 4,096 |'
+  id: totrans-246
   prefs: []
   type: TYPE_TB
 - en: '| Chat | `gpt-3.5-turbo-16k` | Prompt: $0.003 per 1,000 tokensCompletion: $0.004
     per 1,000 tokens | 16,384 |'
+  id: totrans-247
   prefs: []
   type: TYPE_TB
 - en: '| Text completion | `text-davinci-003` | $0.02 per 1,000 tokens | 4,097 |'
+  id: totrans-248
   prefs: []
   type: TYPE_TB
 - en: 'There are several things to note from [Table 2-6](#table-2-6):'
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
 - en: The `davinci` model is more than 10 times the cost of the GPT-3.5 Turbo 4,000-context
@@ -1160,24 +1537,29 @@
     recommended to use GPT-3.5 Turbo (unless you need special features such as insertion,
     via the parameter suffix, or if `text-davinci-003` outperforms `gpt-3.5-turbo`
     for your specific task).
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
 - en: GPT-3.5 Turbo is less expensive than GPT-4\. The differences between GPT-4 and
     GPT-3.5 are irrelevant for many basic tasks. However, in complex inference situations,
     GPT-4 far outperforms any previous model.
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
 - en: 'The chat models have a different pricing system than the `davinci` models:
     they differentiate input (prompt) and output (completion).'
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
 - en: GPT-4 allows a context twice as long as GPT-3.5 Turbo, and can even go up to
     32,000 tokens, which is equivalent to more than 25,000 words of text. GPT-4 enables
     use cases such as long-form content creation, advanced conversation, and document
     search and analysis… for a cost.
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
 - en: 'Security and Privacy: Caution!'
+  id: totrans-254
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1186,9 +1568,11 @@
     for 30 days for monitoring and usage compliance-checking purposes. This means
     OpenAI employees as well as specialized third-party contractors may have access
     to your API data.
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
 - en: Warning
+  id: totrans-256
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
@@ -1198,13 +1582,16 @@
     user, be aware that your personal information and the data you send as input can
     be transferred from your location to the OpenAI facilities and servers in the
     United States. This may have some legal impact on your application creation.
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
 - en: More details on how to build LLM-powered applications while taking into account
     security and privacy issues can be found in [Chapter 3](ch03.html#building_apps_with_gpt_4_and_chatgpt).
+  id: totrans-258
   prefs: []
   type: TYPE_NORMAL
 - en: Other OpenAI APIs and Functionalities
+  id: totrans-259
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -1212,9 +1599,11 @@
     We selected several of these functionalities to explore in this section, but if
     you want a deep dive into all the API possibilities, look at [OpenAI’s API reference
     page](https://platform.openai.com/docs/api-reference).
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
 - en: Embeddings
+  id: totrans-261
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1227,59 +1616,78 @@
     can transform a text into a vector of numbers. The embeddings endpoint allows
     developers to obtain a vector representation of an input text. This vector representation
     can then be used as input to other ML models and NLP algorithms.
+  id: totrans-262
   prefs: []
   type: TYPE_NORMAL
 - en: 'At the time of this writing, OpenAI recommends using its latest model, `text-embedding-ada-002`,
     for nearly all use cases. It is very simple to use:'
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE21]'
+  id: totrans-264
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE21]'
 - en: 'The embedding is accessed with:'
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE22]'
+  id: totrans-266
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE22]'
 - en: 'The resulting embedding is a vector: an array of floats.'
+  id: totrans-267
   prefs: []
   type: TYPE_NORMAL
 - en: Tip
+  id: totrans-268
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: The complete documentation on embeddings is available in [OpenAI’s reference
     documents](https://platform.openai.com/docs/api-reference/embeddings).
+  id: totrans-269
   prefs: []
   type: TYPE_NORMAL
 - en: 'The principle of embeddings is to represent text strings meaningfully in some
     space that captures their semantic similarity. With this idea, you can have various
     use cases:'
+  id: totrans-270
   prefs: []
   type: TYPE_NORMAL
 - en: Search
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
 - en: Sort results by relevance to the query string.
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
 - en: Recommendations
+  id: totrans-273
   prefs: []
   type: TYPE_NORMAL
 - en: Recommend articles that contain text strings related to the query string.
+  id: totrans-274
   prefs: []
   type: TYPE_NORMAL
 - en: Clustering
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
 - en: Group strings by similarity.
+  id: totrans-276
   prefs: []
   type: TYPE_NORMAL
 - en: Anomaly detection
+  id: totrans-277
   prefs: []
   type: TYPE_NORMAL
 - en: Find a text string that is not related to the other strings.
+  id: totrans-278
   prefs: []
   type: TYPE_NORMAL
 - en: Embeddings have the property that if two texts have a similar meaning, their
@@ -1294,20 +1702,25 @@
     different embedding representation. Note that in this example, for clarity we
     show the embedding as having two dimensions, but in reality, they are often in
     a much higher dimension, such as 512.
+  id: totrans-279
   prefs: []
   type: TYPE_NORMAL
 - en: '![](assets/dagc_0208.png)'
+  id: totrans-280
   prefs: []
   type: TYPE_IMG
 - en: Figure 2-8\. Example of two-dimensional embedding of three sentences
+  id: totrans-281
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: We refer to the embeddings API several times in the remaining chapters, as embeddings
     are an essential part of processing natural language with AI models.
+  id: totrans-282
   prefs: []
   type: TYPE_NORMAL
 - en: Moderation Model
+  id: totrans-283
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1318,60 +1731,77 @@
     app in which user input will be used as a prompt: you can filter the queries based
     on the moderation endpoint results. The model provides classification capabilities
     that allow you to search for content in the following categories:'
+  id: totrans-284
   prefs: []
   type: TYPE_NORMAL
 - en: Hate
+  id: totrans-285
   prefs: []
   type: TYPE_NORMAL
 - en: Promoting hatred against groups based on race, gender, ethnicity, religion,
     nationality, sexual orientation, disability, or caste
+  id: totrans-286
   prefs: []
   type: TYPE_NORMAL
 - en: Hate/threatening
+  id: totrans-287
   prefs: []
   type: TYPE_NORMAL
 - en: Hateful content that involves violence or severe harm to targeted groups
+  id: totrans-288
   prefs: []
   type: TYPE_NORMAL
 - en: Self-harm
+  id: totrans-289
   prefs: []
   type: TYPE_NORMAL
 - en: Content that promotes or depicts acts of self-harm, including suicide, cutting,
     and eating disorders
+  id: totrans-290
   prefs: []
   type: TYPE_NORMAL
 - en: Sexual
+  id: totrans-291
   prefs: []
   type: TYPE_NORMAL
 - en: Content designed to describe a sexual activity or promote sexual services (except
     for education and wellness)
+  id: totrans-292
   prefs: []
   type: TYPE_NORMAL
 - en: Sexual with minors
+  id: totrans-293
   prefs: []
   type: TYPE_NORMAL
 - en: Sexually explicit content involving persons under 18 years of age
+  id: totrans-294
   prefs: []
   type: TYPE_NORMAL
 - en: Violence
+  id: totrans-295
   prefs: []
   type: TYPE_NORMAL
 - en: Content that glorifies violence or celebrates the suffering or humiliation of
     others
+  id: totrans-296
   prefs: []
   type: TYPE_NORMAL
 - en: Violence/graphic
+  id: totrans-297
   prefs: []
   type: TYPE_NORMAL
 - en: Violent content depicting death, violence, or serious bodily injury in graphic
     detail
+  id: totrans-298
   prefs: []
   type: TYPE_NORMAL
 - en: Note
+  id: totrans-299
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: Support for languages other than English is limited.
+  id: totrans-300
   prefs: []
   type: TYPE_NORMAL
 - en: 'The endpoint for the moderation model is `openai.Moderation.create`, and only
@@ -1380,39 +1810,52 @@
     updated over time to ensure that you always use the most accurate model. The other
     model is `text-moderation-stable`. OpenAI will notify you before updating this
     model.'
+  id: totrans-301
   prefs: []
   type: TYPE_NORMAL
 - en: Warning
+  id: totrans-302
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: The accuracy of `text-moderation-stable` may be slightly lower than `text-moderation-latest`.
+  id: totrans-303
   prefs: []
   type: TYPE_NORMAL
 - en: 'Here is an example of how to use this moderation model:'
+  id: totrans-304
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE23]'
+  id: totrans-305
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE23]'
 - en: 'Let’s take a look at the output result of the moderation endpoint contained
     in the `response` object:'
+  id: totrans-306
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE24]'
+  id: totrans-307
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE24]'
 - en: The output result of the moderation endpoint provides the pieces of information
     shown in [Table 2-7](#table-2-7).
+  id: totrans-308
   prefs: []
   type: TYPE_NORMAL
 - en: Table 2-7\. Description of the output of the moderation endpoint
+  id: totrans-309
   prefs: []
   type: TYPE_NORMAL
 - en: '| Field name | Type | Description |'
+  id: totrans-310
   prefs: []
   type: TYPE_TB
 - en: '| --- | --- | --- |'
+  id: totrans-311
   prefs: []
   type: TYPE_TB
 - en: '| `model` | String | This is the model used for the prediction. When calling
@@ -1420,16 +1863,19 @@
     and in the output result, the model used is `text-moderation-004`. If we had called
     the method with `text-moderation-stable`, then `text-moderation-001` would have
     been used. |'
+  id: totrans-312
   prefs: []
   type: TYPE_TB
 - en: '| `flagged` | Boolean | If the model identifies the content as violating OpenAI’s
     usage policies, set this to `true`; otherwise, set it to `false`. |'
+  id: totrans-313
   prefs: []
   type: TYPE_TB
 - en: '| `categories` | Dict | This includes a dictionary with binary flags for policy
     violation categories. For each category, the value is `true` if the model identifies
     a violation and `false` if not. The dictionary can be accessed via `print(type(response[''results''][0]​[''cate⁠gories'']))`.
     |'
+  id: totrans-314
   prefs: []
   type: TYPE_TB
 - en: '| `category_scores` | Dict | The model provides a dictionary with category-specific
@@ -1437,18 +1883,22 @@
     for that category. Scores range from 0 to 1, with higher scores meaning more confidence.
     These scores should not be seen as probabilities. The dictionary can be accessed
     via `print(type(response​[''re⁠sults''][0][''category_scores'']))`. |'
+  id: totrans-315
   prefs: []
   type: TYPE_TB
 - en: Warning
+  id: totrans-316
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: OpenAI will regularly improve the moderation system. As a result, the `category_scores`
     may vary, and the threshold set to determine the category value from a category
     score may also change.
+  id: totrans-317
   prefs: []
   type: TYPE_NORMAL
 - en: Whisper and DALL-E
+  id: totrans-318
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1456,6 +1906,7 @@
     in combination with GPT models in some use cases. We don’t explain them here because
     they are not the focus of this book. But don’t worry, using their APIs is very
     similar to using OpenAI’s LLM APIs.
+  id: totrans-319
   prefs: []
   type: TYPE_NORMAL
 - en: Whisper is a versatile model for speech recognition. It is trained on a large
@@ -1463,6 +1914,7 @@
     recognition, speech translation, and language identification. An open source version
     is available on the [Whisper project’s GitHub page](https://github.com/openai/whisper)
     of OpenAI.
+  id: totrans-320
   prefs: []
   type: TYPE_NORMAL
 - en: In January 2021, OpenAI introduced DALL-E, an AI system capable of creating
@@ -1471,9 +1923,11 @@
     and new capabilities. Both versions of DALL-E were created by training a transformer
     model on images and their text descriptions. You can try DALL-E 2 through the
     API and via the [Labs interface](https://labs.openai.com).
+  id: totrans-321
   prefs: []
   type: TYPE_NORMAL
 - en: Summary (and Cheat Sheet)
+  id: totrans-322
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -1483,71 +1937,94 @@
     ChatGPT models: the first step to building LLM-powered applications! However,
     using these models implies several considerations: API key management, pricing,
     and privacy.'
+  id: totrans-323
   prefs: []
   type: TYPE_NORMAL
 - en: 'Before starting, we recommend looking at the OpenAI usage policies, and playing
     with the Playground to get familiar with the different models without the hassle
     of coding. Remember: GPT-3.5 Turbo, the model behind ChatGPT, is the best choice
     for most use cases.'
+  id: totrans-324
   prefs: []
   type: TYPE_NORMAL
 - en: 'Following is a cheat sheet to use when sending input to GPT-3.5 Turbo:'
+  id: totrans-325
   prefs: []
   type: TYPE_NORMAL
 - en: 'Install the `openai` dependency:'
+  id: totrans-326
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '[PRE25]'
+  id: totrans-327
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE25]'
 - en: 'Set your API key as an environment variable:'
+  id: totrans-328
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '[PRE26]'
+  id: totrans-329
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE26]'
 - en: 'In Python, import `openai`:'
+  id: totrans-330
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '[PRE27]'
+  id: totrans-331
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE27]'
 - en: 'Call the `openai.ChatCompletion` endpoint:'
+  id: totrans-332
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '[PRE28]'
+  id: totrans-333
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE28]'
 - en: 'Get the answer:'
+  id: totrans-334
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '[PRE29]'
+  id: totrans-335
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE29]'
 - en: Tip
+  id: totrans-336
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
 - en: Don’t forget to check the [pricing page](https://openai.com/pricing), and use
     [tiktoken](https://github.com/openai/tiktoken) to estimate the usage costs.
+  id: totrans-337
   prefs: []
   type: TYPE_NORMAL
 - en: Note that you should never send sensitive data, such as personal information
     or passwords, through the OpenAI endpoints.
+  id: totrans-338
   prefs: []
   type: TYPE_NORMAL
 - en: OpenAI also provides several other models and tools. You will find in the next
     chapters that the embeddings endpoint is very useful for including NLP features
     in your application.
+  id: totrans-339
   prefs: []
   type: TYPE_NORMAL
 - en: Now that you know *how* to use the OpenAI services, it’s time to dive into *why*
     you should use them. In the next chapter, you’ll see an overview of various examples
     and use cases to help you make the most out of the OpenAI ChatGPT and GPT-4 models.
+  id: totrans-340
   prefs: []
   type: TYPE_NORMAL

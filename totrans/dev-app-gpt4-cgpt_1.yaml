@@ -234,6 +234,7 @@
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 这一革命的核心是*注意机制*，这是一个简单而强大的想法。模型不再将文本序列中的所有单词视为同等重要，而是“关注”每一步任务中最相关的术语。交叉注意力和自注意力是基于这一注意机制的两个架构模块，它们经常出现在LLM中。变压器架构广泛使用这些交叉注意力和自注意力模块。
 - en: '*Cross-attention* helps the model determine the relevance of the different
     parts of the input text for accurately predicting the next word in the output
     text. It’s like a spotlight that shines on words or phrases in the input text,
@@ -242,6 +243,7 @@
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: '*交叉注意力*帮助模型确定输入文本的不同部分与准确预测输出文本中下一个单词的相关性。这就像一个聚光灯，照亮输入文本中的单词或短语，突出显示生成下一个单词预测所需的相关信息，同时忽略不太重要的细节。'
 - en: To illustrate this, let’s take an example of a simple sentence translation task.
     Imagine we have an input English sentence, “Alice enjoyed the sunny weather in
     Brussels,” which should be translated into French as “Alice a profité du temps
@@ -255,10 +257,13 @@
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了说明这一点，让我们以一个简单的句子翻译任务为例。假设我们有一个输入的英文句子，“爱丽丝在布鲁塞尔享受了阳光明媚的天气”，应该翻译成法文为“爱丽丝 a
+    profité du temps ensoleillé à Bruxelles.”在这个例子中，让我们专注于生成法文单词*ensoleillé*，意思是*阳光明媚*。对于这个预测，交叉注意力会更加关注英文单词*sunny*和*weather*，因为它们都与*ensoleillé*的含义相关。通过专注于这两个单词，交叉注意力帮助模型为句子的这部分生成准确的翻译。[图1-2](#fig_2_cross_attention_uses_the_attention_mechanism_to_fo)说明了这个例子。
 - en: '![](assets/dagc_0102.png)'
   id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0102.png)'
 - en: Figure 1-2\. Cross-attention uses the attention mechanism to focus on essential
     parts of the input text (English sentence) to predict the next word in the output
     text (French sentence)
@@ -266,6 +271,7 @@
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图1-2。交叉注意力使用注意机制专注于输入文本（英文句子）的关键部分，以预测输出文本（法文句子）中的下一个单词
 - en: '*Self-attention* refers to the ability of a model to focus on different parts
     of its input text. In the context of NLP, the model can evaluate the importance
     of each word in a sentence with the other words. This allows it to better understand
@@ -274,6 +280,7 @@
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: '*自注意力*指的是模型专注于其输入文本的不同部分的能力。在NLP的背景下，模型可以评估句子中每个单词与其他单词的重要性。这使它能够更好地理解单词之间的关系，并帮助模型从输入文本中的多个单词中构建新的*概念*。'
 - en: 'As a more specific example, consider the following: “Alice received praise
     from her colleagues.” Assume that the model is trying to understand the meaning
     of the word *her* in the sentence. The self-attention mechanism assigns different
@@ -285,16 +292,19 @@
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为一个更具体的例子，考虑以下情况：“爱丽丝受到了同事们的赞扬。”假设模型试图理解句子中“她”这个词的含义。自注意力机制为句子中的单词分配不同的权重，突出显示与这个上下文中“她”相关的单词。在这个例子中，自注意力会更加关注“爱丽丝”和“同事们”这两个词。自注意力帮助模型从这些词中建立新的概念。在这个例子中，可能出现的一个概念是“爱丽丝的同事们”，如[图1-3](#fig_3_self_attention_allows_the_emergence_of_the_alice)所示。
 - en: '![](assets/dagc_0103.png)'
   id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0103.png)'
 - en: Figure 1-3\. Self-attention allows the emergence of the “Alice’s colleagues”
     concept
   id: totrans-36
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图1-3。自注意力允许“爱丽丝的同事们”概念的出现
 - en: Unlike the recurrent architecture, transformers also have the advantage of being
     easily *parallelized*. This means the Transformer architecture can process multiple
     parts of the input text simultaneously rather than sequentially. This allows faster
@@ -309,6 +319,7 @@
   id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 与循环架构不同，变压器还具有易于*并行化*的优势。这意味着变压器架构可以同时处理输入文本的多个部分，而不是顺序处理。这样可以加快计算和训练，因为模型的不同部分可以并行工作，而不必等待前面的步骤完成，这与需要顺序处理的循环架构不同。变压器模型的并行处理能力与图形处理单元（GPU）的架构完美契合，GPU的设计是为了同时处理多个计算。因此，GPU非常适合训练和运行这些变压器模型，因为它们具有高度的并行性和计算能力。这一进步使数据科学家能够在更大的数据集上训练模型，为发展LLM铺平了道路。
 - en: 'The Transformer architecture, introduced in 2017 by Vaswani et al. from Google
     in the paper “[Attention Is All You Need”](https://oreil.ly/jVZW1), was originally
     developed for sequence-to-sequence tasks such as machine translation. A standard
@@ -620,17 +631,20 @@
   id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以看到，对于相同的输入，第一个模型无法回答问题（甚至答案很奇怪），而第二个模型可以回答问题。当然，使用标准的GPT-3模型也可以获得期望的响应。然而，与指导模型相反，需要应用特定的提示设计和优化技术才能从GPT-3模型中获得期望的输出。这种技术称为*提示工程*，将在接下来的章节中详细介绍。
 - en: From GPT-3 to InstructGPT
   id: totrans-72
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 从GPT-3到InstructGPT
 - en: OpenAI explains how the Instruct series was constructed in the scientific paper
     [“Training Language Models to Follow Instructions with Human Feedback”](https://oreil.ly/sz90A)
     by Ouyang et al.
   id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI解释了科学论文《使用人类反馈训练语言模型遵循指示》中Instruct系列是如何构建的。
 - en: 'The training recipe has two main stages to go from a GPT-3 model to an instructed
     GPT-3 model: *supervised fine-tuning* (*SFT*) and *reinforcement learning from
     human feedback* (*RLHF*). In each stage, the results of the prior stage are fine-tuned.
@@ -639,25 +653,30 @@
   id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练配方有两个主要阶段，从GPT-3模型到指导的GPT-3模型：*监督微调*（SFT）和*来自人类反馈的强化学习*（RLHF）。在每个阶段中，前一阶段的结果都会进行微调。也就是说，SFT阶段接收GPT-3模型并返回一个新模型，然后将其发送到RLHF阶段以获得指导版本。
 - en: '[Figure 1-6](#fig_6_the_steps_to_obtain_the_instructed_models_from_an), from
     the scientific paper from OpenAI, details the entire process.'
   id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1-6，来自OpenAI的科学论文，详细介绍了整个过程。
 - en: '![](assets/dagc_0106.png)'
   id: totrans-76
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0106.png)'
 - en: Figure 1-6\. The steps to obtain the instructed models (redrawn from an image
     by Ouyang et al.)
   id: totrans-77
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图1-6。获取指导模型的步骤（重新绘制自欧阳等人的图像）。
 - en: We will step through these stages one by one.
   id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将逐个步骤地进行这些阶段。
 - en: In the SFT stage, the original GPT-3 model is fine-tuned with straightforward
     supervised learning (step 1 in [Figure 1-6](#fig_6_the_steps_to_obtain_the_instructed_models_from_an)).
     OpenAI has a collection of prompts made by end users. The process starts with
@@ -670,12 +689,14 @@
   id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 在SFT阶段，原始的GPT-3模型通过直接监督学习进行微调（图1-6中的第1步）。OpenAI拥有一系列由最终用户制作的提示。该过程从可用提示集中随机选择一个提示开始。然后要求人类（称为*标注者*）写出对这个提示的理想答案的示例。这个过程重复数千次，以获得由提示和相应理想响应组成的监督训练集。然后使用这个数据集对GPT-3模型进行微调，以使其对用户请求给出更一致的答案。得到的模型称为SFT模型。
 - en: The RLHF stage is divided into two substeps. First a reward model (RM) is built
     (step 2 in [Figure 1-6](#fig_6_the_steps_to_obtain_the_instructed_models_from_an)),
     and then the RM is used for reinforcement learning (step 3 in [Figure 1-6](#fig_6_the_steps_to_obtain_the_instructed_models_from_an)).
   id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: RLHF阶段分为两个子步骤。首先建立奖励模型（RM）（图1-6中的第2步），然后使用RM进行强化学习（图1-6中的第3步）。
 - en: The goal of the RM is to automatically give a score to a response to a prompt.
     When the response matches what is indicated in the prompt, the RM score should
     be high; when it doesn’t match, it should be low. To construct the RM, OpenAI
@@ -689,6 +710,7 @@
   id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: RM的目标是自动给出对提示的响应的分数。当响应与提示中指示的内容匹配时，RM分数应该很高；当不匹配时，应该很低。为了构建RM，OpenAI首先随机选择一个问题，并使用SFT模型产生几个可能的答案。正如我们将在后面看到的，通过称为*温度*的参数，可以使用相同的输入提示产生许多响应。然后要求人类标注者根据诸如与提示的匹配度和响应的毒性等标准对响应进行排名。经过多次运行这个过程后，使用数据集对SFT模型进行微调以进行评分。这个RM将用于构建最终的InstructGPT模型。
 - en: The final step in training InstructGPT models involves reinforcement learning,
     which is an iterative process. It starts with an initial generative model, such
     as the SFT model. Then a random prompt is selected, and the model predicts an
@@ -699,17 +721,20 @@
   id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练InstructGPT模型的最后一步涉及强化学习，这是一个迭代过程。它从初始生成模型开始，比如SFT模型。然后选择一个随机提示，模型预测输出，RM进行评估。根据收到的奖励，生成模型相应地进行更新。这个过程可以在没有人类干预的情况下重复无数次，为改进模型性能提供更高效和自动化的方法。
 - en: InstructGPT models are better at producing accurate completions for what people
     give as input in the prompt. OpenAI recommends using the InstructGPT series rather
     than the original series.
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: InstructGPT模型更擅长为人们在提示中给出的输入生成准确的完成。OpenAI建议使用InstructGPT系列而不是原始系列。
 - en: GPT-3.5, Codex, and ChatGPT
   id: totrans-84
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: GPT-3.5、Codex和ChatGPT
 - en: In March 2022, OpenAI made available new versions of GPT-3\. These new models
     can edit text or insert content into text. They have been trained on data through
     June 2021 and are described as more powerful than previous versions. At the end
@@ -861,11 +886,13 @@
   id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能听说过“基础模型”这个术语。虽然像GPT这样的LLM被训练来处理人类语言，但基础模型是一个更广泛的概念。这些模型接受多种类型的数据训练，不仅仅是文本，它们可以针对各种任务进行微调，包括但不限于自然语言处理。因此，所有LLM都是基础模型，但并非所有基础模型都是LLM。
 - en: LLM Use Cases and Example Products
   id: totrans-106
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: LLM使用案例和示例产品
 - en: OpenAI includes many inspiring customer stories on its website. This section
     explores some of these applications, use cases, and product examples. We will
     discover how these models may transform our society and open new opportunities
@@ -874,11 +901,13 @@
   id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI在其网站上包含许多鼓舞人心的客户故事。本节探讨了其中一些应用、使用案例和产品示例。我们将发现这些模型可能如何改变我们的社会，并为商业和创造力开辟新的机会。正如你将看到的，许多企业已经在使用这些新技术，但还有更多的想法可以实现。现在轮到你了。
 - en: Be My Eyes
   id: totrans-108
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Be My Eyes
 - en: Since 2012, [Be My Eyes](https://www.bemyeyes.com) has created technologies
     for a community of several million people who are blind or have limited vision.
     For example, it has an app that connects volunteers with blind or visually impaired
@@ -888,6 +917,7 @@
   id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 自2012年以来，[Be My Eyes](https://www.bemyeyes.com)为数百万盲人或视力有限的人群创建了技术。例如，它有一个应用程序，将志愿者与需要帮助的盲人或视障人士联系起来，例如识别产品或在机场导航等日常任务。在应用程序中点击一次，需要帮助的人就会被一名志愿者联系，通过视频和麦克风共享，志愿者可以帮助这个人。
 - en: The new multimodal capacity of GPT-4 makes it possible to process both text
     and images, so Be My Eyes began developing a new virtual volunteer based on GPT-4\.
     This new virtual volunteer aims to reach the same level of assistance and understanding
@@ -895,6 +925,7 @@
   id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-4的新的多模态能力使其能够处理文本和图像，因此Be My Eyes开始开发一个基于GPT-4的新虚拟志愿者。这个新的虚拟志愿者旨在达到与人类志愿者相同的帮助和理解水平。
 - en: “The implications for global accessibility are profound. In the not-so-distant
     future, the blind and low-vision community will utilize these tools not only for
     a host of visual interpretation needs but also to have a greater degree of independence
@@ -902,17 +933,20 @@
   id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: “全球可访问性的影响是深远的。在不久的将来，盲人和低视力社区将利用这些工具，不仅满足各种视觉解释需求，还将在生活中拥有更大程度的独立性，”Be My Eyes的CEO迈克尔·巴克利说。
 - en: At the time of this writing, the virtual volunteer is still in the beta version.
     To gain access to it, you must register to be put on a waiting list in the app,
     but initial feedback from beta testers is very positive.
   id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 在撰写本文时，虚拟志愿者仍处于测试版阶段。要获得访问权限，您必须在应用程序中注册等待名单，但测试版测试者的初步反馈非常积极。
 - en: Morgan Stanley
   id: totrans-113
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 摩根士丹利
 - en: '[Morgan Stanley](https://www.morganstanley.com) is a multinational investment
     bank and financial services company in the United States. As a leader in wealth
     management, Morgan Stanley has a content library of hundreds of thousands of pages
@@ -924,6 +958,7 @@
   id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: '[摩根士丹利](https://www.morganstanley.com)是一家美国的跨国投资银行和金融服务公司。作为财富管理领域的领导者，摩根士丹利拥有数十万页的投资策略、市场研究和评论以及分析师意见的内容库。这些大量的信息分布在多个内部网站上，大部分以PDF格式存在。这意味着顾问必须搜索大量文档才能找到他们的问题的答案。可以想象，这种搜索可能会很漫长和乏味。'
 - en: The company evaluated how it could leverage its intellectual capital with GPT’s
     integrated research capabilities. The resulting internally developed model will
     power a chatbot that performs a comprehensive search of wealth management content
@@ -933,11 +968,13 @@
   id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 该公司评估了如何利用GPT的综合研究能力来发挥其知识资产。由此产生的内部开发模型将驱动一个聊天机器人，该机器人可以对财富管理内容进行全面搜索，并高效地解锁摩根士丹利积累的知识。通过GPT-4，以一种更易于使用的格式分析所有这些信息提供了一种方式。
 - en: Khan Academy
   id: totrans-116
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 可汗学院
 - en: '[Khan Academy](https://www.khanacademy.org) is a US-based nonprofit educational
     organization founded in 2008 by Sal Khan. Its mission is to create a set of free
     online tools to help educate students worldwide. The organization offers thousands
@@ -947,6 +984,7 @@
   id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: '[Khan Academy](https://www.khanacademy.org)是一家总部位于美国的非营利教育组织，由Sal Khan于2008年创立。其使命是创建一套免费在线工具，帮助全球教育学生。该组织为各个年龄段的学生提供数千种数学、科学和社会学课程。此外，该组织通过视频和博客制作短课程，最近开始提供Khanmigo。'
 - en: Khanmigo is a new AI assistant powered by GPT-4\. Khanmigo can do a lot of things
     for students, such as guiding and encouraging them, asking questions, and preparing
     them for tests. Khanmigo is designed to be a friendly chatbot that helps students
@@ -957,6 +995,7 @@
   id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: Khanmigo是由GPT-4提供动力的新的AI助手。Khanmigo可以为学生做很多事情，比如指导和鼓励他们，提问，并为他们准备考试。Khanmigo旨在成为一个友好的聊天机器人，帮助学生完成课业。它不会直接给学生答案，而是引导他们学习过程。Khanmigo还可以通过帮助他们制定教学计划、完成行政任务和创建课本等方式支持教师。
 - en: “We think GPT-4 is opening up new frontiers in education. A lot of people have
     dreamed about this kind of technology for a long time. It’s transformative, and
     we plan to proceed responsibly with testing to explore if it can be used effectively
@@ -965,17 +1004,21 @@
   id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: “我们认为GPT-4正在教育领域开辟新的前沿。很多人长期以来都梦想拥有这种技术。这是变革性的，我们计划负责地进行测试，探索它是否可以有效地用于学习和教学，”Khan
+    Academy的首席学习官克里斯汀·迪塞博说道。
 - en: At the time of this writing, access to Khanmigo’s pilot program is limited to
     selected people. To participate in the program, you must be placed on a [waiting
     list](https://oreil.ly/oP6KN).
   id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 在撰写本文时，Khanmigo的试点计划的访问权限仅限于特定人员。要参加该计划，您必须被放在等待名单上。
 - en: Duolingo
   id: totrans-121
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Duolingo
 - en: '[Duolingo](https://www.duolingo.com) is a US-based educational technology company,
     founded in 2011, that produces applications used by millions of people who want
     to learn a second language. Duolingo users need to understand the rules of grammar
@@ -985,6 +1028,7 @@
   id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: Duolingo是一家总部位于美国的教育科技公司，成立于2011年，生产应用程序，被数百万想要学习第二语言的人使用。Duolingo用户需要理解语法规则来学习语言的基础知识。他们需要进行对话，最好是与母语为该语言的人，以理解这些语法规则并掌握语言。这对于每个人来说都是不可能的。
 - en: 'Duolingo has added two new features to the product using OpenAI’s GPT-4: Role
     Play and Explain My Answer. These features are available in a new subscription
     level called Duolingo Max. With these features, Duolingo has bridged the gap between
@@ -993,6 +1037,7 @@
   id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: Duolingo已经在产品中使用OpenAI的GPT-4添加了两个新功能：角色扮演和解释我的答案。这些功能在名为Duolingo Max的新订阅级别中可用。有了这些功能，Duolingo已经弥合了理论知识和语言的实际应用之间的差距。多亏了LLMs，Duolingo允许学习者沉浸在现实世界的场景中。
 - en: The Role Play feature simulates conversations with native speakers, allowing
     users to practice their language skills in a variety of settings. The Explain
     My Answer feature provides personalized feedback on grammar errors, facilitating
@@ -1000,12 +1045,14 @@
   id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 角色扮演功能模拟与母语为该语言的人的对话，使用户能够在各种环境中练习语言技能。解释我的答案功能提供有关语法错误的个性化反馈，促进对语言结构的更深入理解。
 - en: “We wanted AI-powered features that were deeply integrated into the app and
     leveraged the gamified aspect of Duolingo that our learners love,” says Edwin
     Bodge, principal product manager at Duolingo.
   id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: “我们希望AI功能能够深度整合到应用程序中，并利用Duolingo学习者喜爱的游戏化特性，”Duolingo的首席产品经理埃德温·博奇说道。
 - en: The integration of GPT-4 into Duolingo Max not only enhances the overall learning
     experience but also paves the way for more effective language acquisition, especially
     for those without access to native speakers or immersive environments. This innovative
@@ -1014,11 +1061,13 @@
   id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 将GPT-4整合到Duolingo Max中不仅增强了整体学习体验，还为更有效地习得语言，特别是对于那些无法接触母语为该语言的人或沉浸式环境的人铺平了道路。这种创新的方法应该改变学习者掌握第二语言的方式，并有助于更好的长期学习成果。
 - en: Yabble
   id: totrans-127
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Yabble
 - en: '[Yabble](https://www.yabble.com) is a market research company that uses AI
     to analyze consumer data in order to deliver actionable insights to businesses.
     Its platform transforms raw, unstructured data into visualizations, enabling businesses
@@ -1026,6 +1075,7 @@
   id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: Yabble是一家市场研究公司，利用人工智能分析消费者数据，以向企业提供可操作的见解。其平台将原始的非结构化数据转化为可视化数据，使企业能够根据客户需求做出明智的决策。
 - en: The integration of advanced AI technologies such as GPT into Yabble’s platform
     has enhanced its consumer data processing capabilities. This enhancement allows
     for a more effective understanding of complex questions and answers, enabling
@@ -1035,6 +1085,7 @@
   id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 像GPT这样的先进AI技术的整合到Yabble的平台中增强了其消费者数据处理能力。这种增强使得更有效地理解复杂问题和答案成为可能，从而使企业能够根据数据获得更深入的见解。因此，组织可以通过根据客户反馈识别改进的关键领域，做出更明智的决策。
 - en: “We knew that if we wanted to expand our existing offers, we needed artificial
     intelligence to do a lot of the heavy lifting so that we could spend our time
     and creative energy elsewhere. OpenAI fit the bill perfectly,” says Ben Roe, Head
@@ -1042,17 +1093,20 @@
   id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: “我们知道，如果我们想要扩展我们现有的服务，我们需要人工智能来做很多繁重的工作，这样我们就可以把时间和创造性精力花在其他地方。OpenAI完全符合我们的要求，”Yabble的产品负责人本·罗说。
 - en: Waymark
   id: totrans-131
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Waymark
 - en: '[Waymark](https://waymark.com) provides a platform for creating video ads.
     This platform uses AI to help businesses easily create high-quality videos without
     the need for technical skills or expensive equipment.'
   id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: Waymark提供一个创建视频广告的平台。该平台利用人工智能帮助企业轻松创建高质量的视频，而无需技术技能或昂贵的设备。
 - en: Waymark has integrated GPT into its platform, which has significantly improved
     the scripting process for platform users. This GPT-powered enhancement allows
     the platform to generate custom scripts for businesses in seconds. This allows
@@ -1062,6 +1116,7 @@
   id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: Waymark已将GPT集成到其平台中，这显著改进了平台用户的脚本编写过程。这种由GPT驱动的增强功能使平台能够在几秒钟内为企业生成定制脚本。这使用户能够更多地专注于他们的主要目标，因为他们花费更少的时间编辑脚本，更多的时间创建视频广告。因此，将GPT集成到Waymark的平台中提供了更高效和个性化的视频创作体验。
 - en: “I’ve tried every AI-powered product available over the last five years but
     found nothing that could effectively summarize a business’s online footprint,
     let alone write effective marketing copy, until GPT-3,” says Waymark founder,
@@ -1069,17 +1124,21 @@
   id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: “在过去五年里，我尝试了所有可用的AI产品，但没有找到任何能够有效总结企业在线足迹，更不用说撰写有效营销文案的产品，直到GPT-3，”Waymark创始人Nathan
+    Labenz表示。
 - en: Inworld AI
   id: totrans-135
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Inworld AI
 - en: '[Inworld AI](https://www.inworld.ai) provides a developer platform for creating
     AI characters with distinct personalities, multimodal expression, and contextual
     awareness.'
   id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: '[Inworld AI](https://www.inworld.ai)提供了一个开发平台，用于创建具有独特个性、多模态表达和情境意识的AI角色。'
 - en: One of the main use cases of the Inworld AI platform is video games. The integration
     of GPT as the basis for the character engine of Inworld AI enables efficient and
     rapid video game character development. By combining GPT with other ML models,
@@ -1090,17 +1149,20 @@
   id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: Inworld AI平台的主要用例之一是视频游戏。将GPT作为Inworld AI角色引擎的基础集成，可以实现高效快速的视频游戏角色开发。通过将GPT与其他ML模型结合，该平台可以为AI角色生成独特的个性、情感、记忆和行为。这个过程使游戏开发人员能够专注于叙事和其他主题，而无需花费大量时间从头开始创建语言模型。
 - en: “With GPT-3, we had more time and creative energy to invest in our proprietary
     technology that powers the next generation of non-player characters (NPCs),” says
     Kylan Gibbs, chief product officer and cofounder of Inworld.
   id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: “Inworld的首席产品官兼联合创始人Kylan Gibbs表示：“有了GPT-3，我们有更多的时间和创造性的精力投入到支持下一代非玩家角色（NPC）的专有技术中。”
 - en: 'Beware of AI Hallucinations: Limitations and Considerations'
   id: totrans-139
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 警惕AI幻觉：限制和考虑
 - en: As you have seen, an LLM generates an answer by predicting the next words (or
     tokens) one by one based on a given input prompt. In most situations, the model’s
     output is relevant and entirely usable for your task, but it is essential to be
@@ -1112,6 +1174,7 @@
   id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您所见，LLM通过根据给定的输入提示逐个预测下一个单词（或标记）来生成答案。在大多数情况下，模型的输出对您的任务是相关的和完全可用的，但在使用语言模型时要小心，因为它们可能会给出不连贯的答案。这些答案通常被称为*幻觉*。当AI给出一个自信的但错误的回答，或者涉及虚构事实时，就会发生AI幻觉。这对依赖GPT的用户可能是危险的。您需要仔细检查和批判性地审查模型的回应。
 - en: 'Consider the following example. We start by asking the model to do a simple
     calculation: 2 + 2\. As expected, it answers 4\. So it is correct. Excellent!
     We then ask it to do a more complex calculation: 3,695 × 123,548\. Although the
@@ -1121,15 +1184,18 @@
   id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 考虑以下例子。我们首先让模型进行简单的计算：2 + 2。如预期的那样，它回答4。所以它是正确的。太棒了！然后我们让它进行更复杂的计算：3,695 × 123,548。尽管正确答案是456,509,860，但模型非常自信地给出了错误答案，如您在[图1-7](#fig_7_chatgpt_hallucinating_bad_math_chatgpt_april_22)中所见。当我们要求它检查和重新计算时，它仍然给出了错误答案。
 - en: '![](assets/dagc_0107.png)'
   id: totrans-142
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0107.png)'
 - en: Figure 1-7\. ChatGPT hallucinating bad math (ChatGPT, April 22, 2023)
   id: totrans-143
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图1-7。ChatGPT产生错误的数学幻觉（ChatGPT，2023年4月22日）
 - en: Although, as we will see, you can add new features to GPT using a plug-in system,
     GPT does not include a calculator by default. To answer our question of what is
     2 + 2, GPT generates each token one at a time. It answers correctly because it
@@ -1138,11 +1204,14 @@
   id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管，正如我们将看到的，您可以使用插件系统向GPT添加新功能，但GPT默认不包括计算器。为了回答我们的问题2 + 2等于多少，GPT逐个生成每个标记。它之所以回答正确，可能是因为它在训练中经常看到“2
+    + 2等于4”的文本。它并没有真正进行计算，它只是文本完成。
 - en: Warning
   id: totrans-145
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 警告
 - en: It is unlikely that GPT has seen the numbers we chose for the multiplication
     problem, 3,695 × 123,548, many times in its training. This is why it makes a mistake.
     And as you can see, even when it makes a mistake, it can be reasonably sure about
@@ -1151,6 +1220,7 @@
   id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT很少在训练中多次看到我们选择的乘法问题3,695 × 123,548中的数字。这就是为什么它会犯错。而且正如您所见，即使它犯了错，它对错误的输出也可以相当确定。要小心，特别是如果您在您的应用程序中使用该模型。如果GPT犯了错，您的应用程序可能会得到不一致的结果。
 - en: 'Notice that ChatGPT’s result is *close* to the correct answer and not completely
     random. It is an interesting side effect of its algorithm: even though it has
     no mathematical capabilities, it can give a close estimation with a language approach
@@ -1158,11 +1228,13 @@
   id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，ChatGPT的结果*接近*正确答案，而不是完全随机。这是其算法的一个有趣的副作用：即使它没有数学能力，也可以通过语言方法给出一个接近的估计。
 - en: Note
   id: totrans-148
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: OpenAI introduced the ability to use plug-ins with GPT-4\. As we will see in
     [Chapter 5](ch05.html#advancing_llm_capabilities_with_the_langchain_fram), these
     tools allow you to add additional functionality to the LLM. One tool is a calculator
@@ -1170,35 +1242,42 @@
   id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI引入了在GPT-4中使用插件的功能。正如我们将在[第5章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中看到的，这些工具允许你为LLM添加额外的功能。其中一个工具是一个计算器，可以帮助GPT正确回答这类问题。
 - en: In the preceding example, ChatGPT made a mistake. But in some cases, it can
     even be deliberately deceitful, such as shown in [Figure 1-8](#fig_8_asking_chatgpt_to_count_zebras_on_a_wikipedia_pict).
   id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 在前面的例子中，ChatGPT犯了一个错误。但在某些情况下，它甚至可以故意欺骗，就像[图1-8](#fig_8_asking_chatgpt_to_count_zebras_on_a_wikipedia_pict)中所示的那样。
 - en: '![](assets/dagc_0108.png)'
   id: totrans-151
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0108.png)'
 - en: Figure 1-8\. Asking ChatGPT to count zebras on a Wikipedia picture (ChatGPT,
     April 5, 2023)
   id: totrans-152
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图1-8。询问ChatGPT在维基百科图片上数斑马（ChatGPT，2023年4月5日）
 - en: ChatGPT begins by claiming that it cannot access the internet. However, if we
     insist, something interesting happens (see [Figure 1-9](#fig_9_chatgpt_claiming_it_accessed_the_wikipedia_link)).
   id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT开始声称它无法访问互联网。然而，如果我们坚持，会发生一些有趣的事情（见[图1-9](#fig_9_chatgpt_claiming_it_accessed_the_wikipedia_link)）。
 - en: '![](assets/dagc_0109.png)'
   id: totrans-154
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0109.png)'
 - en: Figure 1-9\. ChatGPT claiming it accessed the Wikipedia link
   id: totrans-155
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图1-9。ChatGPT声称它访问了维基百科链接
 - en: ChatGPT now implies that it *did* access the link. However, this is definitely
     not possible at the moment. ChatGPT is blatantly leading the user to think that
     it has capabilities it doesn’t have. By the way, as [Figure 1-10](#fig_10_the_zebras_chatgpt_didn_t_really_count)
@@ -1206,52 +1285,62 @@
   id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT现在暗示它*确实*访问了链接。然而，目前这绝对是不可能的。ChatGPT明显让用户误以为它具有它实际上没有的能力。顺便说一句，正如[图1-10](#fig_10_the_zebras_chatgpt_didn_t_really_count)所示，图片中有三只以上的斑马。
 - en: '![](assets/dagc_0110.png)'
   id: totrans-157
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0110.png)'
 - en: Figure 1-10\. The zebras ChatGPT didn’t really count
   id: totrans-158
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图1-10。ChatGPT并没有真正数过斑马
 - en: Warning
   id: totrans-159
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 警告
 - en: 'ChatGPT and other GPT-4 models are, by design, not reliable: they can make
     mistakes, give false information, or even mislead the user.'
   id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT和其他GPT-4模型从设计上来说是不可靠的：它们可能会犯错，提供错误信息，甚至误导用户。
 - en: In summary, we highly recommend using pure GPT-based solutions for creative
     applications, not question answering where the truth matters—such as for medical
     tools. For such use cases, as you will see, plug-ins are probably an ideal solution.
   id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，我们强烈建议在创意应用中使用纯GPT-based解决方案，而不是在医疗工具等真相至关重要的问题上使用。对于这样的用例，正如你将看到的，插件可能是一个理想的解决方案。
 - en: Optimizing GPT Models with Plug-ins and Fine-Tuning
   id: totrans-162
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 通过插件和微调优化GPT模型
 - en: 'In addition to its simple completion feature, more advanced techniques can
     be used to further exploit the capabilities of the language models provided by
     OpenAI. This book looks at two of these methods:'
   id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了其简单的完成功能之外，还可以使用更高级的技术来进一步利用OpenAI提供的语言模型的能力。本书将介绍其中的两种方法：
 - en: Plug-ins
   id: totrans-164
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 插件
 - en: Fine-tuning
   id: totrans-165
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 微调
 - en: GPT has some limitations, for example, with calculations. As you’ve seen, GPT
     can correctly answer simple math problems like 2 + 2 but may struggle with more
     complex calculations like 3,695 × 123,548\. Moreover, it does not have direct
@@ -1265,6 +1354,7 @@
   id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT有一些限制，例如在计算方面。正如你所见，GPT可以正确回答简单的数学问题，比如2 + 2，但可能会在更复杂的计算中遇到困难，比如3,695 × 123,548。此外，它没有直接访问互联网的权限，这意味着GPT模型无法获取新信息，只能限于它们训练时的数据。对于GPT-4，最后一次知识更新发生在2021年9月。OpenAI提供的插件服务允许模型连接到第三方开发的应用程序。这些插件使模型能够与开发者定义的API进行交互，这个过程可能会极大地增强GPT模型的能力，因为它们*可以*通过各种行为访问外部世界。
 - en: For developers, plug-ins potentially open up many new opportunities. Consider
     that in the future, each company may want to have its own plug-in for LLMs. There
     could be collections of plug-ins similar to what we find today in smartphone app
@@ -1272,38 +1362,45 @@
   id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于开发者来说，插件可能会开启许多新机会。考虑到将来，每家公司可能都希望为LLMs拥有自己的插件。可能会有类似智能手机应用商店中所找到的插件集合。通过插件添加的应用程序数量可能是巨大的。
 - en: 'On its website, OpenAI says that plug-ins can allow ChatGPT to do things such
     as the following:'
   id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 在其网站上，OpenAI表示插件可以让ChatGPT做以下事情：
 - en: Retrieve real-time information, such as sports scores, stock prices, the latest
     news, and so forth
   id: totrans-169
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 检索实时信息，比如体育比分、股票价格、最新新闻等
 - en: Retrieve knowledge-based information, such as company docs, personal notes,
     and more
   id: totrans-170
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 检索基于知识的信息，比如公司文件、个人笔记等
 - en: Perform actions on behalf of the user, such as booking a flight, ordering food,
     and so on
   id: totrans-171
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代表用户执行操作，比如预订航班、订餐等
 - en: Execute accurate math calculations
   id: totrans-172
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 执行准确的数学计算
 - en: These are just a few examples of use cases; it is up to you to find new ones.
   id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些只是用例的几个例子；发现新的用例取决于你。
 - en: This book also examines fine-tuning techniques. As you will see, fine-tuning
     can improve the accuracy of an existing model for a specific task. The fine-tuning
     process involves retraining an existing GPT model on a particular set of new data.

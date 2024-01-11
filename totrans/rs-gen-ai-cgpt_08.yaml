@@ -1,0 +1,912 @@
+- en: '[CHAPTER 9](toc.xhtml#c09)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Historical flow and development of GPT series](toc.xhtml#c09)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](toc.xhtml#s70a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The Generative Pre-trained Transformer (GPT) models are among the most popular
+    natural language processing models used today. This chapter delves into the intricacies
+    of the GPT-1 and GPT-2 models, discussing their architectures, training stages,
+    implementation specifications, and evaluation. The GPT-1 was first introduced
+    in June 2018 and was designed to develop a strong natural language understanding
+    base through fine-tuning and generative pre-training. It was trained with diverse
+    levels of unlabeled textual corpus data, enabling it to learn patterns and relationships
+    between words and phrases. The model was able to generate coherent text and complete
+    sentences, making it useful in a wide range of applications such as chatbots,
+    language translation, and summarization.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In February 2019, the GPT-2 was released, boasting a larger dataset and more
+    parameters than its predecessor. The GPT-2 was able to generate longer and more
+    coherent sentences, and it was also able to tackle multiple tasks simultaneously.
+    Overall, this chapter provides a detailed overview of the technical aspects of
+    the GPT-1 and GPT-2 models. It highlights their strengths and limitations and
+    discusses their potential applications in various fields. Understanding the workings
+    of these models is essential for anyone interested in natural language processing
+    and machine learning.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Generative Pre-trained Transformer - 1](toc.xhtml#s71a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '**Launch date:** 11th June, 2018'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In 2018, the first GPT model, GPT-1, was released which was trained with a diverse
+    level of unlabeled textual corpus data to get a strong Natural language understanding(
+    NLU) base with fine-tuning and generative pre-training.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Basic Framework](toc.xhtml#s72a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The GPT-1 model really trained the language model using a transformer structure
+    with about 12 layers of decoders and disguised self-attention. It was trained
+    using data from the BookCorpus dataset, which contained over 7000 unpublished
+    books to get the idea of working that model under unrecognized and unseen data
+    with long stretched data which makes the model get better and longer contexts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Model training stages](toc.xhtml#s73a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'GPT - 1 model has 3 stages training:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pre-training the model on the high corpus textual data where texts are getting
+    tokenized and fed into likelihood function to optimize.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In this stage, the fine-tuning is being engaged to get the model accustomed
+    with discriminative task with labeled data - which was passed through a transformer’s
+    block and forwarded into L2 maximization and finally infused the a final linear
+    optimization objective function
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Task-specific Input Transformations contain organized inputs like triplets of
+    documents, ordered sentence pairs, questions, and replies for particular tasks
+    like question answering or textual entailment. The tokens of each input sequence
+    are reinforced into an order with start and end tokens as well as delimiter tokens
+    to maintain the order.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.1.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.1:** *Picture defines the normal transformer architecture and input
+    patterns for different information for different tasks for fine-tuning'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** GPT -1 paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Model implementation specifications](toc.xhtml#s74a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Model used a 768-dimensional state for encoding tokens into word embeddings
+    and for position wise feed forward layer 3072-dimensional state was used with
+    12 attention heads. The adam optimiser was used with a learning rate 2.5 x 10
+    ^(-4) and this learning rate is increased with 0 to 2000 updates with a cosinusoidal
+    schedule. Attention, residual, byte pair encoding (BPE) vocabulary with 40,000
+    merges and embedding dropout rates with 0.1 were used for regularization and the
+    **Gaussian Error Linear Unit** (**GELU**) was used as activation function. The
+    model was trained for 100 epochs on mini-batches of size 64 and sequence length
+    of 512\. The model had 117M parameters in total.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For the fine-tuning part, the same hyperparameters settings have been observed
+    from pretraining. The dropout rate was 0.1, with a learning rate 6.25e-5 and a
+    batch size of 32\. The fine-tune was made very prompt with 3 steps of epochs and
+    Warmup occurs over 0.2% of training and is scheduled using a linear learning rate
+    decay schedule.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Evaluation](toc.xhtml#s75a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The study showed how pre-training improved the model’s zero shot performance
+    on a variety of NLP tasks, including sentiment analysis, question answering, and
+    schema resolution. The architecture was capable of performing a range of NLP tasks
+    with comparatively little fine-tuning and enabled transfer learning. This model
+    demonstrated the efficacy of generative pre-training and created opportunities
+    for future models to better realize this efficacy using larger datasets and additional
+    parameters. GPT-1 performed better than specifically trained supervised state-of-the-art
+    models in 9 out of 12 tasks the models were compared on.
+  prefs: []
+  type: TYPE_NORMAL
+- en: They’ve made use of the just recently made available RACE dataset, which consists
+    of English texts and the corresponding questions from middle and high school exams.
+    It has been demonstrated that this corpus contains more questions of the reasoning
+    variety than other datasets like CNN or SQuaD, making it the ideal testing ground
+    for the model, which was trained to handle long-range contexts. Also, they assessed
+    using the Narrative Cloze Test, which requires choosing the right conclusion from
+    two possibilities for stories with several sentences. The GPT -1 model once again
+    performed significantly better on these tasks than the prior best results, with
+    gains of up to 8.9% on Story Cloze and 5.7% overall on RACE.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To learn more technical aspect of GPT - 1, you can refer to- Improving Language
+    Understanding by Generative Pre-Training **-** **https://tinyurl.com/3fu53mrd**
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Generative Pre-trained Transformer - 2](toc.xhtml#s76a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '**Launch date:** 14th Feb, 2019'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The next version of the GPT model was introduced in 2019, GPT-2 which was trained
+    on a larger dataset and enriched with more parameters to make this model better.
+    In this second version and on the typical improvisation on GPT - 1, it is basically
+    built to tackle multiple tasks together such as question answering, machine translation,
+    reading comprehension, and summarization; and trying to achieve more closer tasks
+    to human-abilities. It was scaled to have more than 10x the number of parameters
+    than GPT - 1 (or the small GPT - 2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Base framework](toc.xhtml#s77a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The base model is similar to the initial GPT model, which is a transformer based
+    architecture with decoder blocks only. To perform the task, the learning goal
+    is needed to be adjusted to P (output|input, task). Task conditioning alludes
+    to this modification, in which different outputs for the same input for different
+    tasks are expected from the model. Some models give the model both the task and
+    the input at the architectural level, using task conditioning. For language models,
+    the job, input, and output are all linguistic stanzas. As a result, task conditioning
+    for language models is carried out by giving the model examples or instructions
+    in natural language. The foundation for zero-shot task transfer, mentioned in
+    GPT-2, is task conditioning.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GPT 2’s capacity to transfer zero shot tasks is intriguing. As a special case
+    of zero shot task transfer, zero shot learning occurs when no examples are given
+    at all, and the model is instructed to perform the task. For fine-tuning, input
+    to GPT-2 was presented in a format that anticipated the model to comprehend the
+    nature of the assignment and provide answers rather than altering the sequences
+    as was done for GPT-1\. To mimic zero-shot task transfer behavior, this was done.
+    For instance, the model was given an English sentence, followed by the word France,
+    and a prompt for the English to French translation assignment. The model was expected
+    to comprehend that the task involved translation and provide the French equivalent
+    of the English statement. These tasks are expected to be executed in an unsupervised
+    manner.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In order to create a substantial and excellent dataset, the authors scraped
+    the Reddit site( posts which at least had minimum 3 karma) and gathered data from
+    outbound links of highly upvoted posts. The final product, called WebText, had
+    40GB of text data from over 8 million publications. This dataset, which was huge,
+    was used to train the GPT-2 model as opposed to the Book Corpus dataset, which
+    was used to train the GPT-1 model. Due to the prevalence of Wikipedia material
+    in test sets, WebText lacks Wikipedia content. The encoding is done in a unicode
+    mechanism which increased the vocabulary base from 256 to 130,000.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Model specifications](toc.xhtml#s78a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '1.5 billion parameters were in GPT-2 which is ten times the amount of GPT-1
+    (117M parameters). There are some major elements in the model which are similar
+    to GPT - 1 though there are few significant variations from GPT-1 included as
+    well:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For word embedding, GPT-2 ( for GPT large) used 1600 dimensional vectors across
+    48 layers and a total 50,257 tokens from a larger vocabulary were used.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Larger batch size of 512 and larger context window from 512 to 1024 tokens were
+    used.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Layer normalization was moved to the input of each sub-block and an additional
+    layer normalization was added after the final self-attention block.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: At initialisation, the weight of residual layers was scaled by 1/√N, where N
+    was the number of residual layers.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: There have been around 117M (GPT-1), 345M, 762M, and 1.5B (GPT-2) parameters
+    to train four language models with 12,24,36,48 layers respectively along with
+    768, 1024, 1280, 1600 dimensional layers respectively. Every successive model
+    was less perplexing than the one before it. This shows that as the number of parameters
+    increases, the complexity of language models on the same dataset reduces. Also,
+    every downstream task was completed better by the model with the most parameters.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Evaluation](toc.xhtml#s79a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Many datasets of downstream tasks, such as reading comprehension, summarization,
+    translation, and question-answering, were used to evaluate GPT-2\. The GPT-2 model
+    has gone through many different kinds of objectives and database testing:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In zero shot settings, GPT-2 improved the then-current state-of-the-art for
+    7 of the 8 language modeling datasets across domains and datasets. Though it lacked
+    a lot with One Billion Word Benchmark from performance perspective, most likely
+    due to it being the most data samples and having the most destructive pre-processing.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The Children’s Book Dataset assesses how well language models perform when applied
+    to various word categories, including nouns, prepositions, and named entities;
+    basically to estimate the correct omitted word out of 10 possible choices. GPT-2
+    achieved a steady growth in accuracy with both CBT-named entity and CBT-common
+    as the model parameter grows; with new state of the art accuracy results of 93.3%
+    and 89.1% respectively for common nouns and named entities.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The LAMBADA dataset evaluates how well models do at finding far-off dependencies
+    and guessing the sentence’s last word. GPT-2 enhanced the state of the art accuracy
+    by Language models(LMs) from 19% to 52.66% and cut down perplexity from 99.8 to
+    8.6\. It worked better with valid continuations of the sentence but not with valid
+    final words. By adding, a stop-filter, it worked better with an improvement by
+    4%
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: By assessing a system’s capacity to resolve ambiguities in the text, the Winograd
+    Schema challenge seeks to gauge its capacity for commonsense thinking. GPT–2 got
+    a better rate of accuracy of 70.70% with an increment of 7%.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The CoQA dataset comprises papers from several fields that naturally exchange
+    questions and answers. The exercise measures one’s capacity for reading comprehension
+    as well as their capacity to respond to inquiries based on prior conversations.
+    GPT-2 matched or exceeded the results from 3 of 4 baselines on zero shot tasks
+    involving reading comprehension, which were trained on the 127,000+ question-answer
+    pairs of the training data.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: On an overview, The language model’s ability to grasp tasks and outperform the
+    state-of-the-art on numerous tasks in zero shot scenarios was improved, according
+    to GPT-2, by training on a larger dataset and employing more parameters. The essay
+    claims that as model capacity increased, performance increased in a log-linear
+    manner.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.2.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.2:** *Performance of GPT-2 in CBT dataset'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** GPT -2 paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also, when the number of parameters increased, the drop in language model perplexity
+    did not approach a point of saturation. The WebText dataset really underfit GPT-2,
+    and perhaps lengthier training sessions further reduced perplexity. According
+    to research, the GPT-2 model size was not the maximum and that a larger language
+    model will help people grasp natural language by reducing confusion.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.3.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.3:** *Performance of Winograd Schema Challenge of GPT -2'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** GPT -2 paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To learn more technical aspect of GPT - 2, you can refer to - Language Models
+    are Unsupervised Multitask Learners - **https://tinyurl.com/3x7b74n9**
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[The introduction to GPT-3](toc.xhtml#s80a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '**Launch date:** 28th May, 2020'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Right after another year of GPT- 2 launch, openAI came up with another updated
+    and advanced version of GPT series, GPT - 3, “Language Models are Few-Shot Learners”.
+    Open AI created the GPT-3 model with 175 billion parameters in its effort to create
+    extremely robust and potent language models that would require little training
+    and only a few demos to comprehend tasks and carry them out. This model featured
+    100 times more parameters than GPT-2 and ten times more than Microsoft’s potent
+    Turing NLG language model. GPT-3 performs well on downstream NLP tasks in zero-shot
+    and few-shot settings because of the numerous parameters and sizable dataset it
+    was trained on. It may write articles that are difficult to differentiate from
+    ones produced by people thanks to its huge capacity. It can also complete on-demand
+    jobs that it was never expressly taught for, such as adding and subtracting numbers,
+    generating SQL queries and codes, decoding sentences of words, writing React and
+    JavaScript codes from a task description in natural language, etc.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Base Framework](toc.xhtml#s81a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: With the text data they are trained on, large language models gain pattern detection
+    and other abilities. The language models begin recognizing patterns in the data
+    while they learn the core job of predicting the next word given context words,
+    which helps them reduce the loss for the language modeling task. Eventually, the
+    model benefits from this skill when transferring zero-shot tasks. The language
+    model compares the pattern of the instances with what it has learned in the past
+    for comparable data and utilizes that knowledge to carry out the tasks when given
+    a few examples and/or a description of what needs to be done. This is a potent
+    capacity of huge language models that gets stronger as the model’s parameter count
+    rises.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Few, one, and zero-shot settings are specialized examples of zero-shot task
+    transfer, as was previously stated. In a few-shot configuration, the job description
+    and as many examples as will fit in the model’s context window are given to it.
+    One example is given to the model in a one-shot setup, while none are given in
+    a zero-shot configuration. The model’s few-shot, one-shot, and zero-shot capabilities
+    all improve with increased capacity.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.4.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.4:** *Image representing the context learning mechanism during training'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** GPT -3 paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Five distinct corpora were used to train the GPT-3, each with a specific weight.
+    Good quality datasets were used to train the model over many epochs and were sampled
+    more often. Common Crawl, WebText2, Books1, Books2, and Wikipedia were the five
+    datasets used which included most of all the use case patterns of textual and
+    contextual data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Model specifications](toc.xhtml#s82a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Again, like GPT-2, the model use in first GPT model with the transformer base
+    but this version witnessed few major differences from GPT-2 which go like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: GPT - 3 has been evaluated in 3 different in-context learning other than traditional
+    fine-tuning with zero, one and few shot learning techniques.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: GPT-3 has 96 layers with each layer having 96 attention heads.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Size of word embeddings was increased to 12888 for GPT-3 from 1600 for GPT-2.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Context window size was increased from 1024 for GPT-2 to 2048 tokens for GPT-3.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Adam optimiser was used with β_1=0.9, β_2=0.95 and ε= 10^(-8).
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Alternating dense and locally banded sparse attention patterns were used.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Evaluation](toc.xhtml#s83a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: A variety of language modeling and NLP datasets were used to test GPT-3\. In
+    a few or zero-shot situations, GPT-3 outperformed cutting-edge methods for language
+    modeling datasets like LAMBADA and Penn Tree Bank. Although it couldn’t surpass
+    the state-of-the-art for other datasets, it did enhance zero-shot state-of-the-art
+    performance. On NLP tasks like closed book question answering, schema resolution,
+    translation, etc., GPT-3 again performed well, frequently outperforming or coming
+    close to well-tuned models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.5.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.5:** *Four methods for performing a task with a language model'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** GPT -3 paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The model performed better in few-shot settings than in one- and zero-shot settings
+    for the majority of the tasks. A variety of language modeling and NLP datasets
+    were used to test GPT-3\. In a few or zero-shot situations, GPT-3 outperformed
+    cutting-edge methods for language modeling datasets like LAMBADA and Penn Tree
+    Bank. Although it couldn’t surpass the state-of-the-art for other datasets, it
+    did enhance zero-shot state-of-the-art performance. On NLP tasks like closed book
+    question answering, schema resolution, translation, etc. GPT-3 again performed
+    well, frequently outperforming or coming close to well-tuned models. The model
+    performed better in few-shot settings than in one- and zero-shot settings for
+    the majority of the tasks. On the CoQA benchmark, 81.5 F1 in the zero-shot setting,
+    84.0 F1 in the one-shot setting, and 85.0 F1 in the few-shot setting, compared
+    to the 90.7 F1 score achieved by fine-tuned SOTA. On the TriviaQA benchmark, 64.3%,
+    68.0%, 71.2% accuracy in the zero-shot setting, in the one-shot setting, and in
+    the few-shot setting respectively, outperforming the state of the art (68%) by
+    3.2%. On the LAMBADA dataset, 76.2 %, 72.5%, 86.4% accuracy in the zero-shot setting,
+    in the one-shot setting, and in the few-shot setting respectively, outperforming
+    the state of the art (68%) by 18%. In addition to being assessed on traditional
+    NLP tasks, the model was also evaluated on more artificial tasks, such as adding
+    numbers, unscrambling words, creating news articles, learning and utilizing new
+    terms, etc. The model performed better in the few-shot option than the one-shot
+    and zero-shot settings for these tasks as well, with performance increasing with
+    the number of parameters.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To learn more technical aspect of GPT - 3, you can refer to - Language Models
+    are Few-Shot Learners- **https://tinyurl.com/4ym9tehp**
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[API development of GPT - 3](toc.xhtml#s84a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In 2020 June, openAI released their API which offers a general-purpose “text
+    in, text out” interface, allowing users to try it on essentially any English language
+    job, in contrast to most AI systems that are developed for a single use-case.
+    One may now request permission to use the API in your product, create a totally
+    new application, or assist in researching the advantages and disadvantages of
+    this technology.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The API will attempt to match the pattern you provided it with when given any
+    text prompt and provide a text completion. It may be “programmed” by giving it
+    a few samples of what you want it to accomplish; the degree of success varies
+    typically depending on how difficult the task is. The API also enables you to
+    improve performance on certain tasks by either learning from human input supplied
+    by users or labelers or by training on a dataset (small or big) of samples you
+    supply.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In September 2020, GPT-3 was integrated with Microsoft exclusively licensing
+    the GPT-3, allowing us to leverage its technical innovations to develop and deliver
+    advanced AI solutions for our customers, creating new potential AI solutions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.6.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.6:** *The process of input feeding in InstructGPT model or GPT 3.5'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** InstructGPT Paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: At the end of 2021, OpenAI eventually made the entire GPT-3 available and its
+    API available for all the users on public space in specified countries with an
+    improved Playground, which makes it easy to prototype with our models, an example
+    library with dozens of prompts to get developers started, and Codex, a new model
+    that translates natural language into code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction of GPT - 3.5, InstructGPT](toc.xhtml#s85a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: One of the major issues that large language models used to face is like unfiltered
+    AI- generated contents and responses sometimes which seem to be untruthful, toxic
+    and irrelevant to the users. Thus, OpenAI integrated a fine-tuning with human-feedback
+    taking stance which helps catering a wide range of tasks. This fine-tuned supervised
+    model is trained with reinforcement learning of human feedback, which are referred
+    as InstructGPT.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Base Framework](toc.xhtml#s86a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In InstructGPT, on the input prompt distribution, the labelers show examples
+    of the intended behavior. These human prompts have tasks like generation, question
+    answering, dialogue, summarization, extractions, and other natural language tasks
+    and are majorly built on English language ( 96%). Almost 40 contractors were contributed
+    towards human feedback and approximately 73% training labellers did synergize
+    with each other.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Model specifications](toc.xhtml#s87a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In the training part of instructGPT, the labelers were directed to use 3 kinds
+    of prompts which included 1\. Engage some arbitrary tasks 2\. Multiple instructions
+    and multiple queries 3\. About certain corresponding solutions from random audiences
+    from waitlisted users. And the training mechanism is made separate to train 3
+    different training model structures where in SFT models, datasets were trained
+    with labellers demonstrations, likewise with rewards model and the dataset are
+    adjusted with human interpretation of previous model output’s rankings; and the
+    PPO models are completely fine-tuned without human interventions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Supervised fine-tuning (SFT):** In this model, the labeler data has been
+    fed within the fine-tune mechanism for 16 epochs, using a cosine decay rate with
+    a residual dropout 0.2.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Reward modeling (RM):** The model has been trained to feed in a prompt response
+    and get a scaler response. The difference in rewards represents the log odds that
+    one response will be preferred to the other by a human label. In this structure
+    they’ve trained approximately 6B RMs out of 175B'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Reinforcement learning (RL)**: A random consumer request was presented in
+    a bandit-style environment, and a response was expected. It generates a reward
+    based on the prompt and answer, as defined by the reward model, and closes the
+    episode. In order to prevent the reward model from being over optimized, they
+    also applied a per-token KL penalty from the SFT model at each token. The RM was
+    used to initialize the value function. These models were known as “PPO.”'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Results](toc.xhtml#s88a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'On the part of exploring more areas of developing the existing ecosystem of
+    NLP models, openAI comes up with another fascinating development, which can resolve
+    the problem of infilling. OpenAI wants to allow them to acquire excellent text
+    infilling without compromising their ability to generate code normally from left
+    to right. The team’s method for transforming training data is incredibly straightforward:
+    they simply transfer a random section of text from the center to the end of a
+    page.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The team shows that a causal AR LLM can learn to fill in the middle of a document
+    and handle related tasks like inferring import modules, writing docstrings, and
+    finishing functions by jointly training models on a mixture of FIM-transformed
+    data and traditional left-to-right data on multiple objectives and datasets. Overall,
+    the FIM models may retain the same left-to-right text capacity as standard AR
+    models while learning how to more efficiently fill in the center – an advantage
+    of the suggested training data transformation technique that provides FIM for
+    free.
+  prefs: []
+  type: TYPE_NORMAL
+- en: At 175B parameters (the davinci models, the most recent update), the InstructGPT
+    model is preferred over GPT-3 more than 85% of the time and over GPT-3 prompted
+    71% of the time by human indications. This means that almost 3 out of 4 times,
+    labelers prefer InstructGPT over a GPT-3 that has been conditioned to do well
+    on the task at hand. Not even prompt engineering is enough to beat InstructGPT.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.7.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.7:** *Evaluation of the final snapshots of models pretrained for
+    100B tokens without FIM and then fine-tuned for 25B (row a) and 50B (row b) tokens
+    with FIM.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** InstructGPT paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To learn more technical aspect of GPT - 3.5, you can refer to - Training language
+    models to follow instructions with human feedback- **https://tinyurl.com/yny5uux2**
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Cost reduction in GPT -3 model API tokens](toc.xhtml#s89a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Moving ahead with time and improvisation, chatGPT’s subscription model also
+    witnessed a price reduction in GPT -3 series and especially in Da-Vinci model
+    and curie model, 66% cost reduction - updated to $0.02 / 1k tokens and $0.002
+    / 1k tokens from $0.06 / 1k tokens and $0.006 / 1k tokens respectively. The OpenAI
+    team kept on making amazing progress on making the model more efficient and more
+    sustainable to lead to price reduction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction of Whisper](toc.xhtml#s90a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In the process of developing a better ecosystem of NLP domains, openAI came
+    up with another Whisper, an automatic speech recognition which is trained on 6,80,000
+    hours of multilingual and multi task supervised scraping through the web. This
+    model is designed to tackle the issue of background noise, data disturbance and
+    making it closer to real estimation. This model also caters to a set of multi-linguistic
+    tasks and gives out the transcripts as well. The multi-linguistic part has 98
+    different language data for the training purpose.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Overview of Whisper](toc.xhtml#s91a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The training dataset is made from diversified audio clips more biased towards
+    the real life data to leverage more human-sided interpretations. The whisper AI
+    is built on the architecture with taking mel-spectrogram of 30 secs chunks of
+    sound wave and passing that into encoder-decoder Transformer to predict the relevant
+    text caption, special tokens that instruct the single model to carry out tasks
+    like language recognition, phrase-level timestamps, multilingual voice transcription,
+    and to-English speech translation are combined in with the special tokens. It
+    has 9 different model sizes according to size and capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.8.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.8:** *The process of text processing through the training pipeline'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** Whisper paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Other current methods usually make use of larger but unsupervised audio pre-training
+    datasets or smaller, more tightly linked audio-text training datasets. Whisper
+    does not outperform models that specialize on LibriSpeech performance, a very
+    competitive benchmark in speech recognition, because it was trained on a broad
+    and varied dataset rather than being tailored to any particular one.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.9.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.9:** *The encoder-decoder model of Whisper'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** Whisper paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: However, it is far more reliable and commits 50% less mistakes than comparable
+    models when we compare its zero-shot performance across a wide range of different
+    datasets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whisper’s performance is close to that of professional human transcribers. The
+    model has been tested with WER distributions of 25 recordings from the Kincaid46
+    dataset transcribed by Whisper, the same 4 commercial ASR systems from one computer-assisted
+    human transcription service and 4 human transcription services and error ranges
+    seemed to have almost similar ranges for all of them.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To learn more technical aspect of Whisper, you can refer to - Robust Speech
+    Recognition via Large-Scale Weak Supervision**-** **https://tinyurl.com/359y5t5y**
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-9.10.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 9.10:** *The box plot is superimposed with dots indicating the WERs
+    on individual recordings, and the aggregate WER over the 25 recordings are annotated
+    on each box'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**Source:** Whisper paper]*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction of ChatGPT](toc.xhtml#s92a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: After redefining and expanding the structure of the existing models around various
+    NLP tasks, openAI structured their GPT - 3.5( referred as sibling model of GPT
+    3.5) series into a conversational smart AI NLP system which can cater the complex
+    NLP solutions. As the time proceeded, the GPT 3.5 witnessed some feature and optimization
+    wise. OpenAI introduced a set of GPT 3.5 model versions which gives users a better
+    clarity to utilize and experiment with the models according to their use cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Turbo**: The same model family that underpins ChatGPT is Turbo. As compared
+    to the Davinci model family, it performs similarly well on completions while being
+    optimized for conversational chat input and output. The Turbo model family in
+    the API ought to work well for every use case that can be handled efficiently
+    in ChatGPT. The first model family to get frequent model upgrades like ChatGPT
+    is the Turbo family.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Qualities:** Conversation and text generation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Max. request can be made:** 4,096 tokens'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Trained date:** Up to Sep 2021'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**DaVinci:** The Davinci model family is the most competent and can complete
+    any work that the other models (Ada, Curie, and Babbage) can complete, frequently
+    with less training. Davinci will yield the greatest results for tasks requiring
+    a deep grasp of the text, such as summarizing for a particular audience and creating
+    original content. Davinci costs more each API request and is slower than the other
+    models as a result of these expanded capabilities, which ask for more computational
+    resources.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Understanding the purpose of text is another area where Davinci excels. Davinci
+    excels at deducing solutions to various logical conundrums and illuminating character
+    motivations. Some of the most difficult cause-and-effect AI puzzles have been
+    cracked by Davinci.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Qualities:** Complex intent, cause and effect, summarization for audience'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Max. request can be made:** 4,000 tokens'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Trained date:** Up to June 2021'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Curie**: Curie is incredibly strong yet moves very quickly. While Curie excels
+    at many complex tasks like sentiment classification and summarization, Davinci
+    is better at processing complex text. Being a general-purpose chatbot, Curie is
+    also fairly adept at doing Q&A and answering queries.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Qualities:** Language translation, complex classification, text sentiment,
+    summarization'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Babbage:** Babbage is capable of simple categorization and other elementary
+    tasks. When assessing how well documents match search queries using semantic search,
+    it is also extremely capable.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Qualities:** Moderate classification, semantic search classification'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Ada**: Ada is often the fastest model and is capable of finishing jobs that
+    don’t call for a lot of detail, such text parsing, address correction, and some
+    types of categorization tasks. The performance of Ada may frequently be enhanced
+    by adding extra context.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Qualities:** Parsing text, simple classification, address correction, keywords'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT has been made to comply with many human valued prototypes and rules.
+    It was trained up to early 2022\. The basic version of ChatGPT uses the GPT 3.5
+    - turbo API as the backend model which is way cheaper than many other GPT 3.5
+    series models to make it more affordable with users.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Timeline Summary](toc.xhtml#s93a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '| **Date** | **Milestone** |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 11th June,2018 | GPT-1 announced on the OpenAI blog. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 14th Feb,2019 | GPT-2 announced on the OpenAI blog. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 28th May,2020 | Initial GPT-3 preprint paper published to arXiv. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 11th Jun,2020 | GPT-3 API private beta. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 22th Sep,2020 | GPT-3 licensed to Microsoft. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 18th Nov,2021 | GPT-3 API opened to the public. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 27th Jan,2022 | InstructGPT was released as text-davinci-002, now known as
+    GPT-3.5\. InstructGPT preprint paper Mar/2022. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 28th July,2022 | Exploring data-optimal models with FIM, paper on arXiv.
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1st Sep,2022 | GPT-3 model pricing was cut by 66% for the davinci and curie
+    model. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 21st Sep 2022 | Whisper (speech recognition) announced on the OpenAI blog.
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 28st Nov 2022 | GPT-3.5 expanded to text-davinci-003, announced via email:Higher
+    quality writing.Handles more complex instructions.3\. Better at longer form content
+    generation. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 30th Nov 2022 | ChatGPT announced on the OpenAI blog. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1st Feb 2023 | ChatGPT hits 100 million monthly active unique users (via
+    UBS report). |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1st Mar 2023 | ChatGPT API announced on the OpenAI blog. |'
+  prefs: []
+  type: TYPE_TB
+- en: '*The timeline was extracted from the GPT blog by Dr Alan D. Thompson'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](toc.xhtml#s94a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The GPT-1 was launched in June 2018, and it was trained with diverse levels
+    of unlabeled textual corpus data to develop a strong natural language understanding
+    base with fine-tuning and generative pre-training.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The study showed how pre-training improved the model’s zero shot performance
+    on a variety of NLP tasks, including sentiment analysis, question answering, and
+    schema resolution.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: GPT-1 performed better than specifically trained supervised state-of-the-art
+    models in 9 out of 12 tasks the models were compared on.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The GPT -1 model once again performed significantly better on these tasks than
+    the prior best results, with gains of up to 8.9% on Story Cloze and 5.7% overall
+    on RACE.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The next version of the GPT model was introduced in 2019, GPT-2 which was trained
+    on a larger dataset and enriched with more parameters to make this model better.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The foundation for zero-shot task transfer, mentioned in GPT-2, is task conditioning.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: GPT 2’s capacity to transfer zero shot tasks is intriguing.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: As a special case of zero shot task transfer, zero shot learning occurs when
+    no examples are given at all, and the model is instructed to perform the task.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Join our book's Discord space
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Join the book''s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[**https://discord.bpbonline.com**](https://discord.bpbonline.com)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/dis.jpg)'
+  prefs: []
+  type: TYPE_IMG

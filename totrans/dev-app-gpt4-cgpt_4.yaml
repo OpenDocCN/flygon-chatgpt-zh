@@ -1,0 +1,1385 @@
+- en: Chapter 4\. Advanced GPT-4 and ChatGPT Techniques
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Now that you are familiar with the basics of LLMs and the OpenAI API, it’s time
+    to take your skills to the next level. This chapter covers powerful strategies
+    that will enable you to harness the true potential of ChatGPT and GPT-4\. From
+    prompt engineering, zero-shot learning, and few-shot learning to fine-tuning models
+    for specific tasks, this chapter will give you all the knowledge you need to create
+    any application you can imagine.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Prompt Engineering
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Before we dive into prompt engineering, let’s briefly review the chat model’s
+    `completion` function, as this section will use it extensively. To make the code
+    more compact, we define the function as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: This function receives a prompt and displays the completion result in the terminal.
+    The model and the temperature are two optional features set by default, respectively,
+    to GPT-4 and 0.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To demonstrate prompt engineering, we will return to the example text “As Descartes
+    said, I think therefore”. If this input is passed to GPT-4, it is natural for
+    the model to complete the sentence by iteratively adding the most likely tokens:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'As a result, we get the following output message:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: '*Prompt engineering* is an emergent discipline focused on developing best practices
+    for building optimal inputs for LLMs in order to produce desirable outputs as
+    programmatically as possible. As an AI engineer, you must know how to interact
+    with AI to obtain exploitable results for your apps, how to ask the right questions,
+    and how to write quality prompts; all topics we will cover in this section.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It should be noted that prompt engineering can affect the cost of using the
+    OpenAI API. The amount of money you will pay to use the API is proportional to
+    the number of tokens you send to and receive from OpenAI. As mentioned in [Chapter 2](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis),
+    use of the `max_token` parameter is highly recommended to avoid unpleasant surprises
+    on your bills.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also note that you should consider the different parameters you can use in the
+    `openai` methods, as you can get significantly different results with the same
+    prompt if you use parameters like `temperature`, `top_p`, and `max_token`.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Designing Effective Prompts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'A lot of tasks can be performed via prompts. They include summarization, text
+    classification, sentiment analysis, and question answering. In all these tasks,
+    it is common to define three elements in the prompt: a role, a context, and a
+    task, as depicted in [Figure 4-1](#fig_1_an_effective_prompt).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](assets/dagc_0401.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 4-1\. An effective prompt
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: All three elements are not always necessary, and their order can be changed,
+    but if your prompt is well constructed and the elements are well defined, you
+    should get good results. Note that even when these three elements are used, for
+    complex tasks you may need to use more advanced techniques, such as zero-shot
+    learning, few-shot learning, and fine-tuning. These advanced techniques will be
+    discussed later in this chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The context
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The first essential element in a prompt is the context. When you write an input
+    text for an LLM, you must detail the context as much as possible. To illustrate
+    this, say you want to use GPT-4 to create an application that suggests the main
+    course for lunch. In the following, we will compare the results we obtain with
+    two different contexts. The first context will have little detail, and the second
+    will have more detail.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'With a short input message such as:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'we get the following output message:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE4]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Now, with more details about the context in the input message:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE5]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'we get the following output message:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE6]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'In the second example, the sentence is more detailed because the model has
+    more context: it suggests a healthy vegetarian dish that is full of protein.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The context guides GPT’s “thinking” to add value to its response. Building
+    a prompt with a good context is an iterative process, often requiring trial-and-error
+    steps. Identifying the essential points the context must contain is sometimes
+    tricky. To help determine possible improvements, you can ask GPT-4 for suggestions.
+    In the following example, we change the prompt: instead of asking the model to
+    answer our question, we instruct it to ask questions about the context in an effort
+    to achieve a better completion.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'With the following input message:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE7]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'we get the following questions from the GPT-4 model:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE8]'
+  prefs: []
+  type: TYPE_PRE
+- en: The questions asked by the model are often relevant. Based on these questions,
+    you can update your context in your prompt. Therefore, we advise you to use this
+    tip often when building your prompt.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The task
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The task defines your use of the GPT-4 model and should be well defined and
+    specific. You should provide sufficient information for the task and use appropriate
+    phrases in the prompt to guide the model to the desired outcome.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the preceding section, the task was for the model to suggest a main course
+    for lunch. We can add details to that task to clarify what we want. Here, we ask
+    the model to add a table with the ingredients and required quantities of each
+    in grams:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE9]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'The model gives us the following output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE10]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'On the [OpenAI API example page](https://platform.openai.com/examples), there
+    is a list with 48 examples of tasks that GPT models can perform, always with the
+    associated prompt and a demo. While these examples use the GPT-3 models and the
+    completion endpoint, the principle would be the same for the chat endpoint, and
+    the examples nicely illustrate how to give a task to OpenAI models. We won’t go
+    through all of them here, but here are a few of them:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Grammar correction
+  prefs: []
+  type: TYPE_NORMAL
+- en: Corrects sentences to standard English.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE11]'
+  prefs: []
+  type: TYPE_PRE
+- en: Summarize for a second-grader
+  prefs: []
+  type: TYPE_NORMAL
+- en: Translates complex text into more straightforward concepts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE12]'
+  prefs: []
+  type: TYPE_PRE
+- en: TL;DR summarization
+  prefs: []
+  type: TYPE_NORMAL
+- en: TL;DR stands for “too long; didn’t read.” It has been observed that a text can
+    be summarized by simply adding `T``l;dr` at the end.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE13]'
+  prefs: []
+  type: TYPE_PRE
+- en: Python to natural language
+  prefs: []
+  type: TYPE_NORMAL
+- en: Explain a piece of Python code in a language people can understand.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE14]'
+  prefs: []
+  type: TYPE_PRE
+- en: Calculate time complexity
+  prefs: []
+  type: TYPE_NORMAL
+- en: Find the time complexity of a function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE15]'
+  prefs: []
+  type: TYPE_PRE
+- en: Python bug fixer
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fixes code containing a bug.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE16]'
+  prefs: []
+  type: TYPE_PRE
+- en: SQL request
+  prefs: []
+  type: TYPE_NORMAL
+- en: Simple SQL query building.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE17]'
+  prefs: []
+  type: TYPE_PRE
+- en: Analogy maker
+  prefs: []
+  type: TYPE_NORMAL
+- en: Can make an analogy between two words.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE18]'
+  prefs: []
+  type: TYPE_PRE
+- en: Summary notes
+  prefs: []
+  type: TYPE_NORMAL
+- en: Summarize notes from a meeting.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE19]'
+  prefs: []
+  type: TYPE_PRE
+- en: The role
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'A final way to influence the model while writing the prompt is to give it a
+    role. Of course, the role and the context can be used independently, but using
+    both increases your control over the model’s output. In the following example,
+    we put the model in the role of a sports nutrition expert:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE20]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'And we get the following result:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE21]'
+  prefs: []
+  type: TYPE_PRE
+- en: As you’ve seen, prompts can be used to condition the probabilistic distribution
+    set of LLMs such as GPT models. They can be seen as a guide that directs the model
+    to produce a particular type of result. While there is no definitive structure
+    for prompt design, a useful framework to consider is the combination of context,
+    role, and task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It’s important to understand that this is just one approach, and prompts can
+    be created without explicitly defining these elements. Some prompts may benefit
+    from a different structure or require a more creative approach based on the specific
+    needs of your application. Therefore, this context-role-task framework should
+    not limit your thinking, but rather be a tool to help you effectively design your
+    prompts when appropriate.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Thinking Step by Step
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'As we know, GPT-4 is not good for computation. It cannot compute 369 × 1,235:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE22]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'We get the following answer: `454965`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The correct answer is 455,715\. Does GPT-4 not solve complex mathematical problems?
+    Remember that the model formulates this answer by predicting each token in the
+    answer sequentially, starting from the left. This means that GPT-4 generates the
+    leftmost digit first, then uses that as part of the context to generate the next
+    digit, and so on, until the complete answer is formed. The challenge here is that
+    each number is predicted independent of the final correct value. GPT-4 considers
+    numbers like tokens; there is no mathematical logic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: In [Chapter 5](ch05.html#advancing_llm_capabilities_with_the_langchain_fram),
+    we’ll explore how OpenAI has enriched GPT-4 with plug-ins. An example is a calculator
+    plug-in for providing accurate mathematical solutions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There is a trick to increasing the reasoning capacity of language models. For
+    example, when asked to solve 369 × 1235, we can see that the model tries to answer
+    directly in one shot. Consider that you probably won’t be able to solve this multiplication
+    either without the help of a pencil and a sheet of paper to do the calculations.
+    It is possible to encourage the model to make intermediate reasonings via the
+    prompt. And like you with your pencil and paper, the model can solve more complex
+    problems if you give it time to reason.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Adding “Let’s think step by step” at the end of the prompt has been empirically
+    proven to enable the model to solve more complicated reasoning problems. This
+    technique, called the *zero-shot-CoT strategy*, was introduced in the scientific
+    paper [“Large Language Models Are Zero-Shot Reasoners”](https://oreil.ly/2tHHy)
+    by Kojima et al., published in 2022\.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*CoT* stands for *chain of thought*; it refers here to the technique of using
+    prompts that encourage the model to imitate step-by-step reasoning. The term *zero-shot*
+    means the model does not rely on task-specific examples to perform this reasoning;
+    it is ready to handle new tasks based on its general training. Unlike techniques
+    such as few-shot learning (which we will examine shortly) that require the model
+    to have seen examples of the task, zero-shot learning tries to generalize without
+    needing task-specific examples.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As we will see, with this sentence added to the prompt, the model begins to
+    reason by breaking the problem into subproblems. As a result, it can take time
+    to reason, allowing it to find solutions to problems it could not solve before
+    in only one shot. Let’s see what happens if we change our input prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE23]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'We get the following output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE24]'
+  prefs: []
+  type: TYPE_PRE
+- en: There has been a remarkable shift in the model’s approach. It now breaks down
+    the primary problem into smaller, more manageable steps rather than trying to
+    tackle the problem head-on.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Warning
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: Despite prompting the model to “think step by step,” it is still crucial that
+    you carefully evaluate its responses, as GPT-4 is not infallible. For a more complex
+    computation such as 3,695 × 123,548, even with this trick the LLM is not able
+    to find the correct solution.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, it’s hard to tell from one example whether this trick generally works
+    or whether we just got lucky. On benchmarks with various math problems, empirical
+    experiments have shown that this trick significantly increased the accuracy of
+    GPT models. Although the trick works well for most math problems, it is not practical
+    for all situations. The authors of “Large Language Models are Zero-Shot Reasoners”
+    found it to be most beneficial for multistep arithmetic problems, problems involving
+    symbolic reasoning, problems involving strategy, and other issues involving reasoning.
+    It was not found to be useful for commonsense problems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Implementing Few-Shot Learning
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '*Few-shot learning*, introduced in [“Language Models Are Few-Shot Learners”](https://oreil.ly/eSoRo)
+    by Brown et al., refers to the ability of the LLM to generalize and produce valuable
+    results with only a few examples in the prompt. With few-shot learning, you give
+    a few examples of the task you want the model to perform, as illustrated in [Figure 4-2](#fig_2_a_prompt_containing_a_few_examples).
+    These examples guide the model to process the desired output format.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](assets/dagc_0402.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 4-2\. A prompt containing a few examples
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: 'In this example, we ask the LLM to convert specific words into emojis. It is
+    difficult to imagine the instructions to put in a prompt to do this task. But
+    with few-shot learning, it’s easy. Give it examples, and the model will automatically
+    try to reproduce them:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE25]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'From the preceding example, we get the following message as output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE26]'
+  prefs: []
+  type: TYPE_PRE
+- en: The few-shot learning technique gives examples of inputs with the desired outputs.
+    Then, in the last line, we provide the prompt for which we want a completion.
+    This prompt is in the same form as the earlier examples. Naturally, the language
+    model will perform a completion operation considering the pattern of the examples
+    given.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We can see that with only a few examples, the model can reproduce the instructions.
+    By leveraging the extensive knowledge that LLMs have acquired in their training
+    phase, they can quickly adapt and generate accurate answers based on only a few
+    examples.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: Few-shot learning is a powerful aspect of LLMs because it allows them to be
+    highly flexible and adaptable, requiring only a limited amount of additional information
+    to perform various tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When you provide examples in the prompt, it is essential to ensure that the
+    context is clear and relevant. Clear examples improve the model’s ability to match
+    the desired output format and execute the problem-solving process. Conversely,
+    inadequate or ambiguous examples can lead to unexpected or incorrect results.
+    Therefore, writing examples carefully and ensuring that they convey the correct
+    information can significantly impact the model’s ability to perform the task accurately.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another approach to guiding LLMs is *one-shot learning*. As its name indicates,
+    in this case you provide only one example to help the model execute the task.
+    Although this approach provides less guidance than few-shot learning, it can be
+    effective for more straightforward tasks or when the LLM already has substantial
+    background knowledge about the topic. The advantages of one-shot learning are
+    simplicity, faster prompt generation, and lower computational cost and thus lower
+    API costs. However, for complex tasks or situations that require a deeper understanding
+    of the desired outcome, few-shot learning might be a more suitable approach to
+    ensure accurate results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Tip
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: Prompt engineering has become a trending topic, and you will find many online
+    resources to delve deeper into the subject. As an example, this [GitHub repository](https://github.com/f/awesome-chatgpt-prompts)
+    contains a list of effective prompts that were contributed by more than 70 different
+    users.
+  prefs: []
+  type: TYPE_NORMAL
+- en: While this section explored various prompt engineering techniques that you can
+    use individually, note that you can combine the techniques to obtain even better
+    results. As a developer, it is your job to find the most effective prompt for
+    your specific problem. Remember that prompt engineering is an iterative process
+    of trial-and-error experimentation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Improving Prompt Effectiveness
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: We have seen several prompt engineering techniques that allow us to influence
+    the behavior of the GPT models to get better results that meet our needs. We’ll
+    end this section with a few more tips and tricks you can use in different situations
+    when writing prompts for GPT models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Instruct the model to ask more questions
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Ending prompts by asking the model if it understood the question and instructing
+    the model to ask more questions is an effective technique if you are building
+    a chatbot-based solution. You can add a text like this to the end of your prompts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE27]'
+  prefs: []
+  type: TYPE_PRE
+- en: Format the output
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Sometimes you’ll want to use the LLM output in a longer process: in such cases,
+    the output format matters. For example, if you want a JSON output, the model tends
+    to write in the output before and after the JSON block. If you add in the prompt
+    `the output must be accepted by json.loads` then it tends to work better. This
+    type of trick can be used in many situations.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, with this script:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE28]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'we get the following JSON block of code:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE29]'
+  prefs: []
+  type: TYPE_PRE
+- en: Repeat the instructions
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: It has been found empirically that repeating instructions gives good results,
+    especially when the prompt is long. The idea is to add to the prompt the same
+    instruction several times, but formulated differently each time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This can also be done with negative prompts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Use negative prompts
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Negative prompts in the context of text generation are a way to guide the model
+    by specifying what you don’t want to see in the output. They act as constraints
+    or guidelines to filter out certain types of responses. This technique is particularly
+    useful when the task is complicated: models tend to follow instructions more precisely
+    when the tasks are repeated several times in different ways.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Continuing with the previous example, we can insist on the output format with
+    negative prompting by adding `Do not add anything before or after the json` `text.`.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In [Chapter 3](ch03.html#building_apps_with_gpt_4_and_chatgpt), we used negative
+    prompting in the third project:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE30]'
+  prefs: []
+  type: TYPE_PRE
+- en: Without this addition to the prompt, the model tended to not follow the instructions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Add length constraints
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'A length constraint is often a good idea: if you expect only a single-word
+    answer or 10 sentences, add it to your prompt. This is what we did in [Chapter 3](ch03.html#building_apps_with_gpt_4_and_chatgpt)
+    in the first project: we specified `LENGTH: 100 words` to generate an adequate
+    news article. In the fourth project, our prompt also had a length instruction:
+    `If you can answer the question: ANSWER, if you need more information: MORE, if
+    you can not answer: OTHER. Only answer one` `word.`. Without that last sentence,
+    the model would tend to formulate sentences rather than follow the instructions.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fine-Tuning
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: OpenAI provides many ready-to-use GPT models. Although these models excel at
+    a broad array of tasks, fine-tuning them for specific tasks or contexts can further
+    enhance their performance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Getting Started
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Let’s imagine that you want to create an email response generator for your
+    company. As your company works in a specific industry with a particular vocabulary,
+    you want the generated email responses to retain your current writing style. There
+    are two strategies for doing this: either you can use the prompt engineering techniques
+    introduced earlier to force the model to output the text you want, or you can
+    fine-tune an existing model. This section explores the second technique.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For this example, you must collect a large number of emails containing data
+    about your particular business domain, inquiries from customers, and responses
+    to those inquiries. You can then use this data to fine-tune an existing model
+    to learn your company’s specific language patterns and vocabulary. The fine-tuned
+    model is essentially a new model built from one of the original models provided
+    by OpenAI, in which the internal weights of the model are adjusted to fit your
+    specific problem so that the new model increases its accuracy on tasks similar
+    to the examples it saw in the dataset provided for the fine-tuning. By fine-tuning
+    an existing LLM, it is possible to create a highly customized and specialized
+    email response generator tailored explicitly to the language patterns and words
+    used in your particular business.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 4-3](#fig_3_the_fine_tuning_process) illustrates the fine-tuning process
+    in which a dataset from a specific domain is used to update the internal weights
+    of an existing GPT model. The objective is for the new fine-tuned model to make
+    better predictions in the particular domain than the original GPT model. It should
+    be emphasized that this is a *new model*. This new model is on the OpenAI servers:
+    as before, you must use the OpenAI APIs to use it, as it cannot be accessed locally.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](assets/dagc_0403.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 4-3\. The fine-tuning process
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: Note
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: Even after you have fine-tuned an LLM with your own specific data, the new model
+    remains on OpenAI’s servers. You’ll interact with it through OpenAI’s APIs, not
+    locally.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Adapting GPT base models for domain-specific needs
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Currently, fine-tuning is only available for the `davinci`, `curie`, `babbage`,
+    and `ada` base models. Each of these offers a trade-off between accuracy and required
+    resources. As a developer, you can select the most appropriate model for your
+    application: while the smaller models, such as `ada` and `babbage`, may be faster
+    and more cost-effective for simple tasks or applications with limited resources,
+    the larger models, `curie` and `davinci`, offer more advanced language processing
+    and generation capabilities, making them ideal for more complex tasks in which
+    higher accuracy is critical.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: These are the original models that are not part of the InstructGPT family of
+    models. For example, they did not benefit from a reinforcement learning phase
+    with a human in the loop. By fine-tuning these base models—for example, adjusting
+    their internal weights based on a custom dataset—you can tailor them to specific
+    tasks or domains. Although they do not have the processing and reasoning capabilities
+    of the InstructGPT family, they do provide a strong foundation for building specialized
+    applications by leveraging their pretrained language processing and generation
+    capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: For fine-tuning, you must use the base models; it is not possible to use the
+    instructed models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fine-tuning versus few-shot learning
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Fine-tuning is a process of *retraining* an existing model on a set of data
+    from a specific task to improve its performance and make its answers more accurate.
+    In fine-tuning, you update the internal parameters of the model. As we saw before,
+    few-shot learning provides the model with a limited number of good examples through
+    its input prompt, which guides the model to produce desired results based on these
+    few examples. With few-shot learning, the internal parameters of the model are
+    not modified.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Both fine-tuning and few-shot learning can serve to enhance GPT models. Fine-tuning
+    produces a highly specialized model that can provide more accurate and contextually
+    relevant results for a given task. This makes it an ideal choice for cases in
+    which a large amount of data is available. This customization ensures that the
+    generated content is more closely aligned with the target domain’s specific language
+    patterns, vocabulary, and tone.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Few-shot learning is a more flexible and data-efficient approach because it
+    does not require retraining the model. This technique is beneficial when limited
+    examples are available or rapid adaptation to different tasks is needed. Few-shot
+    learning allows developers to quickly prototype and experiment with various tasks,
+    making it a versatile and practical option for many use cases. Another essential
+    criterion for choosing between the two methods is that using and training a model
+    that uses fine-tuning is more expensive.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fine-tuning methods often require vast amounts of data. The lack of available
+    examples often limits the use of this type of technique. To give you an idea of
+    the amount of data needed for fine-tuning, you can assume that for relatively
+    simple tasks or when only minor adjustments are required, you may achieve good
+    fine-tuning results with a few hundred examples of input prompts with their corresponding
+    desired completion. This approach works when the pretrained GPT model already
+    performs reasonably well on the task but needs slight refinements to better align
+    with the target domain. However, for more complex tasks or in situations where
+    your app needs more customization, your model may need to use many thousands of
+    examples for the training. This can, for example, correspond to the use case we
+    proposed earlier, with the automatic response to an email that respects your writing
+    style. You can also do fine-tuning for very specialized tasks for which your model
+    may need hundreds of thousands or even millions of examples. This fine-tuning
+    scale can lead to significant performance improvements and better model adaptation
+    to the specific domain.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: '*Transfer learning* applies knowledge learned from one domain to a different
+    but related environment. Therefore, you may sometimes hear the term *transfer
+    learning* in relation to fine-tuning.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fine-Tuning with the OpenAI API
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: This section guides you through the process of tuning an LLM using the OpenAI
+    API. We will explain how to prepare your data, upload datasets, and create a fine-tuned
+    model using the API.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Preparing your data
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'To update an LLM model, it is necessary to provide a dataset with examples.
+    The dataset should be in a JSONL file in which each row corresponds to a pair
+    of prompts and completions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE31]'
+  prefs: []
+  type: TYPE_PRE
+- en: A JSONL file is a text file, with each line representing a single JSON object.
+    You can use it to store large amounts of data efficiently. OpenAI provides a tool
+    that helps you generate this training file. This tool can take various file formats
+    as input (CSV, TSV, XLSX, JSON, or JSONL), requiring only that they contain a
+    prompt and completion column/key, and that they output a training JSONL file ready
+    to be sent for the fine-tuning process. This tool also validates and gives suggestions
+    to improve the quality of your data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Run this tool in your terminal using the following line of code:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE32]'
+  prefs: []
+  type: TYPE_PRE
+- en: The application will make a series of suggestions to improve the result of the
+    final file; you can accept them or not. You can also specify the option `-q`,
+    which auto-accepts all suggestions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: This `openai` tool was installed and available in your terminal when you executed
+    `pip install openai`.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you have enough data, the tool will ask whether dividing the data into training
+    and validation sets is necessary. This is a recommended practice. The algorithm
+    will use the training data to modify the model’s parameters during fine-tuning.
+    The validation set can measure the model’s performance on a dataset that has not
+    been used to update the parameters.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fine-tuning an LLM benefits from using high-quality examples, ideally reviewed
+    by experts. When fine-tuning with preexisting datasets, ensure that the data is
+    screened for offensive or inaccurate content, or examine random samples if the
+    dataset is too large to review all entries manually.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Making your data available
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Once your dataset with the training examples is prepared, you need to upload
+    it to the OpenAI servers. The OpenAI API provides different functions to manipulate
+    files. Here are the most important ones:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Uploading a file:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE33]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Two parameters are mandatory: `file` and `purpose`. Set `purpose` to `fine-tune`.
+    This validates the downloaded file format for fine-tuning. The output of this
+    function is a dictionary in which you can retrieve the `file_id` in the `id` field.
+    Currently, the total file size can be up to 1 GB. For more, you need to contact
+    OpenAI.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Deleting a file:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE34]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'One parameter is mandatory: `file_id`.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Listing all uploaded files:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE35]'
+  prefs: []
+  type: TYPE_PRE
+- en: It can be helpful to retrieve the ID of a file, for example, when you start
+    the fine-tuning process.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Creating a fine-tuned model
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Fine-tuning an uploaded file is a straightforward process. The endpoint `openai.FineTune.create()`
+    creates a job on the OpenAI servers to refine a specified model from a given dataset.
+    The response of this function contains the details of the queued job, including
+    the status of the job, the `fine_tune_id`, and the name of the model at the end
+    of the process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The main input parameters are described in [Table 4-1](#table-4-1).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Table 4-1\. Parameters for `openai.FineTune.create()`
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Field name | Type | Description |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| `training_file` | String | This is the only mandatory parameter containing
+    the `file_id` of the uploaded file. Your dataset must be formatted as a JSONL
+    file. Each training example is a JSON object with the keys `prompt` and `completion`.
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| `model` | String | This specifies the base model used for fine-tuning. You
+    can select `ada`, `babbage`, `curie`, `davinci`, or a previously tuned model.
+    The default base model is `curie`. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| `validation_file` | String | This contains the `file_id` of the uploaded
+    file with the validation data. If you provide this file, the data will be used
+    to generate validation metrics periodically during fine-tuning. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| `suffix` | String | This is a string of up to 40 characters that is added
+    to your custom model name. |'
+  prefs: []
+  type: TYPE_TB
+- en: Listing fine-tuning jobs
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'It is possible to obtain a list of all the fine-tuning jobs on the OpenAI servers
+    via the following function:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE36]'
+  prefs: []
+  type: TYPE_PRE
+- en: The result is a dictionary that contains information on all the refined models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Canceling a fine-tuning job
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'It is possible to immediately interrupt a job running on OpenAI servers via
+    the following function:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE37]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'This function has only one mandatory parameter: `fine_tune_id`. The `fine_tune_id`
+    parameter is a string that starts with `ft-`; for example, `ft-Re12otqdRaJ(...)`.
+    It is obtained after the creation of your job with the function `openai.FineTune.​cre⁠ate()`.
+    If you have lost your `fine_tune_id`, you can retrieve it with `openai.FineTune.list()`.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fine-Tuning Applications
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Fine-tuning offers a powerful way to enhance the performance of models across
+    various applications. This section looks at several use cases in which fine-tuning
+    has been effectively deployed. Take inspiration from these examples! Perhaps you
+    have the same kind of issue in your use cases. Once again, remember that fine-tuning
+    is more expensive than other techniques based on prompt engineering, and therefore,
+    it will not be necessary for most of your situations. But when it is, this technique
+    can significantly improve your results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Legal document analysis
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: In this use case, an LLM is used to process legal texts and extract valuable
+    information. These documents are often written with specific jargon, which makes
+    it difficult for nonspecialists to understand these types of texts. We already
+    saw in [Chapter 1](ch01.html#gpt_4_and_chatgpt_essentials) that when tested on
+    the Uniform Bar Exam, GPT-4 had a score in the 90th percentile. In this case,
+    fine-tuning could specialize the model for a specific domain and/or allow it to
+    assist nonspecialists in the legal process. By fine-tuning an LLM on a legal corpus
+    of a particular topic or for a specific type of end user, the model can process
+    the intricacies of legal language better and become more adept at performing tasks
+    related to that particular type of end user.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fine-tuning an LLM with a large amount of data to analyze legal documents can
+    potentially significantly improve the model’s performance in these tasks by allowing
+    it to better process the nuances of legal language that are often beyond the capabilities
+    of prompt engineering techniques.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Automated code review
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: In this use case, fine-tuning can help the model analyze and suggest improvements
+    for developer-written code. This requires training the model on a dataset comprising
+    code snippets and comments, enabling the model to process language-specific syntax,
+    semantics, and best practices. Note that this use case is similar to what GitHub
+    does with its Copilot tool, which is designed to assist developers in writing
+    code by providing suggestions of code and entire functions in real time. You can
+    use fine-tuning to train the model on a specific task such as code review, and
+    build a project for your own code with specific standards or dedicated to a particular
+    programming framework.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As an example of an input file for this use case, your JSONL file could contain
+    pairs of code and their corresponding review comments. This would help the model
+    learn how to provide accurate and relevant feedback on code quality. One line
+    of the JSONL file could be something like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE38]'
+  prefs: []
+  type: TYPE_PRE
+- en: Financial document summarization
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: In financial document synthesis, a fine-tuned LLM can generate concise and accurate
+    summaries of financial documents, such as earnings reports, financial statements,
+    and analyst reports. By fine-tuning a language model on a dataset related explicitly
+    to financial records, the resulting model can become more accurate in understanding
+    the terminology and context of these documents. For example, the model could take
+    a detailed report about an interest rate increase by a central bank and condense
+    it into a brief yet informative summary.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To adjust an existing model to get better summaries of financial documents,
+    you need to already have a large number of sample summaries. Then you have to
+    provide the model with a JSONL file containing pairs of financial documents and
+    their ideal summaries. For example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE39]'
+  prefs: []
+  type: TYPE_PRE
+- en: Technical document translation
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Using fine-tuning to translate technical documents can significantly improve
+    the performance of a base model compared to what you can obtain with few-shot
+    learning. The main reason is that technical documents often contain specialized
+    vocabulary and complex sentence structures that few-shot learning cannot handle
+    effectively. The base models are GPT-3 models that have not been adjusted, like
+    the InstructGPT-3 models, with reinforcement learning with human feedback techniques.
+    To be used, they need to be fine-tuned. To adapt an existing base model, you have
+    to prepare a JSONL file containing your training data. For the use case of technical
+    document translation, the contents of this file would include translations of
+    technical texts into the target language.
+  prefs: []
+  type: TYPE_NORMAL
+- en: News article generation for niche topics
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'In this use case, a fine-tuned model could generate high-quality, engaging,
+    and contextually relevant news articles for highly specialized topics that the
+    base model probably would not have seen enough of to be accurate. As with all
+    other use cases, you need to create a training dataset to specialize your model
+    to write articles. For that, you need to have at your disposal many articles written
+    on that specific niche topic. This data will be used to create the JSONL file
+    containing prompt-completion pairs. Here is a small example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE40]'
+  prefs: []
+  type: TYPE_PRE
+- en: Generating and Fine-Tuning Synthetic Data for an Email Marketing Campaign
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In this example, we will make a text generation tool for an email marketing
+    agency that utilizes targeted content to create personalized email campaigns for
+    businesses. The emails are designed to engage audiences and promote products or
+    services.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s assume that our agency has a client in the payment processing industry
+    who has asked to help them run a direct email marketing campaign to offer stores
+    a new payment service for ecommerce. The email marketing agency decides to use
+    fine-tuning techniques for this project. Our email marketing agency will need
+    a large amount of data to do this fine-tuning.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In our case, we will need to generate the data synthetically for demonstration
+    purposes, as you will see in the next subsection. Usually, the best results are
+    obtained with data from human experts, but in some cases, synthetic data generation
+    can be a helpful solution.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Creating a synthetic dataset
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: In the following example, we create artificial data from GPT-3.5 Turbo. To do
+    this, we will specify in a prompt that we want promotional sentences to sell the
+    ecommerce service to a specific merchant. The merchant is characterized by a sector
+    of activity, the city where the store is located, and the size of the store. We
+    get promotional sentences by sending the prompts to GPT-3.5 Turbo via the function
+    `chat_completion`, defined earlier.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We start our script by defining three lists that correspond respectively to
+    the type of shop, the cities where the stores are located, and the size of the
+    stores:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE41]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Then we define the first prompt in a string. In this prompt, the role, context,
+    and task are well defined, as they were constructed using the prompt engineering
+    techniques described earlier in this chapter. In this string, the three values
+    between the braces are replaced with the corresponding values later in the code.
+    This first prompt is used to generate the synthetic data:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE42]'
+  prefs: []
+  type: TYPE_PRE
+- en: '``The following prompt contains only the values of the three variables, separated
+    by commas. It is not used to create the synthetic data; only for fine-tuning:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE43]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Then comes the main part of the code, which iterates over the three value lists
+    we defined earlier. We can see that the code of the block in the loop is straightforward.
+    We replace the values in the braces of the two prompts with the appropriate values.
+    The variable `prompt` is used with the function `chat_completion` to generate
+    an advertisement saved in `response_txt`. The `sub_prompt` and `response_txt`
+    variables are then added to the *out_openai_completion.csv* file, our training
+    set for fine-tuning:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE44]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Note that for each combination of characteristics, we produce three examples.
+    To maximize the model’s creativity, we set the temperature to `1`. At the end
+    of this script, we have a Pandas table stored in the file *out_openai_completion.csv*.
+    It contains 162 observations, with two columns containing the prompt and the corresponding
+    completion. Here are the first two lines of this file:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE45]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'We can now call the tool to generate the training file from *out_openai_completion.csv*
+    as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE46]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'As you can see in the following lines of code, this tool makes suggestions
+    for improving our prompt-completion pairs. At the end of this text, it even gives
+    instructions on how to continue the fine-tuning process and advice on using the
+    model to make predictions once the fine-tuning process is complete:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE47]'
+  prefs: []
+  type: TYPE_PRE
+- en: At the end of this process, a new file called *out_openai_completion_prepared.jsonl*
+    is available and ready to be sent to the OpenAI servers to run the fine-tuning
+    process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that, as explained in the message of the function, the prompt has been
+    modified by adding the string `->` at the end, and a suffix ending with `\n` has
+    been added to all completions.``  ``### Fine-tuning a model with the synthetic
+    dataset
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The following code uploads the file and does the fine-tuning. In this example,
+    we will use `davinci` as the base model, and the name of the resulting model will
+    have `direct_marketing` as a suffix:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE48]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'This will start the update process of the `davinci` model with our data. This
+    fine-tuning process can take some time, but when it is finished, you will have
+    a new model adapted for your task. The time needed for this fine-tuning is mainly
+    a function of the number of examples available in your dataset, the number of
+    tokens in your examples, and the base model you have chosen. To give you an idea
+    of the time needed for fine-tuning, in our example it took less than five minutes.
+    However, we have seen some cases in which fine-tuning took more than 30 minutes:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE49]'
+  prefs: []
+  type: TYPE_PRE
+- en: '[PRE50]'
+  prefs: []
+  type: TYPE_PRE
+- en: Warning
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: As the message in the terminal explains, you will break the connection to the
+    OpenAI servers by typing Ctrl+C in the command line, but this will not interrupt
+    the fine-tuning process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To reconnect to the server and get back the status of a running fine-tuning
+    job, you can use the following command, `fine_tunes.follow`, where `fine_tune_id`
+    is the ID of the fine-tuning job:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE51]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'This ID is given when you create the job. In our earlier example, our `fine_tune_id`
+    is `ft-mMsm(...)`. If you lose your `fine_tune_id`, it is possible to display
+    all models via:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE52]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'To immediately cancel a fine-tune job, use this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE53]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'And to delete a fine-tune job, use this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE54]'
+  prefs: []
+  type: TYPE_PRE
+- en: Using the fine-tuned model for text completion
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Once your new model is built, it can be accessed in different ways to make new
+    completions. The easiest way to test it is probably via the Playground. To access
+    your models in this tool, you can search for them in the drop-down menu on the
+    righthand side of the Playground interface (see [Figure 4-4](#fig_4_using_the_fine_tuned_model_in_the_playground)).
+    All your fine-tuned models are at the bottom of this list. Once you select your
+    model, you can use it to make predictions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](assets/dagc_0404.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 4-4\. Using the fine-tuned model in the Playground
+  prefs:
+  - PREF_H6
+  type: TYPE_NORMAL
+- en: We used the fine-tuned LLM in the following example with the input prompt `Hotel,
+    New York, small ->`. Without further instructions, the model automatically generated
+    an advertisement to sell an ecommerce payment service for a small hotel in New
+    York.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We already obtained excellent results with a small dataset comprising only 162
+    examples. For a fine-tuning task, it is generally recommended to have several
+    hundred instances, ideally several thousand. In addition, our training set was
+    generated synthetically when ideally it should have been written by a human expert
+    in marketing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To use it with the OpenAI API, we proceed as before with `openai.Completion.​cre⁠ate()`,
+    except that we need to use the name of our new model as an input parameter. Don’t
+    forget to end all your prompts with `->` and to set `\n` as stop words:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE55]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'We obtain the following answer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE56]'
+  prefs: []
+  type: TYPE_PRE
+- en: As we have shown, fine-tuning can enable Python developers to tailor LLMs to
+    their unique business needs, especially in dynamic domains such as our email marketing
+    example. It’s a powerful approach to customizing the language models you need
+    for your applications. Ultimately, this can easily help you serve your customers
+    better and drive business growth.``  ``## Cost of Fine-Tuning
+  prefs: []
+  type: TYPE_NORMAL
+- en: The use of fine-tuned models is costly. First you have to pay for the training,
+    and once the model is ready, each prediction will cost you a little more than
+    if you had used the base models provided by OpenAI.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pricing is subject to change, but at the time of this writing, it looks like
+    [Table 4-2](#table-4-2).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Table 4-2\. Pricing for fine-tuning models at the time of this book’s writing
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Model | Training | Usage |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| `ada` | $0.0004 per 1,000 tokens | $0.0016 per 1,000 tokens |'
+  prefs: []
+  type: TYPE_TB
+- en: '| `babbage` | $0.0006 per 1,000 tokens | $0.0024 per 1,000 tokens |'
+  prefs: []
+  type: TYPE_TB
+- en: '| `curie` | $0.0030 per 1,000 tokens | $0.0120 per 1,000 tokens |'
+  prefs: []
+  type: TYPE_TB
+- en: '| `davinci` | $0.0300 per 1,000 tokens | $0.1200 per 1,000 tokens |'
+  prefs: []
+  type: TYPE_TB
+- en: As a point of comparison, the price of the `gpt-3.5-turbo` model is $0.002 per
+    1,000 tokens. As already mentioned, `gpt-3.5-turbo` has the best cost-performance
+    ratio.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To get the latest prices, visit the [OpenAI pricing page](https://openai.com/pricing).``  ``#
+    Summary
+  prefs: []
+  type: TYPE_NORMAL
+- en: This chapter discussed advanced techniques to unlock the full potential of GPT-4
+    and ChatGPT and provided key actionable takeaways to improve the development of
+    applications using LLMs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Developers can benefit from understanding prompt engineering, zero-shot learning,
+    few-shot learning, and fine-tuning to create more effective and targeted applications.
+    We explored how to create effective prompts by considering the context, task,
+    and role, which enable more precise interactions with the models. With step-by-step
+    reasoning, developers can encourage the model to reason more effectively and handle
+    complex tasks. In addition, we discussed the flexibility and adaptability that
+    few-shot learning offers, highlighting its data-efficient nature and ability to
+    adapt to different tasks quickly.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Table 4-3](#table-4-3) provides a quick summary of all these techniques, when
+    to use them, and how they compare.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Table 4-3\. A comparison of different techniques
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|  | Zero-shot learning | Few-shot learning | Prompt engineering tricks | Fine-tuning
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- | --- | --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Definition | Predicting unseen tasks without prior examples | Prompt includes
+    examples of inputs and desired output | Detailed prompt that can include context,
+    role, and tasks, or tricks such as “think step by step” | Model is further trained
+    on a smaller, specific dataset; prompts used are simple |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Use case | Simple tasks | Well-defined but complex tasks, usually with specific
+    output format | Creative, complex tasks | Highly complex tasks |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Data | Requires no additional example data | Requires a few examples | Quantity
+    of data depends on the prompt engineering technique | Requires a large training
+    dataset |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Pricing | Usage: pricing per token (input + output) | Usage: pricing per
+    token (input + output); can lead to long prompts | Usage: pricing per token (input
+    + output), can lead to long prompts | Training: Usage: pricing per token (input
+    + output) is about 80 times more expensive for fine-tuned `davinci` compared to
+    GPT-3.5 Turbo. This means that fine-tuning is financially preferable if other
+    techniques lead to a prompt 80 times as long. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Conclusion | Use by default | If zero-shot learning does not work because
+    the output needs to be particular, use few-shot learning. | If zero-shot learning
+    does not work because the task is too complex, try prompt engineering. | If you
+    have a very specific and large dataset and the other solutions do not give good
+    enough results, this should be used as a last resort. |'
+  prefs: []
+  type: TYPE_TB
+- en: To ensure success in building LLM applications, developers should experiment
+    with other techniques and evaluate the model’s responses for accuracy and relevance.
+    In addition, developers should be aware of LLM’s computational limitations and
+    adjust their prompts accordingly to achieve better results. By integrating these
+    advanced techniques and continually refining their approach, developers can create
+    powerful and innovative applications that unlock the true potential of GPT-4 and
+    ChatGPT.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the next chapter, you will discover two additional ways to integrate LLM
+    capabilities into your applications: plug-ins and the LangChain framework. These
+    tools enable developers to create innovative applications, access up-to-date information,
+    and simplify the development of applications that integrate LLMs. We will also
+    provide insight into the future of LLMs and their impact on app development.``'
+  prefs: []
+  type: TYPE_NORMAL

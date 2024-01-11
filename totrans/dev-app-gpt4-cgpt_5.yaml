@@ -1,132 +1,196 @@
 - en: Chapter 5\. Advancing LLM Capabilities with the LangChain Framework and Plug-ins
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 第5章。通过LangChain框架和插件提升LLM功能
 - en: This chapter explores the worlds of the LangChain framework and GPT-4 plug-ins.
     We’ll look at how LangChain enables interaction with different language models
     and the importance of plug-ins in expanding the capabilities of GPT-4\. This advanced
     knowledge will be fundamental in developing sophisticated, cutting-edge applications
     that rely on LLMs.
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章探讨了LangChain框架和GPT-4插件的世界。我们将看看LangChain如何实现与不同语言模型的交互，以及插件在扩展GPT-4功能方面的重要性。这些高级知识将对依赖LLM的复杂、尖端应用程序的开发至关重要。
 - en: The LangChain Framework
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: LangChain框架
 - en: LangChain is a new framework dedicated to developing LLM-powered apps. You will
     find that the code integrating LangChain is much more elegant than the example
     provided in [Chapter 3](ch03.html#building_apps_with_gpt_4_and_chatgpt). The framework
     also provides many additional possibilities.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain是一个专门用于开发LLM驱动应用程序的新框架。您会发现，集成LangChain的代码比[第3章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中提供的示例更加优雅。该框架还提供了许多额外的可能性。
 - en: Installing LangChain is fast and easy with `pip install langchain`.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用`pip install langchain`可以快速轻松地安装LangChain。
 - en: Warning
+  id: totrans-5
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 警告
 - en: At the time of this writing, LangChain is still in beta version 0.0.2*XX*, and
     new versions are released almost daily. Functionalities may be subject to change,
     so we recommend using caution when working with this framework.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在撰写本文时，LangChain仍处于beta版本0.0.2*XX*，几乎每天都会发布新版本。功能可能会发生变化，因此我们建议在使用该框架时谨慎操作。
 - en: LangChain’s key functionalities are divided into modules, as depicted in [Figure 5-1](#fig_1_langchain_modules).
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain的关键功能被分为模块，如[图5-1](#fig_1_langchain_modules)所示。
 - en: '![](assets/dagc_0501.png)'
+  id: totrans-8
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0501.png)'
 - en: Figure 5-1\. LangChain modules
+  id: totrans-9
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图5-1。LangChain模块
 - en: 'Following are brief descriptions of these modules:'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是这些模块的简要描述：
 - en: Models
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型
 - en: The Models module is a standard interface provided by LangChain through which
     you can interact with various LLMs. The framework supports different model-type
     integrations from various providers, including OpenAI, Hugging Face, Cohere, GPT4All,
     and more.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型模块是LangChain提供的标准接口，通过它可以与各种LLM进行交互。该框架支持来自各种提供商的不同模型类型集成，包括OpenAI、Hugging
+    Face、Cohere、GPT4All等。
 - en: Prompts
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示
 - en: Prompts are becoming the new standard for programming LLMs. The Prompts module
     includes many tools for prompt management.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示正在成为编程LLM的新标准。提示模块包括许多用于提示管理的工具。
 - en: Indexes
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 索引
 - en: This module allows you to combine LLMs with your data.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 该模块允许您将LLM与您的数据结合起来。
 - en: Chains
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 链
 - en: With this module, LangChain provides the Chain interface that allows you to
     create a sequence of calls that combine multiple models or prompts.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过这个模块，LangChain提供了链接口，允许您创建一个调用序列，结合多个模型或提示。
 - en: Agents
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 代理
 - en: The Agents module introduces the Agent interface. An agent is a component that
     can process user input, make decisions, and choose the appropriate tools to accomplish
     a task. It works iteratively, taking action until it reaches a solution.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 代理模块介绍了代理接口。代理是一个可以处理用户输入、做出决策并选择适当工具来完成任务的组件。它是迭代工作的，采取行动直到达到解决方案。
 - en: Memory
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 内存
 - en: The Memory module allows you to persist state between chain or agent calls.
     By default, chains and agents are stateless, meaning they process each incoming
     request independently, as do the LLMs.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 内存模块允许您在链或代理调用之间保持状态。默认情况下，链和代理是无状态的，这意味着它们独立处理每个传入请求，就像LLM一样。
 - en: LangChain is a generic interface for different LLMs; you can review all the
     integrations [on its documentation page](https://oreil.ly/n5yNV). OpenAI and many
     other LLM providers are in this list of integrations. Most of these integrations
     need their API key to make a connection. For the OpenAI models, you can do this
     setup as we saw in [Chapter 2](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis),
     with the key set in an `OPENAI_API_KEY` environment variable.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain是不同LLM的通用接口；您可以在[其文档页面](https://oreil.ly/n5yNV)上查看所有的集成。OpenAI和许多其他LLM提供商都在这个集成列表中。这些集成大多需要它们的API密钥来建立连接。对于OpenAI模型，您可以像我们在[第2章](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis)中看到的那样进行设置，将密钥设置在`OPENAI_API_KEY`环境变量中。
 - en: Dynamic Prompts
+  id: totrans-24
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 动态提示
 - en: 'The easiest way to show you how LangChain works is to present you with a simple
     script. In this example, OpenAI and LangChain are used to do a simple text completion:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 展示LangChain工作原理的最简单方法是向您呈现一个简单的脚本。在这个例子中，使用OpenAI和LangChain来完成一个简单的文本补全：
 - en: '[PRE0]'
+  id: totrans-26
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: '`The output is as follows:'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 输出如下：
 - en: '[PRE1]'
+  id: totrans-28
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: The `PromptTemplate` is responsible for constructing the input for the model.
     As such, it is a reproducible way to generate a prompt. It contains an input text
     string called a *template*, in which values can be specified via `input_variables`.
     In our example, the prompt we define automatically adds the “Let’s think step
     by step” part to the question.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: '`PromptTemplate`负责构建模型的输入。因此，它是生成提示的可重复方式。它包含一个称为*模板*的输入文本字符串，其中的值可以通过`input_variables`指定。在我们的示例中，我们定义的提示自动将“让我们逐步思考”部分添加到问题中。'
 - en: The LLM used in this example is GPT-4; currently, the default model is `gpt-3.5-turbo`.
     The model is placed in the variable `llm` via the `ChatOpenAI()` function. This
     function assumes an OpenAI API key is set in the environment variable `OPENAI_API_KEY`,
     like it was in the examples in the previous chapters.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 本例中使用的LLM是GPT-4；目前，默认模型是`gpt-3.5-turbo`。该模型通过`ChatOpenAI()`函数放置在变量`llm`中。该函数假定OpenAI
+    API密钥设置在环境变量`OPENAI_API_KEY`中，就像在前几章的示例中一样。
 - en: The prompt and the model are combined by the function `LLMChain()`, which forms
     a chain with the two elements. Finally, we need to call the `run()` function to
     request completion with the input question. When the `run()` function is executed,
@@ -134,18 +198,24 @@
     (and also memory key values, if available), passes the formatted string to the
     LLM, and finally returns the LLM output. We can see that the model automatically
     answers the question by applying the “Let’s think step by step” rule.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数`LLMChain()`将提示和模型组合在一起，形成一个包含这两个元素的链。最后，我们需要调用`run()`函数来请求使用输入问题完成。当执行`run()`函数时，`LLMChain`使用提供的输入键值（如果可用，还使用内存键值）格式化提示模板，将格式化的字符串传递给LLM，最后返回LLM输出。我们可以看到，模型通过应用“让我们一步一步地思考”规则自动回答问题。
 - en: As you can see, dynamic prompts is a simple yet very valuable feature for complex
     applications and better prompt management.`  `## Agents and Tools
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您所看到的，动态提示是复杂应用和更好的提示管理的一个简单但非常有价值的功能。## 代理和工具
 - en: 'Agents and tools are the key functionalities of the LangChain framework: they
     can make your application extremely powerful. They allow you to solve complex
     problems by making it possible for LLMs to perform actions and integrate with
     various capabilities.'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 代理和工具是LangChain框架的关键功能：它们可以使您的应用程序变得非常强大。它们使您能够通过使LLMs执行操作并与各种功能集成来解决复杂问题。
 - en: 'A *tool* is a particular abstraction around a function that makes it easier
     for a language model to interact with it. An agent can use a tool to interact
     with the world. Specifically, the interface of a tool has a single text input
@@ -155,85 +225,120 @@
     page](https://oreil.ly/iMtOU) in the documentation provided by LangChain. You
     can also [build a custom tool](https://oreil.ly/_dyBW) and load it into the agent
     you are using: this makes agents extremely versatile and powerful.'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '*工具*是围绕一个函数的特定抽象，使语言模型更容易与之交互。代理可以使用工具与世界进行交互。具体而言，工具的接口具有单个文本输入和单个文本输出。LangChain中有许多预定义的工具。这些工具包括Google搜索、维基百科搜索、Python
+    REPL、计算器、世界天气预报API等。要获取完整的工具列表，请查看LangChain提供的[工具页面](https://oreil.ly/iMtOU)的文档。您还可以[构建自定义工具](https://oreil.ly/_dyBW)并将其加载到您正在使用的代理中：这使得代理非常灵活和强大。'
 - en: As we learned in [Chapter 4](ch04.html#advanced_gpt_4_and_chatgpt_techniques),
     with “Let’s think step by step” in the prompt, you can increase, in a sense, the
     reasoning capacity of your model. Adding this sentence to the prompt asks the
     model to take more time to answer the question.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在[第4章](ch04.html#advanced_gpt_4_and_chatgpt_techniques)中所学到的，“让我们一步一步地思考”在提示中，可以在某种程度上增加模型的推理能力。将这个句子添加到提示中，要求模型花更多时间来回答问题。
 - en: In this section, we introduce an agent for applications that require a series
     of intermediate steps. The agent schedules these steps and has access to various
     tools, deciding which to use to answer the user’s query efficiently. In a way,
     as with “Let’s think step by step,” the agent will have more time to plan its
     actions, allowing it to accomplish more complex tasks.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节中，我们介绍了一个适用于需要一系列中间步骤的应用程序的代理。代理安排这些步骤，并可以访问各种工具，决定使用哪个工具以有效地回答用户的查询。在某种程度上，就像“让我们一步一步地思考”一样，代理将有更多的时间来规划其行动，从而能够完成更复杂的任务。
 - en: 'The high-level pseudocode of an agent looks like this:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 代理的高级伪代码如下：
 - en: The agent receives some input from the user.
+  id: totrans-38
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 代理从用户那里接收一些输入。
 - en: The agent decides which tool, if any, to use and what text to enter into that
     tool.
+  id: totrans-39
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 代理决定使用什么工具（如果有的话）以及输入到该工具的文本。
 - en: That tool is then invoked with that input text, and an output text is received
     from the tool.
+  id: totrans-40
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 然后，该工具使用该输入文本进行调用，并从该工具接收一个输出文本。
 - en: The tool’s output is fed into the context of the agent.
+  id: totrans-41
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 工具的输出被馈送到代理的上下文中。
 - en: Steps 2 through 4 are repeated until the agent decides that it no longer needs
     to use a tool, at which point it responds directly to the user.
+  id: totrans-42
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 步骤2到4重复进行，直到代理决定不再需要使用工具，然后直接回应用户。
 - en: You might notice that this seems close to what we did in [Chapter 3](ch03.html#building_apps_with_gpt_4_and_chatgpt),
     with the example of the personal assistant who could answer questions and perform
     actions. LangChain agents allow you to develop this kind of behavior… but much
     more powerfully.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可能会注意到，这似乎接近我们在[第3章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中所做的事情，例如可以回答问题并执行操作的个人助理的示例。LangChain代理允许您开发这种行为……但更加强大。
 - en: To better illustrate how an agent uses tools in LangChain, [Figure 5-2](#fig_2_interaction_between_an_agent_and_tools_in_langchai)
     provides a visual walkthrough of the interaction.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了更好地说明代理如何在LangChain中使用工具，[图5-2](#fig_2_interaction_between_an_agent_and_tools_in_langchai)提供了对交互的视觉演示。
 - en: '![](assets/dagc_0502.png)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0502.png)'
 - en: Figure 5-2\. Interaction between an agent and tools in LangChain
+  id: totrans-46
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图5-2. LangChain中代理和工具的交互
 - en: 'For this section, we want to be able to answer the following question: What
     is the square root of the population of the capital of the country where the Olympic
     Games were held in 2016? This question has no real interest, but it is a good
     demonstration of how LangChain agents and tools can add reasoning capabilities
     to LLMs.'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于这一部分，我们希望能够回答以下问题：2016年奥运会举办国家的首都人口的平方根是多少？这个问题并没有真正的兴趣，但它很好地演示了LangChain代理和工具如何为LLMs增加推理能力。
 - en: 'If we ask the question as-is to GPT-3.5 Turbo, we get the following:'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们直接向GPT-3.5 Turbo提出这个问题，我们会得到以下回答：
 - en: '[PRE2]'
+  id: totrans-49
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'This answer is wrong on two levels: Brazil’s capital is Brasilia, not Rio de
     Janeiro, and the square root of 6.32 million is 2,513.96\. We might be able to
     get better results by adding “Think step by step” or by using other prompt engineering
     techniques, but it would still be difficult to trust the result because of the
     model’s difficulties with reasoning and mathematical operations. Using LangChain
     gives us better guarantees of accuracy.'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个答案在两个层面上是错误的：巴西的首都是巴西利亚，而不是里约热内卢，632万的平方根是2513.96。通过添加“逐步思考”或使用其他提示工程技术，我们可能能够获得更好的结果，但由于模型在推理和数学运算方面的困难，仍然很难相信结果。使用LangChain可以更好地保证准确性。
 - en: 'The following code gives a simple example of how an agent can use two tools
     in LangChain: Wikipedia and a calculator. After the tools are created via the
     function `load_tools()`, the agent is created with the function `initialize_agent()`.
@@ -241,123 +346,181 @@
     `zero-shot-react-description` defines how the agent chooses the tool at each step.
     By setting the `verbose` value to `true`, we can view the agent’s reasoning and
     understand how it arrives at the final decision:'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下代码给出了一个简单的例子，说明了代理如何在LangChain中使用两个工具：维基百科和计算器。在通过`load_tools()`函数创建工具之后，使用`initialize_agent()`函数创建代理。代理的推理需要LLM；在这里，使用了GPT-3.5
+    Turbo。参数`zero-shot-react-description`定义了代理在每一步选择工具的方式。通过将`verbose`值设置为`true`，我们可以查看代理的推理，并理解它是如何得出最终决定的：
 - en: '[PRE3]'
+  id: totrans-52
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: Note
+  id: totrans-53
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: To run the Wikipedia tool, it is necessary to have installed the corresponding
     Python package `wikipedia`. This can be done with `pip install wikipedia`.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 要运行维基百科工具，需要安装相应的Python包`wikipedia`。可以使用`pip install wikipedia`来完成。
 - en: 'As you can see, the agent decides to query Wikipedia for information about
     the 2016 Summer Olympics:'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你所看到的，代理决定查询维基百科关于2016年夏季奥运会的信息：
 - en: '[PRE4]'
+  id: totrans-56
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: 'The next lines of the output contain an extract from Wikipedia about the Olympics.
     Next, the agent uses the Wikipedia tool two additional times:'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 输出的下几行包含了维基百科关于奥运会的摘录。接下来，代理使用了维基百科工具两次：
 - en: '[PRE5]'
+  id: totrans-58
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: 'As a next step, the agent uses the calculator tool:'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为下一步，代理使用了计算器工具：
 - en: '[PRE6]'
+  id: totrans-60
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: 'And finally:'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后：
 - en: '[PRE7]'
+  id: totrans-62
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: 'As you can see, the agent demonstrated complex reasoning capabilities: it completed
     four different steps before coming up with the final answer. The LangChain framework
     allows developers to implement these kinds of reasoning capabilities in just a
     few lines of code.'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你所看到的，代理展示了复杂的推理能力：在得出最终答案之前，它完成了四个不同的步骤。LangChain框架允许开发人员只需几行代码就能实现这种推理能力。
 - en: Tip
+  id: totrans-64
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 提示
 - en: Although several LLMs can be used for the agent and GPT-4 is the most expensive
     among them, we have empirically obtained better results with GPT-4 for complex
     problems; we have observed that the results could quickly become inconsistent
     when smaller models are used for the agent’s reasoning. You may also receive errors
     because the model cannot answer in the expected format.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然可以使用多个LLM作为代理，而GPT-4是其中最昂贵的，但我们经验上发现对于复杂问题，使用GPT-4可以获得更好的结果；我们观察到当使用较小的模型进行代理推理时，结果可能很快变得不一致。您可能还会因为模型无法以预期格式回答而收到错误。
 - en: Memory
+  id: totrans-66
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 记忆
 - en: In some applications, it is crucial to remember previous interactions, both
     in the short and long terms. With LangChain, you can easily add states to chains
     and agents to manage memory. Building a chatbot is the most common example of
     this capability. You can do this very quickly with `ConversationChain`—essentially
     turning a language model into a chat tool with just a few lines of code.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 在某些应用中，记住以前的交互在短期和长期内都是至关重要的。使用LangChain，您可以轻松地向链和代理添加状态以管理记忆。构建聊天机器人是这种能力最常见的例子。您可以使用`ConversationChain`很快地完成这个过程，基本上只需几行代码就可以将语言模型转化为聊天工具。
 - en: 'The following code uses the `text-ada-001` model to make a chatbot. It is a
     small model capable of performing only elementary tasks. However, it is the fastest
     model in the GPT-3 series and has the lowest cost. This model has never been fine-tuned
     to behave like a chatbot, but we can see that with only two lines of code with
     LangChain, we can use this simple completion model to chat:'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下代码使用`text-ada-001`模型制作了一个聊天机器人。这是一个能够执行基本任务的小型模型。然而，它是GPT-3系列中最快的模型，成本最低。这个模型从未被微调成为聊天机器人，但我们可以看到，只需两行代码，我们就可以使用LangChain来使用这个简单的完成模型进行聊天：
 - en: '[PRE8]'
+  id: totrans-69
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: 'In the last line of the preceding code, we executed `predict(input=''Hello'')`.
     This results in the chatbot being asked to respond to our `''Hello''` message.
     And as you can see, the model answers:'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上述代码的最后一行，我们执行了`predict(input='Hello')`。这导致聊天机器人被要求回复我们的“Hello”消息。正如你所看到的，模型的回答是：
 - en: '[PRE9]'
+  id: totrans-71
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: Thanks to `verbose=True` in `ConversationChain`, we can look at the whole prompt
     used by LangChain. When we executed `predict(input='Hello')`, the LLM `text-ada-001`
     received not simply the `'Hello'` message but a complete prompt, which is between
     the tags `> Entering new ConversationChain chain…` and `> Finished chain`.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于在`ConversationChain`中使用了`verbose=True`，我们可以查看LangChain使用的完整提示。当我们执行`predict(input='Hello')`时，LLM`text-ada-001`接收到的不仅仅是`'Hello'`消息，而是一个完整的提示，位于`>
+    Entering new ConversationChain chain…`和`> Finished chain`标签之间。
 - en: 'If we continue the conversation, you can see that the function keeps a conversation
     history in the prompt. If we then ask “Can I ask you a question? Are you an AI?”
     the history of the conversation will also be in the prompt:'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们继续对话，你会发现这个函数会在提示中保留对话历史。如果我们问“我可以问你一个问题吗？你是人工智能吗？”对话的历史也会出现在提示中：
 - en: '[PRE10]'
+  id: totrans-74
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: The `ConversationChain` object uses prompt engineering techniques and memory
     techniques to transform any LLM that does text completion into a chat tool.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: '`ConversationChain`对象使用提示工程技术和记忆技术，将任何进行文本完成的LLM转化为聊天工具。'
 - en: Warning
+  id: totrans-76
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 警告
 - en: Even if this LangChain feature allows all the language models to have chat capabilities,
     this solution is not as powerful as models like `gpt-3.5-turbo` and `gpt-4`, which
     have been fine-tuned specifically for chat. Furthermore, OpenAI has announced
     the deprecation of `text-ada-001`.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使这个LangChain功能允许所有语言模型具有聊天功能，但这个解决方案并不像`gpt-3.5-turbo`和`gpt-4`这样强大，后者已经专门针对聊天进行了优化。此外，OpenAI已宣布废弃`text-ada-001`。
 - en: Embeddings
+  id: totrans-78
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 嵌入
 - en: 'Combining language models with your own text data is a powerful way to personalize
     the knowledge of the models you use in your apps. The principle is the same as
     that discussed in [Chapter 3](ch03.html#building_apps_with_gpt_4_and_chatgpt):
@@ -365,8 +528,10 @@
     and returning the most relevant documents. The documents are then sent to the
     model’s input context to ask it to answer the query. This section shows how easy
     it is to do this with LangChain and embeddings.'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 将语言模型与您自己的文本数据相结合是个性化应用程序中使用的模型知识的强大方式。其原理与[第3章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中讨论的相同：第一步是*信息检索*，指的是获取用户的查询并返回最相关的文档。然后将文档发送到模型的输入上下文中，要求其回答查询。本节展示了如何使用LangChain和嵌入来轻松实现这一点。
 - en: 'An essential module in LangChain is `document_loaders`. With this module, you
     can quickly load your text data from different sources into your application.
     For example, your application can load CSV files, emails, PowerPoint documents,
@@ -374,23 +539,33 @@
     A complete list of loaders is available [in the official documentation](https://oreil.ly/t7nZx).
     Each of them is super easy to set. This example reuses the PDF of the [*Explorer’s
     Guide for The Legend of Zelda: Breath of the Wild*](https://oreil.ly/ZGu3z).'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain中一个重要的模块是`document_loaders`。使用这个模块，您可以快速将文本数据从不同的来源加载到您的应用程序中。例如，您的应用程序可以加载CSV文件、电子邮件、PowerPoint文档、Evernote笔记、Facebook聊天、HTML页面、PDF文档以及许多其他格式。完整的加载器列表可在[官方文档](https://oreil.ly/t7nZx)中找到。每个加载器都非常容易设置。本示例重用了[*探险者指南：塞尔达传说：荒野之息*](https://oreil.ly/ZGu3z)的PDF。
 - en: 'If the PDF is in the current working directory, the following code loads its
     contents and divides it by page:'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果PDF文件在当前工作目录中，以下代码加载其内容并按页面进行划分：
 - en: '[PRE11]'
+  id: totrans-82
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: Note
+  id: totrans-83
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: To use the PDF loader, it is necessary to have the Python `pypdf` package installed.
     This can be done with `pip install pypdf`.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用PDF加载程序，需要安装Python的`pypdf`包。可以使用`pip install pypdf`来完成。
 - en: 'To do information retrieval, it is necessary to embed each loaded page. As
     we discussed in [Chapter 2](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis),
     *embeddings* are a technique used in information retrieval to convert non-numerical
@@ -398,114 +573,166 @@
     allow models to process relationships between these concepts efficiently. With
     OpenAI’s embeddings endpoint, developers can obtain numerical vector representations
     of input text, and LangChain has a wrapper to call these embeddings:'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 要进行信息检索，需要嵌入每个加载的页面。正如我们在[第2章](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis)中讨论的那样，*嵌入*是信息检索中使用的一种技术，用于将非数值概念（如单词、标记和句子）转换为数值向量。嵌入使模型能够有效地处理这些概念之间的关系。使用OpenAI的嵌入端点，开发人员可以获得输入文本的数值向量表示，而LangChain有一个包装器来调用这些嵌入：
 - en: '[PRE12]'
+  id: totrans-86
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: Note
+  id: totrans-87
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: To use `OpenAIEmbeddings`, install the `tiktoken` Python package with `pip install
     tiktoken`.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用`OpenAIEmbeddings`，请使用`pip install tiktoken`安装`tiktoken` Python包。
 - en: 'Indexes save pages’ embeddings and make searches easy. LangChain is centered
     on vector databases. It is possible to choose among many vector databases; a complete
     list is available [in the official documentation](https://oreil.ly/nJLCI). The
     following code snippet uses the [FAISS vector database](https://oreil.ly/7TMdI),
     a library for similarity search developed primarily at Meta’s [Fundamental AI
     Research group](https://ai.facebook.com):'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 索引保存页面的嵌入并使搜索变得容易。LangChain以向量数据库为中心。可以在许多向量数据库中进行选择；完整的列表可在[官方文档](https://oreil.ly/nJLCI)中找到。以下代码片段使用了[FAISS向量数据库](https://oreil.ly/7TMdI)，这是Meta的[基础AI研究小组](https://ai.facebook.com)主要开发的相似性搜索库：
 - en: '[PRE13]'
+  id: totrans-90
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: Note
+  id: totrans-91
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: To use FAISS, it is necessary to install the `faiss-cpu` Python package with
     `pip install faiss-cpu`.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用FAISS，需要使用`pip install faiss-cpu`安装`faiss-cpu` Python包。
 - en: To better illustrate how the PDF document’s content is converted into pages
     of embeddings and stored in the FAISS vector database, [Figure 5-3](#fig_3_creating_and_saving_embeddings_from_a_pdf_document)
     visually summarizes the process.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了更好地说明PDF文档的内容是如何转换为嵌入页面并存储在FAISS向量数据库中的，[图5-3](#fig_3_creating_and_saving_embeddings_from_a_pdf_document)以可视化方式总结了这个过程。
 - en: '![](assets/dagc_0503.png)'
+  id: totrans-94
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0503.png)'
 - en: Figure 5-3\. Creating and saving embeddings from a PDF document
+  id: totrans-95
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图5-3\. 从PDF文档创建和保存嵌入
 - en: 'And now it’s easy to search for similarities:'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在可以轻松搜索相似之处了：
 - en: '[PRE14]'
+  id: totrans-97
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE14]'
 - en: 'From the preceding code, we get the following:'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 从前面的代码中，我们得到以下内容：
 - en: '[PRE15]'
+  id: totrans-99
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE15]'
 - en: '``The answer to the question is that Link’s traditional outfit color is green,
     and we can see that the answer is in the selected content. The output says that
     the answer is on page 35 of *ExplorersGuide.pdf*. Remember that Python starts
     to count from zero; therefore, if you return to the original PDF file of the *Explorer’s
     Guide for The Legend of Zelda: Breath of the Wild*, the solution is on page 36
     (not page 35).'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '``问题的答案是林克的传统服装颜色是绿色，我们可以看到答案在所选内容中。输出显示答案在*ExplorersGuide.pdf*的第35页。请记住，Python从零开始计数；因此，如果返回到*探险者指南：塞尔达传说：荒野之息*的原始PDF文件，解决方案在第36页（而不是第35页）。'
 - en: '[Figure 5-4](#fig_4_the_information_retrieval_looks_for_pages_most_sim) shows
     how the information retrieval process uses the embedding of the query and the
     vector database to identify the pages most similar to the query.'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图5-4](#fig_4_the_information_retrieval_looks_for_pages_most_sim)显示了信息检索过程如何使用查询的嵌入和向量数据库来识别与查询最相似的页面。'
 - en: '![](assets/dagc_0504.png)'
+  id: totrans-102
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0504.png)'
 - en: Figure 5-4\. The information retrieval looks for pages most similar to the query
+  id: totrans-103
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图5-4。信息检索寻找与查询最相似的页面
 - en: 'You might want to integrate your embedding into your chatbot to use the information
     it has retrieved when it answers your questions. Again, with LangChain, this is
     straightforward to do in a few lines of code. We use `RetrievalQA`, which takes
     as inputs an LLM and a vector database. We then ask a question to the obtained
     object in the usual way:'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可能希望将您的嵌入式信息集成到您的聊天机器人中，以便在回答您的问题时使用它检索到的信息。同样，在LangChain中，这只需要几行代码就可以轻松完成。我们使用`RetrievalQA`，它以LLM和向量数据库作为输入。然后我们以通常的方式向获得的对象提问：
 - en: '[PRE16]'
+  id: totrans-105
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE16]'
 - en: 'We get the following answer:'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们得到了以下答案：
 - en: '[PRE17]'
+  id: totrans-107
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE17]'
 - en: '[Figure 5-5](#fig_5_to_answer_the_user_s_question_the_retrieved_infor) shows
     how `RetrievalQA` uses information retrieval to answer the user’s question. As
     we can see in this figure, “Make context” groups together the pages found by the
     information retrieval system and the user’s initial query. This enriched context
     is then sent to the language model, which can use the additional information added
     in the context to correctly answer the user’s question.'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图5-5](#fig_5_to_answer_the_user_s_question_the_retrieved_infor)展示了`RetrievalQA`如何使用信息检索来回答用户的问题。正如我们在这个图中看到的，“创建上下文”将信息检索系统找到的页面和用户的初始查询组合在一起。然后将这个丰富的上下文发送给语言模型，语言模型可以使用上下文中添加的额外信息来正确回答用户的问题。'
 - en: '![](assets/dagc_0505.png)'
+  id: totrans-109
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0505.png)'
 - en: Figure 5-5\. To answer the user’s question, the retrieved information is added
     to the context of the LLM
+  id: totrans-110
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图5-5。为了回答用户的问题，检索到的信息被添加到LLM的上下文中
 - en: You may wonder why it is necessary to do the information retrieval before sending
     the information from the document as input to the context of the language model.
     Indeed, current language models cannot consider large files with hundreds of pages.
@@ -513,53 +740,70 @@
     the information retrieval process. In the near future, as the size of input contexts
     increases, there will likely be situations for which the use of information retrieval
     techniques will not be technically necessary.[PRE18]# GPT-4 Plug-ins
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可能会想知道为什么在将信息从文档发送到语言模型的上下文之前需要进行信息检索。事实上，当前的语言模型无法考虑到具有数百页的大文件。因此，如果输入数据太大，我们会对其进行预过滤。这就是信息检索过程的任务。在不久的将来，随着输入上下文的增加，可能会出现一些情况，使用信息检索技术可能不是技术上必要的。[PRE18]#
+    GPT-4插件
 - en: While language models, including GPT-4, have proven helpful in various tasks,
     they have inherent limitations. For example, these models can only learn from
     the data on which they were trained, which is often outdated or inappropriate
     for specific applications. In addition, their capabilities are limited to text
     generation. We have also seen that LLMs do not work for some tasks, such as complex
     calculations.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然语言模型，包括GPT-4，在各种任务中都证明了其帮助性，但它们也存在固有的局限性。例如，这些模型只能从它们所训练的数据中学习，这些数据通常已经过时或不适用于特定的应用。此外，它们的能力仅限于文本生成。我们也看到LLMs无法完成一些任务，比如复杂的计算。
 - en: 'This section focuses on a groundbreaking feature of GPT-4: plug-ins (note that
     the GPT-3.5 model doesn’t have access to plug-in functionality). In the evolution
     of AI, plug-ins have emerged as a new transformative tool that redefines interaction
     with LLMs. The goal of plug-ins is to provide the LLM with broader capabilities,
     allowing the model to access real-time information, perform complex mathematical
     computations, and utilize third-party services.'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 本节重点介绍了GPT-4的一个突破性功能：插件（请注意，GPT-3.5模型无法访问插件功能）。在AI的发展过程中，插件已经成为一种重新定义与LLMs交互的新型变革工具。插件的目标是为LLM提供更广泛的功能，使模型能够访问实时信息，执行复杂的数学计算，并利用第三方服务。
 - en: We saw in [Chapter 1](ch01.html#gpt_4_and_chatgpt_essentials) that the model
     was not capable of performing complex calculations such as 3,695 × 123,548\. In
     [Figure 5-6](#fig_6_gpt_4_s_use_of_the_calculator_plug_in), we activate the Calculator
     plug-in and we can see that the model automatically calls the calculator when
     it needs to do a calculation, allowing it to find the right solution.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在[第1章](ch01.html#gpt_4_and_chatgpt_essentials)中看到，该模型无法执行复杂的计算，比如3,695 × 123,548。在[图5-6](#fig_6_gpt_4_s_use_of_the_calculator_plug_in)中，我们激活了计算器插件，我们可以看到当模型需要进行计算时，模型会自动调用计算器，从而使其找到正确的解决方案。
 - en: With an iterative deployment approach, OpenAI incrementally adds plug-ins to
     GPT-4, which enables OpenAI to consider practical uses for plug-ins as well as
     any security and customization challenges that they may introduce. While plug-ins
     have been available to all paying users since May 2023, the ability to create
     new plug-ins was not yet available for all developers at the time of this writing.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过迭代部署方法，OpenAI逐步向GPT-4添加插件，这使OpenAI能够考虑插件的实际用途以及可能引入的安全性和定制化挑战。虽然自2023年5月以来，所有付费用户都可以使用插件，但在撰写本文时，尚未为所有开发人员提供创建新插件的功能。
 - en: '![](assets/dagc_0506.png)'
+  id: totrans-116
   prefs: []
   type: TYPE_IMG
+  zh: '![](assets/dagc_0506.png)'
 - en: Figure 5-6\. GPT-4’s use of the Calculator plug-in
+  id: totrans-117
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 图5-6。GPT-4使用计算器插件
 - en: OpenAI’s goal is to create an ecosystem where plug-ins can help shape the future
     dynamics of human–AI interaction. Today it is inconceivable for a serious business
     not to have its own website, but maybe soon, every company will need to have its
     own plug-in. Indeed, several early plug-ins have already been brought to life
     by companies such as Expedia, FiscalNote, Instacart, KAYAK, Klarna, Milo, OpenTable,
     Shopify, and Zapier.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI的目标是创建一个生态系统，插件可以帮助塑造人工智能与人类互动的未来动态。今天，一家严肃的企业没有自己的网站是不可想象的，但也许很快，每家公司都需要有自己的插件。事实上，一些早期的插件已经由Expedia、FiscalNote、Instacart、KAYAK、Klarna、Milo、OpenTable、Shopify和Zapier等公司推出。
 - en: Beyond their primary function, plug-ins serve to extend the functionality of
     GPT-4 in several ways. In a sense, some similarities exist between plug-ins and
     the agents and tools discussed in [“The LangChain Framework”](#the_langchain_framework).
@@ -569,8 +813,10 @@
     or ordering a meal. Both are designed to help AI access up-to-date information
     and perform calculations. However, the plug-ins in GPT-4 focus more on third-party
     services than LangChain’s tools.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了其主要功能外，插件还以多种方式扩展了GPT-4的功能。在某种程度上，插件与[“LangChain框架”](#the_langchain_framework)中讨论的代理和工具存在一些相似之处。例如，插件可以使LLM检索实时信息，如体育比分和股票价格，从知识库中提取数据，如公司文件，并根据用户的需求执行任务，如预订航班或订餐。两者都旨在帮助AI访问最新信息并进行计算。然而，GPT-4中的插件更专注于第三方服务，而不是LangChain的工具。
 - en: This section introduces the fundamental concepts for creating a plug-in by exploring
     the key points of the examples presented on the OpenAI website. We will use the
     example of a to-do list definition plug-in. Plug-ins are still in a limited beta
@@ -579,19 +825,25 @@
     latest information. Note also that during the beta phase, users must manually
     enable their plug-in in ChatGPT’s user interface, and as a developer, you can
     share your plug-in with no more than 100 users.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 本节通过探索OpenAI网站上提供的示例的关键点，介绍了创建插件的基本概念。我们将以待办事项定义插件的示例为例。插件仍处于有限的测试版阶段，因此我们在撰写本书时鼓励读者访问[OpenAI参考页面](https://platform.openai.com/docs/plugins/introduction)获取最新信息。还要注意，在测试版阶段，用户必须在ChatGPT的用户界面中手动启用他们的插件，作为开发者，您最多可以与100名用户分享您的插件。
 - en: Overview
+  id: totrans-121
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 概述
 - en: 'As a plug-in developer, you must create an API and associate it with two descriptive
     files: a plug-in manifest and an OpenAPI specification. When the user starts interacting
     with GPT-4, OpenAI sends a hidden message to GPT if your plug-in is installed.
     This message briefly introduces your plug-in, including its description, endpoints,
     and examples.'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为插件开发者，您必须创建一个API，并将其与两个描述性文件关联起来：一个插件清单和一个OpenAPI规范。当用户开始与GPT-4进行交互时，如果安装了您的插件，OpenAI会向GPT发送一个隐藏的消息。这条消息简要介绍了您的插件，包括其描述、端点和示例。
 - en: The model then becomes an intelligent API caller. When a user asks questions
     about your plug-in, the model can call your plug-in API. The decision to call
     the plug-in is made based on the API specification and a natural language description
@@ -600,25 +852,35 @@
     its response to the user. Therefore, the plug-in’s API responses must return raw
     data instead of natural language responses. This allows GPT to generate its own
     natural language response based on the returned data.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，模型变成了一个智能的API调用者。当用户询问有关您的插件的问题时，模型可以调用您的插件API。调用插件的决定是基于API规范和自然语言描述您的API应该在何种情况下使用。一旦模型决定调用您的插件，它会将API结果合并到其上下文中，以向用户提供响应。因此，插件的API响应必须返回原始数据，而不是自然语言响应。这使得GPT可以根据返回的数据生成自己的自然语言响应。
 - en: For example, if a user asks “Where should I stay in New York?”, the model can
     use a hotel booking plug-in and then combine the plug-in’s API response with its
     language generation capabilities to provide an answer that is both informative
     and user friendly.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如果用户问“我应该在纽约住在哪里？”，模型可以使用酒店预订插件，然后将插件的API响应与其语言生成能力结合起来，提供既信息丰富又用户友好的答案。
 - en: The API
+  id: totrans-125
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: API
 - en: 'Here is a simplified version of the code example of the to-do list definition
     plug-in provided on [OpenAI’s GitHub](https://oreil.ly/un13K):'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是在[OpenAI的GitHub](https://oreil.ly/un13K)上提供的待办事项定义插件的简化代码示例：
 - en: '[PRE19]'
+  id: totrans-127
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE19]'
 - en: This Python code is an example of a simple plug-in that manages a to-do list.
     First the variable `app` is initialized with `quart_cors.cors()`. This line of
     code creates a new Quart application and configures it to allow cross-origin resource
@@ -626,161 +888,236 @@
     is a Python web microframework, and Quart-CORS is an extension that enables control
     over CORS. This setup allows the plug-in to interact with the ChatGPT application
     hosted at the specified URL.
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段Python代码是一个管理待办事项列表的简单插件的示例。首先，变量`app`使用`quart_cors.cors()`进行初始化。这行代码创建了一个新的Quart应用程序，并配置它以允许来自[*https://chat.openai.com*](https://chat.openai.com)的跨域资源共享（CORS）。Quart是一个Python
+    Web微框架，Quart-CORS是一个允许对CORS进行控制的扩展。这个设置允许插件与指定URL上托管的ChatGPT应用程序进行交互。
 - en: 'Then the code defines several HTTP routes corresponding to different functionalities
     of the to-do list plug-in: the `add_todo` function, associated with a `POST` request,
     and the `get_todos` function, associated with a `GET` request.'
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，代码定义了几个HTTP路由，对应于待办事项插件的不同功能：`add_todo`函数，关联一个`POST`请求，以及`get_todos`函数，关联一个`GET`请求。
 - en: 'Next, two additional endpoints are defined: `plugin_manifest` and `openapi_spec`.
     These endpoints serve the plug-in’s manifest file and the OpenAPI specification,
     which are crucial for the interaction between GPT-4 and the plug-in. These files
     contain detailed information about the plug-in and its API, which GPT-4 uses to
     know how and when to use the plug-in.'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，定义了两个额外的端点：`plugin_manifest`和`openapi_spec`。这些端点提供了插件的清单文件和OpenAPI规范，这对于GPT-4和插件之间的交互至关重要。这些文件包含了关于插件及其API的详细信息，GPT-4使用这些信息来了解何时以及如何使用插件。
 - en: The Plug-in Manifest
+  id: totrans-131
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 插件清单
 - en: Each plug-in requires an *ai-plugin.json* file on the API’s domain. So, for
     example, if your company provides service on *thecompany.com*, you must host this
     file at *https://thecompany.com/.well-known*. OpenAI will look for this file in
     */.well-known/ai-plugin.json* when installing the plug-in. Without this file,
     the plug-in can’t be installed.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个插件都需要在 API 的域上有一个 *ai-plugin.json* 文件。例如，如果您的公司在 *thecompany.com* 上提供服务，您必须在
+    *https://thecompany.com/.well-known* 上托管此文件。在安装插件时，OpenAI 将在 */.well-known/ai-plugin.json*
+    中查找此文件。没有这个文件，插件就无法安装。
 - en: 'Here is a minimal definition of the required *ai-plugin.json* file:'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是所需的 *ai-plugin.json* 文件的最小定义：
 - en: '[PRE20]'
+  id: totrans-134
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE20]'
 - en: The fields are detailed in [Table 5-1](#table-5-1).
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 字段在 [表 5-1](#table-5-1) 中详细说明。
 - en: Table 5-1\. Descriptions of the fields required in the *ai-plugin.json file*
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 表 5-1\. *ai-plugin.json 文件* 中所需字段的描述
 - en: '| Field name | Type | Description |'
+  id: totrans-137
   prefs: []
   type: TYPE_TB
+  zh: '| 字段名称 | 类型 | 描述 |'
 - en: '| --- | --- | --- |'
+  id: totrans-138
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- | --- |'
 - en: '| `name_for_model` | String | A short name the model uses to know your plug-in.
     It can only include letters and numbers, and it can have no more than 50 characters.
     |'
+  id: totrans-139
   prefs: []
   type: TYPE_TB
+  zh: '| `name_for_model` | String | 模型用于了解您的插件的简称。它只能包含字母和数字，且不得超过 50 个字符。 |'
 - en: '| `name_for_human` | String | The name people see. It could be your company’s
     full name, but it must be fewer than 20 characters. |'
+  id: totrans-140
   prefs: []
   type: TYPE_TB
+  zh: '| `name_for_human` | String | 人们看到的名称。它可以是您公司的全名，但必须少于 20 个字符。 |'
 - en: '| `description_for_human` | String | A simple explanation of what your plug-in
     does. It’s for people to read and should be fewer than 100 characters. |'
+  id: totrans-141
   prefs: []
   type: TYPE_TB
+  zh: '| `description_for_human` | String | 您的插件功能的简单解释。供人们阅读，应少于 100 个字符。 |'
 - en: '| `description_for_model` | String | A detailed explanation that helps the
     AI understand your plug-in. Therefore, explaining the plug-in’s purpose to the
     model is crucial. The description can be up to 8,000 characters long. |'
+  id: totrans-142
   prefs: []
   type: TYPE_TB
+  zh: '| `description_for_model` | String | 详细的解释，帮助 AI 理解您的插件。因此，向模型解释插件的目的至关重要。描述可以长达
+    8,000 个字符。'
 - en: '| `logo_url` | String | The URL of your plug-in’s logo. The logo should ideally
     be 512 × 512 pixels. |'
+  id: totrans-143
   prefs: []
   type: TYPE_TB
+  zh: '| `logo_url` | String | 您的插件标志的 URL。标志理想情况下应为 512 × 512 像素。 |'
 - en: '| `contact_email` | String | An email address people can use if they need help.
     |'
+  id: totrans-144
   prefs: []
   type: TYPE_TB
+  zh: '| `contact_email` | String | 人们可以使用的电子邮件地址，如果他们需要帮助。 |'
 - en: '| `legal_info_url` | String | A web address that lets users find more details
     about your plug-in. |'
+  id: totrans-145
   prefs: []
   type: TYPE_TB
+  zh: '| `legal_info_url` | String | 一个网址，让用户找到有关您的插件的更多详细信息。 |'
 - en: The OpenAPI Specification
+  id: totrans-146
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: OpenAPI 规范
 - en: The next step in creating your plug-in is to create the *openapi.yaml* file
     with your API specification. This file must follow the OpenAPI standard (see [“Understanding
     the OpenAPI Specification ”](#understandingopenapi)). The GPT model only knows
     your API through the information detailed in this API specification file and the
     manifest file.
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建插件的下一步是使用 API 规范创建 *openapi.yaml* 文件。此文件必须遵循 OpenAPI 标准（参见 [“理解 OpenAPI 规范”](#understandingopenapi)）。GPT
+    模型只通过此 API 规范文件和清单文件中详细的信息来了解您的 API。
 - en: 'Here is an example with the first line of an *openapi.yaml* file for the to-do
     list definition plug-in:'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是待办事项清单定义插件的 *openapi.yaml* 文件的第一行的示例：
 - en: '[PRE21]'
+  id: totrans-149
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE21]'
 - en: Think of the OpenAPI Specification as descriptive documentation that should
     be enough by itself to understand and use your API. When a search is performed
     in GPT-4, the description in the info section is used to determine the relevance
     of the plug-in to the user’s search. The rest of the OpenAPI Specification follows
     the standard OpenAPI format. Many tools can automatically generate OpenAPI specifications
     based on your existing API code or the other way around.
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 将 OpenAPI 规范视为足够自身理解和使用您的 API 的描述性文档。在 GPT-4 中进行搜索时，信息部分中的描述用于确定插件与用户搜索的相关性。其余的
+    OpenAPI 规范遵循标准的 OpenAPI 格式。许多工具可以根据您现有的 API 代码或反之自动生成 OpenAPI 规范。
 - en: Descriptions
+  id: totrans-151
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 描述
 - en: When a user request could potentially benefit from a plug-in, the model initiates
     a scan of the endpoint descriptions within the OpenAPI Specification, as well
     as the `description_for_model` attribute in the manifest file. Your goal is to
     create the most appropriate response, which often involves testing different requests
     and descriptions.
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 当用户的请求可能受益于插件时，模型会启动对 OpenAPI 规范中的端点描述以及清单文件中的 `description_for_model` 属性的扫描。您的目标是创建最合适的响应，这通常涉及测试不同的请求和描述。
 - en: The OpenAPI document should provide a wide range of details about the API, such
     as the available functions and their respective parameters. It should also contain
     attribute-specific “description” fields that provide valuable, naturally written
     explanations of what each function does and what type of information a query field
     expects. These descriptions guide the model in making the most appropriate use
     of the API.
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAPI 文档应提供有关 API 的广泛信息，例如可用函数及其各自的参数。它还应包含特定于属性的“描述”字段，提供有价值的、自然书写的解释，说明每个函数的作用以及查询字段期望的信息类型。这些描述指导模型最合适地使用
+    API。
 - en: A key element in this process is the `description_for_model` attribute. This
     gives you a way to inform the model on how to use the plug-in. Creating concise,
     clear, and descriptive instruction is highly recommended.
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个过程中的一个关键元素是 `description_for_model` 属性。这为您提供了一种方式来告知模型如何使用插件。创建简洁、清晰和描述性的说明是非常推荐的。
 - en: 'However, following certain best practices when writing these descriptions is
     essential:'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，在编写这些描述时遵循某些最佳实践是必不可少的：
 - en: Do not attempt to influence the mood, personality, or exact responses of GPT.
+  id: totrans-156
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 不要试图影响 GPT 的情绪、个性或确切的响应。
 - en: Avoid directing GPT to use a specific plug-in unless the user explicitly requests
     that category of service.
+  id: totrans-157
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 避免指示 GPT 使用特定的插件，除非用户明确请求该类别的服务。
 - en: Do not prescribe specific triggers for GPT to use the plug-in, as it is designed
     to autonomously determine when the use of a plug-in is appropriate.
+  id: totrans-158
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 不要指定 GPT 使用插件的特定触发器，因为它被设计为自主确定何时使用插件是合适的。
 - en: To recap, developing a plug-in for GPT-4 involves creating an API, specifying
     its behavior in an OpenAPI specification, and describing the plug-in and its usage
     in a manifest file. With this setup, GPT-4 can effectively act as an intelligent
     API caller, expanding its capabilities beyond text generation.
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 简而言之，开发GPT-4插件涉及创建API，指定其在OpenAPI规范中的行为，并在清单文件中描述插件及其用法。通过这种设置，GPT-4可以有效地充当智能API调用者，扩展其能力超越文本生成。
 - en: Summary
+  id: totrans-160
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 总结
 - en: The LangChain framework and GPT-4 plug-ins represent a significant leap forward
     in maximizing the potential of LLMs.
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain框架和GPT-4插件代表了最大程度发挥LLM潜力的重大进步。
 - en: LangChain, with its robust suite of tools and modules, has become a central
     framework in the field of LLM. Its versatility in integrating different models,
     managing prompts, combining data, sequencing chains, processing agents, and employing
@@ -790,24 +1127,32 @@
     models. Remember, the true potential of LangChain lies in the creative use of
     these features to solve complex tasks and transform the generic language models
     into powerful, fine-grained applications.
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain凭借其强大的工具和模块套件，已成为LLM领域的中心框架。它在集成不同模型、管理提示、组合数据、排序链、处理代理和使用内存管理方面的多功能性为开发人员和人工智能爱好者打开了新的途径。[第3章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中的示例证明了使用ChatGPT和GPT-4模型从头开始编写复杂指令的限制。请记住，LangChain的真正潜力在于创造性地利用这些功能来解决复杂任务，并将通用语言模型转化为功能强大、细粒度的应用程序。
 - en: GPT-4 plug-ins are a bridge between the language model and the contextual information
     available in real time. This chapter showed that developing plug-ins requires
     a well-structured API and descriptive files. Therefore, providing detailed and
     natural descriptions in these files is essential. This will help GPT-4 make the
     best use of your API.
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-4插件是语言模型和实时可用的上下文信息之间的桥梁。本章表明，开发插件需要一个结构良好的API和描述性文件。因此，在这些文件中提供详细和自然的描述是必不可少的。这将帮助GPT-4充分利用您的API。
 - en: The exciting world of LangChain and GPT-4 plug-ins is a testament to the rapidly
     evolving landscape of AI and LLMs. The insights provided in this chapter are just
     a tiny taste of the transformative potential of these tools.
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain和GPT-4插件的激动人心世界证明了人工智能和LLM领域迅速发展的景象。本章提供的见解只是这些工具变革潜力的一小部分。
 - en: Conclusion
+  id: totrans-165
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 结论
 - en: This book has equipped you with the necessary foundational and advanced knowledge
     to harness the power of LLMs and implement them in real-world applications. We
     covered everything from foundational principles and API integrations to advanced
@@ -815,8 +1160,10 @@
     OpenAI’s GPT-4 and ChatGPT models. We ended the book with a detailed look at how
     the LangChain framework and plug-ins can enable you to unleash the power of LLMs
     and build truly innovative applications.
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 本书为您提供了利用LLM的力量并将其应用于现实世界应用所需的基础和高级知识。我们涵盖了从基本原理和API集成到高级提示工程和微调的一切，引导您朝着使用OpenAI的GPT-4和ChatGPT模型的实际用例。我们以详细介绍LangChain框架和插件如何使您能够释放LLM的力量并构建真正创新的应用程序来结束了本书。
 - en: You now have the tools at your disposal to pioneer further into the realm of
     AI, developing innovative applications that leverage the strength of these advanced
     language models. But remember, the AI landscape is continuously evolving; so it’s
@@ -824,5 +1171,7 @@
     the world of LLMs is only the beginning, and your exploration should not stop
     here. We encourage you to use your new knowledge to explore the future of technology
     with artificial intelligence.```
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，您拥有了工具，可以在AI领域进一步开拓，开发利用这些先进语言模型的强大应用程序。但请记住，AI领域不断发展，因此必须密切关注进展并相应地进行调整。这次进入LLM世界的旅程只是开始，您的探索不应该止步于此。我们鼓励您利用新知识探索人工智能技术的未来。

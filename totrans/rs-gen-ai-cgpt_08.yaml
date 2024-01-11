@@ -481,6 +481,7 @@
   id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 大型语言模型通过训练的文本数据获得了模式检测和其他能力。语言模型在学习预测给定上下文单词的下一个单词的核心任务时，开始识别数据中的模式，这有助于它们减少语言建模任务的损失。最终，当转移零次任务时，模型从这种技能中受益。语言模型将实例的模式与它以前学到的类似数据的模式进行比较，并利用这些知识来执行任务，当给出一些示例和/或需要完成的任务描述时。这是巨大语言模型的一个强大能力，随着模型参数数量的增加而变得更强大。
 - en: Few, one, and zero-shot settings are specialized examples of zero-shot task
     transfer, as was previously stated. In a few-shot configuration, the job description
     and as many examples as will fit in the model’s context window are given to it.
@@ -490,18 +491,22 @@
   id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 少次、一次和零次设置是零次任务转移的专门示例，正如之前所述。在少次配置中，将工作描述和尽可能多的示例提供给模型的上下文窗口。在一次设置中，向模型提供一个示例，而在零次设置中则不提供任何示例。随着容量的增加，模型的少次、一次和零次能力都得到了提高。
 - en: '![](images/Figure-9.4.jpg)'
   id: totrans-61
   prefs: []
   type: TYPE_IMG
+  zh: ！[](images/Figure-9.4.jpg)
 - en: '**Figure 9.4:** *Image representing the context learning mechanism during training'
   id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.4：** *代表训练期间上下文学习机制的图像'
 - en: '[**Source:** GPT -3 paper]*'
   id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：**GPT-3论文]*'
 - en: Five distinct corpora were used to train the GPT-3, each with a specific weight.
     Good quality datasets were used to train the model over many epochs and were sampled
     more often. Common Crawl, WebText2, Books1, Books2, and Wikipedia were the five
@@ -510,52 +515,62 @@
   id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用了五个不同的语料库来训练GPT-3，每个都有特定的权重。使用了高质量的数据集来训练模型，并且经常进行抽样。Common Crawl、WebText2、Books1、Books2和Wikipedia是使用的五个数据集，其中包括大部分文本和上下文数据的用例模式。
 - en: '[Model specifications](toc.xhtml#s82a)'
   id: totrans-65
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[模型规格](toc.xhtml#s82a)'
 - en: 'Again, like GPT-2, the model use in first GPT model with the transformer base
     but this version witnessed few major differences from GPT-2 which go like this:'
   id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 与GPT-2一样，该模型首先使用了transformer基础的GPT模型，但这个版本与GPT-2有一些重大区别，如下所述：
 - en: GPT - 3 has been evaluated in 3 different in-context learning other than traditional
     fine-tuning with zero, one and few shot learning techniques.
   id: totrans-67
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: GPT-3已经在3种不同的上下文学习中进行了评估，而不是传统的零、一和少次学习技术。
 - en: GPT-3 has 96 layers with each layer having 96 attention heads.
   id: totrans-68
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: GPT-3有96层，每层有96个注意头。
 - en: Size of word embeddings was increased to 12888 for GPT-3 from 1600 for GPT-2.
   id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: GPT-3的词嵌入大小从GPT-2的1600增加到12888。
 - en: Context window size was increased from 1024 for GPT-2 to 2048 tokens for GPT-3.
   id: totrans-70
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 上下文窗口大小从GPT-2的1024个标记增加到GPT-3的2048个标记。
 - en: Adam optimiser was used with β_1=0.9, β_2=0.95 and ε= 10^(-8).
   id: totrans-71
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Adam优化器使用β_1=0.9，β_2=0.95和ε= 10^(-8)。
 - en: Alternating dense and locally banded sparse attention patterns were used.
   id: totrans-72
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 交替使用了密集和局部带状稀疏的注意模式。
 - en: '[Evaluation](toc.xhtml#s83a)'
   id: totrans-73
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[评估](toc.xhtml#s83a)'
 - en: A variety of language modeling and NLP datasets were used to test GPT-3\. In
     a few or zero-shot situations, GPT-3 outperformed cutting-edge methods for language
     modeling datasets like LAMBADA and Penn Tree Bank. Although it couldn’t surpass
@@ -566,18 +581,22 @@
   id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用了各种语言建模和自然语言处理数据集来测试GPT-3。在少次或零次情况下，GPT-3超越了像LAMBADA和Penn Tree Bank这样的语言建模数据集的尖端方法。虽然它无法超越其他数据集的最新技术，但它确实提高了零次最新技术的性能。在诸如闭卷问题回答、模式解析、翻译等NLP任务中，GPT-3再次表现良好，经常超越或接近调整良好的模型。
 - en: '![](images/Figure-9.5.jpg)'
   id: totrans-75
   prefs: []
   type: TYPE_IMG
+  zh: ！[](images/Figure-9.5.jpg)
 - en: '**Figure 9.5:** *Four methods for performing a task with a language model'
   id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.5：** *执行任务的四种语言模型方法'
 - en: '[**Source:** GPT -3 paper]*'
   id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：**GPT-3论文]*'
 - en: The model performed better in few-shot settings than in one- and zero-shot settings
     for the majority of the tasks. A variety of language modeling and NLP datasets
     were used to test GPT-3\. In a few or zero-shot situations, GPT-3 outperformed
@@ -603,16 +622,21 @@
   id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于大多数任务，该模型在少样本设置中的表现优于单样本和零样本设置。使用了各种语言建模和自然语言处理数据集来测试GPT-3。在少样本或零样本情况下，GPT-3的表现优于LAMBADA和Penn
+    Tree Bank等语言建模数据集的尖端方法。虽然它无法超越其他数据集的最新技术水平，但它确实提高了零样本技术水平。在诸如闭卷问题回答、模式解析、翻译等NLP任务中，GPT-3再次表现良好，经常优于或接近调整良好的模型。对于CoQA基准测试，在零样本设置中为81.5
+    F1，在单样本设置中为84.0 F1，在少样本设置中为85.0 F1，而经过精调的SOTA达到了90.7 F1。在TriviaQA基准测试中，零样本设置分别为64.3％，68.0％，71.2％的准确率，在单样本设置和少样本设置中分别为68.0％，优于现有技术水平（68.0％）3.2％。在LAMBADA数据集上，零样本设置分别为76.2％，72.5％，86.4％的准确率，在单样本设置和少样本设置中分别为68.0％，优于现有技术水平（68.0％）18.0％。除了在传统的NLP任务上进行评估外，该模型还在更多的人工任务上进行了评估，例如添加数字、解密单词、创建新闻文章、学习和利用新术语等。对于这些任务，该模型在少样本选项中的表现优于单样本和零样本设置，性能随着参数数量的增加而提高。
 - en: To learn more technical aspect of GPT - 3, you can refer to - Language Models
     are Few-Shot Learners- **https://tinyurl.com/4ym9tehp**
   id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 要了解GPT-3的更多技术方面，您可以参考- 语言模型是少样本学习者- **https://tinyurl.com/4ym9tehp**
 - en: '[API development of GPT - 3](toc.xhtml#s84a)'
   id: totrans-80
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: GPT-3的API开发
 - en: In 2020 June, openAI released their API which offers a general-purpose “text
     in, text out” interface, allowing users to try it on essentially any English language
     job, in contrast to most AI systems that are developed for a single use-case.
@@ -622,6 +646,7 @@
   id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 2020年6月，openAI发布了他们的API，提供了一个通用的“文本输入，文本输出”的接口，允许用户在基本上任何英语语言工作上尝试它，与大多数为单一用例开发的人工智能系统形成对比。现在可以请求在产品中使用API的许可，创建全新的应用程序，或协助研究这项技术的优势和劣势。
 - en: The API will attempt to match the pattern you provided it with when given any
     text prompt and provide a text completion. It may be “programmed” by giving it
     a few samples of what you want it to accomplish; the degree of success varies
@@ -632,24 +657,29 @@
   id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 当给定任何文本提示时，API将尝试匹配您提供的模式，并提供文本完成。它可以通过提供您想要完成的一些样本来“编程”它；通常成功程度取决于任务的难度。API还可以通过从用户或标记者提供的人类输入学习，或者通过训练您提供的数据集（小或大）来提高某些任务的性能。
 - en: In September 2020, GPT-3 was integrated with Microsoft exclusively licensing
     the GPT-3, allowing us to leverage its technical innovations to develop and deliver
     advanced AI solutions for our customers, creating new potential AI solutions.
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 2020年9月，GPT-3与微软整合，独家授权GPT-3，使我们能够利用其技术创新来开发和提供先进的人工智能解决方案，为我们的客户创造新的潜在人工智能解决方案。
 - en: '![](images/Figure-9.6.jpg)'
   id: totrans-84
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-9.6.jpg)'
 - en: '**Figure 9.6:** *The process of input feeding in InstructGPT model or GPT 3.5'
   id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.6：** *InstructGPT模型或GPT 3.5中输入馈送的过程'
 - en: '[**Source:** InstructGPT Paper]*'
   id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：** InstructGPT论文]*'
 - en: At the end of 2021, OpenAI eventually made the entire GPT-3 available and its
     API available for all the users on public space in specified countries with an
     improved Playground, which makes it easy to prototype with our models, an example
@@ -658,11 +688,13 @@
   id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 2021年底，OpenAI最终在指定国家的公共空间为所有用户提供了整个GPT-3及其API，并提供了改进的Playground，这使得使用我们的模型进行原型设计变得容易，一个包含数十个提示的示例库，以帮助开发人员入门，以及Codex，一个将自然语言转换为代码的新模型。
 - en: '[Introduction of GPT - 3.5, InstructGPT](toc.xhtml#s85a)'
   id: totrans-88
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: GPT-3.5，InstructGPT的介绍
 - en: One of the major issues that large language models used to face is like unfiltered
     AI- generated contents and responses sometimes which seem to be untruthful, toxic
     and irrelevant to the users. Thus, OpenAI integrated a fine-tuning with human-feedback
@@ -937,6 +969,8 @@
   id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 在重新定义和扩展现有模型在各种NLP任务周围的结构后，OpenAI构建了他们的GPT-3.5（被称为GPT 3.5的兄弟模型）系列，成为一个可以满足复杂NLP解决方案的对话式智能AI
+    NLP系统。随着时间的推移，GPT 3.5在功能和优化方面有所改进。OpenAI推出了一系列GPT 3.5模型版本，使用户能够更清晰地根据其用例利用和实验模型。
 - en: '**Turbo**: The same model family that underpins ChatGPT is Turbo. As compared
     to the Davinci model family, it performs similarly well on completions while being
     optimized for conversational chat input and output. The Turbo model family in
@@ -947,18 +981,22 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**Turbo：** ChatGPT的基础模型系列是Turbo。与Davinci模型系列相比，它在完成方面表现出色，同时针对对话式聊天输入和输出进行了优化。API中的Turbo模型系列应该能够很好地适用于ChatGPT中可以高效处理的每种用例。像ChatGPT一样，第一个经常获得模型升级的模型系列是Turbo系列。'
 - en: '**Qualities:** Conversation and text generation'
   id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: '**特点：** 对话和文本生成'
 - en: '**Max. request can be made:** 4,096 tokens'
   id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: '**最大请求可达到：** 4,096个标记'
 - en: '**Trained date:** Up to Sep 2021'
   id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: '**训练日期：** 截至2021年9月'
 - en: '**DaVinci:** The Davinci model family is the most competent and can complete
     any work that the other models (Ada, Curie, and Babbage) can complete, frequently
     with less training. Davinci will yield the greatest results for tasks requiring
@@ -970,6 +1008,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**DaVinci：** Davinci模型系列是最有竞争力的，可以完成其他模型（Ada、Curie和Babbage）可以完成的任何工作，通常需要更少的训练。Davinci将为需要深入理解文本的任务产生最佳结果，例如为特定受众进行摘要和创作原创内容。由于这些扩展功能需要更多的计算资源，Davinci每个API请求的成本更高，速度也比其他模型慢。'
 - en: Understanding the purpose of text is another area where Davinci excels. Davinci
     excels at deducing solutions to various logical conundrums and illuminating character
     motivations. Some of the most difficult cause-and-effect AI puzzles have been
@@ -977,18 +1016,22 @@
   id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 理解文本目的是Davinci擅长的另一个领域。Davinci擅长推断各种逻辑难题的解决方案和阐明人物动机。一些最困难的因果关系人工智能难题已经被Davinci解决。
 - en: '**Qualities:** Complex intent, cause and effect, summarization for audience'
   id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: '**特点：** 复杂意图，因果关系，面向受众的摘要'
 - en: '**Max. request can be made:** 4,000 tokens'
   id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: '**最大请求可达到：** 4,000个标记'
 - en: '**Trained date:** Up to June 2021'
   id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: '**训练日期：** 截至2021年6月'
 - en: '**Curie**: Curie is incredibly strong yet moves very quickly. While Curie excels
     at many complex tasks like sentiment classification and summarization, Davinci
     is better at processing complex text. Being a general-purpose chatbot, Curie is
@@ -997,11 +1040,13 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**Curie：** Curie非常强大，但速度很快。虽然Curie擅长许多复杂任务，如情感分类和摘要，但Davinci更擅长处理复杂文本。作为通用聊天机器人，Curie在进行问答和回答查询方面也相当擅长。'
 - en: '**Qualities:** Language translation, complex classification, text sentiment,
     summarization'
   id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: '**特点：** 语言翻译，复杂分类，文本情感，摘要'
 - en: '**Babbage:** Babbage is capable of simple categorization and other elementary
     tasks. When assessing how well documents match search queries using semantic search,
     it is also extremely capable.'
@@ -1009,10 +1054,12 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 巴贝奇：巴贝奇能够进行简单的分类和其他基本任务。在使用语义搜索评估文档与搜索查询的匹配程度时，它也非常有能力。
 - en: '**Qualities:** Moderate classification, semantic search classification'
   id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: '**特点：** 中等分类，语义搜索分类'
 - en: '**Ada**: Ada is often the fastest model and is capable of finishing jobs that
     don’t call for a lot of detail, such text parsing, address correction, and some
     types of categorization tasks. The performance of Ada may frequently be enhanced
@@ -1021,10 +1068,12 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**Ada：** Ada通常是最快的模型，能够完成不需要太多细节的工作，比如文本解析、地址校正和某些类型的分类任务。通过添加额外的上下文，Ada的性能通常可以得到提升。'
 - en: '**Qualities:** Parsing text, simple classification, address correction, keywords'
   id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: '**特点：** 解析文本，简单分类，地址校正，关键词'
 - en: ChatGPT has been made to comply with many human valued prototypes and rules.
     It was trained up to early 2022\. The basic version of ChatGPT uses the GPT 3.5
     - turbo API as the backend model which is way cheaper than many other GPT 3.5
@@ -1032,87 +1081,108 @@
   id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT已经被制定为符合许多人类重视的原型和规则。它在2022年初进行了训练。ChatGPT的基本版本使用了GPT 3.5-turbo API作为后端模型，比许多其他GPT
+    3.5系列模型更便宜，使其更受用户欢迎。
 - en: '[Timeline Summary](toc.xhtml#s93a)'
   id: totrans-142
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[时间线摘要](toc.xhtml#s93a)'
 - en: '| **Date** | **Milestone** |'
   id: totrans-143
   prefs: []
   type: TYPE_TB
+  zh: '| **日期** | **里程碑** |'
 - en: '| 11th June,2018 | GPT-1 announced on the OpenAI blog. |'
   id: totrans-144
   prefs: []
   type: TYPE_TB
+  zh: '| 2018年6月11日 | GPT-1在OpenAI博客上宣布。|'
 - en: '| 14th Feb,2019 | GPT-2 announced on the OpenAI blog. |'
   id: totrans-145
   prefs: []
   type: TYPE_TB
+  zh: '| 2019年2月14日 | GPT-2在OpenAI博客上宣布。|'
 - en: '| 28th May,2020 | Initial GPT-3 preprint paper published to arXiv. |'
   id: totrans-146
   prefs: []
   type: TYPE_TB
+  zh: '| 2020年5月28日 | GPT-3初稿论文发布到arXiv。|'
 - en: '| 11th Jun,2020 | GPT-3 API private beta. |'
   id: totrans-147
   prefs: []
   type: TYPE_TB
+  zh: '| 2020年6月11日 | GPT-3 API私人测试版。|'
 - en: '| 22th Sep,2020 | GPT-3 licensed to Microsoft. |'
   id: totrans-148
   prefs: []
   type: TYPE_TB
+  zh: '| 2020年9月22日 | GPT-3授权给微软。|'
 - en: '| 18th Nov,2021 | GPT-3 API opened to the public. |'
   id: totrans-149
   prefs: []
   type: TYPE_TB
+  zh: '| 2021年11月18日 | GPT-3 API向公众开放。|'
 - en: '| 27th Jan,2022 | InstructGPT was released as text-davinci-002, now known as
     GPT-3.5\. InstructGPT preprint paper Mar/2022. |'
   id: totrans-150
   prefs: []
   type: TYPE_TB
+  zh: '| 2022年1月27日 | InstructGPT作为text-davinci-002发布，现在被称为GPT-3.5。InstructGPT初稿论文于2022年3月发布。|'
 - en: '| 28th July,2022 | Exploring data-optimal models with FIM, paper on arXiv.
     |'
   id: totrans-151
   prefs: []
   type: TYPE_TB
+  zh: '| 2022年7月28日 | 在arXiv上发表了探索数据最优模型的论文。|'
 - en: '| 1st Sep,2022 | GPT-3 model pricing was cut by 66% for the davinci and curie
     model. |'
   id: totrans-152
   prefs: []
   type: TYPE_TB
+  zh: '| 2022年9月1日 | GPT-3模型的价格为davinci和curie模型降低了66%。|'
 - en: '| 21st Sep 2022 | Whisper (speech recognition) announced on the OpenAI blog.
     |'
   id: totrans-153
   prefs: []
   type: TYPE_TB
+  zh: '| 2022年9月21日 | Whisper（语音识别）在OpenAI博客上宣布。|'
 - en: '| 28st Nov 2022 | GPT-3.5 expanded to text-davinci-003, announced via email:Higher
     quality writing.Handles more complex instructions.3\. Better at longer form content
     generation. |'
   id: totrans-154
   prefs: []
   type: TYPE_TB
+  zh: '| 2022年11月28日 | GPT-3.5扩展到text-davinci-003，通过电子邮件宣布：写作质量更高。处理更复杂的指令。3.更擅长生成更长的内容。
+    |'
 - en: '| 30th Nov 2022 | ChatGPT announced on the OpenAI blog. |'
   id: totrans-155
   prefs: []
   type: TYPE_TB
+  zh: '| 2022年11月30日 | 在OpenAI博客上宣布了ChatGPT。 |'
 - en: '| 1st Feb 2023 | ChatGPT hits 100 million monthly active unique users (via
     UBS report). |'
   id: totrans-156
   prefs: []
   type: TYPE_TB
+  zh: '| 2023年2月1日 | ChatGPT的月活跃用户达到1亿（通过瑞银报告）。 |'
 - en: '| 1st Mar 2023 | ChatGPT API announced on the OpenAI blog. |'
   id: totrans-157
   prefs: []
   type: TYPE_TB
+  zh: '| 2023年3月1日 | 在OpenAI博客上宣布了ChatGPT API。 |'
 - en: '*The timeline was extracted from the GPT blog by Dr Alan D. Thompson'
   id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '*时间表是从Alan D. Thompson博士的GPT博客中提取的'
 - en: '[Points to remember](toc.xhtml#s94a)'
   id: totrans-159
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[需要记住的要点](toc.xhtml#s94a)'
 - en: The GPT-1 was launched in June 2018, and it was trained with diverse levels
     of unlabeled textual corpus data to develop a strong natural language understanding
     base with fine-tuning and generative pre-training.
@@ -1120,6 +1190,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: GPT-1于2018年6月推出，它是通过对多样化的未标记文本语料库数据进行训练，以开发强大的自然语言理解基础，并进行精细调整和生成式预训练。
 - en: The study showed how pre-training improved the model’s zero shot performance
     on a variety of NLP tasks, including sentiment analysis, question answering, and
     schema resolution.
@@ -1127,12 +1198,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 研究表明，预训练如何提高了模型在各种自然语言处理任务上的零-shot性能，包括情感分析、问答和模式解析。
 - en: GPT-1 performed better than specifically trained supervised state-of-the-art
     models in 9 out of 12 tasks the models were compared on.
   id: totrans-162
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: GPT-1在12项任务中有9项表现优于专门训练的监督式最先进模型。
 - en: The GPT -1 model once again performed significantly better on these tasks than
     the prior best results, with gains of up to 8.9% on Story Cloze and 5.7% overall
     on RACE.
@@ -1140,43 +1213,52 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: GPT-1模型再次在这些任务上表现出比以前最好的结果显着更好，Story Cloze的增益高达8.9％，整体上RACE的增益为5.7％。
 - en: The next version of the GPT model was introduced in 2019, GPT-2 which was trained
     on a larger dataset and enriched with more parameters to make this model better.
   id: totrans-164
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: GPT模型的下一个版本是在2019年推出的，GPT-2，它是在更大的数据集上进行训练，并丰富了更多的参数，以使这个模型更好。
 - en: The foundation for zero-shot task transfer, mentioned in GPT-2, is task conditioning.
   id: totrans-165
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: GPT-2中提到的零-shot任务转移的基础是任务调节。
 - en: GPT 2’s capacity to transfer zero shot tasks is intriguing.
   id: totrans-166
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: GPT 2在转移零-shot任务方面的能力令人着迷。
 - en: As a special case of zero shot task transfer, zero shot learning occurs when
     no examples are given at all, and the model is instructed to perform the task.
   id: totrans-167
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 作为零-shot任务转移的特例，当根本没有给出任何示例，并且指示模型执行任务时，零-shot学习就会发生。
 - en: Join our book's Discord space
   id: totrans-168
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 加入我们书籍的Discord空间
 - en: 'Join the book''s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
   id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入书籍的Discord Workspace，获取最新更新、优惠、世界各地的技术动态、新发布和与作者的交流：
 - en: '[**https://discord.bpbonline.com**](https://discord.bpbonline.com)'
   id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**https://discord.bpbonline.com**](https://discord.bpbonline.com)'
 - en: '![](images/dis.jpg)'
   id: totrans-171
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/dis.jpg)'

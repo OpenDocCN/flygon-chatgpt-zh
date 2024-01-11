@@ -1,15 +1,21 @@
 - en: '[CHAPTER 10](toc.xhtml#c10)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第10章](toc.xhtml#c10)'
 - en: '[API Pricing model and technical limitations of ChatGPT](toc.xhtml#c10)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[ChatGPT的API定价模型和技术限制](toc.xhtml#c10)'
 - en: '[Introduction](toc.xhtml#s95a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s95a)'
 - en: '**API pricing** (as of 02^(nd) Mar, 2023): Though there’s still a free version
     of ChatGPT available, the API is needed for small to large institutes and individuals
     to integrate their developments and applications with GPT to utilize the facility
@@ -17,90 +23,130 @@
     become well sustainable and affordable now. Here’s the list for current pricing
     per 1000 tokens (one can consider this as word vector, 1000 tokens can approximately
     can create an essay of 750 words):'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '**API定价**（截至2023年3月2日）：尽管ChatGPT仍然有免费版本可用，但API对于小到大型机构和个人来说是必需的，以便将他们的开发和应用程序与GPT集成，以在其端利用该设施。ChatGPT和其近亲GPT-3.5的API定价现在已经变得可持续和负担得起。以下是当前每1000个token的定价列表（可以将其视为单词向量，1000个token大约可以创建750个单词的文章）：'
 - en: '| **Model** | **Price / 1000 tokens** |'
+  id: totrans-4
   prefs: []
   type: TYPE_TB
+  zh: '| **模型** | **价格 / 1000 tokens** |'
 - en: '| gpt-3.5-turbo | $0.002 / 1K tokens |'
+  id: totrans-5
   prefs: []
   type: TYPE_TB
+  zh: '| gpt-3.5-turbo | $0.002 / 1K tokens |'
 - en: '| Ada – Fastest | $0.0004 / 1K tokens |'
+  id: totrans-6
   prefs: []
   type: TYPE_TB
+  zh: '| Ada – 最快 | $0.0004 / 1K tokens |'
 - en: '| Babbage | $0.0005 / 1K tokens |'
+  id: totrans-7
   prefs: []
   type: TYPE_TB
+  zh: '| Babbage | $0.0005 / 1K tokens |'
 - en: '| Curie | $0.0020 / 1K tokens |'
+  id: totrans-8
   prefs: []
   type: TYPE_TB
+  zh: '| Curie | $0.0020 / 1K tokens |'
 - en: '| Davinci – the most powerful | $0.0020 / 1K tokens |'
+  id: totrans-9
   prefs: []
   type: TYPE_TB
+  zh: '| Davinci – 最强大 | $0.0020 / 1K tokens |'
 - en: '[Technical Limitations of ChatGPT](toc.xhtml#s96a)'
+  id: totrans-10
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[ChatGPT的技术限制](toc.xhtml#s96a)'
 - en: 'Sometimes ChatGPT provides responses that are accurate but are really erroneous
     or illogical. Fixing this problem is difficult because: (1) there is currently
     no source of truth during RL training; (2) making the model more cautious makes
     it decline questions that it can answer correctly; and (3) supervised training
     deceives the model because the best response depends on the model’s knowledge
     rather than the demonstrator’s knowledge.'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时ChatGPT提供的回答是准确的，但实际上是错误的或不合逻辑的。解决这个问题很困难，因为：（1）目前在RL训练期间没有真相来源；（2）使模型更谨慎会导致它拒绝它可以正确回答的问题；（3）监督训练会欺骗模型，因为最佳回应取决于模型的知识而不是示范者的知识。
 - en: The input phrase can be changed, and ChatGPT is sensitive to repeated attempts
     at the same question. For instance, the model could claim to not know the answer
     if the question is phrased one way, but with a simple rewording, they might be
     able to respond accurately.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入短语可以更改，ChatGPT对相同问题的重复尝试很敏感。例如，如果问题以一种方式表达，模型可能会声称不知道答案，但通过简单改述，他们可能能够准确回答。
 - en: The model repeatedly states that it is a language model developed by OpenAI
     and utilizes other overused words. These problems are caused by biases in the
     training data (trainers favor lengthier responses that appear more thorough) and
     well-known over-optimization problems.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型反复声明自己是由OpenAI开发的语言模型，并使用其他过度使用的词语。这些问题是由训练数据中的偏见引起的（训练者偏爱看起来更彻底的更长回答）以及众所周知的过度优化问题。
 - en: When the user provides an uncertain query, the model should ideally offer clarifying
     questions. Instead, our present models typically make assumptions about what the
     user meant.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 当用户提供一个不确定的查询时，模型理想情况下应该提出澄清问题。相反，我们目前的模型通常会假设用户的意思是什么。
 - en: Although we’ve worked to make the model reject unsuitable requests, there are
     still moments when it’ll take negative instructions or behave inimically. Although
     we anticipate some false negatives and positives for the time being, we are leveraging
     the Moderation API to alert users or prohibit specific categories of hazardous
     material. In order to help us in our continued efforts to enhance this system,
     we are glad to gather user input.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管我们努力使模型拒绝不合适的请求，但仍然有时会接受负面指示或表现敌意。尽管我们暂时预期会有一些误报和误判，但我们正在利用Moderation API来警告用户或禁止特定类别的危险材料。为了帮助我们不断努力改进这个系统，我们很乐意收集用户意见。
 - en: '[Points to remember](toc.xhtml#s97a)'
+  id: totrans-16
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[要记住的事情](toc.xhtml#s97a)'
 - en: 'API pricing (as of 02^(nd) Mar, 2023): Though there’s still a free version
     of ChatGPT available, the API is needed for small to large institutes and individuals
     to integrate their developments and applications with GPT to utilize the facility
     at their end.'
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: API定价（截至2023年3月2日）：尽管ChatGPT仍然有免费版本可用，但API对于小到大型机构和个人来说是必需的，以便将他们的开发和应用程序与GPT集成，以在其端利用该设施。
 - en: API pricing of chatGPT and as well the close sibling, GPT -3.5 has become well
     sustainable and affordable now.
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ChatGPT和其近亲GPT-3.5的API定价现在已经变得可持续和负担得起。
 - en: Join our book's Discord space
+  id: totrans-19
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 加入我们书籍的Discord空间
 - en: 'Join the book''s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入书籍的Discord Workspace，获取最新更新、优惠、全球技术动态、新发布和与作者的交流：
 - en: '[**https://discord.bpbonline.com**](https://discord.bpbonline.com)'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**https://discord.bpbonline.com**](https://discord.bpbonline.com)'
 - en: '![](images/dis.jpg)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/dis.jpg)'

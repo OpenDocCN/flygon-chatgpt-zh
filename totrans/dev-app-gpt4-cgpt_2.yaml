@@ -1288,38 +1288,46 @@
   id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你在[表2-2](#table-2-2)中所见，该表详细介绍了聊天完成端点的输入选项，函数定义需要作为函数对象数组传递。函数对象在[表2-4](#table-2-4)中有详细描述。
 - en: Table 2-4\. Details of the function object
   id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 表2-4。函数对象的详细信息
 - en: '| Field name | Type | Description |'
   id: totrans-189
   prefs: []
   type: TYPE_TB
+  zh: '|字段名称|类型|描述|'
 - en: '| --- | --- | --- |'
   id: totrans-190
   prefs: []
   type: TYPE_TB
+  zh: '|---|---|---|'
 - en: '| `name` | String (required) | The name of the function. |'
   id: totrans-191
   prefs: []
   type: TYPE_TB
+  zh: '|`name`|字符串（必需）|函数的名称。|'
 - en: '| `description` | String | The description of the function. |'
   id: totrans-192
   prefs: []
   type: TYPE_TB
+  zh: '|`description`|字符串|函数的描述。|'
 - en: '| `parameters` | Object | The parameters expected by the function. These parameters
     are expected to be described in a [JSON Schema](http://json-schema.org) format.
     |'
   id: totrans-193
   prefs: []
   type: TYPE_TB
+  zh: '|`parameters`|对象|函数期望的参数。这些参数应该以[JSON Schema](http://json-schema.org)格式描述。|'
 - en: 'As an example, imagine that we have a database that contains information relative
     to company products. We can define a function that executes a search against this
     database:'
   id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 举个例子，假设我们有一个包含与公司产品相关信息的数据库。我们可以定义一个执行针对该数据库的搜索的函数：
 - en: '[PRE12]'
   id: totrans-195
   prefs: []
@@ -1329,6 +1337,7 @@
   id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我们定义函数的规格：
 - en: '[PRE13]'
   id: totrans-197
   prefs: []
@@ -1338,6 +1347,7 @@
   id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们可以创建一个对话并调用`openai.ChatCompletion`端点：
 - en: '[PRE14]'
   id: totrans-199
   prefs: []
@@ -1348,6 +1358,7 @@
   id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型已经创建了一个我们可以使用的查询。如果我们从响应中打印`function_call`对象，我们会得到：
 - en: '[PRE15]'
   id: totrans-201
   prefs: []
@@ -1357,6 +1368,7 @@
   id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我们执行函数并继续与结果进行对话：
 - en: '[PRE16]'
   id: totrans-203
   prefs: []
@@ -1366,6 +1378,7 @@
   id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我们提取最终的响应并获得以下内容：
 - en: '[PRE17]'
   id: totrans-205
   prefs: []
@@ -1378,11 +1391,13 @@
   id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个简单的例子演示了函数如何有助于构建一个解决方案，允许最终用户以自然语言与数据库进行交互。函数定义允许您限制模型的回答方式，并将其响应集成到应用程序中。
 - en: Using Other Text Completion Models
   id: totrans-207
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 使用其他文本完成模型
 - en: As mentioned, OpenAI provides several additional models besides the GPT-3 and
     GPT-3.5 series. These models use a different endpoint than the ChatGPT and GPT-4
     models. Even though the GPT 3.5 Turbo model is usually the best choice in terms
@@ -1392,11 +1407,14 @@
   id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如提到的，OpenAI除了GPT-3和GPT-3.5系列之外，还提供了几个其他模型。这些模型使用的端点与ChatGPT和GPT-4模型不同。尽管GPT
+    3.5 Turbo模型通常是在价格和性能方面最佳的选择，但了解如何使用完成模型，特别是对于微调等用例，对于只有GPT-3完成模型可用的情况非常有帮助。
 - en: Note
   id: totrans-209
   prefs:
   - PREF_H6
   type: TYPE_NORMAL
+  zh: 注意
 - en: OpenAI has released a deprecation plan for the text completion endpoint. We
     introduce this endpoint here only because completion base models are the only
     ones that can be fine-tuned. OpenAI will provide a solution for fine-tuning chat-based
@@ -1405,6 +1423,7 @@
   id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI已经发布了文本完成端点的弃用计划。我们在这里介绍这个端点只是因为完成基础模型是唯一可以进行微调的模型。OpenAI将在2024年1月之前为基于聊天的模型提供微调的解决方案。由于目前还不可用，我们没有必要的信息来在这里描述它。
 - en: 'There is an important difference between text completion and chat completion:
     as you might guess, both generate text, but chat completion is optimized for conversations.
     As you can see in the following code snippet, the main difference with the `openai.ChatCompletion`
@@ -1413,6 +1432,7 @@
   id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: 文本完成和聊天完成之间有一个重要的区别：你可能会猜到，两者都生成文本，但聊天完成是为对话优化的。如你在下面的代码片段中所见，与`openai.ChatCompletion`端点的主要区别在于提示格式。基于聊天的模型必须是对话格式；对于完成，它是一个单一的提示：
 - en: '[PRE18]'
   id: totrans-212
   prefs: []
@@ -1422,6 +1442,7 @@
   id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 前面的代码片段将输出类似于以下内容的完成：
 - en: '[PRE19]'
   id: totrans-214
   prefs: []
@@ -1432,45 +1453,54 @@
   id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一节将详细介绍文本完成端点的输入选项。
 - en: Input Options for the Text Completion Endpoint
   id: totrans-216
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 文本完成端点的输入选项
 - en: The set of input options for `openai.Completion.create` is very similar to what
     we saw previously with the chat endpoint. In this section, we will discuss the
     main input parameters and consider the impact of the length of the prompt.
   id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: '`openai.Completion.create`的输入选项集与我们之前在聊天端点中看到的非常相似。在本节中，我们将讨论主要的输入参数，并考虑提示的长度对其影响。'
 - en: Main input parameters
   id: totrans-218
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 主要输入参数
 - en: The required input parameters and a selection of optional parameters that we
     feel are most useful are described in [Table 2-5](#table-2-5).
   id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们描述了必需的输入参数和我们认为最有用的一些可选参数在[表2-5](#table-2-5)中。
 - en: Table 2-5\. Required parameters and optional parameters for the text completion
     endpoint
   id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: 表2-5。文本完成端点的必需参数和可选参数
 - en: '| Field name | Type | Description |'
   id: totrans-221
   prefs: []
   type: TYPE_TB
+  zh: '|字段名称|类型|描述|'
 - en: '| --- | --- | --- |'
   id: totrans-222
   prefs: []
   type: TYPE_TB
+  zh: '|---|---|---|'
 - en: '| `model` | String (required) | ID of the model to use (the same as with `openai.ChatCompletion`).
     This is the only required option. |'
   id: totrans-223
   prefs: []
   type: TYPE_TB
+  zh: '|`model`|字符串（必需）|要使用的模型的ID（与`openai.ChatCompletion`相同）。这是唯一必需的选项。|'
 - en: '| `prompt` | String or array (default: `<&#124;endoftext&#124;>`) | The prompt
     to generate completions for. This is the main difference from the `openai.ChatCompletion`
     endpoint. The `openai.Completion.create` endpoint should be encoded as a string,

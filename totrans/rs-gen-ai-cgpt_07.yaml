@@ -1,22 +1,32 @@
 - en: '[CHAPTER 8](toc.xhtml#c08)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【第8章】
 - en: '[Brief of top other NLP models](toc.xhtml#c08)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【其他顶级NLP模型简介】
 - en: '[Introduction](toc.xhtml#s69a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 【介绍】
 - en: This table describes some other existing high-level models in the NLP domain
     exploring their structure and capabilities and technically tested performance.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 这张表描述了NLP领域中一些其他现有的高级模型，探索它们的结构和能力以及技术测试的性能。
 - en: '| **Name** | **Details** |'
+  id: totrans-4
   prefs: []
   type: TYPE_TB
+  zh: '| **名称** | **详情** |'
 - en: '| **BERT** | **Model:**The model represents a bi-directional training with
     random masking of input tokens in transformerThe model has around 24 Transformer
     blocks, 1024-hidden, 340M parameters, and training with 3.3 billions of word corpus**Performance:**GLUE
@@ -24,8 +34,12 @@
     of 93.2 % on SQuAD 1.1 benchmark outperforming the human interpretation by 2%**Capabilities:**BERT
     gives more better angle in building sentiment analysis tools & more efficiency
     towards providing better customer experience using chatbots |'
+  id: totrans-5
   prefs: []
   type: TYPE_TB
+  zh: '| **BERT** | **模型：**该模型代表了transformer中输入标记的双向训练和随机屏蔽模型具有大约24个Transformer块，1024隐藏，340M参数，并使用33亿字的语料进行训练**性能：**GLUE基准分数约为80.4%，比以前最佳结果高出7.6%；在SQuAD
+    1.1基准测试中的准确率为93.2%，超过人类解释2%**能力：**BERT在构建情感分析工具方面更具优势，并且在使用聊天机器人提供更好的客户体验方面更加高效
+    |'
 - en: '| **XLnet** | **Model:**This model represents a combination of core concepts
     of TransformerXL and BERT, autoregressive technology of TransformerXL and bidirectional
     nature of BERT for tackle the limitations of both**Performance:**XLnet successfully
@@ -33,16 +47,22 @@
     BERT on 20 tasks**Capabilities:**XLnet is better at question answering, sentiment
     analysis, priority ranking with similar conversational business application can
     be done here |'
+  id: totrans-6
   prefs: []
   type: TYPE_TB
+  zh: '| **XLnet** | **模型：**该模型代表了TransformerXL和BERT的核心概念的组合，TransformerXL的自回归技术和BERT的双向性质，以解决两者的局限性**性能：**XLnet成功地执行了18个不同的NLP任务，并在20个任务上表现优异**能力：**XLnet在问答、情感分析、优先级排名方面更为出色，类似的对话式业务应用也可以在这里完成
+    |'
 - en: '| **RoBERTa** | **Model:**This model is trained with higher number of dataset
     than the original BERT, almost 10x with longer iteration of trainingTraining batch
     number has been also increased up to 8000Byte-pair-encoding vocabulary with more
     than 50k subwords units**Performance:**Almost outperformed BERT in every aspects
     as expected**Capabilities:**RoBERTa can be applied with the similar use cases
     like BERT and XLnet with better performance expectations |'
+  id: totrans-7
   prefs: []
   type: TYPE_TB
+  zh: '| **RoBERTa** | **模型：**该模型的训练数据集比原始BERT多了近10倍，训练迭代时间更长，训练批次数量也增加到了8000字节对编码词汇表中有超过50k个子词单元**性能：**在各个方面几乎都超过了BERT的预期**能力：**RoBERTa可以应用于类似的用例，如BERT和XLnet，并具有更好的性能期望
+    |'
 - en: '| **ALBERT** | **Model:**With the objective of reducing the unnecessary length
     parameters in the large NLP models and break the Moore’s law in NLP model building,
     ALBERT is introduced with parameter reduction mechanisms like factorized embedding
@@ -52,8 +72,11 @@
     an F1 score of 92.2 with SQuAD benchmark and GLUE benchmark of 89.4**Capabilities:**ALBERT
     can be applied with the similar use cases like BERT and XLnet with better performance
     expectations |'
+  id: totrans-8
   prefs: []
   type: TYPE_TB
+  zh: '| **ALBERT** | **模型：**旨在减少大型NLP模型中不必要的长度参数，并打破NLP模型构建中的摩尔定律，ALBERT引入了参数减少机制，如分解嵌入参数化和跨层参数共享**性能：**在不观察到性能显着下降的情况下，ALBERT通过减少18倍的参数和1.7倍的更快训练速度解决了模型臃肿的问题在SQuAD基准测试中取得了92.2的F1分数，GLUE基准测试为89.4**能力：**ALBERT可以应用于类似的用例，如BERT和XLnet，并具有更好的性能期望
+    |'
 - en: '| **PaLM** | **Model:**In this model around 540B training parameter existed
     and to accommodate that during the training phase, the help of data parallelization
     was taken across two cloud TPU v4 pods and finally achieved a training utilization
@@ -67,8 +90,11 @@
     translation, document categorization, ad copy production, code issue correction,
     and more. This is similar to other newly announced pre-trained language models.
     |'
+  id: totrans-9
   prefs: []
   type: TYPE_TB
+  zh: '| **PaLM** | **模型：**在这个模型中，大约有540B的训练参数，并且在训练阶段利用了两个云TPU v4 pod的数据并行化来有效地实现了57.8%的硬件利用率**性能：**在29个主要的NLP任务中，它在28个任务上超过了许多大型模型。它超越了许多基准任务，如SuperGLUE，BIG-bench，比其他模型要好得多。尽管需要的Python代码训练量少了50倍，PaLM在改进的Codex
+    12B上表现出色，表明大型语言模型在从其他计算机语言和自然语言数据中转移知识方面更有效率**能力：**PaLM可以用于各种下游活动，包括对话式人工智能、问答、机器翻译、文档分类、广告文案制作、代码问题纠正等。这与其他新宣布的预训练语言模型类似。|'
 - en: '| **MegaTron** | **Model:**This model has 530 billion parameters with 105 layers,
     20480 hidden dimensions, and 128 attention heads. In this, 8-way tensor and 35-way
     pipeline parallelism, with 2048 sequence length, batch size 1920\. It’s trained
@@ -85,22 +111,35 @@
     issue correction, and more. This is similar to other newly announced pre-trained
     language models. It also performed well against the mathematical interferences
     as well |'
+  id: totrans-10
   prefs: []
   type: TYPE_TB
+  zh: '| **MegaTron** | **模型：**该模型具有5300亿个参数，105层，20480个隐藏维度和128个注意力头。在这个模型中，使用了8路张量和35路管道并行，序列长度为2048，批量大小为1920。它是在包含3390亿个标记的15个数据集上进行训练的。在训练过程中，我们选择根据图2中给定的可变采样权重将数据集混合成异质批次，重点放在高质量的数据集上。我们对模型进行了2700亿个标记的训练。**性能：**它在LAMBADA、RACE-h、BoolQ、PiQA、HellaSwag、WinoGrand、ANLI-R2、HANS、WiC等知名基准测试中表现出色，包括少次、零次和一次测试。它在Lambada、PiQA、HellaSwag等方面表现尤为出色，并展现了在最后一个单词预测、问题回答、逻辑推理方面的性能。**能力：**MT可用于各种下游活动，包括对话AI、问题回答、机器翻译、文档分类、广告文案制作、代码问题纠正等。这与其他新宣布的预训练语言模型类似。它在数学推理方面也表现出色
+    |'
 - en: '**Table 8.1:** *Various NLP models*'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: '**表8.1：** *各种NLP模型*'
 - en: Join our book's Discord space
+  id: totrans-12
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 加入我们书籍的Discord空间
 - en: 'Join the book''s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入书籍的Discord工作区，获取最新更新、优惠、世界各地的技术动态、新发布和与作者的交流：
 - en: '[**https://discord.bpbonline.com**](https://discord.bpbonline.com)'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**https://discord.bpbonline.com**](https://discord.bpbonline.com)'
 - en: '![](images/dis.jpg)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/dis.jpg)'

@@ -1,15 +1,21 @@
 - en: '[CHAPTER 9](toc.xhtml#c09)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第9章](toc.xhtml#c09)'
 - en: '[Historical flow and development of GPT series](toc.xhtml#c09)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[GPT系列的历史流程和发展](toc.xhtml#c09)'
 - en: '[Introduction](toc.xhtml#s70a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s70a)'
 - en: The Generative Pre-trained Transformer (GPT) models are among the most popular
     natural language processing models used today. This chapter delves into the intricacies
     of the GPT-1 and GPT-2 models, discussing their architectures, training stages,
@@ -20,8 +26,10 @@
     between words and phrases. The model was able to generate coherent text and complete
     sentences, making it useful in a wide range of applications such as chatbots,
     language translation, and summarization.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成式预训练变压器（GPT）模型是当今最受欢迎的自然语言处理模型之一。本章深入探讨了GPT-1和GPT-2模型的复杂性，讨论了它们的架构、训练阶段、实施规范和评估。GPT-1首次于2018年6月推出，旨在通过精细调整和生成式预训练开发强大的自然语言理解基础。它经过多样化级别的未标记文本语料数据训练，使其能够学习单词和短语之间的模式和关系。该模型能够生成连贯的文本和完整的句子，使其在诸如聊天机器人、语言翻译和摘要等各种应用中非常有用。
 - en: In February 2019, the GPT-2 was released, boasting a larger dataset and more
     parameters than its predecessor. The GPT-2 was able to generate longer and more
     coherent sentences, and it was also able to tackle multiple tasks simultaneously.
@@ -30,72 +38,102 @@
     discusses their potential applications in various fields. Understanding the workings
     of these models is essential for anyone interested in natural language processing
     and machine learning.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 2019年2月，GPT-2发布，比其前身拥有更大的数据集和更多的参数。GPT-2能够生成更长、更连贯的句子，同时还能同时处理多个任务。总的来说，本章详细介绍了GPT-1和GPT-2模型的技术方面。它突出了它们的优势和局限性，并讨论了它们在各个领域的潜在应用。了解这些模型的工作原理对于任何对自然语言处理和机器学习感兴趣的人都是必要的。
 - en: '[Generative Pre-trained Transformer - 1](toc.xhtml#s71a)'
+  id: totrans-5
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[生成式预训练变压器-1](toc.xhtml#s71a)'
 - en: '**Launch date:** 11th June, 2018'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: '**发布日期：**2018年6月11日'
 - en: In 2018, the first GPT model, GPT-1, was released which was trained with a diverse
     level of unlabeled textual corpus data to get a strong Natural language understanding(
     NLU) base with fine-tuning and generative pre-training.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 2018年，第一个GPT模型GPT-1发布，该模型经过多样化的未标记文本语料数据训练，以获得强大的自然语言理解（NLU）基础，并进行了精细调整和生成式预训练。
 - en: '[Basic Framework](toc.xhtml#s72a)'
+  id: totrans-8
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[基本框架](toc.xhtml#s72a)'
 - en: The GPT-1 model really trained the language model using a transformer structure
     with about 12 layers of decoders and disguised self-attention. It was trained
     using data from the BookCorpus dataset, which contained over 7000 unpublished
     books to get the idea of working that model under unrecognized and unseen data
     with long stretched data which makes the model get better and longer contexts.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-1模型使用了变压器结构进行语言模型训练，包括大约12层解码器和伪装的自注意力。它使用了来自BookCorpus数据集的数据进行训练，该数据集包含了7000多本未发表的书籍，以便让模型在未被识别和未见过的数据下工作，并获得更好和更长的上下文。
 - en: '[Model training stages](toc.xhtml#s73a)'
+  id: totrans-10
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[模型训练阶段](toc.xhtml#s73a)'
 - en: 'GPT - 1 model has 3 stages training:'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-1模型有3个阶段的训练：
 - en: Pre-training the model on the high corpus textual data where texts are getting
     tokenized and fed into likelihood function to optimize.
+  id: totrans-12
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在高语料文本数据上对模型进行预训练，其中文本被标记并输入到可能性函数中进行优化。
 - en: In this stage, the fine-tuning is being engaged to get the model accustomed
     with discriminative task with labeled data - which was passed through a transformer’s
     block and forwarded into L2 maximization and finally infused the a final linear
     optimization objective function
+  id: totrans-13
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在这个阶段，进行了精细调整，使模型习惯于使用带标签数据的判别性任务——这些数据通过一个变压器块传递，并进入L2最大化，最后融入最终的线性优化目标函数。
 - en: Task-specific Input Transformations contain organized inputs like triplets of
     documents, ordered sentence pairs, questions, and replies for particular tasks
     like question answering or textual entailment. The tokens of each input sequence
     are reinforced into an order with start and end tokens as well as delimiter tokens
     to maintain the order.
+  id: totrans-14
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 特定任务的输入转换包含组织良好的输入，如文档三元组、有序句子对、问题和回复，用于特定任务，如问答或文本蕴涵。每个输入序列的标记都被加强为一个顺序，具有开始和结束标记以及分隔符标记以保持顺序。
 - en: '![](images/Figure-9.1.jpg)'
+  id: totrans-15
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-9.1.jpg)'
 - en: '**Figure 9.1:** *Picture defines the normal transformer architecture and input
     patterns for different information for different tasks for fine-tuning'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.1：** *图片定义了不同任务的正常变压器架构和输入模式*'
 - en: '[**Source:** GPT -1 paper]*'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：** GPT-1论文]*'
 - en: '[Model implementation specifications](toc.xhtml#s74a)'
+  id: totrans-18
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[模型实施规范](toc.xhtml#s74a)'
 - en: Model used a 768-dimensional state for encoding tokens into word embeddings
     and for position wise feed forward layer 3072-dimensional state was used with
     12 attention heads. The adam optimiser was used with a learning rate 2.5 x 10
@@ -105,19 +143,25 @@
     **Gaussian Error Linear Unit** (**GELU**) was used as activation function. The
     model was trained for 100 epochs on mini-batches of size 64 and sequence length
     of 512\. The model had 117M parameters in total.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型使用了768维状态来将标记编码为词嵌入，用于位置智能前馈层使用了3072维状态和12个注意力头。使用了adam优化器，学习率为2.5 x 10 ^(-4)，并且这个学习率在0到2000次更新中增加了余弦调度。注意力、残差、字节对编码（BPE）词汇表使用了40000个合并和0.1的嵌入辍学率用于正则化，**高斯误差线性单元**（**GELU**）被用作激活函数。模型在64大小的小批量和512序列长度上进行了100个时期的训练，总共有117M个参数。
 - en: For the fine-tuning part, the same hyperparameters settings have been observed
     from pretraining. The dropout rate was 0.1, with a learning rate 6.25e-5 and a
     batch size of 32\. The fine-tune was made very prompt with 3 steps of epochs and
     Warmup occurs over 0.2% of training and is scheduled using a linear learning rate
     decay schedule.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于微调部分，观察到了与预训练相同的超参数设置。辍学率为0.1，学习率为6.25e-5，批量大小为32。微调非常迅速，共进行了3个时期的步骤，热身在0.2%的训练中进行，并使用线性学习率衰减计划进行调度。
 - en: '[Evaluation](toc.xhtml#s75a)'
+  id: totrans-21
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[评估](toc.xhtml#s75a)'
 - en: The study showed how pre-training improved the model’s zero shot performance
     on a variety of NLP tasks, including sentiment analysis, question answering, and
     schema resolution. The architecture was capable of performing a range of NLP tasks
@@ -126,8 +170,10 @@
     for future models to better realize this efficacy using larger datasets and additional
     parameters. GPT-1 performed better than specifically trained supervised state-of-the-art
     models in 9 out of 12 tasks the models were compared on.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 研究表明，预训练如何提高了模型在各种自然语言处理任务中的零-shot性能，包括情感分析、问答和模式解析。该架构能够在相对较少的微调下执行一系列自然语言处理任务，并实现迁移学习。这个模型证明了生成式预训练的有效性，并为未来的模型提供了更好地利用更大数据集和额外参数实现这种有效性的机会。在12项任务中，GPT-1在9项任务中的表现优于专门训练的监督式最先进模型。
 - en: They’ve made use of the just recently made available RACE dataset, which consists
     of English texts and the corresponding questions from middle and high school exams.
     It has been demonstrated that this corpus contains more questions of the reasoning
@@ -137,19 +183,28 @@
     two possibilities for stories with several sentences. The GPT -1 model once again
     performed significantly better on these tasks than the prior best results, with
     gains of up to 8.9% on Story Cloze and 5.7% overall on RACE.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 他们利用了最近提供的RACE数据集，该数据集包含了中学和高中考试的英文文本和相应的问题。已经证明，这个语料库包含的推理类型的问题比CNN或SQuaD等其他数据集更多，使其成为该模型的理想测试场所，该模型经过训练可以处理长距离上下文。此外，他们还使用了叙述填空测试，该测试需要从两种可能性中选择正确的结论，用于具有多个句子的故事。与先前的最佳结果相比，GPT-1模型在这些任务上的表现再次显著优于先前的最佳结果，Story
+    Cloze的增益高达8.9%，RACE整体增益为5.7%。
 - en: To learn more technical aspect of GPT - 1, you can refer to- Improving Language
     Understanding by Generative Pre-Training **-** **https://tinyurl.com/3fu53mrd**
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 要了解GPT-1的更多技术方面，您可以参考-通过生成式预训练改进语言理解**-** **https://tinyurl.com/3fu53mrd**
 - en: '[Generative Pre-trained Transformer - 2](toc.xhtml#s76a)'
+  id: totrans-25
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[生成式预训练变换器-2](toc.xhtml#s76a)'
 - en: '**Launch date:** 14th Feb, 2019'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: '**发布日期：**2019年2月14日'
 - en: The next version of the GPT model was introduced in 2019, GPT-2 which was trained
     on a larger dataset and enriched with more parameters to make this model better.
     In this second version and on the typical improvisation on GPT - 1, it is basically
@@ -157,12 +212,16 @@
     reading comprehension, and summarization; and trying to achieve more closer tasks
     to human-abilities. It was scaled to have more than 10x the number of parameters
     than GPT - 1 (or the small GPT - 2).
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT模型的下一个版本是在2019年推出的GPT-2，它是在更大的数据集上进行训练，并丰富了更多的参数，以使这个模型更好。在这第二个版本中，与GPT-1的典型即兴表演相比，它基本上是为了同时处理多个任务，如问答、机器翻译、阅读理解和摘要；并试图实现更接近人类能力的任务。它的参数数量比GPT-1（或小型GPT-2）增加了10倍以上。
 - en: '[Base framework](toc.xhtml#s77a)'
+  id: totrans-28
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[基础框架](toc.xhtml#s77a)'
 - en: The base model is similar to the initial GPT model, which is a transformer based
     architecture with decoder blocks only. To perform the task, the learning goal
     is needed to be adjusted to P (output|input, task). Task conditioning alludes
@@ -173,8 +232,10 @@
     for language models is carried out by giving the model examples or instructions
     in natural language. The foundation for zero-shot task transfer, mentioned in
     GPT-2, is task conditioning.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 基础模型类似于最初的GPT模型，它是一个只有解码器块的基于变换器的架构。为了执行任务，需要调整学习目标为P（输出|输入，任务）。任务调节指的是这种修改，即模型预期对于不同任务的相同输入产生不同的输出。一些模型在架构级别上同时给出任务和输入，使用任务调节。对于语言模型，任务、输入和输出都是语言段落。因此，语言模型的任务调节是通过用自然语言给出模型示例或指令来完成的。GPT-2中提到的零-shot任务迁移的基础是任务调节。
 - en: GPT 2’s capacity to transfer zero shot tasks is intriguing. As a special case
     of zero shot task transfer, zero shot learning occurs when no examples are given
     at all, and the model is instructed to perform the task. For fine-tuning, input
@@ -186,8 +247,10 @@
     to comprehend that the task involved translation and provide the French equivalent
     of the English statement. These tasks are expected to be executed in an unsupervised
     manner.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-2在零样本任务转移方面的能力令人着迷。作为零样本任务转移的特例，零样本学习发生在根本没有给出任何示例的情况下，模型被指示执行任务。对于微调，GPT-2的输入以一种预期模型能够理解任务性质并提供答案的格式呈现，而不是像GPT-1那样修改序列。为了模仿零样本任务转移行为，进行了这样的操作。例如，模型被给出一个英文句子，然后是单词“法国”，以及一个英文到法文翻译任务的提示。预期模型能够理解这个任务涉及翻译，并提供英文陈述的法文等价物。这些任务预计以无监督的方式执行。
 - en: In order to create a substantial and excellent dataset, the authors scraped
     the Reddit site( posts which at least had minimum 3 karma) and gathered data from
     outbound links of highly upvoted posts. The final product, called WebText, had
@@ -196,138 +259,191 @@
     was used to train the GPT-1 model. Due to the prevalence of Wikipedia material
     in test sets, WebText lacks Wikipedia content. The encoding is done in a unicode
     mechanism which increased the vocabulary base from 256 to 130,000.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了创建一个实质性和优秀的数据集，作者们从Reddit网站上获取了数据（至少有3个karma的帖子），并收集了高赞帖子的外链数据。最终产品名为WebText，包含了来自800多万个出版物的40GB文本数据。与用于训练GPT-1模型的Book
+    Corpus数据集不同，这个庞大的数据集被用于训练GPT-2模型。由于测试集中维基百科材料的普遍存在，WebText不包含维基百科内容。编码采用了Unicode机制，将词汇基数从256增加到130,000。
 - en: '[Model specifications](toc.xhtml#s78a)'
+  id: totrans-32
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[模型规格](toc.xhtml#s78a)'
 - en: '1.5 billion parameters were in GPT-2 which is ten times the amount of GPT-1
     (117M parameters). There are some major elements in the model which are similar
     to GPT - 1 though there are few significant variations from GPT-1 included as
     well:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-2拥有15亿个参数，是GPT-1（117M参数）的十倍。模型中有一些主要元素与GPT-1相似，但也包括一些与GPT-1有显著差异的元素：
 - en: For word embedding, GPT-2 ( for GPT large) used 1600 dimensional vectors across
     48 layers and a total 50,257 tokens from a larger vocabulary were used.
+  id: totrans-34
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对于词嵌入，GPT-2（对于GPT大型）使用了1600维向量，跨越48层，并使用了来自更大词汇表的总共50,257个标记。
 - en: Larger batch size of 512 and larger context window from 512 to 1024 tokens were
     used.
+  id: totrans-35
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用了更大的批处理大小512和更大的上下文窗口，从512个标记增加到1024个标记。
 - en: Layer normalization was moved to the input of each sub-block and an additional
     layer normalization was added after the final self-attention block.
+  id: totrans-36
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 层归一化被移动到每个子块的输入，并在最终的自注意块之后添加了额外的层归一化。
 - en: At initialisation, the weight of residual layers was scaled by 1/√N, where N
     was the number of residual layers.
+  id: totrans-37
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在初始化时，残差层的权重按1/√N进行了缩放，其中N是残差层的数量。
 - en: There have been around 117M (GPT-1), 345M, 762M, and 1.5B (GPT-2) parameters
     to train four language models with 12,24,36,48 layers respectively along with
     768, 1024, 1280, 1600 dimensional layers respectively. Every successive model
     was less perplexing than the one before it. This shows that as the number of parameters
     increases, the complexity of language models on the same dataset reduces. Also,
     every downstream task was completed better by the model with the most parameters.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了训练四个语言模型，分别使用了约117M（GPT-1）、345M、762M和1.5B（GPT-2）个参数，层次分别为12、24、36、48层，维度分别为768、1024、1280、1600。每个后续模型的困惑度都比前一个模型低。这表明随着参数数量的增加，相同数据集上的语言模型的复杂性降低。此外，具有最多参数的模型在每个下游任务中都表现更好。
 - en: '[Evaluation](toc.xhtml#s79a)'
+  id: totrans-39
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[评估](toc.xhtml#s79a)'
 - en: 'Many datasets of downstream tasks, such as reading comprehension, summarization,
     translation, and question-answering, were used to evaluate GPT-2\. The GPT-2 model
     has gone through many different kinds of objectives and database testing:'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于评估GPT-2的许多下游任务的数据集，如阅读理解、摘要、翻译和问答：
 - en: In zero shot settings, GPT-2 improved the then-current state-of-the-art for
     7 of the 8 language modeling datasets across domains and datasets. Though it lacked
     a lot with One Billion Word Benchmark from performance perspective, most likely
     due to it being the most data samples and having the most destructive pre-processing.
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在零样本设置中，GPT-2在跨领域和数据集的8个语言建模数据集中，对7个数据集的当时最先进技术进行了改进。尽管在性能方面在十亿字基准测试中表现不佳，这很可能是因为它具有最多的数据样本并且具有最具破坏性的预处理。
 - en: The Children’s Book Dataset assesses how well language models perform when applied
     to various word categories, including nouns, prepositions, and named entities;
     basically to estimate the correct omitted word out of 10 possible choices. GPT-2
     achieved a steady growth in accuracy with both CBT-named entity and CBT-common
     as the model parameter grows; with new state of the art accuracy results of 93.3%
     and 89.1% respectively for common nouns and named entities.
+  id: totrans-42
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 儿童图书数据集评估了语言模型在应用于各种词类（包括名词、介词和命名实体）时的表现，基本上是为了估计在10个可能选择中正确省略的单词。随着模型参数的增长，GPT-2在CBT命名实体和CBT常见名词方面的准确性稳步增长；对于常见名词和命名实体，新的最先进的准确性结果分别为93.3%和89.1%。
 - en: The LAMBADA dataset evaluates how well models do at finding far-off dependencies
     and guessing the sentence’s last word. GPT-2 enhanced the state of the art accuracy
     by Language models(LMs) from 19% to 52.66% and cut down perplexity from 99.8 to
     8.6\. It worked better with valid continuations of the sentence but not with valid
     final words. By adding, a stop-filter, it worked better with an improvement by
     4%
+  id: totrans-43
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: LAMBADA数据集评估模型在找到遥远依赖和猜测句子最后一个词方面的表现。GPT-2将语言模型的准确率从19%提高到52.66%，并将困惑度从99.8降低到8.6。它在句子的有效延续方面表现更好，但在有效的最终词方面表现不佳。通过添加停止过滤器，它的表现得到了4%的改善。
 - en: By assessing a system’s capacity to resolve ambiguities in the text, the Winograd
     Schema challenge seeks to gauge its capacity for commonsense thinking. GPT–2 got
     a better rate of accuracy of 70.70% with an increment of 7%.
+  id: totrans-44
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过评估系统在文本中解决歧义的能力，Winograd Schema挑战旨在衡量其常识思维能力。GPT-2的准确率提高了7%，达到了70.70%。
 - en: The CoQA dataset comprises papers from several fields that naturally exchange
     questions and answers. The exercise measures one’s capacity for reading comprehension
     as well as their capacity to respond to inquiries based on prior conversations.
     GPT-2 matched or exceeded the results from 3 of 4 baselines on zero shot tasks
     involving reading comprehension, which were trained on the 127,000+ question-answer
     pairs of the training data.
+  id: totrans-45
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: CoQA数据集包括来自几个领域的论文，这些领域自然地交换问题和答案。这项练习衡量了一个人的阅读理解能力，以及他们基于先前对话回答问题的能力。GPT-2在涉及阅读理解的零-shot任务上与训练数据中的127,000多个问题-答案对匹配或超过了4个基线中的3个的结果。
 - en: On an overview, The language model’s ability to grasp tasks and outperform the
     state-of-the-art on numerous tasks in zero shot scenarios was improved, according
     to GPT-2, by training on a larger dataset and employing more parameters. The essay
     claims that as model capacity increased, performance increased in a log-linear
     manner.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，根据GPT-2的说法，语言模型在零样本情况下理解任务并在许多任务上超越了最先进技术的能力得到了改善，这是通过在更大的数据集上进行训练并使用更多参数实现的。该论文声称，随着模型容量的增加，性能呈对数线性增长。
 - en: '![](images/Figure-9.2.jpg)'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-9.2.jpg)'
 - en: '**Figure 9.2:** *Performance of GPT-2 in CBT dataset'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.2：** *GPT-2在CBT数据集中的表现'
 - en: '[**Source:** GPT -2 paper]*'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：** GPT-2论文]*'
 - en: Also, when the number of parameters increased, the drop in language model perplexity
     did not approach a point of saturation. The WebText dataset really underfit GPT-2,
     and perhaps lengthier training sessions further reduced perplexity. According
     to research, the GPT-2 model size was not the maximum and that a larger language
     model will help people grasp natural language by reducing confusion.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，当参数数量增加时，语言模型困惑度的下降并没有接近饱和点。WebText数据集确实使GPT-2欠拟合，也许更长的训练会进一步降低困惑度。根据研究，GPT-2模型大小并不是最大的，更大的语言模型将有助于人们通过减少混淆来理解自然语言。
 - en: '![](images/Figure-9.3.jpg)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-9.3.jpg)'
 - en: '**Figure 9.3:** *Performance of Winograd Schema Challenge of GPT -2'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.3：** *GPT-2在Winograd Schema Challenge中的表现'
 - en: '[**Source:** GPT -2 paper]*'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：** GPT-2论文]*'
 - en: To learn more technical aspect of GPT - 2, you can refer to - Language Models
     are Unsupervised Multitask Learners - **https://tinyurl.com/3x7b74n9**
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 要了解GPT-2的更多技术方面，您可以参考- 语言模型是无监督多任务学习者- **https://tinyurl.com/3x7b74n9**
 - en: '[The introduction to GPT-3](toc.xhtml#s80a)'
+  id: totrans-55
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[GPT-3的介绍](toc.xhtml#s80a)'
 - en: '**Launch date:** 28th May, 2020'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '**发布日期：** 2020年5月28日'
 - en: Right after another year of GPT- 2 launch, openAI came up with another updated
     and advanced version of GPT series, GPT - 3, “Language Models are Few-Shot Learners”.
     Open AI created the GPT-3 model with 175 billion parameters in its effort to create
@@ -341,12 +457,17 @@
     jobs that it was never expressly taught for, such as adding and subtracting numbers,
     generating SQL queries and codes, decoding sentences of words, writing React and
     JavaScript codes from a task description in natural language, etc.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 在GPT-2推出一年后，openAI推出了GPT系列的另一个更新和先进版本GPT-3，“语言模型是少样本学习者”。Open AI创建了拥有1750亿参数的GPT-3模型，旨在创建极其强大和有效的语言模型，只需要少量训练和少量演示即可理解任务并执行。这个模型的参数比GPT-2多100倍，比微软强大的Turing
+    NLG语言模型多10倍。由于它训练的参数和庞大的数据集，GPT-3在零样本和少样本设置下在下游NLP任务上表现良好。它可以写出难以区分是否由人产生的文章，这要归功于它的巨大容量。它还可以完成从未明确教授的即时任务，比如加减数字，生成SQL查询和代码，解码单词的句子，根据自然语言中的任务描述编写React和JavaScript代码等。
 - en: '[Base Framework](toc.xhtml#s81a)'
+  id: totrans-58
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[基础框架](toc.xhtml#s81a)'
 - en: With the text data they are trained on, large language models gain pattern detection
     and other abilities. The language models begin recognizing patterns in the data
     while they learn the core job of predicting the next word given context words,
@@ -357,6 +478,7 @@
     a few examples and/or a description of what needs to be done. This is a potent
     capacity of huge language models that gets stronger as the model’s parameter count
     rises.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
 - en: Few, one, and zero-shot settings are specialized examples of zero-shot task
@@ -365,15 +487,19 @@
     One example is given to the model in a one-shot setup, while none are given in
     a zero-shot configuration. The model’s few-shot, one-shot, and zero-shot capabilities
     all improve with increased capacity.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
 - en: '![](images/Figure-9.4.jpg)'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
 - en: '**Figure 9.4:** *Image representing the context learning mechanism during training'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
 - en: '[**Source:** GPT -3 paper]*'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
 - en: Five distinct corpora were used to train the GPT-3, each with a specific weight.
@@ -381,42 +507,52 @@
     more often. Common Crawl, WebText2, Books1, Books2, and Wikipedia were the five
     datasets used which included most of all the use case patterns of textual and
     contextual data.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
 - en: '[Model specifications](toc.xhtml#s82a)'
+  id: totrans-65
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: 'Again, like GPT-2, the model use in first GPT model with the transformer base
     but this version witnessed few major differences from GPT-2 which go like this:'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
 - en: GPT - 3 has been evaluated in 3 different in-context learning other than traditional
     fine-tuning with zero, one and few shot learning techniques.
+  id: totrans-67
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: GPT-3 has 96 layers with each layer having 96 attention heads.
+  id: totrans-68
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Size of word embeddings was increased to 12888 for GPT-3 from 1600 for GPT-2.
+  id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Context window size was increased from 1024 for GPT-2 to 2048 tokens for GPT-3.
+  id: totrans-70
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Adam optimiser was used with β_1=0.9, β_2=0.95 and ε= 10^(-8).
+  id: totrans-71
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Alternating dense and locally banded sparse attention patterns were used.
+  id: totrans-72
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: '[Evaluation](toc.xhtml#s83a)'
+  id: totrans-73
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -427,15 +563,19 @@
     performance. On NLP tasks like closed book question answering, schema resolution,
     translation, etc., GPT-3 again performed well, frequently outperforming or coming
     close to well-tuned models.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
 - en: '![](images/Figure-9.5.jpg)'
+  id: totrans-75
   prefs: []
   type: TYPE_IMG
 - en: '**Figure 9.5:** *Four methods for performing a task with a language model'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
 - en: '[**Source:** GPT -3 paper]*'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
 - en: The model performed better in few-shot settings than in one- and zero-shot settings
@@ -460,13 +600,16 @@
     terms, etc. The model performed better in the few-shot option than the one-shot
     and zero-shot settings for these tasks as well, with performance increasing with
     the number of parameters.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
 - en: To learn more technical aspect of GPT - 3, you can refer to - Language Models
     are Few-Shot Learners- **https://tinyurl.com/4ym9tehp**
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
 - en: '[API development of GPT - 3](toc.xhtml#s84a)'
+  id: totrans-80
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -476,6 +619,7 @@
     One may now request permission to use the API in your product, create a totally
     new application, or assist in researching the advantages and disadvantages of
     this technology.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
 - en: The API will attempt to match the pattern you provided it with when given any
@@ -485,20 +629,25 @@
     improve performance on certain tasks by either learning from human input supplied
     by users or labelers or by training on a dataset (small or big) of samples you
     supply.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
 - en: In September 2020, GPT-3 was integrated with Microsoft exclusively licensing
     the GPT-3, allowing us to leverage its technical innovations to develop and deliver
     advanced AI solutions for our customers, creating new potential AI solutions.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
 - en: '![](images/Figure-9.6.jpg)'
+  id: totrans-84
   prefs: []
   type: TYPE_IMG
 - en: '**Figure 9.6:** *The process of input feeding in InstructGPT model or GPT 3.5'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
 - en: '[**Source:** InstructGPT Paper]*'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
 - en: At the end of 2021, OpenAI eventually made the entire GPT-3 available and its
@@ -506,9 +655,11 @@
     improved Playground, which makes it easy to prototype with our models, an example
     library with dozens of prompts to get developers started, and Codex, a new model
     that translates natural language into code.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
 - en: '[Introduction of GPT - 3.5, InstructGPT](toc.xhtml#s85a)'
+  id: totrans-88
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
@@ -518,24 +669,32 @@
     taking stance which helps catering a wide range of tasks. This fine-tuned supervised
     model is trained with reinforcement learning of human feedback, which are referred
     as InstructGPT.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 大型语言模型过去面临的一个主要问题是，有时会出现未经过滤的人工智能生成的内容和响应，这些内容看起来不真实、有毒且与用户无关。因此，OpenAI集成了一个带有人类反馈的微调，这有助于满足各种任务。这种经过微调的监督模型是通过人类反馈的强化学习训练的，被称为InstructGPT。
 - en: '[Base Framework](toc.xhtml#s86a)'
+  id: totrans-90
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[基础框架](toc.xhtml#s86a)'
 - en: In InstructGPT, on the input prompt distribution, the labelers show examples
     of the intended behavior. These human prompts have tasks like generation, question
     answering, dialogue, summarization, extractions, and other natural language tasks
     and are majorly built on English language ( 96%). Almost 40 contractors were contributed
     towards human feedback and approximately 73% training labellers did synergize
     with each other.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 在InstructGPT中，标注者展示了预期行为的示例。这些人类提示包括生成、问答、对话、摘要、提取等自然语言任务，并且主要建立在英语（96％）上。几乎有40名承包商为人类反馈做出了贡献，大约73％的训练标注者之间进行了协同合作。
 - en: '[Model specifications](toc.xhtml#s87a)'
+  id: totrans-92
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[模型规格](toc.xhtml#s87a)'
 - en: In the training part of instructGPT, the labelers were directed to use 3 kinds
     of prompts which included 1\. Engage some arbitrary tasks 2\. Multiple instructions
     and multiple queries 3\. About certain corresponding solutions from random audiences
@@ -544,31 +703,41 @@
     with labellers demonstrations, likewise with rewards model and the dataset are
     adjusted with human interpretation of previous model output’s rankings; and the
     PPO models are completely fine-tuned without human interventions.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 在InstructGPT的训练部分，标注者被指示使用3种提示，包括1. 参与一些任意任务 2. 多个指令和多个查询 3. 关于来自等待用户的随机观众的某些相应解决方案。训练机制被分开，以训练3种不同的训练模型结构，在SFT模型中，数据集是通过标注者演示进行训练的，同样也是通过奖励模型进行调整，并且数据集是根据先前模型输出的排名进行人类解释；而PPO模型则完全在没有人类干预的情况下进行微调。
 - en: '**Supervised fine-tuning (SFT):** In this model, the labeler data has been
     fed within the fine-tune mechanism for 16 epochs, using a cosine decay rate with
     a residual dropout 0.2.'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: '**监督微调（SFT）：**在这个模型中，标签数据已经在微调机制中进行了16个时期的训练，使用余弦衰减率和残差丢失率0.2。'
 - en: '**Reward modeling (RM):** The model has been trained to feed in a prompt response
     and get a scaler response. The difference in rewards represents the log odds that
     one response will be preferred to the other by a human label. In this structure
     they’ve trained approximately 6B RMs out of 175B'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: '**奖励建模（RM）：**该模型已经训练好输入提示响应并获得标量响应。奖励的差异代表了一个响应被人类标签优先于另一个的对数几率。在这个结构中，他们已经训练了大约60亿个RM中的175B个。'
 - en: '**Reinforcement learning (RL)**: A random consumer request was presented in
     a bandit-style environment, and a response was expected. It generates a reward
     based on the prompt and answer, as defined by the reward model, and closes the
     episode. In order to prevent the reward model from being over optimized, they
     also applied a per-token KL penalty from the SFT model at each token. The RM was
     used to initialize the value function. These models were known as “PPO.”'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: '**强化学习（RL）：**在一个类似赌徒的环境中提出了一个随机的消费者请求，并期望得到一个响应。它根据提示和答案生成奖励，由奖励模型定义，并结束该情节。为了防止奖励模型过度优化，他们还在每个标记处应用了来自SFT模型的标记KL惩罚。RM被用来初始化值函数。这些模型被称为“PPO”。'
 - en: '[Results](toc.xhtml#s88a)'
+  id: totrans-97
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结果](toc.xhtml#s88a)'
 - en: 'On the part of exploring more areas of developing the existing ecosystem of
     NLP models, openAI comes up with another fascinating development, which can resolve
     the problem of infilling. OpenAI wants to allow them to acquire excellent text
@@ -576,8 +745,10 @@
     to right. The team’s method for transforming training data is incredibly straightforward:
     they simply transfer a random section of text from the center to the end of a
     page.'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 在探索发展现有NLP模型生态系统的更多领域方面，OpenAI提出了另一个令人着迷的发展，可以解决填充问题。OpenAI希望允许它们在不影响其从左到右正常生成代码的能力的情况下获得出色的文本填充。团队对转换训练数据的方法非常简单：他们只是将页面中心的随机文本部分转移到页面末尾。
 - en: The team shows that a causal AR LLM can learn to fill in the middle of a document
     and handle related tasks like inferring import modules, writing docstrings, and
     finishing functions by jointly training models on a mixture of FIM-transformed
@@ -586,46 +757,64 @@
     models while learning how to more efficiently fill in the center – an advantage
     of the suggested training data transformation technique that provides FIM for
     free.
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 团队表明，因果AR LLM可以学习填写文档的中间部分，并通过在多个目标和数据集上联合训练模型，处理相关任务，如推断导入模块、编写文档字符串和完成函数。总的来说，FIM模型可能保留与标准AR模型相同的从左到右文本容量，同时学会更有效地填写中心部分-这是所提出的训练数据转换技术的优势，为FIM提供了免费的。
 - en: At 175B parameters (the davinci models, the most recent update), the InstructGPT
     model is preferred over GPT-3 more than 85% of the time and over GPT-3 prompted
     71% of the time by human indications. This means that almost 3 out of 4 times,
     labelers prefer InstructGPT over a GPT-3 that has been conditioned to do well
     on the task at hand. Not even prompt engineering is enough to beat InstructGPT.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 在175B参数（达芬奇模型，最新更新）的情况下，InstructGPT模型比GPT-3更受人类指示的偏好超过85％的时间，并且在人类指示下比GPT-3更受欢迎的时间达71％。这意味着几乎有3/4的时间，标注者更喜欢InstructGPT而不是经过条件良好的GPT-3。即使是提示工程也无法击败InstructGPT。
 - en: '![](images/Figure-9.7.jpg)'
+  id: totrans-101
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-9.7.jpg)'
 - en: '**Figure 9.7:** *Evaluation of the final snapshots of models pretrained for
     100B tokens without FIM and then fine-tuned for 25B (row a) and 50B (row b) tokens
     with FIM.'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.7：** *对于预训练了100B标记的模型的最终快照进行评估，没有使用FIM，然后使用FIM进行了25B（a行）和50B（b行）标记的微调。'
 - en: '[**Source:** InstructGPT paper]*'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：** InstructGPT论文]*'
 - en: To learn more technical aspect of GPT - 3.5, you can refer to - Training language
     models to follow instructions with human feedback- **https://tinyurl.com/yny5uux2**
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 要了解更多关于GPT-3.5的技术方面，您可以参考- 使用人类反馈训练语言模型遵循指示- **https://tinyurl.com/yny5uux2**
 - en: '[Cost reduction in GPT -3 model API tokens](toc.xhtml#s89a)'
+  id: totrans-105
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[GPT-3模型API标记的成本降低](toc.xhtml#s89a)'
 - en: Moving ahead with time and improvisation, chatGPT’s subscription model also
     witnessed a price reduction in GPT -3 series and especially in Da-Vinci model
     and curie model, 66% cost reduction - updated to $0.02 / 1k tokens and $0.002
     / 1k tokens from $0.06 / 1k tokens and $0.006 / 1k tokens respectively. The OpenAI
     team kept on making amazing progress on making the model more efficient and more
     sustainable to lead to price reduction.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着时间的推移和改进，chatGPT的订阅模型也在GPT-3系列中见证了价格的降低，特别是在达芬奇模型和库里模型中，成本降低了66% - 从每千个标记的$0.06和$0.006分别更新为每千个标记的$0.02和$0.002。OpenAI团队不断取得了使模型更加高效和可持续以导致价格降低的惊人进展。
 - en: '[Introduction of Whisper](toc.xhtml#s90a)'
+  id: totrans-107
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[Whisper简介](toc.xhtml#s90a)'
 - en: In the process of developing a better ecosystem of NLP domains, openAI came
     up with another Whisper, an automatic speech recognition which is trained on 6,80,000
     hours of multilingual and multi task supervised scraping through the web. This
@@ -633,12 +822,16 @@
     making it closer to real estimation. This model also caters to a set of multi-linguistic
     tasks and gives out the transcripts as well. The multi-linguistic part has 98
     different language data for the training purpose.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 在开发更好的NLP领域生态系统的过程中，OpenAI推出了另一个Whisper，这是一个自动语音识别模型，它经过了680,000小时的多语言和多任务监督网络爬取的训练。该模型旨在解决背景噪音、数据干扰的问题，并使其更接近真实估计。该模型还涵盖了一系列多语言任务，并提供转录。多语言部分有98种不同的语言数据用于训练目的。
 - en: '[Overview of Whisper](toc.xhtml#s91a)'
+  id: totrans-109
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[Whisper概述](toc.xhtml#s91a)'
 - en: The training dataset is made from diversified audio clips more biased towards
     the real life data to leverage more human-sided interpretations. The whisper AI
     is built on the architecture with taking mel-spectrogram of 30 secs chunks of
@@ -647,70 +840,101 @@
     like language recognition, phrase-level timestamps, multilingual voice transcription,
     and to-English speech translation are combined in with the special tokens. It
     has 9 different model sizes according to size and capabilities.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练数据集由多样化的音频剪辑组成，更倾向于真实生活数据，以利用更多人类方面的解释。Whisper AI建立在以30秒声音波块的mel频谱图为基础，并将其传递到编码器-解码器Transformer中以预测相关的文本标题，特殊标记指示单一模型执行任务，如语言识别，短语级时间戳，多语言语音转录和英语语音翻译，这些都与特殊标记结合在一起。它有9种不同的模型大小，根据大小和能力而定。
 - en: '![](images/Figure-9.8.jpg)'
+  id: totrans-111
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-9.8.jpg)'
 - en: '**Figure 9.8:** *The process of text processing through the training pipeline'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.8：** *文本处理的训练流程'
 - en: '[**Source:** Whisper paper]*'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：** Whisper论文]*'
 - en: Other current methods usually make use of larger but unsupervised audio pre-training
     datasets or smaller, more tightly linked audio-text training datasets. Whisper
     does not outperform models that specialize on LibriSpeech performance, a very
     competitive benchmark in speech recognition, because it was trained on a broad
     and varied dataset rather than being tailored to any particular one.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 其他当前的方法通常利用更大但无监督的音频预训练数据集或更小、更紧密链接的音频文本训练数据集。Whisper并没有超越专注于LibriSpeech性能的模型，LibriSpeech是语音识别中非常有竞争力的基准，因为它是在广泛而多样的数据集上训练的，而不是针对特定数据集进行了定制。
 - en: '![](images/Figure-9.9.jpg)'
+  id: totrans-115
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-9.9.jpg)'
 - en: '**Figure 9.9:** *The encoder-decoder model of Whisper'
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.9：** *Whisper的编码器-解码器模型'
 - en: '[**Source:** Whisper paper]*'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：** Whisper论文]*'
 - en: However, it is far more reliable and commits 50% less mistakes than comparable
     models when we compare its zero-shot performance across a wide range of different
     datasets.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，与其他可比模型相比，它的零-shot性能在各种不同数据集上表现出的可靠性更高，且出错率减少了50%。
 - en: Whisper’s performance is close to that of professional human transcribers. The
     model has been tested with WER distributions of 25 recordings from the Kincaid46
     dataset transcribed by Whisper, the same 4 commercial ASR systems from one computer-assisted
     human transcription service and 4 human transcription services and error ranges
     seemed to have almost similar ranges for all of them.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: Whisper的性能接近专业人类转录员的水平。该模型已经通过Whisper转录的Kincaid46数据集的25个录音的WER分布进行了测试，与一个计算机辅助人工转录服务的4个商业ASR系统和4个人工转录服务的错误范围似乎几乎相似。
 - en: To learn more technical aspect of Whisper, you can refer to - Robust Speech
     Recognition via Large-Scale Weak Supervision**-** **https://tinyurl.com/359y5t5y**
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 要了解更多关于Whisper的技术方面，您可以参考- 通过大规模弱监督实现鲁棒语音识别**-** **https://tinyurl.com/359y5t5y**
 - en: '![](images/Figure-9.10.jpg)'
+  id: totrans-121
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-9.10.jpg)'
 - en: '**Figure 9.10:** *The box plot is superimposed with dots indicating the WERs
     on individual recordings, and the aggregate WER over the 25 recordings are annotated
     on each box'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.10：** *箱线图上叠加了表示单个录音的WER的点，每个箱子上注释了25个录音的聚合WER'
 - en: '[**Source:** Whisper paper]*'
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: '[**来源：** Whisper论文]*'
 - en: '[Introduction of ChatGPT](toc.xhtml#s92a)'
+  id: totrans-124
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[ChatGPT简介](toc.xhtml#s92a)'
 - en: After redefining and expanding the structure of the existing models around various
     NLP tasks, openAI structured their GPT - 3.5( referred as sibling model of GPT
     3.5) series into a conversational smart AI NLP system which can cater the complex
     NLP solutions. As the time proceeded, the GPT 3.5 witnessed some feature and optimization
     wise. OpenAI introduced a set of GPT 3.5 model versions which gives users a better
     clarity to utilize and experiment with the models according to their use cases.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
 - en: '**Turbo**: The same model family that underpins ChatGPT is Turbo. As compared
@@ -719,16 +943,20 @@
     the API ought to work well for every use case that can be handled efficiently
     in ChatGPT. The first model family to get frequent model upgrades like ChatGPT
     is the Turbo family.'
+  id: totrans-126
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '**Qualities:** Conversation and text generation'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
 - en: '**Max. request can be made:** 4,096 tokens'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
 - en: '**Trained date:** Up to Sep 2021'
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
 - en: '**DaVinci:** The Davinci model family is the most competent and can complete
@@ -738,6 +966,7 @@
     original content. Davinci costs more each API request and is slower than the other
     models as a result of these expanded capabilities, which ask for more computational
     resources.'
+  id: totrans-130
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
@@ -745,168 +974,209 @@
     excels at deducing solutions to various logical conundrums and illuminating character
     motivations. Some of the most difficult cause-and-effect AI puzzles have been
     cracked by Davinci.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
 - en: '**Qualities:** Complex intent, cause and effect, summarization for audience'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
 - en: '**Max. request can be made:** 4,000 tokens'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
 - en: '**Trained date:** Up to June 2021'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
 - en: '**Curie**: Curie is incredibly strong yet moves very quickly. While Curie excels
     at many complex tasks like sentiment classification and summarization, Davinci
     is better at processing complex text. Being a general-purpose chatbot, Curie is
     also fairly adept at doing Q&A and answering queries.'
+  id: totrans-135
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '**Qualities:** Language translation, complex classification, text sentiment,
     summarization'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
 - en: '**Babbage:** Babbage is capable of simple categorization and other elementary
     tasks. When assessing how well documents match search queries using semantic search,
     it is also extremely capable.'
+  id: totrans-137
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '**Qualities:** Moderate classification, semantic search classification'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
 - en: '**Ada**: Ada is often the fastest model and is capable of finishing jobs that
     don’t call for a lot of detail, such text parsing, address correction, and some
     types of categorization tasks. The performance of Ada may frequently be enhanced
     by adding extra context.'
+  id: totrans-139
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '**Qualities:** Parsing text, simple classification, address correction, keywords'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
 - en: ChatGPT has been made to comply with many human valued prototypes and rules.
     It was trained up to early 2022\. The basic version of ChatGPT uses the GPT 3.5
     - turbo API as the backend model which is way cheaper than many other GPT 3.5
     series models to make it more affordable with users.
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
 - en: '[Timeline Summary](toc.xhtml#s93a)'
+  id: totrans-142
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: '| **Date** | **Milestone** |'
+  id: totrans-143
   prefs: []
   type: TYPE_TB
 - en: '| 11th June,2018 | GPT-1 announced on the OpenAI blog. |'
+  id: totrans-144
   prefs: []
   type: TYPE_TB
 - en: '| 14th Feb,2019 | GPT-2 announced on the OpenAI blog. |'
+  id: totrans-145
   prefs: []
   type: TYPE_TB
 - en: '| 28th May,2020 | Initial GPT-3 preprint paper published to arXiv. |'
+  id: totrans-146
   prefs: []
   type: TYPE_TB
 - en: '| 11th Jun,2020 | GPT-3 API private beta. |'
+  id: totrans-147
   prefs: []
   type: TYPE_TB
 - en: '| 22th Sep,2020 | GPT-3 licensed to Microsoft. |'
+  id: totrans-148
   prefs: []
   type: TYPE_TB
 - en: '| 18th Nov,2021 | GPT-3 API opened to the public. |'
+  id: totrans-149
   prefs: []
   type: TYPE_TB
 - en: '| 27th Jan,2022 | InstructGPT was released as text-davinci-002, now known as
     GPT-3.5\. InstructGPT preprint paper Mar/2022. |'
+  id: totrans-150
   prefs: []
   type: TYPE_TB
 - en: '| 28th July,2022 | Exploring data-optimal models with FIM, paper on arXiv.
     |'
+  id: totrans-151
   prefs: []
   type: TYPE_TB
 - en: '| 1st Sep,2022 | GPT-3 model pricing was cut by 66% for the davinci and curie
     model. |'
+  id: totrans-152
   prefs: []
   type: TYPE_TB
 - en: '| 21st Sep 2022 | Whisper (speech recognition) announced on the OpenAI blog.
     |'
+  id: totrans-153
   prefs: []
   type: TYPE_TB
 - en: '| 28st Nov 2022 | GPT-3.5 expanded to text-davinci-003, announced via email:Higher
     quality writing.Handles more complex instructions.3\. Better at longer form content
     generation. |'
+  id: totrans-154
   prefs: []
   type: TYPE_TB
 - en: '| 30th Nov 2022 | ChatGPT announced on the OpenAI blog. |'
+  id: totrans-155
   prefs: []
   type: TYPE_TB
 - en: '| 1st Feb 2023 | ChatGPT hits 100 million monthly active unique users (via
     UBS report). |'
+  id: totrans-156
   prefs: []
   type: TYPE_TB
 - en: '| 1st Mar 2023 | ChatGPT API announced on the OpenAI blog. |'
+  id: totrans-157
   prefs: []
   type: TYPE_TB
 - en: '*The timeline was extracted from the GPT blog by Dr Alan D. Thompson'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
 - en: '[Points to remember](toc.xhtml#s94a)'
+  id: totrans-159
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: The GPT-1 was launched in June 2018, and it was trained with diverse levels
     of unlabeled textual corpus data to develop a strong natural language understanding
     base with fine-tuning and generative pre-training.
+  id: totrans-160
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: The study showed how pre-training improved the model’s zero shot performance
     on a variety of NLP tasks, including sentiment analysis, question answering, and
     schema resolution.
+  id: totrans-161
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: GPT-1 performed better than specifically trained supervised state-of-the-art
     models in 9 out of 12 tasks the models were compared on.
+  id: totrans-162
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: The GPT -1 model once again performed significantly better on these tasks than
     the prior best results, with gains of up to 8.9% on Story Cloze and 5.7% overall
     on RACE.
+  id: totrans-163
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: The next version of the GPT model was introduced in 2019, GPT-2 which was trained
     on a larger dataset and enriched with more parameters to make this model better.
+  id: totrans-164
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: The foundation for zero-shot task transfer, mentioned in GPT-2, is task conditioning.
+  id: totrans-165
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: GPT 2’s capacity to transfer zero shot tasks is intriguing.
+  id: totrans-166
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: As a special case of zero shot task transfer, zero shot learning occurs when
     no examples are given at all, and the model is instructed to perform the task.
+  id: totrans-167
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Join our book's Discord space
+  id: totrans-168
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: 'Join the book''s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
 - en: '[**https://discord.bpbonline.com**](https://discord.bpbonline.com)'
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
 - en: '![](images/dis.jpg)'
+  id: totrans-171
   prefs: []
   type: TYPE_IMG

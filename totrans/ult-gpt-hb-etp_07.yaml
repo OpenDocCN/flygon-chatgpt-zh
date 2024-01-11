@@ -502,17 +502,20 @@
   id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦成功将数据导入文档对象，您可以开始转换过程，以满足应用程序的需求。一种常见的转换类型是将文档分成称为块的较小部分，这些块与您选择的LLM的上下文窗口对齐。例如，如果您打算使用4个块作为上下文，并分配2000个标记用于上下文，您可能希望将您的文档分成每个500个标记的块。对于英文文本，1个标记大约是4个字符或0.75个单词。
 - en: Additionally, you have the option to automatically extract features or metadata
     associated with each chunk. These extracted details can then be utilized in various
     tasks such as classification or summarization.
   id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，您还可以选择自动提取与每个块相关的特征或元数据。然后可以利用这些提取的细节来执行各种任务，如分类或摘要。
 - en: '[Text Embedding Models](toc.xhtml#s439a)'
   id: totrans-64
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[文本嵌入模型](toc.xhtml#s439a)'
 - en: Embedding means representing text as vectors and it is another method we can
     consider when transforming Documents. The implementation of this method in LangChain
     is straightforward and efficient. LangChain offers a standard interface that can
@@ -520,6 +523,7 @@
   id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 嵌入意味着将文本表示为矢量，这是在转换文档时我们可以考虑的另一种方法。LangChain中这种方法的实现是简单而高效的。LangChain提供了一个标准接口，可以与各种嵌入模型提供商一起使用。
 - en: It is important to note that different embedding providers may employ different
     techniques for embedding queries and documents. To address this, LangChain adopts
     a similar approach and offers distinct methods for embedding each of them. By
@@ -529,11 +533,13 @@
   id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 需要注意的是，不同的嵌入提供商可能采用不同的嵌入查询和文档的技术。为了解决这个问题，LangChain采用了类似的方法，并为嵌入每个方法提供了不同的方法。通过这样做，LangChain确保了在与各种嵌入提供商合作时的兼容性和灵活性，使用户能够无缝地将他们喜欢的嵌入技术集成到他们的工作流程中。
 - en: '[Vector stores](toc.xhtml#s440a)'
   id: totrans-67
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[矢量存储](toc.xhtml#s440a)'
 - en: Searching for specific information in a large amount of unstructured text is
     a common use case for LangChain. To tackle this task, one approach is to start
     by breaking down the unstructured text into Document-type chunks. These Documents
@@ -542,6 +548,7 @@
   id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 在大量非结构化文本中搜索特定信息是LangChain的常见用例。为了解决这个任务，一个方法是首先将非结构化文本分解成文档类型的块。然后将这些文档转换为数字列表（矢量）并存储在一个称为矢量存储的特殊数据库中。
 - en: To find the desired information, the query is also converted into a vector representation
     and compared with each vector in the vector store. The selection process involves
     identifying the documents that are most similar to the query. Similarity is calculated
@@ -552,6 +559,7 @@
   id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了找到所需的信息，查询也被转换为矢量表示，并与矢量存储中的每个矢量进行比较。选择过程涉及识别与查询最相似的文档。相似性是利用余弦相似度或欧氏距离等度量来计算的。余弦相似度通过测量两个矢量之间的夹角的余弦来确定两个矢量之间的相似性，而欧氏距离则计算空间中两点之间的直线距离。
 - en: A vector store acts as a database where the vector representations of Documents
     can be stored together with their metadata. What makes LangChain particularly
     versatile is its compatibility with various open-source vector stores, as well
@@ -559,22 +567,26 @@
   id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 矢量存储作为一个数据库，可以存储文档的矢量表示和它们的元数据。LangChain的特殊之处在于它与各种开源矢量存储的兼容性，以及它与不同付费矢量存储提供商的集成能力。
 - en: '[Retrievers](toc.xhtml#s441a)'
   id: totrans-71
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[检索器](toc.xhtml#s441a)'
 - en: Once our similarity search is complete, we can utilize retrievers to retrieve
     the documents that are pertinent to a query. Retriever functionality enables us
     to effectively retrieve relevant documents based on our similarity search results.
   id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦我们的相似性搜索完成，我们可以利用检索器来检索与查询相关的文档。检索器功能使我们能够根据相似性搜索结果有效地检索相关文档。
 - en: '[Chains](toc.xhtml#s442a)'
   id: totrans-73
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[链](toc.xhtml#s442a)'
 - en: The previously mentioned features can be seen as additional capabilities that
     offer convenience, but the true strength of LangChain lies in its chains. While
     using Language Models alone is suitable for simple applications, the use of multiple
@@ -584,6 +596,7 @@
   id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 前面提到的功能可以被视为提供便利的附加功能，但LangChain的真正优势在于其链。虽然单独使用语言模型适用于简单的应用程序，但在开发更复杂的应用程序时，使用多个LLM或LLM和其他组件的组合是必不可少的。LangChain通过引入链来简化这个过程。
 - en: There are various types of chains. They are particularly designed to quickly
     implement specific use cases, which is why they differ in complexity. The most
     basic type is the LLM Chain, which consists of a prompt template and a Language
@@ -592,6 +605,7 @@
   id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 有各种类型的链。它们特别设计用于快速实现特定用例，这就是它们在复杂性上的差异所在。最基本的类型是LLM链，它由提示模板和语言模型组成。这个链的目的是将给定的输入值格式化为提示，使用准备好的提示执行LLM，最后返回输出。
 - en: Another commonly used chain is the Simple Sequential chain. In this type, a
     series of calls are made to either the same or different Language Models after
     the initial call. This is particularly useful when the output from one call needs
@@ -1035,64 +1049,79 @@
   id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: '`输出 = 模型（_输入）`'
 - en: 'Finally we are parsing the output in order to get a *List* object of civil
     cases processes:'
   id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我们解析输出以获得民事案件流程的*列表*对象：
 - en: '`list_of_processes = output_parser.parse(output)`'
   id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: '`processes_list = output_parser.parse(output)`'
 - en: '`return list_of_processes`'
   id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: '`return list_of_processes`'
 - en: Now that we have a list of civil cases names, we will generate content.
   id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了一系列民事案件名称，我们将生成内容。
 - en: '[Generating content of civil cases](toc.xhtml#s449a)'
   id: totrans-145
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[生成民事案件内容](toc.xhtml#s449a)'
 - en: 'First, let’s create a directory for our civil cases:'
   id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，让我们为我们的民事案件创建一个目录：
 - en: '`def generate_civil_cases(list_of_processes):`'
   id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: '`def 生成民事案件（processes_list）：`'
 - en: '`if not os.path.exists(“civil_cases”):`'
   id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: '`if not os.path.exists(“civil_cases”):`'
 - en: '`os.makedirs(“civil_cases”)`'
   id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: '`os.makedirs(“civil_cases”)`'
 - en: 'We want to generate each of the civil cases in a reproducible way, which is
     why we are again using a prompt template. We are using a Python f-string that
     includes the variable `**civil_case_name**`, which will be changed with each iteration:'
   id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望以可重复的方式生成每个民事案件，这就是为什么我们再次使用提示模板。我们使用了一个包含变量`**civil_case_name**`的Python
+    f-string，它将在每次迭代中更改：
 - en: '`generate_civil_case_template = “””`'
   id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: '`generate_civil_case_template = “””`'
 - en: '`You are a lawyer and a legal expert. Generate content of civil case: {civil_case_name}.
     Include title, full names of parties, background, claims, evidence, legal issues
     and procedural status.`'
   id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: '`你是一名律师和法律专家。生成民事案件内容：{civil_case_name}。包括标题，当事人的全名，背景，主张，证据，法律问题和程序状态。`'
 - en: '`“””`'
   id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: '`“””`'
 - en: When we’ve got simple use cases, using LLMs in isolation is fine. However, as
     the application gets more complex, chaining LLMs may come in handy. Let’s see
     how we can implement a simple `**LLMChain**` that takes in a prompt template,
@@ -1100,233 +1129,290 @@
   id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们有简单的用例时，单独使用LLMs就可以了。但是，随着应用变得更加复杂，链式LLMs可能会派上用场。让我们看看如何实现一个简单的`**LLMChain**`，它接受一个提示模板，用用户输入进行格式化，并从LLM返回一个响应。
 - en: '`llm = OpenAI(temperature=0.9, max_tokens=4000)`'
   id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: '`llm = OpenAI(温度=0.9，最大标记=4000)`'
 - en: '`prompt = PromptTemplate(`'
   id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: '`提示 = PromptTemplate(`'
 - en: '`input_variables=[“civil_case_name”],`'
   id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: '`input_variables=[“civil_case_name”],`'
 - en: '`template=generate_civil_case_template,`'
   id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '`template=generate_civil_case_template,`'
 - en: '`)`'
   id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: '`chain = LLMChain(llm=llm, prompt=prompt)`'
   id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: '`chain = LLMChain(llm=llm, prompt=prompt)`'
 - en: 'We are calling the chain in a loop in order to generate and save civil cases:'
   id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在循环中调用链，以生成并保存民事案件：
 - en: '`for i, process in enumerate(list_of_processes, start=1):`'
   id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '`对于 i, process in enumerate(list_of_processes, start=1):`'
 - en: '`legal_process_content = chain.run(process)`'
   id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '`legal_process_content = chain.run(process)`'
 - en: '`doc = Document()`'
   id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: '`doc = Document()`'
 - en: '`doc.add_paragraph(legal_process_content)`'
   id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: '`doc.add_paragraph(legal_process_content)`'
 - en: '`doc.save(f”civil_cases/civil_case_{i}.docx”)`'
   id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: '`doc.save(f”civil_cases/civil_case_{i}.docx”)`'
 - en: 'Here is the complete code for reference:'
   id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是完整的代码供参考：
 - en: '`from LangChain import PromptTemplate`'
   id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: '`从 LangChain 导入 PromptTemplate`'
 - en: '`from LangChain.llms import OpenAI`'
   id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.llms import OpenAI`'
 - en: '`from LangChain.chains import LLMChain`'
   id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.chains import LLMChain`'
 - en: '`from LangChain.output_parsers import CommaSeparatedListOutputParser`'
   id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: '`从 LangChain.output_parsers 导入 CommaSeparatedListOutputParser`'
 - en: '`import os`'
   id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: '`导入 os`'
 - en: '`from docx import Document`'
   id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from docx import Document`'
 - en: '`from typing import List`'
   id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from typing import List`'
 - en: '`def generate_civil_cases_names() -> List[str]:`'
   id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: '`def 生成民事案件名称（）-> List[str]：`'
 - en: '`generate_civil_cases_names_template = “””`'
   id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: '`generate_civil_cases_names_template = “””`'
 - en: '`You are a lawyer and a legal expert. Generate {number_of_cases} civil cases
     names.\n{format_instructions}`'
   id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: '`你是一名律师和法律专家。生成 {number_of_cases} 民事案件名称。\n{format_instructions}`'
 - en: '`“””`'
   id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: '`“””`'
 - en: '``output_parser = CommaSeparatedListOutputParser()`'
   id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: '``output_parser = CommaSeparatedListOutputParser()`'
 - en: '`format_instructions = output_parser.get_format_instructions()`'
   id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: '`format_instructions = output_parser.get_format_instructions()`'
 - en: '`prompt = PromptTemplate(`'
   id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: '`提示 = PromptTemplate(`'
 - en: '`template=generate_civil_cases_names_template,`'
   id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: '`template=generate_civil_cases_names_template,`'
 - en: '`input_variables=[“number_of_cases”],`'
   id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: '`input_variables=[“number_of_cases”],`'
 - en: '`partial_variables={“format_instructions”: format_instructions},`'
   id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: '`partial_variables={“format_instructions”: format_instructions},`'
 - en: '`)`'
   id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: '`model = OpenAI(temperature=0.9, max_tokens=4000)`'
   id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: '`模型 = OpenAI(温度=0.9，最大标记=4000)`'
 - en: '`_input = prompt.format(number_of_cases=”80”)`'
   id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: '`_输入 = prompt.format(number_of_cases=”80”)`'
 - en: '`output = model(_input)`'
   id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: '`输出 = 模型（_输入）`'
 - en: '`list_of_processes = output_parser.parse(output)`'
   id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: '`processes_list = output_parser.parse(output)`'
 - en: '``return list_of_processes`'
   id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: '``return list_of_processes`'
 - en: '`def generate_civil_cases(list_of_processes):`'
   id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: '`def 生成民事案件（processes_list）：`'
 - en: '`if not os.path.exists(“civil_cases”):`'
   id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: '`if not os.path.exists(“civil_cases”):`'
 - en: '`os.makedirs(“civil_cases”)`'
   id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: '`os.makedirs(“civil_cases”)`'
 - en: '``generate_civil_case_template = “””`'
   id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: '``generate_civil_case_template = “””`'
 - en: '`You are a lawyer and a legal expert. Generate content of civil case: {civil_case_name}.
     Include title, full names of parties, background, claims, evidence, legal issues
     and procedural status.`'
   id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: '`你是一名律师和法律专家。生成民事案件内容：{civil_case_name}。包括标题，当事人的全名，背景，主张，证据，法律问题和程序状态。`'
 - en: '`“””`'
   id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: '`“””`'
 - en: '`llm = OpenAI(temperature=0.9, max_tokens=4000)`'
   id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: '`llm = OpenAI(温度=0.9，最大标记=4000)`'
 - en: '`prompt = PromptTemplate(`'
   id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: '`提示 = PromptTemplate(`'
 - en: '`input_variables=[“civil_case_name”],`'
   id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: '`input_variables=[“civil_case_name”],`'
 - en: '`template=generate_civil_case_template,`'
   id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: '`template=generate_civil_case_template,`'
 - en: '`)`'
   id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: '`chain = LLMChain(llm=llm, prompt=prompt)`'
   id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: '`chain = LLMChain(llm=llm, prompt=prompt)`'
 - en: '`for i, process in enumerate(list_of_processes, start=1):`'
   id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: '`对于 i, process in enumerate(list_of_processes, start=1):`'
 - en: '`legal_process_content = chain.run(process)`'
   id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: '`legal_process_content = chain.run(process)`'
 - en: '`doc = Document()`'
   id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: '`doc = Document()`'
 - en: '`doc.add_paragraph(legal_process_content)`'
   id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: '`doc.add_paragraph(legal_process_content)`'
 - en: '`doc.save(f”civil_cases/civil_case_{i}.docx”)`'
   id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: '`doc.save(f”civil_cases/civil_case_{i}.docx”)`'
 - en: '`if __name__ == “__main__”:`'
   id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: '`if __name__ == “__main__”:`'
 - en: '`process_names = generate_civil_cases_names()`'
   id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: '`process_names = generate_civil_cases_names()`'
 - en: '`generate_civil_cases(process_names)`'
   id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: '`generate_civil_cases(process_names)`'
 - en: The code begins by introducing the *generate_civil_cases_names* function. This
     function utilizes LangChain’s `**PromptTemplate**` and the `**OpenAI**` model
     to generate a list of case names. To ensure proper formatting, the output is then
@@ -1338,17 +1424,20 @@
   id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码从介绍*generate_civil_cases_names*函数开始。这个函数利用LangChain的`**PromptTemplate**`和`**OpenAI**`模型生成一个案例名称列表。为了确保正确的格式，输出然后通过`**output_parser**`进行处理。接下来，我们有`**generate_civil_cases**`函数，它将生成的案例名称列表作为参数。在这个函数内部，`**LLMChain**`被用来通过迭代过程为每个案例单独生成内容。生成的案例将被用作后续语义搜索部分的输入。
 - en: '[Semantic search](toc.xhtml#s450a)'
   id: totrans-212
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[语义搜索](toc.xhtml#s450a)'
 - en: Now that we have a database of civil cases, we want our application to be able
     to perform a semantic search in order to return all cases that are relevant for
     a lawyer that is preparing for a trial.
   id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了一个民事案件数据库，我们希望我们的应用能够进行语义搜索，以返回所有对于一名准备审判的律师相关的案件。
 - en: 'The idea is to take all the civil cases, and then use a model that converts
     them into a vector representation (embeds them) and stores them in a special vector
     database - vector store. For instance, once the lawyer inputs a query, for example,
@@ -1356,55 +1445,67 @@
   id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个想法是获取所有的民事案件，然后使用一个模型将它们转换为向量表示（嵌入）并将它们存储在一个特殊的向量数据库 - 向量存储中。例如，一旦律师输入一个查询，比如*我在寻找有关财务损失的案例*，接下来将执行以下步骤：
 - en: Converting query into vector representation - embedding the query
   id: totrans-215
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将查询转换为向量表示 - 嵌入查询
 - en: Conducting similarity checks between embedded query and embedded civil cases
   id: totrans-216
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在嵌入查询和嵌入民事案件之间进行相似性检查
 - en: Retrieving the relevant vectors from the database
   id: totrans-217
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从数据库中检索相关向量
 - en: '[Embedding civil cases and storing them in Pinecone vector store](toc.xhtml#s451a)'
   id: totrans-218
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[嵌入民事案件并将其存储在Pinecone向量存储中](toc.xhtml#s451a)'
 - en: 'Let’s begin by importing the required libraries and modules:'
   id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们开始导入所需的库和模块：
 - en: '`from LangChain.document_loaders import DirectoryLoader`'
   id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.document_loaders import DirectoryLoader`'
 - en: '`from LangChain.vectorstores import Pinecone`'
   id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.vectorstores import Pinecone`'
 - en: '`from LangChain.embeddings import OpenAIEmbeddings`'
   id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.embeddings import OpenAIEmbeddings`'
 - en: '`import pinecone`'
   id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: '`import pinecone`'
 - en: '`import os`'
   id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: '`import os`'
 - en: We are going to embed the documents using an Open AI embeddings model and then
     store them in the Pinecone vector store.
   id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将使用Open AI嵌入模型嵌入文档，然后将它们存储在Pinecone向量存储中。
 - en: 'The first thing to do is to load the civil cases. For this purpose the `**DirectoryLoader**`
     class object will load all files into a specified directory. Note that by default,
     the *DirectoryLoader* uses the `**UnstructuredLoader**` class to load the documents.
@@ -1414,26 +1515,32 @@
   id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先要做的是加载民事案件。为此，`**DirectoryLoader**`类对象将加载指定目录中的所有文件。请注意，默认情况下，*DirectoryLoader*使用`**UnstructuredLoader**`类来加载文档。如果您需要加载不同（结构化）类型的文档，可以使用不同的加载器类。例如，如果您想加载Python源代码文件，可以使用*PythonLoader*类：
 - en: '`def embed_and_store_documents():`'
   id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: '`def embed_and_store_documents():`'
 - en: '`loader = DirectoryLoader(“civil_cases”, glob=”*.docx”)`'
   id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: '`loader = DirectoryLoader(“civil_cases”, glob=”*.docx”)`'
 - en: '`documents = loader.load()`'
   id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: '`documents = loader.load()`'
 - en: 'Let’s define the embeddings model:'
   id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们定义嵌入模型：
 - en: '`embeddings_model = OpenAIEmbeddings()`'
   id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: '`embeddings_model = OpenAIEmbeddings()`'
 - en: Now, let’s delve into the functionality of Pinecone. Pinecone acts as a vector
     database, enabling us to store embedded data and send queries effectively. Before
     using Pinecone, we need to create an index, which serves as a container for our
@@ -1441,6 +1548,7 @@
   id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们深入了解Pinecone的功能。Pinecone充当向量数据库，使我们能够有效地存储嵌入数据并发送查询。在使用Pinecone之前，我们需要创建一个索引，这个索引作为我们数据的容器。
 - en: When creating a Pinecone index, we have to specify the similarity measure we
     want to use, such as cosine similarity. This measure helps in finding the most
     relevant vectors based on how close they are to the query in vector space. Additionally,
@@ -1450,6 +1558,7 @@
   id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: 在创建Pinecone索引时，我们必须指定我们想要使用的相似性度量，比如余弦相似度。这个度量有助于根据向量空间中它们与查询的接近程度来找到最相关的向量。此外，我们需要定义我们正在处理的向量的维度。在我们将使用的OpenAI的嵌入模型*text-embedding-ada-002*的情况下，输出向量的维度为1536。
 - en: Once the index is created, we can proceed by adding our API key and environment
     name to the environmental variables. This step ensures that our Pinecone client
     has the necessary authorization to access the database. Furthermore, we need to
@@ -1459,116 +1568,144 @@
   id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建索引后，我们可以通过将API密钥和环境名称添加到环境变量中来继续进行。这一步确保我们的Pinecone客户端具有必要的授权来访问数据库。此外，我们需要提供我们创建的索引的名称。这些信息使我们能够有效地初始化Pinecone客户端，提供与向量存储的无缝交互。
 - en: '`pinecone.init(`'
   id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: '`pinecone.init(`'
 - en: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
   id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
 - en: '`)`'
   id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)'
 - en: '`index_name = “legal-documents-search”`'
   id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: '`index_name = “legal-documents-search”`'
 - en: 'Finally, with this single line of code, all documents are going to be embedded
     and stored in Pinecone. These kinds of ready-to-use pieces are the great power
     of LangChain:'
   id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，通过这一行代码，所有文档都将被嵌入并存储在Pinecone中。这些 ready-to-use 的部分是LangChain的巨大力量：
 - en: '`Pinecone.from_documents(`'
   id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Pinecone.from_documents(`'
 - en: '`documents, embeddings_model, index_name=index_name`'
   id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: '`documents, embeddings_model, index_name=index_name`'
 - en: '`)`'
   id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)'
 - en: 'Here is the complete code for reference:'
   id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是完整的代码供参考：
 - en: '`from LangChain.document_loaders import DirectoryLoader`'
   id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.document_loaders import DirectoryLoader`'
 - en: '`from LangChain.vectorstores import Pinecone`'
   id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.vectorstores import Pinecone`'
 - en: '`from LangChain.embeddings import OpenAIEmbeddings`'
   id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.embeddings import OpenAIEmbeddings`'
 - en: '`import pinecone`'
   id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: '`import pinecone`'
 - en: '`import os`'
   id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: '`import os`'
 - en: '`def embed_and_store_documents():`'
   id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: '`def embed_and_store_documents():`'
 - en: '`loader = DirectoryLoader(“civil_cases”, glob=”*.docx”)`'
   id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: '`loader = DirectoryLoader(“civil_cases”, glob=”*.docx”)`'
 - en: '`documents = loader.load()`'
   id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh: '`documents = loader.load()`'
 - en: '`embeddings_model = OpenAIEmbeddings()`'
   id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: '`embeddings_model = OpenAIEmbeddings()`'
 - en: '`pinecone.init(`'
   id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh: '`pinecone.init(`'
 - en: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
   id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
 - en: '`)`'
   id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: '`index_name = “legal-documents-search”`'
   id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh: '`index_name = “legal-documents-search”`'
 - en: '`Pinecone.from_documents(`'
   id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Pinecone.from_documents(`'
 - en: '`documents, embeddings_model, index_name=index_name`'
   id: totrans-258
   prefs: []
   type: TYPE_NORMAL
+  zh: '`documents, embeddings_model, index_name=index_name`'
 - en: '`)`'
   id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: '`if __name__ == “__main__”:`'
   id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh: '`if __name__ == “__main__”:`'
 - en: '`embed_and_store_documents()`'
   id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: '`embed_and_store_documents()`'
 - en: The code snippet begins by loading the civil cases using the `**DirectoryLoader**`.
     This loader retrieves all files with a specified extension from the designated
     directory. Afterward, we define the embeddings model and proceed to initialize
@@ -1577,11 +1714,13 @@
   id: totrans-262
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码片段首先通过使用`**DirectoryLoader**`加载民事案件。这个加载器从指定的目录中检索所有具有指定扩展名的文件。然后，我们定义嵌入模型并初始化Pinecone客户端。最后一步是使用客户端将加载的文件进行嵌入并存储在Pinecone向量存储中。
 - en: '[Similarity search and retrieving relevant data](toc.xhtml#s452a)'
   id: totrans-263
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[相似性搜索和检索相关数据](toc.xhtml#s452a)'
 - en: 'The last part is retrieving the relevant data. First, we want to embed the
     query that is asked by the lawyer and perform a similarity search. Once we find
     the closest results, we want to return the names of the civil case files to the
@@ -1589,65 +1728,80 @@
   id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后一部分是检索相关数据。首先，我们要嵌入律师提出的查询并进行相似性搜索。一旦找到最接近的结果，我们希望将民事案例文件的名称返回给用户。让我们从必要的导入开始：
 - en: '`from LangChain.vectorstores import Pinecone`'
   id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.vectorstores import Pinecone`'
 - en: '`from LangChain.embeddings import OpenAIEmbeddings`'
   id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.embeddings import OpenAIEmbeddings`'
 - en: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
   id: totrans-267
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
 - en: '`import pinecone`'
   id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh: '`import pinecone`'
 - en: '`import os`'
   id: totrans-269
   prefs: []
   type: TYPE_NORMAL
+  zh: '`import os`'
 - en: 'In order to embed the lawyer’s query we will again use embeddings model from
     Open AI:'
   id: totrans-270
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了嵌入律师的查询，我们将再次使用Open AI的嵌入模型：
 - en: '`def retrieve_relevant_cases(query):`'
   id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: '`def retrieve_relevant_cases(query):`'
 - en: '`embeddings_model = OpenAIEmbeddings()`'
   id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: '`embeddings_model = OpenAIEmbeddings()`'
 - en: 'Now that we have an existing index with our civil cases represented as vectors,
     we can use the `**from_existing_index**` method to create a `**docsearch**` object
     that we’ll use for the similarity check:'
   id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了一个包含我们的民事案件的现有索引，我们可以使用`**from_existing_index**`方法创建一个`**docsearch**`对象，用于相似性检查：
 - en: '`index_name = “legal-documents-search”`'
   id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: '`index_name = “legal-documents-search”`'
 - en: '`pinecone.init(`'
   id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: '`pinecone.init(`'
 - en: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
   id: totrans-276
   prefs: []
   type: TYPE_NORMAL
+  zh: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
 - en: '`)`'
   id: totrans-277
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
   id: totrans-278
   prefs: []
   type: TYPE_NORMAL
+  zh: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
 - en: 'If we pass a query like `“Cases about financial loss”` to the *docsearch* object
     calling *similarty_search* method, the following will happen: the query will be
     embedded with the default model defined in the *OpenAIEmbeddings* object, similarity
@@ -1655,91 +1809,113 @@
   id: totrans-279
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们将查询如“关于财务损失的案例”传递给*docsearch*对象调用*similarty_search*方法，将会发生以下情况：查询将使用*OpenAIEmbeddings*对象中定义的默认模型进行嵌入，执行相似性搜索并返回所有相关文件：
 - en: '`docs = docsearch.similarity_search(query)`'
   id: totrans-280
   prefs: []
   type: TYPE_NORMAL
+  zh: '`docs = docsearch.similarity_search(query)`'
 - en: 'Finally, as we are looking for specific documents, we want to return the names
     of these documents that are stored in metadata:'
   id: totrans-281
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，由于我们正在寻找特定的文件，我们希望返回存储在元数据中的这些文件的名称：
 - en: '`sources = [doc.metadata[“source”] for doc in docs]`'
   id: totrans-282
   prefs: []
   type: TYPE_NORMAL
+  zh: '`sources = [doc.metadata[“source”] for doc in docs]`'
 - en: 'Here is the complete code for retrieving relevant civil cases:'
   id: totrans-283
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是检索相关民事案例的完整代码：
 - en: '`from LangChain.vectorstores import Pinecone`'
   id: totrans-284
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.vectorstores import Pinecone`'
 - en: '`from LangChain.embeddings import OpenAIEmbeddings`'
   id: totrans-285
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.embeddings import OpenAIEmbeddings`'
 - en: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
   id: totrans-286
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
 - en: '`import pinecone`'
   id: totrans-287
   prefs: []
   type: TYPE_NORMAL
+  zh: '`import pinecone`'
 - en: '`import os`'
   id: totrans-288
   prefs: []
   type: TYPE_NORMAL
+  zh: '`import os`'
 - en: '`def retrieve_relevant_cases(query):`'
   id: totrans-289
   prefs: []
   type: TYPE_NORMAL
+  zh: '`def retrieve_relevant_cases(query):`'
 - en: '`embeddings_model = OpenAIEmbeddings()`'
   id: totrans-290
   prefs: []
   type: TYPE_NORMAL
+  zh: '`embeddings_model = OpenAIEmbeddings()`'
 - en: '`index_name = “legal-documents-search”`'
   id: totrans-291
   prefs: []
   type: TYPE_NORMAL
+  zh: '`index_name = “legal-documents-search”`'
 - en: '`pinecone.init(`'
   id: totrans-292
   prefs: []
   type: TYPE_NORMAL
+  zh: '`pinecone.init(`'
 - en: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
   id: totrans-293
   prefs: []
   type: TYPE_NORMAL
+  zh: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
 - en: '`)`'
   id: totrans-294
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
   id: totrans-295
   prefs: []
   type: TYPE_NORMAL
+  zh: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
 - en: '`docs = docsearch.similarity_search(query)`'
   id: totrans-296
   prefs: []
   type: TYPE_NORMAL
+  zh: '`docs = docsearch.similarity_search(query)`'
 - en: '`sources = [doc.metadata[“source”] for doc in docs]`'
   id: totrans-297
   prefs: []
   type: TYPE_NORMAL
+  zh: '`sources = [doc.metadata[“source”] for doc in docs]`'
 - en: '`return sources`'
   id: totrans-298
   prefs: []
   type: TYPE_NORMAL
+  zh: '`return sources`'
 - en: '`if __name__ == “__main__”:`'
   id: totrans-299
   prefs: []
   type: TYPE_NORMAL
+  zh: '`if __name__ == “__main__”:`'
 - en: '`print(retrieve_relevant_cases(“Cases about financial loss”))`'
   id: totrans-300
   prefs: []
   type: TYPE_NORMAL
+  zh: '`print(retrieve_relevant_cases(“Cases about financial loss”))`'
 - en: The code snippet includes a function called `**retrieve_relevant_cases**` that
     aims to get the appropriate cases. Initially, we define the embeddings model,
     index name, and initialize the Pinecone client. Next, we create a *docsearch*
@@ -1748,12 +1924,14 @@
   id: totrans-301
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码片段包括一个名为`**retrieve_relevant_cases**`的函数，旨在获取适当的案例。首先，我们定义嵌入模型、索引名称并初始化Pinecone客户端。接下来，我们创建一个用于进行相似性搜索的*docsearch*对象。最后，我们从返回的文件的元数据中提取案例的名称。
 - en: '[Example 2: Internal knowledge QA for automation specialists - chatting over
     a manual of a specific controller](toc.xhtml#s453a)'
   id: totrans-302
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[示例2：自动化专家的内部知识QA-在特定控制器手册上聊天](toc.xhtml#s453a)'
 - en: One common scenario for utilizing LLMs in a corporate environment involves extracting
     data from various types of text documents, such as product specifications, usage
     documentation, web pages, presentations, and internal documents. The main challenge
@@ -1765,6 +1943,7 @@
   id: totrans-303
   prefs: []
   type: TYPE_NORMAL
+  zh: 在企业环境中利用LLM的一个常见场景是从各种类型的文本文档中提取数据，如产品规格、使用文档、网页、演示文稿和内部文档。在这些情况下的主要挑战是处理大量数据以及不同术语用于指代同一事物的不一致性。简单的关键词搜索通常是不够的，理解用户问题的语义含义变得至关重要。为了解决这个问题，LangChain提供了一系列组件，具有有效的策略来解决语义搜索。
 - en: To illustrate the capabilities of LangChain, let’s consider an example where
     we develop a tool for automation specialists to expedite the process of searching
     through documentation. This tool will function as a chat mechanism, allowing the
@@ -1778,17 +1957,20 @@
   id: totrans-304
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了说明LangChain的功能，让我们考虑一个例子，我们开发一个工具，用于自动化专家加快搜索文档的过程。这个工具将作为一个聊天机制，允许专家询问关于特定控制器的问题。提醒一下，控制器是管理过程以实现和维持期望参数的设备。例如，在巧克力制造工厂中，可编程逻辑控制器（PLC）通过监控和控制各种设备和过程来维持特定的生产参数，如温度、压力和速度，确保最佳运行和产品质量。这类控制器的文档可能非常广泛，包含大量内容。
 - en: The objective is to provide automation specialists with a chat interface that
     enables them to quickly access the information they need for design and programming
     purposes.
   id: totrans-305
   prefs: []
   type: TYPE_NORMAL
+  zh: 目标是为自动化专家提供一个聊天界面，使他们能够快速访问设计和编程所需的信息。
 - en: '[Chunking the manual and loading it to the Pinecone vector store](toc.xhtml#s454a)'
   id: totrans-306
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[将手册分块并加载到Pinecone向量存储器](toc.xhtml#s454a)'
 - en: 'Let’s explore the technical aspects of using LangChain for the implementation.
     The controller’s manual is a 40-page PDF document, so our initial task is to load
     the document. Since the entire document is too lengthy to input into our prompt,
@@ -1797,48 +1979,59 @@
   id: totrans-307
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们探讨使用LangChain进行实现的技术方面。控制器手册是一份40页的PDF文档，所以我们的初始任务是加载文档。由于整个文档太长而无法输入到我们的提示中，我们必须制定一种策略将文档分成可管理的部分。首先，让我们考虑一些有用的导入：
 - en: '`from LangChain.text_splitter import RecursiveCharacterTextSplitter`'
   id: totrans-308
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.text_splitter import RecursiveCharacterTextSplitter`'
 - en: '`from LangChain.vectorstores import Pinecone`'
   id: totrans-309
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.vectorstores import Pinecone`'
 - en: '`from LangChain.embeddings import OpenAIEmbeddings`'
   id: totrans-310
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.embeddings import OpenAIEmbeddings`'
 - en: '`from LangChain.document_loaders import PyPDFLoader`'
   id: totrans-311
   prefs: []
   type: TYPE_NORMAL
+  zh: '`from LangChain.document_loaders import PyPDFLoader`'
 - en: '`import pinecone`'
   id: totrans-312
   prefs: []
   type: TYPE_NORMAL
+  zh: '`import pinecone`'
 - en: '`Import os`'
   id: totrans-313
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Import os`'
 - en: 'Loading the manual is our next step. To accomplish this, we can utilize the
     `**PyPDFLoader**` class, which is readily available and allows us to easily load
     the document and save it as a *Document* object:'
   id: totrans-314
   prefs: []
   type: TYPE_NORMAL
+  zh: 加载手册是我们的下一步。为了实现这一目标，我们可以利用`**PyPDFLoader**`类，这个类可以方便地加载文档并将其保存为*Document*对象：
 - en: '`def embed_and_store_documents():`'
   id: totrans-315
   prefs: []
   type: TYPE_NORMAL
+  zh: '`def embed_and_store_documents():`'
 - en: '`loader = PyPDFLoader(“Manual_MT655333.pdf”)`'
   id: totrans-316
   prefs: []
   type: TYPE_NORMAL
+  zh: '`loader = PyPDFLoader(“Manual_MT655333.pdf”)`'
 - en: '`manual = loader.load_and_split()`'
   id: totrans-317
   prefs: []
   type: TYPE_NORMAL
+  zh: '`manual = loader.load_and_split()`'
 - en: 'Now that we have loaded the PDF file, we need to divide it into smaller sections.
     In LangChain, there is a text splitter class called *RecursiveCharacterTextSplitter*
     that can help us with this task. The splitter splits the text based on specific
@@ -1848,6 +2041,8 @@
   id: totrans-318
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经加载了PDF文件，我们需要将其分成较小的部分。在LangChain中，有一个名为*RecursiveCharacterTextSplitter*的文本分割器类，可以帮助我们完成这个任务。分割器根据特定字符拆分文本，这些字符列在下面：[“\n”,
+    “\r”, “ “, „“]。采用这种方法的原因是尽可能保持整个段落在一起。这增加了获取强语义相关文本块的机会。
 - en: The chunk size refers to the maximum size of each section, as measured by the
     length function. The overlap indicates how many tokens will be shared between
     each adjacent section. The length function determines how the length of the sections
@@ -1858,169 +2053,210 @@
   id: totrans-319
   prefs: []
   type: TYPE_NORMAL
+  zh: 分块大小指的是每个部分的最大大小，由长度函数测量。重叠指示了每个相邻部分之间共享多少标记。长度函数确定了如何计算各部分的长度。默认情况下，它计算字符数，但通常使用标记计数。`**add_start_index**`参数确定是否应在元数据中包括每个部分在原始文档中的起始位置。
 - en: '`text_splitter = RecursiveCharacterTextSplitter(`'
   id: totrans-320
   prefs: []
   type: TYPE_NORMAL
+  zh: '`text_splitter = RecursiveCharacterTextSplitter(`'
 - en: '`chunk_size=500,`'
   id: totrans-321
   prefs: []
   type: TYPE_NORMAL
+  zh: '`chunk_size=500,`'
 - en: '`chunk_overlap=30,`'
   id: totrans-322
   prefs: []
   type: TYPE_NORMAL
+  zh: '`chunk_overlap=30,`'
 - en: '`length_function=len,`'
   id: totrans-323
   prefs: []
   type: TYPE_NORMAL
+  zh: '`length_function=len,`'
 - en: '`add_start_index=True,`'
   id: totrans-324
   prefs: []
   type: TYPE_NORMAL
+  zh: '`add_start_index=True,`'
 - en: '`)`'
   id: totrans-325
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: 'In order to split the document into smaller parts, we can utilize the `**text_splitter**`
     object and its `**split_documents**` method:'
   id: totrans-326
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了将文档分成较小的部分，我们可以利用`**text_splitter**`对象及其`**split_documents**`方法：
 - en: '`documents = text_splitter.split_documents(documents=manual)`'
   id: totrans-327
   prefs: []
   type: TYPE_NORMAL
+  zh: '`documents = text_splitter.split_documents(documents=manual)`'
 - en: 'After completing this step, we proceed to embed these chunks and post them
     to the Pinecone vector store:'
   id: totrans-328
   prefs: []
   type: TYPE_NORMAL
+  zh: 完成此步骤后，我们继续嵌入这些块并将它们发布到Pinecone向量存储中：
 - en: '`embeddings_model = OpenAIEmbeddings()`'
   id: totrans-329
   prefs: []
   type: TYPE_NORMAL
+  zh: embeddings_model = OpenAIEmbeddings（）
 - en: '`pinecone.init(`'
   id: totrans-330
   prefs: []
   type: TYPE_NORMAL
+  zh: pinecone.init（
 - en: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
   id: totrans-331
   prefs: []
   type: TYPE_NORMAL
+  zh: api_key = os.environ [‘PINECONE_API_KEY’]，environment = os.environ [‘PINECONE_ENV’]
 - en: '`)`'
   id: totrans-332
   prefs: []
   type: TYPE_NORMAL
+  zh: ）
 - en: '`index_name = ‘mt655333-manual’`'
   id: totrans-333
   prefs: []
   type: TYPE_NORMAL
+  zh: index_name = ‘mt655333-manual’
 - en: '`Pinecone.from_documents(documents, embeddings_model, index_name=index_name)`'
   id: totrans-334
   prefs: []
   type: TYPE_NORMAL
+  zh: Pinecone.from_documents（documents，embeddings_model，index_name = index_name）
 - en: 'Here is how the full code for chunking, embedding, and pushing vectors to Pinecone
     will appear:'
   id: totrans-335
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是分块、嵌入和推送向Pinecone的完整代码：
 - en: '`from LangChain.text_splitter import RecursiveCharacterTextSplitter`'
   id: totrans-336
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.text_splitter导入RecursiveCharacterTextSplitter
 - en: '`from LangChain.vectorstores import Pinecone`'
   id: totrans-337
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.vectorstores导入Pinecone
 - en: '`from LangChain.embeddings import OpenAIEmbeddings`'
   id: totrans-338
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.embeddings导入OpenAIEmbeddings
 - en: '`from LangChain.document_loaders import PyPDFLoader`'
   id: totrans-339
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.document_loaders导入PyPDFLoader
 - en: '`import pinecone`'
   id: totrans-340
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入pinecone
 - en: '`import os`'
   id: totrans-341
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入os
 - en: '`def embed_and_store_documents():`'
   id: totrans-342
   prefs: []
   type: TYPE_NORMAL
+  zh: def embed_and_store_documents（）：
 - en: '`loader = PyPDFLoader(“Manual_MT655333.pdf”)`'
   id: totrans-343
   prefs: []
   type: TYPE_NORMAL
+  zh: 加载器= PyPDFLoader（“Manual_MT655333.pdf”）
 - en: '`manual = loader.load_and_split()`'
   id: totrans-344
   prefs: []
   type: TYPE_NORMAL
+  zh: manual = loader.load_and_split（）
 - en: '`text_splitter = RecursiveCharacterTextSplitter(`'
   id: totrans-345
   prefs: []
   type: TYPE_NORMAL
+  zh: text_splitter = RecursiveCharacterTextSplitter（
 - en: '`chunk_size=500,`'
   id: totrans-346
   prefs: []
   type: TYPE_NORMAL
+  zh: chunk_size = 500，
 - en: '`chunk_overlap=30,`'
   id: totrans-347
   prefs: []
   type: TYPE_NORMAL
+  zh: chunk_overlap = 30，
 - en: '`length_function=len,`'
   id: totrans-348
   prefs: []
   type: TYPE_NORMAL
+  zh: length_function = len，
 - en: '`add_start_index=True,`'
   id: totrans-349
   prefs: []
   type: TYPE_NORMAL
+  zh: add_start_index = True，
 - en: '`)`'
   id: totrans-350
   prefs: []
   type: TYPE_NORMAL
+  zh: ）
 - en: '`documents = text_splitter.split_documents(documents=manual)`'
   id: totrans-351
   prefs: []
   type: TYPE_NORMAL
+  zh: documents = text_splitter.split_documents（documents = manual）
 - en: '``embeddings_model = OpenAIEmbeddings()`'
   id: totrans-352
   prefs: []
   type: TYPE_NORMAL
+  zh: '``embeddings_model = OpenAIEmbeddings（）'
 - en: '`pinecone.init(`'
   id: totrans-353
   prefs: []
   type: TYPE_NORMAL
+  zh: pinecone.init（
 - en: '`api_key=os.environ[‘PINECONE_API_KEY’], environment=os.environ[‘PINECONE_ENV’]`'
   id: totrans-354
   prefs: []
   type: TYPE_NORMAL
+  zh: api_key = os.environ [‘PINECONE_API_KEY’]，环境= os.environ [‘PINECONE_ENV’]
 - en: '`)`'
   id: totrans-355
   prefs: []
   type: TYPE_NORMAL
+  zh: ）
 - en: '`index_name = ‘mt655333-manual’`'
   id: totrans-356
   prefs: []
   type: TYPE_NORMAL
+  zh: index_name = ‘mt655333-manual’
 - en: '`Pinecone.from_documents(documents, embeddings_model, index_name=index_name)`'
   id: totrans-357
   prefs: []
   type: TYPE_NORMAL
+  zh: Pinecone.from_documents（documents，embeddings_model，index_name = index_name）
 - en: '`if __name__ == ‘__main__’:`'
   id: totrans-358
   prefs: []
   type: TYPE_NORMAL
+  zh: if __name__ == ‘__main__’：
 - en: '`embed_and_store_documents()`'
   id: totrans-359
   prefs: []
   type: TYPE_NORMAL
+  zh: embed_and_store_documents（）
 - en: The preceding code snippet uses `**PyPDFLoader**` to load the controller’s manual.
     After that, it utilizes `**RecursiveCharacterTextSplitter**` to split the documents
     into smaller chunks. Later on, it embeds these chunks and puts them in a vector
@@ -2030,12 +2266,14 @@
   id: totrans-360
   prefs: []
   type: TYPE_NORMAL
+  zh: 上述代码片段使用**PyPDFLoader**加载控制器手册。之后，它利用**RecursiveCharacterTextSplitter**将文档分割成较小的块。随后，它嵌入这些块并使用Pinecone客户端将它们放入向量存储中。这使我们能够为下一步准备文档，该步骤涉及在手册上执行相似性搜索。
 - en: '[Chatting over the controller’s manual - Conversational Retrieval Chain for
     similarity search](toc.xhtml#s455a)'
   id: totrans-361
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[在控制器手册上聊天-用于相似性搜索的对话检索链]（toc.xhtml＃s455a）'
 - en: Now let’s explore the implementation of a chat mechanism that allows automation
     specialists to ask for information about the controller. To ensure a smooth conversation
     flow, we must address the fact that subsequent queries may be related to previous
@@ -2046,95 +2284,118 @@
   id: totrans-362
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们探讨一种聊天机制的实现，该机制允许自动化专家询问有关控制器的信息。为了确保对话流畅，我们必须解决后续查询可能与先前查询相关的事实。为了处理这一点，我们需要有效地管理对话的记忆。为了检索相关数据块并有效处理聊天历史记录，我们将使用**ConversationalRetrievalQAchain**。使用这个类，我们将处理先前的交互并将它们整合到当前的聊天中。
 - en: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
   id: totrans-363
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.embeddings.openai导入OpenAIEmbeddings
 - en: '`from LangChain.llms import OpenAI`'
   id: totrans-364
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.llms导入OpenAI
 - en: '`from LangChain.chat_models import ChatOpenAI`'
   id: totrans-365
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.chat_models导入ChatOpenAI
 - en: '`from LangChain.chains import ConversationalRetrievalChain`'
   id: totrans-366
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.chains导入ConversationalRetrievalChain
 - en: '`from LangChain.vectorstores import Pinecone`'
   id: totrans-367
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.vectorstores导入Pinecone
 - en: '`import pinecone`'
   id: totrans-368
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入pinecone
 - en: '`import os`'
   id: totrans-369
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入os
 - en: '`pinecone.init(`'
   id: totrans-370
   prefs: []
   type: TYPE_NORMAL
+  zh: pinecone.init（
 - en: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
   id: totrans-371
   prefs: []
   type: TYPE_NORMAL
+  zh: api_key = os.environ [“PINECONE_API_KEY”]，环境= os.environ [“PINECONE_ENV”]
 - en: '`)`'
   id: totrans-372
   prefs: []
   type: TYPE_NORMAL
+  zh: ）
 - en: '`def retrieve_controllers_info(query, chat_history):`'
   id: totrans-373
   prefs: []
   type: TYPE_NORMAL
+  zh: def retrieve_controllers_info（query，chat_history）：
 - en: '`embeddings_model = OpenAIEmbeddings()`'
   id: totrans-374
   prefs: []
   type: TYPE_NORMAL
+  zh: embeddings_model = OpenAIEmbeddings（）
 - en: '`index_name = “mt655333-manual”`'
   id: totrans-375
   prefs: []
   type: TYPE_NORMAL
+  zh: index_name = “mt655333-manual”
 - en: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
   id: totrans-376
   prefs: []
   type: TYPE_NORMAL
+  zh: docsearch = Pinecone.from_existing_index（index_name，embeddings_model）
 - en: '`The following chain is created by using the `**from_llm**` method on the `**ConversationalRetrievalChain**`
     class:'
   id: totrans-377
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过在**ConversationalRetrievalChain**类上使用**from_llm**方法创建以下链：
 - en: '`qa = ConversationalRetrievalChain.from_llm(`'
   id: totrans-378
   prefs: []
   type: TYPE_NORMAL
+  zh: qa = ConversationalRetrievalChain.from_llm（
 - en: '`OpenAI(temperature=0),`'
   id: totrans-379
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI（temperature = 0），
 - en: '`docsearch.as_retriever(),`'
   id: totrans-380
   prefs: []
   type: TYPE_NORMAL
+  zh: docsearch.as_retriever（），
 - en: '`return_source_documents=True,`'
   id: totrans-381
   prefs: []
   type: TYPE_NORMAL
+  zh: return_source_documents = True，
 - en: '`condense_question_llm=ChatOpenAI(temperature=0, model=”gpt-3.5-turbo”),`'
   id: totrans-382
   prefs: []
   type: TYPE_NORMAL
+  zh: condense_question_llm = ChatOpenAI（temperature = 0，model =”gpt-3.5-turbo”），
 - en: '`)`'
   id: totrans-383
   prefs: []
   type: TYPE_NORMAL
+  zh: ）
 - en: '`return qa({“question”: query, “chat_history”: chat_history})`'
   id: totrans-384
   prefs: []
   type: TYPE_NORMAL
+  zh: return qa（{“question”：query，“chat_history”：chat_history}）
 - en: To get information about the source documents that were used to generate the
     answer, we include an additional argument called `**return_source_documents**`
     and set it to `**True**`. The last parameter, `**condense_question_llm**`, is
@@ -2147,11 +2408,13 @@
   id: totrans-385
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了获取生成答案所使用的源文档的信息，我们包括一个名为“return_source_documents”的额外参数，并将其设置为“True”。最后一个参数“condense_question_llm”负责将聊天历史和查询合并为单个查询向量。这使我们能够使用不同的模型来压缩问题并回答它。可以根据特定任务的性能或使用成本选择模型。该链生成一个包含答案和聊天历史的元组。聊天历史是一个包含查询及其对应答案的元组列表。
 - en: '[Memory handling](toc.xhtml#s456a)'
   id: totrans-386
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[内存处理](toc.xhtml#s456a)'
 - en: 'The last step is to test the chain. It is important to note that in this case,
     we must manage the memory during the chat session. At the start of each session,
     we set the memory to an empty list. As each query is sent to the chat assistant,
@@ -2160,206 +2423,256 @@
   id: totrans-387
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后一步是测试链。重要的是要注意，在这种情况下，我们必须在聊天会话期间管理内存。在每个会话开始时，我们将内存设置为空列表。当每个查询发送到聊天助手时，我们将其添加到一个包含查询及其对应答案的元组中，添加到聊天历史列表中：
 - en: '`if __name__ == “__main__”:`'
   id: totrans-388
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果__name__ ==“__main__”：
 - en: '`chat_history = []`'
   id: totrans-389
   prefs: []
   type: TYPE_NORMAL
+  zh: chat_history=[]
 - en: '`query = “Does MT65533 support autotuning?”`'
   id: totrans-390
   prefs: []
   type: TYPE_NORMAL
+  zh: 查询=“MT65533支持自动调谐吗？”
 - en: '``result = retrieve_controllers_info(query, chat_history)`'
   id: totrans-391
   prefs: []
   type: TYPE_NORMAL
+  zh: 结果=检索控制器信息（查询，聊天记录）
 - en: '``print(result[“answer”])`'
   id: totrans-392
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印（result[“answer”]）
 - en: '`print(result[“source_documents”])`'
   id: totrans-393
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印（result[“source_documents”]）
 - en: '``chat_history.append((query, result[“answer”]))`'
   id: totrans-394
   prefs: []
   type: TYPE_NORMAL
+  zh: chat_history.append（（query，result[“answer”]））
 - en: '``query = “Which methods exactly?”`'
   id: totrans-395
   prefs: []
   type: TYPE_NORMAL
+  zh: 查询=“到底是哪些方法？”
 - en: '`result = retrieve_controllers_info(query, chat_history)`'
   id: totrans-396
   prefs: []
   type: TYPE_NORMAL
+  zh: result=检索控制器信息（query，chat_history）
 - en: '``print(result[“answer”])`'
   id: totrans-397
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印（result[“answer”]）
 - en: '`print(result[“source_documents”])`'
   id: totrans-398
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印（result[“source_documents”]）
 - en: The following conversation is the outcome of the preceding backend application.
     Furthermore, depending on the design, one might want to add relevant fragments
     of the manual that are returned by the `**docsearch**` object.
   id: totrans-399
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下对话是前面的后端应用程序的结果。此外，根据设计，人们可能希望添加由“docsearch”对象返回的手册的相关片段。
 - en: '*Automation Specialist: Does MT65533 support autotuning?*'
   id: totrans-400
   prefs: []
   type: TYPE_NORMAL
+  zh: 自动化专家：MT65533支持自动调谐吗？
 - en: '*AI: Yes, the MT655333 controller supports auto-tuning techniques to determine
     optimal control parameters automatically.*'
   id: totrans-401
   prefs: []
   type: TYPE_NORMAL
+  zh: '*AI：是的，MT655333控制器支持自动调谐技术，以自动确定最佳控制参数。*'
 - en: '*Automation Specialist: Which methods exactly?*'
   id: totrans-402
   prefs: []
   type: TYPE_NORMAL
+  zh: 自动化专家：到底是哪些方法？
 - en: '*AI: The MT65533 controller supports auto-tuning methods such as relay feedback,
     Ziegler-Nichols forward control, adaptive control, and fuzzy logic control.*'
   id: totrans-403
   prefs: []
   type: TYPE_NORMAL
+  zh: '*AI：MT65533控制器支持自动调谐方法，如继电器反馈、Ziegler-Nichols前向控制、自适应控制和模糊逻辑控制。*'
 - en: 'Here is the complete code for reference:'
   id: totrans-404
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是完整的代码供参考：
 - en: '`from LangChain.embeddings.openai import OpenAIEmbeddings`'
   id: totrans-405
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.embeddings.openai导入OpenAIEmbeddings
 - en: '`from LangChain.llms import OpenAI`'
   id: totrans-406
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.llms导入OpenAI
 - en: '`from LangChain.chat_models import ChatOpenAI`'
   id: totrans-407
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.chat_models导入ChatOpenAI
 - en: '`from LangChain.chains import ConversationalRetrievalChain`'
   id: totrans-408
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.chains导入ConversationalRetrievalChain
 - en: '`from LangChain.vectorstores import Pinecone`'
   id: totrans-409
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.vectorstores导入Pinecone
 - en: '`import pinecone`'
   id: totrans-410
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入pinecone
 - en: '`import os`'
   id: totrans-411
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入os
 - en: '`pinecone.init(`'
   id: totrans-412
   prefs: []
   type: TYPE_NORMAL
+  zh: pinecone.init（
 - en: '`api_key=os.environ[“PINECONE_API_KEY”], environment=os.environ[“PINECONE_ENV”]`'
   id: totrans-413
   prefs: []
   type: TYPE_NORMAL
+  zh: api_key=os.environ[“PINECONE_API_KEY”]，environment=os.environ[“PINECONE_ENV”]
 - en: '`)`'
   id: totrans-414
   prefs: []
   type: TYPE_NORMAL
+  zh: ）
 - en: '`def retrieve_controllers_info(query, chat_history):`'
   id: totrans-415
   prefs: []
   type: TYPE_NORMAL
+  zh: def retrieve_controllers_info（query，chat_history）：
 - en: '`embeddings_model = OpenAIEmbeddings()`'
   id: totrans-416
   prefs: []
   type: TYPE_NORMAL
+  zh: embeddings_model=OpenAIEmbeddings（）
 - en: '`index_name = “mt655333-manual”`'
   id: totrans-417
   prefs: []
   type: TYPE_NORMAL
+  zh: index_name=“mt655333-manual”
 - en: '`docsearch = Pinecone.from_existing_index(index_name, embeddings_model)`'
   id: totrans-418
   prefs: []
   type: TYPE_NORMAL
+  zh: docsearch=Pinecone.from_existing_index（index_name，embeddings_model）
 - en: '``qa = ConversationalRetrievalChain.from_llm(`'
   id: totrans-419
   prefs: []
   type: TYPE_NORMAL
+  zh: qa=从llm创建对话检索链（
 - en: '`OpenAI(temperature=0),`'
   id: totrans-420
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI（temperature=0），
 - en: '`docsearch.as_retriever(),`'
   id: totrans-421
   prefs: []
   type: TYPE_NORMAL
+  zh: docsearch.as_retriever（），
 - en: '`return_source_documents=True,`'
   id: totrans-422
   prefs: []
   type: TYPE_NORMAL
+  zh: return_source_documents=True，
 - en: '`condense_question_llm=ChatOpenAI(temperature=0, model=”gpt-3.5-turbo”),`'
   id: totrans-423
   prefs: []
   type: TYPE_NORMAL
+  zh: condense_question_llm=ChatOpenAI（temperature=0，model=”gpt-3.5-turbo”），
 - en: '`)`'
   id: totrans-424
   prefs: []
   type: TYPE_NORMAL
+  zh: ）
 - en: '`return qa({“question”: query, “chat_history”: chat_history})`'
   id: totrans-425
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回qa（{“question”：query，“chat_history”：chat_history}）
 - en: '`if __name__ == “__main__”:`'
   id: totrans-426
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果__name__ ==“__main__”：
 - en: '`chat_history = []`'
   id: totrans-427
   prefs: []
   type: TYPE_NORMAL
+  zh: chat_history=[]
 - en: '`query = “Does MT65533 support autotuning?”`'
   id: totrans-428
   prefs: []
   type: TYPE_NORMAL
+  zh: 查询=“MT65533支持自动调谐吗？”
 - en: '``result = retrieve_controllers_info(query, chat_history)`'
   id: totrans-429
   prefs: []
   type: TYPE_NORMAL
+  zh: result=检索控制器信息（query，chat_history）
 - en: '``print(result[“answer”])`'
   id: totrans-430
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印（result[“answer”]）
 - en: '`print(result[“source_documents”])`'
   id: totrans-431
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印（result[“source_documents”]）
 - en: '``chat_history.append((query, result[“answer”]))`'
   id: totrans-432
   prefs: []
   type: TYPE_NORMAL
+  zh: chat_history.append（（查询，result[“answer”]））
 - en: '``query = “Which methods exactly?”`'
   id: totrans-433
   prefs: []
   type: TYPE_NORMAL
+  zh: 查询=“到底是哪些方法？”
 - en: '`result = retrieve_controllers_info(query, chat_history)`'
   id: totrans-434
   prefs: []
   type: TYPE_NORMAL
+  zh: result=检索控制器信息（query，chat_history）
 - en: '``print(result[“answer”])`'
   id: totrans-435
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印（result[“answer”]）
 - en: '`print(result[“source_documents”])`'
   id: totrans-436
   prefs: []
   type: TYPE_NORMAL
+  zh: 打印（result[“source_documents”]）
 - en: This code snippet begins by initializing the Pinecone client and then defines
     the `**retrieve_controllers_info**` function. This function accepts *query* and
     *chat_history* as input parameters and utilizes the `**ConversationalRetrievalChain**`
@@ -2370,17 +2683,20 @@
   id: totrans-437
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段代码从初始化Pinecone客户端开始，然后定义了“retrieve_controllers_info”函数。此函数接受*query*和*chat_history*作为输入参数，并利用“ConversationalRetrievalChain”在向量存储中执行相似性搜索并生成答案。在主函数中，通过将*query*和*chat_history*传递给“retrieve_controllers_info”函数来测试解决方案。对话记忆的管理由开发人员自行决定。
 - en: '[Example 3: Market research using LangChain Agent](toc.xhtml#s457a)'
   id: totrans-438
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[示例3：使用LangChain代理进行市场研究](toc.xhtml#s457a)'
 - en: The following example illustrates how LangChain’s agents can be utilized to
     carry out market research. This process entails comprehending the task, strategizing
     execution, and implementing specific actions.
   id: totrans-439
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下示例说明了如何利用LangChain的代理进行市场调研。这个过程包括理解任务，制定执行策略和实施具体行动。
 - en: For this example, we will employ LangChain’s agent component. We will empower
     our agent with the capability to utilize SERP API as a search engine. SERP API
     is essentially a tool that developers can utilize to access and extract data from
@@ -2391,53 +2707,66 @@
   id: totrans-440
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们将使用LangChain的代理组件。我们将赋予我们的代理能力，利用SERP API作为搜索引擎。SERP API本质上是开发人员可以利用的工具，用于访问和提取搜索引擎结果页面的数据。代理将利用Open
+    AI模型来规划所有必要的步骤。它将确定要搜索的相关数据，验证API输出的准确性，并编译结果以向用户提供答案。
 - en: 'Since LangChain provides all the necessary tools, the implementation of this
     feature will be straightforward and uncomplicated. Let us begin by importing the
     necessary modules and libraries:'
   id: totrans-441
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于LangChain提供了所有必要的工具，因此实现这个功能将是简单和不复杂的。让我们首先导入必要的模块和库：
 - en: '`from LangChain.agents import load_tools`'
   id: totrans-442
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.agents导入load_tools
 - en: '`from LangChain.agents import initialize_agent`'
   id: totrans-443
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.agents导入initialize_agent
 - en: '`from LangChain.agents import AgentType`'
   id: totrans-444
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.agents导入AgentType
 - en: '`from LangChain.llms import OpenAI`'
   id: totrans-445
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.llms导入OpenAI
 - en: '`import os`'
   id: totrans-446
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入os
 - en: 'In order to use SERP API, we need to register at and get `**serp_api_key**`:'
   id: totrans-447
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了使用SERP API，我们需要注册并获取**serp_api_key**：
 - en: '`serpapi_api_key = os.environ[‘SERPAPI_API_KEY’]`'
   id: totrans-448
   prefs: []
   type: TYPE_NORMAL
+  zh: serpapi_api_key = os.environ[‘SERPAPI_API_KEY’]
 - en: '`llm = OpenAI(temperature=0)`'
   id: totrans-449
   prefs: []
   type: TYPE_NORMAL
+  zh: llm = OpenAI(temperature=0)
 - en: 'We are equipping the agent with the SERP API and an LLM. These tools empower
     the agent to generate accurate and comprehensive answers:'
   id: totrans-450
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们正在为代理配备SERP API和LLM。这些工具使代理能够生成准确和全面的答案：
 - en: '`tools = load_tools([“serpapi”], llm=llm)`'
   id: totrans-451
   prefs: []
   type: TYPE_NORMAL
+  zh: tools = load_tools([“serpapi”], llm=llm)
 - en: Now that we have the list of tools ready, let’s use the `**zero-shot-react-agent**`.
     This type of agent uses the *ReAct* [13] paradigm to determine the most suitable
     tool based on the tool’s description. The *ReAct* gets its name from the combination
@@ -2449,11 +2778,14 @@
   id: totrans-452
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经准备好工具列表，让我们使用**zero-shot-react-agent**。这种类型的代理使用*ReAct* [13]范式来确定基于工具描述的最合适的工具。*ReAct*得名于*reasoning*和*acting*这两个词的组合。这个框架利用推理组件来识别需要执行的任务并评估观察结果。然后它利用执行组件来执行任务。*ReAct*是一个将推理和行动与语言模型相结合，用于解决各种语言推理和决策任务的通用范式。
 - en: '`agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
     verbose=True)`'
   id: totrans-453
   prefs: []
   type: TYPE_NORMAL
+  zh: agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+    verbose=True)
 - en: 'To get started, we first need to initialize the agent. We do this by providing
     it with a set of tools it can use, the reasoning LLM, and specifying the *ReAct*
     agent type. Additionally, we can set the verbose parameter to determine whether
@@ -2462,62 +2794,77 @@
   id: totrans-454
   prefs: []
   type: TYPE_NORMAL
+  zh: 要开始，我们首先需要初始化代理。我们通过提供一组工具和推理LLM来实现这一点，并指定*ReAct*代理类型。此外，我们可以设置verbose参数，以确定代理是否应该提供其行动的逐步描述。一旦代理被初始化，我们就可以要求它解决一个问题：
 - en: '`agent.run(“What is a price of current best Lamborghini model?”)`'
   id: totrans-455
   prefs: []
   type: TYPE_NORMAL
+  zh: agent.run(“当前最好的兰博基尼车型的价格是多少？”)
 - en: 'Here is the complete code for reference:'
   id: totrans-456
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是完整的代码供参考：
 - en: '`from LangChain.agents import load_tools`'
   id: totrans-457
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.agents导入load_tools
 - en: '`from LangChain.agents import initialize_agent`'
   id: totrans-458
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.agents导入initialize_agent
 - en: '`from LangChain.agents import AgentType`'
   id: totrans-459
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.agents导入AgentType
 - en: '`from LangChain.llms import OpenAI`'
   id: totrans-460
   prefs: []
   type: TYPE_NORMAL
+  zh: 从LangChain.llms导入OpenAI
 - en: '`import os`'
   id: totrans-461
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入os
 - en: '`serpapi_api_key = os.environ[“SERPAPI_API_KEY”]`'
   id: totrans-462
   prefs: []
   type: TYPE_NORMAL
+  zh: serpapi_api_key = os.environ[“SERPAPI_API_KEY”]
 - en: '`llm = OpenAI(temperature=0)`'
   id: totrans-463
   prefs: []
   type: TYPE_NORMAL
+  zh: llm = OpenAI(temperature=0)
 - en: '`tools = load_tools([“serpapi”], llm=llm)`'
   id: totrans-464
   prefs: []
   type: TYPE_NORMAL
+  zh: tools = load_tools([“serpapi”], llm=llm)
 - en: '`agent = initialize_agent(`'
   id: totrans-465
   prefs: []
   type: TYPE_NORMAL
+  zh: agent = initialize_agent(
 - en: '`tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True`'
   id: totrans-466
   prefs: []
   type: TYPE_NORMAL
+  zh: tools，llm，agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION，verbose=True
 - en: '`)`'
   id: totrans-467
   prefs: []
   type: TYPE_NORMAL
+  zh: ）
 - en: '`agent.run(“What is a price of current best Lamborghini model?”)`'
   id: totrans-468
   prefs: []
   type: TYPE_NORMAL
+  zh: agent.run(“当前最好的兰博基尼车型的价格是多少？”)
 - en: 'After initializing the agent and equipping it with tools we run it by using
     the query: *What is the price of the latest Lamborghini model?* The agent then
     begins its thought process and carries out a series of actions. These steps are
@@ -2526,40 +2873,49 @@
   id: totrans-469
   prefs: []
   type: TYPE_NORMAL
+  zh: 在初始化代理并装备它的工具后，我们通过使用查询*最新兰博基尼车型的价格是多少？*来运行它。代理然后开始思考并执行一系列动作。由于我们在初始化过程中先前设置了verbose参数，这些步骤将显示为输出：
 - en: '`Entering new AgentExecutor chain…`'
   id: totrans-470
   prefs: []
   type: TYPE_NORMAL
+  zh: 进入新的AgentExecutor链…
 - en: '`I should look up the current best Lamborghini model`'
   id: totrans-471
   prefs: []
   type: TYPE_NORMAL
+  zh: 我应该查找当前最好的兰博基尼车型
 - en: '`Action: Search`'
   id: totrans-472
   prefs: []
   type: TYPE_NORMAL
+  zh: 动作：搜索
 - en: '`Action Input: “current best Lamborghini model”`'
   id: totrans-473
   prefs: []
   type: TYPE_NORMAL
+  zh: 动作输入：“当前最好的兰博基尼车型”
 - en: '`Observation: Best of the Current Lamborghini Model Lineup · Lamborghini Huracán
     Evo RWD / STO · Lamborghini Aventador SVJ · Lamborghini Urus · Lamborghini Sián
     · Awesome …`'
   id: totrans-474
   prefs: []
   type: TYPE_NORMAL
+  zh: 观察：当前兰博基尼车型阵容中最好的是·兰博基尼Huracán Evo RWD / STO·兰博基尼Aventador SVJ·兰博基尼Urus·兰博基尼Sián·很棒…
 - en: '`Thought: I should look up the price of the Lamborghini Huracán Evo RWD / STO`'
   id: totrans-475
   prefs: []
   type: TYPE_NORMAL
+  zh: 思考：我应该查找兰博基尼Huracán Evo RWD / STO的价格
 - en: '`Action: Search`'
   id: totrans-476
   prefs: []
   type: TYPE_NORMAL
+  zh: 动作：搜索
 - en: '`Action Input: “Lamborghini Huracán Evo RWD / STO price”`'
   id: totrans-477
   prefs: []
   type: TYPE_NORMAL
+  zh: 动作输入：“兰博基尼Huracán Evo RWD / STO价格”
 - en: '`Observation: When it was launched, the Lamborghini Huracan STO coupe’s price
     was $327,838 before taxes and delivery, and it’s up to around $335,000 for a 2023
     model. Should …`'

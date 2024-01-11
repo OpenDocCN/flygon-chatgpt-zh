@@ -197,12 +197,14 @@
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 在整个训练过程中，该模型致力于预测句子中的下一个单词，给定先前单词的特定回顾窗口和它们对新单词的重要程度。它将这一预测与其数据集中7000本书（BooksCorpus）的参考文本中的实际下一个单词进行比较，每当发现差异时就会对其内部机制进行调整。当预测准确时，就不需要进行调整。选择BooksCorpus部分是因为连续文本的长段落有助于模型学习处理长距离依赖关系。
 - en: GPT-1 achieved notable improvements over previous models in tasks such as text
     classification, natural language inference[⁴](#ftn4a), question answering, commonsense
     reasoning, and semantic similarity[⁵](#ftn5a).
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-1在文本分类、自然语言推理、问题回答、常识推理和语义相似性等任务方面取得了显著的改进。
 - en: Following the success of GPT-1, OpenAI built on its accomplishments by introducing
     GPT-2 in 2019\. This second iteration demonstrated a significant upscale in the
     number of parameters, soaring from GPT-1’s 117 million to 1.5 billion. Additionally,
@@ -211,6 +213,7 @@
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在GPT-1取得成功之后，OpenAI通过在2019年推出GPT-2来建立其成就。这第二次迭代在参数数量上实现了显著的提升，从GPT-1的1.17亿增加到15亿。此外，GPT-2利用了800万个网页或40GB的文本的更大训练数据集，比GPT-1的训练数据集大了十多倍。
 - en: GPT-2 introduced significant improvements over GPT-1, particularly in zero-shot
     learning[⁶](#ftn6a) and text generation. The model can create high-quality synthetic
     text based on any given input, adapting to the style and content seamlessly, allowing
@@ -220,11 +223,13 @@
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-2在零-shot学习和文本生成方面相对于GPT-1引入了显著的改进。该模型可以基于任何给定的输入创建高质量的合成文本，无缝地适应风格和内容，允许用户选择的主题上进行连贯和逼真的文本延续。GPT-2在翻译和摘要等其他文本生成任务以及问题回答和阅读理解等文本理解任务方面也优于GPT-1。
 - en: '[GPT-3: Pioneering Advanced Natural Language Processing in AI](toc.xhtml#s4a)'
   id: totrans-31
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[GPT-3：AI中先进的自然语言处理的开拓者](toc.xhtml#s4a)'
 - en: GPT-3, the third iteration of the Generative Pre-trained Transformer, was launched
     by OpenAI in 2020 and showcased a further enormous increase in model size, featuring
     175 billion parameters in its most extensive variant. This positioned it as the
@@ -232,6 +237,7 @@
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-3是由OpenAI于2020年推出的生成式预训练变压器的第三次迭代，展示了模型规模的巨大增加，最大变体拥有1750亿个参数。这使其成为当时最大的语言模型。
 - en: It is important to note that GPT-3 was trained on 300 billion tokens[⁷](#ftn7a)
     or 570GB of text, from various datasets including CommonCrawl with approximately
     6 billion crawled web documents, WebText2 with approximately 45 million web pages,
@@ -242,6 +248,7 @@
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 值得注意的是，GPT-3是在3000亿个标记或570GB的文本上进行训练的，包括大约60亿个爬取的网络文档的CommonCrawl，大约4500万个网页的WebText2，维基百科和大量的公共领域书籍。这一重大规模扩展导致捕捉到更复杂的语言模式，并赋予GPT-3更优越的文本生成和理解能力，使其成为GPT-2的一个进化飞跃。
 - en: GPT-3 distinguished itself with its advanced few-shot[⁸](#ftn8a) and one-shot[⁹](#ftn9a)
     learning capabilities. Thus, GPT-3 was able to perform well on new tasks based
     on limited examples, with only a handful, or even just one, input-output example
@@ -250,12 +257,14 @@
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-3以其先进的few-shot和one-shot学习能力脱颖而出。因此，GPT-3能够基于有限的示例，在只有少数或甚至只有一个输入-输出示例的情况下，在新任务上表现良好，而无需在大型领域特定数据集上进行明确的重新训练或微调。
 - en: Owing to its cutting-edge capabilities, GPT-3 could tackle a more extensive
     array of tasks than GPT-2, from drafting emails and writing code to creating poetry
     and answering nuanced questions.
   id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于其尖端能力，GPT-3可以处理比GPT-2更广泛的任务，从起草电子邮件和编写代码到创作诗歌和回答微妙的问题。
 - en: Another critical area of improvement was GPT-3’s ability to generate more coherent
     and contextually relevant text. It reduced the likelihood of producing nonsensical
     or irrelevant responses, a noticeable improvement over GPT-2, which enhanced the
@@ -263,17 +272,20 @@
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个重要的改进领域是GPT-3生成更连贯和上下文相关的文本的能力。它减少了产生荒谬或无关的回应的可能性，这是对GPT-2的显著改进，增强了可用性和整体用户体验。
 - en: OpenAI further expanded the impact of GPT-3 by introducing an Application Programming
     Interface (API), making it more accessible to developers to integrate the model
     into their applications.
   id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI通过引入应用程序编程接口（API）进一步扩大了GPT-3的影响，使开发人员更容易将该模型集成到其应用程序中。
 - en: '[InstructGPT: A Stepping Stone toward Task-oriented AI](toc.xhtml#s5a)'
   id: totrans-38
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[InstructGPT：迈向面向任务的AI的垫脚石](toc.xhtml#s5a)'
 - en: InstructGPT, a fine-tuned version of GPT-3, marked a significant evolution in
     the landscape of large language models as a result of OpenAI’s research. Launched
     in early 2022, it received special recognition for its proficiency in interpreting
@@ -281,6 +293,7 @@
   id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: InstructGPT是GPT-3的一个经过精细调整的版本，作为OpenAI研究成果的一个重大进化，于2022年初推出，因其在解释用户指令和大部分避免不需要的内容方面的熟练程度而受到特别认可。
 - en: InstructGPT’s training aimed to closely align the language model with both the
     explicit and implicit intentions of users. The objective was to develop a model
     that could effectively assist in accomplishing user tasks, while also being trained
@@ -766,6 +779,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**例子**：GPT-4可以通过综合来自各种来源的知识动态地解决商业查询，比如向制药公司提供关于药物进展的见解，或向金融团队提供监管合规策略。它根据特定行业需求调整建议，比如为特定人口统计推荐电子商务实践，或为人力资源部门设计远程工作策略。通过分析历史数据和当代趋势，GPT-4可以帮助企业应对与供应链挑战、新市场人口统计或电动汽车等行业转变相关的颠覆。'
 - en: '**Limitation**: Despite these capabilities, GPT-4 can face challenges in learning
     concepts that deviate significantly from its pre-training knowledge base, such
     as counter-commonsense learning or understanding novel business models. It may
@@ -775,15 +789,18 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**限制**：尽管具有这些能力，GPT-4在学习与其预训练知识基础显著偏离的概念时可能会面临挑战，比如反常识学习或理解新的商业模式。它也可能在实时适应快速发展的情况或超出其训练数据范围的主题时遇到困难。'
 - en: '**Transfer Learning**![](images/Figure-1.4.jpg)'
   id: totrans-109
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**迁移学习**![](images/Figure-1.4.jpg)'
 - en: '**[Figure 1.4](#fig1_4):** Transfer Learning'
   id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图1.4](#fig1_4)**：迁移学习'
 - en: '**Definition**: AGI has the ability to apply knowledge and skills gained in
     one domain to another domain, without requiring extensive retraining. In an enterprise,
     this takes on the form of cross-disciplinary integration, which involves leveraging
@@ -792,6 +809,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**定义**：AGI具有将在一个领域获得的知识和技能应用到另一个领域的能力，而不需要进行大量的重新训练。在企业中，这采取了跨学科整合的形式，涉及利用不同学科的知识和见解来解决复杂问题。'
 - en: '**Importance**: Transfer learning enables AGI to adapt to diverse contexts
     and contribute to discussions on a wide range of topics. In an enterprise setting,
     cross-disciplinary integration allows for the development of comprehensive solutions
@@ -800,6 +818,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**重要性**：迁移学习使得AGI能够适应多样的背景并参与广泛话题的讨论。在企业环境中，跨学科整合可以促进综合解决方案的开发，并通过整合多元化的观点和功能来促进创新。'
 - en: '**Fulfillment**: As an AGI capability, GPT-4 can transfer knowledge between
     diverse domains without requiring explicit retraining, enhancing its application
     across multiple subjects. This allows GPT-4 to excel at providing cross-disciplinary
@@ -808,6 +827,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**实现**：作为AGI的能力，GPT-4可以在不需要明确重新训练的情况下在不同领域之间转移知识，增强了其在多个学科中的应用。这使得GPT-4能够在跨学科知识基础上提供深入见解。'
 - en: '**Examples**: GPT-4 can use its knowledge about animals and their characteristics
     in a conversation about ecology or apply an understanding of statistics in a discussion
     on sports analytics. In a business context, it can propose a solution to a marketing
@@ -819,6 +839,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**例子**：GPT-4可以在生态学对话中运用其关于动物及其特征的知识，或者在讨论体育分析时应用对统计学的理解。在商业环境中，它可以利用心理学和数据科学的见解提出解决营销挑战的方案，通过整合工程、美学和用户体验的原则来策划产品设计，或者利用人力资源、组织心理学和传播学的见解提供改善公司文化的全面方法。'
 - en: '**Limitation**: Maintaining accuracy when transferring knowledge between domains
     with little overlap can be challenging for GPT-4, leading to potential inaccuracies
     or irrelevant information generation. Similarly, while it can integrate knowledge
@@ -827,21 +848,25 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**限制**：在不同领域之间转移知识并保持准确性可能对GPT-4构成挑战，可能导致潜在的不准确或无关的信息生成。同样，虽然它可以整合不同领域的知识，但在专业领域的理解深度可能会受到限制。'
 - en: '**Advanced Reasoning**![](images/Figure-1.5.jpg)'
   id: totrans-116
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**高级推理**![](images/Figure-1.5.jpg)'
 - en: '**[Figure 1.5](#fig1_5):** Advanced Reasoning'
   id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图1.5](#fig1_5)**：高级推理'
 - en: '**Definition**: Advanced reasoning in the context of AGI refers to the ability
     to exhibit and combine diverse forms of human- and machine-level thinking:'
   id: totrans-118
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**定义**：在AGI的背景下，高级推理指的是展示和结合多种形式的人类和机器级别思维的能力。'
 - en: '**Abductive Reasoning** is the method of generating a hypothesis that best
     explains specific observations, frequently used in situations such as root cause
     analysis.'
@@ -849,29 +874,34 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**演绎推理**是生成最佳解释特定观察结果的假设的方法，经常用于根本原因分析等情况。'
 - en: '**Deductive Reasoning** draws specific conclusions from general statements
     or premises.'
   id: totrans-120
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**演绎推理**从一般陈述或前提中得出具体结论。'
 - en: '**Inductive Reasoning** builds broad generalizations from specific observations.'
   id: totrans-121
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**归纳推理**从具体观察中得出广泛的概括。'
 - en: '**Analogical Reasoning** derives insights from one situation (the source) by
     comparing its similarities with another, often unrelated, situation (the target).'
   id: totrans-122
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**类比推理**通过比较一个情况（源）与另一个通常不相关的情况（目标）的相似之处来得出见解。'
 - en: '**Commonsense Reasoning** enables the understanding and inference of basic,
     shared knowledge that an average human being would know implicitly.'
   id: totrans-123
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**常识推理**使得能够理解和推断基本的共享知识，这是普通人会隐含知道的。'
 - en: '**Algorithmic Reasoning** involves “thinking like a computer” to solve problems,
     leveraging well-defined, iterative processes and conditional logic to arrive at
     a solution.'
@@ -879,6 +909,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 算法推理涉及“像计算机一样思考”来解决问题，利用明确定义的迭代过程和条件逻辑来得出解决方案。
 - en: '**Importance**: In business, advanced reasoning is essential. It is a capability
     we use whether we are working towards efficiency or meeting revenue goals. On
     a day-to-day basis, it plays a role in communications with colleagues, customers
@@ -890,6 +921,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 重要性：在商业中，高级推理是必不可少的。无论我们是在追求效率还是实现收入目标，都会使用这种能力。在日常工作中，它在与同事、客户和供应商的沟通中起着作用，有助于建立理解和信任。在项目管理中，推理有助于应对挑战，找到解决方案，并与利益相关者协调。总的来说，无论是在战略还是日常任务中，各种形式的高级推理都是企业环境中的常驻存在。
 - en: '**Fulfillment**: GPT-4’s adeptness in various forms of reasoning stems from
     its extensive training methods. The next-word prediction task it was trained on
     honed its abductive reasoning, facilitating the creation of plausible hypotheses
@@ -906,11 +938,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实现：GPT-4在各种推理形式上的熟练程度源自其广泛的训练方法。它接受的下一个单词预测任务锻炼了其推测推理能力，有助于从观察到的上下文中形成合理的假设。它对演绎推理的扎根来自于对逻辑文本的接触，增强了其制定逻辑一致的推断的能力。它在归纳推理方面的熟练程度是通过对大规模数据集的统计模式识别得出的，使其能够从具体观察中进行概括。此外，它的类推和常识推理是通过广泛的训练数据培养出来的，其中包括大量的比较、日常场景和关系结构。最后，它在算法推理方面的显著程度归因于对数百万代码示例的训练，并通过最近的终端用户编程插件得到进一步改进。
 - en: '**Examples**:'
   id: totrans-127
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 例子：
 - en: '**Abductive Reasoning**: Noticing a sudden 30% dip in user activity on an e-commerce
     site, one might employ abductive reasoning to hypothesize that a recent website
     update introduced a disruptive bug. Similarly, a sharp decline in a specific product’s
@@ -921,6 +955,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 推测性推理：注意到电子商务网站用户活动突然下降30％，可以使用推测性推理来假设最近的网站更新引入了破坏性的错误。类似地，特定产品销量的急剧下降可能指向因素，如竞争对手的产品推出或最近的差评。季度间KPI下降15％可能与政策变化或市场波动有关。
 - en: '**Deductive Reasoning**: Introducing a policy for additional quality checks
     before shipping may reduce customer complaints at the expense of longer delivery
     times, as per deductive reasoning. If a retailer’s goal is to boost online sales
@@ -931,6 +966,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 演绎推理：引入在发货前进行额外质量检查的政策可能会减少客户投诉，但会延长交货时间，这是根据演绎推理得出的结论。如果零售商的目标是将在线销售提高20％，那么专注于实体店广告可能不是最佳策略。同样，一个已经消耗了70％预算的中途建设项目明显表明在没有额外资金的情况下可能会出现超支。
 - en: '**Inductive Reasoning**: Analyzing five years of sales data showing November
     and December spikes suggests a likely uptick next year too, a conclusion reached
     through inductive reasoning. This approach can also uncover patterns in consumer
@@ -940,6 +976,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 归纳推理：分析五年的销售数据，显示11月和12月的销售额激增，表明明年也可能会有增长，这是通过归纳推理得出的结论。这种方法还可以发现消费者行为的模式，为促销机会和分析重复执行模式来简化业务流程。
 - en: '**Analogical Reasoning**: A retail company might infer the potential success
     of a loyalty program similar to a competitor’s using analogical reasoning. Likewise,
     a tech firm might see the benefit of a subscription model, drawing parallels with
@@ -949,6 +986,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 类推推理：零售公司可能会推断出类似竞争对手的忠诚计划可能会成功，类似地，科技公司可能会看到订阅模式的好处，并与流媒体服务进行类比。从汽车行业学习，食品公司可能会采用减少浪费的策略，预期获得类似的效率提升。
 - en: '**Commonsense Reasoning**: Common sense dictates delaying the launch of a new
     ice cream flavor to a warmer month in cold climates. It can attribute a rise in
     July customer inquiries to a summer campaign and weighs the pros and cons of a
@@ -957,6 +995,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 常识推理：常识告诉我们，在寒冷气候的地方，推迟推出新的冰淇淋口味是明智的。它可以将7月份客户咨询的增加归因于夏季活动，并权衡沿海工厂搬迁的利弊，考虑到运输成本和房地产价值。
 - en: '**Algorithmic Reasoning**: In software development, algorithmic reasoning aids
     in crafting efficient systems and streamlining IT support. It also facilitates
     ad-hoc problem-solving in business scenarios, helping in precise cost calculation
@@ -1111,6 +1150,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**重要性**：在商业世界中，有效的沟通至关重要。理解和生成自然语言的能力使AGI能够与用户无缝互动，理解复杂的查询，产生易于理解的输出，并有效地参与讨论，使其成为各种业务功能中不可或缺的工具。'
 - en: '**Fulfillment**: GPT-4 displays this AGI capability, demonstrating a sophisticated
     understanding of and ability to generate natural language. This enables it to
     comprehend complex concepts, engage in meaningful interactions, and produce human-like
@@ -1119,6 +1159,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**实现**：GPT-4展示了这种AGI能力，表现出对自然语言的复杂理解和生成的能力。这使它能够理解复杂概念，进行有意义的互动，并产生类似人类的回应，增强了它在各种应用中的多功能性。'
 - en: '**Examples**: GPT-4 can understand and generate responses to complex queries
     in a wide range of languages, effectively simulating a human conversation. For
     instance, it can help draft business communications, provide detailed responses
@@ -1129,6 +1170,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**例子**：GPT-4可以理解和生成对各种语言的复杂查询的回应，有效地模拟人类对话。例如，它可以帮助起草商业沟通、提供客户查询的详细回应、分析和总结长篇报告，或者通过生成创意想法参与头脑风暴会议。它还可以产生连贯的长篇文本，比如起草文章或博客帖子。'
 - en: '**Limitation**: Despite its proficiency, GPT-4’s understanding of language
     can occasionally falter when confronted with ambiguous, colloquial, or culturally
     specific language. It may also struggle with understanding and generating language
@@ -1140,15 +1182,18 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**限制**：尽管GPT-4在语言理解方面表现出色，但在面对模糊、口头或文化特定的语言时，它偶尔会出现失误。它也可能在需要对世界有深刻理解的语境中，理解和生成语言时遇到困难，因为它的训练数据之外的世界。此外，虽然它可以模拟对话，但它并不真正像人类那样理解语言，它的回应是基于训练数据中识别的模式而非真正的理解。'
 - en: '**Perception and Understanding**![](images/Figure-1.8.jpg)'
   id: totrans-155
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**感知和理解**![](images/Figure-1.8.jpg)'
 - en: '**[Figure 1.8](#fig1_8):** Perception and Understanding'
   id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图1.8](#fig1_8)**：感知和理解'
 - en: '**Definition**: AGI has the capacity to process and interpret sensory information
     from the environment, such as visual, auditory, and tactile data. It would understand
     and interpret different types of data, ranging from unstructured text to structured
@@ -1158,6 +1203,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**定义**：AGI具有处理和解释来自环境的感官信息的能力，如视觉、听觉和触觉数据。它将理解和解释不同类型的数据，从非结构化文本到结构化数据库和图像，从而以类似人类的方式理解世界。'
 - en: '**Importance**: In a business context, perception and understanding capabilities
     allow AGI to parse through vast amounts of data, filter out the noise, identify
     patterns, and draw insights. This is critical for tasks such as analyzing customer
@@ -1167,6 +1213,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**重要性**：在商业环境中，感知和理解能力使AGI能够解析大量数据，过滤噪音，识别模式，并得出见解。这对于分析客户反馈、解释市场趋势、检测数据中的异常或基于复杂数据集做出明智决策至关重要。'
 - en: '**Fulfillment**: Displaying an AGI capability, GPT-4 can perceive and understand
     text-, code-, image-, and audio-based data. With the help of plugins[^(12)](#ftn12a),
     its capabilities are further extended to other modalities such as video and web
@@ -1175,6 +1222,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**实现**：展示了AGI能力，GPT-4可以感知和理解基于文本、代码、图像和音频的数据。借助插件[^(12)](#ftn12a)的帮助，它的能力进一步扩展到其他形式，如视频和网络内容。'
 - en: '**Examples**: GPT-4 can interpret and generate code snippets, thus aiding in
     software development. It can comprehend complex scientific papers, thereby assisting
     in research tasks. It can understand abstract concepts described in the text,
@@ -1187,6 +1235,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**例子**：GPT-4可以解释和生成代码片段，从而帮助软件开发。它可以理解复杂的科学论文，从而协助研究任务。它可以理解文本中描述的抽象概念，这使得它在战略制定和决策方面非常有用。此外，GPT-4可以从图像中提取信息，生成产品描述，回答客户问题或找到匹配的物品。对于基于音频的任务，GPT-4可以处理和转录记录的商务会议，高效地总结要点和行动项。'
 - en: '**Limitation**: While GPT-4 is proficient in processing text, code, image,
     and audio inputs, its capabilities are not inherently designed for handling video
     and tactile data. This means that, without additional plugins or specialized tools,
@@ -1197,15 +1246,18 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**限制**：虽然GPT-4擅长处理文本、代码、图像和音频输入，但它的能力并非天生适用于处理视频和触觉数据。这意味着，没有额外的插件或专门工具，GPT-4在理解和分析视频序列、肢体语言或物理互动方面会面临挑战。此外，它可能会在处理它在训练数据中可能没有见过的异常或矛盾感知时遇到困难。'
 - en: '**Intuitive Understanding of Emotions**![](images/Figure-1.9.jpg)'
   id: totrans-162
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**情感的直观理解**![](images/Figure-1.9.jpg)'
 - en: '**[Figure 1.9](#fig1_9):** Intuitive Understanding of Emotions'
   id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图1.9](#fig1_9)**：情感的直观理解'
 - en: '**Definition**: AGI is capable of recognizing and responding to human emotions,
     allowing for improved human-machine interactions and empathy. This involves interpreting
     textual and contextual cues to identify and comprehend underlying emotions in
@@ -1214,6 +1266,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**定义**: AGI能够识别和回应人类情绪，从而改善人机交互和同情心。这涉及解释文本和语境线索，以识别和理解各种人际情况中潜在的情绪。'
 - en: '**Importance**: Intuitive understanding of emotions is a critical aspect of
     successful communication and relationship-building in any business setting. It
     enables effective customer interactions, facilitates team dynamics, and promotes
@@ -1222,6 +1275,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**重要性**: 对情绪的直观理解是任何商业环境中成功沟通和建立关系的关键方面。它能够促进有效的客户互动，促进团队动态，并促进积极的工作环境。'
 - en: '**Fulfillment**: GPT-4 demonstrates this AGI capability by recognizing basic
     emotions from textual cues, showing an ability to interpret and respond appropriately
     to the sentiment in user inputs. It uses this ability to tailor its responses,
@@ -1230,6 +1284,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**实现**: GPT-4通过识别文本线索中的基本情绪，展示了这种AGI能力，表现出解释和适当回应用户输入情绪的能力。它利用这种能力来定制其回应，在人类般的互动中模仿同情心。'
 - en: '**Examples**: GPT-4 can detect emotions in user messages, adjusting its responses
     based on the perceived sentiment. For instance, it can respond empathetically
     to messages indicating distress or frustration, offering comforting or supportive
@@ -1242,6 +1297,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**例子**: GPT-4可以在用户消息中检测情绪，并根据感知到的情绪调整其回应。例如，它可以对表达痛苦或沮丧的消息做出同情或支持性的回应。它还可以根据用户的情绪调整其沟通风格，例如对友好消息采取更随意的语气，或者在专业环境中采取更正式的语气。此外，理论上，GPT-4可以在客户服务场景中发挥作用，识别客户反馈中的不满，并建议采取补救措施以提升客户体验。'
 - en: '**Limitation**: While GPT-4 can recognize and respond to emotions based on
     textual cues, its understanding is not as nuanced or accurate as a human’s. It
     lacks the emotional intelligence to reason about emotions in a deeply human way.
@@ -1251,15 +1307,18 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**限制**: 虽然GPT-4可以根据文本线索识别和回应情绪，但其理解不如人类那样微妙或准确。它缺乏深度理解情绪的情商。它也可能在复杂的情绪状态或需要高情商的情况下遇到困难，因为它并不真正经历情绪。'
 - en: '**Autonomous Goal Setting and Planning**![](images/Figure-1.10.jpg)'
   id: totrans-169
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**自主目标设定和规划**![](images/Figure-1.10.jpg)'
 - en: '**[Figure 1.10](#fig1_10):** Autonomous Goal Setting and Planning'
   id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图1.10](#fig1_10)**: 自主目标设定和规划'
 - en: '**Definition**: AGI is able to set its own goals and create plans to achieve
     them, demonstrating self-motivation and self-direction. This ability to autonomously
     strategize and enact purposeful plans is an integral component of self-regulation.'
@@ -1267,6 +1326,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**定义**: AGI能够设定自己的目标并制定计划实现这些目标，展示出自我激励和自我导向。这种自主制定策略并实施有目的计划的能力是自我调节的一个重要组成部分。'
 - en: '**Importance**: Autonomous goal setting and planning enable a system to work
     independently, foreseeing potential challenges and strategizing solutions. This
     capability can transform productivity by reducing human intervention and accelerating
@@ -1276,6 +1336,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**重要性**: 自主目标设定和规划使系统能够独立工作，预见潜在挑战并制定解决方案。这种能力可以通过减少人为干预和加速决策过程来提高生产力，特别是在项目管理、战略规划和实现复杂的长期目标等任务中。'
 - en: '**Fulfillment**: While GPT-4 does not fully exhibit this AGI capability, it
     has made strides in goal-directed planning, being capable of generating action
     plans based on user-provided goals and intermediate states of plan execution.'
@@ -1283,6 +1344,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**实现**: 虽然GPT-4并未完全展示出这种AGI能力，但它在目标导向规划方面取得了进展，能够根据用户提供的目标和计划执行的中间状态生成行动计划。'
 - en: In the business world, GPT-4 can be a valuable ally for goal-driven tasks. For
     instance, if a company aims to expand its market share, GPT-4 can draft a plan
     involving competitor analysis, identification of untapped markets, and strategies
@@ -1296,6 +1358,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在商业世界中，GPT-4可以成为目标驱动任务的宝贵盟友。例如，如果一家公司的目标是扩大市场份额，GPT-4可以起草涉及竞争对手分析、发现未开发市场以及产品差异化策略的计划。同样，当面临简化内部流程的目标时，GPT-4可以提出包括自动化重复任务、优化工作流程以及提出增强团队协作的工具的任务顺序。此外，为了提高客户满意度的目标，GPT-4可以制定涉及分析客户反馈、提出服务协议改进以及制定新的客户参与策略的计划。
 - en: '**Limitation**: GPT-4’s capabilities are bound by its programming and lack
     of self-motivation and self-direction, which can limit its autonomous functioning.
     Although it can contribute significantly to achieving user-defined goals, GPT-4
@@ -1305,15 +1368,18 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**限制**: GPT-4的能力受其编程和缺乏自我激励和自我导向的限制，这可能限制其自主功能。虽然它可以对实现用户定义目标做出重大贡献，但GPT-4不能（也不应该）独立制定自己的目标或根据变化的情况修改目标。'
 - en: '**Collaboration and Cooperation**![](images/Figure-1.11.jpg)'
   id: totrans-176
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**合作与协作**![](images/Figure-1.11.jpg)'
 - en: '**[Figure 1.11](#fig1_11):** Collaboration and Cooperation'
   id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图1.11](#fig1_11)**：合作与协作'
 - en: '**Definition**: AGI possesses the ability to work together with humans and
     other AGI systems, enabling collaborative problem-solving and teamwork. This ability,
     particularly in an enterprise setting, involves understanding, interpreting, and
@@ -1324,12 +1390,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**定义**：AGI具有与人类和其他AGI系统共同工作的能力，实现协作解决问题和团队合作。这种能力，特别是在企业环境中，涉及理解、解释和预测群体或社区内的社交暗示、行为和互动，这对于管理团队、处理客户互动或应对涉及人际关系的任何情况至关重要。'
 - en: '**Importance**: Effective collaboration and cooperation, underpinned by adept
     social understanding, are critical for a well-functioning business environment.'
   id: totrans-179
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**重要性**：有效的合作和协作，以及熟练的社交理解，对于良好的商业环境至关重要。'
 - en: '**Fulfillment**: GPT-4 displays this AGI capability by providing assistance
     and generating responses in single-user settings. It also shows high proficiency
     in social comprehension, allowing it to engage with human-like understanding and
@@ -1338,6 +1406,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**履行**: GPT-4通过在单用户环境中提供帮助和生成回应来展示这种AGI能力。它还表现出在社交理解方面的高水平，使其能够在各种社交和商业环境中以人类般的理解和回应进行交流。'
 - en: '**Examples**: GPT-4 can assist users in brainstorming sessions, contribute
     to solving puzzles, or provide constructive feedback on written content. Additionally,
     it can advise a manager on how to handle a conflict within a team based on the
@@ -1348,6 +1417,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**例子**: GPT-4可以在头脑风暴会议中协助用户，为解决难题做出贡献，或对书面内容提供建设性反馈。此外，它可以根据社交和文化趋势预测客户对新营销活动的反应，并根据对员工反馈的分析提供建议，改善公司文化。'
 - en: '**Limitation**: GPT-4’s understanding of multi-user settings and human dynamics
     is limited, reducing its effectiveness in complex collaborative situations. Despite
     its proficiency in social comprehension, it might not fully capture the subtleties
@@ -1356,15 +1426,18 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**限制**：GPT-4对多用户环境和人际动态的理解有限，降低了其在复杂协作情况下的效果。尽管它在社交理解方面表现出色，但可能无法完全捕捉人际互动的微妙之处，这些互动可能是微妙且高度依赖于情境的。'
 - en: '**Ethics and Moral Reasoning**![](images/Figure-1.12.jpg)'
   id: totrans-183
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**道德和道德推理**![](images/Figure-1.12.jpg)'
 - en: '**[Figure 1.12](#fig1_12):** Ethics and Moral Reasoning'
   id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图1.12](#fig1_12)**：道德和道德推理'
 - en: '**Definition**: AGI is ideally designed to incorporate ethical principles and
     moral reasoning, allowing it to make decisions and take actions in line with human
     values and societal norms. In a business context, this involves understanding
@@ -1374,6 +1447,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**定义**：AGI理想上应设计为融入道德原则和道德推理，使其能够根据人类价值观和社会规范做出决策和行动。在商业环境中，这涉及在做出决策时理解和应用道德原则，这对于维护组织的完整性、企业社会责任和公众信任至关重要。'
 - en: '**Importance**: Ethical decision-making underpins all aspects of corporate
     conduct and directly influences public perception of a company. It is a vital
     part of maintaining a *social license to operate*.'
@@ -1381,6 +1455,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**重要性**：道德决策贯穿公司行为的各个方面，直接影响着公众对公司的看法。这是维持“社会经营许可”的重要组成部分。'
 - en: '**Fulfillment**: GPT-4 displays this AGI capability with the ability to conduct
     basic moral reasoning based on the scenarios encountered in its training data.
     While GPT-4 understands ethical principles, its application of these principles
@@ -1389,6 +1464,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**履行**: GPT-4展示了这种AGI能力，能够根据其训练数据中遇到的情景进行基本的道德推理。虽然GPT-4理解道德原则，但其对这些原则的应用受其编程和提供给它的道德框架的限制。'
 - en: '**Examples**: GPT-4 can identify harmful or offensive content, provide balanced
     views on sensitive topics, or even suggest ethically acceptable alternatives in
     a given situation. In a business context, it can assess the potential ethical
@@ -1400,6 +1476,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**例子**：GPT-4可以识别有害或冒犯性内容，在敏感话题上提供平衡的观点，甚至在特定情况下提出道德上可接受的替代方案。在商业环境中，它可以评估商业决策的潜在道德影响，比如实施新的数据收集政策。它可以帮助起草与公司价值观和承诺一致的企业社会责任声明。GPT-4还可以评估公司运营中潜在的道德问题，比如利益冲突或信任违反。'
 - en: '**Limitation**: GPT-4’s understanding and application of complex ethical dilemmas
     can be limited, and it might lack a deep understanding of human values and emotions.
     Its ethical guidance is also inherently influenced by its training data and programmed
@@ -1408,14 +1485,17 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**限制**：GPT-4对复杂道德困境的理解和应用可能有限，可能缺乏对人类价值观和情感的深刻理解。它的道德指导也受其训练数据和编程框架的影响，这可能无法捕捉人类道德的全部复杂性和微妙之处。'
 - en: '![](images/Figure-1.13.jpg)'
   id: totrans-190
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-1.13.jpg)'
 - en: '**[Figure 1.13](#fig1_13):** AGI-Capability Assessment of GPT-4'
   id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[图1.13](#fig1_13)**：GPT-4的AGI能力评估'
 - en: In summary, GPT-4 shows remarkable proficiency in Natural Language Understanding
     and Generation (6/6) and Advanced Reasoning (5/6). It also performs commendably
     in Learning & Adaptation, Transfer Learning, Perception and Understanding and
@@ -1427,11 +1507,13 @@
   id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，GPT-4在自然语言理解和生成（6/6）和高级推理（5/6）方面表现出了显著的熟练度。它在学习和适应、迁移学习、感知和理解以及自主目标设定和规划方面也表现出色（4/6）。GPT-4在创造力和创新、合作与合作以及道德和道德推理方面的能力令人满意（3/6），而它在情感直觉理解方面的表现则过于基础（2/6）。有关这些分数的视觉表示，请参阅*[图1.13](#fig1_13)*。
 - en: '[ChatGPT-4 Plugins](toc.xhtml#s8a)'
   id: totrans-193
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[ChatGPT-4插件](toc.xhtml#s8a)'
 - en: In March 2023, alongside its release, a suite of API-based integration plugins
     was introduced by OpenAI to amplify the capabilities of ChatGPT-4, the chatbot
     version of GPT-4\. Over the subsequent months, OpenAI and external providers continued
@@ -1439,6 +1521,7 @@
   id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 2023年3月，OpenAI发布了一套基于API的集成插件，以增强ChatGPT-4的功能，这是GPT-4的聊天机器人版本。在随后的几个月里，OpenAI和外部提供商继续推出额外的插件，进一步增强了模型的多功能性。
 - en: OpenAI provides an online registration process for new ChatGPT-4 plugins, ensuring
     quality and functionality. These plugins are currently free of charge and become
     part of the ChatGPT-4 system, eliminating the need for separate license agreements.
@@ -1447,6 +1530,7 @@
   id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI为新的ChatGPT-4插件提供在线注册流程，确保质量和功能。这些插件目前是免费的，并成为ChatGPT-4系统的一部分，消除了单独许可协议的需要。与任何软件工具一样，它们应该根据特定企业环境的功能、可用性和潜在好处进行评估。
 - en: The subsequent sections will delve into key plugin categories that hold particular
     significance for businesses, ranging from end-user programming and content understanding
     to content creation and software development. While there is a large number of
@@ -1457,11 +1541,13 @@
   id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来的章节将深入探讨对企业特别重要的插件类别，涵盖了从最终用户编程和内容理解到内容创建和软件开发的各个方面。虽然有大量针对个人消费者量身定制的插件，涵盖了购物、职业发展、旅行和娱乐等领域，但这里的重点是那些提升业务效率、促进数据驱动决策，并在企业环境中倡导智能自动化的插件。
 - en: 'Following is a curated list of ChatGPT-4 plugin categories that are especially
     advantageous for enterprises:'
   id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是OpenAI为企业特别有利的ChatGPT-4插件类别的精选列表：
 - en: '**End-User Programming**: These plugins are designed to facilitate exploratory
     data analysis, visualization, database queries, website creation, machine learning,
     and ad-hoc problem-solving for end users, even if they lack a computing background:'
@@ -1469,16 +1555,19 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**最终用户编程**：这些插件旨在为最终用户提供探索性数据分析、可视化、数据库查询、网站创建、机器学习和临时问题解决，即使他们缺乏计算背景：'
 - en: '**Basic Exploratory Data Analysis**'
   id: totrans-199
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**基本探索性数据分析**'
 - en: '**Spreadsheet-based Data Analysis**'
   id: totrans-200
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**基于电子表格的数据分析**'
 - en: '**Spreadsheet Pal and Spreadsheets AI**: Engage with spreadsheets, allowing
     users to command data analysis, filtering, and visualization. Streamlines the
     process of interacting with spreadsheet data and offers an enhanced experience.'
@@ -1486,6 +1575,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**电子表格助手和电子表格AI**：与电子表格互动，允许用户进行数据分析、过滤和可视化。简化了与电子表格数据交互的过程，并提供了更好的体验。'
 - en: '**Datasheet Chat and Chat with Excel**: Provides an interactive platform to
     converse with spreadsheets. Designed for those who want a more intuitive way to
     engage with their datasheets.'
@@ -1493,11 +1583,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**数据表聊天和与Excel聊天**：提供一个与电子表格交流的交互平台。设计给那些希望以更直观的方式与他们的数据表交互的人。'
 - en: '**Data Visualizations**'
   id: totrans-203
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**数据可视化**'
 - en: '**daigr.am**: Enables users to craft visual representations of data directly
     within a chat interface. Suitable for those looking to analyze, track, or present
     data in a visually compelling format.'
@@ -1505,6 +1597,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**daigr.am**：使用户能够在聊天界面内直接制作数据的视觉表示。适用于那些希望以视觉上引人注目的方式分析、跟踪或呈现数据的人。'
 - en: '**Visualize Your Data**: Converts raw data into clear visuals and charts on
     the fly. Tailored for users who need a quick and straightforward way to represent
     their data visually.'
@@ -1512,6 +1605,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**可视化您的数据**：将原始数据即时转化为清晰的视觉和图表。专为需要快速简单地以视觉方式表示其数据的用户量身定制。'
 - en: '**Graph Constructor**: Assists in generating spider and bar graphs from provided
     datasets. Designed for users who want specific types of visual data representations
     rapidly.'
@@ -1519,6 +1613,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**图形构造器**：帮助生成提供的数据集的蜘蛛图和条形图。设计给那些想要快速获得特定类型的视觉数据表示的用户。'
 - en: '**OpenAI’s Advanced Data Analysis**: This tool, previously called the Code
     Interpreter, is suitable for both beginners and more experienced users and can
     turn high-level descriptions into functional code. Here’s a closer look at its
@@ -1527,51 +1622,60 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**OpenAI的高级数据分析**：这个工具，之前被称为代码解释器，适用于初学者和有经验的用户，可以将高级描述转化为功能性代码。以下是它的特点：'
 - en: '**Complex Exploratory Data Analysis**'
   id: totrans-208
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**复杂的探索性数据分析**'
 - en: '**Question Answering**: Enables users to get answers to questions about a given
     dataset.'
   id: totrans-209
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**问答**：使用户能够获取有关给定数据集的问题的答案。'
 - en: '**Visualization**: Crafts visual representations of query results, making complex
     information more digestible.'
   id: totrans-210
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**可视化**：制作查询结果的视觉表示，使复杂信息更易理解。'
 - en: '**Statistical operations**: Equipped with a diverse array of tools to perform
     flexible statistical analyses.'
   id: totrans-211
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**统计操作**：配备了各种工具，执行灵活的统计分析。'
 - en: '**Simple text analytics**: Facilitates text processing and evaluation.'
   id: totrans-212
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**简单文本分析**：便于文本处理和评估。'
 - en: '**Machine Learning**'
   id: totrans-213
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**机器学习**'
 - en: '**Model creation and execution**: Streamlines the processes of building and
     running simple machine learning models.'
   id: totrans-214
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 模型创建和执行：简化了构建和运行简单机器学习模型的流程。
 - en: '**Visualization**: Translates the outcomes of machine learning models into
     visual formats.'
   id: totrans-215
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 可视化：将机器学习模型的结果转化为可视化格式。
 - en: '**Ad-hoc Problem Solving**: The plugin can also be used to solve one-time problems
     algorithmically, similar to the NoCode[^(13)](#ftn13a) approach, while avoiding
     a software development life cycle. Examples are:'
@@ -1579,12 +1683,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 临时问题解决：该插件还可用于算法解决一次性问题，类似于NoCode方法，同时避免了软件开发生命周期。例如：
 - en: '**Data-mapping**: It can transform a file in any input format to a requested
     output format based on a verbal description of the mapping logic.'
   id: totrans-217
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据映射：可以根据映射逻辑的口头描述，将任何输入格式的文件转换为请求的输出格式。
 - en: '**Supply-chain optimization**: Given a description of the constraints (e.g.,
     limited stocks or resources) and the optimization goal (e.g., minimize costs or
     delivery time), it systematically creates solution candidates and checks filter
@@ -1594,6 +1700,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 供应链优化：根据约束条件的描述（例如，有限的库存或资源）和优化目标（例如，最小化成本或交货时间），系统地创建解决方案候选，并为每个检查过滤条件。然后，它根据其实现目标对候选进行排名。
 - en: 'Cost calculation: Provided with the calculation logic in natural language and
     the raw data as input files, it can perform an ad-hoc computation of the resulting
     costs in an early sale or purchasing scenario.'
@@ -1601,6 +1708,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 成本计算：提供自然语言的计算逻辑和原始数据作为输入文件，可以在早期销售或购买情景中进行结果成本的临时计算。
 - en: 'Scenario-based planning: For a given description of a planning scenario (for
     example, a project or series of workshops) along with known constraints, it can
     compute an indicative schedule in the chat dialogue or as an output file.'
@@ -1608,6 +1716,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于情景的规划：根据规划情景的描述（例如，一个项目或一系列研讨会）以及已知的约束条件，可以在聊天对话框中或作为输出文件计算出一个指示性的时间表。
 - en: Despite its comprehensive functionality, OpenAI’s Advanced Data Analysis does
     have limitations. These include a limited number of Python libraries, constrained
     computational resources, absence of persistent storage, and an inability to handle
@@ -1615,11 +1724,13 @@
   id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管OpenAI的高级数据分析功能全面，但也存在一些局限性。这些包括有限的Python库数量，受限的计算资源，缺乏持久存储，以及无法处理图形用户界面和实时交互。
 - en: '**Other Advanced Analytics Plugins**'
   id: totrans-222
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 其他高级分析插件
 - en: '**Noteable**: Designed for both professional developers and data science newcomers,
     Noteable offers functionalities akin to OpenAI Advanced Data Analysis. It streamlines
     data exploration, visualization, and transformation, fostering collaborative efforts
@@ -1629,6 +1740,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Noteable：为专业开发人员和数据科学新手设计，Noteable提供了类似于OpenAI高级数据分析的功能。它简化了数据探索、可视化和转换，促进团队之间的协作努力。借助其深度学习能力和无缝的互联网集成，用户可以创建高级模型并利用在线资源。
 - en: '**AI Data Analyst**: AI Data Analyst provides a user-friendly interface to
     delve into data without coding or complex queries. It manages data cleaning tasks,
     including handling missing values and duplicates, and supports transformations
@@ -1638,6 +1750,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: AI数据分析师：AI数据分析师提供了一个用户友好的界面，可以在不编写代码或复杂查询的情况下深入数据。它管理数据清洗任务，包括处理缺失值和重复项，并支持归一化等转换。此外，它还提供了统计分析、多样化的可视化选项，以及回归和分类的预测建模。
 - en: '**Data Interpreter**: Data Interpreter facilitates data analysis using a secure
     Python code interpreter. Users can upload datasets, ask questions in plain English,
     or directly input Python code for intricate analyses. The platform supports a
@@ -1647,11 +1760,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据解释器：数据解释器利用安全的Python代码解释器进行数据分析。用户可以上传数据集，用简单的英语提问，或直接输入Python代码进行复杂的分析。该平台支持从查询数据库到可视化结果的广泛数据任务，并允许导出洞察力以供进一步利用或报告。
 - en: '**Database Queries**'
   id: totrans-226
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据库查询
 - en: '**AI2sql**: Converts user-friendly language into database commands. Designed
     for those who need to access databases but are unfamiliar with technical query
     languages.'
@@ -1659,6 +1774,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: AI2sql：将用户友好的语言转换为数据库命令。专为那些需要访问数据库但不熟悉技术查询语言的人设计。
 - en: '**AskYourDatabase**: Transforms user questions into database queries and provides
     results in plain language. Aims to make databases more accessible to everyday
     users.'
@@ -1666,6 +1782,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: AskYourDatabase：将用户问题转换为数据库查询，并以简单语言提供结果。旨在使数据库对普通用户更加可访问。
 - en: '**Chat With Your Data**: Integrates knowledge graphs with a conversational
     interface, allowing users to interact with their data seamlessly. Enables users
     to converse with their data in natural language.'
@@ -1673,29 +1790,34 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与您的数据交谈：将知识图谱与对话界面相结合，使用户可以无缝地与其数据进行交互。使用户能够用自然语言与其数据交谈。
 - en: '**Simple** **Website Building**'
   id: totrans-230
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 简单的网站构建
 - en: '**ABC Website Maker**: Takes user chat prompts and generates corresponding
     website code. Streamlines the process of turning ideas into web applications.'
   id: totrans-231
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ABC网站制作：接受用户聊天提示并生成相应的网站代码。简化了将想法转化为Web应用程序的过程。
 - en: '**A A A Website Maker**: Assists in creating web applications and custom websites.
     Tailored for users seeking a simple web development tool.'
   id: totrans-232
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: A A A网站制作：帮助创建Web应用程序和定制网站。专为寻求简单Web开发工具的用户量身定制。
 - en: '**WebDev**: Provides an environment to build, preview, and test websites directly
     from chat interactions. Suitable for those who want to quickly prototype websites.'
   id: totrans-233
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: WebDev：提供一个环境，可以直接从聊天交互中构建、预览和测试网站。适用于那些希望快速原型设计网站的人。
 - en: '**B12 AI Websites**: Uses natural language descriptions to craft websites.
     Designed for users who want a website without getting involved in the technicalities
     of web design.'
@@ -1703,11 +1825,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**B12 AI网站**：使用自然语言描述来制作网站。适用于那些想要网站而不想涉足网页设计技术的用户。'
 - en: '**General Application Development**'
   id: totrans-235
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**通用应用开发**'
 - en: '**Back4App**: Facilitates the creation, deployment, and scaling of applications
     using natural language. Designed for users who want to manage apps and associated
     resources without diving deep into technical details.'
@@ -1715,6 +1839,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Back4App**：使用自然语言促进应用程序的创建、部署和扩展。适用于想要管理应用程序和相关资源而不深入技术细节的用户。'
 - en: '**Content Understanding**: This category comprises plugins designed to enhance
     the user experience in managing and interacting with various content types, from
     text-based documents to images and video:'
@@ -1722,11 +1847,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**内容理解**：此类别包括旨在增强用户在管理和与各种内容类型交互的体验的插件，从基于文本的文档到图像和视频：'
 - en: '**Document Interaction and Question Answering**'
   id: totrans-238
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**文档交互和问答**'
 - en: '**Document AI and Talk with Docs**: Engage with various document formats, including
     PDFs, text files, and PowerPoint presentations, to answer questions and provide
     insights. Designed for users who need quick answers from their documents.'
@@ -1734,6 +1861,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**文档AI和Talk with Docs**：与各种文档格式（包括PDF、文本文件和PowerPoint演示文稿）进行交互，回答问题并提供见解。适用于需要从其文档中快速获取答案的用户。'
 - en: '**AI PDF and AskYourPDF (Pro)**: Enhance document navigation, content accessibility,
     and interactive engagement with PDF content. These tools are tailored for efficient
     information extraction, especially in business documents, and provide accurate
@@ -1742,6 +1870,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**AI PDF和AskYourPDF（专业版）**：增强文档导航、内容可访问性和与PDF内容的互动。这些工具专为高效信息提取而设计，尤其是在商业文档中，并通过引用页码提供准确的事实核查。'
 - en: '**ChatWithPDF and MixerBox ChatPDF**: Facilitate real-time interaction with
     PDFs, offering robust search functionality and streamlined link sharing. These
     plugins are suitable for those who require efficient information extraction and
@@ -1750,6 +1879,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**ChatWithPDF和MixerBox ChatPDF**：实现与PDF的实时交互，提供强大的搜索功能和简化的链接共享。这些插件适用于需要高效信息提取和与PDF书籍和其他文档的协作的用户。'
 - en: '**Ai Drive**: Provides an organized personal drive where users can chat with
     their PDF files, get summaries, and have questions answered. A proper tool for
     those who want to keep their PDF interactions organized and focused.'
@@ -1757,28 +1887,33 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Ai Drive**：提供一个有组织的个人驱动器，用户可以与其PDF文件聊天、获取摘要并得到问题的答案。适合那些想要保持其PDF交互有序和集中的用户。'
 - en: '**Website Understanding**'
   id: totrans-243
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**网站理解**'
 - en: '**ChatWithWebsite**: Engage with websites to answer questions using the capabilities
     of magicform.ai. Ideal for users who need insights directly from web content.'
   id: totrans-244
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**ChatWithWebsite**：利用magicform.ai的功能与网站互动以回答问题。适用于需要直接从网页内容获取见解的用户。'
 - en: '**Webpage Summarizer**: Input a website link and receive a concise summary.
     Designed for those who want quick overviews of web content without extensive reading.'
   id: totrans-245
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**网页摘要生成器**：输入网站链接，接收简洁的摘要。适用于那些想要快速概览网页内容而不想进行详细阅读的用户。'
 - en: '**Image Understanding**'
   id: totrans-246
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**图像理解**'
 - en: '**ChatOCR**: Converts printed or handwritten documents into digital text using
     OCR technology. Adequate for users who want to digitize and easily access information
     from physical documents.'
@@ -1786,6 +1921,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**ChatOCR**：使用OCR技术将印刷或手写文档转换为数字文本。适用于想要从实体文档中数字化并轻松获取信息的用户。'
 - en: '**SceneXplain**: Analyzes visual content to provide comprehensive interpretations
     of images. Useful for users seeking insights into artistic styles, emotions, settings,
     and historical contexts of images.'
@@ -1793,6 +1929,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**SceneXplain**：分析视觉内容，提供对图像的全面解释。适用于寻求对图像的艺术风格、情感、场景和历史背景的见解的用户。'
 - en: '**Pixellow**: Delivers insights from images and generates detailed captions
     and descriptions. Designed for those who want a deeper understanding of visual
     content.'
@@ -1800,11 +1937,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Pixellow**：从图像中提供见解并生成详细的标题和描述。适用于那些想要更深入理解视觉内容的用户。'
 - en: '**Video Understanding**'
   id: totrans-250
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**视频理解**'
 - en: '**Video Insights and AI Video Summarizer**: Analyzes YouTube videos to provide
     summaries and answer questions about the content. Suitable for users who want
     a quick overview or have specific queries about a video.'
@@ -1812,6 +1951,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**视频见解和AI视频摘要生成器**：分析YouTube视频，提供摘要并回答有关内容的问题。适用于想要快速概览或对视频有特定查询的用户。'
 - en: '**MixerBox ChatVideo, Video Summary, and YT Summarizer**: Offers concise summaries
     of YouTube videos. Designed for users looking for the main highlights or key points
     of a video.'
@@ -1819,6 +1959,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**MixerBox ChatVideo、视频摘要和YT摘要生成器**：提供YouTube视频的简洁摘要。适用于寻找视频的主要亮点或关键点的用户。'
 - en: '**Video Captions**: Transcribes YouTube videos into text, enabling users to
     ask questions, create chapters, and get summarized content. Useful for those who
     prefer reading or need a written record of a video.'
@@ -1826,6 +1967,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**视频字幕**：将YouTube视频转录成文本，使用户能够提问、创建章节并获取摘要内容。适用于那些更喜欢阅读或需要视频的书面记录的用户。'
 - en: '**vidIQ - Discover and YouTube Summaries**: Provides insights and summaries
     for YouTube videos. Aimed at users who want to discover and understand video content
     quickly.'
@@ -1833,17 +1975,20 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**vidIQ - 发现和YouTube摘要**：为YouTube视频提供见解和摘要。旨在满足想要快速发现和理解视频内容的用户需求。'
 - en: '**Heterogeneous** **Content**'
   id: totrans-255
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**异构内容**'
 - en: '**SummarizeAnything.ai**: Converts extensive content from various sources into
     concise summaries. Suitable for quick insights from YouTube, web pages, and PDFs.'
   id: totrans-256
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**SummarizeAnything.ai**：将来自各种来源的广泛内容转换为简洁摘要。适用于从YouTube、网页和PDF中快速获取见解的用户。'
 - en: '**OCR and Media Processing in OpenAI’s Advanced Data Analysis:** Handles optical
     character recognition (OCR) tasks, audio processing, and other media-centric operations.
     Useful for simple text extraction from images and basic media handling.'
@@ -1851,6 +1996,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**OpenAI的高级数据分析中的OCR和媒体处理**：处理光学字符识别（OCR）任务、音频处理和其他媒体中心操作。适用于从图像中提取简单文本和基本媒体处理。'
 - en: '**Information Retrieval and Understanding**: This suite of plugins is tailored
     to streamline the retrieval and understanding of information from diverse sources.
     They encompass web search, website scraping, question answering, and knowledge
@@ -1859,11 +2005,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**信息检索和理解**：这套插件旨在简化从多种来源检索和理解信息。它们包括网络搜索、网站抓取、问答和知识管理，确保用户能够高效地找到、消化和利用内容：'
 - en: '**Web Search**'
   id: totrans-259
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**网络搜索**'
 - en: '**OpenAI Browse with Bing**: Uses Bing AI to browse the internet, fetch relevant
     up-to-date information, and cite sources. It was deactivated for a couple of months
     and now allows sites to control how they interact with ChatGPT.'
@@ -1871,6 +2019,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**OpenAI Browse with Bing**：使用必应AI浏览互联网，获取相关的最新信息并引用来源。它曾经停用了几个月，现在允许网站控制它们与ChatGPT的交互方式。'
 - en: '**Web Requests**: Offers direct access to platforms like Google and Wikipedia
     within the chat interface. Fetches and presents relevant information based on
     user queries.'
@@ -1878,6 +2027,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**网络请求**：在聊天界面内直接访问谷歌和维基百科等平台。根据用户查询获取并呈现相关信息。'
 - en: '**WebPilot**: Provides comprehensive web assistance, from searching and extracting
     information to translating and simplifying content. It also offers navigation
     tools for specific web interactions and content creation from URLs.'
@@ -1885,12 +2035,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**WebPilot**：提供全面的网络辅助，从搜索和提取信息到翻译和简化内容。还提供特定网络互动和从URL创建内容的导航工具。'
 - en: '**KeyMate.AI Search**: Uses AI-driven web crawling for enhanced search results.
     Provides a user-friendly chat interface and customization options.'
   id: totrans-263
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**KeyMate.AI Search**：利用AI驱动的网络爬虫进行增强搜索结果。提供用户友好的聊天界面和自定义选项。'
 - en: '**BrowserOp**: Facilitates multi-web-page browsing in a single query, allowing
     users to specify their information needs, whether from a particular website or
     a broader topic.'
@@ -1898,6 +2050,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**BrowserOp**：在单个查询中实现多网页浏览，允许用户指定他们的信息需求，无论是来自特定网站还是更广泛的主题。'
 - en: '**MixerBox WebSearchG**: Utilizes a customized search engine powered by Google
     Search API to provide comprehensive internet searches, detailed web-page summaries,
     and direct answers to specific questions about web content.'
@@ -1905,28 +2058,33 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**MixerBox WebSearchG**：利用由谷歌搜索API提供的定制搜索引擎进行全面的互联网搜索，详细的网页摘要和对网页内容的具体问题的直接答案。'
 - en: '**BrowserPilot**: Delivers real-time search results across multiple URLs.'
   id: totrans-266
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**BrowserPilot**：在多个URL上提供实时搜索结果。'
 - en: '**TotalQuery Search**: Taps into more than 70 search engines for comprehensive
     web discovery.'
   id: totrans-267
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**TotalQuery Search**：利用70多个搜索引擎进行全面的网络发现。'
 - en: '**MindfulDataAI**: Facilitates recent searches using Google. Designed to provide
     users with up-to-date information on current topics.'
   id: totrans-268
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**MindfulDataAI**：利用谷歌进行最近的搜索。旨在为用户提供关于当前话题的最新信息。'
 - en: '**Website scraping**'
   id: totrans-269
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**网站抓取**'
 - en: '**Aaron Browser**: Scrapes data from multiple websites using real-time Google
     search results. Designed for comprehensive internet crawling, content aggregation,
     monitoring, and extraction.'
@@ -1934,6 +2092,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Aaron Browser**：使用实时谷歌搜索结果从多个网站中提取数据。旨在进行全面的互联网爬行、内容聚合、监控和提取。'
 - en: '**Scrapee and Scraper**: Extracts content from any website by simply providing
     a website link. Streamlines the process of web content retrieval for efficient
     information gathering.'
@@ -1941,17 +2100,20 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Scrapee和Scraper**：通过提供网站链接从任何网站提取内容。简化了网络内容检索过程，实现高效的信息收集。'
 - en: '**Web Question Answering**'
   id: totrans-272
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**网络问答**'
 - en: '**Wikipedia**: Provides answers on general knowledge, current events, and breaking
     news. Fetches up-to-date information directly from Wikipedia for reliable insights.'
   id: totrans-273
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**维基百科**：提供有关一般知识、时事和突发新闻的答案。直接从维基百科获取最新信息，以提供可靠的见解。'
 - en: '**Wolfram ChatGPT**: Offers curated knowledge, real-time data, and visualizations
     spanning various domains. Supports computations, mathematical problem-solving,
     and delivers data visualizations from scientific to stock market information.'
@@ -1959,11 +2121,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Wolfram ChatGPT**：提供跨越各个领域的策划知识、实时数据和可视化。支持计算、数学问题解决，并从科学到股票市场信息提供数据可视化。'
 - en: '**Knowledge Management**'
   id: totrans-275
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**知识管理**'
 - en: '**Custom Knowledge**: Allows users to search through internal company documents,
     Google Docs, and Confluence Pages. Delivers personalized answers by accessing
     a range of linked documents.'
@@ -1971,6 +2135,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**自定义知识**：允许用户搜索内部公司文件、Google文档和Confluence页面。通过访问一系列链接的文档，提供个性化答案。'
 - en: '**FileChat**: Specializes in file management, in-depth analysis, and rapid
     information retrieval. Acts as a personal AI assistant, answering queries using
     user-specific data.'
@@ -1978,6 +2143,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**FileChat**：专注于文件管理、深度分析和快速信息检索。作为个人AI助手，使用用户特定数据回答查询。'
 - en: '**AskYourKG**: Helps users organize and interact with their knowledge (graph[^(14)](#ftn14a)).
     Enables chat-based interaction with documents uploaded to specific websites, promoting
     interactive document understanding.'
@@ -1985,6 +2151,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**AskYourKG**：帮助用户组织和与他们的知识（图[14]）进行交互。通过与上传到特定网站的文档进行基于聊天的交互，促进交互式文档理解。'
 - en: '**Content Creation**: This collection of plugins offers users straightforward
     solutions for generating various content types, from diagrams to videos. These
     tools cover a range of content needs:'
@@ -1992,11 +2159,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**内容创建**：这些插件集合为用户提供了生成各种内容类型的简单解决方案，从图表到视频。这些工具涵盖了一系列内容需求：'
 - en: '**Diagram Creation**'
   id: totrans-280
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**图表创建**'
 - en: '**Show Me**: Transform raw data and concepts into visualizations, from relationship
     diagrams to timelines. Empower users to understand complex information, visualize
     processes, and edit diagrams online, catering to diverse visualization needs.'
@@ -2004,6 +2173,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Show Me**：将原始数据和概念转化为可视化，从关系图到时间表。让用户理解复杂信息，可视化流程，并在线编辑图表，满足多样化的可视化需求。'
 - en: '**Whimsical, MixerBox, and Scrive Diagrams**: Specialize in crafting and showcasing
     various diagrams, including flowcharts and mind maps. These tools enhance brainstorming
     sessions and process detailing, adapting to diverse visualization needs.'
@@ -2011,6 +2181,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Whimsical、MixerBox和Scrive Diagrams**：专门制作和展示各种图表，包括流程图和思维导图。这些工具增强了头脑风暴会议和流程详细说明，适应多样化的可视化需求。'
 - en: '**Diagrams, Eraser, and Draw**: Offer a range of functionalities from integrating
     with visualization platforms to generating diagrams from both code and natural
     language. They cater to a broad audience, from coders to visual enthusiasts.'
@@ -2018,17 +2189,20 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 图表、橡皮擦和绘图：提供一系列功能，从与可视化平台集成到从代码和自然语言生成图表。它们面向广泛的受众，从编码人员到视觉爱好者。
 - en: '**WizeCharts**: Focuses on delivering in-depth data visualization through customizable
     charts, enabling users to create, edit, and share insights.'
   id: totrans-284
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: WizeCharts：专注于通过可定制的图表提供深入的数据可视化，使用户能够创建、编辑和分享见解。
 - en: '**Document Creation**'
   id: totrans-285
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 文档创建
 - en: '**Doc Maker and Doc Maker A+**: Specialize in rapid document generation, from
     resumes and cover letters to proposals. These tools support a variety of formats
     including PDF, DOCX, XLSX, CSV, and HTML, with an emphasis on producing higher-quality
@@ -2037,12 +2211,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Doc Maker和Doc Maker A+：专注于快速文档生成，从简历和求职信到提案。这些工具支持包括PDF、DOCX、XLSX、CSV和HTML在内的各种格式，重点是使用A+变体生成更高质量的文档。
 - en: '**Doc Editor**: Focuses on quick document creation with robust editing capabilities,
     streamlining the process of crafting and refining documents.'
   id: totrans-287
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Doc Editor：专注于快速文档创建和强大的编辑功能，简化了制作和完善文档的过程。
 - en: '**WriteEasy and AISEO Article Writer**: Cater to content creation needs by
     generating articles based on provided topics, links, or data. While WriteEasy
     offers general article creation, AISEO Article Writer emphasizes producing search
@@ -2051,11 +2227,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: WriteEasy和AISEO文章写作：通过生成基于提供的主题、链接或数据的文章来满足内容创作需求。WriteEasy提供一般文章创作，而AISEO文章写作强调迅速生成基于搜索引擎结果页面的、自然语言处理友好的内容。
 - en: '**Presentation Creation**'
   id: totrans-289
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 演示文稿制作
 - en: '**Smart Slides and Present it**: ShowME: Specialize in swift PowerPoint presentation
     generation. By simply inputting the requirements, these tools craft comprehensive
     and downloadable PPTs.'
@@ -2063,12 +2241,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Smart Slides和Present it：专注于快速PowerPoint演示文稿生成。通过简单输入要求，这些工具制作全面且可下载的PPT。
 - en: '**MagicSlides.app**: Transforms ideas into presentations, streamlining the
     process from conception to visualization.'
   id: totrans-291
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: MagicSlides.app：将想法转化为演示文稿，简化了从构思到可视化的过程。
 - en: '**Canva**: A versatile design tool that allows users to create a wide range
     of visuals effortlessly, from presentations and logos to social media posts and
     more.'
@@ -2076,11 +2256,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Canva：一款多功能设计工具，允许用户轻松创建各种视觉，从演示文稿和标志到社交媒体帖子等。
 - en: '**Image Generation**'
   id: totrans-293
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 图像生成
 - en: '**MixerBox ImageGen**: Uses the DALL·E 2 technology to generate visuals from
     textual descriptions, merging natural language understanding with computer vision.
     With features like customizable formats, text overlays, and unique prompt suggestions,
@@ -2090,18 +2272,21 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: MixerBox ImageGen：使用DALL·E 2技术从文本描述生成图像，将自然语言理解与计算机视觉相结合。具有可定制格式、文本叠加和独特提示建议等功能，适用于为各种项目制作图像，从博客到网站。
 - en: '**Argil AI**: Simplifies the image generation process, eliminating the need
     for intricate prompting. It’s designed for users seeking quick visual creation.'
   id: totrans-295
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Argil AI：简化图像生成过程，消除了复杂提示的需求。它专为寻求快速视觉创作的用户设计。
 - en: '**Michelangelo**: Utilizes DALL-E 2 to produce images inspired by various art
     styles. It is designed for those aiming to infuse artistic flair into their visuals.'
   id: totrans-296
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Michelangelo：利用DALL-E 2生成受各种艺术风格启发的图像。它专为那些希望在视觉中融入艺术气息的人设计。
 - en: '**Placid.app**: Acts as a design assistant, transforming templates into marketing
     visuals. It’s tailored for users looking to elevate their marketing materials
     with advanced graphics.'
@@ -2109,11 +2294,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Placid.app：作为设计助手，将模板转化为营销视觉。它专为希望通过高级图形提升营销材料的用户量身定制。
 - en: '**Story Creation**'
   id: totrans-298
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 故事创作
 - en: '**Stories**: Enables users to craft visually rich stories complemented by text-generated
     imagery. With features like font customization, animations, and direct social
     media sharing, it is tailored to boost discoverability on search engines, broadening
@@ -2122,11 +2309,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Stories：使用户能够制作视觉丰富的故事，并配以文本生成的图像。具有字体定制、动画和直接社交媒体分享等功能，旨在提高在搜索引擎上的可发现性，扩大故事的全球受众范围。
 - en: '**Video Generation**'
   id: totrans-300
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 视频生成
 - en: '**Visla**: Employs AI to convert topics provided by users into engaging short
     videos using accessible stock footage. By analyzing input text for key themes,
     it selects appropriate video clips, images, and audio. Beyond content creation,
@@ -2136,6 +2325,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Visla：利用人工智能将用户提供的主题转化为利用现成素材制作的吸引人的短视频。通过分析输入文本的关键主题，选择合适的视频片段、图像和音频。除了内容创作，Visla还通过元标签、描述和关键字丰富的字幕优化搜索引擎可见性。
 - en: '**CapCut**: Transforms video concepts into reality by allowing AI to draft
     a script, source fitting footage, and combine elements into a refined video. It
     is designed for users seeking an intuitive video creation experience.'
@@ -2143,6 +2333,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: CapCut：通过允许人工智能起草剧本、寻找合适的素材并将元素组合成精致视频，将视频概念变为现实。它专为寻求直观视频创作体验的用户设计。
 - en: '**Process Automation**: These plugins offer users AI-driven solutions to simplify
     and automate various tasks and interactions. From managing intricate tasks with
     AI agents to integrating with thousands of apps, they aim to enhance efficiency
@@ -2151,12 +2342,14 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 流程自动化：这些插件为用户提供了简化和自动化各种任务和交互的人工智能解决方案。从使用AI代理管理复杂任务到与数千个应用程序集成，旨在提高效率和生产力：
 - en: '**AI Agents**: Simulates intelligent agents within ChatGPT that, upon receiving
     a goal prompt, devise and execute strategic plans to increase productivity.'
   id: totrans-304
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: AI代理：在ChatGPT中模拟智能代理，一旦接收到目标提示，就会制定和执行增加生产力的战略计划。
 - en: '**Zapier**: Interacts with over 5,000 apps directly within the ChatGPT interface.
     By automating tasks across these platforms, it simplifies operations and the management
     of multiple platforms.'
@@ -2164,6 +2357,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Zapier**：在ChatGPT界面内直接与5000多个应用程序进行交互。通过在这些平台上自动化任务，简化操作和管理多个平台。'
 - en: '**FakeAGI**: Automates objectives using AI agents that tackle tasks and record
     outcomes in a Google spreadsheet. It is designed for users aiming for task management
     support and documentation.'
@@ -2171,6 +2365,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**FakeAGI**：使用AI代理自动化目标，处理任务并记录结果在Google电子表格中。它专为寻求任务管理支持和文档化的用户设计。'
 - en: '**Software Development**: These plugins are tailored for software development
     and program-based data analysis. From exploring GitHub repositories and running
     code in diverse languages to simplifying data processes, these tools aim to enhance
@@ -2179,6 +2374,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**软件开发**：这些插件专为软件开发和基于程序的数据分析而设计。从探索GitHub存储库和在多种编程语言中运行代码到简化数据处理，这些工具旨在增强编码体验并促进更深入的理解和协作：'
 - en: '**AskTheCode and ChatWith****Code**: Allow users to delve into GitHub repositories,
     either by providing a specific URL to inquire about code aspects or by searching
     based on a query. These tools bridge the gap between code exploration and understanding
@@ -2187,6 +2383,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**AskTheCode和ChatWithCode**：允许用户深入GitHub存储库，可以通过提供特定URL来查询代码方面的内容，也可以根据查询进行搜索。这些工具在聊天界面内直接弥合了代码探索和理解之间的差距。'
 - en: '**CoderPad and CodeRunner**: Offer a coding environment where users can run
     code in over thirty programming languages with automatic setup, compile, save,
     and even create visualizations like charts and graphs. They cater to both coding
@@ -2195,6 +2392,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**CoderPad和CodeRunner**：提供一个编码环境，用户可以在30多种编程语言中运行代码，并进行自动设置、编译、保存，甚至创建图表和图形可视化。它们满足了编码和数据可视化的需求。'
 - en: '**Noteable**: Simplifies data exploration, visualization, cleansing, and transformation,
     enhancing team collaboration. With deep learning capabilities and access to online
     libraries, it aids users in building advanced models and harnessing code updates
@@ -2203,6 +2401,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**值得注意的是**：简化数据探索、可视化、清洗和转换，增强团队协作。具有深度学习能力和访问在线库的能力，帮助用户构建高级模型并有效利用代码更新。'
 - en: Through the integration of plugins, ChatGPT-4 transcends its foundational role
     as a text/code-based language model, emerging as a robust Generative AI tool adept
     at handling additional key modalities like web content, images, and video. We
@@ -2212,11 +2411,13 @@
   id: totrans-311
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过插件的集成，ChatGPT-4超越了其作为文本/代码为基础的语言模型的基础角色，成为了一个强大的生成式人工智能工具，擅长处理网页内容、图像和视频等其他关键形式。我们将在最后一个关于本地多模态的小节中更详细地介绍这一重要方面。插件增加的其他关键功能包括最终用户编程、信息检索和流程自动化。
 - en: '[Combining Interactions with Actions: Access to External Tools in GPT Models](toc.xhtml#s9a)'
   id: totrans-312
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[将交互与操作结合：GPT模型中对外部工具的访问](toc.xhtml#s9a)'
 - en: OpenAI’s GPT models, notably GPT-3.5-Turbo and GPT-4, underwent a major upgrade
     in June 2023, allowing them to interact with external tools via the generation
     of API function calls. Before delving deeper, it’s essential to draw a clear distinction
@@ -2227,6 +2428,7 @@
   id: totrans-313
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI的GPT模型，特别是GPT-3.5-Turbo和GPT-4，在2023年6月进行了重大升级，使它们能够通过生成API函数调用与外部工具进行交互。在深入讨论之前，有必要清楚地区分插件和这个新功能。之前的小节广泛讨论了插件，这些是需要正式注册到OpenAI的特定增强功能。一旦注册，这些插件就成为ChatGPT-4的扩展，可供ChatGPT用户社区使用。
 - en: In contrast, the integration of external tools offers a more flexible mechanism
     to enable the cooperation of GPT models with any enterprise application. Examples
     are ERP (Enterprise Resource Planning), CRM (Customer Relationship Management),
@@ -2237,6 +2439,7 @@
   id: totrans-314
   prefs: []
   type: TYPE_NORMAL
+  zh: 相比之下，集成外部工具提供了一种更灵活的机制，可以使GPT模型与任何企业应用进行合作。例如，ERP（企业资源规划）、CRM（客户关系管理）和SCM（供应链管理）系统。扩展其影响范围，GPT模型还可以与企业特定的搜索引擎、内部网站、数据库和专门的ML模型进行接口，确保与组织IT生态系统的无缝融合。
 - en: Developers can instruct GPT models like gpt-4-0613 and gpt-3.5-turbo-0613 to
     generate specific function calls instead of natural language when certain conditions
     are met. These models are skilled to check these conditions on each user input
@@ -2247,17 +2450,20 @@
   id: totrans-315
   prefs: []
   type: TYPE_NORMAL
+  zh: 开发人员可以指示像gpt-4-0613和gpt-3.5-turbo-0613这样的GPT模型在满足特定条件时生成特定的函数调用，而不是自然语言。这些模型能够在每个用户输入上检查这些条件，并在满足条件时创建符合预期格式的相应函数调用。主程序只需执行函数调用并处理其结果，这可能涉及另一个提示给GPT模型以提供自然语言的摘要，然后可以显示给用户。
 - en: In essence, this enhancement transforms GPT models into dynamic integrators
     of enterprise applications, broadening the horizons of AI beyond mere language
     processing.
   id: totrans-316
   prefs: []
   type: TYPE_NORMAL
+  zh: 本质上，这种增强将GPT模型转变为企业应用的动态集成器，将人工智能的视野扩展到了超越语言处理的范畴。
 - en: '[Integration into Enterprise Software](toc.xhtml#s10a)'
   id: totrans-317
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[集成到企业软件中](toc.xhtml#s10a)'
 - en: Standardized Enterprise Software plays a pivotal role in driving efficiency
     and collaboration, particularly within large corporations. These comprehensive
     software packages are extensively utilized due to their broad functionality, robustness,
@@ -2265,6 +2471,7 @@
   id: totrans-318
   prefs: []
   type: TYPE_NORMAL
+  zh: 标准化的企业软件在推动效率和协作方面发挥着关键作用，特别是在大型企业中。由于其广泛的功能、健壮性、可扩展性和安全性，这些综合软件包得到了广泛的利用。
 - en: With the continued advancement of Generative Artificial Intelligence, opportunities
     have emerged for these software systems to further increase their capabilities
     and value. Companies such as Microsoft, ServiceNow, SAP, and Atlassian, who develop
@@ -2274,6 +2481,7 @@
   id: totrans-319
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着生成式人工智能的不断进步，这些软件系统有机会进一步增强其能力和价值。微软、ServiceNow、SAP和Atlassian等开发这些软件产品的公司正在探索将GPT模型整合到其产品中的方式。在这里，我们描述了这些努力以及它们如何促进企业软件解决方案的转型。
 - en: 'The collaboration of Microsoft and OpenAI, which has been strategically nurtured
     since 2019, is the primary example of how GPT-4 capabilities can be leveraged
     by an existing productivity software suite, which is commonly used by an enterprise.
@@ -2283,12 +2491,14 @@
   id: totrans-320
   prefs: []
   type: TYPE_NORMAL
+  zh: 自2019年以来，微软和OpenAI的合作是GPT-4能力如何被现有的企业常用生产力软件套件所利用的主要例子。2022年标志着OpenAI的GPT模型被整合到微软企业产品中的开始，这一过程在2023年获得了重要的动力。以下是这一合作的当前主要成果：
 - en: '**First and foremost, Microsoft offers OpenAI products inside its Azure cloud
     offering:**'
   id: totrans-321
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 首先，微软在其Azure云服务中提供了OpenAI产品：
 - en: '**Microsoft Azure ChatGPT** provides user privacy through isolation from OpenAI’s
     operations and offers plugin support for the integration with other Azure services
     and enterprise-specific data sources.'
@@ -2296,6 +2506,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Microsoft Azure ChatGPT通过与其他Azure服务和企业特定数据源集成的插件支持，为用户提供隔离OpenAI运营的隐私保护。
 - en: The **Azure OpenAI Service** integrates OpenAI’s pre-trained AI models and extends
     existing Azure AI capabilities in natural language processing & computer vision.
     The service offers features like the Chat Playground with GPT-3.5-Turbo and GPT-4
@@ -2307,6 +2518,9 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Azure OpenAI Service集成了OpenAI的预训练AI模型，并扩展了现有的Azure AI能力，包括自然语言处理和计算机视觉。该服务提供了Chat
+    Playground，具有GPT-3.5-Turbo和GPT-4支持，Legacy Playground，具有GPT-3、GPT-3.5和Codex模型，以及DALL-E
+    Playground。此外，还有一个“Bring Your Own Data”区域，用于将GPT模型与企业数据进行关联。该平台还提供部署管理工具和内容过滤设置。
 - en: '**Then Microsoft’s Bing Chat Enterprise provides a similar user experience
     as ChatGPT-4 with the Bing Browser plugin, while ensuring full organizational
     data protection and simultaneous access to DALLE-E. Typical use cases are:**'
@@ -2314,100 +2528,118 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 然后，微软的Bing Chat Enterprise提供了与ChatGPT-4类似的用户体验，同时确保完整的组织数据保护并同时访问DALLE-E。典型的使用案例包括：
 - en: 'Content Creation and Modification:'
   id: totrans-325
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 内容创建和修改：
 - en: Generate diverse business content from user prompts, such as emails, reports,
     or process descriptions.
   id: totrans-326
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 从用户提示中生成各种业务内容，如电子邮件、报告或流程描述。
 - en: Adjust the tone or style of text, incorporating optimism, professionalism, or
     various writing formats.
   id: totrans-327
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 调整文本的语气或风格，包括乐观、专业或各种写作格式。
 - en: Improve existing writing by adding elements like brevity, formality, and creativity.
   id: totrans-328
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过添加简洁、正式和创造性等元素来改进现有的写作。
 - en: 'Image Generation and Customization:'
   id: totrans-329
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 图像生成和定制：
 - en: Create and modify images directly from user prompts.
   id: totrans-330
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 直接从用户提示中创建和修改图像。
 - en: Explore various creation themes, including security, environmental consciousness,
     and digital outlook.
   id: totrans-331
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 探索各种创作主题，包括安全、环保意识和数字前景。
 - en: Modify generated images by altering color schemes, styles, or background details.
   id: totrans-332
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过更改颜色方案、样式或背景细节修改生成的图像。
 - en: 'Intuitive Interaction and Personalized Responses:'
   id: totrans-333
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 直观互动和个性化响应：
 - en: Search and interact using natural, conversational language, accommodating both
     short and detailed inputs.
   id: totrans-334
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用自然、对话式语言进行搜索和交互，适应简短和详细的输入。
 - en: Ask complex questions and receive relevant answers, with the system maintaining
     context for follow-up queries.
   id: totrans-335
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提出复杂问题并获得相关答案，系统保持上下文以进行后续查询。
 - en: Customize the format of Bing’s responses using prompts, such as requesting bullet
     points, tables, or simplified language.
   id: totrans-336
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用提示自定义Bing的响应格式，例如请求项目符号、表格或简化语言。
 - en: 'Comparisons, Summaries, and Real-Time Information:'
   id: totrans-337
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 比较、摘要和实时信息：
 - en: Conduct detailed comparisons and receive concise summaries of enterprises, technologies,
     markets, etc.
   id: totrans-338
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 进行详细的比较，并接收企业、技术、市场等的简洁摘要。
 - en: Access near-real-time results for recent business events or breaking financial
     news.
   id: totrans-339
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 获取最新商业事件或突发财经新闻的几乎实时结果。
 - en: View and revisit previously created content and images.
   id: totrans-340
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查看和重新访问先前创建的内容和图像。
 - en: '**Other Microsoft products are AI-enhanced via the Copilot initiative. Here
     is an overview:**'
   id: totrans-341
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 其他微软产品通过Copilot计划进行了AI增强。以下是概述：
 - en: Microsoft **365’s Copilot** integrates fully into all office apps with GPT-based
     features for automatic text creation in Word, exploratory data analysis in Excel,
     and presentation automation in PowerPoint. Copilot improves communication efficiency
@@ -2417,6 +2649,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Microsoft 365的Copilot完全集成到所有办公应用程序中，具有基于GPT的功能，可以在Word中自动创建文本，在Excel中进行探索性数据分析，在PowerPoint中进行演示自动化。Copilot通过管理电子邮件、总结主题、制定回复并协助会议组织，提高了Outlook和Teams中的沟通效率。
 - en: '**Windows** also integrates **Copilot**, enabling task simplification across
     various apps, while AI enhancements in the Paint and Photos apps introduce innovative
     features and efficient media management. The Snipping Tool’s diverse content capture
@@ -2426,12 +2659,15 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Windows**还集成了**Copilot**，可以简化跨各种应用的任务，同时在Paint和Photos应用中的AI增强功能引入了创新功能和高效的媒体管理。Snipping
+    Tool的多样内容捕捉和Clipchamp的自动视频创建功能提供了丰富的用户互动和高级内容创建。'
 - en: '**Copilot in Viva Engage** offers conversation starters based on trending topics
     and enhances the answers experience by refining questions and responses.'
   id: totrans-344
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Viva Engage中的Copilot**提供了基于热门话题的对话启动器，并通过改进问题和回答来增强答案体验。'
 - en: Integrated into **Power BI, Copilot** supports data interaction through exploratory
     and ad-hoc analysis, offering visualizations, collaborative reporting, and data
     storytelling.
@@ -2439,6 +2675,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Power BI, Copilot**集成了数据交互功能，通过探索性和临时分析支持数据交互，提供可视化、协作报告和数据叙事。'
 - en: '**Copilot in Power Automate** enables automation creation through natural language.
     It understands user intent to create and modify flows, configure connections and
     parameters, and answer product or flow-related questions.'
@@ -2446,6 +2683,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Power Automate中的Copilot**通过自然语言实现自动化创建。它能理解用户意图，创建和修改流程，配置连接和参数，并回答与产品或流程相关的问题。'
 - en: '**‘Copilots in Power Apps** guide the creation of an app or bot. This process
     encompasses creating and importing data tables, generating app screens and user
     event handlers, summarizing user input, answering questions, and managing the
@@ -2454,6 +2692,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**‘Power Apps中的Copilots**指导应用程序或机器人的创建。这个过程包括创建和导入数据表，生成应用程序屏幕和用户事件处理程序，总结用户输入，回答问题，以及管理应用程序或机器人的发布。'
 - en: '**Copilot in Microsoft Teams Phone** integrates with the Teams Phone system,
     using GPT models to automatically summarize phone conversations, highlighting
     key details and suggesting follow-up actions.'
@@ -2461,6 +2700,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Microsoft Teams Phone中的Copilot**与Teams Phone系统集成，使用GPT模型自动总结电话对话，突出关键细节，并建议后续行动。'
 - en: '**Copilot in Teams Chat** enhances communication in Teams by leveraging GPT
     to provide quick summaries of chat threads, allowing users to extract key decisions
     and insights from their discussions.'
@@ -2468,6 +2708,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Teams Chat中的Copilot**通过利用GPT增强了Teams中的沟通，提供了对聊天线程的快速摘要，让用户能够从讨论中提取关键决策和见解。'
 - en: '**Microsoft Sales Copilot** is designed for sellers, streamlining CRM tasks
     with GPT technology, identifying top sales opportunities, and reducing manual
     work, enabling more effective sales strategies.'
@@ -2475,6 +2716,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Microsoft Sales Copilot**专为销售人员设计，利用GPT技术简化CRM任务，识别顶级销售机会，减少手动工作，实现更有效的销售策略。'
 - en: 'Moving beyond Microsoft, other prominent players in the enterprise software
     market have started to harness the power of AI through their collaborations with
     OpenAI. As representative examples, ServiceNow, SAP, and Atlassian have made their
@@ -2482,6 +2724,7 @@
   id: totrans-351
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了微软之外，企业软件市场中的其他知名参与者也已经开始通过与OpenAI的合作来利用AI的力量。作为代表性的例子，ServiceNow、SAP和Atlassian已经开始将AI功能嵌入其平台：
 - en: '**ServiceNow** has integrated OpenAI’s Generative AI Controller and Now Assist
     for Search into its platform through Microsoft’s Azure OpenAI Service. These additions
     enhance workflow automation and user experiences, paving the way for future improvements
@@ -2491,6 +2734,8 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**ServiceNow**通过Microsoft的Azure OpenAI Service将OpenAI的生成式AI控制器和Now Assist for
+    Search集成到其平台中。这些增强功能提升了工作流自动化和用户体验，为未来的生产力和创新改进铺平了道路，包括聊天响应生成和事件优先级排序。'
 - en: In collaboration with Microsoft, **SAP** is working to embed Microsoft’s AI
     functionalities into its products, initially concentrating on merging SAP SuccessFactors
     solutions with several Microsoft services including Azure OpenAI. This partnership
@@ -2500,6 +2745,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与微软合作，**SAP**正在将微软的AI功能嵌入其产品中，最初集中于将SAP SuccessFactors解决方案与包括Azure OpenAI在内的多个微软服务进行整合。这一合作已经在SAP社区内引发了创新的PoC，比如自动客户邮件回复和改进的工单管理。
 - en: '**Atlassian** introduced Atlassian Intelligence, a **virtual teammate** utilizing
     OpenAI’s large language models alongside its AI models. This tool offers features
     like AI-powered summaries and a ChatGPT-like chatbot, aiming to enhance understanding
@@ -2508,6 +2754,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Atlassian**推出了Atlassian Intelligence，这是一个利用OpenAI的大型语言模型和其AI模型的**虚拟队友**。这个工具提供了诸如AI支持的摘要和类似ChatGPT的聊天机器人等功能，旨在增强对工作模式的理解，并促进团队协作。'
 - en: In conclusion, the integration of OpenAI’s GPT models into enterprise software
     is a testament to the transformative potential of AI. This move suggests that,
     as more corporations adopt these enhanced solutions, we can expect impactful shifts
@@ -2515,11 +2762,13 @@
   id: totrans-355
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，将OpenAI的GPT模型集成到企业软件中证明了AI的变革潜力。这一举措表明，随着更多企业采用这些增强型解决方案，我们可以期待他们在运营中使用AI的方式发生重大变化。
 - en: '[ChatGPT Enterprise](toc.xhtml#s11a)'
   id: totrans-356
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[ChatGPT企业](toc.xhtml#s11a)'
 - en: 'Historically, corporations have been wary of embracing new cloud-based technologies,
     especially those that handle vast amounts of data like ChatGPT, primarily due
     to concerns about data privacy, security, and integration with their existing
@@ -2528,17 +2777,21 @@
   id: totrans-357
   prefs: []
   type: TYPE_NORMAL
+  zh: 历来，企业对于采用新的基于云的技术持谨慎态度，特别是那些处理大量数据的技术，比如ChatGPT，主要是出于对数据隐私、安全和与现有基础设施集成的担忧。2023年8月，OpenAI推出了ChatGPT
+    Enterprise，旨在解决这些挑战：
 - en: '**Strengthened Security & Privacy**'
   id: totrans-358
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**加强安全与隐私**'
 - en: '**Data Control**: Companies maintain complete authority over their data. Enterprise
     data is not used for model training.'
   id: totrans-359
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**数据控制**：企业对其数据拥有完全的控制权。企业数据不用于模型训练。'
 - en: '**Robust Encryption**: Utilizing industry-leading encryption techniques, data
     in transit is safeguarded using TLS 1.2+, a security protocol ensuring secure
     data transfer. For data at rest, AES-256 encryption is applied, a symmetric encryption
@@ -2547,6 +2800,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**强大的加密**：利用行业领先的加密技术，使用TLS 1.2+进行数据传输的数据得到保护，这是一种确保安全数据传输的安全协议。对于静态数据，应用AES-256加密，这是一种对称加密标准，因其高安全性而受到推崇。'
 - en: '**Adherence to Standards**: ChatGPT Enterprise is compliant with SOC 2 Type
     1 — a standard assessing the policies, procedures, and controls of service providers.
     Additionally, preparations are underway for Type 2 compliance, which involves
@@ -2555,109 +2809,129 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**遵守标准**：ChatGPT Enterprise符合SOC 2 Type 1标准，该标准评估服务提供商的政策、程序和控制措施。此外，正在准备符合Type
+    2标准，这需要更严格和定期的审计。'
 - en: '**Domain Verification**: An added layer of security is provided to verify and
     authenticate the enterprise’s domain, preventing unauthorized usage.'
   id: totrans-362
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**域验证**：提供了额外的安全层，用于验证和认证企业的域，防止未经授权的使用。'
 - en: '**Facilitating Integration & Collaboration**'
   id: totrans-363
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**促进集成与协作**'
 - en: '**Data Synergy**: ChatGPT Enterprise announced it would offer features enabling
     smooth interactions with typical corporate applications.'
   id: totrans-364
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**数据协同**：ChatGPT Enterprise宣布将提供功能，使其能够与典型的企业应用程序进行平稳交互。'
 - en: '**Shared Workflows**: Teams are empowered to create and distribute workflows
     via shared chat templates.'
   id: totrans-365
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**共享工作流程**：团队可以通过共享的聊天模板创建和分发工作流程。'
 - en: '**API Access**: Companies are provided with API credits to craft enterprise-specific
     solutions, allowing for tailored AI-powered operations.'
   id: totrans-366
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**API访问**：公司可以获得API积分，以制定企业特定的解决方案，从而实现定制的人工智能操作。'
 - en: '**Single Sign-On (SSO)**: This feature simplifies user access and offers a
     touch of added security.'
   id: totrans-367
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**单点登录（SSO）**：此功能简化了用户访问，并提供了额外的安全性。'
 - en: '**Advanced Data Analysis Solution (see also the details in the *ChatGPT-4 plugins*
     subchapter**)'
   id: totrans-368
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**高级数据分析解决方案（另请参阅*ChatGPT-4插件*子章节中的详细信息）**'
 - en: '**Core Functionalities**: It supports a broad range of tasks including exploratory
     data analysis, visualization, statistical operations, and text analytics.'
   id: totrans-369
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**核心功能**：它支持广泛的任务，包括探索性数据分析、可视化、统计操作和文本分析。'
 - en: '**Ad-hoc Problem Solving**: The tool is also adept at handling specific algorithmic
     challenges, like data mapping, cost calculations, and scenario-based planning.'
   id: totrans-370
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**临时问题解决**：该工具还擅长处理特定的算法挑战，如数据映射、成本计算和基于场景的规划。'
 - en: '**Improved** **Performance & Deployment**'
   id: totrans-371
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**改进的** **性能和部署**'
 - en: '**Increased Efficiency with GPT-4**: The Enterprise version harnesses a GPT-4
     model that operates at double the speed without limitations in the number of interactions.'
   id: totrans-372
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**利用GPT-4提高效率**：企业版利用GPT-4模型，速度加倍，互动次数没有限制。'
 - en: '**Extended Interactions**: Thanks to a 32k token context window, ChatGPT Enterprise
     can handle extended dialogues and accommodate larger documents for in-depth discussions.'
   id: totrans-373
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**扩展交互**：由于32k令牌上下文窗口，ChatGPT Enterprise可以处理扩展对话，并容纳更大的文档进行深入讨论。'
 - en: '**Deployment Tools**'
   id: totrans-374
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**部署工具**'
 - en: '**Admin Console**: A dedicated console for seamless bulk member management.'
   id: totrans-375
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**管理控制台**：专门的控制台，用于无缝批量成员管理。'
 - en: '**Analytics Dashboard**: A tool for real-time usage insights, helping companies
     understand how the system is being leveraged.'
   id: totrans-376
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**分析仪表板**：用于实时使用洞察，帮助公司了解系统的利用情况。'
 - en: '**Looking Forward**'
   id: totrans-377
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**展望未来**'
 - en: '**Self-service**: Plans are in motion for a ChatGPT Business model, aiming
     to cater to smaller teams.'
   id: totrans-378
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**自助服务**：ChatGPT Business模式的计划正在进行中，旨在满足较小团队的需求。'
 - en: '**Power Tools**: Future iterations promise more robust Advanced Data Analysis
     tools and specialized browsing features optimized for work settings.'
   id: totrans-379
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**强大工具**：未来的版本承诺提供更强大的高级数据分析工具和专门针对工作环境优化的浏览功能。'
 - en: '**Role-specific Solutions**: The roadmap includes tools specifically crafted
     for roles such as data analysts, marketers, and customer support personnel, ensuring
     a more bespoke experience.'
@@ -2665,22 +2939,26 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**特定角色的解决方案**：路线图包括专门为数据分析师、营销人员和客户支持人员量身定制的工具，确保更个性化的体验。'
 - en: With the *ChatGPT Enterprise* offering, OpenAI has started to align its AI capabilities
     with corporate demands, envisaging a balance of security, flexibility, and performance.
   id: totrans-381
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过*ChatGPT Enterprise*提供，OpenAI已开始将其人工智能能力与企业需求相匹配，设想实现安全性、灵活性和性能的平衡。
 - en: '[ChatGPT Native Multi-modality](toc.xhtml#s12a)'
   id: totrans-382
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[ChatGPT本地多模态](toc.xhtml#s12a)'
 - en: ChatGPT introduced native multi-modal capabilities in October 2023, including
     voice and image interactions, enabling users to engage in conversations and discuss
     visuals without the need for plugins.
   id: totrans-383
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT于2023年10月推出了本地多模态功能，包括语音和图像交互，使用户能够进行对话和讨论视觉内容，无需插件。
 - en: Users can have voice conversations, with the system employing an advanced text-to-speech
     model and Whisper, OpenAI’s speech recognition system, to facilitate interactive
     dialogues. The voice feature offers five different voice options, developed in
@@ -2689,6 +2967,7 @@
   id: totrans-384
   prefs: []
   type: TYPE_NORMAL
+  zh: 用户可以进行语音对话，系统采用先进的文本转语音模型和Whisper，OpenAI的语音识别系统，以促进交互式对话。语音功能提供了五种不同的语音选项，与专业配音演员合作开发，并在iOS和Android平台上提供。
 - en: Furthermore, ChatGPT can interpret and analyze images, which users can upload
     directly through the platform. This feature, powered by a new multimodal GPT-4
     model, GPT-4V (Vision), allows for a wide range of applications, including visual
@@ -2698,6 +2977,7 @@
   id: totrans-385
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，ChatGPT可以解释和分析图像，用户可以直接通过平台上传图像。这一功能由新的多模态GPT-4模型GPT-4V（Vision）提供，可用于各种应用，包括视觉诊断、问题回答、代码生成和分析。可以将多个文本元素、图像和带有标记的图像混合在单个用户输入中，以便进行比较或类比。
 - en: In addition to these, OpenAI’s image generator, DALL·E 3, is now integrated
     natively with ChatGPT, allowing users to generate tailored, detailed prompts that
     bring ideas to life through images. The DALL·E 3 feature is available to ChatGPT
@@ -2706,6 +2986,8 @@
   id: totrans-386
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了这些，OpenAI的图像生成器DALL·E 3现在与ChatGPT本地集成，允许用户生成定制的详细提示，通过图像将想法变为现实。DALL·E 3功能适用于ChatGPT
+    Plus和企业客户，重点关注安全性，防止生成有害内容。
 - en: OpenAI deployed these new capabilities while adhering to their standards for
     safety and responsible usage. OpenAI also took measures to respect individuals’
     privacy and limit ChatGPT’s ability to analyze and make direct statements about
@@ -2714,6 +2996,7 @@
   id: totrans-387
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI在遵守安全和负责任使用标准的同时部署了这些新功能。OpenAI还采取措施尊重个人隐私，并限制了ChatGPT分析和直接对人进行陈述的能力。此外，OpenAI使创作者可以选择将他们的图像排除在未来模型的训练之外。
 - en: Building on the exploration of ChatGPT’s new multi-modality features and considering
     the advancements discussed in the subchapter on plugins, the following table provides
     an overview of the resulting Generative AI capabilities of ChatGPT. It indicates
@@ -2723,58 +3006,70 @@
   id: totrans-388
   prefs: []
   type: TYPE_NORMAL
+  zh: 在探索ChatGPT的新多模态功能并考虑插件子章节中讨论的进展的基础上，以下表格提供了ChatGPT生成AI功能的概述。它显示了模型在各种模态下的本地功能和插件增强功能，展示了模型在从文本和代码理解到高级图像和语音交互的任务中的适应性和全面功能。
 - en: '| **Modality** | **Understanding** | **Creation** |'
   id: totrans-389
   prefs: []
   type: TYPE_TB
+  zh: '| **模态** | **理解** | **生成** |'
 - en: '| Text | Native & Plugins: Advanced comprehension and interpretation of textual
     data. | Native & Plugins: Generation of coherent, contextually relevant text,
     responses, and summaries. |'
   id: totrans-390
   prefs: []
   type: TYPE_TB
+  zh: '| 文本 | 本地和插件：对文本数据进行高级理解和解释。 | 本地和插件：生成连贯、上下文相关的文本、响应和摘要。 |'
 - en: '| Structured Data | Understanding of data in table or code format | Generation
     of data in table or code format |'
   id: totrans-391
   prefs: []
   type: TYPE_TB
+  zh: '| 结构化数据 | 理解表格或代码格式的数据 | 生成表格或代码格式的数据 |'
 - en: '| Image | Native & Plugins: Proficient comprehension of various images using
     GPT-4V plus plugins | Native & Plugins: Native integration with DALL·E 3 for creative
     visuals, along with plugin-supported visual content generation. |'
   id: totrans-392
   prefs: []
   type: TYPE_TB
+  zh: '| 图像 | 本地和插件：使用GPT-4V和插件熟练理解各种图像 | 本地和插件：与DALL·E 3的本地集成，用于创意视觉，以及支持插件的视觉内容生成。
+    |'
 - en: '| Video | Plugins: Enhanced interactions with and analysis of video content.
     | Plugins: Facilitated generation and manipulation of video content. |'
   id: totrans-393
   prefs: []
   type: TYPE_TB
+  zh: '| 视频 | 插件：增强与视频内容的交互和分析。 | 插件：便利生成和操作视频内容。 |'
 - en: '| Code | Native & Plugins: Comprehension of multiple programming languages
     and GitHub repositories. | Native & Plugins: Generation and execution of code
     snippets, database queries, and data analysis and visualization code |'
   id: totrans-394
   prefs: []
   type: TYPE_TB
+  zh: '| 代码 | 本地和插件：理解多种编程语言和GitHub存储库。 | 本地和插件：生成和执行代码片段，数据库查询，数据分析和可视化代码 |'
 - en: '| Web Content | Plugins: Interpretation of web search results and scraped web
     content. | Plugins: Generation of basic website designs and applications. |'
   id: totrans-395
   prefs: []
   type: TYPE_TB
+  zh: '| 网页内容 | 插件：解释网络搜索结果和抓取的网页内容。 | 插件：生成基本的网站设计和应用。 |'
 - en: '| Audio | Native: Transcription of spoken words into text using Whisper, OpenAI’s
     speech-to-text tool. | Native: Generation of human-like audio with synthetic voices.
     |'
   id: totrans-396
   prefs: []
   type: TYPE_TB
+  zh: '| 音频 | 本地：使用Whisper，OpenAI的语音转文本工具，将口语转录成文本。 | 本地：使用合成语音生成类似人类的音频。 |'
 - en: '**Table 1.1:** Multimodality in ChatGPT-4'
   id: totrans-397
   prefs: []
   type: TYPE_NORMAL
+  zh: '**表1.1：** ChatGPT-4的多模态'
 - en: '[GPT-4 Turbo, Assistants, and GPTs](toc.xhtml#s13a)'
   id: totrans-398
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[GPT-4 Turbo，助手和GPTs](toc.xhtml#s13a)'
 - en: In November 2023 OpenAI introduced GPT-4 Turbo, an advancement over the original
     GPT-4 model. This new iteration stands out with its extensive 128k context window,
     allowing it to process information equivalent to over 300 pages of text at once.
@@ -2789,6 +3084,8 @@
   id: totrans-399
   prefs: []
   type: TYPE_NORMAL
+  zh: 2023年11月，OpenAI推出了GPT-4 Turbo，这是对原始GPT-4模型的一项进步。这个新版本以其广泛的128k上下文窗口脱颖而出，使其能够一次处理相当于超过300页文本的信息。它已更新到2023年4月的世界事件知识，并且已经针对成本进行了优化，输入和输出令牌的成本明显低于其前身。在功能方面，GPT-4
+    Turbo使得可以从单个提示执行多个功能，并声称在遵循指令方面进一步提高了准确性，这对需要结构化输出（如JSON）的开发人员特别有益。另一个功能是生成一致的响应，这在较长的对话或重复使用相同提示与不同输入数据时特别有用。
 - en: Alongside GPT-4 Turbo, OpenAI released an updated version of GPT-3.5 Turbo with
     an expanded 16K token context window and improved task performance. A new milestone
     is the Assistants API, which facilitates the development of AI applications with
@@ -2799,6 +3096,8 @@
   id: totrans-400
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了GPT-4 Turbo，OpenAI还发布了更新版本的GPT-3.5 Turbo，具有扩展的16K令牌上下文窗口和改进的任务性能。一个新的里程碑是助手API，它促进了具有类似代理的AI应用程序的开发，利用了高级数据分析和网络浏览等插件，以及高级函数调用。此外，DALL·E
+    3的集成和新的文本到语音API允许开发人员增强其平台的功能，具有先进的图像生成和类人语音合成能力。
 - en: Another innovation are GPTs, customizable prompt-based applications that empower
     prompt engineers to create specialized versions of ChatGPT to enable task-specific
     functionalities like first-level IT-Support, negotiation assistance or report
@@ -2808,6 +3107,8 @@
   id: totrans-401
   prefs: []
   type: TYPE_NORMAL
+  zh: GPTs的另一个创新是可定制的基于提示的应用程序，赋予提示工程师创建ChatGPT的专业版本的能力，以实现特定任务功能，如一级IT支持、谈判协助或报告创建。提示工程师可以使用GPT
+    Builder上传自定义图像，定义GPT的行为，设置欢迎消息以建立初始互动语气，并提供特定任务的提示启动器以引导用户参与。
 - en: Additionally, they can enrich the GPT’s knowledge base by uploading relevant
     enterprise content, for example about products, markets, and policies. Previously
     mentioned capabilities like Advanced Data Analysis, Web Browsing, and DALL·E Image
@@ -2818,6 +3119,7 @@
   id: totrans-402
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，他们可以通过上传相关的企业内容，例如产品、市场和政策，丰富GPT的知识库。先前提到的高级数据分析、网络浏览和DALL·E图像生成等功能也扩大了GPT的操作范围。定制操作允许与第三方API的集成，使GPT能够利用外部服务和数据，非常类似于标准GPT模型与外部工具的集成。
 - en: The upcoming GPT Store will act as a hub for these innovative applications,
     encouraging a community where prompt engineers can share their creations and potentially
     earn revenue. OpenAI has placed a strong emphasis on privacy and safety, enacting
@@ -2825,6 +3127,7 @@
   id: totrans-403
   prefs: []
   type: TYPE_NORMAL
+  zh: 即将推出的GPT Store将作为这些创新应用的中心，鼓励提示工程师分享他们的创作，并有可能获得收入。OpenAI非常重视隐私和安全，制定了严格的政策来保护这些GPT内的用户数据。
 - en: Finally, OpenAI offers GPT-4 fine-tuning for personalized model improvements,
     with a dedicated program for large-scale customization. The Custom Models program
     allows organizations to co-develop bespoke GPT-4 models, ensuring data privacy
@@ -2832,11 +3135,13 @@
   id: totrans-404
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，OpenAI提供了GPT-4的精细调整，以改进个性化模型，设有专门的大规模定制计划。定制模型计划允许组织共同开发定制的GPT-4模型，确保数据隐私和特定于其运营需求。
 - en: '[Conclusion](toc.xhtml#s14a)'
   id: totrans-405
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结论]'
 - en: This chapter traced the evolution of Generative Pre-trained Transformers, from
     the initial GPT-1 and GPT-2 to the innovative ChatGPT and the advanced GPT-4 with
     AGI capabilities. We explored their transformative impact, the expansion of functionalities
@@ -2847,17 +3152,21 @@
   id: totrans-406
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章追溯了生成式预训练变压器的演变，从最初的GPT-1和GPT-2到创新的ChatGPT和具有AGI功能的先进GPT-4。我们探讨了它们的变革性影响，通过插件、外部工具和集成到企业软件的功能扩展。引入本地多模态功能和与DALL·E
+    3和Whisper的集成丰富了用户互动，并扩展了模型的多功能性，实现了全面的生成式AI能力。
 - en: In the next chapter we will introduce a comprehensive AI-capability framework,
     CapabilityGPT, to facilitate the systematic utilization of GPT models in an enterprise
     context.
   id: totrans-407
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将介绍一个全面的AI能力框架CapabilityGPT，以促进在企业环境中系统地利用GPT模型。
 - en: '[Key Points](toc.xhtml#s15a)'
   id: totrans-408
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[要点]'
 - en: The early GPT models, GPT-1 and GPT-2, leveraged the potential of Transformer
     models in natural language processing, paving the way for subsequent advancements
     in the field.
@@ -2865,6 +3174,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 早期的GPT模型GPT-1和GPT-2利用了变压器模型在自然语言处理中的潜力，为该领域的后续进展铺平了道路。
 - en: GPT-3 marked a significant leap forward with its massive model size and enhanced
     capabilities, including its proficiency in learning from a few examples and applying
     this knowledge across diverse tasks.
@@ -2872,12 +3182,14 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: GPT-3以其庞大的模型规模和增强的能力标志着重大的飞跃，包括其在从少量示例中学习并将这些知识应用于各种任务方面的熟练程度。
 - en: InstructGPT was a critical advancement that enhanced task-oriented and instruction-based
     responses, laying the groundwork for ChatGPT.
   id: totrans-411
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: InstructGPT是一项重要的进步，增强了面向任务和基于指令的响应，为ChatGPT奠定了基础。
 - en: ChatGPT revolutionized AI-human interaction with its ability to generate coherent
     and contextually appropriate responses and its advanced instruction-following
     capabilities, taking us closer to more natural and meaningful AI-human interactions.
@@ -2885,6 +3197,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: ChatGPT通过其生成连贯且上下文适当的回应能力以及先进的遵循指令能力，彻底改变了AI与人类的互动，使我们更接近更自然和有意义的AI与人类互动。
 - en: GPT-4 represents a significant milestone towards Artificial General Intelligence,
     with proven capabilities for creation, transfer learning, advanced reasoning and
     planning.
@@ -2892,18 +3205,21 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: GPT-4代表了通向人工通用智能的重要里程碑，具有创造、迁移学习、高级推理和规划的能力。
 - en: The introduction of plugins like Advanced Data Analysis, Web Search, or Image
     Understanding has significantly enhanced ChatGPT-4’s Generative AI capabilities.
   id: totrans-414
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 像高级数据分析、网络搜索或图像理解这样的插件的引入显著增强了ChatGPT-4的生成式AI能力。
 - en: The innovative ability of GPT models to access external tools has broadened
     the scope and reach of AI applications, especially in the area of Enterprise Applications.
   id: totrans-415
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: GPT模型访问外部工具的创新能力扩大了AI应用的范围和影响，特别是在企业应用领域。
 - en: The ongoing integration of GPT-4 into enterprise software platforms, especially
     from OpenAI’s strategic partner Microsoft, is further extending the user base
     of AI capabilities.
@@ -2911,12 +3227,14 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: GPT-4不断集成到企业软件平台中，特别是来自OpenAI战略合作伙伴微软，进一步扩大了AI能力的用户群。
 - en: OpenAI’s launch of ChatGPT Enterprise attempts to directly address the corporate
     reservations about data security and integration.
   id: totrans-417
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: OpenAI推出的ChatGPT Enterprise试图直接解决企业对数据安全和集成的顾虑。
 - en: ChatGPT-4’s native voice and image processing features represent a further improvement
     of its Generative AI capabilities, expanding the model’s versatility across various
     tasks.
@@ -2924,6 +3242,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: ChatGPT-4的本地语音和图像处理功能代表了其生成式人工智能能力的进一步提升，扩展了模型在各种任务中的多功能性。
 - en: GPT-4 Turbo advances the GPT series with a very large 128k token context window,
     capable of processing information equivalent to over 300 pages of text in a single
     prompt, and enhanced accuracy in instruction-following.
@@ -2931,6 +3250,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: GPT-4 Turbo通过一个非常大的128k标记上下文窗口推进了GPT系列，能够在单个提示中处理相当于300页文本的信息，并提高了指令遵循的准确性。
 - en: GPTs, as customizable prompt-based applications allow prompt engineers to tailor
     ChatGPT with task-specific functionalities, fostering a dynamic ecosystem for
     sharing and monetization.
@@ -2938,27 +3258,32 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 作为可定制的基于提示的应用程序，GPT允许提示工程师定制ChatGPT以具有特定任务的功能，促进了共享和变现的动态生态系统。
 - en: ____________________
   id: totrans-421
   prefs: []
   type: TYPE_NORMAL
+  zh: ____________________
 - en: '[¹](#ftn1) Deep learning is a branch of machine learning that uses multi-layered
     neural networks to learn transformation functions and patterns to produce desired
     outputs from the input data.'
   id: totrans-422
   prefs: []
   type: TYPE_NORMAL
+  zh: '[¹](#ftn1) 深度学习是机器学习的一个分支，它使用多层神经网络来学习转换函数和模式，以从输入数据中产生期望的输出。'
 - en: '[²](#ftn2) It was in 2019 that OpenAI introduced a for-profit arm to their
     operation.'
   id: totrans-423
   prefs: []
   type: TYPE_NORMAL
+  zh: '[²](#ftn2) 2019年，OpenAI推出了其营利性业务。'
 - en: '[³](#ftn3) Neural network parameters are like the brain’s memory of what it
     has learned. They are values that the network adjusts as it learns from input-output
     training data.'
   id: totrans-424
   prefs: []
   type: TYPE_NORMAL
+  zh: '[³](#ftn3) 神经网络参数就像大脑对所学知识的记忆。它们是网络在从输入-输出训练数据中学习时调整的值。'
 - en: '[⁴](#ftn4) Natural language inference (NLI) is the task of determining the
     relationship between two sentences. For example, given a statement “All dogs bark”
     and another statement “Some animals make noise,” we infer that the second statement
@@ -2969,12 +3294,14 @@
   id: totrans-425
   prefs: []
   type: TYPE_NORMAL
+  zh: '[⁴](#ftn4) 自然语言推理（NLI）是确定两个句子之间关系的任务。例如，给定一个陈述“所有狗都会叫”和另一个陈述“一些动物会发出声音”，我们推断第二个陈述是对第一个的概括。在NLI中，我们将这些句子对之间的关系分类为“蕴涵”（一个句子逻辑上推出另一个句子）、“矛盾”（句子相互对立）或“中性”（句子无关）。'
 - en: '[⁵](#ftn5) Semantic similarity is about measuring how closely two sentences
     or words share the same meaning. For example, “big” and “large” have high semantic
     similarity because they both describe size.'
   id: totrans-426
   prefs: []
   type: TYPE_NORMAL
+  zh: '[⁵](#ftn5) 语义相似性是衡量两个句子或单词共享相同含义程度的方法。例如，“big”和“large”具有很高的语义相似性，因为它们都描述大小。'
 - en: '[⁶](#ftn6) Zero-shot learning refers to a machine learning approach where a
     model is able to perform tasks for which it hasn’t been explicitly trained. Instead
     of relying on specific training data for every task, the model leverages its existing
@@ -2983,6 +3310,7 @@
   id: totrans-427
   prefs: []
   type: TYPE_NORMAL
+  zh: '[⁶](#ftn6) 零样本学习是指一种机器学习方法，其中模型能够执行其未经明确训练的任务。模型不依赖于每个任务的特定训练数据，而是利用其现有知识，通常是从相关任务中获得的，来推断或推广到新的、未见过的任务。'
 - en: '[⁷](#ftn7) In language models, a “token” can represent a single character,
     part of a word, or an entire word. For example, “sunny day” might be tokenized
     as [“sun”, “ny”, “ day”] or simply as [“sunny”, “day”]. Tokens help the model
@@ -2991,17 +3319,21 @@
   id: totrans-428
   prefs: []
   type: TYPE_NORMAL
+  zh: '[⁷](#ftn7) 在语言模型中，“标记”可以表示单个字符、单词的一部分或整个单词。例如，“sunny day”可以被标记为[“sun”, “ny”,
+    “ day”]或简单地为[“sunny”, “day”]。标记有助于模型处理和生成文本，文本的标记方式可以影响其性能和功能。'
 - en: '[⁸](#ftn8) In the context of machine learning, few-shot learning refers to
     the ability of a system to generalize from a small number of examples — typically
     less than five.'
   id: totrans-429
   prefs: []
   type: TYPE_NORMAL
+  zh: '[⁸](#ftn8) 在机器学习的背景下，少样本学习指的是系统从少量示例（通常少于五个）中推广的能力。'
 - en: '[⁹](#ftn9) One-shot learning is a special case of few-shot learning where the
     system learns from just a single example.'
   id: totrans-430
   prefs: []
   type: TYPE_NORMAL
+  zh: '[⁹](#ftn9) 一样本学习是少样本学习的特殊情况，系统仅从一个示例中学习。'
 - en: '[^(10)](#ftn10) A mixture of expert’s model is a machine learning architecture
     where multiple specialized sub-models (experts) are trained to handle specific
     regions or types of data, and an integration model determines the weight or contribution
@@ -3009,21 +3341,25 @@
   id: totrans-431
   prefs: []
   type: TYPE_NORMAL
+  zh: '[^(10)](#ftn10) 专家混合模型是一种机器学习架构，其中多个专门的子模型（专家）被训练来处理特定区域或类型的数据，而集成模型确定每个专家对于给定输入的权重或贡献，从而实现自适应和上下文感知的决策制定。'
 - en: '[^(11)](#ftn11) ChatGPT-4 Plugins for end-user programming will be discussed
     in the next subchapter.'
   id: totrans-432
   prefs: []
   type: TYPE_NORMAL
+  zh: '[^(11)](#ftn11) ChatGPT-4的终端用户编程插件将在下一小节中讨论。'
 - en: '[^(12)](#ftn12) ChatGPT-4 plugins for multimodal content understanding will
     be discussed in the next subchapter.'
   id: totrans-433
   prefs: []
   type: TYPE_NORMAL
+  zh: '[^(12)](#ftn12) ChatGPT-4多模态内容理解插件将在下一小节中讨论。'
 - en: '[^(13)](#ftn13) NoCode refers to the creation of digital products, like websites,
     apps, or automated workflows, without having to write traditional computer code.'
   id: totrans-434
   prefs: []
   type: TYPE_NORMAL
+  zh: '[^(13)](#ftn13) 无代码指的是创建数字产品（如网站、应用程序或自动化工作流程）而无需编写传统的计算机代码。'
 - en: '[^(14)](#ftn14) A knowledge graph (KG) is a structured representation of interconnected
     information, where nodes represent entities and edges depict their relationships.
     It captures semantic meaning, enabling enhanced understanding and navigation of
@@ -3031,3 +3367,4 @@
   id: totrans-435
   prefs: []
   type: TYPE_NORMAL
+  zh: '[^(14)](#ftn14) 知识图（KG）是互相关联信息的结构化表示，其中节点表示实体，边表示它们的关系。它捕获了语义含义，使人类和机器能够更好地理解和导航复杂数据集。'

@@ -1,4 +1,4 @@
-I. ChatGPT 简介
+# 一、ChatGPT 简介
 
 什么是 ChatGPT？
 

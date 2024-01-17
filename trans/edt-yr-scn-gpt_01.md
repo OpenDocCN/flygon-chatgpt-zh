@@ -4,7 +4,7 @@
 
 在 Three Story Method 问世后，我制定了一系列评分表来帮助作者进行自我编辑。对于感兴趣的人，它们可以在这里免费获取：
 
-[https://theauthorlife.com/free-tools/](https://theauthorlife.com/free-tools/)
+[`theauthorlife.com/free-tools/`](https://theauthorlife.com/free-tools/)
 
 然而，一个持久的挑战仍然存在：评分表的效力取决于用户坦诚的自我反思。这种自我意识是罕见的，强调了在这个过程中导师或教练的重要性。
 
@@ -14,7 +14,7 @@
 
 您可以在这里聘请一位经过认证的 Three Story Method 编辑：
 
-[https://theauthorlife.com/editing/](https://theauthorlife.com/editing/)
+[`theauthorlife.com/editing/`](https://theauthorlife.com/editing/)
 
 想象一下：一位经验丰富的编辑，凭借 ChatGPT 的见解，以无与伦比的精准度引导作者。想象一下，在您的场景到达编辑桌之前，就能获得关于节奏、角色互动或主题共鸣的反馈。这样的反馈可以突出需要改进的部分，为作者和编辑之间更加富有成效的对话铺平道路。无论是优化对话、重新校准叙述语气，还是增强情感共鸣，ChatGPT 都提供了一种更新的视角，丰富了修订过程。
 

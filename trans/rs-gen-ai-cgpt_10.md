@@ -6,7 +6,7 @@
 
 本书的这一章主要将用户带入 ChatGPT 作为免费版本界面的旅程和绝对可用性。客户旅程几乎如下流程图所示
 
-+   发现：客户通过各种渠道（如社交媒体、搜索引擎或口碑）了解 ChatGPT。客户通过网站或应用界面访问 ChatGPT。官方 UI 网址：**[https://chat.openai.com/chat](https://chat.openai.com/chat)**
++   发现：客户通过各种渠道（如社交媒体、搜索引擎或口碑）了解 ChatGPT。客户通过网站或应用界面访问 ChatGPT。官方 UI 网址：**[`chat.openai.com/chat`](https://chat.openai.com/chat)**
 
 ↓
 

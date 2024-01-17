@@ -6,7 +6,7 @@ Text Blaze 对小说家非常有益，特别是对于那些不精通技术的人
 
 Text Blaze 价格实惠，您可以通过我的推广链接访问它。
 
-[https://blaze.today/?ref=UBNH4SCL](https://blaze.today/?ref=UBNH4SCL)
+[`blaze.today/?ref=UBNH4SCL`](https://blaze.today/?ref=UBNH4SCL)
 
 您可以通过创建帐户免费使用 Text Blaze，但您将受到您可以存储在仪表板中的文件/提示数量的限制。
 

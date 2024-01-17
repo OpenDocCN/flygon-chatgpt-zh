@@ -1540,7 +1540,7 @@ ChatGPT-4 的输出如下，其中包括一段对话，其中各自的话语分�
 
 +   *演示代理：使用 Noteable 插件记录破产风险评估，包括关键财务指标的可视化呈现。*
 
-+   **目标规定：** *根据 2020 年的财务报告评估公司的破产风险：[https://www.annualreports.com/HostedData/AnnualReportArchive/j/NYSE_JCP_2020.pdf](https://www.annualreports.com/HostedData/AnnualReportArchive/j/NYSE_JCP_2020.pdf)*
++   **目标规定：** *根据 2020 年的财务报告评估公司的破产风险：[`www.annualreports.com/HostedData/AnnualReportArchive/j/NYSE_JCP_2020.pdf`](https://www.annualreports.com/HostedData/AnnualReportArchive/j/NYSE_JCP_2020.pdf)*
 
 +   **参与规则：**
 

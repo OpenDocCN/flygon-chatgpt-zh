@@ -8,7 +8,7 @@ DALL-E 是一种可以根据文本描述生成图像的人工智能工具。我�
 
 例如：试试 DALL-E。你用于 ChatGPT 的 OpenAI 登录也可以使用。
 
-前往：[https://openai.com/dall-e-2/](https://openai.com/dall-e-2/)
+前往：[`openai.com/dall-e-2/`](https://openai.com/dall-e-2/)
 
 使用你现有的 OpenAI 登录和密码
 

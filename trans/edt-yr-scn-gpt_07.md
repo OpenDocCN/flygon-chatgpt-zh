@@ -10,7 +10,7 @@ ChatGPT 的不懈能力意味着您可以不断地调整和重新提交您的提
 
 如果您想阅读剩下的短篇小说以了解背景，您可以在这里阅读：
 
-[https://books2read.com/m1ss10n](https://books2read.com/m1ss10n)
+[`books2read.com/m1ss10n`](https://books2read.com/m1ss10n)
 
 ## “m1ss10n”的第一场景
 

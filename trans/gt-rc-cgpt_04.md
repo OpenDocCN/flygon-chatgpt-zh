@@ -10,7 +10,7 @@
 
 ### 创建账户
 
-您在与 ChatGPT 一起踏上这段旅程的第一步是简单的：您需要创建一个 ChatGPT 账户。要做到这一点，请前往：[https://chat.openai.com/auth/login](https://chat.openai.com/auth/login)
+您在与 ChatGPT 一起踏上这段旅程的第一步是简单的：您需要创建一个 ChatGPT 账户。要做到这一点，请前往：[`chat.openai.com/auth/login`](https://chat.openai.com/auth/login)
 
 一旦您登陆页面，点击“注册”以创建您的账户，从注册页面您可以选择通过输入您的电子邮件地址并按照任何指示来创建一个账户，或者您可以简单地使用您的谷歌、Outlook 或苹果账户登录。请注意，您的电话号码也可能需要用于验证目的。一旦您输入您的详细信息并跟随任何验证链接，您就可以使用了！
 

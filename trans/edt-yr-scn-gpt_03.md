@@ -14,7 +14,7 @@
 
 如果你正在寻找实践机会，我还提供了一个配套的练习册，以进一步支持你的场景写作努力。
 
-[https://books2read.com/threestorymethodws](https://books2read.com/threestorymethodws)
+[`books2read.com/threestorymethodws`](https://books2read.com/threestorymethodws)
 
 如果你熟悉 Three Story Method 或者已经阅读了“Writing Scenes”这本书，你可能可以跳到下一节。
 

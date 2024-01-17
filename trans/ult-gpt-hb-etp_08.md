@@ -810,9 +810,9 @@ ____________________
 
 ⁴ 正如我们将在后面看到的，还有其他端点，提供不同的功能，比如`SearchEndpoint`，它公开了访问网络搜索服务的方法。
 
-⁵ [https://openai.com/dall-e-3](https://openai.com/dall-e-3)
+⁵ [`openai.com/dall-e-3`](https://openai.com/dall-e-3)
 
-⁶ [https://openjourney.art/](https://openjourney.art/)
+⁶ [`openjourney.art/`](https://openjourney.art/)
 
 ⁷ 参见*[第 4 章：GPT 模型支持的架构模式](c04.xhtml)*，特别是“B 与外部工具集成的对话模式”部分。
 
@@ -822,4 +822,4 @@ ____________________
 
 ¹⁰ JSON，全称 JavaScript 对象表示法，是一种用于以有组织、易于访问的方式存储信息的方法。简而言之，它为我们提供了一个文本人类可读的数据集合，我们可以以逻辑方式访问。它被广泛应用于许多数字服务和产品中，以帮助系统和服务器高效快速地共享数据。即使它的名称包含“JavaScript”，它也可以在 JavaScript 之外的许多编程环境中使用。
 
-¹¹ [https://platform.openai.com/docs/models](https://platform.openai.com/docs/models)（具体来说，用于聊天服务的 gpt-3.5-turbo 和用于嵌入的 text-embedding-ada-002）。
+¹¹ [`platform.openai.com/docs/models`](https://platform.openai.com/docs/models)（具体来说，用于聊天服务的 gpt-3.5-turbo 和用于嵌入的 text-embedding-ada-002）。

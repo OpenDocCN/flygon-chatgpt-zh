@@ -4,7 +4,7 @@
 
 只需点击这里，我会给您发送完整的、实时更新的列表：
 
-[https://theauthorlife.com/aistorytelling/](https://theauthorlife.com/aistorytelling/)
+[`theauthorlife.com/aistorytelling/`](https://theauthorlife.com/aistorytelling/)
 
 您将订阅我的每周通讯《创意人工智能摘要》。如果您已经订阅了《创意人工智能摘要》，只需回复任何一封邮件，我会回复您资源链接。
 

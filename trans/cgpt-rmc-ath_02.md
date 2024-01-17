@@ -6,7 +6,7 @@
 
 1. 访问 OpenAI 网站
 
-前往[https://chat.openai.com/auth/login](https://chat.openai.com/auth/login)开始创建一个新帐户。
+前往[`chat.openai.com/auth/login`](https://chat.openai.com/auth/login)开始创建一个新帐户。
 
 +   如果您看到“[ChatGPT 现在已满](https://www.wikihow.com/Chat-Gpt-Is-at-Capacity)”，请等待片刻然后重试。
 

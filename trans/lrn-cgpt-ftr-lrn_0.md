@@ -114,9 +114,9 @@ ChatGPT 对人工智能和自然语言处理领域做出了重大贡献，其发
 
 **设置和访问 ChatGPT**
 
-要设置和访问 ChatGPT，您需要在 OpenAI 拥有一个账户。在浏览器中输入 OpenAI 网址[https://chat.openai.com](https://chat.openai.com)，然后点击“注册”按钮。输入您的电子邮件地址，然后创建一个密码。完成后，您可以继续验证您的电子邮件。您的账户已创建。
+要设置和访问 ChatGPT，您需要在 OpenAI 拥有一个账户。在浏览器中输入 OpenAI 网址[`chat.openai.com`](https://chat.openai.com)，然后点击“注册”按钮。输入您的电子邮件地址，然后创建一个密码。完成后，您可以继续验证您的电子邮件。您的账户已创建。
 
-一旦您拥有了一个账户，您可以使用此链接访问聊天框[https://chat.openai.com/chat](https://chat.openai.com/chat)，然后您就可以开始使用了，或者您可以通过 OpenAI API 访问 ChatGPT。
+一旦您拥有了一个账户，您可以使用此链接访问聊天框[`chat.openai.com/chat`](https://chat.openai.com/chat)，然后您就可以开始使用了，或者您可以通过 OpenAI API 访问 ChatGPT。
 
 要设置您的 OpenAI 帐户，您需要创建一个 API 密钥并安装 OpenAI Python 库。完成后，您将能够访问 ChatGPT 并使用它来生成对输入的响应。
 

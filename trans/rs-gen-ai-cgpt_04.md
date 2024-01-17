@@ -94,4 +94,4 @@ ChatGPT 可以成为政府部门的有价值工具，帮助他们改善运营并
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

@@ -34,7 +34,7 @@ ChatGPT、生成式人工智能和教育科技领域中有几个使用案例。�
 
 # 理解主题
 
-![](images/Figure-26.1.jpg)
+![](img/Figure-26.1.jpg)
 
 **图 26.1：** *ChatGPT 帮助解决学生的问题*
 
@@ -42,7 +42,7 @@ ChatGPT、生成式人工智能和教育科技领域中有几个使用案例。�
 
 # 解决写作危机
 
-![](images/Figure-26.2.jpg)
+![](img/Figure-26.2.jpg)
 
 **图 26.2：** *ChatGPT 帮助学生写作项目*
 
@@ -50,7 +50,7 @@ ChatGPT 可以被教导提出写作主题，帮助构思想法，并根据多种
 
 # 学习语言
 
-![](images/Figure-26.3.jpg)
+![](img/Figure-26.3.jpg)
 
 **图 26.3：** *Chat GPT 可以被学生用来学习语言*
 
@@ -66,7 +66,7 @@ ChatGPT 可以被教导提出写作主题，帮助构思想法，并根据多种
 
 # 定制教育
 
-![](images/Figure-26.4.jpg)
+![](img/Figure-26.4.jpg)
 
 **图 26.4：** *ChatGPT 为学生准备定制的学习计划*
 
@@ -132,4 +132,4 @@ ChatGPT 无法理解复杂的人类情感和复杂的讨论动态。它无法处
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

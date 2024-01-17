@@ -102,4 +102,4 @@
 
 White MJ 2022，“ChatGPT 本周最疯狂的 10 件事”，Springboard，<[`www.springboard.com/blog/news/chatgpt-revolution/`](https://www.springboard.com/blog/news/chatgpt-revolution/)>。###下一步去哪里？
 
-Sharma U 2023，“您需要查看的 10 个最佳 ChatGPT Chrome 扩展”，Beebom，<[`beebom.com/best-chatgpt-chrome-extensions/`](https://beebom.com/best-chatgpt-chrome-extensions/)>。![广告](images/ad1.png)
+Sharma U 2023，“您需要查看的 10 个最佳 ChatGPT Chrome 扩展”，Beebom，<[`beebom.com/best-chatgpt-chrome-extensions/`](https://beebom.com/best-chatgpt-chrome-extensions/)>。![广告](img/ad1.png)

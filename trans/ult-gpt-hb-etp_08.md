@@ -64,7 +64,7 @@ Python 以其简单性和可读性而闻名，已成为数据科学领域的基�
 
 以下是您需要熟悉的主要组件的解释，以便使用`predictive-powers`库。这些也在*图 9.1*中描述，显示它们的相互关系：
 
-![](images/Figure-9.1.jpg)
+![](img/Figure-9.1.jpg)
 
 **图 9.1：** `predictive-powers`库的基本组件及其关系
 
@@ -210,7 +210,7 @@ API 客户端还提供对 API 密钥（用于服务访问）的安全访问以�
 
 本节详细解释了实现 Writer 所采用的架构，使用了应该在*Chapter 4](c04.xhtml)*[⁹中熟悉的三层方法。该架构旨在具有可扩展性，使其能够处理更复杂的情况。但是，基本的分层方法将保持一致，利用`predictive-powers`服务来为应用程序和 AI 层创建模块化架构。
 
-![](images/Figure-9.2.jpg)
+![](img/Figure-9.2.jpg)
 
 **Figure 9.2:** Essay Writer – Architecture
 
@@ -260,7 +260,7 @@ AI 层是 CapabilityGPT 功能的实现和公开的`predictive-powers`服务。�
 
 1.  最后，作者使用这些信息来生成论文的每个部分，从而产生单个文本文件输出。
 
-![](images/Figure-9.3.jpg)
+![](img/Figure-9.3.jpg)
 
 **图 9.3**：论文作者-工作流程
 

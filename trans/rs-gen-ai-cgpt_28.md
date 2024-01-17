@@ -74,4 +74,4 @@ ChatGPT Plus 每月**20 美元**。该模式旨在获得多种好处，包括在
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

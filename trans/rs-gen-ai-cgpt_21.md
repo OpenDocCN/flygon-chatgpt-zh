@@ -64,4 +64,4 @@ ChatGPT 可以在酒店业中用于改善客户体验，简化运营并增加收
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

@@ -56,4 +56,4 @@ ChatGPT 可以构建和训练神经网络，以解决包括图像识别、自然
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

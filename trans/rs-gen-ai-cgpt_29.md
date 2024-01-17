@@ -76,4 +76,4 @@ Perplexity 收集解决方案的来源的方式是其主要的区分特征之一
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

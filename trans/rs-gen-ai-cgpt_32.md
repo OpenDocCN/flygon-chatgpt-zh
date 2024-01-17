@@ -50,4 +50,4 @@ ChatGPT 的未来前景广阔而多样，潜在应用范围涵盖了广泛的行
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

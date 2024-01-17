@@ -26,7 +26,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![博客平台输出。](images/00007.jpg)
+![博客平台输出。](img/00007.jpg)
 
 > 2. 给您的博客命名
 
@@ -54,7 +54,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![商业名称输出。](images/00008.jpg)
+![商业名称输出。](img/00008.jpg)
 
 一旦你生成了一个名单，浏览并选择你喜欢听起来的名字。
 
@@ -64,7 +64,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 继续做下去，直到你有 10 个以上你喜欢的名字。
 
-下一步是去[`www.namecheckr.com/`](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5uYW1lY2hlY2tyLmNvbS8_dXRtX3NvdXJjZT1wcm9tcHRlbnRyZXByZW5ldXIuYmVlaGlpdi5jb20mdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249c3RhcnRpbmctYW4tYWZmaWxpYXRlLW1hcmtldGluZy1ibG9nLXdpdGgtY2hhdGdwdC1wYXJ0LTIiLCJwb3N0X2lkIjoiNDBjN2M2YWQtMTc5ZS00Yzk2LWI2ZDItNmFiMTdkODYyMTJhIiwicHVibGljYXRpb25faWQiOiIzZDQzNTAwOC1kYWIwLTQ5MjAtODBjMy00NWM1MzBhNzE2NWEiLCJ2aXNpdF90b2tlbiI6ImFlOTM3NjhmLWNkMmEtNGEwZS1iYWFmLTJmMWQyMGRlYTFmMyIsImlhdCI6MTY4OTU4ODkwMC44MDMsImlzcyI6Im9yY2hpZCJ9.xP1JCUQzTLrY-aXuLLl2uTClPh0X0sa7kaUHJhnYgHE)![商业名称检查器。](images/00009.jpg)
+下一步是去[`www.namecheckr.com/`](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5uYW1lY2hlY2tyLmNvbS8_dXRtX3NvdXJjZT1wcm9tcHRlbnRyZXByZW5ldXIuYmVlaGlpdi5jb20mdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249c3RhcnRpbmctYW4tYWZmaWxpYXRlLW1hcmtldGluZy1ibG9nLXdpdGgtY2hhdGdwdC1wYXJ0LTIiLCJwb3N0X2lkIjoiNDBjN2M2YWQtMTc5ZS00Yzk2LWI2ZDItNmFiMTdkODYyMTJhIiwicHVibGljYXRpb25faWQiOiIzZDQzNTAwOC1kYWIwLTQ5MjAtODBjMy00NWM1MzBhNzE2NWEiLCJ2aXNpdF90b2tlbiI6ImFlOTM3NjhmLWNkMmEtNGEwZS1iYWFmLTJmMWQyMGRlYTFmMyIsImlhdCI6MTY4OTU4ODkwMC44MDMsImlzcyI6Im9yY2hpZCJ9.xP1JCUQzTLrY-aXuLLl2uTClPh0X0sa7kaUHJhnYgHE)![商业名称检查器。](img/00009.jpg)
 
 这个网站可以让您一次检查多个平台上的名称是否可用。插入您的业务名称以查看是否可用。
 
@@ -96,7 +96,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![品牌指南输出。](images/00010.jpg)
+![品牌指南输出。](img/00010.jpg)
 
 根据需要进行调整，直接向 ChatGPT 指定更改，直到您对每个部分都满意。我们将在下一节中使用所有这些，因此请确保您
 
@@ -130,7 +130,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![文案输出。](images/00011.jpg)
+![文案输出。](img/00011.jpg)
 
 需要额外的具体文案吗？使用相同的提示+详细信息，只需更改您想要的输出。
 
@@ -160,7 +160,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![标志设计简介输出。](images/00012.jpg)
+![标志设计简介输出。](img/00012.jpg)
 
 现在我们有了文本描述，我们有几个选择。
 
@@ -168,7 +168,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 或者，您可以使用 AI 生成器创建您的标志。这是 Midjourney 尝试的第一个标志（Leafy Muscle）：
 
-![标志示例输出。](images/00013.jpg)
+![标志示例输出。](img/00013.jpg)
 
 您会注意到 Midjourney 擅长视觉元素，但不擅长文本元素！因此，这些需要进行编辑以调整文本。如果您擅长 Photoshop，这是一个很好的选择。
 

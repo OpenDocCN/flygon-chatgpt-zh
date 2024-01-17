@@ -14,7 +14,7 @@
 
 # 示例 1
 
-![](images/Figure-18.1.jpg)
+![](img/Figure-18.1.jpg)
 
 图 18.1：ChatGPT 解决的定性逻辑问题
 
@@ -22,7 +22,7 @@
 
 # 示例 2
 
-![](images/Figure-18.2.jpg)
+![](img/Figure-18.2.jpg)
 
 图 18.2：ChatGPT 生成的项目大纲，以解决情感分析评论
 
@@ -30,7 +30,7 @@
 
 # 示例 3
 
-![](images/Figure-18.3.jpg)
+![](img/Figure-18.3.jpg)
 
 图 18.3：ChatGPT 生成了亚里士多德哲学的 4 种不同解释
 
@@ -48,4 +48,4 @@
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

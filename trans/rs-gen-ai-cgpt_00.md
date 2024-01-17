@@ -60,4 +60,4 @@ ChatGPT 在商业环境中有许多用途，可以改善客户服务、简化流
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

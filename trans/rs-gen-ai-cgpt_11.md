@@ -12,7 +12,7 @@
 
 Precedence Research 预测，到 2030 年，全球人工智能市场规模将达到 16000 亿美元，大幅增加至 2022 年底的 1197.8 亿美元的当前市场规模。
 
-![](images/Figure-12.1.jpg)
+![](img/Figure-12.1.jpg)
 
 **图 12.1：** *AI 空间的增长预测
 
@@ -24,7 +24,7 @@ Precedence Research 预测，到 2030 年，全球人工智能市场规模将达
 
 ChatGPT 的最新突破实际上更加激发了市场的兴趣，并且最近潜在的 AI 业务激增。事实上，由于 ChatGPT 在短短几天内的不可思议的影响，AI 股票飙升。
 
-![](images/Figure-12.2.jpg)
+![](img/Figure-12.2.jpg)
 
 **图 12.2：** *NLP 空间的增长预测
 
@@ -48,4 +48,4 @@ ChatGPT 带来的主要影响在于文本生成和搜索引擎替代品。它能
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

@@ -86,4 +86,4 @@ ChatGPT 是 GPT（生成式预训练变压器）语言模型的一个变种，�
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

@@ -38,13 +38,13 @@ ChatGPT 在解决 40 个 Python 问题中与 CoCoNut（19）和 Codex 不相上�
 
 # 代码生成
 
-![](images/Figure-28.1.jpg)
+![](img/Figure-28.1.jpg)
 
 **图 28.1：** *GPT 编写 Python 代码的能力*
 
 ChatGPT 还可以生成基于目标的原始级别代码。它可以生成用于特定任务的顺序代码构建指令，并有助于完成基本到中级的编码任务。
 
-![](images/Figure-28.2.jpg)
+![](img/Figure-28.2.jpg)
 
 **图 28.2：** *根据任务编写网站构建代码的能力*
 
@@ -52,7 +52,7 @@ ChatGPT 还可以生成基于目标的原始级别代码。它可以生成用于
 
 # 查找、修复代码中的错误
 
-![](images/Figure-28.3.jpg)
+![](img/Figure-28.3.jpg)
 
 **图 28.3：** *使用 ChatGPT 修复代码错误*
 
@@ -60,7 +60,7 @@ ChatGPT 还可以生成基于目标的原始级别代码。它可以生成用于
 
 # 理解算法和注释生成
 
-![](images/Figure-28.4.jpg)
+![](img/Figure-28.4.jpg)
 
 **图 28.4：** *在 ChatGPT 中解决编码中的算法问题*
 
@@ -124,4 +124,4 @@ ChatGPT 或生成式人工智能可以根据输入生成各种编程语言的代
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](images/dis.jpg)
+![](img/dis.jpg)

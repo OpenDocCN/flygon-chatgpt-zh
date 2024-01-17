@@ -1,4 +1,4 @@
-# [参考文献](toc.xhtml#ref)
+# 参考文献
 
 [1] 罗希特·谢瓦莱，32 个详细的 ChatGPT 统计数据-用户、收入和趋势，[https://www.demandsage.com/](https://www.demandsage.com/)，2023 年。
 

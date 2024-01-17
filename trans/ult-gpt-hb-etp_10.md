@@ -1,4 +1,4 @@
-# [附录 B：](toc.xhtml#appb)
+# 附录 B：
 
 # 企业转型案例与 ChatGPT
 

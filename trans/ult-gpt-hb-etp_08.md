@@ -1,8 +1,8 @@
-# [第 9 章](toc.xhtml#c09)
+# 第 9 章
 
-# [`predictive-powers:` Java 的 GPT 实现框架](toc.xhtml#c09)
+# `predictive-powers:` Java 的 GPT 实现框架
 
-# [介绍](toc.xhtml#s460a)
+# 介绍
 
 在上一章中，我们探讨了 Python 的 GPT 实现框架`LangChain`。在本章中，我们将探讨`predictive-powers`，这是一个允许 Java 开发人员快速构建生成式人工智能[¹](#ftn1a)解决方案的软件库。出于几个原因，理解这个库应该被视为至关重要。
 
@@ -20,7 +20,7 @@
 
 最后，我们深入了解代码。这一部分将是必要的简洁，并且只会突出一些实现细节。请注意，虽然我们提供了代码片段作为上下文，但如果您有兴趣探索完整的注释代码，我们鼓励您访问`predictive-powers` GitHub 存储库[10]。虽然对 Java 语言有基本的了解确实可以促进对本章中所呈现的代码示例的更深入理解，但这并不是必需的。对 Java 不熟悉的读者仍然可以理解该库如何轻松应用于前几节讨论的概念。然而，建议读者对软件开发原则有基本了解，因为并非每个技术术语都会被深入定义。
 
-# [结构](toc.xhtml#s461a)
+# 结构
 
 在本章中，我们将讨论以下主题：
 
@@ -36,7 +36,7 @@
 
 +   ‘Essay Writer’代码演示
 
-# [Java vs. Python](toc.xhtml#s462a)
+# Java vs. Python
 
 Python 和 Java 在技术领域各自占据重要地位，为不同的专业领域提供了独特的服务，为在各种应用中利用 GPT 打下了丰富的基础。
 
@@ -46,7 +46,7 @@ Python 以其简单性和可读性而闻名，已成为数据科学领域的基�
 
 通过展示 Python 和 Java 框架，本书旨在使开发人员从不同领域更加了解可用技术，以便在应用程序中实现 GPT 集成，从而为他们提供更加明智的方法。
 
-# [`predictive-powers`库](toc.xhtml#s463a)
+# `predictive-powers`库
 
 `predictive-powers`库旨在简化 Java 开发人员集成生成 AI 能力。作为 Apache-2.0 许可的资源，它在 GitHub 上免费提供。虽然本节提供了示例代码片段，但为了真正深入了解其广泛功能，我们鼓励访问`predictive-powers`GitHub 存储库以获取全面的代码和工作示例。
 
@@ -60,7 +60,7 @@ Python 以其简单性和可读性而闻名，已成为数据科学领域的基�
 
 +   该库包括方便地从各种来源（包括网页和各种格式的文件，如 MS Office、PDF、HTML 等）读取文本内容的方法。
 
-# [基本组件](toc.xhtml#s464a)
+# 基本组件
 
 以下是您需要熟悉的主要组件的解释，以便使用`predictive-powers`库。这些也在*[图 9.1](#fig9_1)*中描述，显示它们的相互关系：
 
@@ -200,7 +200,7 @@ API 客户端还提供对 API 密钥（用于服务访问）的安全访问以�
 
 在`predictive-powers`库的上下文中，知识库是一个内存中的向量数据库，其中包含文本嵌入[⁸](#ftn8a)。每个嵌入可以具有作为`Map`封装的属性数组。知识库提供了基于嵌入相似性和其他过滤条件的语义搜索方法。它可以分区为域，以允许单独搜索并优化性能。
 
-# [`predictive-powers` Use Case](toc.xhtml#s465a)
+# `predictive-powers` Use Case
 
 在本节中，我们将指导您实现一个名为“Essay Writer”（简称“***Writer***”）的自主代理，其目标是撰写关于不同主题的文章。Writer 旨在接收文章内容的简短文本描述，搜索互联网上的相关信息，下载和整理它，生成完整的文章。
 
@@ -388,7 +388,7 @@ The next step involves leveraging a different capability of our framework: **Sea
 
 通过遵循这个工作流程，Writer 自主生成了一篇文章，其中包含来自网络的最新信息，产生了全面且经过深入研究的最终输出。
 
-# [代码演示](toc.xhtml#s466a)
+# 代码演示
 
 在本节中，我们阐明了在前几节中概述的应用程序的工作流程，提供了代码片段来演示如何执行各种任务。如果您希望深入了解 Writer 的完整代码，它始终可以在`predictive-powers` GitHub 存储库中访问。
 
@@ -772,7 +772,7 @@ chatSvc.setTemperature（50.0）;
 
 `}`
 
-# [结论](toc.xhtml#s467a)
+# 结论
 
 本章介绍了`predictive-powers`库及其利用 Java 开发人员的生成 AI 能力的能力。重点是提供一种真实生活的方法来利用生成 AI 能力。
 
@@ -782,7 +782,7 @@ chatSvc.setTemperature（50.0）;
 
 本章的亮点之一是一个实际的例子：创建了一个名为“Essay Writer”的自主代理。这作为一个具体的例子，展示了如何在一个现实项目中利用`predictive-powers`库及其不同的特性。
 
-# [要点](toc.xhtml#s468a)
+# 要点
 
 在本章结束时，读者应该熟悉：
 

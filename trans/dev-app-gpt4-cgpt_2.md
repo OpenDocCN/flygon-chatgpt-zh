@@ -1,4 +1,4 @@
-# 第二章。深入了解 GPT-4 和 ChatGPT 的 API
+# 第二章：深入了解 GPT-4 和 ChatGPT 的 API
 
 本章将详细介绍 GPT-4 和 ChatGPT 的 API。本章的目标是让您对这些 API 的使用有扎实的理解，以便您可以有效地将它们集成到您的 Python 应用程序中。通过本章的学习，您将能够充分利用这些 API 在自己的开发项目中的强大功能。
 
@@ -653,7 +653,7 @@ GPT-4 允许的上下文长度是 GPT-3.5 Turbo 的两倍，甚至可以达到 3
 
 永远不要通过 OpenAI 端点发送个人信息或密码等敏感数据。我们建议您查看[OpenAI 的数据使用政策](https://openai.com/policies/api-data-usage-policies)以获取最新信息，因为这可能会有所变化。如果您是国际用户，请注意您的个人信息和输入的数据可能会从您的位置传输到美国的 OpenAI 设施和服务器。这可能会对您的应用程序创建产生一些法律影响。
 
-有关如何构建考虑安全和隐私问题的 LLM 应用程序的更多细节，请参阅[第 3 章](ch03.html#building_apps_with_gpt_4_and_chatgpt)。
+有关如何构建考虑安全和隐私问题的 LLM 应用程序的更多细节，请参阅[第三章](ch03.html#building_apps_with_gpt_4_and_chatgpt)。
 
 # 其他 OpenAI API 和功能
 

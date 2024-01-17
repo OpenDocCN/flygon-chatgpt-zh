@@ -1,4 +1,4 @@
-# 第 4 章。GPT-4 和 ChatGPT 的高级技术
+# 第四章。GPT-4 和 ChatGPT 的高级技术
 
 现在你已经熟悉了 LLM 的基础知识和 OpenAI API，是时候将你的技能提升到下一个水平了。本章涵盖了强大的策略，将使你能够充分利用 ChatGPT 和 GPT-4 的潜力。从提示工程、零-shot 学习和少-shot 学习到为特定任务微调模型，本章将为你提供创建任何你能想象的应用所需的所有知识。
 
@@ -328,7 +328,7 @@ chat_completion(prompt)
 
 ###### 注意
 
-在[第 5 章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中，我们将探讨 OpenAI 如何通过插件丰富了 GPT-4。一个例子是用于提供准确数学解决方案的计算器插件。
+在[第五章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中，我们将探讨 OpenAI 如何通过插件丰富了 GPT-4。一个例子是用于提供准确数学解决方案的计算器插件。
 
 有一个技巧可以增加语言模型的推理能力。例如，当要求解 369×1235 时，我们可以看到模型试图直接在一次尝试中回答。考虑到你可能也无法在没有铅笔和一张纸的帮助下解决这个乘法。可以通过提示来鼓励模型进行中间推理。就像你用铅笔和纸一样，如果给模型足够的时间来推理，它就可以解决更复杂的问题。
 
@@ -462,7 +462,7 @@ chat_completion(prompt, model='gpt-4')
 
 继续上一个例子，我们可以通过添加“不要在 json 之前或之后添加任何内容。”来坚持输出格式的负面提示。
 
-在[第 3 章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中的第三个项目中，我们使用了负面提示：
+在[第三章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中的第三个项目中，我们使用了负面提示：
 
 ```py
 Extract the keywords from the following question: {user_question}. Do not answer
@@ -473,7 +473,7 @@ anything else, only the keywords.
 
 ### 添加长度约束
 
-长度约束通常是一个好主意：如果你只期望得到一个单词的答案或 10 个句子，就把它添加到你的提示中。这就是我们在[第 3 章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中在第一个项目中所做的：我们指定了“长度：100 个单词”来生成一篇合适的新闻文章。在第四个项目中，我们的提示也有一个长度指令：“如果你可以回答问题：ANSWER，如果你需要更多信息：MORE，如果你无法回答：OTHER。只回答一个”“单词”。如果没有最后一句，模型会倾向于形成句子，而不是遵循指令。
+长度约束通常是一个好主意：如果你只期望得到一个单词的答案或 10 个句子，就把它添加到你的提示中。这就是我们在[第三章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中在第一个项目中所做的：我们指定了“长度：100 个单词”来生成一篇合适的新闻文章。在第四个项目中，我们的提示也有一个长度指令：“如果你可以回答问题：ANSWER，如果你需要更多信息：MORE，如果你无法回答：OTHER。只回答一个”“单词”。如果没有最后一句，模型会倾向于形成句子，而不是遵循指令。
 
 # 微调
 

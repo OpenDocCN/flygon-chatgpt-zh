@@ -72,7 +72,7 @@
 
 1.  坎德 M，索尔梅兹 M 2020 年，《不要害怕人工智能。它将带来长期的就业增长》，世界经济论坛，<[`www.weforum.org/agenda/2020/10/dont-fear-ai-it-will-lead-to-long-term-job-growth/`](https://www.weforum.org/agenda/2020/10/dont-fear-ai-it-will-lead-to-long-term-job-growth/)>。
 
-1.  文森特 J 2023 年，《谷歌的 AI 聊天机器人巴德在首次演示中出现事实错误》，《The Verge》，<[`www.theverge.com/2023/2/8/23590864/google-ai-chatbot-bard-mistake-error-exoplanet-demo`](https://www.theverge.com/2023/2/8/23590864/google-ai-chatbot-bard-mistake-error-exoplanet-demo)>。###第 3 章
+1.  文森特 J 2023 年，《谷歌的 AI 聊天机器人巴德在首次演示中出现事实错误》，《The Verge》，<[`www.theverge.com/2023/2/8/23590864/google-ai-chatbot-bard-mistake-error-exoplanet-demo`](https://www.theverge.com/2023/2/8/23590864/google-ai-chatbot-bard-mistake-error-exoplanet-demo)>。###第三章
 
 1.  福克斯 J 2014 年，《改变游戏规则：如何利用动机科学和游戏设计的力量改变行为，塑造文化并实现智慧》，约翰威利和儿子。
 
@@ -82,13 +82,13 @@
 
 1.  沃伦 T 2020 年，《苹果的 iPad 在 10 年前改变了平板电脑游戏》，《The Verge》，<[`www.theverge.com/2020/1/27/21083369/apple-ipad-10-years-launch-steve-jobs-tablet-market`](https://www.theverge.com/2020/1/27/21083369/apple-ipad-10-years-launch-steve-jobs-tablet-market)>。
 
-1.  Venture Beat Staff 2012，《5 个意想不到的行业特定 iOS 应用程序》，《VentureBeat》，<[`venturebeat.com/mobile/speciality-industry-ipad-apps/`](https://venturebeat.com/mobile/speciality-industry-ipad-apps/)>。###第 4 章
+1.  Venture Beat Staff 2012，《5 个意想不到的行业特定 iOS 应用程序》，《VentureBeat》，<[`venturebeat.com/mobile/speciality-industry-ipad-apps/`](https://venturebeat.com/mobile/speciality-industry-ipad-apps/)>。###第四章
 
 1.  阿尔贝迪 R 2021 年，《精益创业方法论：零风险成功的 4 个步骤》，The Power Business School Blog，<[`www.thepowermba.com/en/blog/lean-startup-methodology`](https://www.thepowermba.com/en/blog/lean-startup-methodology)>。
 
 1.  哈威尔 D，蒂库 N，奥雷姆斯 W 2022 年，《有些人结巴地说话，让人工智能代为发言》，《华盛顿邮报》，<[`www.washingtonpost.com/technology/2022/12/10/chatgpt-ai-helps-written-communication/`](https://www.washingtonpost.com/technology/2022/12/10/chatgpt-ai-helps-written-communication/)>。
 
-1.  山田 A，德罗兹 K 2023 年，《在线教练的 ChatGPT 终极指南》，ChatGPT for coaches，<[`amyyamada.com/chat-gpt-for-coaches/`](https://amyyamada.com/chat-gpt-for-coaches/)>。###第 5 章
+1.  山田 A，德罗兹 K 2023 年，《在线教练的 ChatGPT 终极指南》，ChatGPT for coaches，<[`amyyamada.com/chat-gpt-for-coaches/`](https://amyyamada.com/chat-gpt-for-coaches/)>。###第五章
 
 1.  奥凯恩 C，（2023），《一名大学生要求 ChatGPT 写一封信以摆脱停车罚单-并且成功了》，《CBS 新闻》，<[`www.cbsnews.com/news/chat-gpt-write-letter-to-get-out-of-parking-ticket-college-student-uk-ai-technology-millie-houlton/`](https://www.cbsnews.com/news/chat-gpt-write-letter-to-get-out-of-parking-ticket-college-student-uk-ai-technology-millie-houlton/)>。
 
@@ -98,7 +98,7 @@
 
 1.  盖克尔 J 2023 年，《在 ChatGPT 的强烈抗议声中，一些老师邀请人工智能上课》，《美联社新闻》，<[`apnews.com/article/chatgpt-ai-use-school-essay-7bc171932ff9b994e04f6eaefc09319f`](https://apnews.com/article/chatgpt-ai-use-school-essay-7bc171932ff9b994e04f6eaefc09319f)>。
 
-1.  电信 2005 年，电信广告：中国长城[视频]，电信，<[`www.youtube.com/watch?v=2yckqyg75oE`](https://www.youtube.com/watch?v=2yckqyg75oE)>。###第 6 章
+1.  电信 2005 年，电信广告：中国长城[视频]，电信，<[`www.youtube.com/watch?v=2yckqyg75oE`](https://www.youtube.com/watch?v=2yckqyg75oE)>。###第六章
 
 White MJ 2022，“ChatGPT 本周最疯狂的 10 件事”，Springboard，<[`www.springboard.com/blog/news/chatgpt-revolution/`](https://www.springboard.com/blog/news/chatgpt-revolution/)>。###下一步去哪里？
 

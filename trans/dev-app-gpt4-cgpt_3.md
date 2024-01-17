@@ -1,4 +1,4 @@
-# 第 3 章。使用 GPT-4 和 ChatGPT 构建应用程序
+# 第三章：使用 GPT-4 和 ChatGPT 构建应用程序
 
 通过 API 服务提供 GPT-4 和 ChatGPT 模型引入了开发人员的新功能。现在可以构建智能应用程序，这些应用程序可以理解和响应自然语言，而无需任何深入的 AI 知识。从聊天机器人和虚拟助手到内容创建和语言翻译，LLM 正在被用于驱动不同行业中各种应用程序的能力。
 
@@ -193,7 +193,7 @@ def ask_chatgpt(messages):
     return response["choices"][0]["message"]["content"]
 ```
 
-接下来，让我们构建一个提示，使用[第 4 章](ch04.html#advanced_gpt_4_and_chatgpt_techniques)中将详细介绍的技术之一，以获得更好的结果：给 AI 模型赋予一个角色，然后在任务描述中尽可能精确。在这种情况下，我们告诉它成为记者的助手：
+接下来，让我们构建一个提示，使用[第四章](ch04.html#advanced_gpt_4_and_chatgpt_techniques)中将详细介绍的技术之一，以获得更好的结果：给 AI 模型赋予一个角色，然后在任务描述中尽可能精确。在这种情况下，我们告诉它成为记者的助手：
 
 ```py
 prompt_role = "You are an assistant for journalists. \
@@ -352,7 +352,7 @@ print(response["choices"][0]["message"]["content"])
 
 ###### 注意
 
-图 3-4 中的方法被称为*map reduce*。LangChain 框架在[第 5 章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中介绍，提供了一种自动执行[map-reduce 链](https://oreil.ly/4cDY0)的方法。
+图 3-4 中的方法被称为*map reduce*。LangChain 框架在[第五章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中介绍，提供了一种自动执行[map-reduce 链](https://oreil.ly/4cDY0)的方法。
 
 这个项目证明了将简单的摘要功能集成到您的应用程序中可以带来价值——只需很少的代码。将其插入到您自己的用例中，您将拥有一个非常有用的应用程序。您还可以基于相同的原理创建一些替代功能：关键词提取、标题生成、情感分析等。
 
@@ -374,7 +374,7 @@ print(response["choices"][0]["message"]["content"])
 
 向发送给模型的提示添加示例
 
-您将在[第 4 章](ch04.html#advanced_gpt_4_and_chatgpt_techniques)中详细了解这两种解决方案。在这里，我们专注于另一种更注重软件的方法。这个想法是使用 ChatGPT 或 GPT-4 模型进行信息还原，而不是信息检索：我们不希望 AI 模型知道问题的答案。相反，我们要求它根据我们认为可能与问题匹配的文本摘录来构思一个深思熟虑的答案。这就是我们在这个例子中所做的。
+您将在[第四章](ch04.html#advanced_gpt_4_and_chatgpt_techniques)中详细了解这两种解决方案。在这里，我们专注于另一种更注重软件的方法。这个想法是使用 ChatGPT 或 GPT-4 模型进行信息还原，而不是信息检索：我们不希望 AI 模型知道问题的答案。相反，我们要求它根据我们认为可能与问题匹配的文本摘录来构思一个深思熟虑的答案。这就是我们在这个例子中所做的。
 
 这个想法在图 3-5 中有所体现。
 
@@ -442,7 +442,7 @@ def pdf_to_embeddings(self, pdf_path: str, chunk_length: int = 1000):
 
 ###### 注意
 
-在[第 5 章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中，您将看到另一种使用插件或 LangChain 框架阅读 PDF 的方法。
+在[第五章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中，您将看到另一种使用插件或 LangChain 框架阅读 PDF 的方法。
 
 此方法返回一个带有属性`id`、`vector`和`text`的对象列表。`id`属性是块的编号，`text`属性是原始文本块本身，`vector`属性是由 OpenAI 服务生成的嵌入。
 
@@ -591,9 +591,9 @@ treasure chests.
 
 ###### 注意
 
-再次，在[第 5 章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中，您可以找到使用 LangChain 或插件构建类似项目的其他方法。
+再次，在[第五章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中，您可以找到使用 LangChain 或插件构建类似项目的其他方法。
 
-在这个项目中，我们最终得到了一个 ChatGPT 模型，似乎已经学会了我们自己的数据，而实际上并没有将完整的数据发送给 OpenAI 或重新训练模型。您可以进一步构建您的嵌入方式，以更智能的方式适应您的文档，例如将文本分成段落而不是固定长度的块，或者将段落标题作为 Redis Vector 数据库中对象的属性。从使用 LLM 的角度来看，这个项目无疑是最令人印象深刻的之一。然而，请记住，[第 5 章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)介绍的 LangChain 方法可能更适合大规模项目。
+在这个项目中，我们最终得到了一个 ChatGPT 模型，似乎已经学会了我们自己的数据，而实际上并没有将完整的数据发送给 OpenAI 或重新训练模型。您可以进一步构建您的嵌入方式，以更智能的方式适应您的文档，例如将文本分成段落而不是固定长度的块，或者将段落标题作为 Redis Vector 数据库中对象的属性。从使用 LLM 的角度来看，这个项目无疑是最令人印象深刻的之一。然而，请记住，[第五章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)介绍的 LangChain 方法可能更适合大规模项目。
 
 ## 项目 4：语音控制
 
@@ -711,7 +711,7 @@ actions = {
 
 ###### 注意
 
-这种行为与 LangChain 引入的代理概念非常相似。参见[第 5 章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)。
+这种行为与 LangChain 引入的代理概念非常相似。参见[第五章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)。
 
 我们从`START`状态开始：
 
@@ -809,7 +809,7 @@ User: "The body is 'Meet me on Thursday at 4 p.m. and the recipient is
 
 正如你所看到的，它继续要求更多信息，直到它有了电子邮件的主题、收件人和正文。助手通过说邮件已发送来结束对话。
 
-这个项目的目标是证明 OpenAI 的服务可以改变我们通常与软件应用程序互动的方式。这个项目应该被视为一个概念验证。Gradio 不适用于精细的应用程序，你会发现助手的回应并不总是准确的。我们建议使用在[第 4 章](ch04.html#advanced_gpt_4_and_chatgpt_techniques)中描述的提示工程技术和在[第 5 章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中介绍的 LangChain 框架提供更详细的初始提示。
+这个项目的目标是证明 OpenAI 的服务可以改变我们通常与软件应用程序互动的方式。这个项目应该被视为一个概念验证。Gradio 不适用于精细的应用程序，你会发现助手的回应并不总是准确的。我们建议使用在[第四章](ch04.html#advanced_gpt_4_and_chatgpt_techniques)中描述的提示工程技术和在[第五章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中介绍的 LangChain 框架提供更详细的初始提示。
 
 ###### 注意
 

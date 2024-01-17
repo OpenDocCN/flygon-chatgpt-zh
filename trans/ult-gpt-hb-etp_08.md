@@ -1,6 +1,4 @@
-# 第九章
-
-# `predictive-powers:` Java 的 GPT 实现框架
+# 第九章：`predictive-powers:` Java 的 GPT 实现框架
 
 # 介绍
 

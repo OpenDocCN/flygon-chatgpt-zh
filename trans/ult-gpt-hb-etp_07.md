@@ -1,6 +1,4 @@
-# 第八章
-
-# LangChain：Python 的 GPT 实现框架
+# 第八章：LangChain：Python 的 GPT 实现框架
 
 # 介绍
 

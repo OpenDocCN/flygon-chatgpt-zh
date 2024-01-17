@@ -1,6 +1,4 @@
-# 第二章
-
-# CapabilityGPT-ChatGPT 的企业 AI 能力框架
+# 第二章：CapabilityGPT-ChatGPT 的企业 AI 能力框架
 
 # 介绍
 

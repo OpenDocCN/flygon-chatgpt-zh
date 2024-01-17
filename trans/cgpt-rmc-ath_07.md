@@ -1,4 +1,4 @@
-# ChatGPT 和情感影响
+# 八、ChatGPT 和情感影响
 
 ![](img/00038.jpeg)
 

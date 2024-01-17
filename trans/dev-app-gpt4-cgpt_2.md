@@ -1,4 +1,4 @@
-# 第 2 章。深入了解 GPT-4 和 ChatGPT 的 API
+# 第二章。深入了解 GPT-4 和 ChatGPT 的 API
 
 本章将详细介绍 GPT-4 和 ChatGPT 的 API。本章的目标是让您对这些 API 的使用有扎实的理解，以便您可以有效地将它们集成到您的 Python 应用程序中。通过本章的学习，您将能够充分利用这些 API 在自己的开发项目中的强大功能。
 
@@ -8,15 +8,15 @@
 
 ###### 注意
 
-在继续之前，请查看[OpenAI 使用政策](https://openai.com/policies/usage-policies)，如果您还没有帐户，请在[OpenAI 主页](https://openai.com)上创建一个。您还可以查看[条款和政策页面](https://openai.com/policies)上的其他法律文件。[第 1 章](ch01.html#gpt_4_and_chatgpt_essentials)中介绍的概念对于使用 OpenAI API 和库也是必不可少的。
+在继续之前，请查看[OpenAI 使用政策](https://openai.com/policies/usage-policies)，如果您还没有帐户，请在[OpenAI 主页](https://openai.com)上创建一个。您还可以查看[条款和政策页面](https://openai.com/policies)上的其他法律文件。[第一章](ch01.html#gpt_4_and_chatgpt_essentials)中介绍的概念对于使用 OpenAI API 和库也是必不可少的。
 
 # 基本概念
 
 OpenAI 提供了几种为各种任务设计的模型，每种模型都有自己的定价。在接下来的页面上，您将找到可用模型的详细比较以及如何选择使用哪些模型的提示。重要的是要注意，模型设计的目的——无论是用于文本完成、聊天还是编辑——都会影响您如何使用其 API。例如，ChatGPT 和 GPT-4 背后的模型是基于聊天的，并使用聊天端点。
 
-提示的概念是在[第 1 章](ch01.html#gpt_4_and_chatgpt_essentials)中介绍的。提示不是特定于 OpenAI API，但是所有 LLM 的入口点。简而言之，提示是您发送给模型的输入文本，用于指示模型执行特定任务。对于 ChatGPT 和 GPT-4 模型，提示具有聊天格式，输入和输出消息存储在列表中。我们将在本章中探讨此提示格式的详细信息。
+提示的概念是在[第一章](ch01.html#gpt_4_and_chatgpt_essentials)中介绍的。提示不是特定于 OpenAI API，但是所有 LLM 的入口点。简而言之，提示是您发送给模型的输入文本，用于指示模型执行特定任务。对于 ChatGPT 和 GPT-4 模型，提示具有聊天格式，输入和输出消息存储在列表中。我们将在本章中探讨此提示格式的详细信息。
 
-令牌的概念也在[第 1 章](ch01.html#gpt_4_and_chatgpt_essentials)中描述过。令牌是单词或单词的部分。粗略估计是，100 个令牌大约相当于英文文本的 75 个单词。对 OpenAI 模型的请求是基于使用的令牌数量定价的：也就是说，对 API 的调用成本取决于输入文本和输出文本的长度。您将在“使用 ChatGPT 和 GPT-4”和“使用其他文本完成模型”中找到有关管理和控制输入和输出令牌数量的更多详细信息。
+令牌的概念也在[第一章](ch01.html#gpt_4_and_chatgpt_essentials)中描述过。令牌是单词或单词的部分。粗略估计是，100 个令牌大约相当于英文文本的 75 个单词。对 OpenAI 模型的请求是基于使用的令牌数量定价的：也就是说，对 API 的调用成本取决于输入文本和输出文本的长度。您将在“使用 ChatGPT 和 GPT-4”和“使用其他文本完成模型”中找到有关管理和控制输入和输出令牌数量的更多详细信息。
 
 这些概念在图 2-1 中进行了总结。
 
@@ -54,11 +54,11 @@ GPT-3.5 Turbo 和 GPT-4 都在不断更新。当我们提到`gpt-3.5-turbo`、`g
 
 开发人员通常需要更稳定和可见性的 LLM 版本，以在其应用程序中使用。对于开发人员来说，使用版本可能会在一夜之间发生变化，并且对于相同的输入提示可能会有不同的行为，这可能会很困难。出于这个目的，这些模型的静态快照版本也是可用的。在撰写本文时，最新的快照版本是`gpt-3.5-turbo-0613`、`gpt-3.5-turbo-16k-0613`、`gpt-4-0613`和`gpt-4-32k-0613`。
 
-正如在[第 1 章](ch01.html#gpt_4_and_chatgpt_essentials)中讨论的，OpenAI 建议使用 InstructGPT 系列而不是原始的基于 GPT-3 的模型。这些模型仍然在 API 中以`davinci`、`curie`、`babbage`和`ada`的名称提供。鉴于这些模型可能会提供奇怪、错误和误导性的答案，因此建议在使用时要谨慎。但是，这些模型仍然被使用，因为它们是唯一可以对您的数据进行微调的模型。在撰写本文时，OpenAI 宣布 GPT-3.5 Turbo 和 GPT-4 的微调将在 2024 年推出。
+正如在[第一章](ch01.html#gpt_4_and_chatgpt_essentials)中讨论的，OpenAI 建议使用 InstructGPT 系列而不是原始的基于 GPT-3 的模型。这些模型仍然在 API 中以`davinci`、`curie`、`babbage`和`ada`的名称提供。鉴于这些模型可能会提供奇怪、错误和误导性的答案，因此建议在使用时要谨慎。但是，这些模型仍然被使用，因为它们是唯一可以对您的数据进行微调的模型。在撰写本文时，OpenAI 宣布 GPT-3.5 Turbo 和 GPT-4 的微调将在 2024 年推出。
 
 ###### 注意
 
-在经过监督微调阶段获得的 SFT 模型（在[第 1 章](ch01.html#gpt_4_and_chatgpt_essentials)中介绍）也可以在 API 中以`davinci-instruct-beta`的名称使用。
+在经过监督微调阶段获得的 SFT 模型（在[第一章](ch01.html#gpt_4_and_chatgpt_essentials)中介绍）也可以在 API 中以`davinci-instruct-beta`的名称使用。
 
 # 使用 OpenAI Playground 尝试 GPT 模型
 

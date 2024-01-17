@@ -8,7 +8,7 @@
 
 1.  美国自然历史博物馆 n.d.，关于科学研讨会：阿尔伯特·爱因斯坦，美国自然历史博物馆，<[`www.amnh.org/learn-teach/seminars-on-science/about/faculty/albert-einstein`](https://www.amnh.org/learn-teach/seminars-on-science/about/faculty/albert-einstein)>。
 
-1.  Ngo D 2010，“庆祝 GPS 为大众提供 10 年”，CNet，<[`www.cnet.com/culture/celebrating-10-years-of-gps-for-the-masses/`](https://www.cnet.com/culture/celebrating-10-years-of-gps-for-the-masses/)>。###第 1 章
+1.  Ngo D 2010，“庆祝 GPS 为大众提供 10 年”，CNet，<[`www.cnet.com/culture/celebrating-10-years-of-gps-for-the-masses/`](https://www.cnet.com/culture/celebrating-10-years-of-gps-for-the-masses/)>。###第一章
 
 1.  Power Digital 2018，“Facebook 广告和新闻动态算法历史”，Power Digital，<[`powerdigitalmarketing.com/blog/facebook-advertising-and-news-feed-algorithm-history/`](https://powerdigitalmarketing.com/blog/facebook-advertising-and-news-feed-algorithm-history/)>。
 
@@ -32,7 +32,7 @@
 
 1.  Paul M 2023，“当 ChatGPT 撰写科学摘要时，它能愚弄研究评审员吗？”西北大学现在，<[`news.northwestern.edu/stories/2023/01/chatgpt-writes-convincing-fake-scientific-abstracts-that-fool-reviewers-in-study/#:~:text=Yes%2C%20scientists%20can%20be%20fooled,abstracts%20as%20being%20AI%20generated`](https://news.northwestern.edu/stories/2023/01/chatgpt-writes-convincing-fake-scientific-abstracts-that-fool-reviewers-in-study/#:~:text=Yes%2C%20scientists%20can%20be%20fooled)>。
 
-1.  Somoye FL 2023，“ChatGPT 能帮我做作业吗？”PC 指南，<[`www.pcguide.com/apps/chat-gpt-do-homework/`](https://www.pcguide.com/apps/chat-gpt-do-homework/)>。###第 2 章
+1.  Somoye FL 2023，“ChatGPT 能帮我做作业吗？”PC 指南，<[`www.pcguide.com/apps/chat-gpt-do-homework/`](https://www.pcguide.com/apps/chat-gpt-do-homework/)>。###第二章
 
 1.  Brainy Quote n.d.，Gray Scott quotes，Brainy Quote，<[`www.brainyquote.com/authors/gray-scott-quotes`](https://www.brainyquote.com/authors/gray-scott-quotes)>。
 

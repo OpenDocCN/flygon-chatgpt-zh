@@ -44,7 +44,7 @@ LangChain 的关键功能被分为模块，如图 5-1 所示。
 
 内存模块允许您在链或代理调用之间保持状态。默认情况下，链和代理是无状态的，这意味着它们独立处理每个传入请求，就像 LLM 一样。
 
-LangChain 是不同 LLM 的通用接口；您可以在[其文档页面](https://oreil.ly/n5yNV)上查看所有的集成。OpenAI 和许多其他 LLM 提供商都在这个集成列表中。这些集成大多需要它们的 API 密钥来建立连接。对于 OpenAI 模型，您可以像我们在[第 2 章](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis)中看到的那样进行设置，将密钥设置在`OPENAI_API_KEY`环境变量中。
+LangChain 是不同 LLM 的通用接口；您可以在[其文档页面](https://oreil.ly/n5yNV)上查看所有的集成。OpenAI 和许多其他 LLM 提供商都在这个集成列表中。这些集成大多需要它们的 API 密钥来建立连接。对于 OpenAI 模型，您可以像我们在[第二章](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis)中看到的那样进行设置，将密钥设置在`OPENAI_API_KEY`环境变量中。
 
 ## 动态提示
 
@@ -272,7 +272,7 @@ pages = loader.load_and_split()
 
 要使用 PDF 加载程序，需要安装 Python 的`pypdf`包。可以使用`pip install pypdf`来完成。
 
-要进行信息检索，需要嵌入每个加载的页面。正如我们在[第 2 章](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis)中讨论的那样，*嵌入*是信息检索中使用的一种技术，用于将非数值概念（如单词、标记和句子）转换为数值向量。嵌入使模型能够有效地处理这些概念之间的关系。使用 OpenAI 的嵌入端点，开发人员可以获得输入文本的数值向量表示，而 LangChain 有一个包装器来调用这些嵌入：
+要进行信息检索，需要嵌入每个加载的页面。正如我们在[第二章](ch02.html#a_deep_dive_into_the_gpt_4_and_chatgpt_apis)中讨论的那样，*嵌入*是信息检索中使用的一种技术，用于将非数值概念（如单词、标记和句子）转换为数值向量。嵌入使模型能够有效地处理这些概念之间的关系。使用 OpenAI 的嵌入端点，开发人员可以获得输入文本的数值向量表示，而 LangChain 有一个包装器来调用这些嵌入：
 
 ```py
 from langchain.embeddings import OpenAIEmbeddings
@@ -351,7 +351,7 @@ chain(q, return_only_outputs=True)
 
 本节重点介绍了 GPT-4 的一个突破性功能：插件（请注意，GPT-3.5 模型无法访问插件功能）。在 AI 的发展过程中，插件已经成为一种重新定义与 LLMs 交互的新型变革工具。插件的目标是为 LLM 提供更广泛的功能，使模型能够访问实时信息，执行复杂的数学计算，并利用第三方服务。
 
-我们在第 1 章](ch01.html#gpt_4_and_chatgpt_essentials)中看到，该模型无法执行复杂的计算，比如 3,695 × 123,548。在[图 5-6 中，我们激活了计算器插件，我们可以看到当模型需要进行计算时，模型会自动调用计算器，从而使其找到正确的解决方案。
+我们在第一章](ch01.html#gpt_4_and_chatgpt_essentials)中看到，该模型无法执行复杂的计算，比如 3,695 × 123,548。在[图 5-6 中，我们激活了计算器插件，我们可以看到当模型需要进行计算时，模型会自动调用计算器，从而使其找到正确的解决方案。
 
 通过迭代部署方法，OpenAI 逐步向 GPT-4 添加插件，这使 OpenAI 能够考虑插件的实际用途以及可能引入的安全性和定制化挑战。虽然自 2023 年 5 月以来，所有付费用户都可以使用插件，但在撰写本文时，尚未为所有开发人员提供创建新插件的功能。
 

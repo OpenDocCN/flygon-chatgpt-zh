@@ -1,4 +1,4 @@
-# 开始使用 ChatGPT
+# 三、开始使用 ChatGPT
 
 如何创建 ChatGPT 帐户
 

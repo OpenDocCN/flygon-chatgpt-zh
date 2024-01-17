@@ -457,21 +457,13 @@ if __name__ == "__main__":
 表 5-1\. *ai-plugin.json 文件* 中所需字段的描述
 
 | 字段名称 | 类型 | 描述 |
-
 | --- | --- | --- |
-
 | `name_for_model` | String | 模型用于了解您的插件的简称。它只能包含字母和数字，且不得超过 50 个字符。 |
-
 | `name_for_human` | String | 人们看到的名称。它可以是您公司的全名，但必须少于 20 个字符。 |
-
 | `description_for_human` | String | 您的插件功能的简单解释。供人们阅读，应少于 100 个字符。 |
-
-| `description_for_model` | String | 详细的解释，帮助 AI 理解您的插件。因此，向模型解释插件的目的至关重要。描述可以长达 8,000 个字符。
-
+| `description_for_model` | String | 详细的解释，帮助 AI 理解您的插件。因此，向模型解释插件的目的至关重要。描述可以长达 8,000 个字符。 |
 | `logo_url` | String | 您的插件标志的 URL。标志理想情况下应为 512 × 512 像素。 |
-
 | `contact_email` | String | 人们可以使用的电子邮件地址，如果他们需要帮助。 |
-
 | `legal_info_url` | String | 一个网址，让用户找到有关您的插件的更多详细信息。 |
 
 ## OpenAPI 规范

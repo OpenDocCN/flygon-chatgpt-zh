@@ -7,16 +7,12 @@
 **API 定价**（截至 2023 年 3 月 2 日）：尽管 ChatGPT 仍然有免费版本可用，但 API 对于小到大型机构和个人来说是必需的，以便将他们的开发和应用程序与 GPT 集成，以在其端利用该设施。ChatGPT 和其近亲 GPT-3.5 的 API 定价现在已经变得可持续和负担得起。以下是当前每 1000 个 token 的定价列表（可以将其视为单词向量，1000 个 token 大约可以创建 750 个单词的文章）：
 
 | **模型** | **价格 / 1000 tokens** |
-
-| gpt-3.5-turbo | $0.002 / 1K tokens |
-
-| Ada – 最快 | $0.0004 / 1K tokens |
-
-| Babbage | $0.0005 / 1K tokens |
-
-| Curie | $0.0020 / 1K tokens |
-
-| Davinci – 最强大 | $0.0020 / 1K tokens |
+| --- | --- |
+| gpt-3.5-turbo | \$0.002 / 1K tokens |
+| Ada – 最快 | \$0.0004 / 1K tokens |
+| Babbage | \$0.0005 / 1K tokens |
+| Curie | \$0.0020 / 1K tokens |
+| Davinci – 最强大 | \$0.0020 / 1K tokens |
 
 # ChatGPT 的技术限制
 

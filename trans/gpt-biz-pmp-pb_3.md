@@ -1,5 +1,5 @@
 > 市场研究和领域选择
-
+> 
 > 1. 确定您的兴趣和热情
 
 第一步是确定您对什么充满热情。这可以是从烹饪到科技再到健身等任何事物。
@@ -41,11 +41,11 @@
 专业提示️
 
 > > 为了获得更好的结果，使用 ChatGPT 插件 SERPstat SEO 工具使用实时数据。需要付费 ChatGPT 计划。
-
+> 
 > 或者将您的关键词输入[Google Ads 关键词规划器](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2Fkcy5nb29nbGUuY29tL2hvbWUvdG9vbHMva2V5d29yZC1wbGFubmVyLz91dG1fc291cmNlPXByb21wdGVudHJlcHJlbmV1ci5iZWVoaWl2LmNvbSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1zdGFydGluZy1hbi1hZmZpbGlhdGUtbWFya2V0aW5nLWJsb2ctd2l0aC1jaGF0Z3B0LXBhcnQtMSIsInBvc3RfaWQiOiIyMWVkZjllYS0xMDcxLTRjNTAtODY0ZS1iZjRhYzBhYjhmZjYiLCJwdWJsaWNhdGlvbl9pZCI6IjNkNDM1MDA4LWRhYjAtNDkyMC04MGMzLTQ1YzUzMGE3MTY1YSIsInZpc2l0X3Rva2VuIjoiYWU5Mzc2OGYtY2QyYS00YTBlLWJhYWYtMmYxZDIwZGVhMWYzIiwiaWF0IjoxNjg5NTg3OTkxLjgzMywiaXNzIjoib3JjaGlkIn0.OHk0s8GeMIQ_eL0Zbm2iZAVpXSaYdKaWvU_xo4kHW74)以获取精确的关键词搜索量和竞争情况。免费工具。
-
+> 
 > 还可以将您的主题插入[Answer the Public](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2Fuc3dlcnRoZXB1YmxpYy5jb20vP3V0bV9zb3VyY2U9cHJvbXB0ZW50cmVwcmVuZXVyLmJlZWhpaXYuY29tJnV0bV9tZWRpdW09cmVmZXJyYWwmdXRtX2NhbXBhaWduPXN0YXJ0aW5nLWFuLWFmZmlsaWF0ZS1tYXJrZXRpbmctYmxvZy13aXRoLWNoYXRncHQtcGFydC0xIiwicG9zdF9pZCI6IjIxZWRmOWVhLTEwNzEtNGM1MC04NjRlLWJmNGFjMGFiOGZmNiIsInB1YmxpY2F0aW9uX2lkIjoiM2Q0MzUwMDgtZGFiMC00OTIwLTgwYzMtNDVjNTMwYTcxNjVhIiwidmlzaXRfdG9rZW4iOiJhZTkzNzY4Zi1jZDJhLTRhMGUtYmFhZi0yZjFkMjBkZWExZjMiLCJpYXQiOjE2ODk1ODc5OTEuODMzLCJpc3MiOiJvcmNoaWQifQ.3mcC4FUXyb7UjVVUePq8N9mweC8THCpMKHMA0-ZjLvw)开始扩大您的关键词，并查看您可能要写的博客主题。
-
+> 
 > 3. 分析您的竞争对手
 
 了解您的竞争对手至关重要。查看您选择领域中的顶尖博客。他们做得好吗？您能做得更好或不同吗？
@@ -53,9 +53,9 @@
 ChatGPT 可以帮助您：
 
 > 作为竞争分析助手，提供[主题]领域前三个博客的分析。该任务涉及识别它们的优势、劣势和独特卖点。
-
+> 
 > 目标是了解他们做得好的地方以及差异化的机会所在。
-
+> 
 > 请避免个人意见，坚持客观分析。以表格形式呈现结果。
 
 提示输出
@@ -71,7 +71,7 @@ ChatGPT 可以帮助您：
 ChatGPT 可以协助进行此验证：
 
 > 作为市场调研助理，验证创业和健身领域的潜力。该任务涉及确定受众规模、变现潜力和联盟计划的可用性。
-
+> 
 > 目标是确保这个博客有一个可行的市场。请避免假设，使用数据驱动的见解。
 
 提示输出

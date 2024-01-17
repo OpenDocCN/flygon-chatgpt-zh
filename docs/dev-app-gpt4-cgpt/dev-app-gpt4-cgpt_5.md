@@ -215,7 +215,7 @@ chatbot = ConversationChain(llm=chatbot_llm , verbose=True)
 chatbot.predict(input='Hello')
 ```
 
-在上述代码的最后一行，我们执行了`predict(input='Hello')`。这导致聊天机器人被要求回复我们的“Hello”消息。正如你所看到的，模型的回答是：
+在上述代码的最后一行，我们执行了`predict(input='Hello')`。这导致聊天机器人被要求回复我们的`Hello`消息。正如你所看到的，模型的回答是：
 
 ```py
 

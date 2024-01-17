@@ -413,7 +413,7 @@ OpenAI 提供了其他几个选项来微调您与库的交互方式。我们不�
 
 | 字段名称 | 类型 | 描述 |
 | --- | --- | --- |
-| `choices` | “choice”对象的数组 | 包含模型实际响应的数组。默认情况下，此数组将只有一个元素，可以使用参数`n`更改（参见“附加可选参数”）。此元素包含以下内容： |
+| `choices` | `choice`对象的数组 | 包含模型实际响应的数组。默认情况下，此数组将只有一个元素，可以使用参数`n`更改（参见“附加可选参数”）。此元素包含以下内容： |
 | | | `finish_reason` `-` `string`：模型答案完成的原因。在我们的“Hello World”示例中，我们可以看到`finish_reason`是`stop`，这意味着我们收到了模型的完整响应。如果在输出生成过程中出现错误，它将出现在此字段中。 |
 | | | `index` `-` `integer`：`choices`数组中`choice`对象的索引。 |
 | | | `message` `-` `object`：包含`role`和`content`或`function_call`。`role`将始终是`assistant`，`content`将包括模型生成的文本。通常我们希望获得这个字符串：`response'choices'][0]​['mes⁠sage']['content']`。有关如何使用`function_call`的详细信息，请参见“从文本完成到函数”。 |
@@ -807,7 +807,7 @@ response = openai.Moderation.create(
 
 ###### 警告
 
-OpenAI 将定期改进审查系统。因此，“category_scores”可能会有所变化，并且用于确定类别值的阈值也可能会改变。
+OpenAI 将定期改进审查系统。因此，`category_scores`可能会有所变化，并且用于确定类别值的阈值也可能会改变。
 
 ## Whisper 和 DALL-E
 

@@ -1,4 +1,4 @@
-> 使用ChatGPT进行推广、SEO和链接建设
+> 使用 ChatGPT 进行推广、SEO 和链接建设
 
 本指南的重点是开始为您的博客建立流量。
 
@@ -10,7 +10,7 @@
 
 > 1. SEO
 
-首先是SEO。 SEO基本上是“登上谷歌首页”。
+首先是 SEO。 SEO 基本上是“登上谷歌首页”。
 
 一旦您在谷歌上排名，您将暴露于大量的免费流量。
 
@@ -20,19 +20,19 @@
 
 时间：因为谷歌需要时间来发现和排名您的网站。
 
-努力：因为我们需要对网站进行一些SEO优化。
+努力：因为我们需要对网站进行一些 SEO 优化。
 
-幸运的是，ChatGPT可以在这方面提供帮助。以下是一个提示：
+幸运的是，ChatGPT 可以在这方面提供帮助。以下是一个提示：
 
-> 充当SEO顾问
+> 充当 SEO 顾问
 
 > 阅读提供的博客文章。
 
 > 为关键词[标题中的主要关键词]优化文章
 
-> 根据给定的描述为图像编写alt标签
+> 根据给定的描述为图像编写 alt 标签
 
-> 提供一个对谷歌友好的meta描述
+> 提供一个对谷歌友好的 meta 描述
 
 > #博客文章开始#
 
@@ -40,23 +40,23 @@
 
 > 博客文章结束
 
-主要关键词将来自我们进行的关键词研究，然后用于创建标题。如果您不确定，它将是博客标题的主要“主题”-ChatGPT使用这种结构创建标题。
+主要关键词将来自我们进行的关键词研究，然后用于创建标题。如果您不确定，它将是博客标题的主要“主题”-ChatGPT 使用这种结构创建标题。
 
-如果您使用图片，图像alt标签非常重要-基本上它是图像的“文本版本”，这使我们能够向Google提供更多信息并排名更高。
+如果您使用图片，图像 alt 标签非常重要-基本上它是图像的“文本版本”，这使我们能够向 Google 提供更多信息并排名更高。
 
-meta描述是页面内容的简要摘要，同样对谷歌很有价值。
+meta 描述是页面内容的简要摘要，同样对谷歌很有价值。
 
-我们无法在这里完全讨论SEO-如果您想了解更多，Moz有一篇[关于SEO的优秀指南](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL21vei5jb20vYmVnaW5uZXJzLWd1aWRlLXRvLXNlbz91dG1fY2FtcGFpZ249c2l0ZWxpbmtzJnV0bV9zb3VyY2U9Z29vZ2xlJnV0bV9tZWRpdW09Y3BjJmdhZD0xJmdjbGlkPUNqd0tDQWp3d2I2bEJoQkpFaXdBYnVWVVNwUUQ1NWtvakI0QWtWNF9jMnJtdEdfT2tFT3VoNFJ0ZkQwUmRWRkdoZ050a3BXUldESXNJUm9DSGRRUUF2RF9Cd0UiLCJwb3N0X2lkIjoiNWVjMTRlNDktN2M1Yy00NzEyLTlkZDUtZmUzNjU2ODYwYTU4IiwicHVibGljYXRpb25faWQiOiIzZDQzNTAwOC1kYWIwLTQ5MjAtODBjMy00NWM1MzBhNzE2NWEiLCJ2aXNpdF90b2tlbiI6ImFlOTM3NjhmLWNkMmEtNGEwZS1iYWFmLTJmMWQyMGRlYTFmMyIsImlhdCI6MTY4OTU4OTY1OS42NDMsImlzcyI6Im9yY2hpZCJ9.x0QuuWkrfoJk5oZk3G_fh6cIXZEBRcYXyPBkYenNcxQ)。
+我们无法在这里完全讨论 SEO-如果您想了解更多，Moz 有一篇[关于 SEO 的优秀指南](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL21vei5jb20vYmVnaW5uZXJzLWd1aWRlLXRvLXNlbz91dG1fY2FtcGFpZ249c2l0ZWxpbmtzJnV0bV9zb3VyY2U9Z29vZ2xlJnV0bV9tZWRpdW09Y3BjJmdhZD0xJmdjbGlkPUNqd0tDQWp3d2I2bEJoQkpFaXdBYnVWVVNwUUQ1NWtvakI0QWtWNF9jMnJtdEdfT2tFT3VoNFJ0ZkQwUmRWRkdoZ050a3BXUldESXNJUm9DSGRRUUF2RF9Cd0UiLCJwb3N0X2lkIjoiNWVjMTRlNDktN2M1Yy00NzEyLTlkZDUtZmUzNjU2ODYwYTU4IiwicHVibGljYXRpb25faWQiOiIzZDQzNTAwOC1kYWIwLTQ5MjAtODBjMy00NWM1MzBhNzE2NWEiLCJ2aXNpdF90b2tlbiI6ImFlOTM3NjhmLWNkMmEtNGEwZS1iYWFmLTJmMWQyMGRlYTFmMyIsImlhdCI6MTY4OTU4OTY1OS42NDMsImlzcyI6Im9yY2hpZCJ9.x0QuuWkrfoJk5oZk3G_fh6cIXZEBRcYXyPBkYenNcxQ)。
 
 提示输出
 
-![经过SEO优化的博客文章输出。](images/00018.jpg)
+![经过 SEO 优化的博客文章输出。](images/00018.jpg)
 
-将alt标签和meta描述插入到您的页面中。您确切的操作方式将取决于您的博客平台-谷歌搜索“平台名称+meta描述”和“平台名称+alt标签”以获取教程。
+将 alt 标签和 meta 描述插入到您的页面中。您确切的操作方式将取决于您的博客平台-谷歌搜索“平台名称+meta 描述”和“平台名称+alt 标签”以获取教程。
 
 > 2. 社交媒体推广
 
-SEO需要时间。谷歌不会立即注意到您的网站。
+SEO 需要时间。谷歌不会立即注意到您的网站。
 
 而且，令人恼火的是，谷歌正在寻找的东西之一就是流量。如果人们访问一个网站，它会排名更高。但是...我们想要利用谷歌来获取流量！这是一个先有鸡还是先有蛋的情况。
 
@@ -76,7 +76,7 @@ SEO需要时间。谷歌不会立即注意到您的网站。
 
 > 博客文章结束
 
-用Facebook、Twitter、LinkedIn或您正在使用的其他社交平台的选择替换[平台]。
+用 Facebook、Twitter、LinkedIn 或您正在使用的其他社交平台的选择替换[平台]。
 
 要使用哪个？专注于一个平台，您的受众已经在那里。在考虑其他平台之前，先抓住这一个平台。
 
@@ -98,7 +98,7 @@ SEO需要时间。谷歌不会立即注意到您的网站。
 
 但是我发现很多企业主都在苦苦思索如何与他们的社区互动。你有更重要的事情要做！
 
-使用ChatGPT快速生成回应。
+使用 ChatGPT 快速生成回应。
 
 > 帮我回复一下我社交媒体帖子中的评论。保持简短。简短的句子。使用表情符号。
 
@@ -108,17 +108,17 @@ SEO需要时间。谷歌不会立即注意到您的网站。
 
 作为对评论的回应
 
-“友好也有帮助。对LLMs发火和对人类发火一样有效。 LLMs更有耐心，但仍然需要花时间考虑你的情绪状态才能回答。”
+“友好也有帮助。对 LLMs 发火和对人类发火一样有效。 LLMs 更有耐心，但仍然需要花时间考虑你的情绪状态才能回答。”
 
 ！[](图片/00020.jpg)
 
 友好简单，友好简短。正是我们需要善意地回应评论的内容。
 
-这也适用于负面评论-ChatGPT会礼貌地回应，也许你不会！
+这也适用于负面评论-ChatGPT 会礼貌地回应，也许你不会！
 
 > 4.链接建设研究
 
-一旦我们的基本网站SEO就位，社交媒体开始向我们发送流量，我们就想要参与一种叫做“链接建设”的东西
+一旦我们的基本网站 SEO 就位，社交媒体开始向我们发送流量，我们就想要参与一种叫做“链接建设”的东西
 
 当谷歌分析网站以决定是否应该向其发送更多流量时，评估的因素之一是有多少其他网站链接到它。
 
@@ -132,11 +132,11 @@ SEO需要时间。谷歌不会立即注意到您的网站。
 
 首先，我们需要找到适合链接的网站。
 
-> 充当SEO顾问。
+> 充当 SEO 顾问。
 
 > 我的博客是关于[主题]
 
-> 给我20个包括博客和新闻网站在内的反向链接潜力。
+> 给我 20 个包括博客和新闻网站在内的反向链接潜力。
 
 提供特定的网站名称，根据你的培训程度进行分类。插入你的主题。下面的示例继续使用纯素健身作为示例。
 
@@ -186,7 +186,7 @@ SEO需要时间。谷歌不会立即注意到您的网站。
 
 > > 写上你的专业主题-选择你是专家或者真正感兴趣的主题，无论是健身还是营养，只要确保这是你认为我们的受众会喜欢的东西。
 
-支持任何主张。我们不会做夸大的承诺，所以我们不希望任何帖子违背这一点。如果你在做主张，尽可能用相关的统计数据和可信的参考来支持这些主张。做到了，ChatGPT已经添加了参考资料。确保仔细检查所有这些！独特的内容 - 请只提交尚未在其他网站或媒体上发布的新帖子。如果你之后想在你的网站上重新发布它，那么你需要等待十二周，并将其链接回我们的原始帖子，这样谷歌就不会认为它是重复内容。这是全新的内容，刚刚写出来的。易于阅读。所有内容理想情况下应在500-1,500字之间，包括副标题和专业格式。在文章末尾包括实用的要点和详细的结论。ChatGPT已经完全做到了。包括简短的个人简介 - 概述你在所涉领域的经验和专长，包括你的网站主页和社交媒体资料的链接。奇怪的是，ChatGPT实际上已经完成了这个要求。通过将自己放在作者的位置 - 这就是它的本职工作！用你自己的简介替换这个。不要垃圾邮件链接 - 只在真正需要的地方放置链接，这样做才有意义。没有人想读一篇每隔一句就有链接的文章，感觉像是在做营销推销。ChatGPT遵守了这一点。每一个要求都会有所不同，这就是为什么我们需要把具体情况输入ChatGPT。一旦你有了文章，就按照网站的正常提交流程进行。如果你需要一封电子邮件求职信，也可以使用ChatGPT来帮助生成。重复这个过程，直到你有了可靠的（20+）反向链接。越多越好。
+支持任何主张。我们不会做夸大的承诺，所以我们不希望任何帖子违背这一点。如果你在做主张，尽可能用相关的统计数据和可信的参考来支持这些主张。做到了，ChatGPT 已经添加了参考资料。确保仔细检查所有这些！独特的内容 - 请只提交尚未在其他网站或媒体上发布的新帖子。如果你之后想在你的网站上重新发布它，那么你需要等待十二周，并将其链接回我们的原始帖子，这样谷歌就不会认为它是重复内容。这是全新的内容，刚刚写出来的。易于阅读。所有内容理想情况下应在 500-1,500 字之间，包括副标题和专业格式。在文章末尾包括实用的要点和详细的结论。ChatGPT 已经完全做到了。包括简短的个人简介 - 概述你在所涉领域的经验和专长，包括你的网站主页和社交媒体资料的链接。奇怪的是，ChatGPT 实际上已经完成了这个要求。通过将自己放在作者的位置 - 这就是它的本职工作！用你自己的简介替换这个。不要垃圾邮件链接 - 只在真正需要的地方放置链接，这样做才有意义。没有人想读一篇每隔一句就有链接的文章，感觉像是在做营销推销。ChatGPT 遵守了这一点。每一个要求都会有所不同，这就是为什么我们需要把具体情况输入 ChatGPT。一旦你有了文章，就按照网站的正常提交流程进行。如果你需要一封电子邮件求职信，也可以使用 ChatGPT 来帮助生成。重复这个过程，直到你有了可靠的（20+）反向链接。越多越好。
 
 > 把它整合起来
 
@@ -212,4 +212,4 @@ SEO需要时间。谷歌不会立即注意到您的网站。
 
 内容先于销售。这确保了比你的竞争对手更高质量的联盟营销博客。
 
-在你的博客平台上，简单地将Bob's Red Mill豌豆蛋白粉变成一个链接，并插入你的联盟链接。完成。
+在你的博客平台上，简单地将 Bob's Red Mill 豌豆蛋白粉变成一个链接，并插入你的联盟链接。完成。

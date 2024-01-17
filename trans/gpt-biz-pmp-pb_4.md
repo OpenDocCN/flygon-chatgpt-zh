@@ -4,17 +4,17 @@
 
 首先，我们需要选择我们要建立博客的东西。
 
-ChatGPT不会为我们建立博客。这不是它的用途。
+ChatGPT 不会为我们建立博客。这不是它的用途。
 
-相反，我们可以使用ChatGPT来探索选项，并根据我们的个人情况提出建议。
+相反，我们可以使用 ChatGPT 来探索选项，并根据我们的个人情况提出建议。
 
 > 作为联盟营销顾问，带我选择最好的博客平台。
 
 > 问我关于我的预算，我的技术经验以及我可以投入到这个项目的时间。
 
-> 可能的博客平台包括但不限于自托管的Wordpress，Wordpress.com，Medium，Ghost，Wix，Squarespace，Weebly，Blogger，Substack和beehiiv。
+> 可能的博客平台包括但不限于自托管的 Wordpress，Wordpress.com，Medium，Ghost，Wix，Squarespace，Weebly，Blogger，Substack 和 beehiiv。
 
-> 对于这个博客，SEO很重要。流量主要来自Google SEO，次要来自社交媒体。
+> 对于这个博客，SEO 很重要。流量主要来自 Google SEO，次要来自社交媒体。
 
 根据我的回答，按照我的偏好从高到低的顺序返回结果的排名，以及每个平台的优缺点，以表格形式呈现。
 
@@ -22,7 +22,7 @@ ChatGPT不会为我们建立博客。这不是它的用途。
 
 这有助于缩小潜在的博客平台。当然，要补充自己的研究！
 
-如果您想要一个快速答案 - 如果您擅长技术，请使用自托管的Wordpress + Elementor主题。如果您不擅长技术，请使用beehiiv（如果您对将来的新闻通讯也感兴趣 - 并且对您的利基有意义）或Wordpress .com（如果您不想要新闻通讯）。
+如果您想要一个快速答案 - 如果您擅长技术，请使用自托管的 Wordpress + Elementor 主题。如果您不擅长技术，请使用 beehiiv（如果您对将来的新闻通讯也感兴趣 - 并且对您的利基有意义）或 Wordpress .com（如果您不想要新闻通讯）。
 
 提示输出
 
@@ -34,11 +34,11 @@ ChatGPT不会为我们建立博客。这不是它的用途。
 
 使用下面的提示生成一个名称列表。
 
-从上一步骤中插入您的利基和前2-3个关键词。
+从上一步骤中插入您的利基和前 2-3 个关键词。
 
 > 充当营销顾问。
 
-> 生成20个潜在的商业名称
+> 生成 20 个潜在的商业名称
 
 > 我的业务是一个专注于[利基]的博客
 
@@ -48,9 +48,9 @@ ChatGPT不会为我们建立博客。这不是它的用途。
 
 > 理想情况下，业务名称应该包含一个顶级关键短语，但也应该在这些关键短语之外产生想法
 
-> 专注于易于发音和书写的名称，使用简单的语言，适合SEO
+> 专注于易于发音和书写的名称，使用简单的语言，适合 SEO
 
-> 将业务名称最多保留2-3个单词。
+> 将业务名称最多保留 2-3 个单词。
 
 提示输出
 
@@ -58,11 +58,11 @@ ChatGPT不会为我们建立博客。这不是它的用途。
 
 一旦你生成了一个名单，浏览并选择你喜欢听起来的名字。
 
-如果您需要更多，请在ChatGPT中输入“更多”。
+如果您需要更多，请在 ChatGPT 中输入“更多”。
 
-如果您想要不同的风格，例如更专业的声音，可以告诉ChatGPT：“更专业”。
+如果您想要不同的风格，例如更专业的声音，可以告诉 ChatGPT：“更专业”。
 
-继续做下去，直到你有10个以上你喜欢的名字。
+继续做下去，直到你有 10 个以上你喜欢的名字。
 
 下一步是去[https://www.namecheckr.com/](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5uYW1lY2hlY2tyLmNvbS8_dXRtX3NvdXJjZT1wcm9tcHRlbnRyZXByZW5ldXIuYmVlaGlpdi5jb20mdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249c3RhcnRpbmctYW4tYWZmaWxpYXRlLW1hcmtldGluZy1ibG9nLXdpdGgtY2hhdGdwdC1wYXJ0LTIiLCJwb3N0X2lkIjoiNDBjN2M2YWQtMTc5ZS00Yzk2LWI2ZDItNmFiMTdkODYyMTJhIiwicHVibGljYXRpb25faWQiOiIzZDQzNTAwOC1kYWIwLTQ5MjAtODBjMy00NWM1MzBhNzE2NWEiLCJ2aXNpdF90b2tlbiI6ImFlOTM3NjhmLWNkMmEtNGEwZS1iYWFmLTJmMWQyMGRlYTFmMyIsImlhdCI6MTY4OTU4ODkwMC44MDMsImlzcyI6Im9yY2hpZCJ9.xP1JCUQzTLrY-aXuLLl2uTClPh0X0sa7kaUHJhnYgHE)![商业名称检查器。](images/00009.jpg)
 
@@ -72,7 +72,7 @@ ChatGPT不会为我们建立博客。这不是它的用途。
 
 .com，Facebook，Twitter，Instagram，YouTube...
 
-还有TikTok，你需要手动检查。
+还有 TikTok，你需要手动检查。
 
 一旦找到一个名称，i）你喜欢，ii）在所有或大多数平台上都可用，你就可以开始了。
 
@@ -98,13 +98,13 @@ ChatGPT不会为我们建立博客。这不是它的用途。
 
 ![品牌指南输出。](images/00010.jpg)
 
-根据需要进行调整，直接向ChatGPT指定更改，直到您对每个部分都满意。我们将在下一节中使用所有这些，因此请确保您
+根据需要进行调整，直接向 ChatGPT 指定更改，直到您对每个部分都满意。我们将在下一节中使用所有这些，因此请确保您
 
 > 4.基本文案
 
 我们已经决定了我们的博客平台。我们已经选择了一个名称。我们有一些品牌指南。
 
-继续设置您的博客的基础。如果您需要说明，请尝试在ChatGPT中搜索“在PLATFORM NAME上设置附属博客的步骤”，或者前往Google/Youtube查看一些教程。
+继续设置您的博客的基础。如果您需要说明，请尝试在 ChatGPT 中搜索“在 PLATFORM NAME 上设置附属博客的步骤”，或者前往 Google/Youtube 查看一些教程。
 
 无论您选择哪个平台，我们都需要一些基本的“文案”。
 
@@ -126,7 +126,7 @@ ChatGPT不会为我们建立博客。这不是它的用途。
 
 > ＃品牌指南结束#
 
-> 使用此信息生成：公司口号，标语，博客首页标题x5，博客首页副标题x5，博客的主要特点/优势，页面元描述，Twitter简介，Instagram简介，Facebook页面描述，LinkedIn页面关于我们描述，Tiktok描述，以表格形式提供结果。
+> 使用此信息生成：公司口号，标语，博客首页标题 x5，博客首页副标题 x5，博客的主要特点/优势，页面元描述，Twitter 简介，Instagram 简介，Facebook 页面描述，LinkedIn 页面关于我们描述，Tiktok 描述，以表格形式提供结果。
 
 提示输出
 
@@ -142,7 +142,7 @@ ChatGPT不会为我们建立博客。这不是它的用途。
 
 > 充当视觉设计师
 
-> 根据提供的品牌指南描述5个标志创意
+> 根据提供的品牌指南描述 5 个标志创意
 
 > 公司名称是[公司名称]，应该是标志中唯一的文本
 
@@ -164,21 +164,21 @@ ChatGPT不会为我们建立博客。这不是它的用途。
 
 现在我们有了文本描述，我们有几个选择。
 
-首先，您可以在Fiverr或Upwork上雇用设计师为您设计标志。向他们提供您的标志规格作为起点。
+首先，您可以在 Fiverr 或 Upwork 上雇用设计师为您设计标志。向他们提供您的标志规格作为起点。
 
-或者，您可以使用AI生成器创建您的标志。这是Midjourney尝试的第一个标志（Leafy Muscle）：
+或者，您可以使用 AI 生成器创建您的标志。这是 Midjourney 尝试的第一个标志（Leafy Muscle）：
 
 ![标志示例输出。](images/00013.jpg)
 
-您会注意到Midjourney擅长视觉元素，但不擅长文本元素！因此，这些需要进行编辑以调整文本。如果您擅长Photoshop，这是一个很好的选择。
+您会注意到 Midjourney 擅长视觉元素，但不擅长文本元素！因此，这些需要进行编辑以调整文本。如果您擅长 Photoshop，这是一个很好的选择。
 
-教您如何设置Midjourney超出了本文的范围。这是[快速入门指南](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2RvY3MubWlkam91cm5leS5jb20vZG9jcy9xdWljay1zdGFydD91dG1fc291cmNlPXByb21wdGVudHJlcHJlbmV1ci5iZWVoaWl2LmNvbSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1zdGFydGluZy1hbi1hZmZpbGlhdGUtbWFya2V0aW5nLWJsb2ctd2l0aC1jaGF0Z3B0LXBhcnQtMiIsInBvc3RfaWQiOiI0MGM3YzZhZC0xNzllLTRjOTYtYjZkMi02YWIxN2Q4NjIxMmEiLCJwdWJsaWNhdGlvbl9pZCI6IjNkNDM1MDA4LWRhYjAtNDkyMC04MGMzLTQ1YzUzMGE3MTY1YSIsInZpc2l0X3Rva2VuIjoiYWU5Mzc2OGYtY2QyYS00YTBlLWJhYWYtMmYxZDIwZGVhMWYzIiwiaWF0IjoxNjg5NTg4OTAwLjgwMywiaXNzIjoib3JjaGlkIn0.y2LhPj5mDPrXEymUgqRWNmTE0_5bYTRj2O69gE7dxRU)。
+教您如何设置 Midjourney 超出了本文的范围。这是[快速入门指南](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL2RvY3MubWlkam91cm5leS5jb20vZG9jcy9xdWljay1zdGFydD91dG1fc291cmNlPXByb21wdGVudHJlcHJlbmV1ci5iZWVoaWl2LmNvbSZ1dG1fbWVkaXVtPXJlZmVycmFsJnV0bV9jYW1wYWlnbj1zdGFydGluZy1hbi1hZmZpbGlhdGUtbWFya2V0aW5nLWJsb2ctd2l0aC1jaGF0Z3B0LXBhcnQtMiIsInBvc3RfaWQiOiI0MGM3YzZhZC0xNzllLTRjOTYtYjZkMi02YWIxN2Q4NjIxMmEiLCJwdWJsaWNhdGlvbl9pZCI6IjNkNDM1MDA4LWRhYjAtNDkyMC04MGMzLTQ1YzUzMGE3MTY1YSIsInZpc2l0X3Rva2VuIjoiYWU5Mzc2OGYtY2QyYS00YTBlLWJhYWYtMmYxZDIwZGVhMWYzIiwiaWF0IjoxNjg5NTg4OTAwLjgwMywiaXNzIjoib3JjaGlkIn0.y2LhPj5mDPrXEymUgqRWNmTE0_5bYTRj2O69gE7dxRU)。
 
 > 整合在一起
 
 哇！
 
-在过去的5个提示中，我们已经做了很多工作。
+在过去的 5 个提示中，我们已经做了很多工作。
 
 你现在已经准备好了品牌的基础知识。继续在你选择的博客平台上输入所有这些细节。
 

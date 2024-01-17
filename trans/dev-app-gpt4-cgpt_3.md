@@ -80,7 +80,7 @@ OpenAI 还提供了一个[安全门户](https://trust.openai.com)，旨在展示
 
 OpenAI 服务可能会发生变化，您无法控制 OpenAI 如何管理其 API。最佳实践是确保 API 更改不会迫使您完全重写应用程序。通常通过遵循架构设计模式来实现。
 
-例如，标准的 Web 应用程序架构将如[图 3-1](#fig_1_a_standard_web_app_architecture_integrating_the_op)所示。在这里，OpenAI API 被视为外部服务，并通过应用程序的后端访问。
+例如，标准的 Web 应用程序架构将如图 3-1 所示。在这里，OpenAI API 被视为外部服务，并通过应用程序的后端访问。
 
 ！[](assets/dagc_0301.png)
 
@@ -308,13 +308,13 @@ LLMs 已被证明擅长总结文本。在大多数情况下，它们能够提取
 
 1.  总结第 1 步的记录。
 
-您可以非常容易地访问 YouTube 视频的记录。在您选择观看的视频下方，您会找到可用的操作，如[图 3-2](#fig_2_accessing_the_transcript_of_a_youtube_video)所示。点击“...”选项，然后选择“显示记录”。
+您可以非常容易地访问 YouTube 视频的记录。在您选择观看的视频下方，您会找到可用的操作，如图 3-2 所示。点击“...”选项，然后选择“显示记录”。
 
 ![](assets/dagc_0302.png)
 
 ###### 图 3-2\. 访问 YouTube 视频的记录
 
-将出现一个文本框，其中包含视频的记录；它应该看起来像[图 3-3](#fig_3_example_transcript_of_a_youtube_video_explaining_y)。该框还允许您切换时间戳。
+将出现一个文本框，其中包含视频的记录；它应该看起来像图 3-3。该框还允许您切换时间戳。
 
 ![](assets/dagc_0303.png)
 
@@ -344,7 +344,7 @@ response = openai.ChatCompletion.create(
 print(response["choices"][0]["message"]["content"])
 ```
 
-请注意，如果您的视频很长，转录将会超过允许的 4,096 个令牌的最大限制。在这种情况下，您需要覆盖最大限制，例如采取[图 3-4](#fig_4_steps_to_override_the_maximum_token_limit)中显示的步骤。
+请注意，如果您的视频很长，转录将会超过允许的 4,096 个令牌的最大限制。在这种情况下，您需要覆盖最大限制，例如采取图 3-4 中显示的步骤。
 
 ![](assets/dagc_0304.png)
 
@@ -352,7 +352,7 @@ print(response["choices"][0]["message"]["content"])
 
 ###### 注意
 
-[图 3-4](#fig_4_steps_to_override_the_maximum_token_limit)中的方法被称为*map reduce*。LangChain 框架在[第 5 章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中介绍，提供了一种自动执行[map-reduce 链](https://oreil.ly/4cDY0)的方法。
+图 3-4 中的方法被称为*map reduce*。LangChain 框架在[第 5 章](ch05.html#advancing_llm_capabilities_with_the_langchain_fram)中介绍，提供了一种自动执行[map-reduce 链](https://oreil.ly/4cDY0)的方法。
 
 这个项目证明了将简单的摘要功能集成到您的应用程序中可以带来价值——只需很少的代码。将其插入到您自己的用例中，您将拥有一个非常有用的应用程序。您还可以基于相同的原理创建一些替代功能：关键词提取、标题生成、情感分析等。
 
@@ -376,7 +376,7 @@ print(response["choices"][0]["message"]["content"])
 
 您将在[第 4 章](ch04.html#advanced_gpt_4_and_chatgpt_techniques)中详细了解这两种解决方案。在这里，我们专注于另一种更注重软件的方法。这个想法是使用 ChatGPT 或 GPT-4 模型进行信息还原，而不是信息检索：我们不希望 AI 模型知道问题的答案。相反，我们要求它根据我们认为可能与问题匹配的文本摘录来构思一个深思熟虑的答案。这就是我们在这个例子中所做的。
 
-这个想法在[图 3-5](#fig_5_the_principle_of_a_chatgpt_like_solution_powered_w)中有所体现。
+这个想法在图 3-5 中有所体现。
 
 ![](assets/dagc_0305.png)
 
@@ -624,13 +624,13 @@ def transcribe(file):
 
 ### 带有 GPT-3.5 Turbo 的助手
 
-这个助手的原则是使用 OpenAI 的 API 与用户的输入，模型的输出将被用作开发者的指示或用户的输出，如[图 3-6](#fig_6_the_openai_api_is_used_to_detect_the_intent_of_the)所示。
+这个助手的原则是使用 OpenAI 的 API 与用户的输入，模型的输出将被用作开发者的指示或用户的输出，如图 3-6 所示。
 
 ![](assets/dagc_0306.png)
 
 ###### 图 3-6。使用 OpenAI API 来检测用户输入的意图
 
-让我们逐步走过[图 3-6](#fig_6_the_openai_api_is_used_to_detect_the_intent_of_the)。首先 ChatGPT 检测到用户的输入是一个需要回答的问题：步骤 1 是`QUESTION`。现在我们知道用户的输入是一个问题，我们要求 ChatGPT 来回答它。步骤 2 将把结果给用户。这个过程的目标是，我们的系统知道用户的意图，并相应地行事。如果意图是执行特定的动作，我们可以检测到，并确实执行它。
+让我们逐步走过图 3-6。首先 ChatGPT 检测到用户的输入是一个需要回答的问题：步骤 1 是`QUESTION`。现在我们知道用户的输入是一个问题，我们要求 ChatGPT 来回答它。步骤 2 将把结果给用户。这个过程的目标是，我们的系统知道用户的意图，并相应地行事。如果意图是执行特定的动作，我们可以检测到，并确实执行它。
 
 你可以看到这是一个状态机。*状态机*用于表示可以处于有限数量状态之一的系统。状态之间的转换基于特定的输入或条件。
 
@@ -652,7 +652,7 @@ def transcribe(file):
 
 我们不想继续讨论（我们无法回答问题）。
 
-这些状态显示在[图 3-7](#fig_7_an_example_diagram_of_a_state_machine)中。
+这些状态显示在图 3-7 中。
 
 ![](assets/dagc_0307.png)
 
@@ -660,7 +660,7 @@ def transcribe(file):
 
 为了从一个状态转换到另一个状态，我们定义了一个函数，调用 ChatGPT API，并基本上要求模型确定下一个阶段应该是什么。例如，当我们处于`QUESTION`状态时，我们用以下提示模型：`如果你可以回答问题：ANSWER，如果你需要更多信息：MORE，如果你无法回答：OTHER。只回答一个` `单词``。
 
-我们还可以添加一个状态：例如，`WRITE_EMAIL`，这样我们的助手就可以检测用户是否希望添加电子邮件。如果缺少主题、收件人或消息，我们希望它能够要求更多信息。完整的图表看起来像[图 3-8](#fig_8_a_state_machine_diagram_for_answering_questions_an)。
+我们还可以添加一个状态：例如，`WRITE_EMAIL`，这样我们的助手就可以检测用户是否希望添加电子邮件。如果缺少主题、收件人或消息，我们希望它能够要求更多信息。完整的图表看起来像图 3-8。
 
 ![](assets/dagc_0308.png)
 
@@ -776,13 +776,13 @@ gr.Interface(
 
 ### 演示
 
-让我们运行它：Gradio 代码应该输出类似于`Running on local URL: http://127.0.0.1:7862`的内容，如果你导航到给定的链接，你应该看到类似于[图 3-9](#fig_9_the_gradio_interface)的内容。
+让我们运行它：Gradio 代码应该输出类似于`Running on local URL: http://127.0.0.1:7862`的内容，如果你导航到给定的链接，你应该看到类似于图 3-9 的内容。
 
 ![](assets/dagc_0309.png)
 
 ###### 图 3-9\. Gradio 界面
 
-现在点击“从麦克风录制”并与之互动！我们尝试了一下，并进行了以下对话（见[图 3-10](#fig_10_the_assistant_asking_for_more_information)）：
+现在点击“从麦克风录制”并与之互动！我们尝试了一下，并进行了以下对话（见图 3-10）：
 
 ```py
 User: "Hi"

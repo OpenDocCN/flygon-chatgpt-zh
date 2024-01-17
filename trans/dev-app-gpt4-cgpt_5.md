@@ -12,7 +12,7 @@ LangChain 是一个专门用于开发 LLM 驱动应用程序的新框架。您�
 
 在撰写本文时，LangChain 仍处于 beta 版本 0.0.2*XX*，几乎每天都会发布新版本。功能可能会发生变化，因此我们建议在使用该框架时谨慎操作。
 
-LangChain 的关键功能被分为模块，如[图 5-1](#fig_1_langchain_modules)所示。
+LangChain 的关键功能被分为模块，如图 5-1 所示。
 
 ![](assets/dagc_0501.png)
 
@@ -107,7 +107,7 @@ vary slightly.'
 
 您可能会注意到，这似乎接近我们在[第 3 章](ch03.html#building_apps_with_gpt_4_and_chatgpt)中所做的事情，例如可以回答问题并执行操作的个人助理的示例。LangChain 代理允许您开发这种行为……但更加强大。
 
-为了更好地说明代理如何在 LangChain 中使用工具，[图 5-2](#fig_2_interaction_between_an_agent_and_tools_in_langchai)提供了对交互的视觉演示。
+为了更好地说明代理如何在 LangChain 中使用工具，图 5-2 提供了对交互的视觉演示。
 
 ![](assets/dagc_0502.png)
 
@@ -294,7 +294,7 @@ db = FAISS.from_documents(pages, embeddings)
 
 要使用 FAISS，需要使用`pip install faiss-cpu`安装`faiss-cpu` Python 包。
 
-为了更好地说明 PDF 文档的内容是如何转换为嵌入页面并存储在 FAISS 向量数据库中的，[图 5-3](#fig_3_creating_and_saving_embeddings_from_a_pdf_document)以可视化方式总结了这个过程。
+为了更好地说明 PDF 文档的内容是如何转换为嵌入页面并存储在 FAISS 向量数据库中的，图 5-3 以可视化方式总结了这个过程。
 
 ![](assets/dagc_0503.png)
 
@@ -316,7 +316,7 @@ Document(page_content='While Link’s traditional green `tunic` `is` `certainly`
 
 ``问题的答案是林克的传统服装颜色是绿色，我们可以看到答案在所选内容中。输出显示答案在*ExplorersGuide.pdf*的第 35 页。请记住，Python 从零开始计数；因此，如果返回到*探险者指南：塞尔达传说：荒野之息*的原始 PDF 文件，解决方案在第 36 页（而不是第 35 页）。
 
-[图 5-4](#fig_4_the_information_retrieval_looks_for_pages_most_sim)显示了信息检索过程如何使用查询的嵌入和向量数据库来识别与查询最相似的页面。
+图 5-4 显示了信息检索过程如何使用查询的嵌入和向量数据库来识别与查询最相似的页面。
 
 ![](assets/dagc_0504.png)
 
@@ -339,7 +339,7 @@ chain(q, return_only_outputs=True)
 {'result': " Link's traditional outfit color is green."}
 ```
 
-[图 5-5](#fig_5_to_answer_the_user_s_question_the_retrieved_infor)展示了`RetrievalQA`如何使用信息检索来回答用户的问题。正如我们在这个图中看到的，“创建上下文”将信息检索系统找到的页面和用户的初始查询组合在一起。然后将这个丰富的上下文发送给语言模型，语言模型可以使用上下文中添加的额外信息来正确回答用户的问题。
+图 5-5 展示了`RetrievalQA`如何使用信息检索来回答用户的问题。正如我们在这个图中看到的，“创建上下文”将信息检索系统找到的页面和用户的初始查询组合在一起。然后将这个丰富的上下文发送给语言模型，语言模型可以使用上下文中添加的额外信息来正确回答用户的问题。
 
 ![](assets/dagc_0505.png)
 
@@ -351,7 +351,7 @@ chain(q, return_only_outputs=True)
 
 本节重点介绍了 GPT-4 的一个突破性功能：插件（请注意，GPT-3.5 模型无法访问插件功能）。在 AI 的发展过程中，插件已经成为一种重新定义与 LLMs 交互的新型变革工具。插件的目标是为 LLM 提供更广泛的功能，使模型能够访问实时信息，执行复杂的数学计算，并利用第三方服务。
 
-我们在[第 1 章](ch01.html#gpt_4_and_chatgpt_essentials)中看到，该模型无法执行复杂的计算，比如 3,695 × 123,548。在[图 5-6](#fig_6_gpt_4_s_use_of_the_calculator_plug_in)中，我们激活了计算器插件，我们可以看到当模型需要进行计算时，模型会自动调用计算器，从而使其找到正确的解决方案。
+我们在第 1 章](ch01.html#gpt_4_and_chatgpt_essentials)中看到，该模型无法执行复杂的计算，比如 3,695 × 123,548。在[图 5-6 中，我们激活了计算器插件，我们可以看到当模型需要进行计算时，模型会自动调用计算器，从而使其找到正确的解决方案。
 
 通过迭代部署方法，OpenAI 逐步向 GPT-4 添加插件，这使 OpenAI 能够考虑插件的实际用途以及可能引入的安全性和定制化挑战。虽然自 2023 年 5 月以来，所有付费用户都可以使用插件，但在撰写本文时，尚未为所有开发人员提供创建新插件的功能。
 
@@ -361,7 +361,7 @@ chain(q, return_only_outputs=True)
 
 OpenAI 的目标是创建一个生态系统，插件可以帮助塑造人工智能与人类互动的未来动态。今天，一家严肃的企业没有自己的网站是不可想象的，但也许很快，每家公司都需要有自己的插件。事实上，一些早期的插件已经由 Expedia、FiscalNote、Instacart、KAYAK、Klarna、Milo、OpenTable、Shopify 和 Zapier 等公司推出。
 
-除了其主要功能外，插件还以多种方式扩展了 GPT-4 的功能。在某种程度上，插件与[“LangChain 框架”](#the_langchain_framework)中讨论的代理和工具存在一些相似之处。例如，插件可以使 LLM 检索实时信息，如体育比分和股票价格，从知识库中提取数据，如公司文件，并根据用户的需求执行任务，如预订航班或订餐。两者都旨在帮助 AI 访问最新信息并进行计算。然而，GPT-4 中的插件更专注于第三方服务，而不是 LangChain 的工具。
+除了其主要功能外，插件还以多种方式扩展了 GPT-4 的功能。在某种程度上，插件与“LangChain 框架”中讨论的代理和工具存在一些相似之处。例如，插件可以使 LLM 检索实时信息，如体育比分和股票价格，从知识库中提取数据，如公司文件，并根据用户的需求执行任务，如预订航班或订餐。两者都旨在帮助 AI 访问最新信息并进行计算。然而，GPT-4 中的插件更专注于第三方服务，而不是 LangChain 的工具。
 
 本节通过探索 OpenAI 网站上提供的示例的关键点，介绍了创建插件的基本概念。我们将以待办事项定义插件的示例为例。插件仍处于有限的测试版阶段，因此我们在撰写本书时鼓励读者访问[OpenAI 参考页面](https://platform.openai.com/docs/plugins/introduction)获取最新信息。还要注意，在测试版阶段，用户必须在 ChatGPT 的用户界面中手动启用他们的插件，作为开发者，您最多可以与 100 名用户分享您的插件。
 
@@ -452,7 +452,7 @@ if __name__ == "__main__":
 }      
 ```
 
-字段在 [表 5-1](#table-5-1) 中详细说明。
+字段在 表 5-1 中详细说明。
 
 表 5-1\. *ai-plugin.json 文件* 中所需字段的描述
 
@@ -476,7 +476,7 @@ if __name__ == "__main__":
 
 ## OpenAPI 规范
 
-创建插件的下一步是使用 API 规范创建 *openapi.yaml* 文件。此文件必须遵循 OpenAPI 标准（参见 [“理解 OpenAPI 规范”](#understandingopenapi)）。GPT 模型只通过此 API 规范文件和清单文件中详细的信息来了解您的 API。
+创建插件的下一步是使用 API 规范创建 *openapi.yaml* 文件。此文件必须遵循 OpenAPI 标准（参见 “理解 OpenAPI 规范”）。GPT 模型只通过此 API 规范文件和清单文件中详细的信息来了解您的 API。
 
 以下是待办事项清单定义插件的 *openapi.yaml* 文件的第一行的示例：
 

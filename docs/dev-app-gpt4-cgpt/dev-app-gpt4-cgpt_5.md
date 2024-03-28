@@ -53,14 +53,14 @@ LangChain 是不同 LLM 的通用接口；您可以在[其文档页面](https://
 ```py
 from langchain.chat_models import ChatOpenAI
 from langchain import PromptTemplate, LLMChain
-template = """Question: {question} `Let's think step by step.`
-`Answer: """`
-`prompt` `=` `PromptTemplate``(``template``=``template``,` `input_variables``=``[``"question"``])`
-`llm` `=` `ChatOpenAI``(``model_name``=``"gpt-4"``)`
-`llm_chain` `=` `LLMChain``(``prompt``=``prompt``,` `llm``=``llm``)`
-`question` `=` `""" What is the population of the capital of the country where the`
-`Olympic Games were held in 2016? """`
-`llm_chain``.``run``(``question``)`
+template = """Question: {question} Let's think step by step.
+Answer: """
+prompt = PromptTemplate(template=template, input_variables=["question"])
+llm = ChatOpenAI(model_name="gpt-4")
+llm_chain = LLMChain(prompt=prompt, llm=llm)
+question = """ What is the population of the capital of the country where the
+Olympic Games were held in 2016? """
+llm_chain.run(question)
 ```
 
 输出如下：
@@ -310,11 +310,11 @@ db.similarity_search(q)[0]
 从前面的代码中，我们得到以下内容：
 
 ```py
-Document(page_content='While Link’s traditional green `tunic` `is` `certainly` `an` `iconic` `look``,` `his` 
-              `wardrobe` `has` `expanded` `[``...``]` `Dress` `for` `Success``',` ``metadata``=``{``'source'``:` `'ExplorersGuide.pdf'``,` `'page'``:` `35``})`` 
+Document(page_content='While Link’s traditional green tunic is certainly an iconic look, his 
+              wardrobe has expanded [...] Dress for Success', metadata={'source': 'ExplorersGuide.pdf', 'page': 35}) 
 ```
 
-``问题的答案是林克的传统服装颜色是绿色，我们可以看到答案在所选内容中。输出显示答案在*ExplorersGuide.pdf*的第 35 页。请记住，Python 从零开始计数；因此，如果返回到*探险者指南：塞尔达传说：荒野之息*的原始 PDF 文件，解决方案在第 36 页（而不是第 35 页）。
+问题的答案是林克的传统服装颜色是绿色，我们可以看到答案在所选内容中。输出显示答案在*ExplorersGuide.pdf*的第 35 页。请记住，Python 从零开始计数；因此，如果返回到*探险者指南：塞尔达传说：荒野之息*的原始 PDF 文件，解决方案在第 36 页（而不是第 35 页）。
 
 图 5-4 显示了信息检索过程如何使用查询的嵌入和向量数据库来识别与查询最相似的页面。
 

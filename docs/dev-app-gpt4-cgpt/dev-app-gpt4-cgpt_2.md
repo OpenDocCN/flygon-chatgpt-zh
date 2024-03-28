@@ -827,25 +827,25 @@ Whisper 是语音识别的多功能模型。它经过大型音频数据集的训
 
 1.  安装`openai`依赖项：
 
-```py
+    ```py
     pip install openai
     ```
 
 1.  将 API 密钥设置为环境变量：
 
-```py
+    ```py
     export OPENAI_API_KEY=sk-(...)
     ```
 
 1.  在 Python 中，导入`openai`：
 
-```py
+    ```py
     import openai
     ```
 
 1.  调用`openai.ChatCompletion`端点：
 
-```py
+    ```py
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": "Your Input Here"}],
@@ -854,7 +854,7 @@ Whisper 是语音识别的多功能模型。它经过大型音频数据集的训
 
 1.  获取答案：
 
-```py
+    ```py
         print(response['choices'][0]['message']['content'])
     ```
 

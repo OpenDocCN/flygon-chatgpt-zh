@@ -1,15 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
 
-# 第五章
 
-# ChatGPT 商业黄金矿 #3：
 
-# 聊天机器人创建服务
+# 第五章：ChatGPT 商业金矿 #3：聊天机器人创建服务
 
-![image](img/chapter_title_below.png)
+
 
 随着企业越来越多地寻求创新的方式与客户互动，聊天机器人已成为提供即时、个性化帮助的重要工具。通过利用 ChatGPT 的力量，您可以快速推出一个盈利的聊天机器人创建服务，满足各行各业企业的需求。仅仅一周的时间，您就可以开始提供定制的聊天机器人，改善客户体验，同时也促进业务增长。
 

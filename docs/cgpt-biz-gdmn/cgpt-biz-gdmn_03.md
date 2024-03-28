@@ -1,15 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
 
-# 第四章
 
-# ChatGPT 商业黄金矿#2：
 
-# 文案写作服务
+# 第四章：ChatGPT 商业金矿#2：文案写作服务
 
-![image](img/chapter_title_below.png)
+
 
 在当今快节奏的数字世界中，内容为王。引人入胜和有说服力的文案对于企业吸引和转化目标受众至关重要。如果您正在寻找一项可以在一周内使用 ChatGPT 开始的有利可图的业务，请考虑开展文案写作服务。借助 ChatGPT 的自然语言生成能力，您可以为客户提供高质量内容，同时节省时间和资源。
 

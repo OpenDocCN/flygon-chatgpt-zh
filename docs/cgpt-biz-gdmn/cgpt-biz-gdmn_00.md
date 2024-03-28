@@ -1,13 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第一章:
 
-# 为什么我写这本书
 
-![图片](img/chapter_title_below.png)
+# 第一章：为什么我写这本书
+
+
 
 欢迎阅读《ChatGPT 多源收入：20 个利润丰厚的业务，任何人都可以在一周内使用 ChatGPT 开始》。我很高兴分享我在利用 ChatGPT 创建多个收入来源方面的经验和见解。
 

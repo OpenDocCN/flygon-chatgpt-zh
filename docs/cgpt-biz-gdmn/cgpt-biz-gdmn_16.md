@@ -1,15 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第十七章
 
-# ChatGPT 商业黄金矿#15：
 
-# 在线课程创建业务
+# 第十七章：ChatGPT 商业金矿#15：在线课程创建业务
 
-![图片](img/chapter_title_below.png)
+
 
 随着人们寻求便捷灵活的学习新技能、推进职业或探索新爱好的方式，在线课程变得越来越受欢迎。通过使用 OpenAI 的强大 AI 语言模型 ChatGPT 开始一个在线课程创建服务，您可以帮助客户设计和开发适合各种学习者的高质量、引人入胜的课程。在本文中，我们将探讨如何利用 ChatGPT 在短短一周内建立一个盈利的在线课程创建业务。
 

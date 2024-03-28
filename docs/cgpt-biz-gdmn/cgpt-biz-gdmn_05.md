@@ -1,15 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第六章
 
-# ChatGPT 商业黄金矿藏 #4：
 
-# 语言翻译服务
+# 第六章：ChatGPT 商业金矿 #4：语言翻译服务
 
-![图片](img/chapter_title_below.png)
+
 
 在一个日益全球化的世界中，对快速准确的语言翻译服务的需求正在增长。企业和个人都需要翻译以满足各种目的，如沟通、营销和文档编制。通过利用 ChatGPT 的力量，您可以在短短一周内启动一个盈利丰厚的语言翻译服务，提供高质量的翻译，弥合语言障碍，连接全球人民。
 

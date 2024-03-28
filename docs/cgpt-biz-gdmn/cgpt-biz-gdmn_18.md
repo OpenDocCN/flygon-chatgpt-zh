@@ -1,15 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第十九章
 
-# ChatGPT 商业黄金矿 #17:
 
-# 语音配音剧本撰写业务
+# 第十九章：ChatGPT 商业金矿 #17：语音配音剧本撰写业务
 
-![图片](img/chapter_title_below.png)
+
 
 随着音频内容（如播客、有声读物、商业广告和电子学习材料）的日益流行，语音配音剧本撰写是一个不断发展的领域。通过使用 OpenAI 的强大 AI 语言模型 ChatGPT 开展语音配音剧本撰写业务，您可以帮助客户创作引人入胜、有影响力的音频内容，与目标受众产生共鸣。在本章中，我们将探讨如何在短短一周内利用 ChatGPT 建立一个盈利的语音配音剧本撰写业务。
 

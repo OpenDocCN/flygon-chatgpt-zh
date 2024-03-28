@@ -1,15 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第十四章
 
-# ChatGPT 商业黄金矿 #12：
 
-# 播客剧本写作服务
+# 第十四章：ChatGPT 商业金矿 #12：播客剧本写作服务
 
-![图片](img/chapter_title_below.png)
+
 
 播客是一个迅速增长的媒介，许多企业、企业家和个人希望与世界分享他们的知识、故事和想法。通过使用 OpenAI 的强大 AI 语言模型 ChatGPT 开始一个播客剧本写作服务，您可以帮助客户为他们的播客剧集创建引人入胜和信息丰富的剧本。在本文中，我们将探讨如何利用 ChatGPT 在短短一周内建立一个有利可图的播客剧本写作业务。
 

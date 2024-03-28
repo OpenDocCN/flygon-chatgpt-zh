@@ -1,15 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第二十二章
 
-# ChatGPT 商机黄金矿 #20：
 
-# 使用 ChatGPT 进行编码
+# 第二十二章：ChatGPT 商机金矿 #20：使用 ChatGPT 进行编码
 
-![图片](img/chapter_title_below.png)
+
 
 编码是当今就业市场上备受追捧的技能，对于那些有专业知识向他人提供服务的人来说，它也可以成为一个有利可图的业务。借助像 ChatGPT 这样的 AI 工具，开展编码业务可以变得更加简单和高效。在本文中，我们将探讨如何利用 ChatGPT 在短短一周内开始编码业务，以及一些真实案例和示例。
 

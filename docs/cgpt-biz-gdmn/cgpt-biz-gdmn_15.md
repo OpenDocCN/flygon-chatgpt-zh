@@ -1,15 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
 
-# 第十六章
 
-# ChatGPT 商业黄金矿 #14：
 
-# 电子邮件通讯服务
+# 第十六章：ChatGPT 商业金矿 #14：电子邮件通讯服务
 
-![image](img/chapter_title_below.png)
+
 
 电子邮件通讯是企业和组织与其受众保持互动、分享新闻和推广产品或服务的关键工具。通过使用由 OpenAI 推出的强大 AI 语言模型 ChatGPT 开始电子邮件通讯服务，您可以帮助客户创建引人入胜的内容，让他们的订阅者得到信息并保持兴趣。
 

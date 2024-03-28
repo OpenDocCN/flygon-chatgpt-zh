@@ -1,15 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
 
-# 第三章
 
-# ChatGPT 商业黄金矿#1：
 
-# 商业作者业务
+# 第三章：ChatGPT 商业金矿#1：商业作者业务
 
-![image](img/chapter_title_below.png)
+
 
 商业作者业务是一个有利可图且令人兴奋的业务，有潜力为作家提供一个充实而有回报的职业。
 

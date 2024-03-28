@@ -1,15 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第十三章
 
-# ChatGPT 商业黄金矿#11：
 
-# 拨款撰写服务
+# 第十三章：ChatGPT 商业金矿#11：拨款撰写服务
 
-![图片](img/chapter_title_below.png)
+
 
 撰写拨款提案是非营利组织和寻求资金的企业的关键技能。通过使用 OpenAI 的强大 AI 语言模型 ChatGPT 开展拨款撰写服务，您可以帮助客户创建引人注目的拨款提案，从而增加他们获得财务支持的机会。在本文中，我们将探讨如何利用 ChatGPT 在短短一周内建立一个有利可图的拨款撰写业务。
 

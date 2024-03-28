@@ -1,15 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第十一章
 
-# ChatGPT 商机黄金法则#9：
 
-# 简历写作服务
+# 第十一章：ChatGPT 商业金矿 #9：简历写作服务
 
-![图片](img/chapter_title_below.png)
+
 
 在当今竞争激烈的就业市场中，一份精心制作的简历可能是成功获得面试的关键。通过使用 OpenAI 推出的强大 AI 语言模型 ChatGPT 开展简历写作服务，您可以帮助求职者创建引人注目的简历，从而吸引潜在雇主的注意。在本文中，我们将探讨如何利用 ChatGPT 在短短一周内建立一个盈利的简历写作业务。
 

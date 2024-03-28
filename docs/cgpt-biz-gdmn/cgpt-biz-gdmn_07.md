@@ -1,15 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
 
-# 第八章
 
-ChatGPT 收入流 6：
 
-# 社交媒体管理服务
+# 第八章：ChatGPT 商业金矿 6：社交媒体管理服务
 
-![image](img/chapter_title_below.png)
+
 
 社交媒体已经成为全球企业和个人的重要营销渠道。然而，管理和为多个平台创建内容可能是耗时且具有挑战性的，尤其是对于小型企业和创业者而言。
 

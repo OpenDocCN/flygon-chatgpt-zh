@@ -1,15 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第十二章
 
-# ChatGPT 商业黄金矿 #10：
 
-# 在线辅导业务
+# 第十二章：ChatGPT 商业金矿 #10：在线辅导业务
 
-![图片](img/chapter_title_below.png)
+
 
 在线辅导已成为学生和家长寻求个性化、灵活教育解决方案的越来越受欢迎的选择。通过使用 OpenAI 的强大 AI 语言模型 ChatGPT 开展在线辅导业务，您可以为各个年龄段和学科的学生提供有效而引人入胜的学习体验。在本文中，我们将探讨如何利用 ChatGPT 在短短一周内建立一个盈利的在线辅导业务。
 

@@ -1,15 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
 
-# 第九章
 
-# ChatGPT 商业黄金矿 #7：
 
-# 内容策展业务
+# 第九章：ChatGPT 商业金矿 #7：内容策展业务
 
-![image](img/chapter_title_below.png)
+
 
 数字领域充斥着内容，使得企业和个人难以找到有价值的信息。因此，内容策展服务变得越来越受欢迎，借助 OpenAI 的强大 AI 语言模型 ChatGPT，您可以为客户提供高效和有效的解决方案。在本文中，我们将探讨如何利用 ChatGPT 在短短一周内开展内容策展业务的独特方法。
 

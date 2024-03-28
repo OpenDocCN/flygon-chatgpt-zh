@@ -1,15 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
 
-# 第二十三章
 
-# ChatGPT 商机黄金矿#21：
 
-# 自动化客户服务
+# 第二十三章：ChatGPT 商机金矿#21：自动化客户服务
 
-![image](img/chapter_title_below.png)
+
 
 自动化客户服务，也被称为聊天机器人，在近年来变得越来越受欢迎，因为企业努力提高客户满意度并降低成本。通过利用人工智能和机器学习，聊天机器人可以为客户提供全天候快速高效的支持。
 

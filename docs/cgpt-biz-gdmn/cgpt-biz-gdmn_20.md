@@ -1,15 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
 
-# 第二十一章
 
-# ChatGPT 商业黄金矿#19：
 
-# 使用 ChatGPT 构建 SAAS 业务
+# 第二十一章：ChatGPT 商业金矿#19：使用 ChatGPT 构建 SAAS 业务
 
-![image](img/chapter_title_below.png)
+
 
 开始一个 SAAS（软件即服务）业务可能看起来令人生畏，但借助 ChatGPT 的帮助，您可以简化流程，并在短短一周内开始。
 

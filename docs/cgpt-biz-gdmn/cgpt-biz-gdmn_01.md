@@ -1,13 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
 
-# 第二章
 
-# ChatGPT 革命及其对您和您的口袋意味着什么
 
-![图片](img/chapter_title_below.png)
+# 第二章：ChatGPT 革命及其对您和您的口袋意味着什么
+
+
 
 近年来，人工智能（AI）已经彻底改变了许多行业，包括医疗保健、金融和交通运输。AI 最有前途的应用之一是自然语言处理（NLP），它使机器能够理解和回应人类语言。ChatGPT 是一款由 AI 驱动的平台，利用 NLP 与人类交流并协助各种任务。
 

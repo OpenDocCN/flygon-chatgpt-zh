@@ -1,3 +1,4 @@
++   [ChatGPT 商业金矿](docs/cgpt-biz-gdmn/README.md)
 +   [ChatGPT 商业提示词攻略书](docs/cgpt-biz-pmp-pb/README.md)
 +   [ChatGPT 淘金潮](docs/cgpt-gdrs/README.md)
 +   [ChatGPT 之言情作家](docs/cgpt-rmc-ath/README.md)

@@ -14,7 +14,7 @@ LangChain 是一个专门用于开发 LLM 驱动应用程序的新框架。您�
 
 LangChain 的关键功能被分为模块，如图 5-1 所示。
 
-![](assets/dagc_0501.png)
+![](img/dagc_0501.png)
 
 ###### 图 5-1。LangChain 模块
 
@@ -109,7 +109,7 @@ vary slightly.'
 
 为了更好地说明代理如何在 LangChain 中使用工具，图 5-2 提供了对交互的视觉演示。
 
-![](assets/dagc_0502.png)
+![](img/dagc_0502.png)
 
 ###### 图 5-2. LangChain 中代理和工具的交互
 
@@ -296,7 +296,7 @@ db = FAISS.from_documents(pages, embeddings)
 
 为了更好地说明 PDF 文档的内容是如何转换为嵌入页面并存储在 FAISS 向量数据库中的，图 5-3 以可视化方式总结了这个过程。
 
-![](assets/dagc_0503.png)
+![](img/dagc_0503.png)
 
 ###### 图 5-3\. 从 PDF 文档创建和保存嵌入
 
@@ -318,7 +318,7 @@ Document(page_content='While Link’s traditional green `tunic` `is` `certainly`
 
 图 5-4 显示了信息检索过程如何使用查询的嵌入和向量数据库来识别与查询最相似的页面。
 
-![](assets/dagc_0504.png)
+![](img/dagc_0504.png)
 
 ###### 图 5-4。信息检索寻找与查询最相似的页面
 
@@ -341,7 +341,7 @@ chain(q, return_only_outputs=True)
 
 图 5-5 展示了`RetrievalQA`如何使用信息检索来回答用户的问题。正如我们在这个图中看到的，“创建上下文”将信息检索系统找到的页面和用户的初始查询组合在一起。然后将这个丰富的上下文发送给语言模型，语言模型可以使用上下文中添加的额外信息来正确回答用户的问题。
 
-![](assets/dagc_0505.png)
+![](img/dagc_0505.png)
 
 ###### 图 5-5。为了回答用户的问题，检索到的信息被添加到 LLM 的上下文中
 
@@ -357,7 +357,7 @@ chain(q, return_only_outputs=True)
 
 通过迭代部署方法，OpenAI 逐步向 GPT-4 添加插件，这使 OpenAI 能够考虑插件的实际用途以及可能引入的安全性和定制化挑战。虽然自 2023 年 5 月以来，所有付费用户都可以使用插件，但在撰写本文时，尚未为所有开发人员提供创建新插件的功能。
 
-![](assets/dagc_0506.png)
+![](img/dagc_0506.png)
 
 ###### 图 5-6。GPT-4 使用计算器插件
 

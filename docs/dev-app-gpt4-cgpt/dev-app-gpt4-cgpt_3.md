@@ -82,7 +82,7 @@ OpenAI 服务可能会发生变化，您无法控制 OpenAI 如何管理其 API�
 
 例如，标准的 Web 应用程序架构将如图 3-1 所示。在这里，OpenAI API 被视为外部服务，并通过应用程序的后端访问。
 
-！[](assets/dagc_0301.png)
+！[](img/dagc_0301.png)
 
 ###### 图 3-1。将 OpenAI API 作为外部服务集成到标准 Web 应用程序架构
 
@@ -310,13 +310,13 @@ LLMs 已被证明擅长总结文本。在大多数情况下，它们能够提取
 
 您可以非常容易地访问 YouTube 视频的记录。在您选择观看的视频下方，您会找到可用的操作，如图 3-2 所示。点击“...”选项，然后选择“显示记录”。
 
-![](assets/dagc_0302.png)
+![](img/dagc_0302.png)
 
 ###### 图 3-2\. 访问 YouTube 视频的记录
 
 将出现一个文本框，其中包含视频的记录；它应该看起来像图 3-3。该框还允许您切换时间戳。
 
-![](assets/dagc_0303.png)
+![](img/dagc_0303.png)
 
 ###### 图 3-3\. 说明 YouTube 视频的示例记录
 
@@ -346,7 +346,7 @@ print(response["choices"][0]["message"]["content"])
 
 请注意，如果您的视频很长，转录将会超过允许的 4,096 个令牌的最大限制。在这种情况下，您需要覆盖最大限制，例如采取图 3-4 中显示的步骤。
 
-![](assets/dagc_0304.png)
+![](img/dagc_0304.png)
 
 ###### 图 3-4。覆盖最大令牌限制的步骤
 
@@ -378,7 +378,7 @@ print(response["choices"][0]["message"]["content"])
 
 这个想法在图 3-5 中有所体现。
 
-![](assets/dagc_0305.png)
+![](img/dagc_0305.png)
 
 ###### 图 3-5。使用您自己的数据来驱动 ChatGPT 类似解决方案的原理
 
@@ -626,7 +626,7 @@ def transcribe(file):
 
 这个助手的原则是使用 OpenAI 的 API 与用户的输入，模型的输出将被用作开发者的指示或用户的输出，如图 3-6 所示。
 
-![](assets/dagc_0306.png)
+![](img/dagc_0306.png)
 
 ###### 图 3-6。使用 OpenAI API 来检测用户输入的意图
 
@@ -654,7 +654,7 @@ def transcribe(file):
 
 这些状态显示在图 3-7 中。
 
-![](assets/dagc_0307.png)
+![](img/dagc_0307.png)
 
 ###### 图 3-7\. 状态机的一个示例图表
 
@@ -662,7 +662,7 @@ def transcribe(file):
 
 我们还可以添加一个状态：例如，`WRITE_EMAIL`，这样我们的助手就可以检测用户是否希望添加电子邮件。如果缺少主题、收件人或消息，我们希望它能够要求更多信息。完整的图表看起来像图 3-8。
 
-![](assets/dagc_0308.png)
+![](img/dagc_0308.png)
 
 ###### 图 3-8\. 用于回答问题和发送电子邮件的状态机图表
 
@@ -778,7 +778,7 @@ gr.Interface(
 
 让我们运行它：Gradio 代码应该输出类似于`Running on local URL: http://127.0.0.1:7862`的内容，如果你导航到给定的链接，你应该看到类似于图 3-9 的内容。
 
-![](assets/dagc_0309.png)
+![](img/dagc_0309.png)
 
 ###### 图 3-9\. Gradio 界面
 
@@ -793,7 +793,7 @@ Assistant: "Sure, what message would you like to convey in the email you're
   provide all the necessary details." 
 ```
 
-![](assets/dagc_0310.png)
+![](img/dagc_0310.png)
 
 ###### 图 3-10\. 助手要求更多信息
 

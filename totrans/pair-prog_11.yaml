@@ -1,81 +1,120 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_above.png)'
 - en: Unit Testing
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 单元测试
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_below.png)'
 - en: '![A picture containing dark, night sky  Description automatically generated](d2d_images/image013.jpg)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![自动生成描述的夜空图片](d2d_images/image013.jpg)'
 - en: Image by [Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3625406) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3625406)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 图片由[Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3625406)提供,
+    来自[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3625406)
 - en: As developers, we know the importance of unit testing in ensuring the quality
     and reliability of our software. Yet, we also know the struggles that come with
     creating effective unit tests - the time and effort required, the complexity of
     the testing process, and the challenge of ensuring comprehensive coverage. Personally,
     I have often found myself skipping unit tests in the interest of saving time,
     only to regret it later when bugs and errors inevitably arise.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为开发者，我们知道单元测试在确保软件的质量和可靠性方面的重要性。然而，我们也知道创建有效的单元测试所带来的挑战 —— 所需的时间和精力，测试过程的复杂性，以及确保全面覆盖的挑战。个人而言，我经常为了节省时间而跳过单元测试，只是以后当错误和
+    bug 不可避免地出现时后悔。
 - en: In this chapter, we will explore how Copilot and ChatGPT can help ease the pain
     of creating effective unit tests, by generating test cases for a simple Angular
     service. Through this process, we will see how these tools can help enhance the
     unit testing process.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将探讨Copilot和ChatGPT如何帮助简化创建有效单元测试的痛点，通过生成一个简单的Angular服务的测试用例。通过这个过程，我们将看到这些工具如何帮助增强单元测试过程。
 - en: The Service
+  id: totrans-8
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 该服务
 - en: The service itself is simple enough. I wanted to build a means of setting and
     retrieving two different unique IDs my app can use when making service calls.
     The first is a “conversation ID” that will be set as an HTTP header for all network
     calls for a specific user for a given session. It will not change until the application
     user manually refreshes the screen, closes the browser, or logs out and back in.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个服务本身就足够简单。我想建立一种可以在应用程序进行服务调用时设置和检索两个不同的唯一 ID 的方法。第一个是“会话 ID”，它将作为特定用户在给定会话中的所有网络调用的HTTP标头进行设置。除非应用用户手动刷新屏幕、关闭浏览器或注销并重新登录，否则它不会改变。
 - en: The second is a “correlation ID.” This will also get sent with each HTTP call,
     but it changes with every request. I won’t show the network calls, just the service
     to generate the IDs.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个是“相关 ID”。这也会随着每个请求一起发送，但会随着每个请求而改变。我不会展示网络调用，只展示生成这些 ID 的服务。
 - en: The Service API
+  id: totrans-11
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 服务 API
 - en: There are three primary requirements the service implements.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 服务实现了三个主要要求。
 - en: It will give me the same conversation ID whenever I ask, unless one does not
     exist. In that case, it needs to give me a new one and return it.
+  id: totrans-13
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 每当我询问时，它将给我相同的会话 ID，除非不存在会话 ID。在这种情况下，它需要给我一个新的并返回。
 - en: It will give me a fresh correlation ID every time I request one. I should never
     get the same ID twice.
+  id: totrans-14
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 它将在我每次请求时为我提供一个新的相关 ID。我不应该两次得到相同的 ID。
 - en: It will provide a way for me to force a fresh conversation ID.
+  id: totrans-15
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 它将提供一种让我强制获取新会话 ID 的方法。
 - en: 'The implementation will use UUIDs for both the conversationId and the correlationId.
     In case you aren’t aware of the term UUID, I asked ChatGPT to define it:'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 实现将使用 UUID 分别作为会话 ID 和相关 ID。如果您不了解 UUID 这个术语，我请ChatGPT定义它：
 - en: What is a UUID?
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 什么是 UUID？
 - en: A UUID, or Universally Unique Identifier, is a type of identifier that is used
     to uniquely identify information in a distributed system. A UUID is a 128-bit
     number represented as a sequence of hexadecimal digits, typically displayed in
@@ -87,806 +126,1278 @@
     to ensure that there is no ambiguity or conflict when multiple systems need to
     refer to the same entity, and also helps to provide an additional layer of security
     by making it more difficult to guess or manipulate identifiers.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: UUID，或称为通用唯一标识符，是一种用于在分布式系统中唯一标识信息的标识符类型。UUID是一个128位数字，表示为一系列十六进制数字，通常以连字符分隔的组显示。UUID旨在在空间和时间上都是唯一的，这意味着即使由不同系统在不同时间生成，它们也不应该发生冲突或重复。UUID通常用于各种上下文中，包括作为数据库中的键，作为存储系统中文件或对象的标识符，以及作为Web应用程序中的会话ID。使用UUID有助于确保在多个系统需要引用相同实体时没有歧义或冲突，并且通过使识别符更难猜测或操纵，还有助于提供额外的安全层。
 - en: In short, UUIDs are perfect identifiers to use for my purposes in identifying
     and correlating HTTP calls across various systems.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 简而言之，UUID是用于在各个系统中标识和关联HTTP调用的完美标识符。
 - en: The code itself small and straightforward. I will reproduce the entirety of
     the service here for reference.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码本身简单明了。我将在此处重现整个服务以供参考。
 - en: import { Injectable } from '@angular/core';
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Injectable } from '@angular/core';
 - en: import { v4 as uuidv4 } from 'uuid';
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: import { v4 as uuidv4 } from 'uuid';
 - en: '@Injectable({'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: '@Injectable({'
 - en: 'providedIn: ''root'''
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 'providedIn: ''root'''
 - en: '})'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: export class CorrelationService {
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: export class CorrelationService {
 - en: 'conversationId: string = '''';'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 'conversationId: string = '''';'
 - en: resetConversationId() {
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: resetConversationId() {
 - en: this.conversationId = uuidv4();
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: this.conversationId = uuidv4();
 - en: return this.conversationId;
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.conversationId;
 - en: '}'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: getConversationId() {
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: getConversationId() {
 - en: return this.conversationId || this.resetConversationId();
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.conversationId || this.resetConversationId();
 - en: '}'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: getCorrelationId() {
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: getCorrelationId() {
 - en: return uuidv4();
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: return uuidv4();
 - en: '}'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'There are three functions:'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 有三个函数：
 - en: 'resetConversationId: creates a brand new UUID and assigns it to the internal
     coversationId variable and returns that new value.'
+  id: totrans-40
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 'resetConversationId: 创建一个全新的UUID并将其分配给内部coversationId变量，并返回该新值。'
 - en: 'getConversationId: returns the internal conversationId if it has a value, or
     calls resetConversationID and returns its result.'
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 'getConversationId: 如果内部conversationId有值，则返回该值，否则调用resetConversationID并返回其结果。'
 - en: 'getCorrelationId: simply returns a new UUID every time it’s called.'
+  id: totrans-42
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 'getCorrelationId: 每次调用时都简单地返回一个新的UUID。'
 - en: As I said, it is a very simple service.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我所说，这是一个非常简单的服务。
 - en: The Testing Framework
+  id: totrans-44
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 测试框架
 - en: I want to start by reviewing the test code that is automatically generated by
     the Angular CLI. I do not mean for this to be a comprehensive introduction to
     testing, but I will explain the basics. It should be enough for you to follow
     along in your own tests.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 我想首先回顾由Angular CLI自动生成的测试代码。我并不是指这是一个全面的测试介绍，但我会解释基础知识。这应该足够让您在自己的测试中跟上。
 - en: By default, when you use the Angular CLI to create a service, it will also create
     a default test file. In my case, it created this for me.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 默认情况下，当您使用Angular CLI创建服务时，它还会为您创建一个默认的测试文件。在我的情况下，它为我创建了这个。
 - en: import { TestBed } from '@angular/core/testing';
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: import { TestBed } from '@angular/core/testing';
 - en: import { CorrelationService } from './correlation.service';
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: import { CorrelationService } from './correlation.service';
 - en: describe('CorrelationService', () => {
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: describe('CorrelationService', () => {
 - en: 'let service: CorrelationService;'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 'let service: CorrelationService;'
 - en: beforeEach(() => {
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: beforeEach(() => {
 - en: TestBed.configureTestingModule({});
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: TestBed.configureTestingModule({});
 - en: service = TestBed.inject(CorrelationService);
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: service = TestBed.inject(CorrelationService);
 - en: '});'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: it('should be created', () => {
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should be created', () => {
 - en: expect(service).toBeTruthy();
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service).toBeTruthy();
 - en: '});'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: The first import line brings in the Angular testing class called TestBed. This
     class contains most of the basic testing framework.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个导入行引入了名为TestBed的Angular测试类。这个类包含大部分基本的测试框架。
 - en: The second pulls in the service to be tested, also known as the “System Under
     Test,” or SUT. This is assigned to the variable service.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二个是引入要测试的服务，也被称为“被测试系统”或SUT。这被分配给变量service。
 - en: describe
+  id: totrans-61
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: describe
 - en: describe('CorrelationService', () => {
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: describe('CorrelationService', () => {
 - en: With most JavaScript testing frameworks, tests are organized into one or more
     describe functions. These functions encapsulate related tests and isolate the
     inner tests from other, unrelated tests. They can be nested, as you will see shortly.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用大多数JavaScript测试框架，测试被组织成一个或多个describe函数。这些函数封装了相关的测试，并将内部测试与其他不相关的测试隔离开。它们可以被嵌套，你马上就会看到。
 - en: The describe function is called with two parameters.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 调用describe函数带有两个参数。
 - en: The test label. In this case, the name of the service to be tested.
+  id: totrans-65
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 测试标签。在这种情况下，要测试的服务的名称。
 - en: The function that contains the tests themselves. Here it is an arrow function.
     It contains a single variable representing the service, but nothing is assigned
     to it yet.
+  id: totrans-66
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 包含测试本身的函数。这里是一个箭头函数。它包含一个代表服务的单个变量，但目前尚未分配任何值给它。
 - en: beforeEach
+  id: totrans-67
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: beforeEach
 - en: beforeEach(() => {
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: beforeEach(() => {
 - en: TestBed.configureTestingModule({});
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: TestBed.configureTestingModule({});
 - en: service = TestBed.inject(CorrelationService);
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: service = TestBed.inject(CorrelationService);
 - en: '});'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: Directly inside this function is another function call, beforeEach, which itself
     contains another arrow function. This function is called by the testing framework
     before every unit test is executed.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 直接在这个函数内部还有另一个函数调用，beforeEach，它本身包含另一个箭头函数。这个函数在每个单元测试执行之前被测试框架调用。
 - en: Inside this function is a call to TestBed.configureTestingModule({}), and you
     can see that it is being passed an empty object as its only argument. This object
     contains the test module’s options. It can accept just about every option a normal
     Angular module can. Most tests use this to configure Angular’s dependency injection
     system to inject test doubles required by the SUT. My service has no dependencies,
     so there is nothing to configure.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个函数内部调用了TestBed.configureTestingModule({})，你可以看到它被传递了一个空对象作为它唯一的参数。这个对象包含了测试模块的选项。它几乎可以接受正常的Angular模块能接受的所有选项。大多数测试使用这个来配置Angular的依赖注入系统，以便注入SUT所需的测试替身。我的服务没有依赖项，所以没有什么可配置的。
 - en: Other Functions
+  id: totrans-74
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 其他函数
 - en: 'Not shown are some other functions that can contain setup/tear-down instructions:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 没有显示的是一些其他函数，它们可以包含设置/拆卸指令：
 - en: 'beforeAll: called once before any tests inside the describe are run. This is
     typically used to set up the state required by all tests, but which won’t change
     from test to test.'
+  id: totrans-76
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: beforeAll：在描述中运行任何测试之前调用一次。这通常用于设置所有测试所需的状态，但这些状态不会从一个测试转到另一个测试。
 - en: 'afterEach: called after each unit test function in the describe. This is used
     to tear down or reset the state to undo any side effects that a test might have
     created.'
+  id: totrans-77
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: afterEach：在描述中的每个单元测试函数之后调用。这用于拆卸或重置状态，撤消测试可能创建的任何副作用。
 - en: 'afterAll: called once after all tests in the describe have been run. Again,
     this is used to reset the global state so that effects from your describe function
     don’t bleed into others.'
+  id: totrans-78
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: afterAll：在描述中的所有测试运行完毕后调用一次。同样，这用于重置全局状态，以便来自描述函数的效果不会渗入其他地方。
 - en: it
+  id: totrans-79
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: it
 - en: it('should be created', () => {
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: it('应该被创建', () => {
 - en: expect(service).toBeTruthy();
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service).toBeTruthy();
 - en: '});'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: This function defines a single unit test. You can create as many it functions
     as you want inside your describe. The generated test comes with a single it function.
     Its signature matches that of describe, in that it takes a label and a function
     defining the test.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个函数定义了一个单元测试。你可以在描述中创建尽可能多个的it函数。生成的测试带有一个单独的it函数。它的签名与描述的签名相匹配，它接受一个标签和定义测试的函数。
 - en: 'When combined with its enclosing describe, the it functions should read like
     this:'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 与其封闭的描述结合起来，这些函数应该这样读：
 - en: '[describe Label] [it Label]: Pass/Fail'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '[描述标签] [测试标签]：通过/失败'
 - en: 'Thus, when you read the one pre-generated test, it should look like this:'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，当你阅读预生成的测试时，它应该是这样的：
 - en: 'CorrelationService should be created: Pass'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: CorrelationService 应该被创建：通过
 - en: Consider this phrasing when you create your own tests.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 在创建自己的测试时，请考虑这种措辞。
 - en: There is a lot more to Angular testing than this, but I wanted to make sure
     I explained what you would be seeing before I started.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: Angular测试还有很多内容，但我想确保在开始之前我已经解释了你会看到的内容。
 - en: The Tests
+  id: totrans-90
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 测试
 - en: With that explanation out of the way, let’s look at the tests GitHub Copilot
     generated. If you are following along, it should be a simple matter of creating
     a brand new describe for each function to be tested. This isn’t strictly necessary.
     It is perfectly legal to put all your tests inside a single describe, but I find
     that doing this way gives Copilot the context it needs to write the tests properly.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 解释清楚了，让我们看看GitHub Copilot生成的测试。如果你在跟着做，应该很容易为每个要测试的函数创建一个全新的描述。这并非绝对必要。将所有测试放在一个描述中是完全合法的，但我发现这样做可以给Copilot提供编写测试所需的上下文。
 - en: I entered the first line below as a hint, and Copilot generated the tests for
     me.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 我输入了下面的第一行作为提示，Copilot为我生成了测试。
 - en: describe('resetConversationId', () => {
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: describe('resetConversationId', () => {
 - en: it('should return conversationId', () => {
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: it('应该返回conversationId', () => {
 - en: service.resetConversationId();
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: service.resetConversationId();
 - en: expect(service.getConversationId()).toBeTruthy();
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service.getConversationId()).toBeTruthy();
 - en: '});'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: This test simply checks to see whether calling getConversationId() returns a
     truthy, or non-empty value.
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个测试简单地检查调用getConversationId()是否返回一个真值或非空值。
 - en: it('should return conversationId if it exists', () => {
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: it('如果存在应该返回conversationId', () => {
 - en: service.resetConversationId();
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: service.resetConversationId();
 - en: const conversationId = service.conversationId;
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: const conversationId = service.conversationId;
 - en: expect(service.getConversationId()).toEqual(conversationId);
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service.getConversationId()).toEqual(conversationId);
 - en: '});'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: This test calls getConversationId() twice, expecting the two values to be identical.
     If not, the test will fail.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个测试调用getConversationId()两次，期望两个值相同。如果不是，测试将失败。
 - en: it('should return conversationId if it exists', () => {
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: it('如果存在应该返回conversationId', () => {
 - en: service.resetConversationId();
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: service.resetConversationId();
 - en: const conversationId = service.conversationId;
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: const conversationId = service.conversationId;
 - en: expect(service.getConversationId()).toEqual(conversationId);
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service.getConversationId()).toEqual(conversationId);
 - en: '});'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: No, that isn’t a typo. It generated two identical tests. I don’t know why. You’ll
     see that sometimes with Copilot. It can be mildly annoying, but the purpose is
     so that I can write fewer tests manually. In this case, I’m comfortable with the
     results.
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 不，这不是打字错误。它生成了两个相同的测试。我不知道为什么。有时候你会在Copilot中看到这种情况。这可能有点烦人，但目的是为了让我少写一些测试。在这种情况下，我对结果感到满意。
 - en: It generated tests that exercise the function appropriately. One simple refactor
     I could make would be to move the call to service.resetConversationId() into the
     beforeEach function, guaranteeing it gets called before each test is executed.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 它生成了适当运行该函数的测试。我可以进行的一个简单重构是将调用service.resetConversationId()移动到beforeEach函数中，确保在执行每个测试之前都会调用它。
 - en: Looking at the tests it gave me, I am not convinced I need separate tests for
     resetConversationId, but it would be easy enough to add them.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 看着它给我的测试，我不确定我是否需要为resetConversationId编写单独的测试，但很容易添加它们。
 - en: Let’s look now at the tests for getCorrelationId. According to the requirements,
     it should always return a new one every time it’s called. For this one, instead
     of asking Copilot to complete my describe, I used a comment and let it write everything.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们看看getCorrelationId的测试。根据要求，每次调用它都应该返回一个新的值。对于这个，我没有让Copilot完成我的描述，而是使用了一个注释让它写一切。
 - en: // Test getCorrelationId
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: // 测试getCorrelationId
 - en: it('should return correlationId', () => {
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: it('应该返回correlationId', () => {
 - en: expect(service.getCorrelationId()).toBeTruthy();
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service.getCorrelationId()).toBeTruthy();
 - en: '});'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: It built a single function for me but didn’t go any further. In fact, it isn’t
     a very helpful test, but it does pass. Just like before, all it’s doing it is
     ensuring that the function returns a truthy value.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 它为我构建了一个函数，但没有进一步。实际上，这不是一个非常有用的测试，但它确实通过了。就像之前一样，它只是确保函数返回一个真值。
 - en: That isn’t nearly complete enough, so I tried again. This time, I gave it two
     more detailed comments.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 这还远远不够完整，所以我再试一次。这次，我给了它两个更详细的注释。
 - en: // Test getCorrelationId returns a different value each time
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: // 测试getCorrelationId每次返回不同的值
 - en: it('should return correlationId', () => {
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: it('应该返回correlationId', () => {
 - en: const correlationId = service.getCorrelationId();
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: const correlationId = service.getCorrelationId();
 - en: expect(service.getCorrelationId()).not.toEqual(correlationId);
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service.getCorrelationId()).not.toEqual(correlationId);
 - en: '});'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: That’s a little better. This test is ensuring that calling getCorrelationId()
     twice returns a different value. What if we call it 100 times?
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有点好一点。这个测试确保调用getCorrelationId()两次会返回不同的值。如果我们调用它100次呢？
 - en: // Test getCorrelationId returns a different value a bunch of times
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: // 测试 getCorrelationId 返回不同值多次
 - en: it('should return correlationId', () => {
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should return correlationId', () => {
 - en: const correlationIds = [];
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: const correlationIds = [];
 - en: for (let i = 0; i < 100; i++) {
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: for (let i = 0; i < 100; i++) {
 - en: correlationIds.push(service.getCorrelationId());
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: correlationIds.push(service.getCorrelationId());
 - en: '}'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: expect(correlationIds.length).toEqual(100);
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(correlationIds.length).toEqual(100);
 - en: expect(new Set(correlationIds).size).toEqual(100);
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(new Set(correlationIds).size).toEqual(100);
 - en: '});'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: That’s a much better test. This test calls getCorrelationId() 100 times and
     checks to see that all 100 results are unique.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个更好的测试。这个测试调用 getCorrelationId() 100 次，并检查所有 100 个结果是否唯一。
 - en: I probably would not have thought of using a JavaScript set object to ensure
     that I never get the same value, but it’s a clever and elegant solution. Sets
     cannot contain duplicates. If the set contains 100 values after 100 iterations,
     then all the generated values were unique.
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 我可能不会想到使用 JavaScript 的 set 对象来确保我永远不会得到相同的值，但这是一个聪明和优雅的解决方案。Set 不能包含重复项。如果在
+    100 次迭代后集合包含了 100 个值，那么所有生成的值都是唯一的。
 - en: It just goes to show that Copilot works best with detailed comments.
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是表明 Copilot 最擅长处理详细的注释。
 - en: ChatGPT
+  id: totrans-139
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: ChatGPT
 - en: What about ChatGPT? In theory, it should be just as good at writing these tests,
     so let’s see what it gives us.
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 什么是 ChatGPT？从理论上讲，它应该和编写这些测试一样出色，所以让我们看看它给我们带来了什么。
 - en: As we have seen throughout the book, the trick to getting ChatGPT to give you
     decent code is to provide it with the right prompt. For this prompt, it’s best
     to give it the complete service implementation and ask it to write tests using
     Jasmine (or Jest if you prefer).
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在整本书中所看到的，让 ChatGPT 给你合理的代码的窍门在于提供正确的提示。对于这个提示，最好提供完整的服务实现，并要求它使用 Jasmine（或者如果你喜欢的话，Jest）编写测试。
 - en: Given the following Angular service, write a complete suite of unit tests using
     Jasmine. <I pasted the entire class code here>
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 以以下 Angular 服务为例，使用 Jasmine 编写完整的单元测试套件。 <我在这里粘贴了整个类代码>
 - en: ChatGPT Responded with a complete test suite, as requested.
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 如你要求的那样，提供了完整的测试套件。
 - en: import { CorrelationService } from './correlation.service';
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: import { CorrelationService } from './correlation.service';
 - en: import { v4 as uuidv4 } from 'uuid';
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: import { v4 as uuidv4 } from 'uuid';
 - en: describe('CorrelationService', () => {
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 描述('CorrelationService', () => {
 - en: 'let service: CorrelationService;'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 'let service: CorrelationService;'
 - en: beforeEach(() => {
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: beforeEach(() => {
 - en: service = new CorrelationService();
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: service = new CorrelationService();
 - en: '});'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: it('should create the service', () => {
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should create the service', () => {
 - en: expect(service).toBeTruthy();
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service).toBeTruthy();
 - en: '});'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: describe('resetConversationId()', () => {
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 描述('resetConversationId()', () => {
 - en: it('should set conversationId to a UUID', () => {
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should set conversationId to a UUID', () => {
 - en: service.resetConversationId();
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: service.resetConversationId();
 - en: expect(uuidv4.test(service.conversationId)).toBe(true);
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(uuidv4.test(service.conversationId)).toBe(true);
 - en: '});'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: it('should return the new conversationId', () => {
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should return the new conversationId', () => {
 - en: const conversationId = service.resetConversationId();
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: const conversationId = service.resetConversationId();
 - en: expect(service.conversationId).toEqual(conversationId);
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service.conversationId).toEqual(conversationId);
 - en: '});'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: describe('getConversationId()', () => {
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: describe('getConversationId()', () => {
 - en: it('should return conversationId if set', () => {
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should return conversationId if set', () => {
 - en: service.conversationId = 'test-id';
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: service.conversationId = 'test-id';
 - en: expect(service.getConversationId()).toEqual('test-id');
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service.getConversationId()).toEqual('test-id');
 - en: '});'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: it('should call resetConversationId() and return conversationId if not set',
     () => {
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should call resetConversationId() and return conversationId if not set',
+    () => {
 - en: spyOn(service, 'resetConversationId').and.returnValue('new-id');
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: spyOn(service, 'resetConversationId').and.returnValue('new-id');
 - en: expect(service.getConversationId()).toEqual('new-id');
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service.getConversationId()).toEqual('new-id');
 - en: expect(service.resetConversationId).toHaveBeenCalled();
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service.resetConversationId).toHaveBeenCalled();
 - en: '});'
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: describe('getCorrelationId()', () => {
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 描述('getCorrelationId()', () => {
 - en: it('should return a UUID', () => {
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should return a UUID', () => {
 - en: const correlationId = service.getCorrelationId();
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: const correlationId = service.getCorrelationId();
 - en: expect(uuidv4.test(correlationId)).toBe(true);
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(uuidv4.test(correlationId)).toBe(true);
 - en: '});'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: it('should return a different UUID each time', () => {
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should return a different UUID each time', () => {
 - en: const correlationId1 = service.getCorrelationId();
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: const correlationId1 = service.getCorrelationId();
 - en: const correlationId2 = service.getCorrelationId();
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: const correlationId2 = service.getCorrelationId();
 - en: expect(correlationId1).not.toEqual(correlationId2);
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(correlationId1).not.toEqual(correlationId2);
 - en: '});'
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: Interestingly, these tests don’t even compile. While they look reasonable at
     first glance, two of the tests assume that the uuidv4 library has a test function.
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 有趣的是，这些测试甚至都无法编译。虽然乍一看似乎合理，但其中两个测试假定uuidv4库有一个测试函数。
 - en: expect(uuidv4.test(service.conversationId)).toBe(true);
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(uuidv4.test(service.conversationId)).toBe(true);
 - en: At least the version I am using, v9, it does not.
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 至少我使用的版本，v9，不支持。
 - en: I commented out those two tests and the rest of them passed.
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 我注释掉了那两个测试，其余的都通过了。
 - en: What’s the takeaway here? Using Copilot may be a little more manual, but you
     have much finer control over what is being generated. With ChatGPT, you get a
     flood of code that you either have to proofread carefully or accept at face value.
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里的要点是什么？使用Copilot可能会更加手动，但你对生成的内容有更精细的控制。使用ChatGPT，你会得到一大堆代码，你要么仔细校对，要么就接受现状。
 - en: I don’t recommend the latter.
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不推荐后者。
 - en: Testing HTTP Calls
+  id: totrans-193
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 测试HTTP调用
 - en: Testing a simple service is one thing. It’s fairly simple and the pattern is
     straightforward once you’ve done it a few times. The real value we get from AI
     is in writing tests for things that aren’t necessarily simple and straightforward,
     like testing HTTP calls.
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 测试一个简单的服务是一回事。一旦你做过几次，模式就很简单，也很直接了。我们从AI中获得的真正价值在于为那些并不简单和直接的事物编写测试，比如测试HTTP调用。
 - en: This is something I know how to do conceptually but can never get the syntax
     right the first time. For example, I know I must import and use Angular’s HttpClientTestingModule.
     There is a certain order that things have to be called and setup that has to be
     done. And every time, it’s an exercise of trial and error until I get it right.
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我在概念上知道如何做的事情，但我永远无法第一次就正确地使用语法。例如，我知道我必须导入并使用Angular的HttpClientTestingModule。有一定的调用顺序和设置必须完成。每次都是一个试错的过程，直到我做对为止。
 - en: No longer.
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 不再。
 - en: I asked ChatGPT to help me write a test for a fictitious weather service. The
     service itself that I defined looks like this.
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 我让ChatGPT帮我为一个虚构的天气服务编写测试。我定义的服务本身看起来像这样。
 - en: export class WeatherService {
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: export class WeatherService {
 - en: 'http: HttpClient = inject(HttpClient);'
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 'http: HttpClient = inject(HttpClient);'
 - en: 'getWeather(zipcode: string) {'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 'getWeather(zipcode: string) {'
 - en: return this.http.get(`weather.com/api/forecast/${zipcode}`);
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.http.get(`weather.com/api/forecast/${zipcode}`);
 - en: '}'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: ChatGPT gave me a pretty good test suite for this one.
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT为这个提供了一个相当不错的测试套件。
 - en: import { TestBed } from '@angular/core/testing';
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: import { TestBed } from '@angular/core/testing';
 - en: import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 - en: import { WeatherService } from './weather.service';
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: import { WeatherService } from './weather.service';
 - en: describe('WeatherService', () => {
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: describe('WeatherService', () => {
 - en: 'let service: WeatherService;'
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: 'let service: WeatherService;'
 - en: 'let httpMock: HttpTestingController;'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 'let httpMock: HttpTestingController;'
 - en: beforeEach(() => {
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: beforeEach(() => {
 - en: TestBed.configureTestingModule({
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: TestBed.configureTestingModule({
 - en: 'imports: [HttpClientTestingModule],'
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 'imports: [HttpClientTestingModule],'
 - en: 'providers: [WeatherService]'
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 'providers: [WeatherService]'
 - en: '});'
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: service = TestBed.inject(WeatherService);
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: service = TestBed.inject(WeatherService);
 - en: httpMock = TestBed.inject(HttpTestingController);
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: httpMock = TestBed.inject(HttpTestingController);
 - en: '});'
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: afterEach(() => {
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: afterEach(() => {
 - en: httpMock.verify();
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: httpMock.verify();
 - en: '});'
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: ––––––––
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: ––––––––
 - en: '![image](d2d_images/scene_break.png)'
+  id: totrans-223
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/scene_break.png)'
 - en: it('should be created', () => {
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should be created', () => {
 - en: expect(service).toBeTruthy();
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(service).toBeTruthy();
 - en: '});'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: it('should return the weather for a given zipcode', () => {
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: it('should return the weather for a given zipcode', () => {
 - en: const mockResponse = {
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: const mockResponse = {
 - en: 'temperature: 68,'
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 'temperature: 68,'
 - en: 'description: ''Sunny'''
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 'description: ''晴天'''
 - en: '};'
+  id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: const zipcode = '90210';
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: const zipcode = '90210';
 - en: service.getWeather(zipcode).subscribe(response => {
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: service.getWeather(zipcode).subscribe(response => {
 - en: expect(response).toEqual(mockResponse);
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(response).toEqual(mockResponse);
 - en: '});'
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: const request = httpMock.expectOne(`weather.com/api/forecast/${zipcode}`);
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: const request = httpMock.expectOne(`weather.com/api/forecast/${zipcode}`);
 - en: expect(request.request.method).toBe('GET');
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: expect(request.request.method).toBe('GET');
 - en: request.flush(mockResponse);
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: request.flush(mockResponse);
 - en: '});'
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: It only handled the “happy path,” but it gave me the structure I was looking
     for. As I implied, testing Angular’s HttpClient is finicky, and I typically get
     it wrong the first time.
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: 它只处理了“快乐路径”，但给了我我想要的结构。正如我所暗示的，测试Angular的HttpClient是棘手的，我通常第一次就搞错了。
 - en: For some reason, I can never seem to remember to include the verification in
     afterEach, which assures that the service only made the expected HTTP calls, no
     more or less. Nor do I tend to remember the right order to create the mock’s expectOne
     and flush functions.
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于某种原因，我似乎永远记不住在 afterEach 中包含验证，以确保服务只发出了预期的 HTTP 调用，不多不少。我也不记得创建模拟的 expectOne
+    和 flush 函数的正确顺序。
 - en: Having ChatGPT build this test suite for me saves a lot of time. Once I have
     the structure in place, I can fill in the gaps (or get Copilot to do it for me).
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: 让 ChatGPT 为我构建这个测试套件节省了很多时间。一旦我有了结构，我就可以填补空白（或让 Copilot 为我完成）。
 - en: This test passed the first time, by the way.
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: 这次测试一次通过了，顺便说一句。
 - en: Far From Perfect
+  id: totrans-245
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 远非完美
 - en: It’s not all wine and roses, to be sure. We have already seen that ChatGPT doesn’t
     know anything past mid-2021 or so. Copilot is better in this regard, as it is
     trained on almost all of GitHub, plus it can see your code.
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 毫无疑问，并非一切都是美好的。我们已经看到，ChatGPT 对 2021 年中期之后的任何事情都一无所知。在这方面，Copilot 更好，因为它是在几乎所有的
+    GitHub 上进行训练的，而且它可以查看你的代码。
 - en: I tried to get each of them to help me write a unit test for an Angular HttpInterceptor,
     to use with the CorrelationService from the beginning of the chapter. I use an
     interceptor to add the correlationId and coversationId values as HTTP headers
     on every outgoing HTTP call.
+  id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: 我尝试让它们每个人帮我编写一个用于 Angular HttpInterceptor 的单元测试，以与本章开头的 CorrelationService 一起使用。我使用拦截器在每次传出的
+    HTTP 调用上添加 correlationId 和 coversationId 值作为 HTTP 标头。
 - en: ChatGPT knew about the class based HttpInterceptor, but nothing about the new
     functional HttpInterceptorFn, which was just introduced in Angular 15\. Predictably,
     ChatGPT knew nothing about it, insisting that no such thing exists.
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 知道基于类的 HttpInterceptor，但对于刚在 Angular 15 中引入的新的 functional HttpInterceptorFn
+    一无所知。可预见的是，ChatGPT 对此一无所知，坚称不存在这样的东西。
 - en: Copilot tried but gave me nothing I could use. The results are not even worth
     reproducing here.
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot 尝试了，但没有给我任何可以使用的东西。结果甚至不值得在这里重现。
 - en: Undoubtedly things will get better. For now, consider this one more piece of
     evidence that as good as the AI gets, we software developers still need to understand
     our craft. We can use these tools to help us, but we always need to be aware of
     their limitations.
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: 毫无疑问，事情会变得更好。目前，可以将这视为更多证据，即尽管 AI 变得越来越好，但我们软件开发人员仍然需要了解我们的技艺。我们可以利用这些工具来帮助我们，但我们始终需要意识到它们的局限性。

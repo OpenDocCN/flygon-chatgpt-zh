@@ -1,97 +1,142 @@
 - en: '2'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '2'
 - en: OpenAI and ChatGPT – Beyond the Market Hype
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: OpenAI和ChatGPT – 超越市场炒作
 - en: This chapter provides an overview of OpenAI and its most notable development—ChatGPT,
     highlighting its history, technology, and capabilities.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章概述了OpenAI及其最显著的发展—ChatGPT，重点介绍其历史、技术和能力。
 - en: The overall goal is to provide a deeper knowledge of how ChatGPT can be used
     in various industries and applications to improve communication and automate processes
     and, finally, how those applications can impact the world of technology and beyond.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 总体目标是提供ChatGPT如何在各个行业和应用中使用以改善沟通和自动化流程的更深入了解，最终，这些应用如何影响技术领域及其他领域。
 - en: 'We will cover all this with the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将涵盖以下主题：
 - en: What is OpenAI?
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 什么是OpenAI？
 - en: Overview of OpenAI model families
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: OpenAI模型系列概述
 - en: 'Road to ChatGPT: the math of the model behind it'
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ChatGPT之路：背后模型的数学
 - en: 'ChatGPT: the state of the art'
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ChatGPT：最先进技术
 - en: Technical requirements
+  id: totrans-9
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 技术要求
 - en: 'In order to be able to test the example in this chapter, you will need the
     following:'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了能够测试本章中的示例，您需要以下内容：
 - en: An OpenAI account to access the Playground and the Models API ([https://openai.com/api/login20](https://openai.com/api/login20))
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 一个OpenAI账户，用于访问Playground和Models API（[https://openai.com/api/login20](https://openai.com/api/login20))
 - en: Your favorite IDE environment, such as Jupyter or Visual Studio
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 你喜欢的集成开发环境，比如Jupyter或Visual Studio
 - en: Python 3.7.1+ installed ([https://www.python.org/downloads](https://www.python.org/downloads))
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 已安装Python 3.7.1+（[https://www.python.org/downloads](https://www.python.org/downloads)）
 - en: '`pip` installed ([https://pip.pypa.io/en/stable/installation/](https://pip.pypa.io/en/stable/installation/))'
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`pip`已安装（[https://pip.pypa.io/en/stable/installation/](https://pip.pypa.io/en/stable/installation/)）'
 - en: OpenAI Python library ([https://pypi.org/project/openai/](https://pypi.org/project/openai/))
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: OpenAI Python库（[https://pypi.org/project/openai/](https://pypi.org/project/openai/)）
 - en: What is OpenAI?
+  id: totrans-16
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 什么是OpenAI？
 - en: OpenAI is a research organization founded in 2015 by Elon Musk, Sam Altman,
     Greg Brockman, Ilya Sutskever, Wojciech Zaremba, and John Schulman. As stated
     on the OpenAI web page, its mission is *“to ensure that Artificial General Intelligence
     (AGI) benefits all of humanity”*. As it is *general*, AGI is intended to have
     the ability to learn and perform a wide range of tasks, without the need for task-specific
     programming.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI是由埃隆·马斯克、山姆·奥尔特曼、格雷格·布罗克曼、伊利亚·苏茨克维尔、沃伊切赫·扎雷姆巴和约翰·舒尔曼于2015年创立的研究组织。正如OpenAI网页上所述，其使命是*“确保人工通用智能（AGI）造福全人类”*。由于是*通用*的，AGI旨在具有学习和执行各种任务的能力，而无需特定任务的编程。
 - en: Since 2015, OpenAI has focused its research on **Deep Reinforcement Learning**
     (**DRL**), a subset of **machine learning** (**ML**) that combines **Reinforcement
     Learning** (**RL**) with deep neural networks. The first contribution in that
     field traces back to 2016 when the company released OpenAI Gym, a toolkit for
     researchers to develop and test **RL** algorithms.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 自2015年以来，OpenAI将研究重点放在**深度强化学习**（**DRL**）上，这是**机器学习**（**ML**）的一个子集，将**强化学习**（**RL**）与深度神经网络结合起来。该领域的第一个贡献可以追溯到2016年，当时该公司发布了OpenAI
+    Gym，这是一个供研究人员开发和测试**RL**算法的工具包。
 - en: '![Figure 2.1 – Landing page of Gym documentation (https://www.gymlibrary.dev/)](img/Figure_2.1_B19904.jpg)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.1 – Gym文档的首页（https://www.gymlibrary.dev/）](img/Figure_2.1_B19904.jpg)'
 - en: Figure 2.1 – Landing page of Gym documentation (https://www.gymlibrary.dev/)
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.1 – Gym文档的首页（https://www.gymlibrary.dev/）
 - en: OpenAI kept researching and contributing in that field, yet its most notable
     achievements are related to generative models—**Generative Pre-trained** **Transformers**
     (**GPT**).
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI继续在该领域进行研究和贡献，然而其最显著的成就与生成模型有关—**生成式预训练** **变换器**（**GPT**）。
 - en: After introducing the model architecture in their paper *“Improving Language
     Understanding by Generative Pre-Training”* and baptizing it **GPT-1**, OpenAI
     researchers soon released, in 2019, its successor, the GPT-2\. This version of
@@ -99,189 +144,270 @@
     slightly over 8 million documents with a total of 40 GB of text from URLs shared
     in Reddit submissions with at least 3 upvotes. It had 1.2 billion parameters,
     ten times as many as its predecessor.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 在他们的论文*“通过生成式预训练改进语言理解”*中介绍了模型架构，并将其命名为**GPT-1**，OpenAI研究人员很快在2019年发布了其继任者，GPT-2。这个版本的GPT是在一个名为**WebText**的语料库上训练的，当时该语料库包含稍微超过800万个文档，总共40
+    GB的文本，这些文本来自Reddit提交的URL，至少有3个赞。它有12亿个参数，是其前身的十倍。
 - en: 'Here, you can see the landing page of a UI of GPT-2 published by HuggingFace
     ([https://transformer.huggingface.co/doc/distil-gpt2](https://transformer.huggingface.co/doc/distil-gpt2)):'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，您可以看到HuggingFace发布的GPT-2的UI的着陆页（[https://transformer.huggingface.co/doc/distil-gpt2](https://transformer.huggingface.co/doc/distil-gpt2)）：
 - en: '![Figure 2.2 – GPT-2 writing a paragraph based on a prompt. Source: https://transformer.huggingface.co/doc/distil-gpt2](img/Figure_2.2_B19904.jpg)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.2 – GPT-2根据提示撰写段落。来源：https://transformer.huggingface.co/doc/distil-gpt2](img/Figure_2.2_B19904.jpg)'
 - en: 'Figure 2.2 – GPT-2 writing a paragraph based on a prompt. Source: https://transformer.huggingface.co/doc/distil-gpt2'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.2 – GPT-2根据提示撰写段落。来源：https://transformer.huggingface.co/doc/distil-gpt2
 - en: Then, in 2020, OpenAI first announced and then released GPT-3, which, with its
     175 billion parameters, dramatically improved benchmark results over GPT-2.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，在2020年，OpenAI首先宣布，然后发布了GPT-3，其拥有1750亿个参数，显着改善了GPT-2的基准结果。
 - en: In addition to natural language generative models, OpenAI also developed in
     the field of image generation, releasing its first model in that field, called
     **DALL-E**, revealed in 2021\. As mentioned in the previous chapter, DALL-E is
     capable of creating brand new images from a natural language input, which is interpreted
     by the latest version of GPT-3.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了自然语言生成模型，OpenAI还在图像生成领域取得了进展，发布了该领域的第一个模型，名为**DALL-E**，于2021年揭示。正如前一章所述，DALL-E能够根据自然语言输入创建全新的图像，这由最新版本的GPT-3解释。
 - en: DALL-E saw a recent upgrade to its new version, DALL-E 2, announced in April
     2022.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: DALL-E最近升级到其新版本DALL-E 2，于2022年4月宣布。
 - en: 'In the following figure, you can see an example of images generated by DALL-E
     starting with the natural language prompt **generate a realistic picture of a
     cup of coffee in a** **cozy environment**:'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下图中，您可以看到以自然语言提示**在舒适环境中生成一杯咖啡的逼真图片**为例的DALL-E生成的图像：
 - en: '![Figure 2.3 – Images generated by DALL-E with a natural language prompt as
     input](img/Figure_2.3_B19904.jpg)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.3 – DALL-E生成的图像，以自然语言提示为输入](img/Figure_2.3_B19904.jpg)'
 - en: Figure 2.3 – Images generated by DALL-E with a natural language prompt as input
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.3 – DALL-E生成的图像，以自然语言提示为输入
 - en: You can try generating creative pictures yourself in the lab of OpenAI DALL-E
     ([https://labs.openai.com/](https://labs.openai.com/)), where you will get limited
     free credits to experiment.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以在OpenAI DALL-E实验室（[https://labs.openai.com/](https://labs.openai.com/)）尝试生成创意图片，您将获得有限的免费积分进行实验。
 - en: Although OpenAI has invested in many fields of Generative AI, its contribution
     to text understanding and generation has been outstanding, thanks to the development
     of the foundation GPT models we are going to explore in the following paragraphs.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管OpenAI在许多生成AI领域进行了投资，但其在文本理解和生成方面的贡献卓越，这要归功于我们将在接下来的段落中探讨的基础GPT模型的发展。
 - en: An overview of OpenAI model families
+  id: totrans-34
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: OpenAI模型系列概述
 - en: 'Today, OpenAI offers a set of pre-trained, ready-to-use models that can be
     consumed by the general public. This has two important implications:'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 今天，OpenAI提供一组预训练的、可供公众使用的模型。这有两个重要的含义：
 - en: Powerful foundation models can be consumed without the need for long and expensive
     training
+  id: totrans-36
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 强大的基础模型可以在不需要长时间和昂贵的训练的情况下使用
 - en: It’s not necessary to be a data scientist or an ML engineer to manipulate those
     models
+  id: totrans-37
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 操纵这些模型并不需要成为数据科学家或ML工程师
 - en: Users can test OpenAI models in OpenAI Playground, a friendly user interface
     where you can interact with models without the need to write any code.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 用户可以在OpenAI Playground中测试OpenAI模型，这是一个友好的用户界面，您可以与模型进行交互，而无需编写任何代码。
 - en: 'In the following screenshot, you can see the landing page of the OpenAI Playground:'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下面的截图中，您可以看到OpenAI Playground的着陆页：
 - en: '![Figure 2.4 – OpenAI Playground at https://platform.openai.com/playground](img/Figure_2.4_B19904.jpg)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.4 – OpenAI Playground位于https://platform.openai.com/playground](img/Figure_2.4_B19904.jpg)'
 - en: Figure 2.4 – OpenAI Playground at https://platform.openai.com/playground
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.4 – OpenAI Playground位于https://platform.openai.com/playground
 - en: As you can see from *Figure 2**.4*, the Playground offers a UI where the user
     can start interacting with the model, which you can select on the right-hand side
     of the UI. To start interacting with the Playground, you can just type any questions
     or instructions in the input space in natural language. You can also start with
     some examples available in the OpenAI documentation ([https://platform.openai.com/examples](https://platform.openai.com/examples)).
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您从*图2**.4*中所看到的，Playground提供了一个用户界面，用户可以在该界面的右侧选择模型开始与之交互。要开始与Playground交互，您只需在自然语言的输入空间中键入任何问题或指令。您也可以从OpenAI文档中提供的一些示例开始（[https://platform.openai.com/examples](https://platform.openai.com/examples)）。
 - en: 'Before diving deeper into model families, let’s first define some jargon you
     will see in this chapter:'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 在深入研究模型系列之前，让我们首先定义一些您将在本章中看到的行话：
 - en: '**Tokens**: Tokens can be considered as word fragments or segments that are
     used by the API to process input prompts. Unlike complete words, tokens may contain
     trailing spaces or even partial sub-words. To better understand the concept of
     tokens in terms of length, there are some general guidelines to keep in mind.
     For instance, one token in English is approximately equivalent to four characters,
     or three-quarters of a word.'
+  id: totrans-44
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**标记**：标记可以被视为API用于处理输入提示的单词片段或段。与完整单词不同，标记可能包含尾随空格甚至部分子单词。为了更好地理解标记的长度概念，有一些一般性指导原则需要牢记。例如，在英语中，一个标记大约相当于四个字符，或者三分之四个单词。'
 - en: '**Prompt**: In the context of **natural language processing** (**NLP**) and
     ML, a prompt refers to a piece of text that is given as input to an AI language
     model to generate a response or output. The prompt can be a question, a statement,
     or a sentence, and it is used to provide context and direction to the language
     model.'
+  id: totrans-45
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**提示**：在**自然语言处理**（**NLP**）和机器学习的背景下，提示是指作为输入提供给AI语言模型以生成响应或输出的文本片段。提示可以是一个问题、一个陈述或一个句子，用于为语言模型提供上下文和指导。'
 - en: '**Context**: In the field of GPT, context refers to the words and sentences
     that come before the user’s prompt. This context is used by the language model
     to generate the most probable next word or phrase, based on the patterns and relationships
     found in the training data.'
+  id: totrans-46
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**上下文**：在GPT领域，上下文指的是用户提示之前的单词和句子。语言模型利用这个上下文来生成最可能的下一个单词或短语，基于训练数据中发现的模式和关系。'
 - en: '**Model confidence**: Model confidence refers to the level of certainty or
     probability that an AI model assigns to a particular prediction or output. In
     the context of NLP, model confidence is often used to indicate how confident the
     AI model is in the correctness or relevance of its generated response to a given
     input prompt.'
+  id: totrans-47
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**模型置信度**：模型置信度指的是AI模型对特定预测或输出的确定性或概率水平。在NLP的背景下，模型置信度通常用于指示AI模型对其生成的响应与给定输入提示的正确性或相关性的信心程度。'
 - en: The preceding definitions will be pivotal in understanding how to use Azure
     OpenAI model families and how to configure their parameters.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 上述定义将对理解如何使用Azure OpenAI模型系列以及如何配置其参数起到关键作用。
 - en: 'In the Playground, there are two main models families that can be tested:'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Playground中，有两个主要的模型系列可以进行测试：
 - en: '**GPT-3**: A set of models that can understand and generate natural language.
     GPT-3 has been trained on a large corpus of text and can perform a wide range
     of natural language tasks such as language translation, summarization, question-answering,
     and more. Here is an example:'
+  id: totrans-50
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**GPT-3**：一组能够理解和生成自然语言的模型。GPT-3已经在大量文本语料库上进行了训练，可以执行各种自然语言任务，如语言翻译、摘要、问答等。这里是一个例子：'
 - en: '![Figure 2.5 – An example of a summarization task with GPT-3](img/Figure_2.5_B19904.jpg)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.5 – 使用GPT-3进行摘要任务的示例](img/Figure_2.5_B19904.jpg)'
 - en: Figure 2.5 – An example of a summarization task with GPT-3
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.5 – 使用GPT-3进行摘要任务的示例
 - en: '**GPT-3.5**: This is a newer set of models that build upon GPT-3 and aim to
     improve its natural language understanding and generation abilities. GPT-3.5 models
     can perform complex natural language tasks such as composing coherent paragraphs
     or essays, generating poetry, and even creating computer programs in natural language.
     GPT-3.5 is the model behind ChatGPT and, on top of its API, it is also consumable
     within the Playground with a dedicated UI:'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '**GPT-3.5**: 这是在GPT-3基础上构建的新一代模型，旨在提高其自然语言理解和生成能力。GPT-3.5模型可以执行复杂的自然语言任务，如撰写连贯的段落或文章，生成诗歌，甚至以自然语言创建计算机程序。GPT-3.5是ChatGPT背后的模型，在其API上，它还可以通过专门的UI在Playground中消耗：'
 - en: '![Figure 2.6 – An example of interaction with GPT-3.5](img/Figure_2.6_B19904.jpg)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.6 – 使用GPT-3.5进行交互的示例](img/Figure_2.6_B19904.jpg)'
 - en: Figure 2.6 – An example of interaction with GPT-3.5
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.6 – 使用GPT-3.5进行交互的示例
 - en: '**Codex**: A set of models that can understand and generate code in various
     programming languages. Codex can translate natural language prompts into working
     code, making it a powerful tool for software development. Here is an example using
     Codex:'
+  id: totrans-56
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Codex**: 一组能够理解和生成各种编程语言代码的模型。Codex可以将自然语言提示转换为可运行的代码，使其成为软件开发的强大工具。以下是使用Codex的例子：'
 - en: '![Figure 2.7 – An example of code generation with Codex](img/Figure_2.7_B19904.jpg)'
+  id: totrans-57
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.7 – 使用Codex生成代码的示例](img/Figure_2.7_B19904.jpg)'
 - en: Figure 2.7 – An example of code generation with Codex
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.7 – 使用Codex生成代码的示例
 - en: Note
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 注
 - en: In March 2023, OpenAI announced that Codex models will be deprecated from that
     date on. This is because of the incredible capabilities of the new chat models
     (including GPT-3.5-turbo, the model behind ChatGPT) that encompass coding tasks
     as well, with results that benchmark or even surpass Codex models’ ones.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 在2023年3月，OpenAI宣布Codex模型将从该日期起被弃用。原因是新的聊天模型（包括ChatGPT背后的模型GPT-3.5-turbo）的不可思议的能力，这些模型还可以涵盖编码任务，并且其结果可以达到或甚至超过Codex模型的结果。
 - en: 'For each model, you can also play with some parameters that you can configure.
     Here is a list:'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每个模型，你还可以调整一些可配置的参数。以下是一个列表：
 - en: '**Temperature** (ranging from 0 to 1): This controls the randomness of the
     model’s response. A low-level temperature makes your model more deterministic,
     meaning that it will tend to give the same output to the same question. For example,
@@ -289,187 +415,268 @@
     0, it will always give the same answer. On the other hand, if I do the same with
     a model with temperature set to 1, it will try to modify its answers each time
     in terms of wording and style.'
+  id: totrans-62
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**温度**（从0到1）：控制模型响应的随机性。低温度使你的模型更加确定性，意味着它会倾向于给出相同的输出作为同样的问题。例如，如果我多次问我的模型，“OpenAI是什么？”并将温度设置为0，它总是会给出相同的答案。另一方面，如果我使用温度设置为1的模型做同样的事情，它将试图通过措辞和风格在每次都修改它的答案。'
 - en: '**Max length** (ranging from 0 to 2048): This controls the length (in terms
     of tokens) of the model’s response to the user’s prompt.'
+  id: totrans-63
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**最大长度**（从0到2048）：控制模型对用户提示的响应的长度（以标记为单位）。'
 - en: '**Stop sequences** (user input): This makes responses end at the desired point,
     such as the end of a sentence or list.'
+  id: totrans-64
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**停止序列**（用户输入）: 这会使得回应在期望的地方结束，比如句子或列表的结尾。'
 - en: '**Top probabilities** (ranging from 0 to 1): This controls which tokens the
     model will consider when generating a response. Setting this to 0.9 will consider
     the top 90% most likely of all possible tokens. One could ask, "W*hy not set top
     probabilities as 1 so that all the most likely tokens are chosen?*" The answer
     is that users might still want to maintain variety when the model has low confidence,
     even in the highest-scoring tokens.'
+  id: totrans-65
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**顶部概率**（从0到1）：控制模型在生成回应时将考虑哪些标记。将其设置为0.9将考虑所有可能标记中最有可能的前90%。也许你会问，“为什么不将顶部概率设置为1，这样就可以选择所有最有可能的标记？”答案是用户可能仍然希望在模型信心较低时保持多样性，即使在得分最高的标记中。'
 - en: '**Frequency penalty** (ranging from 0 to 1): This controls the repetition of
     the same tokens in the generated response. The higher the penalty, the lower the
     probability of seeing the same tokens more than once in the same response. The
     penalty reduces the chance proportionally, based on how often a token has appeared
     in the text so far (this is the key difference from the following parameter).'
+  id: totrans-66
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**频率惩罚**（从0到1）：控制生成的回应中相同标记的重复频率。惩罚越高，出现相同标记在回应中的概率就越低。该惩罚通过标记在文本中迄今为止出现的频率来比例减少概率（这是与下一个参数的关键区别）。'
 - en: '**Presence penalty** (ranging from 0 to 2): This is similar to the previous
     one but stricter. It reduces the chance of repeating any token that has appeared
     in the text at all so far. As it is stricter than the frequency penalty, the presence
     penalty also increases the likelihood of introducing new topics in a response.'
+  id: totrans-67
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**存在惩罚**（范围从0到2）：这类似于上一个，但更严格。它减少了出现在文本中的任何一个标记的重复机会。由于比频率惩罚更严格，存在惩罚也增加了在回应中引入新主题的可能性。'
 - en: '**Best of** (ranging from 0 to 20): This generates multiple responses and displays
     only the one with the best total probability across all its tokens.'
+  id: totrans-68
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**最佳**（范围从0到20）：这将生成多个回应，并仅显示所有标记的总概率最佳的回应。'
 - en: '**Pre- and post-response text** (user input): This inserts text before and
     after the model’s response. This can help prepare the model for a response.'
+  id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**回应前后文本**（用户输入）：这在模型回应之前和之后插入文本。这可以帮助模型准备回应。'
 - en: 'Besides trying OpenAI models in the Playground, you can always call the models
     API in your custom code and embed models into your applications. Indeed, in the
     right corner of the Playground, you can click on **View code** and export the
     configuration as shown here:'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了在 Playground 中尝试 OpenAI 模型，您还可以在自定义代码中调用模型 API 并将模型嵌入到您的应用程序中。实际上，在 Playground
+    的右上角，您可以点击**查看代码**并导出如下所示的配置：
 - en: '![Figure 2.8 – Python code for calling a GPT3 model with a natural language
     prompt](img/Figure_2.8_B19904.jpg)'
+  id: totrans-71
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.8 - 使用自然语言提示调用GPT3模型的Python代码](img/Figure_2.8_B19904.jpg)'
 - en: Figure 2.8 – Python code for calling a GPT3 model with a natural language prompt
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.8 - 使用自然语言提示调用GPT3模型的Python代码
 - en: As you can see from the preceding screenshot, the code exports the parameter
     configuration you set in the Playground.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 如您从前述屏幕截图中所见，该代码导出了您在Playground中设置的参数配置。
 - en: 'Now you can start using the OpenAI library in Python by installing it via `pip
     install openai` in your terminal. In order to use the models, you will need to
     generate an API key. You can find your API keys ([https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys))
     in your account settings, as shown here:'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，您可以通过在终端中使用`pip install openai`来安装Python中的OpenAI库来开始使用。为了使用模型，您需要生成一个API密钥。您可以在您的账户设置中找到您的API密钥（[https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)），如下所示：
 - en: '![Figure 2.9 – API keys in the account settings page of your OpenAI profile](img/Figure_2.9_B19904.jpg)'
+  id: totrans-75
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.9 - 您OpenAI配置文件中帐户设置页面中的API密钥](img/Figure_2.9_B19904.jpg)'
 - en: Figure 2.9 – API keys in the account settings page of your OpenAI profile
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.9 - 您OpenAI配置文件中帐户设置页面中的API密钥
 - en: 'With OpenAI APIs, you can also try the following additional model families
     that are not available in the Playground:'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用OpenAI API，您还可以尝试以下在Playground中不可用的其他模型系列：
 - en: '**Moderation**: This is a fine-tuned model developed by OpenAI that can detect
     potentially sensitive or unsafe text content. Moderation uses ML algorithms to
     classify text as safe or unsafe based on its context and language use. This model
     can be used to automate content moderation on social media platforms, online communities,
     and in many other domains. There are multiple categories, such as hate, hate/threatening,
     self-harm, sexual, sexual/minors, violence, violence/graphic.'
+  id: totrans-78
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**审查**：这是由OpenAI开发的经过调整的模型，可以检测潜在的敏感或不安全的文本内容。审查使用机器学习算法根据上下文和语言使用对文本进行分类为安全或不安全。此模型可用于在社交媒体平台、在线社区及其他许多领域自动化内容审查。有多个类别，如仇恨、仇恨/威胁、自残、性暴力、性暴力/未成年人、暴力、暴力/图形。'
 - en: 'Here is example code for the Moderation API:'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是审查API的示例代码：
 - en: '[PRE0]'
+  id: totrans-80
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: 'The output for this is as follows:'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 其输出如下所示：
 - en: '[PRE1]'
+  id: totrans-82
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: In this case, the Moderator API detected evidence of violent content.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，审查API检测到暴力内容的证据。
 - en: '**Embeddings**: Some models can use embeddings. These embeddings involve representing
     words or sentences in a multi-dimensional space. The mathematical distances between
     different instances in this space represent their similarity in terms of meaning.
     As an example, imagine the words queen, woman, king, and man. Ideally, in our
     multidimensional space, where words are vectors, if the representation is correct,
     we want to achieve the following:'
+  id: totrans-84
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**嵌入**：一些模型可以使用嵌入。这些嵌入涉及在多维空间中表示单词或句子。在这个空间中不同实例之间的数学距离表示它们在意义上的相似性。举个例子，想象单词queen、woman、king和man。理想情况下，在我们的多维空间中，如果表示正确，我们希望实现以下内容：'
 - en: '![Figure 2.10 – Example of vectorial equations among words](img/Figure_2.10_B19904.jpg)'
+  id: totrans-85
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.10 – 单词之间的矢量方程示例](img/Figure_2.10_B19904.jpg)'
 - en: Figure 2.10 – Example of vectorial equations among words
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.10 – 单词之间的矢量方程示例
 - en: 'This means that the distance between *woman* and *man* should be equal to the
     distance between *queen* and *king*. Here is an example of an embedding:'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着*女人*和*男人*之间的距离应该等于*女王*和*国王*之间的距离。这里是一个嵌入的例子：
 - en: '[PRE2]'
+  id: totrans-88
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'The preceding method creates a vector representation of the input. We can have
     a look at the first 10 vectors of the output here:'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 前面的方法创建了输入的向量表示。我们可以在这里查看输出的前10个向量。
 - en: '[PRE3]'
+  id: totrans-90
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: Embeddings can be extremely useful in intelligent search scenarios. Indeed,
     by getting the embedding of the user input and the documents the user wants to
     search, it is possible to compute distance metrics (namely, cosine similarity)
     between the input and the documents. By doing so, we can retrieve the documents
     that are *closer*, in mathematical distance terms, to the user input.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 嵌入在智能搜索场景中可以极其有用。事实上，通过获取用户输入和用户想要搜索的文档的嵌入，可以计算距离度量（即余弦相似度）来衡量输入和文档之间的距离。通过这样做，我们可以检索与用户输入在数学距离上更*接近*的文档。
 - en: '**Whisper**: This is a speech recognition model that can transcribe audio into
     text. Whisper can recognize and transcribe various languages and dialects with
     high accuracy, making it a valuable tool for automated speech recognition systems.
     Here is an example:'
+  id: totrans-92
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Whisper**：这是一个语音识别模型，可以将音频转录为文本。Whisper可以识别和转录各种语言和方言，准确率很高，是自动语音识别系统的有价值的工具。这里是一个例子：'
 - en: '[PRE4]'
+  id: totrans-93
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: '[PRE5]'
+  id: totrans-94
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: '[PRE6]'
+  id: totrans-95
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: '[PRE7]'
+  id: totrans-96
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: '[PRE8]'
+  id: totrans-97
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: 'The output looks like the following:'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 输出如下所示：
 - en: '[PRE9]'
+  id: totrans-99
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: All the previous models come as pre-built, in the sense that they have already
     been pre-trained on a huge knowledge base.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有先前的模型都是预先构建的，也就是说它们已经在一个庞大的知识库上进行了预训练。
 - en: However, there are some ways you can make your model more customized and tailored
     for your use case.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，有一些方法可以使您的模型更加定制化，以适应您的用例。
 - en: The first method is embedded in the way the model is designed, and it involves
     providing your model with the context in the **few-learning approach** (we will
     focus on this technique later on in the book). Namely, you could ask the model
@@ -477,23 +684,33 @@
     already written. For this, you can provide the model with your query of generating
     an article *and* the former article as a reference or context, so that the model
     is better prepared for your request.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一种方法嵌入在模型设计的方式中，它涉及在**few-learning方法**中为您的模型提供上下文（我们将在本书的后面重点介绍这种技术）。换句话说，您可以要求模型生成一篇文章，其模板和词汇回忆您已经写过的另一篇文章。为此，您可以向模型提供您的查询生成一篇文章*和*以前的文章作为参考或上下文，以便模型更好地为您的请求做好准备。
 - en: 'Here is an example of it:'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是一个例子：
 - en: '![Figure 2.11 – An example of a conversation within the OpenAI Playground with
     the few-shot learning approach](img/Figure_2.11_B19904.jpg)'
+  id: totrans-104
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.11 – OpenAI Playground中使用few-shot learning方法进行对话的示例](img/Figure_2.11_B19904.jpg)'
 - en: Figure 2.11 – An example of a conversation within the OpenAI Playground with
     the few-shot learning approach
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.11 – OpenAI Playground中使用few-shot learning方法进行对话的示例
 - en: The second method is more sophisticated and is called **fine-tuning**. Fine-tuning
     is the process of adapting a pre-trained model to a new task.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二种方法更为复杂，被称为**微调**。微调是将预训练模型适应新任务的过程。
 - en: 'In fine-tuning, the parameters of the pre-trained model are altered, either
     by adjusting the existing parameters or by adding new parameters, to better fit
     the data for the new task. This is done by training the model on a smaller labeled
@@ -501,321 +718,464 @@
     leverage the knowledge learned from the pre-trained model and fine-tune it to
     the new task, rather than training a model from scratch. Have a look at the following
     figure:'
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 在微调中，预训练模型的参数被改变，要么通过调整现有参数，要么通过添加新参数，以更好地适应新任务的数据。这是通过在特定于新任务的较小标记数据集上训练模型来实现的。微调的关键思想是利用从预训练模型中学到的知识，并将其微调到新任务，而不是从头开始训练模型。请看下面的图：
 - en: '![Figure 2.12 – Model fine-tuning](img/Figure_2.12_B19904.jpg)'
+  id: totrans-108
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.12 – 模型微调](img/Figure_2.12_B19904.jpg)'
 - en: Figure 2.12 – Model fine-tuning
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.12 – 模型微调
 - en: 'In the preceding figure, you can see a schema on how fine-tuning works on OpenAI
     pre-built models. The idea is that you have available a pre-trained model with
     general-purpose weights or parameters. Then, you feed your model with custom data,
     typically in the form of *key-value* prompts and completions as shown here:'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 在前图中，你可以看到关于如何在 OpenAI 预构建模型上进行精调的模式图。其思想是你可以使用通用参数或权重的预训练模型。然后，你用自定义数据喂养你的模型，通常以*键-值*提示和完成的形式，如下所示：
 - en: '[PRE10]'
+  id: totrans-111
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: Once the training is done, you will have a customized model that performs particularly
     well for a given task, for example, the classification of your company’s documentation.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练完成后，你将会得到一个定制化模型，对于给定任务表现特别出色，例如，对公司文档进行分类。
 - en: The nice thing about fine-tuning is that you can make pre-built models tailored
     to your use cases, without the need to re-train them from scratch, yet leveraging
     smaller training datasets and hence less training time and computing. At the same
     time, the model keeps its generative power and accuracy learned via the original
     training, the one that occurred on the massive dataset.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 精调的好处在于，你可以根据自己的用例定制预构建模型，无需从头开始重新训练，但是可以利用更小的训练数据集，因此训练时间和计算量更少。与此同时，模型保持其生成能力和通过原始训练学习的准确性，这是在大规模数据集上发生的。
 - en: In this paragraph, we got an overview of the models offered by OpenAI to the
     general public, from those you can try directly in the Playground (GPT, Codex)
     to more complex models such as embeddings. We also learned that, besides using
     models in their pre-built state, you can also customize them via fine-tuning,
     providing a set of examples to learn from.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这一段中，我们对 OpenAI 提供给一般公众的模型进行了概述，从你可以直接在 Playground 中尝试的模型（GPT、Codex）到如嵌入等更复杂的模型。我们还了解到，除了使用预构建模型之外，你还可以通过精调进行定制化，提供一组示例供学习。
 - en: In the following sections, we are going to focus on the background of those
     amazing models, starting from the math behind them and then getting to the great
     discoveries that made ChatGPT possible.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 在接下来的章节中，我们将专注于这些惊人模型的背景，从它们背后的数学开始，然后深入探讨使 ChatGPT 成为可能的重大发现。
 - en: 'Road to ChatGPT: the math of the model behind it'
+  id: totrans-116
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: ChatGPT 之路：其背后的模型数学
 - en: Since its foundation in 2015, OpenAI has invested in the research and development
     of the class of models called **Generative Pre-trained Transformers** (**GPT**),
     and they have captured everyone’s attention as being the engine behind ChatGPT.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 自 2015 年成立以来，OpenAI 投资于研究和开发一类被称为**生成式预训练变压器**（**GPT**）的模型，并且它们作为 ChatGPT 背后的引擎已经引起了大家的关注。
 - en: GPT models belong to the architectural framework of transformers introduced
     in a 2017 paper by Google researchers, *Attention Is All* *You Need*.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT 模型属于变压器结构框架，此框架于 2017 年由 Google 研究员在一篇论文中介绍，*Attention Is All You Need*。
 - en: The transformer architecture was introduced to overcome the limitations of traditional
     **Recurrent Neural Networks** (**RNNs**). RNNs were first introduced in the 1980s
     by researchers at the Los Alamos National Laboratory, but they did not gain much
     attention until the 1990s. The original idea behind RNNs was that of processing
     sequential data or time series data, keeping information across time steps.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 变压器架构是为了克服传统**循环神经网络**（**RNNs**）的局限性而引入的。RNNs 首次在 1980 年代由洛斯阿拉莫斯国家实验室的研究人员提出，但直到
+    1990 年代它们才引起了人们的关注。RNNs 背后的最初想法是处理顺序数据或时间序列数据，跨时间步保留信息。
 - en: Indeed, up to that moment in time, the classic **Artificial Neural Network**
     (**ANN**) architecture was that of the feedforward ANN, where the output of each
     hidden layer is the input of the next one, without maintaining information about
     past layers.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 确实，直到那一时刻，经典的**人工神经网络**（**ANN**）结构是前馈 ANN 的结构，其中每个隐藏层的输出是下一个隐藏层的输入，没有保留有关过去层的信息。
 - en: 'In order to understand the idea behind the transformer, we need to start from
     its origins. We will hence dwell on the following topics:'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了理解变压器背后的思想，我们需要从它的起源开始。因此，我们将深入探讨以下主题：
 - en: The structure of RNNs
+  id: totrans-122
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: RNN 的结构
 - en: RNNs’ main limitations
+  id: totrans-123
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: RNN 的主要局限性
 - en: How those limitations have been overcome with the introduction of new architectural
     elements, including positional encoding, self-attention, and the feedforward layer
+  id: totrans-124
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如何通过引入新的架构元素（包括位置编码、自注意力和前馈层）克服这些局限性
 - en: How we got to the state of the art of GPT and ChatGPT
+  id: totrans-125
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们如何达到 GPT 和 ChatGPT 的最先进技术
 - en: Let’s start with the architecture of transformers’ predecessors.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们从变压器的前身架构开始。
 - en: The structure of RNNs
+  id: totrans-127
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: RNN的结构
 - en: 'Let’s imagine we want to predict a house price. If we had only today’s price
     for it, we could use a feedforward architecture where we apply a non-linear transformation
     to the input via a hidden layer (with an activation function) and get as output
     the forecast of the price for tomorrow. Here is how:'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们想象我们想要预测房价。如果我们只有今天的价格，我们可以使用一个前馈架构，通过隐藏层（带有激活函数）对输入进行非线性转换，并得到明天价格的预测输出。具体如下：
 - en: '![Figure 2.13 – Feedforward architecture with a hidden layer](img/Figure_2.13_B19904.jpg)'
+  id: totrans-129
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.13 – 具有隐藏层的前馈架构](img/Figure_2.13_B19904.jpg)'
 - en: Figure 2.13 – Feedforward architecture with a hidden layer
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.13 – 具有隐藏层的前馈架构
 - en: However, for this kind of data, it is also likely to have the availability of
     longer sequences. For example, we might have the time series of this house for
     the next 5 years. Of course, we want to embed this extra information we have into
     our model so that our RNN is able to keep the memory about past input in order
     to properly interpret current input and forecast future outputs.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，对于这种类型的数据，也很可能有更长的序列可用。例如，我们可能有未来5年的这栋房子的时间序列。当然，我们希望将我们拥有的额外信息嵌入到我们的模型中，以便我们的RNN能够保持过去输入的记忆，以正确解释当前输入并预测未来输出。
 - en: 'So, coming back to our example, imagine we not only have the price for today
     but also the price for yesterday **(t-1)** and the day before **(t-2)**. This
     is how we can calculate it:'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，回到我们的例子，想象我们不仅有今天的价格，还有昨天的价格**(t-1)**和前一天的价格**(t-2)**。这是我们如何计算的：
 - en: '![Figure 2.14 – Example of an RNN](img/Figure_2.14_B19904.jpg)'
+  id: totrans-133
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.14 – RNN示例](img/Figure_2.14_B19904.jpg)'
 - en: Figure 2.14 – Example of an RNN
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.14 – RNN示例
 - en: Since we are only interested in tomorrow’s price, let’s ignore the intermediate
     final outputs for *t-1* and *t*.
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于我们只关心明天的价格，让我们忽略*t-1*和*t*的中间最终输出。
 - en: '![Figure 2.15 – Example of an RNN](img/Figure_2.15_B19904.jpg)'
+  id: totrans-136
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.15 – RNN示例](img/Figure_2.15_B19904.jpg)'
 - en: Figure 2.15 – Example of an RNN
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.15 – RNN示例
 - en: As you can see, the output of the hidden layer of **t-2** is served as a (weighted)
     input of the hidden layer of **t-1**, which also takes the input of **t-1**. Then,
     the output of the hidden layer at **t-1**, which already keeps the memory of **t-2**
     and **t-1** inputs, is served as input to the hidden layer of **t**. As a result,
     the price for tomorrow (**y**t+1), which is the one we are interested in, brings
     the memory of all the previous days’ inputs.
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 如您所见，**t-2**的隐藏层输出作为**t-1**的隐藏层的（加权）输入，同时也接受**t-1**的输入。然后，**t-1**的隐藏层输出，已经保留了**t-2**和**t-1**输入的记忆，作为**t**的隐藏层的输入。因此，我们感兴趣的明天价格（**y**t+1）带有所有先前几天输入的记忆。
 - en: 'Finally, if we want to shrink this picture, we can think about the RNN as follows:'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，如果我们想要缩小这张图片，我们可以将RNN看作如下：
 - en: '![Figure 2.16 – Example of an RNN in its wrapped form](img/Figure_2.16_B19904.jpg)'
+  id: totrans-140
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.16 – RNN的包装形式示例](img/Figure_2.16_B19904.jpg)'
 - en: Figure 2.16 – Example of an RNN in its wrapped form
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.16 – RNN的包装形式示例
 - en: This means that the output of the RNN layer at time step *t-n* is then produced
     and passed as input to the next time step. The hidden state of the RNN layer is
     also passed as input to the next time step, allowing the network to maintain and
     propagate information across different parts of the input sequence.
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 这意味着RNN层在时间步*t-n*的输出然后被产生并传递为下一个时间步的输入。RNN层的隐藏状态也作为下一个时间步的输入传递，使网络能够在输入序列的不同部分之间保持和传播信息。
 - en: Even though RNNs were a great development in the field of ANN, they still suffer
     from some limitations, which we are going to examine in the next section.
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管RNN在人工神经网络领域是一项重大进展，但它们仍然存在一些限制，我们将在下一节中进行探讨。
 - en: The main limitations of RNNs
+  id: totrans-144
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: RNN的主要限制
 - en: 'As mentioned in the introduction of this section, RNNs suffer from three main
     limitations:'
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 如本节介绍所述，RNNs存在三个主要限制：
 - en: '**Gradient vanishing and exploding**: RNNs suffer from the problem of gradient
     vanishing and exploding, which makes it difficult to train the network effectively.
     This problem occurs because the gradients are multiplied multiple times during
     the backpropagation process, which can cause the gradients to become very small
     or very large.'
+  id: totrans-146
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**梯度消失和爆炸**：RNNs存在梯度消失和爆炸的问题，这使得有效训练网络变得困难。这个问题发生在反向传播过程中梯度被多次相乘，导致梯度变得非常小或非常大。'
 - en: '**Limited context**: Traditional RNNs are only able to capture a limited amount
     of context, as they process the input sequence one element at a time. This means
     that they are not able to effectively process long-term dependencies or relationships
     between elements that are far apart in the input sequence.'
+  id: totrans-147
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**有限的上下文**：传统的RNN只能捕捉有限数量的上下文，因为它们一次处理输入序列的一个元素。这意味着它们无法有效处理长期依赖关系或输入序列中相距较远的元素之间的关系。'
 - en: '**Difficulty in parallelization**: RNNs are inherently sequential, which makes
     it difficult to parallelize their computation, hence they do not make great use
     of today’s **Graphical Processing Units** (**GPUs**). This can make them slow
     to train and deploy on large-scale datasets and devices.'
+  id: totrans-148
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**并行化困难**：RNN本质上是顺序的，这使得并行化它们的计算变得困难，因此它们无法充分利用今天的**图形处理单元**（**GPU**）。这可能导致它们在大规模数据集和设备上训练和部署变慢。'
 - en: A first attempt to overcome the first two limitations (limited context and vanishing
     and exploding gradient) occurred in 1997 when a new architecture was introduced
     by Sepp Hochreiter and Jürgen Schmidhuber in their paper, *Long Short-term Memory*.
     Networks with this new architecture were then called **Long Short-Term** **Memory**
     (**LSTM**).
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 1997年，Sepp Hochreiter和Jürgen Schmidhuber在他们的论文《长短期记忆》中引入了一种新的架构，试图克服前两个限制（有限的上下文和梯度消失和梯度爆炸）。
 - en: LSTM networks overcome the problem of limited context by introducing the concept
     of a cell state, which is separate from the hidden state and is able to maintain
     information for much longer periods. The cell state is passed through the network
     unchanged, allowing it to store information from previous time steps that would
     otherwise be lost.
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: LSTM网络通过引入细胞状态的概念来克服有限上下文的问题，该状态与隐藏状态分开，能够长时间保持信息。细胞状态在网络中保持不变传递，使其能够存储从以前时间步丢失的信息。
 - en: Furthermore, LSTM networks overcome the problem of vanishing and exploding gradients
     by using carefully designed gates to control the flow of information in and out
     of the cell, which helps to prevent gradients from becoming too small or too large.
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，LSTM网络通过使用精心设计的门控来控制信息在细胞内外的流动，从而克服了梯度消失和梯度爆炸的问题，这有助于防止梯度变得过小或过大。
 - en: However, LSTM networks still maintain the problem of lack of parallelization
     and hence slow training time (even slower than RNNs since they are more complex).
     The goal is to have a model that is able to use parallelization even on sequential
     data.
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，LSTM网络仍然存在并行化不足的问题，因此训练时间较慢（甚至比RNN更复杂，因此更慢）。目标是拥有一个能够在顺序数据上实现并行化的模型。
 - en: To overcome those limitations, a new framework was introduced.
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了克服这些限制，引入了一种新的框架。
 - en: Overcoming limitations – introducing transformers
+  id: totrans-154
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 克服限制 - 引入transformers
 - en: The transformer architecture addresses these limitations by replacing the recurrence
     (with a self-attention mechanism), allowing for parallel computation and capturing
     long-term dependencies.
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: Transformer架构通过替换循环（使用自注意机制）来解决这些限制，允许并行计算并捕捉长期依赖关系。
 - en: '![Figure 2.7 – Transformer architecture from the original paper, “Attention
     is all you need.” Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones,
     L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need.
     ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.17_B19904.jpg)'
+  id: totrans-156
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.7 - 来自原始论文“注意力就是你所需要的”的Transformer架构。Vaswani, A., Shazeer, N., Parmar,
+    N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017).
+    Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.17_B19904.jpg)'
 - en: Figure 2.7 – Transformer architecture from the original paper, “Attention is
     all you need.” Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L.,
     Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need.
     ArXiv. https://doi.org/10.48550/arXiv.1706.03762
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.7 - 来自原始论文“注意力就是你所需要的”的Transformer架构。Vaswani, A., Shazeer, N., Parmar, N.,
+    Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention
+    Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762
 - en: 'In the preceding figure (taken from the original paper), you can see that there
     are two main building blocks: on the left-hand side, we have the “encoder,” which
     has the task of representing the input in a lower-dimensional space; on the right-hand
     side, we have the “decoder,” which has the task of translating the lower-dimensional
     data provided by the encoder back to the original data format.'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上述图中（摘自原始论文），您可以看到有两个主要的构建模块：左侧是“编码器”，其任务是将输入表示为较低维空间；右侧是“解码器”，其任务是将编码器提供的较低维数据翻译回原始数据格式。
 - en: 'Both the encoder and the decoder share three main types of layers that distinguish
     the transformer architecture: positional encoding, self-attention, and feedforward.'
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 编码器和解码器共享三种主要类型的层，区分了Transformer架构：位置编码、自注意力和前馈。
 - en: Let us understand each of these in the following sections.
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们在以下部分了解每一个。
 - en: Positional encoding
+  id: totrans-161
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 位置编码
 - en: 'Encoders are layers that transform natural language input into numerical vectors.
     This is achieved thanks to the process of embedding, an NLP technique that represents
     words with vectors in such a way that once represented in a vectorial space, the
     mathematical distance between vectors is representative of the similarity among
     words they represent. Have a look at the following figure:'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 编码器是将自然语言输入转换为数字向量的层。这得益于嵌入的过程，这是一种NLP技术，它用向量表示单词，使得一旦在向量空间中表示，向量之间的数学距离代表了它们所代表的单词之间的相似性。请看下图：
 - en: '![Figure 2.18 –  Transformer architecture from the original paper, “Attention
     is all you need.” Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones,
     L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need.
     ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.18_B19904.jpg)'
+  id: totrans-163
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.18 – 《注意力就是你所需要的》原始论文中的Transformer架构。Vaswani, A., Shazeer, N., Parmar,
+    N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017).
+    Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.18_B19904.jpg)'
 - en: Figure 2.18 – Transformer architecture from the original paper, “Attention is
     all you need.” Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L.,
     Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need.
     ArXiv. https://doi.org/10.48550/arXiv.1706.03762
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.18 – 《注意力就是你所需要的》原始论文中的Transformer架构。Vaswani, A., Shazeer, N., Parmar, N.,
+    Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention
+    Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762
 - en: As we talk about the meaning of sentences, we all agree that the arrangement
     of words in a sentence is significant in determining its meaning. That is the
     reason why we want our encoder to take into account that order, to be *positional*.
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们谈论句子的含义时，我们都同意句子中单词的排列对于确定其含义是重要的。这就是为什么我们希望我们的编码器考虑到这种顺序，是*位置*的原因。
 - en: The positional encoding is a fixed, learned vector that represents the position
     of a word in the sequence. It is added to the embedding of the word so that the
     final representation of a word includes both its meaning and its position.
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 位置编码是一个固定的、可学习的向量，表示单词在序列中的位置。它被添加到单词的嵌入中，使得单词的最终表示包括其含义和位置。
 - en: Self-attention
+  id: totrans-167
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 自注意力
 - en: Self-attention layers are responsible for determining the importance of each
     input token in generating the output. They answer the question, "W*hich part of
     the input should I* *focus on?*"
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 自注意力层负责确定生成输出时每个输入标记的重要性。它们回答了这个问题，“*我应该关注输入的哪一部分？*”
 - en: '![Figure 2.19 –  Transformer architecture from the original paper, “Attention
     is all you need.” Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones,
     L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need.
     ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.19_B19904.jpg)'
+  id: totrans-169
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.19 – 《注意力就是你所需要的》原始论文中的Transformer架构。Vaswani, A., Shazeer, N., Parmar,
+    N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017).
+    Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.19_B19904.jpg)'
 - en: Figure 2.19 – Transformer architecture from the original paper, “Attention is
     all you need.” Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L.,
     Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need.
     ArXiv. https://doi.org/10.48550/arXiv.1706.03762
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.19 – 《注意力就是你所需要的》原始论文中的Transformer架构。Vaswani, A., Shazeer, N., Parmar, N.,
+    Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention
+    Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762
 - en: In order to obtain the self-attention vector for a sentence, the elements we
     need are *value*, *query*, and *key*. These matrices are used to calculate attention
     scores between the elements in the input sequence and are the three weight matrices
     that are learned during the training process (typically initialized with random
     values).
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了获得一个句子的自注意力向量，我们需要的元素是*值*，*查询*和*键*。这些矩阵用于计算输入序列中元素之间的注意力得分，并且是在训练过程中学习的三个权重矩阵（通常初始化为随机值）。
 - en: '**Query** is used to represent the current focus of the attention mechanism,
     while **key** is used to determine which parts of the input should be given attention,
     and **value** is used to compute the context vectors. Those matrices are then
@@ -824,91 +1184,130 @@
     in a transformed, context-aware manner, which allows the transformer to attend
     to different parts of the input depending on the task at hand. Here is how we
     can depict the matrices’ multiplication:'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: '**查询**用于表示注意力机制的当前焦点，而**键**用于确定应该受到注意的输入部分，**值**用于计算上下文向量。然后这些矩阵相乘，并通过非线性变换传递（使用softmax函数）。自注意力层的输出以一种转换的、具有上下文意识的方式表示输入值，这使得Transformer可以根据手头任务关注输入的不同部分。这是如何描述矩阵相乘的过程：'
 - en: '![Figure 2.20 – Representation of query, key, and value matrice multiplication
     to obtain the context vector](img/Figure_2.20_B19904.jpg)'
+  id: totrans-173
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.20 - 查询，键和值矩阵相乘以获得上下文向量的表示](img/Figure_2.20_B19904.jpg)'
 - en: Figure 2.20 – Representation of query, key, and value matrice multiplication
     to obtain the context vector
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.20 - 查询，键和值矩阵相乘以获得上下文向量的表示
 - en: Note that, in the architecture proposed by the author of the paper, *Attention
     is all you need*, the attention layer is referred to as **multi-headed attention**.
     Multi-headed attention is nothing but a mechanism in which multiple self-attention
     mechanisms operate in parallel on different parts of the input data, producing
     multiple representations. This allows the transformer model to attend to different
     parts of the input data in parallel and aggregate information from multiple perspectives.
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意，在论文作者提出的架构中，“注意力就是你需要的”，注意力层被称为**多头注意力**。多头注意力实际上是一种机制，多个自注意力机制并行处理输入数据的不同部分，生成多个表示。这允许Transformer模型同时关注输入数据的不同部分并从多个角度汇总信息。
 - en: Once the parallel outputs of the attention layers are ready, they are then concatenated
     and processed by a feedforward layer.
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦注意力层的并行输出准备就绪，它们将被串联并通过前馈层进行处理。
 - en: Feedforward layers
+  id: totrans-177
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 前馈层
 - en: Feedforward layers are responsible for transforming the output of the self-attention
     layers into a suitable representation for the final output.
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: 前馈层负责将自注意力层的输出转换为最终输出的合适表示。
 - en: '![Figure 2.21 –  Transformer architecture from the original paper, “Attention
     is all you need.” Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones,
     L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need.
     ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.21_B19904.jpg)'
+  id: totrans-179
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.21 - “注意力就是你需要的”原始论文中的Transformer架构。Vaswani, A., Shazeer, N., Parmar,
+    N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017).
+    注意力就是你需要的. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.21_B19904.jpg)'
 - en: Figure 2.21 – Transformer architecture from the original paper, “Attention is
     all you need.” Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L.,
     Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need.
     ArXiv. https://doi.org/10.48550/arXiv.1706.03762
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.21 - “注意力就是你需要的”原始论文中的Transformer架构。Vaswani, A., Shazeer, N., Parmar, N.,
+    Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention
+    Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762
 - en: 'The feedforward layers are the main building blocks of the transformer architecture
     and consist of two main elements:'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: 前馈层是Transformer架构的主要构件，并包括两个主要元素：
 - en: '**Fully connected layer** (also known as a dense layer): This is a type of
     layer where every neuron in the layer is connected to every neuron in the preceding
     layer. In other words, each input from the previous layer is connected to each
     neuron in the current layer, and each neuron in the current layer contributes
     to the output of all neurons in the next layer. Each neuron in the dense layer
     calculates a weighted sum of its inputs via linear transformations.'
+  id: totrans-182
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**全连接层**（也称为密集层）：这是一种每个神经元与前一层中的每个神经元相连接的层类型。换句话说，来自前一层的每个输入都连接到当前层中的每个神经元，并且当前层中的每个神经元都对下一层中所有神经元的输出有贡献。密集层中的每个神经元通过线性变换计算其输入的加权和。'
 - en: '**Activation function**: This is a non-linear function that is applied to the
     output of the fully connected layer. The activation function is used to introduce
     non-linearity into the output of a neuron, which is necessary for the network
     to learn complex patterns and relationships in the input data. In the case of
     GPT, the activation function is the ReLU.'
+  id: totrans-183
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**激活函数**：这是应用于全连接层输出的非线性函数。激活函数用于向神经元的输出引入非线性，这对于网络学习输入数据中的复杂模式和关系是必要的。在 GPT
+    的情况下，激活函数是 ReLU。'
 - en: The output from the feedforward layer is then used as input to the next layer
     in the network.
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: 前馈层的输出然后被用作网络中下一层的输入。
 - en: 'In the following figure, we can see an example of a generic feedforward layer
     taking as input a 2D vector, performing linear operations in the dense layer using
     the trained weights, and then applying a non-linear transformation to the output
     with a ReLU activation function:'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下图中，我们可以看到一个通用前馈层的示例，它以一个二维向量作为输入，在密集层中使用训练好的权重进行线性操作，然后使用 ReLU 激活函数对输出进行非线性转换：
 - en: '![Figure 2.22 – Schema of a generic feed forward layer with two-dimensional
     input in the dense layer and a ReLU non-linear activation function](img/Figure_2.22_B19904.jpg)'
+  id: totrans-186
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.22 - 具有二维输入的通用前馈层在密集层中和 ReLU 非线性激活函数中的模式图](img/Figure_2.22_B19904.jpg)'
 - en: Figure 2.22 – Schema of a generic feed forward layer with two-dimensional input
     in the dense layer and a ReLU non-linear activation function
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.22 - 具有二维输入的通用前馈层在密集层中和 ReLU 非线性激活函数中的模式图
 - en: The last mile – decoding results
+  id: totrans-188
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 最后一英里 - 解码结果
 - en: 'We mentioned that transformers are made of two components: an encoder and a
     decoder. Even though they share the core elements of positional encoding, self-attention
     and feedforward layers, the decoder still has to perform an additional operation
@@ -916,177 +1315,261 @@
     linear layer (a feedforward network that adapts the dimension of the input to
     the dimension of the output) and a softmax function (it transforms the input into
     a vector of probabilities).'
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们提到变压器由两个组件组成：编码器和解码器。尽管它们共享位置编码、自注意力和前馈层的核心元素，但解码器仍然必须执行一个额外的操作 - 将输入解码为原始数据格式。这个操作是通过一个线性层（一个将输入的维度调整为输出维度的前馈网络）和一个
+    softmax 函数（它将输入转换为概率向量）来完成的。
 - en: From that vector, we pick the word corresponding to the highest probability
     and use it as the best output of the model.
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 从该向量中，我们选择对应最高概率的单词，并将其用作模型的最佳输出。
 - en: All the architectural elements explained above define the framework of Transformers.
     We will see in the next section how this innovative framework paved the way for
     GPT-3 and other powerful language models developed by OpenAI.
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面解释的所有架构元素定义了变压器的框架。在下一节中，我们将看到这一创新框架如何为 GPT-3 和其他由 OpenAI 开发的强大语言模型铺平了道路。
 - en: GPT-3
+  id: totrans-192
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: GPT-3
 - en: 'And here we come to GPT-3, the architecture behind ChatGPT. It is indeed a
     model based on a transformer architecture, yet with a peculiarity: it only has
     the decoder layer. Indeed, in their introductory paper *Improving Language Understanding
     by Generative Pre-Training*, OpenAI researchers used an *only-decoder* approach.'
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们来到了 ChatGPT 背后的 GPT-3 架构。它确实是基于变压器架构的模型，但有一个特殊之处：它只有解码器层。事实上，在他们的介绍性论文*通过生成式预训练改进语言理解*中，OpenAI
+    的研究人员采用了*仅解码器*的方法。
 - en: GPT-3 is *huge*. But how huge, concretely?
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT-3 是*巨大*的。但具体有多大呢？
 - en: 'Let’s start with the knowledge base it was trained on. It was meant to be as
     exhaustive as possible in terms of human knowledge, so it was composed of different
     sources:'
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们从它训练的知识库开始。它旨在尽可能详尽地涵盖人类知识，因此由不同来源组成：
 - en: '**Common Craw**l ([https://commoncrawl.org/](https://commoncrawl.org/)): A
     massive corpus of web data gathered over an 8-year period with minimal filtering'
+  id: totrans-196
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Common Crawl** ([https://commoncrawl.org/](https://commoncrawl.org/))：一个在
+    8 年时间内收集的大规模网络数据语料库，几乎没有过滤'
 - en: '**WebText2** ([https://openwebtext2.readthedocs.io/en/latest/background/](https://openwebtext2.readthedocs.io/en/latest/background/)):
     A collection of text from web pages linked to in Reddit posts with at least 3
     upvotes'
+  id: totrans-197
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**WebText2** ([https://openwebtext2.readthedocs.io/en/latest/background/](https://openwebtext2.readthedocs.io/en/latest/background/))：一个包含来自
+    Reddit 帖子中链接的网页文本的集合，至少有 3 个赞'
 - en: '**Books1 and Books2**: Two separate corpora consisting of books available on
     the internet'
+  id: totrans-198
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Books1 和 Books2**：两个分别由互联网上可用的书籍组成的语料库'
 - en: '**Wikipedia**: A corpus containing articles from the English-language version
     of the popular online encyclopedia, Wikipedia'
+  id: totrans-199
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**维基百科**：一个包含来自流行在线百科全书维基百科英文版的文章的语料库'
 - en: 'Here you can get a better idea:'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里你可以更好地了解：
 - en: '![Figure 2.23 – GPT-3 knowledge base](img/Figure_2.23_B19904.jpg)'
+  id: totrans-201
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.23 – GPT-3 知识库](img/Figure_2.23_B19904.jpg)'
 - en: Figure 2.23 – GPT-3 knowledge base
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.23 – GPT-3 知识库
 - en: 'Let’s consider the following assumption:'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑以下假设：
 - en: 1 token ~= 4 chars in English
+  id: totrans-204
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 1 代币 ~= 4 个英文字符
 - en: 1 token ~= ¾ words
+  id: totrans-205
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 1 代币 ~= ¾ 词
 - en: We can conclude that GPT-3 has been trained on around *374* *billion words*!
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以得出结论，GPT-3 已经在*374* *亿个单词*上进行了训练！
 - en: 'This knowledge base was meant to train 175 billion parameters sparsely among
     96 hidden layers. To give you an idea of how massive GPT-3 is, let’s compare it
     to the previous versions, GPT-1 and GPT-2:'
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个知识库旨在在 96 个隐藏层中稀疏地训练 1750 亿个参数。为了让你了解 GPT-3 有多庞大，让我们将其与之前的版本 GPT-1 和 GPT-2
+    进行比较：
 - en: '![Figure 2.24 – Evolution of GPT models over time in terms of the number of
     parameters](img/Figure_2.24_B19904.jpg)'
+  id: totrans-208
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.24 – GPT 模型随时间在参数数量上的演变](img/Figure_2.24_B19904.jpg)'
 - en: Figure 2.24 – Evolution of GPT models over time in terms of the number of parameters
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.24 – GPT 模型随时间在参数数量上的演变
 - en: As you can see, in only a few years since the introduction of GPT-1 in 2018,
     the complexity and depth of GPT models have grown exponentially.
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你所看到的，在自 2018 年 GPT-1 推出以来的几年里，GPT 模型的复杂性和深度呈指数级增长。
 - en: 'The speed of development behind GPT models has been stunning, especially if
     we think about the latest version of this model, also the first one made available
     to the general public: ChatGPT.'
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT 模型背后的发展速度令人惊叹，特别是如果我们考虑到这个模型的最新版本，也是首个向普通大众提供的版本：ChatGPT。
 - en: 'ChatGPT: the state of the art'
+  id: totrans-212
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: ChatGPT：最先进的技术
 - en: In November 2022, OpenAI announced the web preview of its conversational AI
     system, ChatGPT, available to the general public. This was the start of huge hype
     coming from subject matter experts, organizations, and the general public – to
     the point that, after only 5 days, the service reached 1 million users!
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 2022 年 11 月，OpenAI 宣布了其会话式人工智能系统 ChatGPT 的网络预览，向普通大众提供。这引起了来自专家、组织和普通大众的巨大热情，以至于在仅仅
+    5 天后，该服务就吸引了 100 万用户！
 - en: 'Before writing about ChatGPT, I will let it introduce itself:'
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 在写关于 ChatGPT 之前，我会让它自我介绍：
 - en: '![Figure 2.25 – ChatGPT introduces itself](img/Figure_2.25_B19904.jpg)'
+  id: totrans-215
   prefs: []
   type: TYPE_IMG
+  zh: '![图2.25 – ChatGPT 自我介绍](img/Figure_2.25_B19904.jpg)'
 - en: Figure 2.25 – ChatGPT introduces itself
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.25 – ChatGPT 自我介绍
 - en: ChatGPT is built on top of an advanced language model that utilizes a modified
     version of GPT-3, which has been fine-tuned specifically for dialogue. The optimization
     process involved **Reinforcement Learning with Human Feedback** (**RLHF**), a
     technique that leverages human input to train the model to exhibit desirable conversational
     behaviors.
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 是建立在一个先进的语言模型之上的，该模型利用了 GPT-3 的修改版本，专门为对话进行了微调。优化过程涉及到**强化学习与人类反馈**（**RLHF**），这是一种利用人类输入来训练模型展现出期望对话行为的技术。
 - en: We can define RLHF as a machine learning approach where an algorithm learns
     to perform a task by receiving feedback from a human. The algorithm is trained
     to make decisions that maximize a reward signal provided by the human, and the
     human provides additional feedback to improve the algorithm’s performance. This
     approach is useful when the task is too complex for traditional programming or
     when the desired outcome is difficult to specify in advance.
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以将 RLHF 定义为一种机器学习方法，其中算法通过接收来自人类的反馈来学习执行任务。该算法经过训练，以做出最大化人类提供的奖励信号的决策，并且人类提供额外的反馈以改善算法的性能。当任务对于传统编程来说过于复杂或者期望的结果难以提前指定时，这种方法就很有用。
 - en: The relevant differentiator here is that ChatGPT has been trained with humans
     in the loop so that it is aligned with its users. By incorporating RLHF, ChatGPT
     has been designed to better understand and respond to human language in a natural
     and engaging way.
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里的相关区别是ChatGPT已经在人类的帮助下进行了训练，使其与其用户保持一致。通过整合RLHF，ChatGPT被设计为更好地理解并以一种自然而引人入胜的方式回应人类语言。
 - en: Note
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意
 - en: The same RLHF mechanism was used for what we can think of as the predecessor
     of ChatGPT—**InstructGPT**. In the related paper published by OpenAI’s researchers
     in January 2022, InstructGPT is introduced as a class of models that is better
     than GPT-3 at following English instructions.
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 相同的RLHF机制被用于我们可以将其视为ChatGPT前身的**InstructGPT**。在OpenAI的研究人员于2022年1月发表的相关论文中，InstructGPT被介绍为一类比GPT-3更擅长遵循英语指示的模型。
 - en: The knowledge cut-off date for ChatGPT is 2021, which means that the model is
     aware of information that was available up to 2021\. However, you can still provide
     context to the model with a few-shot learning approach, even though the model
     responses will still be based on its knowledge base up to the cut-off date.
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT的知识截止日期是2021年，这意味着该模型了解到截止日期前可用的信息。然而，您仍然可以通过少量示例学习方法为模型提供上下文，尽管模型的回复仍然基于其知识库直到截止日期。
 - en: ChatGPT is revolutionizing the way we interact with AI. ChatGPT’s ability to
     generate human-like text has made it a popular choice for a wide range of applications,
     including chatbots, customer service, and content creation. Additionally, OpenAI
     announced that the ChatGPT API will soon be released, allowing developers to integrate
     ChatGPT directly into custom applications.
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT正在彻底改变与人工智能的互动方式。ChatGPT生成类人文本的能力使其成为广泛应用的热门选择，包括聊天机器人、客户服务和内容创作。此外，OpenAI宣布ChatGPT
+    API将很快发布，允许开发人员将ChatGPT直接集成到自定义应用程序中。
 - en: The ongoing developments and improvements in ChatGPT’s architecture and training
     methods promise to push the boundaries of language processing even further.
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT的架构和训练方法的不断发展和改进承诺将进一步推动语言处理的边界。
 - en: Summary
+  id: totrans-225
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 总结
 - en: In this chapter, we went through the history of OpenAI, its research fields,
     and the latest developments, up to ChatGPT. We went deeper into the OpenAI Playground
     for the test environment and how to embed the Models API into your code. Then,
     we dwelled on the mathematics behind the GPT model family, in order to have better
     clarity about the functioning of GPT-3, the model behind ChatGPT.
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们回顾了OpenAI的历史、研究领域和最新发展，一直到ChatGPT。我们深入研究了OpenAI Playground作为测试环境以及如何将Models
+    API嵌入到您的代码中。然后，我们深入探讨了GPT模型家族背后的数学知识，以更清晰地了解GPT-3的运作原理，这是ChatGPT背后的模型。
 - en: 'With a deeper understanding of the math behind GPT models, we can have a better
     perception of how powerful those models are and the multiple ways they can impact
     both individuals and organizations. With this first glance at the OpenAI Playground
@@ -1094,27 +1577,40 @@
     your applications: the game-changer element here is that you don’t need powerful
     hardware and hours of time to train your models, since they are already available
     to you and can also be customized if needed, with a few examples.'
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过深入理解GPT模型背后的数学，我们可以更好地理解这些模型的强大之处以及它们对个人和组织的多种影响。通过对OpenAI Playground和Models
+    API的第一次了解，我们看到了测试或嵌入预训练模型的简易性：这里的改变游戏规则的因素是，您无需强大的硬件和数小时的时间来训练您的模型，因为它们已经可供您使用，如果需要，还可以定制一些示例。
 - en: In the next chapter, we also begin *Part 2* of this book, where we will see
     ChatGPT in action within various domains and how to unlock its potential. You
     will learn how to get the highest value from ChatGPT by properly designing your
     prompts, how to boost your daily productivity, and how it can be a great project
     assistant for developers, marketers, and researchers.
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们也开始了本书的*第二部分*，我们将看到ChatGPT在各个领域内的应用，以及如何释放其潜力。您将学习如何通过正确设计提示来获取ChatGPT的最高价值，如何提高日常生产力，以及它如何成为开发人员、市场营销人员和研究人员的出色项目助手。
 - en: References
+  id: totrans-229
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 参考文献
 - en: Radford, A., & Narasimhan, K. (2018). Improving language understanding by generative
     pre-training.
+  id: totrans-230
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Radford, A., & Narasimhan, K. (2018). 通过生成式预训练改善语言理解。
 - en: Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N.,
     Kaiser, L., & Polosukhin, I. (2017). *Attention Is All You Need*. ArXiv. [https://doi.org/10.48550/arXiv.1706.03762](https://doi.org/10.48550/arXiv.1706.03762)
     OpenAI. Fine-Tuning Guide. OpenAI platform documentation. [https://platform.openai.com/docs/guides/fine-tuning](https://platform.openai.com/docs/guides/fine-tuning).
+  id: totrans-231
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N.,
+    Kaiser, L., & Polosukhin, I. (2017). *注意力机制就是你所需要的*. ArXiv. [https://doi.org/10.48550/arXiv.1706.03762](https://doi.org/10.48550/arXiv.1706.03762)
+    OpenAI. Fine-Tuning Guide. OpenAI 平台文档. [https://platform.openai.com/docs/guides/fine-tuning](https://platform.openai.com/docs/guides/fine-tuning).

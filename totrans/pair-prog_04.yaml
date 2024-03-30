@@ -1,767 +1,1212 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/chapter_title_above.png)'
 - en: Common Algorithms
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 常见算法
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/chapter_title_below.png)'
 - en: '![A close up of a screen  Description automatically generated with low confidence](d2d_images/image003.jpg)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![一个屏幕的特写 由低置信度自动生成的描述](d2d_images/image003.jpg)'
 - en: Image by [Markus Spiske](https://pixabay.com/users/markusspiske-670330/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1486361) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1486361)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 图片由[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1486361)的[Markus
+    Spiske](https://pixabay.com/users/markusspiske-670330/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1486361)提供
 - en: One of my favorite uses for AI is to have it generate code for common algorithms.
     In this chapter, I will highlight some real-world situations where I have used
     it to solve common problems.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我最喜欢AI的用途之一是让它为常见算法生成代码。在本章中，我将重点介绍一些我用它解决常见问题的真实场景。
 - en: IIFE
+  id: totrans-7
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: IIFE
 - en: Do you know what an IIFE is in JavaScript? Well, just ask ChatGPT!
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 您知道JavaScript中的IIFE是什么吗？好吧，只需问ChatGPT！
 - en: What’s an IIFE in Javascript, why would I need one, and how would I create one?
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: JavaScript中的IIFE是什么，我为什么需要它，以及如何创建一个？
 - en: IIFE stands for Immediately Invoked Function Expression. It is a common design
     pattern used in JavaScript to create a private scope for your code and avoid polluting
     the global namespace with variables and functions.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: IIFE代表立即调用的函数表达式。这是JavaScript中常用的设计模式，用于为您的代码创建一个私有作用域，并避免用变量和函数污染全局命名空间。
 - en: You might use an IIFE in situations where you need to encapsulate some code
     and prevent it from affecting other code on the page. For example, you might use
     an IIFE to define a module in your application, where the module's code is contained
     within the IIFE's private scope.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在需要封装一些代码并防止其影响页面上其他代码的情况下，您可能会使用IIFE。例如，您可以使用IIFE来定义应用程序中的一个模块，其中模块的代码包含在IIFE的私有作用域内。
 - en: 'To create an IIFE, you simply define a function expression and wrap it in parentheses
     to make it an expression. You can then immediately invoke the function by appending
     a pair of parentheses after it, like this:'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 要创建一个IIFE，您只需定义一个函数表达式并将其包装在括号中使其成为表达式。然后，您可以通过在其后附加一对括号立即调用该函数，就像这样：
 - en: (function() {
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: (function() {
 - en: // your code here
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在这里放置您的代码
 - en: '})();'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: '})();'
 - en: In this example, an anonymous function is defined and immediately invoked. The
     function creates a private scope for the code inside it, preventing any variables
     or functions declared within it from leaking into the global scope.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，定义了一个匿名函数并立即调用。该函数为其中的代码创建了一个私有作用域，防止其中声明的任何变量或函数泄漏到全局作用域中。
 - en: Note that the parentheses around the function expression are necessary, because
     they cause the function to be interpreted as an expression rather than a declaration.
     Without these parentheses, the JavaScript parser would interpret the function
     as a function declaration, which can only be used in certain contexts.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，围绕函数表达式的括号是必需的，因为它们使函数被解释为表达式而不是声明。没有这些括号，JavaScript解析器会将函数解释为函数声明，这只能在某些上下文中使用。
 - en: That’s a pretty impressive explanation. It actually gave me a longer explanation,
     but I pared it down for you.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个相当令人印象深刻的解释。实际上，它给了我一个更长的解释，但我为您精简了一下。
 - en: Granted, with TypeScript, we hardly need to use IIFEs anymore. In fact, what
     if we asked ChatGPT to convert its last IIFE into an equivalent TypeScript class?
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上，使用TypeScript，我们几乎不再需要使用IIFE。事实上，如果我们让ChatGPT将其最后一个IIFE转换为等效的TypeScript类，会怎么样？
 - en: What would be the equivalent of that code if we were to use classes in TypeScript
     instead?
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们在TypeScript中使用类，那么该代码的等价物会是什么？
 - en: If you were to use classes in TypeScript to achieve a similar result as the
     IIFE example, you could define a class and use the constructor method to execute
     your code.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您要在TypeScript中使用类来实现与IIFE示例类似的结果，您可以定义一个类并使用构造函数方法来执行您的代码。
 - en: 'Here''s an example:'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是一个例子：
 - en: class MyClass {
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: class MyClass {
 - en: constructor() {
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 构造函数() {
 - en: // your code here
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在这里放置您的代码
 - en: '}'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: new MyClass();
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: new MyClass();
 - en: In this example, the MyClass constructor function is executed immediately when
     an instance of the class is created using the new keyword.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，当使用 new 关键字创建类的实例时，MyClass 构造函数会立即执行。
 - en: 'You could also pass arguments to the constructor method, like this:'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也可以向构造方法传递参数，就像这样：
 - en: class MyClass {
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: class MyClass {
 - en: constructor(arg1, arg2) {
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: constructor(arg1, arg2) {
 - en: // your code here
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: // 你的代码在这里
 - en: '}'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: new MyClass(val1, val2);
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: new MyClass(val1, val2);
 - en: In this case, the arguments val1 and val2 are passed to the constructor method
     as arg1 and arg2, respectively.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，参数 val1 和 val2 作为 arg1 和 arg2 传递给构造方法。
 - en: 'Using classes in TypeScript provides additional benefits, such as better type
     checking and encapsulation, as well as the ability to define public and private
     members. However, the overall goal of both the IIFE and class examples is the
     same: to encapsulate your code and prevent it from affecting other code on the
     page.'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 TypeScript 中使用类提供了额外的好处，如更好的类型检查和封装，以及定义公共和私有成员的能力。然而，IIFE 和类示例的总体目标是相同的：封装您的代码，防止其影响页面上的其他代码。
 - en: Notice I didn’t have to restate my request, but simply asked it to rewrite “that
     code.” This is our first example of ChatGPT remembering the context of the conversation.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意我不必重复我的请求，只需要求它重写“那段代码”。这是 ChatGPT 记住对话上下文的第一个例子。
 - en: Array Functions
+  id: totrans-40
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 数组函数
 - en: Copilot and ChatGPT are really good at helping manipulate arrays. All you need
     to do is ask.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot 和 ChatGPT 在帮助操作数组方面非常擅长。你只需要提出请求。
 - en: Reduce
+  id: totrans-42
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: Reduce
 - en: For some reason, I can never remember how to use JavaScript’s reduce function
     to calculate the sum of the items in an array. GitHub Copilot knew, however. I
     simply provided a comment of what I wanted to accomplish, and let Copilot do the
     rest.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于某种原因，我总是记不住如何使用 JavaScript 的 reduce 函数来计算数组中项目的总和。然而，GitHub Copilot 知道。我只需提供我想要实现的注释，让
+    Copilot 完成剩下的工作。
 - en: Consider the following array of “puzzles.” This is a I snippet from my game
     Foreword, a game of word squares.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 考虑以下“拼图”数组。这是我游戏 Foreword 中的一个片段，一个单词方块游戏。
 - en: // Partial array of "puzzles" for this example
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: // 这个例子的“拼图”部分数组
 - en: 'private demoPuzzles: Puzzle[] = ['
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 'private demoPuzzles: Puzzle[] = ['
 - en: '{ id:88, size: 4, solution: [''abetbabeebontent''] },'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id:88, size: 4, solution: [''abetbabeebontent''] },'
 - en: '{ id:89, size: 4, solution: [''icedcaveevendent''] },'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id:89, size: 4, solution: [''icedcaveevendent''] },'
 - en: '{ id:90, size: 8, solution: [''abetracemirestun'', ''armsbaitecruteen''] },'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id:90, size: 8, solution: [''abetracemirestun'', ''armsbaitecruteen''] },'
 - en: '{ id:91, size: 8, solution: [''cageheaturicmyth'', ''chumaerygaitetch''] }'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id:91, size: 8, solution: [''cageheaturicmyth'', ''chumaerygaitetch''] }'
 - en: '];'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: Notice that some puzzles have one solution, and some have two. My actual array
     of puzzles has thousands of elements.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意一些拼图有一个解，一些有两个解。我的实际拼图数组有成千上万个元素。
 - en: Now let’s assume I want to count the total number of solutions in my puzzle
     array. I provided Copilot with a simple comment and let it generate the code.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在假设我想计算我的拼图数组中的总解数。我提供了一个简单的注释给 Copilot，让它生成代码。
 - en: // Count the total number of solutions in the demo Puzzle array
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: // 计算 demo Puzzle 数组中的总解数
 - en: const total = this.demoPuzzles.reduce((acc, puzzle) => acc + puzzle.solution.length,
     0);
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: const total = this.demoPuzzles.reduce((acc, puzzle) => acc + puzzle.solution.length,
+    0);
 - en: Yeah, I could have used a for loop, or looked up the syntax ofArray.reduce,
     but Copilot did this for me, with nothing more than a comment. To me, that’s productive!
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，我本可以使用 for 循环，或查找 Array.reduce 的语法，但 Copilot 为我完成了这项工作，只需一个注释。对我来说，这很高效！
 - en: Filter
+  id: totrans-57
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 过滤
 - en: Next, imagine I want to find all the puzzles in the array of size 4\. I gave
     Copilot the first comment. It then proceeded to write the second comment.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，假设我想找到数组中大小为 4 的所有拼图。我给 Copilot 第一个注释。然后它继续写第二个注释。
 - en: //  Find all puzzles with a size of 4
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: //  查找所有大小为 4 的拼图
 - en: //  Find all puzzles with a size of 8
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: //  查找所有大小为 8 的拼图
 - en: It was able to do this because it knows the context of the application and can
     see what else I’m doing. By recognizing some of the puzzles were size 4 and some
     size 8, it offered the second comment. What happened next surprised me. Instead
     of giving me the array filter function I was expecting, it gave me this.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 它能够做到这一点，因为它了解应用程序的上下文，并且可以看到我在做什么。通过识别一些拼图大小为 4，一些大小为 8，它提供了第二个注释。接下来发生的事情让我感到惊讶。它没有给我期望的数组过滤函数，而是给了我这个。
 - en: 'public findPuzzlesBySize(size: number): Puzzle[] {'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 'public findPuzzlesBySize(size: number): Puzzle[] {'
 - en: return this.demoPuzzles.filter(puzzle => puzzle.size === size);
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.demoPuzzles.filter(puzzle => puzzle.size === size);
 - en: '}'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: That’s right. It gave me a generic function to find puzzles by any size.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 没错。它给了我一个通用函数，可以按任何大小查找谜题。
 - en: When I gave the same prompt to ChatGPT, it went in a slightly different direction.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我给ChatGPT相同提示时，它走了稍微不同的方向。
 - en: Given an array that looks like the following array, find all puzzles of size
     4 or 8\. (I then pasted the puzzles array).
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 给定一个看起来像以下数组的数组，找到所有大小为4或8的谜题。（然后我粘贴了谜题数组）。
 - en: 'To find all puzzles of size 4 or 8, you can use the filter method on the demoPuzzles
     array and provide a callback function that checks the size of each puzzle:'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 要查找所有大小为4或8的谜题，您可以在demoPuzzles数组上使用filter方法，并提供一个检查每个谜题大小的回调函数：
 - en: const filteredPuzzles = demoPuzzles.filter(puzzle => puzzle.size === 4 || puzzle.size
     === 8);
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: const filteredPuzzles = demoPuzzles.filter(puzzle => puzzle.size === 4 || puzzle.size
+    === 8);
 - en: This will return a new array that contains only the puzzles that have a size
     of 4 or 8.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将返回一个新数组，其中仅包含大小为4或8的谜题。
 - en: 'You could also use the forEach method and check the size of each puzzle, then
     push the matching puzzles into a new array:'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 您还可以使用forEach方法检查每个谜题的大小，然后将匹配的谜题推入新数组：
 - en: const filteredPuzzles = [];
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: const filteredPuzzles = [];
 - en: demoPuzzles.forEach(puzzle => {
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: demoPuzzles.forEach(puzzle => {
 - en: if (puzzle.size === 4 || puzzle.size === 8) {
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: if (puzzle.size === 4 || puzzle.size === 8) {
 - en: filteredPuzzles.push(puzzle);
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: filteredPuzzles.push(puzzle);
 - en: '}'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '});'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: This achieves the same result as the filter method.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 这与filter方法实现了相同的结果。
 - en: In either case, the resulting filteredPuzzles array will contain only the puzzles
     of size 4 or 8.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论哪种情况，结果过滤后的谜题数组将仅包含大小为4或8的谜题。
 - en: In this case, ChatGPT took me literally, giving me a way to find puzzles of
     either size 4 or of size 8\. The odd thing is that the code it gave me will produce
     an array with the identical contents as the original, which is not at all helpful.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，ChatGPT字面上带我，给了我一种找到大小为4或大小为8的谜题的方法。奇怪的是，它给我的代码将产生一个与原始内容相同的数组，这一点一点也不有用。
 - en: Copilot, on the other hand, gave me code that was closer to what I needed. Consider
     that a win for Copilot.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，Copilot给了我更接近我所需的代码。可以认为这是Copilot的胜利。
 - en: Sort
+  id: totrans-82
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 排序
 - en: What if I wanted to sort the array? I know that JavaScript has a sort function
     and that it takes a call-back function that describes how the sort should be done.
     But maybe I can’t quite remember the syntax.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我想对数组进行排序怎么办？我知道JavaScript有一个sort函数，它接受一个描述排序方式的回调函数。但也许我不太记得语法。
 - en: 'Asking Copilot to sort my array of puzzles with the larger (size 8) puzzles
     at the beginning, gave me this:'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 要求Copilot对我的谜题数组进行排序，将较大（大小为8）的谜题放在前面，给了我这个：
 - en: // Sort the puzzles by size, with the largest first
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: // 按大小排序谜题，最大的在前
 - en: puzzles = this.demoPuzzles.sort((a, b) => b.size - a.size);
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: puzzles = this.demoPuzzles.sort((a, b) => b.size - a.size);
 - en: Notice that this time, Copilot simply gave me a one-liner instead of a complete
     function. In my experience, this is more consistent with how Copilot usually responds.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意，这次Copilot只给了我一行代码，而不是完整的函数。根据我的经验，这更符合Copilot通常的回应方式。
 - en: ChatGPT offered me this response.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT给了我这个回应。
 - en: const sortedPuzzles = demoPuzzles.sort((a, b) => b.size - a.size);
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: const sortedPuzzles = demoPuzzles.sort((a, b) => b.size - a.size);
 - en: This will return a new array that contains the puzzles sorted by size, with
     the largest first.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将返回一个新数组，其中包含按大小排序的谜题，最大的在前。
 - en: In this example, the sort method takes a callback function that compares the
     size property of the a and b objects. By subtracting a.size from b.size, we ensure
     that the puzzles are sorted in descending order based on size.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，sort方法接受一个回调函数，比较a和b对象的size属性。通过从b.size减去a.size，我们确保谜题根据大小按降序排序。
 - en: The two functions are identical, which is good sign. I still love that ChatGPT
     offers an explanation for its suggestions, whereas Copilot assumes you only need
     it to write the code.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 这两个函数是相同的，这是一个好迹象。我仍然喜欢ChatGPT为其建议提供解释，而Copilot则假定您只需要它来编写代码。
 - en: Array as a Stack or a Queue
+  id: totrans-93
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 数组作为堆栈或队列
 - en: Sometimes we want to implement a stack or a queue with arrays. Copilot and ChatGPT
     can help with that also.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时我们想要使用数组实现堆栈或队列。Copilot和ChatGPT也可以帮助处理这个问题。
 - en: 'ChatGPT gave me a complete set of strongly typed TypeScript functions when
     I asked it to do so:'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我要求ChatGPT完成一组强类型的TypeScript函数时，它给了我这个：
 - en: Generate a set of strongly typed TypeScript functions to treat the array like
     a stack or queue.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成一组强类型的TypeScript函数，以将数组视为堆栈或队列。
 - en: 'type Puzzle = { id: number; size: number; solution: string[] };'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 'type Puzzle = { id: number; size: number; solution: string[] };'
 - en: 'function pushToStack(stack: Puzzle[], puzzle: Puzzle): Puzzle[] {'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 'function pushToStack(stack: Puzzle[], puzzle: Puzzle): Puzzle[] {'
 - en: return [...stack, puzzle];
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: return [...stack, puzzle];
 - en: '}'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'function popFromStack(stack: Puzzle[]): [Puzzle | undefined, Puzzle[]] {'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 'function popFromStack(stack: Puzzle[]): [Puzzle | undefined, Puzzle[]] {'
 - en: const poppedPuzzle = stack[stack.length - 1];
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: const poppedPuzzle = stack[stack.length - 1];
 - en: const newStack = stack.slice(0, stack.length - 1);
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: const newStack = stack.slice(0, stack.length - 1);
 - en: return [poppedPuzzle, newStack];
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: return [poppedPuzzle, newStack];
 - en: '}'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'function enqueue(queue: Puzzle[], puzzle: Puzzle): Puzzle[] {'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 'function enqueue(queue: Puzzle[], puzzle: Puzzle): Puzzle[] {'
 - en: return [...queue, puzzle];
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: return [...queue, puzzle];
 - en: '}'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'function dequeue(queue: Puzzle[]): [Puzzle | undefined, Puzzle[]] {'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 'function dequeue(queue: Puzzle[]): [Puzzle | undefined, Puzzle[]] {'
 - en: const dequeuedPuzzle = queue[0];
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: const dequeuedPuzzle = queue[0];
 - en: const newQueue = queue.slice(1);
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: const newQueue = queue.slice(1);
 - en: return [dequeuedPuzzle, newQueue];
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: return [dequeuedPuzzle, newQueue];
 - en: '}'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: As usual, it provided a complete explanation for each function.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常，它为每个函数提供了完整的解释。
 - en: Copilot was far more concise, though it wrote every line after my first comment
     (including the new comments).
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot更加简洁，尽管它在我的第一个注释之后写了每一行（包括新注释）。
 - en: // Function to add a new puzzle to the list of puzzles like a queue
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: // 添加一个新拼图到拼图列表中的队列的函数
 - en: addPuzzle() {
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: addPuzzle() {
 - en: 'this.demoPuzzles.push({ id: 92, size: 4, solution: [''cageheaturicmyth'', ''chumaerygaitetch'']
     });'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 'this.demoPuzzles.push({ id: 92, size: 4, solution: [''cageheaturicmyth'', ''chumaerygaitetch'']
+    });'
 - en: '}'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: // Function to remove a puzzle from the list of puzzles like a queue
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: // 从拼图列表中移除一个拼图的函数
 - en: removePuzzle() {
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: removePuzzle() {
 - en: this.demoPuzzles.pop();
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: this.demoPuzzles.pop();
 - en: '}'
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: // Function to add a new puzzle to the list of puzzles like a stack
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: // 添加一个新拼图到拼图列表中的队列的函数
 - en: pushPuzzle() {
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: pushPuzzle() {
 - en: 'this.demoPuzzles.unshift({ id: 92, size: 4, solution: [''cageheaturicmyth'',
     ''chumaerygaitetch''] });'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 'this.demoPuzzles.unshift({ id: 92, size: 4, solution: [''cageheaturicmyth'',
+    ''chumaerygaitetch''] });'
 - en: '}'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: // Function to remove a puzzle from the list of puzzles like a stack
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: // 从拼图列表中移除一个拼图的函数
 - en: popPuzzle() {
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: popPuzzle() {
 - en: this.demoPuzzles.shift();
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: this.demoPuzzles.shift();
 - en: '}'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: Notice that it did not try to create a new Puzzle type for me. It knew I already
     had data and only gave me what I needed in context of my application.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意它没有尝试为我创建一个新的拼图类型。它知道我已经有了数据，只给我提供了我在应用程序上下文中需要的内容。
 - en: What it got totally wrong, however, was assuming I wanted a hard-coded puzzle
     literal (and an invalid one at that) instead of giving the function a Puzzle parameter.
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，它完全错误地假设我想要一个硬编码的拼图文字（而且是无效的），而不是给函数一个拼图参数。
 - en: Fortunately, all Copilot needs to fix that incorrect assumption is a reworded
     comment.
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 幸运的是，Copilot 只需要重新表述的注释来纠正那个错误的假设。
 - en: // Function to add a new puzzle to the list of puzzles like a queue,
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: // 添加一个新拼图到拼图列表中的队列的函数，
 - en: // which takes a strongly typed Puzzle object as a parameter
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: // 以强类型的拼图对象作为参数
 - en: 'addPuzzle(puzzle: Puzzle) {'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 'addPuzzle(puzzle: Puzzle) {'
 - en: this.demoPuzzles.push(puzzle);
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: this.demoPuzzles.push(puzzle);
 - en: '}'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: It got the rest of the functions right, but for this example, I didn’t think
     I needed to show all the code again.
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 它对其他函数的处理都正确，但对于这个例子，我认为不需要再显示所有的代码。
 - en: Array to Hash
+  id: totrans-141
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 数组转哈希
 - en: In one of my projects, I queried a remote web service to retrieve customer and
     sales information, which was returned in data structure that looked something
     like the following.
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我的一个项目中，我查询了一个远程网络服务以检索客户和销售信息，返回的数据结构看起来类似于以下内容。
 - en: '"orders": ['
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: '"订单": ['
 - en: '{'
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: '"id": "order1",'
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: '"id": "订单1",'
 - en: '"customerName": "John Smith",'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: '"customerName": "约翰·史密斯",'
 - en: '"productName": "Shirt",'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: '"productName": "衬衫",'
 - en: '"quantity": 2,'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: '"数量": 2,'
 - en: '"price": 25'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: '"价格": 25'
 - en: '},'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: '},'
 - en: '{'
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: '"id": "order2",'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: '"id": "订单2",'
 - en: '"customerName": "Jane Doe",'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: '"customerName": "简·多",'
 - en: '"productName": "Pants",'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '"productName": "裤子",'
 - en: '"quantity": 1,'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: '"数量": 1,'
 - en: '"price": 40'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: '"价格": 40'
 - en: '},'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: '},'
 - en: '{'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: '"id": "order3",'
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: '"id": "订单3",'
 - en: '"customerName": "Bob Johnson",'
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: '"customerName": "鲍勃·约翰逊",'
 - en: '"productName": "Socks",'
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: '"productName": "袜子",'
 - en: '"quantity": 3,'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '"数量": 3,'
 - en: '"price": 10'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '"价格": 10'
 - en: '}'
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: ']'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: ']'
 - en: Notice that orders is an array, with each order being a self-contained object
     in the array. Now imagine that there are hundreds or thousands of such orders.
     If I wanted to grab just order72, I would have to traverse the entire array. If
     the data structure were a hash instead, with each order having its id as the key,
     it would be much simpler (and faster) to get any arbitrary element.
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意，订单是一个数组，每个订单都是数组中一个独立的对象。现在想象一下，有数百或数千个这样的订单。如果我只想获取订单72，我将不得不遍历整个数组。如果数据结构是哈希而不是数组，每个订单都有其id作为键，那么获取任意元素将更简单（也更快）。
 - en: I could very quickly come up with code that loops through the entire array and
     generates a new hash object, but this is the sort of mundane task at which ChatGPT
     excels. This is the prompt I gave it, followed by the code it produced.
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 我很快就能编写循环遍历整个数组并生成一个新的哈希对象的代码，但这是 ChatGPT 擅长的枯燥任务。这是我给它的提示，随后是它生成的代码。
 - en: ChatGPT offered to use the reduce function, which honestly never occurred to
     me. As I told you before, it’s not a function that I’m good at. It’s one of my
     (many?) blind spots.
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 建议使用 reduce 函数，这实在是我从未想到的。就像我之前告诉过你的，这不是我擅长的函数之一。这是我的（许多？）盲点之一。
 - en: I have an array in TypeScript with the following shape. (I pasted the above
     JSON here). I want to convert it from an array to a hash array so that can address
     each object by its "id".
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在 TypeScript 中有一个具有以下结构的数组。（我将上面的 JSON 粘贴到这里）。我想将它从数组转换为哈希数组，以便可以通过其 "id" 地址访问每个对象。
 - en: 'You can convert the array to a hash array by using the reduce method and creating
     a new object with the "id" property as the key. Here''s an example:'
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以通过使用 reduce 方法将数组转换为哈希数组，并创建一个新对象，其中 "id" 属性作为键。这里是一个例子：
 - en: const hashArray = orders.reduce((acc, config) => {
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: const hashArray = orders.reduce((acc, config) => {
 - en: acc[config.id] = config;
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: acc[config.id] = config;
 - en: return acc;
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: return acc;
 - en: '}, {});'
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: '}, {});'
 - en: 'Now you can access each object by its "id" like this: hashArray["order2"].'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你可以通过像这样的"id"访问每个对象：hashArray["order2"]。
 - en: I then further refined it by asking for a standalone function, which it created
     for me (not shown).
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我进一步完善它，要求一个独立的函数，它为我创建了一个（未显示）。
 - en: String Manipulation
+  id: totrans-177
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 字符串操作
 - en: Do you find yourself manipulating text often? I know I do. Extracting smaller
     bits of text from long inputs, determining whether one string exists inside another,
     dealing with padding, etc. Those sorts of things are reasonably straightforward,
     but I prefer not to type this stuff if I don’t have to.
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: 你经常发现自己经常操作文本吗？我知道我会。从长输入中提取较小的文本片段，确定一个字符串是否存在于另一个字符串中，处理填充等。这些事情相当简单，但如果不必要的话，我宁愿不输入这些东西。
 - en: String searches
+  id: totrans-179
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 字符串搜索
 - en: Consider the problem of finding every occurrence of a word inside a longer string.
     How would ChatGPT approach it?
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: 考虑在长字符串中查找单词的每个出现的问题。ChatGPT 会如何处理？
 - en: const text = "The quick brown fox jumps over the lazy dog.";
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: const text = "The quick brown fox jumps over the lazy dog.";
 - en: // Find all occurrences of the substring "the" (case-insensitive)
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: // 查找所有出现的子字符串"the"（不区分大小写）
 - en: const substring = /the/gi;
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: const substring = /the/gi;
 - en: const matches = text.match(substring);
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: const matches = text.match(substring);
 - en: // Print the matches
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: // 打印匹配项
 - en: console.log(matches);
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(matches);
 - en: ChatGPT went directly to regular expressions. I’ll dive deeper into regexes
     later in the book.
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 直接使用了正则表达式。我将在本书后面更深入地讨论正则表达式。
 - en: Copilot also used a regular expression, but it went in an entirely different
     direction.
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot 也使用了正则表达式，但它走了完全不同的方向。
 - en: const regex = /the/gi;
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: const regex = /the/gi;
 - en: let m;
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: let m;
 - en: while ((m = regex.exec(text)) !== null) {
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: while ((m = regex.exec(text)) !== null) {
 - en: // This is necessary to avoid infinite loops with zero-width matches
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: // 这是为了避免与零宽匹配无限循环
 - en: if (m.index === regex.lastIndex) {
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: if (m.index === regex.lastIndex) {
 - en: regex.lastIndex++;
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: regex.lastIndex++;
 - en: '}'
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: // The result can be accessed through the `m`-variable.
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: // 结果可以通过 `m` 变量访问。
 - en: m.forEach((match, groupIndex) => {
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: m.forEach((match, groupIndex) => {
 - en: 'console.log(`Found match, group ${groupIndex}: ${match}`);'
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(`找到匹配项，组 ${groupIndex}：${match}`);
 - en: '});'
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '}'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: In all honesty, I’m not entirely sure I understand what Copilot gave me there.
     For fun, I pasted Copilot’s code sample into ChatGPT and asked it to explain it
     to me. This is what it said.
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: 老实说，我并不完全确定 Copilot 给我的东西。为了好玩，我将 Copilot 的代码示例粘贴到 ChatGPT 中，并要求它解释给我听。这就是它说的。
 - en: 'This JavaScript code finds all occurrences of the substring "the" in a given
     piece of text using regular expressions, and logs the matches to the console.
     Here''s a breakdown of how it works:'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段 JavaScript 代码使用正则表达式在给定文本中找到子字符串 "the" 的所有出现，并将匹配项记录到控制台。以下是它的工作原理：
 - en: const regex = /the/gi; - This line creates a regular expression regex that matches
     the substring "the" with the /the/ syntax. The g and i flags are used to perform
     a global search and a case-insensitive search, respectively.
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: const regex = /the/gi; - 这一行创建了一个正则表达式 regex，用 /the/ 语法匹配子字符串 "the"。g 和 i 标志分别用于执行全局搜索和不区分大小写搜索。
 - en: let m; - This line declares a variable m without initializing it.
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: let m; - 这一行声明了一个未初始化的变量 m。
 - en: while ((m = regex.exec(text)) !== null) { - This line sets m to the result of
     calling the regex.exec(text) method, which returns an array of information about
     the next match of the regular expression in the text string. The while loop continues
     as long as m is not null.
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: while ((m = regex.exec(text)) !== null) { - This line sets m to the result of
+    calling the regex.exec(text) method, which returns an array of information about
+    the next match of the regular expression in the text string. The while loop continues
+    as long as m is not null.
 - en: if (m.index === regex.lastIndex) { regex.lastIndex++; } - This line checks whether
     the match is a zero-width match (i.e., an empty string), and if so, increments
     the lastIndex property of the regex object to avoid an infinite loop.
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: if (m.index === regex.lastIndex) { regex.lastIndex++; } - This line checks whether
+    the match is a zero-width match (i.e., an empty string), and if so, increments
+    the lastIndex property of the regex object to avoid an infinite loop.
 - en: 'm.forEach((match, groupIndex) => { console.log(Found match, group ${groupIndex}:
     ${match}); }); - This line loops through each match in the m array using the forEach()
     method, and logs each match and its group index to the console using a template
     literal.'
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 'm.forEach((match, groupIndex) => { console.log(Found match, group ${groupIndex}:
+    ${match}); }); - This line loops through each match in the m array using the forEach()
+    method, and logs each match and its group index to the console using a template
+    literal.'
 - en: Overall, this code is a more advanced version of the previous code examples,
     using the regex.exec() method to iterate over each match and access its properties.
     The use of forEach() allows for more fine-grained control over the output and
     provides access to the match's group index, which can be useful when working with
     more complex regular expressions.
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，这段代码是前面代码示例的更高级版本，使用regex.exec()方法迭代每个匹配并访问其属性。使用forEach()允许更细粒度控制输出，并提供访问匹配的组索引，这在处理更复杂的正则表达式时会很有用。
 - en: Do you see what it did? Read that final paragraph carefully. ChatGPT recognized
     that the code I pasted from Copilot was related to my original question, and then
     explained that it was a more advanced example of the same concept. Truly amazing!
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: Do you see what it did? Read that final paragraph carefully. ChatGPT recognized
+    that the code I pasted from Copilot was related to my original question, and then
+    explained that it was a more advanced example of the same concept. Truly amazing!
 - en: Removing whitespace
+  id: totrans-210
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 移除空格
 - en: Sometimes, you may be faced with a lengthy piece of text with too much whitespace.
     Given such a string, how would you remove its excess whitespace, while preserving
     the important text?
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时，你可能面对一大段过多空白的文本。在给定这样的字符串的情况下，你会如何去除其中多余的空白，同时保留重要的文本呢？
 - en: For this example, I asked ChatGPT to generate some sample “lorem ipsum” text
     with lots of extra whitespace.
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于这个例子，我要求ChatGPT生成一些带有大量额外空白的“lorem ipsum”文本示例。
 - en: const loremIpsumWithWhitespace = `
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: const loremIpsumWithWhitespace = `
 - en: Lorem ipsum  dolor sit amet, consectetur adipiscing elit.  Fusce molestie turpis 
     nec  felis malesuada accumsan. Vestibulum  tincidunt lacus nec nulla dignissim
     blandit. Morbi tristique, enim eu imperdiet luctus, nisl turpis aliquam nunc, 
@@ -769,498 +1214,810 @@
     lectus.  Morbi sed lectus  ac nibh eleifend tristique.  Praesent sagittis elit
     vel dui consequat,  eu maximus purus molestie. Integer varius  pharetra odio,
     non vestibulum urna lobortis et.  Sed et eleifend lorem, quis mollis ipsum.
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: Lorem ipsum  dolor sit amet, consectetur adipiscing elit.  Fusce molestie turpis 
+    nec  felis malesuada accumsan. Vestibulum  tincidunt lacus nec nulla dignissim
+    blandit. Morbi tristique, enim eu imperdiet luctus, nisl turpis aliquam nunc, 
+    eu interdum purus  velit  quis velit.  Curabitur vel semper tellus,  at iaculis
+    lectus.  Morbi sed lectus  ac nibh eleifend tristique.  Praesent sagittis elit
+    vel dui consequat,  eu maximus purus molestie. Integer varius  pharetra odio,
+    non vestibulum urna lobortis et.  Sed et eleifend lorem, quis mollis ipsum.
 - en: Pellentesque  consectetur  mauris sed risus laoreet,  vel malesuada augue convallis. 
     Nullam vestibulum commodo metus, id tristique est suscipit id. Etiam pretium sagittis
     malesuada.  Vivamus sit amet mi lorem.  Etiam hendrerit euismod libero, nec  accumsan
     massa laoreet vel.  Donec  viverra felis et urna fringilla, non convallis tellus
     egestas. Suspendisse faucibus quam in erat sagittis  dignissim. Duis maximus risus
     sit amet eros bibendum feugiat.`;
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: Pellentesque  consectetur  mauris sed risus laoreet,  vel malesuada augue convallis. 
+    Nullam vestibulum commodo metus, id tristique est suscipit id. Etiam pretium sagittis
+    malesuada.  Vivamus sit amet mi lorem.  Etiam hendrerit euismod libero, nec  accumsan
+    massa laoreet vel.  Donec  viverra felis et urna fringilla, non convallis tellus
+    egestas. Suspendisse faucibus quam in erat sagittis  dignissim. Duis maximus risus
+    sit amet eros bibendum feugiat.
 - en: Next, I asked for a generic function that would accept that type of input and
     return the string with all the insignificant whitespace removed.
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我要求一个通用函数，它将接受这种类型的输入并返回移除所有不重要空白的字符串。
 - en: function removeInsignificantWhitespace(text) {
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: function removeInsignificantWhitespace(text) {
 - en: // Replace all whitespace characters with a single space
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: // Replace all whitespace characters with a single space
 - en: const stripped = text.replace(/\s+/g, " ");
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: const stripped = text.replace(/\s+/g, " ");
 - en: // Remove leading/trailing spaces and line breaks
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: // 移除前导/尾随空格和换行符
 - en: return stripped.trim();
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: return stripped.trim();
 - en: '}'
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: This function works by first using a regular expression (/\s+/g) to match all
     occurrences of one or more whitespace characters (spaces, tabs, line breaks, etc.)
     and replacing them with a single space character using the replace() method.
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个函数首先使用正则表达式（/\s+/g）匹配所有出现的一个或多个空白字符（空格、制表符、换行符等），然后使用replace()方法将它们替换为一个空格字符。
 - en: The resulting string is then passed to the trim() method, which removes any
     leading or trailing spaces or line breaks.
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终的字符串然后传递给trim()方法，该方法会移除任何前导或尾随空格或换行符。
 - en: This ensures that the final output contains only the necessary whitespace characters
     (e.g., spaces between words) and no unnecessary ones.
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 这确保最终输出只包含必要的空格字符（例如单词之间的空格），而不包含不必要的空格字符。
 - en: For Copilot’s test, I started with the long JavaScript constant from before
     and gave it a similar prompt. Its result was a little terser.
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于Copilot的测试，我从前面的长JavaScript常量开始，并给了一个类似的提示。它的结果有点简洁。
 - en: // Function to remove all the whitespace from a string
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: // 从字符串中移除所有空格的函数
 - en: 'function removeWhitespace(text: string) {'
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: 'function removeWhitespace(text: string) {'
 - en: return text.replace(/\s/g, '');
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: return text.replace(/\s/g, '');
 - en: '}'
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: What’s amusing about Copilot’s result is that it suggested its own comment after
     I pasted in the lengthy text. Always remember that Copilot’s strength is in its
     awareness of your entire application.
+  id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot结果有趣的地方在于，当我粘贴了冗长的文本后，它建议了自己的注释。永远记住，Copilot的强项在于它对整个应用程序的意识。
 - en: Whitespace Padding
+  id: totrans-232
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 空格填充
 - en: 'Now, let’s consider the puzzle array. If I wanted to generate some pretty formatting
     using only text in a fixed-width font, how might I do that? ChatGPT gave me the
     following function, along with a sample of what the output would look like:'
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们考虑一下谜题数组。如果我想要使用只有文本的固定宽度字体生成一些漂亮的格式，我该如何做？ChatGPT给了我以下函数，以及输出看起来像的示例：
 - en: 'const printTable = (puzzles: Puzzle[]): void => {'
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: 'const printTable = (puzzles: Puzzle[]): void => {'
 - en: console.log('ID  Size  Solution');
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log('ID  Size  Solution');
 - en: console.log('——————————-');
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log('——————————-');
 - en: puzzles.forEach(puzzle => {
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: puzzles.forEach(puzzle => {
 - en: console.log(`${puzzle.id.toString().padEnd(4, ' ')}${puzzle.size.toString().padEnd(6,
     ' ')}${puzzle.solution[0]}`);
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(`${puzzle.id.toString().padEnd(4, ' ')}${puzzle.size.toString().padEnd(6,
+    ' ')}${puzzle.solution[0]}`);
 - en: '});'
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '};'
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: printTable(demoPuzzles);
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: printTable(demoPuzzles);
 - en: 'This code will output the demoPuzzles array as a table with fixed-width font,
     like this:'
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段代码将以固定宽度字体的形式输出demoPuzzles数组，如下所示：
 - en: ––––––––
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: ––––––––
 - en: '![image](d2d_images/scene_break.png)'
+  id: totrans-244
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/scene_break.png)'
 - en: ID  Size  Solution
+  id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: ID  Size  Solution
 - en: ——————————-
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: ——————————-
 - en: '![image](d2d_images/scene_break.png)'
+  id: totrans-247
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/scene_break.png)'
 - en: 88  4  abetbabeebontent
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: 88  4  abetbabeebontent
 - en: 89  4  icedcaveevendent
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: 89  4  icedcaveevendent
 - en: 90  8  abetracemirestun
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: 90  8  abetracemirestun
 - en: 91  8  cageheaturicmyth
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh: 91  8  cageheaturicmyth
 - en: Copilot gave me something different, but I think in this case it cheated.
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot给了我一些不同的东西，但我认为在这种情况下它作弊了。
 - en: // Print the puzzles array as a table, using only text, suitable for output
     with a fixed-width font.
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh: // 以只使用文本的方式将谜题数组打印为表格，适用于使用固定宽度字体。
 - en: printPuzzles() {
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: printPuzzles() {
 - en: let puzzleTable = this.demoPuzzles.map(p => {
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: let puzzleTable = this.demoPuzzles.map(p => {
 - en: 'return { id: p.id, size: p.size, solution: p.solution.join('' '') };'
+  id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh: 'return { id: p.id, size: p.size, solution: p.solution.join('' '') };'
 - en: '});'
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: console.table(puzzleTable);
+  id: totrans-258
   prefs: []
   type: TYPE_NORMAL
+  zh: console.table(puzzleTable);
 - en: '}'
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: Technically, console.table will do exactly what I asked, so in that respect
     was correct. I decided to give it another hint to see if I could get it to write
     something closer to what ChatGPT did.
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh: 从技术上讲，console.table确实做到了我要求的，所以在这方面是正确的。我决定再给它一个提示，看看能否让它写出更接近ChatGPT的东西。
 - en: // Print the puzzles array as a table, using only text, suitable for output
     with a fixed-width font, using console.log.
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: // 以只使用文本的方式将谜题数组打印为表格，适用于使用固定宽度字体的输出，使用console.log。
 - en: printPuzzles() {
+  id: totrans-262
   prefs: []
   type: TYPE_NORMAL
+  zh: printPuzzles() {
 - en: // Get the longest puzzle id, so we can pad the id column to align the puzzle
     data.
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh: // 获取最长的谜题id，以便填充id列以对齐谜题数据。
 - en: const longestId = this.demoPuzzles.reduce((longest, puzzle) => Math.max(longest,
     puzzle.id.toString().length), 0);
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: const longestId = this.demoPuzzles.reduce((longest, puzzle) => Math.max(longest,
+    puzzle.id.toString().length), 0);
 - en: // Print the header row.
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: // 打印标题行。
 - en: console.log(`id${' '.repeat(longestId - 2)} | size | solution`);
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(`id${' '.repeat(longestId - 2)} | size | solution`);
 - en: console.log('-'.repeat(longestId + 2) + '-+-' + '-'.repeat(5) + '-+-' + '-'.repeat(16));
+  id: totrans-267
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log('-'.repeat(longestId + 2) + '-+-' + '-'.repeat(5) + '-+-' + '-'.repeat(16));
 - en: // Print the puzzle rows.
+  id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh: // 打印谜题行。
 - en: this.demoPuzzles.forEach(puzzle => {
+  id: totrans-269
   prefs: []
   type: TYPE_NORMAL
+  zh: this.demoPuzzles.forEach(puzzle => {
 - en: console.log(`${puzzle.id}${' '.repeat(longestId - puzzle.id.toString().length)}
     | ${puzzle.size} | ${puzzle.solution.join(' ')}`);
+  id: totrans-270
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(`${puzzle.id}${' '.repeat(longestId - puzzle.id.toString().length)}
+    | ${puzzle.size} | ${puzzle.solution.join(' ')}`);
 - en: '});'
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '}'
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: It did a better job on the second pass. What do you think? I like the fact that
     it looks for the longest id so that I can pad the columns correctly. That was
     a nice touch.
+  id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二次运行效果更好。你觉得呢？我喜欢它寻找最长 ID 的功能，这样我就可以正确填充列。这是一个很好的点子。
 - en: Generating CSV Files
+  id: totrans-274
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 生成 CSV 文件
 - en: What if I wanted to output the array as a comma-separated file instead? Copilot
     gave me almost the same code as above, but with some extra logic.
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我想要将数组输出为逗号分隔的文件呢？Copilot 给了我几乎与上面相同的代码，但带有一些额外的逻辑。
 - en: // Generate a CSV file containing the puzzles array
+  id: totrans-276
   prefs: []
   type: TYPE_NORMAL
+  zh: // 生成包含谜题数组的 CSV 文件
 - en: generateCsv() {
+  id: totrans-277
   prefs: []
   type: TYPE_NORMAL
+  zh: generateCsv() {
 - en: // Create a CSV file, with a header row, and a row for each puzzle.
+  id: totrans-278
   prefs: []
   type: TYPE_NORMAL
+  zh: // 创建一个带有标题行和每个谜题行的 CSV 文件。
 - en: const csv = 'id,size,solution\r\n' + this.demoPuzzles.map(puzzle => `${puzzle.id},${puzzle.size},"${puzzle.solution.join('
     ')}"`).join('\r\n');
+  id: totrans-279
   prefs: []
   type: TYPE_NORMAL
+  zh: const csv = 'id,size,solution\r\n' + this.demoPuzzles.map(puzzle => `${puzzle.id},${puzzle.size},"${puzzle.solution.join('
+    ')}"`).join('\r\n');
 - en: // Write the CSV file to disk.
+  id: totrans-280
   prefs: []
   type: TYPE_NORMAL
+  zh: // 将 CSV 文件写入磁盘。
 - en: require('fs').writeFileSync('puzzles.csv', csv);
+  id: totrans-281
   prefs: []
   type: TYPE_NORMAL
+  zh: require('fs').writeFileSync('puzzles.csv', csv);
 - en: '}'
+  id: totrans-282
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: One of the dangers in relying on an AI to do the work for you is that it might
     create buggy code that looks reasonable. In this case, if any of my fields contained
     commas, the output generated by this function would most likely be unreadable
     as a CSV file.
+  id: totrans-283
   prefs: []
   type: TYPE_NORMAL
+  zh: 依赖人工智能来为你工作的一个危险是它可能会创建看起来合理但存在错误的代码。在这种情况下，如果我的任何字段包含逗号，这个函数生成的输出很可能会导致 CSV
+    文件无法阅读。
 - en: ChatGPT gave me almost the same code, except that it accounted for potential
     commas in my puzzle fields.
+  id: totrans-284
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 给了我几乎相同的代码，只是它考虑了谜题字段中可能存在的逗号。
 - en: import * as fs from 'fs';
+  id: totrans-285
   prefs: []
   type: TYPE_NORMAL
+  zh: import * as fs from 'fs';
 - en: 'const generateCSV = (puzzles: Puzzle[]): void => {'
+  id: totrans-286
   prefs: []
   type: TYPE_NORMAL
+  zh: 'const generateCSV = (puzzles: Puzzle[]): void => {'
 - en: const header = 'id,size,solution\n';
+  id: totrans-287
   prefs: []
   type: TYPE_NORMAL
+  zh: const header = 'id,size,solution\n';
 - en: const rows = puzzles.map(puzzle => `${puzzle.id},${puzzle.size},"${puzzle.solution.join(';')}"\n`);
+  id: totrans-288
   prefs: []
   type: TYPE_NORMAL
+  zh: const rows = puzzles.map(puzzle => `${puzzle.id},${puzzle.size},"${puzzle.solution.join(';')}"\n`);
 - en: const csv = header + rows.join('');
+  id: totrans-289
   prefs: []
   type: TYPE_NORMAL
+  zh: const csv = header + rows.join('');
 - en: fs.writeFileSync('puzzles.csv', csv);
+  id: totrans-290
   prefs: []
   type: TYPE_NORMAL
+  zh: fs.writeFileSync('puzzles.csv', csv);
 - en: '};'
+  id: totrans-291
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: generateCSV(demoPuzzles);
+  id: totrans-292
   prefs: []
   type: TYPE_NORMAL
+  zh: generateCSV(demoPuzzles);
 - en: Notice that both solutions assumed I’m using Node, in that each solution uses
     the fs library. ChatGPT took extra care to inform me that I would need the fs
     module from NodeJS.
+  id: totrans-293
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这两个解决方案都假设我在使用 Node，因为每个解决方案都使用了 fs 库。ChatGPT 特别注意告诉我我需要来自 NodeJS 的 fs 模块。
 - en: Note that in order to run this code, you will need to have the fs module and
     the Node.js runtime installed.
+  id: totrans-294
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，为了运行此代码，您需要安装 fs 模块和 Node.js 运行时。
 - en: Generate HTML
+  id: totrans-295
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 生成 HTML
 - en: I could also ask it to generate HTML for me. ChatGPT did exactly what I asked
     it to, again remembering the shape of my puzzles array and objects.
+  id: totrans-296
   prefs: []
   type: TYPE_NORMAL
+  zh: 我也可以要求它为我生成 HTML。ChatGPT 确实按照我要求的方式做了，再次记住了我的谜题数组和对象的形状。
 - en: Create a function in JavaScript that will output the puzzles array as an HTML
     table
+  id: totrans-297
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个 JavaScript 函数，将谜题数组输出为 HTML 表格
 - en: function printTable(puzzles) {
+  id: totrans-298
   prefs: []
   type: TYPE_NORMAL
+  zh: function printTable(puzzles) {
 - en: const table = document.createElement('table');
+  id: totrans-299
   prefs: []
   type: TYPE_NORMAL
+  zh: const table = document.createElement('table');
 - en: const headerRow = document.createElement('tr');
+  id: totrans-300
   prefs: []
   type: TYPE_NORMAL
+  zh: const headerRow = document.createElement('tr');
 - en: const idHeader = document.createElement('th');
+  id: totrans-301
   prefs: []
   type: TYPE_NORMAL
+  zh: const idHeader = document.createElement('th');
 - en: const sizeHeader = document.createElement('th');
+  id: totrans-302
   prefs: []
   type: TYPE_NORMAL
+  zh: const sizeHeader = document.createElement('th');
 - en: const solutionHeader = document.createElement('th');
+  id: totrans-303
   prefs: []
   type: TYPE_NORMAL
+  zh: const solutionHeader = document.createElement('th');
 - en: idHeader.textContent = 'ID';
+  id: totrans-304
   prefs: []
   type: TYPE_NORMAL
+  zh: idHeader.textContent = 'ID';
 - en: sizeHeader.textContent = 'Size';
+  id: totrans-305
   prefs: []
   type: TYPE_NORMAL
+  zh: sizeHeader.textContent = '大小';
 - en: solutionHeader.textContent = 'Solution';
+  id: totrans-306
   prefs: []
   type: TYPE_NORMAL
+  zh: solutionHeader.textContent = '解决方案';
 - en: headerRow.appendChild(idHeader);
+  id: totrans-307
   prefs: []
   type: TYPE_NORMAL
+  zh: headerRow.appendChild(idHeader);
 - en: headerRow.appendChild(sizeHeader);
+  id: totrans-308
   prefs: []
   type: TYPE_NORMAL
+  zh: headerRow.appendChild(sizeHeader);
 - en: headerRow.appendChild(solutionHeader);
+  id: totrans-309
   prefs: []
   type: TYPE_NORMAL
+  zh: headerRow.appendChild(solutionHeader);
 - en: table.appendChild(headerRow);
+  id: totrans-310
   prefs: []
   type: TYPE_NORMAL
+  zh: table.appendChild(headerRow);
 - en: puzzles.forEach(puzzle => {
+  id: totrans-311
   prefs: []
   type: TYPE_NORMAL
+  zh: puzzles.forEach(puzzle => {
 - en: const row = document.createElement('tr');
+  id: totrans-312
   prefs: []
   type: TYPE_NORMAL
+  zh: const row = document.createElement('tr');
 - en: const idCell = document.createElement('td');
+  id: totrans-313
   prefs: []
   type: TYPE_NORMAL
+  zh: const idCell = document.createElement('td');
 - en: const sizeCell = document.createElement('td');
+  id: totrans-314
   prefs: []
   type: TYPE_NORMAL
+  zh: const sizeCell = document.createElement('td');
 - en: const solutionCell = document.createElement('td');
+  id: totrans-315
   prefs: []
   type: TYPE_NORMAL
+  zh: const solutionCell = document.createElement('td');
 - en: idCell.textContent = puzzle.id;
+  id: totrans-316
   prefs: []
   type: TYPE_NORMAL
+  zh: idCell.textContent = puzzle.id;
 - en: sizeCell.textContent = puzzle.size;
+  id: totrans-317
   prefs: []
   type: TYPE_NORMAL
+  zh: sizeCell.textContent = puzzle.size;
 - en: solutionCell.textContent = puzzle.solution.join(';');
+  id: totrans-318
   prefs: []
   type: TYPE_NORMAL
+  zh: solutionCell.textContent = puzzle.solution.join(';');
 - en: row.appendChild(idCell);
+  id: totrans-319
   prefs: []
   type: TYPE_NORMAL
+  zh: row.appendChild(idCell);
 - en: row.appendChild(sizeCell);
+  id: totrans-320
   prefs: []
   type: TYPE_NORMAL
+  zh: row.appendChild(sizeCell);
 - en: row.appendChild(solutionCell);
+  id: totrans-321
   prefs: []
   type: TYPE_NORMAL
+  zh: row.appendChild(solutionCell);
 - en: table.appendChild(row);
+  id: totrans-322
   prefs: []
   type: TYPE_NORMAL
+  zh: table.appendChild(row);
 - en: '});'
+  id: totrans-323
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: document.body.appendChild(table);
+  id: totrans-324
   prefs: []
   type: TYPE_NORMAL
+  zh: document.body.appendChild(table);
 - en: '}'
+  id: totrans-325
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: printTable(demoPuzzles);
+  id: totrans-326
   prefs: []
   type: TYPE_NORMAL
+  zh: printTable(demoPuzzles);
 - en: Here I think it may have outdone itself. I was expecting to see a bunch of hard-coded
     strings with HTML characters. I didn’t expect it to use DOM manipulation, but
     of course, that might be the better solution in many cases.
+  id: totrans-327
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我认为它可能已经超越了自己。我原本期望看到一堆硬编码的带有HTML字符的字符串。我没想到它会使用DOM操作，但当然，在许多情况下这可能是更好的解决方案。
 - en: Would Copilot do as well? Actually, it did what I expected originally.
+  id: totrans-328
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot会做得一样好吗？实际上，它做了我最初期望的事情。
 - en: // Function to output the puzzles array as an HTML table
+  id: totrans-329
   prefs: []
   type: TYPE_NORMAL
+  zh: // 将谜题数组输出为HTML表格的函数
 - en: printPuzzlesAsHtml() {
+  id: totrans-330
   prefs: []
   type: TYPE_NORMAL
+  zh: printPuzzlesAsHtml() {
 - en: // Get the longest puzzle id, so we can pad the id column to align the puzzle
     data.
+  id: totrans-331
   prefs: []
   type: TYPE_NORMAL
+  zh: // 获取最长的谜题ID，以便我们可以填充ID列以对齐谜题数据。
 - en: const longestId = this.demoPuzzles.reduce((longest, puzzle) => Math.max(longest,
     puzzle.id.toString().length), 0);
+  id: totrans-332
   prefs: []
   type: TYPE_NORMAL
+  zh: const longestId = this.demoPuzzles.reduce((longest, puzzle) => Math.max(longest,
+    puzzle.id.toString().length), 0);
 - en: // Print the header row.
+  id: totrans-333
   prefs: []
   type: TYPE_NORMAL
+  zh: // 打印标题行。
 - en: console.log('<table>');
+  id: totrans-334
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log('<table>');
 - en: console.log('<tr><th>id</th><th>size</th><th>solution</th></tr>');
+  id: totrans-335
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log('<tr><th>id</th><th>size</th><th>solution</th></tr>');
 - en: // Print the puzzle rows.
+  id: totrans-336
   prefs: []
   type: TYPE_NORMAL
+  zh: // 打印谜题行。
 - en: this.demoPuzzles.forEach(puzzle => {
+  id: totrans-337
   prefs: []
   type: TYPE_NORMAL
+  zh: this.demoPuzzles.forEach(puzzle => {
 - en: console.log(`<tr><td>${puzzle.id}</td><td>${puzzle.size}</td><td>${puzzle.solution.join('
     ')}</td></tr>`);
+  id: totrans-338
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(`<tr><td>${puzzle.id}</td><td>${puzzle.size}</td><td>${puzzle.solution.join('
+    ')}</td></tr>`);
 - en: '});'
+  id: totrans-339
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: console.log('</table>');
+  id: totrans-340
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log('</table>');
 - en: '}'
+  id: totrans-341
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: That doesn’t mean it is incapable of using the DOM API. All I had to do was
     change my prompt a bit.
+  id: totrans-342
   prefs: []
   type: TYPE_NORMAL
+  zh: 这并不意味着它无法使用DOM API。我所要做的就是稍微改变我的提示。
 - en: // Function that uses the DOM API to output the puzzles array as an HTML table
+  id: totrans-343
   prefs: []
   type: TYPE_NORMAL
+  zh: // 使用DOM API输出谜题数组为HTML表格的函数
 - en: 'private outputPuzzles(puzzles: Puzzle[]): void {'
+  id: totrans-344
   prefs: []
   type: TYPE_NORMAL
+  zh: 'private outputPuzzles(puzzles: Puzzle[]): void {'
 - en: const table = document.createElement('table');
+  id: totrans-345
   prefs: []
   type: TYPE_NORMAL
+  zh: const table = document.createElement('table');
 - en: const header = document.createElement('tr');
+  id: totrans-346
   prefs: []
   type: TYPE_NORMAL
+  zh: const header = document.createElement('tr');
 - en: header.innerHTML = '<th>ID</th><th>Size</th><th>Solution</th>';
+  id: totrans-347
   prefs: []
   type: TYPE_NORMAL
+  zh: header.innerHTML = '<th>ID</th><th>Size</th><th>Solution</th>';
 - en: table.appendChild(header);
+  id: totrans-348
   prefs: []
   type: TYPE_NORMAL
+  zh: table.appendChild(header);
 - en: puzzles.forEach(puzzle => {
+  id: totrans-349
   prefs: []
   type: TYPE_NORMAL
+  zh: puzzles.forEach(puzzle => {
 - en: const row = document.createElement('tr');
+  id: totrans-350
   prefs: []
   type: TYPE_NORMAL
+  zh: const row = document.createElement('tr');
 - en: row.innerHTML = `<td>${puzzle.id}</td><td>${puzzle.size}</td><td>${puzzle.solution}</td>`;
+  id: totrans-351
   prefs: []
   type: TYPE_NORMAL
+  zh: row.innerHTML = `<td>${puzzle.id}</td><td>${puzzle.size}</td><td>${puzzle.solution}</td>`;
 - en: table.appendChild(row);
+  id: totrans-352
   prefs: []
   type: TYPE_NORMAL
+  zh: table.appendChild(row);
 - en: '});'
+  id: totrans-353
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: document.body.appendChild(table);
+  id: totrans-354
   prefs: []
   type: TYPE_NORMAL
+  zh: document.body.appendChild(table);
 - en: '}'
+  id: totrans-355
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: I’m not sure that’s any better. It ended up building me a hybrid of DOM calls
     and HTML string literals. That’s the thing about these AIs; you often have to
     try the same thing more than once to get the code you’re looking for.
+  id: totrans-356
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不确定这样做是否更好。最终它为我构建了一个DOM调用和HTML字符串文本的混合体。这就是这些AI的问题；通常您必须尝试多次相同的方法才能得到您要找的代码。
 - en: Conclusion
+  id: totrans-357
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 结论
 - en: This chapter focused primarily on array and string manipulation, which is what
     most of my day-to-day work entails. You may have different algorithms you work
     with regularly. Rest assured that either of these tools will save you a lot of
     typing. The important thing to keep in mind is that the prompt is just as important
     as the language you ask them to use.
+  id: totrans-358
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章主要关注数组和字符串操作，这是我日常工作中的大部分内容。您可能经常使用不同的算法。请放心，这两个工具都将为您节省大量输入时间。要记住的重要事情是提示与您要求它们使用的语言一样重要。
 - en: Also, as you’ve seen, sometimes you have to try multiple prompts to get the
     right code. Finally, make sure you validate the correctness of the code. Either
     tool can create code that looks great but doesn’t account for edge cases.
+  id: totrans-359
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，正如你所看到的，有时你必须尝试多个提示才能得到正确的代码。最后，请确保验证代码的正确性。任何工具都可以创建看起来很棒但不考虑边缘情况的代码。
 - en: Remember that at the end of the day, you’re the programmer, not the AI.
+  id: totrans-360
   prefs: []
   type: TYPE_NORMAL
+  zh: 记住，归根结底，你是程序员，而不是AI。

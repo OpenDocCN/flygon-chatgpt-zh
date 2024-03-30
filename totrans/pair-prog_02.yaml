@@ -1,1195 +1,1812 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/chapter_title_above.png)'
 - en: Shell Scripting Commands
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: Shell脚本命令
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/chapter_title_below.png)'
 - en: '![A person sitting in front of a computer  Description automatically generated
     with medium confidence](d2d_images/image014.jpg)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![一个坐在电脑前的人 由机器自动生成的描述，中等置信度](d2d_images/image014.jpg)'
 - en: Image by [cocoandwifi](https://pixabay.com/users/cocoandwifi-4330980/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4996834) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4996834)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 图片由 [cocoandwifi](https://pixabay.com/users/cocoandwifi-4330980/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4996834) 提供自 [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4996834)
 - en: Shell scripting is a fundamental skill for anyone who wants to efficiently manage
     and automate tasks on a computer.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: Shell脚本是任何想要在计算机上高效管理和自动化任务的人的基本技能。
 - en: Let’s investigate how Copilot and ChatGPT do with shell scripting. A while back
     I wrote an article about what these symbols (~|&||&&$!`()?) mean in a bash (or
     similar) shell and how to use them.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看Copilot和ChatGPT在shell脚本中的表现。不久前，我写了一篇关于这些符号（~|&||&&$!`()?）在bash（或类似）shell中的含义以及如何使用它们的文章。
 - en: Can GitHub Copilot and ChatGPT give me these types of commands from nothing
     but comments? Read on to find out.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: GitHub Copilot和ChatGPT能否仅凭评论给我这些类型的命令？继续阅读以了解详情。
 - en: '#!/bin/bash'
+  id: totrans-9
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '#!/bin/bash'
 - en: Copilot only works in the context of a code editor. It has no conversational
     interface as ChatGPT does. Thus, to test Copilot, the first thing I did was to
     create a blank file in VS Code. At the top of the file, I added a “shebang” line
     to indicate that the file contains shell scripting code.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot只在代码编辑器的上下文中工作。它没有像ChatGPT那样的对话界面。因此，为了测试Copilot，我做的第一件事是在VS Code中创建一个空白文件。在文件顶部，我添加了一个“shebang”行来指示文件包含shell脚本代码。
 - en: '#!/bin/bash'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: '#!/bin/bash'
 - en: Next, I added the following comment to see what Copilot would write for me.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我添加了以下注释，看看Copilot会为我写什么。
 - en: Check for a directory and print a message if it doesn't exist
+  id: totrans-13
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 检查目录是否存在并打印消息
 - en: To my surprise, it didn’t do anything. Maybe, I thought, Copilot doesn’t know
     about shell scripting and this experiment will end quickly. Then it hit me. It
     didn’t get the hint from the shebang, but probably from the file extension. I
     saved the file as copilot.sh and tried again.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 令我惊讶的是，它什么也没做。也许，我想，Copilot不了解shell脚本，这个实验很快就会结束。然后我明白了。它没有从shebang中得到提示，而是可能从文件扩展名中得到的。我将文件保存为copilot.sh然后再试一次。
 - en: This time, Copilot gave me some code.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 这次，Copilot给了我一些代码。
 - en: if [ ! -d /home/username/Downloads ]; then
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果 [ ! -d /home/username/Downloads ]; then
 - en: echo "The directory /home/username/Downloads does not exist."
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: echo "目录/home/username/Downloads不存在。"
 - en: fi
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: fi
 - en: It isn’t what I expected, but it does what the comment says.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这不是我预期的，但它确实做了评论中说的事情。
 - en: File Extension?
+  id: totrans-20
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 文件扩展名？
 - en: As I mentioned, Copilot needs to know what kind of file it is before it can
     write code for you. Through further experimentation, I discovered that it isn’t
     the file extension that made Copilot understand the file type. Instead, it was
     VS Code itself. Saving the file with a .sh extension told VS Code that it was
     a Shell Script file.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我所提到的，Copilot需要知道文件的类型才能为您编写代码。通过进一步的实验，我发现让Copilot理解文件类型的不是文件扩展名。相反，是VS Code本身。将文件保存为.sh扩展名告诉VS
+    Code这是一个Shell脚本文件。
 - en: '![image](d2d_images/image021.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/image021.png)'
 - en: The file extension is less important than the type of  file VS Code thinks it is.
     In most cases, VS Code gets it right automatically. If not, you can click on the
     phrase “Plain Text” in the bottom status bar. A menu will appear at the top of
     the page, allowing you to select the file type manually.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 文件扩展名不如VS Code认为的文件类型重要。在大多数情况下，VS Code会自动正确识别。如果没有，您可以点击底部状态栏中的“纯文本”短语。页面顶部将出现一个菜单，允许您手动选择文件类型。
 - en: '![Graphical user interface, text, application  Description automatically generated](d2d_images/image009.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![图形用户界面，文本，应用程序 由机器自动生成的描述](d2d_images/image009.png)'
 - en: In my case, saving the file with a .sh did the trick. In another instance, adding
     the “Shebang” line did it. The results seemed inconsistent, so double-check the
     type.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我的情况下，将文件保存为.sh就解决了问题。在另一种情况下，添加“Shebang”行就解决了问题。结果似乎不一致，所以请仔细检查类型。
 - en: '![image](d2d_images/image019.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/image019.png)'
 - en: The important thing to remember is that Copilot only cares about that file type
     and not the extension.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 记住的重要一点是，Copilot只关心文件类型而不关心扩展名。
 - en: What about ChatGPT?
+  id: totrans-28
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 聊天GPT怎么样？
 - en: 'ChatGPT seems better suited for these sorts of things, given its more conversational
     nature. Here is how it responded to the same prompt:'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT似乎更适合这些事情，考虑到其更具对话性质。以下是它对相同提示的回应：
 - en: Check for a directory and print a message if it doesn't exist
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 检查目录并在不存在时打印消息
 - en: 'You can use the test command (also known as [ or [[) to check if a directory
     exists, and the echo command to print a message if it doesn''t. Here is an example:'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以使用 test 命令（也称为 [ 或 [[）来检查目录是否存在，并使用 echo 命令在不存在时打印消息。以下是一个示例：
 - en: if test ! -d /path/to/directory; then
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果 test ! -d /path/to/directory; then
 - en: echo "Directory does not exist"
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: echo "目录不存在"
 - en: fi
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 结束
 - en: Alternatively, you could use the if [ ! -d "/path/to/directory" ]; then command
     with the same echo message.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者，您可以使用 if [ ! -d "/path/to/directory" ]; then 命令并带有相同的 echo 消息。
 - en: Another option is to use if [[ ! -d "/path/to/directory" ]]; then
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个选项是使用 if [[ ! -d "/path/to/directory" ]]; then
 - en: The difference between the two sets of output is immediately apparent. ChatGPT
     offers an explanation with its answers, and does not simply give you the code.
     As you will see, this can be a significant advantage to using ChatGPT over Copilot.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 两组输出之间的区别立即显而易见。ChatGPT在回答中提供解释，而不仅仅给出代码。正如您将看到的，这可能是使用ChatGPT而不是Copilot的重要优势。
 - en: The find Command
+  id: totrans-38
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 查找命令
 - en: 'The next thing I tried was to find all the PDF files anywhere in my home directory
     and below. Normally when I do that, I use the find command. Is that what Copilot
     would suggest? I entered the following comment:'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 我接下来尝试的是在我的主目录及其子目录中查找所有 PDF 文件。通常情况下，我会使用 find 命令。Copilot会建议这样做吗？我输入了以下评论：
 - en: Find all PDF files in my home directory and print the path to each one
+  id: totrans-40
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 查找我主目录中的所有 PDF 文件并打印每个文件的路径
 - en: 'When I pressed the Return key, nothing happened. I tried a few more times,
     but Copilot refused to suggest anything. Then I decided to try to give it a hint.
     I typed the word find on a line by itself, just beneath that comment. Copilot
     immediately sprang to life and suggested the following completion:'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我按下回车键时，什么都没有发生。我尝试了几次，但Copilot拒绝建议任何内容。然后我决定尝试给它一个提示。我在那个评论的下面单独一行输入了单词 find。Copilot立即活跃起来，并建议以下完成：
 - en: find /home/username -name "*.pdf" -print
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: find /home/username -name "*.pdf" -print
 - en: I was a little disappointed. That command won’t work unless my home directory
     just happens to be /home/username. However, then I started thinking about it.
     Copilot did the hard part. It got the syntax of the find command correct. I can
     always edit it to fix my home directory.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我有点失望。除非我的主目录碰巧是 /home/username，否则该命令将无法工作。然而，然后我开始考虑。Copilot做了艰难的部分。它正确地得到了
+    find 命令的语法。我总是可以编辑它以修复我的主目录。
 - en: In fact, when I changed my hint to find ~, it did the right thing with no further
     aid.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上，当我将提示更改为 find ~ 时，它会自行完成而无需进一步帮助。
 - en: If you are not aware, ~ is a shell short cut meaning “my account’s home directory.”
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您不知道，~ 是一个表示“我的帐户主目录”的shell快捷方式。
 - en: ChatGPT gave me two different options.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT给了我两个不同的选项。
 - en: Find all PDF files in my home directory and print the path to each one
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 查找我主目录中的所有 PDF 文件并打印每个文件的路径
 - en: 'You can use the find command to search for all PDF files in your home directory
     and print the path to each one. Here''s an example:'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以使用 find 命令搜索您的主目录中的所有 PDF 文件并打印每个文件的路径。这里是一个示例：
 - en: find ~ -name "*.pdf" -print
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -name "*.pdf" -print
 - en: This will search for all files in your home directory (~) that end in .pdf and
     print the path to each one.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将搜索您的主目录（~）中以 .pdf 结尾的所有文件，并打印每个文件的路径。
 - en: Alternatively, you could use ls command with wildcard,
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者，您可以使用带有通配符的 ls 命令，
 - en: ls ~/ -R | grep .pdf$
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: ls ~/ -R | grep .pdf$
 - en: This will recursively list all files in your home directory, and filter only
     the files with .pdf extension.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将递归列出您的主目录中的所有文件，并仅过滤具有 .pdf 扩展名的文件。
 - en: As I expected, ChatGPT does a much better job than Copilot. As before, I appreciate
     that it provides an explanation and not just the command. If you are trying to
     learn, this is the better experience.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我预料的那样，ChatGPT比Copilot做得更好。与以前一样，我欣赏它提供解释而不仅仅是命令。如果您想要学习，这将是更好的体验。
 - en: Background Tasks
+  id: totrans-55
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 后台任务
 - en: The next thing I wanted to do was to determine whether the AI knows how to use
     some of those symbols that often trip up beginners. Would they know that the greater
     than sign (>) is used to redirect output and that the ampersand (&) is used to
     run a command in the background?
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我接下来想要做的一件事是确定AI是否知道如何使用一些经常使初学者困惑的符号。它们会知道大于号（>）用于重定向输出，和和符号（&）用于在后台运行命令吗？
 - en: I changed my comment as follows, and then gave it the same hint from above.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 我更改了我的评论如下，然后给了它同上面一样的提示。
 - en: Find all PDF files below my home folder and write the results to a file called
     pdfs.txt in the background.
+  id: totrans-58
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 在后台查找我的主文件夹下的所有PDF文件并将结果写入名为pdfs.txt的文件中。
 - en: find ~ -name "*.pdf" > pdfs.txt &
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -name "*.pdf" > pdfs.txt &
 - en: That’s exactly right, though I was confused that it dropped the -print parameter.
     Then I remembered that printing is the default behavior of the find command.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 这完全正确，尽管我对它省略了-print参数感到困惑。然后我记得查找命令的默认行为是输出。
 - en: As before, ChatGPT gave me multiple options, complete with thorough explanations.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 跟以前一样，ChatGPT给了我多个选项，并详细解释了每个选项。
 - en: Find all PDF files below my home folder and write the results to a file called
     pdfs.txt in the background.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 在后台查找我主文件夹下的所有PDF文件并将结果写入名为pdfs.txt的文件中。
 - en: 'You can use the find command to search for all PDF files below your home directory,
     and the tee command to write the results to a file called pdfs.txt in the background.
     Here''s an example:'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以使用find命令搜索你主文件夹下的所有PDF文件，并使用tee命令将结果写入名为pdfs.txt的文件中。以下是一个例子：
 - en: find ~ -name "*.pdf" -print | tee pdfs.txt &
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -name "*.pdf" -print | tee pdfs.txt &
 - en: This will search for all files in your home directory and its subdirectories
     that end in .pdf and print the path to each one. The output will be piped to the
     tee command, which will write it to a file called pdfs.txt in the current directory.
     The & at the end will run the command in background, so you can continue to use
     the terminal.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将搜索你的主目录及其子目录中所有以.pdf结尾的文件，并打印每个文件的路径。输出将被传输到tee命令，该命令将其写入当前目录中名为pdfs.txt的文件中。最后的&符号将在后台运行该命令，因此你可以继续使用终端。
 - en: Alternatively, you could use ls command with wildcard,
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者，你可以使用带通配符的ls命令，
 - en: ls ~/ -R | grep .pdf$ >> pdfs.txt &
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: ls ~/ -R | grep .pdf$ >> pdfs.txt &
 - en: This will recursively list all files in your home directory and its subdirectories,
     and filter only the files with .pdf extension, and write it to pdfs.txt file.
     The & at the end will run the command in background as well.
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将递归列出你的主目录及其子目录中的所有文件，并只筛选出扩展名为.pdf的文件，写入pdfs.txt文件中。最后的&符号也会在后台运行该命令。
 - en: I had forgotten all about the tee command. I’m also impressed that it went a
     little farther with the ls command, using grep with a simple regular expression
     to find files that end in .pdf. It also assumed I would want to append to my pdfs.txt
     file if it already exists. Though not exactly what I asked for, it actually gave
     me more.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 我完全忘记了tee命令。我也对ls命令更加印象深刻，它使用grep和简单的正则表达式找到以.pdf结尾的文件。它还假设我想要追加到pdfs.txt文件中如果它已经存在。虽然不完全是我要求的，但它实际上给了我更多。
 - en: Output Pipe
+  id: totrans-70
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 输出管道
 - en: Next, I wanted to see whether they know how to use the output of one command
     as the input to another. I was also curious to know whether they are aware of
     the previous command just generated. Do they remember?
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我想看看他们是否知道如何将一个命令的输出作为另一个命令的输入。我还很好奇他们是否知道刚才生成的前一个命令。他们会记得吗？
 - en: Here is my Copilot comment and the command it generated.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是我的Copilot评论和它生成的命令。
 - en: Count the number of PDF files in my home folder in the background and print
     the result.
+  id: totrans-73
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 在后台计算我的主文件夹中的PDF文件数量，并输出结果。
 - en: find ~ -name "*.pdf" | wc -l &
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -name "*.pdf" | wc -l &
 - en: I had hoped it would use the file it created from the last command, but it didn’t.
     It did, however, remember that I prefer to use find ~.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 我希望它会使用上一个命令创建的文件，但它没有这样做。不过，它确实记得我更倾向于使用find ~。
 - en: ChatGPT again gave me multiple options.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT再次给了我多个选项。
 - en: Count the number of PDF files in my home folder in the background and print
     the result.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 在后台计算我的主文件夹中的PDF文件数量，并输出结果。
 - en: 'You can use the find command to search for all PDF files in your home directory,
     and the wc command to count the number of files and print the result. Here''s
     an example:'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以使用find命令搜索主目录中的所有PDF文件，然后使用wc命令计算文件数量并输出结果。以下是一个例子：
 - en: find ~ -name "*.pdf" -print | wc -l > count.txt &
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -name "*.pdf" -print | wc -l > count.txt &
 - en: This will search for all files in your home directory and its subdirectories
     that end in .pdf, print the path to each one, then pipe the output to the wc command
     with the -l option which will count the number of lines and redirect the output
     to a file called count.txt in the current directory. The & at the end will run
     the command in background, so you can continue to use the terminal.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将搜索您的主目录及其子目录中以 .pdf 结尾的所有文件，打印每个文件的路径，然后将输出传输到带有 -l 选项的 wc 命令中，该选项将计算行数并将输出重定向到当前目录中名为
+    count.txt 的文件。最后的 & 将在后台运行该命令，因此您可以继续使用终端。
 - en: 'Alternatively, you could use ls command with wildcard:'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者，您可以使用带通配符的 ls 命令：
 - en: ls -R ~/ | grep .pdf$ | wc -l > count.txt &
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: ls -R ~/ | grep .pdf$ | wc -l > count.txt &
 - en: This will recursively list all files in your home directory and its subdirectories,
     filter only the files with .pdf extension, pipe the output to the wc command with
     the -l option which will count the number of lines and redirect the output to
     a file called count.txt in the current directory. The & at the end will run the
     command in background as well.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将递归列出您的主目录及其子目录中的所有文件，仅筛选出扩展名为 .pdf 的文件，将输出传输到带有 -l 选项的 wc 命令中，该选项将计算行数并将输出重定向到当前目录中名为
+    count.txt 的文件。最后的 & 将在后台运行该命令。
 - en: At this point, I found myself wondering whether it ever makes sense to use Copilot
     for the command line. I continued to do so for the rest of these tests.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 此时，我开始想知道是否有必要使用 Copilot 来进行命令行操作。我继续在这些测试中这样做。
 - en: Redirect Errors to Ignore Them
+  id: totrans-85
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 重定向错误以忽略它们
 - en: Most people know how to use the > character to redirect the output of a command
     to a file. If the command encounters any errors, those will still display in the
     terminal, which can be confusing when running the command in the background.
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 大多数人知道如何使用 > 字符将命令的输出重定向到文件中。如果命令遇到任何错误，这些错误仍将显示在终端中，这在后台运行命令时可能会令人困惑。
 - en: I know it is possible to redirect errors to a special file called /dev/null,
     so that they are ignored completely. Unfortunately, I can never remember the syntax.
     I don’t know why because it isn’t that complicated. It’s one of my weird blind
     spots, I suppose.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 我知道可以将错误重定向到一个名为 /dev/null 的特殊文件中，以便完全忽略它们。不幸的是，我永远记不住语法。我不知道为什么，因为它并不那么复杂。这可能是我的一个奇怪的盲点吧。
 - en: Fortunately, Copilot knows exactly how to do it. I decided to combine some of
     the above concepts to see what it would do. It got it right on the first try.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 幸运的是，Copilot 知道如何做。我决定结合一些上述概念看看它会做什么。它第一次就做对了。
 - en: Find all the PDF files below my home folder, in the background, ignoring errors,
     and write the output to a file.
+  id: totrans-89
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 在后台查找所有位于我的主文件夹下的 PDF 文件，忽略错误，并将输出写入文件。
 - en: find ~ -name "*.pdf" > pdfs.txt 2> /dev/null &
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -name "*.pdf" > pdfs.txt 2> /dev/null &
 - en: ChatGPT Remembers
+  id: totrans-91
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: ChatGPT 记住了
 - en: What’s really cool about ChatGPT is that it remembers earlier parts of your
     conversation. For this one, I changed up the prompt and simply asked it to “rewrite
     the last command to ignore any errors.” The explanations are almost identical
     as those it provided above, so I’ll spare you the duplication and simply show
     you the commands it gave me. Again, it gave me two options.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 真正酷的地方在于它记住了你对话的早期部分。对于这个，我改变了提示，简单地要求它“重写最后一个命令以忽略任何错误”。解释几乎与它上面提供的相同，所以我就不重复了，只是展示它给我的命令。同样，它给了我两个选项。
 - en: Option 1 – Find
+  id: totrans-93
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 选项 1 – 查找
 - en: find ~ -name "*.pdf" -print 2> /dev/null | wc -l > count.txt &
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -name "*.pdf" -print 2> /dev/null | wc -l > count.txt &
 - en: Option 2 – ls
+  id: totrans-95
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 选项 2 – ls
 - en: ls -R ~/ 2> /dev/null | grep .pdf$ | wc -l > count.txt &
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: ls -R ~/ 2> /dev/null | grep .pdf$ | wc -l > count.txt &
 - en: '*nix System Administration'
+  id: totrans-97
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: '*nix 系统管理'
 - en: I started wondering whether they could help me with some common system administration
     tasks, such as creating users, adding users to groups, and so forth.
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 我开始想知道他们是否能帮助我处理一些常见的系统管理任务，比如创建用户、将用户添加到组等等。
 - en: Add a New User Account
+  id: totrans-99
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 添加一个新用户账户
 - en: I decided to start with something simple, so I asked Copilot to create a new
     user account for me.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 我决定从简单的事情开始，所以我让 Copilot 为我创建一个新用户账户。
 - en: Create a new user account
+  id: totrans-101
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 创建一个新用户账户
 - en: sudo adduser username
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo adduser 用户名
 - en: This doesn’t work on a Mac. Maybe it works on Linux. I decided to try again
     and got this.
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 这在 Mac 上不起作用。也许在 Linux 上可以。我决定再试一次，得到了这个结果。
 - en: Create a new user account on macos
+  id: totrans-104
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 在 macOS 上创建一个新用户账户
 - en: dscl . -create /Users/username
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: dscl . -create /Users/用户名
 - en: Running that gave me a permission error. I tried once again, prepending sudo
     to the command. That one might have worked; I’m not sure. The folder /Users/username
     does not exist, nor did a user by that name appear when I opened the Users control
     panel. Maybe I’m still missing something.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 运行会给我一个权限错误。我再次尝试，在命令前面加上sudo。可能这个命令有用；我不确定。文件夹/Users/username不存在，当我打开用户控制面板时也没有出现这个名称的用户。也许我还是忽略了什么。
 - en: This is an example where Copilot might be more frustrating than helpful.
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个例子，Copilot可能比帮助更令人沮丧。
 - en: ChatGPT again outdid itself, providing more detail and explanation.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT再次表现出色，提供了更多的细节和解释。
 - en: Create a new user account on macos
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 在macos上创建一个新的用户帐户
 - en: 'To create a new user account on macOS, you can use the dscl (Directory Service
     command line utility) command. Here is an example of how to create a new user
     account called "newuser" with a password of "newpassword":'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 要在macOS上创建一个新的用户帐户，你可以使用dscl（Directory Service命令行实用程序）命令。下面是一个示例，如何创建一个名为“newuser”的新用户帐户和密码为“newpassword”：
 - en: sudo dscl . -create /Users/newuser
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dscl . -create /Users/newuser
 - en: sudo dscl . -create /Users/newuser UserShell /bin/bash
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dscl . -create /Users/newuser UserShell /bin/bash
 - en: sudo dscl . -create /Users/newuser RealName "New User"
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dscl . -create /Users/newuser RealName "New User"
 - en: sudo dscl . -create /Users/newuser UniqueID "501"
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dscl . -create /Users/newuser UniqueID "501"
 - en: sudo dscl . -create /Users/newuser PrimaryGroupID 20
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dscl . -create /Users/newuser PrimaryGroupID 20
 - en: sudo dscl . -create /Users/newuser NFSHomeDirectory /Users/newuser
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dscl . -create /Users/newuser NFSHomeDirectory /Users/newuser
 - en: sudo dscl . -passwd /Users/newuser newpassword
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dscl . -passwd /Users/newuser newpassword
 - en: This creates the account, sets the shell to /bin/bash, sets the RealName, UniqueID,
     PrimaryGroupID and home directory, and sets the password.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 这创建了帐户，将shell设置为/bin/bash，设置了RealName、UniqueID、PrimaryGroupID和home目录，并设置了密码。
 - en: 'Alternatively, you can use the sysadminctl command to create a new user account
     and set the password. Here is an example:'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者，你可以使用sysadminctl命令来创建一个新的用户帐户并设置密码。下面是一个例子：
 - en: sudo sysadminctl -addUser newuser -fullName "New User" -password newpassword
     -admin
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo sysadminctl -addUser newuser -fullName "New User" -password newpassword
+    -admin
 - en: This creates the account with the username "newuser", full name "New User",
     password "newpassword" and admin privilege.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将创建一个帐户，用户名为“newuser”，全名为“New User”，密码为“newpassword”，并具有管理员权限。
 - en: You also can use the GUI by going to System Preferences > Users & Groups > click
     on the lock icon to unlock it > click on the "+" sign to add a new user.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也可以通过转到系统偏好设置 > 用户和群组 > 单击锁图标进行解锁 > 单击“+”符号添加新用户来使用图形界面。
 - en: Please note that these commands require administrative privileges and should
     be used with caution.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这些命令需要管理员权限，并且应注意谨慎使用。
 - en: I tried the second command on my Mac and it worked flawlessly. ChatGPT wins
     here handily.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在我的Mac上尝试了第二个命令，它毫无问题。ChatGPT在这里绝对是赢家。
 - en: Make an Existing User an Admin
+  id: totrans-125
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 使现有用户成为管理员
 - en: Next, I asked them both for the command to make an existing user an admin.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我询问它们两个如何使现有用户成为管理员。
 - en: Make user 'michael' a local administrator
+  id: totrans-127
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 使用户'michael'成为本地管理员
 - en: sudo dseditgroup -o edit -a michael -t user admin
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dseditgroup -o edit -a michael -t user admin
 - en: I’m honestly not sure whether that one will work, but it looks correct. Again,
     is Copilot being helpful or frustrating?
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 老实说我不确定那个命令是否有效，但它看起来正确。再次，Copilot是在帮忙还是令人沮丧？
 - en: ChatGPT again gave me a set of options, the second of which matched Copilot’s
     suggestion.
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT再次给了我一系列选项，其中第二个与Copilot的建议相匹配。
 - en: Make user 'michael' a local administrator
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用户'michael'成为本地管理员
 - en: 'To make a user "michael" a local administrator on macOS, you can use the dscl
     (Directory Service command line utility) command. Here is an example of how to
     make the user "michael" a local administrator:'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 要将用户“michael”设置为macOS上的本地管理员，你可以使用dscl（Directory Service命令行实用程序）命令。下面是如何将用户“michael”设置为本地管理员的示例：
 - en: sudo dscl . -append /Groups/admin GroupMembership michael
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dscl . -append /Groups/admin GroupMembership michael
 - en: This command adds the user "michael" to the "admin" group. Members of the "admin"
     group have administrative privileges on the system.
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个命令将用户“michael”添加到“admin”组。 "admin"组的成员在系统上具有管理员权限。
 - en: 'Alternatively, you can use the dseditgroup command to add a user to the "admin"
     group. Here is an example:'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者，你可以使用dseditgroup命令将用户添加到“admin”组。下面是一个例子：
 - en: sudo dseditgroup -o edit -a michael -t user admin
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dseditgroup -o edit -a michael -t user admin
 - en: This command adds the user "michael" to the "admin" group.
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个命令将用户“michael”添加到“admin”组。
 - en: You also can use the GUI by going to System Preferences > Users & Groups > click
     on the lock icon to unlock it > right click on the user you want to change > select
     "Advanced Options" > change the "Account type" to "Administrator".
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 您还可以通过转到系统偏好设置 > 用户与组 > 单击锁图标以解锁 > 右键单击要更改的用户 > 选择“高级选项” > 将“帐户类型”更改为“管理员”来使用GUI。
 - en: Please note that these commands require administrative privileges and should
     be used with caution.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这些命令需要管理员权限，并应谨慎使用。
 - en: Backup Files
+  id: totrans-140
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 备份文件
 - en: Have you ever used rsync to back up files from one system to another? No? Of
     course not. No one does (ok, maybe some people do). It’s hard to remember the
     syntax. That’s why Dropbox and other such services exist. Maybe Copilot knows
     the syntax.
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 您曾经使用rsync从一个系统备份文件到另一个系统吗？没有？当然没有。没有人这样做（好吧，也许有些人这样做）。很难记住语法。这就是为什么存在Dropbox和其他类似服务的原因。也许Copilot知道语法。
 - en: Sync my home folder to a remote server
+  id: totrans-142
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将我的主文件夹同步到远程服务器
 - en: rsync -avz—delete ~/ username@server:/home/username
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: rsync -avz—delete ~/ username@server:/home/username
 - en: It suffers from the same path name problems from before but again, those are
     easily recognized and fixed. What isn’t so easily discerned is whether those parameters
     are correct. I did a little research on my Mac using man rsync to read the command’s
     online manual. It seems that the command above is exactly what you would want
     to synchronize the source folder to the destination machine.
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 它遭受了之前的路径名问题，但同样，这些问题很容易识别和修复。不那么容易辨认的是这些参数是否正确。我在我的Mac上做了一点研究，使用man rsync阅读命令的在线手册。看起来上面的命令正是您想要将源文件夹同步到目标机器的命令。
 - en: The —delete parameter tells the command to delete any extra files at the destination
     that are not on the source. If you just want to copy everything, keeping files
     on the destination you might have removed locally, you can omit this parameter.
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: —delete参数告诉命令删除目的地上不在源上的任何额外文件。如果您只想复制所有内容，保留在目的地上您可能已经删除的文件，可以省略此参数。
 - en: ChatGPT gave me four different suggestions, with rsync being the first one.
     It also suggested using scp, which I had planned to ask about next.
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT给了我四个不同的建议，其中rsync是第一个。它还建议使用scp，这是我打算接下来询问的。
 - en: Sync my home folder to a remote server
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 将我的主文件夹同步到远程服务器
 - en: 'There are several ways to sync your home folder to a remote server on macOS.
     Here are a few options:'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 在macOS上同步您的主文件夹到远程服务器有几种方法。以下是一些选项：
 - en: 'rsync: This command-line tool can be used to synchronize files and directories
     between two locations. Here''s an example of how to use rsync to sync your home
     folder to a remote server:'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: rsync：这个命令行工具可用于在两个位置之间同步文件和目录。以下是如何使用rsync将您的主文件夹同步到远程服务器的示例：
 - en: rsync -avz -e ssh ~/ username@remote-server:/path/to/remote/folder/
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: rsync -avz -e ssh ~/ username@remote-server:/path/to/remote/folder/
 - en: This command will sync all files and directories in your home folder to the
     specified remote server. The -a option tells rsync to preserve file permissions
     and ownership, the -v option provides verbose output, and the -z option enables
     compression to speed up the transfer. The -e option specifies the remote shell
     to use, in this case ssh.
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令将同步主文件夹中的所有文件和目录到指定的远程服务器。-a选项告诉rsync保留文件权限和所有权，-v选项提供详细输出，-z选项启用压缩以加快传输速度。-e选项指定要使用的远程shell，在本例中为ssh。
 - en: 'scp: This command-line tool can be used to copy files and directories between
     a local machine and a remote server. Here''s an example of how to use scp to sync
     your home folder to a remote server:'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: scp：这个命令行工具可用于在本地计算机和远程服务器之间复制文件和目录。以下是如何使用scp将您的主文件夹同步到远程服务器的示例：
 - en: scp -r ~/ username@remote-server:/path/to/remote/folder/
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: scp -r ~/ username@remote-server:/path/to/remote/folder/
 - en: This command will copy all files and directories in your home folder to the
     specified remote server. The -r option tells scp to copy directories recursively.
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令将复制主文件夹中的所有文件和目录到指定的远程服务器。-r选项告诉scp递归复制目录。
 - en: 'Finder: You also can use Finder to sync your home folder to a remote server
     by mounting the remote folder as a local volume using SMB, NFS or FTP protocols,
     and then use the Finder to copy the files and folders.'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: Finder：您还可以使用Finder将您的主文件夹与远程服务器同步，方法是将远程文件夹挂载为本地卷，使用SMB、NFS或FTP协议，然后使用Finder复制文件和文件夹。
 - en: 'Third party software: There are also third-party software like ChronoSync,
     Carbon Copy Cloner, and others that can be used to sync your home folder to a
     remote server.'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 第三方软件：还有第三方软件如ChronoSync、Carbon Copy Cloner等，可用于将您的主文件夹同步到远程服务器。
 - en: Please note that these commands require a remote server with the appropriate
     permissions and access to be set up, and also make sure you have the correct login
     credentials to access the remote server.
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这些命令需要设置具有适当权限和访问权限的远程服务器，并确保你有正确的登录凭据来访问远程服务器。
 - en: Securely Copy from Server to Local
+  id: totrans-158
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 从服务器安全地复制到本地
 - en: Instead of backing up files, maybe there are some files on a remote server that
     you want to copy locally. You might use a command like this.
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许你不想备份文件，而是想将远程服务器上的一些文件复制到本地。你可以使用这样的命令。
 - en: Securely Copy from Server to Local folder
+  id: totrans-160
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 从服务器安全地复制到本地文件夹
 - en: scp -r username@server:/home/username/ ~/Downloads
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: scp -r username@server:/home/username/ ~/Downloads
 - en: Yes, that one is correct, too. ChatGPT had already suggested scp as one possible
     method to synchronize files to a remote server, and I fully expected it to get
     this one with ease.
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 是的，这个也是正确的。ChatGPT已经建议了scp作为将文件同步到远程服务器的一种可能方法，我完全预料到它会轻松地完成这个任务。
 - en: Securely Copy from Server to Local folder
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 从服务器安全地复制到本地文件夹
 - en: To securely copy files from a remote server to a local folder on macOS, you
     can use the scp command. scp stands for "secure copy" and it uses the SSH protocol
     to transfer files.
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 要在macOS上安全地从远程服务器复制文件到本地文件夹，你可以使用scp命令。scp代表“安全复制”，它使用SSH协议传输文件。
 - en: 'Here''s an example of how to use scp to copy a file called "file.txt" from
     the remote server "remote-server" to the local folder "~/Downloads":'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个使用scp将名为“file.txt”的文件从远程服务器“remote-server”复制到本地文件夹“~/Downloads”的示例：
 - en: scp username@remote-server:/path/to/file.txt ~/Downloads
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: scp username@remote-server:/path/to/file.txt ~/Downloads
 - en: This command will copy the file "file.txt" from the specified path on the remote
     server to the "Downloads" folder in your home directory.
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个命令将文件“file.txt”从远程服务器上指定路径复制到你的主目录中的“Downloads”文件夹。
 - en: You can also copy a directory and its contents by adding the -r option, which
     stands for "recursive"
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也可以通过添加-r选项（表示“递归”）来复制一个目录及其内容
 - en: scp -r username@remote-server:/path/to/directory ~/Downloads
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: scp -r username@remote-server:/path/to/directory ~/Downloads
 - en: 'You can also copy multiple files and directories by listing them, for example:'
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 你也可以通过列出它们来复制多个文件和目录，例如：
 - en: scp username@remote-server:/path/to/file1.txt /path/to/file2.txt /path/to/directory1/
     ~/Downloads
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: scp username@remote-server:/path/to/file1.txt /path/to/file2.txt /path/to/directory1/
+    ~/Downloads
 - en: 'You also can specify a different port number if the remote server uses a non-default
     port by using -P option:'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果远程服务器使用非默认端口，你也可以使用-P选项指定不同的端口号：
 - en: scp -P 22 username@remote-server:/path/to/file.txt ~/Downloads
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: scp -P 22 username@remote-server:/path/to/file.txt ~/Downloads
 - en: Please note that these commands require a remote server with the appropriate
     permissions and access to be set up, and also make sure you have the correct login
     credentials to access the remote server. Also, the scp command encrypts the data
     as it is transferred, providing an additional layer of security.
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这些命令需要设置具有适当权限和访问权限的远程服务器，并确保你有正确的登录凭据来访问远程服务器。此外，scp命令在传输数据时对数据进行加密，提供了额外的安全层。
 - en: Archiving Folders
+  id: totrans-175
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 存档文件夹
 - en: Sometimes we want to back up a folder by creating an archive. We might want
     to email it or upload it to a public server, or just simply copy it to a flash
     drive. If the goal is to keep the files together, an archive is perfect. If only
     I could remember what that command syntax is.
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时我们想通过创建归档文件来备份一个文件夹。我们可能想通过电子邮件发送它或将其上传到公共服务器，或者只是简单地将其复制到闪存驱动器中。如果目标是保持文件在一起，那么归档是完美的。如果我能记住那个命令的语法就好了。
 - en: I gave them both the same prompt, with Copilot first. I asked them each for
     both the commands to archive and unarchive a given directory.
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: 我给了他们相同的提示，首先是Copilot。我要求他们分别给出归档和解压给定目录的命令。
 - en: Archive the src directory using tar and gzip
+  id: totrans-178
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 使用tar和gzip对src目录进行归档
 - en: tar -cvzf src.tar.gz src
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -cvzf src.tar.gz src
 - en: Uncompress the tar.gz file
+  id: totrans-180
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 解压tar.gz文件
 - en: tar -xvzf src.tar.gz
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -xvzf src.tar.gz
 - en: The commands are correct, but again, Copilot provides the information without
     context. In source code, this makes a lot of sense. If you don’t know what the
     tar command does, though, you may still be lost. You certainly won’t know that
     you can safely remove the v from the parameter and still get the results you want.
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些命令是正确的，但再次，Copilot提供的信息没有上下文。在源代码中，这是有很多意义的。但如果你不知道tar命令的作用，你可能还是会迷失。你肯定不会知道你可以安全地删除参数中的v并仍然得到想要的结果。
 - en: Let’s see how ChatGPT did.
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看ChatGPT的表现如何。
 - en: Archive the src directory using tar and gzip
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用tar和gzip对src目录进行归档
 - en: 'To archive the src directory using tar and gzip, you can use the following
     command:'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用tar和gzip归档src目录，可以使用以下命令：
 - en: tar -czvf src.tar.gz src/
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -czvf src.tar.gz src/
 - en: This command creates a new archive file called src.tar.gz that contains the
     contents of the src directory. The -c option tells tar to create a new archive,
     the -z option tells it to use gzip to compress the archive, and the -v option
     tells it to display verbose information about the progress of the archive creation.
     The -f option specifies the name and location of the archive file.
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令创建一个名为src.tar.gz的新归档文件，其中包含src目录的内容。-c选项告诉tar创建新的归档文件，-z选项告诉它使用gzip压缩归档文件，并且-v选项告诉它显示有关创建归档的详细信息。-f选项指定了归档文件的名称和位置。
 - en: You can also use tar with gzip with the following command
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 您还可以使用以下命令与gzip一起使用tar
 - en: tar -zcvf src.tar.gz src/
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -zcvf src.tar.gz src/
 - en: It will produce the same result.
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 它将产生相同的结果。
 - en: Please note that this command will create the archive file in the current directory,
     you can specify a different directory to save the archive file. Also, the original
     src directory will not be deleted, if you want to delete it after archiving you
     can add —remove-files option
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，此命令将在当前目录中创建归档文件，可以指定不同的目录保存归档文件。另外，原始src目录不会被删除，如果要在归档后删除它，可以添加—remove-files选项
 - en: tar -czvf src.tar.gz—remove-files src/
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -czvf src.tar.gz—remove-files src/
 - en: This command will archive the src directory and remove the original directory
     after archiving it.
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令将归档src目录并在归档后删除原始目录。
 - en: This is the first time I have seen ChatGPT provide the exact same information
     as an alternative to its first suggestion. Notice that the first two commands
     are identical except for the ordering of parameters, which is irrelevant. It’s
     literally the same command.
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我第一次看到ChatGPT提供与其第一个建议相同的信息作为替代选项。请注意，前两个命令是相同的，排列参数的顺序是无关紧要的。它们实际上是完全相同的命令。
 - en: I do appreciate the third option it gave, though. I was not aware of the —remove-files
     option.
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 我确实很欣赏它给出的第三个选项。我不知道—remove-files选项。
 - en: I then asked it to uncompress the tar file. I admit that I was not prepared
     for the tutorial it generated.
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我要求它解压tar文件。我承认我没有做好准备来接受其生成的教程。
 - en: 'To uncompress a .tar.gz file, you can use the following command:'
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 要解压.tar.gz文件，可以使用以下命令：
 - en: tar -xzvf src.tar.gz
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -xzvf src.tar.gz
 - en: This command tells tar to extract the contents of the src.tar.gz file, the -x
     option tells it to extract the archive, the -z option tells it to use gzip to
     decompress the archive, and the -v option tells it to display verbose information
     about the progress of the extraction. The -f option specifies the name and location
     of the archive file.
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个命令告诉tar解压src.tar.gz文件的内容，-x选项告诉它解压归档文件，-z选项告诉它使用gzip解压归档文件，并且-v选项告诉它显示有关解压过程的详细信息。-f选项指定了归档文件的名称和位置。
 - en: You can also use the following command
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 您还可以使用以下命令
 - en: tar -xvf src.tar.gz
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -xvf src.tar.gz
 - en: This command will also extract the contents of the src.tar.gz file, but you
     need to specify that the file is gzipped by adding the -z option
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令还会提取src.tar.gz文件的内容，但您需要通过添加-z选项来指定文件已经经过gzipped压缩
 - en: tar -xvzf src.tar.gz
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -xvzf src.tar.gz
 - en: This command will extract the contents of the archive to the current directory,
     if you want to extract the files to a different directory you can use the -C option
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令将归档文件的内容提取到当前目录，如果要将文件提取到不同的目录，可以使用-C选项
 - en: tar -xvzf src.tar.gz -C /path/to/directory
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -xvzf src.tar.gz -C /path/to/directory
 - en: This command will extract the files to the directory /path/to/directory.
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令将文件提取到目录/path/to/directory。
 - en: Please note that the extracted files will have the same permissions and ownership
     as the original files, if you want to change the permissions or ownership of the
     extracted files you can use the —no-same-permissions and —no-same-owner options.
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，提取的文件将具有与原始文件相同的权限和所有权，如果要更改提取文件的权限或所有权，可以使用—no-same-permissions和—no-same-owner选项。
 - en: tar -xvzf src.tar.gz—no-same-permissions—no-same-owner
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -xvzf src.tar.gz—no-same-permissions—no-same-owner
 - en: This command will extract the files with the current user's permissions and
     ownership.
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令将以当前用户的权限和所有权解压文件。
 - en: Also, after extracting the files you can delete the original archive file by
     adding -k option
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，在提取文件后，您可以通过添加-k选项删除原始归档文件
 - en: tar -xvzf src.tar.gz -k
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -xvzf src.tar.gz -k
 - en: This command will extract the files and keep the original archive file.
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令将提取文件并保留原始归档文件。
 - en: It's important to note that tar.gz files are also known as tarballs, they are
     a combination of tar archive and gzip compression, the .tar file contains the
     files and the .gz file is the compression. It's important to use both options
     -x and -z to extract and decompress the file respectively.
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 值得注意的是，tar.gz 文件也被称为 tarballs，它们是 tar 存档和 gzip 压缩的组合，.tar 文件包含文件，.gz 文件是压缩的。重要的是使用
+    -x 和 -z 选项分别提取和解压文件。
 - en: Once again, it managed to get confused and essentially gave me the same command
     for two different options. Otherwise, I think it did a thorough job explaining
     things.
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 再次，它混淆了，而且基本上给了我两个不同选项的相同命令。否则，我觉得它彻底地解释了事情。
 - en: GitHub SSH Key
+  id: totrans-215
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: GitHub SSH 密钥
 - en: I don’t know about you, but I always have to look up how to create a new SSH
     key for GitHub using git+ssh protocol. Maybe I could get Copilot to do it for
     me.
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不知道你们，但我总是不得不查找如何使用 git+ssh 协议为 GitHub 创建新的 SSH 密钥。也许我可以让 Copilot 为我做这件事。
 - en: Create and copy a new ssh key for github to the clipboard
+  id: totrans-217
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 创建并将新的 github ssh 密钥复制到剪贴板
 - en: ssh-keygen -t rsa -b 4096 -C "
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: ssh-keygen -t rsa -b 4096 -C "
 - en: '" && cat ~/.ssh/id_rsa.pub | pbcopy'
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: '" && cat ~/.ssh/id_rsa.pub | pbcopy'
 - en: This command is correct and exactly what I expected, with the exception of the
     -C " prompt it gave me. In fact, Copilot stopped after that parameter, as if it
     expected me to input something.
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: 该命令是正确的，和我预期的完全一致，除了它给我的 -C " 提示语。实际上，Copilot 在该参数后停止了，好像它希望我输入一些内容。
 - en: Whenever Copilot gives you a partial command as its output, it is either waiting
     for you to enter more info yourself or it wants you to continue on the next line.
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 每当 Copilot 以部分命令作为输出时，它要么等待您自己输入更多信息，要么希望您在下一行继续。
 - en: As it turns out -C is simply a comment to the key, so I could have typed something
     like github-key and continued on. As soon as I pressed Return, it gave me the
     second line. This line tells the shell to copy the public key from my home directory’s .ssh
     directory into the clipboard using pbcopy.
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 结果表明 -C 只是密钥的一个注释，所以我可以输入类似 github-key 等内容然后继续。当我按下 Return 键时，它给了我第二行。该行告诉 shell
+    使用 pbcopy 将我的家目录下的 .ssh 目录中的公钥复制到剪贴板。
 - en: At that point, the computer’s clipboard should have a copy of my public key,
     which I can then paste into GitHub’s public key UI.
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 在那一点上，计算机的剪贴板应该有我的公钥的副本，然后我可以将其粘贴到 GitHub 的公钥 UI 中。
 - en: ChatGPT suggested that I use my email address as the comment and gave me a complete
     example. It also split the process into two commands instead a one.
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 建议我使用我的电子邮件地址作为注释，并给了我一个完整的例子。它还将该过程分割成了两个命令而不是一个。
 - en: Create and copy a new ssh key for github to the clipboard
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建并将新的 github ssh 密钥复制到剪贴板
 - en: 'To create and copy a new SSH key for use with GitHub on macOS, you can use
     the ssh-keygen and pbcopy command. Here is an example of how to create a new SSH
     key and copy it to the clipboard:'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 要在 macOS 上为 GitHub 使用创建和复制新的 SSH 密钥，您可以使用 ssh-keygen 和 pbcopy 命令。以下是创建新 SSH
+    密钥并将其复制到剪贴板的示例：
 - en: 'Open the Terminal and generate a new SSH key:'
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: 打开终端并生成一个新的 SSH 密钥：
 - en: ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 - en: This command creates a new RSA key with a 4096-bit key size, and associates
     the email "[your_email@example.com](mailto:your_email@example.com)" with the key
     as a comment.
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 该命令将使用 4096 位密钥大小创建一个新的 RSA 密钥，并将邮箱 "[your_email@example.com](mailto:your_email@example.com)"
+    与该密钥关联为注释。
 - en: When prompted, you can press Enter to accept the default location and file name
     for the key, or enter a new location and file name.
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 在提示时，您可以按 Enter 接受密钥的默认位置和文件名，或输入新位置和文件名。
 - en: 'After the key is generated, you can copy the key to your clipboard using the
     pbcopy command:'
+  id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成密钥后，您可以使用 pbcopy 命令将密钥复制到剪贴板：
 - en: pbcopy < ~/.ssh/id_rsa.pub
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: pbcopy < ~/.ssh/id_rsa.pub
 - en: This command copies the contents of the file "~/.ssh/id_rsa.pub" to the clipboard.
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: 该命令将文件 "~/.ssh/id_rsa.pub" 的内容复制到剪贴板。
 - en: Go to your GitHub settings, under SSH and GPG keys, click on "New SSH Key" button.
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: 进入 GitHub 设置，在 SSH 和 GPG 密钥下，点击 "New SSH Key" 按钮。
 - en: Give a title to the key, and paste the key on the "Key" field, press "Add SSH
     key" button.
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: 给该密钥命名，并将密钥粘贴到 "Key" 栏，点击 "Add SSH key" 按钮。
 - en: You can test the connection by running ssh -T git@github.com
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以通过运行 ssh -T git@github.com 来测试连接。
 - en: Please note that pbcopy command only works on macOS and is used to copy data
     to the clipboard. On other operating systems, the command may differ and you may
     need to use xclip or xsel to copy the key to the clipboard.
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，pbcopy 命令仅在 macOS 上有效，并且用于将数据复制到剪贴板。在其他操作系统上，命令可能不同，您可能需要使用 xclip 或 xsel
+    将密钥复制到剪贴板。
 - en: I love that ChatGPT goes above and beyond the actual command, providing examples,
     options, and even caveats.
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: 我喜欢 ChatGPT 超越实际命令，提供示例、选项甚至注意事项。
 - en: Commands Specific to macOS
+  id: totrans-239
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 专用于 macOS 的命令
 - en: So far, I’ve been impressed with what both Copilot and ChatGPT were able to
     do. There are other commands that I have a hard time remembering, particularly
     commands on macOS that manipulate media files. Let’s see how they did with some
     of those.
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我对 Copilot 和 ChatGPT 能够做到的印象深刻。有些命令我很难记住，特别是在 macOS 上操作媒体文件的命令。让我们看看它们在其中一些命令上的表现如何。
 - en: Unfortunately, I seem to have hit the limit of Copilot’s abilities. Each of
     the comments I tried did not result in working commands. Here is the first, asking
     Copilot to convert a folder of JPEG files to PNG format.
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: 不幸的是，我似乎已经达到了 Copilot 能力的极限。我尝试的每个评论都没有产生有效的命令。这是第一个，要求 Copilot 将一个 JPEG 文件夹转换为
+    PNG 格式。
 - en: The command it gave me doesn’t work on my Mac, but it looks like it should.
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: 它给我的命令在我的 Mac 上不起作用，但看起来应该可以。
 - en: Convert all jpg files in the current directory to png files
+  id: totrans-243
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将当前目录中的所有 jpg 文件转换为 png 文件
 - en: for file in *.jpg; do
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: for file in *.jpg; do
 - en: convert "$file" "${file%.jpg}.png"
+  id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: convert "$file" "${file%.jpg}.png"
 - en: done
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 完成
 - en: ChatGPT, naturally, explained why.
+  id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 自然地解释了原因。
 - en: Convert all jpg files in the current directory to png files
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: 将当前目录中的所有 jpg 文件转换为 png 文件
 - en: 'You can use the command-line tool convert from ImageMagick to convert all JPG
     files in the current directory to PNG files. Here is an example of how to use
     convert to convert all JPG files to PNG files:'
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以使用 ImageMagick 的命令行工具 convert 将当前目录中的所有 JPG 文件转换为 PNG 文件。以下是如何使用 convert
+    将所有 JPG 文件转换为 PNG 文件的示例：
 - en: for file in *.jpg; do convert "$file" "${file%.jpg}.png"; done
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: for file in *.jpg; do convert "$file" "${file%.jpg}.png"; done
 - en: This command will loop through all files in the current directory that have
     a .jpg extension, run the convert command on each file, and save the output to
     a new file with the same name but with a .png extension.
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个命令将循环遍历当前目录中具有 .jpg 扩展名的所有文件，在每个文件上运行 convert 命令，并将输出保存到具有相同名称但扩展名为 .png 的新文件中。
 - en: 'Alternatively, you can use find and mogrify command from ImageMagick:'
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者，您可以使用 ImageMagick 的 find 和 mogrify 命令：
 - en: find . -name "*.jpg" -exec mogrify -format png {} +
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh: find . -name "*.jpg" -exec mogrify -format png {} +
 - en: This command will search for all .jpg files in the current directory and its
     subdirectories and change their format to .png and overwrite the original files.
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个命令将搜索当前目录及其子目录中的所有 .jpg 文件，并将它们的格式更改为 .png 并覆盖原始文件。
 - en: Please note that this will overwrite the original JPG files. If you want to
     keep the original files, you can modify the command to save the output to a different
     location or with a different file name.
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这将覆盖原始的 JPG 文件。如果您想保留原始文件，可以修改命令以将输出保存到不同位置或使用不同的文件名。
 - en: Interestingly, its first suggestion matched Copilot’s identically. The difference
     is that ChatGPT told me that the convert command comes from ImageMagick. Deciding
     not to give up just yet, I asked it how to install ImageMagick.
+  id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh: 有趣的是，它的第一个建议与 Copilot 的完全相同。不同之处在于 ChatGPT 告诉我 convert 命令来自 ImageMagick。决定还不要放弃，我问它如何安装
+    ImageMagick。
 - en: This is what it told me.
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是它告诉我的。
 - en: How do I install ImageMagick?
+  id: totrans-258
   prefs: []
   type: TYPE_NORMAL
+  zh: 如何安装 ImageMagick？
 - en: 'To install ImageMagick on macOS, you can use the package manager Homebrew.
     Here are the steps to install ImageMagick using Homebrew:'
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: 要在 macOS 上安装 ImageMagick，您可以使用软件包管理器 Homebrew。以下是使用 Homebrew 安装 ImageMagick
+    的步骤：
 - en: 'Install Homebrew if you haven''t already by running the following command in
     the terminal:'
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您尚未安装 Homebrew，请在终端中运行以下命令来安装：
 - en: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 - en: 'Once Homebrew is installed, you can use it to install ImageMagick by running
     the following command in the terminal:'
+  id: totrans-262
   prefs: []
   type: TYPE_NORMAL
+  zh: 安装了 Homebrew 后，您可以使用它来通过在终端中运行以下命令来安装 ImageMagick：
 - en: brew install imagemagick
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh: brew install imagemagick
 - en: 'After the installation is complete, you can check that it was successful by
     running the following command:'
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: 安装完成后，您可以通过运行以下命令来检查是否成功：
 - en: convert -version
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: convert -version
 - en: This will display the version of ImageMagick that you have installed.
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将显示您安装的 ImageMagick 版本。
 - en: 'Another way to install ImageMagick on macOS is to download the binary package
     from the official website and install it manually. You can find the binary package
     here: [https://imagemagick.org/script/download.php#macosx](https://imagemagick.org/script/download.php#macosx)'
+  id: totrans-267
   prefs: []
   type: TYPE_NORMAL
+  zh: 在macOS上安装ImageMagick的另一种方法是从官方网站下载二进制包并手动安装。您可以在此处找到二进制包：[https://imagemagick.org/script/download.php#macosx](https://imagemagick.org/script/download.php#macosx)
 - en: Please note that you may need to add the ImageMagick binaries to your system's
     PATH for the convert and mogrify command to be recognized by the terminal.
+  id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，您可能需要将ImageMagick二进制文件添加到系统的PATH中，以便终端识别convert和mogrify命令。
 - en: I had similar issues with other commands. This one also didn’t work for me,
     but there was no hint as to what the error might be.
+  id: totrans-269
   prefs: []
   type: TYPE_NORMAL
+  zh: 我遇到了其他命令的类似问题。这个命令对我也没用，但没有提示错误可能是什么。
 - en: Extract audio from all the mp4 files in the folder
+  id: totrans-270
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 从文件夹中提取所有mp4文件的音频
 - en: for file in *.mp4; do
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: for file in *.mp4; do
 - en: ffmpeg -i "$file" -vn -acodec copy "${file%.mp4}.mp3"
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: ffmpeg -i "$file" -vn -acodec copy "${file%.mp4}.mp3"
 - en: done
+  id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: 完成
 - en: As expected, ChatGPT gave me a lot more context, after suggesting a very similar
     command, but also explaining what I needed to understand about it.
+  id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: 不出所料，ChatGPT给了我更多的上下文，建议了一个很相似的命令，但也解释了我需要理解的内容。
 - en: Extract audio from all the mp4 files in the folder
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: 从文件夹中提取所有mp4文件的音频
 - en: 'You can use the command-line tool ffmpeg to extract the audio from all MP4
     files in a folder on macOS. Here is an example of how to use ffmpeg to extract
     the audio from all MP4 files in the current directory and save it as an MP3 file:'
+  id: totrans-276
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以使用命令行工具ffmpeg在macOS上从所有MP4文件中提取音频。以下是如何使用ffmpeg从当前目录中的所有MP4文件中提取音频并将其保存为MP3文件的示例：
 - en: for file in *.mp4; do ffmpeg -i "$file" -vn -acodec libmp3lame -ac 2 -q:a 4
     -y "${file%.mp4}.mp3"; done
+  id: totrans-277
   prefs: []
   type: TYPE_NORMAL
+  zh: for file in *.mp4; do ffmpeg -i "$file" -vn -acodec libmp3lame -ac 2 -q:a 4
+    -y "${file%.mp4}.mp3"; done
 - en: This command will loop through all files in the current directory that have
     a .mp4 extension, run the ffmpeg command on each file, and save the audio output
     to a new file with the same name but with a .mp3 extension.
+  id: totrans-278
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个命令将循环遍历当前目录中具有.mp4扩展名的所有文件，在每个文件上运行ffmpeg命令，并将音频输出保存到一个新文件中，文件名相同，但扩展名为.mp3。
 - en: This command uses the -i option to specify the input file, the -vn option to
     disable the video stream, the -acodec option to specify the audio codec, -ac 2
     to specify the number of audio channels, -q:a 4 to specify the audio quality and
     -y to overwriting output files.
+  id: totrans-279
   prefs: []
   type: TYPE_NORMAL
+  zh: 该命令使用-i选项指定输入文件，-vn选项禁用视频流，-acodec选项指定音频编解码器，-ac 2指定音频通道数，-q:a 4指定音频质量和-y用于覆盖输出文件。
 - en: You can change the output file format and codec by changing the mp3 and libmp3lame
     accordingly.
+  id: totrans-280
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以通过更改mp3和libmp3lame来更改输出文件格式和编解码器。
 - en: 'Please note that you may need to install ffmpeg in your system if it is not
     already installed. You can install ffmpeg using Homebrew by running the following
     command in the terminal:'
+  id: totrans-281
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，如果系统中尚未安装ffmpeg，您可能需要在系统中安装ffmpeg。您可以通过在终端中运行以下命令来使用Homebrew安装ffmpeg：
 - en: brew install ffmpeg
+  id: totrans-282
   prefs: []
   type: TYPE_NORMAL
+  zh: brew install ffmpeg
 - en: Also, please note that this command will overwrite any existing files with the
     same name. If you want to keep the original files, you can modify the command
     to save the output to a different location or with a different file name.
+  id: totrans-283
   prefs: []
   type: TYPE_NORMAL
+  zh: 另外，请注意，该命令将覆盖同名现有文件。如果您想保留原始文件，可以修改命令将输出保存到不同位置或使用不同文件名。
 - en: The command ChatGPT gave me was more complete, but its explanation is misleading.
     Or maybe I simply read it wrong. The -y parameter will automatically overwrite
     any existing files on output, but the command is not destructive to the input
     files.
+  id: totrans-284
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT给我的命令更完整，但它的解释是误导的。-y参数将自动覆盖输出上的任何现有文件，但该命令不会破坏输入文件。
 - en: My final test was to try to extract audio using avconvert, another command on
     macOS. Copilot gave me a single command.
+  id: totrans-285
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的最后一个测试是尝试使用avconvert在macOS上提取音频。Copilot给了我一个单一命令。
 - en: Extract audio from video file using avconvert
+  id: totrans-286
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 使用avconvert从视频文件中提取音频
 - en: avconvert -i video.mp4 -vn -acodec copy audio.mp3
+  id: totrans-287
   prefs: []
   type: TYPE_NORMAL
+  zh: avconvert -i video.mp4 -vn -acodec copy audio.mp3
 - en: Apparently, this command no longer exists, which ChatGPT was happy to explain
     to me when I asked about it.
+  id: totrans-288
   prefs: []
   type: TYPE_NORMAL
+  zh: 显然，这个命令已经不复存在了，ChatGPT很高兴向我解释了这一点。
 - en: What is avconvert?
+  id: totrans-289
   prefs: []
   type: TYPE_NORMAL
+  zh: avconvert是什么？
 - en: 'avconv is a command-line tool similar to ffmpeg that can be used to convert
     multimedia files. To extract the audio from a video file using avconv on macOS,
     you can use the following command:'
+  id: totrans-290
   prefs: []
   type: TYPE_NORMAL
+  zh: avconv 是一个类似于 ffmpeg 的命令行工具，可用于转换多媒体文件。在 macOS 上使用 avconv 提取视频文件的音频，您可以使用以下命令：
 - en: avconv -i inputfile.mp4 -vn -acodec libmp3lame -ac 2 -q:a 4 -y outputfile.mp3
+  id: totrans-291
   prefs: []
   type: TYPE_NORMAL
+  zh: avconv -i inputfile.mp4 -vn -acodec libmp3lame -ac 2 -q:a 4 -y outputfile.mp3
 - en: This command uses the -i option to specify the input file, the -vn option to
     disable the video stream, the -acodec option to specify the audio codec as libmp3lame,
     the -ac 2 option to specify the number of audio channels, the -q:a 4 option to
     specify the audio quality and the -y option to overwrite output files if they
     already exist.
+  id: totrans-292
   prefs: []
   type: TYPE_NORMAL
+  zh: 此命令使用 -i 选项指定输入文件，-vn 选项禁用视频流，-acodec 选项将音频编解码器指定为 libmp3lame，-ac 2 选项指定音频通道数，-q:a
+    4 选项指定音频质量，-y 选项覆盖已存在的输出文件。
 - en: You can change the input and output file name and format accordingly, also you
     can change the codec and quality options as you need.
+  id: totrans-293
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以根据需要更改输入和输出文件名和格式，也可以根据需要更改编解码器和质量选项。
 - en: 'Please note that you may need to install avconv in your system if it is not
     already installed. You can install avconv using Homebrew by running the following
     command in the terminal:'
+  id: totrans-294
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，如果系统尚未安装 avconv，则可能需要在系统中安装 avconv。您可以通过在终端中运行以下命令来安装 avconv：
 - en: brew install libav
+  id: totrans-295
   prefs: []
   type: TYPE_NORMAL
+  zh: brew install libav
 - en: Please note that avconv and ffmpeg are similar but not exactly the same, and
     their syntax and options may differ slightly. Some options or codecs that work
     with ffmpeg may not work with avconv, and vice versa. Also, ffmpeg is more commonly
     used and has more active development than avconv, but both of them can be used
     to extract audio from a video file.
+  id: totrans-296
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，avconv 和 ffmpeg 类似但并非完全相同，它们的语法和选项可能略有不同。有些在 ffmpeg 中有效的选项或编解码器可能在 avconv
+    中无效，反之亦然。此外，ffmpeg 的使用更为普遍，并且有更积极的开发，但两者都可以用于从视频文件中提取音频。
 - en: Note that it didn’t answer the question that I asked, or so I thought. Confused
     and mildly curious, I then asked for clarification.
+  id: totrans-297
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，Copilot 没有回答我提出的问题，或者我是这样认为的。感到困惑和稍有好奇，我随后要求澄清。
 - en: What is the difference between avconv and avconvert?
+  id: totrans-298
   prefs: []
   type: TYPE_NORMAL
+  zh: avconv 和 avconvert 之间有什么区别？
 - en: avconv and avconvert are actually the same thing, avconv is the command-line
     tool for the libav library, that is a fork of the ffmpeg library. avconv was the
     command-line tool for the libav library and it's the equivalent of the ffmpeg
@@ -1198,28 +1815,41 @@
     avconvert is a typo or a misspelling of avconv, and both commands can be used
     to perform the same tasks. The avconv tool has been replaced by ffmpeg, but you
     might find some old resources or scripts that use avconv or avconvert.
+  id: totrans-299
   prefs: []
   type: TYPE_NORMAL
+  zh: avconv 和 avconvert 实际上是同一件事，avconv 是 libav 库的命令行工具，这是 ffmpeg 库的一个分支。avconv 曾是
+    libav 库的命令行工具，它相当于 ffmpeg 库的命令行工具，但 libav 项目在2018年停止了，现在 libav 开发者建议使用 ffmpeg
+    而不是 avconv。avconvert 是 avconv 的拼写错误，这两个命令都可以执行相同的任务。avconv 工具已被 ffmpeg 取代，但您可能会发现一些旧资源或脚本使用
+    avconv 或 avconvert。
 - en: In summary, avconv and avconvert are the same command-line tool, but the libav
     project was discontinued in 2018 and now it's recommended to use ffmpeg instead
     of avconv.
+  id: totrans-300
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，avconv 和 avconvert 是相同的命令行工具，但 libav 项目在2018年停止，现在建议使用 ffmpeg 而不是 avconv。
 - en: I got none of that context from Copilot. What amazed me is that I thought avconvert
     was the current and correct command to use. Apparently, I was mistaken on both
     counts.
+  id: totrans-301
   prefs: []
   type: TYPE_NORMAL
+  zh: 我从 Copilot 那里没有得到任何上下文。令我惊讶的是，我以为 avconvert 是当前和正确的命令。显然，在这两个方面我都错了。
 - en: Parting Thoughts
+  id: totrans-302
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结语
 - en: While using AI tools can potentially save time and effort, it is important to
     assess the quality of the generated commands and ensure they are safe and effective.
     The output from ChatGPT is superior to that of Copilot, but I expected that for
     the purposes of this chapter.
+  id: totrans-303
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然使用 AI 工具可能节省时间和精力，但重要的是评估生成的命令的质量，并确保它们安全有效。ChatGPT 的输出优于 Copilot，但我对本章的目的有所期待。
 - en: ChatGPT is an advanced AI model that is capable of understanding and responding
     to more complex and nuanced questions. Copilot is an AI assistant designed to
     help developers with their coding tasks, but it’s not as advanced as ChatGPT.
@@ -1227,8 +1857,11 @@
     task effectively. Both ChatGPT and Copilot can provide accurate and reliable answers
     to your questions, but ChatGPT’s output is more detailed and comprehensive. Ultimately,
     the choice of which tool to use will depend on your specific needs and preferences.
+  id: totrans-304
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 是一个高级人工智能模型，能够理解并回答更复杂和微妙的问题。Copilot 是一个专为开发人员设计的人工智能助手，用来帮助他们完成编码任务，但它不像ChatGPT那样先进。然而，重要的是，无论哪种工具都可以帮助你有效地完成任务。ChatGPT
+    和 Copilot 都可以准确可靠地回答你的问题，但ChatGPT的输出更详细和全面。最终，使用哪种工具取决于你的具体需求和偏好。
 - en: In addition to the difference in output quality, another aspect to consider
     is the area of expertise of each tool. ChatGPT is a general-purpose language model
     that has been trained on a vast amount of text data, making it a good choice when
@@ -1236,19 +1869,27 @@
     It is good at providing a comprehensive understanding of a topic, and it can be
     used for a wide range of tasks, including language translation, text generation,
     and question answering.
+  id: totrans-305
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了输出质量的差异外，另一个要考虑的方面是每个工具的专业领域。ChatGPT 是一个通用的语言模型，经过大量文本数据的训练，因此在主题可能不熟悉时，或者需要解释或澄清时，它是一个很好的选择。它擅长提供对主题的全面理解，可以用于广泛的任务，包括语言翻译、文本生成和问题回答。
 - en: On the other hand, Copilot is an AI assistant that is specifically designed
     for developers and is trained on actual software. Therefore, may be better at
     understanding your code in context and providing solutions that are tailored to
     your specific needs.
+  id: totrans-306
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，Copilot 是一个专为开发人员设计、在实际软件上进行过训练的人工智能助手。因此，它可能更擅长理解你代码的上下文，并提供与你具体需求相符的解决方案。
 - en: As you will continue to see, it can help you with your coding tasks by suggesting
     snippets of code, providing documentation, and even completing your code for you.
+  id: totrans-307
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你将看到的，它可以通过建议代码片段、提供文档，甚至为你完成代码来帮助你处理编码任务。
 - en: If you are a developer and you need help with your code, Copilot is a great
     choice.
+  id: totrans-308
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你是一个开发人员，并且需要帮助解决你的代码问题，Copilot 是一个很好的选择。

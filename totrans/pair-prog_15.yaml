@@ -1,1600 +1,2630 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_above.png)'
 - en: ChatGPT w/GPT-4
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 与GPT-4一起使用ChatGPT
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_below.png)'
 - en: Within a day or two of this book going to press, GPT-4 was released. I thought
     it would be fun to see whether GPT-4 would do a better job than GPT-3.5 did, so
     I pasted every ChatGPT prompt from the book and asked it to reevaluate the answers
     using the new model.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这本书印刷出版的一两天内，GPT-4发布了。我觉得看看GPT-4是否比GPT-3.5做得更好会很有趣，所以我粘贴了书中的每个ChatGPT提示，并要求它使用新模型重新评估答案。
 - en: What follows are those prompts and its new answers.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来是这些提示及其新答案。
 - en: Check for a directory and print a message if it doesn't exist
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 检查目录是否存在，如果不存在则打印消息
 - en: dir_name="example_directory" if [ ! -d "$dir_name" ]; then echo "Directory $dir_name
     does not exist" fi
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: dir_name="example_directory" if [ ! -d "$dir_name" ]; then echo "Directory $dir_name
+    does not exist" fi
 - en: Find all PDF files in my home directory and print the path to each one
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 查找我的主目录中的所有PDF文件并打印每个文件的路径
 - en: find ~ -type f -name "*.pdf"
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -type f -name "*.pdf"
 - en: Find all PDF files below my home folder and write the results to a file called
     pdfs.txt in the background.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 查找我的主文件夹下的所有PDF文件并将结果写入名为pdfs.txt的文件中（在后台进行）。
 - en: find ~ -type f -name "*.pdf" > pdfs.txt &
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -type f -name "*.pdf" > pdfs.txt &
 - en: Count the number of PDF files in my home folder in the background and print
     the result.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在后台计算我的主文件夹中PDF文件的数量并打印结果。
 - en: find ~ -type f -name "*.pdf" | wc -l &
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: find ~ -type f -name "*.pdf" | wc -l &
 - en: Create a new user account on macOS
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 在macOS上创建一个新用户账户
 - en: sudo sysadminctl -addUser newuser -fullName "New User" -password "password"
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo sysadminctl -addUser newuser -fullName "New User" -password "password"
 - en: Make user 'michael' a local administrator
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 将用户'michael'设为本地管理员
 - en: sudo dseditgroup -o edit -a michael -t user admin
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo dseditgroup -o edit -a michael -t user admin
 - en: Sync my home folder to a remote server
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 将我的主文件夹同步到远程服务器
 - en: rsync -azP ~/ user@remote.server.com:/path/to/destination
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: rsync -azP ~/ user@remote.server.com:/path/to/destination
 - en: Securely Copy from Server to Local folder
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 从服务器安全地复制到本地文件夹
 - en: scp user@remote.server.com:/path/to/source /path/to/local/destination
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: scp user@remote.server.com:/path/to/source /path/to/local/destination
 - en: Archive the src directory using tar and gzip
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用tar和gzip对src目录进行归档
 - en: tar -czvf src.tar.gz src
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: tar -czvf src.tar.gz src
 - en: Create and copy a new ssh key for github to the clipboard
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 为github创建并复制一个新的ssh密钥到剪贴板
 - en: ssh-keygen -t ed25519 -C "your_email@example.com" cat ~/.ssh/id_ed25519.pub
     | pbcopy
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: ssh-keygen -t ed25519 -C "your_email@example.com" cat ~/.ssh/id_ed25519.pub
+    | pbcopy
 - en: Convert all jpg files in the current directory to png files
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 将当前目录中的所有jpg文件转换为png文件
 - en: mogrify -format png *.jpg
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: mogrify -format png *.jpg
 - en: How do I install ImageMagick?
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 如何安装ImageMagick？
 - en: 'On macOS:'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在macOS上：
 - en: brew install imagemagick
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: brew install imagemagick
 - en: 'On Ubuntu/Debian:'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Ubuntu/Debian上：
 - en: sudo apt-get install imagemagick
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo apt-get install imagemagick
 - en: 'On CentOS/RHEL:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 在CentOS/RHEL上：
 - en: sudo yum install ImageMagick
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: sudo yum install ImageMagick
 - en: Extract audio from all the mp4 files in the folder
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 从文件夹中提取所有mp4文件的音频
 - en: for f in *.mp4; do ffmpeg -i "$f" -vn -acodec copy "${f%.*}.m4a"; done
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: for f in *.mp4; do ffmpeg -i "$f" -vn -acodec copy "${f%.*}.m4a"; done
 - en: What is avconvert?
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: avconvert是什么？
 - en: avconvert is a command-line tool for macOS that performs media conversion. It
     is part of the AV Foundation framework, which is an Objective-C framework for
     working with audiovisual media on iOS and macOS. avconvert can be used to transcode
     media files between various formats, change their properties, and apply filters.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: avconvert是macOS的一个命令行工具，用于执行媒体转换。它是AV Foundation框架的一部分，这是一个用于在iOS和macOS上处理音视频媒体的Objective-C框架。avconvert可用于在各种格式之间转码媒体文件，更改其属性并应用滤镜。
 - en: What is the difference between avconv and avconvert?
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: avconv和avconvert之间有什么区别？
 - en: avconv is a command-line tool for converting multimedia files, and it is part
     of the Libav project. avconvert, on the other hand, is a macOS-specific command-line
     tool for media conversion that is part of the AV Foundation framework. While both
     tools can be used to transcode media files between various formats, avconvert
     is designed specifically for macOS and is a part of the native AV Foundation framework,
     whereas avconv is a more general-purpose tool that can be used on multiple platforms.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: avconv是用于转换多媒体文件的命令行工具，它是Libav项目的一部分。另一方面，avconvert是macOS特定的用于媒体转换的命令行工具，它是AV
+    Foundation框架的一部分。虽然这两个工具都可以用于在各种格式之间转码媒体文件，但avconvert专为macOS设计，是本机AV Foundation框架的一部分，而avconv是一个更通用的工具，可用于多个平台。
 - en: What’s an IIFE in Javascript, why would I need one, and how would I create one?
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 什么是Javascript中的IIFE，我为什么需要一个，以及如何创建一个？
 - en: An IIFE (Immediately Invoked Function Expression) is a JavaScript function that
     is defined and executed immediately after its declaration. It is a common technique
     for creating a private scope to avoid polluting the global namespace and to encapsulate
     variables and functions.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: IIFE（立即调用函数表达式）是一个在声明后立即定义和执行的JavaScript函数。这是一种常见的技术，用于创建一个私有作用域，以避免污染全局命名空间并封装变量和函数。
 - en: You might need an IIFE to create a private scope for your code, to avoid conflicts
     with other scripts and libraries or to control the visibility of variables and
     functions.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能需要一个IIFE来为你的代码创建一个私有作用域，以避免与其他脚本和库发生冲突，或者控制变量和函数的可见性。
 - en: 'Here''s how you can create an IIFE in JavaScript:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是如何在JavaScript中创建一个IIFE的方法：
 - en: (function () {
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: (function () {
 - en: // Your code here
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在这里写你的代码
 - en: var privateVar = "I am private";
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: var privateVar = "我是私有的";
 - en: console.log("IIFE executed");
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log("IIFE执行");
 - en: '})();'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '})();'
 - en: What would be the equivalent of that code if we were to use classes in TypeScript
     instead?
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们在TypeScript中使用类，那么该代码的等价物是什么？
 - en: class MyClass {
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: class MyClass {
 - en: 'private privateVar: string;'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 'private privateVar: string;'
 - en: constructor() {
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: constructor() {
 - en: this.privateVar = "I am private";
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: this.privateVar = "我是私有的";
 - en: console.log("Class constructor executed");
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log("类构造函数执行");
 - en: '}'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: const instance = new MyClass();
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: const instance = new MyClass();
 - en: Given an array that looks like the following array, find all puzzles of size
     4 or 8\. (I then pasted the puzzles array).
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 给定一个看起来像下面数组的数组，找到所有大小为4或8的谜题。（然后我粘贴了谜题数组）。
 - en: const puzzles = [
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: const puzzles = [
 - en: '{ id: 1, size: 4, name: "Puzzle 1" },'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id: 1, size: 4, name: "谜题 1" },'
 - en: '{ id: 2, size: 8, name: "Puzzle 2" },'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id: 2, size: 8, name: "谜题 2" },'
 - en: '{ id: 3, size: 16, name: "Puzzle 3" },'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id: 3, size: 16, name: "谜题 3" },'
 - en: // ...
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: // ...
 - en: '];'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: const filteredPuzzles = puzzles.filter(
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: const filteredPuzzles = puzzles.filter(
 - en: (puzzle) => puzzle.size === 4 || puzzle.size === 8
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: (puzzle) => puzzle.size === 4 || puzzle.size === 8
 - en: );
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: Generate a set of strongly typed TypeScript functions to treat the array like
     a stack or queue.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成一组强类型的TypeScript函数，以将数组视为堆栈或队列。
 - en: 'type Puzzle = { id: number; size: number; name: string };'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 'type Puzzle = { id: number; size: number; name: string };'
 - en: class PuzzleQueue {
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: class PuzzleQueue {
 - en: 'private queue: Puzzle[];'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 'private queue: Puzzle[];'
 - en: constructor() {
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: constructor() {
 - en: this.queue = [];
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: this.queue = [];
 - en: '}'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'enqueue(puzzle: Puzzle): void {'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 'enqueue(puzzle: Puzzle): void {'
 - en: this.queue.push(puzzle);
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: this.queue.push(puzzle);
 - en: '}'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'dequeue(): Puzzle | undefined {'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 'dequeue(): Puzzle | undefined {'
 - en: return this.queue.shift();
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回this.queue.shift();
 - en: '}'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'size(): number {'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 'size(): number {'
 - en: return this.queue.length;
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回this.queue.length;
 - en: '}'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'isEmpty(): boolean {'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 'isEmpty(): boolean {'
 - en: return this.queue.length === 0;
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回this.queue.length === 0;
 - en: '}'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: class PuzzleStack {
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: class PuzzleStack {
 - en: 'private stack: Puzzle[];'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 'private stack: Puzzle[];'
 - en: constructor() {
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: constructor() {
 - en: this.stack = [];
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: this.stack = [];
 - en: '}'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'push(puzzle: Puzzle): void {'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 'push(puzzle: Puzzle): void {'
 - en: this.stack.push(puzzle);
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: this.stack.push(puzzle);
 - en: '}'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'pop(): Puzzle | undefined {'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 'pop(): Puzzle | undefined {'
 - en: return this.stack.pop();
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回this.stack.pop();
 - en: '}'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'size(): number {'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 'size(): number {'
 - en: return this.stack.length;
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回this.stack.length;
 - en: '}'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'isEmpty(): boolean {'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 'isEmpty(): boolean {'
 - en: return this.stack.length === 0;
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回this.stack.length === 0;
 - en: '}'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: I have an array in TypeScript with the following shape. (I pasted the above
     JSON here). I want to convert it from an array to a hash array so that can address
     each object by its "id".
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在TypeScript中有一个具有以下形状的数组。（我在这里粘贴了上面的JSON）。我想将它从数组转换为哈希数组，以便可以通过其“id”访问每个对象。
 - en: 'const puzzleArray: Puzzle[] = ['
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 'const puzzleArray: Puzzle[] = ['
 - en: '{ id: 1, size: 4, name: "Puzzle 1" },'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id: 1, size: 4, name: "谜题 1" },'
 - en: '{ id: 2, size: 8, name: "Puzzle 2" },'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id: 2, size: 8, name: "谜题 2" },'
 - en: '{ id: 3, size: 16, name: "Puzzle 3" },'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id: 3, size: 16, name: "谜题 3" },'
 - en: // ...
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: // ...
 - en: '];'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: 'const puzzleHash: { [id: number]: Puzzle } = puzzleArray.reduce('
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 'const puzzleHash: { [id: number]: Puzzle } = puzzleArray.reduce('
 - en: (hash, puzzle) => {
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: （哈希，谜题）=> {
 - en: hash[puzzle.id] = puzzle;
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: hash[puzzle.id] = puzzle;
 - en: return hash;
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回哈希。
 - en: '},'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: '},'
 - en: '{}'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: '{}'
 - en: );
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: // Access a puzzle by its ID
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: // 通过ID访问一个谜题
 - en: const puzzle = puzzleHash[1];
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: const puzzle = puzzleHash[1];
 - en: Create a function in JavaScript that will output the puzzles array as an HTML
     table
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个JavaScript函数，将谜题数组输出为HTML表格
 - en: function createPuzzleTable(puzzles) {
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: function createPuzzleTable(puzzles) {
 - en: const table = document.createElement("table");
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: const table = document.createElement("table");
 - en: const thead = document.createElement("thead");
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: const thead = document.createElement("thead");
 - en: const tbody = document.createElement("tbody");
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: const tbody = document.createElement("tbody");
 - en: const headerRow = document.createElement("tr");
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: const headerRow = document.createElement("tr");
 - en: '["ID", "Size", "Name"].forEach((headerText) => {'
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: '["ID", "Size", "Name"].forEach((headerText) => {'
 - en: const th = document.createElement("th");
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: const th = document.createElement("th");
 - en: th.textContent = headerText;
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: th.textContent = headerText;
 - en: headerRow.appendChild(th);
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: headerRow.appendChild(th);
 - en: '});'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: thead.appendChild(headerRow);
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: thead.appendChild(headerRow);
 - en: table.appendChild(thead);
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: table.appendChild(thead);
 - en: puzzles.forEach((puzzle) => {
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: puzzles.forEach((puzzle) => {
 - en: const row = document.createElement("tr");
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: const row = document.createElement("tr");
 - en: const idCell = document.createElement("td");
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: const idCell = document.createElement("td");
 - en: const sizeCell = document.createElement("td");
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: const sizeCell = document.createElement("td");
 - en: const nameCell = document.createElement("td");
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: const nameCell = document.createElement("td");
 - en: idCell.textContent = puzzle.id;
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: idCell.textContent = puzzle.id;
 - en: sizeCell.textContent = puzzle.size;
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: sizeCell.textContent = puzzle.size;
 - en: nameCell.textContent = puzzle.name;
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: nameCell.textContent = puzzle.name;
 - en: row.appendChild(idCell);
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: row.appendChild(idCell);
 - en: row.appendChild(sizeCell);
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: row.appendChild(sizeCell);
 - en: row.appendChild(nameCell);
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: row.appendChild(nameCell);
 - en: tbody.appendChild(row);
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: tbody.appendChild(row);
 - en: '});'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: table.appendChild(tbody);
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: table.appendChild(tbody);
 - en: return table;
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: return table;
 - en: '}'
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: const puzzles = [
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: const puzzles = [
 - en: '{ id: 1, size: 4, name: "Puzzle 1" },'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id: 1, size: 4, name: "拼图 1" },'
 - en: '{ id: 2, size: 8, name: "Puzzle 2" },'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id: 2, size: 8, name: "拼图 2" },'
 - en: '{ id: 3, size: 16, name: "Puzzle 3" },'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id: 3, size: 16, name: "拼图 3" },'
 - en: // ...
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: // ...
 - en: '];'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: const puzzleTable = createPuzzleTable(puzzles);
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: const puzzleTable = createPuzzleTable(puzzles);
 - en: document.body.appendChild(puzzleTable);
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: document.body.appendChild(puzzleTable);
 - en: What does the following code block do?
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下代码块做什么？
 - en: const firstSolution$ = puzzles$.pipe(
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: const firstSolution$ = puzzles$.pipe(
 - en: filter((puzzle) => puzzle.size === 4),
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: filter((puzzle) => puzzle.size === 4),
 - en: map((puzzle) => puzzle.solution[0])
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: map((puzzle) => puzzle.solution[0])
 - en: );
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: const firstSolution$ = puzzles$.pipe(
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: const firstSolution$ = puzzles$.pipe(
 - en: filter((puzzle) => puzzle.size === 4),
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: filter((puzzle) => puzzle.size === 4),
 - en: map((puzzle) => puzzle.solution[0])
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: map((puzzle) => puzzle.solution[0])
 - en: );
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: 'The code block defines an RxJS Observable named firstSolution$. It takes an
     Observable of puzzles (puzzles$) and applies two operators to it: filter and map.
     The filter operator filters the input stream of puzzles to only include those
     with a size of 4\. Then, the map operator transforms the filtered puzzles into
     their first solutions (puzzle.solution[0]). The resulting firstSolution$ Observable
     emits the first solution of each puzzle with a size of 4.'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码块定义了一个名为 firstSolution$ 的 RxJS Observable。它接受一个拼图的 Observable（puzzles$）并对其应用两个操作符：filter
+    和 map。filter 操作符将拼图的输入流筛选，仅包括大小为 4 的拼图。然后，map 操作符将筛选后的拼图转换为它们的第一个解决方案（puzzle.solution[0]）。生成的
+    firstSolution$ Observable 发出大小为 4 的每个拼图的第一个解决方案。
 - en: Build me a complete angular service that fetches some sample data (perhaps blog
     posts) from a remote web service. Be sure to log any errors encountered. Then
     create a web page implemented as an angular component, which displays the blog
     post titles from the service in an unordered list. Prefer to use the angular async
     pipe in the template rather than subscribing to the observable.
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 为我构建一个完整的 Angular 服务，从远程网络服务获取一些示例数据（也许是博客文章）。确保记录遇到的任何错误。然后创建一个作为 Angular 组件实现的网页，以无序列表显示服务中的博客文章标题。最好在模板中使用
+    Angular 异步管道而不是订阅 Observable。
 - en: '1.  First, generate a new Angular service and a new component using Angular
     CLI:'
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 1.  首先，使用 Angular CLI 生成一个新的 Angular 服务和一个新的组件：
 - en: ng generate service blog ng generate component blog-list
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: ng generate service blog ng generate component blog-list
 - en: '2.  Modify blog.service.ts:'
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 2.  修改 blog.service.ts：
 - en: import { Injectable } from "@angular/core";
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Injectable } from "@angular/core";
 - en: import { HttpClient } from "@angular/common/http";
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: import { HttpClient } from "@angular/common/http";
 - en: import { catchError } from "rxjs/operators";
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: import { catchError } from "rxjs/operators";
 - en: import { throwError, Observable } from "rxjs";
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: import { throwError, Observable } from "rxjs";
 - en: export interface BlogPost {
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: export interface BlogPost {
 - en: 'id: number;'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 'id: number;'
 - en: 'title: string;'
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: 'title: string;'
 - en: 'body: string;'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: 'body: string;'
 - en: '}'
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '@Injectable({ providedIn: "root" })'
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: '@Injectable({ providedIn: "root" })'
 - en: export class BlogService {
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: export class BlogService {
 - en: private apiUrl = "https://jsonplaceholder.typicode.com/posts";
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: private apiUrl = "https://jsonplaceholder.typicode.com/posts";
 - en: 'constructor(private http: HttpClient) {}'
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: 'constructor(private http: HttpClient) {}'
 - en: 'getBlogPosts(): Observable<BlogPost[]> {'
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 'getBlogPosts(): Observable<BlogPost[]> {'
 - en: return this.http.get<BlogPost[]>(this.apiUrl).pipe(
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.http.get<BlogPost[]>(this.apiUrl).pipe(
 - en: catchError((error) => {
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: catchError((error) => {
 - en: console.error("Error fetching blog posts:", error);
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: console.error("获取博客文章时出错：", error);
 - en: return throwError(error);
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: return throwError(error);
 - en: '})'
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: );
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: '}'
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '3.  Modify blog-list.component.ts:'
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 3.  修改 blog-list.component.ts：
 - en: import { Component, OnInit } from "@angular/core";
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Component, OnInit } from "@angular/core";
 - en: import { BlogService, BlogPost } from "../blog.service";
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: import { BlogService, BlogPost } from "../blog.service";
 - en: import { Observable } from "rxjs";
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Observable } from "rxjs";
 - en: '@Component({'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: '@Component({'
 - en: 'selector: "app-blog-list",'
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: 'selector: "app-blog-list",'
 - en: 'templateUrl: "./blog-list.component.html",'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 'templateUrl: "./blog-list.component.html",'
 - en: 'styleUrls: ["./blog-list.component.css"],'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: 'styleUrls: ["./blog-list.component.css"],'
 - en: '})'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: export class BlogListComponent implements OnInit {
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: export class BlogListComponent implements OnInit {
 - en: 'blogPosts$: Observable<BlogPost[]>;'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 'blogPosts$: Observable<BlogPost[]>;'
 - en: 'constructor(private blogService: BlogService) {}'
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 'constructor(private blogService: BlogService) {}'
 - en: 'ngOnInit(): void {'
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 'ngOnInit(): void {'
 - en: this.blogPosts$ = this.blogService.getBlogPosts();
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: this.blogPosts$ = this.blogService.getBlogPosts();
 - en: '}'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '4.  Modify blog-list.component.html:'
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: '4.  修改 blog-list.component.html:'
 - en: <ul>
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: <ul>
 - en: <li *ngFor="let post of blogPosts$ | async">{{ post.title</li>
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: <li *ngFor="let post of blogPosts$ | async">{{ post.title</li>
 - en: </ul>
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: </ul>
 - en: '5.  Finally, include the BlogListComponent in a parent component or the app.component.html
     to display the blog post titles:'
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 5.  最后，将 BlogListComponent 包含到父组件或 app.component.html 中，以显示博客文章标题：
 - en: <app-blog-list></app-blog-list>
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: <app-blog-list></app-blog-list>
 - en: 'Give me a regular expression to validate an email address:'
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个用于验证电子邮件地址的正则表达式：
 - en: /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
 - en: 'Give me a regex that can validate any phone number, us or international, liberally
     accepting common punctuation:'
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: '给我一个正则表达式，可以宽松接受常见标点符号，验证任何电话号码，美国或国际的： '
 - en: /^\+?(\d[\s-.]?){6,}\d$/
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: /^\+?(\d[\s-.]?){6,}\d$/
 - en: 'Give me a regex to find all URLs from img and a tags in the text of an HTML
     page:'
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个正则表达式，从 HTML 页面的文本中查找所有 img 和 a 标签中的 URL：
 - en: /(?<=<img[^>]*\ssrc=['"]?)(https?:\/\/\S+?)(?=['" >])|(?<=<a[^>]*\shref=['"]?)(https?:\/\/\S+?)(?=['"
     >])/g
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: /(?<=<img[^>]*\ssrc=['"]?)(https?:\/\/\S+?)(?=['" >])|(?<=<a[^>]*\shref=['"]?)(https?:\/\/\S+?)(?=['"
+    >])/g
 - en: 'Give me a regex matching URLs found in an arbitrary document of text, which
     may or may not be HTML:'
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个正则表达式，匹配任何文档中的 URL，该文档可能是 HTML，也可能不是：
 - en: /https?:\/\/(?:[a-zA-Z0-9$-_@.&+]|[!*'(,),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+/g
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: /https?:\/\/(?:[a-zA-Z0-9$-_@.&+]|[!*'(,),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+/g
 - en: 'Give me a regex to validate password complexity with the following rules: Passwords
     much contain at least one number, one lowercase and one uppercase letter, one
     symbol, and be 8 characters or longer:'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个验证密码复杂性的正则表达式，遵循以下规则：密码必须包含至少一个数字，一个小写字母和一个大写字母，一个符号，并且长度至少为 8 个字符：
 - en: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&**])(?=.{8,})/
 - en: 'Give me a regex that will validate that the input is a US currency:'
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个验证输入是否是美国货币的正则表达式：
 - en: /^\$?(\d{1,3}(,\d{3})*|(\d+))(\.\d{2})?$/
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: /^\$?(\d{1,3}(,\d{3})*|(\d+))(\.\d{2})?$/
 - en: 'Given a potential list of different ways to write US currency, write a regular
     expression that will match all of these: $1 .22 $.25 0.79 1.49 $0.00 $0.43 $1,230,847,369.99'
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于潜在的不同美国货币书写方式的列表，编写一个正则表达式匹配所有这些：$1 .22 $.25 0.79 1.49 $0.00 $0.43 $1,230,847,369.99
 - en: /^(\$?(\d{1,3}(,\d{3})*|(\d+))(\.\d{2})?|\.\d{2})$/
+  id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: /^(\$?(\d{1,3}(,\d{3})*|(\d+))(\.\d{2})?|\.\d{2})$/
 - en: 'Write a regex that will validate that the input is a valid SSN:'
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: 写一个验证输入是否为有效社保号码的正则表达式：
 - en: /^\d{3}-?\d{2}-?\d{4}$/
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: /^\d{3}-?\d{2}-?\d{4}$/
 - en: 'Implement a function to validate a credit card number using the Luhn Algorithm:'
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: 实现一个使用 Luhn 算法验证信用卡号的函数：
 - en: function isValidCreditCard(number) {
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: function isValidCreditCard(number) {
 - en: const numArr = number
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: const numArr = number
 - en: .split("")
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: .split("")
 - en: .reverse()
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: .reverse()
 - en: .map((digit) => parseInt(digit, 10));
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: .map((digit) => parseInt(digit, 10));
 - en: const sum = numArr.reduce((acc, digit, index) => {
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: const sum = numArr.reduce((acc, digit, index) => {
 - en: if (index % 2 !== 0) {
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: if (index % 2 !== 0) {
 - en: digit *= 2;
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: digit *= 2;
 - en: if (digit > 9) {
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: if (digit > 9) {
 - en: digit -= 9;
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: digit -= 9;
 - en: '}'
+  id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: return acc + digit;
+  id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: return acc + digit;
 - en: '}, 0);'
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: '}, 0);'
 - en: return sum % 10 === 0;
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: return sum % 10 === 0;
 - en: '}'
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'Write a regex to recognize all HTMl tags in the input text:'
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh: 写一个正则表达式来识别输入文本中的所有 HTML 标签：
 - en: /\<[^>]*\>/g
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: /\<[^>]*\>/g
 - en: 'Give me a list of schools in the USA as a JavaScript array:'
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个美国学校列表的 JavaScript 数组：
 - en: As an AI language model, I am unable to provide a comprehensive and up-to-date
     list of schools in the USA. However, you can obtain this information from various
     public sources such as the National Center for Education Statistics ([https://nces.ed.gov](https://nces.ed.gov)/).
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为 AI 语言模型，我无法提供一个全面和最新的美国学校列表。但是，你可以从各种公共来源获取这些信息，如国家教育统计中心([https://nces.ed.gov](https://nces.ed.gov)/)。
 - en: 'Generate a list of random customer names and addresses:'
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成一个随机客户姓名和地址的列表：
 - en: const customers = [
+  id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh: const customers = [
 - en: '{ name: "John Doe", address: "123 Main St, New York, NY 10001" },'
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ name: "John Doe", address: "123 Main St, New York, NY 10001" },'
 - en: '{ name: "Jane Smith", address: "456 Elm St, Los Angeles, CA 90001" },'
+  id: totrans-258
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ name: "Jane Smith", address: "456 Elm St, Los Angeles, CA 90001" },'
 - en: '{ name: "Michael Johnson", address: "789 Oak St, Chicago, IL 60601" },'
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ name: "Michael Johnson", address: "789 Oak St, Chicago, IL 60601" },'
 - en: // ...
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh: // ...
 - en: '];'
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: 'Generate a list of random customer names and addresses without using the faker
     library:'
+  id: totrans-262
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成一个随机客户姓名和地址的列表，不使用 faker 库：
 - en: 'To generate random customer names and addresses without using the faker library,
     you can create a simple function to generate random data. Here''s a basic example:'
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh: '要生成随机客户姓名和地址，而不使用 faker 库，您可以创建一个简单的函数来生成随机数据。以下是一个基本示例:'
 - en: function getRandomInt(min, max) {
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: function getRandomInt(min, max) {
 - en: min = Math.ceil(min);
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: min = Math.ceil(min);
 - en: max = Math.floor(max);
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: max = Math.floor(max);
 - en: return Math.floor(Math.random() * (max - min + 1)) + min;
+  id: totrans-267
   prefs: []
   type: TYPE_NORMAL
+  zh: return Math.floor(Math.random() * (max - min + 1)) + min;
 - en: '}'
+  id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: const firstNames = ['John', 'Jane', 'Michael', 'Sarah', 'David'];
+  id: totrans-269
   prefs: []
   type: TYPE_NORMAL
+  zh: const firstNames = ['John', 'Jane', 'Michael', 'Sarah', 'David'];
 - en: const lastNames = ['Doe', 'Smith', 'Johnson', 'Miller', 'Brown'];
+  id: totrans-270
   prefs: []
   type: TYPE_NORMAL
+  zh: const lastNames = ['Doe', 'Smith', 'Johnson', 'Miller', 'Brown'];
 - en: const streetNames = ['Main', 'Elm', 'Oak', 'Pine', 'Maple'];
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: const streetNames = ['Main', 'Elm', 'Oak', 'Pine', 'Maple'];
 - en: const cities = [
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: const cities = [
 - en: '''New York'','
+  id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: '''纽约'','
 - en: '''Los Angeles'','
+  id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: '''洛杉矶'','
 - en: '''Chicago'','
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: '''芝加哥'','
 - en: '''Houston'','
+  id: totrans-276
   prefs: []
   type: TYPE_NORMAL
+  zh: '''休斯顿'','
 - en: '''Phoenix'''
+  id: totrans-277
   prefs: []
   type: TYPE_NORMAL
+  zh: '''凤凰城'''
 - en: '];'
+  id: totrans-278
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: const states = ['NY', 'CA', 'IL', 'TX', 'AZ'];
+  id: totrans-279
   prefs: []
   type: TYPE_NORMAL
+  zh: const states = ['NY', 'CA', 'IL', 'TX', 'AZ'];
 - en: const zipCodes = ['10001', '90001', '60601', '77001', '85001'];
+  id: totrans-280
   prefs: []
   type: TYPE_NORMAL
+  zh: const zipCodes = ['10001', '90001', '60601', '77001', '85001'];
 - en: function generateRandomCustomer() {
+  id: totrans-281
   prefs: []
   type: TYPE_NORMAL
+  zh: function generateRandomCustomer() {
 - en: const firstName =
+  id: totrans-282
   prefs: []
   type: TYPE_NORMAL
+  zh: const firstName =
 - en: firstNames[getRandomInt(0, firstNames.length - 1)];
+  id: totrans-283
   prefs: []
   type: TYPE_NORMAL
+  zh: firstNames[getRandomInt(0, firstNames.length - 1)];
 - en: const lastName = lastNames[getRandomInt(0, lastNames.length - 1)];
+  id: totrans-284
   prefs: []
   type: TYPE_NORMAL
+  zh: const lastName = lastNames[getRandomInt(0, lastNames.length - 1)];
 - en: const streetNumber = getRandomInt(100, 999);
+  id: totrans-285
   prefs: []
   type: TYPE_NORMAL
+  zh: const streetNumber = getRandomInt(100, 999);
 - en: const streetName =
+  id: totrans-286
   prefs: []
   type: TYPE_NORMAL
+  zh: const streetName =
 - en: streetNames[getRandomInt(0, streetNames.length - 1)];
+  id: totrans-287
   prefs: []
   type: TYPE_NORMAL
+  zh: streetNames[getRandomInt(0, streetNames.length - 1)];
 - en: const city = cities[getRandomInt(0, cities.length - 1)];
+  id: totrans-288
   prefs: []
   type: TYPE_NORMAL
+  zh: const city = cities[getRandomInt(0, cities.length - 1)];
 - en: const state = states[getRandomInt(0, states.length - 1)];
+  id: totrans-289
   prefs: []
   type: TYPE_NORMAL
+  zh: const state = states[getRandomInt(0, states.length - 1)];
 - en: const zipCode = zipCodes[getRandomInt(0, zipCodes.length - 1)];
+  id: totrans-290
   prefs: []
   type: TYPE_NORMAL
+  zh: const zipCode = zipCodes[getRandomInt(0, zipCodes.length - 1)];
 - en: return {
+  id: totrans-291
   prefs: []
   type: TYPE_NORMAL
+  zh: return {
 - en: 'name: `${firstName} ${lastName}`,'
+  id: totrans-292
   prefs: []
   type: TYPE_NORMAL
+  zh: '名字: `${firstName} ${lastName}`,'
 - en: 'address: `${streetNumber} ${streetName} St, ${city}, ${state} ${zipCode}`'
+  id: totrans-293
   prefs: []
   type: TYPE_NORMAL
+  zh: '地址: `${streetNumber} ${streetName} St, ${city}, ${state} ${zipCode}`'
 - en: '};'
+  id: totrans-294
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: '}'
+  id: totrans-295
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'const customers = Array.from({ length: 10 }, () =>'
+  id: totrans-296
   prefs: []
   type: TYPE_NORMAL
+  zh: 'const customers = Array.from({ length: 10 }, () =>'
 - en: generateRandomCustomer()
+  id: totrans-297
   prefs: []
   type: TYPE_NORMAL
+  zh: generateRandomCustomer()
 - en: );
+  id: totrans-298
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: console.log(customers);
+  id: totrans-299
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(customers);
 - en: 'Add a random color to each customer:'
+  id: totrans-300
   prefs: []
   type: TYPE_NORMAL
+  zh: '为每个客户添加一个随机颜色:'
 - en: const colors = ['red', 'blue', 'green', 'yellow', 'orange'];
+  id: totrans-301
   prefs: []
   type: TYPE_NORMAL
+  zh: const colors = ['red', 'blue', 'green', 'yellow', 'orange'];
 - en: customers.forEach((customer) => {
+  id: totrans-302
   prefs: []
   type: TYPE_NORMAL
+  zh: customers.forEach((customer) => {
 - en: customer.color = colors[getRandomInt(0, colors.length - 1)];
+  id: totrans-303
   prefs: []
   type: TYPE_NORMAL
+  zh: customer.color = colors[getRandomInt(0, colors.length - 1)];
 - en: '});'
+  id: totrans-304
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: console.log(customers);
+  id: totrans-305
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(customers);
 - en: 'Add a favorite CSS Color to each customer:'
+  id: totrans-306
   prefs: []
   type: TYPE_NORMAL
+  zh: '为每个客户添加一个喜欢的 CSS 颜色:'
 - en: const cssColors = [
+  id: totrans-307
   prefs: []
   type: TYPE_NORMAL
+  zh: const cssColors = [
 - en: '''Crimson'','
+  id: totrans-308
   prefs: []
   type: TYPE_NORMAL
+  zh: '''深红色'','
 - en: '''DarkCyan'','
+  id: totrans-309
   prefs: []
   type: TYPE_NORMAL
+  zh: '''深青色'','
 - en: '''DodgerBlue'','
+  id: totrans-310
   prefs: []
   type: TYPE_NORMAL
+  zh: '''DodgerBlue'','
 - en: '''ForestGreen'','
+  id: totrans-311
   prefs: []
   type: TYPE_NORMAL
+  zh: '''森林绿'','
 - en: '''Gold'''
+  id: totrans-312
   prefs: []
   type: TYPE_NORMAL
+  zh: '''金色'''
 - en: '];'
+  id: totrans-313
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: customers.forEach((customer) => {
+  id: totrans-314
   prefs: []
   type: TYPE_NORMAL
+  zh: customers.forEach((customer) => {
 - en: customer.favoriteColor =
+  id: totrans-315
   prefs: []
   type: TYPE_NORMAL
+  zh: customer.favoriteColor =
 - en: cssColors[getRandomInt(0, cssColors.length - 1)];
+  id: totrans-316
   prefs: []
   type: TYPE_NORMAL
+  zh: cssColors[getRandomInt(0, cssColors.length - 1)];
 - en: '});'
+  id: totrans-317
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: console.log(customers);
+  id: totrans-318
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(customers);
 - en: What kind of car does each customer drive?
+  id: totrans-319
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个客户驾驶什么样的车？
 - en: 'I cannot determine the exact car each customer drives without more context
     or data. However, you can generate random car data for each customer, similar
     to how we generated random names, addresses, and colors:'
+  id: totrans-320
   prefs: []
   type: TYPE_NORMAL
+  zh: '没有更多上下文或数据，我无法确定每个客户驾驶的确切汽车。但是，您可以为每个客户生成随机汽车数据，类似于我们生成随机姓名、地址和颜色的方式:'
 - en: const carMakes = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan'];
+  id: totrans-321
   prefs: []
   type: TYPE_NORMAL
+  zh: const carMakes = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan'];
 - en: const carModels = ['Corolla', 'Civic', 'F-150', 'Impala', 'Altima'];
+  id: totrans-322
   prefs: []
   type: TYPE_NORMAL
+  zh: const carModels = ['Corolla', 'Civic', 'F-150', 'Impala', 'Altima'];
 - en: customers.forEach((customer) => {
+  id: totrans-323
   prefs: []
   type: TYPE_NORMAL
+  zh: customers.forEach((customer) => {
 - en: customer.car = {
+  id: totrans-324
   prefs: []
   type: TYPE_NORMAL
+  zh: customer.car = {
 - en: 'make: carMakes[getRandomInt(0, carMakes.length - 1)],'
+  id: totrans-325
   prefs: []
   type: TYPE_NORMAL
+  zh: 'make: carMakes[getRandomInt(0, carMakes.length - 1)],'
 - en: 'model: carModels[getRandomInt(0, carModels.length - 1)]'
+  id: totrans-326
   prefs: []
   type: TYPE_NORMAL
+  zh: '型号: carModels[getRandomInt(0, carModels.length - 1)]'
 - en: '};'
+  id: totrans-327
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: '});'
+  id: totrans-328
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: console.log(customers);
+  id: totrans-329
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(customers);
 - en: What kind of dog does each customer have?
+  id: totrans-330
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个客户有什么样的狗？
 - en: 'Similar to the car example, you can generate random dog breeds for each customer:'
+  id: totrans-331
   prefs: []
   type: TYPE_NORMAL
+  zh: '类似于汽车示例，您可以为每个客户生成随机狗品种:'
 - en: const dogBreeds = [
+  id: totrans-332
   prefs: []
   type: TYPE_NORMAL
+  zh: const dogBreeds = [
 - en: '''Labrador Retriever'','
+  id: totrans-333
   prefs: []
   type: TYPE_NORMAL
+  zh: '''拉布拉多猎犬'','
 - en: '''German Shepherd'','
+  id: totrans-334
   prefs: []
   type: TYPE_NORMAL
+  zh: '''德国牧羊犬'','
 - en: '''Golden Retriever'','
+  id: totrans-335
   prefs: []
   type: TYPE_NORMAL
+  zh: '''金毛寻回犬'','
 - en: '''French Bulldog'','
+  id: totrans-336
   prefs: []
   type: TYPE_NORMAL
+  zh: '''法国斗牛犬'','
 - en: '''Beagle'''
+  id: totrans-337
   prefs: []
   type: TYPE_NORMAL
+  zh: '''猎犬'''
 - en: '];'
+  id: totrans-338
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: customers.forEach((customer) => {
+  id: totrans-339
   prefs: []
   type: TYPE_NORMAL
+  zh: customers.forEach((customer) => {
 - en: customer.dog = {
+  id: totrans-340
   prefs: []
   type: TYPE_NORMAL
+  zh: customer.dog = {
 - en: 'breed: dogBreeds[getRandomInt(0, dogBreeds.length - 1)]'
+  id: totrans-341
   prefs: []
   type: TYPE_NORMAL
+  zh: '品种: dogBreeds[getRandomInt(0, dogBreeds.length - 1)]'
 - en: '};'
+  id: totrans-342
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: '});'
+  id: totrans-343
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: console.log(customers);
+  id: totrans-344
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(customers);
 - en: // Create an array of all possible card values
+  id: totrans-345
   prefs: []
   type: TYPE_NORMAL
+  zh: // 创建所有可能的卡片值数组
 - en: const cardValues = [
+  id: totrans-346
   prefs: []
   type: TYPE_NORMAL
+  zh: const cardValues = [
 - en: '''2'','
+  id: totrans-347
   prefs: []
   type: TYPE_NORMAL
+  zh: '''2'','
 - en: '''3'','
+  id: totrans-348
   prefs: []
   type: TYPE_NORMAL
+  zh: '''3'','
 - en: '''4'','
+  id: totrans-349
   prefs: []
   type: TYPE_NORMAL
+  zh: '''4'','
 - en: '''5'','
+  id: totrans-350
   prefs: []
   type: TYPE_NORMAL
+  zh: '''5'','
 - en: '''6'','
+  id: totrans-351
   prefs: []
   type: TYPE_NORMAL
+  zh: '''6'','
 - en: '''7'','
+  id: totrans-352
   prefs: []
   type: TYPE_NORMAL
+  zh: '''7'','
 - en: '''8'','
+  id: totrans-353
   prefs: []
   type: TYPE_NORMAL
+  zh: '''8'','
 - en: '''9'','
+  id: totrans-354
   prefs: []
   type: TYPE_NORMAL
+  zh: '''9'','
 - en: '''10'','
+  id: totrans-355
   prefs: []
   type: TYPE_NORMAL
+  zh: '''10'','
 - en: '''J'','
+  id: totrans-356
   prefs: []
   type: TYPE_NORMAL
+  zh: '''J'','
 - en: '''Q'','
+  id: totrans-357
   prefs: []
   type: TYPE_NORMAL
+  zh: '''Q'','
 - en: '''K'','
+  id: totrans-358
   prefs: []
   type: TYPE_NORMAL
+  zh: '''K'','
 - en: '''A'''
+  id: totrans-359
   prefs: []
   type: TYPE_NORMAL
+  zh: '''A'''
 - en: '];'
+  id: totrans-360
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: const cardSuits = ['hearts', 'diamonds', 'clubs', 'spades'];
+  id: totrans-361
   prefs: []
   type: TYPE_NORMAL
+  zh: const cardSuits = ['hearts', 'diamonds', 'clubs', 'spades'];
 - en: // Function to shuffle the deck
+  id: totrans-362
   prefs: []
   type: TYPE_NORMAL
+  zh: // 洗牌功能
 - en: function shuffleDeck(deck) {
+  id: totrans-363
   prefs: []
   type: TYPE_NORMAL
+  zh: 洗牌牌组函数
 - en: for (let i = deck.length - 1; i > 0; i—) {
+  id: totrans-364
   prefs: []
   type: TYPE_NORMAL
+  zh: for (let i = deck.length - 1; i > 0; i—) {
 - en: const j = Math.floor(Math.random() * (i + 1));
+  id: totrans-365
   prefs: []
   type: TYPE_NORMAL
+  zh: const j = Math.floor(Math.random() * (i + 1));
 - en: '[deck[i], deck[j]] = [deck[j], deck[i]];'
+  id: totrans-366
   prefs: []
   type: TYPE_NORMAL
+  zh: '[deck[i], deck[j]] = [deck[j], deck[i]];'
 - en: '}'
+  id: totrans-367
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-368
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: // Shuffle the deck using built-in Javascript array functionality
+  id: totrans-369
   prefs: []
   type: TYPE_NORMAL
+  zh: // 使用内置的Javascript数组功能洗牌牌组
 - en: const deck = [];
+  id: totrans-370
   prefs: []
   type: TYPE_NORMAL
+  zh: const deck = [];
 - en: cardSuits.forEach((suit) => {
+  id: totrans-371
   prefs: []
   type: TYPE_NORMAL
+  zh: cardSuits.forEach((suit) => {
 - en: cardValues.forEach((value) => {
+  id: totrans-372
   prefs: []
   type: TYPE_NORMAL
+  zh: cardValues.forEach((value) => {
 - en: deck.push({ suit, value });
+  id: totrans-373
   prefs: []
   type: TYPE_NORMAL
+  zh: deck.push({ suit, value });
 - en: '});'
+  id: totrans-374
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-375
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: shuffleDeck(deck);
+  id: totrans-376
   prefs: []
   type: TYPE_NORMAL
+  zh: shuffleDeck(deck);
 - en: console.log(deck);
+  id: totrans-377
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(deck);
 - en: 'Create a random deck of Uno cards:'
+  id: totrans-378
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一副随机的Uno卡牌：
 - en: function generateUnoDeck() {
+  id: totrans-379
   prefs: []
   type: TYPE_NORMAL
+  zh: function generateUnoDeck() {
 - en: const colors = ['red', 'green', 'blue', 'yellow'];
+  id: totrans-380
   prefs: []
   type: TYPE_NORMAL
+  zh: const colors = ['red', 'green', 'blue', 'yellow'];
 - en: const values = [
+  id: totrans-381
   prefs: []
   type: TYPE_NORMAL
+  zh: const values = [
 - en: '''0'','
+  id: totrans-382
   prefs: []
   type: TYPE_NORMAL
+  zh: '''0'','
 - en: '''1'','
+  id: totrans-383
   prefs: []
   type: TYPE_NORMAL
+  zh: '''1'','
 - en: '''2'','
+  id: totrans-384
   prefs: []
   type: TYPE_NORMAL
+  zh: '''2'','
 - en: '''3'','
+  id: totrans-385
   prefs: []
   type: TYPE_NORMAL
+  zh: '''3'','
 - en: '''4'','
+  id: totrans-386
   prefs: []
   type: TYPE_NORMAL
+  zh: '''4'','
 - en: '''5'','
+  id: totrans-387
   prefs: []
   type: TYPE_NORMAL
+  zh: '''5'','
 - en: '''6'','
+  id: totrans-388
   prefs: []
   type: TYPE_NORMAL
+  zh: '''6'','
 - en: '''7'','
+  id: totrans-389
   prefs: []
   type: TYPE_NORMAL
+  zh: '''7'','
 - en: '''8'','
+  id: totrans-390
   prefs: []
   type: TYPE_NORMAL
+  zh: '''8'','
 - en: '''9'','
+  id: totrans-391
   prefs: []
   type: TYPE_NORMAL
+  zh: '''9'','
 - en: '''Skip'','
+  id: totrans-392
   prefs: []
   type: TYPE_NORMAL
+  zh: '''跳过'','
 - en: '''Reverse'','
+  id: totrans-393
   prefs: []
   type: TYPE_NORMAL
+  zh: '''反转'','
 - en: '''Draw Two'''
+  id: totrans-394
   prefs: []
   type: TYPE_NORMAL
+  zh: '''抽取两张牌'''
 - en: '];'
+  id: totrans-395
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: const deck = [];
+  id: totrans-396
   prefs: []
   type: TYPE_NORMAL
+  zh: const deck = [];
 - en: colors.forEach((color) => {
+  id: totrans-397
   prefs: []
   type: TYPE_NORMAL
+  zh: colors.forEach((color) => {
 - en: values.forEach((value) => {
+  id: totrans-398
   prefs: []
   type: TYPE_NORMAL
+  zh: values.forEach((value) => {
 - en: deck.push({ color, value });
+  id: totrans-399
   prefs: []
   type: TYPE_NORMAL
+  zh: deck.push({ color, value });
 - en: if (value !== '0') {
+  id: totrans-400
   prefs: []
   type: TYPE_NORMAL
+  zh: if (value !== '0') {
 - en: deck.push({ color, value });
+  id: totrans-401
   prefs: []
   type: TYPE_NORMAL
+  zh: deck.push({ color, value });
 - en: // Add a second card of each value, except for 0.
+  id: totrans-402
   prefs: []
   type: TYPE_NORMAL
+  zh: // 添加每个值的第二张牌，除了0。
 - en: '}'
+  id: totrans-403
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '});'
+  id: totrans-404
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-405
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: // Add wild cards
+  id: totrans-406
   prefs: []
   type: TYPE_NORMAL
+  zh: // 添加万能卡
 - en: for (let i = 0; i < 4; i++) {
+  id: totrans-407
   prefs: []
   type: TYPE_NORMAL
+  zh: for (let i = 0; i < 4; i++) {
 - en: 'deck.push({ color: ''wild'', value: ''Wild'' });'
+  id: totrans-408
   prefs: []
   type: TYPE_NORMAL
+  zh: 'deck.push({ color: ''wild'', value: ''Wild'' });'
 - en: 'deck.push({ color: ''wild'', value: ''Wild Draw Four'' });'
+  id: totrans-409
   prefs: []
   type: TYPE_NORMAL
+  zh: 'deck.push({ color: ''wild'', value: ''Wild Draw Four'' });'
 - en: '}'
+  id: totrans-410
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: shuffleDeck(deck);
+  id: totrans-411
   prefs: []
   type: TYPE_NORMAL
+  zh: shuffleDeck(deck);
 - en: return deck;
+  id: totrans-412
   prefs: []
   type: TYPE_NORMAL
+  zh: return deck;
 - en: '}'
+  id: totrans-413
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: const unoDeck = generateUnoDeck();
+  id: totrans-414
   prefs: []
   type: TYPE_NORMAL
+  zh: const unoDeck = generateUnoDeck();
 - en: console.log(unoDeck);
+  id: totrans-415
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(unoDeck);
 - en: 'Create an array of possible grocery items:'
+  id: totrans-416
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个可能的杂货商品数组：
 - en: const groceryItems = [
+  id: totrans-417
   prefs: []
   type: TYPE_NORMAL
+  zh: const groceryItems = [
 - en: '''Apples'','
+  id: totrans-418
   prefs: []
   type: TYPE_NORMAL
+  zh: '''苹果'','
 - en: '''Bananas'','
+  id: totrans-419
   prefs: []
   type: TYPE_NORMAL
+  zh: '''香蕉'','
 - en: '''Oranges'','
+  id: totrans-420
   prefs: []
   type: TYPE_NORMAL
+  zh: '''橙子'','
 - en: '''Grapes'','
+  id: totrans-421
   prefs: []
   type: TYPE_NORMAL
+  zh: '''葡萄'','
 - en: '''Milk'','
+  id: totrans-422
   prefs: []
   type: TYPE_NORMAL
+  zh: '''牛奶'','
 - en: '''Bread'','
+  id: totrans-423
   prefs: []
   type: TYPE_NORMAL
+  zh: '''面包'','
 - en: '''Eggs'','
+  id: totrans-424
   prefs: []
   type: TYPE_NORMAL
+  zh: '''鸡蛋'','
 - en: '''Cheese'','
+  id: totrans-425
   prefs: []
   type: TYPE_NORMAL
+  zh: '''奶酪'','
 - en: '''Butter'','
+  id: totrans-426
   prefs: []
   type: TYPE_NORMAL
+  zh: '''黄油'','
 - en: '''Chicken'','
+  id: totrans-427
   prefs: []
   type: TYPE_NORMAL
+  zh: '''鸡肉'','
 - en: '''Beef'','
+  id: totrans-428
   prefs: []
   type: TYPE_NORMAL
+  zh: '''牛肉'','
 - en: '''Pork'','
+  id: totrans-429
   prefs: []
   type: TYPE_NORMAL
+  zh: '''猪肉'','
 - en: '''Pasta'','
+  id: totrans-430
   prefs: []
   type: TYPE_NORMAL
+  zh: '''面条'','
 - en: '''Rice'','
+  id: totrans-431
   prefs: []
   type: TYPE_NORMAL
+  zh: '''大米'','
 - en: '''Cereal'','
+  id: totrans-432
   prefs: []
   type: TYPE_NORMAL
+  zh: '''谷类'','
 - en: '''Potatoes'','
+  id: totrans-433
   prefs: []
   type: TYPE_NORMAL
+  zh: '''土豆'','
 - en: '''Carrots'','
+  id: totrans-434
   prefs: []
   type: TYPE_NORMAL
+  zh: '''胡萝卜'','
 - en: '''Onions'''
+  id: totrans-435
   prefs: []
   type: TYPE_NORMAL
+  zh: '''洋葱'''
 - en: // ...
+  id: totrans-436
   prefs: []
   type: TYPE_NORMAL
+  zh: // ...
 - en: '];'
+  id: totrans-437
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: 'Create a list of random stock symbols:'
+  id: totrans-438
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个随机股票符号列表：
 - en: const stockSymbols = [
+  id: totrans-439
   prefs: []
   type: TYPE_NORMAL
+  zh: const stockSymbols = [
 - en: '''AAPL'','
+  id: totrans-440
   prefs: []
   type: TYPE_NORMAL
+  zh: '''AAPL'','
 - en: '''GOOGL'','
+  id: totrans-441
   prefs: []
   type: TYPE_NORMAL
+  zh: '''GOOGL'','
 - en: '''AMZN'','
+  id: totrans-442
   prefs: []
   type: TYPE_NORMAL
+  zh: '''AMZN'','
 - en: '''MSFT'','
+  id: totrans-443
   prefs: []
   type: TYPE_NORMAL
+  zh: '''MSFT'','
 - en: '''TSLA'','
+  id: totrans-444
   prefs: []
   type: TYPE_NORMAL
+  zh: '''TSLA'','
 - en: '''FB'','
+  id: totrans-445
   prefs: []
   type: TYPE_NORMAL
+  zh: '''FB'','
 - en: '''BRK.A'','
+  id: totrans-446
   prefs: []
   type: TYPE_NORMAL
+  zh: '''BRK.A'','
 - en: '''JNJ'','
+  id: totrans-447
   prefs: []
   type: TYPE_NORMAL
+  zh: '''JNJ'','
 - en: '''JPM'','
+  id: totrans-448
   prefs: []
   type: TYPE_NORMAL
+  zh: '''JPM'','
 - en: '''V'''
+  id: totrans-449
   prefs: []
   type: TYPE_NORMAL
+  zh: '''V'''
 - en: '];'
+  id: totrans-450
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: // To create a random list of stock symbols, you can simply shuffle the stockSymbols
     array and then select the desired number of items.
+  id: totrans-451
   prefs: []
   type: TYPE_NORMAL
+  zh: // 要创建一个随机股票符号列表，可以简单地洗牌stockSymbols数组，然后选择所需数量的项目。
 - en: 'Generate an observable stream of prices for each stock, changing every 5 seconds:'
+  id: totrans-452
   prefs: []
   type: TYPE_NORMAL
+  zh: 为每支股票生成一个价格的可观察流，每5秒更改一次：
 - en: import { interval } from 'rxjs';
+  id: totrans-453
   prefs: []
   type: TYPE_NORMAL
+  zh: import { interval } from 'rxjs';
 - en: import { map } from 'rxjs/operators';
+  id: totrans-454
   prefs: []
   type: TYPE_NORMAL
+  zh: import { map } from 'rxjs/operators';
 - en: function generateRandomPrice() {
+  id: totrans-455
   prefs: []
   type: TYPE_NORMAL
+  zh: function generateRandomPrice() {
 - en: return Math.floor(Math.random() * (10000 - 1000 + 1) + 1000) / 100;
+  id: totrans-456
   prefs: []
   type: TYPE_NORMAL
+  zh: return Math.floor(Math.random() * (10000 - 1000 + 1) + 1000) / 100;
 - en: '}'
+  id: totrans-457
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: function createPriceStream(stockSymbol) {
+  id: totrans-458
   prefs: []
   type: TYPE_NORMAL
+  zh: function createPriceStream(stockSymbol) {
 - en: return interval(5000).pipe(
+  id: totrans-459
   prefs: []
   type: TYPE_NORMAL
+  zh: return interval(5000).pipe(
 - en: map(() => ({
+  id: totrans-460
   prefs: []
   type: TYPE_NORMAL
+  zh: map(() => ({
 - en: stockSymbol,
+  id: totrans-461
   prefs: []
   type: TYPE_NORMAL
+  zh: stockSymbol,
 - en: 'price: generateRandomPrice(),'
+  id: totrans-462
   prefs: []
   type: TYPE_NORMAL
+  zh: 'price: generateRandomPrice(),'
 - en: 'timestamp: new Date()'
+  id: totrans-463
   prefs: []
   type: TYPE_NORMAL
+  zh: 'timestamp: new Date()'
 - en: '}))'
+  id: totrans-464
   prefs: []
   type: TYPE_NORMAL
+  zh: '}))'
 - en: );
+  id: totrans-465
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: '}'
+  id: totrans-466
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: const stockPriceStreams = stockSymbols.map((stockSymbol) =>
+  id: totrans-467
   prefs: []
   type: TYPE_NORMAL
+  zh: const stockPriceStreams = stockSymbols.map((stockSymbol) =>
 - en: createPriceStream(stockSymbol)
+  id: totrans-468
   prefs: []
   type: TYPE_NORMAL
+  zh: createPriceStream(stockSymbol)
 - en: );
+  id: totrans-469
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: In this example, we are using the rxjs library to create an observable stream
     of prices for each stock symbol. The interval function generates a new value every
     5 seconds (5000 milliseconds), and the map operator is used to generate a new
     price object containing the stock symbol, a random price, and the current timestamp.
+  id: totrans-470
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们使用rxjs库为每个股票符号创建一个价格的可观察流。 interval函数每5秒（5000毫秒）生成一个新值，并且使用map操作符生成一个包含股票符号、随机价格和当前时间戳的新价格对象。
 - en: 'Now that you have the stockPriceStreams array, you can subscribe to each individual
     observable to receive the price updates:'
+  id: totrans-471
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你有了stockPriceStreams数组，你可以订阅每个单独的可观察对象来接收价格更新：
 - en: stockPriceStreams.forEach((priceStream, index) => {
+  id: totrans-472
   prefs: []
   type: TYPE_NORMAL
+  zh: stockPriceStreams.forEach((priceStream, index) => {
 - en: priceStream.subscribe((price) => {
+  id: totrans-473
   prefs: []
   type: TYPE_NORMAL
+  zh: priceStream.subscribe((price) => {
 - en: console.log(
+  id: totrans-474
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(
 - en: '`Price update for ${price.stockSymbol}: $${price.price} at ${price.timestamp}`'
+  id: totrans-475
   prefs: []
   type: TYPE_NORMAL
+  zh: '`价格更新: ${price.stockSymbol}：$${price.price}，时间：${price.timestamp}`'
 - en: );
+  id: totrans-476
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: '});'
+  id: totrans-477
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '});'
+  id: totrans-478
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: This will log the price updates for each stock symbol in the console every 5
     seconds.
+  id: totrans-479
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将在控制台上每5秒记录每个股票符号的价格更新。
 - en: 'For the attendance app, I''ll generate a few Agile epics and stories:'
+  id: totrans-480
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于考勤应用，我将生成几个敏捷史诗和故事：
 - en: 'Epic 1: Roster Management'
+  id: totrans-481
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗1：花名册管理
 - en: 'Story 1.1: As a user, I want to add a student to the class roster.'
+  id: totrans-482
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 1.1：作为用户，我想要将一个学生添加到班级花名册中。
 - en: 'Story 1.2: As a user, I want to edit a student''s information on the class
     roster.'
+  id: totrans-483
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 1.2：作为用户，我想要编辑班级花名册中学生的信息。
 - en: 'Story 1.3: As a user, I want to remove a student from the class roster.'
+  id: totrans-484
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 1.3：作为用户，我想要从班级花名册中移除一个学生。
 - en: 'Epic 2: Attendance Tracking'
+  id: totrans-485
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗 2：考勤追踪
 - en: 'Story 2.1: As a user, I want to mark a student as present or absent for a specific
     day.'
+  id: totrans-486
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 2.1：作为用户，我想要标记某一天的学生出席或缺席。
 - en: 'Story 2.2: As a user, I want to view attendance records for the class.'
+  id: totrans-487
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 2.2：作为用户，我想要查看班级的考勤记录。
 - en: 'Epic 3: Photo Management'
+  id: totrans-488
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗 3：照片管理
 - en: 'Story 3.1: As a user, I want to add a photo of each student to their profile.'
+  id: totrans-489
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 3.1：作为用户，我想要为每个学生添加一张照片到他们的个人资料中。
 - en: 'Story 3.2: As a user, I want to update a student''s photo.'
+  id: totrans-490
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 3.2：作为用户，我想要更新一个学生的照片。
 - en: 'Epic 4: Cross-Platform Compatibility'
+  id: totrans-491
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗 4：跨平台兼容性
 - en: 'Story 4.1: As a user, I want the app to be compatible with desktop web browsers.'
+  id: totrans-492
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 4.1：作为用户，我希望应用程序与桌面 Web 浏览器兼容。
 - en: 'Story 4.2: As a user, I want the app to be compatible with iOS devices.'
+  id: totrans-493
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 4.2：作为用户，我希望应用程序与 iOS 设备兼容。
 - en: 'Story 4.3: As a user, I want the app to be compatible with Android devices.'
+  id: totrans-494
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事 4.3：作为用户，我希望应用程序与 Android 设备兼容。
 - en: 'Given the relative difficulties of those tasks and their UAC, generate a rough
     relative estimate for each using T-shirt sizing:'
+  id: totrans-495
   prefs: []
   type: TYPE_NORMAL
+  zh: 鉴于这些任务的相对困难程度和它们的用户故事价值，使用 T 恤尺码为每个生成一个粗略的相对估计：
 - en: 'Epic 1: Roster Management'
+  id: totrans-496
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗 1：班级管理
 - en: '  Story 1.1: Small'
+  id: totrans-497
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 1.1：小型
 - en: '  Story 1.2: Small'
+  id: totrans-498
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 1.2：小型
 - en: '  Story 1.3: Small'
+  id: totrans-499
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 1.3：小型
 - en: 'Epic 2: Attendance Tracking'
+  id: totrans-500
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗 2：考勤追踪
 - en: '  Story 2.1: Medium'
+  id: totrans-501
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 2.1：中等
 - en: '  Story 2.2: Medium'
+  id: totrans-502
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 2.2：中等
 - en: 'Epic 3: Photo Management'
+  id: totrans-503
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗 3：照片管理
 - en: '  Story 3.1: Medium'
+  id: totrans-504
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 3.1：中等
 - en: '  Story 3.2: Small'
+  id: totrans-505
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 3.2：小型
 - en: 'Epic 4: Cross-Platform Compatibility'
+  id: totrans-506
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗 4：跨平台兼容性
 - en: '  Story 4.1: Large'
+  id: totrans-507
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 4.1：大型
 - en: '  Story 4.2: Large'
+  id: totrans-508
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 4.2：大型
 - en: '  Story 4.3: Large'
+  id: totrans-509
   prefs: []
   type: TYPE_NORMAL
+  zh:   故事 4.3：大型
 - en: The newest version of Angular and Ionic Framework I know of is Angular 12 and
     Ionic 5, as of my knowledge cutoff in September 2021\. However, newer versions
     might have been released since then. Please check their respective websites or
     package repositories for the most up-to-date information.
+  id: totrans-510
   prefs: []
   type: TYPE_NORMAL
+  zh: 我所知道的 Angular 和 Ionic Framework 的最新版本是 Angular 12 和 Ionic 5，在我截止于 2021 年 9 月的知识范围内。然而，自那时以来可能已经发布了更新版本。请查看它们各自的网站或软件包存储库以获取最新信息。
 - en: Using Angular and the Ionic Framework, create a complete web application that
     uses a split-pane layout with a side menu and a default Home page. It should have
     an Angular service to load blog posts from a remote sample API. Those blog posts
@@ -1603,102 +2633,171 @@
     prefer the async pipe over subscribing and unsubscribing. Make sure you provide
     the Ionic CLI commands to create the application and any additional items needed
     to create the application.
+  id: totrans-511
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 Angular 和 Ionic Framework，创建一个完整的 Web 应用程序，使用分栏布局，包括侧边菜单和默认的主页。它应该有一个 Angular
+    服务来从远程示例 API 加载博客文章。这些博客文章应该显示在一个名为 Posts 的页面上。Posts 页面应该是响应式的，以 <ion-card> 的形式显示博客文章的标题和内容。在处理
+    Observables 时，优先使用 async 管道而不是订阅和取消订阅。确保提供 Ionic CLI 命令来创建应用程序以及创建应用程序所需的任何其他项目。
 - en: '1.  Install the Ionic CLI if you haven''t already:'
+  id: totrans-512
   prefs: []
   type: TYPE_NORMAL
+  zh: 1.  如果尚未安装 Ionic CLI，请安装：
 - en: npm install -g @ionic/cli
+  id: totrans-513
   prefs: []
   type: TYPE_NORMAL
+  zh: npm install -g @ionic/cli
 - en: '2.  Create a new Ionic Angular project:'
+  id: totrans-514
   prefs: []
   type: TYPE_NORMAL
+  zh: 2.  创建一个新的 Ionic Angular 项目：
 - en: ionic start myApp sidemenu—type=angular
+  id: totrans-515
   prefs: []
   type: TYPE_NORMAL
+  zh: ionic start myApp sidemenu—type=angular
 - en: '3.  Change the directory to the newly created app:'
+  id: totrans-516
   prefs: []
   type: TYPE_NORMAL
+  zh: 3.  切换到新创建的应用程序目录：
 - en: cd myApp
+  id: totrans-517
   prefs: []
   type: TYPE_NORMAL
+  zh: cd myApp
 - en: '4.  Generate a service to load blog posts:'
+  id: totrans-518
   prefs: []
   type: TYPE_NORMAL
+  zh: 4.  生成一个用于加载博客文章的服务：
 - en: ionic generate service services/blog
+  id: totrans-519
   prefs: []
   type: TYPE_NORMAL
+  zh: ionic generate service services/blog
 - en: '5.  Edit src/app/services/blog.service.ts to fetch sample blog post data:'
+  id: totrans-520
   prefs: []
   type: TYPE_NORMAL
+  zh: 5.  编辑 src/app/services/blog.service.ts 以获取示例博客文章数据：
 - en: 'import { HttpClient } from ''@angular/common/http''; import { Injectable }
     from ''@angular/core''; import { Observable } from ''rxjs''; @Injectable({ providedIn:
     ''root'', }) export class BlogService { private apiUrl = ''https://jsonplaceholder.typicode.com/posts'';
     constructor(private http: HttpClient) {} getPosts(): Observable<any> { return
     this.http.get<any[]>(this.apiUrl); } }'
+  id: totrans-521
   prefs: []
   type: TYPE_NORMAL
+  zh: 'import { HttpClient } from ''@angular/common/http''; import { Injectable }
+    from ''@angular/core''; import { Observable } from ''rxjs''; @Injectable({ providedIn:
+    ''root'', }) export class BlogService { private apiUrl = ''https://jsonplaceholder.typicode.com/posts'';
+    constructor(private http: HttpClient) {} getPosts(): Observable<any> { return
+    this.http.get<any[]>(this.apiUrl); } }'
 - en: '6.  Add HttpClientModule to src/app/app.module.ts:'
+  id: totrans-522
   prefs: []
   type: TYPE_NORMAL
+  zh: 6.  在 src/app/app.module.ts 中添加 HttpClientModule：
 - en: 'import { HttpClientModule } from ''@angular/common/http''; @NgModule({ // ...
     imports: [ // ... HttpClientModule, ], // ... }) export class AppModule {}'
+  id: totrans-523
   prefs: []
   type: TYPE_NORMAL
+  zh: '导入 { HttpClientModule } from ''@angular/common/http''; @NgModule({ // ... imports:
+    [ // ... HttpClientModule, ], // ... }) export class AppModule {}'
 - en: '7.  Generate a new page for displaying blog posts:'
+  id: totrans-524
   prefs: []
   type: TYPE_NORMAL
+  zh: 7.  生成一个用于显示博客文章的新页面：
 - en: ionic generate page pages/posts
+  id: totrans-525
   prefs: []
   type: TYPE_NORMAL
+  zh: ionic generate page pages/posts
 - en: '8.  Edit src/app/pages/posts/posts.page.ts to load the blog posts:'
+  id: totrans-526
   prefs: []
   type: TYPE_NORMAL
+  zh: 8.  编辑 src/app/pages/posts/posts.page.ts 以加载博客文章：
 - en: 'import { Component, OnInit } from ''@angular/core''; import { BlogService }
     from ''../../services/blog.service''; import { Observable } from ''rxjs''; @Component({
     selector: ''app-posts'', templateUrl: ''./posts.page.html'', styleUrls: [''./posts.page.scss''],
     }) export class PostsPage implements OnInit { posts$: Observable<any>; constructor(private
     blogService: BlogService) {} ngOnInit() { this.posts$ = this.blogService.getPosts();
     } }'
+  id: totrans-527
   prefs: []
   type: TYPE_NORMAL
+  zh: '导入 { Component, OnInit } from ''@angular/core''; 导入 { BlogService } from ''../../services/blog.service'';
+    导入 { Observable } from ''rxjs''; @Component({ selector: ''app-posts'', templateUrl:
+    ''./posts.page.html'', styleUrls: [''./posts.page.scss''], }) export class PostsPage
+    implements OnInit { posts$: Observable<any>; constructor(private blogService:
+    BlogService) {} ngOnInit() { this.posts$ = this.blogService.getPosts(); } }'
 - en: '9.  Edit src/app/pages/posts/posts.page.html to display the blog posts using
     an async pipe and <ion-card>:'
+  id: totrans-528
   prefs: []
   type: TYPE_NORMAL
+  zh: 9.  编辑 src/app/pages/posts/posts.page.html 以使用 async 管道和 <ion-card> 显示博客文章：
 - en: <ion-header> <ion-toolbar> <ion-title>Posts</ion-title> </ion-toolbar> </ion-header>
     <ion-content> <ion-card *ngFor="let post of posts$ | async"> <ion-card-header>
     <ion-card-title>{{ post.title }}</ion-card-title> </ion-card-header> <ion-card-content>
     {{ post.body }} </ion-card-content> </ion-card> </ion-content>
+  id: totrans-529
   prefs: []
   type: TYPE_NORMAL
+  zh: <ion-header> <ion-toolbar> <ion-title>Posts</ion-title> </ion-toolbar> </ion-header>
+    <ion-content> <ion-card *ngFor="let post of posts$ | async"> <ion-card-header>
+    <ion-card-title>{{ post.title }}</ion-card-title> </ion-card-header> <ion-card-content>
+    {{ post.body }} </ion-card-content> </ion-card> </ion-content>
 - en: '10.  Add the Posts page to the side menu by editing src/app/app.component.ts:'
+  id: totrans-530
   prefs: []
   type: TYPE_NORMAL
+  zh: 10.  通过编辑 src/app/app.component.ts 将 Posts 页面添加到侧边菜单：
 - en: '// ... public appPages = [ // ... { title: ''Posts'', url: ''/posts'', icon:
     ''mail'' }, ]; // ...'
+  id: totrans-531
   prefs: []
   type: TYPE_NORMAL
+  zh: '// ... public appPages = [ // ... { title: ''Posts'', url: ''/posts'', icon:
+    ''mail'' }, ]; // ...'
 - en: '11.  Update the routing in src/app/app-routing.module.ts to include the Posts
     page:'
+  id: totrans-532
   prefs: []
   type: TYPE_NORMAL
+  zh: 11.  更新 src/app/app-routing.module.ts 中的路由以包含 Posts 页面：
 - en: '// ... import { PostsPage } from ''./pages/posts/posts.page''; const routes:
     Routes = [ // ... { path: ''posts'', component: PostsPage, }, ]; // ...'
+  id: totrans-533
   prefs: []
   type: TYPE_NORMAL
+  zh: '// ... 导入 { PostsPage } from ''./pages/posts/posts.page''; const routes: Routes
+    = [ // ... { path: ''posts'', component: PostsPage, }, ]; // ...'
 - en: '12.  Run the app in the development mode:'
+  id: totrans-534
   prefs: []
   type: TYPE_NORMAL
+  zh: 12.  在开发模式下运行应用程序：
 - en: ionic serve
+  id: totrans-535
   prefs: []
   type: TYPE_NORMAL
+  zh: ionic serve
 - en: Now you should have a complete Angular and Ionic web application with a split-pane
     layout, a side menu, and a Home page. The Posts page displays blog post titles
     and content in an <ion-card> element, and the async pipe is used to handle Observables.
+  id: totrans-536
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，您应该拥有一个完整的 Angular 和 Ionic Web 应用程序，具有分栏布局、侧边菜单和主页。Posts 页面在 <ion-card> 元素中显示博客文章标题和内容，并使用
+    async 管道处理 Observables。
 - en: A UUID (Universally Unique Identifier) is a 128-bit number that is used to uniquely
     identify an object or entity across different systems or platforms. It's usually
     represented as a string consisting of 32 alphanumeric characters separated by
@@ -1707,23 +2806,34 @@
     times have unique identifiers, even without a central coordination authority.
     This is useful in distributed systems, databases, or applications where unique
     identification is required.
+  id: totrans-537
   prefs: []
   type: TYPE_NORMAL
+  zh: UUID（通用唯一标识符）是一个用于在不同系统或平台上唯一标识对象或实体的 128 位数字。通常表示为由连字符分隔成五组的 32 个字母数字字符组成的字符串，格式为
+    8-4-4-4-12（例如，123e4567-e89b-12d3-a456-426614174000）。UUID 用于确保由不同系统或不同时间创建的对象具有唯一标识符，即使没有中央协调机构。这在需要唯一标识的分布式系统、数据库或应用程序中非常有用。
 - en: 'Given the following Angular service, write a complete suite of unit tests using
     Jasmine:'
+  id: totrans-538
   prefs: []
   type: TYPE_NORMAL
+  zh: 给定以下 Angular 服务，请使用 Jasmine 编写完整的单元测试套件：
 - en: 'First, you''ll want to generate a test file for the service (if it doesn''t
     already exist) using the Angular CLI:'
+  id: totrans-539
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，您需要使用 Angular CLI 为服务生成一个测试文件（如果尚不存在）：
 - en: ng generate service services/shuffle—skipTests=false
+  id: totrans-540
   prefs: []
   type: TYPE_NORMAL
+  zh: ng generate service services/shuffle—skipTests=false
 - en: 'Next, update the src/app/services/shuffle.service.spec.ts file with the following
     Jasmine tests:'
+  id: totrans-541
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，使用以下 Jasmine 测试更新 src/app/services/shuffle.service.spec.ts 文件：
 - en: 'import { TestBed } from ''@angular/core/testing''; import { ShuffleService
     } from ''./shuffle.service''; describe(''ShuffleService'', () => { let service:
     ShuffleService; beforeEach(() => { TestBed.configureTestingModule({}); service
@@ -1741,153 +2851,265 @@
     5]; const seed = ''test_seed''; service.seed(seed); const shuffledArray1 = service.shuffle([...inputArray]);
     service.seed(seed); const shuffledArray2 = service.shuffle([...inputArray]); expect(shuffledArray1).toEqual(shuffledArray2);
     }); });'
+  id: totrans-542
   prefs: []
   type: TYPE_NORMAL
+  zh: 'import { TestBed } from ''@angular/core/testing''; import { ShuffleService
+    } from ''./shuffle.service''; describe(''ShuffleService'', () => { let service:
+    ShuffleService; beforeEach(() => { TestBed.configureTestingModule({}); service
+    = TestBed.inject(ShuffleService); }); it(''should be created'', () => { expect(service).toBeTruthy();
+    }); it(''should generate the same hash code for the same input string'', () =>
+    { const input = ''test_string''; const hash1 = service.hashCode(input); const
+    hash2 = service.hashCode(input); expect(hash1).toEqual(hash2); }); it(''should
+    generate different hash codes for different input strings'', () => { const input1
+    = ''test_string1''; const input2 = ''test_string2''; const hash1 = service.hashCode(input1);
+    const hash2 = service.hashCode(input2); expect(hash1).not.toEqual(hash2); });
+    it(''should shuffle the input array'', () => { const inputArray = [1, 2, 3, 4,
+    5]; const shuffledArray = service.shuffle([...inputArray]); expect(shuffledArray).not.toEqual(inputArray);
+    expect(shuffledArray.sort()).toEqual(inputArray); }); it(''should seed the random
+    number generator with the same seed'', () => { const inputArray = [1, 2, 3, 4,
+    5]; const seed = ''test_seed''; service.seed(seed); const shuffledArray1 = service.shuffle([...inputArray]);
+    service.seed(seed); const shuffledArray2 = service.shuffle([...inputArray]); expect(shuffledArray1).toEqual(shuffledArray2);
+    }); });'
 - en: These tests will cover the creation of the service, the generation of hash codes,
     and the shuffle method, including seeding the random number generator.
+  id: totrans-543
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些测试将涵盖服务的创建、哈希码的生成以及洗牌方法，包括对随机数生成器进行种子化。
 - en: The significance of the masked name might be to protect the identity of an individual
     or entity, to hide sensitive information, or to maintain privacy. In the context
     of the ShuffleService, it is not clear what the masked name might refer to, as
     the service appears to be a generic utility for shuffling arrays and generating
     hash codes.
+  id: totrans-544
   prefs: []
   type: TYPE_NORMAL
+  zh: 掩盖名称的重要性可能是为了保护个人或实体的身份，隐藏敏感信息，或者保持隐私。在ShuffleService的背景下，不清楚掩盖名称可能指的是什么，因为该服务似乎是一个用于洗牌数组和生成哈希码的通用实用程序。
 - en: '![image](d2d_images/image006.png)![Michael Callaghan](d2d_images/image006.png)'
+  id: totrans-545
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/image006.png)![Michael Callaghan](d2d_images/image006.png)'
 - en: Given the following string of commit messages for a pull request, generate some
     release notes, grouped by common themes and sorted by perceived importance.
+  id: totrans-546
   prefs: []
   type: TYPE_NORMAL
+  zh: 鉴于以下拉取请求的提交消息字符串，请生成一些发布说明，按常见主题分组并按 perceived 重要性排序。
 - en: 'Commit messages:'
+  id: totrans-547
   prefs: []
   type: TYPE_NORMAL
+  zh: 提交消息：
 - en: Added capacitor and capacitor storage
+  id: totrans-548
   prefs: []
   type: TYPE_NORMAL
+  zh: 添加了电容器和电容器存储
 - en: Converted student service to promises?
+  id: totrans-549
   prefs: []
   type: TYPE_NORMAL
+  zh: 将学生服务转换为promises？
 - en: Fixed DeleteStudent, but not perfectly
+  id: totrans-550
   prefs: []
   type: TYPE_NORMAL
+  zh: 修复了DeleteStudent，但不完美
 - en: Removed RxJS from storage service
+  id: totrans-551
   prefs: []
   type: TYPE_NORMAL
+  zh: 从存储服务中删除了RxJS
 - en: Student CRUD working
+  id: totrans-552
   prefs: []
   type: TYPE_NORMAL
+  zh: 学生CRUD正常运行
 - en: Added some more functionality
+  id: totrans-553
   prefs: []
   type: TYPE_NORMAL
+  zh: 添加了一些更多功能
 - en: Refactored some of the storage code
+  id: totrans-554
   prefs: []
   type: TYPE_NORMAL
+  zh: 重构了一些存储代码
 - en: Added New Student functionality
+  id: totrans-555
   prefs: []
   type: TYPE_NORMAL
+  zh: 添加了新的学生功能
 - en: Added camera feature
+  id: totrans-556
   prefs: []
   type: TYPE_NORMAL
+  zh: 添加了相机功能
 - en: Standardize state management within the student service (#22)
+  id: totrans-557
   prefs: []
   type: TYPE_NORMAL
+  zh: 在学生服务中标准化状态管理（#22）
 - en: 'refactor: add explicit modifiers to service signatures'
+  id: totrans-558
   prefs: []
   type: TYPE_NORMAL
+  zh: 重构：为服务签名添加显式修饰符
 - en: 'refactor: simplify syntax in student service'
+  id: totrans-559
   prefs: []
   type: TYPE_NORMAL
+  zh: 重构：简化学生服务中的语法
 - en: 'fix: initialize service with stored data'
+  id: totrans-560
   prefs: []
   type: TYPE_NORMAL
+  zh: 修复：使用存储的数据初始化服务
 - en: 'refactor: move state changes into student service'
+  id: totrans-561
   prefs: []
   type: TYPE_NORMAL
+  zh: 重构：将状态更改移到学生服务中
 - en: 'refactor: use routerLinkActive to determine link state'
+  id: totrans-562
   prefs: []
   type: TYPE_NORMAL
+  zh: 重构：使用routerLinkActive确定链接状态
 - en: 'chore: format all files with prettier'
+  id: totrans-563
   prefs: []
   type: TYPE_NORMAL
+  zh: 杂务：使用prettier格式化所有文件
 - en: 'chore: prefer single quote for strings'
+  id: totrans-564
   prefs: []
   type: TYPE_NORMAL
+  zh: 杂务：更喜欢单引号用于字符串
 - en: Added camera feature
+  id: totrans-565
   prefs: []
   type: TYPE_NORMAL
+  zh: 添加了相机功能
 - en: Made some minor tweaks for the workshop
+  id: totrans-566
   prefs: []
   type: TYPE_NORMAL
+  zh: 对研讨会进行了一些微小的调整
 - en: Minor tweaks for conference
+  id: totrans-567
   prefs: []
   type: TYPE_NORMAL
+  zh: 为会议进行了一些微小的调整
 - en: 'Release Notes:'
+  id: totrans-568
   prefs: []
   type: TYPE_NORMAL
+  zh: 发布说明：
 - en: New Features
+  id: totrans-569
   prefs: []
   type: TYPE_NORMAL
+  zh: 新功能
 - en:   Added New Student functionality
+  id: totrans-570
   prefs: []
   type: TYPE_NORMAL
+  zh:   添加了新的学生功能
 - en:   Added camera feature, allowing users to take and store photographs of students
+  id: totrans-571
   prefs: []
   type: TYPE_NORMAL
+  zh:   添加了摄像头功能，允许用户拍摄和存储学生的照片
 - en: Improvements
+  id: totrans-572
   prefs: []
   type: TYPE_NORMAL
+  zh: 改进
 - en:   Added Capacitor storage for improved data management
+  id: totrans-573
   prefs: []
   type: TYPE_NORMAL
+  zh:   添加了用于改进数据管理的Capacitor存储功能
 - en:   Standardized state management within the student service
+  id: totrans-574
   prefs: []
   type: TYPE_NORMAL
+  zh:   在学生服务中标准化了状态管理
 - en:   Student CRUD functionality is now fully functional
+  id: totrans-575
   prefs: []
   type: TYPE_NORMAL
+  zh:   学生的CRUD功能现在完全可用
 - en:   Fixed DeleteStudent, with some room for improvement
+  id: totrans-576
   prefs: []
   type: TYPE_NORMAL
+  zh:   修复了DeleteStudent，但还有改进的空间
 - en:   Refactored storage code for better maintainability
+  id: totrans-577
   prefs: []
   type: TYPE_NORMAL
+  zh:   为了更易于维护，重构了存储代码
 - en:   Minor tweaks for workshop and conference presentations
+  id: totrans-578
   prefs: []
   type: TYPE_NORMAL
+  zh:   对研讨会和会议演示进行了微小的调整
 - en: Code Refactoring and Cleanup
+  id: totrans-579
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码重构和清理
 - en:   Converted student service to use promises
+  id: totrans-580
   prefs: []
   type: TYPE_NORMAL
+  zh:   将学生服务转换为使用promises
 - en:   Removed RxJS from storage service for simplification
+  id: totrans-581
   prefs: []
   type: TYPE_NORMAL
+  zh:   从存储服务中移除了RxJS以简化操作
 - en:   Added explicit modifiers to service signatures
+  id: totrans-582
   prefs: []
   type: TYPE_NORMAL
+  zh:   在服务签名中添加了明确的修饰符
 - en:   Simplified syntax in student service
+  id: totrans-583
   prefs: []
   type: TYPE_NORMAL
+  zh:   简化了学生服务中的语法
 - en:   Initialized service with stored data
+  id: totrans-584
   prefs: []
   type: TYPE_NORMAL
+  zh:   用存储的数据初始化服务
 - en:   Moved state changes into student service
+  id: totrans-585
   prefs: []
   type: TYPE_NORMAL
+  zh:   将状态更改移到学生服务中
 - en:   Used routerLinkActive to determine link state
+  id: totrans-586
   prefs: []
   type: TYPE_NORMAL
+  zh:   使用routerLinkActive来确定链接状态
 - en:   Formatted all files with Prettier
+  id: totrans-587
   prefs: []
   type: TYPE_NORMAL
+  zh:   使用Prettier格式化了所有文件
 - en:   Preferred single quote for strings
+  id: totrans-588
   prefs: []
   type: TYPE_NORMAL
+  zh:   优先使用单引号表示字符串
 - en: I hope the generated release notes meet your expectations. If you have any more
     requests or questions, feel free to ask!
+  id: totrans-589
   prefs: []
   type: TYPE_NORMAL
+  zh: 希望生成的发布说明符合您的期望。如果您有任何其他请求或问题，请随时提出！

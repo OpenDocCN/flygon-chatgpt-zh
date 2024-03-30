@@ -1,468 +1,695 @@
 - en: '6'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '6'
 - en: Developing the Future with ChatGPT
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 用ChatGPT开发未来
 - en: In this chapter, we will discuss how developers can leverage ChatGPT. The chapter
     focuses on the main use cases ChatGPT addresses in the domain of developers, including
     code review and optimization, documentation generation, and code generation. The
     chapter will provide examples and enable you to try the prompts on your own.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论开发人员如何利用ChatGPT。本章关注ChatGPT在开发人员领域中解决的主要用例，包括代码审查和优化、文档生成和代码生成。本章将提供示例，并让您自行尝试提示。
 - en: 'After a general introduction about the reasons why developers should leverage
     ChatGPT as a daily assistant, we will focus on ChatGPT and how it can do the following:'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在对开发人员为什么应该将ChatGPT作为日常助手进行一般性介绍之后，我们将重点关注ChatGPT以及它可以做到以下几点：
 - en: Why ChatGPT for developers?
+  id: totrans-4
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 为什么开发人员选择ChatGPT？
 - en: Generate, optimize, and debug code
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 生成、优化和调试代码
 - en: Generate code-related documentation and debug your code
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 生成与代码相关的文档并调试您的代码
 - en: Explain **machine learning** (**ML**) models to help data scientists and business
     users with model interpretability
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 解释**机器学习**（**ML**）模型，以帮助数据科学家和业务用户理解模型的可解释性
 - en: Translate different programming languages
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 翻译不同的编程语言
 - en: By the end of this chapter, you will be able to leverage ChatGPT for coding
     activities and use it as an assistant for your coding productivity.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章末尾，您将能够利用ChatGPT进行编码活动，并将其用作您编码生产力的助手。
 - en: Why ChatGPT for developers?
+  id: totrans-10
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 为什么开发人员选择ChatGPT？
 - en: Personally, I believe that one of the most mind-blowing capabilities of ChatGPT
     is that of dealing with code. Of any type. We’ve already seen in [*Chapter 4*](B19904_04.xhtml#_idTextAnchor053)
     how ChatGPT can act as a Python console. However, ChatGPT capabilities for developers
     go way beyond that example. It can be a daily assistant for code generation, explanation,
     and debugging.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 就我个人而言，我相信ChatGPT最让人惊叹的能力之一就是处理代码。任何类型的代码。我们已经在[*第4章*](B19904_04.xhtml#_idTextAnchor053)中看到ChatGPT如何可以作为Python控制台。然而，对于开发人员来说，ChatGPT的能力远不止这个例子。它可以成为代码生成、解释和调试的日常助手。
 - en: 'Among the most popular languages, we can certainly mention Python, JavaScript,
     SQL, and C#. However, ChatGPT covers a wide range of languages, as disclosed by
     itself:'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在最受欢迎的语言中，我们当然可以提到Python、JavaScript、SQL和C#。然而，ChatGPT覆盖了各种语言，就像它自己披露的那样：
 - en: '![Figure 6.1 – ChatGPT lists the programming languages it is able to understand
     and generate](img/Figure_6.1_B19904.jpg)'
+  id: totrans-13
   prefs: []
   type: TYPE_IMG
+  zh: '![图6.1 – ChatGPT列出了它能够理解和生成的编程语言](img/Figure_6.1_B19904.jpg)'
 - en: Figure 6.1 – ChatGPT lists the programming languages it is able to understand
     and generate
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 图6.1 – ChatGPT列出了它能够理解和生成的编程语言
 - en: Whether you are a backend/frontend developer, a data scientist, or a data engineer,
     whenever you work with a programming language, ChatGPT can be a game changer,
     and we will see how in the several examples in the next sections.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论你是后端/前端开发人员、数据科学家还是数据工程师，在你使用编程语言时，ChatGPT都可能是一个改变游戏规则的因素，而我们将在下一节的几个示例中看到它是如何做到这一点的。
 - en: From the next section onward, we will dive deeper into concrete examples of
     what ChatGPT can achieve when working with code. We will see end-to-end use cases
     covering different domains so that we will get familiar with using ChatGPT as
     a code assistant.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 从下一节开始，我们将深入研究ChatGPT在处理代码时可以取得的具体成就。我们将看到覆盖不同领域的端到端用例，以便我们熟悉使用ChatGPT作为代码助手。
 - en: Generating, optimizing, and debugging code
+  id: totrans-17
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 生成、优化和调试代码
 - en: 'The primary capability you should leverage is ChatGPT code generation. How
     many times have you been looking for a pre-built piece of code to start from?
     Generating the `utils` functions, sample datasets, SQL schemas, and so on? ChatGPT
     is able to generate code based on input in natural language:'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 您应该利用的主要功能是ChatGPT代码生成。你有多少次在寻找预先构建的代码片段来作为起点？生成`utils`函数、示例数据集、SQL模式等？ChatGPT能够根据自然语言输入生成代码：
 - en: '![Figure 6.2 – Example of ChatGPT generating a Python function to write into
     CSV files](img/Figure_6.2_B19904.jpg)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![图6.2 – ChatGPT生成一个Python函数来写入CSV文件的示例](img/Figure_6.2_B19904.jpg)'
 - en: Figure 6.2 – Example of ChatGPT generating a Python function to write into CSV
     files
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 图6.2 – ChatGPT生成Python函数来写入CSV文件的示例
 - en: As you can see, not only was ChatGPT able to generate the function, but also
     it was able to explain what the function does, how to use it, and what to substitute
     with generic placeholders such as `my_folder`.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您所见，ChatGPT不仅能够生成函数，还能够解释函数的功能、如何使用它以及使用通用占位符（如`my_folder`）替代什么。
 - en: 'Another example could be of creating schemas for structured tables. Namely,
     imagine you are a data engineer in the process of creating relationships between
     two standard tables in an SAP ERP system: `MARA` and `VBAP`, storing, respectively,
     general material data and sales document data.'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个示例可能是为结构化表创建模式。比如，想象一下你是一个数据工程师，正在创建 SAP ERP 系统中两个标准表之间的关系：`MARA` 和 `VBAP`，分别存储一般物料数据和销售文档数据。
 - en: 'Let’s ask ChatGPT to create the schema for these tables by giving it the names
     of the columns as context:'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们请求 ChatGPT 根据列名创建这些表的模式，将列名作为上下文：
 - en: '![Figure 6.3 – Example of ChatGPT generating a SQL schema for the SAP tables](img/Figure_6.3_B19904.jpg)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.3 – ChatGPT 为 SAP 表生成 SQL 模式的示例](img/Figure_6.3_B19904.jpg)'
 - en: Figure 6.3 – Example of ChatGPT generating a SQL schema for the SAP tables
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.3 – ChatGPT 为 SAP 表生成 SQL 模式的示例
 - en: 'Note that ChatGPT was able to make relationships because it knows SAP taxonomy
     and column names interpretation, which is something anyone who doesn’t know SAP
     taxonomy (including data engineers) struggles with. As confirmation, let’s ask
     ChatGPT to rename all those columns with more human-understandable names:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，ChatGPT 能够建立关系，因为它了解 SAP 分类和列名解释，这是任何不了解 SAP 分类（包括数据工程师在内）的人都会遇到困难的地方。作为确认，让我们请求
+    ChatGPT 用更易理解的名称重命名所有这些列：
 - en: '![Figure 6.4 – SAP tables columns renamed by ChatGPT](img/Figure_6.4_B19904.jpg)'
+  id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.4 – ChatGPT 重命名的 SAP 表列](img/Figure_6.4_B19904.jpg)'
 - en: Figure 6.4 – SAP tables columns renamed by ChatGPT
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.4 – ChatGPT 重命名的 SAP 表列
 - en: 'And, finally, let’s recreate the schema with the new columns, making sure to
     avoid duplicates (the new name, `Condition Value`, is indeed repeated five times):'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，让我们使用新列重新创建模式，确保避免重复（新名称 `Condition Value` 确实重复了五次）：
 - en: '![Figure 6.5 – SQL schema with renamed columns](img/Figure_6.5_B19904.jpg)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.5 – SQL 模式，列已重命名](img/Figure_6.5_B19904.jpg)'
 - en: Figure 6.5 – SQL schema with renamed columns
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.5 – SQL 模式，列已重命名
 - en: The preceding example is key to reducing the time to create schemas for further
     data analysis.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 上面的示例对于减少创建用于进一步数据分析的模式所需的时间至关重要。
 - en: ChatGPT can also be a great assistant for code optimization. In fact, it might
     save us some running time or compute power to make optimized scripts starting
     from our input. This capability might be compared, in the domain of natural language,
     to the writing assistance feature we saw in [*Chapter 5*](B19904_05.xhtml#_idTextAnchor061)
     in the *Improving writing skills and* *translation* section.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 也可以成为代码优化的好助手。事实上，它可能节省我们一些运行时间或计算资源，从我们的输入开始制作优化的脚本。在自然语言领域，这种能力可能与我们在[*第
+    5 章*](B19904_05.xhtml#_idTextAnchor061)中看到的写作辅助功能相媲美，在*提高写作技能和* *翻译* 部分。
 - en: 'For example, imagine you want to create a list of odd numbers starting from
     another list. To achieve the result, you wrote the following Python script (for
     the purpose of this exercise, I will also track the execution time with the `timeit`
     and `datetime` libraries):'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，想象一下你想从另一个列表开始创建一个奇数列表。为了达到这个目的，你编写了以下 Python 脚本（为了这个练习，我还将使用 `timeit` 和
+    `datetime` 库跟踪执行时间）：
 - en: '[PRE0]'
+  id: totrans-35
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: The execution time was `00.141185` seconds. What happens if we ask ChatGPT to
     optimize this script?
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 执行时间为 `00.141185` 秒。如果我们要求 ChatGPT 优化这个脚本会发生什么呢？
 - en: '![Figure 6.6 – ChatGPT generating optimized alternatives to a Python script](img/Figure_6.6_B19904.jpg)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.6 – ChatGPT 生成优化的 Python 脚本替代方案](img/Figure_6.6_B19904.jpg)'
 - en: Figure 6.6 – ChatGPT generating optimized alternatives to a Python script
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.6 – ChatGPT 生成优化的 Python 脚本替代方案
 - en: ChatGPT provided me with an example to achieve the same results with lower execution
     time. It also elaborated on the alternative with a clear explanation of why the
     comprehension method is faster than a `for` loop.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 为我提供了一个示例，以更低的执行时间实现相同的结果。它还详细说明了为什么理解方法比 `for` 循环更快的替代方案。
 - en: 'Let’s see the performance of this new script compared to the previous one:'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看这个新脚本与之前脚本的性能比较：
 - en: '![Figure 6.7 – Comparison of user and ChatGPT scripts’ execution times](img/Figure_6.7_B19904.jpg)'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.7 – 用户和 ChatGPT 脚本执行时间的比较](img/Figure_6.7_B19904.jpg)'
 - en: Figure 6.7 – Comparison of user and ChatGPT scripts’ execution times
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.7 – 用户和 ChatGPT 脚本执行时间的比较
 - en: As you can see, the second method (the one generated by ChatGPT) provides a
     reduction in execution time of about 47.8%.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 如您所见，第二种方法（由 ChatGPT 生成的方法）将执行时间减少约 47.8%。
 - en: On top of code generation and optimization, ChatGPT can also be leveraged for
     *error* explanation and debugging. Sometimes, errors are difficult to interpret;
     hence a natural language explanation can be useful to identify the problem and
     drive you toward the solution.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了代码生成和优化外，ChatGPT 还可以用于*错误*解释和调试。有时，错误很难解释；因此，自然语言解释可以帮助识别问题并引导您走向解决方案。
 - en: 'For example, while running a `.py` file from my command line, I get the following
     error:'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，当我从命令行运行一个`.py`文件时，我收到以下错误：
 - en: '[PRE1]'
+  id: totrans-46
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: Let’s see whether ChatGPT is able to let me understand the nature of the error.
     To do so, I simply provide ChatGPT with the text of the error and ask it to give
     me an explanation.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看 ChatGPT 是否能让我理解错误的本质。为此，我只需向 ChatGPT 提供错误文本，并要求它给我解释。
 - en: '![Figure 6.8 – ChatGPT explaining a Python error in natural language](img/Figure_6.8_B19904.jpg)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.8 – ChatGPT 用自然语言解释 Python 错误](img/Figure_6.8_B19904.jpg)'
 - en: Figure 6.8 – ChatGPT explaining a Python error in natural language
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.8 – ChatGPT 用自然语言解释 Python 错误
 - en: Finally, let’s imagine I wrote a function in Python that takes a string as input
     and returns the same string with an underscore after each letter.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，让我们想象我写了一个函数，该函数接受一个字符串作为输入，并返回每个字母后面带有下划线的相同字符串。
 - en: 'In the preceding example, I was expecting to see the `g_p_t_` result; however,
     it only returned `t_` with this code:'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上面的例子中，我期望看到`g_p_t_`的结果；然而，实际上它只返回了这段代码中的`t_`：
 - en: '![Figure 6.9 – Bugged Python function](img/Figure_6.9_B19904.jpg)'
+  id: totrans-52
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.9 – 有错误的 Python 函数](img/Figure_6.9_B19904.jpg)'
 - en: Figure 6.9 – Bugged Python function
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.9 – 有错误的 Python 函数
 - en: 'Let’s ask ChatGPT to debug this function for us:'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们请 ChatGPT 为我们调试这个函数：
 - en: '![Figure 6.10 – Example of ChatGPT debugging a Python function](img/Figure_6.10_B19904.jpg)'
+  id: totrans-55
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.10 – ChatGPT 调试 Python 函数的示例](img/Figure_6.10_B19904.jpg)'
 - en: Figure 6.10 – Example of ChatGPT debugging a Python function
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.10 – ChatGPT 调试 Python 函数的示例
 - en: 'Impressive, isn’t it? Again, ChatGPT provided the correct version of the code,
     and it helped in the explanation of where the bugs were and why they led to an
     incorrect result. Let’s see whether it works now:'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 令人印象深刻，不是吗？再次，ChatGPT 提供了正确版本的代码，并帮助解释错误在哪里以及为什么导致不正确的结果。让我们看看现在是否可以工作：
 - en: '![Figure 6.11 – Python function after ChatGPT debugging](img/Figure_6.11_B19904.jpg)'
+  id: totrans-58
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.11 – ChatGPT 调试后的 Python 函数](img/Figure_6.11_B19904.jpg)'
 - en: Figure 6.11 – Python function after ChatGPT debugging
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.11 – ChatGPT 调试后的 Python 函数
 - en: Well, it obviously does!
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 嗯，显然是这样的！
 - en: These and many other code-related functionalities could really boost your productivity,
     shortening the time to perform many tasks.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些以及许多其他与代码相关的功能确实可以提高您的生产力，缩短执行许多任务所需的时间。
 - en: However, ChatGPT goes beyond pure debugging. Thanks to the incredible language
     understanding of the GPT model behind, this **artificial intelligence** (**AI**)
     tool is able to generate proper documentation alongside the code, as well as explain
     exactly what a string of code will do, which we will see in the next section.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，ChatGPT 不仅仅局限于纯粹的调试。由于 GPT 模型背后的令人难以置信的语言理解能力，这个**人工智能**（**AI**）工具能够在代码旁边生成适当的文档，以及准确解释代码将做什么，我们将在下一节中看到。
 - en: Generating documentation and code explainability
+  id: totrans-63
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 生成文档和代码可解释性
 - en: Whenever working with new applications or projects, it is always good practice
     to correlate your code with documentation. It might be in the form of a docstring
     that you can embed in your functions or classes so that others can invoke them
     directly in the development environment.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 在处理新应用程序或项目时，将代码与文档相关联始终是一个好的实践。这可以通过在函数或类中嵌入文档字符串的形式来实现，以便他人可以直接在开发环境中调用它们。
 - en: 'For example, the following Python class has 10 different methods for basic
     mathematical operations:'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，以下 Python 类具有 10 个不同的方法用于基本数学运算：
 - en: '[PRE2]'
+  id: totrans-66
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'You can initialize the class and test it as follows (as an example, I will
     use the addition method):'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以初始化该类并测试它如下（作为示例，我将使用加法方法）：
 - en: '![Figure 6.12 – Initializing a Python class and using one of its methods](img/Figure_6.12_B19904.jpg)'
+  id: totrans-68
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.12 – 初始化 Python 类并使用其中一个方法](img/Figure_6.12_B19904.jpg)'
 - en: Figure 6.12 – Initializing a Python class and using one of its methods
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.12 – 初始化 Python 类并使用其中一个方法
 - en: 'Now, let’s say I want to be able to retrieve the docstring documentation using
     the `Calculator?` convention. By doing so with Python packages, functions, and
     methods, we have full documentation of the capabilities of that specific object,
     as follows (an example with the `pandas` Python library):'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，假设我想能够使用`Calculator?`约定来检索文档字符串文档。通过这样做，对于Python包、函数和方法，我们可以得到该特定对象的全面文档，如下所示（`pandas`
+    Python库的示例）：
 - en: '![Figure 6.13 – Example of the pandas library documentation](img/Figure_6.13_B19904.jpg)'
+  id: totrans-71
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.13 – pandas库文档示例](img/Figure_6.13_B19904.jpg)'
 - en: Figure 6.13 – Example of the pandas library documentation
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.13 – pandas库文档示例
 - en: So let’s now ask ChatGPT to produce the same result for our `Calculator` class.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们请ChatGPT为我们的`Calculator`类生成相同的结果。
 - en: 'Henceforth, after giving the `Calculator` class as context to ChatGPT, I asked
     it to generate the relative documentation as follows:'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，在向ChatGPT提供`Calculator`类作为上下文之后，我要求它生成相关的文档如下：
 - en: '![Figure 6.14 – ChatGPT updating the code with documentation](img/Figure_6.14_B19904.jpg)'
+  id: totrans-75
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.14 – ChatGPT 更新代码文档](img/Figure_6.14_B19904.jpg)'
 - en: Figure 6.14 – ChatGPT updating the code with documentation
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.14 – ChatGPT更新代码文档
 - en: You can find the whole ChatGPT response in the GitHub repository of this book
     at [https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/blob/main/Chapter%206%20-%20ChatGPT%20for%20Developers/prompts](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/blob/main/Chapter%206%20-%20ChatGPT%20for%20Developers/prompts).
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以在本书的GitHub存储库中找到整个ChatGPT响应，网址为[https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/blob/main/Chapter%206%20-%20ChatGPT%20for%20Developers/prompts](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/blob/main/Chapter%206%20-%20ChatGPT%20for%20Developers/prompts)。
 - en: 'As a result, if we update our class as shown in the preceding code and call
     `Calculator?`, we will get the following output:'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，如果我们按照前面代码中所示更新我们的类，并调用`Calculator?`，我们将得到以下输出：
 - en: '![Figure 6.15 – The new Calculator class documentation](img/Figure_6.15_B19904.jpg)'
+  id: totrans-79
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.15 – 新的计算器类文档](img/Figure_6.15_B19904.jpg)'
 - en: Figure 6.15 – The new Calculator class documentation
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.15 – 新的计算器类文档
 - en: Finally, ChatGPT can also be leveraged to explain what a script, function, class,
     or other similar things do in natural language. We have already seen many examples
     of ChatGPT enriching its code-related response with clear explanations. However,
     we can boost this capability by asking specific questions in terms of code understanding.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，ChatGPT还可以被利用来用自然语言解释脚本、函数、类或其他类似的内容所做的事情。我们已经看到ChatGPT用清晰的解释丰富了其与代码相关的响应的许多示例。然而，我们可以通过以代码理解为特定问题提出具体问题来增强这一能力。
 - en: 'For example, let’s ask ChatGPT to explain to us what the following Python script
     does:'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，让我们请ChatGPT向我们解释以下Python脚本的作用：
 - en: '![Figure 6.16 – Example of ChatGPT explaining a Python script](img/Figure_6.16_B19904.jpg)'
+  id: totrans-83
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.16 – ChatGPT解释Python脚本的示例](img/Figure_6.16_B19904.jpg)'
 - en: Figure 6.16 – Example of ChatGPT explaining a Python script
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.16 – ChatGPT解释Python脚本的示例
 - en: Code explainability can also be part of the preceding mentioned documentation,
     or it can be used among developers who might want to better understand complex
     code from other teams or (as sometimes happens to me) remember what they wrote
     some time ago.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码可解释性也可以作为前述文档的一部分，或者可以在希望更好地理解来自其他团队的复杂代码的开发人员之间使用，或者（就像有时发生在我身上的）记住他们一段时间前写的东西。
 - en: Thanks to ChatGPT and the capabilities mentioned in this section, developers
     can easily keep track of the project life cycle in natural language so that it
     is easier for both new team members and non-technical users to understand the
     work done so far.
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于ChatGPT和本节提到的能力，开发人员可以轻松地用自然语言跟踪项目生命周期，这样新团队成员和非技术用户更容易理解到目前为止所做的工作。
 - en: We will see in the next section how code explainability is a pivotal step for
     ML model interpretability in data science projects.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一节中，我们将看到代码可解释性是数据科学项目中机器学习模型可解释性的关键步骤。
 - en: Understanding ML model interpretability
+  id: totrans-88
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 理解机器学习模型可解释性
 - en: Model interpretability refers to the degree of ease with which a human can comprehend
     the logic behind the ML model’s predictions. Essentially, it is the capability
     to comprehend how a model arrives at its decisions and which variables are contributing
     to its forecasts.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型可解释性是指人类可以理解ML模型预测逻辑的程度。基本上，这是理解模型如何做出决策以及哪些变量有助于其预测的能力。
 - en: 'Let’s see an example of model interpretability using a deep learning `keras.datasets`:
     it consists of 60,000 32x32 color images (so 3-channels images) in 10 classes
     (airplane, automobile, bird, cat, deer, dog, frog, horse, ship, and truck), with
     6,000 images per class. Here, I will share just the body of the model; you can
     find all the related code in the book’s GitHub repository for data preparation
     and pre-processing at [https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%206%20-%20ChatGPT%20for%20Developers/code](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%206%20-%20ChatGPT%20for%20Developers/code):'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看一个使用深度学习 `keras.datasets` 进行模型可解释性的示例：它包含 60,000 张 32x32 的彩色图像（因此是 3 通道图像），分为
+    10 类（飞机、汽车、鸟、猫、鹿、狗、青蛙、马、船和卡车），每类有 6,000 张图像。在这里，我将分享模型的主体部分；您可以在书的 GitHub 代码库中找到所有相关代码，用于数据准备和预处理：[https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%206%20-%20ChatGPT%20for%20Developers/code](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%206%20-%20ChatGPT%20for%20Developers/code)。
 - en: '[PRE3]'
+  id: totrans-91
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'The preceding code is made of several layers that perform different actions.
     I might be interested in having an explanation of the structure of the model as
     well as the purpose of each layer. Let’s ask ChatGPT for some help with that:'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 上述代码由几个执行不同操作的层组成。我可能对模型的结构以及每个层的目的感兴趣。让我们向 ChatGPT 寻求帮助：
 - en: '![Figure 6.17 – Model interpretability with ChatGPT](img/Figure_6.17_B19904.jpg)'
+  id: totrans-93
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.17 – 使用 ChatGPT 进行模型可解释性](img/Figure_6.17_B19904.jpg)'
 - en: Figure 6.17 – Model interpretability with ChatGPT
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.17 – 使用 ChatGPT 进行模型可解释性
 - en: As you can see in the preceding figure, ChatGPT was able to give us a clear
     explanation of the structure and layers of our CNN. It also adds some comments
     and tips, such as the fact that using the max pooling layer helps reduce the dimensionality
     of the input.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您在上图中所看到的，ChatGPT 能够清晰地解释我们的 CNN 的结构和层次。它还添加了一些评论和提示，比如使用最大池化层有助于减少输入的维度。
 - en: 'I can also be supported by ChatGPT in interpreting model results in the validation
     phase. So, after splitting data into training and test sets and training the model
     on the training set, I want to see its performance on the test set:'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 我还可以通过 ChatGPT 在验证阶段解释模型结果。因此，在将数据分为训练集和测试集并在训练集上训练模型后，我想看到它在测试集上的表现：
 - en: '![Figure 6.18 – Evaluation metrics](img/Figure_6.18_B19904.jpg)'
+  id: totrans-97
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.18 – 评估指标](img/Figure_6.18_B19904.jpg)'
 - en: Figure 6.18 – Evaluation metrics
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.18 – 评估指标
 - en: 'Let’s also ask ChatGPT to elaborate on our validation metrics:'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们还请 ChatGPT 对我们的验证指标进行详细说明：
 - en: '![Figure 6.19 – Example of ChatGPT explaining evaluation metrics](img/Figure_6.19_B19904.jpg)'
+  id: totrans-100
   prefs: []
   type: TYPE_IMG
+  zh: '![图 6.19 – ChatGPT 解释评估指标示例](img/Figure_6.19_B19904.jpg)'
 - en: Figure 6.19 – Example of ChatGPT explaining evaluation metrics
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 6.19 – ChatGPT 解释评估指标示例
 - en: Once again, the result was really impressive, and it provided clear guidance
     on how to set up ML experiments in terms of training and test sets. It explains
     how important it is for the model to be sufficiently generalized so that it does
     not overfit and is able to predict accurate results on data that it has never
     seen before.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 再次，结果非常令人印象深刻，并清晰指导如何设置 ML 实验的训练和测试集。它解释了模型足够泛化的重要性，以便它不会过拟合，并能够在以前从未见过的数据上预测准确的结果。
 - en: There are many reasons why model interpretability is important. A pivotal element
     is that it reduces the gap between business users and the code behind models.
     This is key to enabling business users to understand how a model behaves, as well
     as translate it into code business ideas.
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 模型可解释性之所以重要有很多原因。一个关键因素是它减少了业务用户与模型背后代码之间的差距。这对于使业务用户能够理解模型行为，并将其转化为代码业务理念至关重要。
 - en: Furthermore, model interpretability enables one of the key principles of responsible
     and ethical AI, which is the transparency of how a model behind AI systems thinks
     and behaves. Unlocking model interpretability means detecting potential biases
     or harmful behaviors a model could have while in production and consequently preventing
     them from happening.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，模型可解释性实现了负责任和道德人工智能的关键原则之一，即 AI 系统背后的模型思考和行为的透明性。解锁模型可解释性意味着检测模型在生产中可能存在的潜在偏见或有害行为，并因此防止它们发生。
 - en: Overall, ChatGPT can provide valuable support in the context of model interpretability,
     generating insights at the row level, as we saw in the previous example.
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，ChatGPT在模型可解释性的背景下能够提供有价值的支持，通过在行级别生成见解，正如我们在上一个示例中所看到的。
 - en: The next and last ChatGPT capability we will explore will be yet another boost
     for developers’ productivity, especially when various programming languages are
     being used within the same project.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我们将探讨ChatGPT的下一个并且也是最后一个能力，这将对开发人员的生产力产生更大的提升，尤其是在同一个项目中使用多种编程语言时。
 - en: Translation among different programming languages
+  id: totrans-107
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 不同编程语言之间的翻译
 - en: In [*Chapter 5*](B19904_05.xhtml#_idTextAnchor061), we saw how ChatGPT has great
     capabilities for translating between different languages. What is really incredible
     is that natural language is not its only object of translation. In fact, ChatGPT
     is capable of translating between different programming languages while keeping
     the same output as well as the same style (namely, it preserves docstring documentation
     if present).
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 在[*第5章*](B19904_05.xhtml#_idTextAnchor061)中，我们看到ChatGPT在不同语言之间具有很强的翻译能力。真正令人难以置信的是，自然语言并不是它唯一的翻译对象。事实上，ChatGPT能够在不同的编程语言之间进行翻译，同时保持相同的输出以及相同的风格（即，如果存在文档字符串文档，它将保留该文档）。
 - en: There are so many scenarios when this could be a game changer.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 在许多情况下，这可能是一个改变局面的游戏规则的场景。
 - en: For example, you might have to learn a new programming language or statistical
     tool you’ve never seen before because you need to quickly deliver a project on
     it. With the help of ChatGPT, you can start programming in your language of preference
     and then ask it to translate to the desired language, which you will be learning
     alongside the translation process.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，你可能需要学习一个之前从未见过的新编程语言或统计工具，因为你需要快速交付一个项目。有了ChatGPT的帮助，你可以开始使用你喜欢的编程语言，然后要求它翻译到你想要的语言，而你会在翻译过程中学会这门语言。
 - en: Imagine that the project needs to be delivered in MATLAB (a proprietary numerical
     computing and programming software developed by MathWorks), yet you’ve always
     programmed in Python. The project consists of classifying images from the **Modified
@@ -470,60 +697,91 @@
     dataset description and related paper can be found here at [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)).
     The dataset contains numerous handwritten digits and is frequently utilized to
     teach various image processing systems.
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 想象一下，项目需要在MATLAB（由MathWorks开发的专有数值计算和编程软件）中交付，可你一直在Python中编程。该项目包括从**修改后的美国国家标准与技术研究所**（**MNIST**）数据集中对图像进行分类（原始数据集的描述和相关论文可以在此处找到：[http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)）。该数据集包含许多手写数字，经常被用于教授各种图像处理系统。
 - en: 'To start, I wrote the following Python code to initialize a deep-learning model
     for classification:'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我编写了以下Python代码来初始化一个用于分类的深度学习模型：
 - en: '[PRE4]'
+  id: totrans-113
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: 'Let’s now see what happens if we give the preceding code as context to ChatGPT
     and ask it to translate it into MATLAB:'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们看看如果我们把前面的代码作为ChatGPT的上下文，并要求它将其翻译成MATLAB会发生什么：
 - en: '![Figure 20 – ChatGPT translates Python code into MATLAB](img/Figure_6.20_B19904.jpg)'
+  id: totrans-115
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 20 – ChatGPT 将Python代码翻译成MATLAB](img/Figure_6.20_B19904.jpg)'
 - en: Figure 20 – ChatGPT translates Python code into MATLAB
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 20 – ChatGPT 将Python代码翻译成MATLAB
 - en: 'Let’s also see whether it is capable of translating it into other languages
     such as JavaScript:'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看它是否能够将代码翻译成其他语言，比如JavaScript：
 - en: '![Figure 6.21 – ChatGPT translates Python code into JavaScript](img/Figure_6.21_B19904.jpg)'
+  id: totrans-118
   prefs: []
   type: TYPE_IMG
+  zh: '![图表 6.21 – ChatGPT 将Python代码翻译成JavaScript](img/Figure_6.21_B19904.jpg)'
 - en: Figure 6.21 – ChatGPT translates Python code into JavaScript
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 图表 6.21 – ChatGPT 将Python代码翻译成JavaScript
 - en: Code translation could also reduce the skill gap between new technologies and
     current programming capabilities.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码翻译还可以减少新技术和当前编程能力之间的技能差距。
 - en: Another key implication of code translation is **application modernization**.
     Indeed, imagine you want to refresh your application stack, namely migrating to
     the cloud. You could decide to initiate with a simple lift and shift going toward
     **Infrastructure-as-a-Service** (**IaaS**) instances (such as Windows or Linux
     **virtual machines** (**VMs**)). However, in a second phase, you might want to
     refactor, rearchitect, or ever rebuild your applications.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码翻译的另一个关键影响是**应用现代化**。诚然，想象一下，你希望刷新你的应用程序堆栈，即迁移到云上。你可以决定从**基础设施即服务**（**IaaS**）实例（如Windows或Linux
+    **虚拟机**（**VM**））进行简单的搬迁。然而，在第二阶段，你可能希望重新构建、重新设计或甚至重建你的应用程序。
 - en: 'The following diagram depicts the various options for application modernization:'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下图表描述了应用程序现代化的各种选项：
 - en: '![Figure 6.22 – Four ways you can migrate your applications to the public cloud](img/Figure_6.22_B19904.jpg)'
+  id: totrans-123
   prefs: []
   type: TYPE_IMG
+  zh: '![图6.22 – 迁移应用程序到公共云的四种方式](img/Figure_6.22_B19904.jpg)'
 - en: Figure 6.22 – Four ways you can migrate your applications to the public cloud
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 图6.22 – 迁移应用程序到公共云的四种方式
 - en: ChatGPT and OpenAI Codex models can help you with the migration. Consider mainframes,
     for example.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT和OpenAI Codex模型可以帮助你进行迁移。例如考虑大型机。
 - en: Mainframes are computers that are predominantly employed by large organizations
     to carry out essential tasks such as bulk data processing for activities such
     as censuses, consumer and industry statistics, enterprise resource planning, and
@@ -531,72 +789,104 @@
     mainframe environment is **Common Business Oriented Language** (**COBOL**). Despite
     being invented in 1959, COBOL is still in use today and is one of the oldest programming
     languages in existence.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 大型组织主要使用大型机进行重要任务，如用于人口普查、消费者和行业统计、企业资源规划以及大规模事务处理的大规模数据处理。大型机环境的应用程序编程语言是**通用商业定向语言**（**COBOL**）。尽管COBOL在1959年发明，但今天仍在使用，是现存最古老的编程语言之一。
 - en: As technology continues to improve, applications residing in the realm of mainframes
     have been subject to a continuous process of migration and modernization aimed
     at enhancing existing legacy mainframe infrastructure in areas such as interface,
     code, cost, performance, and maintainability.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着技术的不断改进，存储在大型机领域的应用程序一直在经历持续的迁移和现代化过程，旨在增强存在的遗留大型机基础设施的接口、代码、成本、性能和可维护性。
 - en: Of course, this implies translating COBOL to more modern programming languages
     such as C# or Java. The problem is that COBOL is unknown to most of the new-generation
     programmers; hence there is a huge skills gap in this context.
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，这意味着将COBOL翻译成更现代的编程语言，比如C#或Java。问题在于，大多数新一代程序员不了解COBOL；因此在这一背景下存在巨大的技能鸿沟。
 - en: 'Let’s consider a COBOL script that reads a file of employee records and writes
     a report of employees who have been with the company for more than 10 years:'
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑一个读取员工记录文件并编写服务时间超过10年的员工报告的COBOL脚本：
 - en: '[PRE5]'
+  id: totrans-130
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: 'I then passed the previous COBOL script to ChatGPT so that it can use it as
     context to formulate its response. Let’s now ask ChatGPT to translate that script
     into JavaScript:'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 我然后将之前的COBOL脚本传递给ChatGPT，这样它就可以将其作为上下文来制定其响应。现在让我们要求ChatGPT将该脚本翻译成JavaScript：
 - en: '![Figure 6.23 – Example of ChatGPT translating COBOL to JavaScript](img/Figure_6.23_B19904.jpg)'
+  id: totrans-132
   prefs: []
   type: TYPE_IMG
+  zh: '![图6.23 – ChatGPT将COBOL翻译成JavaScript的示例](img/Figure_6.23_B19904.jpg)'
 - en: Figure 6.23 – Example of ChatGPT translating COBOL to JavaScript
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 图6.23 – ChatGPT将COBOL翻译成JavaScript的示例
 - en: Tools such as ChatGPT can help in reducing the skill gap in this and similar
     scenarios by introducing a layer that knows both the past and the future of programming.
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 像ChatGPT这样的工具可以帮助减少这种以及类似场景中的技能鸿沟，引入了一个既懂得编程的过去又懂得未来的层。
 - en: In conclusion, ChatGPT can be an effective tool for application modernization,
     providing code upgrading in addition to valuable insights and recommendations
     for enhancing legacy systems. With its advanced language processing capabilities
     and extensive knowledge base, ChatGPT can help organizations streamline their
     modernization efforts, making the process faster, more efficient, and more effective.
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，ChatGPT可以成为应用现代化的有效工具，提供代码升级以及增强遗留系统的宝贵见解和建议。凭借其先进的语言处理能力和丰富的知识库，ChatGPT可以帮助组织简化其现代化工作，使该过程更快、更有效率和更有效。
 - en: Note
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 注
 - en: OpenAI codex models are the engines behind GitHub Copilot. This new capability
     encompasses many of the use cases we will see in this chapter, such as code generation,
     autofill, and code optimization.
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: OpenAI Codex模型是GitHub Copilot背后的引擎。这种新功能涵盖了本章中我们将看到的许多用例，比如代码生成、自动填充和代码优化。
 - en: Summary
+  id: totrans-138
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 总结
 - en: ChatGPT can be a valuable resource for developers looking to enhance their skills
     and streamline their workflows. We started by seeing how ChatGPT can generate,
     optimize, and debug your code, but we also covered further capabilities such as
     generating documentation alongside your code, explaining your ML models, and translating
     between different programming languages for application modernization.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT可以成为开发人员寻求提升技能和简化工作流程的宝贵资源。我们首先看到了ChatGPT如何生成、优化和调试您的代码，但我们还涵盖了更多的功能，比如在您的代码旁边生成文档，解释您的ML模型，以及在不同编程语言之间进行翻译，用于应用现代化。
 - en: Whether you’re a seasoned developer or just starting out, ChatGPT offers a powerful
     tool for learning and growth, reducing the gap between code and natural language.
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 无论您是经验丰富的开发人员还是刚刚起步，ChatGPT都为学习和成长提供了强大的工具，缩小了代码和自然语言之间的差距。
 - en: 'In the next chapter, we will dive deeper into another domain of application
     where ChatGPT could be a game changer: marketing.'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将深入探讨另一个应用领域，ChatGPT可能成为游戏改变者的地方：营销。

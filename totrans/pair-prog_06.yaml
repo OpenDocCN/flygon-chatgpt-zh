@@ -1,747 +1,1190 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_above.png)'
 - en: Angular’s HttpClient
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: Angular的HttpClient
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_below.png)'
 - en: '![image](d2d_images/image017.jpg)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/image017.jpg)'
 - en: Image by [Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2528410) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2528410)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 图片由[Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2528410)提供，来自[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2528410)
 - en: Now let’s consider Angular’s HttpClient, which makes heavy use of RxJS. In fact,
     the HttpClient is often the first place the new Angular developer is introduced
     to RxJS. That can be a make or break experience.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们考虑一下Angular的HttpClient，它大量使用RxJS。事实上，HttpClient通常是新的Angular开发人员首次接触RxJS的地方。这可能是一个决定性的体验。
 - en: So, I wanted to see how well it does with some of the common coding patterns
     we see when using Angular’s HttpClient.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，我想看看它在使用Angular的HttpClient时如何处理一些常见的编码模式。
 - en: Even if you aren’t an Angular developer, the process is worth understanding.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使你不是Angular开发人员，这个过程也值得理解。
 - en: A Typical Angular Service
+  id: totrans-9
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 一个典型的Angular服务
 - en: For this example, I decided to start with a blank web page and see exactly how
     little code I could write. Remembering that Copilot needs to know what kind of
     file it’s working on, I immediately told VS Code it was a TypeScript file by clicking
     on the file type at the bottom right-corner of the window and selecting TypeScript from
     the options offered.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于这个示例，我决定从一个空白网页开始，看看我能写多少少量的代码。记住Copilot需要知道它正在处理的文件类型，我立即告诉VS Code这是一个TypeScript文件，方法是点击窗口右下角的文件类型，并从提供的选项中选择TypeScript。
 - en: 'Next, I entered the following comment at the top of the file:'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我在文件顶部输入了以下注释：
 - en: // Provide service in root
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在根目录提供服务
 - en: 'Copilot immediately gave me three lines:'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot立即给了我三行代码：
 - en: '[@Injectable](http://twitter.com/Injectable "Twitter profile for @Injectable")({'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: '[@Injectable](http://twitter.com/Injectable "Twitter profile for @Injectable")({'
 - en: 'providedIn: ''root'''
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 'providedIn: ''root'''
 - en: '})'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: 'It stopped there; I presume waiting for me to give it more to go on. I decided
     not to, and simply pressed the Tab key, to which it responded with this:'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 它停在那里；我猜它在等待我提供更多信息。我决定不这样做，只是按下了Tab键，它回应如下：
 - en: export class ApiService {
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: export class ApiService {
 - en: // API url
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: // API 地址
 - en: private apiUrl = '[https://api.github.com/users'](https://api.github.com/users%27);
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: private apiUrl = '[https://api.github.com/users'](https://api.github.com/users%27);
 - en: 'constructor(private http: HttpClient) {}'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 'constructor(private http: HttpClient) {}'
 - en: // Get user
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: // 获取用户
 - en: 'getUser(username: string): Observable<User> {'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 'getUser(username: string): Observable<User> {'
 - en: return this.http.get<User>(`${this.apiUrl}/${username}`);
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.http.get<User>(`${this.apiUrl}/${username}`);
 - en: '}'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: // Get repos
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: // 获取仓库
 - en: 'getRepos(username: string): Observable<Repo[]> {'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 'getRepos(username: string): Observable<Repo[]> {'
 - en: return this.http.get<Repo[]>
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.http.get<Repo[]>
 - en: (`${this.apiUrl}/${username}/repos`);
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: (`${this.apiUrl}/${username}/repos`);
 - en: '}'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'That’s all pretty cool, but not really what I wanted. I can’t complain too
     much, though, because I didn’t give it anything else to go on. I decided to keep
     the class but remove (for now) the two functions. This left the entire file looking
     like this:'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这一切都很酷，但不是我想要的。不过我也不能抱怨太多，因为我没有给它任何其他信息。我决定保留这个类，但暂时移除了两个函数。这样整个文件看起来像这样：
 - en: // Provide service in root
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在根目录提供服务
 - en: '@Injectable({'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '@Injectable({'
 - en: 'providedIn: ''root'''
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 'providedIn: ''root'''
 - en: '}) export class ApiService {'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '}) export class ApiService {'
 - en: // API url
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: // API 地址
 - en: private apiUrl = 'https://api.github.com/users';
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: private apiUrl = 'https://api.github.com/users';
 - en: 'constructor(private http: HttpClient) {}'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 'constructor(private http: HttpClient) {}'
 - en: '}'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: If you’re following along, you will notice that Copilot does not automatically
     import any of those Angular identifiers. The good news is that VS Code will do
     that for me. Or maybe I could convince Copilot to do it. What if I typed import at
     the top of the file?
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你在跟着做，你会注意到Copilot并不会自动导入任何Angular标识符。好消息是VS Code会为我做这个工作。或者也许我可以说服Copilot来做这个。如果我在文件顶部输入import会怎么样呢？
 - en: When I did that, it didn’t do anything. Maybe another hint would help. I added
     a comment at the top of the file and the word import. Copilot suggested the rest
     automatically.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我这样做时，没有任何变化。也许另一个提示会有所帮助。我在文件顶部添加了一个注释和一个单词import。Copilot 自动建议了剩下的部分。
 - en: // Angular service
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: // Angular 服务
 - en: import { Injectable } from '[@angular/core](http://twitter.com/angular/core
     "Twitter profile for @angular/core")';
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Injectable } from '[@angular/core](http://twitter.com/angular/core
+    "Twitter profile for @angular/core")';
 - en: import { HttpClient } from '[@angular/common](http://twitter.com/angular/common
     "Twitter profile for @angular/common")/http';
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: import { HttpClient } from '[@angular/common](http://twitter.com/angular/common
+    "Twitter profile for @angular/common")/http';
 - en: Now that the imports were taken care of, I could get on with the rest of the
     experiment.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在导入已经处理好了，我可以继续进行实验的其余部分了。
 - en: A Simple HTTP GET
+  id: totrans-47
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 一个简单的 HTTP GET
 - en: Whenever I’m building a demo app, I always struggle with where to find decent
     remote data APIs to showcase. I seldom have the time or inclination to build my
     own, so I like to look for something interesting, amusing, or both.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 每当我构建演示应用程序时，我总是苦恼于在哪里找到可以展示的体面远程数据 API。我很少有时间或倾向去构建我自己的，所以我喜欢寻找一些有趣、有趣或两者兼有的东西。
 - en: If I simply ask Copilot to find me something, what will it provide me? I removed
     the apiUrlvariable and its comment. Then added a new comment at the top of the
     class.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我简单地要求 Copilot 为我找点什么，它会提供给我什么？我移除了 apiUrl 变量及其注释。然后在类的顶部添加了一个新的注释。
 - en: // Get some sample data from a remote web server
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: // 从远程 Web 服务器获取一些示例数据
 - en: getSampleData() {
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: getSampleData() {
 - en: return this.http.get('https://jsonplaceholder.typicode.com/todos/1');
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.http.get('https://jsonplaceholder.typicode.com/todos/1');
 - en: '}'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: That isn’t what I expected, but it works. So, I decided to try again with a
     different prompt.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 这不是我预期的，但它起作用。因此，我决定尝试一个不同的提示。
 - en: // Get all posts from the API
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: // 从 API 获取所有帖子
 - en: getAllPosts() {
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: getAllPosts() {
 - en: return this.http.get('[https://jsonplaceholder.typicode.com/posts'](https://jsonplaceholder.typicode.com/posts%27));
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.http.get('[https://jsonplaceholder.typicode.com/posts'](https://jsonplaceholder.typicode.com/posts%27));
 - en: '}'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: That’s pretty cool and as it turns out, that API is fully functional.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 这相当酷，而且事实证明，该 API 是完全可用的。
 - en: Let’s Add Some RxJS
+  id: totrans-60
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 让我们加入一些 RxJS
 - en: The call to http.getreturns an Observable, but right now we aren’t doing anything
     with it. What happens if we get an error? I decided to add a hint inside getAllPosts
     to support error handling.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 对 http.get的调用返回一个 Observable，但目前我们没有处理任何情况。如果出现错误会怎样？我决定在 getAllPosts 中添加提示以支持错误处理。
 - en: I changed the return to aconst posts$ and got this.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 我将返回值改为const posts$，得到了这个结果。
 - en: const posts$ =
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: const posts$ =
 - en: this.http.get('[https://jsonplaceholder.typicode.com/posts'](https://jsonplaceholder.typicode.com/posts%27));
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: this.http.get('[https://jsonplaceholder.typicode.com/posts'](https://jsonplaceholder.typicode.com/posts%27));
 - en: // Log any errors from the API call
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: // 记录 API 调用中的任何错误
 - en: posts$.subscribe(
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: posts$.subscribe(
 - en: posts => console.log(posts),
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: posts => console.log(posts),
 - en: err => console.log(err)
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: err => console.log(err)
 - en: );
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: Ok, that’s not what I wanted at all. I was hoping it would suggest using .pipe
     and .catchError. I decided to give it a hint by creating a logError function,
     again with Copilot’s help.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 好吧，这根本不是我想要的。我希望它会建议使用 .pipe 和 .catchError 。我决定通过创建一个 logError 函数再次给出提示，这次再次得到了
+    Copilot 的帮助。
 - en: // Log any errors to the console
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: // 将任何错误记录到控制台
 - en: 'private handleError(error: any): Promise<any> {'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 'handleError(error: any): Promise<any> {'
 - en: console.error('An error occurred', error);
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: console.error('发生了一个错误', error);
 - en: return Promise.reject(error.message || error);
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: return Promise.reject(error.message || error);
 - en: '}'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: That felt as though it’s gotten worse at guessing my intentions. So, I tried
     again with a different hint.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 这感觉好像它在猜测我的意图时变得更糟了。所以，我尝试了一个不同的提示。
 - en: // Log any errors in the observable to the console
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在 observable 中记录任何错误到控制台
 - en: logError(err) {
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: logError(err) {
 - en: 'console.error(''There was an error: '' + err);'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: console.error('发生了一个错误：' + err);
 - en: '}'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: Better. Well, at least that’s what I was going to write. Next, I was curious
     about Copilot seeing that function in my file and automatically calling it.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 更好。嗯，至少我的计划是这样写的。下一步，我对 Copilot 看到我的文件中的函数并自动调用它感到好奇。
 - en: // Detect and handle errors in the observable stream before returning to the
     caller.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在返回给调用者之前检测和处理 observable 流中的错误。
 - en: posts$.subscribe(
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: posts$.subscribe(
 - en: data => console.log(data),
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: data => console.log(data),
 - en: err => console.error(err),
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: err => console.error(err),
 - en: () => console.log('done loading posts') // This is called when the observable
     completes.
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: () => console.log('帖子加载完毕') // 当 observable 完成时调用此函数。
 - en: );
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: return posts$;
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回 posts$;
 - en: If you were a novice with Angular, its HttpClient, or RxJS, you might think
     this is reasonable code. It’s not, at least not in this context. The code block
     creates an RxJS Subscription object, but never unsubscribes. This is OK in this
     context, but only because I know an HTTP GET will always complete or error. However,
     this is not the best way to handle this.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你是一个对于Angular或其HttpClient或RxJS不熟悉的初学者，你可能会认为这是合理的代码。不是，在这种情况下至少不是。代码块创建了一个RxJS订阅对象，但从未取消订阅。在这种情况下是可以的，但只因为我知道HTTP
+    GET总会完成或出错。然而，这不是处理这个问题的最佳方式。
 - en: Before giving up entirely, I decided to try one more thing.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 在完全放弃之前，我决定再试一件事情。
 - en: Instead of a comment, I started the next line with posts$.pipeand let Copilot
     suggest the rest. This is what it gave me.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 而不是一个注释，我从下一行开始以posts$.pipe，并让Copilot建议其余部分。这就是它给我的。
 - en: posts$.pipe(
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: posts$.pipe(
 - en: catchError(this.logError));
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: catchError(this.logError));
 - en: That’s what I was looking for!
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是我要找的内容！
 - en: However, the astute amongst you might have noticed that my logErrorfunction
     is no longer valid. I had to change it to return an Observable, but Copilot didn’t
     really help me with that task. I had to do it myself. It now looks like this.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是，你们中聪明的人可能已经注意到，我的logError函数已经不再有效了。我不得不将其更改为返回一个Observable，但是Copilot并没有真正帮助我完成这个任务。这是我自己做的。现在它看起来像这样。
 - en: // Log any errors in the observable to the console
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: // 将Observable中的任何错误记录到控制台
 - en: 'logError(err): Observable<any> {'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 'logError(err): Observable<any> {'
 - en: 'console.error(''There was an error: '' + err);'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: console.error('出错了：' + err);
 - en: return of();
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: return of();
 - en: '}'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: Using the Observable in the Angular Template
+  id: totrans-101
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 在Angular模板中使用Observable
 - en: What use is an Observable if we can’t get its values? The final example for
     this chapter is getting the posts from that API call onto a web page. I have to
     admit, this was pretty interesting.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们不能获取Observable的值，那Observable有什么用呢？这一章的最后一个例子是将该API调用返回的文章显示在网页上。我不得不承认，这是非常有趣的。
 - en: I started in a blank file and provided the first line below as a comment. It
     suggested everything else, with only a few hints, which I will explain after the
     code block.
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 我从一个空白文件开始，并将以下第一行作为注释。它建议了其他所有内容，只有少数提示，我将在代码块后解释。
 - en: // Angular "Posts" component
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: // Angular "文章" 组件
 - en: import { Component, OnInit } from '[@angular/core](http://twitter.com/angular/core
     "Twitter profile for @angular/core")';
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Component, OnInit } from '[@angular/core](http://twitter.com/angular/core
+    "Twitter profile for @angular/core")';
 - en: '[@Component](http://twitter.com/Component "Twitter profile for @Component")({'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: '[@Component](http://twitter.com/Component "Twitter profile for @Component")({'
 - en: 'selector: ''app-posts'','
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 'selector: ''app-posts'','
 - en: 'template: `'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 'template: `'
 - en: <h1>Posts</h1>
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: <h1>文章</h1>
 - en: <ul>
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: <ul>
 - en: <li *ngFor="let post of posts">
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: <li *ngFor="let post of posts">
 - en: '{{ post.title }}'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: '{{ post.title }}'
 - en: </li>
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: </li>
 - en: </ul>
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: </ul>
 - en: '`,'
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: '`,'
 - en: 'styles: []'
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 'styles: []'
 - en: '})'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: export class PostsComponent implements OnInit {
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: export class PostsComponent implements OnInit {
 - en: 'posts: any;'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 'posts: any;'
 - en: 'constructor(private apiService: ApiService) { }'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 'constructor(private apiService: ApiService) { }'
 - en: ngOnInit() {
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: ngOnInit() {
 - en: this.apiService.getAllPosts().subscribe((data) => {
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: this.apiService.getAllPosts().subscribe((data) => {
 - en: this.posts = data;
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: this.posts = data;
 - en: '});'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '}'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: At first, it wanted a separate file for my template and styles. That’s perfectly
     valid, but overkill for my example. I deleted those lines and manually typed template and styles.
     It then added what you see above.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 最初，它想要一个单独的文件来放置我的模板和样式。这是完全有效的，但对于我的例子来说有点过头了。我删除了这些行，并手动输入了模板和样式。然后它添加了你在上面看到的内容。
 - en: It correctly found and referenced the ApiService from the other file, though
     I did have to fix its import. I consider that a minor nuisance because VS Code
     will handle that for me.
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 它正确地找到并引用了另一个文件中的ApiService，虽然我确实不得不修复其导入。我认为这只是一个小麻烦，因为VS Code会为我处理这个问题。
 - en: What about async pipes?
+  id: totrans-129
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 那什么是异步管道？
 - en: I mentioned before that I prefer not to subscribe to Observables if I don’t
     have to. Angular provides the async pipe, which automatically subscribes and unsubscribes
     as needed. Could I get Copilot to handle that for me?
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 我以前提到，如果我不必要订阅Observable，我更喜欢避免。Angular提供了自动订阅和取消订阅的异步管道。我能让Copilot来帮我处理吗？
 - en: Following the common practice of naming Observable variables with a suffixed
     dollar sign, I changed the variable name fromposts to posts$ and deleted the body
     of ngOnInit.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 遵循使用带有后缀美元符的Observable变量的常见做法，我将变量名从posts更改为posts$，并删除了ngOnInit的主体。
 - en: 'As soon as I added a blank line inside that function, Copilot suggested exactly
     what I wanted:'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我在该函数内添加一个空行时，Copilot确切地建议了我想要的：
 - en: ngOnInit() {
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: ngOnInit() {
 - en: this.posts$ = this.apiService.getAllPosts();
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: this.posts$ = this.apiService.getAllPosts();
 - en: '}'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: The only thing left was to see if it would fix the template. So, I went back
     to the <li *ngFor and erased the entire block. Copilot insisted on putting it
     back the way it was, which wouldn’t work at all. There isn’t even a variable called posts,
     so it was giving me a literal error.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 唯一剩下的就是看看它是否能修复模板。于是，我回到了`<li *ngFor`，把整个块都擦掉了。Copilot 坚持要把它放回原样，但那根本行不通。甚至都没有一个叫做`posts`的变量，所以它给了我一个字面上的错误。
 - en: Not wanting to give up just yet, I added an HTML comment just inside the <ul>tag,
     hoping that would help. That did the trick!
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 不想就这样放弃，我在`<ul>`标签内部添加了一个HTML注释，希望这样会有所帮助。这招奏效了！
 - en: <ul>
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: <ul>
 - en: <!—Loop through the posts$ observable and display each post—>
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: <!—遍历`posts$`可观察对象并显示每篇文章—>
 - en: <li *ngFor="let post of posts$ | async">
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: <li *ngFor="let post of posts$ | async">
 - en: '{{ post.title }}'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: '{{ post.title }}'
 - en: </li>
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: </li>
 - en: </ul>
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: </ul>
 - en: All in all, I was impressed with how well it did once I prompted it with the
     right hints.
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，一旦我用正确的提示激发它，它的表现让我印象深刻。
 - en: What about ChatGPT?
+  id: totrans-145
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: ChatGPT 呢？
 - en: You may be wondering to yourself, where was ChatGPT throughout all this? Well,
     because I was staying mostly inside the code editor, I thought that Copilot made
     more sense for these examples. However, as a test of ChatGPT’s capabilities, I
     asked it to generate everything for me, using my hints to Copilot as my prompt.
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许你会想，ChatGPT 在这一切中都在哪里？嗯，因为我大部分时间都待在代码编辑器里，我觉得 Copilot 更适合这些示例。然而，作为对 ChatGPT
+    能力的一次测试，我让它为我生成一切，使用我对 Copilot 的提示作为提示。
 - en: Here is the prompt and its complete output.
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是提示及其完整输出。
 - en: Build me a complete angular service that fetches some sample data (perhaps blog
     posts) from a remote web service. Be sure to log any errors encountered. Then
     create a web page implemented as an angular component, which displays the blog
     post titles from the service in an unordered list. Prefer to use the angular async
     pipe in the template rather than subscribing to the observable.
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 为我构建一个完整的 Angular 服务，从远程 Web 服务获取一些示例数据（也许是博客文章）。务必记录遇到的任何错误。然后创建一个作为 Angular
+    组件实现的网页，该组件在无序列表中显示来自服务的博客文章标题。最好在模板中使用 Angular 的异步管道而不是订阅可观察对象。
 - en: 'Sure, I''d be happy to help you with that! Here is an example implementation
     of an Angular service and component that fetches blog posts from a remote web
     service:'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，我很乐意帮助你！这是一个从远程 Web 服务获取博客文章的 Angular 服务和组件的示例实现：
 - en: import { Injectable } from '@angular/core';
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Injectable } from '@angular/core';
 - en: import { HttpClient } from '@angular/common/http';
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: import { HttpClient } from '@angular/common/http';
 - en: import { Observable, throwError } from 'rxjs';
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Observable, throwError } from 'rxjs';
 - en: import { catchError } from 'rxjs/operators';
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: import { catchError } from 'rxjs/operators';
 - en: '@Injectable({'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '@Injectable({'
 - en: 'providedIn: ''root'''
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 'providedIn: ''root'''
 - en: '})'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: export class BlogPostService {
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: export class BlogPostService {
 - en: private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
 - en: 'constructor(private http: HttpClient) { }'
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 'constructor(private http: HttpClient) { }'
 - en: 'getBlogPosts(): Observable<any[]> {'
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 'getBlogPosts(): Observable<any[]> {'
 - en: return this.http.get<any[]>(this.apiUrl).pipe(
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.http.get<any[]>(this.apiUrl).pipe(
 - en: catchError(error => {
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: catchError(error => {
 - en: console.error('Error fetching blog posts:', error);
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: console.error('获取博客文章时出错：', error);
 - en: return throwError(error);
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: return throwError(error);
 - en: '})'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: );
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: '}'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: This service uses the HttpClient module from Angular to make an HTTP GET request
     to the specified API URL. If an error occurs during the request, the service logs
     the error to the console and throws an error using the throwError method from
     the rxjs library.
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 该服务使用 Angular 的 HttpClient 模块向指定的 API URL 发送 HTTP GET 请求。如果请求过程中发生错误，服务会将错误记录到控制台并使用
+    rxjs 库中的 throwError 方法抛出错误。
 - en: import { Component, OnInit } from '@angular/core';
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Component, OnInit } from '@angular/core';
 - en: import { Observable } from 'rxjs';
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: import { Observable } from 'rxjs';
 - en: import { BlogPostService } from '../blog-post.service';
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: import { BlogPostService } from '../blog-post.service';
 - en: '@Component({'
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: '@Component({'
 - en: 'selector: ''app-blog-post-list'','
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 'selector: ''app-blog-post-list'','
 - en: 'template: `'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 'template: `'
 - en: <h2>Blog Posts</h2>
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: <h2>博客文章</h2>
 - en: <ul>
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: <ul>
 - en: <li *ngFor="let post of posts$ | async">{{ post.title }}</li>
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: <li *ngFor="let post of posts$ | async">{{ post.title }}</li>
 - en: </ul>
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: </ul>
 - en: '`'
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: '`'
 - en: '})'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: export class BlogPostListComponent implements OnInit {
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: export class BlogPostListComponent implements OnInit {
 - en: 'posts$: Observable<any[]>;'
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 'posts$: Observable<any[]>;'
 - en: 'constructor(private blogPostService: BlogPostService) { }'
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: 'constructor(private blogPostService: BlogPostService) { }'
 - en: 'ngOnInit(): void {'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 'ngOnInit(): void {'
 - en: this.posts$ = this.blogPostService.getBlogPosts();
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: this.posts$ = this.blogPostService.getBlogPosts();
 - en: '}'
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: This component uses the async pipe in the template to subscribe to the posts$
     observable returned by the BlogPostService. The ngOnInit method of the component
     sets the posts$ observable to the result of calling getBlogPosts on the service.
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 此组件在模板中使用异步管道来订阅由BlogPostService返回的posts$可观察对象。组件的ngOnInit方法将posts$可观察对象设置为调用服务上的getBlogPosts的结果。
 - en: 'Finally, you''ll need to add the HttpClientModule to your app module''s imports
     array to make the HttpClient available to the service:'
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，您需要将HttpClientModule添加到您的应用程序模块的imports数组中，以使HttpClient可用于服务：
 - en: import { NgModule } from '@angular/core';
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入 { NgModule } from '@angular/core';
 - en: import { BrowserModule } from '@angular/platform-browser';
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入 { BrowserModule } from '@angular/platform-browser';
 - en: import { HttpClientModule } from '@angular/common/http';
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入 { HttpClientModule } from '@angular/common/http';
 - en: import { AppComponent } from './app.component';
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入 { AppComponent } from './app.component';
 - en: import { BlogPostListComponent } from './blog-post-list/blog-post-list.component';
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 导入 { BlogPostListComponent } from './blog-post-list/blog-post-list.component';
 - en: '@NgModule({'
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: '@NgModule({'
 - en: 'declarations: ['
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 'declarations: ['
 - en: AppComponent,
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: AppComponent,
 - en: BlogPostListComponent
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: BlogPostListComponent
 - en: '],'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: '],'
 - en: 'imports: ['
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: 'imports: ['
 - en: BrowserModule,
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: BrowserModule,
 - en: HttpClientModule
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: HttpClientModule
 - en: '],'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: '],'
 - en: 'providers: [],'
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: 'providers: [],'
 - en: 'bootstrap: [AppComponent]'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 启动：[AppComponent]
 - en: '})'
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: export class AppModule { }
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: export class AppModule { }
 - en: That's it! With this code, you should be able to display a list of blog post
     titles retrieved from a remote web service in an Angular component using the async
     pipe.
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: 就是这样！有了这段代码，您应该能够使用异步管道在Angular组件中显示从远程网络服务检索到的博客文章标题列表。
 - en: Wow! ChatGPT built almost exactly the same code, complete with explanations.
     In fact, what it produced is more complete than what I got from Copilot.
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 哇！ChatGPT几乎完全构建了相同的代码，包括解释。事实上，它生成的内容比我从Copilot得到的更完整。
 - en: My only complaint about what it wrote is that its information is slightly outdated.
     Angular 14.2 introduced a developer preview of “standalone components,” which
     don’t need to be contained inside an NgModule. You can even write entire applications
     without a single NgModule. Angular 15 officially made them part of the framework.
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: 我对它所写的唯一抱怨是，它的信息略显过时。Angular 14.2引入了“独立组件”的开发者预览，这些组件不需要包含在NgModule内。您甚至可以编写完整的应用程序而不需要一个NgModule。Angular
+    15正式将它们纳入了框架。
 - en: This is a minor thing, but it serves to illustrate an important point. ChatGPT’s
     knowledge doesn’t know much about the past 2 years. I asked ChatGPT to rewrite
     the above application with standalone components from Angular 15\. This was its
     reply.
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是一个小事，但它可以说明一个重要的观点。ChatGPT的知识并不了解过去两年的情况。我让ChatGPT使用Angular 15中的独立组件重写上述应用程序。这是它的回复。
 - en: I'm sorry, but Angular 15 is not a version that exists - the latest version
     of Angular as of my knowledge cutoff date of September 2021 is Angular 12\. However,
     I can provide an example of how to rewrite the application using Angular's componentless
     routes with the ng-container element, introduced in Angular 4.
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 对不起，但Angular 15不是一个存在的版本 - 我截止到2021年9月的知识截止日期的最新版本是Angular 12。但是，我可以提供一个示例，展示如何使用Angular的无组件路由和ng-container元素（在Angular
+    4中引入）重写应用程序。
 - en: It then proceeded to give me almost the same application as before but adding
     in some default routing. Angular 12 is 3 versions old as I write this, soon to
     be 4 versions old. I don’t even think it’s supported anymore.
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后它继续给我几乎相同的应用程序，但添加了一些默认路由。当我写这篇文章时，Angular 12已经过时了3个版本，很快就会过时4个版本。我甚至认为它已经不再受支持了。
 - en: Let this be a friendly reminder and warning. ChatGPT is amazing at what it does,
     if you’re looking for information that tends to be long-lived. That’s why it does
     so well with regular expressions, scripting, and common algorithms. By its own
     admission, its knowledge can be woefully outdated, especially in this industry,
     which moves as fast as it does.
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: 让这成为一个友好的提醒和警告。ChatGPT在其所做的事情上表现出色，如果你正在寻找那些往往具有长期生存力的信息。这就是为什么它在处理正则表达式、脚本和常见算法时表现出色。据其自己承认，它的知识可能会过时，尤其是在这个行业中，这个行业的发展速度如此之快。

@@ -1,461 +1,702 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_above.png)'
 - en: Learning RxJS
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 学习 RxJS
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_below.png)'
 - en: '![Abstract image of a human, binary numbers, and a planet](d2d_images/image015.jpg)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![人体的抽象图像，二进制数和行星](d2d_images/image015.jpg)'
 - en: Image by [Gerd Altmann from Pixabay](https://pixabay.com/users/geralt-9301/?amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3175073)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 由 [Gerd Altmann from Pixabay](https://pixabay.com/users/geralt-9301/?amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3175073)
+    的图像
 - en: Working with Copilot and ChatGPT on common algorithms got me thinking that they
     could be very useful tools for learning Reactive Extensions for JavaScript (RxJS),
     or at least to help me remember some of its non-obvious syntax.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 与 Copilot 和 ChatGPT 一起处理常见算法让我想到它们可能会是学习 JavaScript 中的 React 扩展（RxJS）或者至少帮助我记住一些它的非显而易见的语法的非常有用的工具。
 - en: A lot of people don’t like to use RxJS, thinking it’s too complicated. They
     tend to avoid it, which I believe is a shame. Yes, RxJS can have a steep learning
     curve, but learning to think “reactively” and using RxJS effectively has been
     worth the effort. I wondered how useful Copilot could be in helping others to
     learn RxJS.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 很多人不喜欢使用 RxJS，认为它太复杂了。他们倾向于避开它，但我认为这很遗憾。是的，RxJS 可能有一个陡峭的学习曲线，但学会以“反应式”的方式思考并有效地使用
+    RxJS 是值得努力的。我想知道 Copilot 在帮助其他人学习 RxJS 方面能有多大帮助。
 - en: 'For this chapter, I’m going to continue using that array of puzzles from before.
     In case you need a refresher, it looks like this:'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于本章，我将继续使用之前的那组谜题数组。如果你需要回顾，它看起来是这样的：
 - en: // Partial array of "puzzles" for this example
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: // 用于此示例的“谜题”部分数组
 - en: 'private demoPuzzles: Puzzle[] = ['
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 'private demoPuzzles: Puzzle[] = ['
 - en: '{ id:88, size: 4, solution: [''abetbabeebontent''] },'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id:88, size: 4, solution: [''abetbabeebontent''] },'
 - en: '{ id:89, size: 4, solution: [''icedcaveevendent''] },'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id:89, size: 4, solution: [''icedcaveevendent''] },'
 - en: '{ id:90, size: 8, solution: [''abetracemirestun'', ''armsbaitecruteen''] },'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id:90, size: 8, solution: [''abetracemirestun'', ''armsbaitecruteen''] },'
 - en: '{ id:91, size: 8, solution: [''cageheaturicmyth'', ''chumaerygaitetch''] }'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: '{ id:91, size: 8, solution: [''cageheaturicmyth'', ''chumaerygaitetch''] }'
 - en: '];'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: '];'
 - en: from and of
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: from 和 of
 - en: Sticking with the above array of puzzles, let’s imagine that the puzzles are
     part of a game, and that they exist as a stream of Observables. Further, assume
     that the game gets them from some outside source. For now, we won’t worry about
     where they are coming from. Every time a new puzzle is presented, the game will
     do “something” with it.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 保持上面的谜题数组，让我们假设这些谜题是游戏的一部分，并且它们存在为一个 Observable 流。此外，假设游戏从外部来源获取它们。现在，我们不需要担心它们来自哪里。每当出现一个新的谜题时，游戏将对其进行“某些”处理。
 - en: 'So, I asked Copilot to do just that. This is my comment and the code it wrote
     for me:'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我要求 Copilot 就是这样做的。这是我写的注释以及它为我写的代码：
 - en: // Create a new observable from the demo Puzzle array
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: // 从示例谜题数组创建一个新的 Observable
 - en: const puzzles$ = from(this.demoPuzzles);
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: const puzzles$ = from(this.demoPuzzles);
 - en: Perfect! The RxJS from function creates a new Observable from an array, emitting
     a new value for each element of the array. That is exactly what I wanted. Notice
     also that it uses the common naming convention of appending a $ to the identifier,
     indicating that it is an Observable.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 完美！RxJS 的 from 函数从一个数组创建了一个新的 Observable，在数组的每个元素上都会发出一个新值。这正是我想要的。还请注意，它使用了一个常见的命名约定，即在标识符后面添加
+    $，表示它是一个 Observable。
 - en: There is another RxJS operator, of, that can also create an Observable from
     an array. Though it would have been valid to use that, of creates a single Observable
     from that emits once, containing the entire array. That is not what I wanted,
     and somehow Copilot knew (or guessed) that.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有另一个 RxJS 操作符，即 of，也可以从数组创建一个 Observable。虽然使用它也是有效的，但 of 只会创建一个 Observable
+    并发出一次，包含整个数组。这不是我想要的，但不知何故 Copilot 知道（或者猜到）了。
 - en: filter
+  id: totrans-23
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: filter
 - en: 'Now that we have an Observable let’s do something with it. Let’s start with
     a couple of the simpler and more common RxJS operators: map and filter.'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有了一个 Observable，让我们对它做点什么。让我们从一些更简单和更常见的 RxJS 操作符开始：map 和 filter。
 - en: 'The RxJS filter operator is used to do what its name implies: filter an existing
     stream to include only those items that match some provided criteria.'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: RxJS 的 filter 操作符用于实现其名字的含义：过滤现有的流，只包括与某些提供的条件匹配的项目。
 - en: 'What if the game player only wants to see puzzles of size 4? Can we get Copilot
     to do that for us? Here is the comment I typed and the code Copilot generated
     in response to that comment:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果游戏玩家只想看到尺寸为4的谜题怎么办？我们能让Copilot为我们做到这点吗？这是我输入的评论以及Copilot根据评论生成的代码的回应：
 - en: // Filter puzzles to only those of size 4
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: // 仅将谜题筛选为尺寸为4的谜题
 - en: const size4$ = puzzles$.pipe(filter(puzzle => puzzle.size === 4));
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: const size4$ = puzzles$.pipe(filter(puzzle => puzzle.size === 4));
 - en: What did it give us? It created a new Observable called size4$, using the consistent
     naming convention from before.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 它给了我们什么？它创建了一个新的Observable，使用了之前的一贯命名惯例称为 size4$。
 - en: It also correctly understands that to use the filter operator, we first have
     to use the RxJS pipefunction. Any time you are working with an RxJS Observable,
     and you want to act on it before subscribing to the value stream, you need to
     pass a list of operators into the pipe function.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 它还正确理解了使用 filter 操作符，我们首先必须使用RxJS的 pipe 函数。每当你使用RxJS Observable并且想要在订阅值流之前对其进行操作时，你需要将操作符列表传入 pipe 函数中。
 - en: Next, to select the puzzles of size 4, it correctly deduced that I would need
     the filteroperator, which takes a callback function defining how each item in
     the stream should be matched. If it looks familiar, it’s because it works exactly
     like Array.filter.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，为了选择尺寸为4的谜题，它正确地推断出我需要 filter 操作符，它接受一个回调函数来定义流中每个项目应该如何匹配。如果它看起来很熟悉，那是因为它的工作方式与 Array.filter 完全相同。
 - en: You might be thinking that I cheated a bit by using the word “Filter” in my
     comment. What would happen if I used a different phrase? Well, I decided to find
     out. I deleted the above code and its comment and typed something completely new.
     I wanted to avoid hinting words like “select” or “filter.” This is what it gave
     me.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能会认为我在评论中有点耍花招，使用了“Filter”这个词。如果我使用不同的短语会发生什么？好吧，我决定找出答案。我删掉了上面的代码及其评论，然后输入了完全新的东西。我想避免暗示“选择”或“过滤”之类的词语。这是它给我的。
 - en: // Give me only the puzzles of size four
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: // 给我尺寸为4的谜题
 - en: const size4$ = puzzles$.pipe(filter(puzzle => puzzle.size === 4));
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: const size4$ = puzzles$.pipe(filter(puzzle => puzzle.size === 4));
 - en: It still correctly decided that I need to add the filter operator to a pipeand
     it converted “four” to 4\. Pretty impressive.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 它仍然正确地决定我需要在pipe中添加 filter 操作符，它将“four”转换为 4 。相当令人印象深刻。
 - en: map
+  id: totrans-36
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: map
 - en: Let’s see what happens if we want only a part of each of the above puzzles.
     Maybe we are only going to display the first solution of the puzzle as it is emitted.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看如果我们只想要每个上述谜题的一部分会发生什么。也许我们只会显示每个谜题的第一个解决方案。
 - en: Any time you want to coerce one object into another, you would first reach for
     the map operator, which works very similarly to the JavaScript Array function
     of the same name.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 每当你想要将一个对象强制转换为另一个对象时，你首先会使用 map 操作符，它的工作方式与JavaScript数组函数 map 非常相似。
 - en: 'As with the prior examples, here are my comment and the generated code:'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像以前的例子一样，这里是我的评论和生成的代码：
 - en: // Display only the first solution of each puzzle
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: // 仅显示每个谜题的第一个解决方案
 - en: const firstSolution$ = size4$.pipe(map(puzzle => puzzle.solution[0]));
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: const firstSolution$ = size4$.pipe(map(puzzle => puzzle.solution[0]));
 - en: Do you see what it did there? It correctly assumed that I would be using the
     output from the prior command, so it gave me the size4$value from before. As I
     have previously pointed out, this shows that Copilot is aware of the context of
     your source code.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 你看到它的操作了吗？它正确地假设我将使用先前命令的输出，所以它给了我之前的 size4$value。就像我以前指出的那样，这表明Copilot意识到你源代码的上下文。
 - en: I think the only disagreement I have is the name firstSolution$, but right now
     I can’t think of a better one.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我认为我唯一不同意的是 firstSolution$ 的名字，但我现在想不出更好的名字。
 - en: At this point, I have an Observable that is filtered and mapped to only give
     me the first solution of size-4 puzzles as they are emitted.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 此时，我有一个经过过滤和映射的Observable，它只会在产生时给我尺寸为4的谜题的第一个解决方案。
 - en: Could it combine them for me?
+  id: totrans-45
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 能为我合并它们吗？
 - en: What if I structured my comment to try to get Copilot to write the entire pipeline
     for me? Let’s see how that would look.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我构造我的评论尝试让Copilot为我编写整个管道会怎么样？让我们看看它的样子。
 - en: // Give me the first solution of each size-4 puzzles
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: // 给我每个尺寸为4的谜题的第一个解决方案
 - en: puzzles$.pipe(
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: puzzles$.pipe(
 - en: filter(puzzle => puzzle.size === 4),
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: filter(puzzle => puzzle.size === 4),
 - en: map(puzzle => puzzle.solution[0]),
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: map(puzzle => puzzle.solution[0]),
 - en: first()
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: first()
 - en: ).subscribe(solution => console.log(solution));
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: ).subscribe(solution => console.log(solution));
 - en: Honestly, this is close, but it is not what I wanted. I think the word ofin
     the comment might have thrown it off. Plus, it insisted on adding the subscribe,
     which I didn’t want it to do. When building RxJS solutions, I try not to subscribe
     because that requires me to remember when I must unsubscribe. I’ll touch on that
     later.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 老实说，这很接近，但这不是我想要的。我觉得注释中的“of”这个词可能会让它困惑。另外，它坚持要添加subscribe，而我并不想要它这样做。在构建RxJS解决方案时，我尽量不订阅，因为这要求我记住何时必须取消订阅。我稍后会谈到这一点。
 - en: I decided to give it a few more hints to see whether I could help it along.
     In this case, I typed the comment and const on the next line to hint to Copilot
     I want a constant instead of a subscription.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 我决定给它一些更多的提示，看看我是否能帮助它。在这种情况下，我在下一行键入了注释和const，暗示Copilot我想要一个常量而不是订阅。
 - en: // Give me the first solution for each size-4 puzzles
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: // 给我每个大小为4的谜题的第一个解
 - en: const
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: const
 - en: firstSolution$ = puzzles$.pipe(
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: firstSolution$ = puzzles$.pipe(
 - en: filter(puzzle => puzzle.size === 4),
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: filter(puzzle => puzzle.size === 4),
 - en: map(puzzle => puzzle.solution[0]),
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: map(puzzle => puzzle.solution[0]),
 - en: first()
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: first()
 - en: );
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: Better, but it added first(), which I definitely do not want. It’s being thrown
     off by the word “first” in the comment.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 更好了，但它添加了first()，而这绝对不是我想要的。它被注释中的“first”这个词所迷惑。
 - en: Why didn’t I want to use first()? This operator gives me only the first value
     from the Observable stream, which is not what I wanted. Instead, I wanted the
     first puzzle from each value from the stream. A subtle but important difference.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 为什么我不想使用first()？这个操作符只会给我Observable流中的第一个值，而这不是我想要的。相反，我想要来自流中每个值的第一个谜题。这是微妙但重要的区别。
 - en: Let’s see if I can make a final tweak to get closer.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: '让我们看看我是否可以做出最后一次调整以更接近。 '
 - en: // Give me the first solution inside each puzzle of size four
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: // 给我每一个大小为四的谜题中的第一个解
 - en: const firstSolution$ = puzzles$.pipe(
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: const firstSolution$ = puzzles$.pipe(
 - en: filter(puzzle => puzzle.size === 4),
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: filter(puzzle => puzzle.size === 4),
 - en: map(puzzle => puzzle.solution[0])
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: map(puzzle => puzzle.solution[0])
 - en: );
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: That’s exactly what I wanted it to do. The takeaway for me is that you need
     to be very specific about your intentions. Don’t be afraid to reject its first
     attempt. You can always try again.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 这正是我想让它做的。对我来说，关键是你需要非常明确地表达你的意图。不要害怕拒绝它的第一次尝试。你总是可以再试一次。
 - en: take
+  id: totrans-71
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: take
 - en: The take operator is used to select (or take) only a certain number of emissions
     from the observable and then automatically disconnect. Copilot knew exactly how
     to structure that for me.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: take操作符用于从Observable中选择（或取出）一定数量的值，然后自动断开连接。Copilot完全知道如何为我构建这个结构。
 - en: // Take only the first two size 8 puzzles
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: // 仅取出前两个大小为8的谜题
 - en: const firstTwoSize8Puzzles$ = this.demoPuzzles$.pipe(
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: const firstTwoSize8Puzzles$ = this.demoPuzzles$.pipe(
 - en: filter(puzzle => puzzle.size === 8),
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: filter(puzzle => puzzle.size === 8),
 - en: take(2)
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: take(2)
 - en: );
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: Thinking I might throw it a curveball, so to speak, I asked it to log only those
     puzzles from the last example. It got it right, building on the code it had just
     created.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 我觉得我可能会给它一个曲球，所以我要求它只记录上一个示例中的谜题。它做得很对，建立在它刚刚创建的代码上。
 - en: // Log the first two size 8 puzzles to the console
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: // 将上一个示例中的前两个大小为8的谜题记录到控制台中
 - en: firstTwoSize8Puzzles$.subscribe(puzzle => console.log(puzzle));
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: firstTwoSize8Puzzles$.subscribe(puzzle => console.log(puzzle));
 - en: tap
+  id: totrans-81
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: tap
 - en: Sometimes you want to see the values in an Observable stream without affecting
     the stream or any downstream operators. The tap operator is built for that exact
     scenario. Could I get Copilot to rewrite my logging statement above to use tap?
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时你希望在不影响流或任何下游操作符的情况下查看Observable流中的值。tap操作符就是为这种情况设计的。我能让Copilot重新编写我的上面的记录语句以使用tap吗？
 - en: // Take the first two size 8 puzzles, but log all puzzles to the console
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: // 取出前两个大小为8的谜题，但将所有的谜题记录到控制台
 - en: const demoPuzzles2$ = demoPuzzles$.pipe(
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: const demoPuzzles2$ = demoPuzzles$.pipe(
 - en: tap(puzzles => console.log(puzzles)),
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: tap(puzzles => console.log(puzzles)),
 - en: filter(puzzles => puzzles.size === 8),
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: filter(puzzles => puzzles.size === 8),
 - en: take(2)
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: take(2)
 - en: );
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: That looks just about right, though I’m not thrilled with its naming. In fact,
     Copilot appears to have remembered that I prefer not to subscribe to my observables,
     so I’ll overlook the odd name.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 这看起来差不多，尽管我对它的命名并不满意。事实上，Copilot似乎记得我不喜欢订阅我的Observables，所以我会忽略这个奇怪的名称。
 - en: subscribe
+  id: totrans-90
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: subscribe
 - en: Despite my resistance to using subscribe prematurely, could I get Copilot to
     subscribe to the Observable? Undoubtedly, with the right prompt. As it turns out,
     as soon as pressed the enter key, Copilot immediately offered the following code
     with no further action on my part.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管我不愿意过早使用subscribe，但我能否让Copilot订阅Observable？毫无疑问，只要有正确的提示。事实证明，一旦我按下回车键，Copilot立即提供了以下代码，而我并没有采取进一步的行动。
 - en: demoPuzzles2$.subscribe(puzzles => console.log(puzzles));
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: demoPuzzles2$.subscribe(puzzles => console.log(puzzles));
 - en: That’s exactly what I wanted it to do. I guess it read my mind.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 这正是我希望它做的。我想它读懂了我的想法。
 - en: What about ChatGPT for RxJS?
+  id: totrans-94
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 那么ChatGPT对RxJS怎么样呢？
 - en: ChatGPT was less of a help for this, but not for the reasons you might expect.
     At first, I thought it would be better, especially since it tends to explain the
     code it produces. What bothered me about ChatGPT for RxJS, though, is that it
     seemed to take me too literally.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT对此的帮助较少，但并非因为你可能期望的原因。起初，我以为它会更好，特别是因为它倾向于解释它产生的代码。但我对ChatGPT对RxJS不满意的原因是，它似乎对我的话过于字面。
 - en: For example, when I asked it about using take to get me the first two elements,
     it actually wrote out everything as a complete function. Copilot tends to give
     you the code you need when you need it.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，当我询问它使用take来获取前两个元素时，它实际上将一切都写成了一个完整的函数。Copilot倾向于在你需要时为你提供所需的代码。
 - en: Where ChatGPT excels is in explaining the code that Copilot writes. Let’s see
     how that would work before moving on. I asked ChatGPT what this code does. It
     gave me the following analysis, which I’m sure you’ll agree is impressive.
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT擅长解释Copilot写的代码。让我们在进行下一步之前看看这将如何运行。我询问ChatGPT这段代码的作用。它给出了以下分析，我确信你会认为这很令人印象深刻。
 - en: What does the following code block do?
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下代码块的作用是什么？
 - en: const firstSolution$ = puzzles$.pipe(
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: const firstSolution$ = puzzles$.pipe(
 - en: filter(puzzle => puzzle.size === 4),
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: filter(puzzle => puzzle.size === 4),
 - en: map(puzzle => puzzle.solution[0])
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: map(puzzle => puzzle.solution[0])
 - en: );
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: 'Sure, the code you provided does the following:'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，你提供的代码确实完成了以下工作：
 - en: Creates an observable puzzles$ that emits each element of a larger array of
     Puzzle objects, similar to the demoPuzzles array we saw earlier.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个observable puzzles$，它发出一个更大的Puzzle对象数组的每个元素，类似于我们之前看到的demoPuzzles数组。
 - en: Uses the pipe method to create a chain of operators that will be applied to
     each emission of the puzzles$ observable.
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用管道方法创建一系列操作符，这些操作符将应用于puzzles$ observable的每个发射。
 - en: The first operator in the chain is filter, which filters out any puzzles that
     do not have a size property of 4\. This means that only puzzles with a size of
     4 will be allowed to continue down the chain.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 链中的第一个操作符是filter，它过滤掉没有大小属性为4的拼图。这意味着只有大小为4的拼图将被允许继续传递。
 - en: The second operator in the chain is map, which maps each remaining puzzle to
     its first solution. Since the solution property of each Puzzle object is an array
     of strings, we use the array indexing operator [0] to select the first element
     of the array as the solution.
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 链中的第二个操作符是map，它将每个剩余的拼图映射到它的第一个解决方案。因为每个Puzzle对象的solution属性是一个字符串数组，所以我们使用数组索引操作符[0]来选择数组的第一个元素作为解决方案。
 - en: The resulting observable firstSolution$ emits the first solution of each puzzle
     that has a size of 4.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成的observable firstSolution$ 发出每个拼图有4个大小的第一个解决方案。
 - en: To summarize, the code filters a stream of Puzzle objects by size and then maps
     the remaining puzzles to their first solution, resulting in a stream of strings
     that represent the first solution of each puzzle that has a size of 4.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 总结一下，该代码通过大小过滤Puzzle对象的流，然后将剩余的拼图映射到它们的第一个解决方案，从而产生一个表示每个有4个拼图大小的第一个解决方案的字符串流。
 - en: What’s the Takeaway?
+  id: totrans-110
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总结一下？
 - en: Admittedly, there is a lot more to RxJS than the few operators I used here.
     RxJS is huge, with more than 100 operators, though most developers use fewer than
     a dozen of them regularly. The goal of this chapter wasn’t to perform an exhaustive
     test of RxJS.
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 诚然，在这里我使用的操作符远不止我使用的几个。RxJS非常庞大，拥有100多个操作符，尽管大多数开发者通常只使用其中不到十几个。本章的目标不是对RxJS进行彻底的测试。
 - en: My purpose was to see whether Copilot can help a novice developer get up to
     speed with RxJS, knowing only a little about what it can do. I will use more RxJS
     later, where the context is a little more appropriate.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 我的目的是看看Copilot是否可以帮助新手开发者了解RxJS，并且只知道它的一点点功能。稍后在更合适的情境下会使用更多RxJS。
 - en: Can Copilot help someone learn RxJS or how to use it better? I’m skeptical,
     if only because it didn’t always give me the code I wanted. An RxJS novice just
     starting out may not have enough experience to know what to accept and when to
     try again.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot能帮助某人学习RxJS或更好地使用它吗？我持怀疑态度，因为它并不总是给我想要的代码。一个刚开始接触RxJS的新手可能没有足够的经验来知道什么时候接受，什么时候再试一次。
 - en: Copilot might be a better option for experienced JavaScript developers who understand
     the basics of RxJS. They can use it with the reasonable expectation that it will
     pick the correct operators to match their needs.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot可能是有经验的JavaScript开发人员的更好选择，他们了解RxJS的基础知识。他们可以合理地期望它会选择正确的操作符来满足他们的需求。
 - en: Ultimately, while I find Copilot to be a useful and [mostly] benign tool, it
     does have to be coerced to do the right thing often.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 最终，虽然我发现Copilot是一个有用且[大多数时候]无害的工具，但它经常需要被迫做正确的事情。
 - en: I’m not convinced it’s a tool for the RxJS beginner, who may be misled by incorrect
     code.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 我并不认为它是RxJS初学者的工具，他们可能会被错误的代码误导。
 - en: ChatGPT, on the other hand, is excellent in helping a novice understand code.
     Simply paste it into the text box and ask for an explanation. That’s powerful
     and should not be overlooked.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT，另一方面，在帮助新手理解代码方面表现出色。只需将其粘贴到文本框中并请求解释。这是强大的，不应忽视。

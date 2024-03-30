@@ -1,24 +1,37 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/chapter_title_above.png)'
 - en: Other Considerations
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 其他考虑事项
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/chapter_title_below.png)'
 - en: '![A picture containing text, electronics, circuit  Description automatically
     generated](d2d_images/image005.jpg)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![包含文本、电子设备、电路的图片  自动生成描述](d2d_images/image005.jpg)'
 - en: Image by [Vicki Hamilton](https://pixabay.com/users/flutie8211-17475707/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7772914) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7772914)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 图片由[Vicki Hamilton](https://pixabay.com/users/flutie8211-17475707/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7772914)从[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7772914)获取
 - en: When writing a book like this, it’s hard to know when to stop. I see things
     on Twitter, people posting about all the cool stuff they’re doing with AI. Naturally,
     I want to try them myself and add them to book. Ultimately, though, such an attitude
@@ -28,1024 +41,1648 @@
     get to all of them. However, there are a few interesting uses for AI that don’t
     fit so neatly into any of the prior chapters. I want to take a few moments to
     touch on them here.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 写这样一本书时，很难知道何时停下来。我在Twitter上看到一些东西，人们在发布关于他们如何使用AI做很酷的事情的帖子。自然地，我也想尝试并将它们添加到书中。然而，这样的态度最终会自我毁灭。有截止日期要满足，还有其他需要我关注的项目。我相信这不会是我最后一次写关于这个主题的文章。我脑海中已经有更多的想法，可能超出了健康范围。我怀疑我永远也无法实现它们。然而，AI还有一些有趣的用途，不太适合前面的章节。我想花点时间在这里简要谈谈它们。
 - en: Understanding New Code
+  id: totrans-7
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 理解新代码
 - en: Throughout this book, I have been using AI to help with programming tasks. Another
     possibility is to use it the other way. ChatGPT is especially good at this. Consider
     the scenario where you have been given some legacy code and you aren’t sure what
     it does (or exactly how). You can paste the code into ChatGPT and ask it for an
     explanation.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本书中，我一直在使用AI来帮助编程任务。另一个可能性是以相反的方式使用它。ChatGPT在这方面特别擅长。考虑这样一种情况，你拿到了一些旧代码，不确定它是做什么的（或者确切地说是如何做的）。你可以将代码粘贴到ChatGPT中，并要求它解释。
 - en: For example, I have some old Ionic/Angular/Firebase code in a project I haven’t
     touched in a while. So, I asked ChatGPT what it does.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，我在一个有段时间没有碰过的项目中有一些旧的Ionic/Angular/Firebase代码。所以，我问ChatGPT它是做什么的。
 - en: updateNames() {
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: updateNames() {
 - en: this.db
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: this.db
 - en: .list('/hymns')
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: .list('/hymns')
 - en: .snapshotChanges()
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: .snapshotChanges()
 - en: .pipe(
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: .pipe(
 - en: first(),
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: first(),
 - en: switchMap((list) => list)
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: switchMap((list) => list)
 - en: )
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: )
 - en: .subscribe((hymn) => {
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: .subscribe((hymn) => {
 - en: hymn.payload.child('/arrangements').forEach((arrangement) => {
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: hymn.payload.child('/arrangements').forEach((arrangement) => {
 - en: const userNameNode = arrangement.child('/user/name');
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: const userNameNode = arrangement.child('/user/name');
 - en: const names = userNameNode.val().split(' ');
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: const names = userNameNode.val().split(' ');
 - en: const maskedName = `${names[0]} ${names[names.length - 1][0]}.`;
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: const maskedName = `${names[0]} ${names[names.length - 1][0]}.`;
 - en: userNameNode.ref.set(maskedName);
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: userNameNode.ref.set(maskedName);
 - en: console.log(maskedName);
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(maskedName);
 - en: '});'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: console.log('Done');
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log('完成');
 - en: '});'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: '});'
 - en: '}'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'It responded with this explanation:'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 它以这种解释做出了回应：
 - en: This code updates the name property of each user node in the arrangements child
     nodes of every hymn in the /hymns list of a Firebase Realtime Database.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 这段代码更新Firebase实时数据库中/hymns列表中每个赞美诗的arrangements子节点中每个用户节点的名称属性。
 - en: The code uses the db object (likely an instance of AngularFire2) to access the
     /hymns list as an observable using the list() method. It then calls snapshotChanges()
     on the observable to get an array of changes in the database, and processes the
     first change using first().
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 该代码使用db对象（可能是AngularFire2的一个实例）访问/hymns列表，并使用list()方法将其作为observable。然后调用observable的snapshotChanges()方法获取数据库中的更改数组，并使用first()处理第一个更改。
 - en: It then uses switchMap() to flatten the array into an observable of individual
     changes, which is subscribed to with subscribe().
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后使用switchMap()将数组展平为一个包含各个更改的observable，然后使用subscribe()进行订阅。
 - en: For each hymn, the code loops through each arrangement node in its arrangements
     child nodes using the forEach() method.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每首赞美诗，该代码使用forEach()方法循环遍历其arrangements子节点中的每个arrangement节点。
 - en: For each arrangement, the code gets the name property of its user child node,
     splits the name into an array using the split() method, and creates a masked name
     consisting of the first name and the first letter of the last name using string
     interpolation. The masked name is then set as the new value of the name property
     using the set() method on the userNameNode.ref object.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每个排列，代码获取其用户子节点的名称属性，使用 split() 方法将名称拆分为数组，并使用字符串插值创建由名字和姓氏首字母组成的掩盖姓名。然后，使用
+    set() 方法将掩盖姓名设置为 userNameNode.ref 对象上的名称属性的新值。
 - en: Finally, the code logs the masked name to the console and repeats the process
     for each hymn. Once all the hymns have been processed, the code logs 'Done' to
     the console.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，代码将掩盖的姓名记录到控制台，并为每首赞美诗重复这个过程。一旦所有赞美诗都被处理完，代码会在控制台记录“完成”。
 - en: Notice how it correctly inferred the use of both Firebase (AngularFire2) and
     RxJS.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意它正确推断了 Firebase（AngularFire2）和 RxJS 的使用。
 - en: I then asked ChatGPT about the significance of masking the name. Its response
     was spot on perfect.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我问 ChatGPT 关于掩盖姓名的意义。它的回答完美无缺。
 - en: What do you believe the significance of the masked name might be?
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 你认为掩盖姓名的意义是什么？
 - en: The significance of the masked name is likely to protect the privacy of the
     user's full name.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 掩盖姓名的意义很可能是为了保护用户全名的隐私。
 - en: By masking the name, the code only reveals the first name and the first letter
     of the last name, which can be useful for anonymizing user data or protecting
     the user's identity. This can be particularly important if the application is
     dealing with sensitive information or if the user's full name is not necessary
     for the functioning of the application.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: '通过掩盖姓名，代码只会显示名字和姓氏的首字母，这对于匿名化用户数据或保护用户身份可能很有用。如果应用程序处理敏感信息或用户的全名对应用程序的功能不是必要的，这一点尤为重要。 '
 - en: Using a masked name also helps to maintain consistency in the display of user
     data. For example, if the application displays a list of users or user-generated
     content, masking the name can make the display more uniform and visually appealing.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用掩盖的姓名还有助于保持用户数据显示的一致性。例如，如果应用程序显示用户列表或用户生成的内容，掩盖姓名可以使显示更加统一和视觉上更吸引人。
 - en: Overall, the use of a masked name is a common technique for protecting user
     privacy and ensuring a consistent display of user data.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，使用掩盖姓名是保护用户隐私和确保用户数据显示一致性的常见技术。
 - en: This was a straightforward, almost trivial example. I chose it because it was
     easy to follow. That said, this technique is particularly useful if you are trying
     to determine not only what unfamiliar code does, but also why.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个简单、几乎微不足道的例子。我选择它是因为它很容易理解。尽管如此，如果你试图确定陌生代码的作用以及原因，这种技术尤其有用。
 - en: Generating Code from Data
+  id: totrans-44
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 从数据生成代码
 - en: Another cool use I have found for ChatGPT is that you can paste some data you
     get from a web service (or similar) response and ask the AI to convert it into
     a different data format, or even code that will represent that data’s shape.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 我发现 ChatGPT 的另一个很酷的用途是，你可以粘贴一些来自网络服务（或类似服务）响应的数据，并要求 AI 将其转换为不同的数据格式，甚至是代表该数据形状的代码。
 - en: 'For example, let’s say you have some sample data that looks like this:'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，假设你有一些看起来像这样的示例数据：
 - en: '{'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: '"contacts": ['
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '"contacts": ['
 - en: '{'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: '"id": "1",'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: '"id": "1",'
 - en: '"firstName": "John",'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '"firstName": "John",'
 - en: '"lastName": "Doe",'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: '"lastName": "Doe",'
 - en: '"email": "johndoe@gmail.com",'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '"email": "johndoe@gmail.com",'
 - en: '"address": {'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: '"address": {'
 - en: '"street": "123 Main St.",'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '"street": "123 Main St.",'
 - en: '"city": "Anytown",'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '"city": "Anytown",'
 - en: '"state": "CA",'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: '"state": "CA",'
 - en: '"zip": "12345"'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '"zip": "12345"'
 - en: '},'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: '},'
 - en: '"phones": ['
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: '"phones": ['
 - en: '{'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: '"type": "home",'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: '"type": "home",'
 - en: '"number": "555-555-5555"'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: '"number": "555-555-5555"'
 - en: '},'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: '},'
 - en: '{'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: '"type": "work",'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: '"type": "work",'
 - en: '"number": "555-555-5556"'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: '"number": "555-555-5556"'
 - en: '},'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: '},'
 - en: '{'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: '{'
 - en: '"type": "mobile",'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: '"type": "mobile",'
 - en: '"number": "555-555-5557"'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: '"number": "555-555-5557"'
 - en: '}'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: ']'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: ']'
 - en: '}'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: ']'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: ']'
 - en: '}'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'You can ask ChatGPT to provide you with an interface or a class in the language
     of your choice. Here is the TypeScript interface it provided:'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以要求 ChatGPT 为你提供所需语言的接口或类。这是它提供的 TypeScript 接口：
 - en: interface Contact {
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 接口 Contact {
 - en: 'id: string;'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 'id: string;'
 - en: 'firstName: string;'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 'firstName: string;'
 - en: 'lastName: string;'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 'lastName: string;'
 - en: 'email: string;'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 'email: string;'
 - en: 'address: Address;'
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 'address: Address;'
 - en: 'phones: Phone[];'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 'phones: Phone[];'
 - en: '}'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: interface Address {
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 接口 Address {
 - en: 'street: string;'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 'street: string;'
 - en: 'city: string;'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 'city: string;'
 - en: 'state: string;'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 'state: string;'
 - en: 'zip: string;'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 'zip: string;'
 - en: '}'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: interface Phone {
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 接口 Phone {
 - en: 'type: string;'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 'type: string;'
 - en: 'number: string;'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 'number: string;'
 - en: '}'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'I’ve been favoring JavaScript and TypeScript throughout the book, but just
     to show that it can and will do more, I asked it to generate a Python object from
     that data. It gave me this:'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 我一直在这本书中偏爱 JavaScript 和 TypeScript，但只是为了显示它可以并且会做更多，我要求它从这些数据中生成一个 Python 对象。它给了我这个：
 - en: 'class Contact:'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: '类联系人:'
 - en: 'def __init__(self, id, first_name, last_name, email, address, phones):'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def __init__(self, id, first_name, last_name, email, address, phones):'
 - en: self.id = id
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: self.id = id
 - en: self.first_name = first_name
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: self.first_name = first_name
 - en: self.last_name = last_name
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: self.last_name = last_name
 - en: self.email = email
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: self.email = email
 - en: self.address = address
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: self.address = address
 - en: self.phones = phones
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: self.phones = phones
 - en: 'class Address:'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 类地址：
 - en: 'def __init__(self, street, city, state, zip_code):'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def __init__(self, street, city, state, zip_code):'
 - en: self.street = street
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: self.street = street
 - en: self.city = city
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: self.city = city
 - en: self.state = state
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: self.state = state
 - en: self.zip_code = zip_code
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: self.zip_code = zip_code
 - en: 'class Phone:'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: '类电话:'
 - en: 'def __init__(self, type, number):'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def __init__(self, type, number):'
 - en: self.type = type
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: self.type = type
 - en: self.number = number
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: self.number = number
 - en: To be honest, I don’t know Python, so I can only guess as to its accuracy, but
     it looks convincing.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 老实说，我不懂 Python，所以只能猜测其准确性，但看起来很有说服力。
 - en: Programming Language Translation
+  id: totrans-116
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 编程语言翻译
 - en: Another area where ChatGPT excels is translating code from one language to another.
     Let’s say I am trying to reuse some code from an Angular Service in a React application
     I’m building. I want to translate the code from a TypeScript class to pure JavaScript.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 擅长的另一个领域是将代码从一种语言翻译成另一种语言。比如我正在尝试在我正在构建的 React 应用程序中重用一些来自 Angular 服务的代码。我想将
+    TypeScript 类的代码翻译成纯粹的 JavaScript。
 - en: It’s a modest class but will serve as a fine example. Asking ChatGPT to translate
     it into functional JavaScript yields the following code.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是个不错的类，将作为一个很好的例子。要求ChatGPT将其翻译成功能性的 JavaScript 产生以下代码。
 - en: We won’t dive into the MersenneTwister, other than mention that it’s an algorithm
     for generating random numbers. That’s a topic for another day.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不会深入讨论 MersenneTwister，只是提一下它是一个用于生成随机数的算法。这是另一个主题。
 - en: Given the following TypeScript class, provide me functional JavaScript I can
     use in its place.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 鉴于以下 TypeScript 类，请为我提供可用于替代的功能性 JavaScript。
 - en: export class ShuffleService {
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: export class ShuffleService {
 - en: 'random: MersenneTwister = new MersenneTwister();'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 'random: MersenneTwister = new MersenneTwister();'
 - en: 'seed(slug = ''xyz''): void {'
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 'seed(slug = ''xyz''): void {'
 - en: const hash = this.hashCode(slug);
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: const hash = this.hashCode(slug);
 - en: this.random.seed = hash;
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: this.random.seed = hash;
 - en: '}'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'hashCode(str: string): number {'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 'hashCode(str: string): number {'
 - en: return Array.from(str)
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: return Array.from(str)
 - en: // eslint-disable-next-line no-bitwise
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: // eslint-disable-next-line no-bitwise
 - en: .reduce((s, c) => Math.imul(31, s) + c.charCodeAt(0) | 0, 0);
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: .reduce((s, c) => Math.imul(31, s) + c.charCodeAt(0) | 0);
 - en: '}'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: 'shuffle(array): any[] {'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 'shuffle(array): any[] {'
 - en: return this.random.shuffle(array);
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.random.shuffle(array);
 - en: '}'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '}'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: This is what it came up with.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 它生成了这些。
 - en: function ShuffleService() {
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: function ShuffleService() {
 - en: const random = new MersenneTwister();
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: const random = new MersenneTwister();
 - en: function seed(slug = 'xyz') {
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: function seed(slug = 'xyz') {
 - en: const hash = hashCode(slug);
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: const hash = hashCode(slug);
 - en: random.seed = hash;
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: random.seed = hash;
 - en: '}'
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: function hashCode(str) {
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: function hashCode(str) {
 - en: return Array.from(str)
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: return Array.from(str)
 - en: .reduce((s, c) => Math.imul(31, s) + c.charCodeAt(0) | 0, 0);
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: .reduce((s, c) => Math.imul(31, s) + c.charCodeAt(0) | 0, 0);
 - en: '}'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: function shuffle(array) {
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: function shuffle(array) {
 - en: return random.shuffle(array);
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: return random.shuffle(array);
 - en: '}'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: return {
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: return {
 - en: seed,
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 种子，
 - en: shuffle,
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: shuffle,
 - en: '};'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: '}'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: Framework Translation
+  id: totrans-155
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 框架翻译
 - en: It can also help rewrite code from one framework into another. Continuing the
     example from above, I have a small Ionic-Angular component that I want to reuse
     in my Ionic-React application. I can simply copy and paste that code and have
     the new framework code given to me.
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 它还可以帮助将代码从一个框架重写为另一个框架。继续上面的例子，我有一个小的Ionic-Angular组件，我想在我的Ionic-React应用程序中重用。我可以简单地复制和粘贴该代码，然后得到新的框架代码。
 - en: Original Ionic-Angular Component
+  id: totrans-157
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 原始的 Ionic-Angular 组件
 - en: <ion-card>
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: <ion-card>
 - en: <ion-card-content>
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: <ion-card-content>
 - en: <div class="symbols symbols-{{card?.length}}">
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: <div class="symbols symbols-{{card?.length}}">
 - en: <div class="symbol-wrapper"
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: <div class="symbol-wrapper"
 - en: '*ngFor="let cardSymbol of card">'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '*ngFor="let cardSymbol of card">'
 - en: <div class="symbol"
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: <div class="symbol"
 - en: appRandomRotation>
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: appRandomRotation>
 - en: <div appThrottledClick
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: <div appThrottledClick
 - en: '[class]="cardSymbol"'
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: '[class]="cardSymbol"'
 - en: (throttledClick)="onSymbolClick(cardSymbol)"
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: (throttledClick)="onSymbolClick(cardSymbol)"
 - en: '[throttleTime]="2000">'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: '[throttleTime]="2000">'
 - en: '{{cardSymbol}}</div>'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: '{{cardSymbol}}</div>'
 - en: </div>
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: </div>
 - en: </div>
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: </div>
 - en: </div>
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: </div>
 - en: </ion-card-content>
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: </ion-card-content>
 - en: </ion-card>
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: </ion-card>
 - en: Ionic-React Component from ChatGPT
+  id: totrans-175
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: ChatGPT 生成的 Ionic-React 组件
 - en: import { IonCard, IonCardContent } from '@ionic/react';
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: import { IonCard, IonCardContent } from '@ionic/react';
 - en: import RandomRotation from './RandomRotation';
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: import RandomRotation from './RandomRotation';
 - en: import ThrottledClick from './ThrottledClick';
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: import ThrottledClick from './ThrottledClick';
 - en: function CardComponent({ card, onSymbolClick }) {
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: function CardComponent({ card, onSymbolClick }) {
 - en: return (
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: return (
 - en: <IonCard>
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: <IonCard>
 - en: <IonCardContent>
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: <IonCardContent>
 - en: <div className={`symbols symbols-${card?.length}`}>
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: <div className={`symbols symbols-${card?.length}`}>
 - en: '{card.map((cardSymbol, index) => ('
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: '{card.map((cardSymbol, index) => ('
 - en: <div key={index} className="symbol-wrapper">
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: <div key={index} className="symbol-wrapper">
 - en: <div className="symbol" ref={RandomRotation}>
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: <div className="symbol" ref={RandomRotation}>
 - en: <ThrottledClick throttleTime={2000} onClick={() => onSymbolClick(cardSymbol)}>
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: <ThrottledClick throttleTime={2000} onClick={() => onSymbolClick(cardSymbol)}>
 - en: <div className={cardSymbol}>{cardSymbol}</div>
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: <div className={cardSymbol}>{cardSymbol}</div>
 - en: </ThrottledClick>
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: </ThrottledClick>
 - en: </div>
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: </div>
 - en: </div>
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: </div>
 - en: ))}
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: ))}
 - en: </div>
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: </div>
 - en: </IonCardContent>
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: </IonCardContent>
 - en: </IonCard>
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: </IonCard>
 - en: );
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: );
 - en: '}'
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: export default CardComponent;
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: export default CardComponent;
 - en: In the above code, we are importing IonCard and IonCardContent components from
     @ionic/react and using them as the outermost components. The map function is used
     to iterate over the card array and render the individual symbols. Instead of *ngFor,
     we are using the map function in JSX to loop over the card array.
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上面的代码中，我们从@ionic/react导入IonCard和IonCardContent组件，并将它们用作最外层组件。map函数用于遍历card数组并渲染单个符号。我们在JSX中使用map函数而不是*ngFor来循环遍历card数组。
 - en: For the RandomRotation directive, we need to create a custom React component
     and attach it as a ref to the symbol element. Similarly, for the ThrottledClick
     directive, we are creating a custom React component and passing the throttleTime
     prop and onClick handler as props to it.
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于RandomRotation指令，我们需要创建一个自定义的React组件，并将其附加为符号元素的ref。类似地，对于ThrottledClick指令，我们正在创建一个自定义的React组件，并将throttleTime属性和onClick处理程序作为props传递给它。
 - en: Finally, we export the CardComponent component as the default export.
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我们将CardComponent组件作为默认导出。
 - en: Notice that it recognized the need to extract the Angular directives and let
     me know that they would need to be created separately. It didn’t do that automatically,
     simply because I didn’t provide it with the directives’ code.
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意到它识别到需要提取Angular指令，并告诉我它们需要单独创建。它没有自动执行，只是因为我没有提供指令的代码。
 - en: Angular Material Component from GhatGPT
+  id: totrans-203
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: GhatGPT的Angular Material组件
 - en: Or maybe I don’t want to use Ionic at all but want to stick with Angular and
     use the Angular Material components instead.
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者我根本不想使用Ionic，而是想坚持使用Angular并使用Angular Material组件。
 - en: <mat-card>
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: <mat-card>
 - en: <mat-card-content>
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: <mat-card-content>
 - en: <div [ngClass]="'symbols symbols-' + (card?.length || 0)">
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: <div [ngClass]="'symbols symbols-' + (card?.length || 0)">
 - en: <div class="symbol-wrapper" *ngFor="let cardSymbol of card">
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: <div class="symbol-wrapper" *ngFor="let cardSymbol of card">
 - en: <div class="symbol" appRandomRotation>
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: <div class="symbol" appRandomRotation>
 - en: <button mat-button appThrottledClick
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: <button mat-button appThrottledClick
 - en: '[ngClass]="cardSymbol"'
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: '[ngClass]="cardSymbol"'
 - en: '[throttleTime]="2000"'
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: '[节流时间]="2000"'
 - en: (throttledClick)="onSymbolClick(cardSymbol)">
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: (throttledClick)="onSymbolClick(cardSymbol)">
 - en: '{{cardSymbol}}'
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: '{{cardSymbol}}'
 - en: </button>
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: </button>
 - en: </div>
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: </div>
 - en: </div>
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: </div>
 - en: </div>
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: </div>
 - en: </mat-card-content>
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: </mat-card-content>
 - en: </mat-card>
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: </mat-card>
 - en: ChatGPT correctly recognized that I can continue to use my Angular directives
     as-is.
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT正确识别到我可以继续使用我的Angular指令。
 - en: I hope you see how powerful it is to be able to experiment (and even learn)
     multiple frameworks this way.
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 希望您能看到通过这种方式能够尝试（甚至学习）多个框架是多么强大。
 - en: Release Notes
+  id: totrans-223
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 发布说明
 - en: 'ChatGPT can help you generate your software release notes. This one is relatively
     new for me, and it took me a while to figure out what works best. I tried to start
     with actual diffs, but ChatGPT doesn’t like long passages of text. Instead, I
     decided to use git commit messages. Here is a sample from an actual project of
     mine:'
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT可以帮助您生成软件发布说明。这对我来说是相对新的，我花了一些时间找出最好的方法。我试图从实际的差异开始，但ChatGPT不喜欢长篇文字。相反，我决定使用git提交消息。这是我一个实际项目的示例：
 - en: Add photo (#23)
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 添加照片 (#23)
 - en: '* Added capacitor and capacitor storage'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 添加了电容器和电容器存储'
 - en: '* Converted student service to promises?'
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 将学生服务转换为promises？'
 - en: '* Fixed DeleteStudent, but not perfectly'
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 修复了DeleteStudent，但不完美'
 - en: '* Removed RxJS from storage service'
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 从存储服务中删除了RxJS'
 - en: '* Student CRUD working'
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 学生CRUD正常工作'
 - en: '* Added some more functionality'
+  id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 添加了一些更多功能'
 - en: '* Refactored some of the storage code'
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 重构了一些存储代码'
 - en: '* Added New Student functionality'
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 添加了新学生功能'
 - en: '* Added camera feature'
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 添加了相机功能'
 - en: '* Standardize state management within the student service (#22)'
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 在学生服务中标准化状态管理 (#22)'
 - en: '* refactor: add explicit modifiers to service signatures'
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 重构：为服务签名添加显式修饰符'
 - en: '* refactor: simplify syntax in student service'
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 重构：简化学生服务中的语法'
 - en: '* fix: initialize service with stored data'
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 修复：使用存储的数据初始化服务'
 - en: '* refactor: move state changes into student service'
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 重构：将状态更改移到学生服务中'
 - en: '* refactor: use routerLinkActive to determine link state'
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 重构：使用 routerLinkActive 来确定链接状态'
 - en: '* chore: format all files with prettier'
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 任务：使用 prettier 格式化所有文件'
 - en: '* chore: prefer single quote for strings'
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 任务：对字符串使用单引号'
 - en: '* Added camera feature'
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 添加了相机功能'
 - en: '* Made some minor tweeks for the workshop'
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 为研讨会做了一些小调整'
 - en: '* Minor tweaks for conference'
+  id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 为会议做了一些小调整'
 - en: I asked ChatGPT to group and prioritize this list into release notes.
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 我请求 ChatGPT 将此列表分组并按优先级排列成为发布说明。
 - en: Given the following string of commit messages for a pull request, generate some
     release notes, grouped by common themes and sorted by perceived importance. <I
     pasted the messages here>
+  id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据一个拉取请求的提交消息生成一些发布说明，按常见主题分组并按感知重要性排序。<我在这里粘贴了消息>
 - en: Release Notes
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: 发布说明
 - en: Features
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: 功能
 - en:   Added camera feature (#23)
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh:   添加了相机功能（＃23）
 - en:   Added New Student functionality
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh:   添加了新的学生功能
 - en:   Added capacitor and capacitor storage
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh:   添加了电容器和电容器存储
 - en:   Added some more functionality
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh:   添加了一些额外的功能
 - en: Fixes
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: 修正
 - en:   Fixed DeleteStudent, but not perfectly
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh:   修复了 DeleteStudent，但并不完美
 - en:   Removed RxJS from storage service
+  id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh:   从存储服务中删除了 RxJS
 - en: Improvements
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: 改进
 - en:   Standardized state management within the student service (#22)
+  id: totrans-258
   prefs: []
   type: TYPE_NORMAL
+  zh:   在学生服务中标准化了状态管理（＃22）
 - en:   Refactored some of the storage code
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh:   重构了一些存储代码
 - en:   Refactored the student service to use promises
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh:   重构了学生服务以使用 promises
 - en:   Refactored the student service to simplify syntax
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh:   重构了学生服务以简化语法
 - en:   Refactored the student service to add explicit modifiers to service signatures
+  id: totrans-262
   prefs: []
   type: TYPE_NORMAL
+  zh:   重构了学生服务以向服务签名显式添加修饰符
 - en:   Refactored the student service to move state changes into student service
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh:   重构学生服务以将状态更改移到学生服务中
 - en:   Refactored the code to use routerLinkActive to determine link state
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh:   重构了代码以使用 routerLinkActive 来确定链接状态
 - en:   Initialized service with stored data
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh:   使用存储的数据初始化服务
 - en: Miscellaneous
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: 杂项
 - en:   Made some minor tweaks for the workshop
+  id: totrans-267
   prefs: []
   type: TYPE_NORMAL
+  zh:   为研讨会做了一些小调整
 - en:   Made some minor tweaks for conference
+  id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh:   为会议做了一些小调整
 - en:   Formatted all files with prettier
+  id: totrans-269
   prefs: []
   type: TYPE_NORMAL
+  zh:   使用 prettier 格式化了所有文件
 - en:   Preferred single quote for strings
+  id: totrans-270
   prefs: []
   type: TYPE_NORMAL
+  zh:   更喜欢对字符串使用单引号
 - en: 'Note: The commit message "Added camera feature" appears twice in the original
     list, and so it is included only once in these release notes.'
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：提交信息“添加了相机功能”在原始列表中出现了两次，因此在这些发布说明中只包含一次。
 - en: It’s not perfect, but it provides a great starting point.
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: 它不是完美的，但它提供了一个很好的起点。
 - en: Generating Function Documentation
+  id: totrans-273
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 生成功能文档
 - en: I found a VS Code extension called “Mintlify Doc Writer” that uses AI to generate
     function-level documentation. It understands multiple languages, including Python,
     JavaScript, TypeScript, C++, PHP, Java, C#, Ruby, and more.
+  id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: 我发现了一个名为“Mintlify Doc Writer”的 VS Code 扩展，它使用人工智能生成函数级文档。它了解多种语言，包括 Python、JavaScript、TypeScript、C++、PHP、Java、C#、Ruby
+    等等。
 - en: Once installed, you use it by highlighting function or code block and pressing
      Ctrl + . (period) or Cmd + . (period) on the Mac. It will create a comment block
     above your code appropriate for the language you’re using. Here is a sample function
     from one of my projects and the JSDoc comment it created.
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: 安装后，您可以通过突出显示函数或代码块并按下Ctrl + .（英文句点）或Cmd + .（英文句点）在 Mac 上来使用它。它将为您的代码创建一个适合您使用的语言的评论块。这里是我项目中一个示例函数和它创建的
+    JSDoc 注释。
 - en: I highlighted the entire function in the editor and pressed Cmd + . and watched
     it work its magic.
+  id: totrans-276
   prefs: []
   type: TYPE_NORMAL
+  zh: 我在编辑器中突出显示整个功能，按下 Cmd + . 然后观察它的神奇。
 - en: /**
+  id: totrans-277
   prefs: []
   type: TYPE_NORMAL
+  zh: /**
 - en: '* It takes a number of cards and a slug, and returns a deck'
+  id: totrans-278
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 它接受卡片数量和 slug，并返回一个卡组'
 - en: '* @param {number} numberOfCards - number - the number of cards in the deck'
+  id: totrans-279
   prefs: []
   type: TYPE_NORMAL
+  zh: '* @param {number} numberOfCards - number - 卡组中的卡片数量'
 - en: '* @param [slug] - a string that will be used to seed the random number generator.
     This is useful if'
+  id: totrans-280
   prefs: []
   type: TYPE_NORMAL
+  zh: '* @param [slug] - 将用于种子随机数生成器的字符串。如果有需要的话会很有用'
 - en: '* you want to generate the same deck twice.'
+  id: totrans-281
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 如果你想要两次生成相同的卡组。'
 - en: '* @returns A deck of cards'
+  id: totrans-282
   prefs: []
   type: TYPE_NORMAL
+  zh: '* @returns 一副卡牌'
 - en: '*/'
+  id: totrans-283
   prefs: []
   type: TYPE_NORMAL
+  zh: '*/'
 - en: 'buildDeck(numberOfCards: number, slug = ''''): Deck {'
+  id: totrans-284
   prefs: []
   type: TYPE_NORMAL
+  zh: 'buildDeck(numberOfCards: number, slug = ''''): Deck {'
 - en: this.shuffleService.seed(slug);
+  id: totrans-285
   prefs: []
   type: TYPE_NORMAL
+  zh: this.shuffleService.seed(slug);
 - en: this.shuffledSymbols = this.shuffleService.shuffle(SYMBOLS);
+  id: totrans-286
   prefs: []
   type: TYPE_NORMAL
+  zh: this.shuffledSymbols = this.shuffleService.shuffle(SYMBOLS);
 - en: const rawCards = this.dobbleService.dobble(numberOfCards);
+  id: totrans-287
   prefs: []
   type: TYPE_NORMAL
+  zh: const rawCards = this.dobbleService.dobble(numberOfCards);
 - en: const deck = rawCards.map(card =>
+  id: totrans-288
   prefs: []
   type: TYPE_NORMAL
+  zh: const deck = rawCards.map(card =>
 - en: this.buildCard(card));
+  id: totrans-289
   prefs: []
   type: TYPE_NORMAL
+  zh: this.buildCard(card));
 - en: return this.shuffleService.shuffle(deck);
+  id: totrans-290
   prefs: []
   type: TYPE_NORMAL
+  zh: return this.shuffleService.shuffle(deck);
 - en: '}'
+  id: totrans-291
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: It does a passable job at understanding the meaning of your code and giving
     you a basic comment. What I find truly useful is combining Mintlify with Copilot
     to help flesh out your docs even more.
+  id: totrans-292
   prefs: []
   type: TYPE_NORMAL
+  zh: 它在理解你代码的意义并给出基本注释方面做得还过得去。我发现真正有用的是将Mintlify与Copilot结合起来，帮助更充分地填充你的文档。
 - en: I started with the docs above and pressed Enter to prompt Copilot to flesh them
     out. Here is the result of the JSDoc comment.
+  id: totrans-293
   prefs: []
   type: TYPE_NORMAL
+  zh: 我从上面的文档开始，并按Enter提示Copilot来填充它们。下面是JSDoc注释的结果。
 - en: /**
+  id: totrans-294
   prefs: []
   type: TYPE_NORMAL
+  zh: /**
 - en: '* It takes a number of cards and a slug, and returns a deck of cards'
+  id: totrans-295
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 它接受卡片的数量和slug，然后返回一副卡片组。'
 - en: '* The slug is used to seed the random number generator, so that the same deck
     is generated every time.'
+  id: totrans-296
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 随机数发生器使用slug作为种子，因此每次生成的是同一副牌。'
 - en: '* If no slug is provided, the deck will be generated randomly.'
+  id: totrans-297
   prefs: []
   type: TYPE_NORMAL
+  zh: '* 如果不提供slug，将随机生成牌组。'
 - en: '* @example'
+  id: totrans-298
   prefs: []
   type: TYPE_NORMAL
+  zh: '* @example'
 - en: '* const deck = deckService.buildDeck(5, ''my-slug'');'
+  id: totrans-299
   prefs: []
   type: TYPE_NORMAL
+  zh: '* const deck = deckService.buildDeck(5, ''my-slug'');'
 - en: '* // deck will always be the same'
+  id: totrans-300
   prefs: []
   type: TYPE_NORMAL
+  zh: '* // 牌组永远都是相同的'
 - en: '* @example'
+  id: totrans-301
   prefs: []
   type: TYPE_NORMAL
+  zh: '* @example'
 - en: '* const deck = deckService.buildDeck(5);'
+  id: totrans-302
   prefs: []
   type: TYPE_NORMAL
+  zh: '* const deck = deckService.buildDeck(5);'
 - en: '* // deck will be different every time'
+  id: totrans-303
   prefs: []
   type: TYPE_NORMAL
+  zh: '* // 每次牌组都会不同'
 - en: '*'
+  id: totrans-304
   prefs: []
   type: TYPE_NORMAL
+  zh: '*'
 - en: '![image](d2d_images/scene_break.png)'
+  id: totrans-305
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/scene_break.png)'
 - en: '* @param {number} numberOfCards - number - the number of cards you want to
     generate'
+  id: totrans-306
   prefs: []
   type: TYPE_NORMAL
+  zh: '* @param {number} numberOfCards - number - 要生成的卡片数量'
 - en: '* @param [slug] - a string that will be used to seed the random number generator.'
+  id: totrans-307
   prefs: []
   type: TYPE_NORMAL
+  zh: '* @param [slug] - 一个用于种子随机数生成器的字符串。'
 - en: '* @returns A deck of cards'
+  id: totrans-308
   prefs: []
   type: TYPE_NORMAL
+  zh: '* @returns 一副卡片组'
 - en: '*/'
+  id: totrans-309
   prefs: []
   type: TYPE_NORMAL
+  zh: '*/'
 - en: It wanted to go further, but I stopped it there, thinking it was detailed enough.
+  id: totrans-310
   prefs: []
   type: TYPE_NORMAL
+  zh: 它想要走得更远，但我停在那里，觉得已经足够详细了。
 - en: You can find the extension in the VS Code marketplace at [https://marketplace.visualstudio.com/items?itemName=mintlify.document](https://marketplace.visualstudio.com/items?itemName=mintlify.document)
+  id: totrans-311
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在VS Code市场上找到这个扩展：[https://marketplace.visualstudio.com/items?itemName=mintlify.document](https://marketplace.visualstudio.com/items?itemName=mintlify.document)
 - en: Codeium
+  id: totrans-312
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Codeium
 - en: About the time I was half finished with the Copilot portions of the book, I
     got an invitation to try out a new tool like Copilot. It’s called Codeium. Like
     Copilot, it integrates into multiple IDEs, many more than Copilot currently does.
     The big hook is that it’s free for individual users, and they claim it always
     will be. You can find it at [https://codeium.com](https://codeium.com).
+  id: totrans-313
   prefs: []
   type: TYPE_NORMAL
+  zh: 大约当我完成了这本书中Copilot部分的一半时，我收到了一个尝试类似Copilot的新工具的邀请。它叫Codeium。像Copilot一样，它能集成到多个集成开发环境中，而且比Copilot目前的集成更多。最大的吸引点是，个人用户可以免费使用，并且他们声称它永远是免费的。你可以在[https://codeium.com](https://codeium.com)找到它。
 - en: Codeium believes that AI can accelerate all the different “modes” of software
     development, but rather than having developers install multiple products for each
     mode, they are building a single product that seamlessly transitions between them.
     Their latest announcement is natural language-based repo-wide code search, which
     complements their autocomplete capabilities.
+  id: totrans-314
   prefs: []
   type: TYPE_NORMAL
+  zh: Codeium相信人工智能可以加速软件开发的各种“模式”，但与其让开发者安装多个产品来适应每种模式，他们正在开发一个能在这些模式之间无缝切换的单一产品。他们最新的公告是基于自然语言的仓库范围代码搜索，这与他们的自动完成功能相辅相成。
 - en: I am not sure why or how they decided to give it away, but it seems like a solid
     tool that is worth investigating. I look forward to trying it.
+  id: totrans-315
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不确定他们为什么决定放弃它，也不知道他们是如何决定的，但看起来是一个值得研究的可靠工具。我期待尝试它。

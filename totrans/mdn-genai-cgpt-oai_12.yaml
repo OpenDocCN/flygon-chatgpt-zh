@@ -1,11 +1,15 @@
 - en: '9'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '9'
 - en: OpenAI and ChatGPT for Enterprises – Introducing Azure OpenAI
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 为企业介绍Azure OpenAI的OpenAI和ChatGPT
 - en: In this chapter, we’ll focus on the enterprise-level applications of OpenAI
     models and introduce the partnership between OpenAI and Microsoft and **Azure
     OpenAI** (**AOAI**) Service. We will go through the milestones and developments
@@ -13,66 +17,95 @@
     the journey that brought the Azure cloud into the game of OpenAI, and why this
     is a game-changer for large organizations. Finally, we will consider the topic
     of responsible AI and how to make sure your AI system complies with ethical standards.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将重点关注OpenAI模型在企业级的应用，并介绍OpenAI和Microsoft的合作伙伴关系以及**Azure OpenAI**（**AOAI**）服务。我们将介绍Microsoft在**人工智能**（**AI**）领域的里程碑和发展，并突出Azure云在OpenAI领域的发展历程，以及为何这对于大型组织来说是一个改变游戏规则的因素。最后，我们将考虑负责任的人工智能，并介绍如何确保您的AI系统符合道德标准。
 - en: 'In this chapter, we will discuss the following topics:'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: The history of the partnership between Microsoft and OpenAI and the introduction
     of AOAI Service
+  id: totrans-4
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Microsoft和OpenAI合作的历史以及AOAI服务的介绍
 - en: The role of the public cloud in the context of OpenAI models
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在OpenAI模型的公共云中的角色
 - en: Responsible AI
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 负责任的人工智能
 - en: By the end of this chapter, you will have learned about the main features of
     AOAI Service and how it differs from the OpenAI models we’ve discussed so far.
     You will also be familiar with the partnership history between Microsoft and OpenAI,
     and why there was the need for OpenAI models to be deployed on an enterprise-scale
     infrastructure. Finally, you will understand Microsoft’s continuous and long-lasting
     commitment toward responsible AI and how it is benefiting AOAI Service.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章结束时，您将了解AOAI服务的主要特点，以及它与我们迄今讨论的OpenAI模型的区别。您还将了解Microsoft和OpenAI之间的合作历史，以及为什么需要在企业规模的基础架构上部署OpenAI模型。最后，您将了解Microsoft持续而长期的负责任人工智能承诺，以及它如何使AOAI服务受益。
 - en: Technical requirements
+  id: totrans-8
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 技术要求
 - en: 'The following are the technical requirements for this chapter:'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是本章的技术要求：
 - en: '**An Azure subscription**, which you can create for free here: [https://azure.microsoft.com/free/cognitive-services](https://azure.microsoft.com/free/cognitive-services).'
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Azure订阅**，您可以在此处免费创建：[https://azure.microsoft.com/free/cognitive-services](https://azure.microsoft.com/free/cognitive-services)。'
 - en: '**Access granted to Azure OpenAI** in the desired Azure subscription. At the
     time of writing, access to this service is granted only by application. You can
     apply for access to Azure OpenAI by completing the form at [https://aka.ms/oai/access](https://aka.ms/oai/access).'
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在期望的Azure订阅中**授予对Azure OpenAI的访问权限**。撰写本文时，该服务的访问权限仅通过申请获得。您可以通过填写表单，申请访问Azure
+    OpenAI，链接为[https://aka.ms/oai/access](https://aka.ms/oai/access)。
 - en: OpenAI and Microsoft for enterprise-level AI – introducing Azure OpenAI
+  id: totrans-12
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 为企业级AI介绍OpenAI和Microsoft – 引入Azure OpenAI
 - en: Microsoft has a long history of investing in AI research and development, with
     a focus on building AI-powered tools and services that can be used by businesses
     and individuals to solve complex problems and improve productivity.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: Microsoft长期投资于AI研发，专注于构建AI驱动的工具和服务，可供企业和个人解决复杂问题并提高生产力。
 - en: It also boasts a series of milestones in terms of achieving human parity in
     AI domains such as speech recognition (2017), machine translation (2018), conversational
     Q&A (2019), image captioning (2020), and natural language understanding (2021).
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 它还在实现人类在AI领域实现平等的一系列重要里程碑，如语音识别（2017）、机器翻译（2018）、对话问答（2019）、图像字幕（2020）和自然语言理解（2021）。
 - en: Definition
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 定义
 - en: Human parity in AI refers to the point at which an AI system can perform a task
     or tasks at a level that is equal to or indistinguishable from a human being.
     This concept is often used to measure the performance of AI systems, especially
@@ -80,585 +113,858 @@
     recognition. Achieving human parity in AI is considered a significant milestone
     as it demonstrates the AI’s ability to effectively match human capabilities in
     a given domain.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 在AI领域，人类平等指的是AI系统能够以与人类相等或难以区分的水平执行任务的时刻。这个概念经常用来衡量AI系统的性能，尤其是在自然语言理解、语音识别和图像识别等领域。在AI领域实现人类的平等被认为是一个重要的里程碑，因为它证明了AI有效地匹配了在特定领域的人类能力。
 - en: In the next few sections, we are going to explore the research history and background
     of Microsoft in the domain of AI, to fully understand its journey toward their
     partnership with OpenAI and, finally, the development of AOAI Service.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: '在接下来的几节中，我们将探讨微软在人工智能领域的研究历史和背景，以充分了解其与OpenAI的合作之旅，并最终开发AOAI服务。 '
 - en: Microsoft AI background
+  id: totrans-18
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 微软人工智能背景
 - en: 'Early research in the field of AI traces back to the late 1990s when Microsoft
     established its **machine learning** (**ML**) and applied statistics groups. Starting
     with those, Microsoft started researching and experimenting with intelligent agents
     and virtual assistants. In this case, the prototype was Clippy, a personal digital
     assistant for Microsoft Office:'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 人工智能领域的早期研究可以追溯到1990年代末，当时微软建立了其**机器学习**（**ML**）和应用统计研究小组。从那时开始，微软开始研究和尝试智能代理和虚拟助手。在这种情况下，原型是
+    Clippy，一个为Microsoft Office的个人数字助理：
 - en: '![Figure 9.1 – Clippy, the default Office Assistant launched in 2000](img/Figure_9.1_B19904.jpg)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.1 – Clippy，2000年推出的默认办公助手](img/Figure_9.1_B19904.jpg)'
 - en: Figure 9.1 – Clippy, the default Office Assistant launched in 2000
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.1 – Clippy，2000年推出的默认办公助手
 - en: Clippy was the forerunner of more sophisticated tools such as Cortana. Launched
     in 2014, Cortana is a digital assistant that uses **natural language processing**
     (**NLP**) and ML to provide personalized assistance to users.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: Clippy是更复杂工具的先驱，例如Cortana。Cortana于2014年推出，是一个使用**自然语言处理**（**NLP**）和机器学习来为用户提供个性化协助的数字助手。
 - en: 'Then, in 2016, as an expansion of Microsoft Project Oxford, Microsoft launched
     Microsoft Cognitive Services in the Azure cloud, a set of APIs that provide AI
     capabilities to developers without them requiring ML and data science expertise:'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 随后，2016年，作为对微软牛津项目的扩展，微软在Azure云中推出了微软认知服务，这是一组API，为开发人员提供人工智能能力，而无需他们需要机器学习和数据科学专业知识：
 - en: '![Figure 9.2 – Microsoft Azure AI services](img/Figure_9.2_B19904.jpg)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.2 – 微软 Azure 人工智能服务](img/Figure_9.2_B19904.jpg)'
 - en: Figure 9.2 – Microsoft Azure AI services
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.2 – 微软 Azure 人工智能服务
 - en: 'With Cognitive Services, AI could finally be consumed by a wide range of users,
     from large enterprises to individual developers. From this, we witnessed what
     we now call **AI democratization**: AI is no longer a privilege for those who
     have deep technical knowledge and powerful and expensive hardware for model training.
     Cognitive Services has been developed for the following reasons:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 有了认知服务，人工智能最终可以被广泛用户消费，从大型企业到个人开发者。出于这个原因，我们见证了我们现在称之为**人工智能民主化**：人工智能不再是那些拥有深厚技术知识和强大昂贵硬件进行模型训练的特权。认知服务出于以下原因已经发展：
 - en: So that anyone, from data scientists to business users, can leverage Cognitive
     Services with a no-code approach
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 以便任何人，从数据科学家到业务用户，都可以利用认知服务进行无代码方法的利用
 - en: To provide a set of pre-built models that have already been trained – that is,
     they are ready to use and don’t need GPU-powered hardware to run
+  id: totrans-28
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提供一组已经经过训练的预构建模型 – 也就是说，它们已经可以使用，不需要GPU驱动的硬件来运行
 - en: 'Microsoft’s investments in AI can be seen from its acquisition of AI companies
     in recent years, including SwiftKey (a predictive keyboard app: [https://blogs.microsoft.com/blog/2016/02/03/microsoft-acquires-swiftkey-in-support-of-re-inventing-productivity-ambition/](https://blogs.microsoft.com/blog/2016/02/03/microsoft-acquires-swiftkey-in-support-of-re-inventing-productivity-ambition/))
     in 2016, Maluuba (a deep learning startup: https://blogs.microsoft.com/blog/2017/01/13/microsoft-acquires-deep-learning-startup-maluuba-ai-pioneer-yoshua-bengio-advisory-role/)
     in 2017, and Bonsai (a platform for building AI models: [https://blogs.microsoft.com/blog/2018/06/20/microsoft-to-acquire-bonsai-in-move-to-build-brains-for-autonomous-systems/](https://blogs.microsoft.com/blog/2018/06/20/microsoft-to-acquire-bonsai-in-move-to-build-brains-for-autonomous-systems/))
     in 2018.'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 从微软最近几年收购的人工智能公司中可以看出微软对人工智能的投资，包括2016年的SwiftKey（一个预测键盘应用：[https://blogs.microsoft.com/blog/2016/02/03/microsoft-acquires-swiftkey-in-support-of-re-inventing-productivity-ambition/](https://blogs.microsoft.com/blog/2016/02/03/microsoft-acquires-swiftkey-in-support-of-re-inventing-productivity-ambition/)），2017
+    年的 Maluuba（一个深度学习初创公司：https://blogs.microsoft.com/blog/2017/01/13/microsoft-acquires-deep-learning-startup-maluuba-ai-pioneer-yoshua-bengio-advisory-role/），和
+    2018 年的 Bonsai（一个构建人工智能模型的平台：[https://blogs.microsoft.com/blog/2018/06/20/microsoft-to-acquire-bonsai-in-move-to-build-brains-for-autonomous-systems/](https://blogs.microsoft.com/blog/2018/06/20/microsoft-to-acquire-bonsai-in-move-to-build-brains-for-autonomous-systems/)）。
 - en: Among the companies Microsoft invested in and partnered with, there is also
     OpenAI.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 在微软投资和合作的公司中，还包括 OpenAI。
 - en: 'The partnership between the two tech companies began in 2016 when OpenAI agreed
     to leverage Microsoft’s Azure cloud infrastructure to run its AI experiments.
     Later on, in 2019, Microsoft announced a $1 billion partnership with OpenAI ([https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/](https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/))
     to develop AI models and technologies that can be used for the benefit of humanity.
     This partnership is based on the following three main pillars:'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 两家科技公司之间的合作始于2016年，当时OpenAI同意利用微软的Azure云基础设施来运行其人工智能实验。后来，在2019年，微软宣布与OpenAI达成了一项价值10亿美元的合作伙伴关系（[https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/](https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/)），旨在开发可造福人类的人工智能模型和技术。这项合作基于以下三个主要支柱：
 - en: Microsoft and OpenAI will jointly build new Azure supercomputing infrastructure
     to train AI models
+  id: totrans-32
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 微软和OpenAI将共同建立新的Azure超级计算基础设施来训练人工智能模型
 - en: OpenAI will make its models and technologies consumable from the Azure cloud
+  id: totrans-33
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: OpenAI将使其模型和技术可以从Azure云中使用
 - en: Microsoft will become OpenAI’s preferred partner for commercializing new AI
     solutions to the market
+  id: totrans-34
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 微软将成为OpenAI在市场上推广新人工智能解决方案的首选合作伙伴
 - en: Since then, the two companies kept investing and researching, and finally, in
     January 2023, a set of OpenAI models was made available in Azure via AOAI Service.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 从那时起，两家公司继续投资和研究，最终在2023年1月，一套OpenAI模型通过AOAI服务在Azure上提供。
 - en: With the general availability of AOAI Service, a new milestone was reached and
     the Microsoft AI portfolio has been extended with the powerful large language
     models of OpenAI.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着AOAI服务的普及，达到了一个新的里程碑，微软AI产品组合得到了扩展，增加了OpenAI强大的大型语言模型。
 - en: Azure OpenAI Service
+  id: totrans-37
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Azure OpenAI服务
 - en: AOAI Service is a product of Microsoft that provides REST API access to OpenAI’s
     powerful language models such as GPT-3.5, Codex, and DALL-E. You can use these
     models for the very same tasks as OpenAI models, such as content generation, summarization,
     semantic search, natural language, and code translation.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: AOAI服务是微软的产品，提供对OpenAI强大语言模型（如GPT-3.5、Codex和DALL-E）的REST API访问。您可以像使用OpenAI模型一样使用这些模型，例如内容生成、摘要、语义搜索、自然语言和代码翻译等任务。
 - en: 'In the context of the Microsoft Azure AI portfolio, AOAI Service is collocated
     among the following Cognitive Services offerings:'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Microsoft Azure AI产品组合的背景下，AOAI服务位于以下认知服务产品之间：
 - en: '![Figure 9.3 – AOAI Service General Availability (GA)](img/Figure_9.3_B19904.jpg)'
+  id: totrans-40
   prefs: []
   type: TYPE_IMG
+  zh: '![图9.3 – AOAI服务的普及（GA）](img/Figure_9.3_B19904.jpg)'
 - en: Figure 9.3 – AOAI Service General Availability (GA)
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 图9.3 – AOAI服务的普及（GA）
 - en: As with any other Cognitive Services offering, AOAI offers models that have
     already been trained and are ready to be consumed.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 与任何其他认知服务产品一样，AOAI提供已经训练好并准备消费的模型。
 - en: 'To create your AOAI resource, follow these instructions:'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 要创建您的AOAI资源，请按照以下说明操作：
 - en: Navigate to the Azure portal at [https://ms.portal.azure.com](https://ms.portal.azure.com).
+  id: totrans-44
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到Azure门户网站 [https://ms.portal.azure.com](https://ms.portal.azure.com)。
 - en: Click on **Create** **a resource**.
+  id: totrans-45
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击**创建一个资源**。
 - en: Type `azure openai` and click on **Create**.
+  id: totrans-46
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 输入`azure openai`，然后点击**创建**。
 - en: Fill in the required information and click on **Review +** **create**.
+  id: totrans-47
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 填写所需信息，然后点击**审核 + 创建**。
 - en: 'This is shown in the following screenshot:'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 如下截图所示：
 - en: '![Figure 9.4 – Steps to create an AOAI resource](img/Figure_9.4_B19904.jpg)'
+  id: totrans-49
   prefs: []
   type: TYPE_IMG
+  zh: '![图9.4 – 创建AOAI资源的步骤](img/Figure_9.4_B19904.jpg)'
 - en: Figure 9.4 – Steps to create an AOAI resource
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 图9.4 – 创建AOAI资源的步骤
 - en: 'This process might take a few minutes. Once it is ready, you can directly jump
     to its user-friendly interface, AOAI Playground, to test your models before deploying
     them:'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个过程可能需要几分钟。一旦准备就绪，您可以直接转到其用户友好的界面，AOAI Playground，测试您的模型，然后部署它们：
 - en: '![Figure 9.5 – AOAI UI and Playground](img/Figure_9.5_B19904.jpg)'
+  id: totrans-52
   prefs: []
   type: TYPE_IMG
+  zh: '![图9.5 – AOAI用户界面和Playground](img/Figure_9.5_B19904.jpg)'
 - en: Figure 9.5 – AOAI UI and Playground
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 图9.5 – AOAI用户界面和Playground
 - en: 'Note that AOAI Playground looks almost identical to the OpenAI Playground version
     we saw in [*Chapter 2*](B19904_02.xhtml#_idTextAnchor030). The difference here
     is that, to use AOAI models, you have to initiate a deployment, which is a serverless
     compute instance you can attach to a model. You can do so either in Playground
     or on the resource backend page in the Azure portal:'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，AOAI Playground 看起来几乎与我们在[*第 2 章*](B19904_02.xhtml#_idTextAnchor030)中看到的
+    OpenAI Playground 版本相同。这里的区别在于，要使用 AOAI 模型，您必须启动一个部署，这是一个无服务器计算实例，您可以将其附加到模型上。您可以在
+    Playground 中或在 Azure 门户的资源后端页面上执行此操作：
 - en: '![Figure 9.6 – Creating a new AOAI deployment via Playground (A) or in the
     Azure portal (B)](img/Figure_9.6_B19904.jpg)'
+  id: totrans-55
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.6 – 通过 Playground（A）或 Azure 门户（B）创建新的 AOAI 部署](img/Figure_9.6_B19904.jpg)'
 - en: Figure 9.6 – Creating a new AOAI deployment via Playground (A) or in the Azure
     portal (B)
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.6 – 通过 Playground（A）或 Azure 门户（B）创建新的 AOAI 部署
 - en: 'For example, I created a deployment called `text-davinci-003` with an associated
     `text-davinci-003` model:'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，我创建了一个名为 `text-davinci-003` 的部署，带有一个关联的 `text-davinci-003` 模型：
 - en: '![Figure 9.7 – An active deployment of AOAI](img/Figure_9.7_B19904.jpg)'
+  id: totrans-58
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.7 – AOAI 的活跃部署](img/Figure_9.7_B19904.jpg)'
 - en: Figure 9.7 – An active deployment of AOAI
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.7 – AOAI 的活跃部署
 - en: In OpenAI Playground, we can test those models either directly via the user
     interface or by embedding their APIs into our applications. In the next section,
     we are going to explore how to interact with Playground and try different models’
     configurations. In [*Chapter 10*](B19904_10.xhtml#_idTextAnchor109), we will learn
     how to integrate AOAI’s Models API into enterprise applications.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 OpenAI Playground 中，我们可以通过用户界面直接测试这些模型，或者将它们的 API 嵌入到我们的应用程序中。在下一节中，我们将探讨如何与
+    Playground 互动并尝试不同模型的配置。在[*第 10 章*](B19904_10.xhtml#_idTextAnchor109)中，我们将学习如何将
+    AOAI 的 Models API 集成到企业应用程序中。
 - en: Exploring Playground
+  id: totrans-61
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 探索 Playground
 - en: 'AOAI Playground is the easiest way to get familiar with the underlying models
     and start planning which model’s version is the most suitable for your projects.
     The user interface presents different tabs and workspaces, as shown in the following
     screenshot:'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: AOAI Playground 是熟悉基础模型并开始规划哪个模型版本最适合您的项目的最简单方法。用户界面呈现不同的选项卡和工作区，如下面的截图所示：
 - en: '![Figure 9.8 – Overview of AOAI Playground](img/Figure_9.8_B19904.jpg)'
+  id: totrans-63
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.8 – AOAI Playground 概览](img/Figure_9.8_B19904.jpg)'
 - en: Figure 9.8 – Overview of AOAI Playground
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.8 – AOAI Playground 概览
 - en: 'Let’s explore each of them:'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们逐个探索：
 - en: '**Playground** | **Chat**: The **Chat** workspace is designed to be only used
     with conversational models such as GPT-3.5-turbo (the model behind ChatGPT):'
+  id: totrans-66
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Playground** | **Chat**：**Chat** 工作区专为与对话模型（如 ChatGPT 背后的 GPT-3.5-turbo 模型）一起使用而设计：'
 - en: '![Figure 9.9 – AOAI Chat workspace](img/Figure_9.9_B19904.jpg)'
+  id: totrans-67
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.9 – AOAI Chat 工作区](img/Figure_9.9_B19904.jpg)'
 - en: Figure 9.9 – AOAI Chat workspace
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.9 – AOAI Chat 工作区
 - en: 'It offers a similar experience to ChatGPT itself, with the possibility to configure
     your model with additional parameters (as we saw in [*Chapter 2*](B19904_02.xhtml#_idTextAnchor030)
     with OpenAI Playground). Furthermore, there is an additional feature that makes
     the **Chat** workspace very interesting, known as **System message**:'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 它提供了与 ChatGPT 本身类似的体验，可以通过附加参数配置您的模型（正如我们在[*第 2 章*](B19904_02.xhtml#_idTextAnchor030)中在
+    OpenAI Playground 中看到的）。此外，还有一个使 **Chat** 工作区非常有趣的附加功能，称为 **系统消息**：
 - en: '![Figure 9.10 – Example of System message](img/Figure_9.10_B19904.jpg)'
+  id: totrans-70
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.10 – 系统消息示例](img/Figure_9.10_B19904.jpg)'
 - en: Figure 9.10 – Example of System message
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.10 – 系统消息示例
 - en: '**System message** is the set of instructions we give the model to tell it
     how to behave and interact with us. As for the prompt, **System message** represents
     a key component of a model’s configuration since it massively affects model performance.'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: '**系统消息** 是我们给模型的一组指令，告诉它如何行为和与我们互动。至于提示，**系统消息** 是模型配置的一个关键组成部分，因为它极大地影响模型的性能。'
 - en: 'For example, let’s instruct our model to behave as a JSON formatter assistant:'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，让我们指示我们的模型表现为 JSON 格式化助手：
 - en: '![Figure 9.11 – Example of a model acting as a JSON formatter assistant](img/Figure_9.11_B19904.jpg)'
+  id: totrans-74
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.11 – 模型充当 JSON 格式化助手的示例](img/Figure_9.11_B19904.jpg)'
 - en: Figure 9.11 – Example of a model acting as a JSON formatter assistant
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.11 – 模型充当 JSON 格式化助手的示例
 - en: As you can see from the previous screenshot, the model was able to suggest a
     JSON file through some simple data, such as name and age, without the need to
     specify any labels.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您从前面的截图中看到的那样，该模型能够通过一些简单的数据（如姓名和年龄）建议一个 JSON 文件，而无需指定任何标签。
 - en: '**Playground** | **Completions**: Different from the previous workspace, the
     **Completions** workspace offers a sort of *white paper* where you can interact
     with your models. While GPT-3.5-turbo is designed for conversational tasks (which
     means it can be consumed via a chatbot-like interface), the GPT-3 series contains
     more general-purpose models and can be used for a wide range of language tasks,
     such as content generation, summarization, and so on.'
+  id: totrans-77
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**游乐场** | **完成**：与之前的工作区不同，**完成**工作区提供了一种类似*白皮书*的地方，您可以与您的模型进行交互。虽然 GPT-3.5-turbo
+    设计用于对话任务（这意味着它可以通过类似聊天机器人的界面来消耗），但 GPT-3 系列包含更多通用模型，可用于广泛的语言任务，如内容生成、摘要等。'
 - en: 'For example, we could ask our model to generate a quiz by giving it a description
     of the topic and a one-shot example, as shown here:'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，我们可以要求我们的模型通过给定主题描述和一次性示例来生成一个测验，如下所示：
 - en: '![Figure 9.12 – Example of a GPT model generating a quiz](img/Figure_9.12_B19904.jpg)'
+  id: totrans-79
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.12 – 生成测验的 GPT 模型示例](img/Figure_9.12_B19904.jpg)'
 - en: Figure 9.12 – Example of a GPT model generating a quiz
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.12 – 生成测验的 GPT 模型示例
 - en: Finally, as per the **Chat** workspace, with **Completions**, you can configure
     parameters such as the maximum number of tokens or the temperature (refer to [*Chapter
     2*](B19904_02.xhtml#_idTextAnchor030) for a comprehensive list of those parameters
     and their meanings).
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，根据**聊天**工作区，通过**完成**，您可以配置参数，如最大标记数或温度（有关这些参数及其含义的全面列表，请参考[*第 2 章*](B19904_02.xhtml#_idTextAnchor030)）。
 - en: '**Management** | **Deployments**: Within the **Deployments** tab, you can create
     and manage new deployments to be associated with AOAI models. They are depicted
     here:'
+  id: totrans-82
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**管理** | **部署**：在**部署**选项卡中，您可以创建和管理与 AOAI 模型关联的新部署。它们如下所示：'
 - en: '![Figure 9.13 – List of AOAI deployments](img/Figure_9.13_B19904.jpg)'
+  id: totrans-83
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.13 – AOAI 部署列表](img/Figure_9.13_B19904.jpg)'
 - en: Figure 9.13 – List of AOAI deployments
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.13 – AOAI 部署列表
 - en: Each deployment can host only one model. You can edit or delete your deployments
     at any time. As we mentioned previously, a model deployment is the enabler step
     for using either the **Completions** or **Chat** workspace within AOAI Service.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个部署只能托管一个模型。您可以随时编辑或删除您的部署。正如我们之前提到的，模型部署是使用 AOAI 服务中的**完成**或**聊天**工作区的启用步骤。
 - en: '**Management** | **Models**: Within this tab, you can quickly assess the models
     that are available within AOAI Service and, among them, those that can be deployed
     (that is, a model that hasn’t been deployed yet). For example, let’s consider
     the following screenshot:'
+  id: totrans-86
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**管理** | **模型**：在这个选项卡中，您可以快速评估 AOAI 服务中可用的模型，其中包括可以部署的模型（即尚未部署的模型）。例如，让我们考虑以下截图：'
 - en: '![Figure 9.14 – List of AOAI models](img/Figure_9.14_B19904.jpg)'
+  id: totrans-87
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.14 – AOAI 模型列表](img/Figure_9.14_B19904.jpg)'
 - en: Figure 9.14 – List of AOAI models
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.14 – AOAI 模型列表
 - en: Here, we have `text-similarity-curie-001`. It doesn’t have an associated deployment,
     so it can be deployed (as the `text-similarity-ada-002` already has a deployment,
     so it is not available anymore.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们有`text-similarity-curie-001`。它没有关联的部署，因此可以部署（因为`text-similarity-ada-002`已经有一个部署，所以不再可用）。
 - en: 'Within this tab, you can also create a custom model by following a procedure
     called fine-tuning. We explored this in [*Chapter 2*](B19904_02.xhtml#_idTextAnchor030):'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个选项卡中，您还可以按照一种称为微调的过程创建自定义模型。我们在[*第 2 章*](B19904_02.xhtml#_idTextAnchor030)中探讨了这一点：
 - en: '![Figure 9.15 – Example of model fine-tuning](img/Figure_9.15_B19904.jpg)'
+  id: totrans-91
   prefs: []
   type: TYPE_IMG
+  zh: '![图 9.15 – 模型微调示例](img/Figure_9.15_B19904.jpg)'
 - en: Figure 9.15 – Example of model fine-tuning
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.15 – 模型微调示例
 - en: Starting from this guided widget, you can upload your training and validation
     data to produce a customized model, starting from a base model (namely, `text-davinci-002`),
     which will be hosted on a dedicated deployment.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 从这个引导小部件开始，您可以上传您的训练和验证数据，以生成一个定制模型，从一个基础模型（即`text-davinci-002`）开始，该模型将托管在一个专用部署上。
 - en: Note
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意
 - en: 'In [*Chapter 2*](B19904_02.xhtml#_idTextAnchor030), we saw that the training
     dataset should align with a specific format of the following type (called JSONL):'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 在[*第 2 章*](B19904_02.xhtml#_idTextAnchor030)中，我们看到训练数据集应该符合以下类型的特定格式（称为 JSONL）：
 - en: '`{"prompt": "<prompt text>", "completion": "<ideal` `generated text>"}`'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: '`{"prompt": "<提示文本>", "completion": "<理想生成文本>"}` '
 - en: '`{"prompt": "<prompt text>", "completion": "<ideal` `generated text>"}`'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: '`{"prompt": "<提示文本>", "completion": "<理想生成文本>"}` '
 - en: '`{"prompt": "<prompt text>", "completion": "<ideal` `generated text>"}`'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: '`{"prompt": "<提示文本>", "completion": "<理想生成文本>"}` '
 - en: '`...`'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: '`...`'
 - en: To facilitate this formatting, OpenAI has developed a tool that can format your
     data into this specific format ready for fine-tuning. It can also provide suggestions
     on how to modify data so that the tool can be used for fine-tuning. Plus, it accepts
     various data formats as inputs, including CSV, TXT, and JSON.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了简化这种格式，OpenAI开发了一个工具，可以将您的数据格式化为准备进行微调的特定格式。它还可以提供建议，以便修改数据，使工具可以用于微调。此外，它接受各种数据格式作为输入，包括CSV、TXT和JSON。
 - en: 'To use this tool, you can initialize the OpenAI **command-line interface**
     (**CLI**) by running the following command:'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用此工具，您可以通过运行以下命令初始化OpenAI的**命令行界面**（**CLI**）：
 - en: '**pip install --****upgrade openai**'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '**pip install --****upgrade openai**'
 - en: 'Once initialized, you can run the tool, as follows:'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 初始化后，您可以运行该工具，如下所示：
 - en: '`openai tools fine_tunes.prepare_data -``f <LOCAL_FILE>`'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: '`openai tools fine_tunes.prepare_data -``f <LOCAL_FILE>`'
 - en: '**Management** | **File Management**: Finally, within the **File Management**
     tab, you can govern and upload your training and test data directly from the user
     interface, as shown here:'
+  id: totrans-105
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**管理** | **文件管理**：最后，在**文件管理**选项卡中，您可以直接从用户界面管理和上传您的训练和测试数据，如下所示：'
 - en: '![Figure 9.16 – Example of uploading a file within AOAI Service](img/Figure_9.16_B19904.jpg)'
+  id: totrans-106
   prefs: []
   type: TYPE_IMG
+  zh: '![图9.16 – 在AOAI服务中上传文件的示例](img/Figure_9.16_B19904.jpg)'
 - en: Figure 9.16 – Example of uploading a file within AOAI Service
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 图9.16 – 在AOAI服务中上传文件的示例
 - en: You can decide to upload files by selecting **Local file** or **Azure blob or
     other shared web locations**.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以选择通过选择**本地文件**或**Azure blob或其他共享网络位置**来上传文件。
 - en: Once you’ve uploaded your files, you will be able to select them while creating
     customized models, via the **Models** tab.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 上传文件后，您将能够在创建定制模型时通过**模型**选项卡选择它们。
 - en: Finally, as mentioned in the previous section, each model comes with a REST
     API that can be consumed in your applications.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，正如在前一节中提到的，每个模型都配备了一个REST API，可以在您的应用程序中使用。
 - en: In the next chapter, we will see many end-to-end implementations of using AOAI’s
     Models API. However, before we jump into that, we need to understand how AOAI
     differs from the standard OpenAI models and why the Azure cloud became part of
     the game.
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将看到许多使用AOAI模型API的端到端实现。然而，在我们深入研究之前，我们需要了解AOAI与标准OpenAI模型的区别，以及为什么Azure云成为游戏的一部分。
 - en: Why introduce a public cloud?
+  id: totrans-112
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 为什么要引入公共云？
 - en: At the beginning of this chapter, we saw how Microsoft and OpenAI have partnered
     in recent years and how Microsoft’s cloud, Azure, became the *gym* for OpenAI
     model training. However, it also became the cloud infrastructure where OpenAI
     models can be consumed.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章的开头，我们看到微软和OpenAI近年来合作，以及微软的云Azure如何成为OpenAI模型训练的“健身房”。然而，它也成为了OpenAI模型可以被消费的云基础设施。
 - en: 'But what is the difference between using models from OpenAI and Azure OpenAI?
     The difference is the underlying infrastructure: with Azure OpenAI, you are leveraging
     your *own* infrastructure while living in your *own secured* subscription. This
     brings a series of advantages:'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是使用OpenAI和Azure OpenAI模型有什么区别？区别在于基础架构：使用Azure OpenAI，您正在利用您*自己的*基础架构，同时生活在您*自己的安全*订阅中。这带来了一系列优势：
 - en: '**Scalability and flexibility**: You can benefit from the scalability of Azure
     and accommodate the elastic usage of AOAI models. From small pilots to enterprise-level
     production projects, AOAI allows you to leverage the required capacity and scale
     up or down if necessary.'
+  id: totrans-115
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**可扩展性和灵活性**：您可以从Azure的可扩展性中受益，并适应AOAI模型的弹性使用。从小型试点到企业级生产项目，AOAI允许您利用所需的容量，并在必要时进行扩展或缩减。'
 - en: '**Security and compliance**: You can use role-based authentication and private
     network connectivity to make your deployment more secure and trusted. You can
     also train your AI model while having full control of your data.'
+  id: totrans-116
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**安全性和合规性**：您可以使用基于角色的身份验证和私人网络连接，使部署更加安全和可信。您还可以在完全控制您的数据的同时训练您的AI模型。'
 - en: '**Regional availability**: You can run your AI workloads on the Azure global
     infrastructure that meets your production needs.'
+  id: totrans-117
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**区域可用性**：您可以在满足生产需求的Azure全球基础设施上运行您的AI工作负载。'
 - en: '**Built-in responsible AI**: You can use content filtering to ensure that your
     AI model generates appropriate and ethical output.'
+  id: totrans-118
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**内置的负责任AI**：您可以使用内容过滤来确保您的AI模型生成适当和符合道德的输出。'
 - en: With the OpenAI models available in Azure, we can elevate the game to the enterprise
     and production levels, meeting all security and capacity requirements typical
     of large organizations.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 有了Azure中可用的OpenAI模型，我们可以将游戏提升到企业和生产级别，满足大型组织通常的所有安全和容量要求。
 - en: 'One of the previously mentioned benefits deserves a particular focus: responsible
     AI. The rapid development of AI technologies also needs to be addressed in terms
     of ethical tools. This is what Microsoft has been studying since 2016, as we will
     explore in the next section.'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 先前提到的好处之一值得特别关注：负责任的人工智能。人工智能技术的快速发展也需要从道德工具的角度加以解决。这是微软自2016年以来一直在研究的内容，我们将在下一节中探讨。
 - en: Understanding responsible AI
+  id: totrans-121
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 理解负责任的人工智能
 - en: We mentioned the built-in responsible AI as one of the key features of AOAI.
     However, to fully understand it, we first need to understand Microsoft’s commitment
     and journey toward responsible AI.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们提到内置的负责任人工智能是AOAI的关键特性之一。然而，要完全理解它，我们首先需要了解微软对负责任人工智能的承诺和旅程。
 - en: Microsoft’s journey toward responsible AI
+  id: totrans-123
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 微软迈向负责任人工智能的旅程
 - en: Microsoft soon recognized that as AI technologies continue to advance and become
     more integrated into our lives, there is a growing need to ensure that those systems
     are developed and used responsibly, ethically, and in ways that benefit everyone.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 微软很快意识到，随着人工智能技术不断发展并更多地融入我们的生活，有必要确保这些系统负责任、道德，并以符合所有人利益的方式开发和使用。
 - en: The beginning of this journey traces back to 2016 when Microsoft’s CEO Satya
     Nadella penned an article exploring how humans and AI can work together to solve
     society’s greatest challenges and introducing the first concepts of responsible
     AI, among which are transparency, fairness, and that it is designed for privacy
     and to assist humanity.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 这一旅程的开端可以追溯到2016年，当时微软的首席执行官萨蒂亚·纳德拉撰写了一篇文章，探讨人类和人工智能如何共同解决社会最大的挑战，并介绍了负责任人工智能的第一个概念，其中包括透明度、公平性，以及它是为了隐私和协助人类而设计的。
 - en: Shortly after, in 2017, Microsoft formalized those concepts with the first AI
     ethics committee – **Aether** (short for **AI, Ethics, and Effects in Engineering
     and Research**) – formed as an advisory group for the Microsoft senior leadership
     team.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 此后不久，在2017年，微软通过第一个人工智能伦理委员会**Aether**（简称**AI、伦理和工程研究中的影响**）正式确立了这些概念，形成了微软高级领导团队的咨询小组。
 - en: 'AETHER spent time listening to customers and internal experts, and then partnered
     with legal affairs to publish the book titled *The Future Computed: Artificial
     Intelligence and its role in society* in January 2018\. In this book, Microsoft
     identified six principles meant to guide a company’s development of AI systems,
     as well as to help inform the broader industry and society as a whole about responsible
     AI practices.'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: AETHER花时间倾听客户和内部专家的意见，然后与法律事务合作，在2018年1月出版了名为*《未来计算：人工智能及其在社会中的作用》*的书。在这本书中，微软确定了六项原则，旨在指导公司开发人工智能系统，并帮助全行业和整个社会了解负责任的人工智能实践。
 - en: 'Microsoft’s six principles for responsible AI are as follows:'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 微软对负责任的人工智能的六大原则如下：
 - en: '**Fairness**: Microsoft aims to create AI systems that are unbiased and treat
     all individuals and groups fairly, without discrimination or prejudice'
+  id: totrans-129
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**公平性**：微软旨在创建无偏见、公平对待所有个人和群体的人工智能系统，不歧视或偏见'
 - en: '**Reliability and safety**: Microsoft seeks to create AI systems that are robust,
     reliable, and secure, and that do not compromise safety or create unintended harm'
+  id: totrans-130
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**可靠性和安全性**：微软致力于创建强大、可靠和安全的人工智能系统，不会危及安全或造成意外伤害'
 - en: '**Privacy and security**: Microsoft values the privacy and security of individuals
     and their data, and works to protect them through transparency and responsible
     use of AI technologies'
+  id: totrans-131
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**隐私和安全**：微软重视个人和其数据的隐私和安全，并通过透明度和对人工智能技术的负责任使用来保护它们'
 - en: '**Inclusiveness**: Microsoft believes that AI should be designed to empower
     and include individuals from diverse backgrounds, and to foster equal opportunities
     for all'
+  id: totrans-132
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**包容性**：微软认为人工智能应该被设计为赋予和包容来自不同背景的个人，并促进所有人的平等机会'
 - en: '**Transparency**: Microsoft believes in transparency and accountability for
     the decisions and actions of AI systems and is committed to providing clear explanations
     for their outcomes'
+  id: totrans-133
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**透明度**：微软相信人工智能系统的决策和行动应该透明和可追溯，并致力于为其结果提供清晰的解释'
 - en: '**Accountability**: Microsoft accepts responsibility for the impact of its
     AI systems on society and the environment, and seeks to promote ethical and responsible
     practices in the development and use of AI'
+  id: totrans-134
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**问责制**：微软承担其AI系统对社会和环境的影响的责任，并致力于促进在AI开发和使用中的道德和负责任实践。'
 - en: Microsoft follows these principles with the help of committees that offer guidance
     to its leadership, engineering teams, and every other team within the company.
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 微软通过委员会的帮助遵循这些原则，为其领导层、工程团队以及公司内的每个团队提供指导。
 - en: Microsoft also has a **Responsible AI Standard** that provides a framework for
     building AI systems responsibly.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 微软还制定了一个**负责任人工智能标准**，为负责任地构建AI系统提供了框架。
 - en: 'Following the publication of that book, Microsoft kept investing and researching
     in the following fields of responsible AI:'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 在该书出版后，微软继续在负责任人工智能的以下领域进行投资和研究：
 - en: From the contribution to government regulation in the field of facial recognition
     (2018, [https://www.geekwire.com/2018/microsoft-calls-government-regulation-facial-recognition-technology/](https://www.geekwire.com/2018/microsoft-calls-government-regulation-facial-recognition-technology/),
     [https://blogs.microsoft.com/on-the-issues/2018/12/17/six-principles-to-guide-microsofts-facial-recognition-work/](https://blogs.microsoft.com/on-the-issues/2018/12/17/six-principles-to-guide-microsofts-facial-recognition-work/))
     to the establishment of responsible AI in systems engineering or RAISE (2020,
     [https://www.microsoft.com/en-us/ai/our-approach?activetab=pivot1%3aprimaryr5](https://www.microsoft.com/en-us/ai/our-approach?activetab=pivot1%3aprimaryr5))
+  id: totrans-138
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 从对面部识别领域的政府监管贡献（2018，[https://www.geekwire.com/2018/microsoft-calls-government-regulation-facial-recognition-technology/](https://www.geekwire.com/2018/microsoft-calls-government-regulation-facial-recognition-technology/)，[https://blogs.microsoft.com/on-the-issues/2018/12/17/six-principles-to-guide-microsofts-facial-recognition-work/](https://blogs.microsoft.com/on-the-issues/2018/12/17/six-principles-to-guide-microsofts-facial-recognition-work/)）到在系统工程中建立负责任人工智能或RAISE（2020，[https://www.microsoft.com/en-us/ai/our-approach?activetab=pivot1%3aprimaryr5](https://www.microsoft.com/en-us/ai/our-approach?activetab=pivot1%3aprimaryr5))
 - en: The development of responsible AI tools in the areas of ML interpretability,
     unfairness assessment and mitigation, error analysis, causal inference, and counterfactual
     analysis (2021, [https://responsibleaitoolbox.ai/](https://responsibleaitoolbox.ai/))
+  id: totrans-139
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在ML可解释性、不公平评估和缓解、错误分析、因果推断和反事实分析领域负责任人工智能工具的发展（2021，[https://responsibleaitoolbox.ai/](https://responsibleaitoolbox.ai/)）
 - en: 'The following diagram shows the entire journey for responsible AI:'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下图表展示了负责任人工智能的整个过程：
 - en: '![Figure 9.17 – Microsoft’s responsible AI journey](img/Figure_9.17_B19904.jpg)'
+  id: totrans-141
   prefs: []
   type: TYPE_IMG
+  zh: '![图9.17 – 微软的负责任人工智能之旅](img/Figure_9.17_B19904.jpg)'
 - en: Figure 9.17 – Microsoft’s responsible AI journey
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 图9.17 – 微软的负责任人工智能之旅
 - en: Microsoft’s commitment to responsible AI is reflected in the way its products
     are designed and the best practices and guidelines provided.
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 微软对负责任人工智能的承诺体现在其产品设计方式以及提供的最佳实践和指南中。
 - en: Of course, this also applies to AOAI Service. As we will see in the next section,
     AOAI Service comes with a built-in responsible AI at a different level.
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，这也适用于AOAI服务。正如我们将在下一节中看到的，AOAI服务在不同层面内置了负责任的人工智能。
 - en: Azure OpenAI and responsible AI
+  id: totrans-145
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: Azure OpenAI和负责任人工智能
 - en: 'When it comes to AOAI Service, we can talk about responsible AI at the following
     two levels:'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于AOAI服务，我们可以从以下两个层面谈论负责任的人工智能：
 - en: '`finish_reason` parameter on the response in JSON will be `content_filter`
     to signify that some of the generation was filtered.'
+  id: totrans-147
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: JSON响应中的`finish_reason`参数将是`content_filter`，表示部分生成内容已被过滤。
 - en: '**Code of conduct and best practices**: As for its other AI services, Microsoft
     provides **Transparency Notes** for AOAI. This application aims to promote an
     understanding of how AI technology works, its limitations and capabilities, and
@@ -666,88 +972,126 @@
     These notes can be used by developers and system owners to create AI systems that
     are fit for their intended purpose and, in the specific case of AOAI, help identify
     those scenarios that might trigger the built-in content filter.'
+  id: totrans-148
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**行为准则和最佳实践**：对于其其他AI服务，微软为AOAI提供**透明度说明**。该应用旨在促进对AI技术工作方式、其局限性和能力以及考虑整个系统（包括人和环境）重要性的理解。开发人员和系统所有者可以使用这些说明来创建适合其预期目的的AI系统，并在AOAI的特定情况下，帮助识别可能触发内置内容过滤器的情景。'
 - en: Both the built-in capabilities and Transparency Notes are manifestations of
     Microsoft’s effort to apply ethical AI practices in real-world scenarios, guided
     by their AI principles.
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 内置功能和透明度说明都是微软努力将道德人工智能实践应用于现实场景的体现，遵循着他们的AI原则。
 - en: In conclusion, as responsible AI for Microsoft signifies the company’s unwavering
     commitment to ethical AI development and deployment, AOAI also benefits from this
     commitment.
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，作为微软负责任的AI象征着该公司对道德人工智能开发和部署的坚定承诺，AOAI也从中受益。
 - en: Summary
+  id: totrans-151
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 总结
 - en: 'In this chapter, we saw how the partnership between OpenAI and Microsoft has
     brought about a powerful and innovative AI solution for enterprise-level organizations:
     AOAI. This service combines OpenAI’s cutting-edge technology with Microsoft’s
     extensive cloud infrastructure to provide businesses with a scalable and customizable
     platform for building and deploying advanced AI applications.'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们看到了OpenAI与微软之间的合作如何为面向企业级组织带来了强大和创新的人工智能解决方案：AOAI。该服务结合了OpenAI的尖端技术和微软的广泛云基础设施，为企业提供了一个可扩展和可定制的平台，用于构建和部署先进的人工智能应用程序。
 - en: We also dwelled on Microsoft’s strong focus on responsible AI practices and
     ethics, and how AOAI Service reflects this commitment to responsible AI, with
     features such as a content filter built into the platform.
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还详细讨论了微软对负责任的人工智能实践和伦理的强烈关注，以及AOAI服务如何反映了对负责任人工智能的承诺，比如内置于平台的内容过滤器等功能。
 - en: As AI continues to transform industries and shape our future, the collaboration
     between OpenAI and Microsoft marks an important milestone in the development of
     enterprise-level AI solutions. AOAI empowers businesses to harness the power of
     AI to drive growth and innovation while ensuring ethical and responsible practices.
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着人工智能继续改变行业并塑造我们的未来，OpenAI与微软之间的合作标志着企业级人工智能解决方案发展的重要里程碑。AOAI使企业能够利用人工智能的力量推动增长和创新，同时确保道德和负责任的实践。
 - en: In the next chapter, we will dive deeper into concrete use cases that enterprises
     are developing with the AOAI Models API. We will also see an end-to-end implementation
     of a potential use case that uses Python and Streamlit so that you can experience
     firsthand how AOAI’s models can infuse your applications with AI.
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将深入探讨企业正在开发的AOAI Models API的具体用例。我们还将看到一个潜在用例的端到端实现，该用例使用Python和Streamlit，以便您可以第一手体验AOAI的模型如何为您的应用程序注入人工智能。
 - en: References
+  id: totrans-156
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 参考资料
 - en: '[https://blogs.microsoft.com/blog/2023/01/23/microsoftandopenaiextendpartnership/](https://blogs.microsoft.com/blog/2023/01/23/microsoftandopenaiextendpartnership/)'
+  id: totrans-157
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://blogs.microsoft.com/blog/2023/01/23/microsoftandopenaiextendpartnership/](https://blogs.microsoft.com/blog/2023/01/23/microsoftandopenaiextendpartnership/)'
 - en: '[https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/](https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/)'
+  id: totrans-158
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/](https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/)'
 - en: '[https://azure.microsoft.com/en-us/blog/general-availability-of-azure-openai-service-expands-access-to-large-advanced-ai-models-with-added-enterprise-benefits/](https://azure.microsoft.com/en-us/blog/general-availability-of-azure-openai-service-expands-access-to-large-advanced-ai-models-with-added-enterprise-benefits/)'
+  id: totrans-159
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://azure.microsoft.com/en-us/blog/general-availability-of-azure-openai-service-expands-access-to-large-advanced-ai-models-with-added-enterprise-benefits/](https://azure.microsoft.com/en-us/blog/general-availability-of-azure-openai-service-expands-access-to-large-advanced-ai-models-with-added-enterprise-benefits/)'
 - en: '[https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.xhtml](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.xhtml)'
+  id: totrans-160
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.xhtml](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.xhtml)'
 - en: '[https://www.geekwire.com/2018/microsoft-calls-government-regulation-facial-recognition-technology/](https://www.geekwire.com/2018/microsoft-calls-government-regulation-facial-recognition-technology/)'
+  id: totrans-161
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://www.geekwire.com/2018/microsoft-calls-government-regulation-facial-recognition-technology/](https://www.geekwire.com/2018/microsoft-calls-government-regulation-facial-recognition-technology/)'
 - en: '[https://blogs.microsoft.com/on-the-issues/2018/12/17/six-principles-to-guide-microsofts-facial-recognition-work/](https://blogs.microsoft.com/on-the-issues/2018/12/17/six-principles-to-guide-microsofts-facial-recognition-work/)'
+  id: totrans-162
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://blogs.microsoft.com/on-the-issues/2018/12/17/six-principles-to-guide-microsofts-facial-recognition-work/](https://blogs.microsoft.com/on-the-issues/2018/12/17/six-principles-to-guide-microsofts-facial-recognition-work/)'
 - en: '[https://www.microsoft.com/en-us/ai/our-approach?activetab=pivot1%3aprimaryr5](https://www.microsoft.com/en-us/ai/our-approach?activetab=pivot1%3aprimaryr5)'
+  id: totrans-163
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://www.microsoft.com/en-us/ai/our-approach?activetab=pivot1%3aprimaryr5](https://www.microsoft.com/en-us/ai/our-approach?activetab=pivot1%3aprimaryr5)'
 - en: '[https://responsibleaitoolbox.ai/](https://responsibleaitoolbox.ai/)'
+  id: totrans-164
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://responsibleaitoolbox.ai/](https://responsibleaitoolbox.ai/)'
 - en: '[https://www.microsoft.com/en-us/research/publication/human-parity-on-commonsenseqa-augmenting-self-attention-with-external-attention/](https://www.microsoft.com/en-us/research/publication/human-parity-on-commonsenseqa-augmenting-self-attention-with-external-attention/)'
+  id: totrans-165
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://www.microsoft.com/en-us/research/publication/human-parity-on-commonsenseqa-augmenting-self-attention-with-external-attention/](https://www.microsoft.com/en-us/research/publication/human-parity-on-commonsenseqa-augmenting-self-attention-with-external-attention/)'
 - en: '[https://learn.microsoft.com/en-gb/azure/cognitive-services/openai/how-to/fine-tuning?pivots=programming-language-studio#openai-cli-data-preparation-tool](https://learn.microsoft.com/en-gb/azure/cognitive-services/openai/how-to/fine-tuning?pivots=programming-language-studio#openai-cli-data-preparation-tool)'
+  id: totrans-166
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://learn.microsoft.com/en-gb/azure/cognitive-services/openai/how-to/fine-tuning?pivots=programming-language-studio#openai-cli-data-preparation-tool](https://learn.microsoft.com/en-gb/azure/cognitive-services/openai/how-to/fine-tuning?pivots=programming-language-studio#openai-cli-data-preparation-tool)'

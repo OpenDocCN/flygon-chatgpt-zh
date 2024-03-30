@@ -1,11 +1,15 @@
 - en: '10'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '10'
 - en: Trending Use Cases for Enterprises
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 企业的热门用例
 - en: We start this chapter with an overview of the current most trending use cases
     for Azure OpenAI that enterprises are developing in the market today. Azure OpenAI
     has been embraced by a wide range of industries, including finance, healthcare,
@@ -13,84 +17,124 @@
     solutions to complex problems. Because of that, it is crucial for us to understand
     to what extent Azure OpenAI models could impact those industries and maintain
     competitiveness.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们从概述当今市场上企业正在开发的 Azure OpenAI 最流行的用例开始本章。由于 Azure OpenAI 能够为复杂问题提供先进解决方案，因此它已被广泛应用于金融、医疗保健、零售和制造等各种行业。因此，我们必须了解
+    Azure OpenAI 模型对这些行业可能产生的影响程度，并保持竞争力。
 - en: With this purpose, the chapter outlines the various applications of Azure OpenAI
     in these industries, including improving customer experience, enhancing smart-search,
     and building customer-facing chatbots. Each use case will have an end-to-end implementation
     with Python, LangChain, or Streamlit as the frontend.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 为此，本章概述了 Azure OpenAI 在这些行业中的各种应用，包括改善客户体验、增强智能搜索和构建面向客户的聊天机器人。每个用例都将使用 Python、LangChain
+    或 Streamlit 作为前端进行端到端实现。
 - en: 'In this chapter, we will learn about the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将学习以下主题：
 - en: How Azure OpenAI is being used in enterprises
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Azure OpenAI 在企业中的应用方式
 - en: Analyzing and generating contracts
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分析和生成合同
 - en: Understanding call center analytics
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 理解呼叫中心分析
 - en: Exploring semantic search
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 探索语义搜索
 - en: 'By the end of this chapter, you will have a deeper understanding of the enterprise
     use cases Azure OpenAI is paving the way for. This understanding is crucial at
     this time of digital development by way of generative AI: those technologies are
     growing exponentially, and enterprises are adopting them at an equally fast pace.
     Knowing about those technologies and their applications gives us the tools to
     understand the market and adapt for the future.'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过本章结束时，您将更深入地了解 Azure OpenAI 为企业开辟道路的用例。在这个数字发展时代，生成式人工智能技术正在呈指数增长，企业也以同样快的速度采用这些技术。了解这些技术及其应用为我们提供了理解市场并为未来做出调整的工具。
 - en: Finally, you will also be able to start your own projects with Python, LangChain,
     Streamlit, and your AOAI instance to follow the examples covered as well as new
     use cases.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，您还可以使用 Python、LangChain、Streamlit 和您的 AOAI 实例开始自己的项目，以便跟随所涵盖的示例以及新的用例。
 - en: Technical requirements
+  id: totrans-11
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 技术要求
 - en: 'The following are the technical prerequisites of this chapter:'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章的技术先决条件如下：
 - en: '**An Azure subscription**, which you can create for free here: [https://azure.microsoft.com/free/cognitive-services](https://azure.microsoft.com/free/cognitive-services).'
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**Azure 订阅**，您可以在此处免费创建：[https://azure.microsoft.com/free/cognitive-services](https://azure.microsoft.com/free/cognitive-services)。'
 - en: '**Access to Azure OpenAI** in the Azure subscription. Currently, access to
     this service is granted only by application. You can apply for access to Azure
     OpenAI by completing the form at [https://aka.ms/oai/access](https://aka.ms/oai/access).'
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**访问 Azure OpenAI** 的 Azure 订阅。目前，只有通过申请才能获得访问此服务的权限。您可以通过填写 [https://aka.ms/oai/access](https://aka.ms/oai/access)
+    上的表格申请访问 Azure OpenAI。'
 - en: Python 3.7.1 or a later version.
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Python 3.7.1 或更高版本。
 - en: 'The following Python libraries: `Openai`, `langchain,requests`, `json`, `os`,
     `pandas`, `numpy`, `streamlit`, `tiktoken`, and `matplotlib`.'
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 以下 Python 库：`Openai`、`langchain,requests`、`json`、`os`、`pandas`、`numpy`、`streamlit`、`tiktoken`
+    和 `matplotlib`。
 - en: An Azure OpenAI Service resource with a model deployed. In my case, I deployed
     an instance called `test1` with `text-davinci-002` associated.
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 部署了模型的 Azure OpenAI 服务资源。在我的情况下，我部署了一个名为 `test1` 的实例，并关联了 `text-davinci-002`。
 - en: 'All the code shown in this chapter, as well as the scripts used for preprocessing
     and `utils`, are available at the book’s GitHub repository:'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章中显示的所有代码以及用于预处理和 `utils` 的脚本都可以在该书的 GitHub 仓库中找到：
 - en: '[https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases)'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: '[https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases)'
 - en: All the code will be written using Python. To work with Azure OpenAI’s large
     language models, I will use LangChain, a lightweight framework that makes it easier
     to wrap **Large Language Models (LLMs**) in applications. For the frontend, I
@@ -98,139 +142,192 @@
     and deploy web applications for data science and machine learning projects. It
     provides a simple and intuitive interface for creating interactive data-driven
     applications.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有的代码将使用Python编写。为了使用Azure OpenAI的大型语言模型，我将使用LangChain，这是一个轻量级框架，使大型语言模型（LLMs）更易于在应用程序中使用。对于前端，我将使用Streamlit，这是一个开源的Python库，可轻松构建和部署数据科学和机器学习项目的网络应用。它提供了一个简单直观的界面，用于创建交互式的数据驱动应用程序。
 - en: Note
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 注
 - en: For each scenario, while exporting the code and API from Azure OpenAI, I will
     also set some values to pre-set parameters such as `temperature`, `max_tokens`,
     and so on. For a comprehensive list of these parameters and their meaning, you
     can refer to [*Chapter 2*](B19904_02.xhtml#_idTextAnchor030), in the *An overview
     of OpenAI model* *families* section.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每种情况，从Azure OpenAI导出代码和API时，我还会设置一些值为预设参数，如`temperature`，`max_tokens`等等。关于这些参数及其含义的全面列表，请参考[*第2章*](B19904_02.xhtml#_idTextAnchor030)，在*OpenAI模型概述*
+    *家族* 部分。
 - en: How Azure OpenAI is being used in enterprises
+  id: totrans-23
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 如何在企业中使用Azure OpenAI
 - en: Azure OpenAI is quickly gaining popularity among large enterprises as a powerful
     tool for driving innovation and increasing efficiency. Many companies are now
     leveraging the capabilities of this technology to streamline their operations
     and gain a competitive edge.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: Azure OpenAI正在迅速在大型企业中越来越受欢迎，作为推动创新和提高效率的强大工具。如今，许多公司正在利用这项技术的能力来简化他们的业务并获得竞争优势。
 - en: 'Here are some examples grouped by industry domain:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是按行业领域分组的一些例子：
 - en: '**Healthcare**: AOAI’s language models can be used to analyze **electronic
     health records** (**EHRs**) and medical literature to help physicians make more
     informed decisions about patient care.'
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**医疗保健**：AOAI的语言模型可用于分析**电子健康记录**（**EHRs**）和医学文献，以帮助医生做出更明智的患者护理决策。'
 - en: '**Finance**: AOAI’s models can be used to analyze market trends and identify
     potential investment opportunities. They can also be used for fraud detection,
     credit scoring, and customer service automation.'
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**金融**：AOAI的模型可用于分析市场趋势并确定潜在的投资机会。它们还可用于欺诈检测，信用评分和客户服务自动化。'
 - en: '**Retail**: AOAI’s models can be used to personalize customer experiences and
     provide targeted product recommendations. They can also be used for inventory
     optimization, demand forecasting, and supply chain management.'
+  id: totrans-28
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**零售**：AOAI的模型可用于个性化客户体验和提供有针对性的产品推荐。它们还可用于库存优化，需求预测和供应链管理。'
 - en: '**Media**: OpenAI’s models can be used to generate news articles, summaries,
     and captions in multiple languages. They can also be used for content moderation,
     sentiment analysis, and identifying fake news.'
+  id: totrans-29
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**媒体**：OpenAI的模型可用于在多种语言中生成新闻文章，摘要和标题。它们还可用于内容审查，情感分析以及辨别假新闻。'
 - en: 'And there are many other examples. A nice example to quote is what the Portuguese
     Ministry of Justice, supported by Microsoft Portugal, has implemented as a service
     for its citizens: a chatbot powered by `gpt-3.5-turbo`, the model behind ChatGPT,
     which is able to answer questions about legal proceedings.'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有许多其他例子。一个很好的例子是葡萄牙司法部在微软葡萄牙的支持下为其公民实施的服务：一个由`gpt-3.5-turbo`支持的聊天机器人，它是ChatGPT背后的模型，能够回答有关法律诉讼的问题。
 - en: The chatbot is called **Practical Guide to Access to Justice** (**GPJ**) and
     it is meant to democratize access to complex jargon typical of legal procedures.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个聊天机器人被称为**司法访问实用指南**（**GPJ**），其目的是使普通人更容易了解法律程序中典型的复杂行话。
 - en: This is a great example of how different industries, including governments,
     can leverage Azure OpenAI models to be more competitive, as well as to provide
     a better service to their customers or even to the population.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是不同行业，包括政府，如何利用Azure OpenAI模型更有竞争力，以及为他们的客户或者人口提供更好的服务的一个很好的例子。
 - en: In the following paragraphs, we will dive deeper into concrete use cases alongside
     a step-by-step implementation with Python.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 在接下来的段落中，我们将深入探讨具体的用例，以及使用Python逐步实现。
 - en: Contract analyzer and generator
+  id: totrans-34
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 合同分析器和生成器
 - en: AOAI’s models can be a valuable tool for contract analysis, helping the legal
     department, and contract managers save time and avoid potential legal issues.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: AOAI的模型可以成为合同分析的有价值工具，帮助法律部门和合同管理员节省时间，避免潜在的法律问题。
 - en: Thanks to their deep language understanding capabilities, lawyers and contract
     managers can gain a deeper understanding of legal documents, reduce the risk of
     disputes and litigation, and ensure that contracts accurately reflect the intentions
     of all parties involved.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 律师和合同管理员可以借助他们的深度语言理解能力更深入地理解法律文件，减少争端和诉讼的风险，并确保合同准确反映了所有相关方的意图。
 - en: 'Some examples of AOAI’s applications with contracts are the following:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: AOAI在合同中的应用的一些例子如下：
 - en: '**Identifying key clauses**: AOAI’s models can analyze a contract and identify
     key clauses, such as those related to termination, indemnification, and confidentiality.
     This can save time and help ensure that all important clauses are considered during
     the analysis process.'
+  id: totrans-38
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**识别关键条款**：AOAI的模型可以分析合同并识别关键条款，例如与终止、赔偿和保密有关的条款。这可以节省时间并确保在分析过程中考虑到所有重要的条款。'
 - en: '**Analyzing language**: AOAI’s models can help identify complex language and
     legal jargon, making it easier for lawyers to understand the intent and meaning
     of the contract. This can help avoid misunderstandings and disputes down the line.'
+  id: totrans-39
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**分析语言**: AOAI的模型可以帮助识别复杂的语言和法律术语，使律师更容易理解合同的意图和含义。这可以帮助避免后续的误解和争端。'
 - en: '**Flagging potential issues**: AOAI’s models can help flag potential issues
     with a contract, such as ambiguous language or conflicting terms. This can help
     lawyers and contract managers address these issues before they become major problems.'
+  id: totrans-40
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**标记潜在问题**: AOAI的模型可以帮助标记合同中的潜在问题，例如模糊的语言或冲突的条款。这可以帮助律师和合同管理员在它们变成重大问题之前解决这些问题。'
 - en: '**Providing contract templates**: AOAI’s models can provide templates for common
     contracts, such as non-disclosure agreements or service agreements. This can save
     time and ensure that contracts are consistent and comprehensive.'
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**提供合同模板**: AOAI的模型可以提供常见合同模板，例如保密协议或服务协议。这可以节省时间并确保合同一致且全面。'
 - en: '**Assisting with contract review**: AOAI’s models can assist with the review
     process by highlighting areas that require attention or clarification. This can
     help ensure that all parties are on the same page and that the contract accurately
     reflects the intentions of all parties involved.'
+  id: totrans-42
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**协助合同审查**：AOAI的模型可以通过突出显示需要关注或澄清的区域来协助审查流程。这可以帮助确保所有相关方保持一致，并且合同准确反映了所有相关方的意图。'
 - en: We will see an example of each of these elements in Python and, by the end of
     this chapter, an end-to-end implementation with Streamlit.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在Python中看到每个元素的一个示例，并且在本章结束时会有一个带有Streamlit的端到端实现。
 - en: Identifying key clauses
+  id: totrans-44
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 识别关键条款
 - en: Contracts are an integral part of any business or legal agreement, but they
     can be complex and time-consuming to analyze. To simplify the process and ensure
     that all important clauses are taken into account, AOAI’s models can assist by
     identifying key clauses within a contract. These key clauses may include provisions
     related to termination, indemnification, confidentiality, and other critical aspects
     of the agreement.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 合同是任何商业或法律协议的组成部分，但可能很复杂且耗时。为了简化流程并确保考虑到所有重要条款，AOAI的模型可以通过识别合同中的关键条款来辅助。这些关键条款可能包括与终止、赔偿、保密以及协议的其他关键方面相关的规定。
 - en: For example, suppose a company is reviewing a contract with a vendor to provide
     services. The contract contains multiple pages of legal language, making it challenging
     to identify the essential provisions that could have significant consequences
@@ -238,68 +335,102 @@
     and identify the key clauses related to termination, indemnification, and confidentiality.
     This will enable the company to focus on the critical provisions and understand
     the potential risks and benefits associated with them.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，假设一家公司正在审查与供应商提供服务的合同。合同包含多页的法律语言，使得识别对业务可能产生重大影响的重要条款成为挑战。通过使用AOAI模型，公司可以分析合同并识别与终止、赔偿和保密有关的关键条款。这将使公司能够专注于重要条款，并了解与其相关的潜在风险和收益。
 - en: In this way, the identification of key clauses by AOAI’s models can save time,
     reduce the risk of oversight, and help ensure that businesses make informed decisions
     when reviewing contracts.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样，AOAI的模型通过识别关键条款可以节省时间，减少疏忽的风险，并帮助企业在审查合同时做出明智的决定。
 - en: 'The following is an example of a service-providing contract:'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是一个服务提供合同的示例：
 - en: '![Figure 10.1 – Sample of a service-providing contract](img/Figure_10.1_B19904.jpg)'
+  id: totrans-49
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.1 – 服务提供合同示例](img/Figure_10.1_B19904.jpg)'
 - en: Figure 10.1 – Sample of a service-providing contract
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.1 – 服务提供合同示例
 - en: 'Let’s say we want to extract the termination clauses of this contract. As described
     in the *Technical requirements* section, I deployed a simple instance of `text-davinci-002`
     called `test1`. I also created a variable called `contract` where I stored the
     preceding sample contract. Then, I defined a prompt where I ask my model about
     the termination clause, as follows:'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们想提取这份合同的终止条款。如*技术要求*部分所述，我部署了一个名为`test1`的`text-davinci-002`的简单实例。我还创建了一个名为`contract`的变量，其中存储了前述示例合同。然后，我定义了一个提示，询问我的模型有关终止条款的问题，如下所示：
 - en: '[PRE0]'
+  id: totrans-52
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: 'Here is the output:'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是输出结果：
 - en: '![Figure 10.2 – Example of termination clause extraction](img/Figure_10.2_B19904.jpg)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.2 – 终止条款提取示例](img/Figure_10.2_B19904.jpg)'
 - en: Figure 10.2 – Example of termination clause extraction
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.2 – 终止条款提取示例
 - en: 'I could also set up a conversation where I can ask my model multiple questions
     about the clauses:'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 我还可以设置一个对话，可以向我的模型提出关于条款的多个问题：
 - en: '[PRE1]'
+  id: totrans-57
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: 'Here is its response:'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是它的响应：
 - en: '![Figure 10.3 – Conversation with AOAI model](img/Figure_10.3_B19904.jpg)'
+  id: totrans-59
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.3 – 与AOAI模型的对话](img/Figure_10.3_B19904.jpg)'
 - en: Figure 10.3 – Conversation with AOAI model
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.3 – 与AOAI模型的对话
 - en: This was a simple example with a short contract. Now imagine having pages and
     pages to examine. AOAI’s models can definitely offer valuable assistance in extracting
     such clauses, as well as pointing the user toward the sections of pages where
     clauses are specified so that the **Subject Matter Expert** (**SME**) can verify
     the response.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个简单的示例，涉及一个简短的合同。现在想象一下有很多页需要检查。AOAI的模型肯定可以提供有价值的帮助，提取这些条款，并指导用户指向页面的部分，其中规定了条款，以便**主题专家**（**SME**）可以验证响应。
 - en: Analyzing language
+  id: totrans-62
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 分析语言
 - en: In some cases, contracts may contain highly technical or specialized language
     that can be difficult for lawyers to understand. AOAI’s models can help identify
     these terms and provide clear explanations of their meaning, helping lawyers to
@@ -307,13 +438,17 @@
     that all parties have a clear understanding of the terms and conditions of the
     agreement, potential misunderstandings and disputes can be avoided, saving time
     and resources for all involved.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 在某些情况下，合同可能包含律师难以理解的高度技术或专业化语言。AOAI的模型可以帮助识别这些术语，并清晰解释其含义，帮助律师更好地理解合同的意图和整体含义。通过确保所有各方清楚理解协议的条款和条件，可以避免潜在的误解和争议，为所有相关方节省时间和资源。
 - en: For example, imagine a contract in the context of **Carbon Capture and Storage**
     (**CCS**). The contract contains many technical terms related to CCS, such as
     *leakage*, *MVA technology*, and *post-combustion capture*.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，想象一下在**碳捕集与储存**（**CCS**）背景下的合同。合同包含许多与CCS相关的技术术语，如*泄漏*、*MVA技术*和*后燃烧捕集*。
 - en: Without a background in CCS, a lawyer reviewing the contract may struggle to
     fully understand the meaning and implications of these terms. By using AOAI’s
     models to analyze the contract, the lawyer could quickly identify these technical
@@ -321,58 +456,86 @@
     to better understand the intent of the contract and ensure that all parties are
     on the same page. As a result, the chances of misunderstandings and disputes down
     the line would be greatly reduced.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 没有CCS背景的律师审查合同时可能难以完全理解这些术语的含义和影响。通过使用AOAI的模型分析合同，律师可以快速识别这些技术术语，并清晰解释其含义。这将帮助律师更好地理解合同的意图，并确保所有各方达成一致。因此，后续误解和争议的可能性将大大降低。
 - en: 'Let’s consider the following extract of a sample contract:'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑以下示例合同的摘录：
 - en: '![ Figure 10.4 – Sample contract](img/Figure_10.4_B19904.jpg)'
+  id: totrans-67
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.4 – 示例合同](img/Figure_10.4_B19904.jpg)'
 - en: Figure 10.4 – Sample contract
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.4 – 示例合同
 - en: As you can see from the preceding sample contract, there are many terms that,
     if you are not familiar with CCS and, more generally, with energetic and environmental
     engineering, you might not find easy to understand, nor the context in which they
     are written.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您从前述的样本合同中所看到的，有许多术语，如果您不熟悉 CCS，更广义地说，不熟悉能源和环境工程，您可能会发现难以理解，也不容易理解它们所写的上下文。
 - en: Luckily for us, AOAI’s models are able not only to give an explanation of single
     terms (nothing new compared to existing search engines) but also – and mostly
     – to explain those terms *within the context* they are used.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 幸运的是，AOAI 的模型不仅能够解释单个术语（与现有搜索引擎相比并没有什么新意），而且 – 更重要的是 – 能够解释这些术语*在使用的上下文中*。
 - en: 'To prove that, let’s set up some queries in an interactive chat with our AOAI
     model (in this case, the sample contract has also been stored in the `contract`
     variable):'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了证明这一点，让我们在与我们的 AOAI 模型进行交互式聊天中设置一些查询（在这种情况下，样本合同也已存储在`contract`变量中）：
 - en: '[PRE2]'
+  id: totrans-72
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'Here is the response:'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是回应：
 - en: '![Figure 10.5 – Conversation with an AOAI model about a contract](img/Figure_10.5_B19904.jpg)'
+  id: totrans-74
   prefs: []
   type: TYPE_IMG
+  zh: '![图 10.5 – 与 AOAI 模型关于合同的对话](img/Figure_10.5_B19904.jpg)'
 - en: Figure 10.5 – Conversation with an AOAI model about a contract
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 10.5 – 与 AOAI 模型关于合同的对话
 - en: As you can see, the model was able to provide a detailed explanation not only
     of a technical notion (EPA) but also of the context in which it is used.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您所看到的，该模型不仅能够详细解释技术概念（EPA），还能解释其使用的上下文。
 - en: Thanks to AOAI’s models, the gap between technical, domain-specific jargon and
     legal taxonomy can be reduced, if not eliminated, so that the lawyer or contract
     manager can focus on the semantic content.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 多亏了 AOAI 的模型，技术上的、领域特定的行话和法律术语之间的鸿沟可以被缩小，甚至消除，这样律师或合同经理就可以专注于语义内容。
 - en: Flagging potential issues
+  id: totrans-78
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 标记潜在问题
 - en: AOAI can be useful in contract analysis for flagging potential issues by leveraging
     its advanced **natural language processing** (**NLP**) capabilities to identify
     clauses and language that may create ambiguity, uncertainty, or legal risk. For
@@ -380,193 +543,292 @@
     in a contract that may lead to disputes or litigation. They can also identify
     clauses that may be unfavorable to one party or another, such as those that limit
     liability, restrict competition, or require exclusive dealings.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: AOAI 在合同分析中可以发挥作用，通过利用其先进的**自然语言处理**（**NLP**）能力来识别可能导致歧义、不确定性或法律风险的条款和语言。例如，AOAI
+    的语言模型可以标记合同中可能导致争议或诉讼的模糊语言或冲突条款。它们还可以识别可能对一方或另一方不利的条款，例如限制责任、限制竞争或要求独家交易的条款。
 - en: Let’s consider the following example. We work in the legal office of ABC Corporation,
     and we are producing an employment agreement for a new wave of hires. We recently
     changed hiring terms, so this will be the first time this agreement is produced.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑以下例子。我们在 ABC 公司的法律办公室工作，为一批新员工制定雇佣协议。我们最近改变了招聘条款，因此这将是第一次制定这份协议。
 - en: 'We finalized the following draft:'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们最终完成了以下草案：
 - en: '![](img/Figure_10.6_B19904.jpg)'
+  id: totrans-82
   prefs: []
   type: TYPE_IMG
+  zh: '![](img/Figure_10.6_B19904.jpg)'
 - en: Figure 10.6 – Sample employment agreement contract draft
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 10.6 – 样本雇佣协议合同草案
 - en: 'And we want to make sure there are no ambiguities. With this purpose, let’s
     ask our AOAI model to flag them for us. Also, in this case, I deployed a simple
     `text-davinci-002` instance called `test1`. I also created a variable called `contract`
     where I stored the preceding sample contract:'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们希望确保没有歧义。为此，让我们请教我们的 AOAI 模型为我们标记它们。此外，在这种情况下，我部署了一个名为`test1`的简单`text-davinci-002`实例。我还创建了一个名为`contract`的变量，其中存储了前述的样本合同：
 - en: '[PRE3]'
+  id: totrans-85
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'Here is the output:'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是输出：
 - en: '![Figure 10.7 – Example of ambiguity identification in a contract](img/Figure_10.7_B19904.jpg)'
+  id: totrans-87
   prefs: []
   type: TYPE_IMG
+  zh: '![图 10.7 – 合同中歧义识别的示例](img/Figure_10.7_B19904.jpg)'
 - en: Figure 10.7 – Example of ambiguity identification in a contract
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 10.7 – 合同中歧义识别的示例
 - en: This was a pretty useful insight, yet we can go even further. We could indeed
     set up a chatbot-like environment so that I can go on with the contract analysis
     and also ask the model to generate a modified version of the same contract, making
     sure to avoid the aforementioned ambiguities.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个非常有用的见解，但我们可以走得更远。我们确实可以建立一个类似聊天机器人的环境，这样我就可以继续进行合同分析，并要求模型生成同一合同的修改版本，确保避免前述的歧义。
 - en: 'For this purpose, we need to make sure to incorporate memory within our Python
     code, so I will use a `while` loop with a `break` condition:'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 为此，我们需要确保在我们的Python代码中加入内存，因此我将使用一个带有`break`条件的`while`循环：
 - en: '[PRE4]'
+  id: totrans-91
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: Note
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意
 - en: The taxonomy refers to my start and stop sequences. Those make responses start
     and stop at a desired point, such as the end of a sentence or list. In this case,
     I’m making sure the assistant starts generating after `user_input`, and adding
     a stop sequence at the end of each response.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 分类法是指我的起始和停止序列。这些使得回应在期望的点开始和结束，比如在句子或清单的末尾。在这种情况下，我确保助手在`user_input`后开始生成，并在每个回应的末尾添加一个停止序列。
 - en: 'When running the preceding code, we will have an output similar to the following:'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 运行上述代码时，我们将得到类似以下的输出：
 - en: '![Figure 10.8 – A sample chat for inspecting and generating new contracts](img/Figure_10.8_B19904.jpg)'
+  id: totrans-95
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.8 - 用于检查和生成新合同的样本聊天](img/Figure_10.8_B19904.jpg)'
 - en: Figure 10.8 – A sample chat for inspecting and generating new contracts
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.8 - 用于检查和生成新合同的样本聊天
 - en: 'As you can see, my AI assistant generated a new contract for me, making sure
     to remove ambiguities and conflicting terms. Note that I’ve also asked the model
     to explain the reason why the contract is free from ambiguities now, to make sure
     I can identify those sections properly and validate them:'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您所见，我的AI助手为我生成了一份新合同，并确保删除了模棱两可和矛盾的条款。请注意，我还要求模型解释现在合同没有模棱两可的原因，以确保我能够正确识别这些部分并验证它们：
 - en: '[PRE5]'
+  id: totrans-98
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: Additionally, AOAI’s models can identify clauses that may not be legally enforceable,
     such as those that violate antitrust laws or public policy.
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，AOAI的模型可以识别可能不具有法律约束力的条款，例如那些违反反垄断法或公共政策的条款。
 - en: 'Let’s consider the following agreement or sale of products between two competitor
     companies: ABC and XYZ.'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑以下ABC和XYZ两家竞争公司之间的产品销售协议：
 - en: '![Figure 10.9 – Sample agreement between two competitor companies](img/Figure_10.9_B19904.jpg)'
+  id: totrans-101
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.9 - 两家竞争对手公司之间的样本协议](img/Figure_10.9_B19904.jpg)'
 - en: Figure 10.9 – Sample agreement between two competitor companies
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.9 - 两家竞争对手公司之间的样本协议
 - en: Now, clause 3 includes potentially problematic language that could be interpreted
     as an attempt to restrict competition. It is important for companies to carefully
     review their contracts and ensure that they are not engaging in any practices
     that may violate antitrust laws or other regulations.
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，第3款包括可能会被解释为试图限制竞争的问题语言。公司需要仔细审查他们的合同，并确保他们没有参与可能违反反垄断法或其他法规的行为。
 - en: 'Let’s see whether our AOAI model is able to detect it:'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看我们的AOAI模型是否能够检测到：
 - en: '[PRE6]'
+  id: totrans-105
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: 'Here is the output:'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是输出内容：
 - en: '![Figure 10.10 – Example of potential conflicting clauses in a contract](img/Figure_10.10_B19904.jpg)'
+  id: totrans-107
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.10 - 合同中潜在冲突条款的示例](img/Figure_10.10_B19904.jpg)'
 - en: Figure 10.10 – Example of potential conflicting clauses in a contract
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.10 - 合同中潜在冲突条款的示例
 - en: In this case, the model was able to detect potential conflicts with antitrust
     laws.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，该模型能够检测潜在的与反垄断法冲突的条款。
 - en: By leveraging the power of AOAI’s models to analyze contract language, companies
     can ensure compliance with legal standards, mitigate legal and reputational risks,
     and facilitate fair competition in the marketplace.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过利用AOAI模型分析合同语言的能力，公司可以确保符合法律标准，减轻法律和声誉风险，并促进市场公平竞争。
 - en: Providing contract templates
+  id: totrans-111
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 提供合同模板
 - en: In the previous paragraph, we saw an example of a contract generator to adjust
     an existing draft with potential issues to be removed. With the same model, we
     could also go further and generate contract drafts from scratch, by just providing
     some parameters such as the termination date or duration of the contract.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 在前面的段落中，我们看到了一个用于调整存在潜在问题的草案的合同生成器的示例。使用相同的模型，我们也可以进一步，并通过只提供一些参数，例如合同的终止日期或期限，从头生成合同草案。
 - en: 'For this purpose, let’s say we want to generate a draft of a service delivery
     agreement. Some parameters we might need to provide are the following:'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 为此，假设我们要生成一个服务交付协议的草案。我们需要提供的一些参数如下：
 - en: Service provider
+  id: totrans-114
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 服务提供商
 - en: Client
+  id: totrans-115
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 客户
 - en: Description of services
+  id: totrans-116
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 服务描述
 - en: Start date
+  id: totrans-117
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 起始日期
 - en: Duration
+  id: totrans-118
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时长
 - en: Payment terms
+  id: totrans-119
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 付款条件
 - en: Termination notice
+  id: totrans-120
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 终止通知
 - en: State or countries
+  id: totrans-121
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 州或国家
 - en: 'In order to ask our model to generate a draft contract from scratch, we will
     need to build a parametric prompt as follows:'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了要求我们的模型从头生成一份草案合同，我们需要构建一个参数提示如下：
 - en: '[PRE7]'
+  id: totrans-123
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: 'Here is the output:'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是输出内容：
 - en: '![Figure 10.11 – Example of a contract template generated by Azure OpenAI models](img/Figure_10.11_B19904.jpg)'
+  id: totrans-125
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.11 – 由Azure OpenAI模型生成的合同模板示例](img/Figure_10.11_B19904.jpg)'
 - en: Figure 10.11 – Example of a contract template generated by Azure OpenAI models
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.11 – 由Azure OpenAI模型生成的合同模板示例
 - en: As you can see, with just a few inputs, the model was able to create a nice
     contract draft, including signatures and similar formalities. This could save
     time and money to produce preliminary drafts, which could then be enriched with
     further details and parameters, with the goal of serving as templates for similar
     agreements.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你所看到的，只需输入几个内容，模型就能够创建一个漂亮的合同草案，包括签名和类似的形式。 这可以节省时间和金钱来制作初步草稿，然后可以用进一步的细节和参数来丰富它们，目的是作为类似协议的模板。
 - en: In conclusion, AOAI has great potential to assist legal professionals in the
     analysis of contracts, especially in identifying potential issues and ambiguities.
     However, it is important to note that machine learning models can never replace
@@ -574,243 +836,364 @@
     in the review and interpretation of contracts, as well as the final decision-making
     process. With the appropriate use of technology and human expertise, the legal
     industry can benefit from increased efficiency and accuracy in contract analysis.
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，AOAI在协助法律专业人员分析合同方面有着巨大潜力，特别是在识别潜在问题和模棱两可性方面。 但是，必须注意到，机器学习模型永远不能取代法律分析的人为因素。
+    一个技艺娴熟的律师应该始终参与合同的审查和解释，以及最终的决策过程。 通过适当利用技术和人类专业知识，法律行业可以从合同分析的效率和准确性提高中受益。
 - en: Frontend with Streamlit
+  id: totrans-129
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用Streamlit的前端
 - en: The idea of this section is to implement a company portal where lawyers and
     contract managers can access all the contracts they need to analyze and quickly
     gather some insights, such as identifying key clauses, analyzing language, and
     flagging potential issues.
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 本节的想法是实施一个公司门户，律师和合同管理员可以访问他们需要分析的所有合同，并快速收集一些见解，例如识别关键条款，分析语言并标记潜在问题。
 - en: They could also ask the portal to generate some contract templates from scratch,
     to be used as drafts for production-ready contracts.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 他们还可以要求门户从头开始生成一些合同模板，以用作生产就绪合同的草稿。
 - en: To do so, we will use Streamlit. To connect with my AOAI instance, I will need
     my key and endpoint, which I’ve stored in a `.``toml` file.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 为此，我们将使用Streamlit。 要连接到我的AOAI实例，我需要我的密钥和终结点，我已将它们存储在`.``toml`文件中。
 - en: 'As per other sections, you can find the whole app file in the GitHub repository
     here: [https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases).'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 与其他部分一样，你可以在GitHub仓库中找到整个应用程序文件：[https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases)。
 - en: 'The landing page of a given conversation (in this case, our sample contract)
     looks like the following:'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 给定对话的着陆页面（在本例中为我们的样本合同）如下所示：
 - en: '![Figure 10.12 – Landing page of the Contract Analyzer app](img/Figure_10.12_B19904.jpg)'
+  id: totrans-135
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.12 – 合同分析器应用的着陆页面](img/Figure_10.12_B19904.jpg)'
 - en: Figure 10.12 – Landing page of the Contract Analyzer app
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.12 – 合同分析器应用的着陆页面
 - en: 'Now we can do the following analysis:'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们可以进行以下分析：
 - en: 'From a drop-down menu, we can select the type of key clause we want to extract
     from the contract and get real-time results:'
+  id: totrans-138
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 从下拉菜单中，我们可以选择要从合同中提取的关键条款的类型，并获得实时结果：
 - en: '![Figure 10.13 – Extracting a confidentiality clause from a sample contract](img/Figure_10.13_B19904.jpg)'
+  id: totrans-139
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.13 – 从示例合同中提取机密条款](img/Figure_10.13_B19904.jpg)'
 - en: Figure 10.13 – Extracting a confidentiality clause from a sample contract
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.13 – 从示例合同中提取机密条款
 - en: 'We can also have a conversation with AOAI’s models to ask for explanations
     about technical terms:'
+  id: totrans-141
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们还可以和AOAI的模型进行对话，询问技术术语的解释：
 - en: '![Figure 10.14 – Language analysis](img/Figure_10.14_B19904.jpg)'
+  id: totrans-142
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.14 – 语言分析](img/Figure_10.14_B19904.jpg)'
 - en: Figure 10.14 – Language analysis
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.14 – 语言分析
 - en: 'We can also ask about potential issues:'
+  id: totrans-144
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们还可以询问潜在问题：
 - en: '![Figure 10.15 – Example of ambiguities detected by AOAI’s models](img/Figure_10.15_B19904.jpg)'
+  id: totrans-145
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.15 – AOAI模型检测到的模棱两可示例](img/Figure_10.15_B19904.jpg)'
 - en: Figure 10.15 – Example of ambiguities detected by AOAI’s models
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.15 – AOAI模型检测到的歧义示例
 - en: 'And finally, we can also ask to generate contract templates:'
+  id: totrans-147
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最后，我们还可以要求生成合同模板：
 - en: '![Figure 10.16 – Example of contract template generation](img/Figure_10.16_B19904.jpg)'
+  id: totrans-148
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.16 – 合同模板生成示例](img/Figure_10.16_B19904.jpg)'
 - en: Figure 10.16 – Example of contract template generation
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.16 – 合同模板生成示例
 - en: This was just a sample application with limited functions, yet it already offers
     some powerful insights and analysis that could be extracted thanks to the language
     capabilities of AOAI’s models.
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是一个具有有限功能的示例应用，但由于AOAI模型的语言能力，它已经提供了一些强大的见解和分析。
 - en: In the next section, we will dive deeper into another application of AOAI’s
     models, in the context of call center analytics.
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一节中，我们将更深入地探讨AOAI模型在呼叫中心分析中的另一个应用。
 - en: Understanding call center analytics
+  id: totrans-152
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 理解呼叫中心分析
 - en: Azure OpenAI can be a valuable tool for call center analytics. By analyzing
     transcripts of calls between customers and agents, GPT models can identify patterns
     and insights that can help call centers to improve their operations.
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: Azure OpenAI可以成为呼叫中心分析的宝贵工具。通过分析客户和代理之间的通话记录，GPT模型可以识别模式和见解，这可以帮助呼叫中心改善其运营。
 - en: 'Here are some examples of what AOAI models can do:'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是AOAI模型的一些示例能做的事情：
 - en: Identify frequently asked questions and suggest potential responses, which can
     help agents answer calls more quickly and effectively
+  id: totrans-155
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 辨别常见问题并建议潜在的回复，可以帮助代理更快速、更有效地回答电话
 - en: Analyze the sentiment in customer interactions, allowing call center managers
     to identify areas where customer satisfaction may be lacking and make necessary
     improvements
+  id: totrans-156
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分析客户互动中的情感，从而让呼叫中心经理们识别客户满意度不足的地方并做出必要的改进
 - en: Provide insights into call volume trends, wait times, and call duration, allowing
     call centers to optimize staffing levels and resource allocation
+  id: totrans-157
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提供通话量趋势、等待时间和通话持续时间的见解，让呼叫中心优化人员配备水平和资源分配
 - en: Extract relevant information from the conversation in order to automatically
     create tickets in the CRM
+  id: totrans-158
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 从对话中提取相关信息以自动在CRM中创建工单
 - en: Provide a relevant knowledge base for customer-facing chatbots that can address
     a larger number of questions/claims before switching to a physical operator
+  id: totrans-159
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 为客户面向的聊天机器人提供相关的知识库，可以在切换到实际操作员之前解决更多的问题/索赔
 - en: With its powerful NLP capabilities, AOAI can help call centers to improve their
     efficiency and effectiveness, leading to improved customer satisfaction and business
     outcomes.
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 借助其强大的NLP功能，AOAI可以帮助呼叫中心提高其效率和效果，从而提高客户满意度和业务成果。
 - en: For our sample scenario, let’s imagine we are a car insurance company. On a
     daily basis, we receive large numbers of calls from customers who found themselves
     in car accidents and need support to determine what to do with their insurance.
     After every call, our operators need to open a ticket on our CRM.
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于我们的示例情景，让我们假设我们是一家汽车保险公司。每天，我们收到大量的来自发生车祸并需要支持确定如何处理他们的保险的客户的电话。每次通话结束后，我们的操作员需要在我们的CRM上打开一个工单。
 - en: 'Our goal is that of simplifying the overall procedure by implementing the following
     features:'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的目标是通过实施以下功能来简化整个流程：
 - en: From the call transcript, extract relevant parameters to automatically create
     a ticket
+  id: totrans-163
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 从通话记录中提取相关参数以自动创建一个工单
 - en: Get the main topic of the conversation to classify it in the proper category
+  id: totrans-164
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 获取对话的主要话题以将其分类到适当的类别
 - en: Get the sentiment of the customer
+  id: totrans-165
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 获取客户的情绪
 - en: Generate a guide for responding to particularly tough conversations
+  id: totrans-166
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 生成应对特别棘手对话的指南
 - en: 'Here is a visual representation of this:'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是这个的可视化表示：
 - en: '![Figure 10.17 – Sample architecture for call center analytics](img/Figure_10.17_B19904.jpg)'
+  id: totrans-168
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.17 – 呼叫中心分析的示例结构](img/Figure_10.17_B19904.jpg)'
 - en: Figure 10.17 – Sample architecture for call center analytics
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.17 – 呼叫中心分析的示例结构
 - en: 'For this purpose, I will start with a sample transcript of an imaginary conversation
     for our company:'
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 为此，我将从我们公司的一个虚构对话的示例记录开始：
 - en: '![Figure 10.18 – Sample fake conversation to raise a request](img/Figure_10.18_B19904.jpg)'
+  id: totrans-171
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.18 – 提出请求的虚假对话示例](img/Figure_10.18_B19904.jpg)'
 - en: Figure 10.18 – Sample fake conversation to raise a request
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.18 – 提出请求的虚假对话示例
 - en: Then, in this scenario, I will only need one deployment of my AOAI instance,
     with an associated `text-davinci-002` instance.
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，在这种情况下，我只需要一个部署我的AOAI实例，附带一个`text-davinci-002`实例。
 - en: In the following sections, we will learn how to extract relevant parameters
     from the transcript, classify its main topics into categories, analyze the customer’s
     sentiment, and generate a guided tutorial to facilitate the operator’s response.
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 在接下来的章节中，我们将学习如何从转录中提取相关参数，将其主要主题分类到各种类别中，分析客户的情感，并生成一个引导教程，以便于运营人员的回应。
 - en: Parameter extraction
+  id: totrans-175
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 参数提取
 - en: 'The first step is extracting relevant parameters from the transcript. This
     is pivotal if I want to automatically create a ticket in my CRM with appropriate
     information. For example, let’s say that in order to create a ticket, I need the
     following elements:'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一步是从转录中提取相关参数。如果我要自动创建一个包含适当信息的CRM票证，这一步就十分关键。例如，假设为了创建一个票证，我需要以下元素：
 - en: Name and surname
+  id: totrans-177
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 名字和姓氏
 - en: Reason for calling
+  id: totrans-178
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 打电话的原因
 - en: Policy number
+  id: totrans-179
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 保单编号
 - en: Resolution
+  id: totrans-180
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 解决方案
 - en: 'The following code shows how we can implement it with Python (I initialized
     a variable called `transcript` equal to the previous conversation):'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下代码展示了我们如何用Python实现（我初始化了一个名为`transcript`的变量，其值等于之前的谈话）：
 - en: '[PRE8]'
+  id: totrans-182
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: 'Here is the output for it:'
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是相关输出：
 - en: '[PRE9]'
+  id: totrans-184
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: 'Finally, let’s convert this information into a JSON file, so that it can trigger
     the creation of our ticket. For this purpose, I’ve simply added the `The output
     format should be JSON` line to my prompt, as you can see in the output here:'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，让我们将这些信息转换成JSON文件，以便触发我们的票证创建。为此，我只需在提示中添加一行`输出格式应为JSON`，正如你在这里的输出中看到的那样：
 - en: '[PRE10]'
+  id: totrans-186
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: Sentiment analysis
+  id: totrans-187
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 情感分析
 - en: Another element we might want to know about is the sentiment of the call. Sentiment
     analysis is important for call center analytics because it helps to understand
     the emotional tone of customer interactions. In the preceding transcript, sentiment
@@ -818,365 +1201,538 @@
     by the customer. This information can be valuable for call center managers to
     understand the overall satisfaction of customers and to identify areas for improvement
     in their services.
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可能想要了解的另一个元素是通话的情感。情感分析对呼叫中心分析非常重要，因为它帮助理解客户互动的情感色调。在前述的转录中，情感分析可以用来识别客户表达的沮丧和愤怒程度。这些信息对呼叫中心的经理来说是宝贵的，能够理解客户的整体满意度，并识别其服务中的改进领域。
 - en: For example, if sentiment analysis shows that many customers are expressing
     frustration with long wait times on the phone, call center managers could use
     that information to improve their staffing levels or invest in new technology
     to reduce wait times. Similarly, if sentiment analysis shows that customers are
     generally satisfied with the services provided by the call center, managers could
     use that information to identify areas of excellence and build on those strengths.
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如果情感分析显示很多客户对电话等待时间感到沮丧，呼叫中心经理可以利用这些信息来改善其职员水平或投资于新技术以缩短等待时间。同样，如果情感分析显示客户通常对呼叫中心提供的服务感到满意，经理可以利用这些信息来识别卓越之处并建立在这些优势上。
 - en: The only thing we have to do is ask our AOAI instance what the sentiment of
     the conversation is.
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们唯一需要做的就是询问我们的AOAI实例谈话的情感是什么。
 - en: 'As you can see, the response is positive since, by the end of the conversation,
     the customer is happy with the customer service. However, reading the transcript,
     we know that, initially, the customer was very frustrated, so we could do a bit
     of prompt design to get more accurate results:'
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你所看到的，由于在谈话结束时，客户对客服服务感到满意，因此响应是积极的。然而，读了转录后，我们知道最初客户非常沮丧，因此我们可以对提示设计进行一些改进以获得更准确的结果：
 - en: '[PRE11]'
+  id: totrans-192
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: 'Here is the output:'
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是输出：
 - en: '![Figure 10.19 – Example of sentiment analysis of a customer’s claim](img/Figure_10.19_B19904.jpg)'
+  id: totrans-194
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.19 - 客户索赔情感分析示例](img/Figure_10.19_B19904.jpg)'
 - en: Figure 10.19 – Example of sentiment analysis of a customer’s claim
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.19 - 客户索赔情感分析示例
 - en: 'We can also go deeper and ask it to explain the reason behind the initial negative
     sentiment identified:'
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们也可以进一步问它解释识别到的初始负面情感的原因：
 - en: '[PRE12]'
+  id: totrans-197
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: 'Here is the output:'
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是输出：
 - en: '![Figure 10.20 – Example of sentiment analysis with AOAI models](img/Figure_10.20_B19904.jpg)'
+  id: totrans-199
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.20 - AOAI模型情感分析示例](img/Figure_10.20_B19904.jpg)'
 - en: Figure 10.20 – Example of sentiment analysis with AOAI models
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.20 - AOAI模型情感分析示例
 - en: This is important information since we understand that there is a margin of
     improvement in our customer service. We could match this discontent – the long
     and useless wait during the first call – with similar elements retrieved from
     other transcripts, understand whether it is systematic, and if so, how to improve
     it.
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是重要信息，因为我们了解到我们的客户服务有改进的空间。我们可以将这种不满 - 在第一次通话时长时间无用的等待 - 与从其他对话记录中检索到的类似元素进行匹配，了解其是否是系统性的，如果是，如何改进。
 - en: 'For the purpose of our analysis, we then extract further information to add
     to our JSON file, so that we can also trigger other types of actions (in addition
     to the creation of the ticket). Modifying the prompt, the result is the following:'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了我们的分析目的，我们进一步提取信息添加到我们的 JSON 文件中，以便我们还可以触发其他类型的操作（除了创建工单之外）。修改提示后，结果如下：
 - en: '![Figure 10.21 – Example of JSON extracted from a customer’s request](img/Figure_10.21_B19904.jpg)'
+  id: totrans-203
   prefs: []
   type: TYPE_IMG
+  zh: '![图 10.21 – 从客户请求中提取的 JSON 示例]（img/Figure_10.21_B19904.jpg）'
 - en: Figure 10.21 – Example of JSON extracted from a customer’s request
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 10.21 – 从客户请求中提取的 JSON 示例
 - en: Classification of customers’ requests
+  id: totrans-205
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 客户请求的分类
 - en: 'When analyzing customers’ requests, it is very useful to first classify them
     into proper categories, so that the relevant office can handle each request quicker.
     Here, you can find three pretty common categories for request classification:'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 在分析客户的请求时，首先将它们分类到适当的类别中非常有用，以便相关办事处可以更快地处理每个请求。在这里，您可以找到请求分类的三种常见类别：
 - en: '**Reporting issue**: This class would include transcripts where the customer
     is reporting a problem or issue with their policy or account, but the issue cannot
     be resolved during the call. The conversation would likely involve the agent documenting
     the issue and creating a report for the appropriate department to investigate
     and address the issue. Examples could include reporting a billing error or requesting
     a policy change that cannot be immediately processed.'
+  id: totrans-207
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**报告问题**：这种类别包括客户在报告其保单或账户存在问题或状况，但问题无法在通话中解决的对话记录。对话可能涉及代理记录问题并创建报告，以便适当部门调查和解决问题。示例可能包括报告账单错误或请求无法立即处理的保单更改。'
 - en: '**Claim handling**: This class would include transcripts where the customer
     expresses frustration or dissatisfaction with the issue reported and/or the call
     center’s services. The conversation would likely involve the customer sharing
     their negative experience and the agent working to address their concerns, such
     as by apologizing for long wait times or offering a solution to their problem.'
+  id: totrans-208
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**索赔处理**：这种类别包括客户对报告的问题和/或呼叫中心的服务表示不满或不满意。对话可能涉及客户分享他们的负面经验，而代理努力解决他们的顾虑，比如道歉长时间等待或提供解决方案。'
 - en: '**General inquiry**: This class would include transcripts where the customer
     has a question or inquiry about their policy or other services provided by the
     call center. The conversation would likely involve the agent providing information
     and answering the customer’s questions, without any specific issue or complaint
     to be resolved.'
+  id: totrans-209
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**一般询问**：这种类别包括客户有关其保单或呼叫中心提供的其他服务的问题或查询的对话记录。对话可能涉及代理提供信息并回答客户的问题，而无需解决任何特定问题或投诉。'
 - en: 'Let’s ask our AOAI instance to classify the transcript for us:'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们请我们的 AOAI 实例为我们分类这段对话记录：
 - en: '[PRE13]'
+  id: totrans-211
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: 'Here is the output:'
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是输出：
 - en: '![Figure 10.22 – Example of customer request classification](img/Figure_10.22_B19904.jpg)'
+  id: totrans-213
   prefs: []
   type: TYPE_IMG
+  zh: '![图 10.22 – 客户请求分类示例]（img/Figure_10.22_B19904.jpg）'
 - en: Figure 10.22 – Example of customer request classification
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 10.22 – 客户请求分类示例
 - en: 'Once more, we can add this information to our JSON file by updating the prompt
     with the previous request. The result will be as follows:'
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: 再次，我们可以通过更新上一个请求的提示，将这些信息添加到我们的 JSON 文件中。结果如下：
 - en: '![Figure 10.23 – Example of JSON file generation](img/Figure_10.23_B19904.jpg)'
+  id: totrans-216
   prefs: []
   type: TYPE_IMG
+  zh: '![图 10.23 – JSON 文件生成示例]（img/Figure_10.23_B19904.jpg）'
 - en: Figure 10.23 – Example of JSON file generation
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 10.23 – JSON 文件生成示例
 - en: Great, now we have plenty of information as metadata of our transcript. What
     we will now do is use the elements retrieved to build parametric prompts and generate
     further actions to address this task as quickly as possible. We will do so with
     a simple frontend using Streamlit.
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: 很好，现在我们有大量的元数据作为我们对话记录的元数据。我们现在要做的是使用检索到的元素构建参数提示并生成进一步的操作，以尽快解决这项任务。我们将使用 Streamlit
+    来构建一个简单的前端来完成这项任务。
 - en: Implementing the frontend with Streamlit
+  id: totrans-219
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用Streamlit实现前端
 - en: The idea of this section is to implement a company portal where operators can
     access all the transcripts of their conversations and quickly perform some actions
     such as generating a ticket or generating an email response to their customers.
     They could also ask the portal for some recommendations on how to improve their
     customer service (this information might also be available at the higher management
     level so that it enriches the insights on company improvements).
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: 本节的想法是实现一个公司门户，操作员可以访问他们对话的所有剧本，并快速执行一些操作，如生成票证或向客户生成电子邮件回复。他们还可以向门户询问如何改进客户服务的建议（这些信息也可能在更高管理层中可用，以丰富公司改进的见解）。
 - en: To do so, we will use Streamlit. Also, in this case, I’m creating a `.toml`
     file with my API, so that I can call my secrets securely in my Streamlit app.
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 要做到这一点，我们将使用Streamlit。此外，在这种情况下，我正在创建一个`.toml`文件，其中包含我的API，以便我可以在我的Streamlit应用程序中安全地调用我的机密。
 - en: As per other sections, you can find the whole app file in the GitHub repository
     of this book.
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 如其他部分所述，您可以在本书的GitHub存储库中找到整个应用程序文件。
 - en: 'The landing page of a given conversation (in this case, our sample transcript),
     looks like the following:'
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 给定对话的着陆页（在本例中，我们的示例剧本）如下所示：
 - en: '![Figure 10.24 – Sample transcript landing page](img/Figure_10.24_B19904.jpg)'
+  id: totrans-224
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.24 – 示例剧本着陆页](img/Figure_10.24_B19904.jpg)'
 - en: Figure 10.24 – Sample transcript landing page
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.24 – 示例剧本着陆页
 - en: 'Let’s see what kind of actions our AOAI model is capable of doing for us:'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看看我们的AOAI模型能为我们做哪些操作：
 - en: 'The first thing we can do as operators is create a ticket with the information
     gathered from the JSON file:'
+  id: totrans-227
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 我们作为操作员可以做的第一件事是根据从JSON文件中收集的信息创建一个票证：
 - en: '![Figure 10.25 – Frontend for ticket generation](img/Figure_10.25_B19904.jpg)'
+  id: totrans-228
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.25 – 用于生成票证的前端](img/Figure_10.25_B19904.jpg)'
 - en: Figure 10.25 – Frontend for ticket generation
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.25 – 用于生成票证的前端
 - en: 'We can automatically generate an email to Mr. Mario Rossi to notify him of
     the initiation of the resolution process. To do so, I defined a function asking
     my AOAI instance to generate an email using a parametric prompt:'
+  id: totrans-230
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 我们可以自动生成一封电子邮件给Mario Rossi先生，通知他解决流程的启动。为此，我定义了一个函数，要求我的AOAI实例使用参数提示生成电子邮件：
 - en: '[PRE14]'
+  id: totrans-231
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE14]'
 - en: '[PRE15]'
+  id: totrans-232
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE15]'
 - en: '[PRE16]'
+  id: totrans-233
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE16]'
 - en: '[PRE17]'
+  id: totrans-234
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE17]'
 - en: '[PRE18]'
+  id: totrans-235
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE18]'
 - en: '[PRE19]'
+  id: totrans-236
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE19]'
 - en: '[PRE20]'
+  id: totrans-237
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE20]'
 - en: '[PRE21]'
+  id: totrans-238
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE21]'
 - en: '[PRE22]'
+  id: totrans-239
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE22]'
 - en: '[PRE23]'
+  id: totrans-240
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE23]'
 - en: '[PRE24]'
+  id: totrans-241
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE24]'
 - en: '[PRE25]'
+  id: totrans-242
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE25]'
 - en: Here, `data` is the JSON **Business intelligence** (**BI**) extracted from the
     transcript, as seen in the previous sections.
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，`data`是从剧本中提取的JSON **商业智能** (**BI**)，如前几节所示。
 - en: 'The frontend will look like so:'
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: 前端将如下所示：
 - en: '![Figure 10.26 – Sample email generated by AOAI](img/Figure_10.26_B19904.jpg)'
+  id: totrans-245
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.26 – AOAI生成的示例电子邮件](img/Figure_10.26_B19904.jpg)'
 - en: Figure 10.26 – Sample email generated by AOAI
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.26 – AOAI生成的示例电子邮件
 - en: 'Finally, we can ask for recommendations to improve the resolution procedure
     and customer satisfaction. Also, in this case, I used a parametric prompt:'
+  id: totrans-247
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后，我们可以要求改进解决方案流程和客户满意度的建议。此外，在这种情况下，我使用了一个参数提示：
 - en: '[PRE26]'
+  id: totrans-248
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE26]'
 - en: '[PRE27]'
+  id: totrans-249
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE27]'
 - en: '[PRE28]'
+  id: totrans-250
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE28]'
 - en: '[PRE29]'
+  id: totrans-251
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE29]'
 - en: '[PRE30]'
+  id: totrans-252
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE30]'
 - en: '[PRE31]'
+  id: totrans-253
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE31]'
 - en: '[PRE32]'
+  id: totrans-254
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE32]'
 - en: '[PRE33]'
+  id: totrans-255
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE33]'
 - en: '[PRE34]'
+  id: totrans-256
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE34]'
 - en: '[PRE35]'
+  id: totrans-257
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE35]'
 - en: '[PRE36]'
+  id: totrans-258
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE36]'
 - en: '[PRE37]'
+  id: totrans-259
   prefs:
   - PREF_IND
   type: TYPE_PRE
+  zh: '[PRE37]'
 - en: Here, `data` is still the JSON file extracted from the transcript, as seen in
     the previous sections.
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，`data`仍然是从剧本中提取的JSON文件，如前几节所示。
 - en: 'The frontend will look like so:'
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: 前端将如下所示：
 - en: '![Figure 10.27 – Some recommendations for call center improvements generated
     by AOAI](img/Figure_10.27_B19904.jpg)'
+  id: totrans-262
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.27 – AOAI生成的呼叫中心改进建议](img/Figure_10.27_B19904.jpg)'
 - en: Figure 10.27 – Some recommendations for call center improvements generated by
     AOAI
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.27 – AOAI生成的呼叫中心改进建议
 - en: This was just a sample application with limited functions, yet it already offers
     some powerful automations and insights that could boost call center productivity
     and customer satisfaction.
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是一个具有有限功能的示例应用程序，但它已经提供了一些强大的自动化和见解，可以提升呼叫中心的生产力和客户满意度。
 - en: 'Here are some further elements that our imaginary car insurance company should
     add in a production environment:'
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是我们想象中的汽车保险公司应该在生产环境中添加的一些进一步元素：
 - en: An automatic trigger for ticket generation in their CRM software.
+  id: totrans-266
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 他们的CRM软件中用于自动生成票证的自动触发器。
 - en: A customer-facing chatbot trained on call center transcripts, so that a call
     with an operator occurs only in cases where the situations have not been addressed
     in the past.
+  id: totrans-267
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于呼叫中心剧本训练的面向客户的聊天机器人，以便只有在过去未解决的情况下才会与操作员通话。
 - en: '**Business intelligence** (**BI**) dashboards where relevant transcript insights
     are gathered. For example, some statistics about the following:'
+  id: totrans-268
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**商业智能** (**BI**) 仪表板，汇集相关剧本见解。例如，关于以下内容的一些统计信息：'
 - en: The most common reasons for complaints
+  id: totrans-269
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 抱怨最常见的原因
 - en: Sentiment distribution over the duration of calls
+  id: totrans-270
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通话时段的情感分布
 - en: The frequency of categories over time
+  id: totrans-271
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 类别随时间的频率
 - en: With this, we have understood how we perform extraction sentiment analysis.
     We saw how we engage with customer requests and the concept of using Streamlit
     for the frontend. All these help us work better with stakeholders and improve
     operations.
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: 有了这一点我们已经了解了如何进行情感分析的提取。我们看到了我们如何与顾客的请求进行交流以及使用Streamlit作为前端的概念。所有这些都帮助我们更好地与利益相关者合作并提高运营效率。
 - en: Exploring semantic search
+  id: totrans-273
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 探索语义搜索
 - en: Semantic search is a cutting-edge search technology that has revolutionized
     the way people find information online. In the world of enterprise, it has become
     a vital tool for businesses that need to search through vast amounts of data quickly
@@ -1184,16 +1740,20 @@
     meaning of the search query and the content being searched. This technology goes
     beyond traditional keyword-based search engines by using ML algorithms to understand
     the context of the search query, resulting in more accurate and relevant results.
+  id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: 语义搜索是一项领先的搜索技术，彻底改变了人们在网上查找信息的方式。在企业界，它已成为需要快速而准确地搜索大量数据的企业的重要工具。语义搜索引擎使用自然语言处理（NLP）技术来理解搜索查询和被搜索内容的含义。这项技术通过使用机器学习算法来理解搜索查询的上下文，比传统的基于关键字的搜索引擎能够得到更准确和相关的结果。
 - en: A key component of semantic search is the use of embedding, which is the process
     of representing words or phrases as numerical vectors. These vectors are generated
     by a neural network that analyzes the context of each word or phrase in a given
     text corpus. By converting words into vectors, it becomes easier to measure the
     semantic similarity between words and phrases, which is crucial for accurate search
     results.
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: 语义搜索的一个关键组成部分是嵌入的使用，这是将单词或短语表示为数值向量的过程。这些向量是由一个神经网络生成的，该神经网络分析给定文本语料库中每个单词或短语的上下文。通过将单词转换为向量，可以更容易地衡量单词和短语之间的语义相似性，这对准确的搜索结果至关重要。
 - en: For example, in the realm of medical documentations and papers, embedding can
     be used to enhance semantic search algorithms by making it easier to identify
     related concepts and topics. Namely, if a researcher is searching for information
@@ -1201,8 +1761,10 @@
     identify related terms such as chemotherapy, radiation therapy, and immunotherapy.
     By understanding the semantic relationships between these terms, the search engine
     can return more accurate and relevant results.
+  id: totrans-276
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在医疗文件和论文领域，嵌入可以用于通过更轻松地识别相关概念和主题来增强语义搜索算法。举例来说，如果一位研究人员正在搜索有关癌症治疗的信息，使用嵌入的语义搜索引擎可以识别出类似化疗、放射疗法和免疫疗法等相关术语。通过理解这些术语之间的语义关系，搜索引擎可以返回更准确和相关的结果。
 - en: Embedding can also be used to identify related topics and concepts that may
     not be immediately apparent from the search query. For instance, if a researcher
     is searching for information about breast cancer, a semantic search engine that
@@ -1211,230 +1773,344 @@
     and concepts related to breast cancer can help researchers find relevant papers
     and documents that they may not have discovered through a traditional keyword
     search.
+  id: totrans-277
   prefs: []
   type: TYPE_NORMAL
+  zh: 嵌入还可用于识别与搜索查询中未能立即显现的相关主题和概念。例如，如果一位研究人员正在搜索有关乳腺癌的信息，使用嵌入的语义搜索引擎可以识别出与乳腺癌相关的主题，如乳腺癌预防、乳腺癌筛查和荷尔蒙疗法。对于与乳腺癌相关的主题和概念的更广泛理解可以帮助研究人员找到他们通过传统关键字搜索可能无法发现的相关论文和文档。
 - en: For example, let’s consider the following scenario. We are a private clinic
     and every day we struggle to find information in the huge amount of available
     documentation. To produce a diagnosis, doctors need to go through many papers
     and this is very time-consuming.
+  id: totrans-278
   prefs: []
   type: TYPE_NORMAL
+  zh: 举例来说，我们假设以下情景。我们是一家私人诊所，每天都在努力在大量的可用文档中查找信息。为了做出诊断，医生们需要查阅许多论文，这非常耗时。
 - en: We are looking for an AI research assistant that can help us in the research
     process. For this purpose, we will use an Azure OpenAI deployment called `embedding`
     associated with the `text-embedding-ada-002` model.
+  id: totrans-279
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们正在寻找一个可以在研究过程中帮助我们的人工智能研究助手。为此，我们将使用一个名为`embedding`并有关联的`text-embedding-ada-002`模型的Azure
+    OpenAI部署。
 - en: 'The idea is as follows:'
+  id: totrans-280
   prefs: []
   type: TYPE_NORMAL
+  zh: 思路如下：
 - en: Get the embedding of the available text with the embedding model.
+  id: totrans-281
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用嵌入模型获取可用文本的嵌入。
 - en: Get the embedding of the user query with the embedding model.
+  id: totrans-282
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用嵌入模型获取用户查询的嵌入。
 - en: Compute the distance between the embedded query and the embedded knowledge base.
+  id: totrans-283
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 计算嵌入查询和嵌入知识库之间的距离。
 - en: Return the most similar pieces of text and use them as context to the GPT model.
+  id: totrans-284
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 返回最相似的文本片段并将它们用作GPT模型的上下文。
 - en: Use the GPT model to generate a response.
+  id: totrans-285
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用GPT模型生成响应。
 - en: 'This is represented here:'
+  id: totrans-286
   prefs: []
   type: TYPE_NORMAL
+  zh: 这在这里表示：
 - en: '![Figure 10.28 – A reference architecture of a semantic search project](img/Figure_10.28_B19904.jpg)'
+  id: totrans-287
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.28 – 语义搜索项目的参考架构](img/Figure_10.28_B19904.jpg)'
 - en: Figure 10.28 – A reference architecture of a semantic search project
+  id: totrans-288
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.28 – 语义搜索项目的参考架构
 - en: To simulate the knowledge base, we will use a paper about alternative treatments
     for sciatica (you can find it at [https://doi.org/10.1136/bmj-2022-070730](https://doi.org/10.1136/bmj-2022-070730)).
+  id: totrans-289
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了模拟知识库，我们将使用一篇关于坐骨神经痛替代治疗的论文（您可以在[https://doi.org/10.1136/bmj-2022-070730](https://doi.org/10.1136/bmj-2022-070730)找到）。
 - en: For the embedding and question-and-answer management, we will use LangChain
     modules.
+  id: totrans-290
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于嵌入和问答管理，我们将使用LangChain模块。
 - en: Document embedding using LangChain modules
+  id: totrans-291
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用LangChain模块进行文档嵌入
 - en: 'The first step of our project is that of initializing an embedding model so
     that we can vectorize our custom documents. To do so, we can use the LangChain
     `OpenAIEmbeddings` module, which wraps embeddings models directly from Azure OpenAI:'
+  id: totrans-292
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们项目的第一步是初始化一个嵌入模型，以便我们可以对自定义文档进行向量化。为此，我们可以使用LangChain `OpenAIEmbeddings` 模块，该模块直接包装了来自Azure
+    OpenAI的嵌入模型：
 - en: '[PRE38]'
+  id: totrans-293
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE38]'
 - en: 'Here is its output:'
+  id: totrans-294
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是它的输出：
 - en: '![Figure 10.29 – Example of text embeddings](img/Figure_10.29_B19904.jpg)'
+  id: totrans-295
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.29 – 文本嵌入示例](img/Figure_10.29_B19904.jpg)'
 - en: Figure 10.29 – Example of text embeddings
+  id: totrans-296
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.29 – 文本嵌入示例
 - en: As you can see, the result is a numerical vector, computed with the `text-embedding-ada-002`
     embedding model.
+  id: totrans-297
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您所见，结果是一个数值向量，使用`text-embedding-ada-002`嵌入模型计算得出。
 - en: Now, we need to vectorize the whole document. Plus, we will also need storage
     to put the documents into. LangChain offers several vector stores, and we are
     going to use the FAISS vector store.
+  id: totrans-298
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我们需要对整个文档进行向量化。此外，我们还需要存储空间来存放文档。LangChain提供了几种向量存储方式，我们将使用FAISS向量存储。
 - en: 'So, let’s initialize our FAISS indexer:'
+  id: totrans-299
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，让我们初始化我们的FAISS索引器：
 - en: '[PRE39]'
+  id: totrans-300
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE39]'
 - en: 'Great, now we can initialize our model with the `AzureOpenAI` class. To do
     so, we only need to pass it the name of our deployment:'
+  id: totrans-301
   prefs: []
   type: TYPE_NORMAL
+  zh: 太棒了，现在我们可以使用`AzureOpenAI`类初始化我们的模型。为此，我们只需要传递部署的名称：
 - en: '[PRE40]'
+  id: totrans-302
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE40]'
 - en: 'Finally, we need to compute the similarity between the user prompt and the
     embedded knowledge base. To do so, let’s initialize the following function:'
+  id: totrans-303
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我们需要计算用户提示和嵌入知识库之间的相似性。为此，让我们初始化以下函数：
 - en: '[PRE41]'
+  id: totrans-304
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE41]'
 - en: With the preceding function, we are computing the semantic affinity between
     the user prompt and the embedded document. By doing so, only text chunks with
     high similarity with user prompts will be used as context for our Azure OpenAI
     model, so that we can overcome the limitation of the maximum number of tokens.
+  id: totrans-305
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过上述函数，我们正在计算用户提示和嵌入文档之间的语义亲和性。通过这样做，只有与用户提示具有高相似性的文本块将被用作我们Azure OpenAI模型的上下文，以便我们可以克服最大标记数的限制。
 - en: Creating a frontend for Streamlit
+  id: totrans-306
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 为Streamlit创建前端
 - en: We’ve created the logic behind our semantic search engine; now it’s time to
     create a frontend so that users can interact with it via a UI. To do so, I will
     use Streamlit.
+  id: totrans-307
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经创建了我们语义搜索引擎背后的逻辑；现在是时候创建一个前端，以便用户可以通过UI与其交互。为此，我将使用Streamlit。
 - en: Also, in this case, I’m creating a `.toml` file with my API, so that I can call
     my secrets securely in my Streamlit app.
+  id: totrans-308
   prefs: []
   type: TYPE_NORMAL
+  zh: 同样，在这种情况下，我正在创建一个`.toml`文件与我的API，以便我可以在我的Streamlit应用程序中安全地调用我的秘密。
 - en: For this purpose, let’s create a `.py` file containing the same code we saw
     in the previous section, with the addition of some frontend elements (you can
     find the entire `.py` file in the GitHub repository).
+  id: totrans-309
   prefs: []
   type: TYPE_NORMAL
+  zh: 为此，让我们创建一个包含与前一节中相同代码的`.py`文件，同时添加一些前端元素（您可以在GitHub存储库中找到整个`.py`文件）。
 - en: 'More specifically, I’ve added the following instructions to create a simple
     search bar:'
+  id: totrans-310
   prefs: []
   type: TYPE_NORMAL
+  zh: 更具体地说，我已经添加了以下指令来创建一个简单的搜索栏：
 - en: '[PRE42]'
+  id: totrans-311
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE42]'
 - en: I then saved the file as `medical_smart_search_app.py` and ran it via Anaconda
     Prompt with the `streamlit run` `smart_search.py` command.
+  id: totrans-312
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，我将文件保存为`medical_smart_search_app.py`，并通过Anaconda Prompt使用`streamlit run`
+    `smart_search.py`命令运行它。
 - en: 'The result looks like the following:'
+  id: totrans-313
   prefs: []
   type: TYPE_NORMAL
+  zh: 结果如下所示：
 - en: '![Figure 10.30 – Sample frontend with Streamlit and AOAI in the backend](img/Figure_10.30_B19904.jpg)'
+  id: totrans-314
   prefs: []
   type: TYPE_IMG
+  zh: '![图10.30 – 带有Streamlit和AOAI后端的示例前端](img/Figure_10.30_B19904.jpg)'
 - en: Figure 10.30 – Sample frontend with Streamlit and AOAI in the backend
+  id: totrans-315
   prefs: []
   type: TYPE_NORMAL
+  zh: 图10.30 – 带有Streamlit和AOAI后端的示例前端
 - en: 'There are some further elements you can decide to add to your search engine,
     such as the following:'
+  id: totrans-316
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以决定将一些其他元素添加到您的搜索引擎中，例如以下内容：
 - en: Instructing the AOAI model not to respond if the answer is not in the context.
     To do so, you can specify that in the prompt.
+  id: totrans-317
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 指示AOAI模型在上下文中没有答案时不予回应。要做到这一点，您可以在提示中指定。
 - en: On top of the response, also providing the raw text of the context and the link,
     if any, to the page it was taken from.
+  id: totrans-318
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 除了响应之外，还提供上下文的原始文本和链接（如果有的话），指向它所在页面的链接。
 - en: Keeping AOAI responses and additional context for the next user’s prompts, so
     that it also retains memory with few-shot learning.
+  id: totrans-319
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 保留AOAI的响应和下一个用户提示的附加上下文，以便它也通过少量学习保留记忆。
 - en: We looked at an example with medical documentation; however, there are many
     domains where a semantic search engine can be used, from legal entities to manufacturers
     with massive technical documentation.
+  id: totrans-320
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们看了一个医疗文档的示例；然而，有许多领域可以使用语义搜索引擎，从法律实体到拥有大量技术文档的制造商。
 - en: Overall, having a smart search system within an organization not only reduces
     the search time but also provides a response that is a summary of many documents
     that might contain partial responses.
+  id: totrans-321
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，在组织内部拥有智能搜索系统不仅减少了搜索时间，还提供了许多可能包含部分响应的文档的摘要响应。
 - en: It is pivotal to keep in mind that in similar scenarios (especially for medical
     or legal domains), a human in the loop to validate the result is needed. Nevertheless,
     having such an AI assistant could boost productivity, reduce the search cost and
     time, improve the search quality, and enable the finding of rare documents.
+  id: totrans-322
   prefs: []
   type: TYPE_NORMAL
+  zh: 在类似情况下（尤其是医疗或法律领域），需要一个人来验证结果。尽管如此，拥有这样的人工智能助手可以提高生产力，减少搜索成本和时间，提高搜索质量，并实现对罕见文档的查找。
 - en: Summary
+  id: totrans-323
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 总结
 - en: Azure OpenAI models elevate the power of large language models at the enterprise
     level, and they have the potential to revolutionize enterprise operations across
     a wide range of industries.
+  id: totrans-324
   prefs: []
   type: TYPE_NORMAL
+  zh: Azure OpenAI模型提升了企业级大型语言模型的能力，并有潜力在广泛的行业中彻底改变企业运营。
 - en: By leveraging state-of-the-art NLP, businesses can automate mundane tasks, optimize
     complex processes, and unlock valuable insights from data.
+  id: totrans-325
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过利用最先进的自然语言处理技术，企业可以自动化琐碎任务，优化复杂流程，并从数据中获取有价值的见解。
 - en: In this chapter, we looked at concrete use cases in the field of contract analysis
     and generation, call center analytics, and semantic search for a custom knowledge
     base. We did this with a step-by-step tutorial in Python and, finally, with a
     frontend in Streamlit.
+  id: totrans-326
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们通过Python的逐步教程以及Streamlit的前端，查看了合同分析和生成、呼叫中心分析以及用于自定义知识库的语义搜索等领域的具体用例。
 - en: Of course, successful integration of Azure OpenAI models requires a strategic
     approach, including identifying relevant use cases, selecting appropriate tools
     and platforms, and investing in employee training and development. As the field
     of AI continues to evolve, enterprises must stay up to date with the latest trends
     and innovations to remain competitive and realize the full benefits of Azure OpenAI.
+  id: totrans-327
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，成功整合Azure OpenAI模型需要战略性方法，包括确定相关的用例、选择适当的工具和平台，并投资于员工培训和发展。随着人工智能领域的不断发展，企业必须与最新的趋势和创新保持同步，以保持竞争力并实现Azure
+    OpenAI的全部好处。
 - en: 'The ones mentioned in this chapter are just a modest subset of the use cases
     of what can be achieved with the power of large language models: this will be
     the topic of the next and last chapter of this book, where we will sum up everything
     we have seen so far and unveil what the future of AI development will bring to
     the market.'
+  id: totrans-328
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章提到的内容只是大型语言模型的用例中的一小部分：这将是本书的下一章，也是最后一章的主题，在那里我们将总结迄今为止所见的一切，并揭示人工智能发展的未来将为市场带来什么。
 - en: References
+  id: totrans-329
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 参考文献
 - en: '[https://python.langchain.com/en/latest/index.xhtml#](https://python.langchain.com/en/latest/index.xhtml#)'
+  id: totrans-330
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://python.langchain.com/en/latest/index.xhtml#](https://python.langchain.com/en/latest/index.xhtml#)'
 - en: '[https://www.aroged.com/2023/02/17/chatgpt-ministry-of-justice-will-use-gpj-to-respond-to-citizens-in-portugal/](https://www.aroged.com/2023/02/17/chatgpt-ministry-of-justice-will-use-gpj-to-respond-to-citizens-in-portugal/)'
+  id: totrans-331
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[https://www.aroged.com/2023/02/17/chatgpt-ministry-of-justice-will-use-gpj-to-respond-to-citizens-in-portugal/](https://www.aroged.com/2023/02/17/chatgpt-ministry-of-justice-will-use-gpj-to-respond-to-citizens-in-portugal/)'

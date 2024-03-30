@@ -1,64 +1,94 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_above.png)'
 - en: Agile Project Management
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 敏捷项目管理
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_below.png)'
 - en: '![image](d2d_images/image004.jpg)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/image004.jpg)'
 - en: Image by [14995841](https://pixabay.com/users/14995841-14995841/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4784909) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4784909)
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 图片由[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4784909)的[14995841](https://pixabay.com/users/14995841-14995841/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4784909)提供
 - en: I’m going to make an admission here. I am not a fan of project management tasks.
     I don’t like creating stories, grooming stories, doing project estimates, etc.
     I want to build working code and do it as fast as possible.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 我要在这里承认一点。我不喜欢项目管理任务。我不喜欢创建故事、梳理故事、做项目估算等。我想构建可工作的代码，并尽快完成。
 - en: However, I do recognize the value of project management tasks. That’s where
     AI comes into play. AI can help make the process a little simpler and more pleasant
     by automating certain aspects of the project management process. For example,
     AI-powered tools can assist with story grooming by creating comprehensive user
     acceptance criteria.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，我确实认识到项目管理任务的价值。这就是人工智能发挥作用的地方。人工智能可以通过自动化项目管理过程的某些方面，使过程变得更简单、更愉快。例如，由人工智能驱动的工具可以通过创建全面的用户验收标准来协助故事梳理。
 - en: This gets these tasks off my plate as quickly as possible, so that I can get
     to the more interesting job of delivering software. In this chapter, I’ll show
     you how I use ChatGPT for project planning.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样可以尽快完成这些任务，这样我就可以开始更有趣的工作，即交付软件。在本章中，我将向您展示我如何使用ChatGPT进行项目规划。
 - en: Note, GitHub Copilot is not really suitable for this type of usage, but I’ll
     get back to using it when it’s time to write some code.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，GitHub Copilot实际上不太适合这种用法，但当需要编写一些代码时，我会回到使用它。
 - en: Project Concept
+  id: totrans-10
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 项目概念
 - en: I started by describing an application to ChatGPT. The application in question
     is the demo application from many of books and video courses.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我开始向ChatGPT描述一个应用程序。所讨论的应用程序是许多书籍和视频课程中的演示应用程序。
 - en: The application will store and manage the attendance for a single classroom.
     It will store the names and contact information for the class roster and the students’
     parents. It will provide a way to add, edit, and remove students, as well as the
     ability to mark the students absent or present for a given day. The app will run
     on both desktop web, iOS, and Android. It will also connect to the device's camera
     to add a photograph of each student.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 该应用程序将存储和管理单个教室的考勤情况。它将存储班级花名册和学生家长的姓名和联系信息。它将提供一种添加、编辑和删除学生的方式，以及标记学生某一天的缺席或出席的能力。该应用程序将在桌面网络、iOS
+    和 Android 上运行。它还将连接到设备的摄像头，以添加每个学生的照片。
 - en: I gave that description to ChatGPT and asked it “to write a marketing summary
     for it.” Here is its reply.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 我向ChatGPT描述了这一情况，并要求它“为其撰写一份营销摘要”。以下是它的回复。
 - en: '"Attendance Manager" is a multi-platform app that simplifies classroom attendance
     management. With its easy-to-use interface, you can quickly store and manage the
     names, contact information, and attendance records of students and their parents.
@@ -67,382 +97,573 @@
     Attendance Manager ensures that you have access to your class roster and attendance
     records anytime, anywhere. Experience the ease and convenience of attendance management
     with Attendance Manager!'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: '"考勤管理"是一个多平台应用程序，简化了课堂考勤管理。通过其易于使用的界面，您可以快速存储和管理学生及其家长的姓名、联系信息和考勤记录。该应用程序具有拍照功能，使学生识别快速而轻松。无论您是在台式电脑还是移动设备上，考勤管理器都确保您随时随地都可以访问班级花名册和考勤记录。体验考勤管理的便捷和方便，尽在考勤管理器！'
 - en: How great is that!? Beginning with a dry application description, I got a decent
     description suitable for use as a starting point for a market brochure. More importantly
     for my purposes is that I can then build on that to help with the rest of the
     project plan.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 多棒啊！从一个干燥的应用程序描述开始，我得到了一个适合用作市场宣传册起点的不错描述。对于我的目的来说，更重要的是我可以在此基础上继续构建，以帮助完成项目计划的其余部分。
 - en: Epics and User Stories
+  id: totrans-16
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 史诗和用户故事
 - en: Next, I asked ChatGPT to use that description to generate my epics and user
     stories for this admittedly simple application.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我请 ChatGPT 使用该描述生成我的史诗和用户故事，用于这个明显简单的应用程序。
 - en: Given that description, create a few agile epics that will help direct the development
     of the application. I envision three different visual screens for the application.
     A home page, a roster page, and a student details page. Add those to the epics
     and stories.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据该描述，创建几个敏捷史诗，以帮助指导应用程序的开发。我设想应用程序有三个不同的视觉屏幕。一个主页，一个花名册页面和一个学生详情页面。将它们添加到史诗和故事中。
 - en: 'Student Information Management:'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 学生信息管理：
 - en: 'Epic: Manage Student Information'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗：管理学生信息
 - en:   As a teacher, I want to be able to add, edit, and remove students and their
     parents' contact information in the system.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望能够在系统中添加、编辑和删除学生及其家长的联系信息。
 - en:   As a teacher, I want to be able to view a class roster and search for specific
     students.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望能够查看班级花名册并搜索特定学生。
 - en: 'Story: Create Student Details Page'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事：创建学生详情页面
 - en:   As a teacher, I want to navigate to the student details page from the roster
     page to add, edit, or remove student information.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望能够从花名册页面导航到学生详情页面，以添加、编辑或删除学生信息。
 - en:   As a teacher, I want to view a student's photo, name, and contact information
     on the student details page.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望在学生详情页面上查看学生的照片、姓名和联系信息。
 - en: 'Attendance Management:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 出勤管理：
 - en: 'Epic: Manage Student Attendance'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗：管理学生出勤
 - en:   As a teacher, I want to be able to mark students as absent or present for
     a given day.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望能够标记学生在某一天的缺席或出席情况。
 - en:   As a teacher, I want to view the attendance records for a specific date range
     or for an individual student.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望能够查看特定日期范围或单个学生的出勤记录。
 - en: 'Story: Create Roster Page'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事：创建花名册页面
 - en:   As a teacher, I want to view the class roster and mark students as absent
     or present on the roster page.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望在花名册页面查看班级花名册，并标记学生的缺席或出席情况。
 - en:   As a teacher, I want to view the attendance records for each student on the
     roster page.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望在花名册页面上查看每个学生的出勤记录。
 - en: 'Multi-platform Support:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 多平台支持：
 - en: 'Epic: Ensure Cross-platform Compatibility'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗：确保跨平台兼容性
 - en:   As a teacher, I want to use the application on a desktop computer, iOS device,
     or Android device.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望在台式电脑、iOS 设备或安卓设备上使用该应用程序。
 - en:   As a teacher, I want the application to have a responsive design that adjusts
     to different screen sizes.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望应用程序具有响应式设计，可以适应不同屏幕尺寸。
 - en: 'Story: Create Home Page'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事：创建主页
 - en:   As a teacher, I want to view the class roster and navigate to the roster
     and student details pages from the home page.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望在主页上查看班级花名册，并从主页导航到花名册和学生详情页面。
 - en:   As a teacher, I want the home page to display on all devices with a responsive
     design.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望主页在所有设备上都显示响应式设计。
 - en: 'Photo Capturing:'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 拍照：
 - en: 'Epic: Associate Photos with Student Profiles'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 史诗：将照片与学生个人资料关联
 - en:   As a teacher, I want to take photos of students using the device's camera
     and associate the photos with their respective profiles.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望使用设备的摄像头拍摄学生照片，并将照片与他们的个人资料关联。
 - en:   As a teacher, I want to be able to view the photos of students when I am
     marking attendance or viewing the class roster.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望在标记出勤或查看班级花名册时能够查看学生的照片。
 - en: 'Story: Add Photo Capturing Capability'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 故事：添加拍照功能
 - en:   As a teacher, I want to be able to access the device's camera from the student
     details page to take photos of students.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望能够从学生详情页面访问设备的摄像头拍摄学生照片。
 - en:   As a teacher, I want to be able to associate a photo with a student's profile
     on the student details page.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh:   作为一名教师，我希望能够在学生详情页面上将照片与学生的个人资料关联。
 - en: This is more than I would have come up with on my own, and the user stories
     are easily good enough to get started planning the project. Keep in mind that
     this took a only a few seconds.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 这比我自己想出的要多，用户故事足够好，可以开始规划项目。请记住，这只花了几秒钟。
 - en: Next, let’s see what happened when I asked for some user acceptance criteria
     for these stories. I won’t show them all here, just enough to give you an idea
     of what it does.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，让我们看看当我要求一些用户验收标准时发生了什么。我不会在这里展示它们所有，只展示足够让你了解它的做法。
 - en: Generate some user acceptance criteria for the stories in epic 1 using the "given,
     when, then" syntax
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用“给定，当，那么”语法为史诗1中的故事生成一些用户验收标准。
 - en: Manage Student Information - Create Student Details Page
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理学生信息-创建学生详细信息页面
 - en: Given that I am a teacher using the application, when I navigate to the student
     details page from the roster page, then I should see an interface to add, edit,
     or remove student information.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我是使用该应用程序的教师，当我从名册页面导航到学生详细信息页面时，那么我应该看到一个界面来添加、编辑或移除学生信息。
 - en: 'Acceptance Criteria:'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 接受标准：
 - en:   The student details page is accessible from the roster page.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh:   学生详细信息页面可从名册页面访问。
 - en:   The interface displays the student's photo.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh:   界面显示学生的照片。
 - en:   The interface includes fields for the student's name, contact information,
     and photo.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh:   界面包括学生姓名、联系信息和照片的字段。
 - en:   The interface allows the teacher to add a new student, edit existing student
     information, and remove a student.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh:   该界面允许教师添加新学生，编辑现有学生信息，并移除学生。
 - en:   The changes made in the interface are saved in the system.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh:   界面中所做的更改将保存在系统中。
 - en: Manage Student Information - View Class Roster
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理学生信息-查看班级名册
 - en: Given that I am a teacher using the application, when I view the class roster,
     then I should see a list of all students in the class and their contact information.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我是使用该应用程序的教师，当我查看班级名册时，那么我应该看到班级中所有学生和他们的联系信息的列表。
 - en: 'Acceptance Criteria:'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 接受标准：
 - en:   The class roster is accessible from the home page.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh:   从主页可访问班级名册。
 - en:   The roster displays the student's photo, name, and contact information.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh:   名册显示学生的照片、姓名和联系信息。
 - en:   The roster allows the teacher to search for a specific student.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh:   名册允许教师搜索特定学生。
 - en:   The roster is sorted alphabetically by student name.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh:   名册按学生姓名字母顺序排序。
 - en:   Manage Student Information - Search for Specific Students
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理学生信息-搜索特定学生
 - en: Given that I am a teacher using the application, when I search for a specific
     student on the class roster, then I should see the matching students and their
     contact information.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我是使用该应用程序的教师，当我在班级名册上搜索特定学生时，那么我应该看到匹配的学生及其联系信息。
 - en: 'Acceptance Criteria:'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 接受标准：
 - en:   The teacher can initiate a search on the class roster page.
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh:   教师可以在班级名册页面启动搜索。
 - en:   The search matches the student name, photo, and contact information with
     the search query.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh:   搜索与搜索查询匹配学生姓名、照片和联系信息。
 - en:   The search results are displayed in a list format.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh:   搜索结果以列表形式显示。
 - en:   The search results are sorted alphabetically by student name.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh:   搜索结果按学生姓名字母顺序排序。
 - en: ChatGPT took care of one of the most tedious tasks in software development,
     at least from where I’m sitting. Is it perfect? Not at all. There are features
     and acceptance criteria I never asked for. I didn’t say anything about a search
     feature, but ChatGPT added it to my application. That doesn’t mean I have to add
     it.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT处理了软件开发中最乏味的任务之一，至少从我的角度来看是这样。它完美吗？一点也不。它添加了我从未要求的功能和验收标准。我没有提到搜索功能，但ChatGPT把它加到了我的应用中。这并不意味着我一定要添加它。
 - en: There are a couple of ways to look at this. One is that it just suggested a
     feature I hadn’t considered, but maybe should. The other is that I can simply
     ignore it or ask ChatGPT to regenerate the UAC without the search feature. Either
     way is a win for me.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有几种看法。其中一种是它只是建议了我未考虑过的功能，但也许应该考虑。另一种是我可以简单地忽略它，或者要求ChatGPT重新生成没有搜索功能的用户验收标准。无论哪种方式都对我有利。
 - en: It also didn’t write each of the acceptance criteria using “Given/when/then,”
     but otherwise I’m happy with what it gave me.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 它还没有使用“给定/当/那么”写出每一条验收标准，但除此之外，我对它给出的结果都很满意。
 - en: By the way, I did ask it to generate UAC without using the term “user acceptance
     criteria.” It tried to create “user access control” instead, which was a very
     different result.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 顺便说一句，我确实让它生成用户验收标准而不使用术语“用户验收标准。”它却试图创建“用户访问控制”，这是一个完全不同的结果。
 - en: Estimations
+  id: totrans-76
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 估算
 - en: If there is a task most developers dislike more than generating stories and
     acceptance criteria, it would have to be estimations. Fortunately, I was able
     to get ChatGPT to manage that for me as well, at least partially, using T-Shirt
     sizing.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果有一个开发人员比生成故事和验收标准更讨厌的任务，那就一定是估算了。幸运的是，我至少部分地能让ChatGPT代替我使用T恤尺寸进行管理。
 - en: T-Shirt Sizing
+  id: totrans-78
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: T恤尺寸
 - en: In case you aren’t familiar with the concept, T-Shirt sizing is a method of
     estimation that assigns relative sizes to tasks or features based on their perceived
     level of difficulty. The sizing is usually done using a set of labels, such as
     XS (extra small), S (small), M (medium), L (large), XL (extra-large), and so on,
     to indicate the relative size of each task.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你不熟悉这个概念，T恤尺寸是一种根据任务或特性的难度级别来分配相对大小估计的方法。通常使用一组标签进行大小估计，如XS（特小），S（小），M（中），L（大），XL（特大）等，以指示每个任务的相对大小。
 - en: The exact labels and their meanings may vary between organizations, but the
     goal is to provide a rough, relative estimate that can be used for planning and
     prioritization purposes. The method is named after the idea of T-shirts being
     different sizes, with a small T-shirt being easier to handle than a large one.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 标签的确切名称及其含义可能会在组织之间有所不同，但目标是提供一个可以用于规划和优先排序目的的粗略相对估计。这个方法是根据T恤尺寸不同而得名的，因为小号T恤比大号T恤更容易处理。
 - en: 'With that understanding, I asked ChatGPT:'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 有了这样的理解，我问ChatGPT：
 - en: Given the relative difficulties of those tasks and their UAC, generate a rough
     relative estimate for each using T-shirt sizing.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 鉴于这些任务的相对难度和它们的UAC，请使用T恤尺寸为每个任务生成一个粗略的相对估计。
 - en: Manage Student Information - Create Student Details Page
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理学生信息 - 创建学生详情页面
 - en: 'Size: Medium'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 大小：中
 - en: The task of creating the student details page involves adding and editing student
     information, which is relatively straightforward but requires a user-friendly
     interface. The user acceptance criteria (UAC) also include saving changes made
     in the interface, which requires a functional back-end. Therefore, this task is
     estimated to be a medium-sized task.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建学生详情页面的任务包括添加和编辑学生信息，这相对直接，但需要一个用户友好的界面。用户接受标准（UAC）还包括保存在界面上进行的更改，这需要一个功能齐全的后端。因此，这个任务估计为一个中等大小的任务。
 - en: Manage Student Information - View Class Roster
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理学生信息 - 查看班级名单
 - en: 'Size: Small'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 大小：小
 - en: The task of creating the class roster page involves displaying a list of students
     and their contact information, which is a relatively simple task. The UAC includes
     sorting the list alphabetically and allowing the teacher to search for specific
     students, which are additional features that can be added with minimal effort.
     Therefore, this task is estimated to be a small-sized task.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建班级名单页面的任务包括显示学生列表及其联系信息，这是一个相对简单的任务。 UAC包括对列表进行字母排序并允许老师搜索特定学生，这些是可以在最小努力下添加的附加功能。因此，估计这个任务是一个小型任务。
 - en: Manage Student Information - Search for Specific Students
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理学生信息 - 搜索特定学生
 - en: 'Size: Small'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 大小：小
 - en: The task of adding a search functionality to the class roster page involves
     matching student information with the search query and displaying the results.
     This is a relatively simple task that can be implemented with minimal effort.
     Therefore, this task is estimated to be a small-sized task.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 为班级名单页面添加搜索功能的任务包括将学生信息与搜索查询匹配并显示结果。这是一个相对简单的任务，可以用最小的努力来实现。因此，这个任务估计为一个小型任务。
 - en: What impressed me about the response is that it attempted to justify its estimates.
     With this as a starting point, I would feel a lot more comfortable creating some
     estimates for management. If nothing else, it gives the team a place to begin
     a longer discussion.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 令我印象深刻的是，它试图为其估计提供理由。有了这个作为起点，我会感觉更舒服地为管理做一些估计。即使没有其他东西，这给了团队一个开始更长讨论的地方。
 - en: Fibonacci Estimates
+  id: totrans-93
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 斐波那契估算
 - en: While T-Shirt Sizing is often enough for the development team, management typically
     wants something a little more concrete. My team uses Fibonacci values.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然T恤尺寸对开发团队来说通常足够了，但管理层通常希望有更具体的东西。我的团队使用斐波那契值。
 - en: The idea behind using Fibonacci numbers is that each number represents a rough
     estimate of the amount of effort required to complete a task or feature, and the
     gap between each number becomes progressively larger as the estimate becomes larger.
     This helps to avoid the use of overly precise estimates, which can be difficult
     to achieve and lead to unachievable expectations.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用斐波那契数列的想法是，每个数字代表完成任务或功能所需的粗略估计量，随着估计量的增加，每个数字之间的差距变得越来越大。这有助于避免使用过于精确的估计，这可能难以实现并导致无法实现的期望。
 - en: This method allows for the estimation of tasks with a high degree of uncertainty,
     where the exact effort required is not known. By using a set of standardized values,
     teams can make rough estimates that are consistent and easily understood across
     the organization.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种方法允许对具有高度不确定性的任务进行估计，其中不知道确切所需的努力。通过使用一组标准化的值，团队可以进行粗略估计，这些估计在整个组织中是一致的且易于理解的。
 - en: I asked ChatGPT to rewrite its T-Shirt estimates as Fibonacci instead. It generated
     almost the same text as before, but with different values. I’m showing just those
     values here.
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 我要求 ChatGPT 将其 T 恤估计值改写为斐波那契数列。它生成的文本几乎与之前相同，但值不同。我在这里只展示这些值。
 - en: Manage Student Information - Create Student Details Page
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理学生信息 - 创建学生详情页面
 - en: 'Estimate: 5'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 估计：5
 - en: Manage Student Information - View Class Roster
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理学生信息 - 查看班级花名册
 - en: 'Estimate: 3'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 估计：3
 - en: Manage Student Information - Search for Specific Students
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 管理学生信息 - 搜索特定学生
 - en: 'Estimate: 2'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 估计：2
 - en: Did you spot the difference? Using T-Shirt sizing, the estimates were “medium,”
     “small,” and “small.” Using Fibonacci values, ChatGPT decided that searching for
     students was a little simpler than viewing the class roster.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 你发现了区别吗？使用 T 恤尺寸，估计值为“中等”，“小”，“小”。使用斐波那契值，ChatGPT 认为搜索学生比查看班级花名册要简单一些。
 - en: That type of awareness is common for developers, but I didn’t expect it from
     the AI.
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 开发人员对这种意识很常见，但我没想到 AI 也会有这种意识。
 - en: Summary
+  id: totrans-106
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总结
 - en: ChatGPT can be used to write concise and clear marketing summaries, create agile
     epics and user stories, generate user acceptance criteria, and provide rough estimates.
     It can help streamline the process by providing fast and accurate responses. The
     use of ChatGPT in in this way can help you achieve greater efficiency and consistency,
     especially if (like me) you don’t particularly care for these tasks.
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 可用于撰写简明清晰的营销摘要，创建敏捷史诗和用户故事，生成用户验收标准，并提供粗略估计。它可以通过提供快速准确的响应来简化流程。以这种方式使用
+    ChatGPT 可以帮助您实现更高的效率和一致性，特别是如果（像我一样）您对这些任务不是特别感兴趣。
 - en: I’ve been using this strategy personally and as a result, I’m enjoying the process
     more than ever before. I find staring at a blank screen to be hard, but I don’t
     mind rephrasing and refining the output ChatGPT gives me for these tasks.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 我个人一直在使用这种策略，结果是，我比以往任何时候都更享受这个过程。我发现盯着空白屏幕很难受，但我不介意重新表达和完善 ChatGPT 为这些任务提供的输出。

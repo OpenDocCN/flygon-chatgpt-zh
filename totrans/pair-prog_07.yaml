@@ -1,23 +1,36 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/chapter_title_above.png)'
 - en: Regular Expressions
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 正则表达式
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![图片](d2d_images/chapter_title_below.png)'
 - en: '![Teacher at a chalkboard instructing students](d2d_images/image018.jpg)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![在黑板上指导学生的教师](d2d_images/image018.jpg)'
 - en: Image by Author and OpenAI
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 作者和OpenAI提供的图片
 - en: Input validation is a critical component of ensuring data integrity and preventing
     security vulnerabilities. However, crafting effective regular expressions (regexes)
     can be a time-consuming and challenging task. That's where Copilot and ChatGPT
@@ -25,944 +38,1479 @@
     for input validation using nothing more than a simple prompt in the form of a
     comment. Read on to discover my findings and the surprising effectiveness of this
     AI-powered tool.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入验证是确保数据完整性和防止安全漏洞的关键组成部分。然而，制作有效的正则表达式（regexes）可能是一项耗时且具有挑战性的任务。这就是Copilot和ChatGPT发挥作用的地方。在本章中，我着手探索它们如何仅仅通过一个简单的提示来生成用于输入验证的正则表达式，并发现了这种基于人工智能的工具的惊人有效性。继续阅读，了解我的发现以及这种工具的惊人有效性。
 - en: Regex 101 Site
+  id: totrans-7
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 正则表达式101网站
 - en: 'I decided to use an existing regex website to help me test what Copilot provided:[regex101:
     build, test, and debug regex](https://regex101.com/). ([https://regex101.com](https://regex101.com))'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: '我决定使用现有的正则表达式网站来帮助我测试Copilot提供的内容：[regex101: 构建、测试和调试正则表达式](https://regex101.com/)。
+    ([https://regex101.com](https://regex101.com))'
 - en: This site lets me choose what type of regular expression to test and has some
     really cool error detection and debugging features.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个网站让我选择要测试的正则表达式类型，并具有一些非常酷的错误检测和调试功能。
 - en: Email Address
+  id: totrans-10
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 电子邮件地址
 - en: The first thing that came to mind is evaluating a string to see if it is a valid
     email address.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我首先想到的是评估一个字符串是否是有效的电子邮件地址。
 - en: I asked Copilot to make an email pattern for me inside a TypeScript file. This
     is what it gave me.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 我让Copilot在一个TypeScript文件中为我创建一个电子邮件模式。这就是它给我的东西。
 - en: // Email regex
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: // 电子邮件正则表达式
 - en: emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 - en: 'It looks clever, but does it work? Dropping that into [regex101.com](http://regex101.com/),
     I was able to test some emails fairly quickly. Here are some other email addresses
     I tried:'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 它看起来很聪明，但它有效吗？将其放入[regex101.com](http://regex101.com/)，我能够相对快速地测试一些电子邮件。以下是我尝试过的一些其他电子邮件地址：
 - en: Matched
+  id: totrans-16
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 匹配
 - en: '[mike@company.com](mailto:mike@company.com)'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: '[mike@company.com](mailto:mike@company.com)'
 - en: '[mike@company.co.uk](mailto:mike@company.co.uk)'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: '[mike@company.co.uk](mailto:mike@company.co.uk)'
 - en: '[x@y.com](mailto:x@y.com)'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: '[x@y.com](mailto:x@y.com)'
 - en: '[mike@x.cc](mailto:mike@x.cc)'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: '[mike@x.cc](mailto:mike@x.cc)'
 - en: Not Matched
+  id: totrans-21
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 未匹配
 - en: mike@localhost
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: mike@localhost
 - en: '[mike@10.0.0.1](mailto:mike@10.0.0.1)'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: '[mike@10.0.0.1](mailto:mike@10.0.0.1)'
 - en: mike@x.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: mike@x.
 - en: Bill
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 比尔
 - en: The first two of those are valid, but Copilot’s regex failed to match them.
     Would ChatGPT do any better?
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 前两个是有效的，但Copilot的正则表达式未能匹配它们。ChatGPT会做得更好吗？
 - en: Give me a regular expression to validate an email address
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个验证电子邮件地址的正则表达式
 - en: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
 - en: This one looks nothing like what Copilot gave me. Does it do any better with
     my test email addresses? As it turns out, it matched exactly the same. ChatGPT
     provided a lengthy explanation of the regex it gave me, which I won’t reproduce
     here. Suffice it to say that it was complete.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个看起来与Copilot给我的完全不同。它在我的测试电子邮件地址上表现如何？事实证明，它完全匹配。ChatGPT为我提供了关于它给我的正则表达式的详细解释，我不会在这里重复。可以说它是完整的。
 - en: So, they aren’t bad, but I’m wondering how they stack up to the professionals.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 所以，它们并不差，但我想知道它们与专业人士相比如何。
 - en: 'According to a [an article I found on the most comprehensive email regex](https://www.abstractapi.com/guides/email-address-pattern-validation),
     this is “the best” email pattern:'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据我在[一篇关于最全面电子邮件正则表达式的文章](https://www.abstractapi.com/guides/email-address-pattern-validation)中找到的内容，这是“最佳”的电子邮件模式：
 - en: ([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|"([]!#-[^-~ \t]|(\\[\t -~]))+")@([0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?(\.[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?)*|\[((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|IPv6:((((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){6}|::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){5}|[0-9A-Fa-f]{0,4}::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){4}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):)?(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){3}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,2}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){2}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,3}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,4}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::)((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3})|(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3})|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,5}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3})|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,6}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::)|(?!IPv6:)[0-9A-Za-z-]*[0-9A-Za-z]:[!-Z^-~]+)])
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: ([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|"([]!#-[^-~ \t]|(\\[\t -~]))+")@([0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?(\.[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?)*|\[((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|IPv6:((((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){6}|::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){5}|[0-9A-Fa-f]{0,4}::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){4}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):)?(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){3}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,2}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){2}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,3}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,4}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::)((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3})|(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3})|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,5}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3})|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,6}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::)|(?!IPv6:)[0-9A-Za-z-]*[0-9A-Za-z]:[!-Z^-~]+)])
 - en: That’s a 1240-character regex! It looks nothing like the one the AIs gave me.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 那是一个1240个字符的正则表达式！看起来与AI给我的那个完全不同。
 - en: This one did much better, including matching two valid email addresses from
     the above list that the first regex did not.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个做得更好，包括匹配上述列表中第一个正则表达式未能匹配的两个有效电子邮件地址。
 - en: mike@localhost
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: mike@localhost
 - en: mike@10.0.0.1
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: mike@10.0.0.1
 - en: Honestly, I think that both regexes from the AI are fine, but they did miss
     those two valid email addresses.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 老实说，我认为AI的两个正则表达式都不错，但它们确实漏掉了那两个有效的电子邮件地址。
 - en: Phone numbers
+  id: totrans-38
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 电话号码
 - en: Moving on, how well will they do validating a phone number? I gave Copilot a
     comment hint to see what it came up with and it gave me this at first.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，它们在验证电话号码方面表现如何？我给Copilot一个评论提示，看看它能给我什么，起初它给了我这个。
 - en: // Phone number pattern with optional country code
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: // 带有可选国家代码的电话号码模式
 - en: phoneRegex = /^(\+?1)?[2-9]\d{2}[2-9](?!11)\d{6}$/;
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: phoneRegex = /^(\+?1)?[2-9]\d{2}[2-9](?!11)\d{6}$/;
 - en: This one sort of works, but it doesn’t allow any punctuation or spacing in the
     number. It does allow an optional +1, but that only works for US phone numbers.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个有点用，但不允许号码中有任何标点或空格。它允许一个可选的 +1，但这只适用于美国电话号码。
 - en: Matched
+  id: totrans-43
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 匹配
 - en: '2025551212'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: '2025551212'
 - en: '8002822882'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: '8002822882'
 - en: '+12025551212'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: '+12025551212'
 - en: '+14079393463'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: '+14079393463'
 - en: Not matched
+  id: totrans-48
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 未匹配
 - en: 603–555–1212
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 603–555–1212
 - en: 603 555 1212
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 603 555 1212
 - en: (603) 555 1212
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: (603) 555 1212
 - en: 'Not to be completely daunted yet, I thought I’d give it one more try. I gave
     it a different comment:'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管还没有完全泄气，我想我会再试一次。我给了它一个不同的评论：
 - en: // international phone number
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: // 国际电话号码
 - en: phoneRegex = /^\+?([0-9]{2})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: phoneRegex = /^\+?([0-9]{2})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 - en: 'This one was a lot more flexible, but it still failed to match what I would
     consider some common phone number formats:'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个更加灵活，但仍然无法匹配我认为一些常见电话号码格式：
 - en: Matched
+  id: totrans-56
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 匹配
 - en: +01 202 555 1212
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: +01 202 555 1212
 - en: +014079393463
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: +014079393463
 - en: // UK Number
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: // 英国号码
 - en: +44 889 234 1239
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: +44 889 234 1239
 - en: +44.889.234.1239
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: +44.889.234.1239
 - en: +44 889–234–1239
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: +44 889–234–1239
 - en: Not Matched
+  id: totrans-63
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 未匹配
 - en: (202) 555–1212
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: (202) 555–1212
 - en: 800–282–2882
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 800–282–2882
 - en: 'So far, I am not impressed with what Copilot gave me. ChatGPT gave me this
     one:'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我对Copilot给我的东西并不满意。ChatGPT给了我这个：
 - en: Give me a regex that can validate any phone number, us or international, liberally
     accepting common punctuation.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个可以验证任何电话号码，美国或国际的正则表达式，宽松接受常见标点符号。
 - en: ^[\+]?[\d]{0,3}[\s.-]?[\(]?[\d]{1,3}[\)]?[\s.-]?[\d]{3,4}[\s.-]?[\d]{3,4}$
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: ^[\+]?[\d]{0,3}[\s.-]?[\(]?[\d]{1,3}[\)]?[\s.-]?[\d]{3,4}[\s.-]?[\d]{3,4}$
 - en: It actually did worse, matching only the first two UK numbers, and failing the
     same ones Copilot’s pattern did. Maybe matching a phone number is simply too difficult
     with a regex.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 实际上效果更差，只匹配了前两个英国数字，并且无法匹配Copilot模式的同样内容。也许用正则表达式匹配电话号码太困难了。
 - en: Valid URL
+  id: totrans-70
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 有效的URL
 - en: 'Related to, though not specifically about validation, I wanted to see whether
     Copilot would give me a pattern to recognize valid all URLs inside a string. That
     could be useful for crawling websites. As with the rest of the examples, I started
     with a comment. It gave me two options:'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然与验证无关，但我想知道Copilot是否会给我一个识别字符串中所有有效URL的模式。这对于爬取网站可能会有用。和其他例子一样，我先写了一个注释。它给了我两个选项：
 - en: // Regex to find URLs inside a string
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: // 用于在字符串中找到URL的正则表达式
 - en: urlRegex = /((https?:\/\/)|(www\.))[^\s]+/g;
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: urlRegex = /((https?:\/\/)|(www\.))[^\s]+/g;
 - en: urlRegex = /((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/g;
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: urlRegex = /((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/g;
 - en: What I find really cool about these suggestions is that Copilot gave me the g modifier
     (match globally) on both regexes, presumably because I asked for URLs (plural)
     in my comment, and not simply the singular URL.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 我觉得这些建议真的很酷的地方在于Copilot在两个正则表达式上都给了我“g”修饰符（全局匹配），可能是因为我在评论中要求“URLs”（复数），而不是单一的“URL”。
 - en: The first one, though it looks OK at first glance, is simply wrong. My test
     string was the source code of a web page with lots of links. The first regex gave
     me 137 matches, but upon further inspection, it included punctuation that was
     part of the surrounding text and not part of the URL.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个，虽然乍一看还行，但是完全错了。我的测试字符串是带有大量链接的网页源代码。第一个正则表达式给了我137个匹配项，但经进一步检查，它包含了周围文本的标点符号，而不是URL的一部分。
 - en: So, I decided to try the second, longer suggestion. That one was actually worse,
     matching a bunch of text that clearly are not URLs. What bothers me about both
     of these regexes is that they match the closing quote in an HTML attribute.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我决定尝试第二个更长的建议。那个实际上更糟糕，匹配了一堆明显不是URL的文本。我对这两个正则表达式的困扰之处在于它们匹配了HTML属性中的引号。
 - en: <img src="https://pictures.com/images/12345.jpg">
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: <img src="https://pictures.com/images/12345.jpg">
 - en: According to both regexes, the URL portion of that img tag is https://pictures.com/images/12345.jpg"
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据这两个正则表达式，该img标签的URL部分是https://pictures.com/images/12345.jpg"
 - en: It made me think that perhaps my comment hint was wrong. Instead of searching
     for URLs in a “string,” maybe I should be more specific. I decided to give it
     one more shot.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 使我觉得也许我的评论提示错了。我不是在“字符串”中搜索URL，也许我应该更具体一点。我决定再试一次。
 - en: // Regex to find all URLs from img and a tags
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: // 用于从img和a标签中找到所有URL的正则表达式
 - en: urlRegex = /<img[^>]*src="([^"]*)"[^>]*>|<a[^>]*href="([^"]*)"[^>]*>/g;
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: urlRegex = /<img[^>]*src="([^"]*)"[^>]*>|<a[^>]*href="([^"]*)"[^>]*>/g;
 - en: Interestingly enough, I believe this one came closest. Notice that my comment
     was a lot more specific about what I was looking for. What’s more, I had to look
     a little more closely at the matches. The actual URLs are inside of Group 2 of
     each match.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 有趣的是，我认为这个最接近。请注意，我的评论对我正在寻找的东西更加具体。更重要的是，我需要仔细检查匹配项。实际的URL在每个匹配的第二组中。
 - en: ChatGPT took me literally, as it has been doing throughout all my research and
     experimentation.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT一直以来都取得了一些研究和实验的成果。
 - en: Give me a regex to find all URLs from img and a tags in the text of an HTML
     page.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个正则表达式，从 HTML 页面的文本中找到所有img和a标签的URL。
 - en: (?<=<img.*?src="|<a.*?href=")[^"]*
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: (?<=<img.*?src="|<a.*?href=")[^"]*
 - en: It did not give me a regex looking to match URLs. Instead, it is a regex that
     extracts the entire string inside the quotes following an img or href attribute.
     That is, in fact, exactly what I asked for.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 它没有给我一个匹配URL的正则表达式。实际上，这是一个提取跟在img或href属性后引号中完整字符串的正则表达式。这其实就是我要求的。
 - en: Not giving up just yet, I offered a more explicit prompt to ChatGPT to tweak
     its understanding.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 迳然没有放弃，我向ChatGPT明确表示以调整其理解。
 - en: Give me a regex matching URLs found in an arbitrary document of text, which
     may or may not be HTML.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个匹配在文本文档中找到的URL的正则表达式，这些文档可能是HTML格式，也可能不是。
 - en: \b(?:(?:https?|ftp):\/\/|www\.)[^\s]+\b
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: \b(?:(?:https?|ftp):\/\/|www\.)[^\s]+\b
 - en: Its explanation was comprehensive, so I tested it and discovered that it was
     by far the best regular expression. This would be a better regex to use if you
     were validating that a given string is, in fact, a URL.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 它的解释是全面的，所以我测试了一下，发现它无疑是最好的正则表达式。如果你要验证给定的字符串是否确实是URL，这将是更好的正则表达式。
 - en: Password complexity
+  id: totrans-92
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 密码复杂性
 - en: Just about every web site that lets users register has some rule about password
     complexity. Can Copilot generate a regex to validate such passwords?
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 几乎每个允许用户注册的网站都有一些关于密码复杂性的规则。Can Copilot 生成一个正则表达式来验证这样的密码吗？
 - en: // Passwords much contain at least one number, one lowercase and one uppercase
     letter, one symbol, and be 8 characters or longer.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: // 密码必须包含至少一个数字，一个小写字母和一个大写字母，一个符号，并且至少为 8 个字符长。
 - en: private passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: private passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
 - en: That’s quite the regex, but is it correct? Back over at regex101.com, I put
     it to the test.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 那真是一个正则表达式，但它正确吗？我转到 regex101.com，对它进行了测试。
 - en: Valid Passwords
+  id: totrans-97
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 有效的密码
 - en: P@55word
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: P@55word
 - en: This1s@GoodPassword
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: This1s@GoodPassword
 - en: MikeWasHerein1999!
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: MikeWasHerein1999!
 - en: Invalid Passwords
+  id: totrans-101
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 无效的密码
 - en: password
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 密码
 - en: MikeWasHere!
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: MikeWasHere!
 - en: This is a bad password
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个糟糕的密码
 - en: '12345'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '12345'
 - en: My hastily-considered opinion is that this is a good regex for its purpose.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 我草率地认为这是一个很好用途的正则表达式。
 - en: ChatGPT gave me a functionally similar, but slightly different pattern.
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 给了我一个功能上类似但稍有不同的模式。
 - en: 'Give me a regex to validate password complexity with the following rules: Passwords
     much contain at least one number, one lowercase and one uppercase letter, one
     symbol, and be 8 characters or longer.'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个正则表达式，用以下规则验证密码复杂性：密码必须包含至少一个数字，一个小写字母和一个大写字母，一个符号，并且至少为 8 个字符长。
 - en: ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)[\S]{8,}$
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)[\S]{8,}$
 - en: It matched the same password list as Copilot’s regular expression, so I consider
     them both valid.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 它与 Copilot 的正则表达式匹配了同样的密码列表，所以我认为它们都是有效的。
 - en: Valid U.S. currency
+  id: totrans-111
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 有效的美元货币
 - en: Another common scenario is determining whether or not input is valid US currency.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个常见的情况是确定输入是否是有效的美国货币。
 - en: // Validate that the input is a US currency
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: // 验证输入是否是美国货币
 - en: private currencyRegex = /^\$?(([1-9]\d{0,2}(,\d{3})*)|0)?(\.\d{2})?$/;
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: private currencyRegex = /^\$?(([1-9]\d{0,2}(,\d{3})*)|0)?(\.\d{2})?$/;
 - en: This one looks good at first glance. I tried a short list of strings that I
     imagine people might enter into a web page as currency. Let’s see how that regex
     did.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个乍一看看起来不错。我尝试了一小部分字符串列表，我想像人们可能会在网页上输入的货币。让我们看看那个正则表达式的效果。
 - en: Valid Currency
+  id: totrans-116
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 有效的货币
 - en: $1
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: $1
 - en: '.22'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: '.22'
 - en: $.25
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: $.25
 - en: '0.79'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '0.79'
 - en: '1.49'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: '1.49'
 - en: $0.00
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: $0.00
 - en: $0.43
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: $0.43
 - en: $1,230,847,369.99
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: $1,230,847,369.99
 - en: Invalid Currency
+  id: totrans-125
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 无效的货币
 - en: Mike
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: Mike
 - en: '1.575'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: '1.575'
 - en: 1.57$
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 1.57$
 - en: 2.25%
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 2.25%
 - en: 1 dollar
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 1 美元
 - en: Looks pretty good to me. I’d call that a pass.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 看起来对我来说相当不错。我会认为这是一个通过。
 - en: ChatGPT gave me a similar regex.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 给了我一个相似的正则表达式。
 - en: Give me a regex that will validate that the input is a US currency
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 给我一个正则表达式，用来验证输入是否是美国货币
 - en: ^\$[1-9]\d{0,2}(,\d{3})*(\.\d{2})?$
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: ^\$[1-9]\d{0,2}(,\d{3})*(\.\d{2})?$
 - en: Unfortunately, it failed all the test values except the first and last valid
     values. I asked it to try again, allowing for an optional dollar sign. The regex
     it gave me validated only one additional test value (1.49) but still failed on
     the rest.
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 不幸的是，它没有通过所有测试值，除了第一个和最后一个有效值。我让它再试一次，允许一个可选的美元符号。它给我的正则表达式只能验证一种额外的测试值 (1.49)，但在剩下的上面仍然失败了。
 - en: Giving it one more chance, I decided to take a different approach. Here is my
     entire conversation and its reply.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 再给它一次机会，我决定采取一种不同的方法。这是我整个对话及其回复。
 - en: 'Given a potential list of different ways to write US currency, write a regular
     expression that will match all of these: $1 .22 $.25 0.79 1.49 $0.00 $0.43 $1,230,847,369.99'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 给出一个可能的写法列表，写一个可以匹配所有这些的正则表达式：$1 .22 $.25 0.79 1.49 $0.00 $0.43 $1,230,847,369.99
 - en: 'Here''s a regular expression that can match all of the given examples of US
     currency values:'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是一个可以匹配所有给出的美国货币值示例的正则表达式：
 - en: ^(?:\$\s?)?(?:\d{1,3}(?:,\d{3})*|\d+)(?:\.\d{2})?$
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: ^(?:\$\s?)?(?:\d{1,3}(?:,\d{3})*|\d+)(?:\.\d{2})?$
 - en: 'Let''s break down this regular expression:'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们分解这个正则表达式：
 - en: ^ - Start of the line
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: ^ - 起始位置
 - en: (?:\$\s?)? - Optionally match a dollar sign followed by an optional whitespace
     character
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: (?:\$\s?)? - 可选择地匹配一个美元符号后面跟着一个可选的空白字符
 - en: (?:\d{1,3}(?:,\d{3})*|\d+) - Match either a sequence of 1-3 digits, optionally
     followed by groups of three digits separated by commas, or a single sequence of
     one or more digits.
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: (?:\d{1,3}(?:,\d{3})*|\d+) - 匹配1-3位数字序列，可选择地跟着逗号分隔的三位数字组，或一个或多个数字的单个序列。
 - en: (?:\.\d{2})? - Optionally match a period followed by exactly two digits
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: (?:\.\d{2})? - 可选择地匹配一个小数点后面跟着精确两位数字
 - en: $ - End of the line
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: $ - 行结束
 - en: This regular expression matches the given examples of US currency values, including
     dollar amounts with or without the dollar sign, decimal points and commas.
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 此正则表达式匹配给定示例的美元金额，包括带有或不带有美元符号、小数点和逗号的金额。
 - en: Note that this regular expression does not match negative amounts. Also, if
     you have currency values with unusual formats, such as negative amounts or amounts
     with more than two decimal places, you may need to modify the regular expression
     accordingly.
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，此正则表达式不匹配负金额。此外，如果您有具有不寻常格式的货币值，例如负金额或小数点后超过两位的金额，则可能需要相应修改正则表达式。
 - en: How well do you think it did?
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 你认为它表现如何？
 - en: It got all of them except the $.25 value. Not bad, but it shows that ChatGPT
     isn’t infallible. However, I do appreciate the power of giving it examples and
     letting it do the rest.
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 它获取了所有内容，除了$0.25的值。还不错，但这表明ChatGPT并非万无一失。但是，我很欣赏给它示例并让它完成其余工作的力量。
 - en: U.S. Social Security Number
+  id: totrans-150
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 美国社会安全号码
 - en: What about social security numbers? Those are pretty straightforward in the
     US, so I didn’t expect too much of a challenge here.
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么社会安全号码呢？在美国，这些都很简单，所以我对此并没有期望太高。
 - en: // Validate the the input is a valid SSN
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: // 验证输入是否为有效的社会安全号码
 - en: private ssnRegex = /^\d{3}-?\d{2}-?\d{4}$/;
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: private ssnRegex = /^\d{3}-?\d{2}-?\d{4}$/;
 - en: Valid SSN
+  id: totrans-154
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 有效的社会安全号码
 - en: 999–99–9999
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 999–99–9999
 - en: 012–34–5678
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 012–34–5678
 - en: 978–76–5432
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 978–76–5432
 - en: Invalid SSN
+  id: totrans-158
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 无效的社会安全号码
 - en: 978 76 5432
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 978 76 5432
 - en: 97–876–5432
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 97–876–5432
 - en: 5432–76–978
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 5432–76–978
 - en: xxx-yy-zzzz
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: xxx-yy-zzzz
 - en: As I said, pretty straightforward. ChatGPT went above and beyond in its reply.
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我所说，非常直接。ChatGPT在回复中做得更多。
 - en: Write a regex that will validate the the input is a valid SSN.
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个正则表达式，用于验证输入是否为有效的社会安全号码。
 - en: ^(?!000)(?!666)[0-8]\d{2}[- ]?(?!00)\d{2}[- ]?(?!0000)\d{4}$
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: ^(?!000)(?!666)[0-8]\d{2}[- ]?(?!00)\d{2}[- ]?(?!0000)\d{4}$
 - en: This regex ensures that certain SSNs are specifically disallowed. ChatGPT also
     provided this warning, which I found both useful and amusing.
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 此正则表达式确保特定的社会安全号码被明确禁止。ChatGPT还提供了这个警告，我觉得既有用又有趣。
 - en: Note that this regular expression only checks the format of the SSN, not whether
     it is an actual valid SSN that is assigned to a specific person. It's also worth
     noting that some SSNs assigned before June 25, 2011 may not be valid, as the Social
     Security Administration implemented a new randomization policy on that date.
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，此正则表达式仅检查SSN的格式，而不检查它是否是分配给特定人员的实际有效SSN。值得注意的是，一些在2011年6月25日之前分配的SSN可能无效，因为社会安全管理局在该日期实施了新的随机化政策。
 - en: I didn’t know any of that trivia around social security numbers.
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不知道关于社会安全号码的这些琐事。
 - en: Valid credit card numbers
+  id: totrans-169
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 有效的信用卡号
 - en: I expected that this one might pose a little more of a challenge. Validating
     credit card numbers is a common task for web apps. However, relying solely on
     regular expressions (regex) to validate credit card numbers can be dangerous.
     While regex is a powerful tool for pattern matching, it may not catch all potential
     errors or security risks associated with credit card numbers.
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 我预计这个可能会更具挑战性。验证信用卡号是Web应用程序的常见任务。然而，仅依赖正则表达式（regex）来验证信用卡号可能是危险的。虽然正则表达式是用于模式匹配的强大工具，但它可能无法捕捉与信用卡号相关的所有潜在错误或安全风险。
 - en: This is because credit card numbers have a complex structure with multiple rules
     and restrictions, and regex patterns may not always account for all of them. Credit
     card numbers are not simply a pattern of grouped digits, though they may appear
     to be at first glance. I don’t think a regex can compute the checksum (aka [Luhn
     Algorithm](https://www.creditcardvalidator.org/developer)), so I think we may
     have to settle for “close.”
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是因为信用卡号具有多个规则和限制的复杂结构，正则表达式模式可能并不总是考虑到所有这些规则。信用卡号不仅仅是一组分组的数字模式，尽管乍一看可能是这样。我不认为正则表达式可以计算校验和（也称为[卢恩算法](https://www.creditcardvalidator.org/developer)），所以我认为我们可能只能“接近”。
 - en: // Validate the credit card number
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: // 验证信用卡号码
 - en: private creditCardRegex = /^((4\d{3})|(5[1-5]\d{2})|(6011))(-?\d{4}){3}$/;
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: private creditCardRegex = /^((4\d{3})|(5[1-5]\d{2})|(6011))(-?\d{4}){3}$/;
 - en: That regex might be good for a first-pass client-side validation, but it’s far
     from perfect.
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 那个正则表达式可能适用于首次客户端验证，但远非完美。
 - en: Valid CC#
+  id: totrans-175
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 有效的信用卡号
 - en: '4321567843215678'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: '4321567843215678'
 - en: '6011222233334444'
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: '6011222233334444'
 - en: '4444333322221111'
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: '4444333322221111'
 - en: '5432123456789999'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: '5432123456789999'
 - en: Invalid CC#
+  id: totrans-180
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 无效的信用卡号
 - en: 4321 5678 4321 5678
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: 4321 5678 4321 5678
 - en: 6011 2222 3333 4444
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: 6011 2222 3333 4444
 - en: 4444 3333 2222 1111
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 4444 3333 2222 1111
 - en: 5432 1234 5678 9999
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: 5432 1234 5678 9999
 - en: 378282246310005 (Valid Amex)
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 378282246310005（有效的Amex）
 - en: That last one is a false negative. Apparently, the regex cannot match American
     Express card numbers.
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后一个是假阴性。显然，正则表达式无法匹配美国运通卡号。
 - en: One last thought I had was whether or not Copilot knows what the Lunh Algorithm
     is. The JavaScript is available on the developer page I linked above.
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 我最后的想法是Copilot是否知道Lunh算法是什么。我上面链接的开发者页面上有JavaScript代码。
 - en: 'I got this response when I typed my comment, which is not what I expected:'
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我输入我的评论时，我得到了这个回复，这不是我预期的：
 - en: // Validate the credit card number using the Lunh Algorithm
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: // 使用Lunh算法验证信用卡号
 - en: private creditCardLuhnRegex = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9][0-9])[0-9]{12}|(?:2131|1800|35\d{3})\d{11})$/;
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: private creditCardLuhnRegex = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9][0-9])[0-9]{12}|(?:2131|1800|35\d{3})\d{11})$/;
 - en: It doesn’t actually appear to implement the algorithm, but it does match the
     Amex number that the first regex missed.
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 它实际上似乎没有实现该算法，但它确实匹配了第一个正则表达式错过的美国运通卡号。
 - en: Before leaving this section, I wondered if a slight change to my comment might
     make it work.
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 在离开这一部分之前，我想知道对我的评论稍作修改是否会起作用。
 - en: // Function to Validate the credit card number using the Lunh Algorithm
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: // 使用Lunh算法验证信用卡号的函数
 - en: 'private validateCreditCardNumber(cardNumber: string): boolean {'
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 'private validateCreditCardNumber(cardNumber: string): boolean {'
 - en: let sum = 0;
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: let sum = 0;
 - en: let shouldDouble = false;
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: let shouldDouble = false;
 - en: for (let i = cardNumber.length - 1; i >= 0; i—) {
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: for (let i = cardNumber.length - 1; i >= 0; i—) {
 - en: let digit = parseInt(cardNumber.charAt(i), 10);
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: let digit = parseInt(cardNumber.charAt(i), 10);
 - en: if (shouldDouble) {
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: if (shouldDouble) {
 - en: if ((digit *= 2) > 9) digit -= 9;
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: if ((digit *= 2) > 9) digit -= 9;
 - en: '}'
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: sum += digit;
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: sum += digit;
 - en: shouldDouble = !shouldDouble;
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: shouldDouble = !shouldDouble;
 - en: '}'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: return sum % 10 === 0;
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: return sum % 10 === 0;
 - en: '} // End of validateCreditCardNumber'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: '} // 结束validateCreditCardNumber'
 - en: I didn’t run it to test it out, but that is a lot closer to what I was expecting.
     Feel free to give it a try.
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 我没有运行它来测试，但这更接近我预期的结果。随时尝试一下。
 - en: I suspected that ChatGPT would be better for this sort of thing, so I gave it
     a similar prompt to see what it would come up with.
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 我怀疑ChatGPT在这方面会更好，所以我给了它一个类似的提示，看看它会得出什么。
 - en: Implement a function to validate a credit card number using the Lunh Algorithm
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: 实现一个使用Lunh算法验证信用卡号的函数
 - en: 'Sure, here''s a Python function that uses the Luhn Algorithm to validate a
     credit card number:'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，这里有一个使用Luhn算法验证信用卡号的Python函数：
 - en: 'def validate_credit_card_number(card_number):'
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def validate_credit_card_number(card_number):'
 - en: Reverse the credit card number and convert each digit to an integer
+  id: totrans-212
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 反转信用卡号并将每个数字转换为整数
 - en: digits = [int(x) for x in str(card_number)][::-1]
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: digits = [int(x) for x in str(card_number)][::-1]
 - en: Double the value of every second digit
+  id: totrans-214
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将每第二个数字的值加倍
 - en: doubled_digits = []
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: doubled_digits = []
 - en: 'for i, digit in enumerate(digits):'
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 'for i, digit in enumerate(digits):'
 - en: 'if i % 2 == 1:'
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: 'if i % 2 == 1:'
 - en: doubled_digits.append(digit * 2)
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: doubled_digits.append(digit * 2)
 - en: 'else:'
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 'else:'
 - en: doubled_digits.append(digit)
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: doubled_digits.append(digit)
 - en: Add the digits of the doubled values and the undoubled digits
+  id: totrans-221
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将加倍值的数字和未加倍的数字相加
 - en: total = 0
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: total = 0
 - en: 'for digit in doubled_digits:'
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 'for digit in doubled_digits:'
 - en: 'if digit > 9:'
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: 'if digit > 9:'
 - en: total += digit - 9
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: total += digit - 9
 - en: 'else:'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 'else:'
 - en: total += digit
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: total += digit
 - en: If the total is a multiple of 10, the card number is valid
+  id: totrans-228
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 如果总和是10的倍数，则信用卡号有效
 - en: return total % 10 == 0
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: return total % 10 == 0
 - en: Does it work? I don’t really know. Honestly, I didn’t test it. I don’t speak
     Python, but it did give me a glimpse at some of the languages the ChatGPT (and
     presumably Copilot) knows. The JavaScript I got from Copilot looks different from
     the JavaScript code at the website.
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 它有效吗？我不太清楚。老实说，我没有测试过。我不会说Python，但它让我一窥ChatGPT（和可能是Copilot）了解的一些语言。我从Copilot得到的JavaScript代码与网站上的JavaScript代码看起来不同。
 - en: If you decide to test either version, let me know if it works.
+  id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你决定测试任一版本，请告诉我它是否有效。
 - en: HTML tags
+  id: totrans-232
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: HTML标签
 - en: Can Copilot recognize legal HTML tags?
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: Copilot能识别合法的HTML标签吗？
 - en: // Recognize all HTML tags in the input text
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: // 识别输入文本中的所有HTML标签
 - en: private htmlTagRegex = /<[^>]*>/g;
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: private htmlTagRegex = /<[^>]*>/g;
 - en: I won’t show the matches here, but this one seems to work. My only complaint
     is that it sees closing tags, too.
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不会在这里展示匹配结果，但这个似乎有效。我唯一的抱怨是它也看到了闭合标签。
 - en: ChatGPT decided that I still wanted Python, based on the last conversation I
     had with it. This is another reminder that your conversations have context that
     ChatGPT will remember.
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT认为我仍然想要Python，基于我上次与它的对话。这是另一个提醒，你的对话有ChatGPT会记住的上下文。
 - en: Write a regex to recognize all HTMl tags in the input text.
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个正则表达式来识别输入文本中的所有HTML标签。
 - en: import re
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: import re
 - en: pattern = r'<\/?[a-zA-Z]+\b(?:\s*[a-zA-Z]+=(?:"[^"]*"|\'[^\']*\'))*\s*\/?>'
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: 模式 = r'<\/?[a-zA-Z]+\b(?:\s*[a-zA-Z]+=(?:"[^"]*"|\'[^\']*\'))*\s*\/?>'
 - en: tags = re.findall(pattern, input_text)
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: tags = re.findall(pattern, input_text)
 - en: Go back to giving me raw regexes, not wrapped in python
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: 回到给我原始正则表达式，不要包裹在Python中
 - en: <\/?[a-zA-Z]+\b(?:\s*[a-zA-Z]+=(?:"[^"]*"|\'[^\']*\'))*\s*\/?>
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: <\/?[a-zA-Z]+\b(?:\s*[a-zA-Z]+=(?:"[^"]*"|\'[^\']*\'))*\s*\/?>
 - en: They appear to be the same regex, with the former wrapped in Python syntax.
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: 它们似乎是相同的正则表达式，只是前者包含了Python语法。
 - en: Detect Repeated Words
+  id: totrans-245
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 检测重复单词
 - en: How hard would it be to detect repeated words in a piece of text?
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 在一段文本中检测重复单词有多难？
 - en: // Find repeated words in the input text
+  id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: // 在输入文本中查找重复的单词
 - en: private repeatedWordRegex = /\b(\w+)\b\s+\b\1\b/g;
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: private repeatedWordRegex = /\b(\w+)\b\s+\b\1\b/g;
 - en: I expected this one to be more complicated than it was, but on reflection, this
     is the kind of thing regular expressions really good for. ChatGPT gave me almost
     the exact same pattern, except it appears to account for duplicate words that
     are separated by punctuation.
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: 我本以为这个会比实际复杂，但反思之后，这正是正则表达式擅长的事情。ChatGPT给出的模式几乎完全相同，只是似乎考虑了被标点符号分隔的重复单词。
 - en: \b(\w+)\b(?=.*\b\1\b)
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: \b(\w+)\b(?=.*\b\1\b)
 - en: Note that this regular expression will not match repeated words that are separated
     by non-word characters (e.g., "hello, hello" will not match). If you want to match
     repeated words regardless of the characters separating them, you can replace the
     word boundary \b with a whitespace character \s in the regular expression.
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这个正则表达式不会匹配被非单词字符分隔的重复单词（例如，“hello, hello”不会匹配）。如果你想匹配无论分隔它们的字符是什么的重复单词，你可以在正则表达式中用空格字符\s替换单词边界\b。
 - en: Repeated Words Detected
+  id: totrans-252
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 检测到重复单词
 - en: Mike was was here here
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh: 迈克曾在此处留下痕迹
 - en: the quick brown fox fox jumps over the lazy dog
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: 敏捷的棕色狐狸跳过了懒狗
 - en: Space, the the final frontier
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: 空格，最终的边界
 - en: Repeated Words Not Detected
+  id: totrans-256
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 未检测到重复单词
 - en: mike was here
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: 迈克曾在此处
 - en: mike was here was here
+  id: totrans-258
   prefs: []
   type: TYPE_NORMAL
+  zh: 迈克曾在此处留下痕迹
 - en: Space, The the final frontier
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: 空格，最终的边界
 - en: the quick brown fox jumps over the lazy dog
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh: 敏捷的棕色狐狸跳过了懒狗
 - en: You may notice that the regex is case-sensitive. Adding an i should solve that
     problem.
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能注意到正则表达式是区分大小写的。添加一个 i 应该可以解决这个问题。
 - en: Valid JavaScript identifiers
+  id: totrans-262
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 有效的JavaScript标识符
 - en: This one made sense after I saw what it wrote, but it wasn’t what I expected
     (honestly, I’m not sure what I expected).
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我看到它写的内容后，这个我才明白，但这不是我期望的（老实说，我不确定我期望什么）。
 - en: // Recognize all valid JavaScript keywords in the input text
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: // 识别输入文本中的所有有效JavaScript关键字
 - en: private jsKeywordRegex = /\b(break|case|catch|continue|debugger|default|delete|do|else|finally|for|function|if|in|instanceof|new|return|switch|this|throw|try|typeof|var|void|while|with|class|const|enum|export|extends|import|super|implements|interface|let|package|private|protected|public|static|yield|abstract|boolean|byte|char|double|final|float|goto|int|long|native|short|synchronized|throws|transient|volatile)\b/g;
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: private jsKeywordRegex = /\b(break|case|catch|continue|debugger|default|delete|do|else|finally|for|function|if|in|instanceof|new|return|switch|this|throw|try|typeof|var|void|while|with|class|const|enum|export|extends|import|super|implements|interface|let|package|private|protected|public|static|yield|abstract|boolean|byte|char|double|final|float|goto|int|long|native|short|synchronized|throws|transient|volatile)\b/g;
 - en: ChatGPT gave me practically the same regex.
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT给出的实际上是几乎相同的正则表达式。
 - en: \b(?:await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|false|finally|for|function|if|implements|import|in|instanceof|interface|let|new|null|package|private|protected|public|return|super|switch|this|throw|true|try|typeof|var|void|while|with|yield)\b
+  id: totrans-267
   prefs: []
   type: TYPE_NORMAL
+  zh: \b(?:await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|false|finally|for|function|if|implements|import|in|instanceof|interface|let|new|null|package|private|protected|public|return|super|switch|this|throw|true|try|typeof|var|void|while|with|yield)\b
 - en: Looking at both patterns more closely, I’m not convinced that either of them
     is 100% correct, though.
+  id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh: 更仔细地查看这两个模式，我并不确信它们两者都是100%正确的。
 - en: Conclusion
+  id: totrans-269
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 结论
 - en: After some early failures, I think it’s safe to say that both ChatGPT and Copilot
     can help with regular expressions. However, as you have seen, they are both far
     from perfect.
+  id: totrans-270
   prefs: []
   type: TYPE_NORMAL
+  zh: 在一些早期的失败之后，我认为可以肯定地说，ChatGPT和Copilot都可以帮助处理正则表达式。然而，正如你所看到的，它们都远非完美。
 - en: As with any code written for you by an AI (or even other developers), you can’t
     simply accept what you’re given without question. It’s important to understand
     what the code does.
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像任何由AI（甚至其他开发人员）为你编写的代码一样，你不能简单地不加怀疑地接受所给出的代码。理解代码的功能是很重要的。
 - en: As I have written previously, I will continue to use them where it makes sense.
     I will not, however, blindly use everything written for me by an AI.
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我之前所写的，我会在合适的情况下继续使用它们。不过，我不会盲目地使用由人工智能为我写的一切。

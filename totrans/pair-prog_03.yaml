@@ -1,534 +1,823 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_above.png)'
 - en: Git Commands
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: Git 命令
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![image](d2d_images/chapter_title_below.png)'
 - en: '![GitHub Commit Graph](d2d_images/image016.png)'
+  id: totrans-4
   prefs: []
   type: TYPE_IMG
+  zh: '![GitHub 提交图](d2d_images/image016.png)'
 - en: GitHub Commit Graph by Author
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: GitHub 提交图按作者
 - en: Can GitHub Copilot Help with Git Itself?
+  id: totrans-6
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: GitHub Copilot 能帮助 Git 本身吗？
 - en: After my experience with shell scripting, I decided to explore how Copilot could
     assist with learning Git commands. In this chapter, I will detail my findings
     and demonstrate how Copilot can effectively aid in the learning process.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我使用 shell 脚本的经验之后，我决定探索 Copilot 如何帮助学习 Git 命令。在本章中，我将详细介绍我的发现，并演示 Copilot 如何有效地辅助学习过程。
 - en: Basic Git Commands
+  id: totrans-8
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 基本 Git 命令
 - en: '![File type selector in VS Code](d2d_images/image008.png)'
+  id: totrans-9
   prefs: []
   type: TYPE_IMG
+  zh: '![VS Code 中的文件类型选择器](d2d_images/image008.png)'
 - en: As I did with shell scripting, I created a blank document in VS Code and set
     its type to Shell Script. Next, I started adding comments into the document to
     see what Copilot would suggest. In every case you see below, I typed as little
     as possible to exercise Copilot to its fullest.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 就像我在 shell 脚本中所做的那样，我在 VS Code 中创建了一个空白文档，并将其类型设置为 Shell 脚本。接下来，我开始在文档中添加注释，看看
+    Copilot 会建议什么。在下面的每种情况中，我尽可能少地输入，以充分运用 Copilot。
 - en: I started simple, just asking it to create a new git repository for me.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 我从简单开始，只是让它为我创建一个新的 git 仓库。
 - en: Create an empty git repo
+  id: totrans-12
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 创建一个空的 git 仓库
 - en: git init
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: git init
 - en: Next, I wanted to set my git name and email, but I can never remember the exact
     commands. Copilot, however, does.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，我想设置我的 git 用户名和邮箱，但我总是记不住确切的命令。然而，Copilot 可以。
 - en: Set my git user name and email
+  id: totrans-15
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 设置我的 git 用户名和邮箱
 - en: git config user.name "Mike Callaghan"
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: git config user.name "Mike Callaghan"
 - en: git config user.email "[michael@walkingriver.com](mailto:michael@walkingriver.com)"
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: git config user.email "[michael@walkingriver.com](mailto:michael@walkingriver.com)"
 - en: Sadly, but understandably, Copilot didn’t know my name and email address. I
     added those myself. It suggested “John Doe,” which was an easy hint that I would
     have to change it. For the email, it stopped the suggested text at the opening
     quote, suggesting that I complete the line myself.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 不幸的是，但可以理解的是，Copilot 不知道我的姓名和邮箱地址。我自己添加了这些信息。它建议使用“John Doe”，这是一个简单的提示，我需要更改它。对于邮箱，它在开头引号处停止建议的文本，建议我自己完成这一行。
 - en: 'An empty git repo isn’t very useful, so I wanted to create a new branch, add
     a file to it, and then commit the changes and push the branch. Here are those
     commands, all as suggested by Copilot from my comments:'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个空的 git 仓库并不是很有用，所以我想创建一个新的分支，向其中添加一个文件，然后提交更改并推送该分支。以下是这些命令，都是根据 Copilot 从我的评论中建议的：
 - en: Create and switch to a new branch named develop
+  id: totrans-20
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 创建并切换到名为 develop 的新分支
 - en: git checkout -b develop
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: git checkout -b develop
 - en: Create a file
+  id: totrans-22
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 创建一个文件
 - en: echo "Hello World" > hello.txt
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: echo "Hello World" > hello.txt
 - en: Commit all new and updated files to this branch
+  id: totrans-24
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将所有新文件和更新的文件提交到这个分支
 - en: git add .
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: git add .
 - en: git commit -m "Initial commit"
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: git commit -m "Initial commit"
 - en: Push this branch to the remote repository
+  id: totrans-27
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 推送此分支到远程仓库
 - en: git push -u origin develop
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: git push -u origin develop
 - en: Switch back to the main branch
+  id: totrans-29
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 切换回主分支
 - en: git checkout main
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: git checkout main
 - en: Merge the develop branch into the main branch
+  id: totrans-31
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将 develop 分支合并到主分支
 - en: git merge develop
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: git merge develop
 - en: Rebase the main branch onto the develop branch
+  id: totrans-33
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将主分支重新定位到 develop 分支
 - en: git checkout develop
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: git checkout develop
 - en: git rebase main
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: git rebase main
 - en: Those are all pretty good guesses. So far, I’m pleased with how well Copilot
     understands git.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些都是相当不错的猜测。到目前为止，我对 Copilot 对 git 的理解感到满意。
 - en: Intermediate Git Commands
+  id: totrans-37
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 中级 Git 命令
 - en: For the rest of the chapter, I ran the generated commands on a mature repo,
     rather than the one I created above. This one has multiple branches, commits,
     tags, etc.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章的其余部分，我在一个成熟的仓库上运行生成的命令，而不是上面创建的那个。这个仓库有多个分支、提交、标签等。
 - en: Commit Logs
+  id: totrans-39
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 提交日志
 - en: Git-log enables you to view a quick summary of a repo’s commits in reverse order,
     newest to oldest. Copilot helped me learn a number of variations on that command.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: Git-log 可以让您以相反顺序查看仓库的提交的快速摘要，从最新到最旧。Copilot 帮助我学习了许多关于该命令的变体。
 - en: Show me the last 10 commits on develop branch
+  id: totrans-41
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 展示 develop 分支上最近的 10 次提交
 - en: git log—oneline -10 develop
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: git log—oneline -10 develop
 - en: Show me the last 10 commits on all branches
+  id: totrans-43
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 展示所有分支上最近的 10 次提交
 - en: git log—oneline -10—all
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: git log—oneline -10—all
 - en: Show me the last 10 commits on all branches and show the graph
+  id: totrans-45
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 展示所有分支上最近的 10 次提交并展示图形
 - en: git log—oneline -10—all—graph
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: git log—oneline -10—all—graph
 - en: Show me the last 10 commits on all branches and show the graph and author
+  id: totrans-47
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 显示所有分支上最近的10个提交，显示图形和作者
 - en: git log—oneline -10—all—graph—author="Mike Callaghan"
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: git log—oneline -10—all—graph—author="Mike Callaghan"
 - en: I’m not sure this one is accurate. I believe that it will show me all commits
     by Mike Callaghan, but necessary all commits and their authors. Again, be careful
     with simply accepting what Copilot provides at face value. It can help, but if
     you are careless, it can also hurt you.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不确定这个是否准确。我相信它会显示所有Mike Callaghan的提交，但不是所有提交和它们的作者。再次强调，小心接受Copilot提供的内容。它可以帮助，但如果不小心，也会伤害你。
 - en: Revert Mistaken Commits
+  id: totrans-50
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 撤销错误的提交
 - en: I have a hard time remembering the correct git commands to revert changes I
     didn’t mean to commit. Would Copilot allow me to stop referring to that article?
     Here is what it gave me when I asked.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 我很难记住正确的git命令来撤销我不想提交的更改。Copilot是否能让我不再参考那篇文章？这是我询问时得到的回答。
 - en: Revert last commit
+  id: totrans-52
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 撤销最后一次提交
 - en: git reset—hard HEAD~1
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: git reset—hard HEAD~1
 - en: Revert last commit and keep changes
+  id: totrans-54
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 回滚最后一次提交并保留更改
 - en: git reset—soft HEAD~1
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: git reset—soft HEAD~1
 - en: Revert all commits from ee670f5 to 9ad6740
+  id: totrans-56
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 从ee670f5到9ad6740回滚所有提交
 - en: git revert ee670f5..9ad6740
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: git revert ee670f5..9ad6740
 - en: Those are exactly correct.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些完全正确。
 - en: Cherry Pick
+  id: totrans-59
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: Cherry Pick
 - en: Sometimes we want to select a single prior commit from another branch and apply
     it to the current branch. This is called cherry picking, and Copilot knew how
     to do that, too.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时我们想从另一个分支选择单个先前提交并将其应用到当前分支。这称为cherry picking，Copilot也知道如何做。
 - en: Cherry pick commit 9ad6740 into main
+  id: totrans-61
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将提交9ad6740 cherry-pick到main
 - en: git checkout main
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: git checkout main
 - en: git cherry-pick 9ad6740
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: git cherry-pick 9ad6740
 - en: Git Diff
+  id: totrans-64
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: Git Diff
 - en: If you want to view what has changed between two commits, you use the git-diff command.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想查看两个提交之间的变化，可以使用git-diff命令。
 - en: Compare commits ee670f5 with 9ad6740
+  id: totrans-66
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 比较提交ee670f5和9ad6740
 - en: git diff ee670f5 9ad6740
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: git diff ee670f5 9ad6740
 - en: This works, but it isn’t very intuitive. Maybe there is a better option?
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样做是有效的，但不够直观。也许有更好的选择？
 - en: DiffMerge
+  id: totrans-69
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: DiffMerge
 - en: There is an app I’ve used before called DiffMerge that gives you a nicer UI
     for comparing diffs. I wondered whether Copilot could help me install and configure
     it.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 我以前用过一个叫DiffMerge的应用程序，它提供了一个更好的UI来比较差异。我想知道Copilot是否能帮我安装和配置它。
 - en: install diffmerge from brew
+  id: totrans-71
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 从brew安装diffmerge
 - en: brew install—cask diffmerge
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: brew install—cask diffmerge
 - en: Set the difftool to diffmerge
+  id: totrans-73
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 将difftool设置为diffmerge
 - en: git config—global diff.tool diffmerge
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: git config—global diff.tool diffmerge
 - en: git config—global difftool.diffmerge.cmd 'diffmerge "$LOCAL" "$REMOTE"'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: git config—global difftool.diffmerge.cmd 'diffmerge "$LOCAL" "$REMOTE"'
 - en: git config—global difftool.prompt false
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: git config—global difftool.prompt false
 - en: Compare commits ee670f5 with 9ad6740 with an external diff tool
+  id: totrans-77
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 使用外部diff工具比较提交ee670f5和9ad6740
 - en: git difftool ee670f5 9ad6740
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: git difftool ee670f5 9ad6740
 - en: 'Note that even though DiffMerge runs on both macOS and Windows, the brew command
     is specific to macOS. I asked it to install on Windows instead and it gave me
     this:'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，尽管DiffMerge在macOS和Windows上都可以运行，但brew命令是特定于macOS的。我要求在Windows上安装，结果给了我这个：
 - en: install diffmerge on windows
+  id: totrans-80
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 在Windows上安装diffmerge
 - en: choco install diffmerge
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: choco install diffmerge
 - en: I don’t have a Windows box to try it, but it looks legitimate. The rest of the
     commands above should be the same.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 我没有Windows电脑来尝试，但看起来是合法的。上面的其余命令应该是一样的。
 - en: Advanced Git Commands
+  id: totrans-83
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 高级Git命令
 - en: I don’t profess to be a git expert. I consider myself an intermediate student
     at best. That said, I have done a few more advanced activities with git, and I
     present them here for your edification.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 我不自诩为git专家。我最多只能算是一个中级学生。尽管如此，我在git上做了一些更高级的活动，并在这里为您呈现。
 - en: Archive Repo
+  id: totrans-85
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 存档Repo
 - en: Have you ever needed to send someone a copy of your git repo without any of
     the git stuff attached? You could checkout the correct branch at the desired commit,
     remove the .git folder, and then zip it up. Did you know that git can do all that
     for you?
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 你是否曾经需要向某人发送你的git存储库的副本，而不附带任何git内容？你可以在所需的提交处检出正确的分支，删除.git文件夹，然后将其压缩。你知道git可以为你完成所有这些吗？
 - en: Archive the current branch
+  id: totrans-87
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 存档当前分支
 - en: git archive -o archive.zip HEAD
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: git archive -o archive.zip HEAD
 - en: Archive the current branch and exclude the .gitignore files
+  id: totrans-89
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 存档当前分支并排除.gitignore文件
 - en: git archive -o archive.zip HEAD—. ':!*.gitignore'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: git archive -o archive.zip HEAD—. ':!*.gitignore'
 - en: Archive commit 1319f65 and exclude the .gitignore files
+  id: totrans-91
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 存档提交1319f65并排除.gitignore文件
 - en: git archive -o archive.zip 1319f65—. ':!*.gitignore'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: git archive -o archive.zip 1319f65—. ':!*.gitignore'
 - en: Clean up Stale Branches and Files
+  id: totrans-93
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 清理过时的分支和文件
 - en: After a pull request is completed, it’s often a good idea to clean up older
     feature branches. GitHub and GitLab can be configured to do this automatically.
     The trouble is, doing so on your local repo isn’t so easy.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 完成拉取请求后，清理旧的功能分支通常是个好主意。GitHub和GitLab可以自动配置这样做。问题是，在本地存储库中这样做并不那么容易。
 - en: Remove all merged branches
+  id: totrans-95
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 删除所有已合并的分支
 - en: git branch—merged | grep -v "\*" | xargs -n 1 git branch -d
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: git branch—merged | grep -v "\*" | xargs -n 1 git branch -d
 - en: Sometimes, you may want to delete an individual branch that exists on both your
     local repo and the remote.
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时，你可能想要从本地存储库和远程存储库中删除一个单独的分支。
 - en: Delete myfeature branch on local and remote
+  id: totrans-98
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 本地和远程删除 myfeature 分支
 - en: git branch -d myfeature
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: git branch -d myfeature
 - en: git push origin—delete myfeature
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: git push origin—delete myfeature
 - en: What if you have untracked files on your local, and want to clean them up?
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你在本地有未跟踪的文件，想要清理它们怎么办？
 - en: Delete untracked local files from the current working tree
+  id: totrans-102
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 从当前工作树中删除未跟踪的本地文件
 - en: git clean -f
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: git clean -f
 - en: Shallow Clones
+  id: totrans-104
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 浅克隆
 - en: Have you ever had a git repository grow so large that it took up way too much
     disk space? After a while, you might decide that you don’t need the full history,
     and it would be easier to clone only a portion of it. This is called a “shallow
     clone,” and Copilot knows how to do it.
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 你是否遇到过一个 Git 存储库占用了太多磁盘空间的情况？过了一段时间，你可能会决定不需要完整的历史记录，而且只克隆其中的一个部分会更容易。这叫做“浅克隆”，Copilot知道如何做。
 - en: Clone repo keeping only commits after Jan 1, 2022
+  id: totrans-106
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 克隆存储库，只保留 2022 年 1 月 1 日之后的提交
 - en: git clone—shallow-since=2022-01-01
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: git clone—shallow-since=2022-01-01
 - en: Clone repo keeping only commits after Jan 1, 2022 and before Jan 1, 2023
+  id: totrans-108
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 克隆存储库，只保留 2022 年 1 月 1 日之后和 2023 年 1 月 1 日之前的提交
 - en: git clone—shallow-since=2022-01-01—shallow-until=2023-01-01
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: git clone—shallow-since=2022-01-01—shallow-until=2023-01-01
 - en: Clone repo keeping only commits after Jan 1, 2022 and before Jan 1, 2023 and
     only the main branch
+  id: totrans-110
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 克隆存储库，只保留 2022 年 1 月 1 日之后和 2023 年 1 月 1 日之前的提交且只有主分支
 - en: git clone—shallow-since=2022-01-01—shallow-until=2023-01-01—branch main
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: git clone—shallow-since=2022-01-01—shallow-until=2023-01-01—branch main
 - en: Clone repo keeping only commits after Jan 1, 2022 and before Jan 1, 2023 and
     only the main branch and only the last 10 commits
+  id: totrans-112
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 克隆存储库，只保留 2022 年 1 月 1 日之后和 2023 年 1 月 1 日之前的提交，只有主分支和只有最后 10 个提交。
 - en: git clone—shallow-since=2022-01-01—shallow-until=2023-01-01—branch main—depth
     10
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: git clone—shallow-since=2022-01-01—shallow-until=2023-01-01—branch main—depth
+    10
 - en: At this point, I don’t feel it’s necessary for me to try to remember these commands.
     Copilot will remember them for me.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我觉得没必要记住这些命令。Copilot会替我记住它们。
 - en: Permanently Remove a File
+  id: totrans-115
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 永久删除一个文件
 - en: For my last operation, imagine you have accidentally committed a file containing
     secrets (passwords, private keys, etc.) to your remote repo. If you simply delete
     it from your local, add the file to .gitignore, and commit, that won’t do the
     trick. The file can still be restored. The only way to remove a file in this manner
     is to rewrite history. Fortunately, git can do this, but it’s easier said than
     done, as you’ll see.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于我的最后操作，假设你不小心将一个包含秘密（密码、私钥等）的文件提交到远程存储库。如果你只是从本地删除它，将文件添加到 .gitignore，并提交，这样做行不通。文件仍然可以恢复。以这种方式删除文件的唯一方法是重写历史。幸运的是，git
+    可以这样做，但事实上并不像说的那么容易，你会看到的。
 - en: This is what Copilot offered when I asked it to delete a file of secrets.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我要求Copilot删除一个包含秘密的文件时，这就是Copilot提供的。
 - en: Delete secrets file accidentally committed to git
+  id: totrans-118
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 意外提交到 git 的 secrets 文件
 - en: git filter-branch—force—index-filter 'git rm—cached—ignore-unmatch secrets.txt'—prune-empty—tag-name-filter
     cat——all
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: git filter-branch—force—index-filter 'git rm—cached—ignore-unmatch secrets.txt'—prune-empty—tag-name-filter
+    cat——all
 - en: To be honest, I didn’t want to test this command, but I decided to give it a
     try on an unimportant repo. I switched out secrets.txt with package-lock.json,
     figuring it wouldn’t be terribly dangerous to remove that particular file.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 老实说，我不想测试这个命令，但我决定在一个不重要的存储库中试一试。我将 secrets.txt 替换为 package-lock.json，我觉得删除这个特定文件不会带来太大危险。
 - en: 'When I ran it, git gave me a large warning:'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我运行它时，git 给了我一个大警告：
 - en: git-filter-branch has a glut of gotchas generating mangled history
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: git-filter-branch 有很多陷阱，生成了被搅乱的历史
 - en: rewrites.  Hit Ctrl-C before proceeding to abort, then use an
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 重写。在继续之前按Ctrl-C中断，然后使用
 - en: alternative filtering tool such as 'git filter-repo'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 其他过滤工具，如'git filter-repo'
 - en: (https://github.com/newren/git-filter-repo/) instead.  See the
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: (https://github.com/newren/git-filter-repo/) 链接查看`filter-branch`手册页了解更多详情；为了抑制这个警告
 - en: filter-branch manual page for more details; to squelch this warning,
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关filter-branch的详细手册页，请参阅更多详细信息；要抑制此警告，
 - en: set FILTER_BRANCH_SQUELCH_WARNING=1.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 设置FILTER_BRANCH_SQUELCH_WARNING=1。
 - en: I let it run, figuring “what’s the worst that can happen?” What happened is
     that it removed every instance of package-lock.jsonin my entire project. Beyond
     that, the local and remote repos diverged by 20-some commits, so I never did figure
     out if that’s what I wanted.
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 我让它运行，想着“最坏的情况是什么？”结果是它移除了我整个项目中每个 package-lock.json 的实例。除此之外，本地和远程仓库分歧了大约 20
+    个提交，所以我从来没有弄清楚那是否是我想要的。
 - en: 'I asked Copilot to fix my diverged branches, and it offered this:'
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 我让 Copilot 修复了我的分歧分支，它提供了这个选择：
 - en: Fix diverged branches
+  id: totrans-130
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 修复分歧的分支
 - en: git fetch—all
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: git fetch—all
 - en: git reset—hard origin/main
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: git reset—hard origin/main
 - en: It worked, and now I’m back to where I was when I started.
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 它有效了，现在我回到了最开始的地方。
 - en: Now, what was that warning all about? Maybe it’s something we should consider.
     I looked into git-filter-repo, and it looks like a better solution. Also, as it
     turned out, Copilot seemed to know about that, too.
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，那个警告到底是什么意思？也许这是我们应该考虑的事情。我调研了 git-filter-repo，看起来是一个更好的解决方案。而且，事实证明，Copilot
+    似乎也知道那个。
 - en: Delete secrets file accidentally pushed to remote with filter-repo
+  id: totrans-135
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 使用 filter-repo 意外推送到远程的 secrets 文件。
 - en: git filter-repo—path-glob '!secrets.txt'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: git filter-repo—path-glob '!secrets.txt'
 - en: As I didn’t have it installed, the command didn’t work. However, I was impressed
     that it came up with the correct syntax (I presume).
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 因为我没有安装它，所以命令没有生效。不过，我对它能提供正确的语法印象深刻（我推测）。
 - en: Final Words
+  id: totrans-138
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 最后的话
 - en: With the exception of the last request and that one tiny issue with git log,
     Copilot handled everything I threw at it. I’ll probably keep using it whenever
     I can’t remember exactly which git command to use.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了最后一个请求和 git log 的一个小问题之外，Copilot 处理了我提出的一切。每当我不记得要使用哪个 git 命令时，我可能会继续使用它。
 - en: You may be wondering why I didn’t use ChatGPT here. I expect that it would be
     able to get these same commands correct. I urge you to give it a shot as an exercise.
     Drop me an email and let me know how it goes.
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可能想知道为什么我这里没有使用 ChatGPT。我预计它能够正确地执行这些相同的命令。我敦促你尝试一下作为练习。给我发封邮件，告诉我进展如何。

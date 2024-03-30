@@ -1,0 +1,1418 @@
+- en: '[CHAPTER 8](toc.xhtml#c08)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Power Query: One-Stop Solution](toc.xhtml#c08)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](toc.xhtml#s125a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This chapter will discuss one of the game-changing tools in Excel that promises
+    to revolutionize the way we handle data retrieval and transformation — Power Query.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Often hailed as the *one-stop solution* for data lookup, Power Query empowers
+    users to seamlessly connect, reshape, and cleanse data from various sources, transforming
+    raw information into valuable insights with remarkable efficiency and ease.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Like the FILTER function, Power Query has the flexibility to return a subset
+    of data, not just a single entry, which is important for creating dynamic reports.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In Excel 2010 and Excel 2013 versions, the Power Query feature is not integrated
+    by default. You need to download and install the Power Query add-in, which can
+    be found on the add-in on the Microsoft Download Center. Once installed, you’ll
+    find the Power Query option in the `**Power Query**` tab on the Excel ribbon.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](toc.xhtml#s126a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will discuss the 15 scenarios where we can Power Query:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Installing the Power Query add-in for Excel 2010 and Excel 2013
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Exact Lookup
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Return multiple results and Multiple columns.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Approximate Lookup
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Lookup using table joins.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Looking up the top or bottom n items
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Lookup using the List function.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Looking up Weekday vs. Weekend data
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Looking up Data that excludes Holidays.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Looking up Items repeated *N* times.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Return end of Month date items Only
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Fuzzy Lookup
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Installing the Power Query add-in for Excel 2010 and Excel 2013](toc.xhtml#s127a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Here’s a guide on how to do it:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**For Excel 2010:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Download the Power Query Add-in**:**
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Go to the Microsoft Download Center.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Search for “Power Query for Excel 2010” and download the appropriate version
+    (32-bit or 64-bit) based on your Excel version and system architecture.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Install the Add-in:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Run the downloaded installer.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Follow the on-screen instructions to install the Power Query add-in. Make sure
+    Excel is closed during this process.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: After installation, open Excel 2010.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Enable the Add-in:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Click File tab in Excel.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Select Options.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In the Excel Options dialog box, click Add-Ins on the left sidebar.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In the Manage box at the bottom, select COM Add-ins and click Go.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Check the Microsoft Office Power Query for the Excel option.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Click OK to enable the add-in.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**For Excel 2013**:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Power Query is already integrated, but you might need to enable it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how to enable Power Query:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Click File tab in Excel.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Select Options.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In the Excel Options dialog box, click Add-Ins on the left sidebar.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In the Manage box at the bottom, select COM Add-ins and click Go.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Check the Microsoft Office Power Query option.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Click OK to enable Power Query.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: With Power Query enabled, you can access it from the Data tab in the Ribbon.
+    You’ll see options like Get & Transform and Get Data there.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The first step in using Power Query is importing data into its editor. There
+    are two ways of importing data as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If your data is in the Excel workbook, go to the “Data” tab and select “From
+    Table/Range” if your data is in a structured table.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If your data is in a different workbook or different format (CSV, text file,
+    database, web source, and more), go to the “Data” tab, select “Get Data,” and
+    choose the appropriate source.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Note:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you’re connecting to a different data source, a Navigator window will appear.
+    Navigate to the specific file or database, select the table or query you want,
+    and click `**Load**` or `**Transform Data**` to open the Power Query Editor.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Exact Lookup](toc.xhtml#s128a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: To use Power Query to do an exact lookup, we need to have both the criteria
+    and lookup data in tables.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, in *[Figure 8.1](#fig8_1)*, we want to get the date for any debtor
+    in cell E2:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.1.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.1:** Power Query exact match lookup'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Convert the cells containing the criterion to a table. Name the table criteria
+    as shown in *[Figure 8.2](#fig8_2)*:![](images/Figure-8.2.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.2:** Create a Criterion table'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Convert the data to look up into a table as well and name it `**tblDebtors**`,
+    as shown in *[Figure 8.3](#fig8_3)*:![](images/Figure-8.3.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.3:** Create a Lookup data table'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Load the criterion table to Power Query first. To do this, click anywhere on
+    the table ► Go to the `**Data**` tab ► Click `**From Table/Range**` (see *[Figure
+    8.4](#fig8_4)*):![](images/Figure-8.4.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.4:** Loading the Criterion Table to Power Query Editor'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Go to the `**Power Query Editor**` and load out the criteria table as a connection
+    only, as shown in *[Figure 8.5](#fig8_5)*:![](images/Figure-8.5.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.5:** Loading Out the Criterion Table as a connection only'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Follow the same procedure as outlined in Step 3 to load the data table in Power
+    Query. By now, you should see the `**Criteria**` and Lookup Table in Power Query
+    Editor, as shown in *[Figure 8.6](#fig8_6)*:![](images/Figure-8.6.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.6:** Criteria and Lookup Table in Power Query Editor'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Go to the `**Debtors**`’ table and filter with the first debtor, as shown in
+    *[Figure 8.7](#fig8_7)*:![](images/Figure-8.7.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.7:** Apply Filter on the Lookup table'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Convert the criterion table into a value by right-clicking the Value and Drilling
+    down, as shown in *[Figure 8.8](#fig8_8)*:![](images/Figure-8.8.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.8:** Convert the Criteria table to a Value'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Replace the Filtered value in Step 6 above with the criteria value, as shown
+    in *[Figure 8.9](#fig8_9)*:![](images/Figure-8.9.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.9:** Replace Filtered Value with Criterion Value'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Since we want to return the date value, we should select and remove other columns,
+    as shown in [Figure 8.10](#fig8_10):![](images/Figure-8.10.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.10:** Replace Filtered Value with Criterion Value'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Close and load the retrieved date (see *[Figure 8.11](#fig8_11)*):![](images/Figure-8.11.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.11:** Load out the returned data'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: The final step is to load out the filtered Customer/debtor’s date not as a connection
+    but to an existing worksheet (see *[Figure 8.12](#fig8_12)*):![](images/Figure-8.12.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.12:** Load data to an existing worksheet'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '**Note:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To look up another customer/debtor’s date, just replace the name. Then, go to
+    the Data tab. In the queries and connection group, click Refresh All.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Power Query stores and remembers all the steps, so there’s no need to repeat
+    them when the criteria change.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Return multiple results and multiple columns](toc.xhtml#s129a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Now, let us assume that we have multiple transactions for the debtors, and
+    we want to return all transactions and multiple columns, as shown in *[Figure
+    8.13](#fig8_13)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.13.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.13:** Power Query returns Multiple items and multiple Columns'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: You will follow the same steps as outlined earlier, except for a small change
+    in Step 9.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In Step 9, where we were removing unwanted columns, this time, we will only
+    remove the debtor’s column, as shown in *[Figure 8.14](#fig8_14)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.14.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.14:** Allowing multiple columns to be returned'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Steps 10 and 11 in the previous section remains unchanged.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Approximate Lookup](toc.xhtml#s130a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Unlike in Excel, Power Query does not have a VLOOKUP or XLOOKUP function that
+    can do an approximate lookup.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this section, we will learn the steps to use to lookup grades using an approximate
+    lookup, as shown in *[Figure 8.15](#fig8_15)*. Please note your grades table needs
+    to be sorted in ascending order:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.15.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.15:** Power Query Approximate Match'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Load the grades table (`**tblGrade**`) as a connection only and then load the
+    exams table (`**tblExams**`). Then, follow Steps 3–5 outlined in the preceding
+    section (see *[Figure 8.16](#fig8_16)*):![](images/Figure-8.16.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.16:** Name the tables and load them to Power Query'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Click exams table, go to the Combine tab, and append queries as new (see *[Figure
+    8.17](#fig8_17))*:![](images/Figure-8.17.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.17:** Appending Queries in Power Query'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Append the exams table (`**tblExams**`) and grade tables (`**tblGrade**`) (see
+    *[Figure 8.18](#fig8_18)*):![](images/Figure-8.18.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.18:** Appending two tables'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: On the appended query, go to the `**Add Column**` tab and add an `**Index Column**`.
+    We will use this to sort the data later (see *[Figure 8.19](#fig8_19)*):![](images/Figure-8.19.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.19:** Adding an Index Column to Appended Query'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Sort the marks in ascending order (see *[Figure 8.20](#fig8_20)*):![](images/Figure-8.20.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.20:** Sort the marks in Ascending order'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Click Grade Column, go to the `**Transform**` tab, then in the Fill options,
+    and click Down (see *[Figure 8.21](#fig8_21)*):![](images/Figure-8.21.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.21:** Fill down the grades'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Go to the Students Column and Filter out the null values. Just untick the null
+    values.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to the Index column and sort it in ascending order.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Highlight the Grades table, then go to the `**Home**` tab, under the Remove
+    columns options, and click Remove other columns.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click appended query, go to the `**Home**` tab, and then under the Close and
+    Load options, click `**Close & Load To**` (see *[Figure 8.22](#fig8_22)*):![](images/Figure-8.22.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.22:** Load the grades from the Approximate Lookup'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Load the grades as a table next to the exams table (see *[Figure 8.23](#fig8_23)*):![](images/Figure-8.23.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.23:** Load the grades next to the exams table'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '[Lookup using table joins](toc.xhtml#s131a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In Power Query, one of the most important things to learn is the different
+    forms of table joins. In this example, we are going to use only two joins:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Inner Join**: Only the rows with matching values in both tables are included
+    in the result.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Left Anti-join**: Only rows from the left (or first) table are included in
+    the result.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'In the following example, see *[Figure 8.24](#fig8_24)*, we want to look up
+    from the `**tblCars**`, the customers whose cars were serviced (`**tblServiced**`)
+    (happy customers) and those with un-serviced cars (unhappy customers):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.24.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.24:** Looking up data using table joins'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Load the Cars table (`**tblCars**`) and Serviced tables (`**tblServiced**`)
+    as a connection only. Follow Steps 3–5 in the Exact Lookup section previously
+    mentioned.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click Cars table and go to the `**Home**` tab. Under the `**Combine**` group,
+    select Merge queries, and then select `**Merge Queries**` as New (see *[Figure
+    8.25](#fig8_25)*):![](images/Figure-8.25.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.25:** Merging Queries'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: In the Merge pop-up Table, Select `**tblServiced**` from the second dropdown
+    menu. Then select the `**Car Serviced**` column from the `**tblCars**` and the
+    `**Serviced Cars**` column from the `**tblServiced**` table. Finally, from the
+    Join kind, select Inner Join. This will only result in happy customers’ data (see
+    *[Figure 8.26](#fig8_26)*):![](images/Figure-8.26.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.26:** Inner Join table merge'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Rename the query to `**HappyCustomers**`, select the customer column, and click
+    remove other columns (see *[Figure 8.27](#fig8_27)*):![](images/Figure-8.27.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.27:** Renaming queries'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Repeat the preceding Steps 1–3 to create a new merged query. This time instead
+    of selecting an inner join, select a Left Anti-join. This will only result in
+    unhappy customers’ data whose cars were not serviced (see *[Figure 8.28](#fig8_28)*):![](images/Figure-8.28.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.28:** Left Anti-Join table merge'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Rename the query to `**UnhappyCustomers**`, select the customer column, and
+    click Remove other columns.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Lastly, load the two new queries as tables to an existing worksheet.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Looking up the top or bottom n items](toc.xhtml#s132a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: To look up the top/bottom n items dynamically, we will use almost the same steps
+    as those used in the Exact lookup section with a slight change.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, *[Figure 8.29](#fig8_29)* shows how to look up the top five creditors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.29.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.29:** Lookup top five creditors'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Load the Top 5 table (`**tblTop**`) as a connection only, and then load the
+    creditors table (`**tblCreditors**`). Follow Steps 3–5 in the Exact Lookup section
+    previously mentioned.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Convert the `**tblTop**` table into a value by right-clicking the value and
+    then drilling down. Refer to Step 7 in the Exact Lookup section previously mentioned.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click creditors table, go to the `**Home**` tab, and under the Keep Rows options,
+    select Keep Top Rows. In the pop-up window, type 5 under the number of rows (see
+    *[Figure 8.30](#fig8_30)*):![](images/Figure-8.30.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.30:** Keep the top five rows'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Go to the `**View**` tab and click `**Advanced Editor**` (see *[Figure 8.31](#fig8_31)*).
+    The reason for this step is to replace the hardcoded five rows with our criteria
+    in the `**tblTop**` table:![](images/Figure-8.31.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.31:** Invoke the Advanced Editor'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Replace the hardcoded 5 with our dynamic criteria in the “tblTop” table (see
+    *[Figure 8.32](#fig8_32)*):![](images/Figure-8.32.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.32:** Replace hardcoded criteria with dynamic one'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Load the filtered creditors as a table in the existing worksheet.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: To test if the dynamic Filter is working, change the top 5–7 and refresh the
+    query.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '***Note****: To lookup the bottom n items, follow the same steps as mentioned
+    previously, but in step 3, select “Keep the bottom rows”*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Lookup using the List function](toc.xhtml#s133a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: There are over 45 list-related functions in Power Query. Let us learn how to
+    use a few to look up data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We are going to look up the Grades and tutor tables, as shown in *[Figure 8.33](#fig8_33)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.33.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.33:** Approximate and Exact functions using List function'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Load all the three tables as a connection only.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the Class table (`**tblClass**`), go to the `**Add Column**` tab, and
+    click `**Custom Column**` (see *[Figure 8.34](#fig8_34)*):![](images/Figure-8.34.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.34:** Create a Custom Column'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Rename your column `**Tutor**` and write the function, as shown in *[Figure
+    8.35](#fig8_35)*:![](images/Figure-8.35.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.35:** Exact Lookup using List.PositionOf function'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`tblTutor[Tutor]`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`{ List.PositionOf(tblTutor[Subject],[Subject]) }`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the function works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**tblTutor[Tutor]**` ► returns a list of all the tutors in the lookup `**tblTutor**`
+    table. In Power Query, you can access the columns of a table using the square
+    bracket notation `**([ColumnName])**`**.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: After retrieving the column, we need to use the position index operator, that
+    is, the curly braces ( {} ) to return the row number where the subject in the
+    `**tblclass**` matches the subject in `**tblTutor**`
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**List.PositionOf(tblTutor[Subject],[Subject])**` ► To dynamically return
+    the row per subject, we use the function List.PositionOf. This function is used
+    to find the position of the current value ([Subject]) within the list of values
+    in the `**Subject**` column (tblTutor[Subject]) of the table. It returns the position
+    (index) of the value within the list.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: This expression works like the INDEX and MATCH combo function we learned in
+    *[Chapter 3, Index and Match](c03.xhtml)*. We are looking up the column first
+    from the `**tblTutor**` and then the row where the subject in the `**tblclass**`
+    matches the subject in the `**tblTutor**`
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Now, let us see how to do an approximate match by looking up the grades.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create another custom column and rename it grades.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Write the following functions as shown in *[Figure 8.36](#fig8_36):*
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`List.Last(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Table.SelectRows(Grades,(IT)=> IT[Marks]<=[Marks])[Grade])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.36.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.36:** Approximate Lookup using Table.SelectRows and List.Last'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the function works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**Table.SelectRows(Grades, (IT)=> IT[Marks]<=[Marks])**` ► This function filters
+    the rows of the “Grades” table based on a condition. The second argument, `**(IT)
+    => IT[Marks] <= [Marks]**`, is an inline function (also called a lambda function)
+    that specifies the filtering condition.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Here’s what’s happening:'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`**(IT)**` is the custom variable to represent the Internal table “Grades”,
+    which we shall be filtering inside the “tblClass” table.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**IT[Marks]**` refers to the value in the “Marks” column of the internal table.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**[Marks]**` refers to the value of the marks in the “tblClass” per row.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: So, the filtering condition checks whether the values in the “Marks” column
+    of the “Grades” table (IT[Marks]) are less than or equal to the value of the “Marks”
+    in “tblClass” and returns a table of those Marks and corresponding Grades.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**Table.SelectRows(Grades,(IT)=> IT[Marks]<=[Marks])[Grade]►**` Since we are
+    only interested in the grades, we use the field column operator ( [] ) to get
+    a grades list.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Finally, we look up the last grade in the list using the `**List.Last**` function.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Looking up Weekday versus Weekend data](toc.xhtml#s134a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: To look up weekend or weekday data in Power Query, we use the `**Date.DayOfWeek**`
+    function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, using data shown in *[Figure 8.37](#fig8_37)*, let us see how to
+    look up whom we gave credit on the weekends and weekdays.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.37.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.37:** Lookup the Weekday and Weekend data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Load the table to Power Query.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'To look up Weekday data, go to the View tab, click Advanced Editor, and write
+    the following function:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`let`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`Source = Excel.CurrentWorkbook(){[Name=”tblCreditors”]}[Content],`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`#”Filtered Rows” =`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`Table.SelectRows(`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`Source, each Date.DayOfWeek([Date])>=1 and Date.DayOfWeek([Date])<6`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`)`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`in`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`#”Filtered Rows”`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'Here is how the function works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The `**let**` clause is used to define a set of named steps, each of which represents
+    a specific transformation or calculation.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**Source = Excel.CurrentWorkbook(){[Name=”tblCreditors”]}[Content**``**] ►**`
+    assigns the contents of a table named “tblCreditors” from the current Excel workbook
+    to the variable “Source.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Define a new “Filtered Rows” step using the `**Table.SelectRows**` function
+    to filter the rows of the “Source” table based on a specific condition involving
+    the day of the week.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**Date.DayOfWeek([Date]) > 1 and Date.DayOfWeek([Date]) < 6**` checks if the
+    day of the week of the “Date” column is greater or equal to 1 (Monday) and less
+    than 6 (Friday). This effectively filters out rows corresponding to weekends (Saturday
+    and Sunday).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**in #”Filtered Rows”►**` The in keyword indicates the output of the script.
+    This line specifies the result of the script, which is the table generated by
+    the “Filtered Rows” step.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Note
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**Date.DayOfWeek**` function returns a number (from 0 to 6) indicating the
+    day of the week of the provided Date.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: It treats Sunday as the first day of the week.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Therefore, to look up only weekend data, replace the previously provided `**Table.SelectRows**`
+    function with the following function, which returns only the day of the week of
+    the `**Date**` equal to 0 or 1, that is (Sunday and Saturday):'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**Table.SelectRows(Source, each Date.DayOfWeek([Date])=0 or Date.DayOfWeek([Date])=6)**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Looking up date that excludes holidays](toc.xhtml#s135a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Assuming we have the following harvest data and holiday dates, as shown in *[Figure
+    8.38](#fig8_38)*. Let us learn how to look up harvested data excluding holidays.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.38.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.38:** Lookup dates excluding holidays'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Load the two tables as a connection only.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to Queries and Connections, right-click the harvested table, and click `**Merge**`
+    (see *[Figure 8.39](#fig8_39)*):![](images/Figure-8.39.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.39:** Merging Queries'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: On the Merge pop-up window, select the Holidays table in the second drop-down
+    menu. Then, select the Date column in the harvested table and holidays. Finally,
+    select the Left Anti-join to exclude the holidays from the harvested table (see
+    *[Figure 8.40](#fig8_40)*):![](images/Figure-8.40.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.40:** Merging Queries'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Finally, delete the holidays column and load out the data.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Looking up items repeated N times](toc.xhtml#s136a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Using the data shown in *[Figure 8.41](#fig8_41)*, let us learn how to lookup
+    the items repeated two times from the `**Sports Sale**` table.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that we want a solution where we can replace the 2 with any number,
+    and Power Query will look up the items.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.41.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.41:** Lookup items repeated 2 times'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Load the two tables as a connection only.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Convert the `**RepeatN**` table to a value ► Right-click the value and drill
+    down (see *[Figure 8.42](#fig8_42)*):![](images/Figure-8.42.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.42:** Convert table to value'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Go to the `**SportSales**` table and select the Items column. Then, go to the
+    Transfo+rm tab and click `**GroupBy**`. Under the Operation, select `**CountRows**`
+    and click `**OK**` (see *[Figure 8.43](#fig8_43)*)*:*![](images/Figure-8.43.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.43:** Group By Items'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Go to the new count column and filter by 1 (see *[Figure 8.44](#fig8_44)*):![](images/Figure-8.44.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.44:** Filter by any Count'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Replace the hardcoded filter criteria with our `**RepeatN**` value. Go to the
+    View tab and click `**Advanced Editor**`. Delete the hardcoded filter (1) and
+    type `**RepeatN**` (see *[Figure 8.45](#fig8_45)*):![](images/Figure-8.45.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.45:** Filter by any Count'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Delete the `**Count**` column and load the data (see *[Figure 8.46](#fig8_46)*)*:*![](images/Figure-8.46.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.46:** Delete the count column and load the data'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '[Return end-of-month date items only](toc.xhtml#s137a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In the previous chapter on the `**FILTER**` function, we learned how to look
+    up transactions occurring at any end of the month. Now, let us see how we can
+    implement the same using Power Query.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Using the data shown in *[Figure 8.47](#fig8_47)*, return only the creditors
+    paid at any end of the month:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.47.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.47:** Lookup End of the Month transactions'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Load the creditors’ table in Power Query.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to the `**View**` tab and click Advanced Editor.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Write the function as shown in *[Figure 8.48](#fig8_48)*:![](images/Figure-8.48.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.48:** M Code for Selecting End of the Month items'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'Here is how the function works:'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: The `**let**` clause i s used to define a set of named steps, each of which
+    represents a specific transformation or calculation.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**Source = Excel.CurrentWorkbook(){[Name=”Creditors”]}[Content] ►**` assigns
+    the contents of a table named “Creditors” from the current Excel workbook to the
+    variable “Source”.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Define a new “Filtered Rows” step using the `**Table.SelectRows**` function
+    to filter the rows of the “Source” table based on a specific condition.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**Date.Day([Paid Date])**` returns the day part of the “Paid Date” column,
+    while `**Date.DaysInMonth([Paid Date])**` returns a number from 28 to 31 indicating
+    the number of days in the month.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**Date.Day([Paid Date]) = Date.DaysInMonth([Paid Date])**` check if the day
+    of the paid date is equal to the total number of days in that month. If they are
+    equal, the expression will return TRUE, indicating that the payment date falls
+    on the last day of the month.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**Table.SelectRows**` function only returns rows where the preceding condition
+    is TRUE.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Load out the filtered table to an existing worksheet.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Fuzzy Lookup](toc.xhtml#s138a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Performing a fuzzy match in Power Query is easier and far more intuitive than
+    using functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fuzzy matching refers to the technique of comparing non-identical text strings
+    based on their similarity. Instead of exact matches, fuzzy matching evaluates
+    the resemblance between strings, allowing for the identification of similar or
+    closely related terms within datasets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, how do we lookup the staff in `**tblDirty**` using the `**Lookup
+    Company**` column in the `**tblClean**`, as shown in *[Figure 8.49](#fig8_49)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-8.49.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 8.49:** Fuzzy Lookup'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Load the two tables as a connection only.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click `**tblDirty**` and click Merge.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the `**tblClean**`, and then select the columns to Match, as shown in
+    *[Figure 8.50](#fig8_50)*.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click `**Use Fuzzy Matching to perform the merge**` and expand the fuzzy matching
+    options. These allow you to fine-tune the matching process. A lower similarity
+    threshold lowers the strictness of the fuzzy matching algorithm.![](images/Figure-8.50.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.50:** Left Outer Fuzzy Lookup'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Expand the Merged table (see *[Figure 8.51](#fig8_51)*) and select the lookup
+    column only.![](images/Figure-8.51.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 8.51:** Expand the Merged table'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Delete the Dirty column and load out the table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Conclusion](toc.xhtml#s139a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this chapter, we learned how to solve different lookup problems using a powerful
+    data transformation and preparation tool — Power Query. It is mainly recommended
+    when handling large data sets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One of the setbacks is that creating Power Query queries and connections may
+    take more time upfront than using simple Excel formulas. As we have learned, it
+    involves many steps.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another setback is that, unlike the formulas that recalculate in real-time and
+    provide instant results as you edit the spreadsheet, Power Query requires you
+    to refresh your queries in case your data changes. You can set the queries to
+    refresh after a specific time, but it would be a waste of resources if you have
+    complex queries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the next Chapter, we are going to learn how we can leverage the use of AI
+    in Mastering Excel.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](toc.xhtml#s140a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: If you’re working with a relatively small dataset and need to perform simple
+    lookups, Excel formulas are usually faster to set up and use. However, as the
+    dataset size and complexity increase or when extensive data transformation is
+    required, Power Query becomes a more efficient and scalable option.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: While there are many steps involved, Power Query provides a visual, user-friendly
+    interface that allows users to interact with data transformation. The steps are
+    more intuitive than complex formulas.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: You can create reusable Power Query queries that can be applied to different
+    datasets or shared across teams, ensuring consistency in data preparation and
+    lookup processes.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Multiple choice questions](toc.xhtml#s141a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: What is the primary purpose of Power Query?
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Data Visualization
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Data Transformation and Preparation
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Statistical Analysis
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Data Backup and Recovery
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Which of the following is NOT a step you can perform in Power Query?
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Filtering rows
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Creating pivot tables
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Merging tables
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Removing duplicates
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Which tab in Excel allows you to access Power Query?
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Data
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Insert
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Format
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Home
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Which operation in Power Query allows you to combine data from multiple tables
+    based on a common column?
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Merge
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Concatenate
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Append
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Group By
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Which of the following is a valid data source for Power Query?
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Only Excel files
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Only CSV files
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Excel files, CSV files, Databases, Web sources, and more
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Only Word documents
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: What does the term “Fuzzy Matching” mean in Power Query?
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Matching identical strings
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Matching non-identical text based on similarity
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Matching case-sensitive text
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Matching numerical values
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Answers](toc.xhtml#s142a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: b
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: b
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: a
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: a
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: c
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: b
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL

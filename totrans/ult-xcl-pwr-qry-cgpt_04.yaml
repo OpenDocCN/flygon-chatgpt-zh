@@ -1,0 +1,1168 @@
+- en: '[CHAPTER 2](toc.xhtml#c02)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[VLOOKUP Is Dead: Or is it?](toc.xhtml#c02)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](toc.xhtml#s23a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This chapter will introduce us to the most popular Excel lookup function — `**VLOOKUP**`.
+    We will learn its basic structure and inherent weaknesses, as well as how we can
+    nest it with other functions to overcome its weaknesses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In addition, since the book is about Mastering Excel, we will dig into the different
+    Excel functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](toc.xhtml#s24a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will discuss the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**VLOOKUP**` exact and approximate match'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Breaking `**VLOOKUP**` myths
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 1: `**VLOOKUP**` cannot do a left lookup'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 2: `**VLOOKUP**` cannot return multiple columns in a lookup'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 3: `**VLOOKUP**` cannot do a multiple criteria lookup'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 4: `**VLOOKUP**` cannot handle inserting and deleting columns in the lookup
+    range'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 5: `**VLOOKUP**` cannot do a two-way lookup'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 6: `**VLOOKUP**` cannot do a partial match lookup'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 7: `**VLOOKUP**` cannot do a case-sensitive partial match lookup'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 8: `**VLOOKUP**` cannot do a case-sensitive lookup'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 9: `**VLOOKUP**` cannot return multiple results'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 10: `**VLOOKUP**` cannot lookup from last to first'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 11: `**VLOOKUP**` cannot lookup the top or bottom N values'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 12: `**VLOOKUP**` cannot do a reverse lookup'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 13: `**VLOOKUP**` cannot do a horizontal lookup'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 14: `**VLOOKUP**` cannot return multiple non-contiguous columns'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Myth 15: `**VLOOKUP**` cannot lookup multiple non-contiguous arrays'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[VLOOKUP exact and approximate match](toc.xhtml#s25a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: As we learned in the previous chapter, mastering the basics is the initial step
+    to mastering any skill. So, here is what you need to know about `**VLOOKUP**`.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**VLOOKUP**` allows you to search for a specific value in the leftmost column
+    (that is, *lookup value*) in a table (that is, *table array*) and then return
+    a value from a specified column on the right (that is, *column index number*)
+    in the same row as the lookup value. You can specify whether you want an approximate
+    or exact match (that is, *range lookup*).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By default, `**VLOOKUP**` will do an approximate match.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(lookup value, table array, column index number, [range lookup])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Point to note:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The lookup value **must be in the first column** of the table. In *[Figure 2.1](#fig2_1)*,
+    since the invoice number is the lookup value, all invoices are stored in the first
+    column of our table.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: There are only two essential columns in our table — the one storing the lookup
+    value and the one storing the value to return. In *[Figure 2.1](#fig2_1)*, our
+    formula would still have worked even if we did not have the third column.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Since we want an exact match for our lookup value, we select `**FALSE**` as
+    the lookup range. You can replace `**FALSE**` with zero `**0**`, as follows:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(F3, tblSales, 2, 0)`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '**Note**: Excel stores Boolean values as integers, with a value of `**0**`
+    representing `**FALSE**` and any other value representing TRUE. When you enter
+    `**TRUE**` or `**FALSE**` in a cell, Excel automatically converts them to their
+    equivalent integer.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.1.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.1:** Basic VLOOKUP exact match'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[VLOOKUP approximate match](toc.xhtml#s26a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: By default, the `**VLOOKUP**` function is set to return an approximate match.
+    On the brighter side, when working with a large numerical and sorted dataset,
+    and you can tolerate some errors, `**VLOOKUP**` is very fast.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'However, most searches require an exact match. In addition, an approximate
+    search will return the wrong results if the following requirements are not met:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data table must be sorted in ascending order by the lookup value.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Data table should only have unique values in the lookup values columns.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Data table lookup range should be in the same data type as the lookup value.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Nonetheless, an approximate match is beneficial when grouping data (for example,
+    when assigning grades to students; *[Figure 2.2](#fig2_2)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.2.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.2:** VLOOKUP approximate match data grouping'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Approximate Match is also applicable when searching for a value within a range
+    (for example, when giving a discount based on sales range; *[Figure 2.3](#fig2_3)*):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.3.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.3:** VLOOKUP approximate match value from a range'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note:** When using VLOOKUP for an approximate range, you can skip the last
+    range lookup argument, and the formula will still be ok.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Any argument between square brackets means it is optional.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(lookup value, table array, column index number, [range lookup])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Tip**: VLOOKUP approximate match is a good alternative to the nested IF function
+    since it calculates faster.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, to get the same results, as shown in *[Figure 2.2](#fig2_2)*,
+    you can either use the following nested IF function or VLOOKUP:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=IF(J3>=M7, N7, IF(J3>=M6,N6,IF(J3>=M5,N5,IF(J3>=M4,N4,$N3))))`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(J3, tblGrades,2)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Because of the aforementioned limitation, there are many myths about what `VLOOKUP`
+    can or cannot do.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the next section, we explore the full potential of the `VLOOKUP` function
+    when nested with other functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Breaking VLOOKUP myths](toc.xhtml#s27a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Myths are stories that people from a particular culture have been telling for
+    a long time. These stories usually majorly involve teaching why things are the
+    way they are based on history. These are sometimes half-truths or pure lies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A lot of teachings regarding how `**VLOOKUP**` functions are shrouded by half-truths
+    and sometimes pure lies, giving the `**VLOOKUP**` function a bad name.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this section, we will learn the full truth about `**VLOOKUP**` by busting
+    the existing myths one by one.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 1: VLOOKUP cannot do a left lookup](toc.xhtml#s28a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In *[Figure 2.4](#fig2_4)*, the lookup value (sales date) is not in the first
+    column of the table; instead, we have the return value (customer) there.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In such a situation, the default `**VLOOKUP**` function will not work. You
+    must nest the IF function, as shown in the following figure:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.4.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.4:** VLOOKUP left lookup'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The trick is creating a custom table array using the `**IF**` function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The `**IF**` function returns a two-column table with the Sales Date being the
+    first column and the Customers as the second Column.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This column rearrangement tricks `**VLOOKUP**` into looking to the Left while
+    assuming it is looking to the right.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 2: VLOOKUP cannot return multiple columns in a lookup](toc.xhtml#s29a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In *[Figure 2.5](#fig2_5)*, you must return the Sales Date and Amount given
+    for a specific customer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: By default, you can only return one value at a time, as the `**column_index**`
+    argument in VLOOKUP only accepts a single value.
+  prefs: []
+  type: TYPE_NORMAL
+- en: However, you can wrap more than one `**column_index**` value in curly braces
+    and return multiple columns.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you do not have Office 365 subscription, perform the following steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Highlight the cells to return the multiple values.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Go to the formula bar and key in the following formula.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Click **Ctrl + Shift + Enter** to return the following values:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.5.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.5:** VLOOKUP returns multiple columns'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 3: VLOOKUP cannot use multiple criteria in a lookup](toc.xhtml#s30a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: If your data has duplicates, as shown in *[Figure 2.6](#fig2_6),* the `**VLOOKUP**`
+    function will return the first value that meets a criterion.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, if you looked up the sales amount for customer “Carl Jackson”,
+    the `VLOOKUP` function will return 45,000 since this is the first occurrence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What if you want to look up the sales amount for customer “Carl Jackson” for
+    “1/14/2010”?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'By default, `VLOOKUP` cannot look up multiple values. You can modify it as
+    follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Combine the multiple values using an ampersand. Using our preceding example,
+    our lookup value now will be `Carl Jackson1/14/2010`.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Create a custom two-column table array using the IF function. The first column
+    should contain a combination of two columns that contain the lookup values, that
+    is, `tblSales[Customer]&tblSales[Sales Date]` in that order, similar to the lookup
+    value combo. The second column should contain the lookup value.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: With the combo lookup value and custom table array, write your VLOOKUP as shown
+    in *[Figure 2.6](#fig2_6).* Remember that this is an array function; therefore,
+    click **Ctrl + Shift +Enter** if you do not have an Office 365.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP( T19&U19,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`IF({1,0}, tblSalesT[Customer]&tblSalesT[Sales Date], tblSalesT[Amount]), 2,
+    0 )`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.6.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.6:** VLOOKUP multiple criteria'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 4: VLOOKUP cannot handle the insertion and deletion of columns in the
+    lookup range](toc.xhtml#s31a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: So far, we have been hard coding the column index number in the function, that
+    is, the number of the column that contains the return value.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This poses a problem when you insert or delete a column before this column,
+    as it breaks the `VLOOKUP` function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Therefore, for `VLOOKUP` to handle insertion and deletion, we need to make
+    the column index number dynamic using the `MATCH` Function, as shown in *[Figure
+    2.7](#fig2_7)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**=VLOOKUP(E3,tblSale,**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**MATCH(F2,tblSale[#Headers],0),**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**FALSE)**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note: The `**MATCH**` function looks up a value in a range and returns its
+    relative position.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=MATCH(F2,tblSale[#Headers],0)=2`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In our case, the `**MATCH**` function looks for the text `**Amount**` stored
+    in cell F2 among the sales table headers and will always return its position,
+    making it dynamic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.7.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.7:** VLOOKUP handle insertion and deletion'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 5: VLOOKUP cannot do a two-way lookup](toc.xhtml#s32a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Hard coding the column index number in the `**VLOOKUP**` function makes it almost
+    impossible to do a two-way lookup.
+  prefs: []
+  type: TYPE_NORMAL
+- en: However, if we nest the `**MATCH**` function, as we have learned from the previous
+    section, the `**VLOOKUP**` function can easily do a two-way lookup (see *[Figure
+    2.8](#fig2_8)*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Our Task is to look up sales for a specific customer (Joshua) from the Customers
+    List and for a specific region (Western).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Since the customers’ list is stored in the first column of our `SalesRegion`
+    table, the lookup value will be the specific customer in cell G38\. As for the
+    regions, we shall use the `MATCH` function to return the relative column index
+    for the specific region.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(G38,SalesRegion,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`MATCH(G40, SalesRegion[#Headers],0),0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note**: The MATCH function always returns the first TRUE match.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: And since we cannot have duplicates in table headers, the MATCH function will
+    always return the correct column number.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.8.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.8:** VLOOKUP two-way Lookup'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 6: VLOOKUP cannot do a partial match lookup](toc.xhtml#s33a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: VLOOKUP has only an Approximate and Exact Match but can also do a partial match.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A partial match is possible if you combine the lookup value with a wildcard,
+    as shown in *[Figure 2.9](#fig2_9)*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note:** Wildcards are special characters representing one or multiple characters
+    in a text string. The most common wildcards are the asterisk (*) and a question
+    mark (?).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Asterisk (*): This wildcard represents one or more characters in a text string.
+    For example, **“**`**P***`**”** will find any word that *starts with* the letter
+    P, `***P**` will find any word that *ends with* the letter P, and `***P***` will
+    find any word that *contains* the letter P.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Question mark (?): The question mark wildcard represents a single character
+    in a text string. For example, the search term `**H??t**` will find any four-letter
+    word that starts with “H”, ends with “t”, and has two characters in between, such
+    as “Heat” or “Host”.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: You can combine the asterisk and the question marks to define your search. For
+    example, `**???T***` will search for any string where T is the fourth character
+    but ends with any number of characters, such as Mas**ts**, Coa**t**ing, Soo**t**hing,
+    and so on. Another example is *****`**T???**` This will search for any string
+    where T is the fourth last character but starts with any number of characters,
+    such as Bea**t**ing, Charac**t**ers, Assis**t**ing.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP( “*” & E54 & “*”, tblinvoices, 2, 0 )`'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: In the following example (*[Figure 2.9](#fig2_9)*), we look up the amount for
+    an invoice containing the letter P. We know this because we have put an asterisk
+    before and after our criterion stored in cell E54.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Therefore, *P* means there could be many characters before and after the letter
+    “P”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that the formula returns the first `TRUE` value. Later in the chapter,
+    we will learn how to return multiple values in case of duplicates.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.9.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.9:** VLOOKUP Partial Match'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Suppose you want to look up values for an invoice whose fifth character is the
+    letter “P”?
+  prefs: []
+  type: TYPE_NORMAL
+- en: In such a scenario, we shall use the question mark (?) as the wildcard character
+    to represent any single character.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP( “????”&E57&”*”, tblinvoices, 2, 0 )`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As shown in *[Figure 2.10](#fig2_10)*, Invoice number “220-PU-009” is the first
+    invoice, where the letter “P” is the fifth character. We know this is the correct
+    invoice because we put four question marks before our criterion (P) stored in
+    cell E57.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Remember, since the invoice does not end with the letter “P”, we must insert
+    an asterisk after the criterion to represent any number of characters after it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.10.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.10:** VLOOKUP Partial Match single characters'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note:** Since the `**VLOOKUP**` function is not case-sensitive, the preceding
+    examples will search for the letter “P” irrespective of whether it is uppercase
+    or lowercase.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 7: VLOOKUP cannot do a case-sensitive partial match lookup](toc.xhtml#s34a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Excel has two popular case-sensitive functions: `**FIND**` and `**EXACT**`.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Since `**VLOOKUP**` is not case-sensitive, we must nest one of the preceding
+    functions when doing a case-sensitive partial match lookup.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As *[Figure 2.11](#fig2_11)* exemplifies, we need to look up an invoice that
+    contains the lowercase letter “p”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(TRUE, IF( {1,0},`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`ISNUMBER(FIND(K54,tblpay[Invoice’#])),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`tblpay[Amount]),2,0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the preceding function works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**FIND(K54, tblpay[Invoice’#])**` returns an array of numbers and errors.
+    Numbers representing the position of lowercase “p” in the invoice number and errors
+    for any invoice missing a lowercase “p.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**ISNUMBER(FIND(K54,tblpay[Invoice’#]))**` `converts this array of numbers
+    and errors into a `**TRUE**`/`**FALSE**` array. TRUE for any number and FALSE
+    for the errors.`'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`*   Create a custom two-column table array using the IF function. The first
+    column contains this array of `**TRUE/FALSE**` (lookup values column), and the
+    second contains the Invoices amount (return values column).*   Since our lookup
+    values are `**TRUE/FALSE**` values, the `**VLOOKUP**` function should look up
+    a `**TRUE**` value and return the first TRUE value.*   Since this is an array
+    function, click **Ctrl + Shift + Enter** if you do not have an Office 365 subscription.`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`![](images/Figure-2.11.jpg)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Figure 2.11:** VLOOKUP Partial Case-Sensitive Match'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 8: VLOOKUP cannot do a case-sensitive lookup](toc.xhtml#s35a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: As we have learned from the previous section, the `**FIND**` function will help
+    the `**VLOOKUP**` function to do a partial case-sensitive lookup.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We must use the `EXACT` function to do an entire case-sensitive lookup (see
+    *[Figure 2.12](#fig2_12)*):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(TRUE,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`IF({1,0},`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`EXACT(Q54,Payment[Product]),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Payment[Amount]),2,0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the preceding function operates:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**EXACT(Q54, Payment[Product])**` returns an array of `**TRUE**` and `**FALSE**`.
+    `**TRUE**` represents the product, which is precisely equal to the proper case
+    `Furniture` else `**FALSE**`.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Create a custom two-column table array using the IF function. The first column
+    contains this array of `**TRUE**`/`**FALSE**` (lookup values column), and the
+    second contains the Invoices amount (return values column).
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Since our lookup values are `**TRUE**`/`**FALSE**` values, the `**VLOOKUP**`
+    function should look up a `**TRUE**` value and return the first `**TRUE**` value.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Since this is an array function, click **Ctrl + Shift + Enter** if you do not
+    have an Office 365 subscription.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.12.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.12:** VLOOKUP Full Case-Sensitive Match'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note:** Since `**VLOOKUP**` is not case-sensitive, without the use of the
+    `**EXACT**` function as shown earlier, it would have returned the amount for the
+    first instance where the product is furniture, that is, 45,000.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 9: VLOOKUP cannot return multiple results](toc.xhtml#s36a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'By default, `**VLOOKUP**` returns the first `**TRUE**` value. So, if you have
+    duplicate items and want to return all `**TRUE**` values, you must nest the `**SMALL**`
+    and `**IF**` functions as shown in *[Figure 2.13](#fig2_13)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`SMALL(IF($F$70=tbl[Customer],`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`ROW(tbl[Customer])), ROW(A1)),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`IF({1,0},ROW(tbl[Customer]),tbl[Amount]),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`2,0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the preceding function works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**IF($F$70=tbl[Customer], ROW(tbl[Customer])**` checks for our criterion customer
+    “Carl Jackson” among the customers’ list, and `IF` true, it returns the row number
+    where the customer is found. Since we have duplicate customers, this function
+    will return multiple row numbers.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'We need to iterate over this row numbers list and return one at a time as the
+    lookup value for `VLOOKUP`. We use the `SMALL` function for this task, which returns
+    the row numbers from the smallest to the largest. Note that `ROW(A1)` evaluates
+    to 1, and as you drag the function down, it increases until the complete list
+    is iterated:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**SMALL(IF($F$70=tbl[Customer],ROW(tbl[Customer])), ROW(A1))**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a custom two-column table array using the IF function. The first column
+    contains Customers’ row numbers (lookup values column), and the second contains
+    the Invoices amount (return values column).
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: VLOOKUP function uses each row number returned by the `SMALL` function and returns
+    the corresponding amount.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Please note that after all amounts have been returned, the `VLOOKUP` function
+    returns the `#NUM` error.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Since this is an array function, click **Ctrl + Shift + Enter** if you do not
+    have an Office 365 subscription.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.13.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.13:** VLOOKUP Multiple Results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 10: VLOOKUP cannot lookup from last to first](toc.xhtml#s37a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: By default, `VLOOKUP` looks up values from top to bottom and returns the first
+    TRUE value.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To search from the last to the first, we nest the `LARGE` function in `VLOOKUP`.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Using the example from the previous chapter, all we need to do to search from
+    last to first is to replace the `SMALL` function with the `LARGE` function, as
+    shown in *[Figure 2.14](#fig2_14)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.14.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.14:** VLOOKUP Multiple Results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the preceding function works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**IF($F$70=tbl[Customer], ROW(tbl[Customer])**` checks for our criterion customer
+    “Carl Jackson” among the customers’ list, and IF true, it returns the row number
+    where the customer is found. Since we have duplicate customers, this function
+    will return multiple row numbers'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: We need to iterate over this row numbers list and return one at a time as the
+    lookup value for `VLOOKUP`. We use the `LARGE` function for this task, which returns
+    the row numbers from the largest to the smallest. Note that `ROW(A1)` evaluates
+    to 1, and as you drag the function down, it increases until the complete list
+    is iterated.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Create a custom two-column table array using the IF function. The first column
+    contains Customers’ row numbers (lookup values column), and the second contains
+    the Invoices amount (return values column).
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: VLOOKUP function uses each row number returned by the LARGE function and returns
+    the corresponding amount.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Please note that after all amounts have been returned, the VLOOKUP function
+    returns the `#NUM` error.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Since this is an array function, click **Ctrl + Shift + Enter** if you do not
+    have an Office 365 subscription.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Myth 11: VLOOKUP cannot lookup the top or bottom N values](toc.xhtml#s38a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'By nesting the `SMALL` or `LARGE` function, `VLOOKUP` can quickly return the
+    top or bottom N amounts in an unsorted list (see *[Figure 2.15](#fig2_15)*):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.15.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.15:** VLOOKUP top three sales amount'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`SMALL(IF(TopSale[Amt]>=LARGE(TopSale[Amt],3),ROW(TopSale[Amt])),ROW(A1)),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`IF({1,0},ROW(TopSale[Amt]),TopSale[Amt]),2,0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the preceding function performs:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**TopSale[Amt]>=LARGE(TopSale[Amt],3)**` checks if the sales amount is greater
+    or equal to the third largest sales amount and returns an array of TRUE/FALSE.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The IF function returns a list of row numbers for all sales amounts that are
+    larger or equal to the third-largest sales amount.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: We need to iterate over this row numbers list and return one at a time as the
+    lookup value for `VLOOKUP`. For this task, we use the `SMALL` function, which
+    returns the row numbers from the smallest to the largest. Note that `ROW(A1)`
+    evaluates to 1, and as you drag the function down, it increases until the complete
+    list is iterated.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**SMALL(IF(TopSale[Amt]>=LARGE(TopSale[Amt],3),ROW(TopSale[Amt])),ROW(A1))**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a custom two-column table array using the IF function. The first column
+    contains Amounts’ row numbers (lookup values column), and the second contains
+    the Invoices amount (return values column).
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: VLOOKUP function uses each row number returned by the `SMALL` function and returns
+    the corresponding amount.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Please note that after all amounts have been returned, the `VLOOKUP` function
+    returns the `#NUM` error.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Since this is an array function, click Ctrl + Shift + Enter if you do not have
+    an Office 365 subscription.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Myth 12: VLOOKUP cannot do a reverse lookup](toc.xhtml#s39a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In Excel, a reverse lookup is a way to look up a value in a table based on a
+    known result. This is the reverse of the two-way lookup discussed in the previous
+    section (see Myth 5).
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, as shown in *[Figure 2.16](#fig2_16)*, you are looking for a Doctor
+    and a Corresponding session given to the patient.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.16.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.16:** VLOOKUP reverse lookup'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`MAX(IF(Clients=F86,ROW(Clients))),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`CHOOSE({1,2,3},`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`ROW(Clients),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Doctors&”-Morning”,`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Doctors&”-Afternoon”),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`MAX(IF(Clients=F86, COLUMN(Clients)-COLUMN(Doctors)+1)),0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Before we start learning how the formula works, let us learn about the named
+    ranges that we have used:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Clients = C86:D95
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Doctors = B86:B95
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Now, the preceding function performs in the following way:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**IF(Clients=F86, ROW(Clients))**` checks if the client in cell F86 is in
+    the array of clients in the named range. Assuming no duplicates, the IF function
+    returns the row number of the client; otherwise, it returns FALSE values (see
+    *[Figure 2.17](#fig2_17)*):![](images/Figure-2.17.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Figure 2.17:** Return Client Row'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`**MAX(IF(Clients=F86, ROW(Clients)))**``**:**` the MAX function ignores the
+    `FALSE` values and returns the row number. This becomes the lookup value for the
+    `VLOOKUP` function.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**CHOOSE({1,2,3}, ROW(Clients), Doctors&”-Morning”, Doctors&”-Afternoon”):**`
+    the `CHOOSE` creates a table array for `VLOOKUP` function with clients row numbers
+    as lookup values column and the two-column array combining the doctors with the
+    sessions as return values columns.![](images/Figure-2.18.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Figure 2.18:** VLOOKUP Custom Table Array'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '`**MAX(IF(Clients=F86, COLUMN(Clients)-COLUMN(Doctors)+1))**` checks if the
+    client in cell F86 is in the array of clients in the named range and returns the
+    column number of the client; otherwise, it returns FALSE values. Please note that
+    we must adjust the column counts by deducting the doctor’s column and adding 1.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using the preceding inputs, the `**VLOOKUP**` function can do reverse lookup.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Myth 13: VLOOKUP cannot do a horizontal lookup](toc.xhtml#s40a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In Excel, many horizontal lookups are left for the `HLOOKUP` function, but this
+    should not be the case anymore, as the `VLOOKUP` function can also do a horizontal
+    lookup, as shown in *[Figure 2.19](#fig2_19)*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the following example, you are supposed to look up the representative who
+    quoted the least per item.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.19.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.19:** VLOOKUP horizontal lookup'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`MIN(C101:E101),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`TRANSPOSE(IF({1;0},C101:E101,Reps)),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`2,0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This function works as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**MIN(C101:E101)**` returns the minimum amount per item. This becomes the
+    lookup value for the `VLOOKUP` function.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**IF({1;0}, C101:E101, Reps)**` returns a two-row table array, where the first
+    row contains the quoted prices and the second row contains the representatives
+    (see *[Figure 2.20](#fig2_20)*):![](images/Figure-2.20.jpg)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Figure 2.20:** Two-row table array'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Since VLOOKUP only looks up data vertically, we need to transpose the two-row
+    table to a two-column table using the TRANSPOSE function (see *[Figure 2.21](#fig2_21)*):![](images/Figure-2.21.jpg)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Figure 2.21:** Two-column table array'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Using the Minimum quoted price as the Lookup value and the transposed table
+    as the Table array, the VLOOKUP function quickly returns the representative with
+    the least quotation.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Myth 14: VLOOKUP cannot return multiple non-contiguous columns](toc.xhtml#s41a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In the previous section, Myth 2, we discussed returning multiple contiguous
+    columns. Now, let us discuss further how to return multiple non-contiguous columns.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In our example *(**[Figure 2.22](#fig2_22))*, we must return the Amount and
+    the Region column data:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.22.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.22:** VLOOKUP non-contiguous columns'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP(G113, tblTransact,{4,2},0)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The only trick we must remember is to put the required column numbers in curly
+    braces. Also, if you do not have an Office 365 subscription, first highlight the
+    column, go to the formula bar, write the above formula, and finally, **click Ctrl
+    + Shift +Enter**.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you want the returned values row-wise, the only trick to remember is to
+    have a semi-colon (;) instead of a comma (,) as a separator between your column
+    numbers (see *[Figure 2.23](#fig2_23)*):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.23.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.23:** VLOOKUP non-contiguous columns row-wise'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Myth 15: VLOOKUP cannot lookup multiple non-contiguous arrays](toc.xhtml#s42a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Dynamically looking up non-contiguous tables requires more functions nesting,
+    as shown in *[Figure 2.24](#fig2_24)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=VLOOKUP([@Amount],`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`CHOOSE(MATCH([@Product],{“Chairs”,”Laptops”},0),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Chairs_Discount, Laptops_Discount), 2, TRUE)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This function works as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**MATCH([@Product],{“Chairs”, “Laptops”},0)**` dynamically returns the position
+    of the product in the lookup array, that is, Chairs = 1, Laptops =2.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`**CHOOSE(MATCH([@Product],{“Chairs”, “Laptops”},0), Chairs_Discount, Laptops_Discount))**`:
+    the `CHOOSE` function uses the position returned by the MATCH function to determine
+    the lookup table array, that is, 1= Chairs Discount, 2= Laptops Discount.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`VLOOKUP` function then checks the sales amount in the selected discount table
+    amount, and it returns the approximate discount.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](images/Figure-2.24.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 2.24:** VLOOKUP non-contiguous lookup tables'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](toc.xhtml#s43a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this chapter, we have learned to look beyond the common knowledge about `VLOOKUP`
+    and seek to unleash its full potential.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We discovered that by creating a custom table array using the IF function, there
+    is no need to rearrange our columns to make `VLOOKUP` lookup to the left. Furthermore,
+    we can return more than one column by having the required return columns in curly
+    braces.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also, you do not need to struggle with the `HLOOKUP` function to do a horizontal
+    lookup; instead, you can simply Transpose your data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When combined with the `MATCH` function, `VLOOKUP` performs all tasks equal
+    to the combination of `INDEX` + `MATCH`.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the next chapter, we will investigate why many Excel users prefer the combination
+    of the INDEX and MATCH functions over `VLOOKUP` and `MATCH`.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](toc.xhtml#s44a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Every Excel function has its limits, but most of them can be adjusted by nesting
+    another function. This is why we pointed out the need for every Excel user to
+    hone their function nesting skills in the first chapter.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using the IF function to create a custom table array for the `VLOOKUP` function
+    makes it more flexible and able to look to the left. However, the IF function
+    is limited to returning only a two-column table. If we need more columns, we use
+    the `CHOOSE` function.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '`VLOOKUP` function defaults to an approximate search. This is one of its biggest
+    weaknesses, and it’s important for any user to be aware of it.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Finally, never accept a function’s weakness without challenging it first.`
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL

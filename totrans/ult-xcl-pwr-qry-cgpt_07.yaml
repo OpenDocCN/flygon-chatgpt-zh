@@ -1,0 +1,936 @@
+- en: '[CHAPTER 5](toc.xhtml#c05)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Other LOOKUP Methods and Functions](toc.xhtml#c05)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](toc.xhtml#s73a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this chapter, we will discuss alternative methods and functions that can
+    be used to look up data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Many Excel users do not look beyond the lookup functions when faced with a lookup
+    problem. This limits their alternatives and chances to learn how other functions
+    work.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Depending on the size of our data or the complexity of the task, certain alternative
+    methods may be more efficient or faster than the known lookup function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us now explore the different approaches that can help us identify the most
+    efficient solution for our situation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](toc.xhtml#s74a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will discuss the six unique alternatives and functions
+    to look up data:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using the advanced filter to look up items in/not in a list
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using Excel Intersection operator to do a two-way lookup
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using Database functions to lookup numeric data
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using `**SUMIFS**`, `**SUMPRODUCT**`, `**AGGREGATE**`, and `**MAX**`/`**MAXIFS**`
+    to lookup numeric data
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Looking up images
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Looking up cell addresses of an item
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using a Pivot Table to lookup unique items in a list
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using the advanced filter to lookup items in/not in a list](toc.xhtml#s75a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Many Excel users must work on the advanced filter options in their everyday
+    lookup tasks. Unlike the standard filter, where you only see the filter criteria
+    when you hover a mouse over it, advanced filter options are visible to all.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*[Figure 5.1](#fig5_1)* shows the use of the advanced filter to lookup all
+    chair purchases:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.1.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.1:** Lookup items in a table using an advanced filter'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Here are the steps to follow:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Click anywhere on the table containing all the data.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to the data tab and click the Advanced Filter options.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'On the `**Advanced Filter Pop-up Screen**` (see *[Figure 5.2](#fig5_2)*):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click the `**Copy to another location**`.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The list range will pick automatically if you are using a table and have followed
+    the preceding steps.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select a criteria range — both the header and the cell containing the criteria
+    should be selected. Since the advanced filter reads from the `**Criteria range:**`
+    to the `**List range:**`, the headers should be identical.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the `**Copy to**` field, select a single cell from which to copy the filtered
+    table.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Finally, click `**OK**`.![](images/Figure-5.2.jpg)
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.2:** Advanced filter options for selecting items in a list'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: To look up items not in the table, change the criteria to include the “not equal
+    to” operator (<>) and follow the preceding steps.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.3.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.3:** Lookup items NOT in a list using an advanced Filter'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If we want to look up unique values, Advanced Filter has this option as well.
+    As shown in *[Figure 5.4](#fig5_4)*, suppose we want to know the unique crops
+    that we plant:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.4.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.4:** Lookup items UNIQUE items in a list using an advanced Filter'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note:** With Unique records filtering, we skip the criteria range and click
+    the `**Unique record-only**` option instead.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: All the other steps, as discussed above, apply.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using Excel Intersection Operator to do a two-way lookup](toc.xhtml#s76a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The Excel intersection operator is one of the least known but ideal ways of
+    solving a two-way lookup problem, that is, finding the intersecting value(s) of
+    two named ranges.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We only need to remember that using **a space character between two named ranges**
+    becomes the Intersect operator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In *[Figure 5.5](#fig5_5)*, the Intersect operator is used to return the sales
+    in the western region made by customer Joshua:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.5.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.5:** Two-way lookup using Excel Intersection Operation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Here are the steps to follow:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Click anywhere on the table containing all the data.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to the `**Formula**` tab, and under the `**Define Names**`, click `**Create
+    from Selection**`.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The `**Create Names from Selection**` pop-up will appear, as shown in *[Figure
+    5.6](#fig5_6)*. Select Create names from values in the top row and left columns.![](images/Figure-5.6.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.6:** Creating names to be used in the Intersection'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Once the names have been created, you can use the Intersect operator. Type the
+    Row header (Joshua) and the Column header (Western) separated by the intersection
+    operator, which is a space, as shown in *[Figure 5.7](#fig5_7)*:![](images/Figure-5.7.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.7:** Using the Intersection operation'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'Intersection operations are not limited to a single criterion operation; we
+    can use it for multiple criteria, as shown in *[Figure 5.8](#fig5_8)*. We want
+    to know the total amount bought by Joshua in the western and southern regions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=SUM(Joshua Western:Southern)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.8.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.8:** Intersection operation two-way lookup using multiple criteria'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**How the formula works:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We will follow the same preceding steps to create the named ranges. However,
+    for this solution, we will select two regions separated by a full colon.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This returns the amounts for the two regions, as shown in *[Figure 5.9](#fig5_9)*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, sum up the amounts to get the totals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.9.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.9:** Multiple criteria results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We can also look up the total values for non-adjacent columns, as shown in *[Figure
+    5.10](#fig5_10)*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this example, we want to know the total values for Joshua in the Eastern
+    or Southern region.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The only trick to remember here is to use the plus sign (+) as an alternative
+    to the OR logic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=Joshua Eastern + Joshua Southern`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.10.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.10:** Multiple OR criteria results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note:** Intersection operators work with both cell range references and named
+    ranges.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: All you need to remember is to include a space between these ranges.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using Database functions to lookup numeric data](toc.xhtml#s77a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Database functions have existed since Excel 2007, yet many users do not know
+    their power and potential to look up numeric data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Database functions perform specific calculations on a specified field (a Column)
+    whose records meet specified criteria.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The syntax is as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`= DSUM(Database, Field, Criteria)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Where:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Database must be a range of data where every row is considered a record, and
+    every column a field with the top row containing identifiers for the fields.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Field is the column that contains the data to look up.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Criteria is a range or set of conditions that determine records to look up.
+    It must include a column header, and the criterion must correspond to a field
+    name in the database.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'For example, in *[Figure 5.11](#fig5_11)*, we want to look up the amount of
+    pens sold in March:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.11.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.11:** Multiple OR criteria results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=DSUM (B65:E78, G66, G67:G68)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Where:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Database**: All the data range, including the headers ►B65:E78.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Field**: Header for the column that contains the lookup data► Mar stored
+    in cell G66.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Criteria**: A range that contains a column header and a field value that
+    acts as the criterion. See *[Figure 5.12](#fig5_12)* for more information.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.12.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.12:** Arguments in database function'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Database functions are not limited to simple criteria, as shown in the preceding
+    example; you can create complex ones, as shown in *[Figure 5.13](#fig5_13)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.13.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.13:** Complex criteria in database function'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=DSUM(tbl_Orders[#All],”Qty”,F81:I82)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The formula returns orders with a date greater than 1st June and less than 30th
+    June for product Chair, and with a quantity greater than 20.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the formula works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Database**: All the data in the table called `**tbl_Orders**`.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Field**: The column whose header is `**Qty**`.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Criteria**: All the information contained in cell range F81:182.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Note**: The Criteria area **MUST NO**T include any Blank rows or Columns.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using SUMIFS, SUMPRODUCT, AGGREGATE, and MAX functions to lookup numeric data](toc.xhtml#s78a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: One of the least known facts is that match and trigonometry functions can be
+    better than the lookup function when looking up single numeric values.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, in *[Figure 5.14](#fig5_14)*, we want to return the payment amount
+    for invoice “224-VV-004”:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.14.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.14:** Using SUMIFS function to lookup numeric data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=SUMIFS(Payments[Amt],Payments[Invoice],G100)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The `**SUMIFS**` function calculates the sum of values that meet multiple criteria.
+    It allows you to specify multiple conditions and sum up only the values that satisfy
+    them.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=SUMIFS (sum_range, criteria_range1, criteria1, [criteria_range2, criteria2],
+    ...)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Where:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: sum range ► the values to be aggregated.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: criteria range ► the values to apply conditions.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: criteria ► the condition to be met.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'In our preceding example, we check which invoice number stored in the pay is
+    equal to:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`**Payments[Amt]**` is the sum range. It represents the column `**Amt**` in
+    the `**Payments**` table. We want to return values from this range based on the
+    given conditions.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`**Payments[Invoice]**` is the first criteria range. It represents the column
+    `**Invoice**` in the `**Payments**` table. We want to check this range of cells
+    against a specific condition.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`**G100**` is the criteria. It is a specific value or reference against which
+    the cells in the `**Invoice**` column will be evaluated.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The function returns the corresponding payment amount since only one invoice
+    number meets the criteria.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note:** If multiple Invoice numbers had met the condition, the function would
+    have returned the total payment amount.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An alternative to the `**SUMIFS**` function is the `**SUMPRODUCT**` function
+    (see *[Figure 5.15](#fig5_15)*):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.15.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.15:** Using the SUMPRODUCT function to lookup numeric data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=SUMPRODUCT(Payments[Amt],(Payments[Invoice]=G100)*1)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The `**SUMPRODUCT**` function is versatile and allows you to multiply corresponding
+    elements in multiple arrays and sum up the products.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is advantageous when you need to perform calculations on arrays or when you
+    want to apply criteria to multiple ranges simultaneously.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=SUMPRODUCT(array1, array2, ...)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the preceding example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**Payments[Amt]**` is the first array. It represents the column `**Amt**`
+    in the `**Payments**` table. We want to multiply and sum up this array of values.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For the second array, we first compare each cell in the `**Invoice**` column
+    of the `**Payments**` table to the value in cell G100 and return an array of True
+    and False values `**(Payments[Invoice]=G100)**`. Multiplying this array by 1 converts
+    True values to 1 and False values to 0 `**((Payments[Invoice]=G100)*1)**`.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Finally, the `SUMPRODUCT` function multiplies the corresponding values in the
+    `**Amt**` column and the array of 1s and 0s, then sums up the products. The sum
+    calculation will include only the values in the `**Amt**` column for the rows
+    where the `**Invoice**` column matches G100 (see *[Figure 5.16](#fig5_16)*).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Note**: Performing a mathematical operation on a Boolean value converts them
+    to their numeric equivalent of 1/0.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Therefore, we could convert the preceding True/False values by adding a zero.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**(Payments [Invoice]=G100)+0.**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.16.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.16:** SUMPRODUCT arrays multiplication'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Finally, let us look at the `**AGGREGATE**` function and how we can use it
+    to look up numeric values, as shown in *[Figure 5.17](#fig5_17)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.17.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.17:** Using the AGGREGATE function to lookup numeric data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unlike the other `**SUMPRODUCT**` and `**SUMIFS**` functions, the `**AGGREGATE**`
+    function performs a wide range of calculations on a dataset.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It allows you to apply 19 functions (see *[Table 5.1](#tab5_1)*) with seven
+    options to ignore errors, hidden values, and subtotals, and apply specific conditions
+    to include or exclude data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| **1.** `**AVERAGE**` | **5.** `**MIN**` | **9.** `**SUM**` | **13.** `**MODE.SNGL**`
+    | **17.** `**QUARTILE.INC**` |'
+  prefs: []
+  type: TYPE_TB
+- en: '| **2.** `**COUNT**` | **6.** `**PRODUCT**` | **10.**`**VAR.S**` | **14.**
+    `**LARGE**` | **18.** `**PERCENTILE.EXC**` |'
+  prefs: []
+  type: TYPE_TB
+- en: '| **3.** `**COUNTA**` | **7.** `**STDEV.S**` | **11.**`**VAR.P**` | **15.**
+    `**SMALL**` | **19.** `**QUARTILE.EXC**` |'
+  prefs: []
+  type: TYPE_TB
+- en: '| **4.** `**MAX**` | **8.** `**STDEV.P**` | **12.** `**MEDIAN**` | **16.**
+    `**PERCENTILE.INC**` |  |'
+  prefs: []
+  type: TYPE_TB
+- en: '**Table 5.1:** Functions to apply in AGGREGATE'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=AGGREGATE(function_num, options, array, [k])`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Refer to the formula used in *[Figure 5.16](#fig5_16)*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=AGGREGATE(14,3,Payments[Amt]*(Payments[Invoice]=G100)*1,1)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the preceding function works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 14 ►This argument specifies the `**LARGE**` function that returns the kth largest
+    value in our data range.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 3 ►This argument specifies that the function will ignore error values in the
+    data range.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For the array, we first compare each cell in the `**Invoice**` column of the
+    `**Payments**` table to the value in cell G100 and return an array of True and
+    False values (Payments[Invoice]=G100). Multiplying this array by 1 converts True
+    values to 1 and False values to 0 ((Payments[Invoice]=G100)*1). Then, multiply
+    the corresponding values in the `**Amt**` column and the array of 1s and 0s.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Finally, the function returns the largest value in the preceding final array.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Note**: Like the `**SUMPRODUCT**` function, `**AGGREGATE**` can natively
+    manage many array operations without using **Ctrl + Shift + Enter**.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Closely related to the preceding functions are the `**MAX**` and `**MAXIFS**`
+    functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In *[Figure 5.17](#fig5_17)*, we use the `**MAX**` function to lookup the numeric
+    function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=MAX( Payments[Amt]* (Payments[Invoice]=G100) )`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the preceding function works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We first compare each cell in the `**Invoice**` column of the `**Payments**`
+    table to the value in cell G100 and return an array of True and False values (Payments[Invoice]=G100).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Then, we multiply the corresponding values in the `**Amt**` column and the array
+    of `**TRUEs**` and `**FALSE**`s. This will return an amount value for all TRUEs
+    and zeros for all `**FALSE**`s.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The `**MAX**` function returns the largest value in the preceding array.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.18.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.18:** Using the MAX function to lookup numeric data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The `**MAX**` function may be hard to understand and explain. The alternative
+    is the `**MAXIFS**` function, as shown in *[Figure 5.19](#fig5_19)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=MAXIFS(Payments[Amt], Payments[Invoice],G100 )`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.19.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.19:** Using the MAXIFS function to lookup numeric data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=MAXIFS(max_range, criteria_range1, criteria1, criteria_range2, criteria2,…)`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the preceding example, `**Amount**` values are our max range while the criteria
+    range is the invoice numbers, and our criteria is the value stored in cell G100.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note**: For complex criteria lookup, consider using `**MAXIFS**` over the
+    `**MAX**` function.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Looking up images](toc.xhtml#s79a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Lookup capability in Excel is more comprehensive than just text and numbers.
+    We will learn how to look up images, as shown in *[Figure 5.20](#fig5_20)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.20.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.20:** Looking up images'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Perform the following steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a list of products and an adjacent blank column for logo images.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Copy a logo image for each product and paste it on the blank cell adjacent to
+    each product name. Resize it to fit.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: To lock the image to the cell, right-click and select `**Format Picture**`.
+    Go to the Format Picture pane, select `**Size & Properties**`, and select `**Move
+    and size with cells**` in the `**Properties**` section (see *[Figure 5.21](#fig5_21)*):![](images/Figure-5.21.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.21:** Locking images to cells'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'The next steps involve creating a linked image:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select and copy any cell that has the image. Ensure you copy the cell and not
+    the image.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Right-click on another cell where you want to store the lookup image.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select `**Paste Special**` and paste it as a Linked image (see *[Figure 5.22](#fig5_22)).*
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The logo in your selected cell will be pasted into that new cell.![](images/Figure-5.22.jpg)
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.22:** Pasting as Linked Picture'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: The next step is to create a named range. This will ensure that the copied logo
+    dynamically changes based on the product name.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to the `**Formula**` tab and select define name.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'In the new name dialogue form, write ► in the Name Field: **Logos**, and in
+    the refers to: `**=INDEX($E$116:$E$120, MATCH($G$116,$D$116:$D$120,0))**` (see
+    *[Figure 5.22](#fig5_22)*).'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Where `**$E$116:$E$120**` ► Column containing the logo images, `**$G$116**`
+    ► the cell containing the product whose logo image you want to look up, and `**$D$116:$D$120**`
+    ► Column containing product names.![](images/Figure-5.23.jpg)
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.23:** Creating name range'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Finally, select the linked image we created in the previous step and replace
+    its reference with the dynamic reference from the created name range (see *[Figure
+    5.24](#fig5_24)*):![](images/Figure-5.24.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.24:** Changing the image reference to created name range'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '**Note**: The defined name should only return a cell reference, so we use the
+    `**INDEX/MATCH**` functions. Other functions like `**VLOOKUP**` will not work
+    since they do not return references.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Looking up cell addresses](toc.xhtml#s80a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this section, we will learn how to look up cell addresses using the ADDRESS
+    function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In general, the `**ADDRESS**` function will return the cell address given a
+    row number and a column number.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that the returned cell address is a text string, not an actual reference.
+    Also, the addresses returned are either relative, mixed, or absolute based on
+    the selected address type.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As shown in *[Figure 5.25](#fig5_25)*, we want to know the last cell address
+    for the crop “`**Traka**`”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.25.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.25:** Looking up the last cell address with a criterion'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`=ADDRESS(`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`MAX( (C125:C136=F125)*ROW(C125:C136) ),`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`COLUMN(C125:C136) )`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is how the preceding function works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**C125:C136=F125**` returns an array of `**TRUE**` and `**FALSE**`, where
+    `**TRUE**` is the position where the crop meets the criterion; otherwise, `**FALSE**`.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: (`**C125:C136=F125)*ROW(C125:C136),**` Multiply the corresponding Row numbers
+    and the array of `**TRUE**`s and `**FALSE**`s. This will return Row numbers for
+    all `**TRUE**`s and zeros for all `**FALSE**`s.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`**MAX**` function returns the largest row number from the preceding array.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '`**COLUMN(C125:C136)**` returns the column number for all the crops.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The `**ADDRESS**` function returns the absolute cell reference given the row
+    and column numbers.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Note:** By default, the `**ADDRESS**` function returns an absolute cell reference.
+    If you want to return a mixed or relative address, select the options as shown
+    in *[Figure 5.26](#fig5_26)*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.26.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.26:** Returning relative or mixed references in the ADDRESS function'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using Pivot Table to lookup unique items in a list](toc.xhtml#s81a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: A pivot table allows you to summarize and analyze large amounts of data quickly
+    and easily. It helps you make sense of your data by organizing it meaningfully.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'It can also be used to look up unique items in a list as shown in *[Figure
+    5.27](#fig5_27)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-5.27.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 5.27:** Looking up Unique Items Using a Pivot Table'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the steps to follow:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Convert your range into a table, click anywhere on your Excel table, go to `**Table
+    Design**` tab, and click Summarize with PivotTable (see *[Figure 5.28](#fig5_28)*):![](images/Figure-5.28.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.28:** Creating a Pivot Table'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: On the pop-up window, click the existing worksheet, then under location, select
+    a cell to place the Pivot Table (see *[Figure 5.29](#fig5_29)*):![](images/Figure-5.29.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.29:** Select where to place the pivot table'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Tick the `**Crop**` field among the pivotable fields or drop the field in the
+    rows area. This populates a list of unique fields (see *[Figure 5.30](#fig5_30)*):![](images/Figure-5.30.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 5.30:** Select the Pivot table fields'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '[Conclusion](toc.xhtml#s82a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this chapter, we learned that Excel offers multiple ways to look up data.
+    By learning different approaches, you gain flexibility in choosing the best method.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Some of these alternative methods are more efficient or faster than the known
+    lookup functions, depending on the size of your data set or the complexity of
+    the task. For example, the `DSUM` function can accommodate more complex criteria
+    and calculates faster than the `**VLOOKUP**` function on numeric data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In summary, learning alternative ways of looking up data in Excel provides you
+    with a broader skill set, increased efficiency, adaptability, and problem-solving
+    capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the next chapter, we will start learning dynamic array lookup functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](toc.xhtml#s83a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Learning alternative ways of solving problems in Excel enhances your problem-solving
+    skills. It encourages you to think critically, consider different approaches,
+    and explore creative solutions. These skills are transferable and valuable beyond
+    Excel, benefiting you in other areas of work or life.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Excel is widely used across various industries and professions. Expanding your
+    knowledge of alternative techniques makes you better equipped to handle diverse
+    problems and adapt to evolving requirements or limitations.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL

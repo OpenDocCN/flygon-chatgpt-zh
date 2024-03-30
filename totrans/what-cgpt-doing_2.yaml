@@ -1,0 +1,480 @@
+- en: Wolfram|Alpha as the Way to Bring Computational Knowledge Superpowers to ChatGPT
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![Wolfram|Alpha as the Way to Bring Computational Knowledge Superpowers to
+    ChatGPT](Image00094.jpg "Wolfram|Alpha as the Way to Bring Computational Knowledge
+    Superpowers to ChatGPT")'
+  prefs: []
+  type: TYPE_IMG
+- en: ChatGPT and Wolfram|Alpha
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: It’s always amazing when things suddenly “just work”. It happened to us with
+    [Wolfram|Alpha](https://www.wolframalpha.com/) back in 2009\. It happened with
+    our [Physics Project](https://www.wolframphysics.org/) in 2020\. And it’s happening
+    now with [OpenAI](https://openai.com/) ’s [ChatGPT](https://chat.openai.com/chat)
+    .
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’ve been tracking [neural net technology](https://www.wolfram.com/language/core-areas/machine-learning/)
+    for a [long time (about 43 years, actually)](https://writings.stephenwolfram.com/2015/05/wolfram-language-artificial-intelligence-the-image-identification-project/)
+    . And even having watched developments in the past few years I find the performance
+    of ChatGPT thoroughly remarkable. Finally, and suddenly, here’s a system that
+    can successfully generate text about almost anything—that’s very comparable to
+    what humans might write. It’s impressive, and useful. And, as I [discuss elsewhere](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
+    , I think its success is probably telling us some very fundamental things about
+    the nature of human thinking.
+  prefs: []
+  type: TYPE_NORMAL
+- en: But while ChatGPT is a remarkable achievement in automating the doing of major
+    human-like things, not everything that’s useful to do is quite so “human like”.
+    Some of it is instead more formal and structured. And indeed one of the great
+    achievements of our civilization over the past several centuries has been to build
+    up the paradigms of mathematics, the exact sciences—and, most importantly, now
+    computation—and to create a tower of capabilities quite different from what pure
+    human-like thinking can achieve.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I myself have been deeply involved with the computational paradigm for many
+    decades, in the singular pursuit of building a [computational language](https://writings.stephenwolfram.com/2019/05/what-weve-built-is-a-computational-language-and-thats-very-important/)
+    to represent as many things in the world as possible in formal symbolic ways.
+    And in doing this my goal has been to build a system that can “computationally
+    assist”—and augment—what I and others want to do. I think about things as a human.
+    But I can also immediately call on [Wolfram Language](https://www.wolfram.com/language/)
+    and Wolfram|Alpha to tap into a kind of unique “computational superpower” that
+    lets me do all sorts of beyond-human things.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It’s a tremendously powerful way of working. And the point is that it’s not
+    just important for us humans. It’s equally, if not more, important for human-like
+    AIs as well—immediately giving them what we can think of as computational knowledge
+    superpowers, that leverage the non-human-like power of structured computation
+    and structured knowledge.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We’ve just started exploring what this means for ChatGPT. But it’s pretty clear
+    that wonderful things are possible. Wolfram|Alpha does something very different
+    from ChatGPT, in a very different way. But they have a common interface: natural
+    language. And this means that ChatGPT can “talk to” Wolfram|Alpha just like humans
+    do—with Wolfram|Alpha turning the natural language it gets from ChatGPT into precise,
+    symbolic computational language on which it can apply its computational knowledge
+    power.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For decades there’s been a dichotomy in thinking about AI between “statistical
+    approaches” of the kind ChatGPT uses, and “symbolic approaches” that are in effect
+    the starting point for Wolfram|Alpha. But now—thanks to the success of ChatGPT—as
+    well as all the work we’ve done in making Wolfram|Alpha understand natural language—there’s
+    finally the opportunity to combine these to make something much stronger than
+    either could ever achieve on their own.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A Basic Example
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'At its core, ChatGPT is a system for generating linguistic output that “follows
+    the pattern” of what’s out there on the web and in books and other materials that
+    have been used in its training. And what’s remarkable is how human-like the output
+    is, not just at a small scale, but across whole essays. It has coherent things
+    to say, that pull in concepts it’s learned, quite often in interesting and unexpected
+    ways. What it produces is always “statistically plausible”, at least at a linguistic
+    level. But—impressive as that ends up being—it certainly doesn’t mean that all
+    the facts and computations it confidently trots out are necessarily correct. Here’s
+    an example I just noticed (and, yes, ChatGPT has intrinsic built-in randomness,
+    so if you try this, you probably won’t get the same result):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00095.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img1.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'It sounds pretty convincing. But it turns out that it’s wrong, as Wolfram|Alpha
+    can tell us:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![How far is it from Chicago to Tokyo?](Image00096.jpg "How far is it from
+    Chicago to Tokyo?")](https://www.wolframalpha.com/input?i=How+far+is+it+from+Chicago+to+Tokyo%3F)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To be fair, of course, this is exactly the kind of thing that Wolfram|Alpha
+    is good at: something that can be turned into a precise computation that can be
+    done on the basis of its structured, curated knowledge. But the neat thing is
+    that one can think about Wolfram|Alpha automatically helping ChatGPT on this.
+    One can [programmatically](https://reference.wolfram.com/language/ref/WolframAlpha.html)
+    ask Wolfram|Alpha the question (you can also use a [web API](https://products.wolframalpha.com/api)
+    , etc.):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| ![](Image00097.gif) |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Now ask the question again to ChatGPT, appending this result:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00098.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img4.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT very politely takes the correction, and if you ask the question yet
+    again it then gives the correct answer. Obviously there could be a more streamlined
+    way to handle the back and forth with Wolfram|Alpha, but it’s nice to see that
+    even this very straightforward pure-natural-language approach basically already
+    works.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'But why does ChatGPT get this particular thing wrong in the first place? If
+    it had seen the specific distance between Chicago and Tokyo somewhere in its training
+    (e.g. from the web), it could of course get it right. But this is a case where
+    the kind of generalization a neural net can readily do—say from many examples
+    of distances between cities—won’t be enough; there’s an actual computational algorithm
+    that’s needed. The way Wolfram|Alpha handles things is quite different. It takes
+    natural language and then—assuming it’s possible—it converts this into precise
+    computational language (i.e. Wolfram Language), in this case:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| ![](Image00099.jpg) |'
+  prefs: []
+  type: TYPE_TB
+- en: The coordinates of [cities](https://reference.wolfram.com/language/ref/entity/City.html)
+    and algorithms to [compute distances](https://reference.wolfram.com/language/ref/GeoDistance.html)
+    between them are then part of the built-in computational knowledge in the Wolfram
+    Language. And, yes, the Wolfram Language has a [huge amount of built-in computational
+    knowledge](https://www.wolfram.com/knowledgebase/) —the result of decades of work
+    on our part, carefully curating what’s now a vast amount of continually updated
+    data, implementing (and often inventing) methods and models and algorithms—and
+    systematically building up a whole coherent computational language for everything.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A Few More Examples
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: ChatGPT and Wolfram|Alpha work in very different ways, and have very different
+    strengths. But in the interests of understanding where ChatGPT can take advantage
+    of Wolfram|Alpha’s strengths, let’s discuss some cases where on its own ChatGPT
+    doesn’t do quite the right thing. And one area where ChatGPT—like humans—often
+    tends to struggle is math.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00100.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img6.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'It’s an interesting, essay-style response. But the actual result is wrong:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![What is 3 to the power 73?](Image00101.jpg "What is 3 to the power 73?")](https://www.wolframalpha.com/input?i=What+is+3+to+the+power+73%3F)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'But if ChatGPT “consulted” Wolfram|Alpha it’d of course be able to get it right.
+    Let’s try something slightly more complex:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00102.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img8a.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'At first glance, this result looks great, and I’d be inclined to believe it.
+    It turns out, though, that it’s wrong, as Wolfram|Alpha can tell us:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Circumference of an ellipse with half axes 3 and 12](Image00103.jpg "Circumference
+    of an ellipse with half axes 3 and 12")](https://www.wolframalpha.com/input?i=circumference+of+an+ellipse+with+half+axes+3+and+12)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'And, yes, doing math homework with ChatGPT (without it being able to consult
+    Wolfram|Alpha) is probably a bad idea. It can give you a very plausible answer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00104.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img10.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'But without “really understanding the math” it’s basically impossible for ChatGPT
+    to reliably get the right answer. And in this case, the answer is again wrong:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![What is the integral of x^2 cos(2x)](Image00105.jpg "What is the integral
+    of x^2 cos(2x)")](https://www.wolframalpha.com/input?i=What+is+the+integral+of+x%5E2+cos%282x%29)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Still, ChatGPT can even make up a very plausible-looking explanation of “how
+    it got its answer” (not that it’s in any way how it really “did it”). And, rather
+    charmingly (and interestingly), the explanation it gives has mistakes very similar
+    to what a human who didn’t understand the math might also make:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00106.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img12.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There are all sorts of situations where “not really understanding what things
+    mean” can cause trouble:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00107.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img13.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'That sounds convincing. But it’s not correct:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![What are the largest countries in Central America?](Image00108.jpg "What
+    are the largest countries in Central America?")](https://www.wolframalpha.com/input?i=What+are+the+largest+countries+in+Central+America%3F)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT seemed to have correctly learned this underlying data somewhere—but
+    it doesn’t “understand what it means” enough to be able to correctly rank the
+    numbers:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00109.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img15.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: And, yes, one can imagine finding a way to “fix this particular bug”. But the
+    point is that the fundamental idea of a generative-language-based AI system like
+    ChatGPT just isn’t a good fit in situations where there are structured computational
+    things to do. Put another way, it’d take “fixing” an almost infinite number of
+    “bugs” to patch up what even an almost-infinitesimal corner of Wolfram|Alpha can
+    achieve in its structured way.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'And the more complex the “computational chain” gets, the more likely you’ll
+    have to call on Wolfram|Alpha to get it right. Here ChatGPT produces a rather
+    confused answer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00110.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img16.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'And, as Wolfram|Alpha tells us, its conclusion isn’t correct (as it already
+    in a sense “knew”):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![What planetary moons are larger than Mercury](Image00111.jpg "What planetary
+    moons are larger than Mercury?")](https://www.wolframalpha.com/input?i=What+planetary+moons+are+larger+than+Mercury%3F)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Whenever it comes to specific (e.g. quantitative) data—even in fairly raw form—things
+    very often tend to have to be more of a “Wolfram|Alpha story”. Here’s an example,
+    inspired by a longtime favorite Wolfram|Alpha test query “How many turkeys are
+    there in Turkey?”:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00112.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img18.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Again, this seems (at first) totally plausible, and it’s even quoting a relevant
+    source. Turns out, though, that this data is basically just “made up”:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Livestock populations in Turkey](Image00113.jpg "Livestock populations in
+    Turkey")](https://www.wolframalpha.com/input?i=Livestock+populations+in+Turkey)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Still, what’s very nice is that ChatGPT can easily be made to “ask for facts
+    to check”:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00114.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img20.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Now feed these through the Wolfram|Alpha API:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| ![](Image00115.gif) |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Now we can ask ChatGPT to fix its original response, injecting this data (and
+    even showing in bold where it did it):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00116.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img22.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The ability to “inject facts” is particularly nice when it comes to things
+    involving real-time (or location etc. dependent) data or computation. ChatGPT
+    won’t immediately answer this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00117.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img23.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'But here’s some relevant Wolfram|Alpha API output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| ![](Image00118.gif) |'
+  prefs: []
+  type: TYPE_TB
+- en: 'And if we feed this to ChatGPT, it’ll generate a nice “essay-style” result:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00119.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img25a.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sometimes there’s an interesting interplay between the computational and the
+    human like. Here’s a rather whimsical question asked of Wolfram|Alpha (and it
+    even checks if you want “soft-serve” instead):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![How many calories are there in a cubic light year of ice cream?](Image00120.jpg
+    "How many calories are there in a cubic light year of ice cream?")](https://www.wolframalpha.com/input?i=How+many+calories+are+there+in+a+cubic+light+year+of+ice+cream%3F)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT at first gets a bit confused about the concept of volume:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00121.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img27.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'But then it seems to “realize” that that much ice cream is fairly silly:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[![Click to enlarge](Image00122.jpg "Click to enlarge")](https://content.wolfram.com/uploads/sites/43/2023/01/swchattech1923img28.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Path Forward
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Machine learning is a powerful method, and particularly over the past decade,
+    it’s had some remarkable successes—of which ChatGPT is the latest. [Image recognition](https://reference.wolfram.com/language/ref/ImageIdentify.html)
+    . [Speech to text](https://reference.wolfram.com/language/ref/SpeechRecognize.html)
+    . [Language translation](https://reference.wolfram.com/language/ref/TextTranslation.html)
+    . In each of these cases, and many more, a threshold was passed—usually quite
+    suddenly. And some task went from “basically impossible” to “basically doable”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: But the results are essentially never “perfect”. Maybe something works well
+    95% of the time. But try as one might, the other 5% remains elusive. For some
+    purposes one might consider this a failure. But the key point is that there are
+    often all sorts of important use cases for which 95% is “good enough”. Maybe it’s
+    because the output is something where there isn’t really a “right answer” anyway.
+    Maybe it’s because one’s just trying to surface possibilities that a human—or
+    a systematic algorithm—will then pick from or refine.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It’s completely remarkable that a few-hundred-billion-parameter neural net that
+    generates text a token at a time can do the kinds of things ChatGPT can. And given
+    this dramatic—and unexpected—success, one might think that if one could just go
+    on and “train a big enough network” one would be able to do absolutely anything
+    with it. But it won’t work that way. Fundamental facts about computation—and notably
+    the concept of [computational irreducibility](https://www.wolframscience.com/nks/chap-12--the-principle-of-computational-equivalence#sect-12-6--computational-irreducibility)
+    —make it clear it ultimately can’t. But what’s more relevant is what we’ve seen
+    in the actual history of machine learning. There’ll be a big breakthrough (like
+    ChatGPT). And improvement won’t stop. But what’s much more important is that there’ll
+    be use cases found that are successful with what can be done, and that aren’t
+    blocked by what can’t.
+  prefs: []
+  type: TYPE_NORMAL
+- en: And yes, there’ll be plenty of cases where “raw ChatGPT” can help with people’s
+    writing, make suggestions, or generate text that’s useful for various kinds of
+    documents or interactions. But when it comes to setting up things that have to
+    be perfect, machine learning just isn’t the way to do it—much as humans aren’t
+    either.
+  prefs: []
+  type: TYPE_NORMAL
+- en: And that’s exactly what we’re seeing in the examples above. ChatGPT does great
+    at the “human-like parts”, where there isn’t a precise “right answer”. But when
+    it’s “put on the spot” for something precise, it often falls down. But the whole
+    point here is that there’s a great way to solve this problem—by connecting ChatGPT
+    to Wolfram|Alpha and all its computational knowledge “superpowers”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Inside Wolfram|Alpha, everything is being turned into computational language,
+    and into precise Wolfram Language code, that at some level has to be “perfect”
+    to be reliably useful. But the crucial point is that ChatGPT doesn’t have to generate
+    this. It can produce its usual natural language, and then Wolfram|Alpha can use
+    its natural language understanding capabilities to translate that natural language
+    into precise Wolfram Language.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In many ways, one might say that ChatGPT never “truly understands” things; it
+    just “knows how to produce stuff that’s useful”. But it’s a different story with
+    Wolfram|Alpha. Because once Wolfram|Alpha has converted something to Wolfram Language,
+    what it’s got is a complete, precise, formal representation, from which one can
+    reliably compute things. Needless to say, there are plenty of things of “human
+    interest” for which we don’t have [formal computational representations](https://writings.stephenwolfram.com/2016/10/computational-law-symbolic-discourse-and-the-ai-constitution/)
+    —though we can still talk about them, albeit it perhaps imprecisely, in natural
+    language. And for these, ChatGPT is on its own, with its very impressive capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: But just like us humans, there are times when ChatGPT needs a more formal and
+    precise “power assist”. But the point is that it doesn’t have to be “formal and
+    precise” in saying what it wants. Because Wolfram|Alpha can communicate with it
+    in what amounts to ChatGPT’s native language—natural language. And Wolfram|Alpha
+    will take care of “adding the formality and precision” when it converts to its
+    native language—Wolfram Language. It’s a very good situation, that I think has
+    great practical potential.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'And that potential is not only at the level of typical chatbot or text generation
+    applications. It extends to things like doing data science or other forms of computational
+    work (or programming). In a sense, it’s an immediate way to get the best of both
+    worlds: the human-like world of ChatGPT, and the computationally precise world
+    of Wolfram Language.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: What about ChatGPT directly learning Wolfram Language? Well, yes, it could do
+    that, and in fact it’s already started. And in the end I fully expect that something
+    like ChatGPT will be able to [operate directly in Wolfram Language](https://writings.stephenwolfram.com/2015/11/how-should-we-talk-to-ais/)
+    , and be very powerful in doing so. It’s an interesting and unique situation,
+    made possible by the [character of the Wolfram Language as a full-scale computational
+    language](https://writings.stephenwolfram.com/2019/05/what-weve-built-is-a-computational-language-and-thats-very-important/)
+    that can talk broadly about things in the world and elsewhere in computational
+    terms.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The whole concept of the Wolfram Language is to take things we humans think
+    about, and be able to represent and work with them computationally. Ordinary programming
+    languages are intended to provide ways to tell computers specifically what to
+    do. The Wolfram Language—in its role as a full-scale computational language—is
+    about something much larger than that. In effect, it’s intended to be a language
+    in which both humans and computers can “think computationally”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Many centuries ago, when mathematical notation was invented, it provided for
+    the first time a streamlined medium in which to “think mathematically” about things.
+    And its invention soon led to algebra, and calculus, and ultimately all the various
+    mathematical sciences. The goal of the Wolfram Language is to do something similar
+    for computational thinking, though now not just for humans—and to enable all the
+    “computational X” fields that can be opened up by the computational paradigm.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I myself have benefitted greatly from having Wolfram Language as a “language
+    to think in”, and it’s been wonderful to see over the past few decades so many
+    advances being made as a result of people “thinking in computational terms” through
+    the medium of Wolfram Language. So what about ChatGPT? Well, it can get into this
+    too. Quite how it will all work I am not yet sure. But it’s not about ChatGPT
+    learning how to do the computation that the Wolfram Language already knows how
+    to do. It’s about ChatGPT learning how to use the Wolfram Language more like people
+    do. It’s about ChatGPT coming up with the analog of “creative essays”, but now
+    written not in natural language but in computational language.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’ve long discussed the [concept of computational essays](https://writings.stephenwolfram.com/2017/11/what-is-a-computational-essay/)
+    written by humans—that communicate in a mixture of natural language and computational
+    language. Now it’s a question of ChatGPT being able to write those—and being able
+    to use Wolfram Language as a way to deliver “meaningful communication”, not just
+    to humans, but also to computers. And, yes, there’s a potentially interesting
+    feedback loop involving actual execution of the Wolfram Language code. But the
+    crucial point is that the richness and flow of “ideas” represented by the Wolfram
+    Language code is—unlike in an ordinary programming language—something much closer
+    to the kind of thing that ChatGPT has “magically” managed to work with in natural
+    language.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Or, put another way, Wolfram Language—like natural language--is something expressive
+    enough that one can imagine writing a meaningful “prompt” for ChatGPT in it. Yes,
+    Wolfram Language can be directly executed on a computer. But as a ChatGPT prompt
+    it can be used to “express an idea” whose “story” could be continued. It might
+    describe some computational structure, leaving ChatGPT to “riff” on [what one
+    might computationally say](https://writings.stephenwolfram.com/2021/11/the-concept-of-the-ruliad/)
+    about that structure that would—according to what it’s learned by reading so many
+    things written by humans—be “interesting to humans”.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are all sorts of exciting possibilities, suddenly opened up by the unexpected
+    success of ChatGPT. But for now there’s the immediate opportunity of giving ChatGPT
+    computational knowledge superpowers through Wolfram|Alpha. So it can not just
+    produce “plausible human-like output”, but output that leverages the whole tower
+    of computation and knowledge that’s encapsulated in Wolfram|Alpha and the Wolfram
+    Language.
+  prefs: []
+  type: TYPE_NORMAL

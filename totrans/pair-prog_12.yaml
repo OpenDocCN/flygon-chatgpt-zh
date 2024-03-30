@@ -1,0 +1,1051 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Other Considerations
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![A picture containing text, electronics, circuit  Description automatically
+    generated](d2d_images/image005.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Image by [Vicki Hamilton](https://pixabay.com/users/flutie8211-17475707/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7772914) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7772914)
+  prefs: []
+  type: TYPE_NORMAL
+- en: When writing a book like this, it’s hard to know when to stop. I see things
+    on Twitter, people posting about all the cool stuff they’re doing with AI. Naturally,
+    I want to try them myself and add them to book. Ultimately, though, such an attitude
+    becomes self-defeating. There are deadlines to meet and other projects the require
+    my attention. I’m sure this isn’t the last I’ll write about this topic. I already
+    have more ideas going through my head than is probably healthy. I doubt I’ll ever
+    get to all of them. However, there are a few interesting uses for AI that don’t
+    fit so neatly into any of the prior chapters. I want to take a few moments to
+    touch on them here.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Understanding New Code
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Throughout this book, I have been using AI to help with programming tasks. Another
+    possibility is to use it the other way. ChatGPT is especially good at this. Consider
+    the scenario where you have been given some legacy code and you aren’t sure what
+    it does (or exactly how). You can paste the code into ChatGPT and ask it for an
+    explanation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, I have some old Ionic/Angular/Firebase code in a project I haven’t
+    touched in a while. So, I asked ChatGPT what it does.
+  prefs: []
+  type: TYPE_NORMAL
+- en: updateNames() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.db
+  prefs: []
+  type: TYPE_NORMAL
+- en: .list('/hymns')
+  prefs: []
+  type: TYPE_NORMAL
+- en: .snapshotChanges()
+  prefs: []
+  type: TYPE_NORMAL
+- en: .pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: first(),
+  prefs: []
+  type: TYPE_NORMAL
+- en: switchMap((list) => list)
+  prefs: []
+  type: TYPE_NORMAL
+- en: )
+  prefs: []
+  type: TYPE_NORMAL
+- en: .subscribe((hymn) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: hymn.payload.child('/arrangements').forEach((arrangement) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const userNameNode = arrangement.child('/user/name');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const names = userNameNode.val().split(' ');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const maskedName = `${names[0]} ${names[names.length - 1][0]}.`;
+  prefs: []
+  type: TYPE_NORMAL
+- en: userNameNode.ref.set(maskedName);
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(maskedName);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log('Done');
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'It responded with this explanation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This code updates the name property of each user node in the arrangements child
+    nodes of every hymn in the /hymns list of a Firebase Realtime Database.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The code uses the db object (likely an instance of AngularFire2) to access the
+    /hymns list as an observable using the list() method. It then calls snapshotChanges()
+    on the observable to get an array of changes in the database, and processes the
+    first change using first().
+  prefs: []
+  type: TYPE_NORMAL
+- en: It then uses switchMap() to flatten the array into an observable of individual
+    changes, which is subscribed to with subscribe().
+  prefs: []
+  type: TYPE_NORMAL
+- en: For each hymn, the code loops through each arrangement node in its arrangements
+    child nodes using the forEach() method.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For each arrangement, the code gets the name property of its user child node,
+    splits the name into an array using the split() method, and creates a masked name
+    consisting of the first name and the first letter of the last name using string
+    interpolation. The masked name is then set as the new value of the name property
+    using the set() method on the userNameNode.ref object.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, the code logs the masked name to the console and repeats the process
+    for each hymn. Once all the hymns have been processed, the code logs 'Done' to
+    the console.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice how it correctly inferred the use of both Firebase (AngularFire2) and
+    RxJS.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I then asked ChatGPT about the significance of masking the name. Its response
+    was spot on perfect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What do you believe the significance of the masked name might be?
+  prefs: []
+  type: TYPE_NORMAL
+- en: The significance of the masked name is likely to protect the privacy of the
+    user's full name.
+  prefs: []
+  type: TYPE_NORMAL
+- en: By masking the name, the code only reveals the first name and the first letter
+    of the last name, which can be useful for anonymizing user data or protecting
+    the user's identity. This can be particularly important if the application is
+    dealing with sensitive information or if the user's full name is not necessary
+    for the functioning of the application.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using a masked name also helps to maintain consistency in the display of user
+    data. For example, if the application displays a list of users or user-generated
+    content, masking the name can make the display more uniform and visually appealing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overall, the use of a masked name is a common technique for protecting user
+    privacy and ensuring a consistent display of user data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This was a straightforward, almost trivial example. I chose it because it was
+    easy to follow. That said, this technique is particularly useful if you are trying
+    to determine not only what unfamiliar code does, but also why.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generating Code from Data
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Another cool use I have found for ChatGPT is that you can paste some data you
+    get from a web service (or similar) response and ask the AI to convert it into
+    a different data format, or even code that will represent that data’s shape.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, let’s say you have some sample data that looks like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"contacts": ['
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"id": "1",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"firstName": "John",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"lastName": "Doe",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"email": "johndoe@gmail.com",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"address": {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"street": "123 Main St.",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"city": "Anytown",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"state": "CA",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"zip": "12345"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '},'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"phones": ['
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"type": "home",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"number": "555-555-5555"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '},'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"type": "work",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"number": "555-555-5556"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '},'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"type": "mobile",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"number": "555-555-5557"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can ask ChatGPT to provide you with an interface or a class in the language
+    of your choice. Here is the TypeScript interface it provided:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: interface Contact {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'id: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'firstName: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'lastName: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'email: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'address: Address;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'phones: Phone[];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: interface Address {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'street: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'city: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'state: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'zip: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: interface Phone {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'type: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'number: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'I’ve been favoring JavaScript and TypeScript throughout the book, but just
+    to show that it can and will do more, I asked it to generate a Python object from
+    that data. It gave me this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'class Contact:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'def __init__(self, id, first_name, last_name, email, address, phones):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.id = id
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.first_name = first_name
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.last_name = last_name
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.email = email
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.address = address
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.phones = phones
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'class Address:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'def __init__(self, street, city, state, zip_code):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.street = street
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.city = city
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.state = state
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.zip_code = zip_code
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'class Phone:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'def __init__(self, type, number):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.type = type
+  prefs: []
+  type: TYPE_NORMAL
+- en: self.number = number
+  prefs: []
+  type: TYPE_NORMAL
+- en: To be honest, I don’t know Python, so I can only guess as to its accuracy, but
+    it looks convincing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Programming Language Translation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Another area where ChatGPT excels is translating code from one language to another.
+    Let’s say I am trying to reuse some code from an Angular Service in a React application
+    I’m building. I want to translate the code from a TypeScript class to pure JavaScript.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It’s a modest class but will serve as a fine example. Asking ChatGPT to translate
+    it into functional JavaScript yields the following code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We won’t dive into the MersenneTwister, other than mention that it’s an algorithm
+    for generating random numbers. That’s a topic for another day.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given the following TypeScript class, provide me functional JavaScript I can
+    use in its place.
+  prefs: []
+  type: TYPE_NORMAL
+- en: export class ShuffleService {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'random: MersenneTwister = new MersenneTwister();'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'seed(slug = ''xyz''): void {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const hash = this.hashCode(slug);
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.random.seed = hash;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'hashCode(str: string): number {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return Array.from(str)
+  prefs: []
+  type: TYPE_NORMAL
+- en: // eslint-disable-next-line no-bitwise
+  prefs: []
+  type: TYPE_NORMAL
+- en: .reduce((s, c) => Math.imul(31, s) + c.charCodeAt(0) | 0, 0);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'shuffle(array): any[] {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.random.shuffle(array);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is what it came up with.
+  prefs: []
+  type: TYPE_NORMAL
+- en: function ShuffleService() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const random = new MersenneTwister();
+  prefs: []
+  type: TYPE_NORMAL
+- en: function seed(slug = 'xyz') {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const hash = hashCode(slug);
+  prefs: []
+  type: TYPE_NORMAL
+- en: random.seed = hash;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: function hashCode(str) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return Array.from(str)
+  prefs: []
+  type: TYPE_NORMAL
+- en: .reduce((s, c) => Math.imul(31, s) + c.charCodeAt(0) | 0, 0);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: function shuffle(array) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return random.shuffle(array);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return {
+  prefs: []
+  type: TYPE_NORMAL
+- en: seed,
+  prefs: []
+  type: TYPE_NORMAL
+- en: shuffle,
+  prefs: []
+  type: TYPE_NORMAL
+- en: '};'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Framework Translation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: It can also help rewrite code from one framework into another. Continuing the
+    example from above, I have a small Ionic-Angular component that I want to reuse
+    in my Ionic-React application. I can simply copy and paste that code and have
+    the new framework code given to me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Original Ionic-Angular Component
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: <ion-card>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <ion-card-content>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div class="symbols symbols-{{card?.length}}">
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div class="symbol-wrapper"
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*ngFor="let cardSymbol of card">'
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div class="symbol"
+  prefs: []
+  type: TYPE_NORMAL
+- en: appRandomRotation>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div appThrottledClick
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[class]="cardSymbol"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: (throttledClick)="onSymbolClick(cardSymbol)"
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[throttleTime]="2000">'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{{cardSymbol}}</div>'
+  prefs: []
+  type: TYPE_NORMAL
+- en: </div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </ion-card-content>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </ion-card>
+  prefs: []
+  type: TYPE_NORMAL
+- en: Ionic-React Component from ChatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: import { IonCard, IonCardContent } from '@ionic/react';
+  prefs: []
+  type: TYPE_NORMAL
+- en: import RandomRotation from './RandomRotation';
+  prefs: []
+  type: TYPE_NORMAL
+- en: import ThrottledClick from './ThrottledClick';
+  prefs: []
+  type: TYPE_NORMAL
+- en: function CardComponent({ card, onSymbolClick }) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return (
+  prefs: []
+  type: TYPE_NORMAL
+- en: <IonCard>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <IonCardContent>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div className={`symbols symbols-${card?.length}`}>
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{card.map((cardSymbol, index) => ('
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div key={index} className="symbol-wrapper">
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div className="symbol" ref={RandomRotation}>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <ThrottledClick throttleTime={2000} onClick={() => onSymbolClick(cardSymbol)}>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div className={cardSymbol}>{cardSymbol}</div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </ThrottledClick>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: ))}
+  prefs: []
+  type: TYPE_NORMAL
+- en: </div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </IonCardContent>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </IonCard>
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: export default CardComponent;
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the above code, we are importing IonCard and IonCardContent components from
+    @ionic/react and using them as the outermost components. The map function is used
+    to iterate over the card array and render the individual symbols. Instead of *ngFor,
+    we are using the map function in JSX to loop over the card array.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For the RandomRotation directive, we need to create a custom React component
+    and attach it as a ref to the symbol element. Similarly, for the ThrottledClick
+    directive, we are creating a custom React component and passing the throttleTime
+    prop and onClick handler as props to it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, we export the CardComponent component as the default export.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice that it recognized the need to extract the Angular directives and let
+    me know that they would need to be created separately. It didn’t do that automatically,
+    simply because I didn’t provide it with the directives’ code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Angular Material Component from GhatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Or maybe I don’t want to use Ionic at all but want to stick with Angular and
+    use the Angular Material components instead.
+  prefs: []
+  type: TYPE_NORMAL
+- en: <mat-card>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <mat-card-content>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div [ngClass]="'symbols symbols-' + (card?.length || 0)">
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div class="symbol-wrapper" *ngFor="let cardSymbol of card">
+  prefs: []
+  type: TYPE_NORMAL
+- en: <div class="symbol" appRandomRotation>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <button mat-button appThrottledClick
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ngClass]="cardSymbol"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[throttleTime]="2000"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: (throttledClick)="onSymbolClick(cardSymbol)">
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{{cardSymbol}}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: </button>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </div>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </mat-card-content>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </mat-card>
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT correctly recognized that I can continue to use my Angular directives
+    as-is.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I hope you see how powerful it is to be able to experiment (and even learn)
+    multiple frameworks this way.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Release Notes
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'ChatGPT can help you generate your software release notes. This one is relatively
+    new for me, and it took me a while to figure out what works best. I tried to start
+    with actual diffs, but ChatGPT doesn’t like long passages of text. Instead, I
+    decided to use git commit messages. Here is a sample from an actual project of
+    mine:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Add photo (#23)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Added capacitor and capacitor storage'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Converted student service to promises?'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Fixed DeleteStudent, but not perfectly'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Removed RxJS from storage service'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Student CRUD working'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Added some more functionality'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Refactored some of the storage code'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Added New Student functionality'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Added camera feature'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Standardize state management within the student service (#22)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* refactor: add explicit modifiers to service signatures'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* refactor: simplify syntax in student service'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* fix: initialize service with stored data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* refactor: move state changes into student service'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* refactor: use routerLinkActive to determine link state'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* chore: format all files with prettier'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* chore: prefer single quote for strings'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Added camera feature'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Made some minor tweeks for the workshop'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* Minor tweaks for conference'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I asked ChatGPT to group and prioritize this list into release notes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given the following string of commit messages for a pull request, generate some
+    release notes, grouped by common themes and sorted by perceived importance. <I
+    pasted the messages here>
+  prefs: []
+  type: TYPE_NORMAL
+- en: Release Notes
+  prefs: []
+  type: TYPE_NORMAL
+- en: Features
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Added camera feature (#23)
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Added New Student functionality
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Added capacitor and capacitor storage
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Added some more functionality
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fixes
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Fixed DeleteStudent, but not perfectly
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Removed RxJS from storage service
+  prefs: []
+  type: TYPE_NORMAL
+- en: Improvements
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Standardized state management within the student service (#22)
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Refactored some of the storage code
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Refactored the student service to use promises
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Refactored the student service to simplify syntax
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Refactored the student service to add explicit modifiers to service signatures
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Refactored the student service to move state changes into student service
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Refactored the code to use routerLinkActive to determine link state
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Initialized service with stored data
+  prefs: []
+  type: TYPE_NORMAL
+- en: Miscellaneous
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Made some minor tweaks for the workshop
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Made some minor tweaks for conference
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Formatted all files with prettier
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Preferred single quote for strings
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note: The commit message "Added camera feature" appears twice in the original
+    list, and so it is included only once in these release notes.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It’s not perfect, but it provides a great starting point.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generating Function Documentation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I found a VS Code extension called “Mintlify Doc Writer” that uses AI to generate
+    function-level documentation. It understands multiple languages, including Python,
+    JavaScript, TypeScript, C++, PHP, Java, C#, Ruby, and more.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once installed, you use it by highlighting function or code block and pressing
+     Ctrl + . (period) or Cmd + . (period) on the Mac. It will create a comment block
+    above your code appropriate for the language you’re using. Here is a sample function
+    from one of my projects and the JSDoc comment it created.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I highlighted the entire function in the editor and pressed Cmd + . and watched
+    it work its magic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: /**
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* It takes a number of cards and a slug, and returns a deck'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* @param {number} numberOfCards - number - the number of cards in the deck'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* @param [slug] - a string that will be used to seed the random number generator.
+    This is useful if'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* you want to generate the same deck twice.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* @returns A deck of cards'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*/'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'buildDeck(numberOfCards: number, slug = ''''): Deck {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.shuffleService.seed(slug);
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.shuffledSymbols = this.shuffleService.shuffle(SYMBOLS);
+  prefs: []
+  type: TYPE_NORMAL
+- en: const rawCards = this.dobbleService.dobble(numberOfCards);
+  prefs: []
+  type: TYPE_NORMAL
+- en: const deck = rawCards.map(card =>
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.buildCard(card));
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.shuffleService.shuffle(deck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It does a passable job at understanding the meaning of your code and giving
+    you a basic comment. What I find truly useful is combining Mintlify with Copilot
+    to help flesh out your docs even more.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I started with the docs above and pressed Enter to prompt Copilot to flesh them
+    out. Here is the result of the JSDoc comment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: /**
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* It takes a number of cards and a slug, and returns a deck of cards'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* The slug is used to seed the random number generator, so that the same deck
+    is generated every time.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* If no slug is provided, the deck will be generated randomly.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* @example'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* const deck = deckService.buildDeck(5, ''my-slug'');'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* // deck will always be the same'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* @example'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* const deck = deckService.buildDeck(5);'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* // deck will be different every time'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/scene_break.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '* @param {number} numberOfCards - number - the number of cards you want to
+    generate'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* @param [slug] - a string that will be used to seed the random number generator.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '* @returns A deck of cards'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*/'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It wanted to go further, but I stopped it there, thinking it was detailed enough.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can find the extension in the VS Code marketplace at [https://marketplace.visualstudio.com/items?itemName=mintlify.document](https://marketplace.visualstudio.com/items?itemName=mintlify.document)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Codeium
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: About the time I was half finished with the Copilot portions of the book, I
+    got an invitation to try out a new tool like Copilot. It’s called Codeium. Like
+    Copilot, it integrates into multiple IDEs, many more than Copilot currently does.
+    The big hook is that it’s free for individual users, and they claim it always
+    will be. You can find it at [https://codeium.com](https://codeium.com).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Codeium believes that AI can accelerate all the different “modes” of software
+    development, but rather than having developers install multiple products for each
+    mode, they are building a single product that seamlessly transitions between them.
+    Their latest announcement is natural language-based repo-wide code search, which
+    complements their autocomplete capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I am not sure why or how they decided to give it away, but it seems like a solid
+    tool that is worth investigating. I look forward to trying it.
+  prefs: []
+  type: TYPE_NORMAL

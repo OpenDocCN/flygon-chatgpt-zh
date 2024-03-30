@@ -1,0 +1,1254 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Shell Scripting Commands
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![A person sitting in front of a computer  Description automatically generated
+    with medium confidence](d2d_images/image014.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Image by [cocoandwifi](https://pixabay.com/users/cocoandwifi-4330980/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4996834) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4996834)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Shell scripting is a fundamental skill for anyone who wants to efficiently manage
+    and automate tasks on a computer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s investigate how Copilot and ChatGPT do with shell scripting. A while back
+    I wrote an article about what these symbols (~|&||&&$!`()?) mean in a bash (or
+    similar) shell and how to use them.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Can GitHub Copilot and ChatGPT give me these types of commands from nothing
+    but comments? Read on to find out.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '#!/bin/bash'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Copilot only works in the context of a code editor. It has no conversational
+    interface as ChatGPT does. Thus, to test Copilot, the first thing I did was to
+    create a blank file in VS Code. At the top of the file, I added a “shebang” line
+    to indicate that the file contains shell scripting code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '#!/bin/bash'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next, I added the following comment to see what Copilot would write for me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Check for a directory and print a message if it doesn't exist
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: To my surprise, it didn’t do anything. Maybe, I thought, Copilot doesn’t know
+    about shell scripting and this experiment will end quickly. Then it hit me. It
+    didn’t get the hint from the shebang, but probably from the file extension. I
+    saved the file as copilot.sh and tried again.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This time, Copilot gave me some code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: if [ ! -d /home/username/Downloads ]; then
+  prefs: []
+  type: TYPE_NORMAL
+- en: echo "The directory /home/username/Downloads does not exist."
+  prefs: []
+  type: TYPE_NORMAL
+- en: fi
+  prefs: []
+  type: TYPE_NORMAL
+- en: It isn’t what I expected, but it does what the comment says.
+  prefs: []
+  type: TYPE_NORMAL
+- en: File Extension?
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: As I mentioned, Copilot needs to know what kind of file it is before it can
+    write code for you. Through further experimentation, I discovered that it isn’t
+    the file extension that made Copilot understand the file type. Instead, it was
+    VS Code itself. Saving the file with a .sh extension told VS Code that it was
+    a Shell Script file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/image021.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: The file extension is less important than the type of  file VS Code thinks it is.
+    In most cases, VS Code gets it right automatically. If not, you can click on the
+    phrase “Plain Text” in the bottom status bar. A menu will appear at the top of
+    the page, allowing you to select the file type manually.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Graphical user interface, text, application  Description automatically generated](d2d_images/image009.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: In my case, saving the file with a .sh did the trick. In another instance, adding
+    the “Shebang” line did it. The results seemed inconsistent, so double-check the
+    type.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/image019.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: The important thing to remember is that Copilot only cares about that file type
+    and not the extension.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What about ChatGPT?
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'ChatGPT seems better suited for these sorts of things, given its more conversational
+    nature. Here is how it responded to the same prompt:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Check for a directory and print a message if it doesn't exist
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can use the test command (also known as [ or [[) to check if a directory
+    exists, and the echo command to print a message if it doesn''t. Here is an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: if test ! -d /path/to/directory; then
+  prefs: []
+  type: TYPE_NORMAL
+- en: echo "Directory does not exist"
+  prefs: []
+  type: TYPE_NORMAL
+- en: fi
+  prefs: []
+  type: TYPE_NORMAL
+- en: Alternatively, you could use the if [ ! -d "/path/to/directory" ]; then command
+    with the same echo message.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another option is to use if [[ ! -d "/path/to/directory" ]]; then
+  prefs: []
+  type: TYPE_NORMAL
+- en: The difference between the two sets of output is immediately apparent. ChatGPT
+    offers an explanation with its answers, and does not simply give you the code.
+    As you will see, this can be a significant advantage to using ChatGPT over Copilot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The find Command
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The next thing I tried was to find all the PDF files anywhere in my home directory
+    and below. Normally when I do that, I use the find command. Is that what Copilot
+    would suggest? I entered the following comment:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Find all PDF files in my home directory and print the path to each one
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'When I pressed the Return key, nothing happened. I tried a few more times,
+    but Copilot refused to suggest anything. Then I decided to try to give it a hint.
+    I typed the word find on a line by itself, just beneath that comment. Copilot
+    immediately sprang to life and suggested the following completion:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: find /home/username -name "*.pdf" -print
+  prefs: []
+  type: TYPE_NORMAL
+- en: I was a little disappointed. That command won’t work unless my home directory
+    just happens to be /home/username. However, then I started thinking about it.
+    Copilot did the hard part. It got the syntax of the find command correct. I can
+    always edit it to fix my home directory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In fact, when I changed my hint to find ~, it did the right thing with no further
+    aid.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you are not aware, ~ is a shell short cut meaning “my account’s home directory.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT gave me two different options.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Find all PDF files in my home directory and print the path to each one
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can use the find command to search for all PDF files in your home directory
+    and print the path to each one. Here''s an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: find ~ -name "*.pdf" -print
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will search for all files in your home directory (~) that end in .pdf and
+    print the path to each one.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Alternatively, you could use ls command with wildcard,
+  prefs: []
+  type: TYPE_NORMAL
+- en: ls ~/ -R | grep .pdf$
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will recursively list all files in your home directory, and filter only
+    the files with .pdf extension.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As I expected, ChatGPT does a much better job than Copilot. As before, I appreciate
+    that it provides an explanation and not just the command. If you are trying to
+    learn, this is the better experience.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Background Tasks
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The next thing I wanted to do was to determine whether the AI knows how to use
+    some of those symbols that often trip up beginners. Would they know that the greater
+    than sign (>) is used to redirect output and that the ampersand (&) is used to
+    run a command in the background?
+  prefs: []
+  type: TYPE_NORMAL
+- en: I changed my comment as follows, and then gave it the same hint from above.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Find all PDF files below my home folder and write the results to a file called
+    pdfs.txt in the background.
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: find ~ -name "*.pdf" > pdfs.txt &
+  prefs: []
+  type: TYPE_NORMAL
+- en: That’s exactly right, though I was confused that it dropped the -print parameter.
+    Then I remembered that printing is the default behavior of the find command.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As before, ChatGPT gave me multiple options, complete with thorough explanations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Find all PDF files below my home folder and write the results to a file called
+    pdfs.txt in the background.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can use the find command to search for all PDF files below your home directory,
+    and the tee command to write the results to a file called pdfs.txt in the background.
+    Here''s an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: find ~ -name "*.pdf" -print | tee pdfs.txt &
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will search for all files in your home directory and its subdirectories
+    that end in .pdf and print the path to each one. The output will be piped to the
+    tee command, which will write it to a file called pdfs.txt in the current directory.
+    The & at the end will run the command in background, so you can continue to use
+    the terminal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Alternatively, you could use ls command with wildcard,
+  prefs: []
+  type: TYPE_NORMAL
+- en: ls ~/ -R | grep .pdf$ >> pdfs.txt &
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will recursively list all files in your home directory and its subdirectories,
+    and filter only the files with .pdf extension, and write it to pdfs.txt file.
+    The & at the end will run the command in background as well.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I had forgotten all about the tee command. I’m also impressed that it went a
+    little farther with the ls command, using grep with a simple regular expression
+    to find files that end in .pdf. It also assumed I would want to append to my pdfs.txt
+    file if it already exists. Though not exactly what I asked for, it actually gave
+    me more.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Output Pipe
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Next, I wanted to see whether they know how to use the output of one command
+    as the input to another. I was also curious to know whether they are aware of
+    the previous command just generated. Do they remember?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here is my Copilot comment and the command it generated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Count the number of PDF files in my home folder in the background and print
+    the result.
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: find ~ -name "*.pdf" | wc -l &
+  prefs: []
+  type: TYPE_NORMAL
+- en: I had hoped it would use the file it created from the last command, but it didn’t.
+    It did, however, remember that I prefer to use find ~.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT again gave me multiple options.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Count the number of PDF files in my home folder in the background and print
+    the result.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can use the find command to search for all PDF files in your home directory,
+    and the wc command to count the number of files and print the result. Here''s
+    an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: find ~ -name "*.pdf" -print | wc -l > count.txt &
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will search for all files in your home directory and its subdirectories
+    that end in .pdf, print the path to each one, then pipe the output to the wc command
+    with the -l option which will count the number of lines and redirect the output
+    to a file called count.txt in the current directory. The & at the end will run
+    the command in background, so you can continue to use the terminal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Alternatively, you could use ls command with wildcard:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ls -R ~/ | grep .pdf$ | wc -l > count.txt &
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will recursively list all files in your home directory and its subdirectories,
+    filter only the files with .pdf extension, pipe the output to the wc command with
+    the -l option which will count the number of lines and redirect the output to
+    a file called count.txt in the current directory. The & at the end will run the
+    command in background as well.
+  prefs: []
+  type: TYPE_NORMAL
+- en: At this point, I found myself wondering whether it ever makes sense to use Copilot
+    for the command line. I continued to do so for the rest of these tests.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Redirect Errors to Ignore Them
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Most people know how to use the > character to redirect the output of a command
+    to a file. If the command encounters any errors, those will still display in the
+    terminal, which can be confusing when running the command in the background.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I know it is possible to redirect errors to a special file called /dev/null,
+    so that they are ignored completely. Unfortunately, I can never remember the syntax.
+    I don’t know why because it isn’t that complicated. It’s one of my weird blind
+    spots, I suppose.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fortunately, Copilot knows exactly how to do it. I decided to combine some of
+    the above concepts to see what it would do. It got it right on the first try.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Find all the PDF files below my home folder, in the background, ignoring errors,
+    and write the output to a file.
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: find ~ -name "*.pdf" > pdfs.txt 2> /dev/null &
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT Remembers
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: What’s really cool about ChatGPT is that it remembers earlier parts of your
+    conversation. For this one, I changed up the prompt and simply asked it to “rewrite
+    the last command to ignore any errors.” The explanations are almost identical
+    as those it provided above, so I’ll spare you the duplication and simply show
+    you the commands it gave me. Again, it gave me two options.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Option 1 – Find
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: find ~ -name "*.pdf" -print 2> /dev/null | wc -l > count.txt &
+  prefs: []
+  type: TYPE_NORMAL
+- en: Option 2 – ls
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: ls -R ~/ 2> /dev/null | grep .pdf$ | wc -l > count.txt &
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*nix System Administration'
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I started wondering whether they could help me with some common system administration
+    tasks, such as creating users, adding users to groups, and so forth.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Add a New User Account
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: I decided to start with something simple, so I asked Copilot to create a new
+    user account for me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a new user account
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: sudo adduser username
+  prefs: []
+  type: TYPE_NORMAL
+- en: This doesn’t work on a Mac. Maybe it works on Linux. I decided to try again
+    and got this.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a new user account on macos
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: dscl . -create /Users/username
+  prefs: []
+  type: TYPE_NORMAL
+- en: Running that gave me a permission error. I tried once again, prepending sudo
+    to the command. That one might have worked; I’m not sure. The folder /Users/username
+    does not exist, nor did a user by that name appear when I opened the Users control
+    panel. Maybe I’m still missing something.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is an example where Copilot might be more frustrating than helpful.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT again outdid itself, providing more detail and explanation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a new user account on macos
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To create a new user account on macOS, you can use the dscl (Directory Service
+    command line utility) command. Here is an example of how to create a new user
+    account called "newuser" with a password of "newpassword":'
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dscl . -create /Users/newuser
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dscl . -create /Users/newuser UserShell /bin/bash
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dscl . -create /Users/newuser RealName "New User"
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dscl . -create /Users/newuser UniqueID "501"
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dscl . -create /Users/newuser PrimaryGroupID 20
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dscl . -create /Users/newuser NFSHomeDirectory /Users/newuser
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dscl . -passwd /Users/newuser newpassword
+  prefs: []
+  type: TYPE_NORMAL
+- en: This creates the account, sets the shell to /bin/bash, sets the RealName, UniqueID,
+    PrimaryGroupID and home directory, and sets the password.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Alternatively, you can use the sysadminctl command to create a new user account
+    and set the password. Here is an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo sysadminctl -addUser newuser -fullName "New User" -password newpassword
+    -admin
+  prefs: []
+  type: TYPE_NORMAL
+- en: This creates the account with the username "newuser", full name "New User",
+    password "newpassword" and admin privilege.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You also can use the GUI by going to System Preferences > Users & Groups > click
+    on the lock icon to unlock it > click on the "+" sign to add a new user.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that these commands require administrative privileges and should
+    be used with caution.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I tried the second command on my Mac and it worked flawlessly. ChatGPT wins
+    here handily.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Make an Existing User an Admin
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Next, I asked them both for the command to make an existing user an admin.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Make user 'michael' a local administrator
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: sudo dseditgroup -o edit -a michael -t user admin
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’m honestly not sure whether that one will work, but it looks correct. Again,
+    is Copilot being helpful or frustrating?
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT again gave me a set of options, the second of which matched Copilot’s
+    suggestion.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Make user 'michael' a local administrator
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To make a user "michael" a local administrator on macOS, you can use the dscl
+    (Directory Service command line utility) command. Here is an example of how to
+    make the user "michael" a local administrator:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dscl . -append /Groups/admin GroupMembership michael
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command adds the user "michael" to the "admin" group. Members of the "admin"
+    group have administrative privileges on the system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Alternatively, you can use the dseditgroup command to add a user to the "admin"
+    group. Here is an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dseditgroup -o edit -a michael -t user admin
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command adds the user "michael" to the "admin" group.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You also can use the GUI by going to System Preferences > Users & Groups > click
+    on the lock icon to unlock it > right click on the user you want to change > select
+    "Advanced Options" > change the "Account type" to "Administrator".
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that these commands require administrative privileges and should
+    be used with caution.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Backup Files
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Have you ever used rsync to back up files from one system to another? No? Of
+    course not. No one does (ok, maybe some people do). It’s hard to remember the
+    syntax. That’s why Dropbox and other such services exist. Maybe Copilot knows
+    the syntax.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sync my home folder to a remote server
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: rsync -avz—delete ~/ username@server:/home/username
+  prefs: []
+  type: TYPE_NORMAL
+- en: It suffers from the same path name problems from before but again, those are
+    easily recognized and fixed. What isn’t so easily discerned is whether those parameters
+    are correct. I did a little research on my Mac using man rsync to read the command’s
+    online manual. It seems that the command above is exactly what you would want
+    to synchronize the source folder to the destination machine.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The —delete parameter tells the command to delete any extra files at the destination
+    that are not on the source. If you just want to copy everything, keeping files
+    on the destination you might have removed locally, you can omit this parameter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT gave me four different suggestions, with rsync being the first one.
+    It also suggested using scp, which I had planned to ask about next.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sync my home folder to a remote server
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There are several ways to sync your home folder to a remote server on macOS.
+    Here are a few options:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'rsync: This command-line tool can be used to synchronize files and directories
+    between two locations. Here''s an example of how to use rsync to sync your home
+    folder to a remote server:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: rsync -avz -e ssh ~/ username@remote-server:/path/to/remote/folder/
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will sync all files and directories in your home folder to the
+    specified remote server. The -a option tells rsync to preserve file permissions
+    and ownership, the -v option provides verbose output, and the -z option enables
+    compression to speed up the transfer. The -e option specifies the remote shell
+    to use, in this case ssh.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'scp: This command-line tool can be used to copy files and directories between
+    a local machine and a remote server. Here''s an example of how to use scp to sync
+    your home folder to a remote server:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: scp -r ~/ username@remote-server:/path/to/remote/folder/
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will copy all files and directories in your home folder to the
+    specified remote server. The -r option tells scp to copy directories recursively.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Finder: You also can use Finder to sync your home folder to a remote server
+    by mounting the remote folder as a local volume using SMB, NFS or FTP protocols,
+    and then use the Finder to copy the files and folders.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Third party software: There are also third-party software like ChronoSync,
+    Carbon Copy Cloner, and others that can be used to sync your home folder to a
+    remote server.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that these commands require a remote server with the appropriate
+    permissions and access to be set up, and also make sure you have the correct login
+    credentials to access the remote server.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Securely Copy from Server to Local
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Instead of backing up files, maybe there are some files on a remote server that
+    you want to copy locally. You might use a command like this.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Securely Copy from Server to Local folder
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: scp -r username@server:/home/username/ ~/Downloads
+  prefs: []
+  type: TYPE_NORMAL
+- en: Yes, that one is correct, too. ChatGPT had already suggested scp as one possible
+    method to synchronize files to a remote server, and I fully expected it to get
+    this one with ease.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Securely Copy from Server to Local folder
+  prefs: []
+  type: TYPE_NORMAL
+- en: To securely copy files from a remote server to a local folder on macOS, you
+    can use the scp command. scp stands for "secure copy" and it uses the SSH protocol
+    to transfer files.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here''s an example of how to use scp to copy a file called "file.txt" from
+    the remote server "remote-server" to the local folder "~/Downloads":'
+  prefs: []
+  type: TYPE_NORMAL
+- en: scp username@remote-server:/path/to/file.txt ~/Downloads
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will copy the file "file.txt" from the specified path on the remote
+    server to the "Downloads" folder in your home directory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can also copy a directory and its contents by adding the -r option, which
+    stands for "recursive"
+  prefs: []
+  type: TYPE_NORMAL
+- en: scp -r username@remote-server:/path/to/directory ~/Downloads
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can also copy multiple files and directories by listing them, for example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: scp username@remote-server:/path/to/file1.txt /path/to/file2.txt /path/to/directory1/
+    ~/Downloads
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You also can specify a different port number if the remote server uses a non-default
+    port by using -P option:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: scp -P 22 username@remote-server:/path/to/file.txt ~/Downloads
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that these commands require a remote server with the appropriate
+    permissions and access to be set up, and also make sure you have the correct login
+    credentials to access the remote server. Also, the scp command encrypts the data
+    as it is transferred, providing an additional layer of security.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Archiving Folders
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Sometimes we want to back up a folder by creating an archive. We might want
+    to email it or upload it to a public server, or just simply copy it to a flash
+    drive. If the goal is to keep the files together, an archive is perfect. If only
+    I could remember what that command syntax is.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I gave them both the same prompt, with Copilot first. I asked them each for
+    both the commands to archive and unarchive a given directory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Archive the src directory using tar and gzip
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: tar -cvzf src.tar.gz src
+  prefs: []
+  type: TYPE_NORMAL
+- en: Uncompress the tar.gz file
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: tar -xvzf src.tar.gz
+  prefs: []
+  type: TYPE_NORMAL
+- en: The commands are correct, but again, Copilot provides the information without
+    context. In source code, this makes a lot of sense. If you don’t know what the
+    tar command does, though, you may still be lost. You certainly won’t know that
+    you can safely remove the v from the parameter and still get the results you want.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s see how ChatGPT did.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Archive the src directory using tar and gzip
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To archive the src directory using tar and gzip, you can use the following
+    command:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -czvf src.tar.gz src/
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command creates a new archive file called src.tar.gz that contains the
+    contents of the src directory. The -c option tells tar to create a new archive,
+    the -z option tells it to use gzip to compress the archive, and the -v option
+    tells it to display verbose information about the progress of the archive creation.
+    The -f option specifies the name and location of the archive file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can also use tar with gzip with the following command
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -zcvf src.tar.gz src/
+  prefs: []
+  type: TYPE_NORMAL
+- en: It will produce the same result.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that this command will create the archive file in the current directory,
+    you can specify a different directory to save the archive file. Also, the original
+    src directory will not be deleted, if you want to delete it after archiving you
+    can add —remove-files option
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -czvf src.tar.gz—remove-files src/
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will archive the src directory and remove the original directory
+    after archiving it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is the first time I have seen ChatGPT provide the exact same information
+    as an alternative to its first suggestion. Notice that the first two commands
+    are identical except for the ordering of parameters, which is irrelevant. It’s
+    literally the same command.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I do appreciate the third option it gave, though. I was not aware of the —remove-files
+    option.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I then asked it to uncompress the tar file. I admit that I was not prepared
+    for the tutorial it generated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To uncompress a .tar.gz file, you can use the following command:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -xzvf src.tar.gz
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command tells tar to extract the contents of the src.tar.gz file, the -x
+    option tells it to extract the archive, the -z option tells it to use gzip to
+    decompress the archive, and the -v option tells it to display verbose information
+    about the progress of the extraction. The -f option specifies the name and location
+    of the archive file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can also use the following command
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -xvf src.tar.gz
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will also extract the contents of the src.tar.gz file, but you
+    need to specify that the file is gzipped by adding the -z option
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -xvzf src.tar.gz
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will extract the contents of the archive to the current directory,
+    if you want to extract the files to a different directory you can use the -C option
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -xvzf src.tar.gz -C /path/to/directory
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will extract the files to the directory /path/to/directory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that the extracted files will have the same permissions and ownership
+    as the original files, if you want to change the permissions or ownership of the
+    extracted files you can use the —no-same-permissions and —no-same-owner options.
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -xvzf src.tar.gz—no-same-permissions—no-same-owner
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will extract the files with the current user's permissions and
+    ownership.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also, after extracting the files you can delete the original archive file by
+    adding -k option
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -xvzf src.tar.gz -k
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will extract the files and keep the original archive file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It's important to note that tar.gz files are also known as tarballs, they are
+    a combination of tar archive and gzip compression, the .tar file contains the
+    files and the .gz file is the compression. It's important to use both options
+    -x and -z to extract and decompress the file respectively.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once again, it managed to get confused and essentially gave me the same command
+    for two different options. Otherwise, I think it did a thorough job explaining
+    things.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GitHub SSH Key
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: I don’t know about you, but I always have to look up how to create a new SSH
+    key for GitHub using git+ssh protocol. Maybe I could get Copilot to do it for
+    me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create and copy a new ssh key for github to the clipboard
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: ssh-keygen -t rsa -b 4096 -C "
+  prefs: []
+  type: TYPE_NORMAL
+- en: '" && cat ~/.ssh/id_rsa.pub | pbcopy'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command is correct and exactly what I expected, with the exception of the
+    -C " prompt it gave me. In fact, Copilot stopped after that parameter, as if it
+    expected me to input something.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whenever Copilot gives you a partial command as its output, it is either waiting
+    for you to enter more info yourself or it wants you to continue on the next line.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As it turns out -C is simply a comment to the key, so I could have typed something
+    like github-key and continued on. As soon as I pressed Return, it gave me the
+    second line. This line tells the shell to copy the public key from my home directory’s .ssh
+    directory into the clipboard using pbcopy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: At that point, the computer’s clipboard should have a copy of my public key,
+    which I can then paste into GitHub’s public key UI.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT suggested that I use my email address as the comment and gave me a complete
+    example. It also split the process into two commands instead a one.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create and copy a new ssh key for github to the clipboard
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To create and copy a new SSH key for use with GitHub on macOS, you can use
+    the ssh-keygen and pbcopy command. Here is an example of how to create a new SSH
+    key and copy it to the clipboard:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Open the Terminal and generate a new SSH key:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command creates a new RSA key with a 4096-bit key size, and associates
+    the email "[your_email@example.com](mailto:your_email@example.com)" with the key
+    as a comment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When prompted, you can press Enter to accept the default location and file name
+    for the key, or enter a new location and file name.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'After the key is generated, you can copy the key to your clipboard using the
+    pbcopy command:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: pbcopy < ~/.ssh/id_rsa.pub
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command copies the contents of the file "~/.ssh/id_rsa.pub" to the clipboard.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Go to your GitHub settings, under SSH and GPG keys, click on "New SSH Key" button.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Give a title to the key, and paste the key on the "Key" field, press "Add SSH
+    key" button.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can test the connection by running ssh -T git@github.com
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that pbcopy command only works on macOS and is used to copy data
+    to the clipboard. On other operating systems, the command may differ and you may
+    need to use xclip or xsel to copy the key to the clipboard.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I love that ChatGPT goes above and beyond the actual command, providing examples,
+    options, and even caveats.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Commands Specific to macOS
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: So far, I’ve been impressed with what both Copilot and ChatGPT were able to
+    do. There are other commands that I have a hard time remembering, particularly
+    commands on macOS that manipulate media files. Let’s see how they did with some
+    of those.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unfortunately, I seem to have hit the limit of Copilot’s abilities. Each of
+    the comments I tried did not result in working commands. Here is the first, asking
+    Copilot to convert a folder of JPEG files to PNG format.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The command it gave me doesn’t work on my Mac, but it looks like it should.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Convert all jpg files in the current directory to png files
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: for file in *.jpg; do
+  prefs: []
+  type: TYPE_NORMAL
+- en: convert "$file" "${file%.jpg}.png"
+  prefs: []
+  type: TYPE_NORMAL
+- en: done
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT, naturally, explained why.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Convert all jpg files in the current directory to png files
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can use the command-line tool convert from ImageMagick to convert all JPG
+    files in the current directory to PNG files. Here is an example of how to use
+    convert to convert all JPG files to PNG files:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: for file in *.jpg; do convert "$file" "${file%.jpg}.png"; done
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will loop through all files in the current directory that have
+    a .jpg extension, run the convert command on each file, and save the output to
+    a new file with the same name but with a .png extension.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Alternatively, you can use find and mogrify command from ImageMagick:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: find . -name "*.jpg" -exec mogrify -format png {} +
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will search for all .jpg files in the current directory and its
+    subdirectories and change their format to .png and overwrite the original files.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that this will overwrite the original JPG files. If you want to
+    keep the original files, you can modify the command to save the output to a different
+    location or with a different file name.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interestingly, its first suggestion matched Copilot’s identically. The difference
+    is that ChatGPT told me that the convert command comes from ImageMagick. Deciding
+    not to give up just yet, I asked it how to install ImageMagick.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is what it told me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: How do I install ImageMagick?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To install ImageMagick on macOS, you can use the package manager Homebrew.
+    Here are the steps to install ImageMagick using Homebrew:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Install Homebrew if you haven''t already by running the following command in
+    the terminal:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once Homebrew is installed, you can use it to install ImageMagick by running
+    the following command in the terminal:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: brew install imagemagick
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'After the installation is complete, you can check that it was successful by
+    running the following command:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: convert -version
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will display the version of ImageMagick that you have installed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Another way to install ImageMagick on macOS is to download the binary package
+    from the official website and install it manually. You can find the binary package
+    here: [https://imagemagick.org/script/download.php#macosx](https://imagemagick.org/script/download.php#macosx)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that you may need to add the ImageMagick binaries to your system's
+    PATH for the convert and mogrify command to be recognized by the terminal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I had similar issues with other commands. This one also didn’t work for me,
+    but there was no hint as to what the error might be.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Extract audio from all the mp4 files in the folder
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: for file in *.mp4; do
+  prefs: []
+  type: TYPE_NORMAL
+- en: ffmpeg -i "$file" -vn -acodec copy "${file%.mp4}.mp3"
+  prefs: []
+  type: TYPE_NORMAL
+- en: done
+  prefs: []
+  type: TYPE_NORMAL
+- en: As expected, ChatGPT gave me a lot more context, after suggesting a very similar
+    command, but also explaining what I needed to understand about it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Extract audio from all the mp4 files in the folder
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can use the command-line tool ffmpeg to extract the audio from all MP4
+    files in a folder on macOS. Here is an example of how to use ffmpeg to extract
+    the audio from all MP4 files in the current directory and save it as an MP3 file:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: for file in *.mp4; do ffmpeg -i "$file" -vn -acodec libmp3lame -ac 2 -q:a 4
+    -y "${file%.mp4}.mp3"; done
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command will loop through all files in the current directory that have
+    a .mp4 extension, run the ffmpeg command on each file, and save the audio output
+    to a new file with the same name but with a .mp3 extension.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command uses the -i option to specify the input file, the -vn option to
+    disable the video stream, the -acodec option to specify the audio codec, -ac 2
+    to specify the number of audio channels, -q:a 4 to specify the audio quality and
+    -y to overwriting output files.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can change the output file format and codec by changing the mp3 and libmp3lame
+    accordingly.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Please note that you may need to install ffmpeg in your system if it is not
+    already installed. You can install ffmpeg using Homebrew by running the following
+    command in the terminal:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: brew install ffmpeg
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also, please note that this command will overwrite any existing files with the
+    same name. If you want to keep the original files, you can modify the command
+    to save the output to a different location or with a different file name.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The command ChatGPT gave me was more complete, but its explanation is misleading.
+    Or maybe I simply read it wrong. The -y parameter will automatically overwrite
+    any existing files on output, but the command is not destructive to the input
+    files.
+  prefs: []
+  type: TYPE_NORMAL
+- en: My final test was to try to extract audio using avconvert, another command on
+    macOS. Copilot gave me a single command.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Extract audio from video file using avconvert
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: avconvert -i video.mp4 -vn -acodec copy audio.mp3
+  prefs: []
+  type: TYPE_NORMAL
+- en: Apparently, this command no longer exists, which ChatGPT was happy to explain
+    to me when I asked about it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What is avconvert?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'avconv is a command-line tool similar to ffmpeg that can be used to convert
+    multimedia files. To extract the audio from a video file using avconv on macOS,
+    you can use the following command:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: avconv -i inputfile.mp4 -vn -acodec libmp3lame -ac 2 -q:a 4 -y outputfile.mp3
+  prefs: []
+  type: TYPE_NORMAL
+- en: This command uses the -i option to specify the input file, the -vn option to
+    disable the video stream, the -acodec option to specify the audio codec as libmp3lame,
+    the -ac 2 option to specify the number of audio channels, the -q:a 4 option to
+    specify the audio quality and the -y option to overwrite output files if they
+    already exist.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can change the input and output file name and format accordingly, also you
+    can change the codec and quality options as you need.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Please note that you may need to install avconv in your system if it is not
+    already installed. You can install avconv using Homebrew by running the following
+    command in the terminal:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: brew install libav
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please note that avconv and ffmpeg are similar but not exactly the same, and
+    their syntax and options may differ slightly. Some options or codecs that work
+    with ffmpeg may not work with avconv, and vice versa. Also, ffmpeg is more commonly
+    used and has more active development than avconv, but both of them can be used
+    to extract audio from a video file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that it didn’t answer the question that I asked, or so I thought. Confused
+    and mildly curious, I then asked for clarification.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What is the difference between avconv and avconvert?
+  prefs: []
+  type: TYPE_NORMAL
+- en: avconv and avconvert are actually the same thing, avconv is the command-line
+    tool for the libav library, that is a fork of the ffmpeg library. avconv was the
+    command-line tool for the libav library and it's the equivalent of the ffmpeg
+    command-line tool for the ffmpeg library, but the libav project was discontinued
+    in 2018 and now the libav developers recommend using ffmpeg instead of avconv.
+    avconvert is a typo or a misspelling of avconv, and both commands can be used
+    to perform the same tasks. The avconv tool has been replaced by ffmpeg, but you
+    might find some old resources or scripts that use avconv or avconvert.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In summary, avconv and avconvert are the same command-line tool, but the libav
+    project was discontinued in 2018 and now it's recommended to use ffmpeg instead
+    of avconv.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I got none of that context from Copilot. What amazed me is that I thought avconvert
+    was the current and correct command to use. Apparently, I was mistaken on both
+    counts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Parting Thoughts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: While using AI tools can potentially save time and effort, it is important to
+    assess the quality of the generated commands and ensure they are safe and effective.
+    The output from ChatGPT is superior to that of Copilot, but I expected that for
+    the purposes of this chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT is an advanced AI model that is capable of understanding and responding
+    to more complex and nuanced questions. Copilot is an AI assistant designed to
+    help developers with their coding tasks, but it’s not as advanced as ChatGPT.
+    However, the important thing here is that either one can help you accomplish your
+    task effectively. Both ChatGPT and Copilot can provide accurate and reliable answers
+    to your questions, but ChatGPT’s output is more detailed and comprehensive. Ultimately,
+    the choice of which tool to use will depend on your specific needs and preferences.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In addition to the difference in output quality, another aspect to consider
+    is the area of expertise of each tool. ChatGPT is a general-purpose language model
+    that has been trained on a vast amount of text data, making it a good choice when
+    the subject matter may be unfamiliar, or when you need an explanation or clarification.
+    It is good at providing a comprehensive understanding of a topic, and it can be
+    used for a wide range of tasks, including language translation, text generation,
+    and question answering.
+  prefs: []
+  type: TYPE_NORMAL
+- en: On the other hand, Copilot is an AI assistant that is specifically designed
+    for developers and is trained on actual software. Therefore, may be better at
+    understanding your code in context and providing solutions that are tailored to
+    your specific needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you will continue to see, it can help you with your coding tasks by suggesting
+    snippets of code, providing documentation, and even completing your code for you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you are a developer and you need help with your code, Copilot is a great
+    choice.
+  prefs: []
+  type: TYPE_NORMAL

@@ -1,0 +1,461 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Learning RxJS
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Abstract image of a human, binary numbers, and a planet](d2d_images/image015.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Image by [Gerd Altmann from Pixabay](https://pixabay.com/users/geralt-9301/?amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3175073)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Working with Copilot and ChatGPT on common algorithms got me thinking that they
+    could be very useful tools for learning Reactive Extensions for JavaScript (RxJS),
+    or at least to help me remember some of its non-obvious syntax.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A lot of people don’t like to use RxJS, thinking it’s too complicated. They
+    tend to avoid it, which I believe is a shame. Yes, RxJS can have a steep learning
+    curve, but learning to think “reactively” and using RxJS effectively has been
+    worth the effort. I wondered how useful Copilot could be in helping others to
+    learn RxJS.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For this chapter, I’m going to continue using that array of puzzles from before.
+    In case you need a refresher, it looks like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Partial array of "puzzles" for this example
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'private demoPuzzles: Puzzle[] = ['
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id:88, size: 4, solution: [''abetbabeebontent''] },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id:89, size: 4, solution: [''icedcaveevendent''] },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id:90, size: 8, solution: [''abetracemirestun'', ''armsbaitecruteen''] },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id:91, size: 8, solution: [''cageheaturicmyth'', ''chumaerygaitetch''] }'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: from and of
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Sticking with the above array of puzzles, let’s imagine that the puzzles are
+    part of a game, and that they exist as a stream of Observables. Further, assume
+    that the game gets them from some outside source. For now, we won’t worry about
+    where they are coming from. Every time a new puzzle is presented, the game will
+    do “something” with it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'So, I asked Copilot to do just that. This is my comment and the code it wrote
+    for me:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create a new observable from the demo Puzzle array
+  prefs: []
+  type: TYPE_NORMAL
+- en: const puzzles$ = from(this.demoPuzzles);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Perfect! The RxJS from function creates a new Observable from an array, emitting
+    a new value for each element of the array. That is exactly what I wanted. Notice
+    also that it uses the common naming convention of appending a $ to the identifier,
+    indicating that it is an Observable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There is another RxJS operator, of, that can also create an Observable from
+    an array. Though it would have been valid to use that, of creates a single Observable
+    from that emits once, containing the entire array. That is not what I wanted,
+    and somehow Copilot knew (or guessed) that.
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Now that we have an Observable let’s do something with it. Let’s start with
+    a couple of the simpler and more common RxJS operators: map and filter.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The RxJS filter operator is used to do what its name implies: filter an existing
+    stream to include only those items that match some provided criteria.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'What if the game player only wants to see puzzles of size 4? Can we get Copilot
+    to do that for us? Here is the comment I typed and the code Copilot generated
+    in response to that comment:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Filter puzzles to only those of size 4
+  prefs: []
+  type: TYPE_NORMAL
+- en: const size4$ = puzzles$.pipe(filter(puzzle => puzzle.size === 4));
+  prefs: []
+  type: TYPE_NORMAL
+- en: What did it give us? It created a new Observable called size4$, using the consistent
+    naming convention from before.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It also correctly understands that to use the filter operator, we first have
+    to use the RxJS pipefunction. Any time you are working with an RxJS Observable,
+    and you want to act on it before subscribing to the value stream, you need to
+    pass a list of operators into the pipe function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next, to select the puzzles of size 4, it correctly deduced that I would need
+    the filteroperator, which takes a callback function defining how each item in
+    the stream should be matched. If it looks familiar, it’s because it works exactly
+    like Array.filter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You might be thinking that I cheated a bit by using the word “Filter” in my
+    comment. What would happen if I used a different phrase? Well, I decided to find
+    out. I deleted the above code and its comment and typed something completely new.
+    I wanted to avoid hinting words like “select” or “filter.” This is what it gave
+    me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Give me only the puzzles of size four
+  prefs: []
+  type: TYPE_NORMAL
+- en: const size4$ = puzzles$.pipe(filter(puzzle => puzzle.size === 4));
+  prefs: []
+  type: TYPE_NORMAL
+- en: It still correctly decided that I need to add the filter operator to a pipeand
+    it converted “four” to 4\. Pretty impressive.
+  prefs: []
+  type: TYPE_NORMAL
+- en: map
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Let’s see what happens if we want only a part of each of the above puzzles.
+    Maybe we are only going to display the first solution of the puzzle as it is emitted.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Any time you want to coerce one object into another, you would first reach for
+    the map operator, which works very similarly to the JavaScript Array function
+    of the same name.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As with the prior examples, here are my comment and the generated code:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Display only the first solution of each puzzle
+  prefs: []
+  type: TYPE_NORMAL
+- en: const firstSolution$ = size4$.pipe(map(puzzle => puzzle.solution[0]));
+  prefs: []
+  type: TYPE_NORMAL
+- en: Do you see what it did there? It correctly assumed that I would be using the
+    output from the prior command, so it gave me the size4$value from before. As I
+    have previously pointed out, this shows that Copilot is aware of the context of
+    your source code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I think the only disagreement I have is the name firstSolution$, but right now
+    I can’t think of a better one.
+  prefs: []
+  type: TYPE_NORMAL
+- en: At this point, I have an Observable that is filtered and mapped to only give
+    me the first solution of size-4 puzzles as they are emitted.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Could it combine them for me?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: What if I structured my comment to try to get Copilot to write the entire pipeline
+    for me? Let’s see how that would look.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Give me the first solution of each size-4 puzzles
+  prefs: []
+  type: TYPE_NORMAL
+- en: puzzles$.pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter(puzzle => puzzle.size === 4),
+  prefs: []
+  type: TYPE_NORMAL
+- en: map(puzzle => puzzle.solution[0]),
+  prefs: []
+  type: TYPE_NORMAL
+- en: first()
+  prefs: []
+  type: TYPE_NORMAL
+- en: ).subscribe(solution => console.log(solution));
+  prefs: []
+  type: TYPE_NORMAL
+- en: Honestly, this is close, but it is not what I wanted. I think the word ofin
+    the comment might have thrown it off. Plus, it insisted on adding the subscribe,
+    which I didn’t want it to do. When building RxJS solutions, I try not to subscribe
+    because that requires me to remember when I must unsubscribe. I’ll touch on that
+    later.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I decided to give it a few more hints to see whether I could help it along.
+    In this case, I typed the comment and const on the next line to hint to Copilot
+    I want a constant instead of a subscription.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Give me the first solution for each size-4 puzzles
+  prefs: []
+  type: TYPE_NORMAL
+- en: const
+  prefs: []
+  type: TYPE_NORMAL
+- en: firstSolution$ = puzzles$.pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter(puzzle => puzzle.size === 4),
+  prefs: []
+  type: TYPE_NORMAL
+- en: map(puzzle => puzzle.solution[0]),
+  prefs: []
+  type: TYPE_NORMAL
+- en: first()
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: Better, but it added first(), which I definitely do not want. It’s being thrown
+    off by the word “first” in the comment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Why didn’t I want to use first()? This operator gives me only the first value
+    from the Observable stream, which is not what I wanted. Instead, I wanted the
+    first puzzle from each value from the stream. A subtle but important difference.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s see if I can make a final tweak to get closer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Give me the first solution inside each puzzle of size four
+  prefs: []
+  type: TYPE_NORMAL
+- en: const firstSolution$ = puzzles$.pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter(puzzle => puzzle.size === 4),
+  prefs: []
+  type: TYPE_NORMAL
+- en: map(puzzle => puzzle.solution[0])
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: That’s exactly what I wanted it to do. The takeaway for me is that you need
+    to be very specific about your intentions. Don’t be afraid to reject its first
+    attempt. You can always try again.
+  prefs: []
+  type: TYPE_NORMAL
+- en: take
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The take operator is used to select (or take) only a certain number of emissions
+    from the observable and then automatically disconnect. Copilot knew exactly how
+    to structure that for me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Take only the first two size 8 puzzles
+  prefs: []
+  type: TYPE_NORMAL
+- en: const firstTwoSize8Puzzles$ = this.demoPuzzles$.pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter(puzzle => puzzle.size === 8),
+  prefs: []
+  type: TYPE_NORMAL
+- en: take(2)
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: Thinking I might throw it a curveball, so to speak, I asked it to log only those
+    puzzles from the last example. It got it right, building on the code it had just
+    created.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Log the first two size 8 puzzles to the console
+  prefs: []
+  type: TYPE_NORMAL
+- en: firstTwoSize8Puzzles$.subscribe(puzzle => console.log(puzzle));
+  prefs: []
+  type: TYPE_NORMAL
+- en: tap
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Sometimes you want to see the values in an Observable stream without affecting
+    the stream or any downstream operators. The tap operator is built for that exact
+    scenario. Could I get Copilot to rewrite my logging statement above to use tap?
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Take the first two size 8 puzzles, but log all puzzles to the console
+  prefs: []
+  type: TYPE_NORMAL
+- en: const demoPuzzles2$ = demoPuzzles$.pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: tap(puzzles => console.log(puzzles)),
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter(puzzles => puzzles.size === 8),
+  prefs: []
+  type: TYPE_NORMAL
+- en: take(2)
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: That looks just about right, though I’m not thrilled with its naming. In fact,
+    Copilot appears to have remembered that I prefer not to subscribe to my observables,
+    so I’ll overlook the odd name.
+  prefs: []
+  type: TYPE_NORMAL
+- en: subscribe
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Despite my resistance to using subscribe prematurely, could I get Copilot to
+    subscribe to the Observable? Undoubtedly, with the right prompt. As it turns out,
+    as soon as pressed the enter key, Copilot immediately offered the following code
+    with no further action on my part.
+  prefs: []
+  type: TYPE_NORMAL
+- en: demoPuzzles2$.subscribe(puzzles => console.log(puzzles));
+  prefs: []
+  type: TYPE_NORMAL
+- en: That’s exactly what I wanted it to do. I guess it read my mind.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What about ChatGPT for RxJS?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: ChatGPT was less of a help for this, but not for the reasons you might expect.
+    At first, I thought it would be better, especially since it tends to explain the
+    code it produces. What bothered me about ChatGPT for RxJS, though, is that it
+    seemed to take me too literally.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, when I asked it about using take to get me the first two elements,
+    it actually wrote out everything as a complete function. Copilot tends to give
+    you the code you need when you need it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Where ChatGPT excels is in explaining the code that Copilot writes. Let’s see
+    how that would work before moving on. I asked ChatGPT what this code does. It
+    gave me the following analysis, which I’m sure you’ll agree is impressive.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What does the following code block do?
+  prefs: []
+  type: TYPE_NORMAL
+- en: const firstSolution$ = puzzles$.pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter(puzzle => puzzle.size === 4),
+  prefs: []
+  type: TYPE_NORMAL
+- en: map(puzzle => puzzle.solution[0])
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sure, the code you provided does the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Creates an observable puzzles$ that emits each element of a larger array of
+    Puzzle objects, similar to the demoPuzzles array we saw earlier.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Uses the pipe method to create a chain of operators that will be applied to
+    each emission of the puzzles$ observable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first operator in the chain is filter, which filters out any puzzles that
+    do not have a size property of 4\. This means that only puzzles with a size of
+    4 will be allowed to continue down the chain.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The second operator in the chain is map, which maps each remaining puzzle to
+    its first solution. Since the solution property of each Puzzle object is an array
+    of strings, we use the array indexing operator [0] to select the first element
+    of the array as the solution.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The resulting observable firstSolution$ emits the first solution of each puzzle
+    that has a size of 4.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To summarize, the code filters a stream of Puzzle objects by size and then maps
+    the remaining puzzles to their first solution, resulting in a stream of strings
+    that represent the first solution of each puzzle that has a size of 4.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What’s the Takeaway?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Admittedly, there is a lot more to RxJS than the few operators I used here.
+    RxJS is huge, with more than 100 operators, though most developers use fewer than
+    a dozen of them regularly. The goal of this chapter wasn’t to perform an exhaustive
+    test of RxJS.
+  prefs: []
+  type: TYPE_NORMAL
+- en: My purpose was to see whether Copilot can help a novice developer get up to
+    speed with RxJS, knowing only a little about what it can do. I will use more RxJS
+    later, where the context is a little more appropriate.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Can Copilot help someone learn RxJS or how to use it better? I’m skeptical,
+    if only because it didn’t always give me the code I wanted. An RxJS novice just
+    starting out may not have enough experience to know what to accept and when to
+    try again.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Copilot might be a better option for experienced JavaScript developers who understand
+    the basics of RxJS. They can use it with the reasonable expectation that it will
+    pick the correct operators to match their needs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Ultimately, while I find Copilot to be a useful and [mostly] benign tool, it
+    does have to be coerced to do the right thing often.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’m not convinced it’s a tool for the RxJS beginner, who may be misled by incorrect
+    code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT, on the other hand, is excellent in helping a novice understand code.
+    Simply paste it into the text box and ask for an explanation. That’s powerful
+    and should not be overlooked.
+  prefs: []
+  type: TYPE_NORMAL

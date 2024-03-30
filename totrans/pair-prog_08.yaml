@@ -1,0 +1,1396 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Data Generation
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Gambling table with dice, cards, and chips](d2d_images/image020.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Image by [Thorsten Frenzel from Pixabay](https://pixabay.com/users/thorstenf-7677369/?amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4178462)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Never Lack Sample Data for Your Apps
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Generating sample data is a crucial aspect of application development, as it
+    allows developers to test and refine their software in a controlled environment.
+    In this chapter, we will explore the effectiveness of Copilot and ChatGPT in generating
+    sample data for applications. We will start with simple examples and gradually
+    move towards more complex ideas, sharing both the successes and failures along
+    the way. By the end of this chapter, you will have a better understanding of the
+    capabilities and limitations of these tools and how they can be leveraged to improve
+    your application development process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As before I will show my simple comment, followed by what the AIs suggested,
+    with commentary where appropriate.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Lorem Ipsum Text
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: First, let’s see what Copilot suggested for a generic request for some “lorem
+    ipsum” text.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Generate a paragraph of lorem ipsum text
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const text = require(''lorem-ipsum'').loremIpsum({count: 1, units: ''paragraphs''});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'That isn’t what I expected at all. I had hoped it would simply build some for
+    me. Honestly, I’d never heard of a [lorem-ipsum npm package](https://www.npmjs.com/package/lorem-ipsum/v/1.0.5),
+    so I decided to look for it. I installed the package and ran my code, which output
+    this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Aliquip qui est officia tempor elit aliquip. Lorem culpa ea exercitation aliqua
+    aliquip et aute. Eiusmod ad sunt labore proident id reprehenderit ullamco dolore
+    laborum excepteur ad eiusmod laboris. Et duis consectetur culpa nulla velit adipisicing
+    minim velit dolore deserunt commodo id occaecat. Mollit aliquip consectetur aliquip
+    duis eu incididunt ut amet deserunt qui.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Again, not what I expected, but it did the right thing. I can hardly complain
+    when it gives me working code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT did exactly what I expected without any additional prompting. It just
+    worked.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, purus non
+    ornare congue, magna magna porta velit, eget malesuada velit velit vel mi. Sed
+    velit velit, suscipit vel dolor eu, malesuada ornare elit. Sed dictum id elit
+    vel dictum. Donec malesuada risus vitae ipsum placerat, eget aliquam velit ullamcorper.
+    Sed in eros vel velit blandit elementum. Sed nec tempor tellus. Sed non eros euismod,
+    feugiat eros ut, gravida dolor. Nam auctor malesuada est, euismod euismod erat
+    tempor id.
+  prefs: []
+  type: TYPE_NORMAL
+- en: List of schools in the USA
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: For the next experiment, I wanted a list of schools that can be found in the
+    United States. This one took on the same pattern as above, but with a different
+    outcome.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // List of schools in the USA
+  prefs: []
+  type: TYPE_NORMAL
+- en: const schools = require('us-schools').schools;
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(schools);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unfortunately, no such npm package exists, at least not that I could find. I
+    was starting to have less faith in this process than when I began.
+  prefs: []
+  type: TYPE_NORMAL
+- en: On the other hand, ChatGPT again came through.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Give me a list of schools in the USA as a JavaScript array
+  prefs: []
+  type: TYPE_NORMAL
+- en: const schools = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Harvard University", state: "Massachusetts" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Stanford University", state: "California" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Princeton University", state: "New Jersey" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Yale University", state: "Connecticut" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Columbia University", state: "New York" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Brown University", state: "Rhode Island" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "University of Pennsylvania", state: "Pennsylvania" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Cornell University", state: "New York" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Dartmouth College", state: "New Hampshire" }'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fake Customers with Addresses
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Wondering whether I would ever get a success out of Copilot, I moved on with
+    my preplanned list. Could it generate some fake customers for me?
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Generate a list of random customer names and addresses
+  prefs: []
+  type: TYPE_NORMAL
+- en: const faker = require('faker');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const customers = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < 100; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customers.push({
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'name: faker.name.findName(),'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'address: faker.address.streetAddress(),'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'city: faker.address.city(),'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'state: faker.address.state(),'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'zip: faker.address.zipCode(),'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’ve used [faker](https://www.npmjs.com/package/@faker-js/faker) ([https://www.npmjs.com/package/@faker-js/faker](https://www.npmjs.com/package/@faker-js/faker))
+    in the past, so I had higher hopes for this one. I installed the faker npm package
+    and added a console.table(customers)command. This would print the array to my
+    browser console in a grid, with each “customer” on its own row.
+  prefs: []
+  type: TYPE_NORMAL
+- en: That gave me errors, as the require line is incorrect. The correct version is
+  prefs: []
+  type: TYPE_NORMAL
+- en: const { faker } = require('@faker-js/faker');
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once I fixed that, I was informed that findName has been deprecated in favor
+    of fullName, but the code still runs. I was provided with an output of fake customers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GitHub Copilot was trained on years and years of existing code, so it makes
+    sense that some of that code will be based on older patterns or deprecated libraries.
+    It’s inevitable, but the good news is that as we continue to train it, it’ll only
+    get better.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given what you’ve already seen, you probably have more faith in ChatGPT in getting
+    this right. If you were to bet on it, you would have lost.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generate a list of random customer names and addresses
+  prefs: []
+  type: TYPE_NORMAL
+- en: const faker = require('faker');
+  prefs: []
+  type: TYPE_NORMAL
+- en: let customers = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for(let i = 0; i < 10; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: let customer = {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'name: faker.name.findName(),'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'address: faker.address.streetAddress()'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: customers.push(customer);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(customers);
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT made the exact same mistakes as Copilot. This is not entirely unexpected,
+    as the data on which ChatGPT was trained ended sometime in 2021\. It isn’t aware
+    of any updates to libraries and frameworks made after that. What is less expected
+    is that it wrote code that was almost identical to Copilot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not completely undaunted, I made a slight change and asked ChatGPT to try again,
+    without faker. I wanted to see whether it could do it on its own. I got more than
+    I expected, but it did what I asked.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generate a list of random customer names and addresses without using the faker
+    library
+  prefs: []
+  type: TYPE_NORMAL
+- en: let customers = []
+  prefs: []
+  type: TYPE_NORMAL
+- en: const firstNames = ['John', 'Emily', 'Jessica', 'Michael', 'David',
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Jacob'', ''Madison'', ''Ethan'', ''Elizabeth'']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const lastNames = ['Smith', 'Johnson', 'Williams', 'Jones', 'Brown',
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Miller'', ''Wilson'', ''Moore'', ''Taylor'']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const streets = ['Main St', 'High St', 'Park Ave', '1st St', '2nd St',
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''4th St'', ''5th St'', ''6th St'', ''7th St'']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cities = ['New York', 'Los Angeles', 'Chicago', 'Houston',
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Philadelphia'', ''San Antonio'', ''San Diego'', ''Dallas'']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const states = ['NY', 'CA', 'TX', 'AZ', 'PA', 'TX', 'CA', 'TX', 'CA']
+  prefs: []
+  type: TYPE_NORMAL
+- en: const zipCodes = ['10001', '90001', '60601', '77001', '85001', '19019',
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''78201'', ''92201'', ''75201'', ''95201'']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: for(let i = 0; i < 10; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: let customer = {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'name: firstNames[Math.floor(Math.random() * firstNames.length)] +'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ''' '' + lastNames[Math.floor(Math.random() * lastNames.length)],'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'address: streets[Math.floor(Math.random() * streets.length)] + '' '' +'
+  prefs: []
+  type: TYPE_NORMAL
+- en: cities[Math.floor(Math.random() * cities.length)] + ' ' +
+  prefs: []
+  type: TYPE_NORMAL
+- en: states[Math.floor(Math.random() * states.length)] + ' ' +
+  prefs: []
+  type: TYPE_NORMAL
+- en: zipCodes[Math.floor(Math.random() * zipCodes.length)]
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: customers.push(customer)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Another interesting thing about this particular code generation: I asked ChatGPT
+    to wrap at 60 characters and to use single quotes instead of double quotes, which
+    it did.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Random Color generation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Have you ever needed some random colors? I admit this one is a bit less impressive,
+    but I was determined to continue. My hypothesis at this point is that Copilot
+    would continue to use faker.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Add a random color to each customer
+  prefs: []
+  type: TYPE_NORMAL
+- en: const colors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const customer of customers) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customer.color = colors[Math.floor(Math.random() * colors.length)];
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: But, of course, I was wrong. This is closer to what I expected it to do before
+    it started using faker. I was hoping to get some CSS colors instead of names.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Add a favorite CSS Color to each customer
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const customer of customers) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customer.color = faker.commerce.color();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: What? It went back to using faker! This is fine, but commerce.color()apparently
+    is deprecated also. Copilot never suggested using the newer functions. It worked,
+    though, which might be all we can expect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT took that comment and rewrote its entire code block, adding the new
+    functionality where appropriate. Here are the relevant lines it added:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Add a random color to each customer
+  prefs: []
+  type: TYPE_NORMAL
+- en: const colors = ['Red', 'Green', 'Blue', 'Orange', 'Yellow', 'Purple', 'Pink',
+    'Brown', 'Gray', 'Black']
+  prefs: []
+  type: TYPE_NORMAL
+- en: for(let i = 0; i < 10; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: let customer = {
+  prefs: []
+  type: TYPE_NORMAL
+- en: . . .
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'color: colors[Math.floor(Math.random() * colors.length)]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: customers.push(customer)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(customers)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Would it do as well if I asked it to use CSS colors? It came through perfectly,
+    changing the above colors array to a colorValues array.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Add a favorite CSS Color to each customer
+  prefs: []
+  type: TYPE_NORMAL
+- en: const colorValues = ['#ff0000', '#00ff00', '#0000ff', '#ffa500',
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''#ffc0cb'', ''#a52a2a'', ''#808080'', ''#000000'']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice that ChatGPT doesn’t use semicolons in its generated code. I don’t know
+    what to make of that, but if you want it to include them, you can simply ask it
+    to do so.
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the way, ChatGPT is happy to use the faker library to generate colors. I
+    won’t include that code here, as it is still insisting on using a version that
+    doesn’t work.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As I have said before, this stuff isn’t perfect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Movie titles
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: What about movie titles? Would they be able to generate real movies or real-sounding
+    fake movies?
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Add a favorite movie to each customer
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const customer of customers) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customer.movie = faker.commerce.productName();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Apparently, faker doesn’t know anything about movies, and Copilot was unable
+    (or unwilling) to suggest anything else.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I consider this one a failure, at least for Copilot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT did exactly what I had hoped it would do from the beginning. It gave
+    me an array of movie titles.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Add a favorite movie to each customer
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const movies = [''The Godfather'', ''The Shawshank Redemption'', ''The Dark
+    Knight'', ''The Good, the Bad and the Ugly'', ''The Lord of the Rings: The Return
+    of the King'', ''Pulp Fiction'', ''The Matrix'', ''Goodfellas'', ''One Flew Over
+    the Cuckoo\''s Nest'', ''Seven Samurai'']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then, it added a random element from that array into each customer (not shown).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given the movie list, I didn’t have high hopes for Copilot to handle the rest
+    of my list. My expectations for ChatGPT were still pretty high, though. I will
+    present the rest of them here without comment unless the results were way out
+    of line with my (by now meager) expectations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Car Makes and Models
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Copilot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: // What kind of car does each customer drive?
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const customer of customers) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customer.car = faker.vehicle.model();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: It gave me another array from which it would randomly assign a car.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What kind of car does each customer drive?
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cars = ['Ford', 'Chevrolet', 'Toyota', 'Honda', 'Nissan', 'Jeep', 'Dodge',
+    'Chrysler', 'BMW', 'Mercedes-Benz']
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dog breeds
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Copilot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: // What kind of dog does each customer have?
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const customer of customers) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customer.dog = faker.animal.dog();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: What kind of dog does each customer have?
+  prefs: []
+  type: TYPE_NORMAL
+- en: const dogs = ['Golden Retriever', 'Labrador Retriever', 'German Shepherd', 'Bulldog',
+    'Poodle', 'Beagle', 'Rottweiler', 'Yorkshire Terrier']
+  prefs: []
+  type: TYPE_NORMAL
+- en: Deck of cards
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Copilot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: // Create a random deck of cards
+  prefs: []
+  type: TYPE_NORMAL
+- en: const deck = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const ranks = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack',
+    'Queen', 'King'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const suit of suits) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const rank of ranks) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: deck.push({ suit, rank });
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This wasn’t bad and it’s accurate. Next, we might want to shuffle the deck.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Shuffle the deck
+  prefs: []
+  type: TYPE_NORMAL
+- en: deck.sort(() => Math.random() - 0.5);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not bad. And it didn’t use faker.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: ChatGPT did a similar job and added some explanation, which as we have seen,
+    is typical for its output.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an array of all possible card values
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cardValues = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight',
+    'Nine', 'Ten', 'Jack', 'Queen', 'King'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an array of all possible card suits
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cardSuits = ['Hearts', 'Diamonds', 'Spades', 'Clubs'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an empty array to store the random deck of cards
+  prefs: []
+  type: TYPE_NORMAL
+- en: const randomDeck = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Loop through each card value and suit, creating a new card object and pushing
+    it to the randomDeck array
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < cardValues.length; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let j = 0; j < cardSuits.length; j++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const card = { value: cardValues[i], suit: cardSuits[j] };'
+  prefs: []
+  type: TYPE_NORMAL
+- en: randomDeck.push(card);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(randomDeck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: This code will create a random deck of 52 cards, with 13 card values (Ace, Two,
+    Three, etc.) and 4 card suits (Hearts, Diamonds, Spades, Clubs). The resulting
+    randomDeck array will contain 52 card objects, each with a value property and
+    a suit property.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When I asked it to shuffle the deck, I expected it to use built-in array functions,
+    but it did not. Instead, it wrote a shuffle function the hard way.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to shuffle the deck
+  prefs: []
+  type: TYPE_NORMAL
+- en: function shuffleDeck(deck) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Loop through the deck and swap each card with a randomly chosen card
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < deck.length; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const randomIndex = Math.floor(Math.random() * deck.length);
+  prefs: []
+  type: TYPE_NORMAL
+- en: const temp = deck[i];
+  prefs: []
+  type: TYPE_NORMAL
+- en: deck[i] = deck[randomIndex];
+  prefs: []
+  type: TYPE_NORMAL
+- en: deck[randomIndex] = temp;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return deck;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Shuffle the deck
+  prefs: []
+  type: TYPE_NORMAL
+- en: const shuffledDeck = shuffleDeck(randomDeck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(shuffledDeck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Encouraged, I asked it one more time, this time instructing it to use built-in
+    array functions. It gave me basically the same function Copilot wrote.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Shuffle the deck using built-in Javascript array functionality
+  prefs: []
+  type: TYPE_NORMAL
+- en: const shuffledDeck = randomDeck.sort(() => Math.random() - 0.5);
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(shuffledDeck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: That should do the trick. It’s all about asking for exactly what you want.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Deck of uno cards
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Does they even know what Uno cards are?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Copilot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: // Create a random deck of Uno cards
+  prefs: []
+  type: TYPE_NORMAL
+- en: const unoDeck = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const colors = ['Red', 'Yellow', 'Green', 'Blue'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const specialCards = ['Skip', 'Reverse', 'Draw Two', 'Wild', 'Wild Draw Four'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const color of colors) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const rank of ranks) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: unoDeck.push({ color, rank });
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (const specialCard of specialCards) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: unoDeck.push({ color, specialCard });
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It’s clear that it knows something about Uno cards, given the colors and special
+    cards. I was a little annoyed that it didn’t create the rank. I presume it used
+    the rank array from the last code block, since I didn’t delete any of that code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I decided to delete the other card code and try again.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create a random deck of Uno cards
+  prefs: []
+  type: TYPE_NORMAL
+- en: const { uno } = require('@faker-js/faker');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const deck = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < 108; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: deck.push(uno.card());
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Nope, this didn’t work at all. Not surprisingly, the faker library has nounoexport.
+    Nothing else I tried got it to work. The first code block was actually better.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: I must admit to being impressed with what ChatGPT gave me. It produced functional,
+    well-documented code, and an explanation of what it generated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a random deck of Uno cards
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an array of all possible card values
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cardValues = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Skip',
+    'Reverse', 'Draw Two', 'Wild', 'Wild Draw Four'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an array of all possible card colors
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cardColors = ['Red', 'Yellow', 'Green', 'Blue'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an empty array to store the random deck of Uno cards
+  prefs: []
+  type: TYPE_NORMAL
+- en: const randomDeck = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Loop through each card value and color, creating a new card object and pushing
+    it to the randomDeck array
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < cardValues.length; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let j = 0; j < cardColors.length; j++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Skip the 'Wild' and 'Wild Draw Four' card values since they can be any color
+  prefs: []
+  type: TYPE_NORMAL
+- en: if (cardValues[i] === 'Wild' || cardValues[i] === 'Wild Draw Four') {
+  prefs: []
+  type: TYPE_NORMAL
+- en: continue;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const card = { value: cardValues[i], color: cardColors[j] };'
+  prefs: []
+  type: TYPE_NORMAL
+- en: randomDeck.push(card);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Add the 'Wild' and 'Wild Draw Four' cards to the randomDeck array
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < 4; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const wildCard = { value: ''Wild'', color: ''Any'' };'
+  prefs: []
+  type: TYPE_NORMAL
+- en: randomDeck.push(wildCard);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < 4; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const wildDrawFourCard = { value: ''Wild Draw Four'', color: ''Any'' };'
+  prefs: []
+  type: TYPE_NORMAL
+- en: randomDeck.push(wildDrawFourCard);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(randomDeck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: This code creates a random deck of 108 Uno cards, with 15 card values (0, 1,
+    2, etc.) and 4 card colors (Red, Yellow, Green, Blue) and two special cards 'Wild'
+    and 'Wild Draw Four' card, these cards have any color, then it creates a for loop
+    to add 4 cards of 'Wild' and 'Wild Draw Four' for each color and push it to the
+    randomDeck array, the resulting randomDeck array will contain 108 card objects,
+    each with a value property and a color property.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Grocery shopping list
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Copilot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'This one also used faker, and after a few false starts, it finally gave me
+    this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create a random grocery list
+  prefs: []
+  type: TYPE_NORMAL
+- en: const groceryList = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < 10; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: groceryList.push(faker.commerce.productName());
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It was more proof that Copilot is aware of the rest of the code in your project.
+    Sometimes you need to delete the code it generated before and try again. If you
+    don’t like what you get, try rewording the comment slightly.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: ChatGPT took a slightly different approach. It seems to understand whether it
+    should take prior instructions into account. When given this prompt, it did exactly
+    what I thought it would.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create an array of possible grocery items
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an array of possible grocery items
+  prefs: []
+  type: TYPE_NORMAL
+- en: const groceryItems = ['Apples', 'Bananas', 'Oranges', 'Lemons', 'Lettuce', 'Carrots',
+    'Potatoes', 'Onions', 'Tomatoes', 'Garlic', 'Ground Beef', 'Chicken Breasts',
+    'Eggs', 'Milk', 'Cheese', 'Bread', 'Pasta', 'Rice', 'Beans', 'Cereal', 'Yogurt'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an empty array to store the random grocery list
+  prefs: []
+  type: TYPE_NORMAL
+- en: const randomList = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to generate a random number of items
+  prefs: []
+  type: TYPE_NORMAL
+- en: function randomNumberOfItems() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return Math.floor(Math.random() * groceryItems.length);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Loop through the groceryItems array and push a random number of items to
+    the randomList array
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < randomNumberOfItems(); i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: randomList.push(groceryItems[Math.floor(Math.random() * groceryItems.length)]);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(randomList);
+  prefs: []
+  type: TYPE_NORMAL
+- en: This code creates an array of possible grocery items, then creates an empty
+    array to store a random grocery list, it also creates a function randomNumberOfItems
+    that uses Math.random() to generate a random number of items, this function is
+    then used to create a for loop that will push a random number of items to the
+    randomList array. The resulting randomList array will contain a random number
+    of grocery items from the groceryItems array.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Stock market symbols
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Copilot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Copilot made a valiant attempt on this one, but it wanted to use currency symbols
+    from faker, which apparently has no stock ticker symbols.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create a list of random stock symbols
+  prefs: []
+  type: TYPE_NORMAL
+- en: const symbols = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < 100; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: symbols.push(faker.finance.currencyCode());
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It generated a list of 100 3-letter codes. For the purposes of sample code in
+    a demo UI, I suppose this would do the job.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: What I most appreciate about ChatGPT is that it understands context. It knows
+    what I mean by “Stock Symbols.” It gave me a very thorough code block.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a list of random stock symbols
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an array of possible stock symbols
+  prefs: []
+  type: TYPE_NORMAL
+- en: const stockSymbols = ['AAPL', 'GOOGL', 'AMZN', 'FB', 'MSFT', 'BABA', 'TATAMOTORS',
+    'BA', 'INFY', 'WMT', 'GE', 'CVX', 'PG', 'XOM', 'CMCSA', 'C'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an empty array to store the random stock symbols
+  prefs: []
+  type: TYPE_NORMAL
+- en: const randomStockSymbols = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to generate a random number of stock symbols
+  prefs: []
+  type: TYPE_NORMAL
+- en: function randomNumberOfSymbols() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return Math.floor(Math.random() * stockSymbols.length);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Loop through the stockSymbols array and push a random number of symbols to
+    the randomStockSymbols array
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < randomNumberOfSymbols(); i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: randomStockSymbols.push(stockSymbols[Math.floor(Math.random() * stockSymbols.length)]);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(randomStockSymbols);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Random stock price stream
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Can they also provide a random price stream from one of those symbols?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Copilot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: // Create a list of random stock prices
+  prefs: []
+  type: TYPE_NORMAL
+- en: const prices = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < 100; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: prices.push(faker.finance.amount());
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.table(prices);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then I figured I’d ask Copilot to put the two lists together.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Combine the prices and symbols into a list of stocks
+  prefs: []
+  type: TYPE_NORMAL
+- en: const stocks = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < 100; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: stocks.push({
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'symbol: symbols[i],'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'price: prices[i],'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.table(stocks);
+  prefs: []
+  type: TYPE_NORMAL
+- en: It isn’t horrible, but it would be cool to generate a stream that I could subscribe
+    to.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Generate an observable stream of prices for each stock, changing every 5
+    seconds
+  prefs: []
+  type: TYPE_NORMAL
+- en: const { interval } = require('rxjs');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const { map, mergeMap } = require('rxjs/operators');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const { from } = require('rxjs');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const { zip } = require('rxjs');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const { take } = require('rxjs/operators');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const stockStream = from(stocks);
+  prefs: []
+  type: TYPE_NORMAL
+- en: const priceStream = interval(5000).pipe(take(10));
+  prefs: []
+  type: TYPE_NORMAL
+- en: const combinedStream = zip(stockStream, priceStream).pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: map(([stock, price]) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: stock.price = price;
+  prefs: []
+  type: TYPE_NORMAL
+- en: return stock;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ));
+  prefs: []
+  type: TYPE_NORMAL
+- en: combinedStream.subscribe((stock) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(stock);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This was cool and mostly correct. I would have preferred that it take its prices
+    from the list it created earlier, but it did most of the heavy lifting for me.
+    When I ran it, it emitted a stock symbol and price every 5 seconds.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The code I got from ChatGPT was similar to what Copilot gave me, but far more
+    complete. As with past prompts, it insists on giving a complete answer to every
+    question. Here is what it gave me in its entirety.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generate an observable stream of prices for each stock, changing every 5 seconds
+  prefs: []
+  type: TYPE_NORMAL
+- en: const { Observable } = rxjs;
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an array of possible stock symbols
+  prefs: []
+  type: TYPE_NORMAL
+- en: const stockSymbols = ['AAPL', 'GOOGL', 'AMZN', 'FB', 'MSFT', 'BABA', 'TATAMOTORS',
+    'BA', 'INFY', 'WMT', 'GE', 'CVX', 'PG', 'XOM', 'CMCSA', 'C'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an empty array to store the random stock symbols
+  prefs: []
+  type: TYPE_NORMAL
+- en: const randomStockSymbols = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to generate a random number of stock symbols
+  prefs: []
+  type: TYPE_NORMAL
+- en: function randomNumberOfSymbols() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return Math.floor(Math.random() * stockSymbols.length);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Loop through the stockSymbols array and push a random number of symbols to
+    the randomStockSymbols array
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < randomNumberOfSymbols(); i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: randomStockSymbols.push(stockSymbols[Math.floor(Math.random() * stockSymbols.length)]);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(randomStockSymbols);
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an empty array to store the random stock prices
+  prefs: []
+  type: TYPE_NORMAL
+- en: const randomStockPrices = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to generate a random stock price
+  prefs: []
+  type: TYPE_NORMAL
+- en: function randomStockPrice() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return (Math.random() * (300 - 50) + 50).toFixed(2);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Loop through the randomStockSymbols array and push a random stock price to
+    the randomStockPrices array
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < randomStockSymbols.length; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const stock = {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'symbol: randomStockSymbols[i],'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'price: randomStockPrice()'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '};'
+  prefs: []
+  type: TYPE_NORMAL
+- en: randomStockPrices.push(stock);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(randomStockPrices);
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an observable stream for each stock symbol
+  prefs: []
+  type: TYPE_NORMAL
+- en: const stockStreams = randomStockSymbols.map(symbol => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return Observable.create(observer => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: setInterval(() => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: observer.next({
+  prefs: []
+  type: TYPE_NORMAL
+- en: symbol,
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'price: randomStockPrice()'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}, 5000);'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Subscribe to each stock stream and log the updated stock price
+  prefs: []
+  type: TYPE_NORMAL
+- en: stockStreams.forEach(stream => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: stream.subscribe(stock => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'console.log(`${stock.symbol}: $${stock.price}`);'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This code generates an observable stream for each stock symbol in the randomStockSymbols
+    array, using the rxjs library and the Observable.create() method. It uses the
+    setInterval() function to emit a new stock object containing the symbol and a
+    random price every 5 seconds. Then it subscribes to each stock stream and logs
+    the updated stock price.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It's important to note that for this code to work, you should import rxjs library
+    first.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You have to admit that’s pretty complete.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusion
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Overall, I rate Copilot a 5 or 6 out of 10 on the success scale. It ended up
+    being more of a helper to use the faker library than anything. I suppose that
+    even though it didn’t do what I expected it to do, it really doesn’t matter how
+    the sample data is generated. Copilot uses the tools at its disposal, which is
+    a good thing. I don’t think this should count against Copilot, though. It does
+    a great job, considering what it’s designed to do.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT, on the other hand, scored an 8 or a 9\. It will use or not use existing
+    libraries, which makes it more flexible. It also remembers past requests, so you
+    can give it instructions such as, “Do that again, using single quotes instead
+    of double quotes.” Or “Rewrite that function using built-in JavaScript array functions.”
+    One downside of ChatGPT that I did not show is that every time you ask it to rewrite
+    or refactor an earlier answer, it slowly regenerates the entire block. After five
+    or six of those, the time it takes to generate its answers feels longer and longer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I did discover later that ChatGPT Plus, the paid subscription version, generates
+    code much faster. I guess that’s what you get for $20/month (price as of March
+    2023).
+  prefs: []
+  type: TYPE_NORMAL
+- en: As we continue to explore the various ways to use these tools, I think you’ll
+    agree that each has its strengths, depending on where and how it’s used.
+  prefs: []
+  type: TYPE_NORMAL

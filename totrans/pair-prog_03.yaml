@@ -1,0 +1,534 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Git Commands
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![GitHub Commit Graph](d2d_images/image016.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: GitHub Commit Graph by Author
+  prefs: []
+  type: TYPE_NORMAL
+- en: Can GitHub Copilot Help with Git Itself?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: After my experience with shell scripting, I decided to explore how Copilot could
+    assist with learning Git commands. In this chapter, I will detail my findings
+    and demonstrate how Copilot can effectively aid in the learning process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Basic Git Commands
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: '![File type selector in VS Code](d2d_images/image008.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: As I did with shell scripting, I created a blank document in VS Code and set
+    its type to Shell Script. Next, I started adding comments into the document to
+    see what Copilot would suggest. In every case you see below, I typed as little
+    as possible to exercise Copilot to its fullest.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I started simple, just asking it to create a new git repository for me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create an empty git repo
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git init
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next, I wanted to set my git name and email, but I can never remember the exact
+    commands. Copilot, however, does.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Set my git user name and email
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git config user.name "Mike Callaghan"
+  prefs: []
+  type: TYPE_NORMAL
+- en: git config user.email "[michael@walkingriver.com](mailto:michael@walkingriver.com)"
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sadly, but understandably, Copilot didn’t know my name and email address. I
+    added those myself. It suggested “John Doe,” which was an easy hint that I would
+    have to change it. For the email, it stopped the suggested text at the opening
+    quote, suggesting that I complete the line myself.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An empty git repo isn’t very useful, so I wanted to create a new branch, add
+    a file to it, and then commit the changes and push the branch. Here are those
+    commands, all as suggested by Copilot from my comments:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create and switch to a new branch named develop
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git checkout -b develop
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a file
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: echo "Hello World" > hello.txt
+  prefs: []
+  type: TYPE_NORMAL
+- en: Commit all new and updated files to this branch
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git add .
+  prefs: []
+  type: TYPE_NORMAL
+- en: git commit -m "Initial commit"
+  prefs: []
+  type: TYPE_NORMAL
+- en: Push this branch to the remote repository
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git push -u origin develop
+  prefs: []
+  type: TYPE_NORMAL
+- en: Switch back to the main branch
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git checkout main
+  prefs: []
+  type: TYPE_NORMAL
+- en: Merge the develop branch into the main branch
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git merge develop
+  prefs: []
+  type: TYPE_NORMAL
+- en: Rebase the main branch onto the develop branch
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git checkout develop
+  prefs: []
+  type: TYPE_NORMAL
+- en: git rebase main
+  prefs: []
+  type: TYPE_NORMAL
+- en: Those are all pretty good guesses. So far, I’m pleased with how well Copilot
+    understands git.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Intermediate Git Commands
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: For the rest of the chapter, I ran the generated commands on a mature repo,
+    rather than the one I created above. This one has multiple branches, commits,
+    tags, etc.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Commit Logs
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: Git-log enables you to view a quick summary of a repo’s commits in reverse order,
+    newest to oldest. Copilot helped me learn a number of variations on that command.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Show me the last 10 commits on develop branch
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git log—oneline -10 develop
+  prefs: []
+  type: TYPE_NORMAL
+- en: Show me the last 10 commits on all branches
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git log—oneline -10—all
+  prefs: []
+  type: TYPE_NORMAL
+- en: Show me the last 10 commits on all branches and show the graph
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git log—oneline -10—all—graph
+  prefs: []
+  type: TYPE_NORMAL
+- en: Show me the last 10 commits on all branches and show the graph and author
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git log—oneline -10—all—graph—author="Mike Callaghan"
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’m not sure this one is accurate. I believe that it will show me all commits
+    by Mike Callaghan, but necessary all commits and their authors. Again, be careful
+    with simply accepting what Copilot provides at face value. It can help, but if
+    you are careless, it can also hurt you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Revert Mistaken Commits
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: I have a hard time remembering the correct git commands to revert changes I
+    didn’t mean to commit. Would Copilot allow me to stop referring to that article?
+    Here is what it gave me when I asked.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Revert last commit
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git reset—hard HEAD~1
+  prefs: []
+  type: TYPE_NORMAL
+- en: Revert last commit and keep changes
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git reset—soft HEAD~1
+  prefs: []
+  type: TYPE_NORMAL
+- en: Revert all commits from ee670f5 to 9ad6740
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git revert ee670f5..9ad6740
+  prefs: []
+  type: TYPE_NORMAL
+- en: Those are exactly correct.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cherry Pick
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: Sometimes we want to select a single prior commit from another branch and apply
+    it to the current branch. This is called cherry picking, and Copilot knew how
+    to do that, too.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cherry pick commit 9ad6740 into main
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git checkout main
+  prefs: []
+  type: TYPE_NORMAL
+- en: git cherry-pick 9ad6740
+  prefs: []
+  type: TYPE_NORMAL
+- en: Git Diff
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: If you want to view what has changed between two commits, you use the git-diff command.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Compare commits ee670f5 with 9ad6740
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git diff ee670f5 9ad6740
+  prefs: []
+  type: TYPE_NORMAL
+- en: This works, but it isn’t very intuitive. Maybe there is a better option?
+  prefs: []
+  type: TYPE_NORMAL
+- en: DiffMerge
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: There is an app I’ve used before called DiffMerge that gives you a nicer UI
+    for comparing diffs. I wondered whether Copilot could help me install and configure
+    it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: install diffmerge from brew
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: brew install—cask diffmerge
+  prefs: []
+  type: TYPE_NORMAL
+- en: Set the difftool to diffmerge
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git config—global diff.tool diffmerge
+  prefs: []
+  type: TYPE_NORMAL
+- en: git config—global difftool.diffmerge.cmd 'diffmerge "$LOCAL" "$REMOTE"'
+  prefs: []
+  type: TYPE_NORMAL
+- en: git config—global difftool.prompt false
+  prefs: []
+  type: TYPE_NORMAL
+- en: Compare commits ee670f5 with 9ad6740 with an external diff tool
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git difftool ee670f5 9ad6740
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note that even though DiffMerge runs on both macOS and Windows, the brew command
+    is specific to macOS. I asked it to install on Windows instead and it gave me
+    this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: install diffmerge on windows
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: choco install diffmerge
+  prefs: []
+  type: TYPE_NORMAL
+- en: I don’t have a Windows box to try it, but it looks legitimate. The rest of the
+    commands above should be the same.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Advanced Git Commands
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: I don’t profess to be a git expert. I consider myself an intermediate student
+    at best. That said, I have done a few more advanced activities with git, and I
+    present them here for your edification.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Archive Repo
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: Have you ever needed to send someone a copy of your git repo without any of
+    the git stuff attached? You could checkout the correct branch at the desired commit,
+    remove the .git folder, and then zip it up. Did you know that git can do all that
+    for you?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Archive the current branch
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git archive -o archive.zip HEAD
+  prefs: []
+  type: TYPE_NORMAL
+- en: Archive the current branch and exclude the .gitignore files
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git archive -o archive.zip HEAD—. ':!*.gitignore'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Archive commit 1319f65 and exclude the .gitignore files
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git archive -o archive.zip 1319f65—. ':!*.gitignore'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Clean up Stale Branches and Files
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: After a pull request is completed, it’s often a good idea to clean up older
+    feature branches. GitHub and GitLab can be configured to do this automatically.
+    The trouble is, doing so on your local repo isn’t so easy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Remove all merged branches
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git branch—merged | grep -v "\*" | xargs -n 1 git branch -d
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sometimes, you may want to delete an individual branch that exists on both your
+    local repo and the remote.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Delete myfeature branch on local and remote
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git branch -d myfeature
+  prefs: []
+  type: TYPE_NORMAL
+- en: git push origin—delete myfeature
+  prefs: []
+  type: TYPE_NORMAL
+- en: What if you have untracked files on your local, and want to clean them up?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Delete untracked local files from the current working tree
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git clean -f
+  prefs: []
+  type: TYPE_NORMAL
+- en: Shallow Clones
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: Have you ever had a git repository grow so large that it took up way too much
+    disk space? After a while, you might decide that you don’t need the full history,
+    and it would be easier to clone only a portion of it. This is called a “shallow
+    clone,” and Copilot knows how to do it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Clone repo keeping only commits after Jan 1, 2022
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git clone—shallow-since=2022-01-01
+  prefs: []
+  type: TYPE_NORMAL
+- en: Clone repo keeping only commits after Jan 1, 2022 and before Jan 1, 2023
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git clone—shallow-since=2022-01-01—shallow-until=2023-01-01
+  prefs: []
+  type: TYPE_NORMAL
+- en: Clone repo keeping only commits after Jan 1, 2022 and before Jan 1, 2023 and
+    only the main branch
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git clone—shallow-since=2022-01-01—shallow-until=2023-01-01—branch main
+  prefs: []
+  type: TYPE_NORMAL
+- en: Clone repo keeping only commits after Jan 1, 2022 and before Jan 1, 2023 and
+    only the main branch and only the last 10 commits
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git clone—shallow-since=2022-01-01—shallow-until=2023-01-01—branch main—depth
+    10
+  prefs: []
+  type: TYPE_NORMAL
+- en: At this point, I don’t feel it’s necessary for me to try to remember these commands.
+    Copilot will remember them for me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Permanently Remove a File
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: For my last operation, imagine you have accidentally committed a file containing
+    secrets (passwords, private keys, etc.) to your remote repo. If you simply delete
+    it from your local, add the file to .gitignore, and commit, that won’t do the
+    trick. The file can still be restored. The only way to remove a file in this manner
+    is to rewrite history. Fortunately, git can do this, but it’s easier said than
+    done, as you’ll see.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is what Copilot offered when I asked it to delete a file of secrets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Delete secrets file accidentally committed to git
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git filter-branch—force—index-filter 'git rm—cached—ignore-unmatch secrets.txt'—prune-empty—tag-name-filter
+    cat——all
+  prefs: []
+  type: TYPE_NORMAL
+- en: To be honest, I didn’t want to test this command, but I decided to give it a
+    try on an unimportant repo. I switched out secrets.txt with package-lock.json,
+    figuring it wouldn’t be terribly dangerous to remove that particular file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'When I ran it, git gave me a large warning:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: git-filter-branch has a glut of gotchas generating mangled history
+  prefs: []
+  type: TYPE_NORMAL
+- en: rewrites.  Hit Ctrl-C before proceeding to abort, then use an
+  prefs: []
+  type: TYPE_NORMAL
+- en: alternative filtering tool such as 'git filter-repo'
+  prefs: []
+  type: TYPE_NORMAL
+- en: (https://github.com/newren/git-filter-repo/) instead.  See the
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter-branch manual page for more details; to squelch this warning,
+  prefs: []
+  type: TYPE_NORMAL
+- en: set FILTER_BRANCH_SQUELCH_WARNING=1.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I let it run, figuring “what’s the worst that can happen?” What happened is
+    that it removed every instance of package-lock.jsonin my entire project. Beyond
+    that, the local and remote repos diverged by 20-some commits, so I never did figure
+    out if that’s what I wanted.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'I asked Copilot to fix my diverged branches, and it offered this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fix diverged branches
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git fetch—all
+  prefs: []
+  type: TYPE_NORMAL
+- en: git reset—hard origin/main
+  prefs: []
+  type: TYPE_NORMAL
+- en: It worked, and now I’m back to where I was when I started.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, what was that warning all about? Maybe it’s something we should consider.
+    I looked into git-filter-repo, and it looks like a better solution. Also, as it
+    turned out, Copilot seemed to know about that, too.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Delete secrets file accidentally pushed to remote with filter-repo
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: git filter-repo—path-glob '!secrets.txt'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As I didn’t have it installed, the command didn’t work. However, I was impressed
+    that it came up with the correct syntax (I presume).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Final Words
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: With the exception of the last request and that one tiny issue with git log,
+    Copilot handled everything I threw at it. I’ll probably keep using it whenever
+    I can’t remember exactly which git command to use.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You may be wondering why I didn’t use ChatGPT here. I expect that it would be
+    able to get these same commands correct. I urge you to give it a shot as an exercise.
+    Drop me an email and let me know how it goes.
+  prefs: []
+  type: TYPE_NORMAL

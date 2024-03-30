@@ -1,0 +1,1440 @@
+- en: '10'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Trending Use Cases for Enterprises
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: We start this chapter with an overview of the current most trending use cases
+    for Azure OpenAI that enterprises are developing in the market today. Azure OpenAI
+    has been embraced by a wide range of industries, including finance, healthcare,
+    retail, and manufacturing, among others, due to its ability to provide advanced
+    solutions to complex problems. Because of that, it is crucial for us to understand
+    to what extent Azure OpenAI models could impact those industries and maintain
+    competitiveness.
+  prefs: []
+  type: TYPE_NORMAL
+- en: With this purpose, the chapter outlines the various applications of Azure OpenAI
+    in these industries, including improving customer experience, enhancing smart-search,
+    and building customer-facing chatbots. Each use case will have an end-to-end implementation
+    with Python, LangChain, or Streamlit as the frontend.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will learn about the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: How Azure OpenAI is being used in enterprises
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Analyzing and generating contracts
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Understanding call center analytics
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Exploring semantic search
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'By the end of this chapter, you will have a deeper understanding of the enterprise
+    use cases Azure OpenAI is paving the way for. This understanding is crucial at
+    this time of digital development by way of generative AI: those technologies are
+    growing exponentially, and enterprises are adopting them at an equally fast pace.
+    Knowing about those technologies and their applications gives us the tools to
+    understand the market and adapt for the future.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, you will also be able to start your own projects with Python, LangChain,
+    Streamlit, and your AOAI instance to follow the examples covered as well as new
+    use cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Technical requirements
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The following are the technical prerequisites of this chapter:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**An Azure subscription**, which you can create for free here: [https://azure.microsoft.com/free/cognitive-services](https://azure.microsoft.com/free/cognitive-services).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Access to Azure OpenAI** in the Azure subscription. Currently, access to
+    this service is granted only by application. You can apply for access to Azure
+    OpenAI by completing the form at [https://aka.ms/oai/access](https://aka.ms/oai/access).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Python 3.7.1 or a later version.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The following Python libraries: `Openai`, `langchain,requests`, `json`, `os`,
+    `pandas`, `numpy`, `streamlit`, `tiktoken`, and `matplotlib`.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: An Azure OpenAI Service resource with a model deployed. In my case, I deployed
+    an instance called `test1` with `text-davinci-002` associated.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'All the code shown in this chapter, as well as the scripts used for preprocessing
+    and `utils`, are available at the book’s GitHub repository:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: All the code will be written using Python. To work with Azure OpenAI’s large
+    language models, I will use LangChain, a lightweight framework that makes it easier
+    to wrap **Large Language Models (LLMs**) in applications. For the frontend, I
+    will use Streamlit, an open source Python library that makes it easy to build
+    and deploy web applications for data science and machine learning projects. It
+    provides a simple and intuitive interface for creating interactive data-driven
+    applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note
+  prefs: []
+  type: TYPE_NORMAL
+- en: For each scenario, while exporting the code and API from Azure OpenAI, I will
+    also set some values to pre-set parameters such as `temperature`, `max_tokens`,
+    and so on. For a comprehensive list of these parameters and their meaning, you
+    can refer to [*Chapter 2*](B19904_02.xhtml#_idTextAnchor030), in the *An overview
+    of OpenAI model* *families* section.
+  prefs: []
+  type: TYPE_NORMAL
+- en: How Azure OpenAI is being used in enterprises
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Azure OpenAI is quickly gaining popularity among large enterprises as a powerful
+    tool for driving innovation and increasing efficiency. Many companies are now
+    leveraging the capabilities of this technology to streamline their operations
+    and gain a competitive edge.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are some examples grouped by industry domain:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Healthcare**: AOAI’s language models can be used to analyze **electronic
+    health records** (**EHRs**) and medical literature to help physicians make more
+    informed decisions about patient care.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Finance**: AOAI’s models can be used to analyze market trends and identify
+    potential investment opportunities. They can also be used for fraud detection,
+    credit scoring, and customer service automation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Retail**: AOAI’s models can be used to personalize customer experiences and
+    provide targeted product recommendations. They can also be used for inventory
+    optimization, demand forecasting, and supply chain management.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Media**: OpenAI’s models can be used to generate news articles, summaries,
+    and captions in multiple languages. They can also be used for content moderation,
+    sentiment analysis, and identifying fake news.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'And there are many other examples. A nice example to quote is what the Portuguese
+    Ministry of Justice, supported by Microsoft Portugal, has implemented as a service
+    for its citizens: a chatbot powered by `gpt-3.5-turbo`, the model behind ChatGPT,
+    which is able to answer questions about legal proceedings.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chatbot is called **Practical Guide to Access to Justice** (**GPJ**) and
+    it is meant to democratize access to complex jargon typical of legal procedures.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is a great example of how different industries, including governments,
+    can leverage Azure OpenAI models to be more competitive, as well as to provide
+    a better service to their customers or even to the population.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the following paragraphs, we will dive deeper into concrete use cases alongside
+    a step-by-step implementation with Python.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Contract analyzer and generator
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: AOAI’s models can be a valuable tool for contract analysis, helping the legal
+    department, and contract managers save time and avoid potential legal issues.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Thanks to their deep language understanding capabilities, lawyers and contract
+    managers can gain a deeper understanding of legal documents, reduce the risk of
+    disputes and litigation, and ensure that contracts accurately reflect the intentions
+    of all parties involved.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Some examples of AOAI’s applications with contracts are the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Identifying key clauses**: AOAI’s models can analyze a contract and identify
+    key clauses, such as those related to termination, indemnification, and confidentiality.
+    This can save time and help ensure that all important clauses are considered during
+    the analysis process.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Analyzing language**: AOAI’s models can help identify complex language and
+    legal jargon, making it easier for lawyers to understand the intent and meaning
+    of the contract. This can help avoid misunderstandings and disputes down the line.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Flagging potential issues**: AOAI’s models can help flag potential issues
+    with a contract, such as ambiguous language or conflicting terms. This can help
+    lawyers and contract managers address these issues before they become major problems.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Providing contract templates**: AOAI’s models can provide templates for common
+    contracts, such as non-disclosure agreements or service agreements. This can save
+    time and ensure that contracts are consistent and comprehensive.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Assisting with contract review**: AOAI’s models can assist with the review
+    process by highlighting areas that require attention or clarification. This can
+    help ensure that all parties are on the same page and that the contract accurately
+    reflects the intentions of all parties involved.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: We will see an example of each of these elements in Python and, by the end of
+    this chapter, an end-to-end implementation with Streamlit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Identifying key clauses
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Contracts are an integral part of any business or legal agreement, but they
+    can be complex and time-consuming to analyze. To simplify the process and ensure
+    that all important clauses are taken into account, AOAI’s models can assist by
+    identifying key clauses within a contract. These key clauses may include provisions
+    related to termination, indemnification, confidentiality, and other critical aspects
+    of the agreement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, suppose a company is reviewing a contract with a vendor to provide
+    services. The contract contains multiple pages of legal language, making it challenging
+    to identify the essential provisions that could have significant consequences
+    for the business. By using an AOAI model, the company can analyze the contract
+    and identify the key clauses related to termination, indemnification, and confidentiality.
+    This will enable the company to focus on the critical provisions and understand
+    the potential risks and benefits associated with them.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this way, the identification of key clauses by AOAI’s models can save time,
+    reduce the risk of oversight, and help ensure that businesses make informed decisions
+    when reviewing contracts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The following is an example of a service-providing contract:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.1 – Sample of a service-providing contract](img/Figure_10.1_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.1 – Sample of a service-providing contract
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s say we want to extract the termination clauses of this contract. As described
+    in the *Technical requirements* section, I deployed a simple instance of `text-davinci-002`
+    called `test1`. I also created a variable called `contract` where I stored the
+    preceding sample contract. Then, I defined a prompt where I ask my model about
+    the termination clause, as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is the output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.2 – Example of termination clause extraction](img/Figure_10.2_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.2 – Example of termination clause extraction
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'I could also set up a conversation where I can ask my model multiple questions
+    about the clauses:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is its response:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.3 – Conversation with AOAI model](img/Figure_10.3_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.3 – Conversation with AOAI model
+  prefs: []
+  type: TYPE_NORMAL
+- en: This was a simple example with a short contract. Now imagine having pages and
+    pages to examine. AOAI’s models can definitely offer valuable assistance in extracting
+    such clauses, as well as pointing the user toward the sections of pages where
+    clauses are specified so that the **Subject Matter Expert** (**SME**) can verify
+    the response.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Analyzing language
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In some cases, contracts may contain highly technical or specialized language
+    that can be difficult for lawyers to understand. AOAI’s models can help identify
+    these terms and provide clear explanations of their meaning, helping lawyers to
+    better understand the intent and overall meaning of the contract. By ensuring
+    that all parties have a clear understanding of the terms and conditions of the
+    agreement, potential misunderstandings and disputes can be avoided, saving time
+    and resources for all involved.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, imagine a contract in the context of **Carbon Capture and Storage**
+    (**CCS**). The contract contains many technical terms related to CCS, such as
+    *leakage*, *MVA technology*, and *post-combustion capture*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Without a background in CCS, a lawyer reviewing the contract may struggle to
+    fully understand the meaning and implications of these terms. By using AOAI’s
+    models to analyze the contract, the lawyer could quickly identify these technical
+    terms and receive clear explanations of their meaning. This would help the lawyer
+    to better understand the intent of the contract and ensure that all parties are
+    on the same page. As a result, the chances of misunderstandings and disputes down
+    the line would be greatly reduced.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s consider the following extract of a sample contract:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![ Figure 10.4 – Sample contract](img/Figure_10.4_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.4 – Sample contract
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can see from the preceding sample contract, there are many terms that,
+    if you are not familiar with CCS and, more generally, with energetic and environmental
+    engineering, you might not find easy to understand, nor the context in which they
+    are written.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Luckily for us, AOAI’s models are able not only to give an explanation of single
+    terms (nothing new compared to existing search engines) but also – and mostly
+    – to explain those terms *within the context* they are used.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To prove that, let’s set up some queries in an interactive chat with our AOAI
+    model (in this case, the sample contract has also been stored in the `contract`
+    variable):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is the response:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.5 – Conversation with an AOAI model about a contract](img/Figure_10.5_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.5 – Conversation with an AOAI model about a contract
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can see, the model was able to provide a detailed explanation not only
+    of a technical notion (EPA) but also of the context in which it is used.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Thanks to AOAI’s models, the gap between technical, domain-specific jargon and
+    legal taxonomy can be reduced, if not eliminated, so that the lawyer or contract
+    manager can focus on the semantic content.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Flagging potential issues
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: AOAI can be useful in contract analysis for flagging potential issues by leveraging
+    its advanced **natural language processing** (**NLP**) capabilities to identify
+    clauses and language that may create ambiguity, uncertainty, or legal risk. For
+    example, AOAI’s language models can flag ambiguous language or conflicting terms
+    in a contract that may lead to disputes or litigation. They can also identify
+    clauses that may be unfavorable to one party or another, such as those that limit
+    liability, restrict competition, or require exclusive dealings.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s consider the following example. We work in the legal office of ABC Corporation,
+    and we are producing an employment agreement for a new wave of hires. We recently
+    changed hiring terms, so this will be the first time this agreement is produced.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We finalized the following draft:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](img/Figure_10.6_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.6 – Sample employment agreement contract draft
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'And we want to make sure there are no ambiguities. With this purpose, let’s
+    ask our AOAI model to flag them for us. Also, in this case, I deployed a simple
+    `text-davinci-002` instance called `test1`. I also created a variable called `contract`
+    where I stored the preceding sample contract:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is the output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.7 – Example of ambiguity identification in a contract](img/Figure_10.7_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.7 – Example of ambiguity identification in a contract
+  prefs: []
+  type: TYPE_NORMAL
+- en: This was a pretty useful insight, yet we can go even further. We could indeed
+    set up a chatbot-like environment so that I can go on with the contract analysis
+    and also ask the model to generate a modified version of the same contract, making
+    sure to avoid the aforementioned ambiguities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For this purpose, we need to make sure to incorporate memory within our Python
+    code, so I will use a `while` loop with a `break` condition:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE4]'
+  prefs: []
+  type: TYPE_PRE
+- en: Note
+  prefs: []
+  type: TYPE_NORMAL
+- en: The taxonomy refers to my start and stop sequences. Those make responses start
+    and stop at a desired point, such as the end of a sentence or list. In this case,
+    I’m making sure the assistant starts generating after `user_input`, and adding
+    a stop sequence at the end of each response.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'When running the preceding code, we will have an output similar to the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.8 – A sample chat for inspecting and generating new contracts](img/Figure_10.8_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.8 – A sample chat for inspecting and generating new contracts
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As you can see, my AI assistant generated a new contract for me, making sure
+    to remove ambiguities and conflicting terms. Note that I’ve also asked the model
+    to explain the reason why the contract is free from ambiguities now, to make sure
+    I can identify those sections properly and validate them:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE5]'
+  prefs: []
+  type: TYPE_PRE
+- en: Additionally, AOAI’s models can identify clauses that may not be legally enforceable,
+    such as those that violate antitrust laws or public policy.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s consider the following agreement or sale of products between two competitor
+    companies: ABC and XYZ.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.9 – Sample agreement between two competitor companies](img/Figure_10.9_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.9 – Sample agreement between two competitor companies
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, clause 3 includes potentially problematic language that could be interpreted
+    as an attempt to restrict competition. It is important for companies to carefully
+    review their contracts and ensure that they are not engaging in any practices
+    that may violate antitrust laws or other regulations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s see whether our AOAI model is able to detect it:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE6]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is the output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.10 – Example of potential conflicting clauses in a contract](img/Figure_10.10_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.10 – Example of potential conflicting clauses in a contract
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this case, the model was able to detect potential conflicts with antitrust
+    laws.
+  prefs: []
+  type: TYPE_NORMAL
+- en: By leveraging the power of AOAI’s models to analyze contract language, companies
+    can ensure compliance with legal standards, mitigate legal and reputational risks,
+    and facilitate fair competition in the marketplace.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Providing contract templates
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In the previous paragraph, we saw an example of a contract generator to adjust
+    an existing draft with potential issues to be removed. With the same model, we
+    could also go further and generate contract drafts from scratch, by just providing
+    some parameters such as the termination date or duration of the contract.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For this purpose, let’s say we want to generate a draft of a service delivery
+    agreement. Some parameters we might need to provide are the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Service provider
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Client
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Description of services
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Start date
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Duration
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Payment terms
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Termination notice
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: State or countries
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'In order to ask our model to generate a draft contract from scratch, we will
+    need to build a parametric prompt as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE7]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is the output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.11 – Example of a contract template generated by Azure OpenAI models](img/Figure_10.11_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.11 – Example of a contract template generated by Azure OpenAI models
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can see, with just a few inputs, the model was able to create a nice
+    contract draft, including signatures and similar formalities. This could save
+    time and money to produce preliminary drafts, which could then be enriched with
+    further details and parameters, with the goal of serving as templates for similar
+    agreements.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In conclusion, AOAI has great potential to assist legal professionals in the
+    analysis of contracts, especially in identifying potential issues and ambiguities.
+    However, it is important to note that machine learning models can never replace
+    the human element of legal analysis. A skilled attorney should always be involved
+    in the review and interpretation of contracts, as well as the final decision-making
+    process. With the appropriate use of technology and human expertise, the legal
+    industry can benefit from increased efficiency and accuracy in contract analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Frontend with Streamlit
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The idea of this section is to implement a company portal where lawyers and
+    contract managers can access all the contracts they need to analyze and quickly
+    gather some insights, such as identifying key clauses, analyzing language, and
+    flagging potential issues.
+  prefs: []
+  type: TYPE_NORMAL
+- en: They could also ask the portal to generate some contract templates from scratch,
+    to be used as drafts for production-ready contracts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To do so, we will use Streamlit. To connect with my AOAI instance, I will need
+    my key and endpoint, which I’ve stored in a `.``toml` file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As per other sections, you can find the whole app file in the GitHub repository
+    here: [https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%2010%20-%20Enterprise%20use%20cases).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The landing page of a given conversation (in this case, our sample contract)
+    looks like the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.12 – Landing page of the Contract Analyzer app](img/Figure_10.12_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.12 – Landing page of the Contract Analyzer app
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Now we can do the following analysis:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'From a drop-down menu, we can select the type of key clause we want to extract
+    from the contract and get real-time results:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![Figure 10.13 – Extracting a confidentiality clause from a sample contract](img/Figure_10.13_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.13 – Extracting a confidentiality clause from a sample contract
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We can also have a conversation with AOAI’s models to ask for explanations
+    about technical terms:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![Figure 10.14 – Language analysis](img/Figure_10.14_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.14 – Language analysis
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We can also ask about potential issues:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![Figure 10.15 – Example of ambiguities detected by AOAI’s models](img/Figure_10.15_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.15 – Example of ambiguities detected by AOAI’s models
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'And finally, we can also ask to generate contract templates:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![Figure 10.16 – Example of contract template generation](img/Figure_10.16_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.16 – Example of contract template generation
+  prefs: []
+  type: TYPE_NORMAL
+- en: This was just a sample application with limited functions, yet it already offers
+    some powerful insights and analysis that could be extracted thanks to the language
+    capabilities of AOAI’s models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the next section, we will dive deeper into another application of AOAI’s
+    models, in the context of call center analytics.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Understanding call center analytics
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Azure OpenAI can be a valuable tool for call center analytics. By analyzing
+    transcripts of calls between customers and agents, GPT models can identify patterns
+    and insights that can help call centers to improve their operations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are some examples of what AOAI models can do:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Identify frequently asked questions and suggest potential responses, which can
+    help agents answer calls more quickly and effectively
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Analyze the sentiment in customer interactions, allowing call center managers
+    to identify areas where customer satisfaction may be lacking and make necessary
+    improvements
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Provide insights into call volume trends, wait times, and call duration, allowing
+    call centers to optimize staffing levels and resource allocation
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Extract relevant information from the conversation in order to automatically
+    create tickets in the CRM
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Provide a relevant knowledge base for customer-facing chatbots that can address
+    a larger number of questions/claims before switching to a physical operator
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: With its powerful NLP capabilities, AOAI can help call centers to improve their
+    efficiency and effectiveness, leading to improved customer satisfaction and business
+    outcomes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For our sample scenario, let’s imagine we are a car insurance company. On a
+    daily basis, we receive large numbers of calls from customers who found themselves
+    in car accidents and need support to determine what to do with their insurance.
+    After every call, our operators need to open a ticket on our CRM.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Our goal is that of simplifying the overall procedure by implementing the following
+    features:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: From the call transcript, extract relevant parameters to automatically create
+    a ticket
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Get the main topic of the conversation to classify it in the proper category
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Get the sentiment of the customer
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Generate a guide for responding to particularly tough conversations
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Here is a visual representation of this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.17 – Sample architecture for call center analytics](img/Figure_10.17_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.17 – Sample architecture for call center analytics
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For this purpose, I will start with a sample transcript of an imaginary conversation
+    for our company:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.18 – Sample fake conversation to raise a request](img/Figure_10.18_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.18 – Sample fake conversation to raise a request
+  prefs: []
+  type: TYPE_NORMAL
+- en: Then, in this scenario, I will only need one deployment of my AOAI instance,
+    with an associated `text-davinci-002` instance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the following sections, we will learn how to extract relevant parameters
+    from the transcript, classify its main topics into categories, analyze the customer’s
+    sentiment, and generate a guided tutorial to facilitate the operator’s response.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Parameter extraction
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The first step is extracting relevant parameters from the transcript. This
+    is pivotal if I want to automatically create a ticket in my CRM with appropriate
+    information. For example, let’s say that in order to create a ticket, I need the
+    following elements:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Name and surname
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Reason for calling
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Policy number
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Resolution
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'The following code shows how we can implement it with Python (I initialized
+    a variable called `transcript` equal to the previous conversation):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE8]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is the output for it:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE9]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Finally, let’s convert this information into a JSON file, so that it can trigger
+    the creation of our ticket. For this purpose, I’ve simply added the `The output
+    format should be JSON` line to my prompt, as you can see in the output here:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE10]'
+  prefs: []
+  type: TYPE_PRE
+- en: Sentiment analysis
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Another element we might want to know about is the sentiment of the call. Sentiment
+    analysis is important for call center analytics because it helps to understand
+    the emotional tone of customer interactions. In the preceding transcript, sentiment
+    analysis could be used to identify the level of frustration and anger expressed
+    by the customer. This information can be valuable for call center managers to
+    understand the overall satisfaction of customers and to identify areas for improvement
+    in their services.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, if sentiment analysis shows that many customers are expressing
+    frustration with long wait times on the phone, call center managers could use
+    that information to improve their staffing levels or invest in new technology
+    to reduce wait times. Similarly, if sentiment analysis shows that customers are
+    generally satisfied with the services provided by the call center, managers could
+    use that information to identify areas of excellence and build on those strengths.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The only thing we have to do is ask our AOAI instance what the sentiment of
+    the conversation is.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As you can see, the response is positive since, by the end of the conversation,
+    the customer is happy with the customer service. However, reading the transcript,
+    we know that, initially, the customer was very frustrated, so we could do a bit
+    of prompt design to get more accurate results:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE11]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is the output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.19 – Example of sentiment analysis of a customer’s claim](img/Figure_10.19_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.19 – Example of sentiment analysis of a customer’s claim
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We can also go deeper and ask it to explain the reason behind the initial negative
+    sentiment identified:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE12]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is the output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.20 – Example of sentiment analysis with AOAI models](img/Figure_10.20_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.20 – Example of sentiment analysis with AOAI models
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is important information since we understand that there is a margin of
+    improvement in our customer service. We could match this discontent – the long
+    and useless wait during the first call – with similar elements retrieved from
+    other transcripts, understand whether it is systematic, and if so, how to improve
+    it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For the purpose of our analysis, we then extract further information to add
+    to our JSON file, so that we can also trigger other types of actions (in addition
+    to the creation of the ticket). Modifying the prompt, the result is the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.21 – Example of JSON extracted from a customer’s request](img/Figure_10.21_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.21 – Example of JSON extracted from a customer’s request
+  prefs: []
+  type: TYPE_NORMAL
+- en: Classification of customers’ requests
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'When analyzing customers’ requests, it is very useful to first classify them
+    into proper categories, so that the relevant office can handle each request quicker.
+    Here, you can find three pretty common categories for request classification:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Reporting issue**: This class would include transcripts where the customer
+    is reporting a problem or issue with their policy or account, but the issue cannot
+    be resolved during the call. The conversation would likely involve the agent documenting
+    the issue and creating a report for the appropriate department to investigate
+    and address the issue. Examples could include reporting a billing error or requesting
+    a policy change that cannot be immediately processed.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Claim handling**: This class would include transcripts where the customer
+    expresses frustration or dissatisfaction with the issue reported and/or the call
+    center’s services. The conversation would likely involve the customer sharing
+    their negative experience and the agent working to address their concerns, such
+    as by apologizing for long wait times or offering a solution to their problem.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**General inquiry**: This class would include transcripts where the customer
+    has a question or inquiry about their policy or other services provided by the
+    call center. The conversation would likely involve the agent providing information
+    and answering the customer’s questions, without any specific issue or complaint
+    to be resolved.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Let’s ask our AOAI instance to classify the transcript for us:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE13]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is the output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.22 – Example of customer request classification](img/Figure_10.22_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.22 – Example of customer request classification
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Once more, we can add this information to our JSON file by updating the prompt
+    with the previous request. The result will be as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.23 – Example of JSON file generation](img/Figure_10.23_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.23 – Example of JSON file generation
+  prefs: []
+  type: TYPE_NORMAL
+- en: Great, now we have plenty of information as metadata of our transcript. What
+    we will now do is use the elements retrieved to build parametric prompts and generate
+    further actions to address this task as quickly as possible. We will do so with
+    a simple frontend using Streamlit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Implementing the frontend with Streamlit
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The idea of this section is to implement a company portal where operators can
+    access all the transcripts of their conversations and quickly perform some actions
+    such as generating a ticket or generating an email response to their customers.
+    They could also ask the portal for some recommendations on how to improve their
+    customer service (this information might also be available at the higher management
+    level so that it enriches the insights on company improvements).
+  prefs: []
+  type: TYPE_NORMAL
+- en: To do so, we will use Streamlit. Also, in this case, I’m creating a `.toml`
+    file with my API, so that I can call my secrets securely in my Streamlit app.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As per other sections, you can find the whole app file in the GitHub repository
+    of this book.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The landing page of a given conversation (in this case, our sample transcript),
+    looks like the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.24 – Sample transcript landing page](img/Figure_10.24_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.24 – Sample transcript landing page
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s see what kind of actions our AOAI model is capable of doing for us:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The first thing we can do as operators is create a ticket with the information
+    gathered from the JSON file:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![Figure 10.25 – Frontend for ticket generation](img/Figure_10.25_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.25 – Frontend for ticket generation
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We can automatically generate an email to Mr. Mario Rossi to notify him of
+    the initiation of the resolution process. To do so, I defined a function asking
+    my AOAI instance to generate an email using a parametric prompt:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[PRE14]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE15]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE16]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE17]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE18]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE19]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE20]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE21]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE22]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE23]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE24]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE25]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: Here, `data` is the JSON **Business intelligence** (**BI**) extracted from the
+    transcript, as seen in the previous sections.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The frontend will look like so:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.26 – Sample email generated by AOAI](img/Figure_10.26_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.26 – Sample email generated by AOAI
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Finally, we can ask for recommendations to improve the resolution procedure
+    and customer satisfaction. Also, in this case, I used a parametric prompt:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[PRE26]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE27]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE28]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE29]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE30]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE31]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE32]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE33]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE34]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE35]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE36]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: '[PRE37]'
+  prefs:
+  - PREF_IND
+  type: TYPE_PRE
+- en: Here, `data` is still the JSON file extracted from the transcript, as seen in
+    the previous sections.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The frontend will look like so:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.27 – Some recommendations for call center improvements generated
+    by AOAI](img/Figure_10.27_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.27 – Some recommendations for call center improvements generated by
+    AOAI
+  prefs: []
+  type: TYPE_NORMAL
+- en: This was just a sample application with limited functions, yet it already offers
+    some powerful automations and insights that could boost call center productivity
+    and customer satisfaction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are some further elements that our imaginary car insurance company should
+    add in a production environment:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: An automatic trigger for ticket generation in their CRM software.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: A customer-facing chatbot trained on call center transcripts, so that a call
+    with an operator occurs only in cases where the situations have not been addressed
+    in the past.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Business intelligence** (**BI**) dashboards where relevant transcript insights
+    are gathered. For example, some statistics about the following:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The most common reasons for complaints
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Sentiment distribution over the duration of calls
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The frequency of categories over time
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: With this, we have understood how we perform extraction sentiment analysis.
+    We saw how we engage with customer requests and the concept of using Streamlit
+    for the frontend. All these help us work better with stakeholders and improve
+    operations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Exploring semantic search
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Semantic search is a cutting-edge search technology that has revolutionized
+    the way people find information online. In the world of enterprise, it has become
+    a vital tool for businesses that need to search through vast amounts of data quickly
+    and accurately. The semantic search engine uses NLP techniques to understand the
+    meaning of the search query and the content being searched. This technology goes
+    beyond traditional keyword-based search engines by using ML algorithms to understand
+    the context of the search query, resulting in more accurate and relevant results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A key component of semantic search is the use of embedding, which is the process
+    of representing words or phrases as numerical vectors. These vectors are generated
+    by a neural network that analyzes the context of each word or phrase in a given
+    text corpus. By converting words into vectors, it becomes easier to measure the
+    semantic similarity between words and phrases, which is crucial for accurate search
+    results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, in the realm of medical documentations and papers, embedding can
+    be used to enhance semantic search algorithms by making it easier to identify
+    related concepts and topics. Namely, if a researcher is searching for information
+    about the treatment of cancer, a semantic search engine that uses embedding can
+    identify related terms such as chemotherapy, radiation therapy, and immunotherapy.
+    By understanding the semantic relationships between these terms, the search engine
+    can return more accurate and relevant results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Embedding can also be used to identify related topics and concepts that may
+    not be immediately apparent from the search query. For instance, if a researcher
+    is searching for information about breast cancer, a semantic search engine that
+    uses embedding can identify related topics such as mammography screening, breast
+    cancer prevention, and hormonal therapy. This broader understanding of the topics
+    and concepts related to breast cancer can help researchers find relevant papers
+    and documents that they may not have discovered through a traditional keyword
+    search.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, let’s consider the following scenario. We are a private clinic
+    and every day we struggle to find information in the huge amount of available
+    documentation. To produce a diagnosis, doctors need to go through many papers
+    and this is very time-consuming.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We are looking for an AI research assistant that can help us in the research
+    process. For this purpose, we will use an Azure OpenAI deployment called `embedding`
+    associated with the `text-embedding-ada-002` model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The idea is as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Get the embedding of the available text with the embedding model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Get the embedding of the user query with the embedding model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Compute the distance between the embedded query and the embedded knowledge base.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Return the most similar pieces of text and use them as context to the GPT model.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use the GPT model to generate a response.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'This is represented here:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.28 – A reference architecture of a semantic search project](img/Figure_10.28_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.28 – A reference architecture of a semantic search project
+  prefs: []
+  type: TYPE_NORMAL
+- en: To simulate the knowledge base, we will use a paper about alternative treatments
+    for sciatica (you can find it at [https://doi.org/10.1136/bmj-2022-070730](https://doi.org/10.1136/bmj-2022-070730)).
+  prefs: []
+  type: TYPE_NORMAL
+- en: For the embedding and question-and-answer management, we will use LangChain
+    modules.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Document embedding using LangChain modules
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'The first step of our project is that of initializing an embedding model so
+    that we can vectorize our custom documents. To do so, we can use the LangChain
+    `OpenAIEmbeddings` module, which wraps embeddings models directly from Azure OpenAI:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE38]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Here is its output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.29 – Example of text embeddings](img/Figure_10.29_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.29 – Example of text embeddings
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can see, the result is a numerical vector, computed with the `text-embedding-ada-002`
+    embedding model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, we need to vectorize the whole document. Plus, we will also need storage
+    to put the documents into. LangChain offers several vector stores, and we are
+    going to use the FAISS vector store.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'So, let’s initialize our FAISS indexer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE39]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Great, now we can initialize our model with the `AzureOpenAI` class. To do
+    so, we only need to pass it the name of our deployment:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE40]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Finally, we need to compute the similarity between the user prompt and the
+    embedded knowledge base. To do so, let’s initialize the following function:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE41]'
+  prefs: []
+  type: TYPE_PRE
+- en: With the preceding function, we are computing the semantic affinity between
+    the user prompt and the embedded document. By doing so, only text chunks with
+    high similarity with user prompts will be used as context for our Azure OpenAI
+    model, so that we can overcome the limitation of the maximum number of tokens.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Creating a frontend for Streamlit
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: We’ve created the logic behind our semantic search engine; now it’s time to
+    create a frontend so that users can interact with it via a UI. To do so, I will
+    use Streamlit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also, in this case, I’m creating a `.toml` file with my API, so that I can call
+    my secrets securely in my Streamlit app.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For this purpose, let’s create a `.py` file containing the same code we saw
+    in the previous section, with the addition of some frontend elements (you can
+    find the entire `.py` file in the GitHub repository).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'More specifically, I’ve added the following instructions to create a simple
+    search bar:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE42]'
+  prefs: []
+  type: TYPE_PRE
+- en: I then saved the file as `medical_smart_search_app.py` and ran it via Anaconda
+    Prompt with the `streamlit run` `smart_search.py` command.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The result looks like the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 10.30 – Sample frontend with Streamlit and AOAI in the backend](img/Figure_10.30_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 10.30 – Sample frontend with Streamlit and AOAI in the backend
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There are some further elements you can decide to add to your search engine,
+    such as the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Instructing the AOAI model not to respond if the answer is not in the context.
+    To do so, you can specify that in the prompt.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: On top of the response, also providing the raw text of the context and the link,
+    if any, to the page it was taken from.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Keeping AOAI responses and additional context for the next user’s prompts, so
+    that it also retains memory with few-shot learning.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: We looked at an example with medical documentation; however, there are many
+    domains where a semantic search engine can be used, from legal entities to manufacturers
+    with massive technical documentation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overall, having a smart search system within an organization not only reduces
+    the search time but also provides a response that is a summary of many documents
+    that might contain partial responses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is pivotal to keep in mind that in similar scenarios (especially for medical
+    or legal domains), a human in the loop to validate the result is needed. Nevertheless,
+    having such an AI assistant could boost productivity, reduce the search cost and
+    time, improve the search quality, and enable the finding of rare documents.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Summary
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Azure OpenAI models elevate the power of large language models at the enterprise
+    level, and they have the potential to revolutionize enterprise operations across
+    a wide range of industries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: By leveraging state-of-the-art NLP, businesses can automate mundane tasks, optimize
+    complex processes, and unlock valuable insights from data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we looked at concrete use cases in the field of contract analysis
+    and generation, call center analytics, and semantic search for a custom knowledge
+    base. We did this with a step-by-step tutorial in Python and, finally, with a
+    frontend in Streamlit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, successful integration of Azure OpenAI models requires a strategic
+    approach, including identifying relevant use cases, selecting appropriate tools
+    and platforms, and investing in employee training and development. As the field
+    of AI continues to evolve, enterprises must stay up to date with the latest trends
+    and innovations to remain competitive and realize the full benefits of Azure OpenAI.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The ones mentioned in this chapter are just a modest subset of the use cases
+    of what can be achieved with the power of large language models: this will be
+    the topic of the next and last chapter of this book, where we will sum up everything
+    we have seen so far and unveil what the future of AI development will bring to
+    the market.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: References
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[https://python.langchain.com/en/latest/index.xhtml#](https://python.langchain.com/en/latest/index.xhtml#)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[https://www.aroged.com/2023/02/17/chatgpt-ministry-of-justice-will-use-gpj-to-respond-to-citizens-in-portugal/](https://www.aroged.com/2023/02/17/chatgpt-ministry-of-justice-will-use-gpj-to-respond-to-citizens-in-portugal/)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL

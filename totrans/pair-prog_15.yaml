@@ -1,0 +1,1893 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: ChatGPT w/GPT-4
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Within a day or two of this book going to press, GPT-4 was released. I thought
+    it would be fun to see whether GPT-4 would do a better job than GPT-3.5 did, so
+    I pasted every ChatGPT prompt from the book and asked it to reevaluate the answers
+    using the new model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What follows are those prompts and its new answers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Check for a directory and print a message if it doesn't exist
+  prefs: []
+  type: TYPE_NORMAL
+- en: dir_name="example_directory" if [ ! -d "$dir_name" ]; then echo "Directory $dir_name
+    does not exist" fi
+  prefs: []
+  type: TYPE_NORMAL
+- en: Find all PDF files in my home directory and print the path to each one
+  prefs: []
+  type: TYPE_NORMAL
+- en: find ~ -type f -name "*.pdf"
+  prefs: []
+  type: TYPE_NORMAL
+- en: Find all PDF files below my home folder and write the results to a file called
+    pdfs.txt in the background.
+  prefs: []
+  type: TYPE_NORMAL
+- en: find ~ -type f -name "*.pdf" > pdfs.txt &
+  prefs: []
+  type: TYPE_NORMAL
+- en: Count the number of PDF files in my home folder in the background and print
+    the result.
+  prefs: []
+  type: TYPE_NORMAL
+- en: find ~ -type f -name "*.pdf" | wc -l &
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a new user account on macOS
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo sysadminctl -addUser newuser -fullName "New User" -password "password"
+  prefs: []
+  type: TYPE_NORMAL
+- en: Make user 'michael' a local administrator
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo dseditgroup -o edit -a michael -t user admin
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sync my home folder to a remote server
+  prefs: []
+  type: TYPE_NORMAL
+- en: rsync -azP ~/ user@remote.server.com:/path/to/destination
+  prefs: []
+  type: TYPE_NORMAL
+- en: Securely Copy from Server to Local folder
+  prefs: []
+  type: TYPE_NORMAL
+- en: scp user@remote.server.com:/path/to/source /path/to/local/destination
+  prefs: []
+  type: TYPE_NORMAL
+- en: Archive the src directory using tar and gzip
+  prefs: []
+  type: TYPE_NORMAL
+- en: tar -czvf src.tar.gz src
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create and copy a new ssh key for github to the clipboard
+  prefs: []
+  type: TYPE_NORMAL
+- en: ssh-keygen -t ed25519 -C "your_email@example.com" cat ~/.ssh/id_ed25519.pub
+    | pbcopy
+  prefs: []
+  type: TYPE_NORMAL
+- en: Convert all jpg files in the current directory to png files
+  prefs: []
+  type: TYPE_NORMAL
+- en: mogrify -format png *.jpg
+  prefs: []
+  type: TYPE_NORMAL
+- en: How do I install ImageMagick?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'On macOS:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: brew install imagemagick
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'On Ubuntu/Debian:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo apt-get install imagemagick
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'On CentOS/RHEL:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: sudo yum install ImageMagick
+  prefs: []
+  type: TYPE_NORMAL
+- en: Extract audio from all the mp4 files in the folder
+  prefs: []
+  type: TYPE_NORMAL
+- en: for f in *.mp4; do ffmpeg -i "$f" -vn -acodec copy "${f%.*}.m4a"; done
+  prefs: []
+  type: TYPE_NORMAL
+- en: What is avconvert?
+  prefs: []
+  type: TYPE_NORMAL
+- en: avconvert is a command-line tool for macOS that performs media conversion. It
+    is part of the AV Foundation framework, which is an Objective-C framework for
+    working with audiovisual media on iOS and macOS. avconvert can be used to transcode
+    media files between various formats, change their properties, and apply filters.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What is the difference between avconv and avconvert?
+  prefs: []
+  type: TYPE_NORMAL
+- en: avconv is a command-line tool for converting multimedia files, and it is part
+    of the Libav project. avconvert, on the other hand, is a macOS-specific command-line
+    tool for media conversion that is part of the AV Foundation framework. While both
+    tools can be used to transcode media files between various formats, avconvert
+    is designed specifically for macOS and is a part of the native AV Foundation framework,
+    whereas avconv is a more general-purpose tool that can be used on multiple platforms.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What’s an IIFE in Javascript, why would I need one, and how would I create one?
+  prefs: []
+  type: TYPE_NORMAL
+- en: An IIFE (Immediately Invoked Function Expression) is a JavaScript function that
+    is defined and executed immediately after its declaration. It is a common technique
+    for creating a private scope to avoid polluting the global namespace and to encapsulate
+    variables and functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You might need an IIFE to create a private scope for your code, to avoid conflicts
+    with other scripts and libraries or to control the visibility of variables and
+    functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here''s how you can create an IIFE in JavaScript:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: (function () {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Your code here
+  prefs: []
+  type: TYPE_NORMAL
+- en: var privateVar = "I am private";
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log("IIFE executed");
+  prefs: []
+  type: TYPE_NORMAL
+- en: '})();'
+  prefs: []
+  type: TYPE_NORMAL
+- en: What would be the equivalent of that code if we were to use classes in TypeScript
+    instead?
+  prefs: []
+  type: TYPE_NORMAL
+- en: class MyClass {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'private privateVar: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: constructor() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.privateVar = "I am private";
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log("Class constructor executed");
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const instance = new MyClass();
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given an array that looks like the following array, find all puzzles of size
+    4 or 8\. (I then pasted the puzzles array).
+  prefs: []
+  type: TYPE_NORMAL
+- en: const puzzles = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id: 1, size: 4, name: "Puzzle 1" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id: 2, size: 8, name: "Puzzle 2" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id: 3, size: 16, name: "Puzzle 3" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // ...
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const filteredPuzzles = puzzles.filter(
+  prefs: []
+  type: TYPE_NORMAL
+- en: (puzzle) => puzzle.size === 4 || puzzle.size === 8
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generate a set of strongly typed TypeScript functions to treat the array like
+    a stack or queue.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'type Puzzle = { id: number; size: number; name: string };'
+  prefs: []
+  type: TYPE_NORMAL
+- en: class PuzzleQueue {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'private queue: Puzzle[];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: constructor() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.queue = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'enqueue(puzzle: Puzzle): void {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.queue.push(puzzle);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'dequeue(): Puzzle | undefined {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.queue.shift();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'size(): number {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.queue.length;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'isEmpty(): boolean {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.queue.length === 0;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: class PuzzleStack {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'private stack: Puzzle[];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: constructor() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.stack = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'push(puzzle: Puzzle): void {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.stack.push(puzzle);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'pop(): Puzzle | undefined {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.stack.pop();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'size(): number {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.stack.length;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'isEmpty(): boolean {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.stack.length === 0;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I have an array in TypeScript with the following shape. (I pasted the above
+    JSON here). I want to convert it from an array to a hash array so that can address
+    each object by its "id".
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const puzzleArray: Puzzle[] = ['
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id: 1, size: 4, name: "Puzzle 1" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id: 2, size: 8, name: "Puzzle 2" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id: 3, size: 16, name: "Puzzle 3" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // ...
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const puzzleHash: { [id: number]: Puzzle } = puzzleArray.reduce('
+  prefs: []
+  type: TYPE_NORMAL
+- en: (hash, puzzle) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: hash[puzzle.id] = puzzle;
+  prefs: []
+  type: TYPE_NORMAL
+- en: return hash;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '},'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Access a puzzle by its ID
+  prefs: []
+  type: TYPE_NORMAL
+- en: const puzzle = puzzleHash[1];
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a function in JavaScript that will output the puzzles array as an HTML
+    table
+  prefs: []
+  type: TYPE_NORMAL
+- en: function createPuzzleTable(puzzles) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const table = document.createElement("table");
+  prefs: []
+  type: TYPE_NORMAL
+- en: const thead = document.createElement("thead");
+  prefs: []
+  type: TYPE_NORMAL
+- en: const tbody = document.createElement("tbody");
+  prefs: []
+  type: TYPE_NORMAL
+- en: const headerRow = document.createElement("tr");
+  prefs: []
+  type: TYPE_NORMAL
+- en: '["ID", "Size", "Name"].forEach((headerText) => {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const th = document.createElement("th");
+  prefs: []
+  type: TYPE_NORMAL
+- en: th.textContent = headerText;
+  prefs: []
+  type: TYPE_NORMAL
+- en: headerRow.appendChild(th);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: thead.appendChild(headerRow);
+  prefs: []
+  type: TYPE_NORMAL
+- en: table.appendChild(thead);
+  prefs: []
+  type: TYPE_NORMAL
+- en: puzzles.forEach((puzzle) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const row = document.createElement("tr");
+  prefs: []
+  type: TYPE_NORMAL
+- en: const idCell = document.createElement("td");
+  prefs: []
+  type: TYPE_NORMAL
+- en: const sizeCell = document.createElement("td");
+  prefs: []
+  type: TYPE_NORMAL
+- en: const nameCell = document.createElement("td");
+  prefs: []
+  type: TYPE_NORMAL
+- en: idCell.textContent = puzzle.id;
+  prefs: []
+  type: TYPE_NORMAL
+- en: sizeCell.textContent = puzzle.size;
+  prefs: []
+  type: TYPE_NORMAL
+- en: nameCell.textContent = puzzle.name;
+  prefs: []
+  type: TYPE_NORMAL
+- en: row.appendChild(idCell);
+  prefs: []
+  type: TYPE_NORMAL
+- en: row.appendChild(sizeCell);
+  prefs: []
+  type: TYPE_NORMAL
+- en: row.appendChild(nameCell);
+  prefs: []
+  type: TYPE_NORMAL
+- en: tbody.appendChild(row);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: table.appendChild(tbody);
+  prefs: []
+  type: TYPE_NORMAL
+- en: return table;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const puzzles = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id: 1, size: 4, name: "Puzzle 1" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id: 2, size: 8, name: "Puzzle 2" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id: 3, size: 16, name: "Puzzle 3" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // ...
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const puzzleTable = createPuzzleTable(puzzles);
+  prefs: []
+  type: TYPE_NORMAL
+- en: document.body.appendChild(puzzleTable);
+  prefs: []
+  type: TYPE_NORMAL
+- en: What does the following code block do?
+  prefs: []
+  type: TYPE_NORMAL
+- en: const firstSolution$ = puzzles$.pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter((puzzle) => puzzle.size === 4),
+  prefs: []
+  type: TYPE_NORMAL
+- en: map((puzzle) => puzzle.solution[0])
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: const firstSolution$ = puzzles$.pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: filter((puzzle) => puzzle.size === 4),
+  prefs: []
+  type: TYPE_NORMAL
+- en: map((puzzle) => puzzle.solution[0])
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The code block defines an RxJS Observable named firstSolution$. It takes an
+    Observable of puzzles (puzzles$) and applies two operators to it: filter and map.
+    The filter operator filters the input stream of puzzles to only include those
+    with a size of 4\. Then, the map operator transforms the filtered puzzles into
+    their first solutions (puzzle.solution[0]). The resulting firstSolution$ Observable
+    emits the first solution of each puzzle with a size of 4.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Build me a complete angular service that fetches some sample data (perhaps blog
+    posts) from a remote web service. Be sure to log any errors encountered. Then
+    create a web page implemented as an angular component, which displays the blog
+    post titles from the service in an unordered list. Prefer to use the angular async
+    pipe in the template rather than subscribing to the observable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '1.  First, generate a new Angular service and a new component using Angular
+    CLI:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ng generate service blog ng generate component blog-list
+  prefs: []
+  type: TYPE_NORMAL
+- en: '2.  Modify blog.service.ts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: import { Injectable } from "@angular/core";
+  prefs: []
+  type: TYPE_NORMAL
+- en: import { HttpClient } from "@angular/common/http";
+  prefs: []
+  type: TYPE_NORMAL
+- en: import { catchError } from "rxjs/operators";
+  prefs: []
+  type: TYPE_NORMAL
+- en: import { throwError, Observable } from "rxjs";
+  prefs: []
+  type: TYPE_NORMAL
+- en: export interface BlogPost {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'id: number;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'title: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'body: string;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '@Injectable({ providedIn: "root" })'
+  prefs: []
+  type: TYPE_NORMAL
+- en: export class BlogService {
+  prefs: []
+  type: TYPE_NORMAL
+- en: private apiUrl = "https://jsonplaceholder.typicode.com/posts";
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'constructor(private http: HttpClient) {}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'getBlogPosts(): Observable<BlogPost[]> {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.http.get<BlogPost[]>(this.apiUrl).pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: catchError((error) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.error("Error fetching blog posts:", error);
+  prefs: []
+  type: TYPE_NORMAL
+- en: return throwError(error);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '})'
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '3.  Modify blog-list.component.ts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: import { Component, OnInit } from "@angular/core";
+  prefs: []
+  type: TYPE_NORMAL
+- en: import { BlogService, BlogPost } from "../blog.service";
+  prefs: []
+  type: TYPE_NORMAL
+- en: import { Observable } from "rxjs";
+  prefs: []
+  type: TYPE_NORMAL
+- en: '@Component({'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'selector: "app-blog-list",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'templateUrl: "./blog-list.component.html",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'styleUrls: ["./blog-list.component.css"],'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '})'
+  prefs: []
+  type: TYPE_NORMAL
+- en: export class BlogListComponent implements OnInit {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'blogPosts$: Observable<BlogPost[]>;'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'constructor(private blogService: BlogService) {}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ngOnInit(): void {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.blogPosts$ = this.blogService.getBlogPosts();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '4.  Modify blog-list.component.html:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: <ul>
+  prefs: []
+  type: TYPE_NORMAL
+- en: <li *ngFor="let post of blogPosts$ | async">{{ post.title</li>
+  prefs: []
+  type: TYPE_NORMAL
+- en: </ul>
+  prefs: []
+  type: TYPE_NORMAL
+- en: '5.  Finally, include the BlogListComponent in a parent component or the app.component.html
+    to display the blog post titles:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: <app-blog-list></app-blog-list>
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Give me a regular expression to validate an email address:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Give me a regex that can validate any phone number, us or international, liberally
+    accepting common punctuation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /^\+?(\d[\s-.]?){6,}\d$/
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Give me a regex to find all URLs from img and a tags in the text of an HTML
+    page:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /(?<=<img[^>]*\ssrc=['"]?)(https?:\/\/\S+?)(?=['" >])|(?<=<a[^>]*\shref=['"]?)(https?:\/\/\S+?)(?=['"
+    >])/g
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Give me a regex matching URLs found in an arbitrary document of text, which
+    may or may not be HTML:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /https?:\/\/(?:[a-zA-Z0-9$-_@.&+]|[!*'(,),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+/g
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Give me a regex to validate password complexity with the following rules: Passwords
+    much contain at least one number, one lowercase and one uppercase letter, one
+    symbol, and be 8 characters or longer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Give me a regex that will validate that the input is a US currency:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /^\$?(\d{1,3}(,\d{3})*|(\d+))(\.\d{2})?$/
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Given a potential list of different ways to write US currency, write a regular
+    expression that will match all of these: $1 .22 $.25 0.79 1.49 $0.00 $0.43 $1,230,847,369.99'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /^(\$?(\d{1,3}(,\d{3})*|(\d+))(\.\d{2})?|\.\d{2})$/
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Write a regex that will validate that the input is a valid SSN:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /^\d{3}-?\d{2}-?\d{4}$/
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Implement a function to validate a credit card number using the Luhn Algorithm:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: function isValidCreditCard(number) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const numArr = number
+  prefs: []
+  type: TYPE_NORMAL
+- en: .split("")
+  prefs: []
+  type: TYPE_NORMAL
+- en: .reverse()
+  prefs: []
+  type: TYPE_NORMAL
+- en: .map((digit) => parseInt(digit, 10));
+  prefs: []
+  type: TYPE_NORMAL
+- en: const sum = numArr.reduce((acc, digit, index) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: if (index % 2 !== 0) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: digit *= 2;
+  prefs: []
+  type: TYPE_NORMAL
+- en: if (digit > 9) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: digit -= 9;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return acc + digit;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}, 0);'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return sum % 10 === 0;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Write a regex to recognize all HTMl tags in the input text:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: /\<[^>]*\>/g
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Give me a list of schools in the USA as a JavaScript array:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As an AI language model, I am unable to provide a comprehensive and up-to-date
+    list of schools in the USA. However, you can obtain this information from various
+    public sources such as the National Center for Education Statistics ([https://nces.ed.gov](https://nces.ed.gov)/).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Generate a list of random customer names and addresses:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const customers = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "John Doe", address: "123 Main St, New York, NY 10001" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Jane Smith", address: "456 Elm St, Los Angeles, CA 90001" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ name: "Michael Johnson", address: "789 Oak St, Chicago, IL 60601" },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // ...
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Generate a list of random customer names and addresses without using the faker
+    library:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To generate random customer names and addresses without using the faker library,
+    you can create a simple function to generate random data. Here''s a basic example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: function getRandomInt(min, max) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: min = Math.ceil(min);
+  prefs: []
+  type: TYPE_NORMAL
+- en: max = Math.floor(max);
+  prefs: []
+  type: TYPE_NORMAL
+- en: return Math.floor(Math.random() * (max - min + 1)) + min;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const firstNames = ['John', 'Jane', 'Michael', 'Sarah', 'David'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const lastNames = ['Doe', 'Smith', 'Johnson', 'Miller', 'Brown'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const streetNames = ['Main', 'Elm', 'Oak', 'Pine', 'Maple'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cities = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''New York'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Los Angeles'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Chicago'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Houston'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Phoenix'''
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const states = ['NY', 'CA', 'IL', 'TX', 'AZ'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const zipCodes = ['10001', '90001', '60601', '77001', '85001'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: function generateRandomCustomer() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const firstName =
+  prefs: []
+  type: TYPE_NORMAL
+- en: firstNames[getRandomInt(0, firstNames.length - 1)];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const lastName = lastNames[getRandomInt(0, lastNames.length - 1)];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const streetNumber = getRandomInt(100, 999);
+  prefs: []
+  type: TYPE_NORMAL
+- en: const streetName =
+  prefs: []
+  type: TYPE_NORMAL
+- en: streetNames[getRandomInt(0, streetNames.length - 1)];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const city = cities[getRandomInt(0, cities.length - 1)];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const state = states[getRandomInt(0, states.length - 1)];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const zipCode = zipCodes[getRandomInt(0, zipCodes.length - 1)];
+  prefs: []
+  type: TYPE_NORMAL
+- en: return {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'name: `${firstName} ${lastName}`,'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'address: `${streetNumber} ${streetName} St, ${city}, ${state} ${zipCode}`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '};'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const customers = Array.from({ length: 10 }, () =>'
+  prefs: []
+  type: TYPE_NORMAL
+- en: generateRandomCustomer()
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(customers);
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Add a random color to each customer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const colors = ['red', 'blue', 'green', 'yellow', 'orange'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: customers.forEach((customer) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customer.color = colors[getRandomInt(0, colors.length - 1)];
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(customers);
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Add a favorite CSS Color to each customer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cssColors = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Crimson'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''DarkCyan'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''DodgerBlue'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''ForestGreen'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Gold'''
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: customers.forEach((customer) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customer.favoriteColor =
+  prefs: []
+  type: TYPE_NORMAL
+- en: cssColors[getRandomInt(0, cssColors.length - 1)];
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(customers);
+  prefs: []
+  type: TYPE_NORMAL
+- en: What kind of car does each customer drive?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'I cannot determine the exact car each customer drives without more context
+    or data. However, you can generate random car data for each customer, similar
+    to how we generated random names, addresses, and colors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const carMakes = ['Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const carModels = ['Corolla', 'Civic', 'F-150', 'Impala', 'Altima'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: customers.forEach((customer) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customer.car = {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'make: carMakes[getRandomInt(0, carMakes.length - 1)],'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'model: carModels[getRandomInt(0, carModels.length - 1)]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '};'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(customers);
+  prefs: []
+  type: TYPE_NORMAL
+- en: What kind of dog does each customer have?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Similar to the car example, you can generate random dog breeds for each customer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const dogBreeds = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Labrador Retriever'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''German Shepherd'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Golden Retriever'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''French Bulldog'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Beagle'''
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: customers.forEach((customer) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: customer.dog = {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'breed: dogBreeds[getRandomInt(0, dogBreeds.length - 1)]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '};'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(customers);
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create an array of all possible card values
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cardValues = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''2'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''3'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''4'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''5'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''6'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''7'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''8'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''9'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''10'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''J'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Q'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''K'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''A'''
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const cardSuits = ['hearts', 'diamonds', 'clubs', 'spades'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to shuffle the deck
+  prefs: []
+  type: TYPE_NORMAL
+- en: function shuffleDeck(deck) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = deck.length - 1; i > 0; i—) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const j = Math.floor(Math.random() * (i + 1));
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[deck[i], deck[j]] = [deck[j], deck[i]];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Shuffle the deck using built-in Javascript array functionality
+  prefs: []
+  type: TYPE_NORMAL
+- en: const deck = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: cardSuits.forEach((suit) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: cardValues.forEach((value) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: deck.push({ suit, value });
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: shuffleDeck(deck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(deck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Create a random deck of Uno cards:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: function generateUnoDeck() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const colors = ['red', 'green', 'blue', 'yellow'];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const values = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''0'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''1'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''2'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''3'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''4'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''5'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''6'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''7'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''8'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''9'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Skip'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Reverse'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Draw Two'''
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const deck = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: colors.forEach((color) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: values.forEach((value) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: deck.push({ color, value });
+  prefs: []
+  type: TYPE_NORMAL
+- en: if (value !== '0') {
+  prefs: []
+  type: TYPE_NORMAL
+- en: deck.push({ color, value });
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Add a second card of each value, except for 0.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Add wild cards
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = 0; i < 4; i++) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'deck.push({ color: ''wild'', value: ''Wild'' });'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'deck.push({ color: ''wild'', value: ''Wild Draw Four'' });'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: shuffleDeck(deck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: return deck;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const unoDeck = generateUnoDeck();
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(unoDeck);
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Create an array of possible grocery items:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const groceryItems = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Apples'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Bananas'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Oranges'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Grapes'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Milk'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Bread'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Eggs'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Cheese'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Butter'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Chicken'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Beef'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Pork'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Pasta'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Rice'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Cereal'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Potatoes'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Carrots'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''Onions'''
+  prefs: []
+  type: TYPE_NORMAL
+- en: // ...
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Create a list of random stock symbols:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const stockSymbols = [
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''AAPL'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''GOOGL'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''AMZN'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''MSFT'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''TSLA'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''FB'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''BRK.A'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''JNJ'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''JPM'','
+  prefs: []
+  type: TYPE_NORMAL
+- en: '''V'''
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // To create a random list of stock symbols, you can simply shuffle the stockSymbols
+    array and then select the desired number of items.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Generate an observable stream of prices for each stock, changing every 5 seconds:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: import { interval } from 'rxjs';
+  prefs: []
+  type: TYPE_NORMAL
+- en: import { map } from 'rxjs/operators';
+  prefs: []
+  type: TYPE_NORMAL
+- en: function generateRandomPrice() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return Math.floor(Math.random() * (10000 - 1000 + 1) + 1000) / 100;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: function createPriceStream(stockSymbol) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: return interval(5000).pipe(
+  prefs: []
+  type: TYPE_NORMAL
+- en: map(() => ({
+  prefs: []
+  type: TYPE_NORMAL
+- en: stockSymbol,
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'price: generateRandomPrice(),'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'timestamp: new Date()'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}))'
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const stockPriceStreams = stockSymbols.map((stockSymbol) =>
+  prefs: []
+  type: TYPE_NORMAL
+- en: createPriceStream(stockSymbol)
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this example, we are using the rxjs library to create an observable stream
+    of prices for each stock symbol. The interval function generates a new value every
+    5 seconds (5000 milliseconds), and the map operator is used to generate a new
+    price object containing the stock symbol, a random price, and the current timestamp.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Now that you have the stockPriceStreams array, you can subscribe to each individual
+    observable to receive the price updates:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: stockPriceStreams.forEach((priceStream, index) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: priceStream.subscribe((price) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`Price update for ${price.stockSymbol}: $${price.price} at ${price.timestamp}`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: );
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will log the price updates for each stock symbol in the console every 5
+    seconds.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For the attendance app, I''ll generate a few Agile epics and stories:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic 1: Roster Management'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 1.1: As a user, I want to add a student to the class roster.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 1.2: As a user, I want to edit a student''s information on the class
+    roster.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 1.3: As a user, I want to remove a student from the class roster.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic 2: Attendance Tracking'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 2.1: As a user, I want to mark a student as present or absent for a specific
+    day.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 2.2: As a user, I want to view attendance records for the class.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic 3: Photo Management'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 3.1: As a user, I want to add a photo of each student to their profile.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 3.2: As a user, I want to update a student''s photo.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic 4: Cross-Platform Compatibility'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 4.1: As a user, I want the app to be compatible with desktop web browsers.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 4.2: As a user, I want the app to be compatible with iOS devices.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story 4.3: As a user, I want the app to be compatible with Android devices.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Given the relative difficulties of those tasks and their UAC, generate a rough
+    relative estimate for each using T-shirt sizing:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic 1: Roster Management'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 1.1: Small'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 1.2: Small'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 1.3: Small'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic 2: Attendance Tracking'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 2.1: Medium'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 2.2: Medium'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic 3: Photo Management'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 3.1: Medium'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 3.2: Small'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic 4: Cross-Platform Compatibility'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 4.1: Large'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 4.2: Large'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '  Story 4.3: Large'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The newest version of Angular and Ionic Framework I know of is Angular 12 and
+    Ionic 5, as of my knowledge cutoff in September 2021\. However, newer versions
+    might have been released since then. Please check their respective websites or
+    package repositories for the most up-to-date information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using Angular and the Ionic Framework, create a complete web application that
+    uses a split-pane layout with a side menu and a default Home page. It should have
+    an Angular service to load blog posts from a remote sample API. Those blog posts
+    should be displayed on a page called Posts. The Posts page should be responsive,
+    displaying the blog post titles and body in an <ion-card>. When working with Observables,
+    prefer the async pipe over subscribing and unsubscribing. Make sure you provide
+    the Ionic CLI commands to create the application and any additional items needed
+    to create the application.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '1.  Install the Ionic CLI if you haven''t already:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: npm install -g @ionic/cli
+  prefs: []
+  type: TYPE_NORMAL
+- en: '2.  Create a new Ionic Angular project:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ionic start myApp sidemenu—type=angular
+  prefs: []
+  type: TYPE_NORMAL
+- en: '3.  Change the directory to the newly created app:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: cd myApp
+  prefs: []
+  type: TYPE_NORMAL
+- en: '4.  Generate a service to load blog posts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ionic generate service services/blog
+  prefs: []
+  type: TYPE_NORMAL
+- en: '5.  Edit src/app/services/blog.service.ts to fetch sample blog post data:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'import { HttpClient } from ''@angular/common/http''; import { Injectable }
+    from ''@angular/core''; import { Observable } from ''rxjs''; @Injectable({ providedIn:
+    ''root'', }) export class BlogService { private apiUrl = ''https://jsonplaceholder.typicode.com/posts'';
+    constructor(private http: HttpClient) {} getPosts(): Observable<any> { return
+    this.http.get<any[]>(this.apiUrl); } }'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '6.  Add HttpClientModule to src/app/app.module.ts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'import { HttpClientModule } from ''@angular/common/http''; @NgModule({ // ...
+    imports: [ // ... HttpClientModule, ], // ... }) export class AppModule {}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '7.  Generate a new page for displaying blog posts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ionic generate page pages/posts
+  prefs: []
+  type: TYPE_NORMAL
+- en: '8.  Edit src/app/pages/posts/posts.page.ts to load the blog posts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'import { Component, OnInit } from ''@angular/core''; import { BlogService }
+    from ''../../services/blog.service''; import { Observable } from ''rxjs''; @Component({
+    selector: ''app-posts'', templateUrl: ''./posts.page.html'', styleUrls: [''./posts.page.scss''],
+    }) export class PostsPage implements OnInit { posts$: Observable<any>; constructor(private
+    blogService: BlogService) {} ngOnInit() { this.posts$ = this.blogService.getPosts();
+    } }'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '9.  Edit src/app/pages/posts/posts.page.html to display the blog posts using
+    an async pipe and <ion-card>:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: <ion-header> <ion-toolbar> <ion-title>Posts</ion-title> </ion-toolbar> </ion-header>
+    <ion-content> <ion-card *ngFor="let post of posts$ | async"> <ion-card-header>
+    <ion-card-title>{{ post.title }}</ion-card-title> </ion-card-header> <ion-card-content>
+    {{ post.body }} </ion-card-content> </ion-card> </ion-content>
+  prefs: []
+  type: TYPE_NORMAL
+- en: '10.  Add the Posts page to the side menu by editing src/app/app.component.ts:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '// ... public appPages = [ // ... { title: ''Posts'', url: ''/posts'', icon:
+    ''mail'' }, ]; // ...'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '11.  Update the routing in src/app/app-routing.module.ts to include the Posts
+    page:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '// ... import { PostsPage } from ''./pages/posts/posts.page''; const routes:
+    Routes = [ // ... { path: ''posts'', component: PostsPage, }, ]; // ...'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '12.  Run the app in the development mode:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ionic serve
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now you should have a complete Angular and Ionic web application with a split-pane
+    layout, a side menu, and a Home page. The Posts page displays blog post titles
+    and content in an <ion-card> element, and the async pipe is used to handle Observables.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A UUID (Universally Unique Identifier) is a 128-bit number that is used to uniquely
+    identify an object or entity across different systems or platforms. It's usually
+    represented as a string consisting of 32 alphanumeric characters separated by
+    hyphens into five groups in the form 8-4-4-4-12 (e.g., 123e4567-e89b-12d3-a456-426614174000).
+    UUIDs are used to ensure that objects created by different systems or at different
+    times have unique identifiers, even without a central coordination authority.
+    This is useful in distributed systems, databases, or applications where unique
+    identification is required.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Given the following Angular service, write a complete suite of unit tests using
+    Jasmine:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'First, you''ll want to generate a test file for the service (if it doesn''t
+    already exist) using the Angular CLI:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ng generate service services/shuffle—skipTests=false
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Next, update the src/app/services/shuffle.service.spec.ts file with the following
+    Jasmine tests:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'import { TestBed } from ''@angular/core/testing''; import { ShuffleService
+    } from ''./shuffle.service''; describe(''ShuffleService'', () => { let service:
+    ShuffleService; beforeEach(() => { TestBed.configureTestingModule({}); service
+    = TestBed.inject(ShuffleService); }); it(''should be created'', () => { expect(service).toBeTruthy();
+    }); it(''should generate the same hash code for the same input string'', () =>
+    { const input = ''test_string''; const hash1 = service.hashCode(input); const
+    hash2 = service.hashCode(input); expect(hash1).toEqual(hash2); }); it(''should
+    generate different hash codes for different input strings'', () => { const input1
+    = ''test_string1''; const input2 = ''test_string2''; const hash1 = service.hashCode(input1);
+    const hash2 = service.hashCode(input2); expect(hash1).not.toEqual(hash2); });
+    it(''should shuffle the input array'', () => { const inputArray = [1, 2, 3, 4,
+    5]; const shuffledArray = service.shuffle([...inputArray]); expect(shuffledArray).not.toEqual(inputArray);
+    expect(shuffledArray.sort()).toEqual(inputArray); }); it(''should seed the random
+    number generator with the same seed'', () => { const inputArray = [1, 2, 3, 4,
+    5]; const seed = ''test_seed''; service.seed(seed); const shuffledArray1 = service.shuffle([...inputArray]);
+    service.seed(seed); const shuffledArray2 = service.shuffle([...inputArray]); expect(shuffledArray1).toEqual(shuffledArray2);
+    }); });'
+  prefs: []
+  type: TYPE_NORMAL
+- en: These tests will cover the creation of the service, the generation of hash codes,
+    and the shuffle method, including seeding the random number generator.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The significance of the masked name might be to protect the identity of an individual
+    or entity, to hide sensitive information, or to maintain privacy. In the context
+    of the ShuffleService, it is not clear what the masked name might refer to, as
+    the service appears to be a generic utility for shuffling arrays and generating
+    hash codes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/image006.png)![Michael Callaghan](d2d_images/image006.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Given the following string of commit messages for a pull request, generate some
+    release notes, grouped by common themes and sorted by perceived importance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Commit messages:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Added capacitor and capacitor storage
+  prefs: []
+  type: TYPE_NORMAL
+- en: Converted student service to promises?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fixed DeleteStudent, but not perfectly
+  prefs: []
+  type: TYPE_NORMAL
+- en: Removed RxJS from storage service
+  prefs: []
+  type: TYPE_NORMAL
+- en: Student CRUD working
+  prefs: []
+  type: TYPE_NORMAL
+- en: Added some more functionality
+  prefs: []
+  type: TYPE_NORMAL
+- en: Refactored some of the storage code
+  prefs: []
+  type: TYPE_NORMAL
+- en: Added New Student functionality
+  prefs: []
+  type: TYPE_NORMAL
+- en: Added camera feature
+  prefs: []
+  type: TYPE_NORMAL
+- en: Standardize state management within the student service (#22)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'refactor: add explicit modifiers to service signatures'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'refactor: simplify syntax in student service'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'fix: initialize service with stored data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'refactor: move state changes into student service'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'refactor: use routerLinkActive to determine link state'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'chore: format all files with prettier'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'chore: prefer single quote for strings'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Added camera feature
+  prefs: []
+  type: TYPE_NORMAL
+- en: Made some minor tweaks for the workshop
+  prefs: []
+  type: TYPE_NORMAL
+- en: Minor tweaks for conference
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Release Notes:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: New Features
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Added New Student functionality
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Added camera feature, allowing users to take and store photographs of students
+  prefs: []
+  type: TYPE_NORMAL
+- en: Improvements
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Added Capacitor storage for improved data management
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Standardized state management within the student service
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Student CRUD functionality is now fully functional
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Fixed DeleteStudent, with some room for improvement
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Refactored storage code for better maintainability
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Minor tweaks for workshop and conference presentations
+  prefs: []
+  type: TYPE_NORMAL
+- en: Code Refactoring and Cleanup
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Converted student service to use promises
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Removed RxJS from storage service for simplification
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Added explicit modifiers to service signatures
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Simplified syntax in student service
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Initialized service with stored data
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Moved state changes into student service
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Used routerLinkActive to determine link state
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Formatted all files with Prettier
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Preferred single quote for strings
+  prefs: []
+  type: TYPE_NORMAL
+- en: I hope the generated release notes meet your expectations. If you have any more
+    requests or questions, feel free to ask!
+  prefs: []
+  type: TYPE_NORMAL

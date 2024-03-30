@@ -1,0 +1,467 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Using AI in Software Development
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![AI programmer looking at web code — Image from Pixabay.com](d2d_images/image002.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Image by [Gerd Altmann on Pixabay](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2167835)
+  prefs: []
+  type: TYPE_NORMAL
+- en: I first heard about GitHub Copilot in mid-2022\. I was intrigued by the idea
+    that someone trained an Artificial Intelligence (henceforth “AI”) model from the
+    source code inside every public GitHub repo. Further, that once the model had
+    been trained, it could essentially understand my source code and make suggestions
+    in real time. If this were real, I had to try it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I registered for the free beta and waited. About a week later, I got the email
+    accepting me into the beta program, along with a link to install a Visual Studio
+    Code extension. I installed the extension and started playing with it. It seemed
+    cool but I don’t do a lot of day-to-day coding on my personal machine and wasn’t
+    ready to install Beta software on my work computer. So, I promptly forgot about
+    it for a while.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In June I ran a live mobile app development workshop. For the code demos, I
+    had VS Code running on my personal Mac. Copilot was still installed, and it continued
+    to pop up and offer code completion suggestions. Finally, someone asked what it
+    was, so we went off on a tangent and spent some time exploring Copilot’s capabilities.
+    It seemed to know what code should be written before we did. We were all impressed,
+    to say the least.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It seemed to know all about Ionic and Angular, HTML, CSS, and TypeScript. It
+    understood those languages in the context of the demo app I was building for the
+    workshop. It was rarely wrong, providing code nearly identical to what I was about
+    type.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fast forward a few months. ChatGPT showed up and took the world by storm. Here
+    was the first “approachable” AI with a conversational interface. People could
+    ask it questions and expect a coherent answer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Millions of people began experimenting with it, seeing how well it could write
+    code simply by entering a brief description of the problem. While not perfect,
+    its answers were surprisingly good. People began wondering whether we had entered
+    a strange new world of software development, one where traditional coding, and
+    software developers, would soon be obsolete.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What We Will Cover
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: My objective in writing this book is to describe how AI can be used in the day-to-day
+    activities of a typical software developer. Before we dive deep into these concepts,
+    let’s take a high-level look at what the tools can and cannot do for us.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What Can AI Tools Do?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Code generation: AI can be used to generate code based on a set of inputs and
+    requirements, which can speed up the development process and reduce the chance
+    of errors.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Test automation: AI can be used to automatically generate test cases and test
+    scripts, which can save time and improve the quality of software.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Quality assurance: AI can be used to automatically evaluate the quality of
+    code, which can help identify potential issues before they become problems.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'UI/UX design: AI can be used to generate UI/UX designs, which can save time
+    and improve the overall user experience.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Language Processing: AI can be used for natural language processing, which
+    can be used in natural language interface for software development.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Predictive analytics: AI can be used to predict future trends, bugs and areas
+    that need attention.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'AI-powered search: AI can be used to search and recommend relevant code snippets,
+    libraries and tools to developers.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: I will be focusing on the first two items in that list, as they seem most relevant
+    to software development today.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What are Their Limitations?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Limited understanding of context: AI may not fully understand the context in
+    which code is being written, which can lead to errors or inconsistencies.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Lack of creativity: AI can generate code or designs that are functional but
+    may lack the creativity of a human developer.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Limited ability to handle complexity: AI may struggle with complex code or
+    designs that involve many variables and interdependencies.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Lack of understanding of industry standards and best practices: AI may not
+    be aware of the best practices and standards in a particular industry or field,
+    which can lead to suboptimal results.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Lack of flexibility: AI may not be able to adapt to changing requirements or
+    unexpected situations as well as a human developer.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Limited ability to handle unstructured data: AI may struggle with data that
+    is not well-organized or does not conform to a specific format.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Limited ability to generalize: AI may struggle to generalize from examples
+    and may not work well in situations where it has not been explicitly trained.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Data bias: AI models can perpetuate human biases if the training data is not
+    diverse and representative of the population.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Dependence on large amounts of data: AI models often require large amounts
+    of data to be trained, which can be difficult to acquire and process.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Lack of explainability: AI models can be opaque, making it difficult to understand
+    how they arrived at a particular decision or output. As we will see, this is where
+    ChatGPT shines.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Different AIs Used in This Book
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There are a lot of AI tools that we could choose. I won’t pretend to know even
+    half of them. The two with the biggest market penetration and clout seem to be
+    ChatGPT from OpenAI and Copilot from GitHub. Those are the two I will focus on
+    throughout the book.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: ChatGPT is a language model developed by OpenAI. It is a variant of the GPT
+    (Generative Pre-trained Transformer) model, which is trained on a massive amount
+    of internet text data to generate human-like text. The model is fine-tuned for
+    specific tasks, such as language translation, text summarization, and conversation.
+    With its ability to understand and respond to natural language inputs, ChatGPT
+    can be used for a variety of applications, such as chatbots, virtual assistants,
+    and language-based games.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'People discovered very quickly that it can also be used to generate functioning
+    computer code in a variety of languages. ChatGPT, as a powerful language generation
+    model, can be used in several ways to help with software development:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Code generation: ChatGPT can be used to generate code snippets and even complete
+    functions based on a set of inputs and requirements, which can speed up the development
+    process and reduce the chance of errors.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Text generation: ChatGPT can be used to generate comments, documentation and
+    even commit messages, which can save developers time and improve code readability.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Test case generation: ChatGPT can be used to generate test cases and test scripts
+    for software, which can save time and improve the quality of software.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: To use ChatGPT, you will need to sign up for an OpenAI API account, which you
+    can do at [https://chat.openai.com/chat](https://chat.openai.com/chat). If you
+    already have an account with OpenAI, you can log in with that. If not, you will
+    need to register.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'At the time of this writing, there are two tiers to the service: one is free,
+    but you may find that it is frequently “at capacity,” which makes it hard to use.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: There is also a paid tier, ChatGPT PLUS, which is currently $20USD per month.
+    OpenAI has also announced plans for additional tiers, as well as a waitlist so
+    you can get more information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GitHub Copilot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Copilot is an AI-powered coding assistant developed by GitHub. It is a system
+    that aims to help developers write code more efficiently and effectively by suggesting
+    code completions. Copilot uses machine learning to understand the code you're
+    working on, and suggests completions based on the context of the code, taking
+    into account the structure of the repository and the contents of the file you're
+    working on. Copilot suggests completions for variables, functions, and more, based
+    on the context of the code you're working on.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The tool can be used to generate code snippets, complete function calls and
+    arguments, and suggest variable and function names. Copilot can be used with multiple
+    programming languages such as Python, JavaScript, and Go, and it can be integrated
+    with popular code editors such as Visual Studio Code, Atom, and Sublime Text.
+    Throughout this book, I’ll be using it exclusively inside VS Code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One of the key features of GitHub Copilot is its ability to understand the developer’s
+    intent. This means that it can not only suggest code snippets, but also understand
+    the problem that the developer is trying to solve and provide suggestions accordingly.
+    For example, if a developer is trying to write a function to sort a list of numbers,
+    Copilot will understand that the developer is trying to sort the list and will
+    provide suggestions for sorting algorithms. One of my personal blind spots is
+    in writing reducers in JavaScript. Copilot has gotten them right for me every
+    time I’ve tried.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sometimes, Copilot will offer multiple possibilities. If you aren’t happy with
+    the code Copilot initially suggests, you can cycle through multiple suggestions
+    with Opt + [ and Opt + ] on macOS or Alt + [ and Alt + ] on Windows and Linux.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another important feature of GitHub Copilot is its ability to learn from the
+    developer's codebase. As the you write your code, Copilot will learn about your
+    coding style, and will use this information to provide more accurate and relevant
+    suggestions. This means that the more you use Copilot, the more it will understand
+    your coding preferences and will improve its suggestions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: GitHub Copilot also uses GitHub’s vast codebase to learn from the best practices
+    and patterns of other developers. It can leverage the knowledge from open-source
+    code and from the contributions of the developer’s own team to provide suggestions
+    that are in line with the best practices of the community.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To use Copilot, you will need to sign up at [https://github.com/features/copilot](https://github.com/features/copilot).
+    GitHub Copilot was free to use while it was in Beta, but now that it’s been officially
+    released, it requires a license. At the time of this writing, Copilot is $100/year
+    per developer. There is a free trial, in case you want to follow along with the
+    book before you decide whether to subscribe. Students and open-source maintainers
+    can still use it free of charge, but you have to apply and wait to be approved.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT vs Copilot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: ChatGPT and GitHub Copilot are both AI-powered tools that are designed to assist
+    software developers in their work. Both tools use machine learning algorithms
+    to provide developers with intelligent suggestions and assistance, but they are
+    designed for different aspects of the development process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One of the main differences between the two tools is their area of focus. ChatGPT
+    is focused on natural language processing tasks, while GitHub Copilot is focused
+    on code completion and suggestions. ChatGPT can be used to generate text responses
+    or code, while GitHub Copilot can be used primarily to generate code snippets.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another difference is the way the two tools are used. ChatGPT is accessed through
+    a chat-like interface (hence the name), so developers tend to be more descriptive
+    in using it to generate code. On the other hand, GitHub Copilot is integrated
+    into the development environment and can be used directly inside your project.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Throughout the book, I will use both tools to highlight how they can be used
+    most effectively in the proper situation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Controversy - Should Developers Use These Tools?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I thought I should get this out of the way early because there are those who
+    feel the answer is a definite “no.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: One of the main complaints arising from Copilot’s use of GitHub’s codebase to
+    train its model and make its suggestions is that it could lead to the spread of
+    bad coding practices and security vulnerabilities. Since the tool is using the
+    codebase to learn from the practices and patterns of other developers, it may
+    inadvertently be learning and promoting bad coding practices and security vulnerabilities
+    that exist in those codebases. This could lead to developers unknowingly incorporating
+    these issues into their own code, potentially leading to security breaches or
+    other problems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another potential issue is that Copilot could undermine the importance of understanding
+    and knowledge of the codebase; developers may become too reliant on the tool’s
+    suggestions and not take the time to understand the code they are working on.
+    This could lead to developers not fully understanding the codebase, making it
+    more difficult to maintain and troubleshoot issues in the future.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Furthermore, Copilot’s use of GitHub’s codebase to train its model also raises
+    concerns about privacy and data security. As the tool is analyzing and learning
+    from code written by developers, it may also be collecting and analyzing sensitive
+    data, such as usernames, passwords, or other personal information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Licensing Issues
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'One of the larger criticisms and causes of the controversy stem from licensing
+    issues with the data used to train the AI models. This can be a significant concern,
+    as using code without proper permission or licensing can lead to legal issues.
+    Some specific issues that can arise include:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Copyright infringement if the data used to train an AI model is protected by
+    copyright.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Trade secret infringement if the data used to train an AI model constitutes
+    someone else’s trade secret.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If the data used to train an AI model contains personal information, using it
+    without proper permission or anonymizing it may violate privacy laws.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If the data used to train an AI model is subject to a license or contract, using
+    it in a way that violates those terms can lead to legal issues.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: It’s important for developers and organizations to be aware of these issues
+    and to obtain proper permissions and licenses for any data used to train AI models.
+    This can include obtaining licenses for open-source datasets or negotiating agreements
+    with data providers to use proprietary data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: No Respecter of Licenses
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: When using AI to help write software, it is important to consider the open-source
+    licenses of the code that may have been used to train the AI. Open-source licenses
+    are agreements that dictate how the code covered by the license can be used, modified,
+    and distributed. Different open-source licenses have different terms and conditions,
+    so it is important to carefully review the licenses of any code that is used to
+    train the AI and ensure that they are being complied with. This may involve obtaining
+    the proper permissions, giving credit to the original authors, and making any
+    required changes to the code. Failing to properly comply with open-source licenses
+    can result in legal consequences, such as being sued for copyright infringement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A concrete example may illustrate the issue more clearly. In one of my mobile
+    apps, I use an algorithm I found to generate a deck of cards of an arbitrary size.
+    The JavaScript code I found on GitHub (not using Copilot) is clearly marked as
+    “GPL Licensed.” As I understand it (and I’m not a lawyer), this means that I am
+    free to use this algorithm in my own code, and can even sell the app. That’s allowed.
+    However, I must include the GPL notice in the source code. I must also release
+    my source code under the same license.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What if Copilot had suggested this algorithm to me and I was unaware of its
+    license, and then proceeded to offer my app under a different license? Would I
+    technically be in violation of the GPL from the original algorithm? If so, what
+    risk would this expose me or my employer to? Unfortunately, these types of questions
+    will probably need to be settled in courts. As I write this, there is at least
+    one lawsuit pending regarding Copilot’s use of licensed software in its recommendations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Ethical Considerations
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: What are the ethics of using AI to help with software development? Is it ethical
+    to use an AI to help write software? Can the developer or company really claim
+    that they are the proper authors of said software? This may seem odd, but I asked
+    ChatGPT that very question. This is how it replied.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is generally considered ethical to use AI to assist in the development of
+    software, as long as the developers and the company are transparent about the
+    role of the AI in the development process and give credit where it is due. The
+    developer or company can claim authorship of the software but should also acknowledge
+    the contributions of the AI used in the development process. Additionally, it
+    is important to ensure that any AI models used in the development of software
+    are trained on ethically sourced data and do not perpetuate any biases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I also asked it whether there are any other ethical considerations to be aware
+    of.
+  prefs: []
+  type: TYPE_NORMAL
+- en: First, there is the issue of fairness and bias. It is important to ensure that
+    the AI system is not making decisions based on biased data, as this could result
+    in unfair treatment of certain individuals or groups. Additionally, there is the
+    question of accountability. It is important to consider who is responsible for
+    any errors or mistakes made by the AI system, and to ensure that there are appropriate
+    safeguards in place to prevent such errors from happening. Finally, there is the
+    issue of privacy. It is important to ensure that the personal data of users is
+    collected, used, and stored in a manner that respects their privacy and complies
+    with relevant laws and regulations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conventions Used in This Book
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: As you see above, I am adopting the convention of printing the output from the
+    AI in a different font and background, so that you can easily see distinguish
+    my thoughts from the AI’s.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When I show a comment or prompt get Copilot to generate code, I will show it
+    like this.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When I show a comment or prompt get ChatGPT to generate code, I will show it
+    like this.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Output used verbatim from ChatGPT will be shown this way.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also, any commands or generated source code will be shown this way.
+  prefs: []
+  type: TYPE_NORMAL

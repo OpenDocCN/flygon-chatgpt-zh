@@ -1,0 +1,602 @@
+- en: '6'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Developing the Future with ChatGPT
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In this chapter, we will discuss how developers can leverage ChatGPT. The chapter
+    focuses on the main use cases ChatGPT addresses in the domain of developers, including
+    code review and optimization, documentation generation, and code generation. The
+    chapter will provide examples and enable you to try the prompts on your own.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'After a general introduction about the reasons why developers should leverage
+    ChatGPT as a daily assistant, we will focus on ChatGPT and how it can do the following:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Why ChatGPT for developers?
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Generate, optimize, and debug code
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Generate code-related documentation and debug your code
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Explain **machine learning** (**ML**) models to help data scientists and business
+    users with model interpretability
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Translate different programming languages
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: By the end of this chapter, you will be able to leverage ChatGPT for coding
+    activities and use it as an assistant for your coding productivity.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Why ChatGPT for developers?
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Personally, I believe that one of the most mind-blowing capabilities of ChatGPT
+    is that of dealing with code. Of any type. We’ve already seen in [*Chapter 4*](B19904_04.xhtml#_idTextAnchor053)
+    how ChatGPT can act as a Python console. However, ChatGPT capabilities for developers
+    go way beyond that example. It can be a daily assistant for code generation, explanation,
+    and debugging.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Among the most popular languages, we can certainly mention Python, JavaScript,
+    SQL, and C#. However, ChatGPT covers a wide range of languages, as disclosed by
+    itself:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.1 – ChatGPT lists the programming languages it is able to understand
+    and generate](img/Figure_6.1_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.1 – ChatGPT lists the programming languages it is able to understand
+    and generate
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whether you are a backend/frontend developer, a data scientist, or a data engineer,
+    whenever you work with a programming language, ChatGPT can be a game changer,
+    and we will see how in the several examples in the next sections.
+  prefs: []
+  type: TYPE_NORMAL
+- en: From the next section onward, we will dive deeper into concrete examples of
+    what ChatGPT can achieve when working with code. We will see end-to-end use cases
+    covering different domains so that we will get familiar with using ChatGPT as
+    a code assistant.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generating, optimizing, and debugging code
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'The primary capability you should leverage is ChatGPT code generation. How
+    many times have you been looking for a pre-built piece of code to start from?
+    Generating the `utils` functions, sample datasets, SQL schemas, and so on? ChatGPT
+    is able to generate code based on input in natural language:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.2 – Example of ChatGPT generating a Python function to write into
+    CSV files](img/Figure_6.2_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.2 – Example of ChatGPT generating a Python function to write into CSV
+    files
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can see, not only was ChatGPT able to generate the function, but also
+    it was able to explain what the function does, how to use it, and what to substitute
+    with generic placeholders such as `my_folder`.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Another example could be of creating schemas for structured tables. Namely,
+    imagine you are a data engineer in the process of creating relationships between
+    two standard tables in an SAP ERP system: `MARA` and `VBAP`, storing, respectively,
+    general material data and sales document data.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s ask ChatGPT to create the schema for these tables by giving it the names
+    of the columns as context:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.3 – Example of ChatGPT generating a SQL schema for the SAP tables](img/Figure_6.3_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.3 – Example of ChatGPT generating a SQL schema for the SAP tables
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note that ChatGPT was able to make relationships because it knows SAP taxonomy
+    and column names interpretation, which is something anyone who doesn’t know SAP
+    taxonomy (including data engineers) struggles with. As confirmation, let’s ask
+    ChatGPT to rename all those columns with more human-understandable names:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.4 – SAP tables columns renamed by ChatGPT](img/Figure_6.4_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.4 – SAP tables columns renamed by ChatGPT
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'And, finally, let’s recreate the schema with the new columns, making sure to
+    avoid duplicates (the new name, `Condition Value`, is indeed repeated five times):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.5 – SQL schema with renamed columns](img/Figure_6.5_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.5 – SQL schema with renamed columns
+  prefs: []
+  type: TYPE_NORMAL
+- en: The preceding example is key to reducing the time to create schemas for further
+    data analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT can also be a great assistant for code optimization. In fact, it might
+    save us some running time or compute power to make optimized scripts starting
+    from our input. This capability might be compared, in the domain of natural language,
+    to the writing assistance feature we saw in [*Chapter 5*](B19904_05.xhtml#_idTextAnchor061)
+    in the *Improving writing skills and* *translation* section.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, imagine you want to create a list of odd numbers starting from
+    another list. To achieve the result, you wrote the following Python script (for
+    the purpose of this exercise, I will also track the execution time with the `timeit`
+    and `datetime` libraries):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]'
+  prefs: []
+  type: TYPE_PRE
+- en: The execution time was `00.141185` seconds. What happens if we ask ChatGPT to
+    optimize this script?
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.6 – ChatGPT generating optimized alternatives to a Python script](img/Figure_6.6_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.6 – ChatGPT generating optimized alternatives to a Python script
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT provided me with an example to achieve the same results with lower execution
+    time. It also elaborated on the alternative with a clear explanation of why the
+    comprehension method is faster than a `for` loop.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s see the performance of this new script compared to the previous one:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.7 – Comparison of user and ChatGPT scripts’ execution times](img/Figure_6.7_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.7 – Comparison of user and ChatGPT scripts’ execution times
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can see, the second method (the one generated by ChatGPT) provides a
+    reduction in execution time of about 47.8%.
+  prefs: []
+  type: TYPE_NORMAL
+- en: On top of code generation and optimization, ChatGPT can also be leveraged for
+    *error* explanation and debugging. Sometimes, errors are difficult to interpret;
+    hence a natural language explanation can be useful to identify the problem and
+    drive you toward the solution.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, while running a `.py` file from my command line, I get the following
+    error:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE1]'
+  prefs: []
+  type: TYPE_PRE
+- en: Let’s see whether ChatGPT is able to let me understand the nature of the error.
+    To do so, I simply provide ChatGPT with the text of the error and ask it to give
+    me an explanation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.8 – ChatGPT explaining a Python error in natural language](img/Figure_6.8_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.8 – ChatGPT explaining a Python error in natural language
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, let’s imagine I wrote a function in Python that takes a string as input
+    and returns the same string with an underscore after each letter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the preceding example, I was expecting to see the `g_p_t_` result; however,
+    it only returned `t_` with this code:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.9 – Bugged Python function](img/Figure_6.9_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.9 – Bugged Python function
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s ask ChatGPT to debug this function for us:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.10 – Example of ChatGPT debugging a Python function](img/Figure_6.10_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.10 – Example of ChatGPT debugging a Python function
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Impressive, isn’t it? Again, ChatGPT provided the correct version of the code,
+    and it helped in the explanation of where the bugs were and why they led to an
+    incorrect result. Let’s see whether it works now:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.11 – Python function after ChatGPT debugging](img/Figure_6.11_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.11 – Python function after ChatGPT debugging
+  prefs: []
+  type: TYPE_NORMAL
+- en: Well, it obviously does!
+  prefs: []
+  type: TYPE_NORMAL
+- en: These and many other code-related functionalities could really boost your productivity,
+    shortening the time to perform many tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: However, ChatGPT goes beyond pure debugging. Thanks to the incredible language
+    understanding of the GPT model behind, this **artificial intelligence** (**AI**)
+    tool is able to generate proper documentation alongside the code, as well as explain
+    exactly what a string of code will do, which we will see in the next section.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generating documentation and code explainability
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Whenever working with new applications or projects, it is always good practice
+    to correlate your code with documentation. It might be in the form of a docstring
+    that you can embed in your functions or classes so that others can invoke them
+    directly in the development environment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, the following Python class has 10 different methods for basic
+    mathematical operations:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE2]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'You can initialize the class and test it as follows (as an example, I will
+    use the addition method):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.12 – Initializing a Python class and using one of its methods](img/Figure_6.12_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.12 – Initializing a Python class and using one of its methods
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Now, let’s say I want to be able to retrieve the docstring documentation using
+    the `Calculator?` convention. By doing so with Python packages, functions, and
+    methods, we have full documentation of the capabilities of that specific object,
+    as follows (an example with the `pandas` Python library):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.13 – Example of the pandas library documentation](img/Figure_6.13_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.13 – Example of the pandas library documentation
+  prefs: []
+  type: TYPE_NORMAL
+- en: So let’s now ask ChatGPT to produce the same result for our `Calculator` class.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Henceforth, after giving the `Calculator` class as context to ChatGPT, I asked
+    it to generate the relative documentation as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.14 – ChatGPT updating the code with documentation](img/Figure_6.14_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.14 – ChatGPT updating the code with documentation
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can find the whole ChatGPT response in the GitHub repository of this book
+    at [https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/blob/main/Chapter%206%20-%20ChatGPT%20for%20Developers/prompts](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/blob/main/Chapter%206%20-%20ChatGPT%20for%20Developers/prompts).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'As a result, if we update our class as shown in the preceding code and call
+    `Calculator?`, we will get the following output:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.15 – The new Calculator class documentation](img/Figure_6.15_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.15 – The new Calculator class documentation
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, ChatGPT can also be leveraged to explain what a script, function, class,
+    or other similar things do in natural language. We have already seen many examples
+    of ChatGPT enriching its code-related response with clear explanations. However,
+    we can boost this capability by asking specific questions in terms of code understanding.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For example, let’s ask ChatGPT to explain to us what the following Python script
+    does:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.16 – Example of ChatGPT explaining a Python script](img/Figure_6.16_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.16 – Example of ChatGPT explaining a Python script
+  prefs: []
+  type: TYPE_NORMAL
+- en: Code explainability can also be part of the preceding mentioned documentation,
+    or it can be used among developers who might want to better understand complex
+    code from other teams or (as sometimes happens to me) remember what they wrote
+    some time ago.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Thanks to ChatGPT and the capabilities mentioned in this section, developers
+    can easily keep track of the project life cycle in natural language so that it
+    is easier for both new team members and non-technical users to understand the
+    work done so far.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We will see in the next section how code explainability is a pivotal step for
+    ML model interpretability in data science projects.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Understanding ML model interpretability
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Model interpretability refers to the degree of ease with which a human can comprehend
+    the logic behind the ML model’s predictions. Essentially, it is the capability
+    to comprehend how a model arrives at its decisions and which variables are contributing
+    to its forecasts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s see an example of model interpretability using a deep learning `keras.datasets`:
+    it consists of 60,000 32x32 color images (so 3-channels images) in 10 classes
+    (airplane, automobile, bird, cat, deer, dog, frog, horse, ship, and truck), with
+    6,000 images per class. Here, I will share just the body of the model; you can
+    find all the related code in the book’s GitHub repository for data preparation
+    and pre-processing at [https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%206%20-%20ChatGPT%20for%20Developers/code](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%206%20-%20ChatGPT%20for%20Developers/code):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE3]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'The preceding code is made of several layers that perform different actions.
+    I might be interested in having an explanation of the structure of the model as
+    well as the purpose of each layer. Let’s ask ChatGPT for some help with that:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.17 – Model interpretability with ChatGPT](img/Figure_6.17_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.17 – Model interpretability with ChatGPT
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you can see in the preceding figure, ChatGPT was able to give us a clear
+    explanation of the structure and layers of our CNN. It also adds some comments
+    and tips, such as the fact that using the max pooling layer helps reduce the dimensionality
+    of the input.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'I can also be supported by ChatGPT in interpreting model results in the validation
+    phase. So, after splitting data into training and test sets and training the model
+    on the training set, I want to see its performance on the test set:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.18 – Evaluation metrics](img/Figure_6.18_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.18 – Evaluation metrics
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s also ask ChatGPT to elaborate on our validation metrics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.19 – Example of ChatGPT explaining evaluation metrics](img/Figure_6.19_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.19 – Example of ChatGPT explaining evaluation metrics
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once again, the result was really impressive, and it provided clear guidance
+    on how to set up ML experiments in terms of training and test sets. It explains
+    how important it is for the model to be sufficiently generalized so that it does
+    not overfit and is able to predict accurate results on data that it has never
+    seen before.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are many reasons why model interpretability is important. A pivotal element
+    is that it reduces the gap between business users and the code behind models.
+    This is key to enabling business users to understand how a model behaves, as well
+    as translate it into code business ideas.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Furthermore, model interpretability enables one of the key principles of responsible
+    and ethical AI, which is the transparency of how a model behind AI systems thinks
+    and behaves. Unlocking model interpretability means detecting potential biases
+    or harmful behaviors a model could have while in production and consequently preventing
+    them from happening.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overall, ChatGPT can provide valuable support in the context of model interpretability,
+    generating insights at the row level, as we saw in the previous example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The next and last ChatGPT capability we will explore will be yet another boost
+    for developers’ productivity, especially when various programming languages are
+    being used within the same project.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Translation among different programming languages
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: In [*Chapter 5*](B19904_05.xhtml#_idTextAnchor061), we saw how ChatGPT has great
+    capabilities for translating between different languages. What is really incredible
+    is that natural language is not its only object of translation. In fact, ChatGPT
+    is capable of translating between different programming languages while keeping
+    the same output as well as the same style (namely, it preserves docstring documentation
+    if present).
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are so many scenarios when this could be a game changer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, you might have to learn a new programming language or statistical
+    tool you’ve never seen before because you need to quickly deliver a project on
+    it. With the help of ChatGPT, you can start programming in your language of preference
+    and then ask it to translate to the desired language, which you will be learning
+    alongside the translation process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Imagine that the project needs to be delivered in MATLAB (a proprietary numerical
+    computing and programming software developed by MathWorks), yet you’ve always
+    programmed in Python. The project consists of classifying images from the **Modified
+    National Institute of Standards and Technology** (**MNIST**) dataset (the original
+    dataset description and related paper can be found here at [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)).
+    The dataset contains numerous handwritten digits and is frequently utilized to
+    teach various image processing systems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To start, I wrote the following Python code to initialize a deep-learning model
+    for classification:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE4]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'Let’s now see what happens if we give the preceding code as context to ChatGPT
+    and ask it to translate it into MATLAB:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 20 – ChatGPT translates Python code into MATLAB](img/Figure_6.20_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 20 – ChatGPT translates Python code into MATLAB
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s also see whether it is capable of translating it into other languages
+    such as JavaScript:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.21 – ChatGPT translates Python code into JavaScript](img/Figure_6.21_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.21 – ChatGPT translates Python code into JavaScript
+  prefs: []
+  type: TYPE_NORMAL
+- en: Code translation could also reduce the skill gap between new technologies and
+    current programming capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another key implication of code translation is **application modernization**.
+    Indeed, imagine you want to refresh your application stack, namely migrating to
+    the cloud. You could decide to initiate with a simple lift and shift going toward
+    **Infrastructure-as-a-Service** (**IaaS**) instances (such as Windows or Linux
+    **virtual machines** (**VMs**)). However, in a second phase, you might want to
+    refactor, rearchitect, or ever rebuild your applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The following diagram depicts the various options for application modernization:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.22 – Four ways you can migrate your applications to the public cloud](img/Figure_6.22_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.22 – Four ways you can migrate your applications to the public cloud
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT and OpenAI Codex models can help you with the migration. Consider mainframes,
+    for example.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Mainframes are computers that are predominantly employed by large organizations
+    to carry out essential tasks such as bulk data processing for activities such
+    as censuses, consumer and industry statistics, enterprise resource planning, and
+    large-scale transaction processing. The application programming language of the
+    mainframe environment is **Common Business Oriented Language** (**COBOL**). Despite
+    being invented in 1959, COBOL is still in use today and is one of the oldest programming
+    languages in existence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As technology continues to improve, applications residing in the realm of mainframes
+    have been subject to a continuous process of migration and modernization aimed
+    at enhancing existing legacy mainframe infrastructure in areas such as interface,
+    code, cost, performance, and maintainability.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, this implies translating COBOL to more modern programming languages
+    such as C# or Java. The problem is that COBOL is unknown to most of the new-generation
+    programmers; hence there is a huge skills gap in this context.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s consider a COBOL script that reads a file of employee records and writes
+    a report of employees who have been with the company for more than 10 years:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE5]'
+  prefs: []
+  type: TYPE_PRE
+- en: 'I then passed the previous COBOL script to ChatGPT so that it can use it as
+    context to formulate its response. Let’s now ask ChatGPT to translate that script
+    into JavaScript:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Figure 6.23 – Example of ChatGPT translating COBOL to JavaScript](img/Figure_6.23_B19904.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Figure 6.23 – Example of ChatGPT translating COBOL to JavaScript
+  prefs: []
+  type: TYPE_NORMAL
+- en: Tools such as ChatGPT can help in reducing the skill gap in this and similar
+    scenarios by introducing a layer that knows both the past and the future of programming.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In conclusion, ChatGPT can be an effective tool for application modernization,
+    providing code upgrading in addition to valuable insights and recommendations
+    for enhancing legacy systems. With its advanced language processing capabilities
+    and extensive knowledge base, ChatGPT can help organizations streamline their
+    modernization efforts, making the process faster, more efficient, and more effective.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note
+  prefs: []
+  type: TYPE_NORMAL
+- en: OpenAI codex models are the engines behind GitHub Copilot. This new capability
+    encompasses many of the use cases we will see in this chapter, such as code generation,
+    autofill, and code optimization.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Summary
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: ChatGPT can be a valuable resource for developers looking to enhance their skills
+    and streamline their workflows. We started by seeing how ChatGPT can generate,
+    optimize, and debug your code, but we also covered further capabilities such as
+    generating documentation alongside your code, explaining your ML models, and translating
+    between different programming languages for application modernization.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whether you’re a seasoned developer or just starting out, ChatGPT offers a powerful
+    tool for learning and growth, reducing the gap between code and natural language.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the next chapter, we will dive deeper into another domain of application
+    where ChatGPT could be a game changer: marketing.'
+  prefs: []
+  type: TYPE_NORMAL

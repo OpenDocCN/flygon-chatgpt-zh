@@ -1,0 +1,1266 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Common Algorithms
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![A close up of a screen  Description automatically generated with low confidence](d2d_images/image003.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Image by [Markus Spiske](https://pixabay.com/users/markusspiske-670330/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1486361) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1486361)
+  prefs: []
+  type: TYPE_NORMAL
+- en: One of my favorite uses for AI is to have it generate code for common algorithms.
+    In this chapter, I will highlight some real-world situations where I have used
+    it to solve common problems.
+  prefs: []
+  type: TYPE_NORMAL
+- en: IIFE
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Do you know what an IIFE is in JavaScript? Well, just ask ChatGPT!
+  prefs: []
+  type: TYPE_NORMAL
+- en: What’s an IIFE in Javascript, why would I need one, and how would I create one?
+  prefs: []
+  type: TYPE_NORMAL
+- en: IIFE stands for Immediately Invoked Function Expression. It is a common design
+    pattern used in JavaScript to create a private scope for your code and avoid polluting
+    the global namespace with variables and functions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You might use an IIFE in situations where you need to encapsulate some code
+    and prevent it from affecting other code on the page. For example, you might use
+    an IIFE to define a module in your application, where the module's code is contained
+    within the IIFE's private scope.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To create an IIFE, you simply define a function expression and wrap it in parentheses
+    to make it an expression. You can then immediately invoke the function by appending
+    a pair of parentheses after it, like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: (function() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // your code here
+  prefs: []
+  type: TYPE_NORMAL
+- en: '})();'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this example, an anonymous function is defined and immediately invoked. The
+    function creates a private scope for the code inside it, preventing any variables
+    or functions declared within it from leaking into the global scope.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that the parentheses around the function expression are necessary, because
+    they cause the function to be interpreted as an expression rather than a declaration.
+    Without these parentheses, the JavaScript parser would interpret the function
+    as a function declaration, which can only be used in certain contexts.
+  prefs: []
+  type: TYPE_NORMAL
+- en: That’s a pretty impressive explanation. It actually gave me a longer explanation,
+    but I pared it down for you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Granted, with TypeScript, we hardly need to use IIFEs anymore. In fact, what
+    if we asked ChatGPT to convert its last IIFE into an equivalent TypeScript class?
+  prefs: []
+  type: TYPE_NORMAL
+- en: What would be the equivalent of that code if we were to use classes in TypeScript
+    instead?
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you were to use classes in TypeScript to achieve a similar result as the
+    IIFE example, you could define a class and use the constructor method to execute
+    your code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here''s an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: class MyClass {
+  prefs: []
+  type: TYPE_NORMAL
+- en: constructor() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // your code here
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: new MyClass();
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this example, the MyClass constructor function is executed immediately when
+    an instance of the class is created using the new keyword.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You could also pass arguments to the constructor method, like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: class MyClass {
+  prefs: []
+  type: TYPE_NORMAL
+- en: constructor(arg1, arg2) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // your code here
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: new MyClass(val1, val2);
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this case, the arguments val1 and val2 are passed to the constructor method
+    as arg1 and arg2, respectively.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Using classes in TypeScript provides additional benefits, such as better type
+    checking and encapsulation, as well as the ability to define public and private
+    members. However, the overall goal of both the IIFE and class examples is the
+    same: to encapsulate your code and prevent it from affecting other code on the
+    page.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice I didn’t have to restate my request, but simply asked it to rewrite “that
+    code.” This is our first example of ChatGPT remembering the context of the conversation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Array Functions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Copilot and ChatGPT are really good at helping manipulate arrays. All you need
+    to do is ask.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Reduce
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: For some reason, I can never remember how to use JavaScript’s reduce function
+    to calculate the sum of the items in an array. GitHub Copilot knew, however. I
+    simply provided a comment of what I wanted to accomplish, and let Copilot do the
+    rest.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider the following array of “puzzles.” This is a I snippet from my game
+    Foreword, a game of word squares.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Partial array of "puzzles" for this example
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'private demoPuzzles: Puzzle[] = ['
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id:88, size: 4, solution: [''abetbabeebontent''] },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id:89, size: 4, solution: [''icedcaveevendent''] },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id:90, size: 8, solution: [''abetracemirestun'', ''armsbaitecruteen''] },'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{ id:91, size: 8, solution: [''cageheaturicmyth'', ''chumaerygaitetch''] }'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '];'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice that some puzzles have one solution, and some have two. My actual array
+    of puzzles has thousands of elements.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now let’s assume I want to count the total number of solutions in my puzzle
+    array. I provided Copilot with a simple comment and let it generate the code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Count the total number of solutions in the demo Puzzle array
+  prefs: []
+  type: TYPE_NORMAL
+- en: const total = this.demoPuzzles.reduce((acc, puzzle) => acc + puzzle.solution.length,
+    0);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Yeah, I could have used a for loop, or looked up the syntax ofArray.reduce,
+    but Copilot did this for me, with nothing more than a comment. To me, that’s productive!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Filter
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Next, imagine I want to find all the puzzles in the array of size 4\. I gave
+    Copilot the first comment. It then proceeded to write the second comment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: //  Find all puzzles with a size of 4
+  prefs: []
+  type: TYPE_NORMAL
+- en: //  Find all puzzles with a size of 8
+  prefs: []
+  type: TYPE_NORMAL
+- en: It was able to do this because it knows the context of the application and can
+    see what else I’m doing. By recognizing some of the puzzles were size 4 and some
+    size 8, it offered the second comment. What happened next surprised me. Instead
+    of giving me the array filter function I was expecting, it gave me this.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'public findPuzzlesBySize(size: number): Puzzle[] {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return this.demoPuzzles.filter(puzzle => puzzle.size === size);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: That’s right. It gave me a generic function to find puzzles by any size.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When I gave the same prompt to ChatGPT, it went in a slightly different direction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given an array that looks like the following array, find all puzzles of size
+    4 or 8\. (I then pasted the puzzles array).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To find all puzzles of size 4 or 8, you can use the filter method on the demoPuzzles
+    array and provide a callback function that checks the size of each puzzle:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const filteredPuzzles = demoPuzzles.filter(puzzle => puzzle.size === 4 || puzzle.size
+    === 8);
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will return a new array that contains only the puzzles that have a size
+    of 4 or 8.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You could also use the forEach method and check the size of each puzzle, then
+    push the matching puzzles into a new array:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const filteredPuzzles = [];
+  prefs: []
+  type: TYPE_NORMAL
+- en: demoPuzzles.forEach(puzzle => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: if (puzzle.size === 4 || puzzle.size === 8) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: filteredPuzzles.push(puzzle);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This achieves the same result as the filter method.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In either case, the resulting filteredPuzzles array will contain only the puzzles
+    of size 4 or 8.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this case, ChatGPT took me literally, giving me a way to find puzzles of
+    either size 4 or of size 8\. The odd thing is that the code it gave me will produce
+    an array with the identical contents as the original, which is not at all helpful.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Copilot, on the other hand, gave me code that was closer to what I needed. Consider
+    that a win for Copilot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sort
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: What if I wanted to sort the array? I know that JavaScript has a sort function
+    and that it takes a call-back function that describes how the sort should be done.
+    But maybe I can’t quite remember the syntax.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Asking Copilot to sort my array of puzzles with the larger (size 8) puzzles
+    at the beginning, gave me this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Sort the puzzles by size, with the largest first
+  prefs: []
+  type: TYPE_NORMAL
+- en: puzzles = this.demoPuzzles.sort((a, b) => b.size - a.size);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice that this time, Copilot simply gave me a one-liner instead of a complete
+    function. In my experience, this is more consistent with how Copilot usually responds.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT offered me this response.
+  prefs: []
+  type: TYPE_NORMAL
+- en: const sortedPuzzles = demoPuzzles.sort((a, b) => b.size - a.size);
+  prefs: []
+  type: TYPE_NORMAL
+- en: This will return a new array that contains the puzzles sorted by size, with
+    the largest first.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this example, the sort method takes a callback function that compares the
+    size property of the a and b objects. By subtracting a.size from b.size, we ensure
+    that the puzzles are sorted in descending order based on size.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The two functions are identical, which is good sign. I still love that ChatGPT
+    offers an explanation for its suggestions, whereas Copilot assumes you only need
+    it to write the code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Array as a Stack or a Queue
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Sometimes we want to implement a stack or a queue with arrays. Copilot and ChatGPT
+    can help with that also.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT gave me a complete set of strongly typed TypeScript functions when
+    I asked it to do so:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generate a set of strongly typed TypeScript functions to treat the array like
+    a stack or queue.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'type Puzzle = { id: number; size: number; solution: string[] };'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'function pushToStack(stack: Puzzle[], puzzle: Puzzle): Puzzle[] {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return [...stack, puzzle];
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'function popFromStack(stack: Puzzle[]): [Puzzle | undefined, Puzzle[]] {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const poppedPuzzle = stack[stack.length - 1];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const newStack = stack.slice(0, stack.length - 1);
+  prefs: []
+  type: TYPE_NORMAL
+- en: return [poppedPuzzle, newStack];
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'function enqueue(queue: Puzzle[], puzzle: Puzzle): Puzzle[] {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return [...queue, puzzle];
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'function dequeue(queue: Puzzle[]): [Puzzle | undefined, Puzzle[]] {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const dequeuedPuzzle = queue[0];
+  prefs: []
+  type: TYPE_NORMAL
+- en: const newQueue = queue.slice(1);
+  prefs: []
+  type: TYPE_NORMAL
+- en: return [dequeuedPuzzle, newQueue];
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As usual, it provided a complete explanation for each function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Copilot was far more concise, though it wrote every line after my first comment
+    (including the new comments).
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to add a new puzzle to the list of puzzles like a queue
+  prefs: []
+  type: TYPE_NORMAL
+- en: addPuzzle() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'this.demoPuzzles.push({ id: 92, size: 4, solution: [''cageheaturicmyth'', ''chumaerygaitetch'']
+    });'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to remove a puzzle from the list of puzzles like a queue
+  prefs: []
+  type: TYPE_NORMAL
+- en: removePuzzle() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.demoPuzzles.pop();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to add a new puzzle to the list of puzzles like a stack
+  prefs: []
+  type: TYPE_NORMAL
+- en: pushPuzzle() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'this.demoPuzzles.unshift({ id: 92, size: 4, solution: [''cageheaturicmyth'',
+    ''chumaerygaitetch''] });'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to remove a puzzle from the list of puzzles like a stack
+  prefs: []
+  type: TYPE_NORMAL
+- en: popPuzzle() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.demoPuzzles.shift();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice that it did not try to create a new Puzzle type for me. It knew I already
+    had data and only gave me what I needed in context of my application.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What it got totally wrong, however, was assuming I wanted a hard-coded puzzle
+    literal (and an invalid one at that) instead of giving the function a Puzzle parameter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fortunately, all Copilot needs to fix that incorrect assumption is a reworded
+    comment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to add a new puzzle to the list of puzzles like a queue,
+  prefs: []
+  type: TYPE_NORMAL
+- en: // which takes a strongly typed Puzzle object as a parameter
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'addPuzzle(puzzle: Puzzle) {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.demoPuzzles.push(puzzle);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It got the rest of the functions right, but for this example, I didn’t think
+    I needed to show all the code again.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Array to Hash
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: In one of my projects, I queried a remote web service to retrieve customer and
+    sales information, which was returned in data structure that looked something
+    like the following.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"orders": ['
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"id": "order1",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"customerName": "John Smith",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"productName": "Shirt",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"quantity": 2,'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"price": 25'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '},'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"id": "order2",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"customerName": "Jane Doe",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"productName": "Pants",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"quantity": 1,'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"price": 40'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '},'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '{'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"id": "order3",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"customerName": "Bob Johnson",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"productName": "Socks",'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"quantity": 3,'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"price": 10'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ']'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice that orders is an array, with each order being a self-contained object
+    in the array. Now imagine that there are hundreds or thousands of such orders.
+    If I wanted to grab just order72, I would have to traverse the entire array. If
+    the data structure were a hash instead, with each order having its id as the key,
+    it would be much simpler (and faster) to get any arbitrary element.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I could very quickly come up with code that loops through the entire array and
+    generates a new hash object, but this is the sort of mundane task at which ChatGPT
+    excels. This is the prompt I gave it, followed by the code it produced.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT offered to use the reduce function, which honestly never occurred to
+    me. As I told you before, it’s not a function that I’m good at. It’s one of my
+    (many?) blind spots.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I have an array in TypeScript with the following shape. (I pasted the above
+    JSON here). I want to convert it from an array to a hash array so that can address
+    each object by its "id".
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can convert the array to a hash array by using the reduce method and creating
+    a new object with the "id" property as the key. Here''s an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const hashArray = orders.reduce((acc, config) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: acc[config.id] = config;
+  prefs: []
+  type: TYPE_NORMAL
+- en: return acc;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}, {});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Now you can access each object by its "id" like this: hashArray["order2"].'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I then further refined it by asking for a standalone function, which it created
+    for me (not shown).
+  prefs: []
+  type: TYPE_NORMAL
+- en: String Manipulation
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Do you find yourself manipulating text often? I know I do. Extracting smaller
+    bits of text from long inputs, determining whether one string exists inside another,
+    dealing with padding, etc. Those sorts of things are reasonably straightforward,
+    but I prefer not to type this stuff if I don’t have to.
+  prefs: []
+  type: TYPE_NORMAL
+- en: String searches
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Consider the problem of finding every occurrence of a word inside a longer string.
+    How would ChatGPT approach it?
+  prefs: []
+  type: TYPE_NORMAL
+- en: const text = "The quick brown fox jumps over the lazy dog.";
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Find all occurrences of the substring "the" (case-insensitive)
+  prefs: []
+  type: TYPE_NORMAL
+- en: const substring = /the/gi;
+  prefs: []
+  type: TYPE_NORMAL
+- en: const matches = text.match(substring);
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Print the matches
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(matches);
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT went directly to regular expressions. I’ll dive deeper into regexes
+    later in the book.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Copilot also used a regular expression, but it went in an entirely different
+    direction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: const regex = /the/gi;
+  prefs: []
+  type: TYPE_NORMAL
+- en: let m;
+  prefs: []
+  type: TYPE_NORMAL
+- en: while ((m = regex.exec(text)) !== null) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // This is necessary to avoid infinite loops with zero-width matches
+  prefs: []
+  type: TYPE_NORMAL
+- en: if (m.index === regex.lastIndex) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: regex.lastIndex++;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // The result can be accessed through the `m`-variable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: m.forEach((match, groupIndex) => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'console.log(`Found match, group ${groupIndex}: ${match}`);'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In all honesty, I’m not entirely sure I understand what Copilot gave me there.
+    For fun, I pasted Copilot’s code sample into ChatGPT and asked it to explain it
+    to me. This is what it said.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This JavaScript code finds all occurrences of the substring "the" in a given
+    piece of text using regular expressions, and logs the matches to the console.
+    Here''s a breakdown of how it works:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const regex = /the/gi; - This line creates a regular expression regex that matches
+    the substring "the" with the /the/ syntax. The g and i flags are used to perform
+    a global search and a case-insensitive search, respectively.
+  prefs: []
+  type: TYPE_NORMAL
+- en: let m; - This line declares a variable m without initializing it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: while ((m = regex.exec(text)) !== null) { - This line sets m to the result of
+    calling the regex.exec(text) method, which returns an array of information about
+    the next match of the regular expression in the text string. The while loop continues
+    as long as m is not null.
+  prefs: []
+  type: TYPE_NORMAL
+- en: if (m.index === regex.lastIndex) { regex.lastIndex++; } - This line checks whether
+    the match is a zero-width match (i.e., an empty string), and if so, increments
+    the lastIndex property of the regex object to avoid an infinite loop.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'm.forEach((match, groupIndex) => { console.log(Found match, group ${groupIndex}:
+    ${match}); }); - This line loops through each match in the m array using the forEach()
+    method, and logs each match and its group index to the console using a template
+    literal.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overall, this code is a more advanced version of the previous code examples,
+    using the regex.exec() method to iterate over each match and access its properties.
+    The use of forEach() allows for more fine-grained control over the output and
+    provides access to the match's group index, which can be useful when working with
+    more complex regular expressions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Do you see what it did? Read that final paragraph carefully. ChatGPT recognized
+    that the code I pasted from Copilot was related to my original question, and then
+    explained that it was a more advanced example of the same concept. Truly amazing!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Removing whitespace
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Sometimes, you may be faced with a lengthy piece of text with too much whitespace.
+    Given such a string, how would you remove its excess whitespace, while preserving
+    the important text?
+  prefs: []
+  type: TYPE_NORMAL
+- en: For this example, I asked ChatGPT to generate some sample “lorem ipsum” text
+    with lots of extra whitespace.
+  prefs: []
+  type: TYPE_NORMAL
+- en: const loremIpsumWithWhitespace = `
+  prefs: []
+  type: TYPE_NORMAL
+- en: Lorem ipsum  dolor sit amet, consectetur adipiscing elit.  Fusce molestie turpis 
+    nec  felis malesuada accumsan. Vestibulum  tincidunt lacus nec nulla dignissim
+    blandit. Morbi tristique, enim eu imperdiet luctus, nisl turpis aliquam nunc, 
+    eu interdum purus  velit  quis velit.  Curabitur vel semper tellus,  at iaculis
+    lectus.  Morbi sed lectus  ac nibh eleifend tristique.  Praesent sagittis elit
+    vel dui consequat,  eu maximus purus molestie. Integer varius  pharetra odio,
+    non vestibulum urna lobortis et.  Sed et eleifend lorem, quis mollis ipsum.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pellentesque  consectetur  mauris sed risus laoreet,  vel malesuada augue convallis. 
+    Nullam vestibulum commodo metus, id tristique est suscipit id. Etiam pretium sagittis
+    malesuada.  Vivamus sit amet mi lorem.  Etiam hendrerit euismod libero, nec  accumsan
+    massa laoreet vel.  Donec  viverra felis et urna fringilla, non convallis tellus
+    egestas. Suspendisse faucibus quam in erat sagittis  dignissim. Duis maximus risus
+    sit amet eros bibendum feugiat.`;
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next, I asked for a generic function that would accept that type of input and
+    return the string with all the insignificant whitespace removed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: function removeInsignificantWhitespace(text) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Replace all whitespace characters with a single space
+  prefs: []
+  type: TYPE_NORMAL
+- en: const stripped = text.replace(/\s+/g, " ");
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Remove leading/trailing spaces and line breaks
+  prefs: []
+  type: TYPE_NORMAL
+- en: return stripped.trim();
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This function works by first using a regular expression (/\s+/g) to match all
+    occurrences of one or more whitespace characters (spaces, tabs, line breaks, etc.)
+    and replacing them with a single space character using the replace() method.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The resulting string is then passed to the trim() method, which removes any
+    leading or trailing spaces or line breaks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This ensures that the final output contains only the necessary whitespace characters
+    (e.g., spaces between words) and no unnecessary ones.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For Copilot’s test, I started with the long JavaScript constant from before
+    and gave it a similar prompt. Its result was a little terser.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to remove all the whitespace from a string
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'function removeWhitespace(text: string) {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return text.replace(/\s/g, '');
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: What’s amusing about Copilot’s result is that it suggested its own comment after
+    I pasted in the lengthy text. Always remember that Copilot’s strength is in its
+    awareness of your entire application.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whitespace Padding
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Now, let’s consider the puzzle array. If I wanted to generate some pretty formatting
+    using only text in a fixed-width font, how might I do that? ChatGPT gave me the
+    following function, along with a sample of what the output would look like:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const printTable = (puzzles: Puzzle[]): void => {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log('ID  Size  Solution');
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log('——————————-');
+  prefs: []
+  type: TYPE_NORMAL
+- en: puzzles.forEach(puzzle => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(`${puzzle.id.toString().padEnd(4, ' ')}${puzzle.size.toString().padEnd(6,
+    ' ')}${puzzle.solution[0]}`);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '};'
+  prefs: []
+  type: TYPE_NORMAL
+- en: printTable(demoPuzzles);
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This code will output the demoPuzzles array as a table with fixed-width font,
+    like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ––––––––
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/scene_break.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: ID  Size  Solution
+  prefs: []
+  type: TYPE_NORMAL
+- en: ——————————-
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/scene_break.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 88  4  abetbabeebontent
+  prefs: []
+  type: TYPE_NORMAL
+- en: 89  4  icedcaveevendent
+  prefs: []
+  type: TYPE_NORMAL
+- en: 90  8  abetracemirestun
+  prefs: []
+  type: TYPE_NORMAL
+- en: 91  8  cageheaturicmyth
+  prefs: []
+  type: TYPE_NORMAL
+- en: Copilot gave me something different, but I think in this case it cheated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Print the puzzles array as a table, using only text, suitable for output
+    with a fixed-width font.
+  prefs: []
+  type: TYPE_NORMAL
+- en: printPuzzles() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: let puzzleTable = this.demoPuzzles.map(p => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'return { id: p.id, size: p.size, solution: p.solution.join('' '') };'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.table(puzzleTable);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Technically, console.table will do exactly what I asked, so in that respect
+    was correct. I decided to give it another hint to see if I could get it to write
+    something closer to what ChatGPT did.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Print the puzzles array as a table, using only text, suitable for output
+    with a fixed-width font, using console.log.
+  prefs: []
+  type: TYPE_NORMAL
+- en: printPuzzles() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Get the longest puzzle id, so we can pad the id column to align the puzzle
+    data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: const longestId = this.demoPuzzles.reduce((longest, puzzle) => Math.max(longest,
+    puzzle.id.toString().length), 0);
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Print the header row.
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(`id${' '.repeat(longestId - 2)} | size | solution`);
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log('-'.repeat(longestId + 2) + '-+-' + '-'.repeat(5) + '-+-' + '-'.repeat(16));
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Print the puzzle rows.
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.demoPuzzles.forEach(puzzle => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(`${puzzle.id}${' '.repeat(longestId - puzzle.id.toString().length)}
+    | ${puzzle.size} | ${puzzle.solution.join(' ')}`);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It did a better job on the second pass. What do you think? I like the fact that
+    it looks for the longest id so that I can pad the columns correctly. That was
+    a nice touch.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generating CSV Files
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: What if I wanted to output the array as a comma-separated file instead? Copilot
+    gave me almost the same code as above, but with some extra logic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Generate a CSV file containing the puzzles array
+  prefs: []
+  type: TYPE_NORMAL
+- en: generateCsv() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Create a CSV file, with a header row, and a row for each puzzle.
+  prefs: []
+  type: TYPE_NORMAL
+- en: const csv = 'id,size,solution\r\n' + this.demoPuzzles.map(puzzle => `${puzzle.id},${puzzle.size},"${puzzle.solution.join('
+    ')}"`).join('\r\n');
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Write the CSV file to disk.
+  prefs: []
+  type: TYPE_NORMAL
+- en: require('fs').writeFileSync('puzzles.csv', csv);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: One of the dangers in relying on an AI to do the work for you is that it might
+    create buggy code that looks reasonable. In this case, if any of my fields contained
+    commas, the output generated by this function would most likely be unreadable
+    as a CSV file.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT gave me almost the same code, except that it accounted for potential
+    commas in my puzzle fields.
+  prefs: []
+  type: TYPE_NORMAL
+- en: import * as fs from 'fs';
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'const generateCSV = (puzzles: Puzzle[]): void => {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const header = 'id,size,solution\n';
+  prefs: []
+  type: TYPE_NORMAL
+- en: const rows = puzzles.map(puzzle => `${puzzle.id},${puzzle.size},"${puzzle.solution.join(';')}"\n`);
+  prefs: []
+  type: TYPE_NORMAL
+- en: const csv = header + rows.join('');
+  prefs: []
+  type: TYPE_NORMAL
+- en: fs.writeFileSync('puzzles.csv', csv);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '};'
+  prefs: []
+  type: TYPE_NORMAL
+- en: generateCSV(demoPuzzles);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Notice that both solutions assumed I’m using Node, in that each solution uses
+    the fs library. ChatGPT took extra care to inform me that I would need the fs
+    module from NodeJS.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that in order to run this code, you will need to have the fs module and
+    the Node.js runtime installed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generate HTML
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: I could also ask it to generate HTML for me. ChatGPT did exactly what I asked
+    it to, again remembering the shape of my puzzles array and objects.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a function in JavaScript that will output the puzzles array as an HTML
+    table
+  prefs: []
+  type: TYPE_NORMAL
+- en: function printTable(puzzles) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const table = document.createElement('table');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const headerRow = document.createElement('tr');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const idHeader = document.createElement('th');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const sizeHeader = document.createElement('th');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const solutionHeader = document.createElement('th');
+  prefs: []
+  type: TYPE_NORMAL
+- en: idHeader.textContent = 'ID';
+  prefs: []
+  type: TYPE_NORMAL
+- en: sizeHeader.textContent = 'Size';
+  prefs: []
+  type: TYPE_NORMAL
+- en: solutionHeader.textContent = 'Solution';
+  prefs: []
+  type: TYPE_NORMAL
+- en: headerRow.appendChild(idHeader);
+  prefs: []
+  type: TYPE_NORMAL
+- en: headerRow.appendChild(sizeHeader);
+  prefs: []
+  type: TYPE_NORMAL
+- en: headerRow.appendChild(solutionHeader);
+  prefs: []
+  type: TYPE_NORMAL
+- en: table.appendChild(headerRow);
+  prefs: []
+  type: TYPE_NORMAL
+- en: puzzles.forEach(puzzle => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const row = document.createElement('tr');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const idCell = document.createElement('td');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const sizeCell = document.createElement('td');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const solutionCell = document.createElement('td');
+  prefs: []
+  type: TYPE_NORMAL
+- en: idCell.textContent = puzzle.id;
+  prefs: []
+  type: TYPE_NORMAL
+- en: sizeCell.textContent = puzzle.size;
+  prefs: []
+  type: TYPE_NORMAL
+- en: solutionCell.textContent = puzzle.solution.join(';');
+  prefs: []
+  type: TYPE_NORMAL
+- en: row.appendChild(idCell);
+  prefs: []
+  type: TYPE_NORMAL
+- en: row.appendChild(sizeCell);
+  prefs: []
+  type: TYPE_NORMAL
+- en: row.appendChild(solutionCell);
+  prefs: []
+  type: TYPE_NORMAL
+- en: table.appendChild(row);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: document.body.appendChild(table);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: printTable(demoPuzzles);
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here I think it may have outdone itself. I was expecting to see a bunch of hard-coded
+    strings with HTML characters. I didn’t expect it to use DOM manipulation, but
+    of course, that might be the better solution in many cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Would Copilot do as well? Actually, it did what I expected originally.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to output the puzzles array as an HTML table
+  prefs: []
+  type: TYPE_NORMAL
+- en: printPuzzlesAsHtml() {
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Get the longest puzzle id, so we can pad the id column to align the puzzle
+    data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: const longestId = this.demoPuzzles.reduce((longest, puzzle) => Math.max(longest,
+    puzzle.id.toString().length), 0);
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Print the header row.
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log('<table>');
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log('<tr><th>id</th><th>size</th><th>solution</th></tr>');
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Print the puzzle rows.
+  prefs: []
+  type: TYPE_NORMAL
+- en: this.demoPuzzles.forEach(puzzle => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log(`<tr><td>${puzzle.id}</td><td>${puzzle.size}</td><td>${puzzle.solution.join('
+    ')}</td></tr>`);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: console.log('</table>');
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: That doesn’t mean it is incapable of using the DOM API. All I had to do was
+    change my prompt a bit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function that uses the DOM API to output the puzzles array as an HTML table
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'private outputPuzzles(puzzles: Puzzle[]): void {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: const table = document.createElement('table');
+  prefs: []
+  type: TYPE_NORMAL
+- en: const header = document.createElement('tr');
+  prefs: []
+  type: TYPE_NORMAL
+- en: header.innerHTML = '<th>ID</th><th>Size</th><th>Solution</th>';
+  prefs: []
+  type: TYPE_NORMAL
+- en: table.appendChild(header);
+  prefs: []
+  type: TYPE_NORMAL
+- en: puzzles.forEach(puzzle => {
+  prefs: []
+  type: TYPE_NORMAL
+- en: const row = document.createElement('tr');
+  prefs: []
+  type: TYPE_NORMAL
+- en: row.innerHTML = `<td>${puzzle.id}</td><td>${puzzle.size}</td><td>${puzzle.solution}</td>`;
+  prefs: []
+  type: TYPE_NORMAL
+- en: table.appendChild(row);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '});'
+  prefs: []
+  type: TYPE_NORMAL
+- en: document.body.appendChild(table);
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’m not sure that’s any better. It ended up building me a hybrid of DOM calls
+    and HTML string literals. That’s the thing about these AIs; you often have to
+    try the same thing more than once to get the code you’re looking for.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusion
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This chapter focused primarily on array and string manipulation, which is what
+    most of my day-to-day work entails. You may have different algorithms you work
+    with regularly. Rest assured that either of these tools will save you a lot of
+    typing. The important thing to keep in mind is that the prompt is just as important
+    as the language you ask them to use.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also, as you’ve seen, sometimes you have to try multiple prompts to get the
+    right code. Finally, make sure you validate the correctness of the code. Either
+    tool can create code that looks great but doesn’t account for edge cases.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Remember that at the end of the day, you’re the programmer, not the AI.
+  prefs: []
+  type: TYPE_NORMAL

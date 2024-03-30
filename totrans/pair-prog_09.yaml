@@ -1,0 +1,448 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Agile Project Management
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![image](d2d_images/image004.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Image by [14995841](https://pixabay.com/users/14995841-14995841/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4784909) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4784909)
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’m going to make an admission here. I am not a fan of project management tasks.
+    I don’t like creating stories, grooming stories, doing project estimates, etc.
+    I want to build working code and do it as fast as possible.
+  prefs: []
+  type: TYPE_NORMAL
+- en: However, I do recognize the value of project management tasks. That’s where
+    AI comes into play. AI can help make the process a little simpler and more pleasant
+    by automating certain aspects of the project management process. For example,
+    AI-powered tools can assist with story grooming by creating comprehensive user
+    acceptance criteria.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This gets these tasks off my plate as quickly as possible, so that I can get
+    to the more interesting job of delivering software. In this chapter, I’ll show
+    you how I use ChatGPT for project planning.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note, GitHub Copilot is not really suitable for this type of usage, but I’ll
+    get back to using it when it’s time to write some code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Project Concept
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: I started by describing an application to ChatGPT. The application in question
+    is the demo application from many of books and video courses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The application will store and manage the attendance for a single classroom.
+    It will store the names and contact information for the class roster and the students’
+    parents. It will provide a way to add, edit, and remove students, as well as the
+    ability to mark the students absent or present for a given day. The app will run
+    on both desktop web, iOS, and Android. It will also connect to the device's camera
+    to add a photograph of each student.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I gave that description to ChatGPT and asked it “to write a marketing summary
+    for it.” Here is its reply.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '"Attendance Manager" is a multi-platform app that simplifies classroom attendance
+    management. With its easy-to-use interface, you can quickly store and manage the
+    names, contact information, and attendance records of students and their parents.
+    The app features a photo capturing capability, which makes student identification
+    quick and effortless. Whether you are on a desktop computer or a mobile device,
+    Attendance Manager ensures that you have access to your class roster and attendance
+    records anytime, anywhere. Experience the ease and convenience of attendance management
+    with Attendance Manager!'
+  prefs: []
+  type: TYPE_NORMAL
+- en: How great is that!? Beginning with a dry application description, I got a decent
+    description suitable for use as a starting point for a market brochure. More importantly
+    for my purposes is that I can then build on that to help with the rest of the
+    project plan.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Epics and User Stories
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Next, I asked ChatGPT to use that description to generate my epics and user
+    stories for this admittedly simple application.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given that description, create a few agile epics that will help direct the development
+    of the application. I envision three different visual screens for the application.
+    A home page, a roster page, and a student details page. Add those to the epics
+    and stories.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Student Information Management:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic: Manage Student Information'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to be able to add, edit, and remove students and their
+    parents' contact information in the system.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to be able to view a class roster and search for specific
+    students.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story: Create Student Details Page'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to navigate to the student details page from the roster
+    page to add, edit, or remove student information.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to view a student's photo, name, and contact information
+    on the student details page.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Attendance Management:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic: Manage Student Attendance'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to be able to mark students as absent or present for
+    a given day.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to view the attendance records for a specific date range
+    or for an individual student.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story: Create Roster Page'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to view the class roster and mark students as absent
+    or present on the roster page.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to view the attendance records for each student on the
+    roster page.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Multi-platform Support:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic: Ensure Cross-platform Compatibility'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to use the application on a desktop computer, iOS device,
+    or Android device.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want the application to have a responsive design that adjusts
+    to different screen sizes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story: Create Home Page'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to view the class roster and navigate to the roster
+    and student details pages from the home page.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want the home page to display on all devices with a responsive
+    design.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Photo Capturing:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Epic: Associate Photos with Student Profiles'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to take photos of students using the device's camera
+    and associate the photos with their respective profiles.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to be able to view the photos of students when I am
+    marking attendance or viewing the class roster.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Story: Add Photo Capturing Capability'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to be able to access the device's camera from the student
+    details page to take photos of students.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   As a teacher, I want to be able to associate a photo with a student's profile
+    on the student details page.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is more than I would have come up with on my own, and the user stories
+    are easily good enough to get started planning the project. Keep in mind that
+    this took a only a few seconds.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next, let’s see what happened when I asked for some user acceptance criteria
+    for these stories. I won’t show them all here, just enough to give you an idea
+    of what it does.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generate some user acceptance criteria for the stories in epic 1 using the "given,
+    when, then" syntax
+  prefs: []
+  type: TYPE_NORMAL
+- en: Manage Student Information - Create Student Details Page
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given that I am a teacher using the application, when I navigate to the student
+    details page from the roster page, then I should see an interface to add, edit,
+    or remove student information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Acceptance Criteria:'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The student details page is accessible from the roster page.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The interface displays the student's photo.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The interface includes fields for the student's name, contact information,
+    and photo.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The interface allows the teacher to add a new student, edit existing student
+    information, and remove a student.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The changes made in the interface are saved in the system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Manage Student Information - View Class Roster
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given that I am a teacher using the application, when I view the class roster,
+    then I should see a list of all students in the class and their contact information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Acceptance Criteria:'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The class roster is accessible from the home page.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The roster displays the student's photo, name, and contact information.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The roster allows the teacher to search for a specific student.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The roster is sorted alphabetically by student name.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   Manage Student Information - Search for Specific Students
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given that I am a teacher using the application, when I search for a specific
+    student on the class roster, then I should see the matching students and their
+    contact information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Acceptance Criteria:'
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The teacher can initiate a search on the class roster page.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The search matches the student name, photo, and contact information with
+    the search query.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The search results are displayed in a list format.
+  prefs: []
+  type: TYPE_NORMAL
+- en:   The search results are sorted alphabetically by student name.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT took care of one of the most tedious tasks in software development,
+    at least from where I’m sitting. Is it perfect? Not at all. There are features
+    and acceptance criteria I never asked for. I didn’t say anything about a search
+    feature, but ChatGPT added it to my application. That doesn’t mean I have to add
+    it.
+  prefs: []
+  type: TYPE_NORMAL
+- en: There are a couple of ways to look at this. One is that it just suggested a
+    feature I hadn’t considered, but maybe should. The other is that I can simply
+    ignore it or ask ChatGPT to regenerate the UAC without the search feature. Either
+    way is a win for me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It also didn’t write each of the acceptance criteria using “Given/when/then,”
+    but otherwise I’m happy with what it gave me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the way, I did ask it to generate UAC without using the term “user acceptance
+    criteria.” It tried to create “user access control” instead, which was a very
+    different result.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Estimations
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: If there is a task most developers dislike more than generating stories and
+    acceptance criteria, it would have to be estimations. Fortunately, I was able
+    to get ChatGPT to manage that for me as well, at least partially, using T-Shirt
+    sizing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: T-Shirt Sizing
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: In case you aren’t familiar with the concept, T-Shirt sizing is a method of
+    estimation that assigns relative sizes to tasks or features based on their perceived
+    level of difficulty. The sizing is usually done using a set of labels, such as
+    XS (extra small), S (small), M (medium), L (large), XL (extra-large), and so on,
+    to indicate the relative size of each task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The exact labels and their meanings may vary between organizations, but the
+    goal is to provide a rough, relative estimate that can be used for planning and
+    prioritization purposes. The method is named after the idea of T-shirts being
+    different sizes, with a small T-shirt being easier to handle than a large one.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'With that understanding, I asked ChatGPT:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Given the relative difficulties of those tasks and their UAC, generate a rough
+    relative estimate for each using T-shirt sizing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Manage Student Information - Create Student Details Page
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Size: Medium'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The task of creating the student details page involves adding and editing student
+    information, which is relatively straightforward but requires a user-friendly
+    interface. The user acceptance criteria (UAC) also include saving changes made
+    in the interface, which requires a functional back-end. Therefore, this task is
+    estimated to be a medium-sized task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Manage Student Information - View Class Roster
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Size: Small'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The task of creating the class roster page involves displaying a list of students
+    and their contact information, which is a relatively simple task. The UAC includes
+    sorting the list alphabetically and allowing the teacher to search for specific
+    students, which are additional features that can be added with minimal effort.
+    Therefore, this task is estimated to be a small-sized task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Manage Student Information - Search for Specific Students
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Size: Small'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The task of adding a search functionality to the class roster page involves
+    matching student information with the search query and displaying the results.
+    This is a relatively simple task that can be implemented with minimal effort.
+    Therefore, this task is estimated to be a small-sized task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What impressed me about the response is that it attempted to justify its estimates.
+    With this as a starting point, I would feel a lot more comfortable creating some
+    estimates for management. If nothing else, it gives the team a place to begin
+    a longer discussion.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fibonacci Estimates
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: While T-Shirt Sizing is often enough for the development team, management typically
+    wants something a little more concrete. My team uses Fibonacci values.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The idea behind using Fibonacci numbers is that each number represents a rough
+    estimate of the amount of effort required to complete a task or feature, and the
+    gap between each number becomes progressively larger as the estimate becomes larger.
+    This helps to avoid the use of overly precise estimates, which can be difficult
+    to achieve and lead to unachievable expectations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This method allows for the estimation of tasks with a high degree of uncertainty,
+    where the exact effort required is not known. By using a set of standardized values,
+    teams can make rough estimates that are consistent and easily understood across
+    the organization.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I asked ChatGPT to rewrite its T-Shirt estimates as Fibonacci instead. It generated
+    almost the same text as before, but with different values. I’m showing just those
+    values here.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Manage Student Information - Create Student Details Page
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Estimate: 5'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Manage Student Information - View Class Roster
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Estimate: 3'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Manage Student Information - Search for Specific Students
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Estimate: 2'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Did you spot the difference? Using T-Shirt sizing, the estimates were “medium,”
+    “small,” and “small.” Using Fibonacci values, ChatGPT decided that searching for
+    students was a little simpler than viewing the class roster.
+  prefs: []
+  type: TYPE_NORMAL
+- en: That type of awareness is common for developers, but I didn’t expect it from
+    the AI.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Summary
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: ChatGPT can be used to write concise and clear marketing summaries, create agile
+    epics and user stories, generate user acceptance criteria, and provide rough estimates.
+    It can help streamline the process by providing fast and accurate responses. The
+    use of ChatGPT in in this way can help you achieve greater efficiency and consistency,
+    especially if (like me) you don’t particularly care for these tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I’ve been using this strategy personally and as a result, I’m enjoying the process
+    more than ever before. I find staring at a blank screen to be hard, but I don’t
+    mind rephrasing and refining the output ChatGPT gives me for these tasks.
+  prefs: []
+  type: TYPE_NORMAL

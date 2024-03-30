@@ -1,0 +1,968 @@
+- en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '![image](d2d_images/chapter_title_above.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: Regular Expressions
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![image](d2d_images/chapter_title_below.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![Teacher at a chalkboard instructing students](d2d_images/image018.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Image by Author and OpenAI
+  prefs: []
+  type: TYPE_NORMAL
+- en: Input validation is a critical component of ensuring data integrity and preventing
+    security vulnerabilities. However, crafting effective regular expressions (regexes)
+    can be a time-consuming and challenging task. That's where Copilot and ChatGPT
+    come in. In this chapter, I set out to explore how well they could generate regexes
+    for input validation using nothing more than a simple prompt in the form of a
+    comment. Read on to discover my findings and the surprising effectiveness of this
+    AI-powered tool.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Regex 101 Site
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'I decided to use an existing regex website to help me test what Copilot provided:[regex101:
+    build, test, and debug regex](https://regex101.com/). ([https://regex101.com](https://regex101.com))'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This site lets me choose what type of regular expression to test and has some
+    really cool error detection and debugging features.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Email Address
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The first thing that came to mind is evaluating a string to see if it is a valid
+    email address.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I asked Copilot to make an email pattern for me inside a TypeScript file. This
+    is what it gave me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Email regex
+  prefs: []
+  type: TYPE_NORMAL
+- en: emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'It looks clever, but does it work? Dropping that into [regex101.com](http://regex101.com/),
+    I was able to test some emails fairly quickly. Here are some other email addresses
+    I tried:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Matched
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '[mike@company.com](mailto:mike@company.com)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[mike@company.co.uk](mailto:mike@company.co.uk)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[x@y.com](mailto:x@y.com)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[mike@x.cc](mailto:mike@x.cc)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not Matched
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: mike@localhost
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[mike@10.0.0.1](mailto:mike@10.0.0.1)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: mike@x.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Bill
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first two of those are valid, but Copilot’s regex failed to match them.
+    Would ChatGPT do any better?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Give me a regular expression to validate an email address
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+  prefs: []
+  type: TYPE_NORMAL
+- en: This one looks nothing like what Copilot gave me. Does it do any better with
+    my test email addresses? As it turns out, it matched exactly the same. ChatGPT
+    provided a lengthy explanation of the regex it gave me, which I won’t reproduce
+    here. Suffice it to say that it was complete.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, they aren’t bad, but I’m wondering how they stack up to the professionals.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'According to a [an article I found on the most comprehensive email regex](https://www.abstractapi.com/guides/email-address-pattern-validation),
+    this is “the best” email pattern:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|"([]!#-[^-~ \t]|(\\[\t -~]))+")@([0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?(\.[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?)*|\[((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|IPv6:((((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){6}|::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){5}|[0-9A-Fa-f]{0,4}::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){4}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):)?(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){3}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,2}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){2}|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,3}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,4}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::)((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3})|(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3})|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,5}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3})|(((0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}):){0,6}(0|[1-9A-Fa-f][0-9A-Fa-f]{0,3}))?::)|(?!IPv6:)[0-9A-Za-z-]*[0-9A-Za-z]:[!-Z^-~]+)])
+  prefs: []
+  type: TYPE_NORMAL
+- en: That’s a 1240-character regex! It looks nothing like the one the AIs gave me.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This one did much better, including matching two valid email addresses from
+    the above list that the first regex did not.
+  prefs: []
+  type: TYPE_NORMAL
+- en: mike@localhost
+  prefs: []
+  type: TYPE_NORMAL
+- en: mike@10.0.0.1
+  prefs: []
+  type: TYPE_NORMAL
+- en: Honestly, I think that both regexes from the AI are fine, but they did miss
+    those two valid email addresses.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Phone numbers
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Moving on, how well will they do validating a phone number? I gave Copilot a
+    comment hint to see what it came up with and it gave me this at first.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Phone number pattern with optional country code
+  prefs: []
+  type: TYPE_NORMAL
+- en: phoneRegex = /^(\+?1)?[2-9]\d{2}[2-9](?!11)\d{6}$/;
+  prefs: []
+  type: TYPE_NORMAL
+- en: This one sort of works, but it doesn’t allow any punctuation or spacing in the
+    number. It does allow an optional +1, but that only works for US phone numbers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Matched
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: '2025551212'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '8002822882'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '+12025551212'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '+14079393463'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not matched
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 603–555–1212
+  prefs: []
+  type: TYPE_NORMAL
+- en: 603 555 1212
+  prefs: []
+  type: TYPE_NORMAL
+- en: (603) 555 1212
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Not to be completely daunted yet, I thought I’d give it one more try. I gave
+    it a different comment:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // international phone number
+  prefs: []
+  type: TYPE_NORMAL
+- en: phoneRegex = /^\+?([0-9]{2})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This one was a lot more flexible, but it still failed to match what I would
+    consider some common phone number formats:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Matched
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: +01 202 555 1212
+  prefs: []
+  type: TYPE_NORMAL
+- en: +014079393463
+  prefs: []
+  type: TYPE_NORMAL
+- en: // UK Number
+  prefs: []
+  type: TYPE_NORMAL
+- en: +44 889 234 1239
+  prefs: []
+  type: TYPE_NORMAL
+- en: +44.889.234.1239
+  prefs: []
+  type: TYPE_NORMAL
+- en: +44 889–234–1239
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not Matched
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: (202) 555–1212
+  prefs: []
+  type: TYPE_NORMAL
+- en: 800–282–2882
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'So far, I am not impressed with what Copilot gave me. ChatGPT gave me this
+    one:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Give me a regex that can validate any phone number, us or international, liberally
+    accepting common punctuation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^[\+]?[\d]{0,3}[\s.-]?[\(]?[\d]{1,3}[\)]?[\s.-]?[\d]{3,4}[\s.-]?[\d]{3,4}$
+  prefs: []
+  type: TYPE_NORMAL
+- en: It actually did worse, matching only the first two UK numbers, and failing the
+    same ones Copilot’s pattern did. Maybe matching a phone number is simply too difficult
+    with a regex.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Valid URL
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Related to, though not specifically about validation, I wanted to see whether
+    Copilot would give me a pattern to recognize valid all URLs inside a string. That
+    could be useful for crawling websites. As with the rest of the examples, I started
+    with a comment. It gave me two options:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Regex to find URLs inside a string
+  prefs: []
+  type: TYPE_NORMAL
+- en: urlRegex = /((https?:\/\/)|(www\.))[^\s]+/g;
+  prefs: []
+  type: TYPE_NORMAL
+- en: urlRegex = /((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/g;
+  prefs: []
+  type: TYPE_NORMAL
+- en: What I find really cool about these suggestions is that Copilot gave me the g modifier
+    (match globally) on both regexes, presumably because I asked for URLs (plural)
+    in my comment, and not simply the singular URL.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first one, though it looks OK at first glance, is simply wrong. My test
+    string was the source code of a web page with lots of links. The first regex gave
+    me 137 matches, but upon further inspection, it included punctuation that was
+    part of the surrounding text and not part of the URL.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, I decided to try the second, longer suggestion. That one was actually worse,
+    matching a bunch of text that clearly are not URLs. What bothers me about both
+    of these regexes is that they match the closing quote in an HTML attribute.
+  prefs: []
+  type: TYPE_NORMAL
+- en: <img src="https://pictures.com/images/12345.jpg">
+  prefs: []
+  type: TYPE_NORMAL
+- en: According to both regexes, the URL portion of that img tag is https://pictures.com/images/12345.jpg"
+  prefs: []
+  type: TYPE_NORMAL
+- en: It made me think that perhaps my comment hint was wrong. Instead of searching
+    for URLs in a “string,” maybe I should be more specific. I decided to give it
+    one more shot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Regex to find all URLs from img and a tags
+  prefs: []
+  type: TYPE_NORMAL
+- en: urlRegex = /<img[^>]*src="([^"]*)"[^>]*>|<a[^>]*href="([^"]*)"[^>]*>/g;
+  prefs: []
+  type: TYPE_NORMAL
+- en: Interestingly enough, I believe this one came closest. Notice that my comment
+    was a lot more specific about what I was looking for. What’s more, I had to look
+    a little more closely at the matches. The actual URLs are inside of Group 2 of
+    each match.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT took me literally, as it has been doing throughout all my research and
+    experimentation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Give me a regex to find all URLs from img and a tags in the text of an HTML
+    page.
+  prefs: []
+  type: TYPE_NORMAL
+- en: (?<=<img.*?src="|<a.*?href=")[^"]*
+  prefs: []
+  type: TYPE_NORMAL
+- en: It did not give me a regex looking to match URLs. Instead, it is a regex that
+    extracts the entire string inside the quotes following an img or href attribute.
+    That is, in fact, exactly what I asked for.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not giving up just yet, I offered a more explicit prompt to ChatGPT to tweak
+    its understanding.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Give me a regex matching URLs found in an arbitrary document of text, which
+    may or may not be HTML.
+  prefs: []
+  type: TYPE_NORMAL
+- en: \b(?:(?:https?|ftp):\/\/|www\.)[^\s]+\b
+  prefs: []
+  type: TYPE_NORMAL
+- en: Its explanation was comprehensive, so I tested it and discovered that it was
+    by far the best regular expression. This would be a better regex to use if you
+    were validating that a given string is, in fact, a URL.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Password complexity
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Just about every web site that lets users register has some rule about password
+    complexity. Can Copilot generate a regex to validate such passwords?
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Passwords much contain at least one number, one lowercase and one uppercase
+    letter, one symbol, and be 8 characters or longer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: private passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
+  prefs: []
+  type: TYPE_NORMAL
+- en: That’s quite the regex, but is it correct? Back over at regex101.com, I put
+    it to the test.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Valid Passwords
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: P@55word
+  prefs: []
+  type: TYPE_NORMAL
+- en: This1s@GoodPassword
+  prefs: []
+  type: TYPE_NORMAL
+- en: MikeWasHerein1999!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Invalid Passwords
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: password
+  prefs: []
+  type: TYPE_NORMAL
+- en: MikeWasHere!
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is a bad password
+  prefs: []
+  type: TYPE_NORMAL
+- en: '12345'
+  prefs: []
+  type: TYPE_NORMAL
+- en: My hastily-considered opinion is that this is a good regex for its purpose.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT gave me a functionally similar, but slightly different pattern.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Give me a regex to validate password complexity with the following rules: Passwords
+    much contain at least one number, one lowercase and one uppercase letter, one
+    symbol, and be 8 characters or longer.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)[\S]{8,}$
+  prefs: []
+  type: TYPE_NORMAL
+- en: It matched the same password list as Copilot’s regular expression, so I consider
+    them both valid.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Valid U.S. currency
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Another common scenario is determining whether or not input is valid US currency.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Validate that the input is a US currency
+  prefs: []
+  type: TYPE_NORMAL
+- en: private currencyRegex = /^\$?(([1-9]\d{0,2}(,\d{3})*)|0)?(\.\d{2})?$/;
+  prefs: []
+  type: TYPE_NORMAL
+- en: This one looks good at first glance. I tried a short list of strings that I
+    imagine people might enter into a web page as currency. Let’s see how that regex
+    did.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Valid Currency
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: $1
+  prefs: []
+  type: TYPE_NORMAL
+- en: '.22'
+  prefs: []
+  type: TYPE_NORMAL
+- en: $.25
+  prefs: []
+  type: TYPE_NORMAL
+- en: '0.79'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '1.49'
+  prefs: []
+  type: TYPE_NORMAL
+- en: $0.00
+  prefs: []
+  type: TYPE_NORMAL
+- en: $0.43
+  prefs: []
+  type: TYPE_NORMAL
+- en: $1,230,847,369.99
+  prefs: []
+  type: TYPE_NORMAL
+- en: Invalid Currency
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Mike
+  prefs: []
+  type: TYPE_NORMAL
+- en: '1.575'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 1.57$
+  prefs: []
+  type: TYPE_NORMAL
+- en: 2.25%
+  prefs: []
+  type: TYPE_NORMAL
+- en: 1 dollar
+  prefs: []
+  type: TYPE_NORMAL
+- en: Looks pretty good to me. I’d call that a pass.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT gave me a similar regex.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Give me a regex that will validate that the input is a US currency
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^\$[1-9]\d{0,2}(,\d{3})*(\.\d{2})?$
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unfortunately, it failed all the test values except the first and last valid
+    values. I asked it to try again, allowing for an optional dollar sign. The regex
+    it gave me validated only one additional test value (1.49) but still failed on
+    the rest.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Giving it one more chance, I decided to take a different approach. Here is my
+    entire conversation and its reply.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Given a potential list of different ways to write US currency, write a regular
+    expression that will match all of these: $1 .22 $.25 0.79 1.49 $0.00 $0.43 $1,230,847,369.99'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here''s a regular expression that can match all of the given examples of US
+    currency values:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^(?:\$\s?)?(?:\d{1,3}(?:,\d{3})*|\d+)(?:\.\d{2})?$
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let''s break down this regular expression:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^ - Start of the line
+  prefs: []
+  type: TYPE_NORMAL
+- en: (?:\$\s?)? - Optionally match a dollar sign followed by an optional whitespace
+    character
+  prefs: []
+  type: TYPE_NORMAL
+- en: (?:\d{1,3}(?:,\d{3})*|\d+) - Match either a sequence of 1-3 digits, optionally
+    followed by groups of three digits separated by commas, or a single sequence of
+    one or more digits.
+  prefs: []
+  type: TYPE_NORMAL
+- en: (?:\.\d{2})? - Optionally match a period followed by exactly two digits
+  prefs: []
+  type: TYPE_NORMAL
+- en: $ - End of the line
+  prefs: []
+  type: TYPE_NORMAL
+- en: This regular expression matches the given examples of US currency values, including
+    dollar amounts with or without the dollar sign, decimal points and commas.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that this regular expression does not match negative amounts. Also, if
+    you have currency values with unusual formats, such as negative amounts or amounts
+    with more than two decimal places, you may need to modify the regular expression
+    accordingly.
+  prefs: []
+  type: TYPE_NORMAL
+- en: How well do you think it did?
+  prefs: []
+  type: TYPE_NORMAL
+- en: It got all of them except the $.25 value. Not bad, but it shows that ChatGPT
+    isn’t infallible. However, I do appreciate the power of giving it examples and
+    letting it do the rest.
+  prefs: []
+  type: TYPE_NORMAL
+- en: U.S. Social Security Number
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: What about social security numbers? Those are pretty straightforward in the
+    US, so I didn’t expect too much of a challenge here.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Validate the the input is a valid SSN
+  prefs: []
+  type: TYPE_NORMAL
+- en: private ssnRegex = /^\d{3}-?\d{2}-?\d{4}$/;
+  prefs: []
+  type: TYPE_NORMAL
+- en: Valid SSN
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: 999–99–9999
+  prefs: []
+  type: TYPE_NORMAL
+- en: 012–34–5678
+  prefs: []
+  type: TYPE_NORMAL
+- en: 978–76–5432
+  prefs: []
+  type: TYPE_NORMAL
+- en: Invalid SSN
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: 978 76 5432
+  prefs: []
+  type: TYPE_NORMAL
+- en: 97–876–5432
+  prefs: []
+  type: TYPE_NORMAL
+- en: 5432–76–978
+  prefs: []
+  type: TYPE_NORMAL
+- en: xxx-yy-zzzz
+  prefs: []
+  type: TYPE_NORMAL
+- en: As I said, pretty straightforward. ChatGPT went above and beyond in its reply.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Write a regex that will validate the the input is a valid SSN.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ^(?!000)(?!666)[0-8]\d{2}[- ]?(?!00)\d{2}[- ]?(?!0000)\d{4}$
+  prefs: []
+  type: TYPE_NORMAL
+- en: This regex ensures that certain SSNs are specifically disallowed. ChatGPT also
+    provided this warning, which I found both useful and amusing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that this regular expression only checks the format of the SSN, not whether
+    it is an actual valid SSN that is assigned to a specific person. It's also worth
+    noting that some SSNs assigned before June 25, 2011 may not be valid, as the Social
+    Security Administration implemented a new randomization policy on that date.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I didn’t know any of that trivia around social security numbers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Valid credit card numbers
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: I expected that this one might pose a little more of a challenge. Validating
+    credit card numbers is a common task for web apps. However, relying solely on
+    regular expressions (regex) to validate credit card numbers can be dangerous.
+    While regex is a powerful tool for pattern matching, it may not catch all potential
+    errors or security risks associated with credit card numbers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is because credit card numbers have a complex structure with multiple rules
+    and restrictions, and regex patterns may not always account for all of them. Credit
+    card numbers are not simply a pattern of grouped digits, though they may appear
+    to be at first glance. I don’t think a regex can compute the checksum (aka [Luhn
+    Algorithm](https://www.creditcardvalidator.org/developer)), so I think we may
+    have to settle for “close.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Validate the credit card number
+  prefs: []
+  type: TYPE_NORMAL
+- en: private creditCardRegex = /^((4\d{3})|(5[1-5]\d{2})|(6011))(-?\d{4}){3}$/;
+  prefs: []
+  type: TYPE_NORMAL
+- en: That regex might be good for a first-pass client-side validation, but it’s far
+    from perfect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Valid CC#
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: '4321567843215678'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '6011222233334444'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '4444333322221111'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '5432123456789999'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Invalid CC#
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: 4321 5678 4321 5678
+  prefs: []
+  type: TYPE_NORMAL
+- en: 6011 2222 3333 4444
+  prefs: []
+  type: TYPE_NORMAL
+- en: 4444 3333 2222 1111
+  prefs: []
+  type: TYPE_NORMAL
+- en: 5432 1234 5678 9999
+  prefs: []
+  type: TYPE_NORMAL
+- en: 378282246310005 (Valid Amex)
+  prefs: []
+  type: TYPE_NORMAL
+- en: That last one is a false negative. Apparently, the regex cannot match American
+    Express card numbers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One last thought I had was whether or not Copilot knows what the Lunh Algorithm
+    is. The JavaScript is available on the developer page I linked above.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'I got this response when I typed my comment, which is not what I expected:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Validate the credit card number using the Lunh Algorithm
+  prefs: []
+  type: TYPE_NORMAL
+- en: private creditCardLuhnRegex = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9][0-9])[0-9]{12}|(?:2131|1800|35\d{3})\d{11})$/;
+  prefs: []
+  type: TYPE_NORMAL
+- en: It doesn’t actually appear to implement the algorithm, but it does match the
+    Amex number that the first regex missed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Before leaving this section, I wondered if a slight change to my comment might
+    make it work.
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Function to Validate the credit card number using the Lunh Algorithm
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'private validateCreditCardNumber(cardNumber: string): boolean {'
+  prefs: []
+  type: TYPE_NORMAL
+- en: let sum = 0;
+  prefs: []
+  type: TYPE_NORMAL
+- en: let shouldDouble = false;
+  prefs: []
+  type: TYPE_NORMAL
+- en: for (let i = cardNumber.length - 1; i >= 0; i—) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: let digit = parseInt(cardNumber.charAt(i), 10);
+  prefs: []
+  type: TYPE_NORMAL
+- en: if (shouldDouble) {
+  prefs: []
+  type: TYPE_NORMAL
+- en: if ((digit *= 2) > 9) digit -= 9;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: sum += digit;
+  prefs: []
+  type: TYPE_NORMAL
+- en: shouldDouble = !shouldDouble;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '}'
+  prefs: []
+  type: TYPE_NORMAL
+- en: return sum % 10 === 0;
+  prefs: []
+  type: TYPE_NORMAL
+- en: '} // End of validateCreditCardNumber'
+  prefs: []
+  type: TYPE_NORMAL
+- en: I didn’t run it to test it out, but that is a lot closer to what I was expecting.
+    Feel free to give it a try.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I suspected that ChatGPT would be better for this sort of thing, so I gave it
+    a similar prompt to see what it would come up with.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Implement a function to validate a credit card number using the Lunh Algorithm
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sure, here''s a Python function that uses the Luhn Algorithm to validate a
+    credit card number:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'def validate_credit_card_number(card_number):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Reverse the credit card number and convert each digit to an integer
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: digits = [int(x) for x in str(card_number)][::-1]
+  prefs: []
+  type: TYPE_NORMAL
+- en: Double the value of every second digit
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: doubled_digits = []
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'for i, digit in enumerate(digits):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'if i % 2 == 1:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: doubled_digits.append(digit * 2)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'else:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: doubled_digits.append(digit)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Add the digits of the doubled values and the undoubled digits
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: total = 0
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'for digit in doubled_digits:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'if digit > 9:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: total += digit - 9
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'else:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: total += digit
+  prefs: []
+  type: TYPE_NORMAL
+- en: If the total is a multiple of 10, the card number is valid
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: return total % 10 == 0
+  prefs: []
+  type: TYPE_NORMAL
+- en: Does it work? I don’t really know. Honestly, I didn’t test it. I don’t speak
+    Python, but it did give me a glimpse at some of the languages the ChatGPT (and
+    presumably Copilot) knows. The JavaScript I got from Copilot looks different from
+    the JavaScript code at the website.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you decide to test either version, let me know if it works.
+  prefs: []
+  type: TYPE_NORMAL
+- en: HTML tags
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Can Copilot recognize legal HTML tags?
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Recognize all HTML tags in the input text
+  prefs: []
+  type: TYPE_NORMAL
+- en: private htmlTagRegex = /<[^>]*>/g;
+  prefs: []
+  type: TYPE_NORMAL
+- en: I won’t show the matches here, but this one seems to work. My only complaint
+    is that it sees closing tags, too.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT decided that I still wanted Python, based on the last conversation I
+    had with it. This is another reminder that your conversations have context that
+    ChatGPT will remember.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Write a regex to recognize all HTMl tags in the input text.
+  prefs: []
+  type: TYPE_NORMAL
+- en: import re
+  prefs: []
+  type: TYPE_NORMAL
+- en: pattern = r'<\/?[a-zA-Z]+\b(?:\s*[a-zA-Z]+=(?:"[^"]*"|\'[^\']*\'))*\s*\/?>'
+  prefs: []
+  type: TYPE_NORMAL
+- en: tags = re.findall(pattern, input_text)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Go back to giving me raw regexes, not wrapped in python
+  prefs: []
+  type: TYPE_NORMAL
+- en: <\/?[a-zA-Z]+\b(?:\s*[a-zA-Z]+=(?:"[^"]*"|\'[^\']*\'))*\s*\/?>
+  prefs: []
+  type: TYPE_NORMAL
+- en: They appear to be the same regex, with the former wrapped in Python syntax.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Detect Repeated Words
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: How hard would it be to detect repeated words in a piece of text?
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Find repeated words in the input text
+  prefs: []
+  type: TYPE_NORMAL
+- en: private repeatedWordRegex = /\b(\w+)\b\s+\b\1\b/g;
+  prefs: []
+  type: TYPE_NORMAL
+- en: I expected this one to be more complicated than it was, but on reflection, this
+    is the kind of thing regular expressions really good for. ChatGPT gave me almost
+    the exact same pattern, except it appears to account for duplicate words that
+    are separated by punctuation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: \b(\w+)\b(?=.*\b\1\b)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that this regular expression will not match repeated words that are separated
+    by non-word characters (e.g., "hello, hello" will not match). If you want to match
+    repeated words regardless of the characters separating them, you can replace the
+    word boundary \b with a whitespace character \s in the regular expression.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Repeated Words Detected
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: Mike was was here here
+  prefs: []
+  type: TYPE_NORMAL
+- en: the quick brown fox fox jumps over the lazy dog
+  prefs: []
+  type: TYPE_NORMAL
+- en: Space, the the final frontier
+  prefs: []
+  type: TYPE_NORMAL
+- en: Repeated Words Not Detected
+  prefs:
+  - PREF_H4
+  type: TYPE_NORMAL
+- en: mike was here
+  prefs: []
+  type: TYPE_NORMAL
+- en: mike was here was here
+  prefs: []
+  type: TYPE_NORMAL
+- en: Space, The the final frontier
+  prefs: []
+  type: TYPE_NORMAL
+- en: the quick brown fox jumps over the lazy dog
+  prefs: []
+  type: TYPE_NORMAL
+- en: You may notice that the regex is case-sensitive. Adding an i should solve that
+    problem.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Valid JavaScript identifiers
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: This one made sense after I saw what it wrote, but it wasn’t what I expected
+    (honestly, I’m not sure what I expected).
+  prefs: []
+  type: TYPE_NORMAL
+- en: // Recognize all valid JavaScript keywords in the input text
+  prefs: []
+  type: TYPE_NORMAL
+- en: private jsKeywordRegex = /\b(break|case|catch|continue|debugger|default|delete|do|else|finally|for|function|if|in|instanceof|new|return|switch|this|throw|try|typeof|var|void|while|with|class|const|enum|export|extends|import|super|implements|interface|let|package|private|protected|public|static|yield|abstract|boolean|byte|char|double|final|float|goto|int|long|native|short|synchronized|throws|transient|volatile)\b/g;
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT gave me practically the same regex.
+  prefs: []
+  type: TYPE_NORMAL
+- en: \b(?:await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|false|finally|for|function|if|implements|import|in|instanceof|interface|let|new|null|package|private|protected|public|return|super|switch|this|throw|true|try|typeof|var|void|while|with|yield)\b
+  prefs: []
+  type: TYPE_NORMAL
+- en: Looking at both patterns more closely, I’m not convinced that either of them
+    is 100% correct, though.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Conclusion
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: After some early failures, I think it’s safe to say that both ChatGPT and Copilot
+    can help with regular expressions. However, as you have seen, they are both far
+    from perfect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As with any code written for you by an AI (or even other developers), you can’t
+    simply accept what you’re given without question. It’s important to understand
+    what the code does.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As I have written previously, I will continue to use them where it makes sense.
+    I will not, however, blindly use everything written for me by an AI.
+  prefs: []
+  type: TYPE_NORMAL

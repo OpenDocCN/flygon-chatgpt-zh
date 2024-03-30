@@ -1,104 +1,145 @@
 - en: Chapter 2
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第二章
 - en: Discovering How ChatGPT Works
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: 发现 ChatGPT 如何运作
 - en: IN THIS CHAPTER
+  id: totrans-2
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 本章内容
 - en: '![](images/00003.jpg) Understanding what a prompt is'
+  id: totrans-3
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '![](images/00003.jpg) 理解提示是什么'
 - en: '![](images/00003.jpg) Exploring ChatGPT''s architecture'
+  id: totrans-4
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '![](images/00003.jpg) 探索 ChatGPT 的架构'
 - en: '![](images/00003.jpg) Comparing performance against supercomputing benchmarks'
+  id: totrans-5
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '![](images/00003.jpg) 与超级计算基准的性能比较'
 - en: '![](images/00003.jpg) Grasping the significance of ChatGPT breakthroughs'
+  id: totrans-6
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '![](images/00003.jpg) 理解 ChatGPT 的突破意义'
 - en: At first glance, ChatGPT appears deceptively simple. You ask it a question or
     give it a command in the prompt bar and it responds with an answer. That’s how
     all chatbots work, right? So what is so special about this one?
+  id: totrans-7
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 乍一看，ChatGPT 看起来简单得令人难以置信。您在提示栏中提出问题或给出命令，它会以答案回应。这就是所有聊天机器人的工作方式，对吧？那么这个有什么特别之处呢？
 - en: In this chapter, you learn that ChatGPT is to chatbots what ice cubes are to
     Antarctica. You discover the basics of how it works and why it relies on your
     skills to optimize its performance. But the real treasure here are the tips and
     insights on how to write prompts so that ChatGPT can perform its true magic.
+  id: totrans-8
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 在本章中，您将了解到 ChatGPT 对聊天机器人就像冰块对南极洲一样重要。您将了解它的工作原理的基础以及为什么它依赖于您的技能来优化其性能。但这里真正的宝藏是关于如何编写提示以使
+    ChatGPT 发挥其真正魔力的技巧和见解。
 - en: This chapter provides you with the majority of information you need to understand
     and use ChatGPT. Read it even if you read nothing else in this book.
+  id: totrans-9
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 本章为您提供了理解和使用 ChatGPT 所需的大部分信息。即使您在本书中什么都不读，也要阅读它。
 - en: What’s Different About ChatGPT
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 有何不同
 - en: ChatGPT works differently than a search engine. A search engine such as Google
     or Bing or an AI assistant such as Siri, Alexa, or Google Assistant works by searching
     the internet for matches to the keywords you enter in the search bar. Algorithms
     refine the results based on any number of factors, but your browser history, topic
     interests, purchase data, and location data usually figure into the equation.
+  id: totrans-11
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT 与搜索引擎不同。搜索引擎如 Google 或 Bing，或者诸如 Siri、Alexa 或 Google 助手之类的 AI 助手通过在搜索栏中输入的关键字在互联网上搜索匹配项。算法根据各种因素细化结果，但您的浏览历史、主题兴趣、购买数据和位置数据通常会影响结果。
 - en: You’re then presented with a list of search results ranked in order of relevance
     as determined by the search engine’s algorithm. From there, the user is free to
     consider the sources of each option and click a selection to do a deeper dive
     for more details from that source.
+  id: totrans-12
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 然后，您将看到一个按照搜索引擎算法确定的相关性顺序排列的搜索结果列表。从那里，用户可以考虑每个选项的来源并点击选择，以从该来源深入了解更多细节。
 - en: By comparison, ChatGPT generates its own unified answer to your prompt. It doesn't
     offer citations or note its sources. You ask; it answers. Easy-peasey, right?
     No. That task is incredibly hard for AI to do, which is why generative AI is so
     impressive.
+  id: totrans-13
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 相比之下，ChatGPT 生成自己对您的提示的统一答案。它不提供引用或注明来源。您提问；它回答。简单易行，对吧？不。这对 AI 来说是极其困难的任务，这就是生成式
+    AI 如此令人印象深刻的原因。
 - en: Generating an original result in response to a prompt is achieved by using either
     the GPT-3 (Generative Pre-trained Transformer 3) or GPT-4 model to analyze the
     prompt with context and predict the words that are likely to follow. Both GPT
     models are extremely powerful large language models capable of processing billions
     of words per second.
+  id: totrans-14
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 通过使用 GPT-3（生成式预训练变压器 3）或 GPT-4 模型分析上下文并预测可能跟随的单词，从而实现对提示的原始结果的生成。这两个 GPT 模型都是极其强大的大型语言模型，能够每秒处理数十亿个单词。
 - en: In short, transformers enable ChatGPT to generate coherent, humanlike text as
     a response to a prompt. ChatGPT creates a response by considering context and
     assigning weight (values) to words that are likely to follow the words in the
     prompt to predict which words would be an appropriate response.
+  id: totrans-15
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 简而言之，变压器使 ChatGPT 能够生成连贯、类似人类的文本作为对提示的响应。ChatGPT 通过考虑上下文并为可能跟随提示中的单词的单词分配权重（值）来创建响应，以预测哪些单词将是适当的响应。
 - en: '![](images/00079.jpg) User input is called a prompt rather than a command or
     a query, although it can take either form. You are, in effect, prompting AI to
     predict and complete a pattern that you initiated by entering the prompt.'
+  id: totrans-16
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '![](images/00079.jpg) 用户输入被称为提示，而不是命令或查询，尽管它可以采取任一形式。实际上，您正在提示 AI 预测和完成您通过输入提示启动的模式。'
 - en: '![](images/00079.jpg) The capability to create a rapid, natural-language response
     that fits with the user''s intent and the prompt''s context is an astounding feat
     for a machine. Doubly so when the responses are fast enough that the AI model
     appears to be conversing with the user. Despite its early shortcomings, GPT-3
     and GPT-4 are modern marvels.'
+  id: totrans-17
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '![](images/00079.jpg) 能够快速创建符合用户意图和提示上下文的自然语言响应，对于机器来说是一个惊人的成就。当响应足够快，以至于 AI
+    模型似乎在与用户对话时，这一成就更加突出。尽管早期存在一些缺陷，GPT-3 和 GPT-4 仍然是现代奇迹。'
 - en: Peeking at the ChatGPT Architecture
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 查看 ChatGPT 架构
 - en: As its name implies, ChatGPT is a chatbot running on a GPT model. GPT-3, GPT-3.5,
     and GPT-4 are large language models (LLMs) developed by OpenAI. When GPT-3 was
     introduced, it was the largest LLM at 175 billion parameters. An upgraded version
@@ -107,9 +148,14 @@
     which is a multimodal model, meaning it accepts both image and text inputs although
     its outputs are text only. It's now the largest LLM to date, although GPT-4’s
     exact number of parameters has yet to be disclosed.
+  id: totrans-19
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 正如其名称所示，ChatGPT 是运行在 GPT 模型上的聊天机器人。GPT-3、GPT-3.5 和 GPT-4 是由 OpenAI 开发的大型语言模型（LLMs）。当
+    GPT-3 推出时，它是拥有 1750 亿个参数的最大 LLM。升级版 GPT-3.5 turbo 是 GPT-3 的高度优化和更稳定的版本，对开发者来说价格是原来的十分之一。ChatGPT
+    现在也可在 GPT-4 上使用，这是一个多模态模型，意味着它接受图像和文本输入，尽管其输出仅为文本。尽管 GPT-4 的确切参数数量尚未披露，但它是迄今为止最大的
+    LLM。
 - en: Parameters are numerical values that weigh and define connections between nodes
     and layers in the neural network architecture. The more parameters a model has,
     the more complex its internal representations and weighting. In general, more
@@ -118,9 +164,12 @@
     complexities in a wide range of natural-language-processing tasks. As a result,
     it appears to have the capacity for instantaneous reasoning as it converses fluently
     with users.
+  id: totrans-20
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 参数是神经网络架构中节点和层之间的连接的权重和定义的数值。模型的参数越多，其内部表示和权重就越复杂。一般来说，更多的参数会导致在特定任务上表现更好。例如，ChatGPT
+    的大量参数使其能够理解各种自然语言处理任务中微妙的细微差别和上下文复杂性。因此，它似乎具有即时推理的能力，因为它能够与用户流畅对话。
 - en: Previously, Microsoft’s Turing NLG, a transformer-based generative language
     model, held the record at 17 billion parameters. GPT-4 is currently the biggest
     neural network created. GPT-5 is rumored to be even bigger, but it currently isn’t
@@ -128,100 +177,132 @@
     larger model because GPT-4 is so huge it will serve for years to come. I agree
     that there’s no reason to rush GPT-5 to fruition given that users and developers
     have barely scratched the surface of what GPT-4 can do.
+  id: totrans-21
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 以前，微软的图灵 NLG，一个基于 transformer 的生成式语言模型，拥有 170 亿个参数的记录。GPT-4 目前是创建的最大神经网络。传言
+    GPT-5 更大，但目前尚未进行训练。一些 AI 专家认为没有理由训练一个更大的模型，因为 GPT-4 如此巨大，将在未来几年内发挥作用。我同意，鉴于用户和开发人员几乎没有探索
+    GPT-4 的潜力，没有必要急于推出 GPT-5。
 - en: Discovering the supercomputer and GPUs underneath
+  id: totrans-22
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 探索超级计算机和 GPU 的内部结构
 - en: It’s perhaps no surprise that OpenAI and Microsoft teamed up, given their separate
     efforts towards a similar end. A supercomputer hosted in Azure was built by these
     partners for the exclusive use by OpenAI to train its various AI models. Compared
     with other supercomputers on the global Top500.org list, this supercomputer now
     ranks in the top five, according to Microsoft.
+  id: totrans-23
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 或许并不奇怪，OpenAI 和微软合作，考虑到它们各自为了相似的目标而努力。微软表示，他们与 OpenAI 合作建造了一个托管在 Azure 中的超级计算机，专供
+    OpenAI 使用，用于训练各种 AI 模型。根据微软的说法，与全球 Top500.org 列表上的其他超级计算机相比，这台超级计算机现在排名前五。
 - en: The Top500 list of supercomputers compiles statistics on high-performance computers
     based on items of interest to manufacturers and other high-end users. While specific
     features and metrics may vary, as is befitting the steady evolution and diversification
     of modern supercomputers, the bedrock data in each semiannual report seems to
     consist of the number of installed systems, the applications running on these
     systems, and performance rankings based on comparative benchmarks.
+  id: totrans-24
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 超级计算机Top500榜单编制了关于高性能计算机的统计数据，这些数据基于制造商和其他高端用户感兴趣的项目。虽然具体特征和指标可能有所不同，这符合现代超级计算机稳定演进和多样化的特点，但每份半年报告中的基本数据似乎包括已安装系统的数量、在这些系统上运行的应用程序以及基于比较基准的性能排名。
 - en: As one example, this list ranks supercomputers on their performance against
     the LINPACK benchmark, specifically, how well the machines solve a dense system
     of linear equations. The result is a measure of peak performance rather than overall
     performance. The Top500 researchers can also verify the LINPACK results to further
     ensure accuracy in the rankings.
+  id: totrans-25
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 举例来说，这份榜单根据LINPACK基准测试对超级计算机的性能进行排名，具体来说，这些机器解决密集线性方程组的能力。结果是峰值性能的度量而不是整体性能。Top500的研究人员还可以验证LINPACK的结果，以进一步确保排名的准确性。
 - en: 'Other benchmarks used in the supercomputing industry to judge supercomputer
     performance include COPA, ReCoRD, and SuperGLUE, with the latter testing reasoning
     and advanced natural-language-processing (NLP) tasks. The supercomputer jointly
     built by OpenAI and Microsoft performed well on these three benchmarks too but
     fell short on two others: word-in-context (WIC) analysis and RACE (restate, answer,
     cite evidence, explain) response evaluations.'
+  id: totrans-26
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 超级计算行业用于评估超级计算机性能的其他基准包括COPA、ReCoRD和SuperGLUE，后者测试推理和高级自然语言处理（NLP）任务。由OpenAI和微软联合建造的超级计算机在这三个基准测试中表现良好，但在另外两个基准测试中表现不佳：词汇上下文（WIC）分析和RACE（重述、回答、引用证据、解释）响应评估。
 - en: It’s telling that the supercomputer scored poorly on middle- and high-school
     exam questions (the results of the RACE benchmark) while acing the LINPACK benchmark
     test in solving dense linear equations. The simpler things tend to trip up AI,
     but complexity isn’t the deciding factor in error occurrence. You shouldn't expect
     ChatGPT to perform consistently across varying levels of problem complexities.
     It can err or perform brilliantly in responding to any prompt, simple or complex.
+  id: totrans-27
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 令人意外的是，这台超级计算机在中小学考试问题（RACE基准测试的结果）上表现不佳，而在解决密集线性方程组的LINPACK基准测试中表现出色。简单的事情往往会让人工智能出错，但复杂性并不是错误发生的决定因素。你不应该期望ChatGPT在不同复杂问题层次上表现一致。它可能在回应任何提示时出错或表现出色，无论简单还是复杂。
 - en: In any case, it's safe to say that given the immense size and capabilities of
     GPT models, training any of them requires a more heavily muscled supercomputer
     than most in the field of enormous computing giants.
+  id: totrans-28
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 无论如何，可以肯定地说，考虑到GPT模型的巨大规模和能力，训练任何一个都需要比大多数庞大计算巨头领域更强大的超级计算机。
 - en: Nvidia is the graphics processing unit (GPU) provider and the third partner
     in this story — and theirs is no minor role. A GPU is a specific type of electronic
     circuit designed for fast image rendering that is now commonly leveraged for its
     capability to process many pieces of data simultaneously.
+  id: totrans-29
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: Nvidia是图形处理单元（GPU）提供商，也是这个故事中的第三方合作伙伴，他们的角色丝毫不可小觑。GPU是一种专门设计用于快速图像渲染的电子电路，现在通常被利用其同时处理多个数据片段的能力。
 - en: The GPU-accelerated supercomputer developed for OpenAI is a single system with
     more than 285,000 CPU cores, 10,000 GPUs, and 400 gigabits per second of network
     connectivity for each GPU server. All OpenAI models were trained on NVIDIA V100
     GPUs operating on Microsoft high-bandwidth clusters.
+  id: totrans-30
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 为OpenAI开发的GPU加速超级计算机是一个单一系统，拥有超过285,000个CPU核心、10,000个GPU和每个GPU服务器400千兆每秒的网络连接速度。所有OpenAI模型都是在NVIDIA
+    V100 GPU上运行的微软高带宽集群上进行训练的。
 - en: Further, model training was done on the cuDNN-accelerated PyTorch deep-learning
     framework for all OpenAI models. But specific architectural parameters for any
     given AI model are chosen according to optimal computational efficiency and load-balancing
     across GPUs.
+  id: totrans-31
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 此外，所有OpenAI模型的模型训练都是在cuDNN加速的PyTorch深度学习框架上进行的。但是，针对任何给定的AI模型，具体的架构参数是根据最佳的计算效率和跨GPU的负载平衡来选择的。
 - en: Considering the importance of transformers
+  id: totrans-32
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 考虑到变压器的重要性
 - en: ChatGPT uses a multilayer transformer network to generate responses to user
     prompts. A transformer is a type of neural network architecture. In AI, a neural
     network is a network of processing nodes that use a set of algorithms to mimic
     the human brain. You can think of nodes in an AI brain as working like neurons
     in a human brain.
+  id: totrans-33
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT使用多层变压器网络来生成对用户提示的响应。变压器是一种神经网络架构。在人工智能中，神经网络是一种使用一组算法模仿人脑的处理节点网络。你可以将AI大脑中的节点想象成人脑中的神经元一样工作。
 - en: Different types of transformers are available, each suited to a particular data
     type, such as text or images. ChatGPT uses transformers suited for language processing.
+  id: totrans-34
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 不同类型的变压器可用，每种适用于特定的数据类型，如文本或图像。ChatGPT使用适用于语言处理的变压器。
 - en: Transformers were developed by researchers at Google and the University of Toronto
     in 2017 and were initially designed to handle translations for which context,
     not word order, was more crucial to delivering a corresponding meaning in another
@@ -229,123 +310,168 @@
     tasks too. The big advantage of transformers is that they can be efficiently parallelized,
     meaning they can scale to handle exceptionally large AI models and their training
     requirements.
+  id: totrans-35
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 变压器是由谷歌和多伦多大学的研究人员于2017年开发的，最初设计用于处理翻译，其中上下文而不是单词顺序对于传递另一种语言中的相应含义更为关键。但变压器也被证明是更复杂的语言处理任务的基石。变压器的一个重要优势是它们可以被有效地并行化，这意味着它们可以扩展到处理异常大的AI模型及其训练需求。
 - en: Without the advent of transformers, GPT at large and ChatGPT in particular could
     not render such humanlike outputs.
+  id: totrans-36
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 没有变压器的出现，GPT整体和特别是ChatGPT无法产生如此类似人类的输出。
 - en: 'The specifics of transformers and how they work are highly technical. In this
     chapter, I touch on one piece of a transformer that is arguably the most significant:
     the self-attention mechanism. The short, and thus oversimplified, explanation
     of self-attention is an AI model that has internalized an understanding of various
     representations of the same word.'
+  id: totrans-37
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 变压器及其工作原理的具体细节非常技术性。在本章中，我涉及变压器中可能最重要的一个部分：自注意机制。自注意的简短且因此过于简化的解释是一个AI模型已经内化了对同一个词的各种表示的理解。
 - en: Consider that many words have multiple meanings. In American English, a lemon
     can be a fruit or a product that performs badly. Similarly, as server can be a
     computing device or a waiter. A lift in English is an elevator but in American
     English means catching a ride in someone else’s vehicle.
+  id: totrans-38
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 考虑到许多词汇有多重含义。在美国英语中，柠檬可以是一种水果或表现不佳的产品。同样，服务器可以是一种计算设备或一名服务员。在英语中，lift是电梯的意思，但在美国英语中意味着搭乘别人车辆的意思。
 - en: ChatGPT can distinguish which meaning a word should carry based on context,
     that is, by considering the words that surround it in a sentence. That capability
     is very humanlike and exceedingly difficult for a machine to do.
+  id: totrans-39
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT可以根据上下文区分一个词应该承载的含义，也就是说，通过考虑句子中围绕它的单词。这种能力非常类似人类，对于机器来说极其困难。
 - en: 'Setting the stage: training the model'
+  id: totrans-40
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 布景：训练模型
 - en: Although many companies are training their own AI (of various forms and for
     a variety of uses), that task is best left to those with the know-how and deep
     pockets to successfully see it through. That being the case, you can see the appeal
     to the masses when an AI model such as ChatGPT is readily accessible and usable
     via a browser or an app.
+  id: totrans-41
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 尽管许多公司正在训练自己的AI（以各种形式和用途），但这项任务最好留给那些有能力和深厚资金支持的人来成功完成。在这种情况下，当像ChatGPT这样的AI模型通过浏览器或应用程序轻松可访问和可用时，你可以看到对大众的吸引力。
 - en: Despite its debut as a free tool, ChatGPT is an expensive and complex model
     for OpenAI to build and maintain. For example, ChatGPT uses deep learning, which
     is a computing and energy hog. And simply storing a database massive enough to
     train one AI model drains resources at a quick clip. Training any large language
     model takes enormous amounts of manpower, energy, data, and effort. It’s a very
     expensive exercise with recurring costs that are just as high.
+  id: totrans-42
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 尽管作为一个免费工具首次亮相，ChatGPT是OpenAI构建和维护的一种昂贵且复杂的模型。例如，ChatGPT使用深度学习，这是一种计算和能源消耗巨大的技术。仅仅存储足够训练一个AI模型的大型数据库就会迅速耗尽资源。训练任何大型语言模型需要大量的人力、能源、数据和努力。这是一项非常昂贵的练习，具有同样高昂的重复成本。
 - en: But in the case of GPT, the result proved worth it. GPT-4 is purported to be
     the largest language model in the world. Because of the capabilities such an enormous
     AI model makes possible, ChatGPT is a global sensation. OpenAI, its creator, is
     estimated to be worth $29 billion and counting, according to the Wall Street Journal.
+  id: totrans-43
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 但在 GPT 的情况下，结果证明是值得的。据称，GPT-4 是世界上最大的语言模型。由于如此庞大的人工智能模型所带来的能力，ChatGPT 成为了全球轰动。根据《华尔街日报》的报道，其创造者
+    OpenAI 的估值已达到 290 亿美元，且还在不断增长。
 - en: The ChatGPT model was trained on a massive database comprised of text scraped
     from almost the entire internet as it existed in 2021\. OpenAI says that training
     data included about “570GB of datasets, including web pages, books, and other
     sources.”
+  id: totrans-44
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT 模型是在一个庞大的数据库上进行训练的，该数据库包含了从几乎整个互联网中抓取的文本，截至 2021 年。OpenAI 表示，训练数据包括约“570GB
+    的数据集，包括网页、书籍和其他来源”。
 - en: The initial model was also trained on data fined-tuned by human instructors
     who assumed roles as both human and machine to instruct it on the differences
     in appropriate versus inappropriate responses to prompts. OpenAI says it then
     mixed this newly created dialogue data set with the InstructGPT data set and transformed
     it into a dialogue format.
+  id: totrans-45
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 最初的模型还接受了人类教师精细调整的数据训练，这些教师扮演了人类和机器的双重角色，指导它区分适当与不适当的回应。OpenAI 表示，然后将这个新创建的对话数据集与
+    InstructGPT 数据集混合，并将其转换为对话格式。
 - en: This process is called reinforcement learning from human feedback (RLHF). Specific
     methods can vary between individual model training instances. In other words,
     RLHF can be tweaked to fit the requirements of a particular model’s training needs.
+  id: totrans-46
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 这个过程被称为来自人类反馈的强化学习（RLHF）。具体的方法可能会因个别模型训练实例而异。换句话说，RLHF 可以被调整以适应特定模型训练需求。
 - en: The reinforcement part of this process comes from a collection of comparison
     data and a response from humans by means of a thumbs-up or thumbs-down ranking
     system. The two thumbs appear at the top of each ChatGPT response, as you can
     see in [Figure 2-1](#filepos112482). Ranking the answer you received helps train
     the model further by reinforcing the machine’s learning.
+  id: totrans-47
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 这个过程的强化部分来自于一组比较数据和人类的回复，通过点赞或点踩的排名系统。正如你在[图2-1](#filepos112482)中所看到的，每个 ChatGPT
+    回复的顶部都有两个大拇指。对你收到的回答进行排名有助于通过强化机器的学习来进一步训练模型。
 - en: '![](images/00034.jpg)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/00034.jpg)'
 - en: '[FIGURE 2-1:](#filepos112265) A primary reason for releasing ChatGPT as a free
     research model was so OpenAI could get the public’s help in training it.'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图2-1：](#filepos112265) 将 ChatGPT 作为免费研究模型发布的一个主要原因是为了让 OpenAI 能够得到公众的帮助来进行训练。'
 - en: If you don’t like the response ChatGPT generated, you can click the Regenerate
     Response button (refer to [Figure 2-1](#filepos112482)) to make it try again.
     Be sure to rate each response so that the model can learn how to improve its performance.
+  id: totrans-50
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 如果你不喜欢 ChatGPT 生成的回复，你可以点击重新生成回复按钮（参见[图2-1](#filepos112482)）让它再试一次。一定要对每个回复进行评分，这样模型才能学习如何提高性能。
 - en: Similarly, AI trainers randomly chose earlier conversations they had with the
     training model and ranked the responses. Reward models, like the thumbs-up, thumbs-down
     rating on ChatGPT, can then be used to fine-tune the model in a process called
     proximal policy optimization. The OpenAI blog post in [Figure 2-2](#filepos113701)
     shows this entire training process in one chart.
+  id: totrans-51
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '同样，AI 训练者随机选择了他们与训练模型之前的对话，并对回复进行了排名。奖励模型，如 ChatGPT 上的点赞、点踩评分，然后可以用于通过一种称为近端策略优化的过程对模型进行微调。OpenAI
+    博客文章中的[图2-2](#filepos113701)展示了这个完整的训练过程在一个图表中。 '
 - en: '![](images/00036.jpg)'
+  id: totrans-52
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/00036.jpg)'
 - en: '[FIGURE 2-2:](#filepos113539) OpenAI’s process of training the ChatGPT model.'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图2-2：](#filepos113539) OpenAI 训练 ChatGPT 模型的过程。'
 - en: Grasping the importance of the dialogue format
+  id: totrans-54
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 理解对话格式的重要性
 - en: ChatGPT works in 95 languages that run the gamut from a wide array of human
     mother tongues and regional dialects to a large variety of computer languages
     and mathematical equations. You can also chat using a mix of supported languages.
@@ -353,40 +479,56 @@
     instructions for ChatGPT to do something with that code, as shown in [Figure 2-3](#filepos116161).
     The instruction may be to find errors or vulnerabilities in the code, to write
     new code, or to finish writing the program.
+  id: totrans-55
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT 可以在 95 种语言中运行，涵盖了各种人类母语和地区方言，以及大量的计算机语言和数学方程式。你还可以使用混合支持的语言进行聊天。例如，你可以在提示中包含计算机代码或片段，以及指示
+    ChatGPT 对该代码执行某些操作的说明，如 [图 2-3](#filepos116161) 所示。指令可能是查找代码中的错误或漏洞，编写新代码，或完成编写程序。
 - en: The choice of languages makes using AI easier and more comfortable for users.
     Experts and laypeople alike soon forget that ChatGPT is a technical wonder and
     often start chatting with it like with a friend or peer.
+  id: totrans-56
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 选择语言使得使用人工智能对用户来说更加容易和舒适。专家和普通人很快就会忘记 ChatGPT 是一个技术奇迹，经常开始像与朋友或同行交谈一样与它聊天。
 - en: '![](images/00023.jpg) Once again, I remind you not to think of ChatGPT as a
     person. Anything you say or do with ChatGPT may be used in AI performance reviews
     and training data sets for future AI models. This so-called friend keeps no secrets.
     OpenAI has provided the warning but it’s up to you to remember it.'
+  id: totrans-57
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '![](images/00023.jpg) 再次提醒您不要把 ChatGPT 当作一个人。你与 ChatGPT 说或做的任何事情都可能被用于 AI 的绩效评估和未来
+    AI 模型的训练数据集。这位所谓的朋友没有秘密。OpenAI 已经提供了警告，但记住这一点取决于你。'
 - en: Pondering ChatGPT’s limitations
+  id: totrans-58
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 思考 ChatGPT 的局限性
 - en: The very thing that enables ChatGPT to create responses is the same thing that
     makes it unreliable. For people or machines to imagine something that does not
     exist, such as a fictional world for a novel or movie, they must first be released
     from the strict confines of reality-based rules.
+  id: totrans-59
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 使 ChatGPT 能够创建回复的东西正是使其不可靠的原因。为了让人类或机器想象出不存在的东西，比如小说或电影中的虚构世界，它们必须首先摆脱基于现实规则的严格限制。
 - en: '![](images/00009.jpg)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/00009.jpg)'
 - en: '[FIGURE 2-3:](#filepos114659) ChatGPT understands and speaks in both human
     and computer languages.'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图 2-3：](#filepos114659) ChatGPT 理解并使用人类和计算机语言。'
 - en: But cutting that tether allows AI to abandon any preference for truth because
     truth is fact and fact is reality, but imagination is separate, or at best tangential,
     to reality. Therefore, ChatGPT is free to make up any answer it gives you. Sometimes
@@ -397,25 +539,35 @@
     in the prompt. When it predicts — or guesses — incorrectly but has determined
     on its own that this wrong response has a high probability of being correct, it
     is said to be hallucinating.
+  id: totrans-62
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 但切断这种联系使得人工智能可以放弃对真相的偏好，因为真相是事实，事实是现实，但想象是独立的，或者最多是与现实相关的。因此，ChatGPT 可以随意编造任何答案给你。有时候你希望它这样做，因为你希望它的回应以创造性的方式构思，或包含创新的想法。但有时候
+    ChatGPT 给出的回应是完全错误的，甚至可能令人反感。请记住，ChatGPT 正在预测哪些词将跟随你的提示，满足你的意图，并遵循提示中的上下文。当它预测
+    — 或猜测 — 错误，但自行确定这个错误的回应有很高的正确概率时，它被称为在幻觉。
 - en: In other words, its answer can be undeniably and provably wrong, yet the model
     has a high degree of confidence that it is right. And no, you may not realize
     it just by looking at its answer. You’ll need to do some thorough fact-checking
     before you rely on ChatGPT’s responses.
+  id: totrans-63
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 换句话说，它的答案可以被无可否认地证明是错误的，但模型却有很高的自信认为它是正确的。而且，不，你可能不会仅仅通过看它的答案就意识到这一点。在依赖 ChatGPT
+    的回答之前，你需要进行一些彻底的事实核查。
 - en: It's important to note that ChatGPT does not always wait for you to tell it
     to be creative or imaginative before it starts making up stuff. However, ChatGPT
     is more likely to hallucinate and become verbally offensive in long conversations.
     Because of that tendency, some applications with embedded ChatGPT will limit the
     size of chats in a single session or limit the number of sessions in a day per
     user.
+  id: totrans-64
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 需要注意的是，ChatGPT 并不总是等待你告诉它要创造性或想象力才开始编造东西。然而，在长时间的对话中，ChatGPT 更有可能产生幻觉并变得言语攻击性。由于这种倾向，一些嵌入
+    ChatGPT 的应用程序会限制单个会话中的聊天大小，或限制每个用户每天的会话次数。
 - en: Because ChatGPT makes up its responses fairly often, Cassie Kozyrkov, chief
     decision scientist at Google, calls ChatGPT a bullshitter, which appropriately
     puts its reliability alongside that of tipsy conference-goers at a hotel bar.
@@ -423,242 +575,336 @@
     as a new buddy at the bar, and fact-check anything it tells you before you accept
     it as true. Sam Altman, CEO of OpenAI, admits these shortcomings in the tweet
     shown in [Figure 2-4](#filepos118781).
+  id: totrans-65
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 尽管OpenAI对模型施加了限制，但ChatGPT仍然可能提供不当、不安全和冒犯性的回应。
 - en: '![](images/00073.jpg)'
+  id: totrans-66
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/00073.jpg)'
 - en: '[FIGURE 2-4:](#filepos118667) Tweets about ChatGPT’s reliability by Sam Altman,
     CEO of OpenAI.'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图2-4：](#filepos118667) OpenAI首席执行官Sam Altman关于ChatGPT可靠性的推文。'
 - en: 'Following is a short list of ChatGPT’s limitations:'
+  id: totrans-68
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 以下是ChatGPT的一些限制：
 - en: Training the model to not offend people sometimes has the effect of making the
     model overly cautious and more likely to decline answering questions unnecessarily.
+  id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 训练模型不冒犯人有时会导致模型过于谨慎，更有可能拒绝不必要地回答问题。
 - en: Despite the guardrails OpenAI has imposed on the model, ChatGPT can still deliver
     inappropriate, unsafe, and offensive responses.
+  id: totrans-70
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 尽管OpenAI对模型施加了限制，但ChatGPT仍然可能提供不当、不安全和冒犯性的回应。
 - en: It can generate answers that are completely untrue, sometimes aggressive, and
     more than a little unhinged.
+  id: totrans-71
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 它可能生成完全不真实、有时激进且有点不稳定的答案。
 - en: It decides the ideal answer based on the data it has access to and what it has
     learned, not on what the user knows or expects. Therefore, its output, whether
     factually right or wrong, may fall short of the user's expectations or requirements.
+  id: totrans-72
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 它根据自己可以访问的数据和所学到的知识来决定理想答案，而不是根据用户知道或期望的内容。因此，无论事实上正确与否，其输出可能不符合用户的期望或要求。
 - en: It is oversensitive to how prompts are worded. Repeating or rephrasing a prompt
     elicits different responses.
+  id: totrans-73
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 它对提示的措辞过于敏感。重复或重新措辞提示会引发不同的回应。
 - en: Reentering the same prompt repeatedly can result in different answers, repetitious
     phrasing, or an aggressive answer.
+  id: totrans-74
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 反复输入相同提示可能导致不同答案、重复的措辞或激进的回答。
 - en: The model tends to be long-winded rather than concise, due to a training bias
     wherein the human trainers preferred to give long answers to training prompts.
+  id: totrans-75
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于训练偏见，模型往往喜欢冗长而不是简洁，其中人类训练者更倾向于给出长答案来回应训练提示。
 - en: It guesses at the answer you seek rather than asking you questions to better
     understand what you want.
+  id: totrans-76
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 它猜测您寻求的答案，而不是询问您更好地理解您想要什么。
 - en: Nothing in this description of ChatGPT’s reliability or lack thereof diminishes
     the amazing technical accomplishment that it represents. This list is just a warning
     that you should always fact-check ChatGPT outputs before you put them to use.
+  id: totrans-77
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 这段对ChatGPT可靠性或缺乏可靠性的描述并不减少它所代表的惊人技术成就。这个列表只是一个警告，提醒您在使用ChatGPT输出之前始终要事实核查。
 - en: Increasing the Number of Versions and Integrations
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 增加版本和集成数量
 - en: ChatGPT’s free research preview version was released in beta for public use
     on November 30, 2022\. The company says a free version will continue to be available
     beyond this beta release. Meanwhile, a premium version called ChatGPT Plus was
     released on February 1, 2023\. The price at launch was $20 per month per user.
     This book focuses on these two versions, which are also the versions that beginners
     are likely to encounter and experiment with first.
+  id: totrans-79
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT的免费研究预览版本于2022年11月30日以公测形式发布。公司表示免费版本将在此公测发布之后继续提供。与此同时，名为ChatGPT Plus的高级版本于2023年2月1日发布。发布时的价格为每月每用户20美元。本书关注这两个版本，这也是初学者可能首次遇到和尝试的版本。
 - en: GPT-4 is the most recent model that ChatGPT operates on, but users can currently
     select whether they want to use ChatGPT on GPT-3, ChatGPT-3.5 (which is the default
     at the moment), or ChatGPT-4.
+  id: totrans-80
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: GPT-4是ChatGPT目前运行的最新模型，但用户目前可以选择是否使用GPT-3、ChatGPT-3.5（目前的默认版本）或ChatGPT-4。
 - en: ChatGPT is being integrated with a lot of existing software, so you might encounter
     different versions in your job, business, or personal space. Also, enterprise
     versions are rapidly emerging and evolving, which will lead to more software integrations
     as time progresses.
+  id: totrans-81
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT正在与许多现有软件集成，因此您可能会在工作、业务或个人空间中遇到不同版本。此外，企业版本正在迅速涌现和发展，随着时间的推移，这将导致更多的软件集成。
 - en: As examples of the many types of integrations, this section starts with Microsoft’s
     integration of ChatGPT in Bing. As [Figure 2-5](#filepos122803) shows, to use
     Bing with the ChatGPT integration, you need to download the newest version of
     Bing. You’ll find it in the Windows taskbar after it’s downloaded.
+  id: totrans-82
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 作为许多类型集成的示例，本节从微软在必应中集成ChatGPT开始。如[图2-5](#filepos122803)所示，要使用ChatGPT集成的必应，您需要下载最新版本的必应。下载完成后，您将在Windows任务栏中找到它。
 - en: '![](images/00028.jpg)'
+  id: totrans-83
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/00028.jpg)'
 - en: '[FIGURE 2-5:](#filepos122527) Microsoft Bing with ChatGPT integration.'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图2-5：](#filepos122527) 集成了ChatGPT的微软必应。'
 - en: Another interesting Microsoft integration is Visual ChatGPT, a fusion of ChatGPT
     with a series of visual foundation models, which are algorithms trained on broader
     datasets to enable more functions. Visual ChatGPT enables users to send, receive,
     and edit images while chatting with AI in text.
+  id: totrans-85
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 另一个有趣的微软集成是Visual ChatGPT，这是ChatGPT与一系列视觉基础模型的融合，这些模型是在更广泛的数据集上训练的算法，以实现更多功能。Visual
+    ChatGPT使用户能够在与AI文本聊天时发送、接收和编辑图像。
 - en: You can see a Visual ChatGPT demo and access more technical information about
     it on GitHub at [`https://github.com/microsoft/visual-chatgpt`](https://github.com/microsoft/visual-chatgpt).
     [Figure 2-6](#filepos124053) shows one demo you’ll find as you scroll down the
     GitHub page. Users can insert images in the prompt and ask ChatGPT to produce
     images meeting the requirements in the prompt. You can also edit images during
     the chat.
+  id: totrans-86
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 您可以在GitHub上查看Visual ChatGPT演示并获取更多技术信息，网址为[`https://github.com/microsoft/visual-chatgpt`](https://github.com/microsoft/visual-chatgpt)。如[图2-6](#filepos124053)所示，在向下滚动GitHub页面时，您会发现一个演示。用户可以在提示中插入图像，并要求ChatGPT生成符合提示要求的图像。您还可以在聊天过程中编辑图像。
 - en: '![](images/00037.jpg)'
+  id: totrans-87
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/00037.jpg)'
 - en: '[FIGURE 2-6:](#filepos123721) The demo section of Visual ChatGPT on GitHub.'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图2-6：](#filepos123721) GitHub上Visual ChatGPT的演示部分。'
 - en: For companies seeking to customize ChatGPT to more precisely fit their needs,
     look at the ChatGPT customization interface in Azure OpenAI Studio. To open a
     free trial account, go to [`https://azure.microsoft.com/en-in/free/cognitive-services/`](https://azure.microsoft.com/en-in/free/cognitive-services/).
+  id: totrans-89
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 对于希望定制ChatGPT以更精确地满足其需求的公司，请查看Azure OpenAI Studio中的ChatGPT定制界面。要开通免费试用账户，请访问[`https://azure.microsoft.com/en-in/free/cognitive-services/`](https://azure.microsoft.com/en-in/free/cognitive-services/)。
 - en: There’s no doubt that Microsoft and other companies will find many more ways
     to use ChatGPT in their existing and future software. Indeed, many companies are
     currently using the ChatGPT API (application programming interface) and the increasing
     number of plug-ins to more fully leverage ChatGPT’s capabilities.
+  id: totrans-90
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 毫无疑问，微软和其他公司将发现许多更多的方式在其现有和未来软件中使用ChatGPT。事实上，许多公司目前正在使用ChatGPT API（应用程序编程接口）和越来越多的插件，以更充分地利用ChatGPT的功能。
 - en: In short, ChatGPT is not a one-hit wonder. It's a multipurpose tool that will
     continue to evolve and eventually become the backbone of many other software applications.
     So too will its peers.
+  id: totrans-91
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 简而言之，ChatGPT不是一时的奇迹。它是一个多功能工具，将继续发展，并最终成为许多其他软件应用程序的支柱。它的同行也将如此。
 - en: Glimpsing ChatGPT in Microsoft add-ins
+  id: totrans-92
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 在微软插件中看到ChatGPT
 - en: As mentioned, Microsoft and OpenAI worked as partners in training AI models.
     It’s no surprise then to find ChatGPT rapidly integrated with Office365 and other
     Microsoft products. What may be surprising is that there are also third-party
     ChatGPT add-ins for Microsoft products.
+  id: totrans-93
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 正如提到的，微软和OpenAI合作培训AI模型。因此，ChatGPT迅速与Office365和其他微软产品集成在一起并不奇怪。也许令人惊讶的是，还有第三方的ChatGPT插件适用于微软产品。
 - en: Consider Ghostwriter, a Microsoft add-in developed by software developer and
     former Microsoft consultant Patrick Husting. Like many early users, he got tired
     of cutting and pasting ChatGPT-generated text into a Word document, so he made
     a workaround. That workaround, Ghostwriter, flows ChatGPT text directly into Word.
+  id: totrans-94
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 以Ghostwriter为例，这是由软件开发人员和前微软顾问Patrick Husting开发的微软插件。像许多早期用户一样，他厌倦了将ChatGPT生成的文本剪切并粘贴到Word文档中，因此他制定了一个解决方案。这个解决方案Ghostwriter可以直接将ChatGPT文本流入Word中。
 - en: You can get Ghostwriter in the Microsoft Office Store. A $10 one-time fee gets
     you access to a basic edition that limits responses to a couple of paragraphs,
     which is fine for most general uses. And it spares you most of the AI weirdness
     that could follow if you let the thing ramble on.
+  id: totrans-95
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 您可以在 Microsoft Office 商店中获取 Ghostwriter。支付10美元的一次性费用即可获得基础版，限制响应长度为几段，对于大多数一般用途来说是可以接受的。这样可以避免让
+    AI 无端发狂。
 - en: For a $25 one-time fee, you can get the pro edition, which makes all ChatGPT
     languages available and enables you to configure the response length. Keep prompted
     conversations short and create new chats to continue your work to lessen the risk
     of encountering ChatGPT hallucinations (random and wrong answers) or offensive
     outbreaks.
+  id: totrans-96
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 一次性支付25美元，您可以获得专业版，其中包含所有 ChatGPT 语言，并使您能够配置响应长度。保持提示性对话简短，并创建新的聊天以继续您的工作，以减少遇到
+    ChatGPT 幻觉（随机和错误答案）或冒犯性爆发的风险。
 - en: 'If you want to give Ghostwriter a try or just check out other ChatGPT add-ins,
     follow these steps:'
+  id: totrans-97
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 如果您想尝试 Ghostwriter 或查看其他 ChatGPT 插件，请按照以下步骤操作：
 - en: Open any office product, such as Word, Excel, or Outlook.
+  id: totrans-98
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 打开任何办公产品，如 Word、Excel 或 Outlook。
 - en: Click the Insert tab.
+  id: totrans-99
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“插入”选项卡。
 - en: Click the Add-Ins tab.
+  id: totrans-100
   prefs:
   - PREF_OL
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 点击“插件”选项卡。
 - en: '[Figure 2-7](#filepos127930) is the Add-Ins screen for Word.'
+  id: totrans-101
   prefs:
   - PREF_IND
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[图2-7](#filepos127930) 是 Word 的插件屏幕。'
 - en: Select an add-in from the drop-down menu or enter the name of the add-in in
     the search bar.
+  id: totrans-102
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从下拉菜单中选择一个插件，或在搜索栏中输入插件的名称。
 - en: '![](images/00043.jpg)'
+  id: totrans-103
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/00043.jpg)'
 - en: '[FIGURE 2-7:](#filepos127748) The Ghostwriter ChatGPT add-in.'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图2-7：](#filepos127748) Ghostwriter ChatGPT 插件。'
 - en: Mainstreaming ChatGPT via the power of an API
+  id: totrans-105
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 通过 API 的力量推广 ChatGPT
 - en: On March 1, 2023, OpenAI launched an application programming interface (API),
     which is a connector of sorts that lets applications communicate with each other.
     The API makes it easier for developers to integrate ChatGPT with their organization’s
     products, services, apps, and websites. The price at introduction was $0.002 per
     1000 tokens. That’s relatively cheap as AI price tags go, making ChatGPT easily
     accessible for most developers from a cost standpoint.
+  id: totrans-106
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 2023年3月1日，OpenAI 推出了一个应用程序编程接口（API），这是一种连接器，可以让应用程序相互通信。API 使开发人员更容易将 ChatGPT
+    与其组织的产品、服务、应用程序和网站集成在一起。推出时的价格为每1000个令牌0.002美元。就人工智能价格标签而言，这相对便宜，使得大多数开发人员从成本的角度来看，ChatGPT
+    很容易获得。
 - en: Why is the API priced in units of tokens? ChatGPT models consume a sequence
     of messages with metadata attached in a raw format called Chat Markup Language
     (ChatML). Traditionally, GPT models consume raw, unstructured text as tokens.
     So it’s no surprise that inputs for ChatGPT models are rendered as a sequence
     of tokens, each containing pieces of words.
+  id: totrans-107
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 为什么 API 的定价单位是令牌？ChatGPT 模型消耗带有元数据附加的消息序列，以原始格式称为 Chat Markup Language（ChatML）。传统上，GPT
+    模型将原始、非结构化文本作为令牌消耗。因此，ChatGPT 模型的输入呈现为一系列令牌，每个令牌包含单词片段。
 - en: Tokens are used to predict the next token and the next and — voila! — a machine-generated
     narrative occurs. As you may have noticed, this process is not thinking as humans
     describe the brain-driven process. This process also predicts text in a far faster,
     more intelligent, and multitasked way than simple predictive text or the autocorrect
     feature on your smartphone or in a document spell-checker.
+  id: totrans-108
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 令牌用于预测下一个令牌，然后下一个，然后——哇！——一个机器生成的叙述发生了。您可能已经注意到，这个过程并不像人类描述的大脑驱动过程那样思考。这个过程还以比简单的预测文本或智能手机上的自动更正功能或文档拼写检查器更快、更智能和多任务的方式预测文本。
 - en: As a side note, the predictive nature of GPT problem-solving creates the weird
     issue of too many fingers on human hands in GPT-generated images. The GPT image
     model sees that one finger follows another on a human hand but often fails to
@@ -667,279 +913,410 @@
     the GPT models could truly think, even at a child’s level, they could detect the
     problem and put the correct number of fingers on a hand — in every image containing
     normal human hands.
+  id: totrans-109
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 顺便说一句，GPT 问题解决的预测性质导致了 GPT 生成的图像中出现了人手上的手指过多的奇怪问题。GPT 图像模型看到一个手指跟随另一个手指，但通常没有注意到手指的数量限制为五根，并且手指并非相同。因此，它通常会预测更多的手指，并以奇怪的方式绘制它们。如果
+    GPT 模型真的能够像孩子一样思考，它们可以检测到问题，并在每个包含正常人手的图像上放置正确数量的手指。
 - en: Checking out early ChatGPT API adopters
+  id: totrans-110
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 早期采用 ChatGPT API 的用户
 - en: Instacart, Shopify, Quizlet, and Snap are among the early adopters and ChatGPT
     API experimenters.
+  id: totrans-111
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: Instacart、Shopify、Quizlet和Snap是早期采用者和ChatGPT API实验者。
 - en: Instacart is augmenting its app to make customized shopping lists; create menus
     for school lunches, family dinners, and social events; and shop recipes to help
     you use the ingredients you already have on hand. Ask Instacart, the company’s
     chatbot, is built on the ChatGPT API.
+  id: totrans-112
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: Instacart正在增强其应用程序，以制作定制的购物清单；为学校午餐、家庭晚餐和社交活动创建菜单；并购买食谱，帮助您使用您已经有的食材。该公司的聊天机器人Ask
+    Instacart是基于ChatGPT API构建的。
 - en: Shopify plans to launch a new shopping assistant built on the ChatGPT API. The
     personalized assistant will scan millions of products and deliver a personalized
     selection to shoppers based on their size, brand preferences, and personal style.
+  id: totrans-113
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: Shopify计划推出基于ChatGPT API构建的新型购物助手。这款个性化助手将扫描数百万种产品，并根据顾客的尺寸、品牌偏好和个人风格提供个性化选择。
 - en: Quizlet used GPT-3 for three years before the launch of ChatGPT. ChatGPT was
     put to work across multiple use cases, including vocabulary learning and practice
     tests. Based on the success of these experiments, Quizlet added Q-Chat, built
     on the ChatGPT API, as a fully adaptive AI tutor for students.
+  id: totrans-114
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: Quizlet在推出ChatGPT之前使用了三年的GPT-3。ChatGPT被用于多种用例，包括词汇学习和练习测试。基于这些实验的成功，Quizlet推出了基于ChatGPT
+    API构建的Q-Chat，作为学生的完全自适应AI导师。
 - en: Snap introduced My AI for its premium product, Snap Plus. My AI is an experimental
     feature that adds customizable elements and interactions for app users.
+  id: totrans-115
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: Snap为其高级产品Snap Plus推出了My AI。My AI是一个实验性功能，为应用用户添加了可定制的元素和交互。
 - en: Other organizations are following suit given the drop in cost now that the API
     connects to the more efficient and economical GPT-3.5-turbo and GPT-4 models.
+  id: totrans-116
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 随着API连接到更高效、经济的GPT-3.5-turbo和GPT-4模型，其他组织也在效仿，因为成本下降了。
 - en: Expanding the field of extensions
+  id: totrans-117
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 扩展领域
 - en: An extension is a small, modular piece of software that customizes, or extends,
     the browser’s capabilities. Access to ChatGPT is available via browser extensions.
     Why would you want to use these extensions? Because they make access to ChatGPT
     from any website quicker and easier, and they offer additional features such as
     a chat exporter and a list of suggested prompts.
+  id: totrans-118
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 扩展是一种小型、模块化的软件，用于定制或扩展浏览器的功能。通过浏览器扩展可以访问ChatGPT。为什么要使用这些扩展？因为它们使从任何网站访问ChatGPT更快、更容易，并提供额外功能，如聊天导出器和建议提示列表。
 - en: Following are just a few of the extensions that are available on the Chrome
     or Microsoft Edge browsers. (Some are free.) A few are also available on the Firefox
     browser. Find them by looking at your browser’s extension store or by searching
     for the extension online.
+  id: totrans-119
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 以下是Chrome或Microsoft Edge浏览器上可用的一些扩展（一些是免费的）。其中一些也可以在Firefox浏览器上找到。您可以通过浏览器的扩展商店或在线搜索来找到它们。
 - en: 'ChatGPT Chrome extension: Shows ChatGPT’s results alongside Google search results.'
+  id: totrans-120
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ChatGPT Chrome扩展：在Google搜索结果旁边显示ChatGPT的结果。
 - en: 'Merlin: Gets ChatGPT to compose a response and reply to email, summarize the
     content in a document, do the math in a spreadsheet, and more.'
+  id: totrans-121
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Merlin：让ChatGPT撰写响应并回复电子邮件，总结文档内容，对电子表格中的数学进行计算等。
 - en: 'Enhanced ChatGPT: Adds helpful features to the plain ChatGPT interface and
     provides common prompts you might want to use.'
+  id: totrans-122
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 增强版ChatGPT：为普通ChatGPT界面添加了有用的功能，并提供您可能想要使用的常见提示。
 - en: 'WebChatGPT: Adds current-day internet results to ChatGPT responses, which are
     tethered to the 2021 version of the internet. This extension tries to integrate
     the two, often with mixed results. The ChatGPT browsing plug-in by OpenAI will
     likely do a better job.'
+  id: totrans-123
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: WebChatGPT：在ChatGPT响应中添加了当天的互联网结果，这些结果与2021年的互联网版本相连。这个扩展尝试整合这两者，结果常常参差不齐。OpenAI的ChatGPT浏览插件可能会做得更好。
 - en: 'Promptheus: Lets you simply speak your prompt rather than type it. Press the
     spacebar on your keyboard while in the ChatGPT prompt bar and talk.'
+  id: totrans-124
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Promptheus：让您可以简单地说出您的提示，而不是输入。在ChatGPT提示栏中按下键盘上的空格键并说话。
 - en: 'ChatGPT Export and Share: Exports text from ChatGPT into whatever application
     you’re using. You can also save ChatGPT responses as images or PDFs and share
     links to them.'
+  id: totrans-125
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ChatGPT导出和分享：将ChatGPT中的文本导出到您正在使用的应用程序中。您还可以将ChatGPT的响应保存为图像或PDF，并分享链接。
 - en: '![](images/00023.jpg) Be careful with extensions of any type, ChatGPT related
     or otherwise, and for any browser because extensions can be loaded with malware.
     Be very sure of the safety of an extension before you enable it. Note that I have
     not vetted any extensions to ensure that they are safe and free of malware. Rather,
     I list them here merely as examples.'
+  id: totrans-126
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '![](images/00023.jpg) 小心使用任何类型的扩展，无论是与ChatGPT相关还是其他类型的扩展，以及任何浏览器，因为扩展可能携带恶意软件。在启用扩展之前，请确保扩展的安全性。请注意，我没有审查任何扩展，以确保它们是安全且没有恶意软件。相反，我在这里仅列出它们作为示例。'
 - en: More ChatGPT extensions are available to explore. Check them out on your browser’s
     web store. But again, be careful!
+  id: totrans-127
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 还有更多ChatGPT扩展可供探索。在浏览器的网络商店中查看它们。但是，请再次注意小心！
 - en: Building New Businesses Based on ChatGPT
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于ChatGPT构建新业务
 - en: 'ChatGPT presents users with many business opportunities. For example, it can
     generate business ideas with business plans to match. When prompted by a Hackernoon
     writer, it produced five business ideas, each potentially worth millions of dollars:
     a new way to generate renewable energy, a remote work platform, a new form of
     transportation, a new way to store data, and a way to make healthcare more accessible
     and affordable.'
+  id: totrans-129
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT为用户提供了许多商业机会。例如，它可以生成与商业计划相匹配的商业创意。当一位Hackernoon的作者提出要求时，它提出了五个商业创意，每个创意潜在价值数百万美元：一种新的可再生能源生成方式，一个远程工作平台，一种新的交通方式，一种新的数据存储方式，以及一种使医疗保健更加可及和负担得起的方式。
 - en: ChatGPT can also write or suggest improvements to business plans. Calculate
     better pricing models. Strategically optimize supply chains. Summarize legal forms
     for a quick and easy read. Complete applications for bank loans and credit cards.
     Compute tax implications. Determine payroll taxes. And answer other complex business
     questions.
+  id: totrans-130
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT还可以撰写或建议改进商业计划。计算更好的定价模型。战略性优化供应链。概括法律文件，以便快速简便阅读。填写银行贷款和信用卡申请。计算税务影响。确定工资税。以及回答其他复杂的商业问题。
 - en: It can rapidly automate business communications, from answering emails to writing
     marketing and web page copy. It can write just about any type of business text,
     including statement of work (SOW), contracts, service-level agreements (SLAs),
     warranties, wills, and policies.
+  id: totrans-131
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 它可以快速自动化业务通信，从回复电子邮件到撰写营销和网页文案。它可以撰写几乎任何类型的商业文本，包括工作说明书（SOW）、合同、服务级别协议（SLA）、保修书、遗嘱和政策。
 - en: ChatGPT VERSUS SEARCH
+  id: totrans-132
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT与搜索的对比
 - en: '|'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: ChatGPT
+  id: totrans-134
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT
 - en: '|'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Search Engine
+  id: totrans-136
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 搜索引擎
 - en: '|'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: '|'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Generates a single narrative
+  id: totrans-139
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 生成单一叙述
 - en: '|'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Generates a list of potentially relevant information
+  id: totrans-141
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 生成一系列潜在相关信息的列表
 - en: '|'
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: '|'
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Does not cite sources
+  id: totrans-144
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 不引用来源
 - en: '|'
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Reveals sources
+  id: totrans-146
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 揭示来源
 - en: '|'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: '|'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Currently does not produce images
+  id: totrans-149
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 目前不生成图像
 - en: '|'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Provides a group of related images
+  id: totrans-151
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 提供一组相关的图像
 - en: '|'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: '|'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Predicts responses
+  id: totrans-154
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 预测回应
 - en: '|'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Matches keywords
+  id: totrans-156
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 匹配关键词
 - en: '|'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: '|'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Can hallucinate
+  id: totrans-159
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 可以产生幻觉
 - en: '|'
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Does not hallucinate
+  id: totrans-161
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 不会产生幻觉
 - en: '|'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: '|'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Can provide disinformation
+  id: totrans-164
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 可以提供错误信息
 - en: '|'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Can provide disinformation
+  id: totrans-166
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 可以提供错误信息
 - en: '|'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: '|'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Prompts essential to performance
+  id: totrans-169
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 对性能至关重要的提示
 - en: '|'
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: Keywords essential to performance
+  id: totrans-171
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 对性能至关重要的关键词
 - en: '|'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: '|'
 - en: And ChatGPT can be the backbone of existing writing and publishing businesses
     too. Fiction writers can use it to generate story ideas, plots, and characters.
     Non-fiction writers can use it make first drafts of articles, white papers, e-books,
@@ -948,37 +1325,49 @@
     for submission. Or writers can use ChatGPT to serve as an editor to make the copy
     cleaner before submitting it to a human editor or a publisher. And no, ChatGPT
     was not used for any of these purposes in the writing of this book.
+  id: totrans-173
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT也可以成为现有写作和出版业务的支柱。小说作家可以使用它来生成故事创意、情节和角色。非小说作家可以使用它来撰写文章、白皮书、电子书等的初稿，以作者个人的写作风格和语调。然后作者只需核实事实并调整输出，即可产生一个快速但精心制作的草稿，适合提交。或者作家可以使用ChatGPT作为编辑，使文本更干净，然后再提交给人类编辑或出版商。并且，ChatGPT在编写本书时没有用于这些目的。
 - en: Further, ChatGPT and its brethren can be used as the backbone for a business
     too. For example, people are already using DALL-E to create artistic works and
     sell them online. The art can be printed on demand, thereby reducing production
     waste and overhead, while lowering the price of entry into this new line of business.
+  id: totrans-174
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 此外，ChatGPT及其同类也可以用作业务的支柱。例如，人们已经开始使用DALL-E创建艺术作品并在线销售。��术品可以按需打印，从而减少生产浪费和开销，同时降低进入这一新业务领域的门槛。
 - en: ChatGPT can similarly be used to help produce e-books, printed books, manuals,
     and other text-driven works for mass consumption. ChatGPT can also provide support
     for a business by generating self-help texts for customers, call center scripts,
     return instructions, product assembly instructions, and other support documents.
+  id: totrans-175
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT也可以用于帮助制作电子书、印刷书籍、手册和其他面向大众消费的文本作品。ChatGPT还可以通过生成自助文本为客户、呼叫中心脚本、退货说明、产品组装说明和其他支持文档提供支持。
 - en: ChatGPT can even be the main tool for generating business revenue. For example,
     some people will be intimidated by ChatGPT — or in dire need of better prompts
     — and will hire people to use ChatGPT in their behalf.
+  id: totrans-176
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT甚至可以成为生成商业收入的主要工具。例如，一些人可能会被ChatGPT吓到 - 或者迫切需要更好的提示 - 并会雇人代表他们使用ChatGPT。
 - en: ChatGPT can be teamed with 3D printing to do everything from printing a house
     from ChatGPT-generated blueprints to creating a spacecraft part fitted to NASA’s
     precise specifications.
+  id: totrans-177
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: ChatGPT可以与3D打印技术结合，从根据ChatGPT生成的蓝图打印房屋到创建符合NASA精确规格的航天器零部件，应有尽有。
 - en: Human imagination and prompt skills are the only limits to using this technology.
     That’s what makes ChatGPT so amazing — and so terrifying.
+  id: totrans-178
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 人类的想象力和及时的技能是使用这项技术的唯一限制。这就是使ChatGPT如此令人惊奇 - 也是如此可怕的原因。

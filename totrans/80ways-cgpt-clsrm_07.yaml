@@ -1,10 +1,14 @@
 - en: Chapter eight
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: 第八章
 - en: Using chatGPT for Computer Programming
+  id: totrans-1
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用 chatGPT 进行计算机编程
 - en: This chapter will teach you how to utilize chatGPT to streamline your coding
     process. With chatGPT, you can quickly write code in various languages. Provide
     specific input, and let chatGPT work its magic. Not only can chatGPT write code
@@ -12,336 +16,528 @@
     clean up HTML code, write application scripts, and even add comments to your code.
     By the end of this chapter, you will have a better understanding of how to use
     chatGPT to improve your coding efficiency.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章将教你如何利用 chatGPT 来简化编码过程。通过 chatGPT，你可以快速使用各种语言编写代码。提供具体的输入，让 chatGPT 发挥其魔力。ChatGPT
+    不仅可以编写代码和解释其作用，还可以解决任何问题、编写 SQL 代码、清理 HTML 代码、编写应用程序脚本，甚至为你的代码添加注释。通过本章的学习，你将更好地了解如何利用
+    chatGPT 提高编码效率。
 - en: 54\. Write Code
+  id: totrans-3
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 54\. 写代码
 - en: Do you need any help writing code? Explain what you want to accomplish and which
     language to use. ChatGPT will do its best to deliver code you can use. Some people
     have written entire applications in collaboration with chatGPT.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 需要帮助写代码吗？解释你想要实现什么以及要使用哪种语言。ChatGPT 将尽力提供可用的代码。有些人已经与 chatGPT 协作编写了整个应用程序。
 - en: 'Here is an example of a simple script:'
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个简单脚本的示例：
 - en: '**Write database connection code in PHP to display data as an HTML table with
     the following information: name, address, city, state, and zip code.**'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: '**编写 PHP 中的数据库连接代码，以显示数据为 HTML 表，包括以下信息：姓名、地址、城市、州和邮政编码。**'
 - en: 'ChatGPT:'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 'ChatGPT:'
 - en: '*Here is an example of how to display data from a table named “address_list”
     in a MySQL database as an HTML table using PHP:*'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: '*以下是如何使用 PHP 将 MySQL 数据库中名为“address_list”的表中的数据显示为 HTML 表的示例：*'
 - en: '*<?php*'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<?php*'
 - en: '*$servername = “localhost”;*'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$servername = “localhost”;*'
 - en: '*$username = “your_username”;*'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$username = “your_username”;*'
 - en: '*$password = “your_password”;*'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$password = “your_password”;*'
 - en: '*$dbname = “your_database”;*'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$dbname = “your_database”;*'
 - en: '*// Create connection*'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 创建连接*'
 - en: '*$conn = new mysqli($servername, $username, $password, $dbname);*'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$conn = new mysqli($servername, $username, $password, $dbname);*'
 - en: '*// Check connection*'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 检查连接*'
 - en: '*if ($conn->connect_error) {*'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: '*if ($conn->connect_error) {*'
 - en: '*die(“Connection failed: “ . $conn->connect_error);*'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: '*die(“连接失败：” . $conn->connect_error);*'
 - en: '*}*'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: '*}*'
 - en: '*// Select data from table*'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 从表中选择数据*'
 - en: '*$sql = “SELECT name, address, city, state, zipcode FROM address_list”;*'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$sql = “SELECT name, address, city, state, zipcode FROM address_list”;*'
 - en: '*$result = $conn->query($sql);*'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$result = $conn->query($sql);*'
 - en: '*echo “<table>*'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: '*echo “<table>*'
 - en: '*<tr>*'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<tr>*'
 - en: '*<th>Name</th>*'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<th>Name</th>*'
 - en: '*<th>Address</th>*'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<th>Address</th>*'
 - en: '*<th>City</th>*'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<th>City</th>*'
 - en: '*<th>State</th>*'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<th>State</th>*'
 - en: '*<th>Zip Code</th>*'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<th>Zip Code</th>*'
 - en: '*</tr>”;*'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '*</tr>”;*'
 - en: '*// Output data of each row*'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 输出每行的数据*'
 - en: '*while($row = $result->fetch_assoc()) {*'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: '*while($row = $result->fetch_assoc()) {*'
 - en: '*echo “<tr>*'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: '*echo “<tr>*'
 - en: '*<td>“.$row[”name”].”</td>*'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<td>“.$row[”name”].”</td>*'
 - en: '*<td>“.$row[”address”].”</td>*'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<td>“.$row[”address”].”</td>*'
 - en: '*<td>“.$row[”city”].”</td>*'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<td>“.$row[”city”].”</td>*'
 - en: '*<td>“.$row[”state”].”</td>*'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<td>“.$row[”state”].”</td>*'
 - en: '*<td>“.$row[”zipcode”].”</td>*'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<td>“.$row[”zipcode”].”</td>*'
 - en: '*</tr>”;*'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: '*</tr>”;*'
 - en: '*}*'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: '*}*'
 - en: '*echo “</table>”;*'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: '*echo “</table>”;*'
 - en: '*$conn->close();*'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$conn->close();*'
 - en: '*?>*'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: '*?>*'
 - en: '*This code uses the MySQLi extension to select data from the “address_list”
     table, then it iterates through the resulting rows and adds them to an HTML table.
     The table headers are created using <th> tags and the data rows are created using
     <td> tags. It is important to note that you should change the $username, $password,
     $dbname and $servername variable with your actual credentials. Also, make sure
     that table “address_list” already exists otherwise you will get an error message.*'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: '*这段代码使用 MySQLi 扩展从“address_list”表中选择数据，然后遍历结果行并将它们添加到 HTML 表中。表头使用 <th> 标签创建，数据行使用
+    <td> 标签创建。重要的是要注意，你应该将 $username、$password、$dbname 和 $servername 变量更改为你的实际凭据。另外，请确保表“address_list”已经存在，否则你将收到错误消息。*'
 - en: 55\. Explain What Code Does
+  id: totrans-45
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 55\. 解释代码的作用
 - en: Do you have a piece of computer code that you are not sure of the language or
     what it does? ChatGPT would be happy to tell you. Paste in a code block and ask
     chatGPT to explain what the code does.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 你有一段计算机代码，不确定是什么语言或它的作用吗？ChatGPT 很乐意告诉你。粘贴一段代码块，询问 chatGPT 解释代码的作用。
 - en: '**<%**'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: '**<%**'
 - en: '**Set fs=Server.CreateObject(“Scripting.FileSystemObject”)**'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Set fs=Server.CreateObject(“Scripting.FileSystemObject”)**'
 - en: '**Set f=fs.OpenTextFile(Server.MapPath(“testread.txt”), 1)**'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Set f=fs.OpenTextFile(Server.MapPath(“testread.txt”), 1)**'
 - en: '**do while f.AtEndOfStream = false**'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: '**do while f.AtEndOfStream = false**'
 - en: '**Response.Write(f.ReadLine)**'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Response.Write(f.ReadLine)**'
 - en: '**Response.Write(“<br>”)**'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Response.Write(“<br>”)**'
 - en: '**loop**'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '**loop**'
 - en: '**f.Close**'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: '**f.Close**'
 - en: '**Set f=Nothing**'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Set f=Nothing**'
 - en: '**Set fs=Nothing**'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Set fs=Nothing**'
 - en: '**%>**'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: '**%>**'
 - en: '**Explanation of what the code does**'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '**代码的解释**'
 - en: 'ChatGPT:'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT：
 - en: '*This is a server-side script written in VBScript, typically embedded in an
     ASP (Active Server Pages) file.*'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: '*这是一个使用VBScript编写的服务器端脚本，通常嵌入在ASP（Active Server Pages）文件中。*'
 - en: '*The script uses the* ***Server.CreateObject*** *method to create an instance
     of the “Scripting.FileSystemObject” object, which is used to interact with the
     file system. This object is saved in the variable* ***fs****.*'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '*脚本使用***Server.CreateObject***方法创建一个“Scripting.FileSystemObject”对象的实例，用于与文件系统交互。这个对象保存在变量***fs***中。*'
 - en: '*Then, the script opens a text file named “testread.txt” located in the same
     directory as the ASP file, using the* ***OpenTextFile*** *method of the* ***fs***
     *object. The variable* ***f*** *holds the file object.*'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: '*然后，脚本使用***fs***对象的***OpenTextFile***方法打开一个名为“testread.txt”的文本文件，该文件位于与ASP文件相同的目录中。变量***f***保存文件对象。*'
 - en: '*The script then enters a loop, using the* ***do while*** *statement to check
     if the file is at the end of the stream, which means if the file is at the end
     of the file. If it is not, it uses the* ***ReadLine*** *method to read the next
     line of the file and writes it to the response using* ***Response.Write****. It
     also writes a line break using* ***Response.Write(“<br>”)*** *to separate the
     lines of the file.*'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: '*然后，脚本进入一个循环，使用***do while***语句检查文件是否到达流的末尾，这意味着文件是否到达文件的末尾。如果没有到达，它使用***ReadLine***方法读取文件的下一行，并使用***Response.Write***将其写入响应。它还使用***Response.Write(“<br>”)***写入一个换行符，以分隔文件的行。*'
 - en: '*Once the end of the file is reached, the script closes the file using* ***f.Close***
     *and sets the* ***f*** *and* ***fs*** *variables to* ***Nothing*** *to release
     the memory used by the file object and filesystem object.*'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: '*当文件末尾被达到时，脚本使用***f.Close***关闭文件，并将***f***和***fs***变量设置为***Nothing***，释放文件对象和文件系统对象使用的内存。*'
 - en: '*In short, this script reads the contents of a text file named “testread.txt”
     located in the same directory as the ASP file and writes each line of the file
     to the response, separated by a line break.*'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: '*简而言之，这个脚本读取了一个名为“testread.txt”的文本文件的内容，该文件位于与ASP文件相同的目录中，并将文件的每一行写入响应，用换行符分隔。*'
 - en: 56\. Troubleshoot Scripts
+  id: totrans-66
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 56\. 排查脚本
 - en: 'ChatGPT can help you troubleshoot code. Ask chatGPT to check your code for
     errors. Here is a quick example in which I introduced two typical errors:'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT可以帮助您排查代码问题。请ChatGPT检查您的代码是否有错误。以下是一个快速示例，我引入了两个典型错误：
 - en: '**What is wrong with this code**'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: '**这段代码有什么问题**'
 - en: '**<?php function familyName($fname, $year) {**'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: '**<?php function familyName($fname, $year) {**'
 - en: '**echo “$fname Refsnes. Born in $year <br>”;**'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: '**echo “$fname Refsnes. Born in $year <br>”;**'
 - en: '**}**'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: '**}**'
 - en: '**familyName(“Hege”,”1975″);**'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: '**familyName(“Hege”,”1975″);**'
 - en: '**familyName(“Stale”,”1978″)**'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: '**familyName(“Stale”,”1978″)**'
 - en: '**familyname(“Kai Jim”,”1983″);**'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: '**familyname(“Kai Jim”,”1983″);**'
 - en: '**?>**'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: '**?>**'
 - en: 'ChatGPT: *There are two issues with this code.*'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT：*这段代码有两个问题。*
 - en: '*The last function call is using “familyname” instead of “familyName” (notice
     the uppercase “N” in the correct version). This means that the function will not
     be called, and an error will occur.*'
+  id: totrans-77
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*最后一个函数调用使用了“familyname”而不是“familyName”（注意正确版本中大写的“N”）。这意味着该函数不会被调用，会出现错误。*'
 - en: '*The second call to the function is missing a semicolon at the end of the line.
     This will cause a parse error and the code will not execute correctly. It should
     be like : familyName(“Stale”,”1978″);*'
+  id: totrans-78
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '*对函数的第二次调用在行末���少一个分号。这将导致解析错误，代码将无法正确执行。应该是：familyName(“Stale”,”1978″);*'
 - en: 57\. Write SQL Code
+  id: totrans-79
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 57\. 写SQL代码
 - en: 'Working with database query languages can be tricky and time-consuming but
     essential if working with MySQL, Oracle SQL, or even Microsoft Access. ChatGPT
     will help you write queries quickly by translating your intent into SQL code.
     Here is an example using Postgres SQL:'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用数据库查询语言可能会很棘手和耗时，但如果使用MySQL、Oracle SQL甚至Microsoft Access，这是必不可少的。ChatGPT将通过将您的意图转换为SQL代码来帮助您快速编写查询。以下是一个使用Postgres
+    SQL的示例：
 - en: '**Postgres SQL tables, with their properties:**'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Postgres SQL表，及其属性：**'
 - en: '**Employee(id, name, department_id)**'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Employee(id, name, department_id)**'
 - en: '**Department(id, name, address)**'
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Department(id, name, address)**'
 - en: '**Salary_Payments(id, employee_id, amount, date)**'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Salary_Payments(id, employee_id, amount, date)**'
 - en: '**A query to list the names of the departments which employed more than 10
     employees in the last 3 months**'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '**查询列出过去3个月雇佣了超过10名员工的部门的名称**'
 - en: 'ChatGPT:'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT：
 - en: '*SELECT Department.name FROM Employee*'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: '*SELECT Department.name FROM Employee*'
 - en: '*INNER JOIN Department ON Employee.department_id = Department.id*'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: '*INNER JOIN Department ON Employee.department_id = Department.id*'
 - en: '*WHERE Employee.id IN ( SELECT Salary_Payments.employee_id FROM Salary_Payments*'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: '*WHERE Employee.id IN ( SELECT Salary_Payments.employee_id FROM Salary_Payments*'
 - en: '*WHERE date >= NOW() - INTERVAL ‘3 months’ )*'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: '*WHERE date >= NOW() - INTERVAL ‘3 months’ )*'
 - en: '*GROUP BY Department.id*'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: '*GROUP BY Department.id*'
 - en: '*HAVING COUNT(Employee.id) > 10;*'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: '*HAVING COUNT(Employee.id) > 10;*'
 - en: '*The above query will join the Employee and Department table on the department_id
     column, and then it will filter the results to only include the employees that
     have a salary payment record in the last 3 months. After that the query will group
     the results by department and count the number of employees for each department.
     Finally, the having clause will filter the results to only include the departments
     that have more than 10 employees.*'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: '*上述查询将在department_id列上连接Employee和Department表，然后将结果筛选为仅包括最近3个月有薪水记录的员工。之后，查询将按部门对结果进行分组，并计算每个部门的员工人数。最后，HAVING子句将筛选出仅包括员工人数超过10人的部门的结果。*'
 - en: 58\. Clean Up HTML Code
+  id: totrans-94
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 58\. 清理HTML代码
 - en: 'Copying content from a word processor or a website into a learning management
     system (LMS) or web page will often introduce nonessential HTML code. This extra
     code can make editing more challenging. I like to strip out unnecessary code.
     ChatGPT will do the job for you. Here is an example:'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 从文字处理器或网站复制内容到学习管理系统（LMS）或网页通常会引入非必要的HTML代码。这些额外的代码会增加编辑的难度。我喜欢剔除不必要的代码。ChatGPT会为您完成这项工作。以下是一个示例：
 - en: '**Clean up this HTML code “<h2 style=”;”><strong>Criminology: Theories of Crime</strong></h2>
     <p style=”;”><img src=”https://mysite.com/myimage.jpg” width=”640″ height=”354″
     data-api-endpoint=”https://mysite.com/myimage.jpg” data-api-returntype=”File”
@@ -362,68 +558,120 @@
     <strong>Siegel, L.J. (2019). Criminology: The Core (7<sup>th</sup> ed.) Cengage
     Learning, Inc.</strong></p> <p>Required materials: <strong>Supplemental materials
     may be provided by the instructor</strong></p> <p>Syllabus</p>”**'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: '**清理这段HTML代码“<h2 style=”;”><strong>犯罪学：犯罪理论</strong></h2> <p style=”;”><img
+    src=”https://mysite.com/myimage.jpg” width=”640″ height=”354″ data-api-endpoint=”https://mysite.com/myimage.jpg”
+    data-api-returntype=”File” />  </p> <h2 style=”;”><strong>欢迎！ </strong></h2> <p
+    style=”;”><strong><i>我很高兴在2023年春季学期教授这门课程，并期待我们在一起的时间。</i></strong></p> <p>课程编号/班级：
+     <strong><span lang=”FR”>CRM 205 犯罪学：犯罪理论</span></strong><br />上课时间：    <strong><span>周二和周四，下午3:30
+    – 4:45  </span></strong><br />上课地点：  <strong>主楼，201教室（注意：如果因任何原因我们必须远程上课，将是同步的，您应该使用我们的班级微软团队。请通过以下链接加入团队：<a
+    href=”https://teams.microsoft.com/courselink”>https://teams.microsoft.com/courselink</a>)</strong></p>
+    <p><br />期末考试日期/时间：  <strong>202x年5月2日，周二 @ 下午2:00</strong></p> <p>教师：       <strong><span>Stan
+    Skrabut         </span></strong><br />办公时间地点：    <strong>虚拟</strong><br />办公时间：
+    <strong><span>周三下午4点-5点 </span></strong><i><span>或通过预约</span></i><br />电子邮件地址：
+     <strong>myemail@gmail.com</strong><br />电话：    <strong>通过微软团队群组联系</strong></p>
+    <p>教材和材料： </p> <p>必需教材： <strong>Siegel, L.J. (2019). 犯罪学：核心（第7版）Cengage Learning,
+    Inc.</strong></p> <p>必需材料： <strong>可能由教师提供补充材料</strong></p> <p>教学大纲</p>”**'
 - en: 'ChatGPT:'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 'ChatGPT:'
 - en: '*<h2>Criminology: Theories of Crime</h2>*'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<h2>犯罪学：犯罪理论</h2>*'
 - en: '*<p><img src=“https://mysite.com/myimage.jpg” width=”640″ height=”354″ ></p>*'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<p><img src=“https://mysite.com/myimage.jpg” width=”640″ height=”354″ ></p>*'
 - en: '*<h2>Welcome!</h2>*'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<h2>欢迎！</h2>*'
 - en: '*<p><i>I am thrilled to be instructing this course for the Spring 2023 semester
     and look forward to our time together.</i></p>*'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<p><i>我很高兴在2023年春季学期教授这门课程，并期待我们在一起的时间。</i></p>*'
 - en: '*<p>Course Number/Section: CRM 205 CRIMINOLOGY: Theories of Crime<br>*'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<p>课程编号/部分：CRM 205 犯罪学：犯罪理论<br>*'
 - en: '*Class Days/Time: Tuesday and Thursday, 3:30 – 4:45PM<br>*'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: '*上课日期/时间：周二和周四，下午3:30至4:45<br>*'
 - en: '*Class Location: Main Building, Room 201<br>*'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: '*课程地点：主楼，201室<br>*'
 - en: '*Final Week Date/Time: Tuesday, May 2, 202x @ 2:00PM</p>*'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '*最后一周日期/时间：202x年5月2日星期二 @ 下午2:00</p>*'
 - en: '*<p>Instructor: Stan Skrabut<br>*'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<p>讲师：Stan Skrabut<br>*'
 - en: '*Office Hour Location: Virtual<br>*'
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: '*办公时间地点：虚拟<br>*'
 - en: '*Office Hours: Wednesday 4PM-5PM and by appointment<br>*'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: '*办公时间：周三下午4点至5点，或通过预约<br>*'
 - en: '*E-mail address: myemail@gmail.com<br>*'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: '*电子邮件地址：myemail@gmail.com<br>*'
 - en: '*Phone: Reachable via Microsoft Teams group</p>*'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: '*电话：通过 Microsoft Teams 群组联系</p>*'
 - en: '*<p>Textbooks and Materials:</p>*'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<p>教科书和材料：</p>*'
 - en: '*<p>Required textbooks: Siegel, L.J. (2019). Criminology: The Core (7th ed.)
     Cengage Learning, Inc.</p>*'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<p>必需教科书：Siegel, L.J. (2019). 犯罪学：核心（第7版）Cengage Learning, Inc.</p>*'
 - en: '*<p>Required materials: Supplemental materials may be provided by the instructor</p>*'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<p>必需材料：辅助材料可能由讲师提供</p>*'
 - en: '*<p>Syllabus</p>*'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<p>教学大纲</p>*'
 - en: 59\. Write Application Scripts
+  id: totrans-115
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 59\. 编写应用程序脚本
 - en: 'ChatGPT can convert your intent into action. For example, you can improve the
     functionality of your software applications through the use of scripting. You
     can create solutions to your problems using chatGPT. ChatGPT can write scripts
@@ -431,233 +679,382 @@
     products like spreadsheets or word-processing programs. For example, I am interested
     in prefixing all my file names in a directory with “stan_”. Here is the prompt
     I wrote:'
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 可以将您的意图转化为行动。例如，您可以通过脚本编写来改进软件应用程序的功能。您可以使用 chatGPT 创建解决方案来解决问题。ChatGPT
+    可以为 Microsoft、Google、Apple 和 Linux 产品编写脚本。您还可以增强特定产品，如电子表格或文字处理程序。例如，我有兴趣在目录中的所有文件名前缀为“stan_”。这是我写的提示：
 - en: '**Write a PowerShell Script that will add a “stan_” to the beginning of all
     file names in a directory.**'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: '**编写一个 PowerShell 脚本，将目录中所有文件名的开头添加“stan_”。**'
 - en: 'ChatGPT:'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 'ChatGPT:'
 - en: '*# Get the current directory*'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: '*# 获取当前目录*'
 - en: '*$dir = Get-Location*'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$dir = Get-Location*'
 - en: '*# Get all the files in the directory*'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: '*# 获取目录中的所有文件*'
 - en: '*$files = Get-ChildItem -Path $dir*'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$files = Get-ChildItem -Path $dir*'
 - en: '*# Loop through each file*'
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: '*# 循环遍历每个文��*'
 - en: '*foreach ($file in $files) {*'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: '*foreach ($file in $files) {*'
 - en: '*# Check if the file is not a directory*'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '*# 检查文件是否不是目录*'
 - en: '*if (-not $file.PSIsContainer) {*'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: '*if (-not $file.PSIsContainer) {*'
 - en: '*# Create the new file name by adding “stan_” to the beginning of the current
     file name*'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: '*# 通过在当前文件名前添加“stan_”来创建新文件名*'
 - en: '*$newFileName = “stan_” + $file.Name*'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$newFileName = “stan_” + $file.Name*'
 - en: '*# Rename the file*'
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: '*# 重命名文件*'
 - en: '*Rename-Item $file.FullName $newFileName*'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: '*Rename-Item $file.FullName $newFileName*'
 - en: '*}*'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: '*}*'
 - en: '*}*'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: '*}*'
 - en: '*This script will get the current directory, retrieve all the files in that
     directory and loop through each file. For each file that it finds, it will check
     if it is not a directory and then create a new file name by adding “stan_” to
     the beginning of the current file name. Finally, it will rename the file with
     the new file name.*'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: '*此脚本将获取当前目录，检索该目录中的所有文件，并循环遍历每个文件。对于找到的每个文件，它将检查是否不是目录，然后通过在当前文件名的开头添加“stan_”来创建新文件名。最后，它将使用新文件名重命名文件。*'
 - en: What problems are you trying to fix?
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 您试图解决什么问题？
 - en: 60\. Add Comments To Your Code
+  id: totrans-135
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 60\. 为您的代码添加注释
 - en: In the examples above, you can see that chatGPT can be a great assistant in
     writing code and explaining what the code does. You can also ask chatGPT to document
     the scripts that you have.[^(22)](DsLqM8LuNcUFAQVy.xhtml#GJD2VpbjfQbSPhvs-endnote-1674933832553-text)
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上面的示例中，您可以看到 chatGPT 可以成为编写代码和解释代码功能的绝佳助手。您还可以要求 chatGPT 记录您的脚本。
 - en: '**Rewrite code below and add comments:**'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: '**重写下面的代码并添加注释：**'
 - en: '**<?php**'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: '**<?php**'
 - en: '**require_once ‘_db.php’;**'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: '**require_once ‘_db.php’;**'
 - en: '**$stmt = $db->prepare(‘SELECT * FROM events WHERE NOT ((end <= :start) OR
     (start >= :end))’);**'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$stmt = $db->prepare(‘SELECT * FROM events WHERE NOT ((end <= :start) OR
+    (start >= :end))’);**'
 - en: '**$stmt->bindParam(‘:start’, $_GET[’start’]);**'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$stmt->bindParam(‘:start’, $_GET[’start’]);**'
 - en: '**$stmt->bindParam(‘:end’, $_GET[’end’]);**'
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$stmt->bindParam(‘:end’, $_GET[’end’]);**'
 - en: '**$stmt->execute();**'
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$stmt->execute();**'
 - en: '**$result = $stmt->fetchAll();**'
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$result = $stmt->fetchAll();**'
 - en: '**class Event {}**'
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: '**class Event {}**'
 - en: '**$events = array();**'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$events = array();**'
 - en: '**foreach($result as $row) {**'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: '**foreach($result as $row) {**'
 - en: '**$e = new Event();**'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$e = new Event();**'
 - en: '**$e->id = $row[‘id’];**'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$e->id = $row[‘id’];**'
 - en: '**$e->text = $row[‘name’];**'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$e->text = $row[‘name’];**'
 - en: '**$e->start = $row[‘start’];**'
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$e->start = $row[‘start’];**'
 - en: '**$e->end = $row[‘end’];**'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$e->end = $row[‘end’];**'
 - en: '**$events[] = $e;**'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: '**$events[] = $e;**'
 - en: '**}**'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '**}**'
 - en: '**echo json_encode($events);**'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: '**echo json_encode($events);**'
 - en: '**?>**'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: '**?>**'
 - en: 'chatGPT:'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 'chatGPT:'
 - en: '*<?php*'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '*<?php*'
 - en: '*// require the _db.php file*'
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 需要_db.php文件*'
 - en: '*require_once ‘_db.php’;*'
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: '*require_once ‘_db.php’;*'
 - en: '*// Prepare a SELECT statement to retrieve events from the ‘events’ table where
     the end date is after the start date passed in $_GET variable.*'
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 准备一个SELECT语句，从‘events’表中检索事件，其中结束日期在传入的$_GET变量中的开始日期之后。*'
 - en: '*$stmt = $db->prepare(‘SELECT * FROM events WHERE NOT ((end <= :start) OR (start
     >= :end))’);*'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$stmt = $db->prepare(‘SELECT * FROM events WHERE NOT ((end <= :start) OR (start
+    >= :end))’);*'
 - en: '*// Bind the start and end parameters from $_GET variable to the statement*'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 将$_GET变量中的开始和结束参数绑定到语句*'
 - en: '*$stmt->bindParam(‘:start’, $_GET[’start’]);*'
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$stmt->bindParam(‘:start’, $_GET[’start’]);*'
 - en: '*$stmt->bindParam(‘:end’, $_GET[’end’]);*'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$stmt->bindParam(‘:end’, $_GET[’end’]);*'
 - en: '*// Execute the statement*'
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 执行语句*'
 - en: '*$stmt->execute();*'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$stmt->execute();*'
 - en: '*// Fetch all rows of data from the query and store it in the $result variable*'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 从查询中获取所有数据行并存储在$result变量中*'
 - en: '*$result = $stmt->fetchAll();*'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$result = $stmt->fetchAll();*'
 - en: '*// Create an empty Event class*'
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 创建一个空的Event类*'
 - en: '*class Event {}*'
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: '*class Event {}*'
 - en: '*// Create an empty array to store event objects*'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 创建一个空数组来存储事件对象*'
 - en: '*$events = array();*'
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$events = array();*'
 - en: '*// Iterate through each row of data returned from the query*'
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 遍历从查询返回的每一行数据*'
 - en: '*foreach($result as $row) {*'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: '*foreach($result as $row) {*'
 - en: '*// Create a new Event object*'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 创建一个新的Event对象*'
 - en: '*$e = new Event();*'
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$e = new Event();*'
 - en: '*// Assign the values from the row to the properties of the Event object*'
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 将行中的值分配给Event对象的属性*'
 - en: '*$e->id = $row[‘id’];*'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$e->id = $row[‘id’];*'
 - en: '*$e->text = $row[‘name’];*'
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$e->text = $row[‘name’];*'
 - en: '*$e->start = $row[‘start’];*'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$e->start = $row[‘start’];*'
 - en: '*$e->end = $row[‘end’];*'
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$e->end = $row[‘end’];*'
 - en: '*// Add the Event object to the events array*'
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 将Event对象添加到事件数组中*'
 - en: '*$events[] = $e;*'
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: '*$events[] = $e;*'
 - en: '*}*'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: '*}*'
 - en: '*// Encode the events array as JSON and echo it*'
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: '*// 将事件数组编码为JSON并输出*'
 - en: '*echo json_encode($events);*'
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: '*echo json_encode($events);*'
 - en: '*?>*'
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: '*?>*'

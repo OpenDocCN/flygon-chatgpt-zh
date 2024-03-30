@@ -1,0 +1,663 @@
+- en: Chapter eight
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using chatGPT for Computer Programming
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: This chapter will teach you how to utilize chatGPT to streamline your coding
+    process. With chatGPT, you can quickly write code in various languages. Provide
+    specific input, and let chatGPT work its magic. Not only can chatGPT write code
+    and explain what it does, but it also can troubleshoot any issues, write SQL code,
+    clean up HTML code, write application scripts, and even add comments to your code.
+    By the end of this chapter, you will have a better understanding of how to use
+    chatGPT to improve your coding efficiency.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 54\. Write Code
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Do you need any help writing code? Explain what you want to accomplish and which
+    language to use. ChatGPT will do its best to deliver code you can use. Some people
+    have written entire applications in collaboration with chatGPT.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here is an example of a simple script:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Write database connection code in PHP to display data as an HTML table with
+    the following information: name, address, city, state, and zip code.**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Here is an example of how to display data from a table named “address_list”
+    in a MySQL database as an HTML table using PHP:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<?php*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$servername = “localhost”;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$username = “your_username”;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$password = “your_password”;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$dbname = “your_database”;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Create connection*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$conn = new mysqli($servername, $username, $password, $dbname);*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Check connection*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*if ($conn->connect_error) {*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*die(“Connection failed: “ . $conn->connect_error);*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*}*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Select data from table*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$sql = “SELECT name, address, city, state, zipcode FROM address_list”;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$result = $conn->query($sql);*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*echo “<table>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<tr>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<th>Name</th>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<th>Address</th>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<th>City</th>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<th>State</th>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<th>Zip Code</th>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*</tr>”;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Output data of each row*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*while($row = $result->fetch_assoc()) {*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*echo “<tr>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<td>“.$row[”name”].”</td>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<td>“.$row[”address”].”</td>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<td>“.$row[”city”].”</td>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<td>“.$row[”state”].”</td>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<td>“.$row[”zipcode”].”</td>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*</tr>”;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*}*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*echo “</table>”;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$conn->close();*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*?>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*This code uses the MySQLi extension to select data from the “address_list”
+    table, then it iterates through the resulting rows and adds them to an HTML table.
+    The table headers are created using <th> tags and the data rows are created using
+    <td> tags. It is important to note that you should change the $username, $password,
+    $dbname and $servername variable with your actual credentials. Also, make sure
+    that table “address_list” already exists otherwise you will get an error message.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 55\. Explain What Code Does
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Do you have a piece of computer code that you are not sure of the language or
+    what it does? ChatGPT would be happy to tell you. Paste in a code block and ask
+    chatGPT to explain what the code does.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**<%**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Set fs=Server.CreateObject(“Scripting.FileSystemObject”)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Set f=fs.OpenTextFile(Server.MapPath(“testread.txt”), 1)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**do while f.AtEndOfStream = false**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Response.Write(f.ReadLine)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Response.Write(“<br>”)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**loop**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**f.Close**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Set f=Nothing**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Set fs=Nothing**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**%>**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Explanation of what the code does**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*This is a server-side script written in VBScript, typically embedded in an
+    ASP (Active Server Pages) file.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The script uses the* ***Server.CreateObject*** *method to create an instance
+    of the “Scripting.FileSystemObject” object, which is used to interact with the
+    file system. This object is saved in the variable* ***fs****.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Then, the script opens a text file named “testread.txt” located in the same
+    directory as the ASP file, using the* ***OpenTextFile*** *method of the* ***fs***
+    *object. The variable* ***f*** *holds the file object.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The script then enters a loop, using the* ***do while*** *statement to check
+    if the file is at the end of the stream, which means if the file is at the end
+    of the file. If it is not, it uses the* ***ReadLine*** *method to read the next
+    line of the file and writes it to the response using* ***Response.Write****. It
+    also writes a line break using* ***Response.Write(“<br>”)*** *to separate the
+    lines of the file.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Once the end of the file is reached, the script closes the file using* ***f.Close***
+    *and sets the* ***f*** *and* ***fs*** *variables to* ***Nothing*** *to release
+    the memory used by the file object and filesystem object.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*In short, this script reads the contents of a text file named “testread.txt”
+    located in the same directory as the ASP file and writes each line of the file
+    to the response, separated by a line break.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 56\. Troubleshoot Scripts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'ChatGPT can help you troubleshoot code. Ask chatGPT to check your code for
+    errors. Here is a quick example in which I introduced two typical errors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**What is wrong with this code**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**<?php function familyName($fname, $year) {**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**echo “$fname Refsnes. Born in $year <br>”;**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**}**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**familyName(“Hege”,”1975″);**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**familyName(“Stale”,”1978″)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**familyname(“Kai Jim”,”1983″);**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**?>**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT: *There are two issues with this code.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The last function call is using “familyname” instead of “familyName” (notice
+    the uppercase “N” in the correct version). This means that the function will not
+    be called, and an error will occur.*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*The second call to the function is missing a semicolon at the end of the line.
+    This will cause a parse error and the code will not execute correctly. It should
+    be like : familyName(“Stale”,”1978″);*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 57\. Write SQL Code
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Working with database query languages can be tricky and time-consuming but
+    essential if working with MySQL, Oracle SQL, or even Microsoft Access. ChatGPT
+    will help you write queries quickly by translating your intent into SQL code.
+    Here is an example using Postgres SQL:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Postgres SQL tables, with their properties:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Employee(id, name, department_id)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Department(id, name, address)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Salary_Payments(id, employee_id, amount, date)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**A query to list the names of the departments which employed more than 10
+    employees in the last 3 months**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*SELECT Department.name FROM Employee*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*INNER JOIN Department ON Employee.department_id = Department.id*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*WHERE Employee.id IN ( SELECT Salary_Payments.employee_id FROM Salary_Payments*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*WHERE date >= NOW() - INTERVAL ‘3 months’ )*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*GROUP BY Department.id*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*HAVING COUNT(Employee.id) > 10;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*The above query will join the Employee and Department table on the department_id
+    column, and then it will filter the results to only include the employees that
+    have a salary payment record in the last 3 months. After that the query will group
+    the results by department and count the number of employees for each department.
+    Finally, the having clause will filter the results to only include the departments
+    that have more than 10 employees.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 58\. Clean Up HTML Code
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Copying content from a word processor or a website into a learning management
+    system (LMS) or web page will often introduce nonessential HTML code. This extra
+    code can make editing more challenging. I like to strip out unnecessary code.
+    ChatGPT will do the job for you. Here is an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Clean up this HTML code “<h2 style=”;”><strong>Criminology: Theories of Crime</strong></h2>
+    <p style=”;”><img src=”https://mysite.com/myimage.jpg” width=”640″ height=”354″
+    data-api-endpoint=”https://mysite.com/myimage.jpg” data-api-returntype=”File”
+    />  </p> <h2 style=”;”><strong>Welcome! </strong></h2> <p style=”;”><strong><i>I
+    am thrilled to be instructing this course for the Spring 2023 semester and look
+    forward to our time together. </i></strong></p> <p>Course Number/Section:  <strong><span
+    lang=”FR”>CRM 205 CRIMINOLOGY : Theories of Crime</span></strong><br />Class Days/Time:
+       <strong><span>Tuesday and Thursday, 3:30 – 4:45PM  </span></strong><br />Class
+    Location:  <strong>Main Building, Room 201 (NOTE: if we must make the class remote
+    for whatever reason it will be synchronous, and you should use our class Microsoft
+    Teams Group. Please join the group by using the following link: <a href=”https://teams.microsoft.com/courselink”>https://teams.microsoft.com/courselink</a>)</strong></p>
+    <p><br />Final Week Date/Time:  <strong>Tuesday, May 2, 202x @ 2:00PM</strong></p>
+    <p>Instructor:       <strong><span>Stan Skrabut         </span></strong><br />Office
+    Hour Location:    <strong>Virtual</strong><br />Office Hours: <strong><span>Wednesday
+    4PM-5PM </span></strong><i><span>and by appointment</span></i><br />E-mail address:
+     <strong>myemail@gmail.com</strong><br />Phone:    <strong> Reachable via Microsoft
+    Teams group</strong></p> <p>Textbooks and Materials: </p> <p>Required textbooks:
+    <strong>Siegel, L.J. (2019). Criminology: The Core (7<sup>th</sup> ed.) Cengage
+    Learning, Inc.</strong></p> <p>Required materials: <strong>Supplemental materials
+    may be provided by the instructor</strong></p> <p>Syllabus</p>”**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<h2>Criminology: Theories of Crime</h2>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<p><img src=“https://mysite.com/myimage.jpg” width=”640″ height=”354″ ></p>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<h2>Welcome!</h2>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<p><i>I am thrilled to be instructing this course for the Spring 2023 semester
+    and look forward to our time together.</i></p>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<p>Course Number/Section: CRM 205 CRIMINOLOGY: Theories of Crime<br>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Class Days/Time: Tuesday and Thursday, 3:30 – 4:45PM<br>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Class Location: Main Building, Room 201<br>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Final Week Date/Time: Tuesday, May 2, 202x @ 2:00PM</p>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<p>Instructor: Stan Skrabut<br>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Office Hour Location: Virtual<br>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Office Hours: Wednesday 4PM-5PM and by appointment<br>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*E-mail address: myemail@gmail.com<br>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Phone: Reachable via Microsoft Teams group</p>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<p>Textbooks and Materials:</p>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<p>Required textbooks: Siegel, L.J. (2019). Criminology: The Core (7th ed.)
+    Cengage Learning, Inc.</p>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<p>Required materials: Supplemental materials may be provided by the instructor</p>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<p>Syllabus</p>*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 59\. Write Application Scripts
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'ChatGPT can convert your intent into action. For example, you can improve the
+    functionality of your software applications through the use of scripting. You
+    can create solutions to your problems using chatGPT. ChatGPT can write scripts
+    for Microsoft, Google, Apple, and Linux products. You can also enhance specific
+    products like spreadsheets or word-processing programs. For example, I am interested
+    in prefixing all my file names in a directory with “stan_”. Here is the prompt
+    I wrote:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Write a PowerShell Script that will add a “stan_” to the beginning of all
+    file names in a directory.**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*# Get the current directory*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$dir = Get-Location*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*# Get all the files in the directory*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$files = Get-ChildItem -Path $dir*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*# Loop through each file*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*foreach ($file in $files) {*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*# Check if the file is not a directory*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*if (-not $file.PSIsContainer) {*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*# Create the new file name by adding “stan_” to the beginning of the current
+    file name*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$newFileName = “stan_” + $file.Name*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*# Rename the file*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Rename-Item $file.FullName $newFileName*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*}*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*}*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*This script will get the current directory, retrieve all the files in that
+    directory and loop through each file. For each file that it finds, it will check
+    if it is not a directory and then create a new file name by adding “stan_” to
+    the beginning of the current file name. Finally, it will rename the file with
+    the new file name.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: What problems are you trying to fix?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 60\. Add Comments To Your Code
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In the examples above, you can see that chatGPT can be a great assistant in
+    writing code and explaining what the code does. You can also ask chatGPT to document
+    the scripts that you have.[^(22)](DsLqM8LuNcUFAQVy.xhtml#GJD2VpbjfQbSPhvs-endnote-1674933832553-text)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Rewrite code below and add comments:**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**<?php**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**require_once ‘_db.php’;**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$stmt = $db->prepare(‘SELECT * FROM events WHERE NOT ((end <= :start) OR
+    (start >= :end))’);**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$stmt->bindParam(‘:start’, $_GET[’start’]);**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$stmt->bindParam(‘:end’, $_GET[’end’]);**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$stmt->execute();**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$result = $stmt->fetchAll();**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**class Event {}**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$events = array();**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**foreach($result as $row) {**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$e = new Event();**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$e->id = $row[‘id’];**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$e->text = $row[‘name’];**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$e->start = $row[‘start’];**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$e->end = $row[‘end’];**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**$events[] = $e;**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**}**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**echo json_encode($events);**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**?>**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'chatGPT:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*<?php*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// require the _db.php file*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*require_once ‘_db.php’;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Prepare a SELECT statement to retrieve events from the ‘events’ table where
+    the end date is after the start date passed in $_GET variable.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$stmt = $db->prepare(‘SELECT * FROM events WHERE NOT ((end <= :start) OR (start
+    >= :end))’);*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Bind the start and end parameters from $_GET variable to the statement*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$stmt->bindParam(‘:start’, $_GET[’start’]);*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$stmt->bindParam(‘:end’, $_GET[’end’]);*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Execute the statement*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$stmt->execute();*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Fetch all rows of data from the query and store it in the $result variable*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$result = $stmt->fetchAll();*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Create an empty Event class*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*class Event {}*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Create an empty array to store event objects*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$events = array();*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Iterate through each row of data returned from the query*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*foreach($result as $row) {*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Create a new Event object*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$e = new Event();*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Assign the values from the row to the properties of the Event object*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$e->id = $row[‘id’];*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$e->text = $row[‘name’];*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$e->start = $row[‘start’];*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$e->end = $row[‘end’];*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Add the Event object to the events array*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*$events[] = $e;*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*}*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*// Encode the events array as JSON and echo it*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*echo json_encode($events);*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*?>*'
+  prefs: []
+  type: TYPE_NORMAL

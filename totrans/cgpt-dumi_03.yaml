@@ -1,0 +1,984 @@
+- en: Chapter 2
+  prefs: []
+  type: TYPE_NORMAL
+- en: Discovering How ChatGPT Works
+  prefs: []
+  type: TYPE_NORMAL
+- en: IN THIS CHAPTER
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00003.jpg) Understanding what a prompt is'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00003.jpg) Exploring ChatGPT''s architecture'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00003.jpg) Comparing performance against supercomputing benchmarks'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00003.jpg) Grasping the significance of ChatGPT breakthroughs'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: At first glance, ChatGPT appears deceptively simple. You ask it a question or
+    give it a command in the prompt bar and it responds with an answer. That’s how
+    all chatbots work, right? So what is so special about this one?
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: In this chapter, you learn that ChatGPT is to chatbots what ice cubes are to
+    Antarctica. You discover the basics of how it works and why it relies on your
+    skills to optimize its performance. But the real treasure here are the tips and
+    insights on how to write prompts so that ChatGPT can perform its true magic.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: This chapter provides you with the majority of information you need to understand
+    and use ChatGPT. Read it even if you read nothing else in this book.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: What’s Different About ChatGPT
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT works differently than a search engine. A search engine such as Google
+    or Bing or an AI assistant such as Siri, Alexa, or Google Assistant works by searching
+    the internet for matches to the keywords you enter in the search bar. Algorithms
+    refine the results based on any number of factors, but your browser history, topic
+    interests, purchase data, and location data usually figure into the equation.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: You’re then presented with a list of search results ranked in order of relevance
+    as determined by the search engine’s algorithm. From there, the user is free to
+    consider the sources of each option and click a selection to do a deeper dive
+    for more details from that source.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: By comparison, ChatGPT generates its own unified answer to your prompt. It doesn't
+    offer citations or note its sources. You ask; it answers. Easy-peasey, right?
+    No. That task is incredibly hard for AI to do, which is why generative AI is so
+    impressive.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Generating an original result in response to a prompt is achieved by using either
+    the GPT-3 (Generative Pre-trained Transformer 3) or GPT-4 model to analyze the
+    prompt with context and predict the words that are likely to follow. Both GPT
+    models are extremely powerful large language models capable of processing billions
+    of words per second.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: In short, transformers enable ChatGPT to generate coherent, humanlike text as
+    a response to a prompt. ChatGPT creates a response by considering context and
+    assigning weight (values) to words that are likely to follow the words in the
+    prompt to predict which words would be an appropriate response.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00079.jpg) User input is called a prompt rather than a command or
+    a query, although it can take either form. You are, in effect, prompting AI to
+    predict and complete a pattern that you initiated by entering the prompt.'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00079.jpg) The capability to create a rapid, natural-language response
+    that fits with the user''s intent and the prompt''s context is an astounding feat
+    for a machine. Doubly so when the responses are fast enough that the AI model
+    appears to be conversing with the user. Despite its early shortcomings, GPT-3
+    and GPT-4 are modern marvels.'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Peeking at the ChatGPT Architecture
+  prefs: []
+  type: TYPE_NORMAL
+- en: As its name implies, ChatGPT is a chatbot running on a GPT model. GPT-3, GPT-3.5,
+    and GPT-4 are large language models (LLMs) developed by OpenAI. When GPT-3 was
+    introduced, it was the largest LLM at 175 billion parameters. An upgraded version
+    called GPT-3.5 turbo is a highly optimized and more stable version of GPT-3 that's
+    ten times cheaper for developers to use. ChatGPT is now also available on GPT-4,
+    which is a multimodal model, meaning it accepts both image and text inputs although
+    its outputs are text only. It's now the largest LLM to date, although GPT-4’s
+    exact number of parameters has yet to be disclosed.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Parameters are numerical values that weigh and define connections between nodes
+    and layers in the neural network architecture. The more parameters a model has,
+    the more complex its internal representations and weighting. In general, more
+    parameters lead to better performance on specific tasks. For example, ChatGPT’s
+    large number of parameters enables it to understand subtle nuances and context
+    complexities in a wide range of natural-language-processing tasks. As a result,
+    it appears to have the capacity for instantaneous reasoning as it converses fluently
+    with users.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Previously, Microsoft’s Turing NLG, a transformer-based generative language
+    model, held the record at 17 billion parameters. GPT-4 is currently the biggest
+    neural network created. GPT-5 is rumored to be even bigger, but it currently isn’t
+    being trained. Some AI experts argue that there is no reason to train an even
+    larger model because GPT-4 is so huge it will serve for years to come. I agree
+    that there’s no reason to rush GPT-5 to fruition given that users and developers
+    have barely scratched the surface of what GPT-4 can do.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Discovering the supercomputer and GPUs underneath
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: It’s perhaps no surprise that OpenAI and Microsoft teamed up, given their separate
+    efforts towards a similar end. A supercomputer hosted in Azure was built by these
+    partners for the exclusive use by OpenAI to train its various AI models. Compared
+    with other supercomputers on the global Top500.org list, this supercomputer now
+    ranks in the top five, according to Microsoft.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The Top500 list of supercomputers compiles statistics on high-performance computers
+    based on items of interest to manufacturers and other high-end users. While specific
+    features and metrics may vary, as is befitting the steady evolution and diversification
+    of modern supercomputers, the bedrock data in each semiannual report seems to
+    consist of the number of installed systems, the applications running on these
+    systems, and performance rankings based on comparative benchmarks.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: As one example, this list ranks supercomputers on their performance against
+    the LINPACK benchmark, specifically, how well the machines solve a dense system
+    of linear equations. The result is a measure of peak performance rather than overall
+    performance. The Top500 researchers can also verify the LINPACK results to further
+    ensure accuracy in the rankings.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'Other benchmarks used in the supercomputing industry to judge supercomputer
+    performance include COPA, ReCoRD, and SuperGLUE, with the latter testing reasoning
+    and advanced natural-language-processing (NLP) tasks. The supercomputer jointly
+    built by OpenAI and Microsoft performed well on these three benchmarks too but
+    fell short on two others: word-in-context (WIC) analysis and RACE (restate, answer,
+    cite evidence, explain) response evaluations.'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: It’s telling that the supercomputer scored poorly on middle- and high-school
+    exam questions (the results of the RACE benchmark) while acing the LINPACK benchmark
+    test in solving dense linear equations. The simpler things tend to trip up AI,
+    but complexity isn’t the deciding factor in error occurrence. You shouldn't expect
+    ChatGPT to perform consistently across varying levels of problem complexities.
+    It can err or perform brilliantly in responding to any prompt, simple or complex.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: In any case, it's safe to say that given the immense size and capabilities of
+    GPT models, training any of them requires a more heavily muscled supercomputer
+    than most in the field of enormous computing giants.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Nvidia is the graphics processing unit (GPU) provider and the third partner
+    in this story — and theirs is no minor role. A GPU is a specific type of electronic
+    circuit designed for fast image rendering that is now commonly leveraged for its
+    capability to process many pieces of data simultaneously.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The GPU-accelerated supercomputer developed for OpenAI is a single system with
+    more than 285,000 CPU cores, 10,000 GPUs, and 400 gigabits per second of network
+    connectivity for each GPU server. All OpenAI models were trained on NVIDIA V100
+    GPUs operating on Microsoft high-bandwidth clusters.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Further, model training was done on the cuDNN-accelerated PyTorch deep-learning
+    framework for all OpenAI models. But specific architectural parameters for any
+    given AI model are chosen according to optimal computational efficiency and load-balancing
+    across GPUs.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Considering the importance of transformers
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ChatGPT uses a multilayer transformer network to generate responses to user
+    prompts. A transformer is a type of neural network architecture. In AI, a neural
+    network is a network of processing nodes that use a set of algorithms to mimic
+    the human brain. You can think of nodes in an AI brain as working like neurons
+    in a human brain.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Different types of transformers are available, each suited to a particular data
+    type, such as text or images. ChatGPT uses transformers suited for language processing.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Transformers were developed by researchers at Google and the University of Toronto
+    in 2017 and were initially designed to handle translations for which context,
+    not word order, was more crucial to delivering a corresponding meaning in another
+    language. But transformers proved to be a cornerstone for much more complex language-processing
+    tasks too. The big advantage of transformers is that they can be efficiently parallelized,
+    meaning they can scale to handle exceptionally large AI models and their training
+    requirements.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Without the advent of transformers, GPT at large and ChatGPT in particular could
+    not render such humanlike outputs.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'The specifics of transformers and how they work are highly technical. In this
+    chapter, I touch on one piece of a transformer that is arguably the most significant:
+    the self-attention mechanism. The short, and thus oversimplified, explanation
+    of self-attention is an AI model that has internalized an understanding of various
+    representations of the same word.'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Consider that many words have multiple meanings. In American English, a lemon
+    can be a fruit or a product that performs badly. Similarly, as server can be a
+    computing device or a waiter. A lift in English is an elevator but in American
+    English means catching a ride in someone else’s vehicle.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ChatGPT can distinguish which meaning a word should carry based on context,
+    that is, by considering the words that surround it in a sentence. That capability
+    is very humanlike and exceedingly difficult for a machine to do.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'Setting the stage: training the model'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Although many companies are training their own AI (of various forms and for
+    a variety of uses), that task is best left to those with the know-how and deep
+    pockets to successfully see it through. That being the case, you can see the appeal
+    to the masses when an AI model such as ChatGPT is readily accessible and usable
+    via a browser or an app.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Despite its debut as a free tool, ChatGPT is an expensive and complex model
+    for OpenAI to build and maintain. For example, ChatGPT uses deep learning, which
+    is a computing and energy hog. And simply storing a database massive enough to
+    train one AI model drains resources at a quick clip. Training any large language
+    model takes enormous amounts of manpower, energy, data, and effort. It’s a very
+    expensive exercise with recurring costs that are just as high.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: But in the case of GPT, the result proved worth it. GPT-4 is purported to be
+    the largest language model in the world. Because of the capabilities such an enormous
+    AI model makes possible, ChatGPT is a global sensation. OpenAI, its creator, is
+    estimated to be worth $29 billion and counting, according to the Wall Street Journal.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The ChatGPT model was trained on a massive database comprised of text scraped
+    from almost the entire internet as it existed in 2021\. OpenAI says that training
+    data included about “570GB of datasets, including web pages, books, and other
+    sources.”
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The initial model was also trained on data fined-tuned by human instructors
+    who assumed roles as both human and machine to instruct it on the differences
+    in appropriate versus inappropriate responses to prompts. OpenAI says it then
+    mixed this newly created dialogue data set with the InstructGPT data set and transformed
+    it into a dialogue format.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: This process is called reinforcement learning from human feedback (RLHF). Specific
+    methods can vary between individual model training instances. In other words,
+    RLHF can be tweaked to fit the requirements of a particular model’s training needs.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The reinforcement part of this process comes from a collection of comparison
+    data and a response from humans by means of a thumbs-up or thumbs-down ranking
+    system. The two thumbs appear at the top of each ChatGPT response, as you can
+    see in [Figure 2-1](#filepos112482). Ranking the answer you received helps train
+    the model further by reinforcing the machine’s learning.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00034.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[FIGURE 2-1:](#filepos112265) A primary reason for releasing ChatGPT as a free
+    research model was so OpenAI could get the public’s help in training it.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you don’t like the response ChatGPT generated, you can click the Regenerate
+    Response button (refer to [Figure 2-1](#filepos112482)) to make it try again.
+    Be sure to rate each response so that the model can learn how to improve its performance.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Similarly, AI trainers randomly chose earlier conversations they had with the
+    training model and ranked the responses. Reward models, like the thumbs-up, thumbs-down
+    rating on ChatGPT, can then be used to fine-tune the model in a process called
+    proximal policy optimization. The OpenAI blog post in [Figure 2-2](#filepos113701)
+    shows this entire training process in one chart.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00036.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[FIGURE 2-2:](#filepos113539) OpenAI’s process of training the ChatGPT model.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Grasping the importance of the dialogue format
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ChatGPT works in 95 languages that run the gamut from a wide array of human
+    mother tongues and regional dialects to a large variety of computer languages
+    and mathematical equations. You can also chat using a mix of supported languages.
+    For example, you could include computer code or a snippet in a prompt along with
+    instructions for ChatGPT to do something with that code, as shown in [Figure 2-3](#filepos116161).
+    The instruction may be to find errors or vulnerabilities in the code, to write
+    new code, or to finish writing the program.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The choice of languages makes using AI easier and more comfortable for users.
+    Experts and laypeople alike soon forget that ChatGPT is a technical wonder and
+    often start chatting with it like with a friend or peer.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00023.jpg) Once again, I remind you not to think of ChatGPT as a
+    person. Anything you say or do with ChatGPT may be used in AI performance reviews
+    and training data sets for future AI models. This so-called friend keeps no secrets.
+    OpenAI has provided the warning but it’s up to you to remember it.'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Pondering ChatGPT’s limitations
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: The very thing that enables ChatGPT to create responses is the same thing that
+    makes it unreliable. For people or machines to imagine something that does not
+    exist, such as a fictional world for a novel or movie, they must first be released
+    from the strict confines of reality-based rules.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00009.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[FIGURE 2-3:](#filepos114659) ChatGPT understands and speaks in both human
+    and computer languages.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: But cutting that tether allows AI to abandon any preference for truth because
+    truth is fact and fact is reality, but imagination is separate, or at best tangential,
+    to reality. Therefore, ChatGPT is free to make up any answer it gives you. Sometimes
+    you want it to do that because you want its response to be crafted in a creative
+    manner or to include an innovative idea. But other times the response ChatGPT
+    delivers is flat-out wrong, perhaps even offensive. Remember that ChatGPT is predicting
+    which words will follow your prompt, fulfill your intent, and adhere to the context
+    in the prompt. When it predicts — or guesses — incorrectly but has determined
+    on its own that this wrong response has a high probability of being correct, it
+    is said to be hallucinating.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: In other words, its answer can be undeniably and provably wrong, yet the model
+    has a high degree of confidence that it is right. And no, you may not realize
+    it just by looking at its answer. You’ll need to do some thorough fact-checking
+    before you rely on ChatGPT’s responses.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: It's important to note that ChatGPT does not always wait for you to tell it
+    to be creative or imaginative before it starts making up stuff. However, ChatGPT
+    is more likely to hallucinate and become verbally offensive in long conversations.
+    Because of that tendency, some applications with embedded ChatGPT will limit the
+    size of chats in a single session or limit the number of sessions in a day per
+    user.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Because ChatGPT makes up its responses fairly often, Cassie Kozyrkov, chief
+    decision scientist at Google, calls ChatGPT a bullshitter, which appropriately
+    puts its reliability alongside that of tipsy conference-goers at a hotel bar.
+    Maybe what they said at the bar is true or maybe not entirely so. Think of ChatGPT
+    as a new buddy at the bar, and fact-check anything it tells you before you accept
+    it as true. Sam Altman, CEO of OpenAI, admits these shortcomings in the tweet
+    shown in [Figure 2-4](#filepos118781).
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00073.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[FIGURE 2-4:](#filepos118667) Tweets about ChatGPT’s reliability by Sam Altman,
+    CEO of OpenAI.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Following is a short list of ChatGPT’s limitations:'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Training the model to not offend people sometimes has the effect of making the
+    model overly cautious and more likely to decline answering questions unnecessarily.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Despite the guardrails OpenAI has imposed on the model, ChatGPT can still deliver
+    inappropriate, unsafe, and offensive responses.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: It can generate answers that are completely untrue, sometimes aggressive, and
+    more than a little unhinged.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: It decides the ideal answer based on the data it has access to and what it has
+    learned, not on what the user knows or expects. Therefore, its output, whether
+    factually right or wrong, may fall short of the user's expectations or requirements.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: It is oversensitive to how prompts are worded. Repeating or rephrasing a prompt
+    elicits different responses.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Reentering the same prompt repeatedly can result in different answers, repetitious
+    phrasing, or an aggressive answer.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The model tends to be long-winded rather than concise, due to a training bias
+    wherein the human trainers preferred to give long answers to training prompts.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: It guesses at the answer you seek rather than asking you questions to better
+    understand what you want.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Nothing in this description of ChatGPT’s reliability or lack thereof diminishes
+    the amazing technical accomplishment that it represents. This list is just a warning
+    that you should always fact-check ChatGPT outputs before you put them to use.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Increasing the Number of Versions and Integrations
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT’s free research preview version was released in beta for public use
+    on November 30, 2022\. The company says a free version will continue to be available
+    beyond this beta release. Meanwhile, a premium version called ChatGPT Plus was
+    released on February 1, 2023\. The price at launch was $20 per month per user.
+    This book focuses on these two versions, which are also the versions that beginners
+    are likely to encounter and experiment with first.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: GPT-4 is the most recent model that ChatGPT operates on, but users can currently
+    select whether they want to use ChatGPT on GPT-3, ChatGPT-3.5 (which is the default
+    at the moment), or ChatGPT-4.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ChatGPT is being integrated with a lot of existing software, so you might encounter
+    different versions in your job, business, or personal space. Also, enterprise
+    versions are rapidly emerging and evolving, which will lead to more software integrations
+    as time progresses.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: As examples of the many types of integrations, this section starts with Microsoft’s
+    integration of ChatGPT in Bing. As [Figure 2-5](#filepos122803) shows, to use
+    Bing with the ChatGPT integration, you need to download the newest version of
+    Bing. You’ll find it in the Windows taskbar after it’s downloaded.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00028.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[FIGURE 2-5:](#filepos122527) Microsoft Bing with ChatGPT integration.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Another interesting Microsoft integration is Visual ChatGPT, a fusion of ChatGPT
+    with a series of visual foundation models, which are algorithms trained on broader
+    datasets to enable more functions. Visual ChatGPT enables users to send, receive,
+    and edit images while chatting with AI in text.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: You can see a Visual ChatGPT demo and access more technical information about
+    it on GitHub at [`https://github.com/microsoft/visual-chatgpt`](https://github.com/microsoft/visual-chatgpt).
+    [Figure 2-6](#filepos124053) shows one demo you’ll find as you scroll down the
+    GitHub page. Users can insert images in the prompt and ask ChatGPT to produce
+    images meeting the requirements in the prompt. You can also edit images during
+    the chat.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](images/00037.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[FIGURE 2-6:](#filepos123721) The demo section of Visual ChatGPT on GitHub.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For companies seeking to customize ChatGPT to more precisely fit their needs,
+    look at the ChatGPT customization interface in Azure OpenAI Studio. To open a
+    free trial account, go to [`https://azure.microsoft.com/en-in/free/cognitive-services/`](https://azure.microsoft.com/en-in/free/cognitive-services/).
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: There’s no doubt that Microsoft and other companies will find many more ways
+    to use ChatGPT in their existing and future software. Indeed, many companies are
+    currently using the ChatGPT API (application programming interface) and the increasing
+    number of plug-ins to more fully leverage ChatGPT’s capabilities.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: In short, ChatGPT is not a one-hit wonder. It's a multipurpose tool that will
+    continue to evolve and eventually become the backbone of many other software applications.
+    So too will its peers.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Glimpsing ChatGPT in Microsoft add-ins
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: As mentioned, Microsoft and OpenAI worked as partners in training AI models.
+    It’s no surprise then to find ChatGPT rapidly integrated with Office365 and other
+    Microsoft products. What may be surprising is that there are also third-party
+    ChatGPT add-ins for Microsoft products.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Consider Ghostwriter, a Microsoft add-in developed by software developer and
+    former Microsoft consultant Patrick Husting. Like many early users, he got tired
+    of cutting and pasting ChatGPT-generated text into a Word document, so he made
+    a workaround. That workaround, Ghostwriter, flows ChatGPT text directly into Word.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: You can get Ghostwriter in the Microsoft Office Store. A $10 one-time fee gets
+    you access to a basic edition that limits responses to a couple of paragraphs,
+    which is fine for most general uses. And it spares you most of the AI weirdness
+    that could follow if you let the thing ramble on.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: For a $25 one-time fee, you can get the pro edition, which makes all ChatGPT
+    languages available and enables you to configure the response length. Keep prompted
+    conversations short and create new chats to continue your work to lessen the risk
+    of encountering ChatGPT hallucinations (random and wrong answers) or offensive
+    outbreaks.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'If you want to give Ghostwriter a try or just check out other ChatGPT add-ins,
+    follow these steps:'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Open any office product, such as Word, Excel, or Outlook.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click the Insert tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click the Add-Ins tab.
+  prefs:
+  - PREF_OL
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '[Figure 2-7](#filepos127930) is the Add-Ins screen for Word.'
+  prefs:
+  - PREF_IND
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Select an add-in from the drop-down menu or enter the name of the add-in in
+    the search bar.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/00043.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[FIGURE 2-7:](#filepos127748) The Ghostwriter ChatGPT add-in.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Mainstreaming ChatGPT via the power of an API
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: On March 1, 2023, OpenAI launched an application programming interface (API),
+    which is a connector of sorts that lets applications communicate with each other.
+    The API makes it easier for developers to integrate ChatGPT with their organization’s
+    products, services, apps, and websites. The price at introduction was $0.002 per
+    1000 tokens. That’s relatively cheap as AI price tags go, making ChatGPT easily
+    accessible for most developers from a cost standpoint.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Why is the API priced in units of tokens? ChatGPT models consume a sequence
+    of messages with metadata attached in a raw format called Chat Markup Language
+    (ChatML). Traditionally, GPT models consume raw, unstructured text as tokens.
+    So it’s no surprise that inputs for ChatGPT models are rendered as a sequence
+    of tokens, each containing pieces of words.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Tokens are used to predict the next token and the next and — voila! — a machine-generated
+    narrative occurs. As you may have noticed, this process is not thinking as humans
+    describe the brain-driven process. This process also predicts text in a far faster,
+    more intelligent, and multitasked way than simple predictive text or the autocorrect
+    feature on your smartphone or in a document spell-checker.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: As a side note, the predictive nature of GPT problem-solving creates the weird
+    issue of too many fingers on human hands in GPT-generated images. The GPT image
+    model sees that one finger follows another on a human hand but often fails to
+    note that the number of fingers is limited to five and that the fingers are not
+    identical. Hence, it typically predicts more fingers and draws them oddly. If
+    the GPT models could truly think, even at a child’s level, they could detect the
+    problem and put the correct number of fingers on a hand — in every image containing
+    normal human hands.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Checking out early ChatGPT API adopters
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Instacart, Shopify, Quizlet, and Snap are among the early adopters and ChatGPT
+    API experimenters.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Instacart is augmenting its app to make customized shopping lists; create menus
+    for school lunches, family dinners, and social events; and shop recipes to help
+    you use the ingredients you already have on hand. Ask Instacart, the company’s
+    chatbot, is built on the ChatGPT API.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Shopify plans to launch a new shopping assistant built on the ChatGPT API. The
+    personalized assistant will scan millions of products and deliver a personalized
+    selection to shoppers based on their size, brand preferences, and personal style.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Quizlet used GPT-3 for three years before the launch of ChatGPT. ChatGPT was
+    put to work across multiple use cases, including vocabulary learning and practice
+    tests. Based on the success of these experiments, Quizlet added Q-Chat, built
+    on the ChatGPT API, as a fully adaptive AI tutor for students.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Snap introduced My AI for its premium product, Snap Plus. My AI is an experimental
+    feature that adds customizable elements and interactions for app users.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Other organizations are following suit given the drop in cost now that the API
+    connects to the more efficient and economical GPT-3.5-turbo and GPT-4 models.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Expanding the field of extensions
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: An extension is a small, modular piece of software that customizes, or extends,
+    the browser’s capabilities. Access to ChatGPT is available via browser extensions.
+    Why would you want to use these extensions? Because they make access to ChatGPT
+    from any website quicker and easier, and they offer additional features such as
+    a chat exporter and a list of suggested prompts.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Following are just a few of the extensions that are available on the Chrome
+    or Microsoft Edge browsers. (Some are free.) A few are also available on the Firefox
+    browser. Find them by looking at your browser’s extension store or by searching
+    for the extension online.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'ChatGPT Chrome extension: Shows ChatGPT’s results alongside Google search results.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Merlin: Gets ChatGPT to compose a response and reply to email, summarize the
+    content in a document, do the math in a spreadsheet, and more.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Enhanced ChatGPT: Adds helpful features to the plain ChatGPT interface and
+    provides common prompts you might want to use.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'WebChatGPT: Adds current-day internet results to ChatGPT responses, which are
+    tethered to the 2021 version of the internet. This extension tries to integrate
+    the two, often with mixed results. The ChatGPT browsing plug-in by OpenAI will
+    likely do a better job.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Promptheus: Lets you simply speak your prompt rather than type it. Press the
+    spacebar on your keyboard while in the ChatGPT prompt bar and talk.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT Export and Share: Exports text from ChatGPT into whatever application
+    you’re using. You can also save ChatGPT responses as images or PDFs and share
+    links to them.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](images/00023.jpg) Be careful with extensions of any type, ChatGPT related
+    or otherwise, and for any browser because extensions can be loaded with malware.
+    Be very sure of the safety of an extension before you enable it. Note that I have
+    not vetted any extensions to ensure that they are safe and free of malware. Rather,
+    I list them here merely as examples.'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: More ChatGPT extensions are available to explore. Check them out on your browser’s
+    web store. But again, be careful!
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Building New Businesses Based on ChatGPT
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT presents users with many business opportunities. For example, it can
+    generate business ideas with business plans to match. When prompted by a Hackernoon
+    writer, it produced five business ideas, each potentially worth millions of dollars:
+    a new way to generate renewable energy, a remote work platform, a new form of
+    transportation, a new way to store data, and a way to make healthcare more accessible
+    and affordable.'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ChatGPT can also write or suggest improvements to business plans. Calculate
+    better pricing models. Strategically optimize supply chains. Summarize legal forms
+    for a quick and easy read. Complete applications for bank loans and credit cards.
+    Compute tax implications. Determine payroll taxes. And answer other complex business
+    questions.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: It can rapidly automate business communications, from answering emails to writing
+    marketing and web page copy. It can write just about any type of business text,
+    including statement of work (SOW), contracts, service-level agreements (SLAs),
+    warranties, wills, and policies.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ChatGPT VERSUS SEARCH
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Search Engine
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generates a single narrative
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generates a list of potentially relevant information
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Does not cite sources
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Reveals sources
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Currently does not produce images
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Provides a group of related images
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Predicts responses
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Matches keywords
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Can hallucinate
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Does not hallucinate
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Can provide disinformation
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Can provide disinformation
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Prompts essential to performance
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Keywords essential to performance
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '|'
+  prefs: []
+  type: TYPE_NORMAL
+- en: And ChatGPT can be the backbone of existing writing and publishing businesses
+    too. Fiction writers can use it to generate story ideas, plots, and characters.
+    Non-fiction writers can use it make first drafts of articles, white papers, e-books,
+    and more — in the writer’s personal writing style and tone. Then the writer need
+    only fact-check and tweak the output to produce a quick but polished draft suitable
+    for submission. Or writers can use ChatGPT to serve as an editor to make the copy
+    cleaner before submitting it to a human editor or a publisher. And no, ChatGPT
+    was not used for any of these purposes in the writing of this book.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Further, ChatGPT and its brethren can be used as the backbone for a business
+    too. For example, people are already using DALL-E to create artistic works and
+    sell them online. The art can be printed on demand, thereby reducing production
+    waste and overhead, while lowering the price of entry into this new line of business.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ChatGPT can similarly be used to help produce e-books, printed books, manuals,
+    and other text-driven works for mass consumption. ChatGPT can also provide support
+    for a business by generating self-help texts for customers, call center scripts,
+    return instructions, product assembly instructions, and other support documents.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ChatGPT can even be the main tool for generating business revenue. For example,
+    some people will be intimidated by ChatGPT — or in dire need of better prompts
+    — and will hire people to use ChatGPT in their behalf.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: ChatGPT can be teamed with 3D printing to do everything from printing a house
+    from ChatGPT-generated blueprints to creating a spacecraft part fitted to NASA’s
+    precise specifications.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Human imagination and prompt skills are the only limits to using this technology.
+    That’s what makes ChatGPT so amazing — and so terrifying.
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL

@@ -1,0 +1,361 @@
+- en: '[CHAPTER 22User Forms and User Input in VBS](contents.xhtml#ch22a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_328a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: User Forms and user input are essential aspects of creating interactive and
+    user-friendly applications in Visual Basic Scripting (VBS). User Forms allow developers
+    to design intuitive interfaces and capture user input for various purposes. By
+    utilizing controls such as labels, text boxes, buttons, and more, VBS developers
+    can create dynamic and responsive forms that enhance the overall user experience.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we will explore the process of creating User Forms in VBS,
+    including designing the form layout, adding controls, and handling events. We
+    will also discuss how to incorporate user input into your scripts, enabling your
+    applications to respond to user actions and perform relevant tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_329a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will go over the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: User Forms
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Creating user forms
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Adding other controls
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Handling events for the control
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_330a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of this chapter, the reader will learn about user forms, and how
+    to create them, adding other control as well as handling events for the control.
+    Understanding User Forms and user input in VBS will enable you to build interactive
+    and functional applications that meet the specific needs of your users.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[User forms](contents.xhtml#sc2_331a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'User Forms are used to create customized Dialogue Box. Refer to the following
+    [Figure 22.1](#fig22-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_22.1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 22.1: User forms'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Creating user forms](contents.xhtml#sc2_332a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To create user form, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Click Insert Menu
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select UserForm, as shown in [Figure 22.2](#fig22-2) (a).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: This will add one object UserForm1 in your workbook, as shown in [Figure 22.2](#fig22-2)
+    (b)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use the Properties window to change the name, behavior, and appearance of the
+    form. For example, to change the caption on a form, set the Caption property,
+    as shown in [Figure 22.2](#fig22-2) (c)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 22.2](#fig22-2):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_22.2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 22.2: Creating user forms'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Adding other controls](contents.xhtml#sc2_333a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To add other controls, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Click toolbox in toolbars, as shown in [Figure 22.3](#fig22-3) (a).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Drag the control onto the form, as shown in [Figure 22.3](#fig22-3) (b).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Change the properties such as name, font, and so on, from Property window, as
+    shown in [Figure 22.3](#fig22-3) (c)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 22.3](#fig22-3):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_22.3.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 22.3: Adding other Controls'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Handling events for the control](contents.xhtml#sc2_334a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To handle events for the control, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open code window for the form.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the form control.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click View code tool from the project explorer window, as shown in [Figure 22.4](#fig22-4)
+    (a).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the control which you have placed in your form from [Figure 22.4](#fig22-4)
+    (b).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the event for your control, as shown in [Figure 22.4](#fig22-4) (c).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Write code for the event, as shown in [Figure 22.4](#fig22-4) (d).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_22.4.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 22.4: Handling events for the control'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Scenario 30](contents.xhtml#sc3_335a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a UserForm which will accept Participant’s information to get enrolled
+    for the training. The form should have “Insert” and “Cancel” command button. When
+    the Insert button is clicked, the information entered in the form must go into
+    Excel. When Cancel button is clicked the Form should be closed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Solution](contents.xhtml#sc4_336a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Follow the given steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Insert a UserForm.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Change the name and caption from the property window.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Name of the Form should be USR_enrol.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Caption should be Training Enrolment Form.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Design the form as shown in [Figure 22.5](#fig22-5):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_22.5.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 22.5: Scenario 30 solution'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here,
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Label : Displays descriptive text.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'TextBox : A TextBox is the control most commonly used to display information
+    entered by a user.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ListBox : Displays a list of values and lets you select one or more.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ComboBox : Combines the features of a ListBox and a TextBox. The user can enter
+    a new value, as with a TextBox, or the user can select an existing value as with
+    a ListBox.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Frame : Creates a functional and visual control group.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Properties : Attributes (properties or variables).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Methods : Operations the object will perform with the attribute.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Refer to the following [Table 22.1](#tab22-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Control | Name | Property | Value |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Label | LBL_header | Caption | Ritu Arora Academy. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Label | LBL_name | Caption | Name |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Label | LBL_address | Caption | Address |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Label | LBL_contactno | Caption | Contact No. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Label | LBL_email | Caption | Email-id |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Label | LBL_Subject | Caption | Subject |'
+  prefs: []
+  type: TYPE_TB
+- en: '| TextBox | TXT_name |  |  |'
+  prefs: []
+  type: TYPE_TB
+- en: '| TextBox | TXT_address |  |  |'
+  prefs: []
+  type: TYPE_TB
+- en: '| TextBox | TXT_contactno |  |  |'
+  prefs: []
+  type: TYPE_TB
+- en: '| TextBox | TXT_email |  |  |'
+  prefs: []
+  type: TYPE_TB
+- en: '| TextBox | TXT_companyname | Text | Enter your company name |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Frame | FRM_details | Caption | Other Details |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Combo Box | CBO_subject | Caption |  |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Option Button | OPT_company | Caption | Company |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Option Button | OPT_Personal | Caption | Personal |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Command Button | CMD_insert | Caption | Insert |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Command Button | CMD_cancel | Caption | Cancel |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 22.1: Employee UserForm'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](contents.xhtml#sc2_337a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In conclusion, User Forms and user input are essential components of Visual
+    Basic Scripting (VBS) that allow developers to create interactive and user-friendly
+    applications. By utilizing User Forms, developers can design intuitive interfaces,
+    capture user input, and enhance the overall user experience. Incorporating User
+    Forms and effectively managing user input can greatly improve the functionality
+    and usability of VBS applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_338a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Create a UserForm called “RegistrationForm” that captures user information
+    for event registration. The form should include the following controls:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Labels: “Name:”, “Email:”, “Phone:”, “Event:”, “Payment Method:”'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Textboxes: for the user to enter their name, email, and phone number.'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Combobox: containing a list of events for the user to select.'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Option buttons: for the user to choose their preferred payment method (e.g.,
+    “Credit Card,” “PayPal,” “Cash”).'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Command buttons: “Submit” and “Clear.”'
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Your task is to design the UserForm with the appropriate controls, set their
+    properties, and handle events for the Submit and Clear buttons.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

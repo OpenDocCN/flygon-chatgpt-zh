@@ -1,0 +1,611 @@
+- en: '[CHAPTER 11What-if-Analysis](contents.xhtml#ch11a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_135a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In many situations, you may have to use several different sets of values in
+    one or more formulas, in order to explore all the various results. In this case,
+    manual interference may increase, leading to errors. The What-if Analysis tools
+    can come to your rescue at such situations. There are 3 What-if Analysis tools
+    in Excel, namely:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Goal-seek
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Data-Tables
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Scenario-Manager
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_136a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will go over the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Goal Seek
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Projecting figures using a Data Table
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: One-variable data tables
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Two-variable data tables
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: What-if-Scenarios
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Creating scenarios
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Merge scenarios from another worksheet
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_137a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: After studying this chapter, the reader will be able to understand goal seek,
+    define data tables and learn scenario manager.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Goal seek](contents.xhtml#sc2_138a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us assume you have created a formula to calculate PMT based on the formula.
+    You want to know the number of months you need, in order to complete the instalment,
+    provided you pay x amount per month. For such kind of reverse analysis, you may
+    use Goal Seek utility. This type of analysis involves changing the values in a
+    worksheet and observing how these changes affect the results of the formulas.
+    You use Goal Seek to solve problems that have one variable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Goal Seek feature in Excel helps us compute a value for the spreadsheet
+    input that makes the value for the given formula, match the goal you specify.
+    Goal Seeking saves you from performing time consuming trial-and-err analysis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using the Goal Seek command](contents.xhtml#sc2_139a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To find a specific value that solves a formula, follow the given steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select the cell containing the formula.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Activate the Data tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Data Tools group, click What-if Analysis and choose Goal Seek to open
+    the Goal Seek dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Set cell box, specify the cell that contains the formula you want to
+    solve.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the To Value field, enter the result you want.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the By Changing Cell field, specify the cell that contains the value you
+    want to adjust.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For example, a person takes a loan of 1,00,000 for 36 Months and the EMI [PMT]
+    is 3250\. If he pays Rs. 5000 per month, in how many months would he complete
+    his payment?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to [Table 11.1](#tab11-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '|  | A | B |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1 | Loan Amount | 100000 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 2 | Rate of Interest | 10.50% |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 3 | Payment /month | 36 |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 4 | PMT [EMI] | ($3,250.24) |'
+  prefs: []
+  type: TYPE_TB
+- en: '|  |  | PMT(B5/12,B6,B4) |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 11.1: Data for problem'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 11.1](#fig11-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_11.1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 11.1: Goal Seek'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Projecting figures using a data table](contents.xhtml#sc2_140a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A data table is a range that displays the results, when in one or more formulas,
+    certain values are changed. The different values you want to enter in a formula
+    are also included in the Data Table. Either a single variable or two variables
+    can use in data table.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[One-variable data tables](contents.xhtml#sc3_141a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is used to observe the effects of change in a single variable in one or more
+    formulas.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can see that when we change the interest rate monthly payments in the function,
+    PMT (b5/12, 36, 100000) is affected. In this function, A5 is called the input
+    cell, where various input values are substituted from the Data Table. Refer to
+    [Figure 11.2](#fig11-2):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_11.2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 11.2: One-Variable Data Tables Example'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To create a one-variable Data Table, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Enter input values in a row or a column.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If you list the input values in a column, enter the formula in the cell located
+    at the intersection of the row above the first input value and the column to the
+    right of the input values, as shown in [Figure 11.2](#fig11-2). If you list the
+    input values in a row, enter the formula in the cell located at the intersection
+    of the column to the left of the first value and the row, just below the row of
+    input values.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the range containing the input values and the formula.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: On the Data tab, in the Data Tools group, click What-if Analysis and choose
+    Data Table to open the Table dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If the input values are in a column, specify the input cell in the Column input
+    cell box. If the input values are in a row, use the Row input cell box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Two-Variable Data Tables](contents.xhtml#sc3_142a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can use a two-variable Data Table to see the effect of changing two variables
+    in one or more formulas, as shown in [Figure 11.3](#fig11-3). For example, you
+    can see how changing the Loan Amount and the number of payments affect the monthly
+    payment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To create a two-variable data table, follow the given steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Enter a formula that contains two input cells.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the same column, below the formula, enter the first list of input values.
+    In the same row, to the right of the formula, enter the second list of input values.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the range containing both the input values and the formula.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Data Tools group, click What-if Analysis and choose Data Table to open
+    the Table dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Row input cell box, specify the row input cell.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Column input cell box, specify the column input cell.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[What-if-scenarios](contents.xhtml#sc2_143a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Scenarios are part of a suite of commands sometimes called What-if Analysis
+    tools. A scenario is a set of values in which Excel saves and can also substitute
+    automatically in your worksheet. To forecast the outcome of a worksheet model,
+    you can use scenarios. You can create and save different groups of values on a
+    worksheet and then switch to any of these new scenarios to view different results.
+    You can define up to 32 changing cells per scenario.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can use the Scenario Manager to:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create multiple scenarios with multiple sets of changing cells.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: View the results of each scenario on your worksheet.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Create a summary report of all input values and results.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Merge scenarios from a group into a single scenario model.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Protect scenarios from modification and hide scenarios.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Keep track of modifications with an automatic scenario history.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Creating scenarios](contents.xhtml#sc2_144a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us assume that you have to analyze the net income of a business side-by-side
+    under best, worst and current circumstances in the following illustration. You
+    may use scenario manager to achieve the required result in a summary format.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You can use the Scenario Manager Dialog box to create scenarios. Follow the
+    given steps to do the same:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Activate the Data tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From the What-if Analysis list in the Data Tools group, select Scenario Manager
+    to open the Scenario Manager Dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click the Add button to open the Add Scenario dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Scenario name box, specify the name of the scenario.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Changing cells box, specify the cells that contain the values you want
+    to change. (for example, select the range of current scenario range).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK to open the Scenario Values dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Scenario Values dialog box, specify values for the changing cells.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK to create the scenario.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If you want to create additional scenarios, click Add again, and then repeat
+    the procedure. When you finish creating scenarios, click OK.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the following example, if we need to know the PMT for a range of loan amounts,
+    rate of interests and number of payments, we may use scenarios, as shown in [Figure
+    11.3](#fig11-3).
+  prefs: []
+  type: TYPE_NORMAL
+- en: In First Change, the loan amount is 1,50,000, rate of interest is 10.6% and
+    number of terms is 24\. In Second Change, the loan amount is 2,00,000; the rate
+    of interest is 11% and number of payments 48.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to the following [Figure 11.3](#fig11-3):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_11.3.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 11.3: Scenario Manager'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Create a scenario summary report](contents.xhtml#sc3_145a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To create a scenario summary report, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Click on the Summary Scenario Manager dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Result cells box, enter the references for the cells that refer to cells
+    whose values are changed by the scenarios (Net Income in the above example). Separate
+    the multiple references with commas, as shown in [Figure 11.4](#fig11-4).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Delete a scenario](contents.xhtml#sc3_146a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To delete a scenario, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Activate the Data tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From the What-if Analysis list in the Data Tools group, select Scenario Manager
+    to open the Scenario Manager dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click the name of the scenario you want to delete.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click Delete.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to the following [Figure 11.4](#fig11-4):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_11.4.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 11.4: Scenario Summary'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Display a scenario](contents.xhtml#sc3_147a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'When you display a scenario, you change the values of the cells saved as part
+    of that scenario. Follow the given steps to display a scenario:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Activate the Data tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From the What-if Analysis list in the Data Tools group, select Scenario Manager
+    to open the Scenario Manager dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click the name of the scenario you want to display.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click Show.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Note: Double clicking the name of the scenario displayed in the Scenarios box
+    is the same as selecting the name and choosing the Show values.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Merge scenarios from another worksheet](contents.xhtml#sc2_148a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'It is easy to merge scenarios when all What-if models on the worksheets are
+    identical. All changing cells on the source worksheet must refer to the corresponding
+    changing cells on the active worksheet. Excel copies all scenarios on the source
+    sheet to the active worksheet. To merge scenarios from another worksheet, follow
+    these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open all of the workbooks that contain the scenarios you want to merge.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Switch to the worksheet where you want to merge the scenarios.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Activate the Data tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From the What-if Analysis list in the Data Tools group, select Scenario Manager
+    to open the Scenario Manager dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click Merge.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Book box, click a workbook name.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Sheet box, click the name of a worksheet that contains the scenarios
+    you want to merge.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Repeat this process if you want to merge scenarios from more worksheets.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Protecting scenarios](contents.xhtml#sc3_149a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The Add Scenario and Edit Scenario dialog boxes contain two protection options:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Prevent Changes
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Hide
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: If you select Prevent Changes and then activate sheet protection, the scenarios
+    you define cannot be edited. However, this does not prevent you from seeing the
+    values of the changing cells directly on the sheet (unless the cells themselves
+    are locked). Rather, the scenarios themselves are protected from modification
+    when the Prevent Changes check box is selected.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In addition, selecting the Hide check box removes a scenario name from the list
+    of defined scenarios, preventing its display. Once you select protection options
+    in the Add Scenario or Edit Scenario dialog box, you must activate sheet protection.
+    To do this, use the protection command on the Tools menu, and then choose Protect
+    Sheet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note: When sheet protection is activated, you can still add scenarios. However,
+    you cannot edit or delete them unless the Prevent Changes check box is cleared.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](contents.xhtml#sc2_150a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In conclusion, the What-if Analysis tools in Excel, including Goal Seek, Data
+    Tables, and Scenario Manager, provide valuable insights and help in making informed
+    decisions by exploring different scenarios and analyzing the impact of variables
+    on formulas. These tools are essential for financial planning, budgeting, and
+    forecasting, allowing users to save time, reduce errors, and gain valuable insights
+    for better decision-making.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_151a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'You work for a financial planning company and are analyzing the impact of different
+    loan options on monthly payments. You have the following information:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Loan Amount: $100,000'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Interest Rate: 5.5%'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Loan Term: 20 years'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Using What-if Analysis, perform the following tasks:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Task 1: Goal Seek'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Calculate the monthly payment (EMI) for the given loan amount, interest rate,
+    and loan term.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Use Goal Seek to find the number of months required to pay off the loan if the
+    monthly payment is increased to $800.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Task 2: Data Table'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a one-variable data table to analyze the impact of changing interest
+    rates (4%, 5%, 6%) on the monthly payment for the given loan amount and term.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a two-variable data table to analyze the impact of changing both the
+    loan amount ($80,000, $100,000, $120,000) and loan term (15 years, 20 years, 25
+    years) on the monthly payment.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Task 3: Scenario Manager'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a scenario named “Best Case” with the loan amount of $80,000, interest
+    rate of 4%, and loan term of 15 years.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a scenario named “Worst Case” with the loan amount of $120,000, interest
+    rate of 6%, and loan term of 25 years.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Generate a scenario summary report showing the monthly payment for each scenario.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

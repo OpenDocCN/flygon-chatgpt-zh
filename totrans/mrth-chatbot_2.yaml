@@ -1,0 +1,330 @@
+- en: © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023M.
+    Kurpicz-BrikiMore than a Chatbot[https://doi.org/10.1007/978-3-031-37690-0_2](https://doi.org/10.1007/978-3-031-37690-0_2)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 2. An Introduction to Machine Learning
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)Applied Machine Intelligence, Bern University
+    of Applied Sciences, Biel/Bienne, Switzerland
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overview
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Whereas historically different methods were used to build AI systems, nowadays
+    the term artificial intelligence has become almost synonymous with *machine learning*.
+    In this chapter, we will dive deeper into this topic and understand better how
+    and in what sense machines are capable of learning. To do so, we will introduce
+    some analogies and terminology that will follow us throughout the book when looking
+    at technical aspects of the text processing technologies we will eventually discuss.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We begin with the key differences between traditional computer programming and
+    machine learning. Next, we will look at the different subdomains of machine learning,
+    namely, supervised, unsupervised, and reinforcement learning.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Traditional Computer Programming and Machine Learning
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'To start, let us discuss how *machine learning* makes AI technology different
+    from other software. In general, when producing software, programmers generate
+    *code* in a *programming language* (a set of keywords that can be translated to
+    machine readable format and thus easily be processed and understood by the computer).^([1](#Fn1))
+    Traditionally, this includes a set of instructions, being executed one after the
+    other, leading to a specific result. Let’s look at the following example borrowed
+    from human life rather than software:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Take 10 strawberries, 1 apple and 1 banana
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cut the strawberry into small pieces and add them in a bowl
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cut the apple into slices and add them to the bowl
+  prefs: []
+  type: TYPE_NORMAL
+- en: Peal the banana, cut it into small pieces and add it to the bowl as well
+  prefs: []
+  type: TYPE_NORMAL
+- en: Add 1 spoon of sugar and 3 spoons of lemon juice to the bowl
+  prefs: []
+  type: TYPE_NORMAL
+- en: Mix all the ingredients
+  prefs: []
+  type: TYPE_NORMAL
+- en: Put the bowl in the fridge for at least 30 minutes
+  prefs: []
+  type: TYPE_NORMAL
+- en: If all goes well and instructions are followed, at each execution, the same
+    result – a tasty fruit salad – will be produced. This is similar to a traditional
+    software program. A set of instructions – often referred to as an *algorithm*
+    – is implemented in a programming language. In such software, we have specific
+    *input data* (in our case, the strawberries, the apples, the lemon juice, etc.)
+    and an *output* being produced (the fruit salad).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Machine learning on the other hand works differently. Based on given data (e.g.,
+    the ingredients of our fruit salad), the machine learns or detects patterns. This
+    is what we call the *training data* of our machine learning procedure. Simplified,
+    the question in a traditional algorithm is “How do you proceed step-by-step to
+    obtain a fruit salad from the ingredients?”, whereas with machine learning, we
+    ask “What can you do with or figure out about the ingredients?” For the first
+    question, we would get fruit salad. In the case of machine learning, the result
+    is more open. If, in the case of machine learning, we would like to obtain a fruit
+    salad, we would show the machine the ingredients and the finished product, but,
+    crucially, not the steps that lead from one to the other. After seeing many examples
+    of ingredients and fruit salad, the machine learning procedure constructs its
+    own set of rules for obtaining a fruit salad. We do not have control over how
+    the machine eventually completes the task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Supervised Machine Learning
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Let’s first take a look at supervised learning by staying in our metaphorical
+    kitchen, where we want to train a supervised machine learning program to differentiate
+    between pictures of raspberries and strawberries. To select whether a picture
+    contains a raspberry or a strawberry is a so-called classification task. We provide
+    the system several examples (and yes, usually we need *many* such examples, depending
+    on the application we talk about thousands to millions of examples) of pictures
+    of both strawberries and raspberries. Along with each picture, we provide a text
+    saying whether this is a strawberry or a raspberry. This is the *right solution*
+    of the classification task, and based on that, the machine can learn how the two
+    berries look and, more importantly, how they can be differentiated. The result
+    of this training is a *model*. The model is a software component that is able
+    to classify a new image (that was not part of the training data), determining
+    whether it belongs to one of the classes from the training process. In our case,
+    the model makes a prediction about whether the new picture shows a strawberry
+    or a raspberry. The careful reader might have noticed the use of the term *prediction*.
+    A prediction is an estimation, indicating the most probable option based on the
+    patterns recognized by the system during training. Whereas the proposed result
+    is the most probable option according to the model, we have to understand that
+    it can also be *wrong*. This is one of the key takeaways to bear in mind for the
+    remainder of this book. Figure [2.1](#Fig1) illustrates the process of supervised
+    learning based on pictures of strawberries and raspberries.![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig1_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration represents a set of illustrations of strawberries and raspberries
+    going through the training data, followed by a Machine learning model that recognizes
+    an image of the strawberry.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 2.1
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Supervised machine learning for a classification task: Is it a strawberry or
+    a raspberry on the picture?'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unsupervised Machine Learning
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In the second type of learning strategy, unsupervised learning, we also have
+    training data; however, we do not have *labels*. Labels are the *right solutions*
+    we have seen in the previous paragraph, indicating whether on each picture in
+    the training data there is a raspberry or a strawberry. This means that our training
+    data consists of a bunch of images, some of strawberries and others of raspberries,
+    without any indication of what is displayed on the picture. One application of
+    unsupervised machine learning is to solve a *clustering task*. In a clustering
+    task, the machine learning algorithm analyzes the data and tries to identify groups
+    of similar samples. Without labels, we do not know what each of these groups contains,
+    but we do know that the images within a single group are more similar to each
+    other than to an image from a different group, at least according to the model.
+    Ideally, we would have two clusters, one including all the pictures of strawberries
+    and another one including all the pictures of raspberries. As in the previous
+    example, the clustering might not be perfect. There might be tricky pictures of
+    raspberries, having aspects in common with typical strawberry pictures, which
+    are placed in the wrong group (e.g., you might be most familiar with the grocery
+    store domesticated large strawberry, but wild strawberries are much smaller and
+    could, to the untrained eye, be mistaken for raspberries). Figure [2.2](#Fig2)
+    illustrates this example of unsupervised machine learning.![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig2_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration represents the illustrations of strawberries and raspberries
+    grouped in 2 clusters. Cluster 1 comprises images of strawberries and cluster
+    2 has raspberries. The training data is at the bottom.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 2.2
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Clustering pictures of strawberries and raspberries in groups: an unsupervised
+    machine learning task'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Reinforcement Learning
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Finally, the last type of machine learning is reinforcement learning. This type
+    of learning is similar to the supervised approach, where we gave the system information
+    along with each image (saying, e.g., that we see a strawberry in a given picture).
+    In the case of reinforcement learning, there is an interaction between the machine
+    and the (possibly virtual) environment, which provides feedback during the learning
+    process. You can imagine this as a *trial-and-error* approach.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s take a real-world example to illustrate this. Imagine you are asked to
+    cut a strawberry into slices of approximately of the same size. One way to improve
+    your skills could be by receiving feedback about the strawberry slices that have
+    already been cut. For example, somebody next to you could say, “This slice is
+    quite large compared to the others!” With this feedback, you would adapt your
+    cutting method for the upcoming slices. Step by step, the results would get better.
+    At some point, the results would be good enough to stop the training process.
+    This process is illustrated in Fig. [2.3](#Fig3).![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig3_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration represents a set of illustrations of sliced strawberries grouped
+    under rounds 1 and N. Round 1 indicates a sliced piece and gives feedback that
+    the slice is quite large. Round N denotes that the slices are quite even and is
+    the conclusion of the training process.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 2.3
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Reinforcement learning: improvement through feedback'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Similarly, it is possible to provide such external feedback in machine learning.
+    Specific results can be rewarded, and thus this behavior will be reinforced in
+    the final model. A crucial factor in reinforcement learning is how we give feedback
+    to the machine. For instance, if the feedback doesn’t take into account the number
+    of slices, you could exploit the lack of specificity and simply not slice the
+    strawberry at all, resulting in a trivially perfectly even slice and a pat on
+    the back from your supervisor.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Algorithms and Artificial Intelligence
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'So where is the artificial intelligence (AI) here? There are a few things to
+    clarify. In the media, often, the term *algorithm* is used in the context of AI.
+    I want to give you some context here about this word and how its origin is slightly
+    different from the way it is currently used in the context of AI. Generally, the
+    word *algorithm* (derived from the name of a ninth-century Persian mathematician
+    M. al-Khwarizmi) means a set of instructions to achieve a particular goal, for
+    example, as we have seen previously, how to prepare a fruit salad based on a list
+    of ingredients. An algorithm could also be a set of data processing steps we want
+    to communicate to a computer. In traditional software, this processing is like
+    a recipe. For example, to find the first appearance of the letter “a” in a word,
+    we could use the following algorithm:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Input: word written in English'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Steps to proceed:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Read the first letter: is it “a”? Then result is 1.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If not, read the second letter: is it “a”? Then result is 2.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: etc.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Output: Position of the first appearance of “a” in the input word.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the context of contemporary AI, the word algorithm is used to refer to the
+    software as a whole. For example, personalized recommendations for music or movies
+    are generally considered to be machine learning-based algorithms.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Technically, when talking about AI or machine learning and using this wording,
+    there are actually two separate algorithms at play. For the scope of this example
+    (and most future examples), we will consider a supervised learning setting, where
+    the model is trained on labeled training data. To illustrate this, I want to borrow
+    the definition from Katharina Zweig, who defines machine learning as “Automated
+    learning by way of examples, in which decision rules are searched for [and] then
+    stored in a statistical model” (Zweig [2022](#CR43), p. 95). On one side, we have
+    the algorithm that was used to train the model based on the training data, the
+    process by which “decision rules are searched for.” We refer to this process as
+    the *training phase*, depicted in Fig. [2.4](#Fig4). The input of this training
+    algorithm is the training data and an untrained model, for example, one that guesses
+    randomly. The output is a trained model. This is where the actual machine learning
+    happens.![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig4_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration represents the scenarios in the training phase and prediction
+    phase. Algorithm 1 trains the model with images of strawberries and raspberries
+    using the training data. Algorithm 2 in the production phase recognizes the image
+    of a strawberry.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 2.4
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the training phase, the machine learning model is trained using the training
+    data. This is where the actual machine learning happens. The resulting model is
+    then applied in the prediction phase to new data
+  prefs: []
+  type: TYPE_NORMAL
+- en: On the other hand, we have the statistical or *trained* model, which is the
+    outcome of the training process and itself an algorithm that takes as input one
+    instance of data and provides as output a prediction, based on the rules learned
+    during the training phase. This is the *prediction phase*, where the trained machine
+    learning model is applied to new data, typically after being deployed in whatever
+    production setting the model was being trained for. For example, we may take as
+    input a new picture, distinct from those in the training data, and ask whether
+    it depicts a strawberry or a raspberry. We feed the photo to the model and receive
+    as output its answer to that question, as illustrated on the right in Fig. [2.4](#Fig4).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Text Processing Ahead!
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: So far, we have discussed machine learning with examples based on images. The
+    training data consisted of pictures of strawberries or raspberries. Nevertheless,
+    the learning strategies we have seen can be applied in the same or similar manner
+    to data of different types, e.g., text. We will now move from images to text and
+    explore for the remainder of this book how these machine learning technologies
+    can be applied in natural language processing. Even though we will focus on text
+    processing and generation, the concepts and limitations we describe also apply,
+    to a certain extent, to models dealing with other data types, such as images,
+    video, or multimodal systems.^([2](#Fn2))
+  prefs: []
+  type: TYPE_NORMAL
+- en: Summary
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In this chapter, we looked at three different types of machine learning. In
+    supervised machine learning, the training data is labeled (e.g., indicating whether
+    or not we see a strawberry in a given picture). We examined a simple classification
+    task, training a model to differentiate between strawberries and raspberries and
+    making predictions on new, unseen pictures. For unsupervised machine learning,
+    we looked at the example of clustering, and finally, we learned how reinforcement
+    learning can be used to provide feedback during the learning process and improve
+    the results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the examples, we learned that machine learning models can make mistakes.
+    Whereas they make a prediction by proposing the option that is, according to the
+    model, the most probable solution, this solution can easily be wrong. This is
+    a crucial point to consider when using AI technology.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We also examined the differences between traditional algorithms and machine
+    learning. A supervised machine learning algorithm takes data in the form of inputs
+    and desired outputs (labels) and outputs rules for getting from one to the other,
+    whereas a traditional algorithm consists solely of rules for getting from input
+    to desired output.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s now move on and dive into the fascinating world of text processing!
+  prefs: []
+  type: TYPE_NORMAL

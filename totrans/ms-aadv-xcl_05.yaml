@@ -1,0 +1,502 @@
+- en: '[CHAPTER 4Data Validation](contents.xhtml#ch04a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_55a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sometimes we want to prevent the user to enter a non-text value in a cell. In
+    other words, you can say that you want to restrict the user to enter certain type
+    of values in the cell. Data Validation does this work for you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Data Validation is a process which prevents the users from entering invalid
+    data for individual cells or cell range. With the help of data validation, you
+    can limit the data entry to a specific data type, like integer numbers, fractional
+    (decimal) number or text. You can also set the limit on valid entries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_56a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will go over the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trace Precedents
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Trace Dependents
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Setting Data Validation rules
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Methods of Data Validation
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_57a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: After studying this chapter, students will be able to describe how to restrict
+    data entry in any cell or in any worksheet, as well as identify the various Data
+    Validation techniques.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Trace Precedents](contents.xhtml#sc2_58a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Trace Precedents and Trace Dependents are two features in Excel that allow
+    you to visualize and understand the relationships between cells in a spreadsheet.
+    Here’s a brief overview of each:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Trace Precedents: Trace Precedents allows you to see which cells are referenced
+    by a selected cell. This is useful for understanding how data flows through your
+    spreadsheet and identifying any potential errors or issues. To use Trace Precedents,
+    select the cell you want to trace, and then click the “Trace Precedents” button
+    in the “Formula Auditing” section of the ribbon. Excel will draw arrows pointing
+    to the cells that are referenced by the selected cell.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s say you have a spreadsheet that calculates the total revenue for a company
+    based on the number of units sold and the price per unit. The formula for the
+    total revenue is simply the product of the number of units sold and the price
+    per unit. In this example, cell C2 contains the formula for the total revenue,
+    which is “=A2*B2”. Cell A2 contains the number of units sold, and cell B2 contains
+    the price per unit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to the following figure:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_4.1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 4.1: Example of Trace Precedent'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To use Trace Precedents to see which cells are referenced by cell C2:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Select cell C2, as shown:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_4.2.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 4.2: Apply formula for Total Revenue'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'Click on the Trace Precedents button in the Formula Auditing section of the
+    ribbon, as shown:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_4.3.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 4.3: Formulas Tab'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'Excel will draw arrows pointing to cells A2 and B2, indicating that they are
+    the cells referenced by the formula in cell C2, as shown:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_4.4.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 4.4: Trace Precedent'
+  prefs: []
+  type: TYPE_NORMAL
+- en: This shows you that the formula in cell C2 is dependent on the values in cells
+    A2 and B2\. If you change the values in either of these cells, the value in cell
+    C2 will also change accordingly.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using Trace Precedents helps you understand how data flows through your spreadsheet
+    and identify any potential errors or issues in your formulas.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Trace Dependents](contents.xhtml#sc2_59a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trace Dependents allows you to see which cells depend on a selected cell. This
+    is useful for understanding the impact that changing a particular cell will have
+    on other parts of your spreadsheet. To use Trace Dependents, select the cell you
+    want to trace, and then click the Trace Dependents button in the Formula Auditing
+    section of the ribbon. Excel will draw arrows pointing to the cells that depend
+    on the selected cell.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Both Trace Precedents and Trace Dependents can help you understand the structure
+    of your spreadsheet and troubleshoot any errors or issues that may arise. By using
+    these features, you can more easily navigate and analyze complex spreadsheets,
+    and make more informed decisions based on your data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here’s an example of how to use Trace Dependents:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s say you have a spreadsheet that calculates the monthly payment on a loan
+    based on the principal, interest rate, and term. The formula for the monthly payment
+    is based on the principle, interest rate, and term, which are stored in cells
+    A1, A2, and A3, respectively. Cell A4 contains the formula for the monthly payment,
+    which is calculated using the PMT function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To use Trace Dependents to see which cells depend on cell A4:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select cell A4.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click on the Trace Dependents button in the Formula Auditing section of the
+    ribbon.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Excel will draw arrows pointing to any cells that depend on cell A4.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In this example, cells B4, C4, and D4 depend on cell A4, because they contain
+    the breakdown of the monthly payment, including the portion that goes towards
+    principal, interest, and any additional fees or charges.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to the following figure:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_4.5.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 4.5: Trace Dependents'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By using Trace Dependents, you can see which cells are affected by changing
+    the value in cell A4\. If you were to increase the interest rate or change the
+    loan term, for example, you could use Trace Dependents to see how this would affect
+    the monthly payment and its breakdown.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using Trace Dependents can help you understand the structure of your spreadsheet
+    and make more informed decisions based on your data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Setting Data Validation rules](contents.xhtml#sc2_60a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The following are the steps to create a set of rules for data validation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select the cells for which you want to create a validation rule.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: On the Data tab, in the Data Tools group, click Data Validation to open the
+    Data Validation dialog box (shown in [Figure 4.1](#fig4-1)).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Activate the Settings tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From the Allow list, select a data validation option.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: From the Data list, select the operator you want.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Then complete the remaining entries.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Enter the Input Message if required in Input Message tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Enter the error message if required in Error Alert tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK to set the validation rule.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Close the dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to the following figure:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_4.6.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 4.6: Data Validation'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Methods of Data Validation](contents.xhtml#sc2_61a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us now look at a method of data validation, that is, creating a list.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Creating a list](contents.xhtml#sc3_62a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A list is an effective form of data validation where the user is allowed to
+    select an option from a drop- down list which is built-in to the cell ([Figure
+    4.7](#fig4-7)). The data source may be written manually by the user or selected
+    from the same sheet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The following are the steps to create a list:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select a blank cell
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select Data tab
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select Data Validation from Data Tool group
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select List
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In Source, select the cell with values, or type the data with comma
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to the following figure:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_4.7.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 4.7: Creating a List'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note: If the source is from a different sheet, create a named range for all
+    the values and use the name in the Source field for Data Validation.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Allow numbers within limits:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the Allow box, click Whole Number or Decimal.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Data box, select the type of restriction you want. For example, to set
+    upper and lower limits, select Between.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Enter the minimum, maximum, or specific value to allow.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Allow dates or times within a timeframe:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the Allow box, select Date or Time.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Data box, select the type of restriction you want. For example, to allow
+    dates after a certain day, select greater than.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Enter the start, end, or specific date or time to allow.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Allow text of a specified length:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the Allow box, click Text Length.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Data box, click the type of restriction you want. For example, to allow
+    up to a certain number of characters, click less than or equal to.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Enter the minimum, maximum, or specific length for the text.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Calculate what is allowed based on the content of another cell:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the Allow box, select the type of data you want.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Data box, select the operator (for the criteria) you want.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the box or boxes below the Data box, click the cell that you want to use
+    to specify what’s allowed.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: For example, to allow entries for an account only if the result won’t go over
+    the budget, click Decimal for Allow, select less than or equal to for Data, and
+    in the Maximum box, click the cell that contains the budget amount.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Use a formula to calculate what is allowed:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the Allow box, click Custom.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Formula box, enter a formula that calculates a logical value (TRUE for
+    valid entries or FALSE for invalid). For example, to give an incentive only if
+    the dept. is sales and the region west, you may use the following custom formula
+    =and(d2=”sales”,e2=”west”).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: To display an optional input message when the cell is clicked, click the Input
+    Message tab, and the-Show Input Message When Cell is Selected - check-box is selected
+    and fill in the title and text for the message.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Specify how you want excel to respond when invalid data is entered:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Click the Error Alert tab, and make sure the Show Error Alert After Invalid
+    Data is Entered and check box is selected.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Select one of the following options for the Style box:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: To display an information message that does not prevent entry of invalid data,
+    select Information.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: To display a warning message that does not prevent entry of invalid data, select
+    Warning.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: To prevent entry of invalid data, select Stop.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Fill in the title and text for the message (up to 225 characters).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: If you do not enter a title or text, the title defaults to MS Excel and the
+    message to The value you entered is not valid. A user has restricted values that
+    can be entered into this cell.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](contents.xhtml#sc2_63a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we learned about data validation in Microsoft Excel. Data
+    validation allows us to restrict the type of data that can be entered into cells,
+    ensuring data accuracy and consistency. We explored two methods of data validation:
+    Trace Precedents and Trace Dependents. These features help us understand the relationships
+    between cells and identify potential errors in our formulas.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We also discussed how to set data validation rules using the Data Validation
+    dialog box. This allows us to define specific criteria for the allowed data, such
+    as whole numbers, decimals, dates, times, or text of a specified length. We can
+    even create custom formulas to calculate what data is allowed based on the content
+    of other cells.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Furthermore, we examined the method of creating a list for data validation,
+    where users can select an option from a drop-down list. This helps in maintaining
+    data consistency and simplifies data entry.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_64a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open Advance Excel Assignment workbook. In the sheet named Validation, do the
+    following data validations.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: No duplicates should be allowed in emp_code.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Only text should be allowed in emp name.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Age should be only in numeric data.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Salary should be between 5000 and 50000.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Joining Date should be less than current Date.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the emp_inf sheet create a dropdown list of all the employee codes in cell
+    B3.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

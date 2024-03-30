@@ -1,0 +1,633 @@
+- en: '5'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: ChatGPT Prompts for Research and Analysis
+  prefs: []
+  type: TYPE_NORMAL
+- en: IF YOU PERFORM research as part of your work or your studies, you can harness
+    ChatGPT's power to complete that research more quickly. In this chapter, we'll
+    look at how to prompt ChatGPT to summarize articles you might want to read, analyze
+    data you've captured, and suggest topics connected to the topics you're researching.
+    We'll also cover how to prompt ChatGPT to generate research questions for you
+    and how to enlist ChatGPT's help to design experiments.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Ready?  ## Summarize Articles'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you had infinite time, you could read all the literature on the subject you
+    need to study or to understand. But as your time is limited, you may want to get
+    ChatGPT to summarize one or more articles for you. This can be a great way to
+    get a quick overview of an article — enough, at least, to determine whether you
+    should read the article yourself.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you enable the Web Browsing Model, ChatGPT can summarize articles on the
+    web, provided they are not hidden behind paywalls or otherwise restricted. Give
+    a prompt like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Summarize *URL***'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT reads the article and returns a summary.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Without the Web Browsing Model enabled, you must paste into the Send a Message
+    box the content you want ChatGPT to summarize. Give the “Summarize” prompt, paste
+    the material, and press Enter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Summarize *pasted_material***'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: This method works fine, and is usually quicker than having ChatGPT access the
+    material on the web, but it means that the content can be only up to 4096 tokens
+    long (including the “Summarize” keyword), so you cannot summarize longer articles.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Leaving the “Summarize” prompt open like this lets ChatGPT decide on the length
+    of summary to create. Results vary depending on how long the article is and what
+    its contents are, but ChatGPT typically delivers an introductory paragraph, a
+    number of key points, and a concluding paragraph.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you want ChatGPT to keep the summary to a certain length, give the limit.
+    For example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Summarize in 50 words *URL***'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Alternatively, you might ask for a specific number of key points. For example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Summarize in three key points *URL***  ##
+    Analyze Data'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT can help you to analyze data you have captured. ChatGPT can perform
+    various types of analysis, including these five types:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Descriptive analysis.** This simple form of analysis provides a basic understanding
+    of the data by calculating simple metrics, such as the mean, median, mode, and
+    standard deviation.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Correlation analysis.** This type of analysis enables you to determine if
+    there''s a correlation between two variables. (Spoiler: Correlation does not prove
+    causation.)'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Regression analysis.** This more sophisticated form of correlation analysis
+    tries to show how one variable is affected by one or more other variables.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Time series analysis.** This form of analysis helps you understand trends
+    and seasonality in data collected over an extended period of time.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '**Sentiment analysis.** This form of analysis examines the sentiment expressed
+    in text — for example, in a customer review of a product.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Here are three examples of prompts you could use to ask ChatGPT to analyze data.
+    For each prompt, you would give the data to ChatGPT by pasting it into the Send
+    a Message box after the prompt and (optionally) a line break (press Shift+Enter).
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Could you analyze the following data
+    and tell me the mean, the median, the mode, the variance, and the standard deviation?**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT spelled out the meaning of the five measures, demonstrated how to work
+    out each of them, and then provided this summary:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chatgpticon](images/chatgpticon.png) *So, for this data set:*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Mean = 57.14*'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Median = 60*'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Mode = 80*'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Variance = 420.33*'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Standard Deviation = 20.50*'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Here''s some data from a survey we did
+    that shows the length of customer service calls in seconds and the customer satisfaction
+    rating on a scale of 1 (worst) to 10 (best). Have a look at them and tell me if
+    there''s a correlation between the two.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![Chatgpticon](images/chatgpticon.png) *The data you''ve provided seems to
+    suggest a positive correlation between the length of customer service calls and
+    the customer satisfaction rating. This is because as the length of the call increases,
+    the customer satisfaction rating also increases*.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*However, to accurately determine the correlation, you would typically calculate
+    the Pearson correlation coefficient. …*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT explained that it doesn't currently have the capability to calculate
+    mathematical or statistical functions. It suggested using a programming language,
+    such as R or Python, to perform the calculation — and provided a complete Python
+    script for calculating the correlation coefficient.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Hi ChatGPT! I''m giving you ten customer
+    reviews for our new chewable mouse mat. Do a quick sentiment analysis on them,
+    would you?**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT analyzed each of the customer reviews, determining whether it expressed
+    positive sentiment, negative sentiment, neutral sentiment, or mixed sentiment.
+    Here are three examples:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chatgpticon](images/chatgpticon.png) *1\. *****“This product is useless,
+    but it made me laugh.”***** - Mixed sentiment. Negative due to “useless” but also
+    positive because it made the customer laugh*.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*4\. *****“Fun for 5-year-olds.”***** - Positive sentiment. “Fun” indicates
+    enjoyment or amusement*.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*10\. *****“This may be chewable, but the flavor is disgusting.”***** - Negative
+    sentiment. “Disgusting” is a strong negative word*.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Reducing text to a value (such as “negative sentiment”) feels somewhat grotesque,
+    but greatly simplifies the task of analyzing complex input. ChatGPT does warn
+    that automated tools “may not always interpret sentiment accurately, especially
+    when it comes to sarcasm, irony, or culturally specific expression”; keep this
+    in mind if you use sentiment analysis.  ## Suggest Connected Topics'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you need to look into topics connected to what you are studying, you can
+    ask ChatGPT for help in identifying them. Here are three examples of prompts you
+    could use:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **I''m examining the positive and negative
+    effects of social media usage during the pandemic. Please suggest three connected
+    topics for me to look at.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT suggested Mental Health and Social Media, Social Media as a Source of
+    Information and Misinformation, and Social Media and Physical Activity.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Hey, ChatGPT, I''m studying the effect
+    of daytime napping on academic performance in college students. Could you give
+    me five related topics to consider?**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT suggested topics including Sleep Deprivation and Cognitive Function,
+    Impact of Stress on Sleep Quality, and the Role of Circadian Rhythms in Sleep
+    and Academic Performance.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **I''m working on the effect that reducing
+    the serving size of fast-food takeout dishes will have on the rat population of
+    major urban areas. Give me 10 connected topics I should think about. Thanks!**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![Chatgpticon](images/chatgpticon.png) *Certainly, your topic is an interesting
+    intersection of public health, urban ecology, and behavioral science. Here are
+    ten related topics that you might consider:*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT''s suggested topics included Urban Waste Management, Rat Behavior and
+    Diet, Impact of Fast-Food Industry on Urban Ecosystems, and Fast-Food Consumption
+    Trends.  ## Generate Research Questions'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT can be a valuable resource when you need to generate research questions
+    to probe an area of interest. Instead of you having to cudgel your brains to produce
+    the questions, you can have ChatGPT suggest them in seconds from its vast reading
+    and data banks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Start by telling ChatGPT the topic in which you''re interested and identifying
+    the gaps in current knowledge. Here''s an example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **We know that exercise affects appetite.
+    I want to research how the intensity of exercise changes the effect on appetite.
+    For example, some people report being ravenously hungry after intense exercise,
+    whereas other people don''t want to eat at all for several hours after intense
+    exercise. Can you generate some research questions for me on this subject?**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT returned seven potential research questions, including these three:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chatgpticon](images/chatgpticon.png) *Is there a correlation between the
+    intensity of exercise and the types of food (e.g., protein, carbohydrates, fat)
+    that individuals crave post-exercise?*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*How does intense exercise influence the physiological hunger and satiety hormones
+    (like ghrelin and leptin) compared to moderate or light exercise?*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Is there a difference in post-exercise appetite between aerobic exercises
+    (like running) and anaerobic exercises (like weightlifting) of similar intensity?*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Here''s another example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **I''m investigating the roles of different
+    activities in the acquisition of a foreign language. I want to compare the helpfulness
+    of spoken role-play, in-class group exercises (also spoken), and written exercises.
+    Which activities help students learn most quickly? Please generate eight research
+    questions I could use.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT returned the eight questions I requested, including these three:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chatgpticon](images/chatgpticon.png) *How does the complexity level of the
+    target language affect the effectiveness of spoken role-play, in-class group exercises,
+    and written exercises?*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*How does student engagement and motivation change with each of the three activities
+    (spoken role-play, in-class group exercises, and written exercises) and how does
+    this influence language acquisition speed?*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Which of the three activities (spoken role-play, in-class group exercises,
+    or written exercises) contributes more effectively to long-term retention of a
+    foreign language?*  ## Design Experiments'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT can help you to design experiments that you can perform to further your
+    research. Normally, you'd start off with a research question — for example, a
+    question that your instructor has given you.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '### Understand the 10 Steps in Designing an Experiment'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Designing an experiment typically involves the following 10 steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Defining the experiment's objective.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Developing a hypothesis that predicts the experiment's outcomes.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Designing a methodology that suits your research question.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Identifying the experiment's independent variables, dependent variables, and
+    controlled variables.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Deciding how to collect data for the experiment.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Choosing a suitable sample size and appropriate selection techniques.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Selecting suitable analysis methods to analyze the data collected.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Assessing any ethical considerations involved in the experiment.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Identifying any potential sources of error in the experiment.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Reporting the results of your experiment.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'We''ll now work through those 10 steps explained in the previous section. We''ll
+    use this research question:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For overweight and obese adults, does a low-carbohydrate diet improve weight-loss
+    outcomes compared to a standard American diet?  ### 1\. Define the Objective'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Let''s start by defining the objective. You might prompt like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **I need to design an experiment for the
+    following research question. First, please help me to define the objective of
+    the experiment.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: After the prompts, you'd press Shift+Enter to insert a line break, and then
+    press Ctrl+V to paste in the objective.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT returned the objective with some suggestions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chatgpticon](images/chatgpticon.png) *The objective of your experiment, based
+    on your research question, would be:*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*“To compare the effectiveness of a low-carbohydrate diet versus a standard
+    American diet on weight-loss outcomes in overweight and obese adults.”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*To further refine your objectives, you may want to define what specific weight-loss
+    outcomes you''re interested in. For example:*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Total weight loss after a certain period (e.g., 3 months, 6 months)*.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Changes in body mass index (BMI)*.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Changes in body fat percentage*.'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Long-term maintenance of weight loss (e.g., after 1 year)*.  ### 2\. Develop
+    a Hypothesis'
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Next, we need to develop a hypothesis that predicts the experiment''s outcomes.
+    We can use a prompt such as this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Please suggest a hypothesis based on
+    that objective.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT suggested the following hypothesis:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Chatgpticon](images/chatgpticon.png) *“Overweight and obese adults following
+    a low-carbohydrate diet will experience greater weight loss outcomes compared
+    to those following a standard American diet over a defined period.”*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT also suggested using a specific measure for assessing the weight-loss
+    outcomes, such as total weight loss, decrease in BMI, or decrease in body-fat
+    percentage. So I prompted:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **That hypothesis is good, but please
+    add “total weight loss” as the measure.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT made that change.  ### 3\. Design a Methodology for the Experiment'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The next step is to design a methodology that suits the research question.
+    We can prompt ChatGPT like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Design a methodology for the experiment.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT explained that we need to design a controlled experiment — one that
+    has a control group that will enable us to tell whether our intervention has worked.
+    We will recruit enough overweight and obese adults to make a sample, explaining
+    the experiment to them and making sure they understand the purpose and the risks.
+    We then assign the subjects randomly to the intervention group and the control
+    group, perform the intervention for our determined period, and measure the results.  ###
+    4\. Identify the Independent, Dependent, and Controlled Variables'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Next, we need to identify the experiment''s independent variables, dependent
+    variables, and controlled variables. ChatGPT can spell these out:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **What are the experiment''s independent
+    variables, dependent variables, and controlled variables?**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT explained that the independent variable is the one we manipulate: the
+    participants'' type of diet. The dependent variable is the variable we measure:
+    the participants'' weight. The controlled variables are variables we keep the
+    same for all participants, such as their total caloric intake, activity levels,
+    and frequency of weight measurement.  ### 5\. Decide How to Collect Data'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The next step is to decide how to collect data for the experiment. I prompted
+    ChatGPT like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **How should I collect data for the experiment?**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT explained that the experiment needs at least the weight, but other measurements
+    may be useful, too. We may want to measure height so we can calculate BMI, measure
+    body fat percentage, or measure other health indicators.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'ChatGPT walked me through initial data collection, ongoing data collection
+    at regular intervals during the study period, and final data collection at the
+    end of the study.  ### 6\. Choose the Sample Size and Selection Techniques'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Next, you need to choose a suitable sample size and appropriate selection techniques
+    for the study. I prompted ChatGPT like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **What sample size and selection techniques
+    should I use for the experiment?**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT explained that the larger the sample size, the more closely it will
+    represent the population and the greater its statistical significance will be
+    — but that I also need to work within my resources. ChatGPT mentioned that I could
+    run a power analysis to calculate the appropriate sample size.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Similarly, ChatGPT pointed out that, while random selection of participants
+    would give a truer representation of the population, convenience sampling (in
+    lay terms, taking whatever participants you can get) is likely to be more practical.  ###
+    7\. Select Suitable Analysis Methods'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The seventh step is to select suitable analysis methods to analyze the data
+    collected. I prompted ChatGPT for advice like this:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **What analysis methods should I use to
+    analyze the data collected in the experiment?**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: ChatGPT recommended calculating descriptive statistics for the intervention
+    group and the control group, such as calculating the mean and the medium to measure
+    the central tendency of the weight loss and calculating the range and the standard
+    deviation to measure its dispersion. Next, ChatGPT suggested moving on to inferential
+    statistics and using a t-test if the data meets the assumptions for parametric
+    tests, or using a non-parametric test, such as the Mann-Whitney U test, if it
+    does not.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If I collected data on confounding variables, I could use multivariate regression
+    or analysis of covariance (ANCOVA) to control for them.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Whatever the other results, I should calculate the effect size to measure the
+    size of the difference between the control group and the intervention group.  ###
+    8\. Assess Any Ethical Considerations'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Next, I should assess any ethical considerations involved in the experiment.
+    To this end, I prompted ChatGPT thus:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Please assess any ethical considerations
+    involved in the experiment.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT produced a comprehensive list, starting with Informed Consent and Confidentiality
+    and ending with Fair Participant Selection, Ethics Committee Approval, and Scientific
+    Integrity.  ### 9\. Identify Potential Sources of Error'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Next, I need to identify potential sources of error in the experiment:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **Identify any potential sources of error
+    in the experiment.**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT returned a list of potential sources of error, such as dietary adherence,
+    physical activity levels, measurement errors, and confounding variables (such
+    as sleep patterns, stress levels, or genetic factors).  ### 10\. Report the Results'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'All that remains is to report the results of the experiment. ChatGPT is happy
+    to provide advice on how to do this. I prompted:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![Prompticon](images/prompticon.png) **How can I report the results of the
+    experiment?**'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'ChatGPT recommended presenting the findings, methods, and results in the form
+    of a scientific research paper, which would have these sections:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Title
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Abstract
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Introduction
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Methods
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Results
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Discussion
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Conclusions
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: References
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL

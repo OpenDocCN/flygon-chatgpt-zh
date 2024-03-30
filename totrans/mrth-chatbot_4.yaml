@@ -1,0 +1,1313 @@
+- en: © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023M.
+    Kurpicz-BrikiMore than a Chatbot[https://doi.org/10.1007/978-3-031-37690-0_4](https://doi.org/10.1007/978-3-031-37690-0_4)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 4. Do Chatbots Have Emotions?
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)Applied Machine Intelligence, Bern University
+    of Applied Sciences, Biel/Bienne, Switzerland
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overview
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The idea of creating *intelligent* machines has always been a fascination to
+    humanity, resulting in a large variety of books and movies dealing with these
+    kinds of scenarios. With the rise of advanced language models, the question of
+    what we actually mean by *intelligent* comes up once more. In this chapter, we
+    will discuss this matter and see how it is influenced by human perception. In
+    the second part of the chapter, we will deepen our technical skills and look at
+    state-of-the-art language models. Finally, I will describe a typical example of
+    chatbot architecture.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Machines and Emotions
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: The Turing Test
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Already in early years of computer science, in the 1950s, the challenge of measuring
+    whether a machine could have the same thinking capabilities as a human was discussed.
+    A test nowadays referred to as *Turing Test* (originally called *Imitation Game*
+    (Turing [1950](#CR37))) is often referred to when discussing this topic. In the
+    experiment, a human interacts with a keyboard and a screen with two conversation
+    partners (pretty much like a chatbot conversation nowadays), where one is a human
+    and the other is a machine. The participant is not able to see or hear the two
+    conversation partners. Next, the participant is questioning the two conversation
+    partners, trying to find out who the machine is and who the human. Figure [4.1](#Fig1)
+    illustrates this setup. If after an intensive conversation the human is not able
+    to identify who the machine is and who the human, then the test assumes that the
+    machine has the same thinking capabilities as a human.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig1_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A diagrammatic illustration of human and machine interaction where the text
+    reads Hello, Hi, and Who is the human, who is the machine?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.1
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The setup of the Turing Test: who is the human, and who is the machine?'
+  prefs: []
+  type: TYPE_NORMAL
+- en: When having conversations with ChatGPT or similar chatbots based on state-of-the-art
+    language models, the one or other of you might have the impression that this criterion
+    could be fulfilled. Does it mean that we have reached the point of machines having
+    the same thinking capabilities as humans?
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Turing test has been criticized for the fact that it is all about deception
+    that it tests the gullibility of persons rather than the actual intelligence of
+    the system (Tegmark [2018](#CR36)). What is tested in the scenario described above
+    is the ability to write *like* a human, and not performing the thinking or understanding
+    of a human. We can more concretely investigate that by looking at the example
+    of word vectorization we have seen earlier. Based on mathematical operations,
+    we were able to obtain the word *queen* based on the word vectors of the words
+    *king, man*, and *woman.* Does it mean that the system did *understand* the concept
+    of being a king or what is the difference between man and woman? Probably it did
+    not, all it did was to apply mathematical operations on vectors, and the vectors
+    were sorted the way they are in the vector space, due to all the examples seen
+    in the training data.^([1](#Fn1))
+  prefs: []
+  type: TYPE_NORMAL
+- en: Emotional Chatbots?
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'What about the emotions expressed by chatbots? Let’s consider the following
+    conversation with a state-of-the-art chatbot (based on a GPT-3 model):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Human:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Hello, how are you?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Hi, I am doing well. Thank you for asking. How about you? How are you feeling
+    today?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Human:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “I’m OK. A bit low since it’s cloudy outside. What is going well for you?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “I’m sorry to hear that you are feeling a bit low today. It’s completely understandable
+    to feel that way when the weather is gloomy. As for me, I am feeling grateful
+    for the people in my life who support me and make me happy. I also feel content
+    knowing that I have the ability to recognize and process my emotions in a healthy
+    way, which helps me to stay mentally and emotionally balanced.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: Not bad right? Would this chatbot pass the Turing test? Maybe yes. Does the
+    chatbot *understand* the texts it produces in a way a human would? No, it doesn’t.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The fact that this is hard to believe is rooted in the nature of how humans
+    communicate. This was pointed out in detail in a key scientific paper that appeared
+    in 2021 and warned of the dangers and risks behind large language models (Bender
+    et al. [2021](#CR3)). It points out (among many other interesting points that
+    we will discuss later) that the texts generated by large language models are lacking
+    different key aspects of the usual communication pattern between two humans, who
+    share a common ground: communicative intent, a model of the world, and a model
+    of the reader’s state of mind. This leads to the problem that even though one
+    side of the communication (the chatbot) has no deeper meaning in the output it
+    produces, humans assume *implicit meaning*, which creates an illusion of our singular
+    human understanding of language. Basically, we are tricked by the chatbot simulating
+    to write like a human.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The way robots, AI and, in particular, also language models process information
+    and present answers or results to humans can be seen as *simulations* of human
+    behavior or activities:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We have to realize that *thinking*, *calculating*, the *reactions*, the *decisions*
+    of a robot are only *simulations* of thinking, calculating, reactions, decisions
+    and not – in the human sense – real thinking processes. (Nida-Rümelin and Weidenfeld
+    [2022](#CR9001), p.59)
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: This fact was in an interview with regard to humanoid robots also referred to
+    as *social hallucinations* by the German philosopher Thomas Metzinger (Honert
+    [2017](#CR21)). He states that humans have the capacity to imagine that they are
+    dealing with a conscious counterpart, even if they are not. This does not only
+    apply with humanoid-looking robots but might also apply to chatbots. In other
+    situations, it can even happen that we assign human characteristics to more passive
+    objects such as cars. For example, a study has shown that people are assigning
+    personality traits or facial expressions to cars (Windhager et al. [2008](#CR41)).
+    In this study, 40 participants were shown 3D computer models from different cars
+    of different manufacturers. The participants were asked to say whether they associate
+    the front part of the cars with a human (or animal) face, identifying the parts
+    that would correspond to mouth, eyes, or other parts of the face. They were furthermore
+    asked to rate to what extent the car looks, among others, happy, angry, surprised,
+    dominant, or sad. Interestingly, people generally agreed in their ratings, and
+    the authors thus assume that there must be some consistent information that is
+    perceived by humans in car fronts. The participants thus evaluated the cars in
+    biological terms, even though being inanimate structures.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Uncanny Valley
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: In the case of robots and avatars,^([2](#Fn2)) being too humanlike leads to
+    negative emotions in humans. It is observed that objects that are clearly artificial
+    and distinguishable from real humans (such as humanoid robots clearly looking
+    different from humans or stuffed animals) are better accepted. The hypothesis
+    of the *uncanny valley* (first proposed in 1970 by the Japanese Robotics Professor
+    Masahiro Mori (Mori [1970](#CR28))) predicts that an entity appearing almost human
+    on the other hand will cause the feeling of cold and spookiness in humans.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This uncanny valley effect can also be applied to chatbots. A study (Ciechanowski
+    et al. [2019](#CR7)) has observed how two different groups of human participants
+    interact with two groups of chatbots: The first chatbot was a very simple text-based
+    chatbot, and the second one had also an avatar reading the answers rather than
+    only displaying them on the screen. In the results, the authors conclude that
+    the participants were experiencing less uncanny effects and less negative affect
+    when dealing with the simpler chatbot than with the animated chatbot.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: It seems that state-of-the-art language models have not only enabled a revolution
+    in the field of natural language processing, making several tasks more efficient.
+    They furthermore seem to raise new questions of human-chatbot interaction, leading
+    us to interpret their eloquent and well-phrased texts as emotions or making us
+    feel eerie when interacting with them. Has some sort of language model uncanny
+    valley been reached?
+  prefs: []
+  type: TYPE_NORMAL
+- en: You are still thinking about the over-emotional chatbot conversation and not
+    convinced it is only an illusion? Let’s now get back to the technical part now
+    and have a closer look at how chatbots work and how their answers are generated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Entering the World of Language Models
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Vectors of Entire Sentences
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: So far, when looking at word embeddings, we have considered settings where one
+    word corresponds to one vector. Each word in our example had one numerical representation,
+    being of two dimensions for the toy example and of larger dimensions in the real-world
+    word embeddings. In some cases, it might be necessary or preferable to aggregate
+    several words together. When doing sentiment analysis of texts, often we would
+    like to understand whether an entire sentence (or blocks of text) is positive
+    or negative, rather than just the individual words. When doing this type of operation
+    on sentences and using a machine learning model that takes entire sentences as
+    input, we have a *sentence classification task*. Other examples of similar tasks
+    are a spam filter or identifying whether a given text is about a specific topic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Consider the following sentence, which we want to feed to a machine learning
+    model and estimate whether it is positive or negative:^([3](#Fn3))
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Anna eats a tasty strawberry.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Based on the word embeddings discussed earlier, we can now easily encode each
+    word as a vector:^([4](#Fn4))
+  prefs: []
+  type: TYPE_NORMAL
+- en: Vector(“Anna”) = (0, 2)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Vector (“eats”) = (1, 3)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: …
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'We now want to aggregate these word embeddings to a so-called sentence embedding,
+    a vector representing not only a single word but the entire sentence. One simple
+    method to do so is to just take the average of all word vectors in the sentence.
+    Based on the mathematical properties of vectors, we can apply mathematical operations,
+    as if we could be taking the average of numbers:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Average = [Vector(“Anna”)+Vector(“eats”)+…+Vector(“strawberry”)]/5
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'We sum up all the vectors and divide by the number of vectors (= the number
+    of words). The result is one vector (in the same dimension as the word vectors)
+    that represents the entire sentence:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Vector(“Anna eats a tasty strawberry.”)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'These methods also help to deal with the handling of *sequences of variable-length*.
+    When dealing with language, words (which can be seen as *sequences* of characters)
+    can be longer (as the word *strawberry*) or shorter (as the word *the*). In the
+    same way, we can see sentences as a *sequence* of words, and the number of words
+    per sentence can vary. Therefore, we can consider a sentence that we want to provide
+    as input to our machine learning model as a *variable-length input*. Depending
+    on the sentence we want to classify, we might have less or more words to process.
+    Mostly, we will not be able to know this information in advance and thus need
+    to be ready in our software to process very short sentences, as well as long sentences.
+    Using the average is a simple yet efficient solution to that: no matter how many
+    words there are in the sentence, we will end up with a single vector (of fixed
+    dimension).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Whereas this solution solves our problem for now, it comes with some major
+    limitations. For instance, the order in which the words appear in the sentence
+    is not considered when using this method. This results in the following sentence
+    having the same sentence vector as our example above:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*A tasty strawberry eats Anna.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Not quite the same, right? In some cases, this difference can be very relevant
+    for the classification task, and thus, we need more advanced methods that allow
+    to consider the order of the words in the sentence. Additionally, the longer a
+    sentence is, the less information the average vector contains.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Keeping Some Words in Mind
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: To overcome this limitation, we need a different approach that allows us to
+    keep in mind the order of words, by reading them step by step from left to right,
+    as a human reader would do. Let’s consider this by an example^([5](#Fn5)) as shown
+    in Fig. [4.2](#Fig2).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig2_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A diagrammatic illustration of human and machine interaction where the text
+    reads anna eats a tasty strawberry. It read, understand and store in memory.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.2
+  prefs: []
+  type: TYPE_NORMAL
+- en: Example of a human reading a sentence word by word (based on the explanations
+    of Hagiwara ([2021](#CR19)))
+  prefs: []
+  type: TYPE_NORMAL
+- en: We consider the same example sentence from before. The human reader reads the
+    sentence word by word.^([6](#Fn6)) As a first step, the word *Anna* is read and
+    stored in the short-term memory. Then, the next word, in this case *eats*, is
+    read. It is put in context with the words that have already been read before and
+    is stored in the short-term memory as well. Here, the short-term memory is updated
+    and becomes “Anna eats,” taking note about the relation of the two words, meaning
+    that there is an action that was executed by Anna. This short-term memory can
+    also be referred to as a *mental state*, that is, updated step by step based on
+    the new words that are being read while going through the sentence word by word
+    (Hagiwara [2021](#CR19)).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Neural Networks with Loops
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'We now want to bring together this mechanism of reading a sentence and the
+    neural networks that we saw in the previous chapter. These neural networks are
+    called *recurrent neural networks* (*RNNs*). We can translate the human reader’s
+    process in the previous example to a more technical setup as follows: We introduce
+    the concept of the *state* of a neural network as an analog for the short-term
+    memory of the reader, updating it after each word vector in a similar manner,
+    as shown in Fig. [4.3](#Fig3).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig3_HTML.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A diagrammatic illustration of human and machine interaction where the text
+    reads anna eats a tasty strawberry at 4 states.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.3
+  prefs: []
+  type: TYPE_NORMAL
+- en: A neural network processing a sentence vector by vector (based on the explanations
+    of Hagiwara ([2021](#CR19)))
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To begin, the neural network receives the vector of the word *Anna*. It then
+    receives the second vector: the vector of the word *eats*. This vector is combined
+    with the output of the hidden layer from the previous step and passed to the next
+    step. In other words, the state of the neural network is updated, reflecting the
+    additional information that the new word brings to the entire sentence read so
+    far. This operation is repeated until the end of the sentence has been reached.
+    By then, the content of the entire sentence is stored in this *final state*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the previous chapter, we have seen the neural network architecture, consisting
+    of an input layer, several hidden layers, and an output layer. Each layer consisted
+    of several neurons, which were each processing an input and some weights and providing
+    an output to the next layer. You might remember that a signal was entering our
+    neural network from the input layer and making all its way layer by layer to the
+    output layer. Since when reading a sentence word by word, we perform the same
+    operations again and again, the same neural network structure is being re-used.
+    There are *loops* in the processing. Loops are a common construct in computer
+    programming. Whenever the same operation needs to be executed numerous times,
+    specific constructs can be used to write the instruction only once and tell the
+    computer to execute it several times. This is analogous to the following scenario:
+    If you have ten bowls of strawberries and want to instruct somebody to bring them
+    all from the kitchen to the table in the living room, you could either say:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Please go to the kitchen and bring the first bowl of strawberries to the table.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*Then, please go again to the kitchen and bring the second bowl of strawberries
+    to the table.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*and so on.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'However, you would probably not be doing that. You would be saying something
+    like:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*For each of the ten bowls, please go to the kitchen and bring the bowl to
+    the table.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: So, you just created a loop with ten iterations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The idea of reusing a neural network in a loop structure gives rise to the concept
+    of so-called recurrent neural networks. The same structure can be reused as the
+    next word comes in. At each step, we take the hidden layer output from the previous
+    iteration (the state) along with the word vector of the current step as input
+    into the network. It allows the neural network to connect the incoming word to
+    the rest of the sentence. Coming back to the strawberry bowls in the kitchen,
+    the person picking up the bowls could have a notebook and a pen in the kitchen,
+    taking note each time which bowls were already taken to the table and how they
+    were placed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The architecture of our recurrent neural network therefore looks as shown in
+    Fig. [4.4](#Fig4). The *state* corresponds to the short-term memory mentioned
+    earlier and stores information about each word’s context.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig4_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow diagram illustrates a recurrent neural network consist of input, neural
+    network state and output.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.4
+  prefs: []
+  type: TYPE_NORMAL
+- en: The architecture of a recurrent neural network
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Why is this useful? Suppose we want to generate text by predicting the next
+    word of a partial sentence:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 1:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Anna eats …
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 2:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Anna eats a …
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Step 3:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Anna eats a strawberry …
+  prefs: []
+  type: TYPE_NORMAL
+- en: The word generated at each step is given by the neural network’s prediction
+    for the next word. In each of the steps, the same neural network is used, and
+    the state is the output of the hidden layer, which stores information about everything
+    seen so far.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, let’s come back to our initial problem. We wanted to find a better way than
+    the averaging method to produce a fixed-length vector from a variable-length input.
+    And with recurrent neural networks, we have found a solution. As shown in Fig.
+    [4.5](#Fig5), we can input a sentence (each word encoded as a vector) and get
+    a sentence embedding by using this type of neural network. The sentence embedding
+    is the final state of the neural network. Thanks to the repetition that is possible
+    by using the loop inside the neural network, we can use it for very short sentences
+    as well as sentences containing many words. Furthermore, as advantage over the
+    averaging method, the order of the words in the sentence is considered here.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig5_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: In an illustration of a neural network labeled M State, the sentence Anna eats
+    a tasty strawberry is processed through vectors, including Vector Anna, Vector
+    eats, and Vector strawberry. The resulting vector for the sentence is represented
+    as Vector for the sentence Anna eats a tasty strawberry with values 2.3, 55.6,
+    and 33.4.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.5
+  prefs: []
+  type: TYPE_NORMAL
+- en: A recurrent neural network generating a vector for a complete sentence
+  prefs: []
+  type: TYPE_NORMAL
+- en: Often, we will find a visual representation as shown in Fig. [4.6](#Fig6) to
+    illustrate the same network. Instead of the loop, the recurrent neural network
+    is *unfolded* and displayed as several identical layers. This can be beneficial,
+    as it allows to display how the sequence of words (the sentence) is processed
+    step by step. The state of each copy of the neural network represents the information
+    about the words that has been introduced up to that point.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig6_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: AN illustration of a neural network receives the sentence Anna eats a tasty
+    strawberry and processes it into vectors, ultimately reaching a final state with
+    vector values. The network transitions through various states in the process before
+    arriving at the final result.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.6
+  prefs: []
+  type: TYPE_NORMAL
+- en: Unfolded representation of the recurrent neural network
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here They Are, the Language Models!
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'We are now approaching the heart of this book, introducing the concept of language
+    models. Let’s look at the following definition:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Formally, a language model is a statistical model that gives a probability to
+    a piece of text. […] The more grammatical and the more “sense” the sentence makes,
+    the higher the probability is. (Hagiwara [2021](#CR19), p. 131)
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'Let’s consider the following two sentences:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*There is a field full of strawberries.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '*There is a field full of cats.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: With our world and language knowledge, it is easy to determine for a human that
+    the first sentence is much more likely than the second sentence. This feeling
+    of *being likely* is expressed in probabilities in language models. For the sentences
+    above, we would expect a language model to give a *higher probability* to the
+    first sentence and a lower probability to the second one.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Language models are the foundation of many natural language processing tasks.
+    Examples range from machine translation to speech recognition and answer generation
+    in chatbots.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Put simply, to get the probability of the sentence, the probabilities of each
+    word under consideration of the context (the words before and/or after it) are
+    combined. For example, consider the following sentence:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*There is a field full of strawberries.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'We would consider questions like: How likely is it that a sentence starts with
+    *There*? How likely is it that the word *is* comes after the word *There*? The
+    answers to all these questions would provide us an overall probability, which
+    could then be compared with the overall probability of another sentence, to decide
+    which of the sentences is more likely to be a *real*, *good* sentence (a combination
+    of words that a human is likely to use).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: When looking at these questions, you might have recognized some similarity to
+    the task before, where we created the sentence embeddings. To generate the sentence
+    embeddings, we were processing the sentence word by word, considering also the
+    context and storing the meaning in our *state*. To answer the questions about
+    *likeliness* raised in the previous paragraph, we also need to process the sentence
+    word by word and consider the probability of the word being in a given position
+    of the sentence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We can thus use the architecture of a recurrent neural network and train our
+    first language model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To start, we return to the unfolded recurrent neural network we have seen previously.
+    In particular, we are now interested in the intermediate values of the *state*.
+    When looking at this without the output in Fig. [4.7](#Fig7), we realize that
+    we actually do the following: based on a sequence of inputs (sequence of words
+    in form of vectors), we generate a sequence of outputs (the intermediate values
+    of state). Such an architecture is called *sequence-to-sequence encoder*.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig7_HTML.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the neural network processing pipeline, the input sequence begins with Vector
+    Anna, followed by Vector eats and Vector strawberry. These inputs are processed
+    through various states, ultimately leading to the Output Sequence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.7
+  prefs: []
+  type: TYPE_NORMAL
+- en: The architecture of a sequence-to-sequence encoder
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whereas the intermediate values of the *state* are useful, it is not what we
+    want as output for our language model. What we want is an indication of the probability
+    of potential next words, based on the partial sequence (the partial sentence)
+    we have read so far.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In Fig. [4.8](#Fig8), we consider the example of reading the first word of the
+    sentence, *Anna*. The output of this step is the probability of the next word.
+    Whereas it is very likely that the word *Anna* is followed by the word *eats*,
+    it is rather unlikely that it is followed by *strawberry* or *tasty*. As in the
+    previous chapter, we express probabilities as numbers ranging from 0.0 to 1.0
+    that can be easily mapped to percentages of 0% to 100%.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig8_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: The neural network predicts the next word in the sequence. Given the input Anna,
+    it assigns the highest probability of 0.9 to eats, followed by tasty with 0.3
+    unlikely and strawberry with 0.2 unlikely.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.8
+  prefs: []
+  type: TYPE_NORMAL
+- en: The word following the word “Anna” in the sentence is predicted. Whereas the
+    word “eats” seems to be likely a good choice, the words “strawberry” and “tasty”
+    have lower probabilities
+  prefs: []
+  type: TYPE_NORMAL
+- en: As stated before, we want to use this architecture to *train* the language model.
+    We are thus applying the above principle to a large number of texts, *hiding*
+    specific words and predicting them, in order to be able to control and adjust
+    the result as needed. Reducing the loss here means getting closer to correctly
+    predicting the hidden words.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the example above, we know that the word *eats* follows the word *Anna*
+    in our text. Thus, *eats* is the correct answer, for which, in a fully trained
+    system (in the prediction phase), we expect to have the highest probability. However,
+    in the beginning of the training phase, it would be likely that maybe the answer
+    is not correct yet, and the model is estimating higher probabilities for other
+    words. And this is where the learning happens: based on the estimated values at
+    this step, and the correct answer, an *improvement* of the system to make better
+    predictions happens (this happens as we have seen before by adapting the weights
+    inside the neural network to minimize the loss), sentence by sentence, text by
+    text, for millions or billions of words.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once the language model has been trained, we can use it to construct new sentences!
+    This occurs in the *prediction phase*. By providing the first part of the sentence,
+    we can make a prediction of the next word, as shown in Fig. [4.9](#Fig9). We ask
+    the language model to predict the next word in the sentence “Anna eats a tasty
+    …”, and (hopefully) the answer of our language model is *strawberry*. Behind the
+    scenes, there is again a probability score for every word in the vocabulary leading
+    to this answer.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig9_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration, a language model labeled Neural Network processes the input
+    Anna eats a tasty and predicts the next word, which is strawberry. The model uses
+    its internal state M to make this prediction.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.9
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using a language model to predict the next word in a sentence
+  prefs: []
+  type: TYPE_NORMAL
+- en: The main difference between the training of the word embeddings earlier and
+    this procedure is the input. In the training of the word embeddings, we were calculating
+    the probability of a word being a context word to the target word (the word being
+    encoded). The only input was the target word. In the case of the neural networks
+    in this section, the input to predict the probability of a next word considers
+    not only one word but the previous state, which included information about several
+    words.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We now have seen how to build a language model by using a recurrent neural network
+    as a first example of a sequence-to-sequence encoder. That’s an achievement, congratulations!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Toward Transformer Models
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: There is now only one last step left to bring us to the latest state-of-the-art
+    language models. Current models such as Google’s BERT (Devlin et al. [2019](#CR10))
+    or GPT-3 or GPT-4 from OpenAI are so-called transformer-based models (Vaswani
+    et al. [2017](#CR38)). We will discover in this section what this architecture
+    looks like and why it is so powerful.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We saw in the previous section how we can create a language model that can generate
+    text by predicting the next word in a partial sentence. In the example, we observed
+    the transformation from a sequence of words (a sentence) to a sequence of probabilities
+    (which is the most likely next word?). Now, we would like to slightly adapt the
+    use case and transform a sequence of words to *another* sequence of words. This
+    could be a sentence in English as input, which is translated to another sentence
+    in Spanish, or the question of a user to a chatbot, which is transformed to the
+    matching answer. To achieve this, we will connect two models as the one seen before
+    and transform a sequence of text to another sequence of text. In particular, we
+    will deal with a question-answering task in this section.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Encoders and Decoders
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'To illustrate the idea, let’s consider the following query a user might ask
+    to a chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*In what countries do strawberries grow?*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'To generate an answer, we need to process this user input and find the most
+    appropriate answer. This assumes that the training process of the model was already
+    concluded, and we are in the prediction phase here. Let’s assume for our example
+    that the chatbot will generate the following (not so helpful) answer:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Strawberries grow in different countries.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: To do that, we use one model to create a sentence embedding of the first sentence
+    and then pass it to another model and use this second model to generate the answer.
+    The first model is called *encoder*, as it encodes the meaning of the input sentence
+    in a sentence embedding (a vector representation of the entire sentence). The
+    second model is called *decoder*, as it decodes this embedding and generates the
+    answer sentence. Figure [4.10](#Fig10) shows the high-level view of this architecture.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig10_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the illustration, the Encoder processes the question in what countries do
+    strawberries grow? and generates a numerical sentence embedding. The Decoder uses
+    this embedding to produce the answer 'Strawberries grow in different countries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.10
+  prefs: []
+  type: TYPE_NORMAL
+- en: A high-level view of the encoder-decoder architecture
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Based on what we have seen previously, we can have a closer look now what happens
+    inside these two components – the encoder and the decoder. The way such sequence-to-sequence
+    models can be implemented can vary: depending on the specific natural language
+    processing task, the encoder or decoder can be implemented differently.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s create an encoder that is based on the recurrent neural network architecture
+    we have seen previously to generate the sentence embeddings. The sentence embedding
+    corresponded to the hidden state after the final iteration. This network is actually
+    already doing the task of the encoder, so we can just take it from the previous
+    section and include it as encoder in this new system.^([7](#Fn7)) Phew, first
+    step is done!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s now look at the decoder. Whereas in the previous example, the estimation
+    of the next word was based on the context of the words that had been generated
+    so far, for the decoder, the input the model receives from the encoder is considered
+    as well. Based on that, the output sentence is generated, word by word, as shown
+    in Fig. [4.11](#Fig11).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig11_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration, the encoder processes the question in what countries do strawberries
+    grow? into a numerical sentence embedding. The decoder then uses this embedding
+    to generate the response Strawberries grow in countries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.11
+  prefs: []
+  type: TYPE_NORMAL
+- en: A more detailed view on the two parts of the encoder-decoder architecture. The
+    output of the encoder is the input to the decoder
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pre-Training and Fine-Tuning
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Let’s now look more in detail into the training process of our question answering
+    task. The training phase for this example has two parts. We assume that we have
+    a recurrent neural network as seen previously that was already *pre-trained*.
+    This means that it was already trained with a large corpus of text, and thus the
+    weights are already configured to quite good values. In general, it is ready to
+    make predictions about the next word in a sentence. We take two instances of this
+    model: one we will use to encode our sentences (encoder) and the other one to
+    generate the answer text (decoder). We prepare a dataset to *fine-tune* this model.
+    In an additional training phase, with additional training data, the weights are
+    optimized further. In particular, since the model was trained in general for text
+    generation, the fine-tuning allows to specialize for a specific task, in our case,
+    the question answering.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Table [4.1](#Tab1) shows an example on how the training data for this fine-tuning
+    could look like.Table 4.1
+  prefs: []
+  type: TYPE_NORMAL
+- en: Example of the training data for the fine-tuning task
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Question | Answer |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| <START> In what countries do strawberries grow? <END> | <START> Strawberries
+    grow in different countries. <END> |'
+  prefs: []
+  type: TYPE_TB
+- en: '| <START> Which color do strawberries have? <END> | <START> With exceptions,
+    strawberries are mostly red <END> |'
+  prefs: []
+  type: TYPE_TB
+- en: '| … | … |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Let’s define *tokens* as common sequences of characters found in text.^([8](#Fn8))
+    We will consider in the following examples entire words as input tokens. In reality,
+    not every word necessarily matches exactly one token. For example, the word *sequences*
+    is split in two tokens: *sequ* and *ences*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the context of our encoder-decoder architecture, one aspect to consider is
+    the length of words in the input and the output. Naturally, the question from
+    the user to the chatbot and the answer from the chatbot can have a different number
+    of words. Special words, so-called special tokens, are used to mark the beginning
+    (<START>) and the end (<END>) of an input or output sequence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The question and the answers with these special tokens are shown in Table [4.1](#Tab1).
+    Of course, we would need a long list of these question-and-answer pairs to fine-tune
+    the language model.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the fine-tuning process, the first question is fed to the encoder, generating
+    the sentence embedding. The decoder receives the output of the encoder (the sentence
+    embedding). Since we are in the fine-tuning, which is part of the training phase,
+    we know the answer sentence to this question from our training data. The first
+    word is thus generated, and the learning has the aim to maximize the probability
+    for the word we are looking for. However, in the beginning, other words will be
+    proposed. The system still has to learn. In a next step, when generating the second
+    word of the answer sentence, we take as input the sentence embedding received
+    from the encoder and the first word of the *correct* answer. On purpose, we refer
+    to the correct answer, and not to the word generated in the first step of the
+    learning, as it might be wrong during the learning process and create misleading
+    information for the estimation of the following words. For each generated word,
+    the difference between that word and the correct answer is considered to improve
+    the system. Again, we want to adapt the weights in order to reduce the loss. As
+    before, the system improves over many iterations and many training examples, repeating
+    the steps mentioned in this paragraph.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Once the system has been fine-tuned and is applied to new user queries where
+    we do not know the correct answer, we are in the prediction phase (or in this
+    case, actually more a *generation* phase). The decoder now works slightly differently
+    than explained for the training phase. Again, the output of the encoder and the
+    <START> token get the whole thing started. In contrast to the training phase,
+    now the predicted word from the previous position is considered to generate the
+    next word (there is no right answer that could be taken anyways, because we are
+    assuming this input is a new question that was not seen during training).
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, now that we have the sequence-to-sequence model up and running and know
+    how encoders and decoders work, we can finally get to the transformer models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Transformer Models Architecture Overview
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The transformer models that were initially presented in 2017 (Vaswani et al.
+    [2017](#CR38)) are a new type of encoder-decoder neural network and started in
+    the field of natural language processing the “era of the transformer” (Hagiwara
+    [2021](#CR19), p. 185), providing remarkable improvement for different text processing
+    and text generation tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Compared to the encoder-decoder architecture we saw in detail, the transformer-based
+    models are *more of the same*. In these systems, different layers of encoders
+    and decoders are combined. Multiple encoder layers are thus passed through to
+    further improve the results. Whereas in the original paper presenting this architecture
+    six layers were used, it can be many more in practice (Hagiwara [2021](#CR19)).
+    Similarly, the decoder consists of different layers. The architecture is illustrated
+    in Fig. [4.12](#Fig12).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig12_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow diagram of input sentence to multiple encoder and decoder and output
+    sentence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.12
+  prefs: []
+  type: TYPE_NORMAL
+- en: A high-level view of the transformer architecture
+  prefs: []
+  type: TYPE_NORMAL
+- en: Figure [4.13](#Fig13) shows in more detail what is inside each encoder and decoder
+    component of the transformer model.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig13_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: The illustration depicts an encoder and decoder with feedforward neural networks,
+    self-attention mechanisms, and cross-attention mechanisms.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.13
+  prefs: []
+  type: TYPE_NORMAL
+- en: The inner life of the encoder and decoder in the transformer architecture (inspired
+    by the excellent visualization of transformer models from Alammar ([2018](#CR2)))
+  prefs: []
+  type: TYPE_NORMAL
+- en: As opposed to the example we have seen in detail before, the transformer model
+    does not use recurrent neural networks. Recurrent neural networks and their states
+    have progressively more problems with dependencies between tokens that are far
+    away from each other, the longer the sentences get (Hagiwara [2021](#CR19)). In
+    other words, the state starts to *forget* information about words that occurred
+    much earlier in the sequence. These long-range dependencies can be covered much
+    better when using a mechanism called *self-attention* instead. The transformer
+    applies this self-attention multiple times, in combination with a *feed-forward
+    neural network*. A feed-forward neural network does not have loops, such as the
+    recurrent neural network, and corresponds thus roughly to the very initial type
+    of neural networks we have seen. Going through different layers, the input goes
+    from the left to the right through in the neural network, and finally, an output
+    is produced.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This *attention mechanism* is probably the most important component of what
+    makes the difference of the transformer-based architecture compared to previous
+    natural language processing approaches. We will explore it in more detail in the
+    next sections.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Self-Attention
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: When looking at the encoder-decoder architecture of sequence-to-sequence models,
+    we notice the high relevance of the sentence embeddings that relate the encoder
+    with the decoder. This vector includes all the information available from the
+    user query to generate the answer from the chatbot. However, this vector is rather
+    limited. Even though it contains some hundred dimensions, it is of *fixed length*.
+    And fixed length might not fit well to all the use cases we might encounter. Whether
+    the input sentence is of 3 words or 20 words, the available space to represent
+    all this information is always the same. Indeed, it is the case that in an architecture
+    as we have seen it before, the performance suffers when the input sentence is
+    very long. This problem could be mitigated if there were some mechanisms to only
+    consider the most important (and not just the most recent as in the case of the
+    RNN) parts of a long sequence. Thus, in summary, we can conclude that the decoder
+    needs more information to refer to different aspects of the input it receives
+    from the encoder. And this is what *self-attention* provides.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For intuition: we want it to concentrate on the most relevant information.
+    Imagine you are looking at a page of text and are asked to spot where the word
+    *strawberry* appears in the text. Automatically, we will scan the text and leave
+    out other information, trying to *focus* on the words relevant for our task. Similarly,
+    we want the transformer model to focus on the relevant information for each given
+    word.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Rather than having a sentence embedding with a fixed-length vector to contain
+    all the information relevant to the input sentence, we return to word embeddings.
+    Each word from the input sentence will have one embedding. However, there is an
+    important difference between the word embeddings we have seen earlier and the
+    word embeddings here. The word embeddings here contain information about the entire
+    context of the word.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To generate these *context-based summaries* for each word is the task of the
+    self-attention mechanism. One could say that based on the word embedding representing
+    a word in form of a vector, a more advanced word embedding is created representing
+    both the word *and* its context.
+  prefs: []
+  type: TYPE_NORMAL
+- en: When computing these advanced word embeddings using self-attention for a given
+    word, each other word in the same sentence is attributed a weight. The weight
+    determines how relevant it is to the given word, like the relevance of the huge
+    strawberry to make the strawberry plant bend, always the same story.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s consider the following example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*There is a field of strawberries, and* ***it*** *is so beautiful!*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: When using self-attention to compute the context-based summary for the word
+    *it*, the weight for the word *field* would be expected to be higher as for other
+    words, since *it* is referring to the field of strawberries. Using this mechanism
+    of self-attention, we do not lose track of words referring to other words that
+    have appeared previously in the sentence. This is a typical problem of systems
+    not using self-attention, especially when the sentence gets long, and there are
+    many words between the word and the reference to that word.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, the attention weights and thus dependencies from the word *it*
+    to the context words could be visualized in a simplified manner as in Fig. [4.14](#Fig14).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig14_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration of a strawberries and text reads there is a field of strawberries,
+    and it is so beautiful.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.14
+  prefs: []
+  type: TYPE_NORMAL
+- en: The dependencies from the word “it” reflected in the different weights attributed
+    to different words
+  prefs: []
+  type: TYPE_NORMAL
+- en: Words directly relating to the word *it*, such as the word *field* it refers
+    to, or the word *beautiful* describing it, are more important for its context-dependent
+    summary. Other words, such as *of strawberries* or the verb *is* referring to
+    the word *it*, are relevant but maybe less important than the other words. Therefore,
+    they have smaller weights.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The context-dependent summaries are created and processed in the encoder. As
+    shown in Fig. [4.15](#Fig15), the word *In*, under the consideration of the context,
+    results in one vector that is passed from the encoder to the decoder. With context
+    we mean, for example, the fact that the word *In* is followed by the word *which*,
+    which is followed by the word *countries*. The second vector would be the context-aware
+    representation of the word *which*, the second word of the input sentence and
+    so on for the rest of the words in the input sentence.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig15_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow diagram. The input sentence, in which countries do strawberries grow?
+    is processed through an encoder and decoder. Context-based values are generated
+    during this process. The output sentence is in, which serves as a summary for
+    the word in.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.15
+  prefs: []
+  type: TYPE_NORMAL
+- en: The context-based summaries are created and processed in the encoder
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cross-Attention and Positional Encoding
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'In the decoder, another form of attention is used: *cross-attention*. This
+    mechanism is similar to the self-attention used inside the encoder and the decoder
+    to generate the context-aware word embeddings. Cross-attention is used in the
+    decoder to summarize the information obtained from the encoder (*cross* in the
+    sense that is crosses the border between encoder and decoder). The idea is here
+    again to obtain the most relevant information under consideration of the context.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'When reading about the self-attention mechanism primarily focusing on how words
+    are related, you might have been wondering if we do not have the same problem
+    here as earlier in the book that we miss information about the order of the words
+    (remember the example whether *Anna eats the strawberry* or *the strawberry eats
+    Anna* was represented in the same way). Actually, this could be a problem in the
+    described approach. However, the transformer encoders take care of this by an
+    additional calculation: the *positional encoding*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The positional encoding is an additional component that is added to the word
+    embedding of a word and contains information about the position. The positional
+    encoding of the word *Anna* in *Anna eats a strawberry* (Anna is in position 1)
+    would be different from the positional encoding of *Anna* in *The strawberry eats
+    Anna* (where Anna is in position 4).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Including information about the position of a word in the calculations of the
+    contextualized word embeddings, this information can be kept, and we are safe
+    from problems such as the strawberry eating Anna.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Static and Contextualized Word Embeddings
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The word embeddings we have seen earlier in the book, and that do not consider
+    the context of a word, are also referred to *static* or *traditional word embeddings*.
+    More advanced embeddings as the ones resulting from the transformer-based models
+    seen in this section are referred to as *contextualized word embeddings*. In static
+    word embeddings, the word *orange* referring to the color and the same word *orange*
+    referring to the fruit would be encoded in the same word embedding. In contextualized
+    word embeddings, this would be different, as the context where these words appear
+    in the training data would be considered. For example, the fruit could appear
+    along with strawberries, apples, or bananas, whereas the color could appear along
+    with other colors such as purple, blue, or green. This difference would be considered
+    and reflected in the embeddings when training a transformer-based model. Therefore,
+    the contextualized word embedding of orange (the color) would be different from
+    the embedding for the other orange (the fruit).
+  prefs: []
+  type: TYPE_NORMAL
+- en: These language models we have trained using the transformer architecture can
+    be used as foundation to predict sentences in different situations, like chatbots
+    or next sentence prediction. The language models, or more precisely the *contextualized
+    word embeddings* resulting from these training processes, can also be applied
+    in different other tasks like classification. This reminds us of the dictionary
+    that maps words from human language to vector representations we have seen earlier
+    in this book. As for this dictionary, transformer-based language models can be
+    trained once and then be shared and used in different use cases, as shown in Fig.
+    [4.16](#Fig16). This is good news, because training a state-of-the-art transformer-based
+    model requires powerful (and thus expensive) hardware, large corpora of texts
+    (we talk about thousands of millions of words), and (depending on your hardware)
+    patience for the training to be executed over days or weeks or months.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig16_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow diagram. Transformer-based language models, trained once and publicly
+    accessible, leverage extensive training data to perform specific machine learning
+    tasks efficiently and effectively using the transformer architecture.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.16
+  prefs: []
+  type: TYPE_NORMAL
+- en: Transformer-based models can be trained and made available to be used in other
+    applications
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Before these word embeddings and language models appeared in the landscape
+    of natural language processing, a machine learning model was often trained for
+    one very specific task. As mentioned here and previously, these *pre-trained components*
+    (language models or word embeddings) can be made available and readily used, which
+    has changed the way how natural language processing applications are being built
+    lately. This is an advantage, because different natural language processing tasks
+    may find it beneficial to know that raspberries and strawberries are somewhat
+    similar, because they are both berries. A wonderful analogy to describe this setup
+    has been provided by (Hagiwara [2021](#CR19)):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[This compares to] teaching a baby (=NLP Model) how to dance. By letting babies
+    learn how to walk steadily first (=training word embeddings), dance teachers (=task
+    specific datasets and training objectives) can focus on teaching specific dance
+    moves without worrying whether babies can even stand and walk properly. (Hagiwara
+    [2021](#CR19), p. 220)'
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: This process of using pre-trained components and adapting them to the needs
+    of the actual task (a process called *adaption* or *fine-tuning*) can generally
+    be referred to as *transfer learning*. The insights from the first learning phase,
+    which are stored inside the language model or the word embeddings, can thus be
+    *transferred* to a different type of task. This avoids training models over and
+    over again from scratch, when it is possible to benefit from already existing
+    language models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This usually leads the data engineer to have a setup as described in Fig. [4.17](#Fig17).
+    It relies on publicly available word embeddings or language models that have been
+    trained on a large amount of data and can be included easily in the data engineer’s
+    project by using libraries. Based on these components and a smaller training dataset,
+    the fine-tuning procedure does the machine learning training for the actual required
+    task, for example, the sentiment analysis task described earlier. In terms of
+    weights, training from scratch means that we are starting the training phase with
+    random weights. In the case of fine-tuning, the weights have been already learned
+    from a different task and are just adjusted from there.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig17_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow diagram. Publicly available language models are trained on large text
+    corpora, making them accessible for various tasks. Alternatively, you can fine-tune
+    these models with smaller datasets to tailor them for specific tasks during the
+    training phase.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.17
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pre-trained language models can be fine-tuned for other machine learning tasks
+  prefs: []
+  type: TYPE_NORMAL
+- en: Having the language models and word embeddings readily available is convenient;
+    however, there are also limitations in them (e.g., bias) that are easily propagated
+    this way. We will discuss more about this in a later chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The BERT Model
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'As an example, let’s have a closer look on which tasks Google’s language model
+    BERT was trained (Devlin et al. [2019](#CR10)). The BERT model has been trained
+    on two tasks: *masked language modeling* and *next sentence prediction*. Let’s
+    see what that means. For the masked language modeling, 15% of the tokens were
+    hidden in the training data (a large text corpora). The transformer-model had
+    then to predict those masked tokens. This is similar to examples we have seen
+    before. The token <MASK> indicates the word that was covered and needs to be predicted.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*There is a field full of <MASK>.*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'In the second task, the focus was on the relation between different sentences.
+    This is not covered in the first task, relying only on words within one sentence.
+    The system had to predict for two sentences A and B whether sentence B is the
+    sentence that followed sentence A in the original text. In 50% of the cases, this
+    was true, and in 50% of the cases, it was not the case. Consider the following
+    example, where the system would be expected to predict that sentence B is following
+    sentence A:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sentence A:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Anna goes to the field of strawberries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sentence B:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: She collects many berries and takes them home.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In the following example, the system should rather predict that it is not the
+    case:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sentence A:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Anna goes to the field of strawberries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sentence B:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Cats like to sleep.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The name BERT stands for Bidirectional Encoder Representations from Transformers.
+    This powerful system based on the transformer architecture introduced important
+    advances to the field of natural language processing in 2019.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Architecture of a Chatbot
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Based on what we have seen so far, we can now draw the architecture of a state-of-the-art
+    transformer-based chatbot. As shown in Fig. [4.18](#Fig18), there are different
+    software components involved. In particular, we find the language model with the
+    transformer architecture in the background. As we have seen previously, it consists
+    of different layers of encoders and decoders. Usually, in that kind of applications,
+    there is another software component that allows the human to interact with the
+    language model. This human wanting to interact with software we usually refer
+    to as *the user*. The expectation of the user is in general to have a *graphical
+    user interface* to interact with the software. The community of users wanting
+    a window with black background and small white font without any graphical illustrations
+    is very small and probably limited to a very technical population. You might know
+    this kind of applications from movies, when hackers or critical system shutdowns
+    are involved. In general, users prefer something more graphical, that is, intuitive
+    to use. In the case of a chatbot, this is often provided by a *web application*.
+    A web application can be launched by the user by opening a link in their web browser
+    or by installing an application on their smartphone. Typically, when opening the
+    conversation with the chatbot, they will receive a greeting message and are then
+    able to enter their *input prompt*. This input prompt will be processed by the
+    language model, and the answer sentence will be produced, using the methods we
+    have seen earlier. The sentence that is returned is *most probably* a good answer
+    to the question that the user entered the input prompt. How good it really is
+    depends on the input data and training setup of the language model.^([9](#Fn9))![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig18_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow diagram. The user provides an input prompt, in which countries do strawberries
+    grow? The language model processes this input through an encoder and decoder within
+    a web application. In response, the chatbot, introduced as Hello, I am a chatbot,
+    how may I help you? engages in conversation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 4.18
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The architecture of a chatbot: often web applications are used as an interface
+    between the user and the language model'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, in some setups, the user is also used as a *trainer* for the language
+    model. It is possible to gather feedback from users to improve the language model’s
+    prediction or make them safer. For example, the user can rate the answer, saying
+    whether it was useful or not. In other cases, we would want to flag specific types
+    of answers as inappropriate. The more input and corrections from human trainers
+    are achieved, the better the system can adapt.
+  prefs: []
+  type: TYPE_NORMAL
+- en: That’s it. Now we understand how state-of-the-art language models and chatbots
+    work. Let’s now get back to the example conversation of the chatbot exposing its
+    emotions that we have seen earlier in this chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: At a first sight, it seemed counterintuitive that there is no understanding
+    or meaning in a human-sense behind the texts produced by the chatbot, given the
+    fluent and eloquent way it phrases its answers. The answers seemed coherent and
+    pronounced spontaneously and naturally. When considering the technical background
+    and the generation of the most likely next word based on probabilities, you might
+    want to reconsider the option that these languages’ models reason and produce
+    text in the same way that you do.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The philosophical debate about what consciousness, reasoning, or intelligence
+    mean in a deeper sense, and whether this can be achieved with materials other
+    than the human brain, is not part of this book. I want to give you a basic understanding
+    of how language models work and that they are (currently) not comparable to the
+    capacities of human reasoning, not having mental states like beliefs, desires,
+    intentions, or fears. As argued by Nida-Rümelin and Weidenfeld ([2022](#CR9001),
+    p. 17), “digital states and processes *simulate* mental ones but are not identical
+    to them, even if that simulation were perfect.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: Summary
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In this chapter, we have discussed whether chatbots can have emotions. We have
+    seen that even though the texts they produce are often eloquent and empathic,
+    behind the scenes, it is more about the prediction of the most likely next word,
+    based on probabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We have also learned what recurrent neural networks are and how we can build
+    sequence-to-sequence models from them using an encoder-decoder architecture. Based
+    on that, we understood how the transformer architecture works and how self-attention
+    enables efficient state-of-the-art language models. We have also explored how
+    pre-trained language models can be fine-tuned to a specific task, avoiding starting
+    from scratch each time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, we have seen the architecture of a typical chatbot. Using a language
+    model in the background, often web applications are used as an interface between
+    the user and the chatbot.
+  prefs: []
+  type: TYPE_NORMAL

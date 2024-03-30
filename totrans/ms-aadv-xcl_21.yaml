@@ -1,0 +1,233 @@
+- en: '[CHAPTER 20Arrays and Collections in VBA](contents.xhtml#ch20a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_304a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Arrays and Collections are essential components in VBA programming, enabling
+    efficient storage and manipulation of multiple values. In this chapter, we will
+    explore their concepts, learn how to declare and use them, understand array indexing
+    and dynamic arrays, and examine practical examples of their application in VBA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_305a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will discuss the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Arrays
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Declaring the Arrays
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using Arrays
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Array Indexing
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Declaring a Dynamic Array
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Resizing a Dynamic Array
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_306a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of this chapter, the reader will learn the use of arrays and collections
+    in VBA programming, learn how to declare, resize, and use arrays efficiently,
+    and explore the advantages of collections over arrays for advanced data manipulation
+    tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Arrays](contents.xhtml#sc2_307a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Arrays are a set of sequentially indexed elements having the same intrinsic
+    data type. Each element of an array has a unique identifying index number.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Changes made to one element of an array does not affect the other elements.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The different types of arrays are as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: An array whose size is specified is a fixed-size array.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: An array whose size can be changed while a program is running is a dynamic array.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Single dimension array: Only with rows'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Multiple Dimension array: With rows and columns'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Declaring the arrays](contents.xhtml#sc2_308a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Arrays are declared the same way as other variables.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dim name_Of_array(Size) As Data_Type
+  prefs: []
+  type: TYPE_NORMAL
+- en: Example
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Single dimension: Declaring a single dimension array variable of 10 row size
+    which can store integer items.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dim Myarray(10) As Integer
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Multiple dimension (Max 60 dimensions): Declaring a multiple dimension array
+    variable of 3 rows and 5 columns which can store 15 integer items.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dim Myarray(3 , 5) As Integer
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using arrays](contents.xhtml#sc2_309a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Using Arrays can be explained using this example: To store daily expenses for
+    each day of the month, you can declare one array variable with 31 elements, rather
+    than declaring 31 variables.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Each element in an array contains one value.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Single_array()Dim curExpense(31) As CurrencyDim intI As IntegerFor intI
+    = 0 to 31curExpense(intI) = 20NextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Note: In the above example array index will start from 0'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Array indexing](contents.xhtml#sc2_310a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: All array indexes begin at zero. Whether an array is indexed from 0 or 1 depends
+    on the setting of the Option Base statement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: If Option Base 1 is not specified, all array indexes begin at zero.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Example
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Option Base 1Sub Single_array()Dim curExpense(31) As CurrencyDim intI As
+    IntegerFor intI = 1 to 31curExpense(intI) = 20NextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Note: In the above example, array index will start from 1.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Declaring a dynamic array](contents.xhtml#sc2_311a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By declaring a dynamic array, you can size the array while the code is running.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Use a Dim statement to declare an array, leaving the parentheses empty.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dim Name_Of_Array() As Data_Type
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Resizing a dynamic array](contents.xhtml#sc2_312a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Use the ReDim statement to declare an array implicitly within a procedure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Be careful not to misspell the name of the array when you use the ReDim statement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Array example](contents.xhtml#sc3_313a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Option Base 1 '' Initializing the array index 1Sub Searchdata()Dim mycell_array()
+    As String '' Declaring the dynamic arrayDim a, i As Longi = 1Sheets(1).Selecta
+    = Range("a65536").End(xlUp).Row - 1ReDim mycell_array(a) '' Redeclaring the array
+    sizeRange("a2", Range("a2").End(xlDown)).SelectFor Each mycell In Selection mycell_array(i)
+    = mycelli = i + 1NextSheets("database").SelectRange("a2", Range("a2").End(xlDown)).Selecti
+    = 1For i = 1 To aFor Each mycell In SelectionIf mycell_array(i) = mycell Thenmycell.EntireRow.Delete
+    ''mycell.Offset(0, 1).Value = "found"End IfNextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Conclusion](contents.xhtml#sc2_314a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Arrays and Collections are powerful tools in VBA programming, facilitating the
+    management of data sets and enhancing code efficiency. With a solid grasp of these
+    concepts, you can optimize your VBA code, improve readability, and handle complex
+    data structures effectively. Incorporating arrays and collections into your programming
+    repertoire will expand your capabilities and enable you to tackle a wider range
+    of VBA projects.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_315a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Declare a dynamic array to store the daily expenses of 5 employees.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use a loop to input the expenses for each employee for a specified number of
+    days.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Calculate the total expenses for each employee and display the result.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Determine the employee with the highest total expenses and print their name
+    and the corresponding amount.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Calculate the average expenses per day for the entire team and display the result.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

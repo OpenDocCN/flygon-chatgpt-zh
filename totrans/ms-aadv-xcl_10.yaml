@@ -1,0 +1,908 @@
+- en: '[CHAPTER 9Pivot Tables](contents.xhtml#ch09a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_104a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A Pivot Table is an interactive worksheet-based table that quickly summarizes
+    large amounts of data using the format and calculation methods you choose. It
+    is called a Pivot Table because you can rotate its row and column headings around
+    the core data area to give you different views of the source data. As source data
+    changes, you can update a pivot table. It resides on a worksheet, and thus, you
+    can integrate a Pivot Table into a larger worksheet model using standard formulas.
+    You can use a PivotTable to analyze data in an Excel workbook or from an external
+    database such as MS Access or SQL Server.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_105a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will go over the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Examining Pivot Tables
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Recommended Pivot Table
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Creating a Pivot table
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '% of Grand Total'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Create a graph using Pivot Data
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Slicer
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Timeline
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Power View
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Power Pivot
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Benefits of Data Model
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Creating pivot table using power pivot
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_106a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: After studying this chapter, the reader will be able to create Pivot Tables,
+    make different reports using Pivot Tables, as well as use advanced features of
+    Pivot Tables.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Examining Pivot Tables](contents.xhtml#sc2_107a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The data on which a PivotTable is based, is called the Source Data. Each column
+    represents a field or category of information, which you can assign to different
+    parts of the PivotTable to determine how the data is arranged. You can add four
+    types of fields, which are further explained in the following [Table 9.1](#tab9-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Field | Description |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Report Filter | Filter summarized data in PivotTable. If you select an item
+    in the report filter, the view of PivotTable varies only to display summarized
+    data related to that item. For example, if the area is a report filter, you can
+    display short data for North, West, or all areas. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Row Labels | Row shows items in the field as labels. For example, the row
+    label quarters field contains values, which means that the table shows a line
+    for each quarter. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Column Labels | Column labels are the value of the product field, which means
+    that the table shows a column for each product, in the field that displays the
+    item as a column label. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Σ Values | Summary data are included. These fields usually contain numeric
+    data, such as sales and inventory in the area where the data appears is called
+    the data area. |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 9.1: Types of field in Pivot tables'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to the following [Figure 9.1](#fig9-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.1: Fields of Pivot tables'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select any cell in a data range that includes a heading for each column in the
+    top row. In the Tables group, click the PivotTable button, or click the PivotTable
+    list and select PivotTable. In the Table/Range box, select the range that contains
+    the data to be used in the PivotTable. Select the location for the PivotTable.
+    You can place the PivotTable in a new or existing worksheet. Click OK to create
+    the PivotTable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can add fields to a PivotTable to specify the data you want to display.
+    The fields of the source data appear in the “PivotTable Field List” task pane.
+    To add fields, drag the relevant field from the top of the PivotTable Field List
+    to one of the four areas at the bottom. You can add more than one field to an
+    area, and you do not need to add all fields to the table.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To display data, use data in Row Labels list and numeric in Values:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Activate the Insert tab, to open the Create PivotTable dialog box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Add fields just headings, you need to place at least one field in the S Values
+    area.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: After the field is in place, you can filter the information that appears in
+    the table by selecting from the report in the Filter column, the filter rows,
+    or the filter list. For example, you can show all the data values or restrict
+    PivotTable to summarize just a few of them.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Recommended Pivot Table](contents.xhtml#sc2_108a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Check the recommendation for pivot. For this, select the database and click
+    the Insert tab. Click on the recommended pivot table options, as shown in the
+    following [Figure 9.2](#fig9-2):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.2: Recommended pivot table'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Alternatively, simply select the data to make the pivot table. Click on the
+    button in the lower right corner and select the table option to create the pivot
+    report.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Creating a Pivot Table](contents.xhtml#sc2_109a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: To begin our analysis, we will create a pivot table using the provided sales
+    data. Follow the steps mentioned earlier to set up a pivot table with the necessary
+    fields, including REP, CUSTNAME, PRODUCT, DATE, QTY, CP, S.P., and NET. We will
+    use these fields to analyze the sales data from various perspectives.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Follow the given steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Select the entire range of data, including headers. You can do this by clicking
+    and dragging your cursor across the data or by using keyboard shortcuts (for example,
+    Ctrl+A). Refer to [Figure 9.3](#fig9-3):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.3.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 9.3: Sales Data'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'In Excel, go to the “Insert” tab on the ribbon menu, and then click on the
+    “PivotTable” button, as shown in [Figure 9.4](#fig9-4):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.4.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 9.4: Insert PivotTable'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: A “Create PivotTable” dialog box will appear. Ensure that the range of data
+    you selected is correct, and choose where you want to place the pivot table (for
+    example, a new worksheet or an existing worksheet). Refer to [Figure 9.5](#fig9-5).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click “OK” to create the pivot table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.5.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 9.5: Table/Range'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'The pivot table field list will appear on the right side of the screen. This
+    list contains the column headers from your sales data. Refer to [Figure 9.6](#fig9-6):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.6.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 9.6: Customer wise quantity'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Drag and drop the desired fields from the field list into the different areas
+    of the pivot table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Drag the “CUSTNAME” field to the “Rows” area to group the data by customer names.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Drag the “QTY” field to the “Values” area to calculate the total quantity sold.
+    Refer to [Figure 9.7](#fig9-7):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.7.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 9.7: Value Field settings'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'You can change the summary function by clicking on the dropdown arrow next
+    to the field name in the “Values” area and selecting a different calculation (for
+    example, average, count). Refer to [Figure 9.8](#fig9-8):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.8.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 9.8: Sum and Average'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '[% of Grand Total](contents.xhtml#sc2_110a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To find the % of grad total, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Right-click on any value in the Qty column of the pivot table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select Value Field Settings or Value Settings from the context menu.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the dialog box that appears, choose the option for % of Grand Total or Percentage
+    of the total (exact wording may vary depending on your spreadsheet software).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK to apply the calculation.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The pivot table will now display the percentage of the grand total for each
+    customer or grouping in the “Qty” column.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 9.9](#fig9-9):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.9.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.9: % of Grand Total'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Group items in a PivotTable](contents.xhtml#sc3_111a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If you want to prepare a report based on the current data for the year based
+    or the yearly quarter, then you can use the group option in the pivot table. Follow
+    the given steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select any cell in a data range.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Activate the Option tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click on Group Field.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the By box, click one or more time periods for the groups.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Grouping of Dates](contents.xhtml#sc3_112a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To group dates, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Assuming you already have a pivot table created with the Date field in the Rows
+    or Columns area, proceed to the next step.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Right-click on any date value in the Date column of the pivot table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the context menu that appears, select Group or Group Field (the specific
+    wording may vary depending on your spreadsheet software).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Grouping dialog box, choose the Months option.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK to apply the grouping.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The pivot table will now display the Date column grouped by month, with each
+    month appearing as a separate item in the pivot table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 9.10](#fig9-10):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.10.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.10: Grouping of Dates'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Month Wise Report](contents.xhtml#sc3_113a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The month wise report can be seen in the following [Figure 9.11](#fig9-11):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.11.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.11: Month Wise'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Create a graph using Pivot Data](contents.xhtml#sc2_114a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can use a PivotChart to graphically display data from a PivotTable. A single
+    PivotChart provides different views of the same data. When you create a PivotChart,
+    the row fields of the PivotTable become the categories, and the column fields
+    become the series.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To create a PivotChart, select any cell within a PivotTable, and click Chart
+    in the Tools group on the Options tab. Select Options for the chart as you would
+    a standard chart, then click OK. You can also create a new PivotChart and PivotTable
+    at the same time by selecting a cell in the source data, and selecting PivotChart
+    from the PivotTable list in the Tables group on the Insert tab. Refer to [Figure
+    9.12](#fig9-12):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.12.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.12: Month Wise Chart'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To group the Date column in your pivot table by both month and year:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Right-click on any date value in the Date column of the pivot table and select
+    Group.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Grouping dialog box, choose the Months option and choose the Years option
+    also. Finally, click OK to apply the grouping.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 9.13](#fig9-13):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.13.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.13: Year Wise Month Wise Grouping'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To group the Date column in your pivot table by both and year and Qtr, follow
+    these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Right-click on any date value in the Date column of the pivot table and select
+    Group.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Grouping dialog box, choose the Qtr option and Choose the Years option
+    as well. Finally, click OK to apply the grouping. (Qtr1 refer here Jan, Feb ,
+    March)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 9.14](#fig9-14):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.14.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.14: Year Wise Quarter Wise Grouping'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Weekly Report](contents.xhtml#sc3_115a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If you have grouping on date field, you can group items by weeks. Click Days
+    in the By box, and make sure that Days is the only time period selected. Then
+    click on 7 in the Number of days box.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 9.15](#fig9-15):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.15.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.15: Day wise Grouping'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The pivot table will now display the data grouped by days, allowing you to
+    see the weekly report with data summarized on a daily basis, as shown in [Figure
+    9.16](#fig9-16):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.16.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.16: Weekly Report'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Grouping of Numbers (Creating Slabs)](contents.xhtml#sc3_116a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'For grouping of numbers, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Right-click on any value in the Net column of the pivot table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'From the context menu, select Group or Group Field option. Refer to [Figure
+    9.17](#fig9-17):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.17.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 9.17: Group by numbers'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: In the Grouping dialog box, specify the starting value for your grouping slabs.
+    For example, if you want to start with 0, enter 0 in the Starting at field.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the By field, enter the slab size you want to use. In this case, enter 1000.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click OK to apply the grouping.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: The pivot table will now display the Net column with values grouped into slabs
+    of 1000\. This grouping allows you to analyze the “Qty” values based on the defined
+    slabs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Slicer](contents.xhtml#sc2_117a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Slicers are easy-to-use filtering components that contain a set of buttons
+    that enable you to quickly filter the data in a PivotTable report, without the
+    need to open drop-down lists to find the items that you want to filter. When you
+    use a regular PivotTable report filter to filter multiple items, the filter indicates
+    that only multiple items are filtered, and you have to open a drop-down list to
+    find the filtering details. However, a slicer clearly labels the filter that is
+    applied and provides details so that you can easily understand the data that is
+    displayed in the filtered PivotTable report. Refer to [Figure 9.18](#fig9-18):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.18.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.18: Day wise Grouping'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select any cell within your pivot table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to the PivotTable Analyze or Analyze tab in the Excel ribbon.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Locate the Filter group and click on the Insert Slicer button.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'In the Insert Slicers dialog box, check the box next to Custname to select
+    it. Refer to [Figure 9.19](#fig9-19):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.19.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: Figure 9.19 Slicer
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'Click on the OK button to insert the slicer. Refer to [Figure 9.20](#fig9-20):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.20.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 9.20: Customer Wise Slicer'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: A slicer will be added to your worksheet. You can resize and reposition it as
+    needed.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use the slicer to filter the data in your pivot table by selecting the specific
+    “Custname” values you want to include or exclude.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Timeline](contents.xhtml#sc2_118a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Instead of playing around with filters to show dates, you can now use a PivotTable
+    timeline. It is a box you can add to your PivotTable, that lets you filter by
+    time, and zoom in on the period you want. Click Analyze | Insert Timeline to call
+    it up. Refer to [Figure 9.21](#fig9-21):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.21.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.21: Timeline'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Figure 9.22](#fig9-22) shows the date timeline:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_9.22.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 9.22: Date Timeline'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Power View](contents.xhtml#sc2_119a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Power View add-in allows you to define visually attractive summaries of
+    your worksheet with special emphasis on the variables that you require. With a
+    separate tab, you have the option to view data in the way that best suits you.
+    After defining the relevant power fields, Power View extracts the information
+    from the selected worksheet to give you a complete overview with respect to the
+    viewing filters specified.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Moreover, you can choose a new theme, background, transparency, pictures and
+    other content with the freedom to insert, modify, arrange and analyze relationships,
+    effectively. Follow the given steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select the data.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click on Insert tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click on Power View option.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: You can see the images power view look with Field list with data.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Make use of filter button which is right side to this data. It will allow you
+    to filter the data as per your wish with the help of all the column fields.
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can make use of the field list to see various calculations such as sum,
+    min, max, average and more. Moreover, by using salary parameter, you can check
+    and see the data according to your selected range. This is the entire look of
+    Power View option.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Power Pivot](contents.xhtml#sc2_120a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Power Pivot is an add–in, which we can use to perform powerful data analysis
+    in Excel. The add–in is built into Excel but it is not enabled. To enable the
+    power Pivot, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Go to the File tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click on Option | Add–Ins.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Manage box, click on Com Add – ins.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go check the MS office Power Pivot in COM Add - Ins box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: This is a user-friendly way to perform data analysis using familiar Excel features
+    that you already know, such as the Office Fluent user interface, PivotTable and,
+    PivotChart views, and slicers. With Power Pivot, we can mash up large volumes
+    of data from various sources, perform information analysis rapidly, and share
+    insights easily.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Benefits of Data Model](contents.xhtml#sc2_121a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In both Excel and Power Point, you can create a data model, which is a collection
+    of tables with relationships. The DATA model, which is seen in a workbook in Excel,
+    is a similar data model that you see in the power pivot window. Any data you import
+    into Excel is available in Power Point, and vice versa.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Data Model is a collection of tables and their relationships that reflects RE-L-world
+    relations between business operations and processes; for example, how the product
+    relates to inventory and sales.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Follow the given steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Convert the data into table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Import excel table into Power Pivot.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Table field list can have more than one table in the pivot table.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: We can build the relationships between tables based on one common field so that
+    you do not use lookup.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Power view is enabled by Data model.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Creating pivot table using power pivot](contents.xhtml#sc2_122a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We have four data in four different sheets: city detail, customer, order and
+    order details, and need to create a city wise report, regarding the total quantity
+    sold. So, we need to follow the given steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select the data
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to Home tab.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select Styles group.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Format as table.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click on Design tab.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the Properties group, give a name to the table.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select Power Pivot tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to the Tables group.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Add to Data Model. All of the table will get added to Data model.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Define the Relationship.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Go to Home tab in Power Pivot view.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select Diagram view from View tab.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Then drag and drop common field to create the link between two tables.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select Data view in View tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Click on Pivot table on Home tab.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create the pivot table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Choose the field from the table (Active and all). Table with black border means
+    they are linked with some other table.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select city name from city detail, and quantity from order details.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Conclusion](contents.xhtml#sc2_123a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In conclusion, the chapter on Pivot Tables provided a comprehensive understanding
+    of this powerful tool in Excel for data analysis and reporting. Pivot Tables allow
+    users to summarize and analyze large amounts of data quickly and efficiently,
+    providing different perspectives and insights into the data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The chapter covered various topics, including examining Pivot Tables, recommended
+    Pivot Table options, formatting Pivot Table reports, creating graphs using Pivot
+    Data, utilizing slicers and timelines for filtering data, and exploring advanced
+    features such as Power View and Power Pivot.
+  prefs: []
+  type: TYPE_NORMAL
+- en: By following the step-by-step instructions and examples provided in the chapter,
+    readers can learn how to create Pivot Tables, customize them according to their
+    analysis requirements, and utilize advanced features to enhance their data analysis
+    and reporting capabilities.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overall, Pivot Tables offer a flexible and dynamic way to explore and present
+    data, enabling users to gain valuable insights and make informed decisions based
+    on the summarized information. By mastering Pivot Tables, users can efficiently
+    analyze data, uncover trends, and communicate their findings effectively.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_124a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open the provided Excel spreadsheet containing the sales data.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a Pivot Table to calculate the total sales revenue for each product category.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Format the Pivot Table to make it visually appealing and easy to read.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a Pivot Chart to represent the sales revenue by product category.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create another Pivot Table to determine the region with the highest sales revenue.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a Pivot Chart to visualize the sales revenue by region.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a Pivot Table to analyze the monthly sales revenue.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Use conditional formatting to highlight any significant changes or trends.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a Pivot Table to calculate the average sales revenue per product category.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

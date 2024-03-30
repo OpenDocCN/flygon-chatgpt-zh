@@ -1,0 +1,644 @@
+- en: '[CHAPTER 19Looping Structures in VBA](contents.xhtml#ch19a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_275a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we will delve into the topic of looping structures in Visual
+    Basic for Applications (VBA). Loops are powerful tools that enable the repetitive
+    execution of code, improving efficiency and automating tasks. This chapter explores
+    different types of loops, such as Do...Loop, For...Next, and For Each...Next loops,
+    as well as auto-executed macros that run based on specific events.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_276a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will go over the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using Loops (repeating action)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using Do…Loop statements
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using For…Next statements
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Using For Each…Next statements
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Auto-Executed Macros
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_277a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of this chapter, the reader will learn looping structures in VBA,
+    such as Do...Loop, For...Next, and For Each...Next, and as well as go over practical
+    examples for their implementation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using Loops (repeating action)](contents.xhtml#sc2_278a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Looping allows you to run a group of statements repeatedly. Some loops repeat
+    statements until a condition is False; others repeat statements until a condition
+    is True. There are also loops that repeat statements a specific number of times
+    or for each object in a collection.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Choosing a Loop to use](contents.xhtml#sc3_279a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There are various loops you can use, such as:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Do…Loop : Looping while or until a condition is True.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'For…Next : Using a counter to run statements a specified number of times.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'For Each…Next: Repeating a group of statements for each object in a collection.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Using Do…Loop statements](contents.xhtml#sc2_280a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can use Do...Loop statements to run a block of statements an indefinite
+    number of times. The statements are repeated either while a condition is True
+    or until a condition becomes True.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Do [{While | Until} condition]
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[statements]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exit Do]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[statements]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Loop
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Repeating statements while a condition is true](contents.xhtml#sc3_281a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In a Do...Loop statement there are two ways to use the While keyword to check
+    a condition ¾ You can check the condition before you enter the loop , or ¾ You
+    can check it after the loop has run at least once.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Checking condition before you enter the loop](contents.xhtml#sc3_282a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The syntax for checking the condition before you enter the look is:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: DO WHILE (condition)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Code to be repeated
+  prefs: []
+  type: TYPE_NORMAL
+- en: LOOP
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Checking condition after the loop has run at least once](contents.xhtml#sc3_283a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The syntax for checking the condition after loop has run at least once, is:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: DO
+  prefs: []
+  type: TYPE_NORMAL
+- en: Code to be repeated
+  prefs: []
+  type: TYPE_NORMAL
+- en: LOOP WHILE (condition)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Scenario 17](contents.xhtml#sc3_284a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Write a code to accept and validate username. Blank name should not be allowed.
+    Refer Training File5.xls:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 19.1](#fig19-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_19.1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 19.1: Scenario 17'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub validate_name()Dim name As Stringname = InputBox("enter your name")Do
+    While Trim(name) = ""MsgBox "Name cannot be blank"name = InputBox("enter your
+    name")LoopEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Note: Trim function removes spaces from the beginning and end of the word.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using For…Next statements](contents.xhtml#sc2_285a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: You can use For...Next statements to repeat a block of statements a specific
+    number of times.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: For loop uses a counter variable whose value is increased or decreased with
+    each repetition of the loop internally.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: FOR counter_variable = initial_value TO Final_ValueSTEPstep_value
+  prefs: []
+  type: TYPE_NORMAL
+- en: Code to be repeated
+  prefs: []
+  type: TYPE_NORMAL
+- en: NEXT
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note: Smaller the data type , less time it takes to update.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Scenario 18](contents.xhtml#sc3_286a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a macro named fill_series to display numbers from 1 to 10 (starting with
+    cell A1)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sub fill_series()
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dim fill_val As Integer
+  prefs: []
+  type: TYPE_NORMAL
+- en: Range("A1").Select
+  prefs: []
+  type: TYPE_NORMAL
+- en: For fill_val = 1 To 10
+  prefs: []
+  type: TYPE_NORMAL
+- en: ActiveCell.Value = fill_val
+  prefs: []
+  type: TYPE_NORMAL
+- en: ActiveCell.Offset(1, 0).Select Next
+  prefs: []
+  type: TYPE_NORMAL
+- en: End Sub
+  prefs: []
+  type: TYPE_NORMAL
+- en: Offset function() is used to point or refer the object up, down, left, or right
+    of the object.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: OFFSET(row , column)
+  prefs: []
+  type: TYPE_NORMAL
+- en: Example
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Activecell.Offset(1,0).select: This will select the cell 1 row down and 0 column
+    to the right of the Activecell ,'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Activecell.Offset(0,1).select: This will select the cell 0 row down and 1 column
+    to the right of the Activecell,'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Activecell.Offset(-1,0).select : This will select the cell 1 row up and 0 column
+    to the right of the Activecell,'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Activecell.Offset(0,-1).select: This will select the cell 0 row down and 1
+    column to the left of the Activecell.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Using For Each… Next statements](contents.xhtml#sc2_287a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For Each...Next statements repeat a block of statements for each object in a
+    collection or element in an array.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Visual Basic automatically sets a variable each time the loop runs.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Any number of Exit For statements may be placed anywhere in the loop as an alternative
+    way to exit.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Syntax:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: For Each element  In group
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[statements]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exit For]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[statements]'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Next [element]
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Required: Variable used to iterate through the elements of the collection or
+    array. For collections, element can only be a Variant variable, a generic object
+    variable, or any specific object variable. For arrays, element can only be a Variant
+    variable.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Group: Required. Name of an object collection or array'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Statements
+  prefs: []
+  type: TYPE_NORMAL
+- en: Optional. One or more statements that are executed on each item in group.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Scenario 19](contents.xhtml#sc3_288a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a macro name it as UPPER_CASE to convert data into capital letters. Use
+    Ucase () function to convert the case into capital letters
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to the following [Figure 19.2](#fig19-2):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_19.2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 19.2: Scenario 19'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub UPPER_CASE()Dim wscell As RangeFor Each wscell In Selectionwscell.Value
+    = UCase(wscell.Value)NextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Scenario 20](contents.xhtml#sc3_289a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a macro name it as lower_case to convert data into small letters. Use
+    lcase () function to convert the case into small letters
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 19.3](#fig19-3):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_19.3.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 19.3: Scenario 20'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub lower_case()Dim wscell As RangeFor Each wscell In Selectionwscell.Value
+    = LCase(wscell.Value)NextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Scenario 21](contents.xhtml#sc3_290a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a macro name it as Proper_case to convert data into Title case letters.
+    Use WorksheetFunction object to use any function from excel in VBA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 19.4](#fig19-4):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_19.4.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 19.4: Scenario 21'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Proper_Case()Dim wscell As RangeFor Each wscell In Selectionwscell.Value
+    = Application.WorksheetFunction.Proper(wscell.Value) NextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Scenario 22](contents.xhtml#sc3_291a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Open Scenario 22 and modify. After storing record macro, you should ask the
+    user to be continued or not and run as per user response. If the user clicks OK
+    then it should continue the data entry. If the user clicks on Cancel, it will
+    then display Thanks and end the macro. Refer to [Figure 19.5](#fig19-5):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_19.5.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 19.5: Scenario 22'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Data_Entry1()Dim EmpCode As Integer, next_row As IntegerDim EmpName As
+    StringDim doj As DateDim Salary As CurrencyWorksheets("database").SelectRange("a65536").SelectSelection.End(xlUp).Selectnext_row
+    = ActiveCell.Row + 1DoEmpCode = InputBox("Enter Employee Code")EmpName = InputBox("Enter
+    Employee Name")doj = InputBox("enter Date of Joining mm/dd/yy")Salary = InputBox("Enter
+    Salary of Employee")Cells(next_row , 1).Value = EmpCodeCells(next_row , 2).Value
+    = EmpNameCells(next_row , 3).Value = Format(doj, "MMM DD YYYY")Cells(next_row
+    , 4).Value = Salarynext_row =next_row + 1Loop While (MsgBox("Do you want to continue?",
+    vbOKCancel) = vbOK)MsgBox "Thanks"End Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Scenario 23](contents.xhtml#sc3_292a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a macro which will calculate the following for each employee
+  prefs: []
+  type: TYPE_NORMAL
+- en: HRA (75% of the salary)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: DA (60% of the salary) and
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: TOTAL (salary + HRA + DA)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Refer to [Figure 19.6](#fig19-6):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_19.6.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 19.6: Scenario 23'
+  prefs: []
+  type: TYPE_NORMAL
+- en: There could be two ways to solve this question
+  prefs: []
+  type: TYPE_NORMAL
+- en: Refer Training File6.xls
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Through macro you can put formulae to the cells:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '| Sub Gross_Salary()''The user will select the range H2:H101 cells As Range.For
+    Each wscell In Selectionwscell.Offset(0, 1).Value = "=rc[-1]*75%"wscell.Offset(0,
+    2).Value = "=rc[-2]*60%"wscell.Offset(0, 3).Value = "=sum(rc[-1]:rc[-3])"NextEnd
+    Sub |'
+  prefs:
+  - PREF_IND
+  type: TYPE_TB
+- en: 'Calculate in your macro and put only results in the cells:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '| Sub Gross_Salary()User will select the range H2:H101 Dim wscell As RangeFor
+    Each wscell In Selectionwscell.Offset(0, 1).Value= wscell.Value * .75wscell.Offset(0,
+    2).Value = wscell.Value * 60%wscell.Offset(0, 3).Value = wscell.value + wscell.Offset(0,
+    1).Value + wscell.Offset(0, 2).ValueNextEnd Sub |'
+  prefs:
+  - PREF_IND
+  type: TYPE_TB
+- en: '[Scenario 24](contents.xhtml#sc3_293a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Create a macro to display list of names of worksheets in current workbook.
+    Refer to [Figure 19.7](#fig19-7):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_19.7.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 19.7: Scenario 24'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub list_sheets()„ Declare a variable as worksheet objectDim sht As WorksheetFor
+    Each sht In WorksheetsActiveCell.Value = sht.nameActiveCell.Offset(1, 0).SelectNextEnd
+    Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Auto-Executed Macros](contents.xhtml#sc2_294a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The syntax is:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| fydyr |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Refer to the following [Table 19.1](#tab19-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| To | Use |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Run a macro as soon as workbook gets opened | Sub auto_open()End Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Run a macro as soon as workbook is closed | Sub auto_close()End Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 19.1: Auto-executed macros'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Practice 3](contents.xhtml#sc3_295a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Write a function ("Search_sheet") to check existence of any sheet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Function Search_sheet(newSht)Dim sht As WorksheetFor Each sht In WorksheetsIf
+    UCase(sht.name) = UCase(newSht) ThenSearch_sheet = "Sheet(" & newSht & ") exists"Exit
+    FunctionEnd IfNextSearch_sheet = "Sheet(" & newSht & ") does not exists"End Function
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Practice 4](contents.xhtml#sc3_296a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Write a macro to increase the salary by 2000 for each employee.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Scenario 25](contents.xhtml#sc3_297a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a macro to generate region-wise and department-wise sum of salary and
+    count of employees using pivot table. Modify code such a way that every time pivot
+    should be generated on current data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Refer Training File6.xls
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Pivot_Summary()Range("A2").SelectActiveWorkbook.PivotCaches.Add(SourceType:=xlDatabase,
+    SourceData:= _ Range("a2").CurrentRegion).CreatePivotTable TableDestination:="",
+    TableName:= _ "PivotTable2", DefaultVersion:=xlPivotTableVersion10ActiveSheet.PivotTableWizard
+    TableDestination:=ActiveSheet.Cells(3, 1)ActiveSheet.Cells(3, 1).SelectActiveSheet.PivotTables("PivotTable2").AddFields
+    RowFields:=Array("Region", _ "Dept", "Data")With ActiveSheet.PivotTables("PivotTable2").PivotFields("salary").Orientation
+    = xlDataField.Position = 1End WithWith ActiveSheet.PivotTables("PivotTable2").PivotFields("Empcode").Orientation
+    = xlDataField.Caption = "Count of Empcode".Function = xlCountEnd WithRange("C3").SelectWith
+    ActiveSheet.PivotTables("PivotTable2").DataPivotField.Orientation = xlColumnField.Position
+    = 1End WithEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Scenario 26](contents.xhtml#sc3_298a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Write a code to remove duplicate records from “daily” worksheet if they exist
+    in “master” worksheet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: (Use nested loop)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Solution 26](contents.xhtml#sc4_299a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Refer Training File7.xls
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub duplicates()Dim wscell As Range, tcell As RangeWorksheets("master").SelectRange("a2").SelectRange(ActiveCell,
+    ActiveCell.End(xlDown)).SelectFor Each wscell In SelectionWorksheets("daily").SelectRange("a2").SelectRange(ActiveCell,
+    ActiveCell.End(xlDown)).SelectFor Each tcell In SelectionIf tcell.Value = wscell.Value
+    Thentcell.EntireRow.Delete End IfNextNextActiveCell.SelectEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: The same code can be written using find command as follows
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub duplicates_With_find()Worksheets("master").SelectRangec("a2").SelectRange(ActiveCell,
+    ActiveCell.End(xlDown)).SelectFor Each tcell In SelectionWorksheets("daily").SelectSet
+    c = Cells.Find(What:=tcell.Value)If Not c Is Nothing Then Rows(c.Row).DeleteEnd
+    IfNextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Scenario 27](contents.xhtml#sc3_300a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a macro named as Merging_Sheets which will copy data from all worksheets
+    to one worksheet
+  prefs: []
+  type: TYPE_NORMAL
+- en: Your macro should generate a pivot for the total of quantity sold for region
+    wise and then emp code wise after consolidation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Solution](contents.xhtml#sc4_301a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Merging_Sheets()''Scenario27''Add a sheet at the end and name it as consolidate
+    and create headings Worksheets.Add After:=Worksheets(Worksheets.Count)ActiveSheet.Name
+    = "consolidate"ActiveSheet.Range("a1").SelectRange("a1").Value = "Product"Range("b1").Value
+    = "Sales"Copy data from every worksheet to consolidate worksheetFor Index = 1
+    To Worksheets.Count - 1Worksheets(Index).SelectRange("a2").SelectRange(Selection,
+    Selection.End(xlDown)).SelectRange(Selection, Selection.End(xlToRight)).SelectSelection.CopyWorksheets("consolidate").SelectCells(Range("a65536").End(xlUp).Row
+    + 1, 1).SelectActiveSheet.PasteNext,Generate a pivot on consolidated dataSheets("consolidate").SelectRange("A1").SelectApplication.CutCopyMode
+    = FalseActiveWorkbook.PivotCaches.Add(SourceType:=xlDatabase, SourceData:= _Range("a1").CurrentRegion).CreatePivotTable
+    TableDestination:="", TableName _:="PivotTable1", DefaultVersion:=xlPivotTableVersion10ActiveSheet.PivotTableWizard
+    TableDestination:=ActiveSheet.Cells(3, 1) ActiveSheet.Cells(3, 1).SelectActiveSheet.PivotTables("PivotTable1").AddFields
+    RowFields:="Product"ActiveSheet.PivotTables("PivotTable1").PivotFields("Sales").Orientation
+    = _ xlDataFieldEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Conclusion](contents.xhtml#sc2_302a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Mastering looping structures is essential for effective VBA programming. By
+    utilizing loops, you can automate repetitive tasks, process large amounts of data,
+    and enhance the overall efficiency of your VBA programs. This chapter provides
+    a comprehensive understanding of loops and their applications in VBA, equipping
+    you with the skills to write concise and powerful code that saves time and effort.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_303a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Write a VBA macro named “PrintNumbers” that prints numbers from 1 to 100 in
+    the Immediate Window.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a VBA macro named “CalculateSum” that calculates the sum of numbers from
+    1 to 10 and displays the result in a message box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Write a VBA macro named “EvenNumbers” that prints all even numbers from 1 to
+    20 in the Immediate Window.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a VBA macro named “Factorial” that calculates the factorial of a given
+    number. The macro should prompt the user to enter a number and then display the
+    factorial result in a message box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Write a VBA macro named “ReverseString” that prompts the user to enter a string
+    and then prints the reverse of the string in the Immediate Window.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a VBA macro named “TableOfSquares” that generates a table of squares
+    from 1 to 10\. The macro should display the number and its square in separate
+    columns in a new worksheet.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Write a VBA macro named “CountCharacters” that counts the number of characters
+    in a given string. The macro should prompt the user to enter a string and then
+    display the count in a message box.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

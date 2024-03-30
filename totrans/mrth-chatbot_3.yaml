@@ -1,0 +1,1550 @@
+- en: © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023M.
+    Kurpicz-BrikiMore than a Chatbot[https://doi.org/10.1007/978-3-031-37690-0_3](https://doi.org/10.1007/978-3-031-37690-0_3)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 3. Processing Written Language
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)Applied Machine Intelligence, Bern University
+    of Applied Sciences, Biel/Bienne, Switzerland
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overview
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Human language viewed from a technical perspective has been fascinating researchers
+    for a long time. The first application of natural language processing was in 1948
+    at the Birkbeck College in London and consisted of a dictionary lookup system
+    (Hancox [1996](#CR20)). While 1948 may be quite recent in other domains, in computer
+    science, this is very early. Since then, a lot has happened. Today, natural language
+    processing technologies are used in our daily lives, sometimes explicitly (e.g.,
+    when interacting with a chatbot) and sometimes behind the scenes (e.g., when using
+    online search).
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we will learn more about how text is processed automatically.
+    Natural language processing refers to the automated processing (including generation)
+    of speech and text. In this book, we use the terms text processing and natural
+    language processing interchangeably. We will look at some common natural language
+    processing applications, and I am quite confident that you will recognize the
+    one or the other in recent interactions you’ve had with such systems. We will
+    then have a look at some common methods from the field of natural language processing.
+    Then, we will deepen our machine learning knowledge and introduce and understand
+    the advantages and disadvantages of deep learning and neural networks. Finally,
+    we will understand how words from human language can be represented as mathematical
+    vectors and why this is beneficial for machine learning.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Natural Language Processing Applications
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Automatic processing of text can be useful in many settings. Loosely inspired
+    by the categorization of NLP applications of Lane et al. ([2019](#CR25)), we explore
+    some of the use cases together to unveil the potential that lies within such applications.
+    Many of us interact unknowingly on a day-to-day basis with these technologies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Search Engines and Writing Suggestions
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Web and document search applications rely heavily on natural language processing
+    technologies for assessing the search query (the sentence or word that you have
+    written in the search field) and the available documents (e.g., the existing websites
+    on the Internet that have been collected and indexed) and to identify the best-matching
+    results. All of this happens, usually, in a fraction of a second, and you might
+    not be aware of the extremely efficient processing happening in the background.
+    Furthermore, some search engines propose corrections to your search query (*Did
+    you mean*:) or provide *autocomplete* functionality by assessing the search queries
+    entered by the user.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Natural language processing technologies can also support us while writing text.
+    Many text processing programs underline spelling mistakes or make suggestions,
+    on how to adapt grammar and style. Does it sound familiar to you? Then this is
+    another use case where you have actively interacted with natural language processing
+    technologies similar to the ones we explore in this book.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Text Classification
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Let’s look at another example. Have you ever wondered how the *spam filter*
+    in your e-mail inbox works? Text processing technologies drive the analysis of
+    the incoming e-mails and the decision of whether they are of interest to you or
+    spam. Some e-mail providers use more advanced filtering, providing, for instance,
+    categories such as spam, advertisement, or social media notifications. But text
+    processing with e-mails does not end there. A further use case could be automated
+    ranking by priority or proposing answers to e-mails, functionalities that have
+    recently been introduced by different providers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: But let’s stay with spam detection for now. Depending on the complexity of the
+    underlying technology used by a given software product, the mechanisms to detect
+    spam can function differently, leading also to results of varying qualities. In
+    the simplest case, a keyword analysis based on predefined sentences or the sender’s
+    address can be done. Of course, this might still let numerous spam e-mails into
+    your inbox. So probably (and hopefully) no spam detection system relies solely
+    on predefined lists. We should also bear in mind that spam creators get better
+    and better in response to better and better filters. Automatic text generators
+    are now able to write very believable texts that are uniquely customized for different
+    uses. It’s an arms race between improving technology used to develop very realistically
+    looking spam e-mails and technology to detect spam, both of which using the latest
+    machine-learning-driven advancements in natural language processing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sorting e-mails into different categories is an example of what we, in the field
+    of natural language processing, call a *text classification task*. When approached
+    using machine learning, this can be quite similar to the image classification
+    into strawberries or raspberries that we saw in the previous chapter. Assume we
+    have a large number of examples of spam e-mails, advertisement e-mails, social
+    media notifications, and other e-mails. All of the examples from the four categories
+    in our training dataset are labeled, meaning that they are assigned a *tag* that
+    indicates which category they belong to. During the training phase, the machine
+    then identifies the particularities that differentiate these groups of texts.
+    Finally, the model can classify a new text sample into one of the four categories,
+    as shown in Fig. [3.1](#Fig1).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig1_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration depicts a process of classifying emails as either Spam or Normal
+    E-Mail using a machine learning model. The model is trained on Training Data,
+    and it distinguishes between Advertisement and Social Media categories when deciding
+    whether an email is spam or not.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.1
+  prefs: []
+  type: TYPE_NORMAL
+- en: Classification of e-mails into different categories using supervised machine
+    learning
+  prefs: []
+  type: TYPE_NORMAL
+- en: Recall from the previous chapter that these predicted classes are best guesses
+    based on probability and that the quality of the result depends on the completeness
+    and quality of the training data. And even in the best case, there can be mistakes.
+    With that in mind, you will not be surprised the next time an e-mail is misclassified
+    in your inbox.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Such text classification can also be used in other use cases. It is, for example,
+    possible to train a machine learning model on a large number of texts from two
+    or more different authors and thus obtain a classifier that identifies the author
+    of a text. This kind of technology has been used to determine which parts of Shakespeare’s
+    play *Henry VIII* may have been written by somebody else, a subject that has long
+    been debated by scholars (Plecháč [2021](#CR31)). Authorship attribution also
+    plays an important role in *plagiarism detection*, software that is regularly
+    applied in the context of scientific publishing, as well as to check student papers.
+    Other work in the field investigates how machine learning can be used to identify
+    hate speech or fake news on the Internet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sentiment Analysis
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Text classification is also applied in the field of *sentiment analysis*. These
+    methods aim to extract information from text that indicates sentiment or opinion,
+    for example, whether a text carries a positive or negative attitude of the writer
+    toward a product in a review text. Here again this task can be solved in different
+    ways, starting from a very simplistic approach. If we find expressions like “poor
+    quality,” “horrible design,” or “ugly interface” or, on the flipside “wonderful
+    product,” “amazing design,” and “I love it,” we can easily get an idea of whether
+    the writer of the review likes or dislikes the product. However, there is an untenable
+    multitude of ways sentiment can be expressed, and human creativity is nearly endless,
+    so we will soon reach our limits when creating a word list of all possible positive
+    and negative expressions. An alternative (among others) is therefore to use the
+    methods of supervised machine learning, as we discussed for the case of the e-mail
+    classification. Based on examples of positive texts and negative texts, a classifier
+    is trained that is able to predict whether a new text sample is rather positive
+    or negative. Whenever we have a problem where we want to categorize text into
+    two or more classes, and we have sufficiently many examples available for the
+    different classes, we can utilize this supervised learning approach.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In general, in the context of text classification tasks, we refer to *binary
+    classification* when we have two possible groups to distinguish between, e.g.,
+    positive and negative texts and *multiclass classification* otherwise. A common
+    example of multiclass sentiment classification could be to map review texts to
+    their star rating from 1 to 5, as is often seen on websites where users provide
+    feedback on, for example, movies or restaurants. We would try to use machine learning
+    to predict the star rating (which is the label/*right answer*), based on the review
+    texts written by the users. This would be a multiclass classification with five
+    classes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Text Generation
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: As opposed to text classification tasks, where the model takes a text as input
+    and predicts one of the specified categories as output, other tasks take text
+    as an input and also have text as output. We refer to these tasks as *text generation*.
+    An example for this kind of task is *text summarization*. When dealing with hundreds
+    of pages of text, often, the content can also be aggregated, at least at a surface
+    level, on a few pages or even less. This task can be supported in an automated
+    way by language models. *Chatbots* are another application of text generation.
+    Based on texts as input, they provide text answers similar to those of a human.
+    Chatbots can have different goals, for example, to answer customer queries and
+    provide the information the client is looking for. Here, it is highly relevant
+    that the information is correct. As we have seen recently with the rise of ChatGPT,
+    the correctness of the content produced by language models and chatbots in particular
+    is not always a given (which, naturally, might be surprising for one or the other
+    reader). We will further explore this problem in a later chapter. For now, I want
+    to point out that the aim of some chatbots, can also be to provide the most plausible
+    text in terms of being as close as possible to the wording a human would choose.
+    Other applications of text generation are the automated production of movie scripts,
+    song lyrics, or poetry by machine learning models, and a further important use
+    case of text generation is *machine translation*, where text is translated from
+    one language to another, for example, from English to German. Text generation
+    can also be the result of non-textual input, for example, when automatically generating
+    captions for images.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Information Extraction
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Another task we can conduct on texts is *information extraction*. We want to
+    obtain structured information based on the texts, which, in contrast, is typically
+    considered to be *unstructured data* (this applies to images too). Unstructured
+    because the data does not have a predefined organizational principle, as opposed
+    to, say, a table of values structured according to the row and column identities.
+    The term *unstructured* in the context of written language is perhaps a bit confusing.
+    When treating texts for a given language, there are of course external constraints
+    such as the grammar of the language that might restrict up to a point the order
+    of words or objects in sentences. However, there are still flexibilities, and
+    not all sentences or texts have identical structure. For this reason, text is
+    also sometimes called *semi-structured* data, which can be extended by additional
+    information such as identifying the subject of the sentence or adding tags for
+    the type of word (e.g., by marking *to be* as a verb).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Raw text data itself is not equivalent to data arranged in a table, with columns
+    corresponding to say subject, verb, and object. We could extract such structured
+    data from the text, but it’s not equivalent in the sense that we can’t recover
+    the original text only from the structured table.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the information extraction process, we want to obtain very specific data
+    from the text. We therefore define a data structure, meaning that we describe
+    the structured data we would like to obtain from all the different texts we plan
+    to process. This data structure can be very different depending on the use case
+    of the application. For example, when working with legal texts, it might be of
+    interest to extract the paragraphs and laws mentioned in the texts. In the case
+    of doctor’s notes, we might want to extract the diagnosis from the text and ideally
+    convert it into a standardized format, e.g., a diagnosis code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Let’s look at this in an example. The left side of Fig. [3.2](#Fig2) contains
+    unstructured text. We want to extract two things from the texts (the data structure
+    is prepared in the table on the right):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Which types of berries are mentioned
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Whether there are persons mentioned (e.g., by using their name)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig2_HTML.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: An illustration showcases the transformation of unstructured text into structured
+    data for two different texts. It highlights the berries mentioned and the people
+    mentioned in each text, with text 1 referencing strawberries, raspberries, and
+    Anna, while text 2 mentions blueberries and Anna.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.2
+  prefs: []
+  type: TYPE_NORMAL
+- en: Extracting structured information from unstructured texts
+  prefs: []
+  type: TYPE_NORMAL
+- en: The aim of the information extraction is to provide structured information about
+    the texts that can be further processed, either by humans or by another software
+    component. For example, the data table generated could be easily used to quickly
+    get all the texts where Anna is mentioned or including information about strawberries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: From Applications to Methods
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The use case examples we have been going through in this section are not a complete
+    list of all possible applications of natural language processing. The selected
+    use cases rather aim at giving you an impression of the power of these technologies,
+    the wide range of uses, and how they can potentially support our daily work and
+    life. I also want you to take away from this section that, depending on the complexity
+    of the problem and the expected outcomes, very different technologies can be applied.
+    This can range from simple methods to more complex methods such as deep learning
+    and large language models. It is part of the art and craft of the data engineer
+    to identify the right method for the given application, among the vast range of
+    possibilities available in today’s toolkits and research outcomes. In the upcoming
+    sections, we will have a closer look at some of these technologies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Introduction to Natural Language Processing Methods
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Whereas recent developments in natural language processing heavily rely on machine
+    learning, this is in general not necessarily the case. A simple text processing
+    task could be to identify the appearances of berries in a text, based on a list
+    of words provided to the program. In this case, there would be no training data
+    or training phase, but a traditional algorithm being employed of the sort seen
+    previously analogous to the fruit salad recipe. We would be processing the given
+    sentence step by step, comparing each word to the words on the list. Such simple
+    methods have some limitations, for example, we would have to add both the word
+    *strawberry* and the plural form *strawberries* on the list to make sure to get
+    them all. Figure [3.3](#Fig3) gives an example of such a scenario.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig3_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration of keywords in the sentence given which reads the sun was shining
+    and the weather was good. A large field full of strawberries, however, no raspberries
+    were planted in this region. List of keywords are strawberry, raspberry and blueberry.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.3
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Keep it simple: identifying specific words in a text based on a keyword list'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'A priori, from the computer’s point of view, the text is nothing more than
+    a string of letters and symbols. We call the process of adding additional structure
+    to these strings *parsing*. When looking at the text as humans, we of course see
+    more structure – such as separated words or grammatical structure. The thing is
+    that computers prefer dealing with numbers and doing math, and do not have, in
+    general, the years of training that we had in order to automatically and immediately
+    structure such texts in our heads. When parsing text, we instruct the computer
+    to, for example, do word or sentence *tokenization*: We separate words and sentences,
+    specifying that after each blank space, a new word starts. Or that after a period,
+    a new sentence starts. We are instructing the computer to do so by writing our
+    instructions in a programming language.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: More advanced tagging of a text can be done by using *part-of-speech tagging*,
+    *dependency parsing*, or *named entity recognition*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Part-of-Speech Tagging
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Part-of-speech tagging refers to the process of annotating each word with a
+    *tag* identifying the type of word. For example, strawberry is a *noun*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: As you might imagine, these are regular tasks that need to be done over and
+    over again in different applications. Instead of reinventing the wheel each time,
+    the data engineer has existing software components available (so-called libraries)
+    that can be reused as needed.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In Fig. [3.4](#Fig4), we see an example how this information is provided automatically
+    by a library called SpaCy^([1](#Fn1)) that is commonly used for natural language
+    processing.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig4_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A text read anna is eating the strawberry. This sentence is partitioned in part
+    of speech tagging in pronoun, verb and noun.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.4
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An example of part-of-speech tagging: extracting information about the type
+    of the words. For example, “.” is considered a punctuation (PUNCT), “eating” is
+    classified as verb, and the name “Anna” is a proper noun (PROPN)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dependency Parsing
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Let’s now look at an example for dependency parsing. Dependency parsing gives
+    us information about how the words in the sentence relate to each other. Some
+    of us, especially the ones with a more technical background, will need to grab
+    our grammar books when working with this kind of parsing.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To give you some intuition, we will look at a short snippet of such programming
+    code using the programming language Python and the library SpaCy shown in Fig.
+    [3.5](#Fig5).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig5_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: The code utilizes s p a C y to process the text there was a large strawberry
+    field and visualizes its dependency parse tree using the dep style.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.5
+  prefs: []
+  type: TYPE_NORMAL
+- en: Code snippet to visualize dependency parsing using SpaCy library
+  prefs: []
+  type: TYPE_NORMAL
+- en: The first line loads a model for the English language from this existing library.
+    This would be different when processing another language. To be able to consider,
+    for example, grammatical concepts to parse our text, we will need to have the
+    specifics of the given language readily available. In the second line, we are
+    defining the sentence that we want to parse. The last line initiates the dependency
+    parsing and enables a visualization. Don’t worry if you do not understand the
+    meaning of every single word in the above code snippet; the main goal is to get
+    an understanding of how these things work.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Based on these three lines of programming code, the visualization shown in Fig.
+    [3.6](#Fig6) is generated about our sentence.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig6_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration represents a syntactic analysis of the sentence there was a
+    large strawberry field using dependency labels, with words categorized by their
+    parts of speech and connections defined by attributes such as a t t r, d e t,
+    a m o d, e x p l, and compound.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.6
+  prefs: []
+  type: TYPE_NORMAL
+- en: Visualization of the dependency parsing of an example sentence using the SpaCy
+    library
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We have two different kinds of information in this illustration: On one side,
+    we can see the type of word at the bottom, which we called part-of-speech tag
+    before (*was* is a verb, *large* is an adjective). The arrows indicate us the
+    relations between the words in the sentence, the syntactic dependencies. For example,
+    the words *strawberry* and *field* have been recognized as compound words. The
+    word *large* was marked as adjectival modifier (*amod*) to the word *field* (we
+    are not going to go too deeply into grammar at this point, but you get the idea).'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Named Entity Recognition
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: We will now consider an example of the task of *named entity recognition*, which
+    involves extracting relevant information from text, for example, by classifying
+    words as organizations, geopolitical entities, or numbers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To see this example, we use a similar code example as before, but we change
+    the sentence and one word in the last line (replacing simply *dep* as in *dependency*
+    with *ent* as in *entity*), as shown in Fig. [3.7](#Fig7).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig7_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A code loads the s p a C y English model, processes the given text, and then
+    visualizes the named entities using the entity style.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.7
+  prefs: []
+  type: TYPE_NORMAL
+- en: Code snippet to visualize named entity recognition using the SpaCy library
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Different named entities have been identified in our sentence, as shown in
+    Fig. [3.8](#Fig8): The year 2023 has been identified as a date, the EU as an organization
+    (ORG stands for companies, agencies, institutions), the US as geopolitical entity
+    (GPE), and *thousands* was classified as a number (CARDINAL). There are a few
+    more such categories (such as MONEY for monetary values), but those are among
+    the most common ones. Automatically identifying such information in our texts
+    can be beneficial as an entry point to more advanced text processing. We notice
+    that in this context, the EU could be considered as a geopolitical entity rather
+    than an organization. This serves as a reminder that such models might not work
+    perfectly in all situations.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig8_HTML.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A text reads in 2023 date, thousands cardinal of strawberries were eaten in
+    E U o r g countries and the U S G P E.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.8
+  prefs: []
+  type: TYPE_NORMAL
+- en: Result of the named entity recognition example using the SpaCy library
+  prefs: []
+  type: TYPE_NORMAL
+- en: Inside Machine Learning
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: We looked at the basic procedure of machine learning in the previous chapter.
+    The interesting question we didn’t fully answer then is *how* does the learning
+    actually happen.^([2](#Fn2)) We will first define classical machine learning and
+    see how this is different from deep learning and neural networks. Sounds difficult?
+    No worries, all mathematical backgrounds required to follow this part will be
+    gently introduced as needed. So, let’s go step by step.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this section, we will concentrate on supervised machine learning. We will
+    use the task of sentiment analysis as an example. This means that we consider
+    a collection of texts that are positive, i.e., express the positive attitude of
+    the author, and another collection of texts that are negative. As you might remember,
+    *supervised* means that each text snippet is labeled with the information about
+    whether it is positive or negative. It is a classification task, because we want
+    to train a model that is able to classify a new, unseen text into one of the two
+    classes, *positive* or *negative*. Figure [3.9](#Fig9) shows the setup of our
+    machine learning classifier as we have seen previously for the other examples.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig9_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration represents a simple training data scenario for a binary classification
+    task where data samples are labeled as either positive or negative.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.9
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sentiment analysis: classifying texts as positive or negative with supervised
+    machine learning'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, the interesting thing here is what happens during the training phase. How
+    is the model created, which is then able to classify the unseen texts?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Pre-processing the Training Data
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The training data shown in Fig. [3.9](#Fig9) could be structured in a table,
+    containing the text sample in the first row and the label in the second row, as
+    shown in Table [3.1](#Tab1).Table 3.1
+  prefs: []
+  type: TYPE_NORMAL
+- en: The training data can be structured in a table, with one column for the texts
+    and another column for the labels
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Text | Label |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Wow, what a cool website! | Positive |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Oh no, I really think this is bad. | Negative |'
+  prefs: []
+  type: TYPE_TB
+- en: '| … |   |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Before we can start with the training, text *pre-processing* is done. This
+    means that we have to clean up the texts we are considering as input (i.e., the
+    training data). In our case of sentiment analysis, these are the text samples
+    containing positive or negative texts. We want to exclude information that is
+    not relevant. What exactly needs to be done in this phase depends on what texts
+    we have. For example, a typical operation is to remove additional information
+    such as links or transforming all letters to lowercase and removing punctuation:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Wow, this is REALLY a cool website! [http://​www.​springernature.​com](http://www.springernature.com)”
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'could, for example, be adapted to the following after this phase:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “wow this is really a cool website”
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'We also split the sentence into single words that can be processed separately
+    (so-called tokenization):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “wow this is really a cool website”
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'becomes:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[“wow”,”this”,”is”,”really”,”a”,”cool”,”website”]'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: In some cases, we might go further and remove words that are considered insignificant
+    for the training, so-called stop words. Lane et al. ([2019](#CR25), p. 51) define
+    stop words as “common words in any language that occur with a high frequency but
+    carry much less substantive information about the meaning of a phrase.” Common
+    stop words are, for example, *the*, *a*, or *on*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sometimes, it is also useful to use *stemming* or *lemmatization*. Both methods
+    have the same goal: modifying words with these methods brings them in a form that
+    allows to determine whether two words belong together, meaning that they are the
+    same word in a different form. Stemming is a technique that identifies the word
+    stem by cutting off parts of the word. For example, the stem of *houses* is *house*,
+    and the stem of *runs* is *run*. However, there are some limitations with that
+    method that it is often oversimplifying and words that we might want to differentiate
+    are assigned to the same stem. For example, the word *meetings* is changed to
+    *meet*, but maybe *meeting* would be the better stem (Hagiwara [2021](#CR19)).
+    Also, such methods often fail with irregular words such as *caught,* where we
+    could prefer to have *catch* instead of the stem. With lemmatization on the other
+    hand, instead of using the word stem, the original form of the word is identified.
+    This might seem similar to stemming but is yet different: here it is not just
+    about cutting of parts of the word but under consideration of the language’s structure,
+    for example, for verbs, the base form before conjugation. For our examples *meetings*
+    and *caught*, the lemmatized forms would therefore be *meeting* and *catch* respectively.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Feature Selection
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: We define a *feature* as a characteristic or measurable property of our data.
+    An important and often tricky part of machine learning is *feature selection*,
+    deciding which are the appropriate features and how important they are for training
+    a classifier that works best on other, unseen data. Also in human decision-making,
+    depending on the context, some aspects are more relevant than others. When making
+    a diagnosis about a patient, the blood pressure or the description of symptoms
+    is likely to be more relevant than the color of the T-shirt the person is wearing.
+    Thus, the blood pressure would be a good feature for the machine learning training,
+    whereas the color of the t-shirt would probably not be the best choice.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the case of text processing, the feature selection could, for example, be
+    all the words of a text. In other situations, a good feature selection might be
+    to consider the most often occurring words, or only adjectives, depending on the
+    use case. Let’s suppose for our example that we want to do the feature selection
+    based on the *word frequency*. We therefore need to find out which words occur
+    the most often in our training data. More specifically, we want to find the words
+    that are *typical* for positive texts and typical for negative texts. Some words
+    that appear often in general might be in the top list of both groups, for example,
+    words such as *the* or *a* (if we have removed the stop words earlier, this might
+    be less of a problem). We can get around this by removing any words that appear
+    in *both* the positive and the negative group. The intuition behind this is the
+    fact that such words will not be of any use to differentiate between the two groups.
+    Let’s say we take for the sake of this example the three most frequent words of
+    each group and end up with the following:^([3](#Fn3))
+  prefs: []
+  type: TYPE_NORMAL
+- en: Positive = [“good”, “happy”, “awesome”]
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Negative = [“ugly”, “horrible”, “bad”]
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: From Words to Numbers
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: As mentioned earlier, computers are much better in dealing with numbers than
+    with human language. So, what to do with those words?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Before getting deeper into this, let’s look at the concept of a mathematical
+    *vector*. In general, we are all using numbers daily. Vectors contain more information
+    than single numbers. They consist of lists of multiple numbers, and the length
+    of which is called the dimension of the vector. So, for example, the vector (0,
+    −2, 5.1) is a three-dimensional vector. For a given dimension *n*, the collection
+    of all possible n-dimensional vectors is an example of what’s called a vector
+    space. Vectors are typically depicted as arrows, and arrows with (a) the same
+    length, (b) the same orientation, and (c) that are in parallel are the same vector.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In a two-dimensional vector space, vectors have two coordinates to specify
+    their position. The first coordinate indicates their position with regard to the
+    x-axis, and the second coordinate indicates their position with regard to the
+    y-axis, as illustrated in Fig. [3.10](#Fig10). For three dimensions, we can imagine
+    a cube with three coordinates. Starting from four dimensions (and vector spaces
+    can have very high dimensions), it gets difficult to imagine but works analogously:
+    in a vector space with 20 dimensions, vectors living in that space have 20 numbers
+    composing their coordinates.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig10_HTML.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration depicts y versus x axis with vector V vector in 2 dimensions
+    where V vector = matrix 2, 1.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.10
+  prefs: []
+  type: TYPE_NORMAL
+- en: An example of a vector with two dimensions
+  prefs: []
+  type: TYPE_NORMAL
+- en: We will also need to know that between such vectors, mathematical operations
+    such as addition or subtraction can be executed, similar to numbers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We need to transform our words into vectors, so that the machine learning classifier
+    can work with them. Each word will be converted into a single vector. The simplest
+    way to do this is to use *one-hot vectors*. Each vector has dimension equal to
+    the number of possible words in our vocabulary. In a realistic case, these can
+    be hundreds of thousands of possible words, but let’s keep it simple and assume
+    our language has the following vocabulary consisting of four words:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[“awesome”, “bad”, “good”, “horrible”]'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: The vector space (dimension) would then be 4\. Therefore, each vector has four
+    entries (two more than the example vector in Fig. [3.10](#Fig10)). Each word would
+    then be represented by having a vector full of *0* and having *1* only at the
+    position of the word in the vocabulary. What do we mean by position? In the vocabulary
+    above, the word *awesome* is at position 1, *bad* at position 2, and so on.^([4](#Fn4))
+    Therefore, the vector representation of *bad* would have a 1 at the position 2
+    and 0 for the rest of the positions:^([5](#Fn5))
+  prefs: []
+  type: TYPE_NORMAL
+- en: vector[“bad”] = [0,1,0,0]
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: That’s it. We have created a vector representation of our words. Clearly, this
+    simple method provides some limitations. In four dimensions, some zeroes are forgivable,
+    but if we have vectors of hundreds of thousands of dimensions (to cover all vocabulary
+    of the English language), there will be many zeros that need to be stored. We
+    will see more advanced ways to vectorize words using fewer dimensions in a later
+    section.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Machine Learning Classifiers
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: After this step of *vectorization*, we have a list of vectors that are typical
+    for positive texts and another list of vectors that are typical for negative texts.
+    We are thus ready to train our machine learning classifier. The first thing to
+    do is to choose the type of classifier we want to use. Different mathematical
+    models exist, and we chose one of them depending on the data and our needs. It
+    is also often the case that the best performing classifier cannot be predicted
+    easily in advance. Thus, sometimes, it is very beneficial to try out different
+    ones to find the right one for a given dataset or problem.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One such machine learning classifier is called a *logistic regression classifier*.
+    This type of classifier is a type of *discriminative classifier* (Jurafsky and
+    Martin [2023](#CR24)), which aims to learn to distinguish between two groups based
+    on statistical differences. It is assessed how important the different features
+    are to differentiate between the two groups. This happens by assigning weights,
+    which means assigning each feature a value, measuring how important it is for
+    the outcome. This means that it tries to figure out which are the most relevant
+    among the words we have provided as input. This happens by looking at all the
+    features we have provided one by one and adapting the *weights* as necessary.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To better understand what we mean by weights, let’s consider the following example.
+    We consider a strawberry plant full of wonderful, tasty strawberries in different
+    sizes. There are some fruits, so that the plant tends to bend toward the right
+    side. We want to study what causes the strawberry plant to bend itself. Probably,
+    the huge strawberry contributes more to this than the tiny strawberry. Thus, the
+    huge strawberry has a bigger weight than the tiny strawberry, as shown in Fig.
+    [3.11](#Fig11).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig11_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration depicts a pot with strawberry plant labeled huge strawberry
+    causing the plant to bend and tiny strawberry with less impact.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.11
+  prefs: []
+  type: TYPE_NORMAL
+- en: The huge strawberry is causing the plant to bend; the tiny strawberry has less
+    impact
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is similar to the weights of our features. In the beginning of the learning
+    procedure, all words might have an equal weight. Over time, the model learns that
+    the word *good* indicates positive and therefore gives the word *good* more weight
+    in the positive category. Thus, after training, the model’s decisions will *bend
+    more* in the direction of positive when the word *good* is present, similar as
+    strawberries with larger weights that have major impact on the strawberry plant
+    bending to the right.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Loss Function
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Let’s come back to the example of cutting strawberries in even slices that we
+    have seen in an earlier chapter. With each iteration, we are getting a bit better.
+    But how do we measure our improvement? Let’s say that the desired slice size is
+    4 mm. We want all the slices we cut to be as close as possible to this reference
+    value, and we thus want to become good at cutting strawberries into slices of
+    this specific size. Each time we cut a slice, we can compare its size to the desired
+    slice size. We are 2 mm too large? Let’s try to cut it smaller. This procedure
+    is shown in Fig. [3.12](#Fig12). We improve our method, to get as close as possible
+    to the desired strawberry slice size. In mathematical terms, we want to reduce
+    the difference of the actual slice size and the desired slice size. In this case,
+    we are talking about slice size, but in general terms in machine learning, we
+    talk about the *loss function*. The aim of the learning process is to minimize
+    this loss function. In Fig. [3.12](#Fig12), the loss in the beginning at round
+    1 is 2 mm and 0 mm in round N. The closer the loss gets to zero, the better the
+    performance of the machine learning model. During the learning, the values of
+    the machine learning model (such as weights) are adapted in order to minimize
+    this loss.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig12_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration represents a training process conducted in multiple rounds,
+    ultimately achieving the goal of minimizing the loss function by reducing the
+    difference between the actual and desired slice sizes, concluding with a loss
+    of 0mm for an actual slice size of 4 millimeter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.12
+  prefs: []
+  type: TYPE_NORMAL
+- en: To train the model, we need to minimize the loss. The closer we get to the desired
+    slice size, the lower the loss gets
+  prefs: []
+  type: TYPE_NORMAL
+- en: An important point about the loss function is that it explicitly defines what
+    we are *training the model* to do. The entire aim of the training is to modify
+    the model in order to minimize the loss. This is what we mean by *learning*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let’s now return from cutting strawberries into slices to our previous task
+    of sentiment analysis. We want to classify a text being either positive or negative.
+    Depending on the classifier we choose to train (e.g., the logistic regression
+    mentioned earlier), the loss function is defined. In the simplest case, it is
+    the difference of the predicted value and the expected value (the label of the
+    training data). In other cases, slightly more complex functions can be used, but
+    generally quantifying in some way the difference between the predicted value and
+    the expected value.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Training and Test Data
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Now we have a model that allows us to classify a text into one of the two categories:
+    positive or negative. But how do we know if the classifier actually performs well?
+    To understand this better, we introduce the concept of *test data*. Assume that
+    we have 100 text samples labeled as positive and 100 labeled as negative. It would
+    be good practice to only use, for example, 80 samples of each category for the
+    training process. 20 positive and 20 negative examples would be kept aside, so
+    that we can *validate* our machine learning classifier on it later. This means
+    that we challenge the classifier to predict whether those snippets are positive
+    or negative, without including them in the training process. This is what we mean
+    when we refer to *unseen data*. Since we know the correct classification for those
+    samples, we can use this knowledge to verify the correctness of our classifier.
+    If it is able to classify 38 of the 40 (20 positive and 20 negative) snippets
+    correctly, we are probably happy with the result. If only 10 out of 40 are correctly
+    classified, we might want to reconsider the steps taken earlier and maybe try
+    other features or adapt our pre-processing steps.^([6](#Fn6)) Remember that this
+    is a prediction, and it is highly unlikely that we will build a system that is
+    correct in 100% of the cases.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Figure [3.13](#Fig13) gives an overview of the different steps we have been
+    taking to pre-process our text, select features, and finally train and validate
+    the classifier. All these steps are typically needed to prepare machine learning
+    training.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig13_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow illustration includes preprocessing, feature selection, from words to
+    numbers, machine learning classifiers, the loss function and training and test
+    data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.13
+  prefs: []
+  type: TYPE_NORMAL
+- en: An overview of the different steps needed to prepare for a machine learning
+    training
+  prefs: []
+  type: TYPE_NORMAL
+- en: From Machine Learning to Deep Learning
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'We saw in the previous section how machine learning models are trained: The
+    features were predefined, and the system learned by minimizing the loss function.
+    Let’s call this architecture *classical machine learning*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Limitations of Linear Models
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Additionally, logistic regression and some other classical machine learning
+    are examples of what are known as *linear models*. For the case of classification,
+    this means that they are only able to separate classes that can be separated by
+    a straight line (or hyperplane in higher dimensions). In other cases, this is
+    not possible, and the data requires nonlinear processing to deliver good results.
+    The two examples are illustrated in Fig. [3.14](#Fig14).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig14_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 2 comparison chart reads data can be separated with a linear classifier and
+    data cannot be separated with a linear classifier.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.14
+  prefs: []
+  type: TYPE_NORMAL
+- en: In some cases, the data can be separated with a linear classifier. In other
+    cases, this is not possible
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In cases where we know what to look for and can identify and extract the features
+    that are the most useful for distinguishing classes, classical machine learning
+    classifiers such as logistic regression might be likely to perform well. Some
+    other classical machine learning classifiers even allow to process nonlinearly
+    separable data. However, in many cases, it might not be easy to identify the relevant
+    features. For example, remember the case of the classifier where we wanted to
+    differentiate between strawberry and raspberry pictures that we have seen earlier.
+    Whereas for the human eye it is pretty easy to see whether there is a raspberry
+    or strawberry on the picture, it would be pretty hard to formalize what we are
+    seeing and define concrete features in terms a machine learning algorithm could
+    understand. Potential features here could be, for example, whether the berry has
+    seeds on the outside or not. However, it would be pretty hard to instruct the
+    computer explicitly how to translate from pixel values to these features. Applying
+    the same reasoning to texts, a human can read between the lines and understand
+    that somebody is in a bad mood based on an e-mail message. But if you were asked
+    to give clear and precise instructions based on what features helped you notice
+    this, it would be difficult to put it in words. You might say it has to do with
+    the *tone*, but how do you extract the *tone* feature from the text to feed into
+    the machine learning algorithm? Such tasks, where it’s hard to identify/extract
+    the relevant features from the data, are where the power of *deep learning* saves
+    the day. Deep learning is a subset of machine learning involving one specific
+    technique: *neural networks*.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Neural Networks
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Masato Hagiwara describes a neural network as:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A generic mathematical model that transforms a vector to another vector. That’s
+    it. Contrary to what you may have read and heard in popular media, its essence
+    is simple. (Hagiwara [2021](#CR19), p. 37)
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'I like this definition, even though it takes a bit the magic, because it brings
+    it to the point: in the end, it’s just math.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: As in the previous example using logistic regression, we will need to do pre-processing
+    and finally transform our words into vectors. For now, let’s just consider that
+    we already have a numerical representation in the form of vectors from each word
+    in our text.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Like the classical machine learning seen previously, a neural network also relies
+    on a feedback loop to improve the predictions. Very simplified, we can see a neural
+    network as the kind of structure shown in Fig. [3.15](#Fig15).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig15_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow illustration depicts input, processing, estimation and based on the result,
+    processing is adapted to improve estimation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.15
+  prefs: []
+  type: TYPE_NORMAL
+- en: Similar to what we have seen previously for the classical machine learning,
+    neural networks also have a feedback mechanism to improve the predictions
+  prefs: []
+  type: TYPE_NORMAL
+- en: A neural network can be seen as a more complex structure that includes in the
+    very last part a classical machine learning model, similar to the one that has
+    been described before, as shown in Fig. [3.16](#Fig16). Also here, the learning
+    happens by minimizing the loss. Neural networks can consist of multiple layers.
+    The first layer takes the input data and outputs a new set of features, taken
+    as input by the next layer. After repeating this for all layers, the final layer
+    extracts the features that the classical model can work with. The features extracted
+    at each layer can all be modified during training until *the right sequence* of
+    processing steps has been found. When multiple layers are involved in a neural
+    network, we refer to it as *deep learning*. Depending on the exact setup of the
+    neural network, more complex mathematical operations are possible; additionally,
+    the feature extraction can happen automatically, making it often more performant
+    than classical machine learning.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig16_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow illustration represents a neural network architecture with a final layer
+    that functions similarly to a traditional machine learning classifier, aiming
+    to minimize the loss function.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.16
+  prefs: []
+  type: TYPE_NORMAL
+- en: Neural networks are in general similar to classical machine learning, however,
+    allow more complex mathematical operations
+  prefs: []
+  type: TYPE_NORMAL
+- en: We will now dive a bit deeper into the architectures of neural networks yet
+    staying at a rather high-level.^([7](#Fn7))
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Neurons: Inspired by the Human Brain'
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Neural networks are loosely inspired by the neurons in the human brain. However,
+    we must be clear that such systems are not comparable directly to human brains.
+    They are very simplified, and many aspects of the human brain are still not understood.
+    Consider the following analogy (Rashid [2017](#CR32)): Whereas the human brain
+    has around 100 billion neurons, other smaller animals or insects live with a few
+    hundreds of thousands of neurons. Even though we are able to model computer systems
+    that are much more complex than the brains of those animals, the animals can do
+    some quite useful tasks that would be difficult to solve for a computer. It is
+    worth also mentioning that latest language models have the same order of magnitude
+    of neurons as the human brain. Therefore, the comparison of human or animal intelligence
+    and machine intelligence referring only to the number of neurons is difficult.
+    There seems to be something more to human or animal intelligence.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Coming back to our technical system, a neural network is a set of so-called
+    neurons that are connected to each other. There is a signal that enters on one
+    side of the neural network and passes through the different neurons, and finally,
+    a result comes out.
+  prefs: []
+  type: TYPE_NORMAL
+- en: One layer is typically composed of several neurons. A single neuron, as shown
+    in Fig. [3.17](#Fig17), has several input values and weights assigned to the connections.
+    Inside the neuron, the inputs are processed, and the weights give an indication
+    of how important each input is with regard to the output of the neuron. When thinking
+    about what the weights mean, remember the strawberry plant we saw earlier that
+    was bending to the right because of the huge strawberry with a large weight.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig17_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow illustration depicts multiple weight input followed by neuron and output.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.17
+  prefs: []
+  type: TYPE_NORMAL
+- en: The weights in the neural network are adapted during the training phase to reduce
+    the loss and improve the system’s performance
+  prefs: []
+  type: TYPE_NORMAL
+- en: The good thing is that we do not have to specify these weights. The weights
+    are adapted during the training phase, to reduce the loss and improve the overall
+    system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A neural network consists of several neurons, organized in layers.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the example in Fig. [3.18](#Fig18), we have three layers with two neurons
+    each. The output of the neurons from layer 1 is the input for both neurons of
+    layer 2\. Layer 1 is called *input layer*, layer 2 is a *hidden layer* (there
+    could be more than 1), and layer 3 is the *output layer*. In each neuron, computation
+    happens, based on the input values and the weights, and an output is generated.
+    This math is enabled by vector and in particular *matrix*^([8](#Fn8)) mathematics,
+    and therefore it is important that input and output are vectors and not human
+    words. Such operations can be performed by computers very efficiently even for
+    high-dimensional neural networks.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig18_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration depicts a neural network with six instances of Neuron in the
+    input layer, followed by three hidden layers labeled as Layer 1, Layer 2, and
+    Layer 3, ultimately leading to an output layer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.18
+  prefs: []
+  type: TYPE_NORMAL
+- en: An example of a neural network consisting of three layers
+  prefs: []
+  type: TYPE_NORMAL
+- en: Learning from Our Mistakes
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: So how do we learn from mistakes and improve the performance of our neural network?
+    As we did earlier, we want to adapt the weights in order to minimize the loss.
+    If we do this only with the weights in the last layer, as we did for the example
+    of logistic regression (which only had one layer), this fixes the problem only
+    partially. The output of this last layer depends on the input it received from
+    the previous layer. If we don’t also adjust the weights there, then we are again
+    in the situation of a low-complexity linear model, so we also need to figure out
+    how to make adjustments to the weights in the second to last layer and so on.
+    We thus have to adapt the weights for each of the layers in the neural network.
+    The process is called *backpropagation*. Figure [3.19](#Fig19) shows how the backpropagation
+    happens in the neural network we have discussed before.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig19_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration suggests a neural network processing with the term Neuron at
+    3 layers, followed by an Input and Output with Backpropagation possibly indicating
+    a training process or learning mechanism,
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.19
+  prefs: []
+  type: TYPE_NORMAL
+- en: The weights are adapted in all layers of the neural network. This procedure
+    is called backpropagation
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sentiment Analysis with Neural Networks
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Now let’s come back to our example of sentiment classification and depict this
+    problem in a neural network. In sentiment analysis, we want to classify texts
+    as negative or positive. For the input, we will need again the vector representations
+    of our words. As shown in Fig. [3.20](#Fig20), the last layer has a special format.
+    Since we aim to have a binary decision, the last neuron is adapted to produce
+    one of these two output options (negative or positive).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig20_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A flow illustration represents a process where Our texts are transformed into
+    vectors, then processed through multiple layers, and ultimately result in an output
+    classified as either positive or negative in Layer 3.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.20
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the context of sentiment analysis on text, we want to provide texts as input
+    and obtain a prediction on whether they are positive or negative
+  prefs: []
+  type: TYPE_NORMAL
+- en: As compared to the linear classifiers (such as the logistic regression we have
+    seen previously), neural networks often provide important advantages. For example,
+    the fact that more complex mathematical operations are possible often leads to
+    better performance for text classification. Sometimes, indication for positive
+    or negative sentiment in text can be tricky. Sarcasm might be a strong indicator
+    for a negative sentiment. However, just giving weights to single words as in logistic
+    regression could never capture this complex concept. On the other hand, it is
+    conceivable that some complex function of the combination of words present or
+    not in a text could result in a good measure of sarcasm in text. If so, then neural
+    networks could be able to do this.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We now have a basic understanding of how neural networks work and are ready
+    to go one step further. In the next section, we will have a closer look at word
+    embeddings, which are vectors that encode the meaning of words.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Diving into Word Embeddings
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'Let’s come back to the problem we have gotten around earlier: the machine learning
+    methods need numerical representations (in the form of vectors) and cannot handle
+    human-readable texts. To enable our text processing and generation with the advantages
+    of machine learning methods, increasing the performance for different tasks, we
+    need to convert the words to mathematical vectors.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: So how can we get there? One solution is called *word embeddings*^([9](#Fn9))
+    (sometimes also referred to as *word vector*).
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Each word from human language, so, for example, the English words *Strawberry*
+    or *Raspberry*, has a numerical representation, a specific word embedding,^([10](#Fn10))
+    as shown in Fig. [3.21](#Fig21). Let them be as follows for now:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Strawberry” = [1,6]
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: “Raspberry” = [1,7]
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: “Elephant” = [2,1]
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig21_HTML.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: An illustration. Text reads strawberry and numbered 12, 11, 3 and 4.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.21
+  prefs: []
+  type: TYPE_NORMAL
+- en: The word “Strawberry” is mapped from human language to a vector
+  prefs: []
+  type: TYPE_NORMAL
+- en: For the sake of example, we consider that our vectors live in a two-dimensional
+    space (therefore, we have two numbers in the brackets above). This means that
+    we are easily able to draw them on a sheet of paper, by using points on a two-dimensional
+    coordinate system.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Relations Between Words
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'We notice from Fig. [3.22](#Fig22) that the vectors for the words *Strawberry*
+    and *Raspberry* are closer to each other than to the vector of the word *Elephant*.
+    If two words have a similar meaning, their word embeddings will be closer together
+    in the vector space. Since strawberries and raspberries are both berries, as opposed
+    to the elephant being an animal, their word embeddings are closer together. This
+    property allows us to use mathematical operations to deal with the meaning of
+    words. For example, consider the following puzzle (Bolukbasi et al. [2016](#CR4)):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Man is to King, as Woman is to X
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig22_HTML.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: A graph illustration presents a sequence of words, including Raspberry, Strawberry,
+    and Elephant at different angle along x and y axis.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.22
+  prefs: []
+  type: TYPE_NORMAL
+- en: Words that are similar in their meaning have word vectors that are closer together
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This can be solved by using subtractions and additions. Whereas we often use
+    addition or subtraction with numbers (all of us are familiar with doing something
+    like 1 + 2 − 1 = 2), the same can be done also with vectors, leading to the solution
+    of the puzzle^([11](#Fn11)):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Vector(“Queen”) = Vector(“King”) - Vector(“Man”) + Vector(“Woman”)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: By subtracting the sum of the vector of the word *man* and the word *woman*
+    from the vector of the word *king*, we can obtain the resulting word *queen*.
+    Fascinating, isn’t it?
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Similarly, analogy questions can be solved, even across different domains,
+    for example, getting from science to music (Lane et al. [2019](#CR25)):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Who is the Marie Curie of music?
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: 'This would translate to vector mathematics as follows, similarly to the example
+    with *king* and *queen* stated above:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Vector(“Solution”) = Vector(“Marie Curie”) - Vector(“Science”) + Vector(“Music”)
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Naturally, we get very excited and want to explore more relations in these word
+    embeddings and understand how they can be used as input to machine learning training.
+    But where are these word embeddings actually coming from?
+  prefs: []
+  type: TYPE_NORMAL
+- en: Creating Word Embeddings
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'The main difference between the examples of word embeddings we have seen and
+    actual word embeddings is the dimension.^([12](#Fn12)) Whereas we used two dimensions
+    in the example to be able to visually look at the word embeddings and their relation
+    among each other, usually they have around 300 dimensions.^([13](#Fn13)) Hard
+    to imagine? I feel the same way. But the principles we have seen so far are the
+    same: based on the vector’s properties and using mathematical operations (they
+    luckily work for different dimensions of vectors), we are still able to obtain
+    the same insights. Why would we use 300 dimensions if we could also use only 2,
+    you might be asking? The intuition behind this is that the more dimensions we
+    have, the more aspects in which words can be similar we can consider. Higher-dimensional
+    vectors help to capture different properties of the words and thus improve the
+    quality of the relations between the word embeddings.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, let’s see how meaning gets encoded into these word embeddings and how we
+    can obtain the word embedding for a specific word in human language. We want to
+    have a dictionary of all words, which translates each word to the corresponding
+    vector. Similar to a language dictionary translating words from English to let’s
+    say Spanish, in our case the dictionary is translating words from English to word
+    embeddings. To create such a dictionary, machine learning, or, more precisely,
+    neural networks can be used.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Wait, what? We are using neural networks to generate word embeddings to then
+    use them to encode words that we want to feed to a neural network? Let me explain
+    that more in detail.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We want to convert the words of our text to vectors, in order to process them
+    in a machine learning task, for example, to train a model for a binary classification
+    task in the context of sentiment analysis. This is a supervised machine learning
+    task, since the texts in our training data are labeled as positive or negative.
+    The dictionary of word embeddings is created before that and independently of
+    the actual training process. Those word embeddings can be trained once and reused
+    for different tasks. In the same way as your language dictionary is in your bookshelf,
+    and whenever you need it, for example, to write a letter or translate a word from
+    a text in a foreign language, you just grab it and look up the word you need.
+    The setup is shown in Fig. [3.23](#Fig23).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig23_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: The process of converting words from training data into vector representations,
+    potentially for sentiment analysis. It discusses the utilization of word embeddings,
+    supervised binary sentiment analysis, and the generation of word embeddings through
+    unsupervised training from a text corpus.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.23
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Example procedure of training a sentiment analysis classifier: the textual
+    training data uses existing word embeddings (that have been trained separately)
+    for vectorization'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Word2Vec Embeddings
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: The dictionary of word embeddings is trained using unsupervised machine learning
+    methods. In this section, we will explore the word2vec method presented in 2013
+    (Mikolov et al. [2013](#CR26)), which provided major improvements for a range
+    of natural language processing tasks. This was the beginning of a new era of natural
+    language processing with word embeddings, which was later improved even further
+    with transformer-based models, which we will explore in a later chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The idea behind the word embeddings can be captured by the following quote
+    from the linguist J.R. Firth:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: You shall know a word by the company it keeps (Firth [1962](#CR13), p. 11)
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: For example, the word *Strawberry* and the word *Raspberry* might both appear
+    along with the words *berries*, *field*, *red*, *yummy*, and others. Having a
+    common set of words appearing along with them makes it more probable that those
+    two words are similar to each other in terms of meaning. Therefore, the two words
+    should have similar vectors.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The machine learning method to train word embeddings is *unsupervised*. This
+    means that data does not need to be labeled. This is a major advantage in this
+    case because labeling would be complex in the case of natural language. There
+    are many relations and background knowledge that for us, as humans, have been
+    learned over years and would be very difficult to express in a labeled dataset
+    (which would be required when using supervised learning as in the examples before).
+    For example, that a strawberry is a berry and that berries are plants and that
+    plants are eaten by people and animals (and so on).
+  prefs: []
+  type: TYPE_NORMAL
+- en: However, upon closer inspection, the words in a text do have a sort of label.
+    The difference compared to the supervised learning scenario is that labels are
+    available implicitly and do not need to be added before training. Instead of learning
+    the *meaning* of each word, these algorithms learn the common words that appear
+    along with the mentioned word. For this task, the labels for each word in a text
+    are simply the words that appear just before or just after the word itself.^([14](#Fn14))
+  prefs: []
+  type: TYPE_NORMAL
+- en: To give you an intuition about what that means, let’s look at the example shown
+    in Fig. [3.24](#Fig24). The words *field* and *with* are just before the word
+    *strawberries*, and the words *and* and *raspberries* are right after it. In the
+    skip-gram approach (one of the methods in word2vec word embedding training^([15](#Fn15))),
+    we would try to predict the words surrounding each word. In such a case, we use,
+    for example, the words surrounding the word *strawberries* for training. Since
+    we know the correct answers, we can use this information to improve the learning
+    and reduce the error.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig24_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: The text reads there is a field with strawberries and raspberries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.24
+  prefs: []
+  type: TYPE_NORMAL
+- en: The word “Strawberry” and the two words that appear just before and just after
+    it
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To return back to neural networks, the word *strawberries* would be the input
+    to our neural network. As an output, we want the neural network to predict the
+    surrounding words. The neural network for this is structured as shown in Fig.
+    [3.25](#Fig25). We recognize the architecture that we have seen in the previous
+    section: there are neurons and layers. In particular, the input layer consists
+    of the one-hot vector for the word *strawberries*. With the one-hot vector, all
+    fields are 0, and only the field at the position of the specific word in the vocabulary
+    is set to 1\. The number of entries in this input layer corresponds to the number
+    of words we have in the vocabulary. In the middle, we have a hidden layer. The
+    hidden layer has a specific number of neurons. The number of neurons corresponds
+    to the number of dimensions the resulting word embeddings should have. In case
+    we would want to produce the sample word embeddings we have seen earlier of two
+    dimensions, then we would have two neurons in this layer. In a more realistic
+    case, where we want to produce word embeddings of 300 dimensions, we would have
+    300 neurons here. Finally, the output layer outputs a value that corresponds to
+    a probability for each of the words in the vocabulary. In Fig. [3.25](#Fig25),
+    we see the example for the training pair “strawberries+and” (one out of many training
+    steps).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig25_HTML.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A neural network processes the word strawberries through a series of layers,
+    including an input layer, hidden layer, and output layer. A network assigns probabilities
+    to various words as potential next words in a sequence based on learned associations
+    from training data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.25
+  prefs: []
+  type: TYPE_NORMAL
+- en: Example about the training of word embeddings (based on Lane et al. ([2019](#CR25),
+    p. 193))
+  prefs: []
+  type: TYPE_NORMAL
+- en: When talking about probabilities, we use values between 0 and 1\. Some people
+    are perhaps more familiar with using percentages, but the conversion from probabilities
+    on a 0–1 scale to percentage values is simple. For example, a probability of 0.5
+    is 50%, and 0.2 is 20%. Based on that, with a probability of 98.8%, the word *and*
+    is very likely to follow the word *strawberries*.
+  prefs: []
+  type: TYPE_NORMAL
+- en: During the training, the pair “strawberry+and” makes the score for *and* go
+    up, while the training example “strawberry+with” would make the score for *with*
+    go up. The training happens in iterations, depending on the number of surrounding
+    words we consider. For example, in the case depicted in Fig. [3.24](#Fig24), we
+    have four surrounding words and thus would need to do four iterations before getting
+    to the next word. Therefore, we might not see the words *and* and *strawberries*
+    being very related in general; however, this is the right answer in this training
+    step.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This procedure is repeated a large number of times. First, we iterate over all
+    words in the sentence, doing one training step for each surrounding word. We then
+    do this not only for a few sentences but for large text corpora including millions
+    of pages of text.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Surprisingly, once the training is done, the output layer can be ignored. What
+    we are actually looking for is in the hidden layer. It generates for each word
+    a vector (the word embedding) encoding the semantics in terms of the other words
+    in the vocabulary it frequently appears with. Words that are semantically similar
+    will have similar vectors. This means that we can extract the word vectors that
+    we need to create our dictionary to map English words to word embeddings from
+    the hidden layer, once the training is concluded.^([16](#Fn16))
+  prefs: []
+  type: TYPE_NORMAL
+- en: This is just one procedure for generating word embeddings. In addition to the
+    skip-gram method presented here, Mikolov et al. ([2013](#CR26)) also propose an
+    alternative method that works slightly differently, inverting the task to predict
+    a word based on a collection of surrounding words. Other methods are GloVe (Pennington
+    et al. [2014](#CR29)) embeddings or fasttext (Mikolov et al. [2018](#CR27)).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Off-the-Shelf Word Embeddings
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: As we see in Fig. [3.23](#Fig23), word embeddings can be created once and then
+    reused. This is fortunate, because the training of word embeddings requires a
+    lot of resources. On one side, you need powerful hardware to execute the computations.
+    On the other side, you need to be patient, as such training might take hours or
+    days (or even more in the case of the large language models we will look at in
+    later chapters). Additionally, a large amount of text data (a so-called corpus)
+    is required for the training. Luckily, word embeddings are often publicly available
+    and can be downloaded and used off the shelf by text processing applications.
+    So, when is it worth it to generate your own word embeddings? Since word embeddings
+    are language dependent, you might need to train your own word embeddings for a
+    specific language. However, fasttext (Mikolov et al. [2018](#CR27)) makes word
+    embeddings available in 157 languages (Grave et al. [2018](#CR18)), so this is
+    rarely the case nowadays. In other cases, you might need to train your own embeddings
+    when you need a domain-specific vocabulary. The off-the-shelf word embeddings
+    (as word2vec or fasttext) rely on texts covering a huge range of topics, attempting
+    to model “general” language. But let’s say you are working solely with legal documents.
+    Those documents might contain many domain-specific words, and you might be particularly
+    interested in seeing the relations between precisely those words encoded in the
+    word embeddings.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Working with Libraries
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: In a similar fashion, *libraries* implementing the common methods for machine
+    learning or data preparation tasks are available to data engineers. This means
+    that data engineers, rather than rewriting each time all the instructions in the
+    programming language, can include predefined components in their software. By
+    using the library, the data engineer can provide the input dataset, make specific
+    settings, and then, for example, reuse the logistic regression algorithm implemented
+    by somebody else beforehand. This simplifies the use of these technologies from
+    an applied perspective and shifts the required knowledge to knowing which libraries
+    are available, what they are used for, and how to apply them. Figure [3.26](#Fig26)
+    illustrates the typical components available to the data engineer for model training.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig26_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration demonstrates the concept of word embeddings, where words like
+    good and morning are represented as numerical vectors like 12, 6, 8 and 1, 4,
+    190, respectively. The availability of publicly available word embeddings through
+    libraries, with potential applications in data engineering and modeling tasks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 3.26
+  prefs: []
+  type: TYPE_NORMAL
+- en: The data engineer can rely on existing libraries and publicly available word
+    embeddings
+  prefs: []
+  type: TYPE_NORMAL
+- en: The word embeddings we have seen so far encode one word as one mathematical
+    vector. These encodings can be shared and reused in different applications. More
+    complex language models can also be shared with the community, once trained.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A High-Level View of Language Models
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Looking toward these language models, which we will soon meet, I want to give
+    you a high-level overview at this point of what we are dealing with. Let’s for
+    now define *language models* as statistical models that link probabilities to
+    pieces of text. Often, they are, stated in a very simplified way, used to predict
+    the next word in a (partial) sentence, aiming to produce the best human-like text.
+    Let’s consider the following example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Anna goes to the field and collects …*'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: With a language model, we can predict what could be the next word in this sentence.
+    Probably, based on other texts that language models include in their training
+    data, words such as *strawberries*, *carrots*, or *tomatoes* are more likely to
+    be the next word compared to the words *cats* or *dogs*. The training happens
+    by hiding some words from the original texts and then predicting them. This is
+    somewhat similar to the word embedding training algorithm we saw in this chapter,
+    and so we are well equipped to move toward large language models!
+  prefs: []
+  type: TYPE_NORMAL
+- en: Summary
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In this chapter, we learned about applications and methods of natural language
+    processing. We saw how different solutions with varying levels of complexity can
+    be applied to the same problem. The challenge lies in the identification of the
+    most suitable method for the given task.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We saw how neural networks can be beneficial for nonlinearly separable data
+    by allowing more complex mathematical operations and automating feature extraction.
+    Both classical machine learning and deep learning rely on a loss function and
+    adapting the model weights to minimize the loss and improve the model’s predictions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the context of natural language processing, vectorization is important for
+    mapping human language to mathematical vectors that can be more easily processed
+    by the computer. We have seen different methods for how word embeddings can be
+    trained and how semantically similar words correspond to vectors that are closer
+    together.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Finally, we saw how publicly available word embeddings and libraries are integrated
+    into the data engineer’s workflow.
+  prefs: []
+  type: TYPE_NORMAL

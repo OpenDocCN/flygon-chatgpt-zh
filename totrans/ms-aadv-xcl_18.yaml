@@ -1,0 +1,161 @@
+- en: '[CHAPTER 17Conditional Statements in VBA](contents.xhtml#ch17a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_246a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In Visual Basic for Applications (VBA), conditional statements are used to
+    make decisions in your code based on certain conditions. They allow you to execute
+    different blocks of code depending on the outcome of a logical expression. In
+    this chapter, we will focus on two commonly used conditional statements in VBA:
+    Select Case and If...End If.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_247a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will go over the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: If…End If
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Select Case
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Select Case Vs. If … End If
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_248a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of this chapter, the reader will learn  the differences between Select
+    Case and If...End If statements in VBA and learn their appropriate usage in different
+    scenarios.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[If…End If](contents.xhtml#sc2_249a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In VBA, the “If...End If” statement is used to evaluate a condition and execute
+    a block of code if the condition is true. It can also be combined with “ElseIf”
+    and “Else” clauses to handle multiple conditions. Here is an example of the basic
+    syntax for the “If...End If” statement:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| If condition1 Then'' Code block to execute if condition1 is TrueElseIf condition2
+    Then'' Code block to execute if condition2 is True and condition1 is FalseElse''
+    Code block to execute if none of the previous conditions are TrueEnd If |'
+  prefs: []
+  type: TYPE_TB
+- en: The “condition” and “condition2” in the above example are Boolean expressions
+    that evaluate to either true or false.
+  prefs: []
+  type: TYPE_NORMAL
+- en: It is important to note that the “If...End If” statement can be nested within
+    other control structures like loops and can be used in combination with other
+    statements and keywords to create more complex logic in your VBA code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Example](contents.xhtml#sc2_250a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'If the score is equal to or greater than 90, it displays “Grade: A”. If it
+    is between 80 and 89, it displays “Grade: B”, and so on. If the score does not
+    meet any of the specified conditions, it displays “Grade: F”.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub GradeEvaluation()Dim score As Integer'' Prompt the user to enter a scorescore
+    = InputBox("Enter the score:")'' Evaluate the score and provide a corresponding
+    gradeIf score >= 90 ThenMsgBox "Grade: A"ElseIf score >= 80 ThenMsgBox "Grade:
+    B"ElseIf score >= 70 ThenMsgBox "Grade: C"ElseIf score >= 60 ThenMsgBox "Grade:
+    D"ElseMsgBox "Grade: F"End IfEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Select Case](contents.xhtml#sc2_251a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The Select Case statement in VBA provides a concise and structured way to handle
+    multiple conditions and execute different code blocks based on the value of a
+    single expression. Here is a comprehensive explanation of its syntax and usage:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Select Case expressionCase value1'' Code to execute if expression matches
+    value1Case value2'' Code to execute if expression matches value2Case Else'' Code
+    to execute if expression does not match any previous casesEnd Select |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Example](contents.xhtml#sc3_252a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this example, program prompts the user to enter a fruit name. The Select
+    Case statement then evaluates the input and displays a corresponding message based
+    on the selected fruit. If the fruit is “apple”, it displays a message about it
+    being a healthy choice. If it’s “banana”, it mentions its potassium content. If
+    it is “orange” or “mandarin”, it highlights the citrus goodness. For any other
+    input, it displays a generic message.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub FruitSelection()Dim fruit As String'' Prompt the user to enter a fruit
+    namefruit = InputBox("Enter a fruit name:")'' Evaluate the fruit name and display
+    corresponding messageSelect Case fruitCase "apple"MsgBox "You selected an apple.
+    It’s a healthy choice!"Case "banana"MsgBox "You selected a banana. It’s a great
+    source of potassium."Case "orange", "mandarin"MsgBox "You selected an orange or
+    a mandarin. Enjoy the citrus goodness!"Case ElseMsgBox "That’s an interesting
+    choice!"End SelectEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Select Case Vs. If … End If](contents.xhtml#sc2_253a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Use the Select Case statement as an alternative to using ElseIf in If...Then...Else
+    statements when comparing one expression to several different values.
+  prefs: []
+  type: TYPE_NORMAL
+- en: While If...Then...Else statements can evaluate a different expression for each
+    ElseIf statement, the Select Case statement evaluates an expression only once,
+    at the top of the control structure.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](contents.xhtml#sc2_254a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we explored the differences between Select Case and If...End
+    If statements in VBA. We learned that Select Case is a useful alternative when
+    you have multiple conditions to evaluate against a single expression. It simplifies
+    your code and improves readability. However, If...End If statements are more appropriate
+    when you have distinct and unrelated conditions to consider.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_255a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Write a VBA program that asks the user to enter a day of the week (as a number
+    from 1 to 7) and displays the corresponding day name. Use both Select Case and
+    If...End If statements to implement the program.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Write a VBA program that asks the user to enter a number and determines if it
+    is positive, negative, or zero. Use both Select Case and If...End If statements
+    to implement the program
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

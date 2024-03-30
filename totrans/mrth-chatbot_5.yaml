@@ -1,0 +1,777 @@
+- en: © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023M.
+    Kurpicz-BrikiMore than a Chatbot[https://doi.org/10.1007/978-3-031-37690-0_5](https://doi.org/10.1007/978-3-031-37690-0_5)
+  prefs: []
+  type: TYPE_NORMAL
+- en: 5. The True and the False
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)Applied Machine Intelligence, Bern University
+    of Applied Sciences, Biel/Bienne, Switzerland
+  prefs: []
+  type: TYPE_NORMAL
+- en: Overview
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will dive a bit deeper into a property of state-of-the-art
+    language models that were shortly discussed earlier: the sentence created by a
+    language model and thus also the answer that a chatbot might provide are *most
+    likely* to be a good result. Most likely, because as we have seen previously,
+    it is all about probabilities. Depending on what is available in the options,
+    even the best option for a given problem might not be a very good answer. Therefore,
+    in different ways, state-of-the-art chatbots can provide *wrong* information.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: We will also look at some other chatbot architectures that have been used over
+    the years. In particular, we will consider the example of ELIZA, one of the first
+    chatbots created in the 1960s.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the last part of the chapter, we will investigate evaluation metrics for
+    machine learning models. These metrics help us to identify whether a given model
+    is working well.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What if the Language Model Is Wrong?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: Do You Know Pineberries?
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'Let’s start with the following example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Human:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “What color does a strawberry have?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Strawberries are typically a deep red color when they are fully ripe. However,
+    when they are not fully ripe, they may have green or white areas on the surface.
+    The seeds on the surface of the strawberry are typically a yellow or light brown
+    color.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whereas this is a correct answer for most strawberries, this is not the case
+    for the pineberry, a white strawberry cultivar, shown in Fig. [5.1](#Fig1).![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig1_HTML.jpg)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A photograph of a bunch of Pineberries lying on the surface.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 5.1
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Pineberries are white strawberries (Credit: Wikimedia/Emmbean. CC BY 3.0 License,
+    available at [https://​commons.​wikimedia.​org/​wiki/​File:​Pineberries.​jpg](https://commons.wikimedia.org/wiki/File:Pineberries.jpg))'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Maybe some readers did not know about this type of strawberry because it is
+    not very well-known? The same for the chatbot. The information a chatbot has to
+    generate the answers is limited by the training data it was fed to. For this specific
+    question, a chatbot with a wider range of training data and feedback might get
+    to the following answer in the conversation:^([1](#Fn1))
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot: “Strawberries are typically a deep red color when they are fully ripe.
+    However, when they are not fully ripe, they may have green or white areas on the
+    surface. The seeds on the surface of the strawberry are typically a yellow or
+    light brown color. *Occasionally, you may come across a variety of strawberries
+    that are white or pale pink in color, and these are known as white strawberries*.”'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Of course, now, you could say that we are soon there, adding more and more data,
+    getting smarter and smarter. However, the problem is that you would not see the
+    missing data; you can only see the answer, which might be incomplete (or wrong),
+    and it is impossible to test all the potential use cases. Statistically less likely
+    things, such as strawberries being white, are less likely to be considered for
+    the output. Thus, the information already there are being repeated and reinforced,
+    leading to language models being also referred to as *stochastic parrots*, a “system
+    for haphazardly stitching together sequences of linguistic forms it has observed
+    in its vast training data, according to probabilistic information about how they
+    combine, but without any reference to meaning” (Bender et al. [2021](#CR3), p.
+    617).
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hallucinations
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Another problem in state-of-the-art language models are *hallucinations* in
+    the generation of texts. The word hallucinations in general describes a sensory
+    perception of humans that occurs in absence of an actual external stimulus.^([2](#Fn2))
+    In text generation, we mean “text that is nonsensical or unfaithful to the provided
+    source content” (Ji et al. [2023](#CR22), p. 248:3). Basically, the chatbot is
+    making up information that are not making any sense or are making sense but are
+    wrong and cannot be explained based on the training data that was used.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Hallucinations in language models can be *intrinsic* or *extrinsic* hallucinations
+    (Ji et al. [2023](#CR22)). Intrinsic hallucinations happen when the generated
+    output and the source content are contradicting each other. Let’s say in the training
+    data of the language model, there is the following text about the *strawberry
+    fan* organization (along with millions of other words and years).
+  prefs: []
+  type: TYPE_NORMAL
+- en: “The strawberry fan organization was founded in 2019, by Anna and Tom, after
+    having written a book about the beauty and the wonderful taste of strawberries.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We then have the following conversation with a chatbot, being based upon this
+    language model:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Human:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “In which year was the organization dealing with strawberries founded?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “The strawberry fan organization was founded in **2014**.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: Wait, what? Yes, we just experienced an intrinsic hallucination.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The other type of hallucinations are extrinsic hallucinations. In this case,
+    the generated output cannot be verified but can also not be contradicted based
+    on the source content. Basically, the information is unknown, but the chatbot
+    states an answer to it. This answer might be true but might also be wrong. It
+    is unverified information.
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example, we could observe an extrinsic hallucination in the case where the
+    chatbot is asked to answer a question about the year 2023; however, the training
+    data did only include information up to the year 2022.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Figure [5.2](#Fig2) summarizes the two types of hallucinations.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig2_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration represents the scenarios in intrinsic and extrinsic hallucinations,
+    where the answers are provided by the chatbot from the training data. There is
+    an x-condition in the case of intrinsic hallucinations that is unverified in extrinsic.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 5.2
+  prefs: []
+  type: TYPE_NORMAL
+- en: The difference between intrinsic and extrinsic hallucinations (Based on the
+    explanations in Ji et al. [2023](#CR22))
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the case of hallucinations, we assume that the training data is a ground
+    truth, that is, correct, and that it is desirable that this information is reflected
+    in the texts that the language model produces. However, depending on where the
+    training data is coming from, this is not necessarily the case. Given the large
+    quantities of text that are necessary to train a state-of-the-art language model,
+    no manual verification of the contents by humans are feasible. Typically, the
+    language models that are being trained, shared, and used in many applications
+    are based on texts from the Internet.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Trained on Fake News?
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Fake news and conspiracy theories are itself a problem of today’s society. A
+    study has shown that lies spread faster on the Internet than the truth (Vosoughi
+    et al. [2018](#CR39)). Interestingly, and as opposed to the general opinion that
+    bots^([3](#Fn3)) are a major source of distributing fake news, the study concludes
+    that bots distribute fake news and real information at the same rate. On the other
+    side, humans are more likely to spread fake news than the bots.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So, this means basically that the Internet is full of fake news. Nowadays, more
+    and more people start to select the sources of their search engine’s results carefully,
+    being aware that not everything that is written on the Internet is necessarily
+    true. But what happens when we train a language model based on these contents,
+    which provides humanlike answers about factual information without providing the
+    corresponding references? Whereas we have learned to be suspicious about websites
+    with unknown names, we get trapped by chatbots and interpret meaning and accountability
+    for content, even if there is not.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In computer science, we have the well-known term *garbage in, garbage out*.^([4](#Fn4))
+    It refers to the fact that incorrect or non-sense input data to a computer program
+    will produce incorrect or nonsense output, no matter how good the logic is. Whereas
+    the expression comes from the very early days of computing, it is also true for
+    the field of machine learning. If we see fake news, discriminatory content, or
+    other unwanted things in the training data, we can expect it to have an impact
+    of the outcome of our machine learning applications. The classifiers or language
+    models are only as good as the data they have been trained on.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Different Reasons for Wrong Answers
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: We have seen different scenarios how wrong information in language models can
+    happen. Information about statistically rather rare events can be simply left
+    out, intrinsic or extrinsic hallucinations can be produced due to the internal
+    functioning of the language model, and the training data itself can contain fake
+    news or conspiracy theories. That’s a pretty bad starting point for a trustworthy
+    software application. Figure [5.3](#Fig3) shows these different influence factors
+    on the quality and trustworthiness of the sentences produced by the language model.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig3_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: An illustration indicates the rare information not contained in the training
+    data, the wrong information contained in the training data, and the sentences
+    produced by the language model that contradict or are unverified with regard to
+    the training data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 5.3
+  prefs: []
+  type: TYPE_NORMAL
+- en: Different reasons can cause a chatbot to produce a wrong information
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'It is good to know that these kinds of things happen *by design*. The way how
+    state-of-the-art language models work and the data that are used to train them
+    make this happen. Even the creators of large language models are not safe of it:
+    when Google’s chatbot Bard was presented in 2023, it made a factual error in the
+    first demo (Coulter and Bensinger [2023](#CR8)). The demo produced by Google showed
+    Bard answering the question, “What new discoveries from the James Webb Space Telescope
+    (JWST) can I tell my 9-year old about?” Bard provided a list of answers, including
+    one information indicating that the very first pictures of a planet outside the
+    Earth’s solar system was taken by this telescope. However, as confirmed by NASA,
+    this information was wrong. This was an expensive error, contributing to a loss
+    of 100 billion dollars in market value following the demo.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: One more thing to discuss here is the fact that language models can not only
+    generate wrong information but also produce non-existing words. As we have quickly
+    remarked previously, the input tokens are not necessarily entire words but can
+    also be pieces like *pre*, *ing*, or *ized*, which enables a more efficient processing
+    of compound, rare, or non-English words (Wolfram [2023](#CR42)). However, this
+    can also lead to tokens being put together in a new way, resulting in completely
+    new words.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'When using prompts of tools like ChatGPT,^([5](#Fn5)) this can also be explicitly
+    triggered:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Human:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Can you think of a new word composed of the tokens *pre* and *strawberry*?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Sure, how about *preberry*? It could refer to a strawberry that is not yet
+    fully ripe or has not yet reached its peak sweetness, but is still edible. It
+    could also be used more generally to describe something that is in the early or
+    preliminary stages of development or readiness, similar to the prefix *pre-*.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whereas here we explicitly asked the system to create a new word, we can also
+    find them spontaneously in answers or texts generated by large language models.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Do Chatbots Lie?
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Let’s get back to our technical explanation on how the sentences are formed,
+    based on the prediction of the next word. The way the answers are formed are relying
+    on the probability that a specific word comes after the other, under consideration
+    of the context. However, language models do not have a humanlike understanding
+    of the *meaning* of the words that they create. As with the emotions, the problem
+    is again the human perception. The output of the language models seems fluent
+    and coherent. Therefore, humans are interpreting the produced sentences, which
+    are in the language they speak, as meaningful and corresponding to a communicative
+    intent, with an accountability of the content (Bender et al. [2021](#CR3)). And
+    this is where the risk lies. If the chatbot is hallucinating but is used to search
+    truthful information on the Internet, which is then believed and replicated by
+    the user, then we have a problem.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The topic whether using state-of-the-art language models is appropriate for
+    web search, and whether it will replace the current search engines, has been intensively
+    debated over the past months. Researchers warn to use large language models for
+    tasks they have not been designed for (Shah and Bender [2022](#CR33)). Due to
+    possible factual errors, as we have seen in the previous section, there is a risk
+    of an increase of misinformation with this shift of search toward language models.
+    However, demos and announcements of large tech companies confirm the aim of providing
+    revolution to search, to make any search engine interact with you in a conversational
+    manner.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The question is whether this kind of search is what we are looking for. This
+    is more of a societal rather than a technical question. Do we want to ask an expert,
+    in the case of this vision an *artificial expert* in form of a language model,
+    that provides us aggregated information, potentially containing wrong information?
+    Or do we want to stay in control, using a tool to propose us different information
+    with their corresponding sources and letting the human compare and reflect the
+    information? In both cases, humans need to be aware of the limitations of the
+    tools and the proposed contents and build up the required e-literacy. Most of
+    us have learned that when using search engines, not necessarily all the websites
+    showing up in the results are a trustworthy source of information. With conversational
+    tools, we have to reflect our interpretation of the information provided, being
+    aware that we might interpret them differently when proposed in a human-like conversation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Finally, let me make one last observation about the false information produced
+    by chatbots. In broad media, often the terminology “the chatbot is lying” or “the
+    chatbot is telling lies” is being used. The definition of the verb *to lie* in
+    this sense as of *Merriam-Webster* dictionary is as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '1.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: To make an untrue statement with intent to deceive
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '2.'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: To create a false or misleading impression
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Whereas the first definition refers to humans, the second definition can also
+    be applied to objects, such as the mirror. However, when talking about tools,
+    we rarely use this expression in other cases, when tools provide the incorrect
+    result compared to what they were expected to do. If the coffee machine produces
+    way-too-watery coffee, you would probably be saying that it is broken, not that
+    it is scamming you. Scamming, or lying in the general way we use the term, requires
+    some intention, intention that is not present in the case of chatbots but that
+    is likely interpreted into such conversations by humans. However, we have to keep
+    in mind that human intention can lead to the creation of malicious use cases of
+    the technology.
+  prefs: []
+  type: TYPE_NORMAL
+- en: So overall, we have chatbots hallucinating false information and humans with
+    social hallucinations, seeing intent and humanlike meaning where there is not.
+    We have some work ahead as digital society.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A Short History of Chatbots
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: We have seen in previous sections how state-of-the-art chatbots based on the
+    transformer architecture work. We will now gain some background knowledge of other
+    (mostly previous) variants. Chatbots are also referred to as *dialog systems*
+    or *dialog engines.* Typically, their task is to conduct a conversation in written
+    form with a human. When the conversation happens in spoken form, they are also
+    referred to as *voicebots*. These dialog systems can be digital assistants like
+    Siri or Alexa or integrated into websites to allow customers to search for relevant
+    information. We limit our discussion in this section to text-based methods to
+    see how they relate to the text processing and generation techniques we have seen
+    previously.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ELIZA
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: A very famous example of an early chatbot is ELIZA, developed by Joseph Weizenbaum
+    at the Massachusetts Institute of Technology (MIT) in the 1960s (Weizenbaum [1966](#CR40)).
+    Its creator wanted to explore how the communication between machines and humans
+    using natural language can be enabled. The technical implementation of ELIZA was,
+    compared to today’s methods, rather simple. The user input (the text the human
+    is writing to ask a question to the chatbot) was checked for specific *keywords*.
+    This is to some extent similar to the very simple text analytics method we have
+    seen earlier, where we identified whether a text is about strawberries, by checking
+    if the words *strawberry*, or *strawberries* appear in the text. If a keyword
+    was present in the user’s question, the answer was generated based on *rules*.
+    Content-free remarks were identified and not considered, and under some conditions,
+    earlier transformations were considered too. Using this rule-based, hard-coded
+    approach, there was no training data or machine learning involved.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Using ELIZA, conversations as the one shown in Fig. [5.4](#Fig4) were possible.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig4_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A set of questions and answers simulates the conversation between a human and
+    a machine-generated answer. The responses from the machines are written in uppercase.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 5.4
+  prefs: []
+  type: TYPE_NORMAL
+- en: Extract of the conversation from (Weizenbaum [1966](#CR40)); capitalized expression
+    are the machine-generated answers
+  prefs: []
+  type: TYPE_NORMAL
+- en: The major difference in this conversation compared to state-of-the-art chatbots
+    is that the conversation does not aim to answer questions with real-world knowledge.
+    As Weizenbaum states in its original report, participants interacting with ELIZA
+    were instructed to communicate with it as if they were communicating with a psychiatrist.
+    Why is that?
+  prefs: []
+  type: TYPE_NORMAL
+- en: This mode of conversation was chosen because the psychiatric interview is one
+    of the few examples of categorized dyadic natural language communication in which
+    one of the participating pair is free to assume the pose of knowing almost nothing
+    of the real world. (Weizenbaum [1966](#CR40), p. 42)
+  prefs:
+  - PREF_BQ
+  type: TYPE_NORMAL
+- en: Any content that comes into the conversation is the input of the human, who
+    brings these topics up.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The major limitation of this kind of chatbot is also an advantage. Whereas it
+    is not able to provide any knowledge, it is also much more unlikely to provide
+    false information. In the worst case, it would provide an answer that seems not
+    to fit the input text from the user. Since all the potential answers are listed
+    somewhere in the rules and templates of this type of solution, experiments can
+    be replicated easily. The answers provided by the chatbot can be fully explained
+    and reproduced. Therefore, depending on the use case, chatbots inspired by and
+    based on the methods initially developed in ELIZA can be powerful.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Rule-Based Approaches
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: 'In the example shown above with ELIZA, no information about the world is provided.
+    Rule-based approaches can also be used when we want to transmit very specific
+    information. For example, consider a chatbot on a retail company’s online shop
+    website that enters the conversation with any customer as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “Hey, thanks for visiting this shop! What are you looking for?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Human:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “I would like to eat something tasty, maybe strawberries?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “That’s a good idea! Click on this link for strawberries to directly add the
+    regional strawberries from our shop to the basket.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: This could be implemented in a very simple way, using lists of words and rules.
+    Let’s have a closer look at this based on the architecture of a chatbot we have
+    seen before. The user interacts with the web application, as in the previous case.
+    Now, rather than having the complex transformer-based architecture of the language
+    model in the background providing the answer, a different approach is used in
+    this example. As illustrated in Fig. [5.5](#Fig5), the user’s input text is analyzed
+    for keywords. We are looking for specific words that help us propose a product
+    to the customer. In the simplest case, this is a list of all the product’s names
+    that we have in our shop. By matching the found keywords to this list, we identify
+    the right product and generate the answer as in the conversation above. More advanced
+    versions can make use of other text processing methods we have seen earlier, for
+    example, stemming, lemmatization, or tagging or more complex rule systems.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig5_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A diagram illustrates a set of user-provided input prompts on a web application
+    along with their generated answers. It highlights the keyword named strawberry
+    and indicates to identify the keywords in the input and map them to the available
+    products for generating the answer.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 5.5
+  prefs: []
+  type: TYPE_NORMAL
+- en: Example of a simple rule-based chatbot for an online shop
+  prefs: []
+  type: TYPE_NORMAL
+- en: Of course, everybody would easily notice how our method works if the text is
+    each time exactly the same. A simple yet efficient way to get around this is that
+    we make another list of ten alternative versions of “That’s a good idea.” These
+    alternatives could include “Good choice!” or “Sounds like a plan.” Each time an
+    answer is generated, one of these ten alternatives can be chosen randomly.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This solution is feasible, because the context of the information is limited
+    in this case or, at least, for the questions we can answer. The customer might
+    of course ask for something not related at all to this online shop, then it would
+    not work. We would need to think of possible answers, in case no keywords are
+    identified. For example, “Can you explain me more in detail what you are needing
+    this for?” If we would like to extend this program to a system using these techniques
+    to communicate with a human about any kind of topic, we would find ourselves with
+    more rules and keywords than we could ever create or manage.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A Simple Chatbot with Sentence Embeddings
+  prefs:
+  - PREF_H3
+  type: TYPE_NORMAL
+- en: Let’s now consider another example of a method to create a chatbot by using
+    the information stored in sentence embeddings. We saw earlier that there are different
+    ways to store the meaning of words or sentences in vectors. Based on their position
+    in the vector space, and using mathematical operations, we were able to extract
+    information about similarity of the words or sentences. We assume that we want
+    to create a chatbot that can answer questions about strawberries.
+  prefs: []
+  type: TYPE_NORMAL
+- en: To do this, we use the text from Wikipedia on the article about strawberries.
+    It contains different sections about the history or the cultivation of strawberries.
+    We split this article into sentences and convert each sentence into a sentence
+    vector, as shown in Fig. [5.6](#Fig6).![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig6_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A diagram illustrates a user query regarding the strawberry plant, going through
+    the sentence embedding of the user's question, finding similar embedding, finding
+    texts about strawberries, and the sentence embedding of each sentence.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 5.6
+  prefs: []
+  type: TYPE_NORMAL
+- en: A simple chatbot based on sentence embeddings and similarity
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'We then do the same with the user input. We take the question, for example,
+    “What do you know about strawberry plants?” and create also a vector (sentence
+    embedding) from it. As we have seen earlier, the distance between vectors can
+    be used to capture relation between words or sentences. Therefore, we are looking
+    for a vector close to our question’s sentence embedding, which might be a potential
+    answer to our question. We thus identify which of the sentence embeddings of the
+    Wikipedia article is the closest and output this sentence, as shown in Fig. [5.6](#Fig6).
+    This enables the following conversation with the chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Human:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “What do you know about strawberry plants?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “strawberry plants produce more and better fruit when they are young.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This works quite well for different questions, but is far from perfect, as
+    the following example shows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Human:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “In which countries are strawberries grown?”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Chatbot:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “strawberries can also be grown indoors in strawberry pots.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: Here we used as input the one article about strawberries. When extending this
+    by using all books about strawberries that are available at the local library,
+    results could probably be improved. The chatbot is only as good as the data it
+    has available.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whereas for many tasks the state-of-the-art language models are by far the most
+    efficient solutions, I want you to keep in mind that depending on what you are
+    looking for, simpler architectures can do a good job as well. A major advantage
+    of these simpler methods is often their explainability, which allows us to see
+    behind the scenes easier and let us understand how decisions were made. Sometimes
+    we can also find combinations of different methods combined in practice.
+  prefs: []
+  type: TYPE_NORMAL
+- en: What Is a Good Model?
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: We have seen so far that state-of-the-art chatbots rely on powerful language
+    models. But how can we know how *well* the language models perform or compare
+    them among each other?
+  prefs: []
+  type: TYPE_NORMAL
+- en: A typical number that is mentioned with regard to language models is the number
+    of *parameters* it was trained with. For example, Google’s BERT model has been
+    trained with 340 million parameters or GPT-3 with 175 billion parameters. These
+    are quite large numbers! Let’s remember the architecture of language models we
+    have seen earlier. We saw different types of neural networks, some involving different
+    layers of encoders and decoders. In each of these layers, there were neural networks,
+    and each neural network consists of several neurons, having inputs that are weighted.
+    These weights are adapted during the training, depending how relevant they are
+    for the final decision of the system. These are the “knobs” one can turn to make
+    the model fit the data (Wolfram [2023](#CR42)). When saying that there are 175
+    billion parameters, it means that the architecture of the neural network has 175
+    billion weights to tweak.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Does larger mean better? For the moment, yes. We have seen over the last years
+    how the number of parameters became bigger and bigger with each new model, and
+    the models became better. However, at the same time, more computational power
+    is required, and the complexity of the model increases. With 175 billion parameters,
+    it is pretty hard to assess what a word suggestion was based on.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The parameters are figured out by the system itself, during the training phase,
+    by using the external feedback (e.g., the *correct answers* available to the system).
+    What the data engineer can use to optimize the training process of the system
+    are the *hyperparameters*. The training happens in loops (remember the example:
+    doing over and over again the same thing!). Each loop is called *epoch*. One epoch
+    equates to each training sample has been viewed once and the weights adjusted
+    accordingly. The training process is observed over several epochs, and at some
+    point, the moment to stop has come. This typically happens when there is no more
+    improvement in the learning. The system does not get any better anymore with the
+    given training data. The number of epochs used for training is therefore one of
+    the hyperparameters that is used by the data engineer. Another hyperparameter
+    in a neural network can, for example, be the number of layers. Typically, the
+    data engineer would train models with different hyperparameter settings and compare
+    their output. This process is called *hyperparameter tuning*, as shown in Fig.
+    [5.7](#Fig7).![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig7_HTML.png)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A block diagram illustrates how the input from the data engineer goes through
+    the language model based on neural networks, where the input passes through three
+    layers before obtaining the output. All the layers denote interconnection among
+    the neurons.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 5.7
+  prefs: []
+  type: TYPE_NORMAL
+- en: Example of some of the hyperparameters that the data engineer can tune in the
+    training process
+  prefs: []
+  type: TYPE_NORMAL
+- en: To compare the performance of machine learning models and to find out which
+    hyperparameter configuration is the best, we need some *performance metrics*.
+    We will explore those metrics by using the sentiment analysis classification example
+    we introduced earlier in this book. We have a bunch of texts and want to identify
+    whether each of them is rather negative or positive. We have used the training
+    dataset (something like 80% of the labeled data) for the training phase and have
+    now the test dataset to test the performance of the classifier. Each of these
+    texts in the test dataset is labeled as negative or positive, respectively. However,
+    this information is unseen by the classifier, meaning that it was not used in
+    the training phase. In the test phase, we want to use this data to measure how
+    good the system performs in new, unseen data.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The simplest way is to calculate the *accuracy*. The accuracy indicates how
+    many samples from the test data were labeled correctly by the classifier. If in
+    our test data we have 100 text samples, 50 labeled as positive and 50 labeled
+    as negative, and our classifier labels 80 of them correctly, then we have an accuracy
+    of 80%. In this example, our dataset is *balanced*. Balanced because we have the
+    same number of negative and positive examples. In case of unbalanced datasets,
+    the metric accuracy can be too limited. If we have 90% negative samples in our
+    test data, and only 10% positive text samples, a classifier that classes all text
+    as negative would have an accuracy of 90%. This could lead us to think that the
+    performance of the classifier is quite good, which is not the case.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We want to measure how the classification works for both of the classes. We
+    therefore have to do a more fine-grained analysis of the predictions the classifier
+    made wrong or right. We are considering separately the cases where the classifier
+    was wrong, because it estimated *positive* but the text was indeed *negative*
+    and the cases that the classifier suggested *negative* and the text was *positive*.
+    A data item in the test data that was predicted as positive correctly is therefore
+    referred to as true positive (TP). On the other side, a data item that was predicted
+    as positive but is in reality negative is referred to as false positive (FP).
+    It showed up as positive in the results, but its classification was wrong. In
+    similar way, we define true negative (TN) (predicted correctly as negative) and
+    false negative (FN) (predicted as negative, but actually positive) as shown in
+    Fig. [5.8](#Fig8). In the example, there are ten texts in the test data set, five
+    of them are positive, and five of them are negative. Note that the accuracy of
+    70% (seven out of ten are predicted correctly) is independent of the number of
+    false positives and false negatives. Whether the wrong predictions are concerning
+    the negative or the positive class does not impact the accuracy.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig8_HTML.png)
+  prefs: []
+  type: TYPE_NORMAL
+- en: A rectangular block represents a set of 10 texts of test data comprising the
+    correct labels and predicted labels. It indicates an accuracy value of 70 percent
+    and highlights 3 data points that have a mismatch between the predicted and actual
+    outcomes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Fig. 5.8
+  prefs: []
+  type: TYPE_NORMAL
+- en: Example of a test dataset with ten texts. Based on the correct labels and the
+    predictions, the different metrics can be computed to assess the performance of
+    the model
+  prefs: []
+  type: TYPE_NORMAL
+- en: The *precision* is another metric that considers these aspects. It tells us
+    the fraction of data items that have been predicted as positive and are positive
+    in the correct solution. In the example, where we have four true positives and
+    a total of six positive predictions (true positives + false positives), the precision
+    is 4/6 or, expressed in percentage, 66%. In the best case, all data items predicted
+    as positive are actually correct; then the precision would be 100%.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Along with the precision, we typically look at the *recall*, which shows us
+    the other side. It measures the fraction of positive texts that have been correctly
+    identified as positive (=true positives) in comparison to all the positive training
+    texts (=true positives + false negatives). In our example, the recall is 4/5,
+    or 80%.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Typically, the data engineer wants to achieve a trade-off between recall and
+    precision. We therefore need to consider both measures along with each other.
+    To assess whether a machine learning classifier is performing well, we need them
+    both. Therefore, the *f1-score* was invented, which computes a score involving
+    both recall and precision. Often, when developing a machine classifier, we therefore
+    try to maximize the *f1*-score.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In our case, positive and negative corresponded to the names of our classes,
+    since we are predicting positive and negative texts. This is not necessarily the
+    case. For the classification of spam e-mails, the positive label could be that
+    the e-mail is effectively spam, and the negative label is that it is not spam.
+    The terms true positive, true negative, etc. would still be used as described
+    above.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Note that most of the metrics described here referred to the problem of binary
+    classification. In binary classification, we have two groups (e.g., positive and
+    negative texts), and the classifier aims to estimate which class a new text belongs
+    to. In other cases, we might have multiclass problems, and other yet similar metrics
+    calculations would be used.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this section, with *good*, we meant whether the machine learning system performs
+    well for a specific task, using accuracy, precision, recall, and *f1*-score to
+    quantify the performance. Whether its decisions are fair or ethical is yet another
+    discussion. We will dive deeper into this topic in the next chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Summary
+  prefs:
+  - PREF_H2
+  type: TYPE_NORMAL
+- en: In this chapter, we have seen how chatbots can provide wrong information for
+    different reasons. Examples can be a lack of relevant information in the training
+    data as well as intrinsic or extrinsic hallucinations.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We have also looked at some other architectures starting from ELIZA of the 1960s.
+    Whereas other architectures are not as performant as the state-of-the-art chatbots
+    and language models, it is easier to explain how they came to a given output.
+  prefs: []
+  type: TYPE_NORMAL
+- en: In the last part of this chapter, we have learned about different performance
+    metrics for machine learning models. Evaluating the efficiency of the model on
+    a test dataset, the model can be improved during the training phase.
+  prefs: []
+  type: TYPE_NORMAL

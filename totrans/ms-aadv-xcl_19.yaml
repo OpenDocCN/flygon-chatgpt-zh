@@ -1,0 +1,493 @@
+- en: '[CHAPTER 18Variables and Data Types in VBA](contents.xhtml#ch18a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_256a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we will explore the fundamentals of variables and data types
+    in VBA (Visual Basic for Applications). Variables are essential elements in programming
+    that store and manipulate data during program execution, while data types define
+    the nature of the data stored in variables. Understanding variables and data types
+    is crucial for writing efficient and effective VBA code. We will cover topics
+    such as declaring variables and constants, specifying data types, working with
+    message boxes and input boxes, selecting cells, rows, and columns, and working
+    with sheets, workbooks, and the application object.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_257a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will cover the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Variables and constants
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Declaring variables and constants
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Data types of variables and constants
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Message box and input box
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Selecting and activating cells
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Selecting and activating rows and columns
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Working with Sheets
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Working with WorkBook
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Working with application object
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_258a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of the chapter, the reader will be able to understand the concept
+    of variables and constants in VBA and learn how to declare them, familiarize themselves
+    with different data types available in VBA and their respective ranges, and explore
+    the usage of message boxes and input boxes for user interaction. Additionally,
+    the reader will also learn techniques for selecting and activating cells, rows,
+    and columns in Excel, and gain knowledge on working with sheets, workbooks, and
+    the application object in VBA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Variables and constants](contents.xhtml#sc2_259a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us now learn about variables and constants.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Variable](contents.xhtml#sc3_260a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The features of variables are as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A variable is a named storage location containing data that can be modified
+    during program execution.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Each variable has a name that uniquely identifies it within its scope.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: A data type can be specified or not.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Variable names:'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Must begin with an alphabetic character,
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Must be unique within the same scope,
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Cannot be longer than 255 characters, and
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Contain an embedded period or type-declaration character.
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Constant](contents.xhtml#sc3_261a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: A named item that retains a constant value throughout the execution of a program.
+    A constant can be a string or numeric literal.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Declaring variables and constants](contents.xhtml#sc2_262a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The syntax to declare a variable is:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: DIM name_of_variable AS type_of_variable
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dim strName As String
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dim intX As Integer
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dim intX , intYAs Integer
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The syntax to declare a constant is:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Const name_of_variable AS type_of_variable = constant value
+  prefs: []
+  type: TYPE_NORMAL
+- en: For example
+  prefs: []
+  type: TYPE_NORMAL
+- en: Const conAge As Integer = 34
+  prefs: []
+  type: TYPE_NORMAL
+- en: When declaring variables, use a Dim statement where for constants use a Const
+    statement.
+  prefs: []
+  type: TYPE_NORMAL
+- en: A declaration statement can be placed within a procedure to create a procedure
+    level variable. Or it may be placed at the top of a module, in the Declarations
+    section, to create a module level variable.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Data types of variables and constants](contents.xhtml#sc2_263a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Table 18.1](#tab18-1) shows the various ranges in data type:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Data type | Range |'
+  prefs: []
+  type: TYPE_TB
+- en: '| --- | --- |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Byte | 0 to 255. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Integer | – 32,768 to 32,767. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Long | – 2,147,483,648 to 2,147,483,647. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Single | – 3.402823E38 to – 1.401298E – 45 (negative values). |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 1.401298E – 45 to 3.402823E38 (positive values). |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Double | – 1.7200369313486231E308 to– 4.94065645841247E – 324 (negative values).
+    4.94065645841247E – 324 to 1.7200369313486231E308(positive values). |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Currency | – 922,337,203,685,477.5808 to 922,337,203,685,477.5807. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| String | Zero to approximately two billion characters. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Variant | Date values: January 1, 100 to December 31, 9999. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Numeric values: same range as Double. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| String values: same range as String. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Can also contain Error or Null values. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Boolean | True or False. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Date | January 1, 100 to December 31, 9999. |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Object | Any object reference. |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 18.1: Data Types'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using the option explicit statement](contents.xhtml#sc3_264a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Use Option Explicit to enforce explicit declaration of variables. It must appear
+    in a module before any procedure. If not used, undeclared variables will be of
+    Variant type.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Message box and input box](contents.xhtml#sc2_265a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The Msgbox function displays a message in a dialog box, waits for the user to
+    click a button, and returns an Integer indicating which button the user clicked.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The InputBox Function displays a prompt in a dialog box, waits for the user
+    to input text or click a button, and returns a string containing the contents
+    of the text box.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Example:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Greet()MsgBox "Hello " & InputBOx("What is your name?")End Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Selecting and activating cells](contents.xhtml#sc2_266a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: When you work with Microsoft Excel, you usually select a cell or cells and then
+    perform an action, such as formatting the cells or entering values in them.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to [Table 18.2](#tab18-2), to write the codes for various actions:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| To do this | Write this code |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select cell A1 | Range("A1").select or Cells(1,1).select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select range A1:B5 | Range("A1:b5").select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select range A1:A5 and C2:C10 | Range("A1:A5 , C2:C10").select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select current cell | Activecell.select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select range from current cell to b6 | Range(Activecell , "b6").select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select current region of activecell | Activecell.currentregion.select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Ctrl + Shift+ Down Arrow from Activecell | Range(ActivecellActivecell.End(X
+    lDown)).select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Ctrl + Shift + Down Arrow from cell A2 | Range("A2" , Activecell.End(XlDown)).select
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 18.2: Codes for various actions'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Selecting and activating rows and columns](contents.xhtml#sc2_267a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Sometimes you need to select specific rows and columns and then perform actions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To do this write the code shown in the following [Table 18.3](#tab18-3):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| To do this | Write this code |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select a row | Rows("2:2").select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select rows from 2 to 5 | Rows("2:5").select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select 3 rows from activecell | Activecell.entirerow.Range("1:3"). select
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select a column | Columns("A:A").select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select columns from B to E | Columns("B:E").select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select 3 columns from activecell | Activecell.entirecolumn.Range("A:C").select
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select current row | Activecell.entirerow.select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select current column | Activecell.entirecolumn.select |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 18.3: Codes for various actions'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Working with sheets](contents.xhtml#sc2_268a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Many a times, you need to select a specific sheet, or insert new sheet, rename
+    a sheet, and so on. Refer to [Table 18.4](#tab18-4):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| To do This | Write this code |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select any sheet by index number | Sheets(2).selectWorksheets(2).select |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Select any sheet by name | Sheets("Sheet1").selectWorksheets("Sheet1").select
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Renaming a sheet | Sheets("Sheet1").name="newname" |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Newname | Worksheets("Sheet1").name=Activesheet.name |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Deleting a sheet | Sheets("Sheet1").deleteWorksheets("Sheet1").deleteActivesheet.delete
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Insert a sheet | Sheets.add before:= sheets("Sheet1")Worksheets.add before:=sheets("Sheet1")
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 18.4: Codes for various actions'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Working with WorkBook](contents.xhtml#sc2_269a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sometimes you need to work with different workbooks. Refer to [Table 18.5](#tab18-5):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| To do This | Write this code |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Open a workbook | Workbooks.open filename:="filename with path" |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Open workbook which contains auto macros | Workbooks.openfilename:="Activeworkbook.runautomacros"
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Close a workbook | Workbooks(2).close |'
+  prefs: []
+  type: TYPE_TB
+- en: '| Adding a new workbook | Workbooks.add |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 18.5: Codes for various actions'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Working with application object](contents.xhtml#sc2_270a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Sometimes to ignore different excel messages you need to work with application
+    object, as illustrated in the following [Table 18.6](#tab18-6):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| To do this | Write this code |'
+  prefs: []
+  type: TYPE_TB
+- en: '| To switch off the display of messages | Application.DisplayAlert = False
+    |'
+  prefs: []
+  type: TYPE_TB
+- en: '| To stop flickering of screen | Application.ScreenUpdating = False |'
+  prefs: []
+  type: TYPE_TB
+- en: '| To stop copy / cut mode | Application.CutCopyMode = False |'
+  prefs: []
+  type: TYPE_TB
+- en: '| To calculate | Application.Calculate |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 18.6: Codes for various actions'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Scenario 15](contents.xhtml#sc3_271a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a macro which should accept Name and City of a person and store it in
+    excel worksheet in cell A1 and B1\. If user type Mumbai as city then font color
+    must be red. Use InputBox function to take input from the user. Use MsgBox function
+    to display results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Accept_Details()Dim e_Name , e_City As StringName = InputBox("Enter your
+    name")City = InputBox("Enter your city")MsgBox "Your name is " & Name & " and
+    city is " & CityCells(1, 1).Value = e_Name Cells(1, 2).Value = e_CityIf Cells(1,
+    2).Value = "mumbai" ThenCells(1, 2).Font.ColorIndex = 3ElseCells(1, 2).Font.ColorIndex
+    = 0EndIfEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Scenario 16](contents.xhtml#sc3_272a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create a macro name it as Data_Entry. Accept employee code, name, date of joining
+    and salary of a person. Insert the values in “Database” worksheet. Every new record
+    must be stored after the last record.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Data_Entry()Dim EmpCode As integer, Next_Row as integerDim EmpName As
+    StringDim doj As DateDim Salary As CurrencyEmpCode = InputBox("Enter Employee
+    Code")EmpName = InputBox("Enter Employee Name")doj = InputBox("enter Date of Joining
+    mm/dd/yy")Salary = InputBox("Enter Salary of Employee")Range("a65536").selectSelection.end(xlup).select
+    Next_Row= activecell.row+1Cells(Next_Row, 1).Value = EmpCode Cells(Next_Row, 2).Value
+    = EmpNameCells(Next_Row, 3).Value = Format(doj, "MMM DD YYYY")Cells(Next_Row,
+    4).Value = SalaryEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Conclusion](contents.xhtml#sc2_273a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In conclusion, this chapter provided a comprehensive overview of variables and
+    data types in VBA. It covered the declaration of variables and constants, explained
+    different data types and their ranges, demonstrated the usage of message boxes
+    and input boxes, and explored techniques for selecting and manipulating cells,
+    rows, and columns in Excel. The chapter also touched upon working with sheets,
+    workbooks, and the application object. By understanding these fundamentals, readers
+    can write efficient and effective VBA code.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_274a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Write a VBA macro that prompts the user to enter their name, age, and favorite
+    color using input boxes. The macro should store the values in cells A1, B1, and
+    C1 of the active worksheet, respectively. Additionally, if the user’s age is greater
+    than or equal to 18, the font color of the corresponding cell should be set to
+    their favorite color. Test the macro by running it and entering different values.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

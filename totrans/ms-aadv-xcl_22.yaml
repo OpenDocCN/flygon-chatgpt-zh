@@ -1,0 +1,402 @@
+- en: '[CHAPTER 21Debugging and Error Handling in VBA](contents.xhtml#ch21a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_316a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we will explore the important concepts of debugging and error
+    handling in Visual Basic for Applications (VBA). Debugging is the process of identifying
+    and resolving runtime errors and logical errors in our VBA code. Error handling
+    involves implementing strategies to handle and manage errors that occur during
+    the execution of our code. By understanding these concepts and utilizing appropriate
+    techniques, we can create more robust and reliable VBA macros.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_317a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will go over the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Errors
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Error handling
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Error number
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Debugging the macro
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_318a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of this chapter, the reader will learn about errors, error handling
+    and error number, which, along with debugging, are crucial in VBA.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Errors](contents.xhtml#sc2_319a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'An error is generated if a statement fails. There are three types of errors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Logical: When macro does not give the expected result. These errors can be
+    handled by change in logic and hit and trial method'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Technical: When run time failure of any statement. Use On Error statement to
+    handle these errors.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Syntax: These include incorrectly spelled keywords, mismatched parentheses,
+    and a wide variety of other errors. Excel flags your syntax errors and you cannot
+    execute your code until they are correct.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Error handling](contents.xhtml#sc2_320a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'There are three ways to handle errors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Whenever an error is encountered, direct the control to the specific label or
+    line of code.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: On Error GoTo line / label On Error
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Continue with the statement immediately, following the statement that caused
+    the run-time error.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: On Error Resume Next
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Disable any enabled error handler in the current procedure.
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: On Error GoTo 0
+  prefs:
+  - PREF_IND
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Note: An error-handling routine is not a Sub procedure or Function procedure.
+    It is a section of code marked by a line label or line number. If you do not use
+    an On Error statement, any run-time error that occurs is fatal; that is, an error
+    message is displayed and execution stops.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Scenario 28](contents.xhtml#sc3_321a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open [Scenario 22](ch19.xhtml#sc3_291). It will generate an error if Database
+    worksheet does not exist. Modify the code to handle this error, that is, your
+    program should add a new worksheet if database worksheet does not exist.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Note: Use On Error GoTo line / label'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Solution](contents.xhtml#sc4_322a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Error_handling1()On Error GoTo err_handlerDim EmpCode As Integer, next_row
+    As IntegerDim EmpName As StringDim doj As DateDim Salary As CurrencyWorksheets("database").SelectRange("a65536").SelectSelection.End(xlUp).Selectnext_row
+    = ActiveCell.Row + 1DoEmpCode = InputBox("Enter Employee Code")EmpName = InputBox("Enter
+    Employee Name")doj = InputBox("enter Date of Joining mm/dd/yy")Salary = InputBox("Enter
+    Salary of Employee")Cells(next_row , 1).Value = EmpCodeCells(next_row , 2).Value
+    = EmpNameCells(next_row , 3).Value = Format(doj, "MMM DD YYYY")Cells(next_row
+    , 4).Value = Salarynext_row =next_row + 1Loop While (MsgBox("Do you want to continue?",
+    vbOKCancel) = vbOK)MsgBox "Thanks"Exit Suberr_handler: Worksheets.AddActiveSheet.name
+    ="database"Range("a1").Value = "Emp Code"Range("b1").Value = "Emp Name"Range("c1").Value
+    = "Date of Joining"Range("d1").Value = "Salary"Resume NextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Error number](contents.xhtml#sc2_323a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Each runtime error has a number. If you know the number, you can trap the error
+    by its number. For example, refer to the following [Table 21.1](#tab21-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Error Number | Description |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 61 | Disk Full |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 4 | Application defined or Object defined error |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 7 | Out of memory |'
+  prefs: []
+  type: TYPE_TB
+- en: '| 9 | Subscript out of range |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Table 21.1: Error Numbers and their respective descriptions'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Try the following code to see the error for a particular error number
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Show_Error():Dim ErrorNumber   For ErrorNumber = 61 To 64 '' Loop through
+    values 61 – 64.       Msgbox Error(ErrorNumber)   Next ErrorNumberEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Scenario 29](contents.xhtml#sc3_324a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open [Scenario 28](#sc3_321). If you leave inputbox empty, your macro will generate
+    an error. Modify the code as follows (use On error resume next)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Error_handling2()Dim EmpCode As Integer, next_row As IntegerDim EmpName
+    As StringDim doj As DateDim Salary As Currency'' If there is any error it should
+    continue with the next lineOn Error resume NextWorksheets("database").SelectRange("a65536").SelectSelection.End(xlUp).Select
+    next_row= ActiveCell.Row + 1DoEmpCode = InputBox("Enter Employee Code")EmpName
+    = InputBox("Enter Employee Name")doj = InputBox("enter Date of Joining mm/dd/yy")Salary
+    = InputBox("Enter Salary of Employee")Cells(next_row , 1).Value = EmpCode Cells(next_row
+    , 2).Value = EmpNameCells(next_row , 3).Value = Format(doj, "MMM DD YYYY")Cells(next_row
+    , 4).Value = Salary next_row =next_row + 1Loop While (MsgBox("Do you want to continue?",
+    vbOKCancel) = vbOK) MsgBox "Thanks"End Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Debugging the macro](contents.xhtml#sc2_325a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Debugging is the process of finding and correcting run time errors and logical
+    errors. Press F8 to execute code one at a time.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The Debug toolbar can be seen in the following [Figure 21.1](#fig21-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_21.1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 21.1: Debug Toolbar'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Here are the various toolbar buttons:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Design Mode: Turns design mode off and on.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Run Sub/UserForm or Run Macro: Runs the current procedure if the cursor is
+    in a procedure, runs the UserForm if a UserForm is currently active, or runs a
+    macro if neither the Code window nor a UserForm is active.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Break: Stops execution of a program while it is running and switches to break
+    mode.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Reset: Clears the execution stack and module level variables and resets the
+    project.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Toggle Breakpoint: Sets or removes a breakpoint at the current line.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Step Into: Executes code one statement at a time.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Step Over: Executes code one procedure or statement at a time in the Code window.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Step Out: Executes the remaining lines of a procedure in which the current
+    execution point lies.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Locals Window: Displays the Locals window.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Immediate Window: Displays the Immediate window.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Watch Window: Displays the Watch window.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Quick Watch: Displays the Quick Watch dialog box with the current value of
+    the selected expression.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Call Stack: Displays the Calls dialog box, which lists the currently active
+    procedure calls (procedures in the application that have started but are not completed).'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Here are some tips that will help you to keep errors minimum:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Use an Option Explicit: This will force you to define the data type for every
+    variable that you use. This will avoid the common error of misspelling a variable
+    name.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Format your code with indentation: If you have several nested For...Next loops,
+    for example, consistent indentation will make it much easier to keep track of
+    them all.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Be careful with On Error Resume Next: This statement causes Excel to ignore
+    any errors and continue. In some cases, using this statement will cause Excel
+    to ignore errors that should not be ignored. You may have bugs and not even realize
+    it.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Use comments: Make a habit of writing comments, so that when you revisit your
+    code you can understand the logic. Adding a few comments to describe your logic
+    can save you lots of time.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Keep your subroutines and functions simple: Write your code in smaller modules,
+    each of which has a single, well-defined purpose.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Use the macro recorder to identify properties and methods: If you do not remember
+    the name or syntax of a property or method, record a macro and look at the recorded
+    code.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Consider a different approach: If you are having trouble getting a particular
+    routine to work correctly, you might want to scrap the idea and try something
+    completely different. In most cases, Excel offers several alternative methods
+    of accomplishing the same thing.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Use debug toolbar
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusion](contents.xhtml#sc2_326a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Debugging and error handling are essential skills for VBA developers. By effectively
+    managing errors and debugging our code, we can create more robust and error-free
+    macros. Applying best practices, such as proper code formatting, commenting, and
+    using the available debugging tools, will help us in preventing and resolving
+    errors efficiently.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_327a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Open a new Excel workbook and navigate to the Visual Basic Editor (VBE).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: In the VBE, insert a new module for writing the VBA code.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a subroutine named “CalculateStatistics” that takes no parameters.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Declare the necessary variables for storing input values and calculated statistics.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Implement error handling using advanced error handling techniques such as “On
+    Error GoTo”, “On Error Resume Next”, and “Err.Raise”.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Prompt the user to input a range of numbers from the worksheet using the “Application.InputBox”
+    method.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Use the “WorksheetFunction” object to perform the following calculations on
+    the selected range:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Calculate the sum of the numbers.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Calculate the average of the numbers.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Calculate the maximum value in the range.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Calculate the minimum value in the range.
+  prefs:
+  - PREF_IND
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Display the calculated statistics in separate message boxes.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Include comprehensive error handling to handle scenarios such as invalid input,
+    empty selection, non-numeric values in the range, or division by zero errors.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Test the macro by executing it with different inputs and verify that it handles
+    errors effectively and provides accurate results.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

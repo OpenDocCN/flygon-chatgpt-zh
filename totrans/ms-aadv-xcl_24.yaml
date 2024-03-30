@@ -1,0 +1,464 @@
+- en: '[CHAPTER 23Advanced VBA Techniques and Best Practices](contents.xhtml#ch23a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](contents.xhtml#sc2_339a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we delve into advanced VBA techniques and best practices to
+    enhance the functionality and efficiency of Excel applications. We explore topics
+    such as initializing control values, working with option buttons, creating custom
+    buttons and user forms, utilizing Add-ins, implementing a case conversion Add-In,
+    and creating menus through code. By mastering these advanced techniques, readers
+    will gain a deeper understanding of VBA programming and be able to build more
+    powerful and user-friendly Excel applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](contents.xhtml#sc2_340a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will go over the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Code to give initial values to the control
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Code for option buttons
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Code for Insert Button
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Code to show User Form
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Add-ins
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Code for the Change Case Form
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Creating menu through the code
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Objectives](contents.xhtml#sc2_341a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By the end of this chapter, the reader will learn about advanced VBA techniques
+    and best practices to enhance their Excel applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Code to give initial values to the control](contents.xhtml#sc2_342a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To give initial values to the control, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Select View code form Project explorer.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select the UserForm object.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Select Initialize event.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Refer to the following [Figure 23.1](#fig23-1):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_23.1.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 23.1: Giving initial values to the control'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The code is as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Private Sub UserForm_Initialize()TXT_name.Value = ""TXT_address.Value = ""TXT_contact_no.Value
+    = ""TXT_company_name.Value = ""CBO_subject.AddItem "MS Excel"CBO_subject.AddItem
+    "VBA with Excel"CBO_subject.AddItem "MS Word"CBO_subject.AddItem "MS Powerpoint"CBO_subject.AddItem
+    "MS Office"CBO_subject.AddItem "MS Access"CBO_subject.AddItem "MS Project" OPT_company.Value
+    = TrueEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Code for option buttons](contents.xhtml#sc2_343a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To apply option buttons, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Double click OPT_company
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Private Sub OPT_company_Click()
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '''when the user select this option , txt_companyname text box will be visible.'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: TXT_companyname.Visible = True
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: End Sub
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Double click OPT_personal
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Private Sub OPT_personal_Click()
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '''when user select this option , txt_companyname text box will not be visible'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: TXT_companyname.Visible = False
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: End Sub
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'Refer to the following [Figure 23.2](#fig23-2):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_23.2.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 23.2: Adding option buttons'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Code for Insert button](contents.xhtml#sc2_344a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to the following [Figure 23.3](#fig23-3):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_23.3.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 23.3: Adding the insert button'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Double click insert button
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Private Sub CMD_insert_Click()'' Code to find out next blank cellActiveWorkbook.Sheets("Training
+    Enrollment").ActivateRange("a1").SelectDoIf IsEmpty(ActiveCell) = False ThenActiveCell.Offset(1,
+    0).SelectEnd IfLoop Until IsEmpty(ActiveCell) = True'' Code to put values from
+    Form to ExcelActiveCell.Value = TXT_name.ValueActiveCell.Offset(0, 1).Value =
+    TXT_address.ValueActiveCell.Offset(0, 2).Value = TXT_contactno.ValueActiveCell.Offset(0,
+    3).Value = TXT_email.ValueActiveCell.Offset(0, 4).Value = CBO_subject.Value If
+    OPT_personal.Value = True ThenActiveCell.Offset(0, 5).Value = "Personal" ElseActiveCell.Offset(0,
+    5).Value =  TXT_companyname.ValueEnd IfTXT_name.Value = ""TXT_address.Value =
+    ""TXT_contact_no.Value = ""TXT_email.Value = ""TXT_companyname.Value = "Enter
+    your Company name "TXT_companyname.Visible = False CBO_subject.Value = ""OPT_company.Value
+    = TrueEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: 'To clear the form after inserting the values, follow these steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Double click Cancel Button.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Then write the following code:'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Private Sub CMD_cancel_Click() Unload me
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: End Sub
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '[Code to show User Form](contents.xhtml#sc2_345a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'To run the UserForm from Excel, insert a module and write a macro:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub Enrol_form()USR_enrol.ShowEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Add-ins](contents.xhtml#sc2_346a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Add-ins are separate utilities. They provide some extra functionality to the
+    software. The extension name of an Add Ins is .XLAM. In Excel, we have readymade
+    Add Ins such as Solver, Analysis Toolpack, Conditional Sum Wizard, and so on.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Scenario 31](contents.xhtml#sc3_347a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Create an Add-ins to convert the case into upper/lower/proper, according to
+    the option selected by the user.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Solution](contents.xhtml#sc4_348a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Follow the given steps:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Design a form for Add-ins, as shown in [Figure 23.4](#fig23-4):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '![](images/Figure_23.4.png)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: 'Figure 23.4: Designing a form for Add-ins'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Open a new excel workbook.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Open Visual Basic Editor.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Insert a User Form and name it as Changecase.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Give Caption Change Case.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Drag Objects over the form.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: 'Design it as shown in the following [Table 23.1](#tab23-1):'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '| Object | Name | Property | Value |'
+  prefs:
+  - PREF_IND
+  type: TYPE_TB
+- en: '| Reference Edit | Refselect |  |  |'
+  prefs:
+  - PREF_IND
+  type: TYPE_TB
+- en: '| Option Button | Optupper | Caption | UPPERCASE |'
+  prefs:
+  - PREF_IND
+  type: TYPE_TB
+- en: '| Option Button | Optlower | Caption | lowercase |'
+  prefs:
+  - PREF_IND
+  type: TYPE_TB
+- en: '| Option Button | Optproper | Caption | Proper Case |'
+  prefs:
+  - PREF_IND
+  type: TYPE_TB
+- en: '| Command Button | Cmdexit | Caption | EXIT |'
+  prefs:
+  - PREF_IND
+  type: TYPE_TB
+- en: 'Table 23.1: Option Button'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Open the code window for Changecase form
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Write code for the different controls
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '[Code for the Change Case form](contents.xhtml#sc2_349a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Double click OPTupper control.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Private Sub OPTupper_Click()''When user select this option it will convert
+    into UppercaseDim rng As Range, wscell As RangeSet rng = Range(refselect)For Each
+    wscell In rngwscell.Value = UCase(wscell.Value)NextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Refer to the following [Figure 23.5](#fig23-5):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_23.5.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 23.5: LowerCase'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Now, double click OPTlower control.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Private Sub optlower_Click()''When user select this option it will convert
+    into UppercaseDim rng As Range, wscell As RangeSet rng = Range(refselect)For Each
+    wscell In rngwscell.Value = LCase(wscell.Value)NextEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: 'Refer to the following [Figure 23.6](#fig23-6):'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure_23.6.png)'
+  prefs: []
+  type: TYPE_IMG
+- en: 'Figure 23.6: ProperCase'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Double click opt_upper control and write the following code
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Private Sub optproper_Click()''When user select this option it will convert
+    into UppercaseDim rng As Range, wscell As RangeSet rng = Range(refselect)For Each
+    wscell In rngwscell.Value = Application.WorksheetFunction.Proper(wscell.Value)NextEnd
+    Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: Double click cmdexit control
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Private Sub cmdExit_Click()EndEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: Insert a module and write a macro to show Changecase form
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub show()Changecase.showEnd Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: '[Creating menu through code](contents.xhtml#sc2_350a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Refer to the following code:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '| Sub auto_open()''This code will create a new menu in the existing menubar,
+    which will have one menuitem i.e., Changecase Add-InsDim newmenu As CommandBarPopupDim
+    menuitem As CommandBarButtonSet newmenu = CommandBars(1).Controls.Add(Type:=msoControlPopup,
+    before:=CommandBars(1).Controls("help").Index)newmenu.Caption = "E&xtras"''When
+    Changecase menuitem is selected it should show changecase form Set menuitem =
+    newmenu.Controls.Add(Type:=msoControlButton) menuitem.Caption = "&Change Case"
+    menuitem.OnAction = "show"End SubSub auto_close()''This will remove menu when
+    add ins is removed from the excel CommandBars(1).Controls("extras").DeleteEnd
+    Sub |'
+  prefs: []
+  type: TYPE_TB
+- en: Here,
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Auto_Open(): It is the first event that is fired whenever a Workbook is opened.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: 'Auto_Close(): It is the last event that is fired whenever a Workbook is opened.'
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[Conclusion](contents.xhtml#sc2_351a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we have explored advanced VBA techniques and best practices
+    that can significantly improve the functionality and user experience of Excel
+    applications. From initializing control values to handling option buttons, creating
+    custom buttons and user forms, utilizing Add-ins, and creating menus through code,
+    we have covered a wide range of topics. By applying these techniques and following
+    the best practices outlined, readers can create more robust, efficient, and user-friendly
+    Excel applications. With a solid grasp of these advanced techniques, readers are
+    well-equipped to take their VBA skills to the next level.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Exercise](contents.xhtml#sc2_352a)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Let us consider an example-based exercise that combines several of the advanced
+    VBA techniques discussed in this chapter.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Scenario: You are working on a project management tool in Excel. The tool allows
+    users to input project details, track progress, and generate reports. Your task
+    is to enhance the tool by implementing the following features:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Add a UserForm called “TaskForm” that allows users to input task details, including
+    task name, assigned person, start date, end date, and status (e.g., “Not Started,”
+    “In Progress,” “Completed”).
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Implement validation checks in the TaskForm to ensure that all required fields
+    are filled and that the end date is not earlier than the start date. Display appropriate
+    error messages if any validation fails.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Create a custom Insert button on the TaskForm that adds the entered task details
+    to a designated worksheet, such as “ProjectTasks.” Ensure that each new task is
+    inserted on a new row, and clear the input fields after successful insertion.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Implement a menu system using VBA code. Create a new menu item called “Project
+    Management” in the Excel menu bar. Under the “Project Management” menu, add options
+    to open the TaskForm, display a list of all tasks, and generate a summary report.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Develop a summary report function that calculates and displays the total number
+    of tasks, the number of tasks in each status category, and the percentage of completed
+    tasks. The summary report should be displayed in a new worksheet named “TaskSummary.”
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Implement an Add-In called “TaskUtilities” that provides additional functions
+    for task management, such as sorting tasks by name or date, filtering tasks by
+    status, and generating specialized reports. Test the Add-In by using it in different
+    workbooks and verify its functionality.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Apply best practices for code organization, error handling, and optimization
+    throughout the project to ensure clean and efficient VBA code.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Join our book’s Discord space
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
+    around the world, New Release and Sessions with the Authors:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/fm1.png)'
+  prefs: []
+  type: TYPE_IMG

@@ -1,936 +1,1414 @@
 - en: '[CHAPTER 5](toc.xhtml#c05)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第5章](toc.xhtml#c05)'
 - en: '[Other LOOKUP Methods and Functions](toc.xhtml#c05)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[其他查找方法和函数](toc.xhtml#c05)'
 - en: '[Introduction](toc.xhtml#s73a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s73a)'
 - en: In this chapter, we will discuss alternative methods and functions that can
     be used to look up data.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论可用于查找数据的替代方法和函数。
 - en: Many Excel users do not look beyond the lookup functions when faced with a lookup
     problem. This limits their alternatives and chances to learn how other functions
     work.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多 Excel 用户在面对查找问题时只会使用查找函数，他们没有深入了解其他函数的工作原理的机会。
 - en: Depending on the size of our data or the complexity of the task, certain alternative
     methods may be more efficient or faster than the known lookup function.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据数据的大小或任务的复杂性，某些替代方法可能比已知的查找函数更有效或更快。
 - en: Let us now explore the different approaches that can help us identify the most
     efficient solution for our situation.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们探讨不同的方法，以帮助我们确定最有效的解决方案。
 - en: '[Structure](toc.xhtml#s74a)'
+  id: totrans-7
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结构](toc.xhtml#s74a)'
 - en: 'In this chapter, we will discuss the six unique alternatives and functions
     to look up data:'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论查找数据的六种独特替代方法和函数：
 - en: Using the advanced filter to look up items in/not in a list
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用高级筛选来查找列表中的项目/不在列表中的项目
 - en: Using Excel Intersection operator to do a two-way lookup
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用 Excel 交集运算符进行双向查找
 - en: Using Database functions to lookup numeric data
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用数据库函数查找数值数据
 - en: Using `**SUMIFS**`, `**SUMPRODUCT**`, `**AGGREGATE**`, and `**MAX**`/`**MAXIFS**`
     to lookup numeric data
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用`**SUMIFS**`、`**SUMPRODUCT**`、`**AGGREGATE**`和`**MAX**`/`**MAXIFS**`来查找数值数据
 - en: Looking up images
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找图片
 - en: Looking up cell addresses of an item
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找项目的单元格地址
 - en: Using a Pivot Table to lookup unique items in a list
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用数据透视表查找列表中的唯一项目
 - en: '[Using the advanced filter to lookup items in/not in a list](toc.xhtml#s75a)'
+  id: totrans-16
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用高级筛选查找列表中的项目/不在列表中的项目](toc.xhtml#s75a)'
 - en: Many Excel users must work on the advanced filter options in their everyday
     lookup tasks. Unlike the standard filter, where you only see the filter criteria
     when you hover a mouse over it, advanced filter options are visible to all.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多 Excel 用户在日常查找任务中必须使用高级筛选选项。与标准筛选不同，您只有在将鼠标悬停在其上时才能看到筛选标准，高级筛选选项对所有用户都是可见的。
 - en: '*[Figure 5.1](#fig5_1)* shows the use of the advanced filter to lookup all
     chair purchases:'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: '*[图5.1](#fig5_1)*展示了使用高级筛选查找所有椅子购买的情况：'
 - en: '![](images/Figure-5.1.jpg)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.1.jpg)'
 - en: '**Figure 5.1:** Lookup items in a table using an advanced filter'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.1:** 使用高级筛选在表中查找项目'
 - en: '**Here are the steps to follow:**'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: '**以下是要遵循的步骤：**'
 - en: Click anywhere on the table containing all the data.
+  id: totrans-22
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击包含所有数据的表格的任意位置。
 - en: Go to the data tab and click the Advanced Filter options.
+  id: totrans-23
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到数据选项卡，点击高级筛选选项。
 - en: 'On the `**Advanced Filter Pop-up Screen**` (see *[Figure 5.2](#fig5_2)*):'
+  id: totrans-24
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在`**高级筛选弹出屏幕**`上（见*[图5.2](#fig5_2)*）：
 - en: Click the `**Copy to another location**`.
+  id: totrans-25
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击`**复制到另一个位置**`。
 - en: The list range will pick automatically if you are using a table and have followed
     the preceding steps.
+  id: totrans-26
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 如果您使用的是表格并且已经按照前面的步骤操作，列表范围将会自动选择。
 - en: Select a criteria range — both the header and the cell containing the criteria
     should be selected. Since the advanced filter reads from the `**Criteria range:**`
     to the `**List range:**`, the headers should be identical.
+  id: totrans-27
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择一个标准范围 — 包括标头和包含标准的单元格都应该被选中。由于高级筛选从`**标准范围:**`读取到`**列表范围:**`，所以标头应该是相同的。
 - en: In the `**Copy to**` field, select a single cell from which to copy the filtered
     table.
+  id: totrans-28
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在`**复制到**`字段中，选择一个单元格来复制筛选后的表格。
 - en: Finally, click `**OK**`.![](images/Figure-5.2.jpg)
+  id: totrans-29
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后，点击`**确定**`。![](images/Figure-5.2.jpg)
 - en: '**Figure 5.2:** Advanced filter options for selecting items in a list'
+  id: totrans-30
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图5.2:** 选择列表中项目的高级筛选选项'
 - en: To look up items not in the table, change the criteria to include the “not equal
     to” operator (<>) and follow the preceding steps.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 要查找不在表中的项目，将标准改为包含“不等于”运算符（<>），然后按照前面的步骤操作。
 - en: '![](images/Figure-5.3.jpg)'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.3.jpg)'
 - en: '**Figure 5.3:** Lookup items NOT in a list using an advanced Filter'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.3:** 使用高级筛选查找列表中不在的项目'
 - en: 'If we want to look up unique values, Advanced Filter has this option as well.
     As shown in *[Figure 5.4](#fig5_4)*, suppose we want to know the unique crops
     that we plant:'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们想查找唯一值，高级筛选也有这个选项。如*[图5.4](#fig5_4)*所示，假设我们想知道我们种植的独特作物：
 - en: '![](images/Figure-5.4.jpg)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.4.jpg)'
 - en: '**Figure 5.4:** Lookup items UNIQUE items in a list using an advanced Filter'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.4:** 使用高级筛选查找列表中的唯一项目'
 - en: '**Note:** With Unique records filtering, we skip the criteria range and click
     the `**Unique record-only**` option instead.'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 在唯一记录过滤中，我们跳过条件范围，而是选择`**仅唯一记录**`选项。'
 - en: All the other steps, as discussed above, apply.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有其他步骤，如上所述，均适用。
 - en: '[Using Excel Intersection Operator to do a two-way lookup](toc.xhtml#s76a)'
+  id: totrans-39
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用Excel交集运算符进行双向查找](toc.xhtml#s76a)'
 - en: The Excel intersection operator is one of the least known but ideal ways of
     solving a two-way lookup problem, that is, finding the intersecting value(s) of
     two named ranges.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: Excel交集运算符是解决双向查找问题的最少为人知但理想的方法之一，即查找两个命名范围的交叉值。
 - en: We only need to remember that using **a space character between two named ranges**
     becomes the Intersect operator.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们只需要记住，在这些范围之间加入**一个空格字符**就成为了交集运算符。
 - en: 'In *[Figure 5.5](#fig5_5)*, the Intersect operator is used to return the sales
     in the western region made by customer Joshua:'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 在*[图5.5](#fig5_5)*中，交集运算符用于返回由客户Joshua在西部地区进行的销售：
 - en: '![](images/Figure-5.5.jpg)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.5.jpg)'
 - en: '**Figure 5.5:** Two-way lookup using Excel Intersection Operation'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.5：** 使用Excel交集运算进行双向查找'
 - en: '**Here are the steps to follow:**'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: '**以下是要遵循的步骤：**'
 - en: Click anywhere on the table containing all the data.
+  id: totrans-46
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击包含所有数据的表格的任意位置。
 - en: Go to the `**Formula**` tab, and under the `**Define Names**`, click `**Create
     from Selection**`.
+  id: totrans-47
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到`**公式**`选项卡，在`**定义名称**`下，点击`**从选择创建**`。
 - en: The `**Create Names from Selection**` pop-up will appear, as shown in *[Figure
     5.6](#fig5_6)*. Select Create names from values in the top row and left columns.![](images/Figure-5.6.jpg)
+  id: totrans-48
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**从选择创建名称**`弹出窗口将出现，如*[图5.6](#fig5_6)*所示。选择从顶部行和左侧列的值创建名称。![](images/Figure-5.6.jpg)'
 - en: '**Figure 5.6:** Creating names to be used in the Intersection'
+  id: totrans-49
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图5.6：** 创建用于交集的名称'
 - en: Once the names have been created, you can use the Intersect operator. Type the
     Row header (Joshua) and the Column header (Western) separated by the intersection
     operator, which is a space, as shown in *[Figure 5.7](#fig5_7)*:![](images/Figure-5.7.jpg)
+  id: totrans-50
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建名称后，您可以使用交集运算符。输入行标题（Joshua）和列标题（Western），它们之间用空格分隔，这就是交集运算符，如*[图5.7](#fig5_7)*所示：![](images/Figure-5.7.jpg)
 - en: '**Figure 5.7:** Using the Intersection operation'
+  id: totrans-51
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图5.7：** 使用交集运算'
 - en: 'Intersection operations are not limited to a single criterion operation; we
     can use it for multiple criteria, as shown in *[Figure 5.8](#fig5_8)*. We want
     to know the total amount bought by Joshua in the western and southern regions:'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 交集运算不仅限于单个条件操作；我们可以用它来处理多个条件，如*[图5.8](#fig5_8)*所示。我们想知道Joshua在西部和南部地区购买的总金额：
 - en: '`=SUM(Joshua Western:Southern)`'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=SUM(Joshua Western:Southern)`'
 - en: '![](images/Figure-5.8.jpg)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.8.jpg)'
 - en: '**Figure 5.8:** Intersection operation two-way lookup using multiple criteria'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.8：** 使用多个条件进行交集运算的双向查找'
 - en: '**How the formula works:**'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '**公式的工作原理：**'
 - en: We will follow the same preceding steps to create the named ranges. However,
     for this solution, we will select two regions separated by a full colon.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将按照相同的步骤创建命名范围。但是，对于这个解决方案，我们将选择两个由冒号分隔的区域。
 - en: This returns the amounts for the two regions, as shown in *[Figure 5.9](#fig5_9)*.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将返回两个区域的金额，如*[图5.9](#fig5_9)*所示。
 - en: Finally, sum up the amounts to get the totals.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，将金额相加以获得总额。
 - en: '![](images/Figure-5.9.jpg)'
+  id: totrans-60
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.9.jpg)'
 - en: '**Figure 5.9:** Multiple criteria results'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.9：** 多条件结果'
 - en: We can also look up the total values for non-adjacent columns, as shown in *[Figure
     5.10](#fig5_10)*.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还可以查找非相邻列的总值，如*[图5.10](#fig5_10)*所示。
 - en: In this example, we want to know the total values for Joshua in the Eastern
     or Southern region.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们想知道Joshua在东部或南部地区的总值。
 - en: The only trick to remember here is to use the plus sign (+) as an alternative
     to the OR logic.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 唯一需要记住的技巧是使用加号（+）作为OR逻辑的替代。
 - en: '`=Joshua Eastern + Joshua Southern`'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=Joshua Eastern + Joshua Southern`'
 - en: '![](images/Figure-5.10.jpg)'
+  id: totrans-66
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.10.jpg)'
 - en: '**Figure 5.10:** Multiple OR criteria results'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.10：** 多个OR条件结果'
 - en: '**Note:** Intersection operators work with both cell range references and named
     ranges.'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 交集运算符适用于单元格范围引用和命名范围。'
 - en: All you need to remember is to include a space between these ranges.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 您需要记住的是在这些范围之间包含一个空格。
 - en: '[Using Database functions to lookup numeric data](toc.xhtml#s77a)'
+  id: totrans-70
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用数据库函数查找数字数据](toc.xhtml#s77a)'
 - en: Database functions have existed since Excel 2007, yet many users do not know
     their power and potential to look up numeric data.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 自Excel 2007以来，数据库函数一直存在，然而许多用户并不了解它们查找数字数据的能力和潜力。
 - en: Database functions perform specific calculations on a specified field (a Column)
     whose records meet specified criteria.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据库函数对满足指定条件的记录执行特定计算。
 - en: 'The syntax is as follows:'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法如下：
 - en: '`= DSUM(Database, Field, Criteria)`'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: '`= DSUM(Database, Field, Criteria)`'
 - en: 'Where:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中：
 - en: Database must be a range of data where every row is considered a record, and
     every column a field with the top row containing identifiers for the fields.
+  id: totrans-76
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 数据库必须是一个数据范围，其中每一行被视为一条记录，每一列被视为一个字段，顶部行包含字段的标识符。
 - en: Field is the column that contains the data to look up.
+  id: totrans-77
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 字段是包含要查找数据的列。
 - en: Criteria is a range or set of conditions that determine records to look up.
     It must include a column header, and the criterion must correspond to a field
     name in the database.
+  id: totrans-78
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 条件是确定要查找的记录的范围或一组条件。它必须包含列标题，并且标准必须对应于数据库中的字段名称。
 - en: 'For example, in *[Figure 5.11](#fig5_11)*, we want to look up the amount of
     pens sold in March:'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图5.11](#fig5_11)*中，我们要查找3月销售的钢笔数量：
 - en: '![](images/Figure-5.11.jpg)'
+  id: totrans-80
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.11.jpg)'
 - en: '**Figure 5.11:** Multiple OR criteria results'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.11：** 多个OR条件结果'
 - en: '`=DSUM (B65:E78, G66, G67:G68)`'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=DSUM (B65:E78, G66, G67:G68)`'
 - en: 'Where:'
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中：
 - en: '**Database**: All the data range, including the headers ►B65:E78.'
+  id: totrans-84
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**数据库**：包括标题的所有数据范围 ►B65:E78。'
 - en: '**Field**: Header for the column that contains the lookup data► Mar stored
     in cell G66.'
+  id: totrans-85
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**字段**：包含查找数据的列标题 ► 存储在单元格G66中的Mar。'
 - en: '**Criteria**: A range that contains a column header and a field value that
     acts as the criterion. See *[Figure 5.12](#fig5_12)* for more information.'
+  id: totrans-86
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**条件**：包含列标题和作为条件的字段值的范围。有关更多信息，请参见*[图5.12](#fig5_12)*。'
 - en: '![](images/Figure-5.12.jpg)'
+  id: totrans-87
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.12.jpg)'
 - en: '**Figure 5.12:** Arguments in database function'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.12：** 数据库函数中的参数'
 - en: 'Database functions are not limited to simple criteria, as shown in the preceding
     example; you can create complex ones, as shown in *[Figure 5.13](#fig5_13)*:'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据库函数不仅限于简单条件，如前面的示例所示；您可以创建复杂条件，如*[图5.13](#fig5_13)*所示：
 - en: '![](images/Figure-5.13.jpg)'
+  id: totrans-90
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.13.jpg)'
 - en: '**Figure 5.13:** Complex criteria in database function'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.13：** 数据库函数中的复杂条件'
 - en: '`=DSUM(tbl_Orders[#All],”Qty”,F81:I82)`'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=DSUM(tbl_Orders[#All],”Qty”,F81:I82)`'
 - en: The formula returns orders with a date greater than 1st June and less than 30th
     June for product Chair, and with a quantity greater than 20.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 该公式返回大于6月1日且小于6月30日的日期的产品椅子的订单，并且数量大于20。
 - en: 'Here is how the formula works:'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 公式的工作原理如下：
 - en: '**Database**: All the data in the table called `**tbl_Orders**`.'
+  id: totrans-95
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**数据库**：名为`**tbl_Orders**`的表中的所有数据。'
 - en: '**Field**: The column whose header is `**Qty**`.'
+  id: totrans-96
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**字段**：其标题为`**Qty**`的列。'
 - en: '**Criteria**: All the information contained in cell range F81:182.'
+  id: totrans-97
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**条件**：包含在单元格范围F81:182中的所有信息。'
 - en: '**Note**: The Criteria area **MUST NO**T include any Blank rows or Columns.'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**：条件区域**不得包含**任何空白行或列。'
 - en: '[Using SUMIFS, SUMPRODUCT, AGGREGATE, and MAX functions to lookup numeric data](toc.xhtml#s78a)'
+  id: totrans-99
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用SUMIFS、SUMPRODUCT、AGGREGATE和MAX函数查找数值数据](toc.xhtml#s78a)'
 - en: One of the least known facts is that match and trigonometry functions can be
     better than the lookup function when looking up single numeric values.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中之一鲜为人知的事实是，当查找单个数值时，匹配和三角函数可能比查找函数更好。
 - en: 'For example, in *[Figure 5.14](#fig5_14)*, we want to return the payment amount
     for invoice “224-VV-004”:'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图5.14](#fig5_14)*中，我们要返回发票“224-VV-004”的付款金额：
 - en: '![](images/Figure-5.14.jpg)'
+  id: totrans-102
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.14.jpg)'
 - en: '**Figure 5.14:** Using SUMIFS function to lookup numeric data'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.14：** 使用SUMIFS函数查找数值数据'
 - en: '`=SUMIFS(Payments[Amt],Payments[Invoice],G100)`'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=SUMIFS(Payments[Amt],Payments[Invoice],G100)`'
 - en: The `**SUMIFS**` function calculates the sum of values that meet multiple criteria.
     It allows you to specify multiple conditions and sum up only the values that satisfy
     them.
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**SUMIFS**`函数计算满足多个条件的值的总和。它允许您指定多个条件，并仅对满足条件的值进行求和。'
 - en: 'Syntax:'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '`=SUMIFS (sum_range, criteria_range1, criteria1, [criteria_range2, criteria2],
     ...)`'
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=SUMIFS (sum_range, criteria_range1, criteria1, [criteria_range2, criteria2],
+    ...)`'
 - en: 'Where:'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中：
 - en: sum range ► the values to be aggregated.
+  id: totrans-109
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 汇总范围 ► 要聚合的值。
 - en: criteria range ► the values to apply conditions.
+  id: totrans-110
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 条件范围 ► 应用条件的值。
 - en: criteria ► the condition to be met.
+  id: totrans-111
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 条件 ► 要满足的条件。
 - en: 'In our preceding example, we check which invoice number stored in the pay is
     equal to:'
+  id: totrans-112
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在我们之前的示例中，我们检查存储在支付中的发票号是否等于：
 - en: '`**Payments[Amt]**` is the sum range. It represents the column `**Amt**` in
     the `**Payments**` table. We want to return values from this range based on the
     given conditions.'
+  id: totrans-113
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**Payments[Amt]**` 是求和范围。它代表`**付款**`表中的`**Amt**`列。我们想要根据给定条件从该范围返回值。'
 - en: '`**Payments[Invoice]**` is the first criteria range. It represents the column
     `**Invoice**` in the `**Payments**` table. We want to check this range of cells
     against a specific condition.'
+  id: totrans-114
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**Payments[Invoice]**` 是第一个条件范围。它代表`**付款**`表中的`**发票**`列。我们想要检查这些单元格范围是否符合特定条件。'
 - en: '`**G100**` is the criteria. It is a specific value or reference against which
     the cells in the `**Invoice**` column will be evaluated.'
+  id: totrans-115
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**G100**` 是条件。它是一个特定值或参考值，用于评估`**发票**`列中的单元格。'
 - en: The function returns the corresponding payment amount since only one invoice
     number meets the criteria.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 该函数返回相应的付款金额，因为只有一个发票号符合条件。
 - en: '**Note:** If multiple Invoice numbers had met the condition, the function would
     have returned the total payment amount.'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 如果多个发票号符合条件，函数将返回总付款金额。'
 - en: 'An alternative to the `**SUMIFS**` function is the `**SUMPRODUCT**` function
     (see *[Figure 5.15](#fig5_15)*):'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**SUMIFS**` 函数的替代方案是`**SUMPRODUCT**`函数（见*[图 5.15](#fig5_15)*）：'
 - en: '![](images/Figure-5.15.jpg)'
+  id: totrans-119
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.15.jpg)'
 - en: '**Figure 5.15:** Using the SUMPRODUCT function to lookup numeric data'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 5.15：** 使用 SUMPRODUCT 函数查找数值数据'
 - en: '`=SUMPRODUCT(Payments[Amt],(Payments[Invoice]=G100)*1)`'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=SUMPRODUCT(Payments[Amt],(Payments[Invoice]=G100)*1)`'
 - en: The `**SUMPRODUCT**` function is versatile and allows you to multiply corresponding
     elements in multiple arrays and sum up the products.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**SUMPRODUCT**` 函数功能强大，允许您将多个数组中对应元素相乘并求和。'
 - en: It is advantageous when you need to perform calculations on arrays or when you
     want to apply criteria to multiple ranges simultaneously.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 当您需要对数组执行计算或同时对多个范围应用条件时，这是一个优势。
 - en: 'Syntax:'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '`=SUMPRODUCT(array1, array2, ...)`'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=SUMPRODUCT(array1, array2, ...)`'
 - en: 'In the preceding example:'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上面的示例中：
 - en: '`**Payments[Amt]**` is the first array. It represents the column `**Amt**`
     in the `**Payments**` table. We want to multiply and sum up this array of values.'
+  id: totrans-127
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**Payments[Amt]**` 是第一个数组。它代表`**付款**`表中的`**Amt**`列。我们想要将这些值的数组相乘并求和。'
 - en: For the second array, we first compare each cell in the `**Invoice**` column
     of the `**Payments**` table to the value in cell G100 and return an array of True
     and False values `**(Payments[Invoice]=G100)**`. Multiplying this array by 1 converts
     True values to 1 and False values to 0 `**((Payments[Invoice]=G100)*1)**`.
+  id: totrans-128
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 对于第二个数组，我们首先比较`**发票**`列中的每个单元格（在`**付款**`表中）与单元格 G100 中的值，并返回一个由 True 和 False
+    值组成的数组`**(Payments[Invoice]=G100)**`。将此数组乘以 1 将 True 值转换为 1，False 值转换为 0`**((Payments[Invoice]=G100)*1)**`。
 - en: Finally, the `SUMPRODUCT` function multiplies the corresponding values in the
     `**Amt**` column and the array of 1s and 0s, then sums up the products. The sum
     calculation will include only the values in the `**Amt**` column for the rows
     where the `**Invoice**` column matches G100 (see *[Figure 5.16](#fig5_16)*).
+  id: totrans-129
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后，`SUMPRODUCT`函数将`**Amt**`列中的相应值与 1 和 0 的数组相乘，然后求和这些乘积。求和计算将仅包括`**Amt**`列中的值，其中`**Invoice**`列与
+    G100 匹配（见*[图 5.16](#fig5_16)*）。
 - en: '**Note**: Performing a mathematical operation on a Boolean value converts them
     to their numeric equivalent of 1/0.'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 对布尔值执行数学运算会将它们转换为它们的数值等效值 1/0。'
 - en: Therefore, we could convert the preceding True/False values by adding a zero.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们可以通过添加零来转换前面的 True/False 值。
 - en: '`**(Payments [Invoice]=G100)+0.**`'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**(Payments [Invoice]=G100)+0.**`'
 - en: '![](images/Figure-5.16.jpg)'
+  id: totrans-133
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.16.jpg)'
 - en: '**Figure 5.16:** SUMPRODUCT arrays multiplication'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 5.16：** SUMPRODUCT 数组乘法'
 - en: 'Finally, let us look at the `**AGGREGATE**` function and how we can use it
     to look up numeric values, as shown in *[Figure 5.17](#fig5_17)*:'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，让我们看看`**AGGREGATE**`函数以及我们如何使用它查找数值，如*[图 5.17](#fig5_17)*所示：
 - en: '![](images/Figure-5.17.jpg)'
+  id: totrans-136
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.17.jpg)'
 - en: '**Figure 5.17:** Using the AGGREGATE function to lookup numeric data'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 5.17：** 使用 AGGREGATE 函数查找数值数据'
 - en: Unlike the other `**SUMPRODUCT**` and `**SUMIFS**` functions, the `**AGGREGATE**`
     function performs a wide range of calculations on a dataset.
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 与其他`**SUMPRODUCT**`和`**SUMIFS**`函数不同，`**AGGREGATE**`函数在数据集上执行各种计算。
 - en: It allows you to apply 19 functions (see *[Table 5.1](#tab5_1)*) with seven
     options to ignore errors, hidden values, and subtotals, and apply specific conditions
     to include or exclude data.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 它允许您应用 19 个函数（见*[表 5.1](#tab5_1)*），有七个选项可以忽略错误、隐藏值和小计，并应用特定条件来包含或排除数据。
 - en: '| **1.** `**AVERAGE**` | **5.** `**MIN**` | **9.** `**SUM**` | **13.** `**MODE.SNGL**`
     | **17.** `**QUARTILE.INC**` |'
+  id: totrans-140
   prefs: []
   type: TYPE_TB
+  zh: '| **1.** `**AVERAGE**` | **5.** `**MIN**` | **9.** `**SUM**` | **13.** `**MODE.SNGL**`
+    | **17.** `**QUARTILE.INC**` |'
 - en: '| **2.** `**COUNT**` | **6.** `**PRODUCT**` | **10.**`**VAR.S**` | **14.**
     `**LARGE**` | **18.** `**PERCENTILE.EXC**` |'
+  id: totrans-141
   prefs: []
   type: TYPE_TB
+  zh: '| **2.** `**COUNT**` | **6.** `**PRODUCT**` | **10.**`**VAR.S**` | **14.**
+    `**LARGE**` | **18.** `**PERCENTILE.EXC**` |'
 - en: '| **3.** `**COUNTA**` | **7.** `**STDEV.S**` | **11.**`**VAR.P**` | **15.**
     `**SMALL**` | **19.** `**QUARTILE.EXC**` |'
+  id: totrans-142
   prefs: []
   type: TYPE_TB
+  zh: '| **3.** `**COUNTA**` | **7.** `**STDEV.S**` | **11.**`**VAR.P**` | **15.**
+    `**SMALL**` | **19.** `**QUARTILE.EXC**` |'
 - en: '| **4.** `**MAX**` | **8.** `**STDEV.P**` | **12.** `**MEDIAN**` | **16.**
     `**PERCENTILE.INC**` |  |'
+  id: totrans-143
   prefs: []
   type: TYPE_TB
+  zh: '| **4.** `**MAX**` | **8.** `**STDEV.P**` | **12.** `**MEDIAN**` | **16.**
+    `**PERCENTILE.INC**` |  |'
 - en: '**Table 5.1:** Functions to apply in AGGREGATE'
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: '**表5.1：** 在AGGREGATE中应用的函数'
 - en: 'Syntax:'
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '`=AGGREGATE(function_num, options, array, [k])`'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=AGGREGATE(function_num, options, array, [k])`'
 - en: Refer to the formula used in *[Figure 5.16](#fig5_16)*.
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考*[图5.16](#fig5_16)*中使用的公式。
 - en: '`=AGGREGATE(14,3,Payments[Amt]*(Payments[Invoice]=G100)*1,1)`'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=AGGREGATE(14,3,Payments[Amt]*(Payments[Invoice]=G100)*1,1)`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: 14 ►This argument specifies the `**LARGE**` function that returns the kth largest
     value in our data range.
+  id: totrans-150
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 14 ►该参数指定`**LARGE**`函数返回数据范围中第k个最大值。
 - en: 3 ►This argument specifies that the function will ignore error values in the
     data range.
+  id: totrans-151
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 3 ►该参数指定函数将忽略数据范围中的错误值。
 - en: For the array, we first compare each cell in the `**Invoice**` column of the
     `**Payments**` table to the value in cell G100 and return an array of True and
     False values (Payments[Invoice]=G100). Multiplying this array by 1 converts True
     values to 1 and False values to 0 ((Payments[Invoice]=G100)*1). Then, multiply
     the corresponding values in the `**Amt**` column and the array of 1s and 0s.
+  id: totrans-152
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 对于数组，我们首先将`**Payments**`表中`**Invoice**`列中的每个单元格与单元格G100中的值进行比较，并返回一个True和False值的数组（Payments[Invoice]=G100）。将此数组乘以1将True值转换为1，False值转换为0（(Payments[Invoice]=G100)*1）。然后，将`**Amt**`列中的相应值与1和0的数组相乘。
 - en: Finally, the function returns the largest value in the preceding final array.
+  id: totrans-153
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后，函数返回前述最终数组中的最大值。
 - en: '**Note**: Like the `**SUMPRODUCT**` function, `**AGGREGATE**` can natively
     manage many array operations without using **Ctrl + Shift + Enter**.'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**：与`**SUMPRODUCT**`函数一样，`**AGGREGATE**`可以在不使用**Ctrl + Shift + Enter**的情况下本地管理许多数组操作。'
 - en: Closely related to the preceding functions are the `**MAX**` and `**MAXIFS**`
     functions.
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 与前述函数密切相关的是`**MAX**`和`**MAXIFS**`函数。
 - en: In *[Figure 5.17](#fig5_17)*, we use the `**MAX**` function to lookup the numeric
     function.
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 在*[图5.17](#fig5_17)*中，我们使用`**MAX**`函数查找数值函数。
 - en: '`=MAX( Payments[Amt]* (Payments[Invoice]=G100) )`'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=MAX( Payments[Amt]* (Payments[Invoice]=G100) )`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: We first compare each cell in the `**Invoice**` column of the `**Payments**`
     table to the value in cell G100 and return an array of True and False values (Payments[Invoice]=G100).
+  id: totrans-159
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 我们首先将`**Invoice**`列中的每个单元格与单元格G100中的值进行比较，并返回一个True和False值的数组（Payments[Invoice]=G100）。
 - en: Then, we multiply the corresponding values in the `**Amt**` column and the array
     of `**TRUEs**` and `**FALSE**`s. This will return an amount value for all TRUEs
     and zeros for all `**FALSE**`s.
+  id: totrans-160
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 然后，我们将`**Amt**`列中的相应值与True和False的数组相乘。这将为所有True返回一个金额值，对于所有`**FALSE**`则返回零。
 - en: The `**MAX**` function returns the largest value in the preceding array.
+  id: totrans-161
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**MAX**`函数返回前述数组中的最大值。'
 - en: '![](images/Figure-5.18.jpg)'
+  id: totrans-162
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.18.jpg)'
 - en: '**Figure 5.18:** Using the MAX function to lookup numeric data'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.18：** 使用MAX函数查找数值数据'
 - en: 'The `**MAX**` function may be hard to understand and explain. The alternative
     is the `**MAXIFS**` function, as shown in *[Figure 5.19](#fig5_19)*:'
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**MAX**`函数可能难以理解和解释。替代方法是`**MAXIFS**`函数，如*[图5.19](#fig5_19)*所示：'
 - en: '`=MAXIFS(Payments[Amt], Payments[Invoice],G100 )`'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=MAXIFS(Payments[Amt], Payments[Invoice],G100 )`'
 - en: '![](images/Figure-5.19.jpg)'
+  id: totrans-166
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.19.jpg)'
 - en: '**Figure 5.19:** Using the MAXIFS function to lookup numeric data'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图5.19：** 使用MAXIFS函数查找数值数据'
 - en: 'Syntax:'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '`=MAXIFS(max_range, criteria_range1, criteria1, criteria_range2, criteria2,…)`'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=MAXIFS(max_range, criteria_range1, criteria1, criteria_range2, criteria2,…)`'
 - en: In the preceding example, `**Amount**` values are our max range while the criteria
     range is the invoice numbers, and our criteria is the value stored in cell G100.
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上述示例中，`**Amount**`值是我们的最大范围，而条件范围是发票号码，我们的条件是存储在单元格G100中的值。
 - en: '**Note**: For complex criteria lookup, consider using `**MAXIFS**` over the
     `**MAX**` function.'
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**：对于复杂的条件查找，请考虑使用`**MAXIFS**`而不是`**MAX**`函数。'
 - en: '[Looking up images](toc.xhtml#s79a)'
+  id: totrans-172
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找图像](toc.xhtml#s79a)'
 - en: 'Lookup capability in Excel is more comprehensive than just text and numbers.
     We will learn how to look up images, as shown in *[Figure 5.20](#fig5_20)*:'
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: Excel中的查找功能比仅限于文本和数字更全面。我们将学习如何查找图像，如*[图 5.20](#fig5_20)*所示：
 - en: '![](images/Figure-5.20.jpg)'
+  id: totrans-174
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.20.jpg)'
 - en: '**Figure 5.20:** Looking up images'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 5.20：** 查找图像'
 - en: 'Perform the following steps:'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 执行以下步骤：
 - en: Create a list of products and an adjacent blank column for logo images.
+  id: totrans-177
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个产品列表，并在旁边的空白列中放置标志图像。
 - en: Copy a logo image for each product and paste it on the blank cell adjacent to
     each product name. Resize it to fit.
+  id: totrans-178
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 为每个产品复制一个标志图像，并将其粘贴到每个产品名称旁边的空白单元格中。调整大小以适应。
 - en: To lock the image to the cell, right-click and select `**Format Picture**`.
     Go to the Format Picture pane, select `**Size & Properties**`, and select `**Move
     and size with cells**` in the `**Properties**` section (see *[Figure 5.21](#fig5_21)*):![](images/Figure-5.21.jpg)
+  id: totrans-179
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 要将图像锁定到单元格，右键单击并选择`**格式图片**`。转到格式图片窗格，选择`**大小和属性**`，在`**属性**`部分选择`**随单元格移动和调整大小**`（见*[图
+    5.21](#fig5_21)*）：![](images/Figure-5.21.jpg)
 - en: '**Figure 5.21:** Locking images to cells'
+  id: totrans-180
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 5.21：** 将图像锁定到单元格'
 - en: 'The next steps involve creating a linked image:'
+  id: totrans-181
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 接下来的步骤涉及创建链接图像：
 - en: Select and copy any cell that has the image. Ensure you copy the cell and not
     the image.
+  id: totrans-182
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择并复制任何带有图像的单元格。确保复制的是单元格而不是图像。
 - en: Right-click on another cell where you want to store the lookup image.
+  id: totrans-183
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 右键单击要存储查找图像的另一个单元格。
 - en: Select `**Paste Special**` and paste it as a Linked image (see *[Figure 5.22](#fig5_22)).*
+  id: totrans-184
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择`**粘贴特殊**`，将其粘贴为链接图像（见*[图 5.22](#fig5_22)*）。
 - en: The logo in your selected cell will be pasted into that new cell.![](images/Figure-5.22.jpg)
+  id: totrans-185
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 你选择的单元格中的标志将被粘贴到新单元格中。![](images/Figure-5.22.jpg)
 - en: '**Figure 5.22:** Pasting as Linked Picture'
+  id: totrans-186
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 5.22：** 粘贴为链接图片'
 - en: The next step is to create a named range. This will ensure that the copied logo
     dynamically changes based on the product name.
+  id: totrans-187
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 下一步是创建一个命名范围。这将确保复制的标志根据产品名称动态更改。
 - en: Go to the `**Formula**` tab and select define name.
+  id: totrans-188
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到`**公式**`选项卡，选择定义名称。
 - en: 'In the new name dialogue form, write ► in the Name Field: **Logos**, and in
     the refers to: `**=INDEX($E$116:$E$120, MATCH($G$116,$D$116:$D$120,0))**` (see
     *[Figure 5.22](#fig5_22)*).'
+  id: totrans-189
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在新名称对话框中，在名称字段中写入 ►：**标志**，在引用中写入：`**=INDEX($E$116:$E$120, MATCH($G$116,$D$116:$D$120,0))**`（见*[图
+    5.22](#fig5_22)*）。
 - en: Where `**$E$116:$E$120**` ► Column containing the logo images, `**$G$116**`
     ► the cell containing the product whose logo image you want to look up, and `**$D$116:$D$120**`
     ► Column containing product names.![](images/Figure-5.23.jpg)
+  id: totrans-190
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 其中`**$E$116:$E$120**` ► 包含标志图像的列，`**$G$116**` ► 包含要查找其标志图像的产品的单元���，`**$D$116:$D$120**`
+    ► 包含产品名称的列。![](images/Figure-5.23.jpg)
 - en: '**Figure 5.23:** Creating name range'
+  id: totrans-191
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 5.23：** 创建名称范围'
 - en: Finally, select the linked image we created in the previous step and replace
     its reference with the dynamic reference from the created name range (see *[Figure
     5.24](#fig5_24)*):![](images/Figure-5.24.jpg)
+  id: totrans-192
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后，选择我们在上一步中创建的链接图像，并用创建的名称范围中的动态引用替换其引用（见*[图 5.24](#fig5_24)*）：![](images/Figure-5.24.jpg)
 - en: '**Figure 5.24:** Changing the image reference to created name range'
+  id: totrans-193
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 5.24：** 将图像引用更改为创建的名称范围'
 - en: '**Note**: The defined name should only return a cell reference, so we use the
     `**INDEX/MATCH**` functions. Other functions like `**VLOOKUP**` will not work
     since they do not return references.'
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**：定义的名称应该只返回一个单元格引用，因此我们使用`**INDEX/MATCH**`函数。其他函数如`**VLOOKUP**`不起作用，因为它们不返回引用。'
 - en: '[Looking up cell addresses](toc.xhtml#s80a)'
+  id: totrans-195
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找单元格地址](toc.xhtml#s80a)'
 - en: In this section, we will learn how to look up cell addresses using the ADDRESS
     function.
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节中，我们将学习如何使用ADDRESS函数查找单元格地址。
 - en: In general, the `**ADDRESS**` function will return the cell address given a
     row number and a column number.
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 一般来说，`**ADDRESS**`函数将根据给定的行号和列号返回单元格地址。
 - en: Note that the returned cell address is a text string, not an actual reference.
     Also, the addresses returned are either relative, mixed, or absolute based on
     the selected address type.
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，返回的单元格地址是一个文本字符串，而不是实际引用。此外，根据所选的地址类型，返回的地址可能是相对的、混合的或绝对的。
 - en: As shown in *[Figure 5.25](#fig5_25)*, we want to know the last cell address
     for the crop “`**Traka**`”.
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 如*[图 5.25](#fig5_25)*所示，我们想知道作物“`**Traka**`”的最后一个单元格地址。
 - en: '![](images/Figure-5.25.jpg)'
+  id: totrans-200
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.25.jpg)'
 - en: '**Figure 5.25:** Looking up the last cell address with a criterion'
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 5.25：** 查找带有条件的最后一个单元格地址'
 - en: '`=ADDRESS(`'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=ADDRESS(`'
 - en: '`MAX( (C125:C136=F125)*ROW(C125:C136) ),`'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MAX( (C125:C136=F125)*ROW(C125:C136) ),`'
 - en: '`COLUMN(C125:C136) )`'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: '`COLUMN(C125:C136) )`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**C125:C136=F125**` returns an array of `**TRUE**` and `**FALSE**`, where
     `**TRUE**` is the position where the crop meets the criterion; otherwise, `**FALSE**`.'
+  id: totrans-206
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**C125:C136=F125**` 返回一个由`**TRUE**`和`**FALSE**`组成的数组，其中`**TRUE**`是符合条件的位置；否则为`**FALSE**`。'
 - en: (`**C125:C136=F125)*ROW(C125:C136),**` Multiply the corresponding Row numbers
     and the array of `**TRUE**`s and `**FALSE**`s. This will return Row numbers for
     all `**TRUE**`s and zeros for all `**FALSE**`s.
+  id: totrans-207
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: (`**C125:C136=F125)*ROW(C125:C136),**` 将相应的行号和`**TRUE**`和`**FALSE**`数组相乘。这将返回所有`**TRUE**`的行号和所有`**FALSE**`的零。
 - en: '`**MAX**` function returns the largest row number from the preceding array.'
+  id: totrans-208
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**MAX**`函数从前述数组中返回最大的行号。'
 - en: '`**COLUMN(C125:C136)**` returns the column number for all the crops.'
+  id: totrans-209
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**COLUMN(C125:C136)**` 返回所有作物的列号。'
 - en: The `**ADDRESS**` function returns the absolute cell reference given the row
     and column numbers.
+  id: totrans-210
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**ADDRESS**`函数根据行号和列号返回绝对单元格引用。'
 - en: '**Note:** By default, the `**ADDRESS**` function returns an absolute cell reference.
     If you want to return a mixed or relative address, select the options as shown
     in *[Figure 5.26](#fig5_26)*.'
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 默认情况下，`**ADDRESS**`函数返回绝对单元格引用。如果您想返回混合或相对地址，请按照*[图 5.26](#fig5_26)*中所示的选项进行选择。'
 - en: '![](images/Figure-5.26.jpg)'
+  id: totrans-212
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.26.jpg)'
 - en: '**Figure 5.26:** Returning relative or mixed references in the ADDRESS function'
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 5.26：** 在ADDRESS函数中返回相对或混合引用'
 - en: '[Using Pivot Table to lookup unique items in a list](toc.xhtml#s81a)'
+  id: totrans-214
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用数据透视表查找列表中的唯一项](toc.xhtml#s81a)'
 - en: A pivot table allows you to summarize and analyze large amounts of data quickly
     and easily. It helps you make sense of your data by organizing it meaningfully.
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据透视表可以帮助您快速、轻松地总结和分析大量数据。它通过有意义地组织数据来帮助您理清数据。
 - en: 'It can also be used to look up unique items in a list as shown in *[Figure
     5.27](#fig5_27)*:'
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 它还可以用于查找列表中的唯一项，如*[图 5.27](#fig5_27)*所示：
 - en: '![](images/Figure-5.27.jpg)'
+  id: totrans-217
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-5.27.jpg)'
 - en: '**Figure 5.27:** Looking up Unique Items Using a Pivot Table'
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 5.27：** 使用数据透视表查找唯一项'
 - en: 'Here are the steps to follow:'
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: Convert your range into a table, click anywhere on your Excel table, go to `**Table
     Design**` tab, and click Summarize with PivotTable (see *[Figure 5.28](#fig5_28)*):![](images/Figure-5.28.jpg)
+  id: totrans-220
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将您的范围转换为表格，单击Excel表格的任意位置，转到`**表格设计**`选项卡，然后单击使用数据透视表进行汇总（见*[图 5.28](#fig5_28)*）:![](images/Figure-5.28.jpg)
 - en: '**Figure 5.28:** Creating a Pivot Table'
+  id: totrans-221
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 5.28：** 创建数据透视表'
 - en: On the pop-up window, click the existing worksheet, then under location, select
     a cell to place the Pivot Table (see *[Figure 5.29](#fig5_29)*):![](images/Figure-5.29.jpg)
+  id: totrans-222
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在弹出窗口中，单击现有工作表，然后在位置下拉菜单中选择放置数据透视表的单元格（见*[图 5.29](#fig5_29)*）:![](images/Figure-5.29.jpg)
 - en: '**Figure 5.29:** Select where to place the pivot table'
+  id: totrans-223
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 5.29：** 选择放置数据透视表的位置'
 - en: Tick the `**Crop**` field among the pivotable fields or drop the field in the
     rows area. This populates a list of unique fields (see *[Figure 5.30](#fig5_30)*):![](images/Figure-5.30.jpg)
+  id: totrans-224
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在数据透视表字段中勾选`**作物**`字段或将该字段拖放到行区域。这将生成一个唯一字段列表（见*[图 5.30](#fig5_30)*）:![](images/Figure-5.30.jpg)
 - en: '**Figure 5.30:** Select the Pivot table fields'
+  id: totrans-225
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 5.30：** 选择数据透视表字段'
 - en: '[Conclusion](toc.xhtml#s82a)'
+  id: totrans-226
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结论](toc.xhtml#s82a)'
 - en: In this chapter, we learned that Excel offers multiple ways to look up data.
     By learning different approaches, you gain flexibility in choosing the best method.
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们了解到Excel提供了多种查找数据的方式。通过学习不同的方法，您可以灵活选择最佳方法。
 - en: Some of these alternative methods are more efficient or faster than the known
     lookup functions, depending on the size of your data set or the complexity of
     the task. For example, the `DSUM` function can accommodate more complex criteria
     and calculates faster than the `**VLOOKUP**` function on numeric data.
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些替代方法中有些比已知的查找函数更高效或更快，这取决于数据集的大小或任务的复杂性。例如，`DSUM`函数可以处理更复杂的条件并在数字数据上比`**VLOOKUP**`函数计算更快。
 - en: In summary, learning alternative ways of looking up data in Excel provides you
     with a broader skill set, increased efficiency, adaptability, and problem-solving
     capabilities.
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，在Excel中学习查找数据的替代方法可以为您提供更广泛的技能集、增加效率、适应性和解决问题的能力。
 - en: In the next chapter, we will start learning dynamic array lookup functions.
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将开始学习动态数组查找函数。
 - en: '[Points to remember](toc.xhtml#s83a)'
+  id: totrans-231
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[需要记住的要点](toc.xhtml#s83a)'
 - en: Learning alternative ways of solving problems in Excel enhances your problem-solving
     skills. It encourages you to think critically, consider different approaches,
     and explore creative solutions. These skills are transferable and valuable beyond
     Excel, benefiting you in other areas of work or life.
+  id: totrans-232
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 学习在Excel中解决问题的替代方式可以增强您的问题解决能力。它鼓励您进行批判性思考，考虑不同的方法，并探索创造性的解决方案。这些技能是可转移的，并且在Excel之外也具有价值，使您在其他工作或生活领域受益。
 - en: Excel is widely used across various industries and professions. Expanding your
     knowledge of alternative techniques makes you better equipped to handle diverse
     problems and adapt to evolving requirements or limitations.
+  id: totrans-233
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Excel被广泛应用于各行各业和各种职业。扩展对替代技术的了解，使您更能够处理各种问题并适应不断发展的需求或限制。

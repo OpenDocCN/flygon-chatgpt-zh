@@ -1,1168 +1,1746 @@
 - en: '[CHAPTER 2](toc.xhtml#c02)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第 2 章](toc.xhtml#c02)'
 - en: '[VLOOKUP Is Dead: Or is it?](toc.xhtml#c02)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[VLOOKUP 已死：还是吗？](toc.xhtml#c02)'
 - en: '[Introduction](toc.xhtml#s23a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s23a)'
 - en: This chapter will introduce us to the most popular Excel lookup function — `**VLOOKUP**`.
     We will learn its basic structure and inherent weaknesses, as well as how we can
     nest it with other functions to overcome its weaknesses.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章将向我们介绍最流行的 Excel 查找函数 — `**VLOOKUP**`。我们将学习其基本结构和固有弱点，以及如何将其与其他函数嵌套以克服其弱点。
 - en: In addition, since the book is about Mastering Excel, we will dig into the different
     Excel functions.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 另外，由于这本书是关于精通 Excel，我们将深入研究不同的 Excel 函数。
 - en: '[Structure](toc.xhtml#s24a)'
+  id: totrans-5
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结构](toc.xhtml#s24a)'
 - en: 'In this chapter, we will discuss the following topics:'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: '`**VLOOKUP**` exact and approximate match'
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**VLOOKUP**` 精确匹配和近似匹配'
 - en: Breaking `**VLOOKUP**` myths
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 打破 `**VLOOKUP**` 的神话
 - en: 'Myth 1: `**VLOOKUP**` cannot do a left lookup'
+  id: totrans-9
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 1: `**VLOOKUP**` 无法进行左侧查找'
 - en: 'Myth 2: `**VLOOKUP**` cannot return multiple columns in a lookup'
+  id: totrans-10
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 2: `**VLOOKUP**` 无法在查找中返回多列'
 - en: 'Myth 3: `**VLOOKUP**` cannot do a multiple criteria lookup'
+  id: totrans-11
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 3: `**VLOOKUP**` 无法进行多条件查找'
 - en: 'Myth 4: `**VLOOKUP**` cannot handle inserting and deleting columns in the lookup
     range'
+  id: totrans-12
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 4: `**VLOOKUP**` 无法处理在查找范围中插入和删除列'
 - en: 'Myth 5: `**VLOOKUP**` cannot do a two-way lookup'
+  id: totrans-13
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 5: `**VLOOKUP**` 无法进行双向查找'
 - en: 'Myth 6: `**VLOOKUP**` cannot do a partial match lookup'
+  id: totrans-14
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 6: `**VLOOKUP**` 无法进行部分匹配查找'
 - en: 'Myth 7: `**VLOOKUP**` cannot do a case-sensitive partial match lookup'
+  id: totrans-15
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 7: `**VLOOKUP**` 无法进行区分大小写的部分匹配查找'
 - en: 'Myth 8: `**VLOOKUP**` cannot do a case-sensitive lookup'
+  id: totrans-16
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 8: `**VLOOKUP**` 无法进行区分大小写的查找'
 - en: 'Myth 9: `**VLOOKUP**` cannot return multiple results'
+  id: totrans-17
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 9: `**VLOOKUP**` 无法返回多个结果'
 - en: 'Myth 10: `**VLOOKUP**` cannot lookup from last to first'
+  id: totrans-18
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 10: `**VLOOKUP**` 无法从后往前查找'
 - en: 'Myth 11: `**VLOOKUP**` cannot lookup the top or bottom N values'
+  id: totrans-19
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 11: `**VLOOKUP**` 无法查找前 N 个或后 N 个值'
 - en: 'Myth 12: `**VLOOKUP**` cannot do a reverse lookup'
+  id: totrans-20
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 12: `**VLOOKUP**` 无法进行反向查找'
 - en: 'Myth 13: `**VLOOKUP**` cannot do a horizontal lookup'
+  id: totrans-21
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 13: `**VLOOKUP**` 无法进行水平查找'
 - en: 'Myth 14: `**VLOOKUP**` cannot return multiple non-contiguous columns'
+  id: totrans-22
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 14: `**VLOOKUP**` 无法返回多个不连续的列'
 - en: 'Myth 15: `**VLOOKUP**` cannot lookup multiple non-contiguous arrays'
+  id: totrans-23
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '神话 15: `**VLOOKUP**` 无法查找多个不连续的数组'
 - en: '[VLOOKUP exact and approximate match](toc.xhtml#s25a)'
+  id: totrans-24
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[VLOOKUP 精确匹配和近似匹配](toc.xhtml#s25a)'
 - en: As we learned in the previous chapter, mastering the basics is the initial step
     to mastering any skill. So, here is what you need to know about `**VLOOKUP**`.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在前一章中所学到的，掌握基础知识是掌握任何技能的第一步。因此，以下是关于 `**VLOOKUP**` 的必知内容。
 - en: '`**VLOOKUP**` allows you to search for a specific value in the leftmost column
     (that is, *lookup value*) in a table (that is, *table array*) and then return
     a value from a specified column on the right (that is, *column index number*)
     in the same row as the lookup value. You can specify whether you want an approximate
     or exact match (that is, *range lookup*).'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**VLOOKUP**` 允许你在表格的最左列（即 *查找值*）中搜索特定值，然后从同一行中指定的列（即 *列索引号*）返回一个值。你可以指定是否要进行近似匹配或精确匹配（即
+    *范围查找*）。'
 - en: By default, `**VLOOKUP**` will do an approximate match.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 默认情况下，`**VLOOKUP**` 将进行近似匹配。
 - en: 'Syntax:'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '`=VLOOKUP(lookup value, table array, column index number, [range lookup])`'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(查找值, 表数组, 列索引号, [范围查找])`'
 - en: '**Point to note:**'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意事项：**'
 - en: The lookup value **must be in the first column** of the table. In *[Figure 2.1](#fig2_1)*,
     since the invoice number is the lookup value, all invoices are stored in the first
     column of our table.
+  id: totrans-31
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找值**必须在表格的第一列**中。在 *[图 2.1](#fig2_1)* 中，由于发票号是查找值，所有发票都存储在我们表格的第一列中。
 - en: There are only two essential columns in our table — the one storing the lookup
     value and the one storing the value to return. In *[Figure 2.1](#fig2_1)*, our
     formula would still have worked even if we did not have the third column.
+  id: totrans-32
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们的表格中只有两列是必要的 — 存储查找值的列和存储要返回值的列。在 *[图 2.1](#fig2_1)* 中，即使我们没有第三列，我们的公式仍然可以工作。
 - en: 'Since we want an exact match for our lookup value, we select `**FALSE**` as
     the lookup range. You can replace `**FALSE**` with zero `**0**`, as follows:'
+  id: totrans-33
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于我们希望对查找值进行精确匹配，我们选择 `**FALSE**` 作为查找范围。你可以用零 `**0**` 替换 `**FALSE**`，如下所示：
 - en: '`=VLOOKUP(F3, tblSales, 2, 0)`'
+  id: totrans-34
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(F3, tblSales, 2, 0)`'
 - en: '**Note**: Excel stores Boolean values as integers, with a value of `**0**`
     representing `**FALSE**` and any other value representing TRUE. When you enter
     `**TRUE**` or `**FALSE**` in a cell, Excel automatically converts them to their
     equivalent integer.'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**：Excel将布尔值存储为整数，值为`**0**`表示`**FALSE**`，任何其他值表示TRUE。当您在单元格中输入`**TRUE**`或`**FALSE**`时，Excel会自动将其转换为其等效的整数。'
 - en: '![](images/Figure-2.1.jpg)'
+  id: totrans-36
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.1.jpg)'
 - en: '**Figure 2.1:** Basic VLOOKUP exact match'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.1：** 基本VLOOKUP精确匹配'
 - en: '[VLOOKUP approximate match](toc.xhtml#s26a)'
+  id: totrans-38
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[VLOOKUP近似匹配](toc.xhtml#s26a)'
 - en: By default, the `**VLOOKUP**` function is set to return an approximate match.
     On the brighter side, when working with a large numerical and sorted dataset,
     and you can tolerate some errors, `**VLOOKUP**` is very fast.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 默认情况下，`**VLOOKUP**`函数设置为返回近似匹配。在处理大量数字和排序数据集，并且可以容忍一些错误时，`**VLOOKUP**`非常快速。
 - en: 'However, most searches require an exact match. In addition, an approximate
     search will return the wrong results if the following requirements are not met:'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，大多数搜索需要精确匹配。此外，如果不满足以下要求，近似搜索将返回错误的结果：
 - en: Data table must be sorted in ascending order by the lookup value.
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据表必须按查找值升序排序。
 - en: Data table should only have unique values in the lookup values columns.
+  id: totrans-42
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据表的查找值列中应只有唯一值。
 - en: Data table lookup range should be in the same data type as the lookup value.
+  id: totrans-43
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据表查找范围应与查找值具有相同的数据类型。
 - en: Nonetheless, an approximate match is beneficial when grouping data (for example,
     when assigning grades to students; *[Figure 2.2](#fig2_2)*).
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管如此，当分组数据时（例如，为学生分配成绩时；*[图2.2](#fig2_2)*），近似匹配是有益的。
 - en: '![](images/Figure-2.2.jpg)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.2.jpg)'
 - en: '**Figure 2.2:** VLOOKUP approximate match data grouping'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.2：** VLOOKUP近似匹配数据分组'
 - en: 'Approximate Match is also applicable when searching for a value within a range
     (for example, when giving a discount based on sales range; *[Figure 2.3](#fig2_3)*):'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 在搜索范围内查找值时，近似匹配也适用（例如，根据销售范围给出折扣时；*[图2.3](#fig2_3)*）：
 - en: '![](images/Figure-2.3.jpg)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.3.jpg)'
 - en: '**Figure 2.3:** VLOOKUP approximate match value from a range'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.3：** 从范围内VLOOKUP近似匹配值'
 - en: '**Note:** When using VLOOKUP for an approximate range, you can skip the last
     range lookup argument, and the formula will still be ok.'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 在使用VLOOKUP进行近似范围时，您可以跳过最后的范围查找参数，公式仍然有效。'
 - en: Any argument between square brackets means it is optional.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 方括号中的任何参数表示是可选的。
 - en: '`=VLOOKUP(lookup value, table array, column index number, [range lookup])`'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(查找值, 表数组, 列索引号, [范围查找])`'
 - en: '**Tip**: VLOOKUP approximate match is a good alternative to the nested IF function
     since it calculates faster.'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '**提示**：VLOOKUP近似匹配是嵌套IF函数的一个很好的替代，因为计算速度更快。'
 - en: 'For example, to get the same results, as shown in *[Figure 2.2](#fig2_2)*,
     you can either use the following nested IF function or VLOOKUP:'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，为了获得与*[图2.2](#fig2_2)*中显示的相同结果，您可以使用以下嵌套的IF函数或VLOOKUP：
 - en: '`=IF(J3>=M7, N7, IF(J3>=M6,N6,IF(J3>=M5,N5,IF(J3>=M4,N4,$N3))))`'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=IF(J3>=M7, N7, IF(J3>=M6,N6,IF(J3>=M5,N5,IF(J3>=M4,N4,$N3))))`'
 - en: '`=VLOOKUP(J3, tblGrades,2)`'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(J3, tblGrades,2)`'
 - en: Because of the aforementioned limitation, there are many myths about what `VLOOKUP`
     can or cannot do.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于前述限制，关于`VLOOKUP`能做什么或不能做什么有许多神话。
 - en: In the next section, we explore the full potential of the `VLOOKUP` function
     when nested with other functions.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一节中，我们将探讨`VLOOKUP`函数与其他函数嵌套时的全部潜力。
 - en: '[Breaking VLOOKUP myths](toc.xhtml#s27a)'
+  id: totrans-59
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[打破VLOOKUP的神话](toc.xhtml#s27a)'
 - en: Myths are stories that people from a particular culture have been telling for
     a long time. These stories usually majorly involve teaching why things are the
     way they are based on history. These are sometimes half-truths or pure lies.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 神话是特定文化中的人们长期以来一直在讲述的故事。这些故事通常主要涉及根据历史教导事物为何是其现在的样子。这些有时是半真半假或纯粹的谎言。
 - en: A lot of teachings regarding how `**VLOOKUP**` functions are shrouded by half-truths
     and sometimes pure lies, giving the `**VLOOKUP**` function a bad name.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于`**VLOOKUP**`函数如何运作的许多教导都被半真半假或纯粹的谎言所掩盖，给`**VLOOKUP**`函数带来了不好的名声。
 - en: In this section, we will learn the full truth about `**VLOOKUP**` by busting
     the existing myths one by one.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节中，我们将通过逐一打破现有的神话来了解`**VLOOKUP**`的全部真相。
 - en: '[Myth 1: VLOOKUP cannot do a left lookup](toc.xhtml#s28a)'
+  id: totrans-63
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话1：VLOOKUP无法进行左查找](toc.xhtml#s28a)'
 - en: In *[Figure 2.4](#fig2_4)*, the lookup value (sales date) is not in the first
     column of the table; instead, we have the return value (customer) there.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 在*[图2.4](#fig2_4)*中，查找值（销售日期）不在表的第一列，而是在那里有返回值（客户）。
 - en: 'In such a situation, the default `**VLOOKUP**` function will not work. You
     must nest the IF function, as shown in the following figure:'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，默认的`**VLOOKUP**`函数将无法工作。您必须嵌套IF函数，如下图所示：
 - en: '![](images/Figure-2.4.jpg)'
+  id: totrans-66
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.4.jpg)'
 - en: '**Figure 2.4:** VLOOKUP left lookup'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.4：** VLOOKUP左查找'
 - en: The trick is creating a custom table array using the `**IF**` function.
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 关键是使用`**IF**`函数创建自定义表数组。
 - en: The `**IF**` function returns a two-column table with the Sales Date being the
     first column and the Customers as the second Column.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**IF**`函数返回一个两列表，销售日期是第一列，客户是第二列。'
 - en: This column rearrangement tricks `**VLOOKUP**` into looking to the Left while
     assuming it is looking to the right.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种列重新排列技巧使`**VLOOKUP**`在假定向右查找的同时实际上向左查找。
 - en: '[Myth 2: VLOOKUP cannot return multiple columns in a lookup](toc.xhtml#s29a)'
+  id: totrans-71
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话2：VLOOKUP无法在查找中返回多列](toc.xhtml#s29a)'
 - en: In *[Figure 2.5](#fig2_5)*, you must return the Sales Date and Amount given
     for a specific customer.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 在*[图2.5](#fig2_5)*中，您必须返回特定客户的销售日期和金额。
 - en: By default, you can only return one value at a time, as the `**column_index**`
     argument in VLOOKUP only accepts a single value.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 默认情况下，您一次只能返回一个值，因为VLOOKUP中的`**column_index**`参数只接受单个值。
 - en: However, you can wrap more than one `**column_index**` value in curly braces
     and return multiple columns.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，您可以将多个`**column_index**`值放在花括号中，并返回多个列。
 - en: 'If you do not have Office 365 subscription, perform the following steps:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您没有Office 365订阅，请执行以下步骤：
 - en: Highlight the cells to return the multiple values.
+  id: totrans-76
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 高亮显示要返回多个值的单元格。
 - en: Go to the formula bar and key in the following formula.
+  id: totrans-77
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 转到公式栏，输入以下公式。
 - en: 'Click **Ctrl + Shift + Enter** to return the following values:'
+  id: totrans-78
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 点击**Ctrl + Shift + Enter**返回以下值：
 - en: '![](images/Figure-2.5.jpg)'
+  id: totrans-79
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.5.jpg)'
 - en: '**Figure 2.5:** VLOOKUP returns multiple columns'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.5：** VLOOKUP返回多列'
 - en: '[Myth 3: VLOOKUP cannot use multiple criteria in a lookup](toc.xhtml#s30a)'
+  id: totrans-81
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话3：VLOOKUP无法在查找中使用多个条件](toc.xhtml#s30a)'
 - en: If your data has duplicates, as shown in *[Figure 2.6](#fig2_6),* the `**VLOOKUP**`
     function will return the first value that meets a criterion.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您的数据有重复项，如*[图2.6](#fig2_6)*所示，`**VLOOKUP**`函数将返回满足条件的第一个值。
 - en: For example, if you looked up the sales amount for customer “Carl Jackson”,
     the `VLOOKUP` function will return 45,000 since this is the first occurrence.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如果您查找客户“卡尔·杰克逊”的销售金额，`VLOOKUP`函数将返回45,000，因为这是第一次出现。
 - en: What if you want to look up the sales amount for customer “Carl Jackson” for
     “1/14/2010”?
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您想查找客户“卡尔·杰克逊”在“2010年1月14日”的销售金额怎么办？
 - en: 'By default, `VLOOKUP` cannot look up multiple values. You can modify it as
     follows:'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 默认情况下，`VLOOKUP`无法查找多个值。您可以按以下方式修改它：
 - en: Combine the multiple values using an ampersand. Using our preceding example,
     our lookup value now will be `Carl Jackson1/14/2010`.
+  id: totrans-86
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用和号组合多个值。使用我们前面的例子，我们的查找值现在将是`Carl Jackson1/14/2010`。
 - en: Create a custom two-column table array using the IF function. The first column
     should contain a combination of two columns that contain the lookup values, that
     is, `tblSales[Customer]&tblSales[Sales Date]` in that order, similar to the lookup
     value combo. The second column should contain the lookup value.
+  id: totrans-87
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用IF函数创建一个自定义两列表数组。第一列应包含两列的组合，这两列包含查找值，即按顺序`tblSales[Customer]&tblSales[Sales
+    Date]`，类似于查找值组合。第二列应包含查找值。
 - en: With the combo lookup value and custom table array, write your VLOOKUP as shown
     in *[Figure 2.6](#fig2_6).* Remember that this is an array function; therefore,
     click **Ctrl + Shift +Enter** if you do not have an Office 365.
+  id: totrans-88
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用组合查找值和自定义表数组，在*[图2.6](#fig2_6)*中编写您的VLOOKUP。请记住这是一个数组函数；因此，如果您没有Office 365，请点击**Ctrl
+    + Shift + Enter**。
 - en: '`=VLOOKUP( T19&U19,`'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP( T19&U19,`'
 - en: '`IF({1,0}, tblSalesT[Customer]&tblSalesT[Sales Date], tblSalesT[Amount]), 2,
     0 )`'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: '`IF({1,0}, tblSalesT[Customer]&tblSalesT[Sales Date], tblSalesT[Amount]), 2,
+    0 )`'
 - en: '![](images/Figure-2.6.jpg)'
+  id: totrans-91
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.6.jpg)'
 - en: '**Figure 2.6:** VLOOKUP multiple criteria'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.6：** VLOOKUP多条件'
 - en: '[Myth 4: VLOOKUP cannot handle the insertion and deletion of columns in the
     lookup range](toc.xhtml#s31a)'
+  id: totrans-93
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话4：VLOOKUP无法处理查找范围中的列插入和删除](toc.xhtml#s31a)'
 - en: So far, we have been hard coding the column index number in the function, that
     is, the number of the column that contains the return value.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我们一直在函数中硬编码列索引号，即包含返回值的列的编号。
 - en: This poses a problem when you insert or delete a column before this column,
     as it breaks the `VLOOKUP` function.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 当在此列之前插入或删除列时，这会导致问题，因为它会破坏`VLOOKUP`函数。
 - en: 'Therefore, for `VLOOKUP` to handle insertion and deletion, we need to make
     the column index number dynamic using the `MATCH` Function, as shown in *[Figure
     2.7](#fig2_7)*:'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，为了使`VLOOKUP`处理插入和删除，我们需要使用`MATCH`函数使列索引号动态化，如*[图2.7](#fig2_7)*所示：
 - en: '`**=VLOOKUP(E3,tblSale,**`'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**=VLOOKUP(E3,tblSale,**`'
 - en: '`**MATCH(F2,tblSale[#Headers],0),**`'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**MATCH(F2,tblSale[#Headers],0),**`'
 - en: '`**FALSE)**`'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**FALSE)**`'
 - en: 'Note: The `**MATCH**` function looks up a value in a range and returns its
     relative position.'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：`**MATCH**`函数查找范围中的值并返回其相对位置。
 - en: '`=MATCH(F2,tblSale[#Headers],0)=2`'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=MATCH(F2,tblSale[#Headers],0)=2`'
 - en: In our case, the `**MATCH**` function looks for the text `**Amount**` stored
     in cell F2 among the sales table headers and will always return its position,
     making it dynamic.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的情况下，`**MATCH**`函数在销售表头中查找存储在单元格F2中的文本`**Amount**`，并始终返回其位置，使其具有动态性。
 - en: '![](images/Figure-2.7.jpg)'
+  id: totrans-103
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.7.jpg)'
 - en: '**Figure 2.7:** VLOOKUP handle insertion and deletion'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.7：** VLOOKUP处理插入和删除'
 - en: '[Myth 5: VLOOKUP cannot do a two-way lookup](toc.xhtml#s32a)'
+  id: totrans-105
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话5：VLOOKUP无法进行双向查找](toc.xhtml#s32a)'
 - en: Hard coding the column index number in the `**VLOOKUP**` function makes it almost
     impossible to do a two-way lookup.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 在`**VLOOKUP**`函数中硬编码列索引号几乎不可能进行双向查找。
 - en: However, if we nest the `**MATCH**` function, as we have learned from the previous
     section, the `**VLOOKUP**` function can easily do a two-way lookup (see *[Figure
     2.8](#fig2_8)*).
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是，如果像我们从前一节学到的那样嵌套`**MATCH**`函数，`**VLOOKUP**`函数可以轻松进行双向查找（见*[图2.8](#fig2_8)*）。
 - en: Our Task is to look up sales for a specific customer (Joshua) from the Customers
     List and for a specific region (Western).
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们的任务是从客户列表中查找特定客户（Joshua）的销售额，并查找特定地区（Western）的销售额。
 - en: Since the customers’ list is stored in the first column of our `SalesRegion`
     table, the lookup value will be the specific customer in cell G38\. As for the
     regions, we shall use the `MATCH` function to return the relative column index
     for the specific region.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于客户名单存储在我们的`SalesRegion`表的第一列中，查找值将是单元格G38中的特定客户。至于地区，我们将使用`MATCH`函数返回特定地区的相对列索引。
 - en: '`=VLOOKUP(G38,SalesRegion,`'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(G38,SalesRegion,`'
 - en: '`MATCH(G40, SalesRegion[#Headers],0),0)`'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(G40, SalesRegion[#Headers],0),0)`'
 - en: '**Note**: The MATCH function always returns the first TRUE match.'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** MATCH函数始终返回第一个TRUE匹配。'
 - en: And since we cannot have duplicates in table headers, the MATCH function will
     always return the correct column number.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于我们不能在表头中有重复项，MATCH函数将始终返回正确的列号。
 - en: '![](images/Figure-2.8.jpg)'
+  id: totrans-114
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.8.jpg)'
 - en: '**Figure 2.8:** VLOOKUP two-way Lookup'
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.8：** VLOOKUP双向查找'
 - en: '[Myth 6: VLOOKUP cannot do a partial match lookup](toc.xhtml#s33a)'
+  id: totrans-116
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话6：VLOOKUP无法进行部分匹配查找](toc.xhtml#s33a)'
 - en: VLOOKUP has only an Approximate and Exact Match but can also do a partial match.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: VLOOKUP只有近似匹配和精确匹配，但也可以进行部分匹配。
 - en: A partial match is possible if you combine the lookup value with a wildcard,
     as shown in *[Figure 2.9](#fig2_9)*.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果将查找值与通配符结合起来，就可以进行部分匹配，如*[图2.9](#fig2_9)*所示。
 - en: '**Note:** Wildcards are special characters representing one or multiple characters
     in a text string. The most common wildcards are the asterisk (*) and a question
     mark (?).'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 通配符是表示文本字符串中一个或多个字符的特殊字符。最常见的通配符是星号（*）和问号（?）。'
 - en: 'Asterisk (*): This wildcard represents one or more characters in a text string.
     For example, **“**`**P***`**”** will find any word that *starts with* the letter
     P, `***P**` will find any word that *ends with* the letter P, and `***P***` will
     find any word that *contains* the letter P.'
+  id: totrans-120
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 星号（*）：此通配符表示文本字符串中一个或多个字符。例如，**“**`**P***`**”**将找到以字母P开头的任何单词，`***P**`将找到以字母P结尾的任何单词，`***P***`将找到包含字母P的任何单词。
 - en: 'Question mark (?): The question mark wildcard represents a single character
     in a text string. For example, the search term `**H??t**` will find any four-letter
     word that starts with “H”, ends with “t”, and has two characters in between, such
     as “Heat” or “Host”.'
+  id: totrans-121
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 问号（?）：问号通配符表示文本字符串中的单个字符。例如，搜索词`**H??t**`将找到任何以“H”开头，以“t”结尾，并在中间有两个字符的四字词，例如“Heat”或“Host”。
 - en: You can combine the asterisk and the question marks to define your search. For
     example, `**???T***` will search for any string where T is the fourth character
     but ends with any number of characters, such as Mas**ts**, Coa**t**ing, Soo**t**hing,
     and so on. Another example is *****`**T???**` This will search for any string
     where T is the fourth last character but starts with any number of characters,
     such as Bea**t**ing, Charac**t**ers, Assis**t**ing.
+  id: totrans-122
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 您可以结合星号和问号来定义您的搜索。例如，`**???T***` 将搜索T为第四个字符但以任意数量的字符结尾的任何字符串，例如Mas**ts**，Coa**t**ing，Soo**t**hing等。另一个例子是*****`**T???**`
+    这将搜索T为倒数第四个字符但以任意数量的字符开头的任何字符串，例如Bea**t**ing，Charac**t**ers，Assis**t**ing等。
 - en: '`=VLOOKUP( “*” & E54 & “*”, tblinvoices, 2, 0 )`'
+  id: totrans-123
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP( “*” & E54 & “*”, tblinvoices, 2, 0 )`'
 - en: In the following example (*[Figure 2.9](#fig2_9)*), we look up the amount for
     an invoice containing the letter P. We know this because we have put an asterisk
     before and after our criterion stored in cell E54.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下面的示例（*[图2.9](#fig2_9)*）中，我们查找包含字母P的发票金额。我们知道这一点，因为我们在存储在单元格E54中的标准前后放置了一个星号。
 - en: Therefore, *P* means there could be many characters before and after the letter
     “P”.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，*P* 意味着字母“P”前后可能有许多字符。
 - en: Please note that the formula returns the first `TRUE` value. Later in the chapter,
     we will learn how to return multiple values in case of duplicates.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，该公式返回第一个`TRUE`值。在本章后面，我们将学习如何在重复项的情况下返回多个值。
 - en: '![](images/Figure-2.9.jpg)'
+  id: totrans-127
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.9.jpg)'
 - en: '**Figure 2.9:** VLOOKUP Partial Match'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.9：** VLOOKUP 部分匹配'
 - en: Suppose you want to look up values for an invoice whose fifth character is the
     letter “P”?
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设你想查找第五个字符为字母“P”的发票的值？
 - en: In such a scenario, we shall use the question mark (?) as the wildcard character
     to represent any single character.
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，我们将使用问号（?）作为通配符来代表任意单个字符。
 - en: '`=VLOOKUP( “????”&E57&”*”, tblinvoices, 2, 0 )`'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP( “????”&E57&”*”, tblinvoices, 2, 0 )`'
 - en: As shown in *[Figure 2.10](#fig2_10)*, Invoice number “220-PU-009” is the first
     invoice, where the letter “P” is the fifth character. We know this is the correct
     invoice because we put four question marks before our criterion (P) stored in
     cell E57.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 如*[图2.10](#fig2_10)*所示，发票号“220-PU-009”是第一张发票，其中字母“P”是第五个字符。我们知道这是正确的发票，因为我们在存储在单元格E57中的标准（P��前面放置了四个问号。
 - en: Remember, since the invoice does not end with the letter “P”, we must insert
     an asterisk after the criterion to represent any number of characters after it.
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 请记住，由于发票不以字母“P”结尾，我们必须在标准后面插入一个星号来代表它后面的任意数量的字符。
 - en: '![](images/Figure-2.10.jpg)'
+  id: totrans-134
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.10.jpg)'
 - en: '**Figure 2.10:** VLOOKUP Partial Match single characters'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.10：** VLOOKUP 部分匹配单个字符'
 - en: '**Note:** Since the `**VLOOKUP**` function is not case-sensitive, the preceding
     examples will search for the letter “P” irrespective of whether it is uppercase
     or lowercase.'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 由于`**VLOOKUP**`函数不区分大小写，前面的示例将搜索字母“P”，无论其是大写还是小写。'
 - en: '[Myth 7: VLOOKUP cannot do a case-sensitive partial match lookup](toc.xhtml#s34a)'
+  id: totrans-137
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话7：VLOOKUP 无法进行区分大小写的部分匹配查找](toc.xhtml#s34a)'
 - en: 'Excel has two popular case-sensitive functions: `**FIND**` and `**EXACT**`.'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: Excel有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 - en: Since `**VLOOKUP**` is not case-sensitive, we must nest one of the preceding
     functions when doing a case-sensitive partial match lookup.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于`**VLOOKUP**`不区分大小写，当进行区分大小写的部分匹配查找时，我们必须嵌套前面的函数之一。
 - en: As *[Figure 2.11](#fig2_11)* exemplifies, we need to look up an invoice that
     contains the lowercase letter “p”.
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 如*[图2.11](#fig2_11)*所示，我们需要查找一个包含小写字母“p”的发票。
 - en: '`=VLOOKUP(TRUE, IF( {1,0},`'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(TRUE, IF( {1,0},`'
 - en: '`ISNUMBER(FIND(K54,tblpay[Invoice’#])),`'
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: '`ISNUMBER(FIND(K54,tblpay[Invoice’#])),`'
 - en: '`tblpay[Amount]),2,0)`'
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: '`tblpay[Amount]),2,0)`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**FIND(K54, tblpay[Invoice’#])**` returns an array of numbers and errors.
     Numbers representing the position of lowercase “p” in the invoice number and errors
     for any invoice missing a lowercase “p.”'
+  id: totrans-145
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**FIND(K54, tblpay[Invoice’#])**` 返回一个数字和错误的数组。数字代表发票号码中小写“p”的位置，错误代表任何缺少小写“p”的发票。'
 - en: '`**ISNUMBER(FIND(K54,tblpay[Invoice’#]))**` `converts this array of numbers
     and errors into a `**TRUE**`/`**FALSE**` array. TRUE for any number and FALSE
     for the errors.`'
+  id: totrans-146
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**ISNUMBER(FIND(K54,tblpay[Invoice’#]))**` 将这个数字和错误的数组转换成一个`**TRUE**`/`**FALSE**`数组。对于任何数字为TRUE，对于错误为FALSE。'
 - en: '`*   Create a custom two-column table array using the IF function. The first
     column contains this array of `**TRUE/FALSE**` (lookup values column), and the
     second contains the Invoices amount (return values column).*   Since our lookup
     values are `**TRUE/FALSE**` values, the `**VLOOKUP**` function should look up
     a `**TRUE**` value and return the first TRUE value.*   Since this is an array
     function, click **Ctrl + Shift + Enter** if you do not have an Office 365 subscription.`'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: '`*   使用 IF 函数创建一个自定义的两列表数组。第一列包含这个由 `**TRUE/FALSE**`（查找值列）组成的数组，第二列包含发票金额（返回值列）。*   由于我们的查找值是
+    `**TRUE/FALSE**` 值，`**VLOOKUP**` 函数应该查找一个 `**TRUE**` 值并返回第一个 `**TRUE**` 值。*   由于这是一个数组函数，如果您没有
+    Office 365 订阅，请单击 **Ctrl + Shift + Enter**。'
 - en: '`![](images/Figure-2.11.jpg)'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: '`![](images/Figure-2.11.jpg)'
 - en: '**Figure 2.11:** VLOOKUP Partial Case-Sensitive Match'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 2.11：** VLOOKUP 部分区分大小写匹配'
 - en: '[Myth 8: VLOOKUP cannot do a case-sensitive lookup](toc.xhtml#s35a)'
+  id: totrans-150
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[迷思 8：VLOOKUP 无法进行区分大小写查找](toc.xhtml#s35a)'
 - en: As we have learned from the previous section, the `**FIND**` function will help
     the `**VLOOKUP**` function to do a partial case-sensitive lookup.
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们从前一节中学到的，`**FIND**` 函数将帮助 `**VLOOKUP**` 函数进行部分区分大小写查找。
 - en: 'We must use the `EXACT` function to do an entire case-sensitive lookup (see
     *[Figure 2.12](#fig2_12)*):'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须使用 `EXACT` 函数来进行整个区分大小写查找（见 *[图 2.12](#fig2_12)*）：
 - en: '`=VLOOKUP(TRUE,`'
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(TRUE,`'
 - en: '`IF({1,0},`'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '`IF({1,0},`'
 - en: '`EXACT(Q54,Payment[Product]),`'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: '`EXACT(Q54,Payment[Product]),`'
 - en: '`Payment[Amount]),2,0)`'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Payment[Amount]),2,0)`'
 - en: 'Here is how the preceding function operates:'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的操作方式：
 - en: '`**EXACT(Q54, Payment[Product])**` returns an array of `**TRUE**` and `**FALSE**`.
     `**TRUE**` represents the product, which is precisely equal to the proper case
     `Furniture` else `**FALSE**`.'
+  id: totrans-158
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**EXACT(Q54, Payment[Product])**` 返回一个由 `**TRUE**` 和 `**FALSE**` 组成的数组。 `**TRUE**`
+    代表产品，它与正确大小写的 `Furniture` 完全相等，否则为 `**FALSE**`。'
 - en: Create a custom two-column table array using the IF function. The first column
     contains this array of `**TRUE**`/`**FALSE**` (lookup values column), and the
     second contains the Invoices amount (return values column).
+  id: totrans-159
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用 IF 函数创建一个自定义的两列表数组。第一列包含这个由 `**TRUE**`/`**FALSE**`（查找值列）组成的数组，第二列包含发票金额（返回值列）。
 - en: Since our lookup values are `**TRUE**`/`**FALSE**` values, the `**VLOOKUP**`
     function should look up a `**TRUE**` value and return the first `**TRUE**` value.
+  id: totrans-160
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于我们的查找值是 `**TRUE**`/`**FALSE**` 值，`**VLOOKUP**` 函数应该查找一个 `**TRUE**` 值并返回第一个
+    `**TRUE**` 值。
 - en: Since this is an array function, click **Ctrl + Shift + Enter** if you do not
     have an Office 365 subscription.
+  id: totrans-161
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于这是一个数组函数，如果您没有 Office 365 订阅，请单击 **Ctrl + Shift + Enter**。
 - en: '![](images/Figure-2.12.jpg)'
+  id: totrans-162
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.12.jpg)'
 - en: '**Figure 2.12:** VLOOKUP Full Case-Sensitive Match'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 2.12：** VLOOKUP 完全区分大小写匹配'
 - en: '**Note:** Since `**VLOOKUP**` is not case-sensitive, without the use of the
     `**EXACT**` function as shown earlier, it would have returned the amount for the
     first instance where the product is furniture, that is, 45,000.'
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 由于 `**VLOOKUP**` 不区分大小写，如果没有像前面展示的 `**EXACT**` 函数，它将返回产品为家具的第一个实例的金额，即
+    45,000。'
 - en: '[Myth 9: VLOOKUP cannot return multiple results](toc.xhtml#s36a)'
+  id: totrans-165
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[迷思 9：VLOOKUP 无法返回多个结果](toc.xhtml#s36a)'
 - en: 'By default, `**VLOOKUP**` returns the first `**TRUE**` value. So, if you have
     duplicate items and want to return all `**TRUE**` values, you must nest the `**SMALL**`
     and `**IF**` functions as shown in *[Figure 2.13](#fig2_13)*:'
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 默认情况下，`**VLOOKUP**` 返回第一个 `**TRUE**` 值。因此，如果您有重复项目并且想要返回所有 `**TRUE**` 值，您必须像
+    *[图 2.13](#fig2_13)* 中所示嵌套 `**SMALL**` 和 `**IF**` 函数。
 - en: '`=VLOOKUP(`'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(`'
 - en: '`SMALL(IF($F$70=tbl[Customer],`'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: '`SMALL(IF($F$70=tbl[Customer],`'
 - en: '`ROW(tbl[Customer])), ROW(A1)),`'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: '`ROW(tbl[Customer])), ROW(A1)),`'
 - en: '`IF({1,0},ROW(tbl[Customer]),tbl[Amount]),`'
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: '`IF({1,0},ROW(tbl[Customer]),tbl[Amount]),`'
 - en: '`2,0)`'
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: '`2,0)`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作方式：
 - en: '`**IF($F$70=tbl[Customer], ROW(tbl[Customer])**` checks for our criterion customer
     “Carl Jackson” among the customers’ list, and `IF` true, it returns the row number
     where the customer is found. Since we have duplicate customers, this function
     will return multiple row numbers.'
+  id: totrans-173
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**IF($F$70=tbl[Customer], ROW(tbl[Customer])**` 检查我们的标准客户“Carl Jackson”是否在客户列表中，并且如果为真，则返回找到客户的行号。由于我们有重复的客户，此函数将返回多个行号。'
 - en: 'We need to iterate over this row numbers list and return one at a time as the
     lookup value for `VLOOKUP`. We use the `SMALL` function for this task, which returns
     the row numbers from the smallest to the largest. Note that `ROW(A1)` evaluates
     to 1, and as you drag the function down, it increases until the complete list
     is iterated:'
+  id: totrans-174
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们需要遍历这个行号列表，并逐个作为`VLOOKUP`的查找值返回。我们使用`SMALL`函数来完成这个任务，它会从最小到最大返回行号。请注意，`ROW(A1)`的计算结果为1，当您拖动函数时，它会逐渐增加，直到完整列表被迭代：
 - en: '`**SMALL(IF($F$70=tbl[Customer],ROW(tbl[Customer])), ROW(A1))**`'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**SMALL(IF($F$70=tbl[Customer],ROW(tbl[Customer])), ROW(A1))**`'
 - en: Create a custom two-column table array using the IF function. The first column
     contains Customers’ row numbers (lookup values column), and the second contains
     the Invoices amount (return values column).
+  id: totrans-176
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用IF函数创建一个自定义的两列表数组。第一列包含客户的行号（查找值列），第二列包含发票金额（返回值列）。
 - en: VLOOKUP function uses each row number returned by the `SMALL` function and returns
     the corresponding amount.
+  id: totrans-177
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: VLOOKUP函数使用`SMALL`函数返回的每个行号，并返回相应的金额。
 - en: Please note that after all amounts have been returned, the `VLOOKUP` function
     returns the `#NUM` error.
+  id: totrans-178
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请注意，在所有金额都被返回后，`VLOOKUP`函数会返回`#NUM`错误。
 - en: Since this is an array function, click **Ctrl + Shift + Enter** if you do not
     have an Office 365 subscription.
+  id: totrans-179
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于这是一个数组函数，如果您没有Office 365订阅，请点击**Ctrl + Shift + Enter**。
 - en: '![](images/Figure-2.13.jpg)'
+  id: totrans-180
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.13.jpg)'
 - en: '**Figure 2.13:** VLOOKUP Multiple Results'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.13：** VLOOKUP多个结果'
 - en: '[Myth 10: VLOOKUP cannot lookup from last to first](toc.xhtml#s37a)'
+  id: totrans-182
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话10：VLOOKUP无法从后往前查找](toc.xhtml#s37a)'
 - en: By default, `VLOOKUP` looks up values from top to bottom and returns the first
     TRUE value.
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 默认情况下，`VLOOKUP`从上到下查找值，并返回第一个TRUE值。
 - en: To search from the last to the first, we nest the `LARGE` function in `VLOOKUP`.
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了从最后到第一个搜索，我们将`LARGE`函数嵌套在`VLOOKUP`中。
 - en: 'Using the example from the previous chapter, all we need to do to search from
     last to first is to replace the `SMALL` function with the `LARGE` function, as
     shown in *[Figure 2.14](#fig2_14)*:'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用上一章的示例，要从后往前搜索，我们只需要用`LARGE`函数替换`SMALL`函数，如*[图2.14](#fig2_14)*所示：
 - en: '![](images/Figure-2.14.jpg)'
+  id: totrans-186
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.14.jpg)'
 - en: '**Figure 2.14:** VLOOKUP Multiple Results'
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.14：** VLOOKUP多个结果'
 - en: 'Here is how the preceding function works:'
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是上述函数的工作原理：
 - en: '`**IF($F$70=tbl[Customer], ROW(tbl[Customer])**` checks for our criterion customer
     “Carl Jackson” among the customers’ list, and IF true, it returns the row number
     where the customer is found. Since we have duplicate customers, this function
     will return multiple row numbers'
+  id: totrans-189
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**IF($F$70=tbl[Customer], ROW(tbl[Customer])**`检查我们的标准客户“卡尔·杰克逊”是否在客户列表中，如果是，则返回客户被发现的行号。由于我们有重复的客户，此函数将返回多个行号。'
 - en: We need to iterate over this row numbers list and return one at a time as the
     lookup value for `VLOOKUP`. We use the `LARGE` function for this task, which returns
     the row numbers from the largest to the smallest. Note that `ROW(A1)` evaluates
     to 1, and as you drag the function down, it increases until the complete list
     is iterated.
+  id: totrans-190
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们需要遍历这个行号列表，并逐个作为`VLOOKUP`的查找值返回。我们使用`LARGE`函数来完成这个任务，它会从最大到最小返回行号。请注意，`ROW(A1)`的计算结果为1，当您拖动函数时，它会逐渐增加，直到完整列表被迭代。
 - en: Create a custom two-column table array using the IF function. The first column
     contains Customers’ row numbers (lookup values column), and the second contains
     the Invoices amount (return values column).
+  id: totrans-191
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用IF函数创建一个自定义的两列表数组。第一列包含客户的行号（查找值列），第二列包含发票金额（返回值列）。
 - en: VLOOKUP function uses each row number returned by the LARGE function and returns
     the corresponding amount.
+  id: totrans-192
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: VLOOKUP函数使用LARGE函数返回的每个行号，并返回相应的金额。
 - en: Please note that after all amounts have been returned, the VLOOKUP function
     returns the `#NUM` error.
+  id: totrans-193
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请注意，在所有金额都被返回后，`VLOOKUP`函数会返回`#NUM`错误。
 - en: Since this is an array function, click **Ctrl + Shift + Enter** if you do not
     have an Office 365 subscription.
+  id: totrans-194
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于这是一个数组函数，如果您没有Office 365订阅，请点击**Ctrl + Shift + Enter**。
 - en: '[Myth 11: VLOOKUP cannot lookup the top or bottom N values](toc.xhtml#s38a)'
+  id: totrans-195
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话11：VLOOKUP无法查找前N个或后N个值](toc.xhtml#s38a)'
 - en: 'By nesting the `SMALL` or `LARGE` function, `VLOOKUP` can quickly return the
     top or bottom N amounts in an unsorted list (see *[Figure 2.15](#fig2_15)*):'
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过嵌套`SMALL`或`LARGE`函数，`VLOOKUP`可以快速返回未排序列表中的前N个或后N个金额（见*[图2.15](#fig2_15)*）：
 - en: '![](images/Figure-2.15.jpg)'
+  id: totrans-197
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.15.jpg)'
 - en: '**Figure 2.15:** VLOOKUP top three sales amount'
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.15：** VLOOKUP前三个销售金额'
 - en: '`=VLOOKUP(`'
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(`'
 - en: '`SMALL(IF(TopSale[Amt]>=LARGE(TopSale[Amt],3),ROW(TopSale[Amt])),ROW(A1)),`'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: '`SMALL(IF(TopSale[Amt]>=LARGE(TopSale[Amt],3),ROW(TopSale[Amt])),ROW(A1)),`'
 - en: '`IF({1,0},ROW(TopSale[Amt]),TopSale[Amt]),2,0)`'
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: '`IF({1,0},ROW(TopSale[Amt]),TopSale[Amt]),2,0)`'
 - en: 'Here is how the preceding function performs:'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的执行方式：
 - en: '`**TopSale[Amt]>=LARGE(TopSale[Amt],3)**` checks if the sales amount is greater
     or equal to the third largest sales amount and returns an array of TRUE/FALSE.'
+  id: totrans-203
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**TopSale[Amt]>=LARGE(TopSale[Amt],3)**`检查销售金额是否大于或等于第三大销售金额，并返回一个TRUE/FALSE数组。'
 - en: The IF function returns a list of row numbers for all sales amounts that are
     larger or equal to the third-largest sales amount.
+  id: totrans-204
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: IF函数返回所有销售金额大于或等于第三大销售金额的行号列表。
 - en: We need to iterate over this row numbers list and return one at a time as the
     lookup value for `VLOOKUP`. For this task, we use the `SMALL` function, which
     returns the row numbers from the smallest to the largest. Note that `ROW(A1)`
     evaluates to 1, and as you drag the function down, it increases until the complete
     list is iterated.
+  id: totrans-205
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们需要遍历这个行号列表，并逐个作为`VLOOKUP`的查找值返回。为此任务，我们使用`SMALL`函数，它从最小到最大返回行号。注意`ROW(A1)`评估为1，当您拖动函数时，它会增加直到完整列表被迭代。
 - en: '`**SMALL(IF(TopSale[Amt]>=LARGE(TopSale[Amt],3),ROW(TopSale[Amt])),ROW(A1))**`'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**SMALL(IF(TopSale[Amt]>=LARGE(TopSale[Amt],3),ROW(TopSale[Amt])),ROW(A1))**`'
 - en: Create a custom two-column table array using the IF function. The first column
     contains Amounts’ row numbers (lookup values column), and the second contains
     the Invoices amount (return values column).
+  id: totrans-207
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用IF函数创建自定义的两列表数组。第一列包含金额的行号（查找值列），第二列包含发票金额（返回值列）。
 - en: VLOOKUP function uses each row number returned by the `SMALL` function and returns
     the corresponding amount.
+  id: totrans-208
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: VLOOKUP函数使用SMALL函数返回的每个行号，并返回相应的金额。
 - en: Please note that after all amounts have been returned, the `VLOOKUP` function
     returns the `#NUM` error.
+  id: totrans-209
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请注意，在所有金额已经返回之后，`VLOOKUP`函数会返回`#NUM`错误。
 - en: Since this is an array function, click Ctrl + Shift + Enter if you do not have
     an Office 365 subscription.
+  id: totrans-210
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于这是一个数组函数，如果您没有Office 365订阅，请单击Ctrl + Shift + Enter。
 - en: '[Myth 12: VLOOKUP cannot do a reverse lookup](toc.xhtml#s39a)'
+  id: totrans-211
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话12：VLOOKUP无法进行反向查找](toc.xhtml#s39a)'
 - en: In Excel, a reverse lookup is a way to look up a value in a table based on a
     known result. This is the reverse of the two-way lookup discussed in the previous
     section (see Myth 5).
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Excel中，反向查找是根据已知结果在表中查找值的一种方法。这是前一节讨论的双向查找的反向（见神话5）。
 - en: For example, as shown in *[Figure 2.16](#fig2_16)*, you are looking for a Doctor
     and a Corresponding session given to the patient.
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如*[图2.16](#fig2_16)*所示，您正在寻找给患者的医生和相应的会话。
 - en: '![](images/Figure-2.16.jpg)'
+  id: totrans-214
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.16.jpg)'
 - en: '**Figure 2.16:** VLOOKUP reverse lookup'
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.16：**VLOOKUP反向查找'
 - en: '`=VLOOKUP(`'
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(`'
 - en: '`MAX(IF(Clients=F86,ROW(Clients))),`'
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MAX(IF(Clients=F86,ROW(Clients))),`'
 - en: '`CHOOSE({1,2,3},`'
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: '`CHOOSE({1,2,3},`'
 - en: '`ROW(Clients),`'
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: '`ROW(Clients),`'
 - en: '`Doctors&”-Morning”,`'
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Doctors&”-Morning”,`'
 - en: '`Doctors&”-Afternoon”),`'
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Doctors&”-Afternoon”),`'
 - en: '`MAX(IF(Clients=F86, COLUMN(Clients)-COLUMN(Doctors)+1)),0)`'
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MAX(IF(Clients=F86, COLUMN(Clients)-COLUMN(Doctors)+1)),0)`'
 - en: 'Before we start learning how the formula works, let us learn about the named
     ranges that we have used:'
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 在开始学习公式如何工作之前，让我们了解一下我们使用的命名范围：
 - en: Clients = C86:D95
+  id: totrans-224
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 客户 = C86:D95
 - en: Doctors = B86:B95
+  id: totrans-225
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 医生 = B86:B95
 - en: 'Now, the preceding function performs in the following way:'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，前述函数的执行方式如下：
 - en: '`**IF(Clients=F86, ROW(Clients))**` checks if the client in cell F86 is in
     the array of clients in the named range. Assuming no duplicates, the IF function
     returns the row number of the client; otherwise, it returns FALSE values (see
     *[Figure 2.17](#fig2_17)*):![](images/Figure-2.17.jpg)'
+  id: totrans-227
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**IF(Clients=F86, ROW(Clients))**`检查单元格F86中的客户是否在命名范围中的客户数组中。假设没有重复项，IF函数将返回客户的行号；否则，返回FALSE值（见*[图2.17](#fig2_17)*）：![](images/Figure-2.17.jpg)'
 - en: '**Figure 2.17:** Return Client Row'
+  id: totrans-228
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图2.17：**返回客户行'
 - en: '`**MAX(IF(Clients=F86, ROW(Clients)))**``**:**` the MAX function ignores the
     `FALSE` values and returns the row number. This becomes the lookup value for the
     `VLOOKUP` function.'
+  id: totrans-229
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MAX(IF(Clients=F86, ROW(Clients)))**``**:**`MAX函数忽略`FALSE`值并返回行号。这成为`VLOOKUP`函数的查找值。'
 - en: '`**CHOOSE({1,2,3}, ROW(Clients), Doctors&”-Morning”, Doctors&”-Afternoon”):**`
     the `CHOOSE` creates a table array for `VLOOKUP` function with clients row numbers
     as lookup values column and the two-column array combining the doctors with the
     sessions as return values columns.![](images/Figure-2.18.jpg)'
+  id: totrans-230
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**CHOOSE({1,2,3}, ROW(Clients), Doctors&”-Morning”, Doctors&”-Afternoon”):**`
+    `CHOOSE`创建了一个表数组，用于`VLOOKUP`函数，其中客户行号作为查找值列，将医生与会话组合为返回值列。![](images/Figure-2.18.jpg)'
 - en: '**Figure 2.18:** VLOOKUP Custom Table Array'
+  id: totrans-231
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图2.18：** VLOOKUP自定义表数组'
 - en: '`**MAX(IF(Clients=F86, COLUMN(Clients)-COLUMN(Doctors)+1))**` checks if the
     client in cell F86 is in the array of clients in the named range and returns the
     column number of the client; otherwise, it returns FALSE values. Please note that
     we must adjust the column counts by deducting the doctor’s column and adding 1.'
+  id: totrans-232
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MAX(IF(Clients=F86, COLUMN(Clients)-COLUMN(Doctors)+1))**` 检查F86单元格中的客户是否在命名范围中的客户数组中，并返回客户的列号；否则，返回FALSE值。请注意，我们必须通过减去医生的列数并加1来调整列计数。'
 - en: Using the preceding inputs, the `**VLOOKUP**` function can do reverse lookup.
+  id: totrans-233
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用前述输入，`**VLOOKUP**`函数可以进行反向查找。
 - en: '[Myth 13: VLOOKUP cannot do a horizontal lookup](toc.xhtml#s40a)'
+  id: totrans-234
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话13：VLOOKUP无法进行水平查找](toc.xhtml#s40a)'
 - en: In Excel, many horizontal lookups are left for the `HLOOKUP` function, but this
     should not be the case anymore, as the `VLOOKUP` function can also do a horizontal
     lookup, as shown in *[Figure 2.19](#fig2_19)*.
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Excel中，许多水平查找都留给了`HLOOKUP`函数，但这不再是情况，因为`VLOOKUP`函数也可以进行水平查找，如**[图2.19](#fig2_19)**所示。
 - en: In the following example, you are supposed to look up the representative who
     quoted the least per item.
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: 在以下示例中，您应该查找每个项目报价最低的代表。
 - en: '![](images/Figure-2.19.jpg)'
+  id: totrans-237
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.19.jpg)'
 - en: '**Figure 2.19:** VLOOKUP horizontal lookup'
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.19：** VLOOKUP水平查找'
 - en: '`=VLOOKUP(`'
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(`'
 - en: '`MIN(C101:E101),`'
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MIN(C101:E101),`'
 - en: '`TRANSPOSE(IF({1;0},C101:E101,Reps)),`'
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: '`TRANSPOSE(IF({1;0},C101:E101,Reps)),`'
 - en: '`2,0)`'
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: '`2,0)`'
 - en: 'This function works as follows:'
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: 此函数的工作方式如下：
 - en: '`**MIN(C101:E101)**` returns the minimum amount per item. This becomes the
     lookup value for the `VLOOKUP` function.'
+  id: totrans-244
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MIN(C101:E101)**` 返回每个项目的最低金额。这成为`VLOOKUP`函数的查找值。'
 - en: '`**IF({1;0}, C101:E101, Reps)**` returns a two-row table array, where the first
     row contains the quoted prices and the second row contains the representatives
     (see *[Figure 2.20](#fig2_20)*):![](images/Figure-2.20.jpg)'
+  id: totrans-245
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**IF({1;0}, C101:E101, Reps)**` 返回一个两行表数组，其中第一行包含报价，第二行包含代表（见**[图2.20](#fig2_20)**）：![](images/Figure-2.20.jpg)'
 - en: '**Figure 2.20:** Two-row table array'
+  id: totrans-246
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图2.20：** 两行表数组'
 - en: Since VLOOKUP only looks up data vertically, we need to transpose the two-row
     table to a two-column table using the TRANSPOSE function (see *[Figure 2.21](#fig2_21)*):![](images/Figure-2.21.jpg)
+  id: totrans-247
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于`VLOOKUP`只能垂直查找数据，我们需要使用`TRANSPOSE`函数将两行表转置为两列表（见**[图2.21](#fig2_21)**）：![](images/Figure-2.21.jpg)
 - en: '**Figure 2.21:** Two-column table array'
+  id: totrans-248
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图2.21：** 两列表数组'
 - en: Using the Minimum quoted price as the Lookup value and the transposed table
     as the Table array, the VLOOKUP function quickly returns the representative with
     the least quotation.
+  id: totrans-249
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用最低报价作为查找值和转置表作为表数组，`VLOOKUP`函数快速返回了报价最少的代表。
 - en: '[Myth 14: VLOOKUP cannot return multiple non-contiguous columns](toc.xhtml#s41a)'
+  id: totrans-250
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话14：VLOOKUP无法返回多个非连续列](toc.xhtml#s41a)'
 - en: In the previous section, Myth 2, we discussed returning multiple contiguous
     columns. Now, let us discuss further how to return multiple non-contiguous columns.
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh: 在前一节中，我们讨论了神话2，即如何返回多个连续的列。现在，让我们进一步讨论如何返回多个非连续的列。
 - en: 'In our example *(**[Figure 2.22](#fig2_22))*, we must return the Amount and
     the Region column data:'
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的示例中（**[图2.22](#fig2_22)**），我们必须返回金额和地区列的数据：
 - en: '![](images/Figure-2.22.jpg)'
+  id: totrans-253
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.22.jpg)'
 - en: '**Figure 2.22:** VLOOKUP non-contiguous columns'
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图2.22：** VLOOKUP非连续列'
 - en: '`=VLOOKUP(G113, tblTransact,{4,2},0)`'
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(G113, tblTransact,{4,2},0)`'
 - en: The only trick we must remember is to put the required column numbers in curly
     braces. Also, if you do not have an Office 365 subscription, first highlight the
     column, go to the formula bar, write the above formula, and finally, **click Ctrl
     + Shift +Enter**.
+  id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须记住的唯一技巧是将所需的列号放在花括号中。此外，如果您没有Office 365订阅，首先突出显示列，转到公式栏，编写上述公式，最后，**单击Ctrl
+    + Shift + Enter**。
 - en: 'If you want the returned values row-wise, the only trick to remember is to
     have a semi-colon (;) instead of a comma (,) as a separator between your column
     numbers (see *[Figure 2.23](#fig2_23)*):'
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您希望以行方式返回值，则唯一要记住的技巧是在列号之间使用分号（;）而不是逗号（,）作为分隔符（见**[图2.23](#fig2_23)**）：
 - en: '![](images/Figure-2.23.jpg)'
+  id: totrans-258
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.23.jpg)'
 - en: '**Figure 2.23:** VLOOKUP non-contiguous columns row-wise'
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 2.23：** VLOOKUP逐行查找非连续列'
 - en: '[Myth 15: VLOOKUP cannot lookup multiple non-contiguous arrays](toc.xhtml#s42a)'
+  id: totrans-260
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[神话 15：VLOOKUP无法查找多个非连续数组](toc.xhtml#s42a)'
 - en: 'Dynamically looking up non-contiguous tables requires more functions nesting,
     as shown in *[Figure 2.24](#fig2_24)*:'
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: 动态查找非连续表需要更多的函数嵌套，如*[图 2.24](#fig2_24)*所示：
 - en: '`=VLOOKUP([@Amount],`'
+  id: totrans-262
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP([@Amount],`'
 - en: '`CHOOSE(MATCH([@Product],{“Chairs”,”Laptops”},0),`'
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh: '`CHOOSE(MATCH([@Product],{“椅子”,”笔记本电脑”},0),`'
 - en: '`Chairs_Discount, Laptops_Discount), 2, TRUE)`'
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: '`椅子折扣, 笔记本电脑折扣), 2, TRUE)`'
 - en: 'This function works as follows:'
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: 该函数的工作原理如下：
 - en: '`**MATCH([@Product],{“Chairs”, “Laptops”},0)**` dynamically returns the position
     of the product in the lookup array, that is, Chairs = 1, Laptops =2.'
+  id: totrans-266
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH([@Product],{“椅子”, “笔记本电脑”},0)**` 动态返回产品在查找数组中的位置，即，椅子 = 1，笔记本电脑 =
+    2。'
 - en: '`**CHOOSE(MATCH([@Product],{“Chairs”, “Laptops”},0), Chairs_Discount, Laptops_Discount))**`:
     the `CHOOSE` function uses the position returned by the MATCH function to determine
     the lookup table array, that is, 1= Chairs Discount, 2= Laptops Discount.'
+  id: totrans-267
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**CHOOSE(MATCH([@Product],{“椅子”, “笔记本电脑”},0), 椅子折扣, 笔记本电脑折扣))**`：`CHOOSE`函数使用MATCH函数返回的位置来确定查找表数组，即，1=椅子折扣，2=笔记本电脑折扣。'
 - en: '`VLOOKUP` function then checks the sales amount in the selected discount table
     amount, and it returns the approximate discount.'
+  id: totrans-268
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`VLOOKUP`函数然后检查所选折扣表金额中的销售额，并返回近似折扣。'
 - en: '![](images/Figure-2.24.jpg)'
+  id: totrans-269
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-2.24.jpg)'
 - en: '**Figure 2.24:** VLOOKUP non-contiguous lookup tables'
+  id: totrans-270
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 2.24：** VLOOKUP非连续查找表'
 - en: '[Conclusion](toc.xhtml#s43a)'
+  id: totrans-271
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结论](toc.xhtml#s43a)'
 - en: In this chapter, we have learned to look beyond the common knowledge about `VLOOKUP`
     and seek to unleash its full potential.
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们学会了超越关于`VLOOKUP`的常识，并试图发挥其全部潜力。
 - en: We discovered that by creating a custom table array using the IF function, there
     is no need to rearrange our columns to make `VLOOKUP` lookup to the left. Furthermore,
     we can return more than one column by having the required return columns in curly
     braces.
+  id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们发现，通过使用IF函数创建自定义表数组，无需重新排列列即可使`VLOOKUP`向左查找。此外，通过在花括号中包含所需的返回列，我们可以返回多个列。
 - en: Also, you do not need to struggle with the `HLOOKUP` function to do a horizontal
     lookup; instead, you can simply Transpose your data.
+  id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，您无需费力使用`HLOOKUP`函数进行水平查找；相反，您可以简单地转置您的数据。
 - en: When combined with the `MATCH` function, `VLOOKUP` performs all tasks equal
     to the combination of `INDEX` + `MATCH`.
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: 与`MATCH`函数结合使用时，`VLOOKUP`执行的任务等同于`INDEX` + `MATCH`的组合。
 - en: In the next chapter, we will investigate why many Excel users prefer the combination
     of the INDEX and MATCH functions over `VLOOKUP` and `MATCH`.
+  id: totrans-276
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将调查为什么许多Excel用户更喜欢使用INDEX和MATCH函数的组合而不是`VLOOKUP`和`MATCH`。
 - en: '[Points to remember](toc.xhtml#s44a)'
+  id: totrans-277
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[需要记住的要点](toc.xhtml#s44a)'
 - en: Every Excel function has its limits, but most of them can be adjusted by nesting
     another function. This is why we pointed out the need for every Excel user to
     hone their function nesting skills in the first chapter.
+  id: totrans-278
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每个Excel函数都有其限制，但大多数可以通过嵌套另一个函数来调整。这就是为什么我们在第一章指出每个Excel用户需要磨练他们的函数嵌套技能的原因。
 - en: Using the IF function to create a custom table array for the `VLOOKUP` function
     makes it more flexible and able to look to the left. However, the IF function
     is limited to returning only a two-column table. If we need more columns, we use
     the `CHOOSE` function.
+  id: totrans-279
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用IF函数为`VLOOKUP`函数创建自定义表数组使其更灵活且能够向左查找。然而，IF函数仅限于返回一个两列表。如果我们需要更多列，我们使用`CHOOSE`函数。
 - en: '`VLOOKUP` function defaults to an approximate search. This is one of its biggest
     weaknesses, and it’s important for any user to be aware of it.'
+  id: totrans-280
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`VLOOKUP`函数默认为近似搜索。这是它最大的弱点之一，任何用户都应该意识到这一点。'
 - en: Finally, never accept a function’s weakness without challenging it first.`
+  id: totrans-281
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最后，永远不要在挑战之前接受函数的弱点。`

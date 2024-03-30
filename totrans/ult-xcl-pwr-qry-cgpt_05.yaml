@@ -1,1184 +1,1807 @@
 - en: '[CHAPTER 3](toc.xhtml#c03)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第3章](toc.xhtml#c03)'
 - en: '[INDEX and MATCH](toc.xhtml#c03)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[INDEX和MATCH](toc.xhtml#c03)'
 - en: '[Introduction](toc.xhtml#s45a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s45a)'
 - en: This chapter will introduce what is regarded as the `**VLOOKUP**` function replacement
     — `**INDEX**` and `**MATCH**`. These nested functions are so popular in such a
     way that some users think of them as individual functions. We shall first analyze
     these two functions individually and later see why they are such a powerful combination.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章将介绍被视为`**VLOOKUP**`函数替代品的`**INDEX**`和`**MATCH**`。这些嵌套函数如此受欢迎，以至于一些用户认为它们是独立的函数。我们将首先分析这两个函数，然后看看它们为何是如此强大的组合。
 - en: In addition, since the book is about Mastering Excel, we will learn how to combine
     them with other functions to solve complex lookup issues.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，由于本书是关于精通Excel，我们将学习如何将它们与其他函数结合使用来解决复杂的查找问题。
 - en: '[Structure](toc.xhtml#s46a)'
+  id: totrans-5
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结构](toc.xhtml#s46a)'
 - en: 'In this chapter, we will discuss the following topics:'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: INDEX, MATCH, and the two-way lookup
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: INDEX、MATCH和双向查找
 - en: Three-way lookup
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 三向查找
 - en: Reverse-lookup single result
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 反向查找单个结果
 - en: Reverse-lookup multiple results
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 反向查找多个结果
 - en: Multiple criteria lookup
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 多条件查找
 - en: Returning multiple columns
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 返回多列
 - en: Horizontal lookup
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 水平查找
 - en: Lookup non-contiguous array
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找非连续数组
 - en: Lookup using wildcards
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用通配符进行查找
 - en: Lookup based on text length
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于文本长度进行查找
 - en: Lookup items in a list
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在列表中查找项目
 - en: Lookup unique values
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找唯一值
 - en: '[INDEX, MATCH, and the two-way lookup](toc.xhtml#s47a)'
+  id: totrans-19
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[INDEX、MATCH和双向查找](toc.xhtml#s47a)'
 - en: A two-way lookup is used to find a specific value by matching two criteria.
     It’s commonly used when you have a data table and need to retrieve a value at
     the intersection of a row and column.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 双向查找用于通过匹配两个条件找到特定值。当您有一个数据表并且需要检索行和列的交点处的值时，通常会使用它。
 - en: The INDEX function returns the data at the intersection of a given row and column.
     Therefore, the function requires an array of data, an optional row number (if
     it is a ***single-row array), and an optional column number (if it is a single-column
     array)***.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: INDEX函数返回给定行和列的交点处的数据。因此，该函数需要一个数据数组，一个可选的行号（如果是***单行数组），以及一个可选的列号（如果是单列数组）***。
 - en: 'We will start by looking up a multiple-row and multiple-column array, as shown
     in *[Figure 3.1](#fig3_1)*. We are trying to answer the question, “*What amount
     did customer Gupta buy from the Western region?*”:'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将首先查找多行和多列数组，如*[图3.1](#fig3_1)*所示。我们试图回答问题，“*客户Gupta从西部地区购买了多少？*”：
 - en: '![](images/Figure-3.1.jpg)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.1.jpg)'
 - en: '**Figure 3.1:** INDEX multiple rows and columns lookup'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.1：** 索引多行和多列查找'
 - en: '`=INDEX(RegionSales,10,3)`'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(RegionSales,10,3)`'
 - en: '**Note:** If your data is in a table (this is the date in range A2:D13), the
     row count starts after the header.'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 如果您的数据在表格中（这是范围A2:D13的日期），行计数从标题之后开始。'
 - en: This is why in *[Figure 3.1](#fig3_1)*, Gupta is in row 10, not 11.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是为什么在*[图3.1](#fig3_1)*中，Gupta在第10行而不是第11行。
 - en: Instead of selecting the whole table, we can select the column or row you want.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以选择您想要的列或行，而不是选择整个表格。
 - en: 'For example, in *[Figure 3.2](#fig3_2)*, since we know we want Western region
     sales, we can select the entire column and provide only the row number containing
     our customer:'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图3.2](#fig3_2)*中，由于我们知道我们想要西部地区的销售额，我们可以选择整个列，并仅提供包含我们客户的行号：
 - en: '`=INDEX(RegionSales[Western],10)`'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(RegionSales[Western],10)`'
 - en: 'Note: If your data is in a single column, you only need to provide the row
     number.'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：如果您的数据在单列中，只需提供行号即可。
 - en: You can input 1 as the column number, but it is unnecessary since you have selected
     only one column — Western Region data.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以将列号输入为1，但是由于您只选择了一个列——西部地区的数据，因此这是不必要的。
 - en: 'For example, you can re-write the preceding function as follows:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，您可以将前述函数重写如下：
 - en: '`=INDEX(RegionSales[Western],10,1)`'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(RegionSales[Western],10,1)`'
 - en: '![](images/Figure-3.2.jpg)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.2.jpg)'
 - en: '**Figure 3.2:** INDEX single-column lookup'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.2：** 索引单列查找'
 - en: 'Alternatively, you can select the entire row that contains customer **“**`**Gupta**`**”**
     and only provide the column number, as shown in *[Figure 3.3](#fig3_3)*:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者，您可以选择包含客户**“**`**Gupta**`**”**的整行，并仅提供列号，如*[图3.3](#fig3_3)*所示：
 - en: '`=INDEX( A11:D11, 3 )`'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX( A11:D11, 3 )`'
 - en: '![](images/Figure-3.3.jpg)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.3.jpg)'
 - en: '**Figure 3.3:** INDEX single-row lookup'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.3：** 索引单行查找'
 - en: '**Note:** If your data is in a single row, you need only provide the column
     number.'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 如果您的数据在单行中，只需提供列号即可。'
 - en: You can input 1 as the row number, but it is unnecessary.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以将行号输入为1，但这是不必要的。
 - en: 'For example, you can re-write the preceding function as follows:'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，您可以将前面的函数重写如下：
 - en: '`=INDEX(A11:D11,1,3)`'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(A11:D11,1,3)`'
 - en: Now that we have learned how the INDEX function works, let us revise the `MATCH`
     function.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经了解了INDEX函数的工作原理，让我们修改`MATCH`函数。
 - en: 'As we learned in *[Chapter 2, “VLOOKUP IS DEAD: Or is it”](c02.xhtml)*, the
     MATCH function returns the relative position of an item in an array. For example,
     in *[Figure 3.2](#fig3_2)*, we can dynamically get the row number instead of hardcoding
     it. We achieve this using the `**MATCH**` function, as shown in *[Figure 3.4](#fig3_4)*:'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在*[第2章，“VLOOKUP已死：还是吗”](c02.xhtml)*中学到的，MATCH函数返回数组中项目的相对位置。例如，在*[图3.2](#fig3_2)*中，我们可以动态获取行号而不是硬编码。我们使用`**MATCH**`函数来实现这一点，如*[图3.4](#fig3_4)*所示：
 - en: '![](images/Figure-3.4.jpg)'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.4.jpg)'
 - en: '**Figure 3.4:** MATCH function gets the row number'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.4:** MATCH函数获取行号'
 - en: '**Note:** The `**MATCH**` function returns row 10, yet from the figure, we
     can see that the customer is in row 11.'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意:** `**MATCH**`函数返回第10行，但从图中我们可以看到客户在第11行。'
 - en: As we noted earlier, this is because the MATCH function returns the relative
     position of the value within the lookup array. Since the header data is not within
     the lookup array, the `**MATCH**` function has ignored it.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们之前注意到的，这是因为MATCH函数返回查找数组中值的相对位置。由于标题数据不在查找数组内，`**MATCH**`函数已忽略它。
 - en: 'Knowing the `**MATCH**` function can automate the hardcoding of the row number
     in the `**INDEX**` function, let us substitute the row number with it (see *[Figure
     3.5](#fig3_5)*):'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 知道`**MATCH**`函数可以自动化在`**INDEX**`函数中硬编码的行号，让我们用它替换行号（见*[图3.5](#fig3_5)*）：
 - en: '`=INDEX(RegionSales[Western],`'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(RegionSales[Western],`'
 - en: '`MATCH(F3,RegionSales[Customer],0))`'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(F3,RegionSales[Customer],0))`'
 - en: 'This is the optimal way of writing a simple INDEX and MATCH combo:'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是编写简单的INDEX和MATCH组合的最佳方式：
 - en: Select only the column/row you require.
+  id: totrans-55
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 仅选择您需要的列/行。
 - en: Use the `**MATCH**` function to get the criterion row/column instead of hardcoding
     it.
+  id: totrans-56
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用`**MATCH**`函数获取条件行/列而不是硬编码它。
 - en: '![](images/Figure-3.5.jpg)'
+  id: totrans-57
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.5.jpg)'
 - en: '**Figure 3.5:** INDEX and MATCH function'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.5:** INDEX和MATCH函数'
 - en: 'We are not limited to selecting single-column or single-row arrays. We can
     select a complete table and nest two MATCH functions to make our solution dynamic
     (see *[Figure 3.6](#fig3_6)*):'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不仅限于选择单列或单行数组。我们可以选择完整的表格并嵌套两个MATCH函数使我们的解决方案动态化（见*[图3.6](#fig3_6)*）：
 - en: '`=INDEX(RegionSales,`'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(RegionSales,`'
 - en: '`MATCH(F3,RegionSales[Customer],0),`'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(F3,RegionSales[Customer],0),`'
 - en: '`MATCH(G3,RegionSales[#Headers],0))`'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(G3,RegionSales[#Headers],0))`'
 - en: '![](images/Figure-3.6.jpg)'
+  id: totrans-63
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.6.jpg)'
 - en: '**Figure 3.6:** Dynamic two-way lookup'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.6:** 动态二向查找'
 - en: '[Three-way lookup](toc.xhtml#s48a)'
+  id: totrans-65
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[三向查找](toc.xhtml#s48a)'
 - en: 'A three-way lookup formula allows you to get data from a table using three
     criteria (see *[Figure 3.7](#fig3_7)*):'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 三向查找公式允许您使用三个条件从表中获取数据（见*[图3.7](#fig3_7)*）：
 - en: '`=INDEX(RegionSales,`'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(RegionSales,`'
 - en: '`MATCH(G18&H18,RegionSales[Product]&RegionSales[Customer],0),`'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(G18&H18,RegionSales[Product]&RegionSales[Customer],0),`'
 - en: '`MATCH(G20,RegionSales[#Headers],0))`'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(G20,RegionSales[#Headers],0))`'
 - en: '![](images/Figure-3.7.jpg)'
+  id: totrans-70
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.7.jpg)'
 - en: '**Figure 3.7:** Dynamic three-way lookup'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.7:** 动态三向查找'
 - en: 'The preceding function performs as follows:'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 前面的函数执行如下：
 - en: '`**G18&H18**` returns a single combined criterion, that is, “ChairsRuby.”'
+  id: totrans-73
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**G18&H18**`返回一个单一的组合条件，“ChairsRuby”。'
 - en: '`**RegionSales[Product]&RegionSales[Customer]**` joins the two columns and
     return a one-way array of products and customers that we can use to look up the
     combo criterion (see ***[Figure 3.8](#fig3_8)***):'
+  id: totrans-74
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**RegionSales[Product]&RegionSales[Customer]**`连接两列并返回一个产品和客户的单向数组，我们可以用它来查找组合条件（见***[图3.8](#fig3_8)***）：'
 - en: '**Tip**: When creating a one-way array, follow the **same order** as when creating
     the combo criteria.'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: '**提示**：创建单向数组时，要遵循与创建组合条件相同的顺序。'
 - en: In our example, the combo criterion is a join between `**Product and Customer**`
     (`**ChairsRuby**`); this is the reason we have followed the same order when creating
     the single array.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的示例中，组合条件是`**Product和Customer**`的连接（`**ChairsRuby**`）；这就是我们在创建单一数组时遇到相同顺序的原因。
 - en: '`**MATCH(G18&H18, RegionSales[Product]&RegionSales[Customer],0)**` returns
     the row number in the custom one-way array that contains the combo criterion.'
+  id: totrans-77
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH(G18&H18, RegionSales[Product]&RegionSales[Customer],0)**`返回包含组合条件的自定义单向数组中的行号。'
 - en: '`**MATCH(G20, RegionSales[#Headers],0))**` returns the column number in the
     table headers that contain the month criterion.'
+  id: totrans-78
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH(G20, RegionSales[#Headers],0))**` 返回包含月份条件的表头中的列号。'
 - en: Remember that this is an array function since we are doing the criteria and
     columns joining. Therefore, if you do not have an Office 365 subscription, remember
     to click **Ctrl + Shift + Enter** when you complete writing it.
+  id: totrans-79
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请记住这是一个数组函数，因为我们正在进行条件和列的连接。因此，如果您没有 Office 365 订阅，请在完成编写时记得单击**Ctrl + Shift
+    + Enter**。
 - en: '![](images/Figure-3.8.jpg)'
+  id: totrans-80
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.8.jpg)'
 - en: '**Figure 3.8:** One-way array'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.8：** 单向数组'
 - en: '[Reverse-lookup single result](toc.xhtml#s49a)'
+  id: totrans-82
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[反向查找单个结果](toc.xhtml#s49a)'
 - en: A reverse lookup is the opposite of the two-way lookup function discussed earlier.
     You start with data in an intersection and return the row and column headers.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 反向查找是之前讨论的双向查找函数的相反。您从交叉点的数据开始，并返回行和列标题。
 - en: 'For example, in *[Figure 3.10](#fig3_10)*, we know the exam, but we must look
     up the tutor and the hall:'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图 3.10](#fig3_10)*中，我们知道考试，但我们必须查找导师和大厅：
 - en: '`=INDEX(Tutors&”-”&Halls,`'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(Tutors&“-”&Halls,`'
 - en: '`SUM((Exams=E33)*ROW(Exams))-ROW(Halls),`'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: '`SUM((Exams=E33)*ROW(Exams))-ROW(Halls),`'
 - en: '`SUM((Exams=E33)*COLUMN(Exams))-COLUMN(Tutors))`'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: '`SUM((Exams=E33)*COLUMN(Exams))-COLUMN(Tutors))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**Tutors&”-”&Halls**` returns a custom table containing the combination of
     every tutor and the hall.'
+  id: totrans-89
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**导师&“-”&大厅**` 返回一个包含每位导师和大厅组合的自定义表。'
 - en: '`**(Exams=E33)*ROW(Exams)**` checks if our criteria exam is in the list of
     exams and returns an array of `**TRUE / FALSE**`, which, when multiplied by the
     exam rows, returns 0 where FALSE and the row number where TRUE (see ***[Figure
     3.9](#fig3_9)***).'
+  id: totrans-90
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**(Exams=E33)*ROW(Exams)**` 检查我们的条件考试是否在考试列表中，并返回一个`**TRUE / FALSE**`数组，当乘以考试行时，在`**FALSE**`处返回0，在`**TRUE**`处返回行号（见***[图
+    3.9](#fig3_9)***）。'
 - en: 'We `**SUM**` the array to get a single row number from the preceding step.
     Since `**INDEX**` starts counting row numbers from the header, we then deduct
     the row of the header: `SUM((Exams=E33) * ROW(Exams)) - ROW(Halls)`'
+  id: totrans-91
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们对数组进行`**求和**`，以从前一步得到单个行号。由于`**INDEX**`从标题开始计算行号，因此我们需要减去标题的行号：`SUM((Exams=E33)
+    * ROW(Exams)) - ROW(Halls)`
 - en: 'Similar steps to the ones mentioned earlier are repeated to get the column
     number: `SUM((Exams=E33) * COLUMN(Exams))- COLUMN(Tutors))`'
+  id: totrans-92
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 重复之前提到的类似步骤以获取列号：`SUM((Exams=E33) * COLUMN(Exams))- COLUMN(Tutors))`
 - en: Remember that this is an array function since we create the custom tutors and
     sessions table. Therefore, if you do not have an Office 365 subscription, remember
     to click **Ctrl + Shift + Enter** when you complete writing it.
+  id: totrans-93
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请记住这是一个数组函数，因为我们创建了自定义导师和会话表。因此，如果您没有 Office 365 订阅，请在完成编写时记得单击**Ctrl + Shift
+    + Enter**。
 - en: '![](images/Figure-3.9.jpg)'
+  id: totrans-94
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.9.jpg)'
 - en: '**Figure 3.9:** Exam row number'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.9：** 考试行号'
 - en: '**Tip:** Always deduct Row or Column headers in your count if you have yet
     to include them in the table array.'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: '**提示：** 如果您尚未在表数组中包含行或列标题，请在计数中减去它们。'
 - en: '![](images/Figure-3.10.jpg)'
+  id: totrans-97
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.10.jpg)'
 - en: '**Figure 3.10:** Reverse lookup'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.10：** 反向查找'
 - en: '[Reverse-lookup multiple results](toc.xhtml#s50a)'
+  id: totrans-99
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[反向查找多个结果](toc.xhtml#s50a)'
 - en: Now, let us learn how to return multiple items if you have duplicates in your
     data.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们学习如何在数据中存在重复项时返回多个项目。
 - en: 'Using the example in the previous section, assume patient `**Jack Dan**` had
     two appointments. *[Figure 3.12](#fig3_12)* shows how to return the two appointments:'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用前一节中的示例，假设患者`**杰克·丹**`有两个预约。*[图 3.12](#fig3_12)*展示了如何返回这两个预约：
 - en: '`=INDEX(Doctor&” “&session,`'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(Doctor&“ ”&session,`'
 - en: '`MATCH(TRUE,`'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(TRUE,`'
 - en: '`INDEX(Patients,, LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),ROW(A1)))=$G$47,0),`'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: '`INDEX(Patients,, LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),ROW(A1)))=$G$47,0),`'
 - en: '`LARGE((Patients=$G$47)*COLUMN(Patients)-COLUMN(Doctor),ROW(A1)))`'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '`LARGE((Patients=$G$47)*COLUMN(Patients)-COLUMN(Doctor),ROW(A1)))`'
 - en: 'This function works as follows:'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 此函数的工作方式如下：
 - en: '`**Doctor&” “&session**` returns a custom table containing the combination
     of every doctor and the session.'
+  id: totrans-107
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**医生&“ ”&会话**` 返回一个包含每位医生和会话组合的自定义表。'
 - en: '`**IF(Patients=$G$47, COLUMN(Patients)-COLUMN(Doctor))**` checks if our criteria
     patient is in the list of patients and returns the column numbers where this is
     `**TRUE**`, else `**FALSE**` (see ***[Figure 3.11](#fig3_11)***):![](images/Figure-3.11.jpg)'
+  id: totrans-108
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**IF(Patients=$G$47, COLUMN(Patients)-COLUMN(Doctor))**` 检查我们的条件患者是否在患者列表中，并返回这些条件为`**TRUE**`的列号，否则为`**FALSE**`（见***[图
+    3.11](#fig3_11)***）：![](images/Figure-3.11.jpg)'
 - en: '**Figure 3.11:** Check columns'
+  id: totrans-109
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 3.11：** 检查列'
 - en: '`**LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),ROW(A1))**` returns
     the largest column number, that is, 2\. We use `ROW(A1)`, which returns 1, and
     the number increments as we scroll our formula down.'
+  id: totrans-110
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),ROW(A1))**` 返回最大的列号，即2。我们使用`ROW(A1)`，返回1，随着我们向下滚动公式，数字递增。'
 - en: '`**INDEX(Patients,,LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),ROW(A1)))**`
     use the `**INDEX**` function to filter the data per column (see ***[Figure 3.12](#fig3_12)***):![](images/Figure-3.12.jpg)'
+  id: totrans-111
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**INDEX(Patients,,LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),ROW(A1)))**`
+    使用`**INDEX**`函数按列过滤数据（见***[图3.12](#fig3_12)***）：![](images/Figure-3.12.jpg)'
 - en: '**Figure 3.12:** Filter one column at a time'
+  id: totrans-112
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图3.12：** 逐列过滤'
 - en: '`**MATCH(TRUE, INDEX(Patients,, LARGE(IF(Patients=$G$47, COLUMN(Patients)-COLUMN(Doctor)),
     ROW(A1)))=$G$47,0),**` checks if the patient is in the filtered column and returns
     an array of `**TRUE/FALSE**`. The `**MATCH**` function returns the relative position
     of the only `**TRUE**` value, which forms our row number for the `**INDEX**` function.'
+  id: totrans-113
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH(TRUE, INDEX(Patients,, LARGE(IF(Patients=$G$47, COLUMN(Patients)-COLUMN(Doctor)),
+    ROW(A1)))=$G$47,0),**` 检查患者是否在过滤列中，并返回一个`**TRUE/FALSE**`数组。`**MATCH**`函数返回唯一`**TRUE**`值的相对位置，这形成了我们`**INDEX**`函数的行号。'
 - en: 'Now that we have the row number, the last part is to get the column number
     using the `**LARGE: LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),
     ROW(A1))**`'
+  id: totrans-114
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '现在我们有了行号，最后一部分是使用`**LARGE: LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),
+    ROW(A1))**`获取列号。'
 - en: Fill the formula downward to return all the appointments.
+  id: totrans-115
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 向下填充公式以返回所有预约。
 - en: Remember that this is an array function since we create the custom doctors and
     sessions table. Therefore, if you do not have an Office 365 subscription, remember
     to click **Ctrl + Shift + Enter** when you complete writing it.
+  id: totrans-116
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请记住这是一个数组函数，因为我们创建了自定义医生和会话表。因此，如果您没有Office 365订阅，请在完成编写时记得单击**Ctrl + Shift
+    + Enter**。
 - en: '![](images/Figure-3.13.jpg)'
+  id: totrans-117
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.13.jpg)'
 - en: '**Figure 3.13:** Reverse-lookup multiple items'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.13：** 反向查找多个项目'
 - en: '**Note:** When all appointments have been returned, the INDEX function starts
     to return the `**#NUM**` error.'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 当所有预约都返回时，`**INDEX**`函数开始返回`**#NUM**`错误。'
 - en: '[Multiple criteria lookup](toc.xhtml#s51a)'
+  id: totrans-120
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[多条件查找](toc.xhtml#s51a)'
 - en: 'As we learned in the previous section on three-way lookup, the trick to doing
     a multiple criteria lookup is joining the criteria into one using the ampersand
     (&) (see *[Figure 3.14](#fig3_14)*):'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在前一节关于三向查找中所学到的，进行多条件查找的技巧是使用和号（&）将条件合并为一个（见*[图3.14](#fig3_14)*）：
 - en: '`=INDEX(tblSalesT20[Amount],`'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(tblSalesT20[Amount],`'
 - en: '`MATCH(E60&F60,tblSalesT20[Customer]&tblSalesT20[Sales Date],0))`'
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(E60&F60,tblSalesT20[Customer]&tblSalesT20[Sales Date],0))`'
 - en: '![](images/Figure-3.14.jpg)'
+  id: totrans-124
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.14.jpg)'
 - en: '**Figure 3.14:** Multiple criteria lookup'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.14：** 多条件查找'
 - en: 'The preceding function performs as follows:'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 上述函数的执行如下：
 - en: '`**E60&F60**` returns a single combo criterion for the customer and dates **“Carl
     Jackson40192.”**'
+  id: totrans-127
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**E60&F60**` 返回客户和日期的单个组合条件**“Carl Jackson40192.”**'
 - en: '`**tblSalesT20[Customer]&tblSalesT20[Sales Date]**` returns a single combo
     array for the customer and dates (see *[Figure 3.15](#fig3_15)*):![](images/Figure-3.15.jpg)'
+  id: totrans-128
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**tblSalesT20[Customer]&tblSalesT20[Sales Date]**` 返回客户和日期的单个组合数组（见*[图3.15](#fig3_15)*）：![](images/Figure-3.15.jpg)'
 - en: '**Figure 3.15:** Combo array'
+  id: totrans-129
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图3.15：** 组合数组'
 - en: '`**MATCH(E60&F60,tblSalesT20[Customer]&tblSalesT20[Sales Date],0))**` The `**MATCH**`
     function returns the row number of the combo criterion in the combo array.'
+  id: totrans-130
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH(E60&F60,tblSalesT20[Customer]&tblSalesT20[Sales Date],0))**` `**MATCH**`函数返回组合条件在组合数组中的行号。'
 - en: Remember that this is an array function since we create the custom combo array.
     Therefore, if you do not have an Office 365 subscription, remember to click **Ctrl
     + Shift + Enter** when you complete writing it.
+  id: totrans-131
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请记住这是一个数组函数，因为我们创建了自定义组合数组。因此，如果您没有Office 365订阅，请在完成编写时记得单击**Ctrl + Shift +
+    Enter**。
 - en: '[Returning multiple columns](toc.xhtml#s52a)'
+  id: totrans-132
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[返回多列](toc.xhtml#s52a)'
 - en: 'By default, the `**INDEX**` and `**MATCH**` combo returns a single column.
     If we want multiple columns, we must modify the `**MATCH**` function, as shown
     in *[Figure 3.16](#fig3_16)*:'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 默认情况下，`**INDEX**`和`**MATCH**`组合返回单列。如果我们想要多列，必须修改`**MATCH**`函数，如*[图3.16](#fig3_16)*所示：
 - en: '`=INDEX(RegionSale21,`'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(RegionSale21,`'
 - en: '`MATCH(F75,RegionSale21[Customer],0),`'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(F75,RegionSale21[Customer],0),`'
 - en: '`MATCH(G74:H74,RegionSale21[#Headers],0))`'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(G74:H74,RegionSale21[#Headers],0))`'
 - en: '![](images/Figure-3.16.jpg)'
+  id: totrans-137
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.16.jpg)'
 - en: '**Figure 3.16:** Multiple columns'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.16：** 多列'
 - en: The only trick is finding the relative positions of the multiple columns using
     the MATCH function, `**MATCH(G74:H74,RegionSale21[#Headers],0))**`, by highlighting
     the two criteria (G74:H74), the `**MATCH**` function returns an array of columns
     ({2,3}), which forces the `**INDEX**` function to return both columns.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 唯一的技巧是使用MATCH函数找到多个列的相对位置，`**MATCH(G74:H74,RegionSale21[#Headers],0))**`，通过突出显示两个条件(G74:H74)，`**MATCH**`函数返回一个列的数组({2,3})，这迫使`**INDEX**`函数返回两列。
 - en: This is also an array function; therefore, if you do not have an Office 365
     subscription, remember to click **Ctrl + Shift + Enter** when you complete writing
     it.
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 这也是一个数组函数；因此，如果您没有Office 365订阅，请记住在编写完毕时点击**Ctrl + Shift + Enter**。
 - en: '[Horizontal lookup](toc.xhtml#s53a)'
+  id: totrans-141
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[水平查找](toc.xhtml#s53a)'
 - en: 'Unlike the VLOOKUP function, the `**INDEX**` function is not limited to a vertical
     lookup. The return array can be stored in any direction if you provide the correct
     column or row number (see *[Figure 3.17](#fig3_17)*):'
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 与VLOOKUP函数不同，`**INDEX**`函数不限于垂直查找。如果提供正确的列或行号（参见*[图 3.17](#fig3_17)*），返回数组可以存储在任何方向上：
 - en: '`=INDEX(Suppliers,,`'
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(Suppliers,,`'
 - en: '`MATCH( MIN(B91:D91),B91:D91,0))`'
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH( MIN(B91:D91),B91:D91,0))`'
 - en: '![](images/Figure-3.17.jpg)'
+  id: totrans-145
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.17.jpg)'
 - en: '**Figure 3.17:** Horizontal lookup'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.17：** 水平查找'
 - en: The only trick here is using the MIN function to return the lowest quoted price
     per item. This price becomes our lookup value for the `**MATCH**` function. The
     `**MATCH**` function then returns the relative position of this minimum price.
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里唯一的技巧是使用MIN函数返回每件物品的最低报价。这个价格成为我们的查找值，用于`**MATCH**`函数。`**MATCH**`函数然后返回这个最低价格的相对位置。
 - en: '**Note:** Since the suppliers are in a single-row array, we can skip the row
     number, as shown in the preceding formula.'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 由于供应商在单行数组中，我们可以跳过行号，如前面的公式所示。'
 - en: '[Lookup non-contiguous array](toc.xhtml#s54a)'
+  id: totrans-149
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找非连续数组](toc.xhtml#s54a)'
 - en: 'As shown in *[Figure 3.18](#fig3_18)*, the INDEX function has two syntax options:'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 如*[图 3.18](#fig3_18)*所示，INDEX函数有两种语法选项：
 - en: Array Option, which expects single or multiple contiguous arrays of data.
+  id: totrans-151
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数组选项，期望单个或多个连续的数据数组。
 - en: 'Reference Option, which expects references to cells or a range of non-contiguous
     cells. Here are some important points to note on non-contiguous ranges:'
+  id: totrans-152
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 参考选项，期望对单元格或非连续单元格范围的引用。以下是关于非连续范围的一些重要注意事项：
 - en: Ranges must be enclosed in parentheses and separated by commas.
+  id: totrans-153
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 范围必须用括号括起来，并用逗号分隔。
 - en: Ranges must be on the same worksheet; otherwise, the function will result in
     a `**#VALUE**` error.
+  id: totrans-154
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 范围必须在同一工作表上；否则，函数将导致`**#VALUE**`错误。
 - en: Ranges can be of different lengths but must contain the referenced row or column
     number. An out-of-range reference will result in a `**#REF**` error.
+  id: totrans-155
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 范围可以是不同长度的，但必须包含引用的行或列号。超出范围的引用将导致`**#REF**`错误。
 - en: Ranges are selected in the `**[area_num]**` argument of the `**INDEX**` function.
+  id: totrans-156
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 范围在`**[area_num]**`参数中被选择的`**INDEX**`函数中。
 - en: '![](images/Figure-3.18.jpg)'
+  id: totrans-157
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.18.jpg)'
 - en: '**Figure 3.18:** INDEX reference option'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.18：** INDEX参考选项'
 - en: 'The example given in *[Figure 3.19](#fig3_19)* shows different discounts for
     chairs and laptops. We can use the following function to look up the different
     tables:'
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 在*[图 3.19](#fig3_19)*中给出的示例显示了椅子和笔记本电脑的不同折扣。我们可以使用以下函数查找不同的表：
 - en: '`=INDEX((Chairs_Disc[Disc],Laptops_Disc[Disc]),`'
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX((Chairs_Disc[Disc],Laptops_Disc[Disc]),`'
 - en: '`MATCH([@Amount],`'
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH([@Amount],`'
 - en: '`CHOOSE(IF([@Product]=”Chairs”,1,2),Chairs_Disc[Amt],Laptops_Disc[Amt]),1),,`'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '`CHOOSE(IF([@Product]=”Chairs”,1,2),Chairs_Disc[Amt],Laptops_Disc[Amt]),1),,`'
 - en: '`IF([@Product]=”Chairs”,1,2))`'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '`IF([@Product]=”Chairs”,1,2))`'
 - en: '![](images/Figure-3.19.jpg)'
+  id: totrans-164
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.19.jpg)'
 - en: '**Figure 3.19:** INDEX non-contiguous array'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.19：** INDEX非连续数组'
 - en: 'The preceding function works as follows:'
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 前述函数的工作方式如下：
 - en: '`**( Chairs_Disc[Disc], Laptops_Disc[Disc] )**` returns the two non-contiguous
     discount columns for Chairs and Laptops.'
+  id: totrans-167
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**( Chairs_Disc[Disc], Laptops_Disc[Disc] )**`返回椅子和笔记本电脑的两个不连续的折扣列。'
 - en: '**IF([@Product]=”Chairs”,1,2),** returns a 1 if the product on the table is
     chairs; otherwise, it returns 2\. This is the index that the `**CHOOSE**` function
     will determine to select the amount column in either the Chairs or Laptops table.'
+  id: totrans-168
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**IF([@Product]=”Chairs”,1,2),** 如果表上的产品是椅子，则返回1；否则返回2。这是`**CHOOSE**`函数将确定以选择椅子或笔记本电脑表中的金额列的索引。'
 - en: '`**MATCH([@Amount],CHOOSE(IF([@Product]=”Chairs”,1,2),Chairs_Disc[Amt],Laptops_Disc[Amt]),1)**`
     MATCH function returns the approximate relative position of the amount in the
     discount table amount column.'
+  id: totrans-169
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH([@Amount],CHOOSE(IF([@Product]=”Chairs”,1,2),Chairs_Disc[Amt],Laptops_Disc[Amt]),1)**`
+    MATCH 函数返回折扣表金额列中金额的近似相对位置。'
 - en: Since we are selecting single-column arrays, we can ignore the column index
     argument and jump to the area number argument.
+  id: totrans-170
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于我们选择的是单列数组，因此可以忽略列索引参数并跳转到区域编号参数。
 - en: '**IF([@Product]=”Chairs”,1,2),** return a 1 if the product on the table is
     chairs; otherwise, it returns 2\. This determines which of the two non-contiguous
     discount columns for Chairs and Laptops will be selected.'
+  id: totrans-171
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**IF([@Product]=”Chairs”,1,2),** 如果表上的产品是椅子，则返回1；否则，返回2。这决定了选择椅子和笔记本电脑两个不连续的折扣列中的哪一个。'
 - en: '[Lookup using wildcards](toc.xhtml#s55a)'
+  id: totrans-172
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[通配符查找](toc.xhtml#s55a)'
 - en: As learned in the last chapter, specifically in the `**VLOOKUP**` partial lookup
     section, the `**INDEX-MATCH**` combo can also use the two popular wildcard characters
     (? *).
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如在上一章中所学到的，特别是在`**VLOOKUP**`部分查找部分中，`**INDEX-MATCH**`组合也可以使用两个流行的通配符字符（? *）。
 - en: 'For example, in *[Figure 3.20](#fig3_20)*, we want to look up the amount for
     an invoice containing the letter “P”:'
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图3.20](#fig3_20)*中，我们想要查找包含字母“P”的发票的金额：
 - en: '![](images/Figure-3.20.jpg)'
+  id: totrans-175
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.20.jpg)'
 - en: '**Figure 3.20:** INDEX using an asterisk wildcard character'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.20：** 使用星号通配符字符的INDEX'
 - en: '`=INDEX(tblinvoicez[Amount],`'
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(tblinvoicez[Amount],`'
 - en: '`MATCH(“*”&G117&”*”,tblinvoicez[Invoice ‘#],0))`'
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(“*”&G117&”*”,tblinvoicez[Invoice ‘#],0))`'
 - en: 'Here are some points to remember while using Wildcard characters:'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 在使用通配符字符时，请记住以下几点：
 - en: '**Asterisk (*)**: The asterisk wildcard represents zero or more characters
     in a text string.'
+  id: totrans-180
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**星号（*）**：星号通配符表示文本字符串中的零个或多个字符。'
 - en: '**Question mark (?)**: The question mark wildcard represents a single character
     in a text string.'
+  id: totrans-181
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**问号（?）**：问号通配符表示文本字符串中的单个字符。'
 - en: You can combine the asterisk and the question marks to define your search further.
+  id: totrans-182
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 您可以结合星号和问号来进一步定义您的搜索。
 - en: 'Here is how the preceding function works:'
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**“*”&G117&”*”**` returns *P*, which means there could be many characters
     before and after the letter `**P**`.'
+  id: totrans-184
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**“*”&G117&”*”**` 返回 *P*，这意味着字母`**P**`前后可能有许多字符。'
 - en: '`**MATCH**` function returns the first invoice’s relative row position whose
     invoice number contains the letter `**P**`.'
+  id: totrans-185
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH**` 函数返回第一张发票中包含字母`**P**`的相对行位置。'
 - en: '`**INDEX**` function returns the invoice amount in the same row number.'
+  id: totrans-186
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**INDEX**` 函数返回相同行号中的发票金额。'
 - en: Suppose you want to look up values for an invoice number whose fifth character
     is the letter “P”?
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设您想要查找第五个字符为字母“P”的发票号的值？
 - en: 'In such a scenario, we shall use the question mark (?) as the wildcard character
     to represent any single character (see ***[Figure 3.21](#fig3_21)***):'
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，我们将使用问号（?）作为通配符字符，表示任何单个字符（见***[图3.21](#fig3_21)***）：
 - en: '![](images/Figure-3.21.jpg)'
+  id: totrans-189
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.21.jpg)'
 - en: '**Figure 3.21:** INDEX using mixed wildcard characters'
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.21：** 使用混合通配符字符的INDEX'
 - en: '`=INDEX(tblinvoicez[Amount],`'
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(tblinvoicez[Amount],`'
 - en: '`MATCH(“????”&J117&”*”,tblinvoicez[Invoice ‘#],0))`'
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(“????”&J117&”*”,tblinvoicez[Invoice ‘#],0))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**“????”&J117&”*”**` returns `????P*`, which means any four characters could
     be before the letter “P”. Therefore, “P” is the fifth character, but there are
     multiple characters after it.'
+  id: totrans-194
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**“????”&J117&”*”**` 返回`????P*`，这意味着字母“P”前可能有任意四个字符。因此，“P”是第五个字符，但它后面有多个字符。'
 - en: MATCH function returns the first invoice’s relative row position where an invoice
     number’s fifth character is the letter “P”.
+  id: totrans-195
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: MATCH 函数返回第一张发票中发票号第五个字符为字母“P”的相对行位置。
 - en: INDEX function returns the invoice amount in the same row number.
+  id: totrans-196
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: INDEX 函数返回相同行号中的发票金额。
 - en: '[Lookup based on text length](toc.xhtml#s56a)'
+  id: totrans-197
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[基于文本长度的查找](toc.xhtml#s56a)'
 - en: 'In *[Figure 3.22](#fig3_22)*, we assume all invoice back-orders can be identified
     by the length of the invoice number (that is, 8 characters):'
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 在*[图3.22](#fig3_22)*中，我们假设所有发票的后订单都可以通过发票号的长度（即8个字符）来识别：
 - en: '![](images/Figure-3.22.jpg)'
+  id: totrans-199
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.22.jpg)'
 - en: '**Figure 3.22:** Lookup text based on Length'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图3.22：** 基于长度查找文本'
 - en: 'To look up these back-ordered invoices, we use the following formula:'
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: 要查找这些后订单发票，我们使用以下公式：
 - en: '`=INDEX(Invoices[Amount],`'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(Invoices[Amount],`'
 - en: '`MATCH( G132,LEN(Invoices[Invoice ‘#]),0))`'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH( G132,LEN(Invoices[Invoice ‘#]),0))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**LEN(Invoices[Invoice ‘#]), the**` `LEN` function returns an array of invoice
     number lengths. This becomes the lookup array argument for the MATCH function.'
+  id: totrans-205
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**LEN(Invoices[Invoice ‘#]), the**` `LEN` 函数返回一个发票号长度的数组。这成为 `MATCH` 函数的查找数组参数。'
 - en: '`**MATCH**` function returns the first invoice’s relative row position, whose
     length is 8 characters.'
+  id: totrans-206
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH**` 函数返回第一张发票的相对行位置，其长度为 8 个字符。'
 - en: '`**INDEX**` function returns the invoice amount in the same row number.'
+  id: totrans-207
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**INDEX**` 函数返回相同行号的发票金额。'
 - en: 'Assuming you had multiple back-ordered invoices, as shown in *[Figure 3.23](#fig3_23)*.
     Let us learn how to return the last match with the help of the `**MAX**` function:'
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设您有多张备货发票，如 *[图 3.23](#fig3_23)* 所示。让我们学习如何借助 `**MAX**` 函数返回最后匹配项：
 - en: '`=INDEX(Invoices[Amount],`'
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(Invoices[Amount],`'
 - en: '`MAX(`'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MAX(`'
 - en: '`(LEN(Invoices[Invoice ‘#])=G132)*ROW(Invoices[Invoice ‘#])`'
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: '`(LEN(Invoices[Invoice ‘#])=G132)*ROW(Invoices[Invoice ‘#])`'
 - en: '`-ROW(Invoices[#Headers])`'
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: '`-ROW(Invoices[#Headers])`'
 - en: '`))`'
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: '`))`'
 - en: '![](images/Figure-3.23.jpg)'
+  id: totrans-214
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.23.jpg)'
 - en: '**Figure 3.23:** Lookup the last match'
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.23：** 查找最后匹配项'
 - en: 'Here is how the preceding function works:'
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**LEN(Invoices[Invoice ‘#])**` LEN function returns an array of invoice number
     lengths.'
+  id: totrans-217
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**LEN(Invoices[Invoice ‘#])**` LEN 函数返回一个发票号长度的数组。'
 - en: '`**LEN(Invoices[Invoice ‘#])=G132**` checks which invoice length is equal to
     8 and returns an array of `**TRUE/FALSE**`'
+  id: totrans-218
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**LEN(Invoices[Invoice ‘#])=G132**` 检查哪张发票长度等于 8，并返回一个 `**TRUE/FALSE**` 数组。'
 - en: 'Get the row numbers by multiplying the TRUE/FALSE array with row numbers: `**(LEN(Invoices[Invoice
     ‘#])=G132)*ROW(Invoices[Invoice ‘#])**`'
+  id: totrans-219
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过将 TRUE/FALSE 数组乘以行号来获取行号： `**(LEN(Invoices[Invoice ‘#])=G132)*ROW(Invoices[Invoice
+    ‘#])**`
 - en: Adjust the row numbers count by deducting the header row.
+  id: totrans-220
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过减去标题行来调整行号计数。
 - en: To get the last low, use the `**MAX**` function.
+  id: totrans-221
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 要获取最后一行，请使用 `**MAX**` 函数。
 - en: '`**INDEX**` function returns the invoice amount in the last matching row number
     returned by the `**MAX**` function.'
+  id: totrans-222
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**INDEX**` 函数返回 `**MAX**` 函数返回的最后匹配行号中的发票金额。'
 - en: '[Lookup items in a list](toc.xhtml#s57a)'
+  id: totrans-223
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[列表中的查找项目](toc.xhtml#s57a)'
 - en: Looking up items in a list is relatively easy when you understand the `**COUNTIF**`
     function.
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: 当你理解 `**COUNTIF**` 函数时，在列表中查找项目相对容易。
 - en: 'In *[Figure 3.24](#fig3_24)*, we want to look up the first customer who bought
     from us using any of the currencies in the list in cell G:'
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 *[图 3.24](#fig3_24)* 中，我们想要查找第一个从我们这里购买的客户，使用单元格 G 中列表中的任何货币。
 - en: '![](images/Figure-3.24.jpg)'
+  id: totrans-226
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.24.jpg)'
 - en: '**Figure 3.24:** Lookup item in a list'
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.24：** 列表中的查找项目'
 - en: '`=INDEX(Sales_Currency[Customer],`'
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(Sales_Currency[Customer],`'
 - en: '`MATCH(1,COUNTIF(List, Sales_Currency[Currency]),0))`'
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(1,COUNTIF(List, Sales_Currency[Currency]),0))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**COUNTIF(List, Sales_Currency[Currency])**` `**COUNTIF**` function returns
     an array of 1/0, where 1 is the count of the currency if it is found in the list,
     else 0\. This becomes the lookup array argument for the `**MATCH**` function.'
+  id: totrans-231
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**COUNTIF(List, Sales_Currency[Currency])**` `**COUNTIF**` 函数返回一个 1/0 数组，其中
+    1 是货币在列表中找到的计数，否则为 0。这成为 `MATCH` 函数的查找数组参数。'
 - en: '`**MATCH**` function returns the first invoice’s relative row position whose
     count is 1.'
+  id: totrans-232
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH**` 函数返回第一张发票的相对行位置，计数为 1。'
 - en: '`**INDEX**` function returns the customer in the same row number.'
+  id: totrans-233
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**INDEX**` 函数返回相同行号的客户。'
 - en: 'If we want to return all the items and not just the first match, we must modify
     our formula, as shown in *[Figure 3.25](#fig3_25)*:'
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们想返回所有项目而不仅仅是第一个匹配项，我们必须修改我们的公式，如 *[图 3.25](#fig3_25)* 所示：
 - en: '`=INDEX(`'
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(`'
 - en: '`Sales_Currency[Customer],`'
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Sales_Currency[Customer],`'
 - en: '`LARGE(`'
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: '`LARGE(`'
 - en: '`COUNTIF(List, Sales_Currency[Currency])`'
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: '`COUNTIF(List, Sales_Currency[Currency])`'
 - en: '`*ROW(Sales_Currency[Currency])-ROW(Sales_Currency[#Headers]), ROW(A1))`'
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: '`*ROW(Sales_Currency[Currency])-ROW(Sales_Currency[#Headers]), ROW(A1))`'
 - en: '`)`'
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-241
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`COUNTIF(List, Sales_Currency[Currency])`'
+  id: totrans-242
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`COUNTIF(List, Sales_Currency[Currency])`'
 - en: '`*ROW(Sales_Currency[Currency])` `**COUNTIF**` function returns an array of
     1/0, where 1 is the count of the currency if it is found in the list, else 0\.
     Multiply this array with row numbers to return a list of row numbers that contain
     the items in the list. Remember to adjust the row numbers to start the count after
     the headers by deducting the header row number.'
+  id: totrans-243
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`*ROW(Sales_Currency[Currency])` `**COUNTIF**` 函数返回一个 1/0 数组，其中 1 是货币在列表中找到的计数，否则为
+    0。将此数组乘以行号以返回包含列表中项目的行号列表。记得通过减去标题行号来调整行号以从标题后开始计数。'
 - en: We need to iterate over this row numbers list and return one at a time as the
     row argument for the `**INDEX**` function. We use the LARGE function for this
     task, which returns the row numbers from the largest to the smallest. Note ROW(A1)
     evaluates to 1, and as you drag the function down, it increases until the full
     list is iterated.
+  id: totrans-244
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们需要遍历这个行号码列表，并逐个作为 `**INDEX**` 函数的行参数返回。我们使用 `LARGE` 函数来完成这个任务，它从最大到最小返回行号。注意
+    ROW(A1) 评估为 1，当你向下拖动函数时，它会增加直到完整列表被迭代。
 - en: '`**INDEX**` function uses each row number returned by the LARGE function and
     returns the corresponding customer.'
+  id: totrans-245
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**INDEX** 函数使用 `LARGE` 函数返回的每行号码，并返回相应的客户。'
 - en: Please note that the `**INDEX**` function returns the `**#VALUE**` error after
     all customers have been returned.
+  id: totrans-246
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请注意，当所有客户都返回后，`**INDEX**` 函数会返回 `**#VALUE**` 错误。
 - en: '![](images/Figure-3.25.jpg)'
+  id: totrans-247
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.25.jpg)'
 - en: '**Figure 3.25:** Lookup multiple items in a list'
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.25:** 在列表中查找多个项目'
 - en: 'If we do not want the formula to return the error, we could nest it in the
     `**IFERRROR**` function, as shown in the following syntax. The `**IFERROR**` function
     now returns blanks instead of errors:'
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们不希望公式返回错误，我们可以将其嵌套在 `**IFERRROR**` 函数中，如下所示。`**IFERROR**` 函数现在返回空白而不是错误：
 - en: '`=IFERROR(`'
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=IFERROR(`'
 - en: '`INDEX(Sales_Currency[Customer],`'
+  id: totrans-251
   prefs: []
   type: TYPE_NORMAL
+  zh: '`INDEX(Sales_Currency[Customer],`'
 - en: '`LARGE(`'
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: '`LARGE(`'
 - en: '`COUNTIF(List,Sales_Currency[Currency])`'
+  id: totrans-253
   prefs: []
   type: TYPE_NORMAL
+  zh: '`COUNTIF(List,Sales_Currency[Currency])`'
 - en: '`*ROW(Sales_Currency[Currency])`'
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: '`*ROW(Sales_Currency[Currency])`'
 - en: '`-ROW(Sales_Currency[#Headers]),ROW(A1))),`'
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: '`-ROW(Sales_Currency[#Headers]),ROW(A1))),`'
 - en: '`“”)`'
+  id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh: '`“”)`'
 - en: '[Lookup unique value](toc.xhtml#s58a)'
+  id: totrans-257
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找唯一值](toc.xhtml#s58a)'
 - en: 'Mastering the `**COUNTIF**` function is a big step in enhancing our lookup
     skills. For example, if you want to look up a unique value in Excel, you must
     utilize the `**COUNTIF**` function, as shown in *[Figure 3.26](#fig3_26)*:'
+  id: totrans-258
   prefs: []
   type: TYPE_NORMAL
+  zh: 掌握 `**COUNTIF**` 函数是提升我们查找技能的重要一步。例如，如果你想在 Excel 中查找唯一值，你必须利用 `**COUNTIF**`
+    函数，如 *[图 3.26](#fig3_26)* 所示：
 - en: '`=INDEX(Sales[Customer],`'
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(Sales[Customer],`'
 - en: '`MATCH(TRUE, COUNTIF(Sales[Currency],Sales[Currency])=1,0))`'
+  id: totrans-260
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MATCH(TRUE, COUNTIF(Sales[Currency],Sales[Currency])=1,0))`'
 - en: 'Here is how this function works:'
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是这个函数的工作原理：
 - en: '`**COUNTIF(Sales[Currency],Sales[Currency])**` `**COUNTIF**` function returns
     an array of counts for each currency in the column. Since we are looking for the
     unique values, we check which count is equal to 1 ► `**COUNTIF(Sales[Currency],Sales[Currency])=1**`.
     This comparison returns an array of `TRUE/FALSE`, where `TRUE=UNIQUE` and `FALSE=DUPLICATES`.'
+  id: totrans-262
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**COUNTIF(Sales[Currency],Sales[Currency])**` `**COUNTIF**` 函数返回列中每个货币的计数数组。由于我们正在寻找唯一值，我们检查哪个计数等于
+    1 ► `**COUNTIF(Sales[Currency],Sales[Currency])=1**`。这个比较返回一个 `TRUE/FALSE` 数组，其中
+    `TRUE=唯一`，`FALSE=重复`。'
 - en: '`**MATCH**` functions return the relative row position of the *first* `**TRUE**`
     value in the preceding array.'
+  id: totrans-263
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH**` 函数返回前述数组中第一个 `**TRUE**` 值的相对行位置。'
 - en: '`**INDEX**` function returns the customer in the same row number.'
+  id: totrans-264
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**INDEX** 函数返回相同行号的客户。'
 - en: '![](images/Figure-3.26.jpg)'
+  id: totrans-265
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.26.jpg)'
 - en: '**Figure 3.26:** Lookup unique items'
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.26:** 查找唯一项目'
 - en: '[Lookup bottom *n* values](toc.xhtml#s59a)'
+  id: totrans-267
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找底部 *n* 值](toc.xhtml#s59a)'
 - en: 'Looking up the bottom values is relatively easy if we first understand the
     `**IF**` and `**SMALL**` functions. For example, in *[Figure 3.27](#fig3_27)*,
     we look up the three customers with the least sales:'
+  id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们首先了解 `**IF**` 和 `**SMALL**` 函数，查找底部值就相对容易了。例如，在 *[图 3.27](#fig3_27)* 中，我们查找三个销售额最低的客户：
 - en: '![](images/Figure-3.27.jpg)'
+  id: totrans-269
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-3.27.jpg)'
 - en: '**Figure 3.27:** Lookup bottom items'
+  id: totrans-270
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 3.27:** 查找底部项目'
 - en: '`=INDEX(BottomSale[Customer],`'
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=INDEX(BottomSale[Customer],`'
 - en: '`SMALL(`'
+  id: totrans-272
   prefs: []
   type: TYPE_NORMAL
+  zh: '`SMALL(`'
 - en: '`IF((BottomSale[Amt]<=SMALL(BottomSale[Amt],3)),`'
+  id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: '`IF((BottomSale[Amt]<=SMALL(BottomSale[Amt],3)),`'
 - en: '`(BottomSale[Amt]<=SMALL(BottomSale[Amt],3))*ROW(BottomSale[Amt])-ROW(BottomSale[#Headers]),`'
+  id: totrans-274
   prefs: []
   type: TYPE_NORMAL
+  zh: '`(BottomSale[Amt]<=SMALL(BottomSale[Amt],3))*ROW(BottomSale[Amt])-ROW(BottomSale[#Headers]),`'
 - en: '`“”),ROW(A1)))`'
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: '`“”),ROW(A1)))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-276
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**SMALL(BottomSale[Amt],3)**` the `SMALL` function returns the third smallest
     amount — 28,600\. The next step is to check which amount is less or equal to this
     third smallest amount ► `**(BottomSale[Amt]<=SMALL(BottomSale[Amt],3))**`.This
     comparison returns an array of `TRUE/FALSE`.'
+  id: totrans-277
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**SMALL(BottomSale[Amt],3)** `SMALL` 函数返回第三个最小的金额 — 28,600。下一步是检查哪个金额小于或等于这第三个最小的金额
+    ► **(BottomSale[Amt]<=SMALL(BottomSale[Amt],3))**。这个比较返回一个 `TRUE/FALSE` 数组。'
 - en: '`**BottomSale[Amt]<=SMALL(BottomSale[Amt],3))*ROW(BottomSale[Amt])**` `**])-ROW(BottomSale[#Headers])**`
     To get an array of row numbers, we multiply the `TRUE/FALSE` array with the amounts’
     row numbers. Remember to adjust the row numbers to start the count after the headers
     by deducting the header row number.'
+  id: totrans-278
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**BottomSale[Amt]<=SMALL(BottomSale[Amt],3))*ROW(BottomSale[Amt])**` `**])-ROW(BottomSale[#Headers])**`
+    要获得一系列行号，我们将`TRUE/FALSE`数组与金额的行号相乘。记得调整行号，从标题行号中减去以开始计数。'
 - en: 'The next step is to replace the negative values in the preceding array with
     blanks using the IF function: `**IF((BottomSale[Amt]<=SMALL(BottomSale[Amt],3)),
     (BottomSale[Amt]<=SMALL(BottomSale[Amt],3))*ROW(BottomSale[Amt])-ROW(BottomSale[#Headers]),
     “”)**`'
+  id: totrans-279
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 下一步是使用IF函数将前面数组中的负值替换为空白：`**IF((BottomSale[Amt]<=SMALL(BottomSale[Amt],3)),
+    (BottomSale[Amt]<=SMALL(BottomSale[Amt],3))*ROW(BottomSale[Amt])-ROW(BottomSale[#Headers]),
+    “”)**`
 - en: We need to iterate over this row numbers list and return one at a time as the
     row argument for the INDEX function. For this task, we use the `SMALL` function,
     which returns the row numbers from the smallest to the largest. Note `ROW(A1)`
     evaluates to 1, and as you drag the function down, it increases until the full
     list is iterated.
+  id: totrans-280
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们需要遍历这个行号列表，并逐个作为INDEX函数的行参数返回。为此任务，我们使用`SMALL`函数，它按从最小到最大的顺序返回行号。注意`ROW(A1)`评估为1，当您向下拖动函数时，它会增加直到完整列表被迭代。
 - en: '`**INDEX**` function uses each row number returned by the `**SMALL**` function
     and returns the corresponding customer.'
+  id: totrans-281
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**INDEX**`函数使用`**SMALL**`函数返回的每个行号，并返回相应的客户。'
 - en: Please note that the `**INDEX**` function returns the “#NUM” error after all
     customers have been returned.
+  id: totrans-282
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请注意，当所有客户都被返回后，`**INDEX**`函数会返回“#NUM”错误。
 - en: 'As we learned in the previous section, if you do not want the INDEX function
     to return an error, nest it in the `IFERROR` function, as follows:'
+  id: totrans-283
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在前一节中学到的，如果不希望INDEX函数返回错误，可以将其嵌套在`IFERROR`函数中，如下所示：
 - en: '`=IFERROR(`'
+  id: totrans-284
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=IFERROR(`'
 - en: '`INDEX(BottomSale[Customer],`'
+  id: totrans-285
   prefs: []
   type: TYPE_NORMAL
+  zh: '`INDEX(BottomSale[Customer],`'
 - en: '`SMALL(`'
+  id: totrans-286
   prefs: []
   type: TYPE_NORMAL
+  zh: '`SMALL(`'
 - en: '`IF((BottomSale[Amt]<=SMALL(BottomSale[Amt],3)),`'
+  id: totrans-287
   prefs: []
   type: TYPE_NORMAL
+  zh: '`IF((BottomSale[Amt]<=SMALL(BottomSale[Amt],3)),`'
 - en: '`(BottomSale[Amt]<=SMALL(BottomSale[Amt],3))`'
+  id: totrans-288
   prefs: []
   type: TYPE_NORMAL
+  zh: '`(BottomSale[Amt]<=SMALL(BottomSale[Amt],3))`'
 - en: '`*ROW(BottomSale[Amt])-ROW(BottomSale[#Headers]),`'
+  id: totrans-289
   prefs: []
   type: TYPE_NORMAL
+  zh: '`*ROW(BottomSale[Amt])-ROW(BottomSale[#Headers]),`'
 - en: '`“”),ROW(A1))),`'
+  id: totrans-290
   prefs: []
   type: TYPE_NORMAL
+  zh: '`“”),ROW(A1))),`'
 - en: '`“”)`'
+  id: totrans-291
   prefs: []
   type: TYPE_NORMAL
+  zh: '`“”)`'
 - en: '[Conclusion](toc.xhtml#s60a)'
+  id: totrans-292
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结论](toc.xhtml#s60a)'
 - en: This chapter offers a better lookup method for `VLOOKUP — INDEX/MATCH` combination.
+  id: totrans-293
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章提供了一个更好的查找方法，即`VLOOKUP — INDEX/MATCH`组合。
 - en: 'There are three primary reasons why this combination is the better option:
     (i) It allows us to select not only a two-column table but also a single column/row
     array; (ii) The ability to select a single column/row array makes it flexible
     to look up not only to the left or right but also vertically or horizontally;
     (iii) Since it does not default to an approximate match, this combination is less
     prone to errors.'
+  id: totrans-294
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种组合是更好的选择的主要原因有三点：(i) 它允许我们选择不仅是两列表，还可以是单列/行数组；(ii) 选择单列/行数组的能力使其灵活，不仅可以向左或向右查找，还可以垂直或水平查找；(iii)
+    由于它不默认进行近似匹配，这种组合更不容易出错。
 - en: For those without an Office365 subscription, this combination of `INDEX/MATCH`
     is the most efficient lookup method.
+  id: totrans-295
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于没有Office365订阅的用户，`INDEX/MATCH`组合是最有效的查找方法。
 - en: In the next chapter, we will investigate why some Excel users still use one
     of the oldest legacy lookup functions — `LOOKUP` and `HLOOKUP`.
+  id: totrans-296
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将探讨为什么一些Excel用户仍然使用最古老的遗留查找函数之一 — `LOOKUP` 和 `HLOOKUP`。
 - en: '[Points to remember](toc.xhtml#s61a)'
+  id: totrans-297
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[需要记住的要点](toc.xhtml#s61a)'
 - en: Similar to the `VLOOKUP` function, the `INDEX/MATCH` combination returns the
     first match single value by default. If we want multiple values to nest, we can
     use the SMALL/LARGE functions.
+  id: totrans-298
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与`VLOOKUP`函数类似，`INDEX/MATCH`组合默认返回第一个匹配的单个值。如果我们想要嵌套多个值，可以使用`SMALL/LARGE`函数。
 - en: Unlike the `VLOOKUP` function, the `INDEX/MATCH` function row count is based
     on the array selected, not the default row number returned by the ROW function.
     Therefore, you must adjust the row count if your data does not start from the
     topmost row.
+  id: totrans-299
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与`VLOOKUP`函数不同，`INDEX/MATCH`函数的行数是基于所选数组的，而不是ROW函数返回的默认行数。因此，如果您的数据不是从最顶部行开始的，必须调整行数。

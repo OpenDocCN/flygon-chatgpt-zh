@@ -1,1418 +1,2080 @@
 - en: '[CHAPTER 8](toc.xhtml#c08)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第 8 章](toc.xhtml#c08)'
 - en: '[Power Query: One-Stop Solution](toc.xhtml#c08)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[Power Query：一站式解决方案](toc.xhtml#c08)'
 - en: '[Introduction](toc.xhtml#s125a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s125a)'
 - en: This chapter will discuss one of the game-changing tools in Excel that promises
     to revolutionize the way we handle data retrieval and transformation — Power Query.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章将讨论 Excel 中的一个改变游戏规则的工具，承诺彻底改变我们处理数据检索和转换的方式 — Power Query。
 - en: Often hailed as the *one-stop solution* for data lookup, Power Query empowers
     users to seamlessly connect, reshape, and cleanse data from various sources, transforming
     raw information into valuable insights with remarkable efficiency and ease.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: Power Query 常被誉为数据查找的*一站式解决方案*，赋予用户无缝连接、重塑和清洗来自各种来源的数据的能力，以出色的效率和便捷性将原始信息转化为有价值的见解。
 - en: Like the FILTER function, Power Query has the flexibility to return a subset
     of data, not just a single entry, which is important for creating dynamic reports.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 像 FILTER 函数一样，Power Query 具有返回数据子集的灵活性，而不仅仅是单个条目，这对于创建动态报告非常重要。
 - en: In Excel 2010 and Excel 2013 versions, the Power Query feature is not integrated
     by default. You need to download and install the Power Query add-in, which can
     be found on the add-in on the Microsoft Download Center. Once installed, you’ll
     find the Power Query option in the `**Power Query**` tab on the Excel ribbon.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 Excel 2010 和 Excel 2013 版本中，默认情况下未集成 Power Query 功能。您需要下载并安装 Power Query 加载项，该加载项可以在微软下载中心的加载项中找到。安装后，您将在
+    Excel 标签的“**Power Query**”选项卡中找到 Power Query 选项。
 - en: '[Structure](toc.xhtml#s126a)'
+  id: totrans-7
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结构](toc.xhtml#s126a)'
 - en: 'In this chapter, we will discuss the 15 scenarios where we can Power Query:'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论可以使用 Power Query 的 15 种场景：
 - en: Installing the Power Query add-in for Excel 2010 and Excel 2013
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 为 Excel 2010 和 Excel 2013 安装 Power Query 加载项
 - en: Exact Lookup
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 精确查找
 - en: Return multiple results and Multiple columns.
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 返回多个结果和多列。
 - en: Approximate Lookup
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 近似查找
 - en: Lookup using table joins.
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用表连接进行查找。
 - en: Looking up the top or bottom n items
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找前 n 个或后 n 个项目
 - en: Lookup using the List function.
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用 List 函数进行查找。
 - en: Looking up Weekday vs. Weekend data
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找工作日与周末数据
 - en: Looking up Data that excludes Holidays.
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找排除节假日的数据。
 - en: Looking up Items repeated *N* times.
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找重复 *N* 次的项目。
 - en: Return end of Month date items Only
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 仅返回月底日期项目
 - en: Fuzzy Lookup
+  id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 模糊查找
 - en: '[Installing the Power Query add-in for Excel 2010 and Excel 2013](toc.xhtml#s127a)'
+  id: totrans-21
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[安装 Power Query 加载项适用于 Excel 2010 和 Excel 2013](toc.xhtml#s127a)'
 - en: 'Here’s a guide on how to do it:'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是如何操作的指南：
 - en: '**For Excel 2010:**'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: '**对于 Excel 2010：**'
 - en: Download the Power Query Add-in**:**
+  id: totrans-24
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 下载 Power Query 加载项**：**
 - en: Go to the Microsoft Download Center.
+  id: totrans-25
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 前往微软下载中心。
 - en: Search for “Power Query for Excel 2010” and download the appropriate version
     (32-bit or 64-bit) based on your Excel version and system architecture.
+  id: totrans-26
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 搜索“Excel 2010 的 Power Query”并根据您的 Excel 版本和系统架构下载适当的版本（32 位或 64 位）。
 - en: 'Install the Add-in:'
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 安装加载项：
 - en: Run the downloaded installer.
+  id: totrans-28
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 运行下载的安装程序。
 - en: Follow the on-screen instructions to install the Power Query add-in. Make sure
     Excel is closed during this process.
+  id: totrans-29
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 按照屏幕上的说明安装 Power Query 加载项。确保在此过程中关闭 Excel。
 - en: After installation, open Excel 2010.
+  id: totrans-30
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 安装完成后，打开 Excel 2010。
 - en: 'Enable the Add-in:'
+  id: totrans-31
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 启用加载项：
 - en: Click File tab in Excel.
+  id: totrans-32
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在 Excel 中点击“文件”选项卡。
 - en: Select Options.
+  id: totrans-33
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择“选项”。
 - en: In the Excel Options dialog box, click Add-Ins on the left sidebar.
+  id: totrans-34
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在 Excel 选项对话框中，点击左侧边栏的“加载项”。
 - en: In the Manage box at the bottom, select COM Add-ins and click Go.
+  id: totrans-35
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在底部的“管理”框中，选择“COM 加载项”并点击“前往”。
 - en: Check the Microsoft Office Power Query for the Excel option.
+  id: totrans-36
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选中“Microsoft Office Power Query for Excel”选项。
 - en: Click OK to enable the add-in.
+  id: totrans-37
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 点击“确定”以启用加载项。
 - en: '**For Excel 2013**:'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: '**对于 Excel 2013：**'
 - en: Power Query is already integrated, but you might need to enable it.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: Power Query 已经集成，但您可能需要启用它。
 - en: 'Here is how to enable Power Query:'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是如何启用 Power Query 的方法：
 - en: Click File tab in Excel.
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在 Excel 中点击“文件”选项卡。
 - en: Select Options.
+  id: totrans-42
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择“选项”。
 - en: In the Excel Options dialog box, click Add-Ins on the left sidebar.
+  id: totrans-43
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在 Excel 选项对话框中，点击左侧边栏的“加载项”。
 - en: In the Manage box at the bottom, select COM Add-ins and click Go.
+  id: totrans-44
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在底部的“管理”框中，选择“COM 加载项”并点击“前往”。
 - en: Check the Microsoft Office Power Query option.
+  id: totrans-45
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选中“Microsoft Office Power Query”选项。
 - en: Click OK to enable Power Query.
+  id: totrans-46
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 点击“确定”以启用 Power Query。
 - en: With Power Query enabled, you can access it from the Data tab in the Ribbon.
     You’ll see options like Get & Transform and Get Data there.
+  id: totrans-47
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 启用 Power Query 后，您可以从功能区的“数据”选项卡中访问它。您将在那里看到“获取和转换”以及“获取数据”等选项。
 - en: 'The first step in using Power Query is importing data into its editor. There
     are two ways of importing data as follows:'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 Power Query 的第一步是将数据导入其编辑器。有两种导入数据的方式如下：
 - en: If your data is in the Excel workbook, go to the “Data” tab and select “From
     Table/Range” if your data is in a structured table.
+  id: totrans-49
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果您的数据位于 Excel 工作簿中，请转到“数据”选项卡，并选择“从表/范围获取”，如果您的��据位于结构化表中。
 - en: If your data is in a different workbook or different format (CSV, text file,
     database, web source, and more), go to the “Data” tab, select “Get Data,” and
     choose the appropriate source.
+  id: totrans-50
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果您的数据位于不同的工作簿或不同的格式（CSV、文本文件、数据库、网络来源等），请转到“数据”选项卡，选择“获取数据”，并选择适当的来源。
 - en: '**Note:**'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：**'
 - en: If you’re connecting to a different data source, a Navigator window will appear.
     Navigate to the specific file or database, select the table or query you want,
     and click `**Load**` or `**Transform Data**` to open the Power Query Editor.
+  id: totrans-52
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果您连接到不同的数据源，将出现一个导航窗口。导航到特定文件或数据库，选择您想要的表或查询，然后单击`**加载**`或`**转换数据**`以打开 Power
+    Query Editor。
 - en: '[Exact Lookup](toc.xhtml#s128a)'
+  id: totrans-53
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[精确查找](toc.xhtml#s128a)'
 - en: To use Power Query to do an exact lookup, we need to have both the criteria
     and lookup data in tables.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用 Power Query 进行精确查找，我们需要将准则和查找数据都放入表中。
 - en: 'For example, in *[Figure 8.1](#fig8_1)*, we want to get the date for any debtor
     in cell E2:'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图 8.1](#fig8_1)*中，我们想要获取单元格 E2 中任何债务人的日期：
 - en: '![](images/Figure-8.1.jpg)'
+  id: totrans-56
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.1.jpg)'
 - en: '**Figure 8.1:** Power Query exact match lookup'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 8.1：** Power Query 精确匹配查找'
 - en: 'Here are the steps to follow:'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: Convert the cells containing the criterion to a table. Name the table criteria
     as shown in *[Figure 8.2](#fig8_2)*:![](images/Figure-8.2.jpg)
+  id: totrans-59
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将包含准则的单元格转换为表。如*[图 8.2](#fig8_2)*所示，将表命名为准则：![](images/Figure-8.2.jpg)
 - en: '**Figure 8.2:** Create a Criterion table'
+  id: totrans-60
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.2：** 创建一个准则表'
 - en: Convert the data to look up into a table as well and name it `**tblDebtors**`,
     as shown in *[Figure 8.3](#fig8_3)*:![](images/Figure-8.3.jpg)
+  id: totrans-61
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将要查找的数据也转换为表，并将其命名为`**tblDebtors**`，如*[图 8.3](#fig8_3)*所示：![](images/Figure-8.3.jpg)
 - en: '**Figure 8.3:** Create a Lookup data table'
+  id: totrans-62
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.3：** 创建一个查找数据表'
 - en: Load the criterion table to Power Query first. To do this, click anywhere on
     the table ► Go to the `**Data**` tab ► Click `**From Table/Range**` (see *[Figure
     8.4](#fig8_4)*):![](images/Figure-8.4.jpg)
+  id: totrans-63
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 首先将准则表加载到 Power Query 中。要做到这一点，单击表中的任意位置 ► 转到“数据”选项卡 ► 单击“从表/范围获取”（参见*[图 8.4](#fig8_4)*）：![](images/Figure-8.4.jpg)
 - en: '**Figure 8.4:** Loading the Criterion Table to Power Query Editor'
+  id: totrans-64
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.4：** 将准则表加载到 Power Query Editor'
 - en: Go to the `**Power Query Editor**` and load out the criteria table as a connection
     only, as shown in *[Figure 8.5](#fig8_5)*:![](images/Figure-8.5.jpg)
+  id: totrans-65
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到`**Power Query Editor**`，仅作为连接加载准则表，如*[图 8.5](#fig8_5)*所示：![](images/Figure-8.5.jpg)
 - en: '**Figure 8.5:** Loading Out the Criterion Table as a connection only'
+  id: totrans-66
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.5：** 仅作为连接加载准则表'
 - en: Follow the same procedure as outlined in Step 3 to load the data table in Power
     Query. By now, you should see the `**Criteria**` and Lookup Table in Power Query
     Editor, as shown in *[Figure 8.6](#fig8_6)*:![](images/Figure-8.6.jpg)
+  id: totrans-67
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 按照第 3 步中概述的相同步骤加载 Power Query 中的数据表。现在，您应该在 Power Query Editor 中看到`**准则**`和查找表，如*[图
+    8.6](#fig8_6)*所示：![](images/Figure-8.6.jpg)
 - en: '**Figure 8.6:** Criteria and Lookup Table in Power Query Editor'
+  id: totrans-68
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.6：** Power Query Editor 中的准则和查找表'
 - en: Go to the `**Debtors**`’ table and filter with the first debtor, as shown in
     *[Figure 8.7](#fig8_7)*:![](images/Figure-8.7.jpg)
+  id: totrans-69
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到`**债务人**`表，并根据第一个债务人进行筛选，如*[图 8.7](#fig8_7)*所示：![](images/Figure-8.7.jpg)
 - en: '**Figure 8.7:** Apply Filter on the Lookup table'
+  id: totrans-70
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.7：** 在查找表上应用筛选器'
 - en: Convert the criterion table into a value by right-clicking the Value and Drilling
     down, as shown in *[Figure 8.8](#fig8_8)*:![](images/Figure-8.8.jpg)
+  id: totrans-71
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 通过右键单击值并展开，将准则表转换为值，如*[图 8.8](#fig8_8)*所示：![](images/Figure-8.8.jpg)
 - en: '**Figure 8.8:** Convert the Criteria table to a Value'
+  id: totrans-72
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.8：** 将准则表转换为值'
 - en: Replace the Filtered value in Step 6 above with the criteria value, as shown
     in *[Figure 8.9](#fig8_9)*:![](images/Figure-8.9.jpg)
+  id: totrans-73
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 用第 6 步中的准则值替换筛选值，如*[图 8.9](#fig8_9)*所示：![](images/Figure-8.9.jpg)
 - en: '**Figure 8.9:** Replace Filtered Value with Criterion Value'
+  id: totrans-74
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.9：** 用准则值替换筛选值'
 - en: Since we want to return the date value, we should select and remove other columns,
     as shown in [Figure 8.10](#fig8_10):![](images/Figure-8.10.jpg)
+  id: totrans-75
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 由于我们想要返回日期值，我们应该选择并删除其他列，如[图 8.10](#fig8_10)所示：![](images/Figure-8.10.jpg)
 - en: '**Figure 8.10:** Replace Filtered Value with Criterion Value'
+  id: totrans-76
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.10：** 用准则值替换筛选值'
 - en: Close and load the retrieved date (see *[Figure 8.11](#fig8_11)*):![](images/Figure-8.11.jpg)
+  id: totrans-77
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 关闭并加载检索到的日期（参见*[图 8.11](#fig8_11)*）：![](images/Figure-8.11.jpg)
 - en: '**Figure 8.11:** Load out the returned data'
+  id: totrans-78
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.11：** 加载返回的数据'
 - en: The final step is to load out the filtered Customer/debtor’s date not as a connection
     but to an existing worksheet (see *[Figure 8.12](#fig8_12)*):![](images/Figure-8.12.jpg)
+  id: totrans-79
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后一步是将筛选后的客户/债务人的日期加载到现有工作表而不是连接（见*[图8.12](#fig8_12)*）：![](images/Figure-8.12.jpg)
 - en: '**Figure 8.12:** Load data to an existing worksheet'
+  id: totrans-80
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.12：** 将数据加载到现有工作表'
 - en: '**Note:**'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：**'
 - en: To look up another customer/debtor’s date, just replace the name. Then, go to
     the Data tab. In the queries and connection group, click Refresh All.
+  id: totrans-82
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 要查找另一个客户/债务人的日期，只需替换名称。然后，转到“数据”选项卡。在查询和连接组中，单击“全部刷新”。
 - en: Power Query stores and remembers all the steps, so there’s no need to repeat
     them when the criteria change.
+  id: totrans-83
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Power Query 存储并记住所有步骤，因此在标准发生变化时无需重复执行。
 - en: '[Return multiple results and multiple columns](toc.xhtml#s129a)'
+  id: totrans-84
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[返回多个结果和多个列](toc.xhtml#s129a)'
 - en: 'Now, let us assume that we have multiple transactions for the debtors, and
     we want to return all transactions and multiple columns, as shown in *[Figure
     8.13](#fig8_13)*:'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们假设我们有多个债务人的交易，并且希望返回所有交易和多个列，如*[图8.13](#fig8_13)*所示：
 - en: '![](images/Figure-8.13.jpg)'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.13.jpg)'
 - en: '**Figure 8.13:** Power Query returns Multiple items and multiple Columns'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图8.13：** Power Query 返回多个项目和多个列'
 - en: 'Here are the steps to follow:'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: You will follow the same steps as outlined earlier, except for a small change
     in Step 9.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 您将按照前面概述的相同步骤进行操作，只是在第9步中有一个小变化。
 - en: 'In Step 9, where we were removing unwanted columns, this time, we will only
     remove the debtor’s column, as shown in *[Figure 8.14](#fig8_14)*:'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第9步中，我们删除不需要的列，这次我们只删除债务人的列，如*[图8.14](#fig8_14)*所示：
 - en: '![](images/Figure-8.14.jpg)'
+  id: totrans-91
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.14.jpg)'
 - en: '**Figure 8.14:** Allowing multiple columns to be returned'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图8.14：** 允许返回多个列'
 - en: Steps 10 and 11 in the previous section remains unchanged.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 前一节中的第10和第11步保持不变。
 - en: '[Approximate Lookup](toc.xhtml#s130a)'
+  id: totrans-94
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[近似查找](toc.xhtml#s130a)'
 - en: Unlike in Excel, Power Query does not have a VLOOKUP or XLOOKUP function that
     can do an approximate lookup.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 与 Excel 不同，Power Query 没有可以进行近似查找的 VLOOKUP 或 XLOOKUP 函数。
 - en: 'In this section, we will learn the steps to use to lookup grades using an approximate
     lookup, as shown in *[Figure 8.15](#fig8_15)*. Please note your grades table needs
     to be sorted in ascending order:'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节中，我们将学习使用近似查找来查找成绩的步骤，如*[图8.15](#fig8_15)*所示。请注意，您的成绩表需要按升序排序：
 - en: '![](images/Figure-8.15.jpg)'
+  id: totrans-97
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.15.jpg)'
 - en: '**Figure 8.15:** Power Query Approximate Match'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图8.15：** Power Query 近似匹配'
 - en: 'Here are the steps to follow:'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: Load the grades table (`**tblGrade**`) as a connection only and then load the
     exams table (`**tblExams**`). Then, follow Steps 3–5 outlined in the preceding
     section (see *[Figure 8.16](#fig8_16)*):![](images/Figure-8.16.jpg)
+  id: totrans-100
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 仅将成绩表(`**tblGrade**`)加载为连接，然后加载考试表(`**tblExams**`)。然后，按照前一节中概述的步骤3-5进行操作（见*[图8.16](#fig8_16)*）：![](images/Figure-8.16.jpg)
 - en: '**Figure 8.16:** Name the tables and load them to Power Query'
+  id: totrans-101
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.16：** 为表命名并加载到 Power Query'
 - en: Click exams table, go to the Combine tab, and append queries as new (see *[Figure
     8.17](#fig8_17))*:![](images/Figure-8.17.jpg)
+  id: totrans-102
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击考试表，转到“合并”选项卡，并追加查询为新的（见*[图8.17](#fig8_17)*）：![](images/Figure-8.17.jpg)
 - en: '**Figure 8.17:** Appending Queries in Power Query'
+  id: totrans-103
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.17：** 在 Power Query 中追加查询'
 - en: Append the exams table (`**tblExams**`) and grade tables (`**tblGrade**`) (see
     *[Figure 8.18](#fig8_18)*):![](images/Figure-8.18.jpg)
+  id: totrans-104
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 追加考试表(`**tblExams**`)和成绩表(`**tblGrade**`)（见*[图8.18](#fig8_18)*）：![](images/Figure-8.18.jpg)
 - en: '**Figure 8.18:** Appending two tables'
+  id: totrans-105
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.18：** 追加两个表'
 - en: On the appended query, go to the `**Add Column**` tab and add an `**Index Column**`.
     We will use this to sort the data later (see *[Figure 8.19](#fig8_19)*):![](images/Figure-8.19.jpg)
+  id: totrans-106
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在追加的查询中，转到`**添加列**`选项卡并添加一个`**索引列**`。我们将在稍后使用此列对数据进行排序（见*[图8.19](#fig8_19)*）：![](images/Figure-8.19.jpg)
 - en: '**Figure 8.19:** Adding an Index Column to Appended Query'
+  id: totrans-107
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.19：** 为追加的查询添加索引列'
 - en: Sort the marks in ascending order (see *[Figure 8.20](#fig8_20)*):![](images/Figure-8.20.jpg)
+  id: totrans-108
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将分数按升序排序（见*[图8.20](#fig8_20)*）：![](images/Figure-8.20.jpg)
 - en: '**Figure 8.20:** Sort the marks in Ascending order'
+  id: totrans-109
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.20：** 将分数按升序排序'
 - en: Click Grade Column, go to the `**Transform**` tab, then in the Fill options,
     and click Down (see *[Figure 8.21](#fig8_21)*):![](images/Figure-8.21.jpg)
+  id: totrans-110
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击成绩列，转到`**转换**`选项卡，然后在填充选项中点击“向下”（见*[图8.21](#fig8_21)*）：![](images/Figure-8.21.jpg)
 - en: '**Figure 8.21:** Fill down the grades'
+  id: totrans-111
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.21：** 填充成绩'
 - en: Go to the Students Column and Filter out the null values. Just untick the null
     values.
+  id: totrans-112
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到学生列并过滤掉空值。只需取消选中空值。
 - en: Go to the Index column and sort it in ascending order.
+  id: totrans-113
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到索引列并按升序排序。
 - en: Highlight the Grades table, then go to the `**Home**` tab, under the Remove
     columns options, and click Remove other columns.
+  id: totrans-114
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 高亮显示成绩表，然后转到`**主页**`选项卡，在删除列选项下，单击删除其他列。
 - en: Click appended query, go to the `**Home**` tab, and then under the Close and
     Load options, click `**Close & Load To**` (see *[Figure 8.22](#fig8_22)*):![](images/Figure-8.22.jpg)
+  id: totrans-115
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击附加的查询，转到`**主页**`选项卡，然后在关闭和加载选项下，单击`**关闭并加载到**`（见*[图 8.22](#fig8_22)*）：![](images/Figure-8.22.jpg)
 - en: '**Figure 8.22:** Load the grades from the Approximate Lookup'
+  id: totrans-116
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.22：** 从近似查找加载成绩'
 - en: Load the grades as a table next to the exams table (see *[Figure 8.23](#fig8_23)*):![](images/Figure-8.23.jpg)
+  id: totrans-117
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将成绩加载为一个表，放在考试表旁边（见*[图 8.23](#fig8_23)*）：![](images/Figure-8.23.jpg)
 - en: '**Figure 8.23:** Load the grades next to the exams table'
+  id: totrans-118
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.23：** 将成绩加载到考试表旁边'
 - en: '[Lookup using table joins](toc.xhtml#s131a)'
+  id: totrans-119
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用表连接查找](toc.xhtml#s131a)'
 - en: 'In Power Query, one of the most important things to learn is the different
     forms of table joins. In this example, we are going to use only two joins:'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 Power Query 中，学习的最重要的事情之一是不同形式的表连接。在这个例子中，我们将只使用两种连接：
 - en: '**Inner Join**: Only the rows with matching values in both tables are included
     in the result.'
+  id: totrans-121
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**内连接：** 结果中只包括两个表中值匹配的行。'
 - en: '**Left Anti-join**: Only rows from the left (or first) table are included in
     the result.'
+  id: totrans-122
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**左反连接：** 结果中只包括左侧（或第一个）表中的行。'
 - en: 'In the following example, see *[Figure 8.24](#fig8_24)*, we want to look up
     from the `**tblCars**`, the customers whose cars were serviced (`**tblServiced**`)
     (happy customers) and those with un-serviced cars (unhappy customers):'
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下面的示例中，见*[图 8.24](#fig8_24)*，我���希望从`**tblCars**`中查找那些车辆已经服务过的客户（满意顾客）和那些车辆未服务过的客户（不满意顾客）：
 - en: '![](images/Figure-8.24.jpg)'
+  id: totrans-124
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.24.jpg)'
 - en: '**Figure 8.24:** Looking up data using table joins'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 8.24：** 使用表连接查找数据'
 - en: 'Here are the steps to follow:'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: Load the Cars table (`**tblCars**`) and Serviced tables (`**tblServiced**`)
     as a connection only. Follow Steps 3–5 in the Exact Lookup section previously
     mentioned.
+  id: totrans-127
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将汽车表（`**tblCars**`）和服务表（`**tblServiced**`）仅作为连接加载。按照先前提到的精确查找部分的步骤3-5进行操作。
 - en: Click Cars table and go to the `**Home**` tab. Under the `**Combine**` group,
     select Merge queries, and then select `**Merge Queries**` as New (see *[Figure
     8.25](#fig8_25)*):![](images/Figure-8.25.jpg)
+  id: totrans-128
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击汽车表，转到`**主页**`选项卡。在`**合并**`组下，选择合并查询，然后选择`**合并查询**`作为新查询（见*[图 8.25](#fig8_25)*）：![](images/Figure-8.25.jpg)
 - en: '**Figure 8.25:** Merging Queries'
+  id: totrans-129
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.25：** 合并查询'
 - en: In the Merge pop-up Table, Select `**tblServiced**` from the second dropdown
     menu. Then select the `**Car Serviced**` column from the `**tblCars**` and the
     `**Serviced Cars**` column from the `**tblServiced**` table. Finally, from the
     Join kind, select Inner Join. This will only result in happy customers’ data (see
     *[Figure 8.26](#fig8_26)*):![](images/Figure-8.26.jpg)
+  id: totrans-130
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在合并弹出表中，从第二个下拉菜单中选择`**tblServiced**`。然后从`**tblCars**`中选择`**Car Serviced**`列，从`**tblServiced**`表中选择`**Serviced
+    Cars**`列。最后，从连接类型中选择内连接。这将只显示满意顾客的数据（见*[图 8.26](#fig8_26)*）：![](images/Figure-8.26.jpg)
 - en: '**Figure 8.26:** Inner Join table merge'
+  id: totrans-131
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.26：** 内连接表合并'
 - en: Rename the query to `**HappyCustomers**`, select the customer column, and click
     remove other columns (see *[Figure 8.27](#fig8_27)*):![](images/Figure-8.27.jpg)
+  id: totrans-132
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将查询重命名为`**满意顾客**`，选择客户列，然后单击删除其他列（见*[图 8.27](#fig8_27)*）：![](images/Figure-8.27.jpg)
 - en: '**Figure 8.27:** Renaming queries'
+  id: totrans-133
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.27：** 重命名查询'
 - en: Repeat the preceding Steps 1–3 to create a new merged query. This time instead
     of selecting an inner join, select a Left Anti-join. This will only result in
     unhappy customers’ data whose cars were not serviced (see *[Figure 8.28](#fig8_28)*):![](images/Figure-8.28.jpg)
+  id: totrans-134
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 重复前述步骤1-3，创建一个新的合并查询。这次，不选择内连接，而是选择左反连接。这将只显示未服务车辆的不满意顾客的数据（见*[图 8.28](#fig8_28)*）：![](images/Figure-8.28.jpg)
 - en: '**Figure 8.28:** Left Anti-Join table merge'
+  id: totrans-135
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.28：** 左反连接表合并'
 - en: Rename the query to `**UnhappyCustomers**`, select the customer column, and
     click Remove other columns.
+  id: totrans-136
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将查询重命名为`**不满意顾客**`，选择客户列，然后单击删除其他列。
 - en: Lastly, load the two new queries as tables to an existing worksheet.
+  id: totrans-137
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后，将这两个新查询作为表加载到现有工作表中。
 - en: '[Looking up the top or bottom n items](toc.xhtml#s132a)'
+  id: totrans-138
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找前n个或后n个项目](toc.xhtml#s132a)'
 - en: To look up the top/bottom n items dynamically, we will use almost the same steps
     as those used in the Exact lookup section with a slight change.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 要动态查找前/后n个项目，我们将使用几乎与精确查找部分相同的步骤，只是稍作修改。
 - en: 'For example, *[Figure 8.29](#fig8_29)* shows how to look up the top five creditors:'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，*[图8.29](#fig8_29)*展示了如何查找前五名债权人：
 - en: '![](images/Figure-8.29.jpg)'
+  id: totrans-141
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.29.jpg)'
 - en: '**Figure 8.29:** Lookup top five creditors'
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 8.29：** 查找前五名债权人'
 - en: 'Here are the steps to follow:'
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是要遵循的步骤：
 - en: Load the Top 5 table (`**tblTop**`) as a connection only, and then load the
     creditors table (`**tblCreditors**`). Follow Steps 3–5 in the Exact Lookup section
     previously mentioned.
+  id: totrans-144
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将前5名表（“**tblTop**”）仅作为连接加载，然后加载债权人表（“**tblCreditors**”）。按照前述精确查找部分的步���3-5进行操作。
 - en: Convert the `**tblTop**` table into a value by right-clicking the value and
     then drilling down. Refer to Step 7 in the Exact Lookup section previously mentioned.
+  id: totrans-145
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 通过右键单击值并进行下钻，将“**tblTop**”表转换为值。请参考前面提到的精确查找部分的第7步。
 - en: Click creditors table, go to the `**Home**` tab, and under the Keep Rows options,
     select Keep Top Rows. In the pop-up window, type 5 under the number of rows (see
     *[Figure 8.30](#fig8_30)*):![](images/Figure-8.30.jpg)
+  id: totrans-146
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击债权人表，转到“**主页**”选项卡，在“保留行”选项下，选择“保留前几行”。在弹出窗口中，输入5作为行数（参见*[图8.30](#fig8_30)*）：![](images/Figure-8.30.jpg)
 - en: '**Figure 8.30:** Keep the top five rows'
+  id: totrans-147
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.30：** 保留前五行'
 - en: Go to the `**View**` tab and click `**Advanced Editor**` (see *[Figure 8.31](#fig8_31)*).
     The reason for this step is to replace the hardcoded five rows with our criteria
     in the `**tblTop**` table:![](images/Figure-8.31.jpg)
+  id: totrans-148
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到“**查看**”选项卡，点击“**高级编辑器**”（参见*[图8.31](#fig8_31)*）。这一步的原因是将硬编码的五行替换为我们在“**tblTop**”表中的条件：![](images/Figure-8.31.jpg)
 - en: '**Figure 8.31:** Invoke the Advanced Editor'
+  id: totrans-149
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.31：** 调用高级编辑器'
 - en: Replace the hardcoded 5 with our dynamic criteria in the “tblTop” table (see
     *[Figure 8.32](#fig8_32)*):![](images/Figure-8.32.jpg)
+  id: totrans-150
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在“tblTop”表中用我们的动态条件替换硬编码的5（参见*[图8.32](#fig8_32)*）：![](images/Figure-8.32.jpg)
 - en: '**Figure 8.32:** Replace hardcoded criteria with dynamic one'
+  id: totrans-151
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.32：** 用动态条件替换硬编码的条件'
 - en: Load the filtered creditors as a table in the existing worksheet.
+  id: totrans-152
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将筛选后的债权人加载为现有工作表中的表格。
 - en: To test if the dynamic Filter is working, change the top 5–7 and refresh the
     query.
+  id: totrans-153
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 为了测试动态筛选是否有效，请将前5-7行更改为其他数字，然后刷新查询。
 - en: '***Note****: To lookup the bottom n items, follow the same steps as mentioned
     previously, but in step 3, select “Keep the bottom rows”*'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '***注意****：要查找底部的 n 个项目，请按照前述步骤进行，但在第3步中选择“保留底部行”*'
 - en: '[Lookup using the List function](toc.xhtml#s133a)'
+  id: totrans-155
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用列表函数进行查找](toc.xhtml#s133a)'
 - en: There are over 45 list-related functions in Power Query. Let us learn how to
     use a few to look up data.
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: Power Query 中有超过45个与列表相关的函数。让我们学习如何使用其中一些来查找数据。
 - en: 'We are going to look up the Grades and tutor tables, as shown in *[Figure 8.33](#fig8_33)*:'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将查找成绩和导师表，如*[图8.33](#fig8_33)*所示：
 - en: '![](images/Figure-8.33.jpg)'
+  id: totrans-158
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.33.jpg)'
 - en: '**Figure 8.33:** Approximate and Exact functions using List function'
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 8.33：** 使用列表函数的近似和精确函数'
 - en: 'Here are the steps to follow:'
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是要遵循的步骤：
 - en: Load all the three tables as a connection only.
+  id: totrans-161
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将所有三个表仅作为连接加载。
 - en: Select the Class table (`**tblClass**`), go to the `**Add Column**` tab, and
     click `**Custom Column**` (see *[Figure 8.34](#fig8_34)*):![](images/Figure-8.34.jpg)
+  id: totrans-162
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择班级表（“**tblClass**”），转到“**添加列**”选项卡，点击“**自定义列**”（参见*[图8.34](#fig8_34)*）：![](images/Figure-8.34.jpg)
 - en: '**Figure 8.34:** Create a Custom Column'
+  id: totrans-163
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.34：** 创建自定义列'
 - en: Rename your column `**Tutor**` and write the function, as shown in *[Figure
     8.35](#fig8_35)*:![](images/Figure-8.35.jpg)
+  id: totrans-164
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将您的列重命名为“**Tutor**”，并按照*[图8.35](#fig8_35)*所示编写函数：![](images/Figure-8.35.jpg)
 - en: '**Figure 8.35:** Exact Lookup using List.PositionOf function'
+  id: totrans-165
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.35：** 使用 List.PositionOf 函数进行精确查找'
 - en: '`tblTutor[Tutor]`'
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: '`tblTutor[Tutor]`'
 - en: '`{ List.PositionOf(tblTutor[Subject],[Subject]) }`'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: '`{ List.PositionOf(tblTutor[Subject],[Subject]) }`'
 - en: 'Here is how the function works:'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的工作原理如下：
 - en: '`**tblTutor[Tutor]**` ► returns a list of all the tutors in the lookup `**tblTutor**`
     table. In Power Query, you can access the columns of a table using the square
     bracket notation `**([ColumnName])**`**.**'
+  id: totrans-169
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**tblTutor[Tutor]**` ► 返回查找表“**tblTutor**”中所有导师的列表。在 Power Query 中，您可以使用方括号表示法`**([ColumnName])**`访问表的列**。**'
 - en: After retrieving the column, we need to use the position index operator, that
     is, the curly braces ( {} ) to return the row number where the subject in the
     `**tblclass**` matches the subject in `**tblTutor**`
+  id: totrans-170
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 获取列后，我们需要使用位置索引运算符，即花括号（{}），返回在“**tblclass**”中的主题与“**tblTutor**”中的主题匹配的行号
 - en: '`**List.PositionOf(tblTutor[Subject],[Subject])**` ► To dynamically return
     the row per subject, we use the function List.PositionOf. This function is used
     to find the position of the current value ([Subject]) within the list of values
     in the `**Subject**` column (tblTutor[Subject]) of the table. It returns the position
     (index) of the value within the list.'
+  id: totrans-171
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**List.PositionOf(tblTutor[Subject],[Subject])**` ► 为了动态返回每个科目的行，我们使用了函数List.PositionOf。该函数用于在表的`**Subject**`列（tblTutor[Subject]）中查找当前值（[Subject]）的位置。它返回值在列表中的位置（索引）。'
 - en: This expression works like the INDEX and MATCH combo function we learned in
     *[Chapter 3, Index and Match](c03.xhtml)*. We are looking up the column first
     from the `**tblTutor**` and then the row where the subject in the `**tblclass**`
     matches the subject in the `**tblTutor**`
+  id: totrans-172
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 这个表达式的工作方式类似于我们在*[第3章，Index and Match](c03.xhtml)*中学到的INDEX和MATCH组合函数。我们首先从`**tblTutor**`中查找列，然后在`**tblClass**`中匹配科目与`**tblTutor**`中的科目的行。
 - en: Now, let us see how to do an approximate match by looking up the grades.
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，让我们看看如何通过查找成绩来进行近似匹配。
 - en: 'Here are the steps to follow:'
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是要遵循的步骤：
 - en: Create another custom column and rename it grades.
+  id: totrans-175
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建另一个自定义列并将其重命名为grades。
 - en: Write the following functions as shown in *[Figure 8.36](#fig8_36):*
+  id: totrans-176
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 按照*[图8.36](#fig8_36)*中显示的函数编写如下：
 - en: '`List.Last(`'
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: '`List.Last(`'
 - en: '`Table.SelectRows(Grades,(IT)=> IT[Marks]<=[Marks])[Grade])`'
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Table.SelectRows(Grades,(IT)=> IT[Marks]<=[Marks])[Grade])`'
 - en: '![](images/Figure-8.36.jpg)'
+  id: totrans-179
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.36.jpg)'
 - en: '**Figure 8.36:** Approximate Lookup using Table.SelectRows and List.Last'
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图8.36:** 使用Table.SelectRows和List.Last进行近似查找'
 - en: 'Here is how the function works:'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的工作原理如下：
 - en: '`**Table.SelectRows(Grades, (IT)=> IT[Marks]<=[Marks])**` ► This function filters
     the rows of the “Grades” table based on a condition. The second argument, `**(IT)
     => IT[Marks] <= [Marks]**`, is an inline function (also called a lambda function)
     that specifies the filtering condition.'
+  id: totrans-182
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Table.SelectRows(Grades, (IT)=> IT[Marks]<=[Marks])**` ► 此函数根据条件过滤“Grades”表的行。第二个参数，`**(IT)
+    => IT[Marks] <= [Marks]**`，是一个内联函数（也称为lambda函数），指定了过滤条件。'
 - en: 'Here’s what’s happening:'
+  id: totrans-183
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 这里发生了什么：
 - en: '`**(IT)**` is the custom variable to represent the Internal table “Grades”,
     which we shall be filtering inside the “tblClass” table.'
+  id: totrans-184
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**(IT)**` 是代表内部表“Grades”的自定义变量，在“tblClass”表内我们将对其进行筛选。'
 - en: '`**IT[Marks]**` refers to the value in the “Marks” column of the internal table.'
+  id: totrans-185
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**IT[Marks]**` 指的是内部表“Marks”列中的值。'
 - en: '`**[Marks]**` refers to the value of the marks in the “tblClass” per row.'
+  id: totrans-186
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**[Marks]**` 指的是“tblClass”每行中的成绩值。'
 - en: So, the filtering condition checks whether the values in the “Marks” column
     of the “Grades” table (IT[Marks]) are less than or equal to the value of the “Marks”
     in “tblClass” and returns a table of those Marks and corresponding Grades.
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，过滤条件检查“Grades”表的“Marks”列的值（IT[Marks])是否小于或等于“tblClass”中的“Marks”值，并返回那些Marks和相应Grades的表。
 - en: '`**Table.SelectRows(Grades,(IT)=> IT[Marks]<=[Marks])[Grade]►**` Since we are
     only interested in the grades, we use the field column operator ( [] ) to get
     a grades list.'
+  id: totrans-188
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Table.SelectRows(Grades,(IT)=> IT[Marks]<=[Marks])[Grade]►**` 由于我们只对成绩感兴趣，我们使用字段列运算符（
+    [] ）来获取一个成绩列表。'
 - en: Finally, we look up the last grade in the list using the `**List.Last**` function.
+  id: totrans-189
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 最后，我们使用`**List.Last**`函数查找列表中的最后一个成绩。
 - en: '[Looking up Weekday versus Weekend data](toc.xhtml#s134a)'
+  id: totrans-190
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找工作日与周末数据](toc.xhtml#s134a)'
 - en: To look up weekend or weekday data in Power Query, we use the `**Date.DayOfWeek**`
     function.
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 要在Power Query中查找周末或工作日数据，我们使用`**Date.DayOfWeek**`函数。
 - en: For example, using data shown in *[Figure 8.37](#fig8_37)*, let us see how to
     look up whom we gave credit on the weekends and weekdays.
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，使用*[图8.37](#fig8_37)*中显示的数据，让我们看看如何查找我们在周末和工作日给信用的人。
 - en: '![](images/Figure-8.37.jpg)'
+  id: totrans-193
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.37.jpg)'
 - en: '**Figure 8.37:** Lookup the Weekday and Weekend data'
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图8.37:** 查找工作日和周末数据'
 - en: 'Here are the steps to follow:'
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是要遵循的步骤：
 - en: Load the table to Power Query.
+  id: totrans-196
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将表加���到Power Query中。
 - en: 'To look up Weekday data, go to the View tab, click Advanced Editor, and write
     the following function:'
+  id: totrans-197
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 要查找工作日数据，转到“查看”选项卡，单击“高级编辑器”，并编写以下函数：
 - en: '`let`'
+  id: totrans-198
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`let`'
 - en: '`Source = Excel.CurrentWorkbook(){[Name=”tblCreditors”]}[Content],`'
+  id: totrans-199
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`Source = Excel.CurrentWorkbook(){[Name=”tblCreditors”]}[Content],`'
 - en: '`#”Filtered Rows” =`'
+  id: totrans-200
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`#”筛选行” =`'
 - en: '`Table.SelectRows(`'
+  id: totrans-201
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`Table.SelectRows(`'
 - en: '`Source, each Date.DayOfWeek([Date])>=1 and Date.DayOfWeek([Date])<6`'
+  id: totrans-202
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`Source, each Date.DayOfWeek([Date])>=1 and Date.DayOfWeek([Date])<6`'
 - en: '`)`'
+  id: totrans-203
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`)`'
 - en: '`in`'
+  id: totrans-204
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`in`'
 - en: '`#”Filtered Rows”`'
+  id: totrans-205
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`#”筛选行”`'
 - en: 'Here is how the function works:'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的工作原理如下：
 - en: The `**let**` clause is used to define a set of named steps, each of which represents
     a specific transformation or calculation.
+  id: totrans-207
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**let**` 子句用于定义一组命名步骤，每个步骤代表特定的转换或计算。'
 - en: '`**Source = Excel.CurrentWorkbook(){[Name=”tblCreditors”]}[Content**``**] ►**`
     assigns the contents of a table named “tblCreditors” from the current Excel workbook
     to the variable “Source.”'
+  id: totrans-208
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Source = Excel.CurrentWorkbook(){[Name=”tblCreditors”]}[Content**``**] ►**`
+    将当前 Excel 工作簿中名为“tblCreditors”的表的内容分配给变量“Source”。'
 - en: Define a new “Filtered Rows” step using the `**Table.SelectRows**` function
     to filter the rows of the “Source” table based on a specific condition involving
     the day of the week.
+  id: totrans-209
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用 `**Table.SelectRows**` 函数定义一个新的“Filtered Rows”步骤，以根据涉及一周中某一天的特定条件过滤“Source”表的行。
 - en: '`**Date.DayOfWeek([Date]) > 1 and Date.DayOfWeek([Date]) < 6**` checks if the
     day of the week of the “Date” column is greater or equal to 1 (Monday) and less
     than 6 (Friday). This effectively filters out rows corresponding to weekends (Saturday
     and Sunday).'
+  id: totrans-210
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Date.DayOfWeek([Date]) > 1 and Date.DayOfWeek([Date]) < 6**` 检查“Date”列的星期几是否大于或等于
+    1（星期一）且小于 6（星期五）。这有效地过滤掉对应于周末（星期六和星期日）的行。'
 - en: '`**in #”Filtered Rows”►**` The in keyword indicates the output of the script.
     This line specifies the result of the script, which is the table generated by
     the “Filtered Rows” step.'
+  id: totrans-211
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**in #”Filtered Rows”►**` in 关键字表示脚本的输出。此行指定脚本的结果，即“Filtered Rows”步骤生成的表。'
 - en: Note
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意
 - en: '`**Date.DayOfWeek**` function returns a number (from 0 to 6) indicating the
     day of the week of the provided Date.'
+  id: totrans-213
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Date.DayOfWeek**` 函数返回一个数字（从 0 到 6），表示提供的日期是一周中的哪一天。'
 - en: It treats Sunday as the first day of the week.
+  id: totrans-214
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 将星期日视为一周的第一天。
 - en: 'Therefore, to look up only weekend data, replace the previously provided `**Table.SelectRows**`
     function with the following function, which returns only the day of the week of
     the `**Date**` equal to 0 or 1, that is (Sunday and Saturday):'
+  id: totrans-215
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 因此，要查找仅周末数据，请将先前提供的 `**Table.SelectRows**` 函数替换为以下函数，该函数仅返回 `**Date**` 的一周中的日期等于
+    0 或 1 的函数，即（星期日和星期六）：
 - en: '`**Table.SelectRows(Source, each Date.DayOfWeek([Date])=0 or Date.DayOfWeek([Date])=6)**`'
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**Table.SelectRows(Source, each Date.DayOfWeek([Date])=0 or Date.DayOfWeek([Date])=6)**`'
 - en: '[Looking up date that excludes holidays](toc.xhtml#s135a)'
+  id: totrans-217
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找不包括假期的日期](toc.xhtml#s135a)'
 - en: Assuming we have the following harvest data and holiday dates, as shown in *[Figure
     8.38](#fig8_38)*. Let us learn how to look up harvested data excluding holidays.
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们有以下收集的数据和假期日期，如 *[图 8.38](#fig8_38)* 所示。让我们学习如何查找不包括假期的收集数据。
 - en: '![](images/Figure-8.38.jpg)'
+  id: totrans-219
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.38.jpg)'
 - en: '**Figure 8.38:** Lookup dates excluding holidays'
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 8.38：** 查找不包括假期的日期'
 - en: 'Here are the steps to follow:'
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: Load the two tables as a connection only.
+  id: totrans-222
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 仅将这两个表加载为连接。
 - en: Go to Queries and Connections, right-click the harvested table, and click `**Merge**`
     (see *[Figure 8.39](#fig8_39)*):![](images/Figure-8.39.jpg)
+  id: totrans-223
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到查询和连接，右键单击已获取的表，然后单击 `**Merge**`（参见 *[图 8.39](#fig8_39)*）:![](images/Figure-8.39.jpg)
 - en: '**Figure 8.39:** Merging Queries'
+  id: totrans-224
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.39：** 合并查询'
 - en: On the Merge pop-up window, select the Holidays table in the second drop-down
     menu. Then, select the Date column in the harvested table and holidays. Finally,
     select the Left Anti-join to exclude the holidays from the harvested table (see
     *[Figure 8.40](#fig8_40)*):![](images/Figure-8.40.jpg)
+  id: totrans-225
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在合并弹出窗口中，选择第二个下拉菜单中的假期表。然后，在已获取的表和假期中选择日期列。最后，选择左反连接以从已获取的表中排除假期（参见 *[图 8.40](#fig8_40)*）:![](images/Figure-8.40.jpg)
 - en: '**Figure 8.40:** Merging Queries'
+  id: totrans-226
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 8.40：** 合并查询'
 - en: Finally, delete the holidays column and load out the data.
+  id: totrans-227
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后，删除假期列并加载数据。
 - en: '[Looking up items repeated N times](toc.xhtml#s136a)'
+  id: totrans-228
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找重复 N 次的项目](toc.xhtml#s136a)'
 - en: Using the data shown in *[Figure 8.41](#fig8_41)*, let us learn how to lookup
     the items repeated two times from the `**Sports Sale**` table.
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 *[图 8.41](#fig8_41)* 中显示的数据，让我们学习如何从 `**Sports Sale**` 表中查找重复两次的项目。
 - en: Please note that we want a solution where we can replace the 2 with any number,
     and Power Query will look up the items.
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，我们希望一种解决方案，可以用任何数字替换 2，Power Query 将查找这些项目。
 - en: '![](images/Figure-8.41.jpg)'
+  id: totrans-231
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.41.jpg)'
 - en: '**Figure 8.41:** Lookup items repeated 2 times'
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 8.41：** 查找重复 2 次的项目'
 - en: 'Here are the steps to follow:'
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: Load the two tables as a connection only.
+  id: totrans-234
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 仅将这两个表加载为连接。
 - en: Convert the `**RepeatN**` table to a value ► Right-click the value and drill
     down (see *[Figure 8.42](#fig8_42)*):![](images/Figure-8.42.jpg)
+  id: totrans-235
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将 `**RepeatN**` 表转换为值 ► 右键单击值并展开（参见 *[图 8.42](#fig8_42)*）:![](images/Figure-8.42.jpg)
 - en: '**Figure 8.42:** Convert table to value'
+  id: totrans-236
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.42：**将表转换为值'
 - en: Go to the `**SportSales**` table and select the Items column. Then, go to the
     Transfo+rm tab and click `**GroupBy**`. Under the Operation, select `**CountRows**`
     and click `**OK**` (see *[Figure 8.43](#fig8_43)*)*:*![](images/Figure-8.43.jpg)
+  id: totrans-237
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到`**SportSales**`表格，选择项目列。然后，转到“转换”选项卡，点击`**GroupBy**`。在操作下，选择`**CountRows**`，然后点击`**确定**`
+    (见*[图8.43](#fig8_43)*)*:*![](images/Figure-8.43.jpg)
 - en: '**Figure 8.43:** Group By Items'
+  id: totrans-238
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.43：**按项目分组'
 - en: Go to the new count column and filter by 1 (see *[Figure 8.44](#fig8_44)*):![](images/Figure-8.44.jpg)
+  id: totrans-239
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到新的计数列，并按1进行筛选(见*[图8.44](#fig8_44)*):![](images/Figure-8.44.jpg)
 - en: '**Figure 8.44:** Filter by any Count'
+  id: totrans-240
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.44：**按任意计数筛选'
 - en: Replace the hardcoded filter criteria with our `**RepeatN**` value. Go to the
     View tab and click `**Advanced Editor**`. Delete the hardcoded filter (1) and
     type `**RepeatN**` (see *[Figure 8.45](#fig8_45)*):![](images/Figure-8.45.jpg)
+  id: totrans-241
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 用我们的`**RepeatN**`值替换硬编码的筛选条件。转到查看选项卡，点击`**高级编辑器**`。删除硬编码的筛选条件(1)，输入`**RepeatN**`
+    (见*[图8.45](#fig8_45)*):![](images/Figure-8.45.jpg)
 - en: '**Figure 8.45:** Filter by any Count'
+  id: totrans-242
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.45：**按任意计数筛选'
 - en: Delete the `**Count**` column and load the data (see *[Figure 8.46](#fig8_46)*)*:*![](images/Figure-8.46.jpg)
+  id: totrans-243
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 删除`**Count**`列并加载数据(见*[图8.46](#fig8_46)*)*:*![](images/Figure-8.46.jpg)
 - en: '**Figure 8.46:** Delete the count column and load the data'
+  id: totrans-244
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.46：**删除计数列并加载数据'
 - en: '[Return end-of-month date items only](toc.xhtml#s137a)'
+  id: totrans-245
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[仅返回月末日期项目](toc.xhtml#s137a)'
 - en: In the previous chapter on the `**FILTER**` function, we learned how to look
     up transactions occurring at any end of the month. Now, let us see how we can
     implement the same using Power Query.
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上一章关于`**FILTER**`函数中，我们学习了如何查找发生在月末的交易。现在，让我们看看如何使用Power Query实现相同的功能。
 - en: 'Using the data shown in *[Figure 8.47](#fig8_47)*, return only the creditors
     paid at any end of the month:'
+  id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用*[图8.47](#fig8_47)*中显示的数据，仅返回每月末支付的债权人：
 - en: '![](images/Figure-8.47.jpg)'
+  id: totrans-248
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.47.jpg)'
 - en: '**Figure 8.47:** Lookup End of the Month transactions'
+  id: totrans-249
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图8.47：**查找月末交易'
 - en: 'Here are the steps to follow:'
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: Load the creditors’ table in Power Query.
+  id: totrans-251
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在Power Query中加载债权人表。
 - en: Go to the `**View**` tab and click Advanced Editor.
+  id: totrans-252
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到`**查看**`选项卡，点击高级编辑器。
 - en: Write the function as shown in *[Figure 8.48](#fig8_48)*:![](images/Figure-8.48.jpg)
+  id: totrans-253
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 按照*[图8.48](#fig8_48)*中显示的方式编写函数:![](images/Figure-8.48.jpg)
 - en: '**Figure 8.48:** M Code for Selecting End of the Month items'
+  id: totrans-254
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.48：**选择月末项目的M代码'
 - en: 'Here is how the function works:'
+  id: totrans-255
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 函数的工作原理如下：
 - en: The `**let**` clause i s used to define a set of named steps, each of which
     represents a specific transformation or calculation.
+  id: totrans-256
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**let**`子句用于定义一组命名步骤，每个步骤代表特定的转换或计算。'
 - en: '`**Source = Excel.CurrentWorkbook(){[Name=”Creditors”]}[Content] ►**` assigns
     the contents of a table named “Creditors” from the current Excel workbook to the
     variable “Source”.'
+  id: totrans-257
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Source = Excel.CurrentWorkbook(){[Name=”Creditors”]}[Content] ►**`将当前Excel工作簿中名为“Creditors”的表的内容分配给变量“Source”。'
 - en: Define a new “Filtered Rows” step using the `**Table.SelectRows**` function
     to filter the rows of the “Source” table based on a specific condition.
+  id: totrans-258
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用`**Table.SelectRows**`函数定义一个新的“筛选行”步骤，根据特定条件筛选“Source”表的行。
 - en: '`**Date.Day([Paid Date])**` returns the day part of the “Paid Date” column,
     while `**Date.DaysInMonth([Paid Date])**` returns a number from 28 to 31 indicating
     the number of days in the month.'
+  id: totrans-259
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Date.Day([Paid Date])**`返回“支付日期”列的日期部分，而`**Date.DaysInMonth([Paid Date])**`返回一个从28到31的数字，表示该月的天数。'
 - en: '`**Date.Day([Paid Date]) = Date.DaysInMonth([Paid Date])**` check if the day
     of the paid date is equal to the total number of days in that month. If they are
     equal, the expression will return TRUE, indicating that the payment date falls
     on the last day of the month.'
+  id: totrans-260
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Date.Day([Paid Date]) = Date.DaysInMonth([Paid Date])**`检查支付日期的日期部分是否等于该月的总天数。如果相等，则表达式将返回TRUE，表示支付日期是该月的最后一天。'
 - en: '`**Table.SelectRows**` function only returns rows where the preceding condition
     is TRUE.'
+  id: totrans-261
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Table.SelectRows**`函数仅返回前提条件为TRUE的行。'
 - en: Load out the filtered table to an existing worksheet.
+  id: totrans-262
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将筛选后的表加载到现有工作表中。
 - en: '[Fuzzy Lookup](toc.xhtml#s138a)'
+  id: totrans-263
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[模糊查找](toc.xhtml#s138a)'
 - en: Performing a fuzzy match in Power Query is easier and far more intuitive than
     using functions.
+  id: totrans-264
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Power Query中执行模糊匹配比使用函数更容易且更直观。
 - en: Fuzzy matching refers to the technique of comparing non-identical text strings
     based on their similarity. Instead of exact matches, fuzzy matching evaluates
     the resemblance between strings, allowing for the identification of similar or
     closely related terms within datasets.
+  id: totrans-265
   prefs: []
   type: TYPE_NORMAL
+  zh: 模糊匹配是指根据相似性比较非相同文本字符串的技术。模糊匹配评估字符串之间的相似度，而不是精确匹配，允许在数据集中识别相似或密切相关的术语。
 - en: 'For example, how do we lookup the staff in `**tblDirty**` using the `**Lookup
     Company**` column in the `**tblClean**`, as shown in *[Figure 8.49](#fig8_49)*:'
+  id: totrans-266
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，我们如何使用`**tblClean**`中的`**Lookup Company**`列查找`**tblDirty**`中的员工，如*[图8.49](#fig8_49)*所示：
 - en: '![](images/Figure-8.49.jpg)'
+  id: totrans-267
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-8.49.jpg)'
 - en: '**Figure 8.49:** Fuzzy Lookup'
+  id: totrans-268
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图8.49：** 模糊查找'
 - en: 'Here are the steps to follow:'
+  id: totrans-269
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: Load the two tables as a connection only.
+  id: totrans-270
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 仅将两个表作为连接加载。
 - en: Click `**tblDirty**` and click Merge.
+  id: totrans-271
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击`**tblDirty**`，然后单击合并。
 - en: Select the `**tblClean**`, and then select the columns to Match, as shown in
     *[Figure 8.50](#fig8_50)*.
+  id: totrans-272
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择`**tblClean**`，然后选择要匹配的列，如*[图8.50](#fig8_50)*所示。
 - en: Click `**Use Fuzzy Matching to perform the merge**` and expand the fuzzy matching
     options. These allow you to fine-tune the matching process. A lower similarity
     threshold lowers the strictness of the fuzzy matching algorithm.![](images/Figure-8.50.jpg)
+  id: totrans-273
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击`**使用模糊匹配执行合并**`并展开模糊匹配选项。这些选项允许您微调匹配过程。较低的相似性阈值降低了模糊匹配算法的严格性。![](images/Figure-8.50.jpg)
 - en: '**Figure 8.50:** Left Outer Fuzzy Lookup'
+  id: totrans-274
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.50：** 左外部模糊查找'
 - en: Expand the Merged table (see *[Figure 8.51](#fig8_51)*) and select the lookup
     column only.![](images/Figure-8.51.jpg)
+  id: totrans-275
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 展开合并表（见*[图8.51](#fig8_51)*）并仅选择查找列。![](images/Figure-8.51.jpg)
 - en: '**Figure 8.51:** Expand the Merged table'
+  id: totrans-276
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图8.51：** 展开合并表'
 - en: Delete the Dirty column and load out the table.
+  id: totrans-277
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 删除脏列并将表加载出来。
 - en: '[Conclusion](toc.xhtml#s139a)'
+  id: totrans-278
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结论](toc.xhtml#s139a)'
 - en: In this chapter, we learned how to solve different lookup problems using a powerful
     data transformation and preparation tool — Power Query. It is mainly recommended
     when handling large data sets.
+  id: totrans-279
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们学习了如何使用强大的数据转换和准备工具——Power Query来解决不同的查找问题。在处理大数据集时，这是主要推荐的工具。
 - en: One of the setbacks is that creating Power Query queries and connections may
     take more time upfront than using simple Excel formulas. As we have learned, it
     involves many steps.
+  id: totrans-280
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中一个缺点是，创建Power Query查询和连接可能需要比使用简单的Excel公式更多的时间。正如我们所学到的，这涉及许多步骤。
 - en: Another setback is that, unlike the formulas that recalculate in real-time and
     provide instant results as you edit the spreadsheet, Power Query requires you
     to refresh your queries in case your data changes. You can set the queries to
     refresh after a specific time, but it would be a waste of resources if you have
     complex queries.
+  id: totrans-281
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个缺点是，与实时重新计算并在编辑电子表格时提供即时结果的公式不同，Power Query要求您在数据更改时刷新查询。您可以设置查询在特定时间后刷新，但如果您有复杂的查询，这将是资源的浪费。
 - en: In the next Chapter, we are going to learn how we can leverage the use of AI
     in Mastering Excel.
+  id: totrans-282
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将学习如何在精通Excel中利用人工智能。
 - en: '[Points to remember](toc.xhtml#s140a)'
+  id: totrans-283
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[需要记住的要点](toc.xhtml#s140a)'
 - en: If you’re working with a relatively small dataset and need to perform simple
     lookups, Excel formulas are usually faster to set up and use. However, as the
     dataset size and complexity increase or when extensive data transformation is
     required, Power Query becomes a more efficient and scalable option.
+  id: totrans-284
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果您正在处理相对较小的数据集并且需要执行简单的查找，通常使用Excel公式设置和使用速度更快。但是，随着数据集大小和复杂性的增加或需要进行广泛的数据转换时，Power
+    Query将成为更高效和可扩展的选择。
 - en: While there are many steps involved, Power Query provides a visual, user-friendly
     interface that allows users to interact with data transformation. The steps are
     more intuitive than complex formulas.
+  id: totrans-285
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 尽管涉及许多步骤，但Power Query提供了一个视觉、用户友好的界面，允许用户与数据转换进行交互。这些步骤比复杂的公式更直观。
 - en: You can create reusable Power Query queries that can be applied to different
     datasets or shared across teams, ensuring consistency in data preparation and
     lookup processes.
+  id: totrans-286
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 您可以创建可重复使用的Power Query查询，可应用于不同的数据集或在团队之间共享，确保数据准备和查找过程的一致性。
 - en: '[Multiple choice questions](toc.xhtml#s141a)'
+  id: totrans-287
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[多项选择题](toc.xhtml#s141a)'
 - en: What is the primary purpose of Power Query?
+  id: totrans-288
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Power Query的主要目的是什么？
 - en: Data Visualization
+  id: totrans-289
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 数据可视化
 - en: Data Transformation and Preparation
+  id: totrans-290
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 数据转换和准备
 - en: Statistical Analysis
+  id: totrans-291
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 统计分析
 - en: Data Backup and Recovery
+  id: totrans-292
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 数据备份和恢复
 - en: Which of the following is NOT a step you can perform in Power Query?
+  id: totrans-293
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 以下哪个不是您可以在 Power Query 中执行的步骤？
 - en: Filtering rows
+  id: totrans-294
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 过滤行
 - en: Creating pivot tables
+  id: totrans-295
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建数据透视表
 - en: Merging tables
+  id: totrans-296
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 合并表格
 - en: Removing duplicates
+  id: totrans-297
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 删除重复项
 - en: Which tab in Excel allows you to access Power Query?
+  id: totrans-298
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在 Excel 中哪个选项卡可以访问 Power Query？
 - en: Data
+  id: totrans-299
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 数据
 - en: Insert
+  id: totrans-300
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 插入
 - en: Format
+  id: totrans-301
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 格式
 - en: Home
+  id: totrans-302
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 主页
 - en: Which operation in Power Query allows you to combine data from multiple tables
     based on a common column?
+  id: totrans-303
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Power Query 中的哪个操作允许您基于共同列合并来自多个表的数据？
 - en: Merge
+  id: totrans-304
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 合并
 - en: Concatenate
+  id: totrans-305
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 连接
 - en: Append
+  id: totrans-306
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 追加
 - en: Group By
+  id: totrans-307
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 按组
 - en: Which of the following is a valid data source for Power Query?
+  id: totrans-308
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 以下哪个是 Power Query 的有效数据源？
 - en: Only Excel files
+  id: totrans-309
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 仅限 Excel 文件
 - en: Only CSV files
+  id: totrans-310
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 仅限 CSV 文件
 - en: Excel files, CSV files, Databases, Web sources, and more
+  id: totrans-311
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Excel 文件，CSV 文件，数据库，Web 资源等等
 - en: Only Word documents
+  id: totrans-312
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 仅限 Word 文档
 - en: What does the term “Fuzzy Matching” mean in Power Query?
+  id: totrans-313
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: “模糊匹配”这个术语在 Power Query 中是什么意思？
 - en: Matching identical strings
+  id: totrans-314
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 匹配相同字符串
 - en: Matching non-identical text based on similarity
+  id: totrans-315
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 基于相似性匹配非相同文本
 - en: Matching case-sensitive text
+  id: totrans-316
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 匹配区分大小写的文本
 - en: Matching numerical values
+  id: totrans-317
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 匹配数值
 - en: '[Answers](toc.xhtml#s142a)'
+  id: totrans-318
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[答案](toc.xhtml#s142a)'
 - en: b
+  id: totrans-319
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: b
 - en: b
+  id: totrans-320
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: b
 - en: a
+  id: totrans-321
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: a
 - en: a
+  id: totrans-322
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: a
 - en: c
+  id: totrans-323
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: c
 - en: b
+  id: totrans-324
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: b

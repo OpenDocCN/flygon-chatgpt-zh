@@ -1,15 +1,21 @@
 - en: '[CHAPTER 7](toc.xhtml#c07)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第7章](toc.xhtml#c07)'
 - en: '[FILTER: The Ultimate Lookup Function](toc.xhtml#c07)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[FILTER：最终查找函数](toc.xhtml#c07)'
 - en: '[Introduction](toc.xhtml#s104a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s104a)'
 - en: This chapter will discuss one of the ultimate lookup functions—the Filter function.
     Unlike the `**XLOOKUP**` function, the `**FILTER**` function easily returns an
     array of all matches, not just the first match. This flexibility to return a subset
@@ -17,1127 +23,1702 @@
     in creating dynamic reports. Let us now explore the different scenarios where
     we can use the `**FILTER**` function to **analyze** data in more **customized**
     ways without the need for complex formulas.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章将讨论最终查找函数之一——Filter函数。与`**XLOOKUP**`函数不同，`**FILTER**`函数轻松返回所有匹配项的数组，而不仅仅是第一个匹配项。这种返回数据子集的灵活性，而不仅仅是单个条目，使FILTER成为创建动态报告中最佳函数之一。现在让我们探讨不同的情况，我们可以使用`**FILTER**`函数以更**定制**的方式**分析**数据，而无需复杂的公式。
 - en: '[Structure](toc.xhtml#s105a)'
+  id: totrans-4
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结构](toc.xhtml#s105a)'
 - en: 'This chapter will discuss the following 15 scenarios where the `**FILTER**`
     function is best suited:'
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章将讨论以下15种情况，其中`**FILTER**`函数最适用：
 - en: Return multiple columns and rows
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 返回多列和多行
 - en: Return non-adjacent columns
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 返回非相邻列
 - en: Easily use multiple criteria lookup using `AND`/`OR`
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松使用`AND`/`OR`进行多条件查找
 - en: Easily lookup all X and not Y items
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松查找所有X而不是Y的项目
 - en: Easily lookup top or bottom n items
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松查找前n个或后n个项目
 - en: Easily lookup X or Y and not both
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松查找X或Y，但不是两者都有
 - en: Looking up data using wildcards
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用通配符查找数据
 - en: Looking up weekday vs. weekend data
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找工作日与周末数据
 - en: Looking up data that excludes holidays
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找排除假期的数据
 - en: Looking up ODD/EVEN numbers
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找奇数/偶数
 - en: Looking up items repeated N times
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找重复出现N次的项目
 - en: Looking up items based on time
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于时间查找项目
 - en: Looking up data based on week number, month, year
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 基于周数、月份、年份查找数据
 - en: Looking up common/uncommon values in two lists
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找两个列表中常见/不常见的值
 - en: Return end-of-month date items only
+  id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 仅返回月末日期项目
 - en: '[Return multiple columns and rows](toc.xhtml#s106a)'
+  id: totrans-21
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[返回多列和多行](toc.xhtml#s106a)'
 - en: The FILTER function has one of the simplest and easiest-to-understand syntaxes—only
     three parameters.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: FILTER函数具有最简单和最易于理解的语法之一——仅三个参数。
 - en: '`=FILTER(array, include, [if_empty])`'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(array, include, [if_empty])`'
 - en: array is the range/array of data you want to look up. This can be a table or
     single columns/rows.
+  id: totrans-24
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: array是您要查找的数据范围/数组。这可以是表格或单个列/行。
 - en: include is an array of `**TRUE/FALSE**`, where `**TRUE**` represents the values
     to return else `**FALSE**`.
+  id: totrans-25
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: include是一个由`**TRUE/FALSE**`组成的数组，其中`**TRUE**`表示要返回的值，否则为`**FALSE**`。
 - en: 'NB: If the filtered array is in columns, the include MUST be the same length
     as this array. And if the array is in rows, the include MUST be the same width
     as this array.'
+  id: totrans-26
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 注：如果筛选的数组在列中，则包含必须与此数组的长度相同。如果数组在行中，则包含必须与此数组的宽度相同。
 - en: '`**[if_empty]- [optional]**` Value to return when no results are returned.'
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**[if_empty]- [可选]**` 当没有结果返回时要返回的值。'
 - en: For example, in *[Figure 7.1](#fig7_1)*, we want to look up all the contributions
     and corresponding dates for staff “Carl Jackson”.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图7.1](#fig7_1)*中，我们想查找所有员工“卡尔·杰克逊”的贡献及相应日期。
 - en: '![](images/Figure-7.1.jpg)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.1.jpg)'
 - en: '**Figure 7.1:** Returning Multiple Rows and Columns'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图7.1：** 返回多行和多列'
 - en: '`=FILTER(tblContribution[[Date]:[Amount]],tblContribution[Staff]=F3)`'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(tblContribution[[Date]:[Amount]],tblContribution[Staff]=F3)`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: Select the Columns to filter as our array. Here we are selecting adjacent columns;
     in the next example, we shall learn how to select non-adjacent columns→ `**tblContribution[[Date]:[Amount]]**`
+  id: totrans-33
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择要作为我们数组筛选的列。这里我们选择相邻列；在下一个示例中，我们将学习如何选择非相邻列→ `**tblContribution[[Date]:[Amount]]**`
 - en: Check all instances where our criterion (Carl Jackson) appears in the staff
     list→ `**tblContribution[Staff]=F3.**` This returns a Boolean array (refer to
     *[Figure 7.2](#fig7_2)*), determining what values to include in the filter.
+  id: totrans-34
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 检查我们的标准（卡尔·杰克逊）在员工名单中出现的所有情况→ `**tblContribution[Staff]=F3.**` 这将返回一个布尔数组（参见*[图7.2](#fig7_2)*），确定要包含在筛选器中的值。
 - en: '![](images/Figure-7.2.jpg)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.2.jpg)'
 - en: '**Figure 7.2:** Creating the include parameter'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图7.2：** 创建包含参数'
 - en: '**Note**: Since the FILTER function spills the results vertically/horizontally
     or both depending on your filtered array, ensure you have enough empty cells otherwise,
     you will get a `**#SPILL!**` Error (refer to *[Figure 7.3](#fig7_3)*).'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**：由于FILTER函数根据您的筛选数组在垂直/水平方向或两者之间溢出结果，请确保有足够的空单元格，否则将出现`**#SPILL!**`错误（参见*[图
+    7.3](#fig7_3)*）。'
 - en: '![](images/Figure-7.3.jpg)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.3.jpg)'
 - en: '**Figure 7.3:** Obstructing text creating a spill error'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.3：** 阻止文本导致溢出错误'
 - en: '[Return multiple non-adjacent columns and rows](toc.xhtml#s107a)'
+  id: totrans-40
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[返回多个非相邻列和行](toc.xhtml#s107a)'
 - en: As shown in *[Figure 7.4](#fig7_4)*, we have adjusted the data in the previous
     example to include items donated.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 如*[图 7.4](#fig7_4)*所示，我们已调整了前面示例中的数据以包括捐赠物品。
 - en: In this example, we want to return all donated items and amounts.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们想要返回所有捐赠物品和金额。
 - en: '![](images/Figure-7.4.jpg)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.4.jpg)'
 - en: '**Figure 7.4:** Returning non-adjacent Columns'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.4：** 返回非相邻列'
 - en: '`=FILTER(CHOOSECOLS(tblContribution,2,4),tblContribution[Staff]=G3)`'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(CHOOSECOLS(tblContribution,2,4),tblContribution[Staff]=G3)`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: To select the non-adjacent columns to filter, we shall use the `CHOOSECOLS`
     function. This function requires a table name and required column numbers → `**CHOOSECOLS(tblContribution,2,4)**`
+  id: totrans-47
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 要选择要筛选的非相邻列，我们将使用`CHOOSECOLS`函数。此函数需要一个表名和所需的列号 → `**CHOOSECOLS(tblContribution,2,4)**`
 - en: '**Note**'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**'
 - en: If you do not want to hardcode the columns in the `**CHOOSECOLS**` function,
     you can use the `**XMATCH**` function (refer to *[Figure 7.5](#fig7_5)*).
+  id: totrans-49
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果您不想在`**CHOOSECOLS**`函数中硬编码列，可以使用`**XMATCH**`函数（参见*[图 7.5](#fig7_5)*）。
 - en: Check all instances where our criterion (Carl Jackson) appears in the staff
     list→ `**tblContribution[Staff]=F3**`. This returns a Boolean array, determining
     what values to include in the filter**.**
+  id: totrans-50
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 检查所有员工列表中出现我们标准（卡尔·杰克逊）的情况→ `**tblContribution[Staff]=F3**`。这将返回一个布尔数组，确定筛选器中要包含的值**。**
 - en: '![](images/Figure-7.5.jpg)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.5.jpg)'
 - en: '**Figure 7.5:** CHOOSECOLS function dynamically returns non-adjacent columns'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.5：** CHOOSECOLS函数动态返回非相邻列'
 - en: 'Another alternative to return non-adjacent columns is the use of nested `**FILTER**`
     functions as follows:'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回非相邻列的另一种选择是使用嵌套的`**FILTER**`函数，如下所示：
 - en: '`=FILTER(`'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(`'
 - en: '`FILTER(tblContribution,tblContribution[Staff]=G3),`'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '`FILTER(tblContribution,tblContribution[Staff]=G3),`'
 - en: '`{0,1,0,1})`'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '`{0,1,0,1})`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**FILTER(tblContribution,tblContribution[Staff]=G3)**` This nested FILTER
     function returns all the columns where the staff is equal to Carl Jackson who
     is stored in cell G3.'
+  id: totrans-58
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**FILTER(tblContribution,tblContribution[Staff]=G3)**` 这个嵌套的FILTER函数返回所有员工等于存储在单元格G3中的卡尔·杰克逊的列。'
 - en: To get only the 2nd and 4th columns we use another `**FILTER**` function and
     specify these columns in the include parameter. As we have learned in the introduction
     section, the included parameter is an array of `**TRUE (1)**` /`**FALSE (0)**`,
     where TRUE represents the values to return else FALSE. Therefore, {0,1,0,1} will
     only return the second and fourth columns.
+  id: totrans-59
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 要仅获取第二和第四列，我们使用另一个`**FILTER**`函数，并在包含参数中指定这些列。正如我们在介绍部分中学到的那样，包含参数是一个`**TRUE
+    (1)**` /`**FALSE (0)**`的数组，其中TRUE表示要返回的值，否则为FALSE。因此，{0,1,0,1}将仅返回第二和第四列。
 - en: The third alternative to returning non-adjacent columns is nesting the `**CHOOSE**`
     function. Just like the `**CHOOSECOL**` function, you can not only return non-adjacent
     columns but also rearrange them. Using the below formula, we can return the amount
     column first and then the date column.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回非相邻列的第三种选择是嵌套`**CHOOSE**`函数。就像`**CHOOSECOL**`函数一样，您不仅可以返回非相邻列，还可以重新排列它们。使用下面的公式，我们可以先返回金额列，然后是日期列。
 - en: '`=FILTER(`'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(`'
 - en: '`CHOOSE({1,2},tblContribution[Amount],tblContribution[Date]),tblContribution[Staff]=G51)`'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: '`CHOOSE({1,2},tblContribution[Amount],tblContribution[Date]),tblContribution[Staff]=G51)`'
 - en: '[Easily use multiple criteria lookups using AND/OR](toc.xhtml#s108a)'
+  id: totrans-63
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用AND/OR轻松进行多个条件查找](toc.xhtml#s108a)'
 - en: We are not limited to a single criterion, as shown in the preceding examples.
     We can use the FILTER function with multiple criteria and different logics (`**AND**`/`**OR**`).
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 如前面的示例所示，我们不限于单个标准。我们可以使用FILTER函数与多个标准和不同的逻辑（`**AND**`/`**OR**`）。
 - en: For example, in *[Figure 7.6](#fig7_6)*, we want to look up all donors whose
     donations were in `**ZAR**`, `**USD**`, or `**CHF**`.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图 7.6](#fig7_6)*中，我们想要查找所有捐赠物品为`**ZAR**`、`**USD**`或`**CHF**`的捐赠者。
 - en: '`=FILTER(Donors, COUNTIF(List, Currency))`'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(Donors, COUNTIF(List, Currency))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: Select the donor’s named range (Donors) as our filter array.
+  id: totrans-68
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择捐赠者的命名范围（Donors）作为我们的过滤数组。
 - en: Use the `**COUNTIF**` function to count the number of times our list of currency
     criteria occurs in our database list of currencies. This returns an array of 1/0,
     as follows, where 1=TRUE, 0= FALSE.
+  id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用`**COUNTIF**`函数计算我们的货币条件列表在我们的货币数据库列表中出现的次数。这将返回一个由 1/0 组成的数组，其中 1=TRUE，0=FALSE。
 - en: '`**{0 0 0 0 0 1 0 1 0 0 0 1}**`'
+  id: totrans-70
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**{0 0 0 0 0 1 0 1 0 0 0 1}**`'
 - en: The `**Filter**` function returns all the donors corresponding to the 1 values.
+  id: totrans-71
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Filter**`函数返回所有对应于值为 1 的捐赠者。'
 - en: '![](images/Figure-7.6.jpg)'
+  id: totrans-72
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.6.jpg)'
 - en: '**Figure 7.6:** FILTER function Multiple Criteria OR logic using COUNTIF function'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.6：** 使用 COUNTIF 函数的 FILTER 函数多条件 OR 逻辑'
 - en: The alternative to using the `**COUNTIF**` function is using the plus sign (+)
     to represent the OR logic, as shown in *[Figure 7.7](#fig7_7)*.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用加号（+）表示 OR 逻辑是使用`**COUNTIF**`函数的替代方法，如*[图 7.7](#fig7_7)*所示。
 - en: '![](images/Figure-7.7.jpg)'
+  id: totrans-75
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.7.jpg)'
 - en: '**Figure 7.7:** FILTER function Multiple Criteria OR logic using Plus sign
     (+)'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.7：** 使用加号（+）表示的 FILTER 函数多条件 OR 逻辑'
 - en: In *[Figure 7.8](#fig7_8)*, we want to know when and what amount staff `**Carl
     Jackson**` contributed to books.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 在*[图 7.8](#fig7_8)*中，我们想知道员工`**Carl Jackson**`何时以及捐赠了多少书籍。
 - en: '![](images/Figure-7.8.jpg)'
+  id: totrans-78
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.8.jpg)'
 - en: '**Figure 7.8:** FILTER function Multiple Criteria AND logic'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.8：** 使用 FILTER 函数多条件 AND 逻辑'
 - en: '`=FILTER($D$3:$E$14,($B$3:$B$14=G3)*($C$3:$C$14=H3))`'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER($D$3:$E$14,($B$3:$B$14=G3)*($C$3:$C$14=H3))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: Select the filter array `**($D$3:$E$14)**`.
+  id: totrans-82
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择过滤数组`**($D$3:$E$14)**`。
 - en: Check if the staff equals Carl Jackson `**($B$3:$B$14=G3)**` and the items equals
     Books `**($C$3:$C$14=H3)**`**.** These return a Boolean array (`**TRUE/FALSE**`).
+  id: totrans-83
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 检查员工是否等于 Carl Jackson `**($B$3:$B$14=G3)**`，物品是否等于 Books `**($C$3:$C$14=H3)**`**。**这些返回一个布尔数组（`**TRUE/FALSE**`）。
 - en: Since the FILTER function does not accept the nesting of the `**AND**` function,
     we use the asterisk (*) to represent the AND logic. When you multiply the preceding
     two Boolean arrays, we only get a value of 1 where all criteria are met. See *[Figure
     7.9](#fig7_9)*.
+  id: totrans-84
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于 FILTER 函数不接受`**AND**`函数的嵌套，我们使用星号（*）来表示 AND 逻辑。当你将前两个布尔数组相乘时，只有在满足所有条件时才会得到值为
+    1。参见*[图 7.9](#fig7_9)*。
 - en: '![](images/Figure-7.9.jpg)'
+  id: totrans-85
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.9.jpg)'
 - en: '**Figure 7.9:** Using the asterisk (*) to represent the AND logic'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.9：** 使用星号（*）表示 AND 逻辑'
 - en: '[Easily lookup all X and not Y items](toc.xhtml#s109a)'
+  id: totrans-87
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松查找所有 X 而不是 Y 的项目](toc.xhtml#s109a)'
 - en: In this section, we will learn how to use the NOT comparative operator (<>)
     in the FILTER function.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节中，我们将学习如何在 FILTER 函数中使用 NOT 比较运算符（<>）。
 - en: As shown in *[Figure 7.10](#fig7_10)*, we want to look up all students who scored
     a grade of A but not in the English subject.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 如*[图 7.10](#fig7_10)*所示，我们想查找所有成绩为 A 但不在英语科目中的学生。
 - en: '![](images/Figure-7.10.jpg)'
+  id: totrans-90
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.10.jpg)'
 - en: '**Figure 7.10:** Filtering data using the NOT comparative operator (<>)'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.10：** 使用 NOT 比较运算符（<>）过���数据'
 - en: '`=FILTER(C49:C61,(F49:F61=”A”)=(D49:D61<>”English”))`'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(C49:C61,(F49:F61=”A”)=(D49:D61<>”English”))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: Select the Students filter array **(C49:C61**).
+  id: totrans-94
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择学生过滤数组**(C49:C61)**。
 - en: Check if the grade is equal to `**A**` **(F49:F61=”A”)** and if the subject
     is NOT equal to `**English**` (`**D49:D61<>English**`). These return a Boolean
     array—`**TRUE**` (where both checks are true) and `**FALSE**` (where one/both
     tests are false)
+  id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 检查成绩是否等于`**A**` **(F49:F61=”A”)**，以及科目是否不等于`**English**`（`**D49:D61<>English**`）。这些返回一个布尔数组—`**TRUE**`（两个检查都为真）和`**FALSE**`（其中一个/两个测试为假）
 - en: The alternative uses the greater-than-comparative operator, as shown in *[Figure
     7.11](#fig7_11)*.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用大于比较运算符的替代方法，如*[图 7.11](#fig7_11)*所示。
 - en: '![](images/Figure-7.11.jpg)'
+  id: totrans-97
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.11.jpg)'
 - en: '**Figure 7.11:** Filtering data using the Greater than (>) comparative operator'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.11：** 使用大于（>）比较运算符过滤数据'
 - en: '`=FILTER(C49:C61,(F49:F61=”A”)>(D49:D61=”English”))`'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(C49:C61,(F49:F61=”A”)>(D49:D61=”English”))`'
 - en: The only trick to learn here is that Excel treats the FALSE value as zero (0)
     and one (1) as TRUE; then, only in the instances where 1>0 will the result be
     TRUE. See *[Figure 7.12](#fig7_12)*.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里需要学习的唯一技巧是 Excel 将 FALSE 值视为零（0），将 TRUE 视为一（1）；然后，只有在 1>0 的情况下结果才为 TRUE。参见*[图
+    7.12](#fig7_12)*。
 - en: '![](images/Figure-7.12.jpg)'
+  id: totrans-101
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.12.jpg)'
 - en: '**Figure 7.12:** Comparing Boolean values'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.12：** 比较布尔值'
 - en: '[Easily lookup top or bottom n items](toc.xhtml#s110a)'
+  id: totrans-103
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松查找前 n 个或后 n 个项目](toc.xhtml#s110a)'
 - en: Unlike the previously learned Lookup functions, the FILTER function easily returns
     the top or bottom items, as shown in *[Figure 7.13](#fig7_13)*.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 与先前学习的查找函数不同，FILTER 函数可以轻松返回前几项或底部项目，如 *[图 7.13](#fig7_13)* 所示。
 - en: '![](images/Figure-7.13.jpg)'
+  id: totrans-105
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.13.jpg)'
 - en: '**Figure 7.13:** Filtering the Top or Bottom items'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.13：** 过滤前几项或底部项目'
 - en: To Filter the top 3
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 要过滤前 3 个
 - en: '`=FILTER(Donors, Donations>=LARGE(Donations,3))`'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(Donors, Donations>=LARGE(Donations,3))`'
 - en: To Filter the bottom 3
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 要过滤最后 3 个
 - en: '`=FILTER(Donors, Donations<=SMALL(Donations,3))`'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(Donors, Donations<=SMALL(Donations,3))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是上述函数的工作原理：
 - en: Select the donors’ named range filter array.
+  id: totrans-112
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择捐赠者的命名范围过滤数组。
 - en: Use the LARGE function to return the third largest value `**( LARGE(Donations,3)
     )**` Or the SMALL function to return the third smallest value `**( SMALL(Donations,3)
     ).**`
+  id: totrans-113
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用 LARGE 函数返回第三大值 `**( LARGE(Donations,3) )**` 或使用 SMALL 函数返回第三小值 `**( SMALL(Donations,3)
+    ).**`
 - en: To filter the top items, check the donation amounts that are greater or equal
     to the third largest `**(Donations>=LARGE(Donations,3)).**` To filter the bottom
     items, check the donation amounts that are lesser or equal to the 3rd smallest
     `**(Donations<=SMALL(Donations,3)).**` These return a Boolean array—TRUE (where
     both checks are true) and FALSE (where one/both tests are false).
+  id: totrans-114
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 要过滤前几项，请检查捐赠金额大于或等于第三大的 `**(Donations>=LARGE(Donations,3)).**` 要过滤底部项目，请检查捐赠金额小于或等于第三小的
+    `**(Donations<=SMALL(Donations,3)).**` 这些返回一个布尔数组—`TRUE`（两个检查都为真）和`FALSE`（一个/两个测试为假）。
 - en: The Filter Function returns all the donors corresponding to the TRUE values.
+  id: totrans-115
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过滤函数返回所有对应于 `TRUE` 值的捐赠者。
 - en: '[Easily lookup X or Y and not both](toc.xhtml#s111a)'
+  id: totrans-116
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松查找 X 或 Y 而不是两者都有](toc.xhtml#s111a)'
 - en: This is not a frequent lookup problem, but it is worth knowing how to solve
     it.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 这不是一个经常出现的查找问题，但了解如何解决它是值得的。
 - en: We need to look up all students who scored Grade A or took English, but not
     both. See *[Figure 7.14](#fig7_14)*.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要查找所有得到 A 等级或参加英语考试的学生，但不是两者都有。参见 *[图 7.14](#fig7_14)*。
 - en: '![](images/Figure-7.14.jpg)'
+  id: totrans-119
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.14.jpg)'
 - en: '**Figure 7.14:** Filtering all X or Y but not Both'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.14：** 过滤所有 X 或 Y 但不是两者都有'
 - en: '`=FILTER(C82:C94,(F82:F94=”A”)-(D82:D94=”English”))`'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(C82:C94,(F82:F94=”A”)-(D82:D94=”English”))`'
 - en: The only trick to learn is using the minus sign (-) as a comparison operator.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 唯一需要学习的技巧是使用减号（-）作为比较运算符。
 - en: Here is how the comparison works.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是比较的工作原理。
 - en: If one comparison is `TRUE` (1) and the other is `FALSE` (0), then the comparison
     would be 1-0=1\. Thus, Overall will be TRUE. When comparing two `FALSE` conditions
     0-0=0, thus overall `FALSE`. When comparing two `TRUE` conditions, 1-1=0, this
     also would be an overall `FALSE`. See *[Figure 7.15](#fig7_15)*.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果一个比较是 `TRUE`（1） 而另一个是 `FALSE`（0），那么比较结果将是 1-0=1。因此，总体上是 `TRUE`。当比较两个 `FALSE`
+    条件时，0-0=0，因此总体上是 `FALSE`。当比较两个 `TRUE` 条件时，1-1=0，这也将是总体上的 `FALSE`。参见 *[图 7.15](#fig7_15)*。
 - en: '![](images/Figure-7.15.jpg)'
+  id: totrans-125
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.15.jpg)'
 - en: '**Figure 7.15:** Minus Sign (-) comparison operator'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.15：** 减号（-）比较运算符'
 - en: '**Note**'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**'
 - en: In Excel, FALSE equals 0 value, and any other value equals `TRUE`.
+  id: totrans-128
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在 Excel 中，`FALSE` 等于 0 值，而任何其他值等于 `TRUE`。
 - en: This is why in *[Figure 7.15](#fig7_15)*, the value of −1 is equal to `TRUE`.
+  id: totrans-129
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 这就是为什么在 *[图 7.15](#fig7_15)* 中，值为 -1 等于 `TRUE`。
 - en: '[Looking up data using wildcards](toc.xhtml#s112a)'
+  id: totrans-130
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用通配��查找数据](toc.xhtml#s112a)'
 - en: Unfortunately, the two wildcard characters (***?**) do not work with the FILTER
     function.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 不幸的是，FILTER 函数不支持两个通配符字符（***?**）。
 - en: However, there is a walkaround using a combination of SEARCH and ISNUMBER functions,
     as shown in *[Figure 7.16](#fig7_16)*.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，可以通过结合使用 SEARCH 和 ISNUMBER 函数来解决，如 *[图 7.16](#fig7_16)* 所示。
 - en: The task is to filter all producers whose product contains the word “Milk”.
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 任务是过滤所有产品中包含单词“牛奶”的生产商。
 - en: '![](images/Figure-7.16.jpg)'
+  id: totrans-134
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.16.jpg)'
 - en: '**Figure 7.16:** Filtering data using wildcards'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.16：** 使用通配符过滤数据'
 - en: '`=FILTER(Producers, ISNUMBER(SEARCH(“Milk”, Product)))`'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(Producers, ISNUMBER(SEARCH(“Milk”, Product)))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是上述函数的工作原理：
 - en: The search function returns a number if the product name contains the word “milk”,
     else it returns an error `**(SEARCH(“Milk”, Product)).**`
+  id: totrans-138
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果产品名称包含单词“牛奶”，搜索函数返回一个数字，否则返回一个错误 `**(SEARCH(“Milk”, Product)).**`
 - en: '`ISNUMBER` function returns an array of `TRUE/FALSE` which will be used as
     the include criteria in the `FILTER` function. `ISNUMBER` returns `TRUE` if the
     returned value by the `SEARCH` function is a number; else, it returns `FALSE`.'
+  id: totrans-139
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`ISNUMBER` 函数返回一个 `TRUE/FALSE` 数组，将用作 `FILTER` 函数中的包含条件。如果 `SEARCH` 函数返回的值是一个数字，则
+    `ISNUMBER` 返回 `TRUE`；否则返回 `FALSE`。'
 - en: '[Looking up weekday or weekend data](toc.xhtml#s113a)'
+  id: totrans-140
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找工作日或周末数据](toc.xhtml#s113a)'
 - en: Analyzing transactions based on the weekday or weekend is required, especially
     for sales analysts.
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据工作日或周末分析交易是必要的，特别是对于销售分析师。
 - en: This can be easily done using a combination of the `FILTER` function and the
     `WEEKDAY` function, as shown in *[Figure 7.17](#fig7_17)*.
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可以通过 `FILTER` 函数和 `WEEKDAY` 函数的组合轻松完成，如 *[图 7.17](#fig7_17)* 所示。
 - en: 'To Filter Weekday sold items:'
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 要筛选工作日销售的物品：
 - en: '`=FILTER(tblSportSale[Item],WEEKDAY(tblSportSale[Date],2)<6)`'
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(tblSportSale[Item],WEEKDAY(tblSportSale[Date],2)<6)`'
 - en: 'To Filter Weekend sold items:'
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 要筛选周末销售的物品：
 - en: '`=FILTER(tblSportSale[Item],WEEKDAY(tblSportSale[Date],2)>=6)`'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(tblSportSale[Item],WEEKDAY(tblSportSale[Date],2)>=6)`'
 - en: Here is how the preceding formula works.
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述公式的工作原理。
 - en: Given the date of the sale, the `WEEKDAY` function `**( WEEKDAY(tblSportSale[Date],2))**`
     returns a number between 1 and 7 representing the day of the week. Monday(1) to
     Sunday(7)
+  id: totrans-148
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 给定销售日期，`WEEKDAY` 函数 `**( WEEKDAY(tblSportSale[Date],2))**` 返回一个介于 1 和 7 之间的数字，代表一周中的某一天。星期一(1)到星期日(7)
 - en: For the Weekdays dates, these are dates with a day number less than 6, while
     Weekend dates have a day number greater or equal to 6
+  id: totrans-149
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对于工作日日期，这些日期的日期编号小于 6，而周末日期的日期编号大于或等于 6
 - en: '![](images/Figure-7.17.jpg)'
+  id: totrans-150
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.17.jpg)'
 - en: '**Figure 7.17:** Filtering Weekday or Weekend data'
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.17：** 筛选工作日或周末数据'
 - en: '[Looking up data that excludes holidays and weekends](toc.xhtml#s114a)'
+  id: totrans-152
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找排除假期和周末的数据](toc.xhtml#s114a)'
 - en: In the previous example, we saw how to look up either weekday or weekend-sold
     items.
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 在前面的示例中，我们看到了如何查找工作日或周末销售的物品。
 - en: Assuming we have holidays, how do we look up items sold on workdays only? As
     shown in *[Figure 7.18](#fig7_18)*, you can exclude Holidays and Weekends by using
     the `po` function.
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们有假期，如何查找仅在工作日销售的物品？如 *[图 7.18](#fig7_18)* 所示，您可以使用 `po` 函数排除假期和周末。
 - en: '`=FILTER(SportSales[Item],WORKDAY(SportSales[Date]-1,1,Holidays)=SportSales[Date])`'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(SportSales[Item],WORKDAY(SportSales[Date]-1,1,Holidays)=SportSales[Date])`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**WORKDAY(SportSales[Date]-1, 1, Holidays)**` will subtract one day from the
     Sales date to get the initial date, then add one working day to find the next
     working day after that initial date, while excluding any dates specified in the
     “Holidays” list. If the Sales date is not a holiday or a weekend, the WORKDAY
     function will return the same date; otherwise, it will return the next working
     day.'
+  id: totrans-157
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**WORKDAY(SportSales[Date]-1, 1, Holidays)**` 将从销售日期减去一天以获取初始日期，然后添加一个工作日以找到该初始日期后的下一个工作日，同时排除“假期”列表中指定的任何日期。如果销售日期不是假期或周末，则
+    `WORKDAY` 函数将返回相同日期；否则，它将返回下一个工作日。'
 - en: Compare the returned working days with the Sales dates, `**WORKDAY(SportSales[Date]-1,1,Holidays)=SportSales[Date].**`
     This comparison returns `**TRUE**` if the dates are the same otherwise, `**FALSE**`.
+  id: totrans-158
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 将返回的工作日与销售日期进行比较，`**WORKDAY(SportSales[Date]-1,1,Holidays)=SportSales[Date].**`
+    如果日期相同，则返回 `**TRUE**`，否则返回 `**FALSE**`。
 - en: The `FILTER` function returns only items corresponding to the `TRUE` values
     from the preceding array.
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: '`FILTER` 函数仅返回与前述数组中的 `TRUE` 值对应的物品。'
 - en: '![](images/Figure-7.18.jpg)'
+  id: totrans-160
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.18.jpg)'
 - en: '**Figure 7.18:** Filtering working days data only'
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.18：** 仅筛选工作日数据'
 - en: '[Looking up ODD/EVEN numbers](toc.xhtml#s115a)'
+  id: totrans-162
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找奇数/偶数数字](toc.xhtml#s115a)'
 - en: Let us assume that you are an auditor and want to extract only Even numbered
     invoices, as shown in *[Figure 7.19](#fig7_19)*.
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设您是一名审计员，想要提取仅为偶数发票的物品，如 *[图 7.19](#fig7_19)* 所示。
 - en: Here is the formula you can use for this task.
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是您可以用于此任务的公式。
 - en: '`=FILTER(B147:B158,ISEVEN(0+B147:B158))`'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(B147:B158,ISEVEN(0+B147:B158))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**ISEVEN(0+B147:B158)**` `ISEVEN` function returns an array of `TRUE/FALSE.`
     TRUE for all even numbered invoices else, `FALSE`.'
+  id: totrans-167
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**ISEVEN(0+B147:B158)**` `ISEVEN` 函数返回一个 `TRUE/FALSE` 数组。所有偶数发票返回 `TRUE`，否则返回
+    `FALSE`。'
 - en: '**Note**'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**'
 - en: To force the `ISEVEN` function to evaluate the entire range as an array, you
     must add a zero in your referenced range else the function will return a `#VALUE`
     error.
+  id: totrans-169
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 要强制 `ISEVEN` 函数将整个范围作为数组进行评估，必须在引用的范围中添加零，否则函数将返回 `#VALUE` 错误。
 - en: The FILTER function returns only Invoices that correspond to the TRUE values
     of the array returned earlier.
+  id: totrans-170
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: FILTER 函数仅返回与先前返回的数组的 TRUE 值对应的发票。
 - en: 'To filter the ODD numbered invoices, change the formula as follows:'
+  id: totrans-171
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 要过滤奇数发票号，将公式更改如下：
 - en: '`=FILTER(B147:B158,ISODD(0+B147:B158))`'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(B147:B158,ISODD(0+B147:B158))`'
 - en: '![](images/Figure-7.19.jpg)'
+  id: totrans-173
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.19.jpg)'
 - en: '**Figure 7.19:** Filtering Even values only'
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.19：** 仅过滤偶数值'
 - en: '[Looking up items repeated N times](toc.xhtml#s116a)'
+  id: totrans-175
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找重复 N 次的物品](toc.xhtml#s116a)'
 - en: 'Using the previous data on contributions, let us see how to filter all staff
     who have donated more than two times, as shown in *[Figure 7.20](#fig7_20)*:'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用之前的贡献数据，让我们看看如何过滤所有捐赠超过两次的员工，如 *[图 7.20](#fig7_20)* 所示：
 - en: '![](images/Figure-7.20.jpg)'
+  id: totrans-177
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.20.jpg)'
 - en: '**Figure 7.20:** Filtering Items Repeated n times'
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.20：** 过滤重复 n 次的项目'
 - en: '`=UNIQUE(FILTER(Staff, COUNTIF(Staff, Staff)>2))`'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=UNIQUE(FILTER(Staff, COUNTIF(Staff, Staff)>2))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**COUNTIF(Staff, Staff)**` COUNTIF function returns an array of the number
     of times a staff is repeated in the list. Refer to *[Figure 7.21](#fig7_21)*.![](images/Figure-7.21.jpg)'
+  id: totrans-181
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**COUNTIF(Staff, Staff)**` COUNTIF 函数返回列表中员工重复次数的数组。参考 *[图 7.21](#fig7_21)*。![](images/Figure-7.21.jpg)'
 - en: '**Figure 7.21:** COUNTIF function showing repeats per item'
+  id: totrans-182
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 7.21：** COUNTIF 函数显示每个物品的重复次数'
 - en: Next, we check which items have been repeated more than two times `**COUNTIF(Staff,
     Staff)>2.**` This returns an array of `TRUE/FALSE`.
+  id: totrans-183
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 接下来，我们检查哪些物品重复超过两次 `**COUNTIF(Staff, Staff)>2.**` 这将返回一个 `TRUE/FALSE` 数组。
 - en: The `FILTER` function only includes staff corresponding to the TRUE value, as
     shown in *[Figure 7.22](#fig7_22)*.![](images/Figure-7.22.jpg)
+  id: totrans-184
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`FILTER` 函数仅包括对应于 TRUE 值的员工，如 *[图 7.22](#fig7_22)* 所示。![](images/Figure-7.22.jpg)'
 - en: '**Figure 7.22:** Filtered duplicate values'
+  id: totrans-185
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 7.22：** 过滤重复值'
 - en: To eliminate duplicate values, we use the `**UNIQUE function UNIQUE(FILTER(Staff,
     COUNTIF(Staff, Staff)>2))**`
+  id: totrans-186
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 为了消除重复值，我们使用 `**UNIQUE 函数 UNIQUE(FILTER(Staff, COUNTIF(Staff, Staff)>2))**`
 - en: '[Looking up items based on time](toc.xhtml#s117a)'
+  id: totrans-187
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[根据时间查找物品](toc.xhtml#s117a)'
 - en: Most of the attendance data is collected in DateTime format, as shown in *[Figure
     7.23](#fig7_23)*. Yet we are required to look up that data using the time portion
     of the DateTime only.
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 大多数出勤数据以 DateTime 格式收集，如 *[图 7.23](#fig7_23)* 所示。然而，我们需要仅使用 DateTime 的时间部分来查找该数据。
 - en: When faced with such a problem, the only thing to remember is that the time
     value is always stored as a fraction of 24 hours while the Date is stored as a
     serial number.
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 面对这样的问题，唯一需要记住的是时间值始终以 24 小时的分数存储，而日期存储为序列号。
 - en: Therefore, time will be the value after the decimal in a DateTime serial number.
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，时间将是 DateTime 序列号中的小数部分。
 - en: '![](images/Figure-7.23.jpg)'
+  id: totrans-191
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.23.jpg)'
 - en: '**Figure 7.23:** Filtered based on time'
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.23：** 基于时间过滤'
 - en: '`=FILTER(tblStudents,MOD(tblStudents[[Arrival ]],1)>G164)`'
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(tblStudents,MOD(tblStudents[[Arrival ]],1)>G164)`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**MOD(tblStudents[[Arrival ]],1)**` When used with a divisor of 1, the MOD
     function always returns the fractional part of a number.'
+  id: totrans-195
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MOD(tblStudents[[Arrival ]],1)**` 当除数为 1 时，MOD 函数始终返回数字的小数部分。'
 - en: '`**MOD(tblStudents[[Arrival ]],1)>G164**` This condition checks whether the
     calculated fractional part of the `**Arrival**` time (`**MOD**` result) is greater
     than the value in cell G164\. This is essentially checking if the minutes’ portion
     of the arrival time is greater than the value in G164.'
+  id: totrans-196
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MOD(tblStudents[[Arrival ]],1)>G164**` 此条件检查计算出的 `**Arrival**` 时间的小数部分（`**MOD**`
+    结果）是否大于单元格 G164 中的值。这实质上是检查到达时间的分钟部分是否大于 G164 中的值。'
 - en: The FILTER function is used to retrieve rows from the `**tblStudents**` table
     based on a certain condition. In this case, it filters the rows where the calculated
     fractional part of the `**Arrival**` time is greater than the value in cell G164.
+  id: totrans-197
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: FILTER 函数用于根据特定条件从 `**tblStudents**` 表中检索行。在这种情况下，它过滤了计算出的 `**Arrival**` 时间的小数部分大于单元格
+    G164 中的值的行。
 - en: '[Looking up data based on week number, month, and year](toc.xhtml#s118a)'
+  id: totrans-198
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[根据周数、月份和年份查找数据](toc.xhtml#s118a)'
 - en: In the previous section, we learned how to filter data based on a weekday or
     weekend. In this section, we shall learn how to look up data based on Week number,
     Month, and Year.
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 在前一节中，我们学习了如何根据工作日或周末筛选数据。在本节中，我们将学习如何根据周数、月份和年份查找数据。
 - en: In *[Figure 7.24](#fig7_24)*, we are looking up all items sold in Week 3.
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 *[图 7.24](#fig7_24)* 中，我们正在查找所有在第 3 周售出的物品。
 - en: '![](images/Figure-7.24.jpg)'
+  id: totrans-201
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.24.jpg)'
 - en: '**Figure 7.24:** Filtered based on a Week number'
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.24：** 基于周数筛选'
 - en: '`=FILTER(SportSales[Item],WEEKNUM(SportSales[Date]+0)=3)`'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(SportSales[Item],WEEKNUM(SportSales[Date]+0)=3)`'
 - en: '**Note:**'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：**'
 - en: The WEEKNUM function does not accept a range of data. It returns the `**#VALUE**`
     error. We, however, can force it by adding a zero `**(SportSales[Date]+0)**` to
     the range.
+  id: totrans-205
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: WEEKNUM函数不接受数据范围。它会返回`**#VALUE**`错误。但是，我们可以通过在范围后添加零`**(SportSales[Date]+0)**`来强制执行。
 - en: The WEEKNUM function returns an array of week numbers (Refer to *[Figure 7.25](#fig7_25)*).
+  id: totrans-206
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: WEEKNUM函数返回一个周数的数组（参见*[图 7.25](#fig7_25)*）。
 - en: When we compare the calculated week numbers (from the preceding step) to the
     value, we return an array of `TRUE` and `FALSE`.
+  id: totrans-207
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 当我们将计算出的周数（来自前一步）与该值进行比较时，我们会返回一个由`TRUE`和`FALSE`组成的数组。
 - en: The `FILTER` function is used to filter the rows where the values from the preceding
     step are `TRUE`.
+  id: totrans-208
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`FILTER`函数用于筛选前一步中数值为`TRUE`的行。'
 - en: '![](images/Figure-7.25.jpg)'
+  id: totrans-209
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.25.jpg)'
 - en: '**Figure 7.25:** WEEKNUM returning an array of Week numbers'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.25：** WEEKNUM返回一个周数数组'
 - en: To filter specific months’ data, use the month function as shown in *[Figure
     7.26](#fig7_26)*.
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: 要筛选特定月份的数据，请使用如*[图 7.26](#fig7_26)*所示的月份函数。
 - en: '![](images/Figure-7.26.jpg)'
+  id: totrans-212
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.26.jpg)'
 - en: '**Figure 7.26:** Filtered based on a Month'
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.26：** 基于月份筛选'
 - en: '`=FILTER(SportSales[Item],MONTH(SportSales[Date])=6)`'
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(SportSales[Item],MONTH(SportSales[Date])=6)`'
 - en: The only thing to note here is that the `MONTH` function returns an array of
     month numbers. Everything else is as explained in the `WEEKNUM` function.
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里需要注意的是`MONTH`函数返回一个月份数字的数组。其他一切都如`WEEKNUM`函数中所解释的那样。
 - en: Finally, *[Figure 7.27](#fig7_27)* shows how to filter data using years values.
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，*[图 7.27](#fig7_27)*展示了如何使用年份值来筛选数据。
 - en: '![](images/Figure-7.27.jpg)'
+  id: totrans-217
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.27.jpg)'
 - en: '**Figure 7.27:** Filtered based on a Year'
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.27：** 基于年份筛选'
 - en: '`=FILTER(SportSales[Item],YEAR(SportSales[Date])=2022)`'
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(SportSales[Item],YEAR(SportSales[Date])=2022)`'
 - en: The only thing to note here is that the `YEAR` function returns an array of
     year numbers. Everything else is as explained in the preceding functions.
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里需要注意的是`YEAR`函数返回一个年份数字的数组。其他一切都如前面的函数中所解释的那样。
 - en: '[Lookup common/uncommon items in two lists](toc.xhtml#s119a)'
+  id: totrans-221
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找两个列表中的共同/不常见项目](toc.xhtml#s119a)'
 - en: Comparing values in a list is a common activity in Excel. For example, in *[Figure
     7.28](#fig7_28)*, we look up common and new customers between two lists.
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Excel中比较列表中的值是一项常见的活动。例如，在*[图 7.28](#fig7_28)*中，我们查找两个列表之间的共同和新客户。
 - en: To get new (uncommon) customers
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 获取新（不常见的）客户
 - en: '`=FILTER(Current_Customers, COUNTIF(LastYear_Customers,Current_Customers)=0)`'
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(Current_Customers, COUNTIF(LastYear_Customers,Current_Customers)=0)`'
 - en: To get old(common) customers
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 获取老（共同的）客户
 - en: '`=FILTER(Current_Customers, COUNTIF(LastYear_Customers,Current_Customers)=0)`'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(Current_Customers, COUNTIF(LastYear_Customers,Current_Customers)=0)`'
 - en: The only trick with the function is the use of the `**COUNTIF**` function to
     count how many times items in the new list are repeated on the old list.
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的唯一技巧是使用`**COUNTIF**`函数计算新列表中项目在旧列表中重复出现的次数。
 - en: '`**►COUNTIF(LastYear_Customers, Current_Customers)**` count the number of customers
     who appeared both in the LastYear_Customers range and the Current_Customers range.
     It returns an array of 1 and 0\. Where 1= common in both and 0=uncommon.'
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**►COUNTIF(LastYear_Customers, Current_Customers)**` 计算同时出现在LastYear_Customers范围和Current_Customers范围中的客户数量。它返回一个由1和0组成的数组。其中1=两者共同，0=不常见。'
 - en: '![](images/Figure-7.28.jpg)'
+  id: totrans-229
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.28.jpg)'
 - en: '**Figure 7.28:** Filtered common/uncommon items between lists'
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.28：** 筛选列表之间的常见/不常见项目'
 - en: '[Return end-of-the-month date items only](toc.xhtml#s120a)'
+  id: totrans-231
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[仅返回月底日期项目](toc.xhtml#s120a)'
 - en: When you want to return what was sold on the last date of any month, as shown
     in *[Figure 7.29](#fig7_29)*, you must use the `**EOMONTH**` function.
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: 当您想要返回任何月份最后一天出售的物品时，就像在*[图 7.29](#fig7_29)*中所示，您必须使用`**EOMONTH**`函数。
 - en: '![](images/Figure-7.29.jpg)'
+  id: totrans-233
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-7.29.jpg)'
 - en: '**Figure 7.29:** Filtered items sold on the last day of the month'
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 7.29：** 筛选在月底出售的项目'
 - en: '`=FILTER(Sport_Sales[Item], EOMONTH(Sport_Sales[Date]+0,0)=Sport_Sales[Date])`'
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=FILTER(Sport_Sales[Item], EOMONTH(Sport_Sales[Date]+0,0)=Sport_Sales[Date])`'
 - en: '**Note**:'
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：**'
 - en: '`**EOMONTH**` function does not accept a range of data. It returns the `**#VALUE**`
     error. We, however, can force it by adding a zero (SportSales[Date]+0) to the
     range.'
+  id: totrans-237
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**EOMONTH**`函数不接受数据范围。它会返回`**#VALUE**`错误。但是，我们可以通过在范围后添加零（SportSales[Date]+0）来强制执行。'
 - en: The `**EOMONTH**` function returns an array of the last day of a month given
     a date (refer to *[Figure 7.30](#fig7_30)*).![](images/Figure-7.30.jpg)
+  id: totrans-238
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**EOMONTH**`函数返回给定日期的月份的最后一天的数组（参考*[图7.30](#fig7_30)*）。![](images/Figure-7.30.jpg)'
 - en: '**Figure 7.30:** EOMONTH return an array of the last date in months'
+  id: totrans-239
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图7.30：** EOMONTH 返回月份的最后一天的数组'
 - en: When we compare the calculated end-of-month dates (from the preceding step)
     to the sales dates, we return an array of `**TRUE**` and `**FALSE**`.
+  id: totrans-240
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 当我们将计算得出的月底日期（来自上一步）与销售日期进行比较时，我们会返回一个由`**TRUE**`和`**FALSE**`组成的数组。
 - en: The `**FILTER**` function is used to filter the rows where the values from the
     preceding step are `**TRUE**`.
+  id: totrans-241
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**FILTER**`函数用于过滤前一步骤中数值为`**TRUE**`的行。'
 - en: '[Conclusion](toc.xhtml#s121a)'
+  id: totrans-242
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结论](toc.xhtml#s121a)'
 - en: In this chapter, we learned one of the easiest-to-understand and use lookup
     functions in Excel—the `**FILTER**` function. It is mostly recommended when you
     want to return multiple values.
+  id: totrans-243
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们学习了 Excel 中最易于理解和使用的查找函数之一——`**FILTER**`函数。当您想要返回多个数值时，这是最常推荐的函数。
 - en: The `**FILTER**` function stands as a powerful tool within the Excel arsenal,
     providing users with a dynamic and efficient means of extracting specific data
     subsets from extensive datasets. Through this chapter, we have explored the intricacies
     of the `**FILTER**` function, delving into its syntax, parameters, and real-world
     applications.
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**FILTER**`函数是 Excel 工具中的一个强大工具，为用户提供了从庞大数据集中提取特定数据子集的动态和高效手段。通过本章，我们探讨了`**FILTER**`函数的复杂性，深入研究了其语法、参数和实际应用。'
 - en: By harnessing the capabilities of the `**FILTER**` function, Excel users can
     streamline their data analysis processes, enhancing both accuracy and efficiency.
     This function empowers users to effortlessly retrieve relevant information based
     on complex criteria, enabling informed decision-making, and facilitating comprehensive
     insights into their data.
+  id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过利用`**FILTER**`函数的功能，Excel 用户可以简化其数据分析流程，提高准确性和效率。该函数使用户能够轻松地根据复杂条件检索相关信息，促进明智决策，并促进对数据的全面洞察。
 - en: In the next chapter, we shall learn about Power Query.
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将学习有关 Power Query 的内容。
 - en: '[Points to remember](toc.xhtml#s122a)'
+  id: totrans-247
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[记住的要点](toc.xhtml#s122a)'
 - en: The `**FILTER**` function works seamlessly with other Excel dynamic arrays functions
     like `**SORT**`, `**UNIQUE**`, and `**TRANSPOSE**`, allowing you to create complex
     data manipulation workflows.
+  id: totrans-248
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**FILTER**`函数与其他 Excel 动态数组函数（如`**SORT**`、`**UNIQUE**`和`**TRANSPOSE**`）无缝配合，允许您创建复杂的数据操作工作流程。'
 - en: The FILTER function is non-volatile. Unlike some other functions that recalculate
     every time you make a change, the `**FILTER**` function recalculates only when
     the underlying data or criteria change, improving overall worksheet performance.
+  id: totrans-249
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`FILTER`函数是非不稳定的。与其他一些在每次更改时重新计算的函数不同，`**FILTER**`函数仅在基础数据或条件更改时重新计算，提高了整体工作表性能。'
 - en: The FILTER function does not accommodate the AND/OR functions. So, in case of
     multiple criteria use an asterisk (*) to invoke the AND operation and a Plus sign
     (+) to invoke an OR operation.
+  id: totrans-250
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`FILTER`函数不支持 AND/OR 函数。因此，在多个条件的情况下，使用星号（*）来调用 AND 操作，加号（+）来调用 OR 操作。'
 - en: The FILTER function can handle various data types, including numbers, text,
     dates, and more, making it suitable for a wide range of data analysis tasks.
+  id: totrans-251
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**FILTER**`函数可以处理各种数据类型，包括数字、文本、日期等，使其适用于各种数据分析任务。'
 - en: '[Quiz](toc.xhtml#s123a)'
+  id: totrans-252
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[测验](toc.xhtml#s123a)'
 - en: Which parameter of the `**FILTER**` function is used to display a custom message
     or value when no matching results are found?
+  id: totrans-253
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**FILTER**`函数的哪个参数用于在未找到匹配结果时显示自定义消息或数值？'
 - en: array
+  id: totrans-254
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 数组
 - en: criteria
+  id: totrans-255
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 条件
 - en: '`**[if_empty]**`'
+  id: totrans-256
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**[if_empty]**`'
 - en: '`**[include]**`'
+  id: totrans-257
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**[include]**`'
 - en: Which of the following is NOT a benefit of using the `**FILTER**` function over
     traditional filtering techniques?
+  id: totrans-258
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用`**FILTER**`函数而不是传统过滤技术的以下哪项不是其优点？
 - en: Dynamic array spill
+  id: totrans-259
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 动态数组溢出
 - en: Compatibility with other dynamic array functions
+  id: totrans-260
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 与其他动态数组函数兼容
 - en: Volatile recalculations
+  id: totrans-261
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 不稳定的重新计算
 - en: Simplified multiple criteria handling
+  id: totrans-262
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 简化多条件处理
 - en: What Excel error is returned by the FILTER function if no matching results are
     found based on the criteria?
+  id: totrans-263
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 如果根据条件未找到匹配结果，`FILTER`函数会返回什么 Excel 错误？
 - en: '`**#REF!**`'
+  id: totrans-264
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**#REF!**`'
 - en: '`**#VALUE!**`'
+  id: totrans-265
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**#VALUE!**`'
 - en: '`**#CALC!**`'
+  id: totrans-266
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**#CALC!**`'
 - en: '`**#NUM!**`'
+  id: totrans-267
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**#NUM!**`'
 - en: What Excel function can be used to re-order the results Column of the `**FILTER**`
     function?
+  id: totrans-268
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 用于重新排序`**FILTER**`函数结果列的 Excel 函数是什么？
 - en: '`**SORT**`'
+  id: totrans-269
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**SORT**`'
 - en: '`**SUM**`'
+  id: totrans-270
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**SUM**`'
 - en: '`**VLOOKUP**`'
+  id: totrans-271
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**VLOOKUP**`'
 - en: '`**CHOOSE**`'
+  id: totrans-272
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**CHOOSE**`'
 - en: Which of the following formulas uses the FILTER function to extract rows from
     a table where the “`**Region**`” column is equal to “`**East**`”?
+  id: totrans-273
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 以下哪个公式使用FILTER函数从表中提取“`**Region**`”列等于“`**East**`”的行？
 - en: =`**FILTER(Table1, “Region”, “East”)**`
+  id: totrans-274
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: =`**FILTER(Table1, “Region”, “East”)**`
 - en: =`**FILTER(Table1, “Region”=”East”)**`
+  id: totrans-275
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: =`**FILTER(Table1, “Region”=”East”)**`
 - en: =`**FILTER(Table1, Table1[Region]=”East”)**`
+  id: totrans-276
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: =`**FILTER(Table1, Table1[Region]=”East”)**`
 - en: =`**FILTER(Table1, “East”, “Region”)**`
+  id: totrans-277
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: =`**FILTER(Table1, “East”, “Region”)**`
 - en: '[Answers](toc.xhtml#s124a)'
+  id: totrans-278
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[答案](toc.xhtml#s124a)'
 - en: '`**[if_empty]**`'
+  id: totrans-279
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**[if_empty]**`'
 - en: Volatile recalculations
+  id: totrans-280
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 可变重新计算
 - en: '`**#CALC!**`'
+  id: totrans-281
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**#CALC!**`'
 - en: '`**CHOOSE**`'
+  id: totrans-282
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**CHOOSE**`'
 - en: '`**=FILTER(Table1, Table1[Region]=”East”)**`'
+  id: totrans-283
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**=FILTER(Table1, Table1[Region]=”East”)**`'

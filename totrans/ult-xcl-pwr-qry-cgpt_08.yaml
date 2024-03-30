@@ -1,1139 +1,1710 @@
 - en: '[CHAPTER 6](toc.xhtml#c06)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第 6 章](toc.xhtml#c06)'
 - en: '[XLOOKUP](toc.xhtml#c06)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[XLOOKUP](toc.xhtml#c06)'
 - en: '[Introduction](toc.xhtml#s84a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s84a)'
 - en: In this chapter, we will introduce the first dynamic array lookup function —
     `**XLOOKUP**`.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将介绍第一个动态数组查找函数 — `**XLOOKUP**`。
 - en: When introduced in 2019, it was hailed as the “Functions Killer”, “Ultimate
     Lookup Function”, “Single Most Important function”, and so on. It was supposed
     to replace the `**LOOKUP**`, `**VLOOKUP**`, `**HLOOKUP**`, and `**INDEX**`/`**MATCH**`
     combo.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 当它在 2019 年推出时，被誉为“函数杀手”，“终极查找函数”，“最重要的函数”等等。它应该取代 `**LOOKUP**`，`**VLOOKUP**`，`**HLOOKUP**`
+    和 `**INDEX**`/`**MATCH**` 组合。
 - en: Let us now explore areas where we can use this function and what advantages
     it has over the others.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们探讨可以使用此函数的领域以及它相对于其他函数的优势。
 - en: '[Structure](toc.xhtml#s85a)'
+  id: totrans-6
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结构](toc.xhtml#s85a)'
 - en: 'In this chapter, we will discuss the 15 reasons why `**XLOOKUP**` is a far
     better option than the previously discussed functions:'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论为什么 `**XLOOKUP**` 是比之前讨论的函数更好的选择的 15 个原因：
 - en: Defaults to exact match
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 默认为精确匹配
 - en: Easily return multiple adjacent and non-adjacent columns
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松返回多个相邻和非相邻列
 - en: Easily lookup to the left or right
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松向左或向右查找
 - en: Easily accommodates column insertion/deletion
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松适应列的插入/删除
 - en: Easily lookup vertically or horizontally
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松垂直或水平查找
 - en: Easily lookup from the bottom up
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松从底部向上查找
 - en: Easily integrates wildcards in the lookup
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松在查找中集成通配符
 - en: Returns a cell reference
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 返回单元格引用
 - en: Returns values in case of “No Match”
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在“无匹配”情况下返回值
 - en: Easily two-way or three-way lookup
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松进行双向或三向查找
 - en: Returns non-adjacent columns
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 返回非相邻列
 - en: Returns the last empty or non-empty cell
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 返回最后一个空或非空单元格
 - en: Lookup non-contiguous array
+  id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找非连续数组
 - en: Easily returns duplicate lookup values
+  id: totrans-21
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 轻松返回重复的查找值
 - en: '[Exact match default](toc.xhtml#s86a)'
+  id: totrans-22
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[默认精确匹配](toc.xhtml#s86a)'
 - en: 'The following is the basic `**XLOOKUP**` syntax:'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是基本的 `**XLOOKUP**` 语法：
 - en: '`=XLOOKUP(lookup_value, lookup_array, return_array, [match_mode], [search_mode])`'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(lookup_value, lookup_array, return_array, [match_mode], [search_mode])`'
 - en: 'Where:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中：
 - en: '`**lookup_value:**` We want to search for this value in the `lookup_array`.
     It can be a cell reference or a constant value.'
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**lookup_value:**` 我们想在 `lookup_array` 中搜索这个值。它可以是单元格引用或常量值。'
 - en: '`**lookup_array:**` This is the range or array where we search the above value.
     It can be a single column or row or a two-dimensional range.'
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**lookup_array:**` 这是我们搜索上述值的范围或数组。它可以是单列或行，也可以是二维范围。'
 - en: '`**return_array:**` This is the range or array from which we want to retrieve
     the result. It can be a single column or row or a two-dimensional range.'
+  id: totrans-28
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**return_array:**` 这是我们要检索结果的范围或数组。它可以是单列或行，也可以是二维范围。'
 - en: '`**match_mode (optional):**` This parameter determines how the function matches
     the `lookup_value` with the values in the `lookup_array`. It can be specified
     as 0 (exact match), -1 (exact or next smaller), 1 (exact or next larger), or 2
     (wild character match). If omitted, `**XLOOKUP**` will default to an exact match.'
+  id: totrans-29
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**match_mode (可选):**` 此参数确定函数如何将 `lookup_value` 与 `lookup_array` 中的值进行匹配。可以指定为
+    0 (精确匹配)，-1 (精确或下一个较小值)，1 (精确或下一个较大值)，或 2 (通配符匹配)。如果省略，`**XLOOKUP**` 将默认为精确匹配。'
 - en: '`**search_mode (optional):**` This parameter determines the search behavior
     of the function, that is, 1 (first to last), -1 (last to first), or 2 (binary
     search). If omitted, `**XLOOKUP**` will default to 1 (first to last).'
+  id: totrans-30
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**search_mode (可选):**` 此参数确定函数的搜索行为，即 1 (从头到尾)，-1 (从尾到头)，或 2 (二分搜索)。如果省略，`**XLOOKUP**`
+    将默认为 1 (从头到尾)。'
 - en: This default to an exact match makes `**XLOOKUP**` less prone to errors present
     when using the `**VLOOKUP**` function.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个默认的精确匹配使得使用 `**XLOOKUP**` 函数时比使用 `**VLOOKUP**` 函数时更不容易出错。
 - en: Also, unlike the complicated `**VLOOKUP**` function syntax, where you will be
     required to count columns, the `**XLOOKUP**` function parameters are self-explanatory
     — easy to read and understand.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，与复杂的 `**VLOOKUP**` 函数语法不同，您需要计算列数，`**XLOOKUP**` 函数参数是自解释的 — 易于阅读和理解。
 - en: 'For example, in *[Figure 6.1](#fig6_1)*, we are looking up the amount sold
     on 15th January:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在 *[图 6.1](#fig6_1)* 中，我们正在查找 1 月 15 日的销售额：
 - en: '![](images/Figure-6.1.jpg)'
+  id: totrans-34
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.1.jpg)'
 - en: '**Figure 6.1:** XLOOKUP exact match default'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.1:** XLOOKUP 默认精确匹配'
 - en: '`=XLOOKUP(H3,SalesTable[[ Date]],SalesTable[Amount])`'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(H3,SalesTable[[ Date]],SalesTable[Amount])`'
 - en: 'With `**XLOOKUP**`, all we need is three arguments: Lookup Value (H3), Lookup
     Array (Dates), and Return Array (`**Amounts**`). Furthermore, unlike `**VLOOKUP**`,
     data does not need to be sorted.'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 `**XLOOKUP**`，我们只需要三个参数：查找值（H3）、查找数组（日期）和返回数组（`**金额**`）。此外，与 `**VLOOKUP**`
+    不同，数据不需要排序。
 - en: The result must be corrected with `**VLOOKUP**`, as shown in *[Figure 6.2](#fig6_2)*,
     since the lookup array is not sorted, and we have skipped the match mode.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 结果必须使用 `**VLOOKUP**` 进行校正，如 *[图 6.2](#fig6_2)* 所示，因为查找数组未排序，而且我们已跳过匹配模式。
 - en: '![](images/Figure-6.2.jpg)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.2.jpg)'
 - en: '**Figure 6.2:** VLOOKUP approximate match default'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.2：** VLOOKUP 近似匹配默认'
 - en: '`=VLOOKUP(H3,SalesTable[[ Date]:[Amount]],2)`'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(H3,SalesTable[[ Date]:[Amount]],2)`'
 - en: '[Easily returns multiple adjacent and non-adjacent columns](toc.xhtml#s87a)'
+  id: totrans-42
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松返回多个相邻和非相邻列](toc.xhtml#s87a)'
 - en: '`**XLOOKUP**` belongs to the new Dynamic array formulas in Excel, allowing
     one to return multiple results to a range of cells. This range is known as Spill
     Range, which can be multiple rows/columns or a table.'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP**` 属于 Excel 中的新动态数组公式，允许将多个结果返回到一系列单元格中。这个范围被称为溢出范围，可以是多行/列或一个表格。'
 - en: Dynamic array functions are designed to accommodate their output by automatically
     populating adjacent cells with results. This spill behavior allows the functions
     to return multiple values or an array of values rather than a single result.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 动态数组函数被设计为通过自动填充相邻单元格来容纳它们的输出结果。这种溢出行为允许函数返回多个值或一组值，而不是单个结果。
 - en: The size of the spill range depends on the number of values returned by the
     function.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 溢出范围的大小取决于函数返回的值的数量。
 - en: If we use a legacy array function like `**VLOOKUP**`, we must manually select
     adjacent cells and use the `**Ctrl + Shift + Enter**` to commit it. This is the
     only way it can populate adjacent cells.
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们使用类似 `**VLOOKUP**` 的传统数组函数，我们必须手动选择相邻单元格，并使用 `**Ctrl + Shift + Enter**`
+    来确认。这是它可以填充相邻单元格的唯一方式。
 - en: As shown in *[Figure 6.3](#fig6_3)*, we are looking up the sales date and amount
     for customer “Luke Daly.”
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 如 *[图 6.3](#fig6_3)* 所示，我们正在查找客户“Luke Daly”的销售日期和金额。
 - en: '`=XLOOKUP(H3, SalesTable[Customer], SalesTable[[ Date]:[Amount]] )`'
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(H3, SalesTable[Customer], SalesTable[[ Date]:[Amount]] )`'
 - en: 'The only trick with returning multiple columns is ensuring that you select
     them as a return array. In the preceding example, we have selected both the date
     and amount columns: `**SalesTable[[ Date]:[Amount]]**`'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 返回多列的唯一技巧是确保将它们选择为返回数组。在前面的例子中，我们选择了日期和金额两列：`**SalesTable[[ Date]:[Amount]]**`
 - en: '![](images/Figure-6.3.jpg)'
+  id: totrans-50
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.3.jpg)'
 - en: '**Figure 6.3:** XLOOKUP returns multiple adjacent columns'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.3：** XLOOKUP 返回多个相邻列'
 - en: 'To return multiple non-adjacent columns, we need to use the CHOOSECOLS functions
     in the return array argument to return the selected columns (see *[Figure 6.4](#fig6_4)*):'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 要返回多个非相邻列，我们需要在返回数组参数中使用 CHOOSECOLS 函数来返回所选列（参见 *[图 6.4](#fig6_4)*）：
 - en: '![](images/Figure-6.4.jpg)'
+  id: totrans-53
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.4.jpg)'
 - en: '**Figure 6.4:** XLOOKUP returns multiple non-adjacent columns'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.4：** XLOOKUP 返回多个非相邻列'
 - en: '`=XLOOKUP(I3,SalesTable[Customer],CHOOSECOLS(SalesTable[[ Date]:[Amount]],1,3))`'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(I3,SalesTable[Customer],CHOOSECOLS(SalesTable[[ Date]:[Amount]],1,3))`'
 - en: 'In this example, we select three columns: date, item, and amount. Using `**CHOOSECOLS(SalesTable[[
     Date]:[Amount]],1,3)**`, the choose column returns only the first and third columns.'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们选择了三列：日期、项目和金额。使用 `**CHOOSECOLS(SalesTable[[ Date]:[Amount]],1,3)**`，选择列仅返回第一列和第三列。
 - en: The only thing to remember is that we can use the `**CHOOSECOLS**` function
     to return selected non-adjacent columns in one array.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 唯一需要记住的是，我们可以使用 `**CHOOSECOLS**` 函数返回所选的非相邻列在一个数组中。
 - en: '[Easily lookup data to the left or right](toc.xhtml#s88a)'
+  id: totrans-58
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松查找左侧或右侧的数据](toc.xhtml#s88a)'
 - en: Unlike the VLOOKUP function, the XLOOKUP function easily looks up data from
     the left.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 与 VLOOKUP 函数不同，XLOOKUP 函数可以轻松地从左侧查找数据。
 - en: In *[Figure 6.5](#fig6_5)*, we are looking for the date of the sale for the
     customer `**Luke**`.
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 *[图 6.5](#fig6_5)* 中，我们正在查找客户“Luke”的销售日期。
 - en: '![](images/Figure-6.5.jpg)'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.5.jpg)'
 - en: '**Figure 6.5:** XLOOKUP lookup to the left'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.5：** XLOOKUP 向左查找'
 - en: '`=XLOOKUP(I3,SalesTable[Customer],SalesTable[Date])`'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(I3,SalesTable[Customer],SalesTable[Date])`'
 - en: 'Even though the dates are stored on the left side of the customer data, `**XLOOKUP**`
     still uses its simple three arguments, unlike `**VLOOKUP**`, which requires nesting
     of the IF function (see *[Figure 6.6](#fig6_6)*):'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 即使日期存储在客户数据的左侧，`**XLOOKUP**` 仍然使用其简单的三个参数，不像 `**VLOOKUP**` 需要嵌套 IF 函数（参见 *[图
+    6.6](#fig6_6)*）：
 - en: '`=VLOOKUP(I3, IF({1,0},SalesTable[Customer],SalesTable[Date]), 2, 0)`'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(I3, IF({1,0}, SalesTable[Customer], SalesTable[Date]), 2, 0)`'
 - en: With `**VLOOKUP**`, you must create a custom table array using the IF function,
     as we saw in the previous chapter.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 `**VLOOKUP**` 时，您必须使用 IF 函数创建自定义表数组，就像我们在上一章中看到的那样。
 - en: '![](images/Figure-6.6.jpg)'
+  id: totrans-67
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.6.jpg)'
 - en: '**Figure 6.6:** VLOOKUP lookup to the left'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.6：** `VLOOKUP` 向左查找'
 - en: '[Easily accommodates column insertion/deletion](toc.xhtml#s89a)'
+  id: totrans-69
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松适应列的插入/删除](toc.xhtml#s89a)'
 - en: Unlike the VLOOKUP function, XLOOKUP can handle the insertion and deletion of
     columns in a table.
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 与 `VLOOKUP` 函数不同，`XLOOKUP` 可以处理表中列的插入和删除。
 - en: For example, *[Figure 6.7](#fig6_7)* shows the two functions’ results before
     inserting a new column.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，*[图 6.7](#fig6_7)* 显示了在插入新列之前两个函数的结果。
 - en: '![](images/Figure-6.7.jpg)'
+  id: totrans-72
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.7.jpg)'
 - en: '**Figure 6.7:** VLOOKUP and XLOOKUP functions before column insertion'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.7：** 在插入列之前的 `VLOOKUP` 和 `XLOOKUP` 函数'
 - en: 'When you insert a column in the table, `**VLOOKUP**` returns the wrong values,
     but `**XLOOKUP**` can dynamically handle the insertion (see *[Figure 6.8](#fig6_8)*):'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 当您在表中插入列时，`**VLOOKUP**` 返回错误的值，但 `**XLOOKUP**` 可以动态处理插入（参见 *[图 6.8](#fig6_8)*）：
 - en: '![](images/Figure-6.8.jpg)'
+  id: totrans-75
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.8.jpg)'
 - en: '**Figure 6.8:** VLOOKUP and XLOOKUP functions after column insertion'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.8：** 在插入列后的 `VLOOKUP` 和 `XLOOKUP` 函数'
 - en: '**Note:** The `**VLOOKUP**` cannot handle the insertion because we have a hard-coded
     lookup column, that is, column 4.'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** `**VLOOKUP**` 无法处理插入，因为我们有一个硬编码的查找列，即第 4 列。'
 - en: 'As we learned in *[Chapter 2, VLOOKUP IS DEAD: Or is it?](c02.xhtml)* You can
     overcome this by nesting the `**MATCH**` function in `**VLOOKUP**` as follows:'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在 *[第 2 章，VLOOKUP 已死：还是吗？](c02.xhtml)* 中学到的，您可以通过将 `**MATCH**` 函数嵌套在 `**VLOOKUP**`
+    中来克服这个问题，如下所示：
 - en: '`=VLOOKUP(J3, SalesTable,MATCH(K2,SalesTable[#Headers],0),0)`'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(J3, SalesTable, MATCH(K2, SalesTable[#Headers], 0), 0)`'
 - en: When you delete a column, the `**VLOOKUP**` function returns an error, but `**XLOOKUP**`
     can dynamically handle the deletion. Refer to *[Figure 6.9](#fig6_9)* after we
     have deleted the items column.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 当您删除列时，`**VLOOKUP**` 函数会返回错误，但 `**XLOOKUP**` 可以动态处理删除。参考在我们删除项目列后的 *[图 6.9](#fig6_9)*。
 - en: The `**VLOOKUP**` function returns an error because it cannot find the return
     column, that is, column 4.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**VLOOKUP**` 函数返回错误，因为找不到返回列，即第 4 列。'
 - en: '![](images/Figure-6.9.jpg)'
+  id: totrans-82
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.9.jpg)'
 - en: '**Figure 6.9:** VLOOKUP and XLOOKUP functions after column deletion'
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.9：** 在删除列后的 `VLOOKUP` 和 `XLOOKUP` 函数'
 - en: '[Easily looks up data vertically or horizontally](toc.xhtml#s90a)'
+  id: totrans-84
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松垂直或水平查找数据](toc.xhtml#s90a)'
 - en: With the `**XLOOKUP**` function, we no longer need the `**HLOOKUP**` or modified
     `**VLOOKUP**` function to lookup data horizontally.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 `**XLOOKUP**` 函数，我们不再需要 `**HLOOKUP**` 或修改后的 `**VLOOKUP**` 函数来水平查找数据。
 - en: 'In *[Figure 6.10](#fig6_10)*, we look up the supplier with the lowest quoted
     price:'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 *[图 6.10](#fig6_10)* 中，我们查找了最低报价的供应商：
 - en: '![](images/Figure-6.10.jpg)'
+  id: totrans-87
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.10.jpg)'
 - en: '**Figure 6.10:** VLOOKUP and XLOOKUP function after column deletion'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.10：** 在删除列后的 `VLOOKUP` 和 `XLOOKUP` 函数'
 - en: '`=VLOOKUP(MIN(E67:G67),TRANSPOSE(IF({1;0},E67:G67,Reps)), 2,0)`'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(MIN(E67:G67), TRANSPOSE(IF({1;0}, E67:G67, Reps)), 2, 0)`'
 - en: '`=XLOOKUP(MIN(E67:G67),E67:G67,$E$66:$G$66)`'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(MIN(E67:G67), E67:G67, $E$66:$G$66)`'
 - en: As we can see from the preceding functions, `**XLOOKUP**` is easy to write and
     explain.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们从前述函数中看到的，`**XLOOKUP**` 很容易编写和解释。
 - en: 'Here is how the `**XLOOKUP**` function works:'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是 `**XLOOKUP**` 函数的工作原理：
 - en: '`**MIN(E67:G67):**` the MIN function returns the smallest quoted price per
     item. This becomes our lookup value.'
+  id: totrans-93
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MIN(E67:G67):**` `MIN` 函数返回每个项目的最低报价。这将成为我们的查找值。'
 - en: '`**E67:G67:**` This is our lookup array, that is, all the price ranges. This
     is where we will find the position of the lowest price.'
+  id: totrans-94
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**E67:G67:**` 这是我们的查找数组，即所有价格范围。这是我们将找到最低价格位置的地方。'
 - en: '`**$E$66:$G$66:**` This is our return array, that is, all the suppliers. We
     will return the supplier whose position corresponds to the lowest price.'
+  id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**$E$66:$G$66:**` 这是我们的返回数组，即所有供应商。我们将返回位置对应于最低价格的供应商。'
 - en: '[Easily lookup data from the bottom up](toc.xhtml#s91a)'
+  id: totrans-96
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松从底部向上查找数��](toc.xhtml#s91a)'
 - en: By default, the XLOOKUP and VLOOKUP functions lookup data from top to bottom
     and return the first TRUE value.
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 默认情况下，`XLOOKUP` 和 `VLOOKUP` 函数从上到下查找数据，并返回第一个 `TRUE` 值。
 - en: 'In *[Figure 6.11](#fig6_11)*, we look up the last date customer “Clay Rozendal”
     bought from us:'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 *[图 6.11](#fig6_11)* 中，我们查找了最后一次客户“Clay Rozendal”向我们购买的日期：
 - en: '![](images/Figure-6.11.jpg)'
+  id: totrans-99
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.11.jpg)'
 - en: '**Figure 6.11:** XLOOKUP function lookup from bottom to top'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.11：** `XLOOKUP` 函数从下到上查找'
 - en: '`=XLOOKUP(H3,SalesTable[Customer],SalesTable[Date],,,-1)`'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(H3,SalesTable[Customer],SalesTable[Date],,,-1)`'
 - en: The only trick here is to specify the correct search mode in `**XLOOKUP**`,
     that is, -1.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里唯一的诀窍是在`**XLOOKUP**`中指定正确的搜索模式，即-1。
 - en: This search mode parameter determines the search behavior of the function, that
     is, 1 (first to last), -1 (last to first), or 2 (binary search). If omitted, `**XLOOKUP**`
     will default to 1 (first to last).
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个搜索模式参数确定函数的搜索行为，即1（从头到尾）、-1（从尾到头）或2（二进制搜索）。如果省略，`**XLOOKUP**`将默认为1（从头到尾）。
 - en: 'We need to use the following function to get the same results using `**VLOOKUP**`.
     As shown in *[Figure 6.12](#fig6_12)*, the `**VLOOKUP**` function is complicated
     and hard to understand:'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要使用以下函数来使用`**VLOOKUP**`获得相同的结果。如*[图 6.12](#fig6_12)*所示，`**VLOOKUP**`函数复杂且难以理解：
 - en: '`=VLOOKUP(`'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=VLOOKUP(`'
 - en: '`MAX((SalesTable[Customer]=H3)*ROW(SalesTable[Customer])),`'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: '`MAX((SalesTable[Customer]=H3)*ROW(SalesTable[Customer])),`'
 - en: '`IF({1,0},(SalesTable[Customer]=H3)*ROW(SalesTable[Customer]),SalesTable[Date]),`'
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: '`IF({1,0},(SalesTable[Customer]=H3)*ROW(SalesTable[Customer]),SalesTable[Date]),`'
 - en: '`2,0)`'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: '`2,0)`'
 - en: '![](images/Figure-6.12.jpg)'
+  id: totrans-109
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.12.jpg)'
 - en: '**Figure 6.12:** VLOOKUP function lookup from bottom to top'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.12：** VLOOKUP函数从底部向顶部查找'
 - en: 'Refer to *[Chapter 2, VLOOKUP Is Dead: Or is it?](c02.xhtml)* for an explanation
     of how the preceding `**VLOOKUP**` function works.'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考*[第 2 章，VLOOKUP 已死：还是吗？](c02.xhtml)*以了解前述`**VLOOKUP**`函数的工作原理。
 - en: '[Easily integrates wildcards in the lookup](toc.xhtml#s92a)'
+  id: totrans-112
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松将通配符集成到查找中](toc.xhtml#s92a)'
 - en: Using the asterisk (*) or the question mark (?) wildcard characters creates
     a versatile and simpler lookup value.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用星号（*）或问号（?）通配符字符创建了一个多功能且更简单的查找值。
 - en: For example, in *[Figure 6.13](#fig6_13)*, we look up the date for a cost code
     that contains the letter “P”.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图 6.13](#fig6_13)*中，我们查找包含字母“P”的成本代码的日期。
 - en: '![](images/Figure-6.13.jpg)'
+  id: totrans-115
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.13.jpg)'
 - en: '**Figure 6.13:** XLOOKUP using the asterisk Wildcards'
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.13：** 使用星号通配符的XLOOKUP'
 - en: '`=XLOOKUP(I3,SalesTable[Cost Code],SalesTable[Date],,2)`'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(I3,SalesTable[Cost Code],SalesTable[Date],,2)`'
 - en: The only trick here is remembering to use 2 as the match mode.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里唯一的诀窍是记住使用2作为匹配模式。
 - en: The match mode parameter determines how the function matches the lookup_value
     with the values in the lookup_array. It can be specified as 0 (exact match), -1
     (exact or next smaller), 1 (exact or next larger), or 2 (wild character match).
     If omitted, XLOOKUP will default to an exact match.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 匹配模式参数确定函数如何将查找值与查找数组中的值进行匹配。它可以指定为0（精确匹配）、-1（精确或下一个较小值）、1（精确或下一个较大值）或2（通配符匹配）。如果省略，XLOOKUP将默认为精确匹配。
 - en: '**Note:** The Asterisk (*) wildcard represents one or more characters in a
     text string. For example, P* will find any word that starts with the letter P,
     *P will find any word that ends with the letter P, and *P* will find any word
     with the letter P.'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：**星号（*）通配符代表文本字符串中的一个或多个字符。例如，P*将找到以字母P开头的任何单词，*P将找到以字母P结尾的任何单词，*P*将找到包含字母P的任何单词。'
 - en: Also, remember `**XLOOKUP**` function returns the first `**TRUE**` value.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 还要记住`**XLOOKUP**`函数返回第一个`**TRUE**`值。
 - en: We are not limited to using only the asterisk wildcard, but we can combine both,
     as shown in *[Figure 6.14](#fig6_14)*. In this example, we look up the date for
     a cost code whose fifth character is a “P”.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不仅限于使用星号通配符，而是可以将两者结合起来，如*[图 6.14](#fig6_14)*所示。在这个例子中，我们查找第五个字符为“P”的成本代码的日期。
 - en: As discussed, a question mark (?) wildcard represents a single character in
     a text string. Therefore, a lookup value “????P*” will find any text string whose
     fifth character is the letter “P” followed by indefinite characters.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 如讨论的，问号（?）通配符代表文本字符串中的单个字符。因此，查找值“????P*”将找到第五个字符为字母“P”后跟任意字符的任何文本字符串。
 - en: '![](images/Figure-6.14.jpg)'
+  id: totrans-124
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.14.jpg)'
 - en: '**Figure 6.14:** XLOOKUP using the question mark and asterisk Wildcards'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.14：** 使用问号和星号通配符的XLOOKUP'
 - en: '[Returns a cell reference](toc.xhtml#s93a)'
+  id: totrans-126
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[返回单元格引用](toc.xhtml#s93a)'
 - en: One of the least known features of the `**XLOOKUP**` function is that it returns
     a cell reference, not just values.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP**`函数最不为人知的功能之一是它返回单元格引用，而不仅仅是值。'
 - en: 'Though the cell reference is unseen, unlike the returned value, it can still
     be used, as shown in *[Figure 6.15](#fig6_15)*:'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管单元格引用是看不见的，不像返回的值，但仍然可以使用，如*[图 6.15](#fig6_15)*所示：
 - en: '![](images/Figure-6.15.jpg)'
+  id: totrans-129
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.15.jpg)'
 - en: '**Figure 6.15:** XLOOKUP returning cell reference'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.15：** XLOOKUP返回单元格引用'
 - en: '`=SUM(XLOOKUP(I95,Customers,XLOOKUP(J95,Regions,Data)):`'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=SUM(XLOOKUP(I95,Customers,XLOOKUP(J95,Regions,Data)):`'
 - en: '`XLOOKUP(I95,Customers,XLOOKUP(K95,Regions,Data)))`'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: '`XLOOKUP(I95,客户, XLOOKUP(K95,地区,数据)))`'
 - en: 'Here is how the formula works:'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 公式的工作原理如下：
 - en: '**Step 1**: Create named ranges for the sections to use in the formulas. Select
     every region, as shown in *[Figure 6.16](#fig6_16)*, go to the Name box, and give
     it a name.![](images/Figure-6.16.jpg)'
+  id: totrans-134
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 1**：为公式中使用的部分创建命名范围。选择每个地区，如*[图 6.16](#fig6_16)*所示，转到名称框，并给它一个名称。![](images/Figure-6.16.jpg)'
 - en: '**Figure 6.16:** Creating Named Ranges'
+  id: totrans-135
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 6.16：** 创建命名范围'
 - en: '**Step 2**: Write the nested `**XLOOKUP**` functions:'
+  id: totrans-136
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 2**：编写嵌套的`**XLOOKUP**`函数：'
 - en: The nested `**XLOOKUP**` function, XLOOKUP(J95,Regions,Data), returns the region
     data. This forms the return array of the main `**XLOOKUP**` function.
+  id: totrans-137
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 嵌套的`**XLOOKUP**`函数，XLOOKUP(J95,地区,数据)，返回地区数据。这形成了主`**XLOOKUP**`函数的返回数组。
 - en: 'Using the nested `**XLOOKUP**` function results as the return array, lookup
     the position of the customer:'
+  id: totrans-138
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用嵌套的`**XLOOKUP**`函数作为返回数组，查找客户的位置：
 - en: '`**XLOOKUP(I95,Customers,XLOOKUP(J95,Regions,Data))**`'
+  id: totrans-139
   prefs:
   - PREF_IND
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP(I95,客户, XLOOKUP(J95,地区,数据))**`'
 - en: 'To force the `**XLOOKUP**` functions to return the cell references, use the
     range operator (:) between the `**XLOOKUP**` returning the Eastern Region and
     the one returning the Western region (see *[Figure 6.17](#fig6_17)*):'
+  id: totrans-140
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 要强制`**XLOOKUP**`函数返回单元格引用，使用范围运算符（:）在返回东部地区的`**XLOOKUP**`和返回西部地区的`**XLOOKUP**`之间（参见*[图
+    6.17](#fig6_17)*）：
 - en: '`**XLOOKUP(I95,Customers,XLOOKUP(J95,Regions,Data)):**`'
+  id: totrans-141
   prefs:
   - PREF_IND
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP(I95,客户, XLOOKUP(J95,地区,数据)):**`'
 - en: '`**XLOOKUP(I95,Customers,XLOOKUP(K95,Regions,Data))**`'
+  id: totrans-142
   prefs:
   - PREF_IND
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP(I95,客户, XLOOKUP(K95,地区,数据))**`'
 - en: '![](images/Figure-6.17.jpg)'
+  id: totrans-143
   prefs:
   - PREF_IND
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure-6.17.jpg)'
 - en: '**Figure 6.17:** XLOOKUP returns cell Ranges'
+  id: totrans-144
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 6.17：** XLOOKUP 返回单元格范围'
 - en: 'Step 3: Finally, sum up the above-returned range:'
+  id: totrans-145
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 步骤 3：最后，对上述返回的范围求和：
 - en: '`**=SUM(**`'
+  id: totrans-146
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**=SUM(**`'
 - en: '`**XLOOKUP(I95,Customers,XLOOKUP(J95,Regions,Data)):**`'
+  id: totrans-147
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP(I95,客户, XLOOKUP(J95,地区,数据)):**`'
 - en: '`**XLOOKUP(I95,Customers,XLOOKUP(K95,Regions,Data))**`'
+  id: totrans-148
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP(I95,客户, XLOOKUP(K95,地区,数据))**`'
 - en: '`**)**`'
+  id: totrans-149
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**)**`'
 - en: '**Note:** The `**XLOOKUP**` cannot return multiple rows/column references;
     it is limited to a single-cell reference. For multiple rows/columns references,
     use multiple `**XLOOKUP**` separated by a range operator (:)'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** `**XLOOKUP**` 无法返回多行/列引用；它仅限于单个单元格引用。对于多行/列引用，请使用多个以范围运算符（:）分隔的`**XLOOKUP**`'
 - en: '[Returns values in case of No Match](toc.xhtml#s94a)'
+  id: totrans-151
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[在没有匹配项的情况下返回值](toc.xhtml#s94a)'
 - en: Unlike other lookup functions, which return an error if a match is not found,
     XLOOKUP has an inbuilt “if no match” found argument.
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 与其他查找函数不同，如果未找到匹配项，XLOOKUP具有内置的“如果未找到匹配项”参数。
 - en: For example, in *[Figure 6.19](#fig6_19)*, we are only supposed to get a discount
     for discounted items while returning zero for the rest.
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图 6.19](#fig6_19)*中，我们只应该为打折商品获得折扣，而对其他商品返回零。
 - en: '![](images/Figure-6.18.jpg)'
+  id: totrans-154
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.18.jpg)'
 - en: '**Figure 6.18:** XLOOKUP if_not_ found argument'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.18：** XLOOKUP if_not_found 参数'
 - en: 'We must use the `**if_not_found**` argument to capture the zero for non-discounted
     items, as shown in *[Figure 6.18](#fig6_18)*:'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们必须使用`**if_not_found**`参数来捕获非打折商品的零，如*[图 6.18](#fig6_18)*所示：
 - en: '![](images/Figure-6.19.jpg)'
+  id: totrans-157
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.19.jpg)'
 - en: '**Figure 6.19:** XLOOKUP Return a value if Match is not found'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.19：** XLOOKUP 如果未找到匹配项则返回一个值'
 - en: '[Easily do a three-way lookup](toc.xhtml#s95a)'
+  id: totrans-159
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松进行三向查找](toc.xhtml#s95a)'
 - en: 'Unlike the VLOOKUP function, a nested XLOOKUP function easily does a three-way
     lookup, as shown in *[Figure 6.20](#fig6_20)*:'
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 与VLOOKUP函数不同，嵌套的XLOOKUP函数可以轻松进行三向查找，如*[图 6.20](#fig6_20)*所示：
 - en: '![](images/Figure-6.20.jpg)'
+  id: totrans-161
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.20.jpg)'
 - en: '**Figure 6.20:** XLOOKUP three-way lookup'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.20：** XLOOKUP 三向查找'
 - en: '`=XLOOKUP(J126&K126,SaleReps&Products,`'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(J126&K126,销售代表&产品,`'
 - en: '`XLOOKUP(L126, Months, Amount))`'
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: '`XLOOKUP(L126, 月份, 金额))`'
 - en: 'Here is how the function works:'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的工作原理如下：
 - en: '**Step 1**: Create named ranges for the sections to use in the formulas. Select
     every region as highlighted in *[Figure 6.20](#fig6_20)*. To create a named range,
     Highlight the data, go to the Name box, and give it a Name. Finally, press Enter.'
+  id: totrans-166
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 1**：为公式中使用的部分创建命名范围。选择每个地区，如*[图 6.20](#fig6_20)*中突出显示的。要创建一个命名范围，突出显示数据，转到名称框，并给它一个名称。最后，按Enter键。'
 - en: '**Step 2**: Write the nested `**XLOOKUP**` functions:'
+  id: totrans-167
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 2**：编写嵌套的`**XLOOKUP**`函数：'
 - en: The nested `**XLOOKUP**` function, `**XLOOKUP(L126, Months, Amount)**`, returns
     the criterion Month data. This forms the return array of the main XLOOKUP function.
+  id: totrans-168
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 嵌套的`**XLOOKUP**`函数，`**XLOOKUP(L126, 月份, 金额)**`，返回准则月份数据。这形成了主XLOOKUP函数的返回数组。
 - en: As for the main `**XLOOKUP**` function, first, create a concatenated criterion
     — `**J126&K126**`. This returns a combination of the sales rep and product criteria.
     Then create combined Sales reps and Product columns, as shown in *[Figure 6.21](#fig6_21)*:![](images/Figure-6.21.jpg)
+  id: totrans-169
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 至于主要的`**XLOOKUP**`函数，首先创建一个连接的标准 — `**J126&K126**`。这返回销售代表和产品标准的组合。然后创建组合的销售代表和产品列，如*[图6.21](#fig6_21)*所示：![](images/Figure-6.21.jpg)
 - en: '**Figure 6.21:** XLOOKUP concatenated columns as lookup array'
+  id: totrans-170
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图6.21：** XLOOKUP连接列作为查找数组'
 - en: '**Step 3**: Finally, get the position of the combined criteria in the combined
     columns. Then return the amount in the same position.'
+  id: totrans-171
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤3**：最后，获取组合条件在组合列中的位置。然后返回相同位置的金额。'
 - en: '**Note:** The order in which you concatenate the criteria should be the same
     order for the columns.'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** 连接条件的顺序应该与列的顺序相同。'
 - en: For example, if, in the preceding scenario, we created a `**SalesRep&Product**`
     combo criterion, then we must create a `**SalesRep&Product**` combo Lookup array.
     Any other order will not work.
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在前面的情景中，如果我们创建了一个`**SalesRep&Product**`组合标准，那么我们必须创建一个`**SalesRep&Product**`组合查找数组。任何其他顺序都不起作用。
 - en: '[Easily returns non-adjacent columns](toc.xhtml#s96a)'
+  id: totrans-174
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松返回非相邻列](toc.xhtml#s96a)'
 - en: 'Using the preceding example, let us now use the XLOOKUP function to return
     the January and March Amounts, as shown in *[Figure 6.22](#fig6_22)*:'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用上面的示例，现在让我们使用XLOOKUP函数返回一月和三月的金额，如*[图6.22](#fig6_22)*所示：
 - en: '![](images/Figure-6.22.jpg)'
+  id: totrans-176
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.22.jpg)'
 - en: '**Figure 6.22:** XLOOKUP return non-adjacent column values'
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图6.22：** XLOOKUP返回非相邻列值'
 - en: '`=XLOOKUP(J126&K126, SaleReps&Products, IF({1,0},Jan,Mar))`'
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(J126&K126, SaleReps&Products, IF({1,0},Jan,Mar))`'
 - en: 'Here is how the function works:'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的工作原理如下：
 - en: '**Step 1**: Create named ranges for the sections to use in the formulas. Select
     every region as highlighted in *[Figure 6.22](#fig6_22)*. To create a named range,
     Highlight the data, go to the Name box, and give it a Name. Finally, press Enter.'
+  id: totrans-180
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤1**：为公式中使用的部分创建命名范围。选择如*[图6.22](#fig6_22)*中突出显示的每个区域。要创建命名范围，突出显示数据，转到名称框，并给它一个名称。最后，按Enter键。'
 - en: '**Step 2**: Use the IF function to return non-adjacent columns, as shown in
     *[Figure 6.23](#fig6_23)*. This is the only trick you need to remember.'
+  id: totrans-181
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤2**：使用IF函数返回非相邻列，如*[图6.23](#fig6_23)*所示。这是你需要记住的唯一技巧。'
 - en: '**Step 3**: Create a concatenated criterion — J126&K126\. This returns a combination
     of the sales rep and product criteria. Then create a combined lookup array of
     Sales reps and Product columns.'
+  id: totrans-182
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤3**：创建一个连接的标准 — J126&K126。这返回销售代表和产品标准的组合。然后创建销售代表和产品列的组合查找数组。'
 - en: '**Step 4**: Finally, get the position of the combined criteria in the combined
     lookup array columns. Then return the amounts, from the non-adjacent columns,
     in the same position.'
+  id: totrans-183
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤4**：最后，获取组合条件在组合查找数组列中的位置。然后返回相同位置的非相邻列中的金额。'
 - en: '**Note**: The alternative to the IF function is the `**CHOOSE**` function as
     follows:'
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：** IF函数的替代方案是`**CHOOSE**`函数，如下所示：'
 - en: '`**=XLOOKUP(J126&K126, SaleReps&Products, CHOOSE({1,2},Jan,Mar))**`'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: '`**=XLOOKUP(J126&K126, SaleReps&Products, CHOOSE({1,2},Jan,Mar))**`'
 - en: '![](images/Figure-6.23.jpg)'
+  id: totrans-186
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.23.jpg)'
 - en: '**Figure 6.23:** IF return non-adjacent columns'
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图6.23：** IF返回非相邻列'
 - en: 'The alternative way is to use the Filter function to return non-adjacent columns
     as shown in *[Figure 6.24](#fig6_24)*:'
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一种方法是使用Filter函数返回非相邻列，如*[图6.24](#fig6_24)*所示：
 - en: '![](images/Figure-6.24.jpg)'
+  id: totrans-189
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.24.jpg)'
 - en: '**Figure 6.24:** FILTER function returns non-adjacent columns'
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图6.24：** FILTER函数返回非相邻列'
 - en: '`=XLOOKUP(J126&K126, SaleReps&Products,FILTER(Amounts,{1,0,1}))`'
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(J126&K126, SaleReps&Products,FILTER(Amounts,{1,0,1}))`'
 - en: The only trick to learn here is to learn how to use the include parameter to
     get non-adjacent rows (for more information, please refer to the FILTER function
     in the next chapter).
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里需要学习的唯一技巧是学习如何使用包含参数来获取非相邻行（有关更多信息，请参考下一章中的FILTER函数）。
 - en: The “include” part of a filter function typically refers to the condition that
     specifies which elements from a given list or array should be included in the
     filtered result. If a condition is TRUE (1), then it is included; otherwise, it
     is not included.
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: Filter函数的“包含”部分通常指定应在过滤结果中包含哪些给定列表或数组的元素的条件。如果条件为TRUE（1），则包含；否则，不包含。
 - en: '[Returns the last/first non-empty cell](toc.xhtml#s97a)'
+  id: totrans-194
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[返回最后/第一个非空单元格](toc.xhtml#s97a)'
 - en: 'Other than the `**LOOKUP**` function, a better alternative to getting the last/first
     non-empty cell is the `**XLOOKUP**` function, as shown in *[Figure 6.25](#fig6_25)*:'
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了`**LOOKUP**`函数外，获取最后/第一个非空单元格的更好选择是`**XLOOKUP**`函数，如*[图 6.25](#fig6_25)*所示：
 - en: '![](images/Figure-6.25.jpg)'
+  id: totrans-196
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.25.jpg)'
 - en: '**Figure 6.25:** XLOOKUP last/first non-empty cells'
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.25：** XLOOKUP 最后/第一个非空单元格'
 - en: 'To get the First payment:'
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 要获得第一笔付款：
 - en: '`=XLOOKUP(FALSE,ISBLANK(E158:I158),$E$157:$I$157)`'
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(FALSE,ISBLANK(E158:I158),$E$157:$I$157)`'
 - en: 'To get the Last payment:'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 要获得最后一笔付款：
 - en: '`=XLOOKUP(FALSE,ISBLANK(E158:I158),$E$157:$I$157,,-1)`'
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(FALSE,ISBLANK(E158:I158),$E$157:$I$157,,-1)`'
 - en: Here is how the function works.
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的工作原理如下。
 - en: '**Step 1**: Check if the cells are blank using the ISBLANK function. This returns
     an array of TRUE/FALSE values, as shown in *[Figure 6.26](#fig6_26)*:![](images/Figure-6.26.jpg)'
+  id: totrans-203
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 1**：使用ISBLANK函数检查单元格是否为空。这将返回一个TRUE/FALSE值数组，如*[图 6.26](#fig6_26)*所示：![](images/Figure-6.26.jpg)'
 - en: '**Figure 6.26:** ISBLANK array of TRUE/FALSE'
+  id: totrans-204
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 6.26：** ISBLANK TRUE/FALSE 数组'
 - en: '**Step 2**: To get the first Payment, search for the first FALSE value in the
     array: `**=XLOOKUP(FALSE,ISBLANK(E158:I158),$E$157:$I$157)**`'
+  id: totrans-205
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 2**：要获得第一笔付款，在数组中搜索第一个FALSE值：`**=XLOOKUP(FALSE,ISBLANK(E158:I158),$E$157:$I$157)**`'
 - en: '**Step 3**: To get the last Payment, we specify -1 as the search_mode. The
     XLOOKUP function will match the last FALSE value to the first FALSE value in the
     range: `**=XLOOKUP(FALSE,ISBLANK(E158:I158),$E$157:$I$157,,-1)**`'
+  id: totrans-206
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 3**：要获得最后一笔付款，我们将-1指定为search_mode。XLOOKUP函数将最后一个FALSE值与范围中的第一个FALSE值进行匹配：`**=XLOOKUP(FALSE,ISBLANK(E158:I158),$E$157:$I$157,,-1)**`'
 - en: '[Easily lookup non-contiguous array](toc.xhtml#s98a)'
+  id: totrans-207
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松查找非连续数组](toc.xhtml#s98a)'
 - en: 'A nested XLOOKUP function also easily gets values from the non-contiguous array,
     as shown in *[Figure 6.27](#fig6_27)*:'
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 嵌套的XLOOKUP函数还可以轻松地从非连续数组中获取值，如*[图 6.27](#fig6_27)*所示：
 - en: '![](images/Figure-6.27.jpg)'
+  id: totrans-209
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.27.jpg)'
 - en: '**Figure 6.27:** XLOOKUP non-contiguous array'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.27：** XLOOKUP 非连续数组'
 - en: '`=XLOOKUP(TRUE,[@Product]=”Chairs”,`'
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(TRUE,[@Product]=”Chairs”,`'
 - en: '`XLOOKUP([@Amount], DiscountChairs[Amt], DiscountChairs[Disc],,-1),`'
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: '`XLOOKUP([@Amount], DiscountChairs[Amt], DiscountChairs[Disc],,-1),`'
 - en: '`XLOOKUP([@Amount], DiscountLaptops[Amt], DiscountLaptops[Disc],,-1))`'
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: '`XLOOKUP([@Amount], DiscountLaptops[Amt], DiscountLaptops[Disc],,-1))`'
 - en: Here is how the function works.
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的工作原理如下。
 - en: '**Step 1**: Check if the product is “Chairs”. This returns a TRUE/FALSE value.'
+  id: totrans-215
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 1**：检查产品是否为“椅子”。这将返回一个TRUE/FALSE值。'
 - en: '**Step 2**: Since we use “TRUE” as the lookup value, the first nested XLOOKUP
     is executed if the preceding comparison is TRUE. It gets the discount percentage
     from the chairs’ discount table using an approximate match (we specify -1 as the
     match_mode for an approximate match lookup).'
+  id: totrans-216
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 2**：由于我们使用“TRUE”作为查找值，如果前面的比较为TRUE，则执行第一个嵌套的XLOOKUP。它使用近似匹配（我们指定-1作为匹配模式以进行近似匹配查找）从椅子的折扣表中获取折扣百分比。'
 - en: '`**XLOOKUP([@Amount], DiscountChairs[Amt], DiscountChairs[Disc],,-1),**`'
+  id: totrans-217
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP([@Amount], DiscountChairs[Amt], DiscountChairs[Disc],,-1),**`'
 - en: '**Step 3**: If the value is `**FALSE**`, we execute the `**XLOOKUP**` that
     is in the **“if_not_found”** argument of the `**XLOOKUP**`. This `**XLOOKUP**`
     gets a discount percentage from the laptops’ discount table. Note: this is also
     an approximate match lookup.'
+  id: totrans-218
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**步骤 3**：如果值为`**FALSE**`，我们执行`**XLOOKUP**`，该函数位于`**XLOOKUP**`的**“if_not_found”**参数中。这个`**XLOOKUP**`从笔记本电脑的折扣表中获取折扣百分比。注意：这也是一个近似匹配查找。'
 - en: '`**XLOOKUP([@Amount], DiscountLaptops[Amt], DiscountLaptops[Disc],,-1)**`'
+  id: totrans-219
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP([@Amount], DiscountLaptops[Amt], DiscountLaptops[Disc],,-1)**`'
 - en: '[Easily returns duplicate lookup values](toc.xhtml#s99a)'
+  id: totrans-220
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[轻松返回重复查找值](toc.xhtml#s99a)'
 - en: While, by default, the `**XLOOKUP**` function does not return multiple match
     values if the lookup_array contains duplicate values, it returns the first `**TRUE**`
     value.
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然，默认情况下，`**XLOOKUP**`函数在查找数组包含重复值时不返回多个匹配值，但它会返回第一个`**TRUE**`值。
 - en: 'However, you can achieve this if you nest the `**LARGE**` function, as shown
     in *[Figure 6.28](#fig6_28)*:'
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 但是，如果嵌套`**LARGE**`函数，则可以实现这一点，如*[图 6.28](#fig6_28)*所示：
 - en: '![](images/Figure-6.28.jpg)'
+  id: totrans-223
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-6.28.jpg)'
 - en: '**Figure 6.28:** XLOOKUP returns duplicate lookup values.'
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 6.28：** XLOOKUP 返回重复查找值。'
 - en: '`=XLOOKUP(`'
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=XLOOKUP(`'
 - en: '`LARGE((Vendors=$J$183)*ROW(Vendors),ROW(A1)),`'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: '`LARGE((Vendors=$J$183)*ROW(Vendors),ROW(A1)),`'
 - en: '`ROW(Vendors),January,””)`'
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: '`ROW(Vendors),January,””)`'
 - en: Here is how the function works.
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的工作原理如下。
 - en: '`**(Vendors=$J$183)**` checks which Vendor is equal to “Emily” and returns
     an array of TRUE/FALSE.'
+  id: totrans-229
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**(Vendors=$J$183)**` 检查哪个供应商等于“Emily”并返回一个TRUE/FALSE数组。'
 - en: '`**(Vendors=$J$183)*ROW(Vendors)**` multiply the above array of TRUE/FALSE
     with the row numbers. This returns an array of row numbers for vendor Emily; otherwise,
     it returns zero (see *[Figure 6.29](#fig6_29)*):![](images/Figure-6.29.jpg)'
+  id: totrans-230
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**(Vendors=$J$183)*ROW(Vendors)**` 将上述 TRUE/FALSE 数组与行号相乘。这将返回供应商 Emily 的行号数组；否则，返回零（见
+    *[图6.29](#fig6_29)*）：![](images/Figure-6.29.jpg)'
 - en: '**Figure 6.29:** Row numbers for criterion vendor'
+  id: totrans-231
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图6.29：** 标准供应商的行号'
 - en: We need to iterate over these row numbers lists and return one at a time as
     the lookup value for `**XLOOKUP**`. We use the LARGE function for this task, which
     returns the row numbers from the Largest to the Smallest. Note ROW(A1) evaluates
     to 1, and as you drag the function down, it increases until the complete list
     is iterated. `**LARGE((Vendors=$J$183)*ROW(Vendors),ROW(A1)),**`
+  id: totrans-232
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们需要遍历这些行号列表，并逐个作为 `**XLOOKUP**` 的查找值返回。我们使用 LARGE 函数来完成此任务，它从最大到最小返回行号。注意 ROW(A1)
+    评估为1，当您向下拖动函数时，它会增加，直到完整列表被迭代。`**LARGE((Vendors=$J$183)*ROW(Vendors),ROW(A1)),**`
 - en: '`**XLOOKUP**` returns the January Amount for every row number.'
+  id: totrans-233
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP**` 返回每行号的一月金额。'
 - en: '[Conclusion](toc.xhtml#s100a)'
+  id: totrans-234
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结论](toc.xhtml#s100a)'
 - en: In this chapter, we explored the power of the new XLOOKUP dynamic function and
     observed how easily it makes looking up values.
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们探讨了新 XLOOKUP 动态函数的强大功能，并观察了它如何轻松查找值。
 - en: One of the unique features that sets `**XLOOKUP**` apart from other functions
     is its search mode from last to first, unlike functions that search from top to
     bottom.
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: 将 `**XLOOKUP**` 与其他函数区分开的一个独特特性是其搜索模式从后往前，而不是从上到下。
 - en: Unlike other functions that return errors if the lookup value is not found and
     we need to nest them in the IFERROR function, this is not the case with XLOOKUP,
     since it has an `**If_not_found**` argument where we can return a value or a function.
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: 与其他函数不同，如果查找值未找到并且我们需要将它们嵌套在 IFERROR 函数中，XLOOKUP 不需要这样做，因为它有一个 `**If_not_found**`
+    参数，我们可以��回一个值或一个函数。
 - en: In the next chapter, we will learn of a better lookup function that can return
     multiple values if the `**lookup_array**` contains duplicate values — FILTER Function.
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将了解一个更好的查找函数，如果 `**lookup_array**` 包含重复值，则可以返回多个值 — FILTER 函数。
 - en: '[Points to remember](toc.xhtml#s101a)'
+  id: totrans-239
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[要记住的要点](toc.xhtml#s101a)'
 - en: '`**XLOOKUP**` function returns both value and cell reference.'
+  id: totrans-240
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP**` 函数同时返回值和单元格引用。'
 - en: '`**XLOOKUP**` is generally faster than traditional lookup functions like `**VLOOKUP**`
     or `**HLOOKUP**`, especially when dealing with large data sets. For values sorted
     in ascending order, specify 2 to enable binary search_mode and -2 for values sorted
     in descending order.'
+  id: totrans-241
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP**` 通常比传统的查找函数如 `**VLOOKUP**` 或 `**HLOOKUP**` 更快，特别是处理大数据集时。对于升序排序的值，指定2以启用二进制搜索模式，对于降序排序的值，指定-2。'
 - en: '[Multiple choice questions](toc.xhtml#s102a)'
+  id: totrans-242
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[多项选择题](toc.xhtml#s102a)'
 - en: In an `**XLOOKUP**` function, what is the `**lookup_value**`?
+  id: totrans-243
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在 `**XLOOKUP**` 函数中，`**lookup_value**` 是什么？
 - en: The value to be searched for in the lookup range
+  id: totrans-244
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 要在查找范围中搜索的值
 - en: The range of values to search within
+  id: totrans-245
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 要在其中搜索的值范围
 - en: The range of values to return
+  id: totrans-246
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 要返回的值范围
 - en: The criteria used to filter the results
+  id: totrans-247
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 用于过滤结果的条件
 - en: What happens if the default `**XLOOKUP**` function does not find a match for
     the `**lookup_value**` in the lookup range?
+  id: totrans-248
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 如果默认的 `**XLOOKUP**` 函数在查找范围中找不到 `**lookup_value**`，会发生什么？
 - en: It returns an error
+  id: totrans-249
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 它返回一个错误
 - en: It returns the closest matching value
+  id: totrans-250
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 它返回最接近的匹配值
 - en: It returns a specified default value
+  id: totrans-251
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 它返回一个指定的默认值
 - en: It returns the average of the lookup range
+  id: totrans-252
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 它返回查找范围的平均值
 - en: Which of the following is NOT a valid argument in the XLOOKUP function?
+  id: totrans-253
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 以下哪项不是 `**XLOOKUP**` 函数中的有效参数？
 - en: “`**lookup_value**`”
+  id: totrans-254
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: “`**lookup_value**`”
 - en: “`**return_array**`”
+  id: totrans-255
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: “`**return_array**`”
 - en: “`**criteria_range**`”
+  id: totrans-256
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: “`**criteria_range**`”
 - en: “`**not_found**`”
+  id: totrans-257
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: “`**not_found**`”
 - en: What is the purpose of the “`**if_not_found**`” argument in the `**XLOOKUP**`
     function?
+  id: totrans-258
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP**` 函数中的 “`**if_not_found**`” 参数的目的是什么？'
 - en: To specify the value to return if a match is found
+  id: totrans-259
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 指定如果找到匹配项要返回的值
 - en: To specify the value to return if no match is found
+  id: totrans-260
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 指定如果找不到匹配项要返回的值
 - en: To specify the range to search for a match
+  id: totrans-261
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 指定要搜索匹配项的范围
 - en: To specify the data type of the result
+  id: totrans-262
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 指定结果的数据类型
 - en: Which Excel version introduced the `**XLOOKUP**` function?
+  id: totrans-263
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 哪个 Excel 版本引入了 `**XLOOKUP**` 函数？
 - en: Excel 2007
+  id: totrans-264
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Excel 2007
 - en: Excel 2010
+  id: totrans-265
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Excel 2010
 - en: Excel 2016
+  id: totrans-266
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Excel 2016
 - en: Office 365 Excel
+  id: totrans-267
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Office 365 Excel
 - en: What is the formula structure of the `**XLOOKUP**` function?
+  id: totrans-268
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**XLOOKUP**` 函数的公式结构是什么？'
 - en: '`**=XLOOKUP(lookup_value, lookup_array, return_array)**`'
+  id: totrans-269
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**=XLOOKUP(lookup_value, lookup_array, return_array)**`'
 - en: '`**=XLOOKUP(lookup_array, lookup_value, return_array)**`'
+  id: totrans-270
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**=XLOOKUP(lookup_array, lookup_value, return_array)**`'
 - en: '`**=XLOOKUP(return_array, lookup_value, lookup_array)**`'
+  id: totrans-271
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**=XLOOKUP(return_array, lookup_value, lookup_array)**`'
 - en: '`**=XLOOKUP(return_array, lookup_array, lookup_value)**`'
+  id: totrans-272
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`**=XLOOKUP(return_array, lookup_array, lookup_value)**`'
 - en: '[Answers](toc.xhtml#s103a)'
+  id: totrans-273
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[答案](toc.xhtml#s103a)'
 - en: a
+  id: totrans-274
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: a
 - en: a
+  id: totrans-275
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: a
 - en: c
+  id: totrans-276
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: c
 - en: b
+  id: totrans-277
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: b
 - en: d
+  id: totrans-278
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: d
 - en: a
+  id: totrans-279
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: a

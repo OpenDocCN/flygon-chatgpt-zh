@@ -1,19 +1,27 @@
 - en: '[CHAPTER 9](toc.xhtml#c09)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第 9 章](toc.xhtml#c09)'
 - en: '[ChatGPT: Using ChatGPT to solve lookup issues](toc.xhtml#c09)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[ChatGPT：使用 ChatGPT 解决查找问题](toc.xhtml#c09)'
 - en: '[Introduction](toc.xhtml#s143a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s143a)'
 - en: In this chapter, we will discuss how we can incorporate artificial intelligence
     (AI) into solving lookup problems in Excel.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论如何将人工智能（AI）融入到解决 Excel 中的查找问题中。
 - en: Before we learn about external artificial intelligence, we want to acknowledge
     some of the inbuilt AI features like Flash Fill (which uses pattern recognition),
     Column by Example Option in Power Query (also uses pattern recognition and writes
@@ -21,736 +29,1051 @@
     Recommended Charts (shows an array of charts you can create from data), and Recommended
     Pivot Tables (shows an array of pivot table analysis you can create from your
     data).
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们了解外部人工智能之前，我们想要承认一些内置的 AI 功能，如 Flash Fill（使用模式识别）、Power Query 中的按列示例选项（也使用模式识别并编写可重用的
+    M 代码函数）、数据分析选项（创建图表和分析）、推荐图表（显示您可以从数据创建的各种图表）和推荐数据透视表（显示您可以从数据创建的各种数据透视表分析）。
 - en: ChatGPT represents a cutting-edge development in language generation pioneered
     by OpenAI. It falls under the GPT (Generative Pre-trained Transformer) family
     of models. Utilizing a transformer architecture, GPT models can comprehend and
     generate text resembling human language, drawing upon the input they are provided
     with.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 代表了由 OpenAI 领先的语言生成领域的尖端发展。它属于 GPT（生成式预训练变换器）模型系列。利用变换器架构，GPT 模型可以理解和生成类似人类语言的文本，借鉴它们所提供的输入。
 - en: The most critical skill when using ChatGPT is prompting. A prompt is a text
     you provide to start a chat or ask for a specific response from the model. When
     you interact with ChatGPT, you start the conversation with a prompt — a question,
     a statement, or any text conveying your intent.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在使用 ChatGPT 时最关键的技能是提示。提示是您提供的文本，用于开始聊天或要求模型给出特定回应。当您与 ChatGPT 交互时，您会以提示开始对话
+    —— 一个问题，一个陈述，或任何传达您意图的文本。
 - en: The quality and specificity of your prompt often influence the usefulness and
     relevance of the responses you receive from ChatGPT. Providing clear and detailed
     prompts can result in more accurate and helpful answers.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 您的提示的质量和具体性通常会影响您从 ChatGPT 收到的回应的实用性和相关性。提供清晰和详细的提示可以导致更准确和有用的答案。
 - en: '[Structure](toc.xhtml#s144a)'
+  id: totrans-8
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结构](toc.xhtml#s144a)'
 - en: 'In this chapter, we will discuss the following five ways to make better use
     of ChatGPT:'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下五种更好地利用 ChatGPT 的方法：
 - en: Setting up ChatGPT for optimal results
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 为获得最佳结果设置 ChatGPT
 - en: Mastering the Perfect ChatGPT Prompt
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 掌握完美的 ChatGPT 提示
 - en: Increasing Accuracy of ChatGPT Prompts
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提高 ChatGPT 提示的准确性
 - en: Tips and tricks to advanced ChatGPT usage
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 高级 ChatGPT 使用技巧
 - en: Beyond ChatGPT
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 超越 ChatGPT
 - en: '[Setting up ChatGPT for optimal results](toc.xhtml#s145a)'
+  id: totrans-15
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[为获得最佳结果设置 ChatGPT](toc.xhtml#s145a)'
 - en: The first step in getting the best out of ChatGPT is creating custom instructions,
     which helps avoid repeating preferences in every prompt.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 充分利用 ChatGPT 的第一步是创建自定义说明，这有助于避免在每个提示中重复偏好。
 - en: 'Here are the steps to follow:'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是要遵循的步骤：
 - en: To access your custom instruction setting, click on your profile and then custom
     instructions, as shown in *[Figure 9.1](#fig9_1)*:![](images/Figure-9.1.jpg)
+  id: totrans-18
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 要访问您的自定义说明设置，请单击您的个人资料，然后单击自定义说明，如*[图 9.1](#fig9_1)*所示：![](images/Figure-9.1.jpg)
 - en: '**Figure 9.1:** Accessing Custom Instructions'
+  id: totrans-19
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 9.1：** 访问自定义说明'
 - en: Tell ChatGPT something about yourself. This helps ChatGPT to give responses
     more relevant to your work/goals/interests. For example, see my example in *[Figure
     9.2](#fig9_2):*![](images/Figure-9.2.jpg)
+  id: totrans-20
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 告诉 ChatGPT 一些关于你自己的事情。这有助于 ChatGPT 给出更与你的工作/目标/兴趣相关的回应。例如，查看我的示例在*[图 9.2](#fig9_2)*：![](images/Figure-9.2.jpg)
 - en: '**Figure 9.2:** Provide ChatGPT with a context of who you are'
+  id: totrans-21
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 9.2：** 为 ChatGPT 提供关于你自己的背景'
 - en: The next step is to tell ChatGPT how you would like it to respond. Would the
     responses be formal/casual, long/short, neutral/opinionated? For example, see
     my example in *[Figure 9.3](#fig9_3):*![](images/Figure-9.3.jpg)
+  id: totrans-22
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 下一步是告诉 ChatGPT 你希望它如何回应。回应是正式/随意的，长/短的，中立/主观的？例如，查看我的示例在*[图 9.3](#fig9_3)*：![](images/Figure-9.3.jpg)
 - en: '**Figure 9.3:** Provide ChatGPT with instructions on how you would like your
     responses to be'
+  id: totrans-23
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 9.3：** 为 ChatGPT 提供关于您希望回应的指示'
 - en: Save and close, and now you can start prompting. But before then, let us learn
     how to create the instructions.
+  id: totrans-24
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 保存并关闭，现在您可以开始提示。但在此之前，让我们学习如何创建说明。
 - en: '**Note**:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**：'
 - en: ChatGPT is known for proving the wrong responses from time to time. As a novice
     in the field, you may not notice these immediately, but you can reduce the chances
     of wrong responses by asking it to include the confidence levels and source URL.
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ChatGPT以不时提供错误响应而闻名。作为该领域的新手，您可能不会立即注意到这些错误，但您可以通过要求包含置信水平和源URL来减少错误响应的可能性。
 - en: Verify the response by cross-referencing it with reliable sources (URL).
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过可靠来源（URL）交叉参考来验证响应。
 - en: See *[Figure 9.4](#fig9_4)* on configuring the confidence level and URL setting
     in ChatGPT.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 参见*[图9.4](#fig9_4)*，了解在ChatGPT中配置置信水平和URL设置。
 - en: '![](images/Figure-9.4.jpg)'
+  id: totrans-29
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-9.4.jpg)'
 - en: '**Figure 9.4:** Ask for confidence level and factual URLs'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图9.4：** 要求置信水平和事实URL'
 - en: '[Mastering the perfect ChatGPT prompt](toc.xhtml#s146a)'
+  id: totrans-31
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[掌握完美的ChatGPT提示](toc.xhtml#s146a)'
 - en: As we have learned in the introduction, the quality and specificity of your
     prompt determine the usefulness and relevance of the response.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在介绍中学到的，您的提示的质量和具体性决定了响应的实用性和相关性。
 - en: Let us now learn the four building blocks that make up a good prompt, that is,
     Task, Context, Exemplar, and Persona.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们学习构成良好提示的四个基本要素，即任务、背景、示例和角色。
 - en: '**Task**'
+  id: totrans-34
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**任务**'
 - en: It is mandatory to have a task in your prompt. This is indicated by starting
     your prompt with an action verb.
+  id: totrans-35
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 在您的提示中必须有一个任务。这通过以动作动词开始您的提示来表示。
 - en: For example, “Generate a list of Excel inbuilt lookup functions that can use
     multiple criteria to get data.”
+  id: totrans-36
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 例如，“生成一个可以使用多个条件获取数据的Excel内置查找函数列表。”
 - en: The preceding prompt will list all lookup functions and an example syntax on
     how you can use it to do a multiple criteria lookup.
+  id: totrans-37
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 前述提示将列出所有查找函数以及如何使用它进行多条件查找的示例语法。
 - en: The only problem with the preceding prompt is that it will give only functions
     in Excel and not Power Query because that is the context we have given it. So,
     what is the context?
+  id: totrans-38
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 前述提示的唯一问题是它只会提供Excel中的函数，而不会提供Power Query，因为这是我们给定的上下文。那么，什么是上下文？
 - en: '**Context**'
+  id: totrans-39
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**背景**'
 - en: ChatGPT can give an infinite amount of information, which may not be what you
     are looking for. Therefore, you need to limit the endless possibilities.
+  id: totrans-40
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: ChatGPT可以提供无限量的信息，这可能不是您要寻找的。因此，您需要限制无尽的可能性。
 - en: One way that ChatGPT limits the possibilities is by looking at the custom instructions
     we set up in the previous section.
+  id: totrans-41
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: ChatGPT限制可能性的一种方式是查看我们在上一节设置的自定义说明。
 - en: Additionally, you need to indicate the Environment as a linting factor.
+  id: totrans-42
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 此外，您需要指示环境作为一个限制因素。
 - en: 'For example, if you need Power Query Lookup functions, then the prompt would
     be: “Generate a list of Power Query lookup functions that can use multiple criteria
     to get data.”'
+  id: totrans-43
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 例如，如果您需要Power Query查找函数，则提示将是：“生成一个可以使用多个条件获取数据的Power Query查找函数列表。”
 - en: The environment can be narrowed to a specific function. For example, “Generate
     a list of ways the FILTER function in Excel can use multiple criteria to get data.”
+  id: totrans-44
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 环境可以缩小到特定函数。例如，“生成Excel中FILTER函数可以使用多个条件获取数据的方法列表。”
 - en: Another way of fine-tuning your context is to tell ChatGPT the user’s background.
     For example, “Write the easiest way for a novice to get data using multiple criteria
     in Power Query”. By indicating the user is a novice, ChatGPT will limit the responses
     given.
+  id: totrans-45
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 另一种微调上下文的方法是告诉ChatGPT用户的背景。例如，“写出新手获取数据使用多个条件的最简单方法”。通过指示用户是新手，ChatGPT将限制给出的响应。
 - en: '**Exemplar**'
+  id: totrans-46
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**示例**'
 - en: These are nothing more than examples in which ChatGPT can learn more about the
     required response. Including examples in your prompt significantly leads to more
     accurate results.
+  id: totrans-47
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 这些只是ChatGPT可以了解所需响应更多信息的示例。在您的提示中包含示例显着提高了结果的准确性。
 - en: 'For example, if you want the formula to include the plus sign (+) instead of
     the OR function (as we learned the `**FILTER**` function in *[Chapter 7, FILTER:
     The Ultimate Lookup Function](c07.xhtml)*), then the prompt would be “Write a
     multiple criteria `**INDEX/MATCH**` function using the plus sign instead of the
     OR function.”'
+  id: totrans-48
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 例如，如果您希望公式包含加号（+）而不是OR函数（正如我们在*[第7章，FILTER：终极查找函数](c07.xhtml)*中学到的`**FILTER**`函数），那么提示将是“使用加号而不是OR函数编写多条件`**INDEX/MATCH**`函数。”
 - en: '**Persona**'
+  id: totrans-49
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**角色**'
 - en: This is who you want the AI to be when executing a task. Think of a famous person
     whose work is available online and can be easily accessed by ChatGPT. Personas
     provide ChatGPT with the writing style, domain, and expertise level required when
     responding to a prompt.
+  id: totrans-50
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 这是您希望AI在执行任务时成为的人物。想想一个在线可访问且ChatGPT可以轻松访问的著名人物。人物角色为ChatGPT提供了在回应提示时所需的写作风格、领域和专业水平。
 - en: For example, in Excel, the persona can be a famous Microsoft MVP (most valuable
     professional).
+  id: totrans-51
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 例如，在Excel中，人物角色可以是著名的微软MVP（最有价值的专业人士）。
 - en: 'Here is an example of a prompt including personas:'
+  id: totrans-52
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 这是一个包含人物角色的提示示例：
 - en: Write a Power Query approximate lookup function. Write it as the famous Excel
     Expert Bill Jellen, aka “Mr. Excel”, or Mike Girvin, aka “Excel is Fun”.
+  id: totrans-53
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 编写一个Power Query近似查找函数。将其编写为著名的Excel专家Bill Jellen，又名“Mr. Excel”，或Mike Girvin，又名“Excel
+    is Fun”。
 - en: As shown in *[Figure 9.5](#fig9_5)*, ChatGPT will ensure that the response is
     relevant and consistent with the writing styles of the persona(s) provided.
+  id: totrans-54
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 如*[图9.5](#fig9_5)*所示，ChatGPT将确保响应与提供的人物角色的写作风格相关且一致。
 - en: '![](images/Figure-9.5.jpg)'
+  id: totrans-55
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure-9.5.jpg)'
 - en: '**Figure 9.5:** Provide ChatGPT with Persona'
+  id: totrans-56
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图9.5：** 为ChatGPT提供人物角色'
 - en: '**Note**'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**'
 - en: It is **mandatory** to have a task in your prompt.
+  id: totrans-58
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在您的提示中有一个任务是**强制性**的。
 - en: It is **important** to include a relevant context and exemplar.
+  id: totrans-59
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 包含相关背景和示例是**重要**的。
 - en: It is **good to hav**e a persona.
+  id: totrans-60
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 拥有一个人物角色是**有益的**。
 - en: '[Increasing Accuracy of ChatGPT Prompts](toc.xhtml#s147a)'
+  id: totrans-61
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[提高ChatGPT提示的准确性](toc.xhtml#s147a)'
 - en: As we have learned in the previous section on setting up ChatGPT, accuracy is
     not guaranteed, and this tends to frustrate novices who are unable to troubleshoot
     the responses.
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在前一节关于设置ChatGPT时学到的，准确性并不保证，这往往会让无法排除响应问题的新手感到沮丧。
 - en: 'Other than requesting for confidence level and URL in the responses, let us
     investigate four more ways to increase accuracy:'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了在响应中请求置信度水平和URL之外，让我们探讨四种增加准确性的方法：
 - en: '**Self-Critic**'
+  id: totrans-64
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**自我批评**'
 - en: Ask ChatGPT to critique itself and optimize its response for accuracy.
+  id: totrans-65
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 要求ChatGPT批评自己并优化其响应以提高准确性。
 - en: For example, in the previous section of Mastering prompt, we asked for an approximate
     Lookup M code using Bill Jellen or Mike Girvin’s style. Assuming we are new to
     M Code, we want ChatGPT to help us troubleshoot the code before we use it.
+  id: totrans-66
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 例如，在掌握提示的前一节中，我们要求使用Bill Jellen或Mike Girvin的风格编写近���查找M代码。假设我们对M代码还不熟悉，我们希望ChatGPT在我们使用代码之前帮助我们解决问题。
 - en: 'Here is a follow-up self-critic question we can ask, as shown in *[Figure 9.6](#fig9_6)*:'
+  id: totrans-67
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 这是一个我们可以询问的后续自我批评问题，如*[图9.6](#fig9_6)*所示：
 - en: '![](images/Figure-9.6.jpg)'
+  id: totrans-68
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure-9.6.jpg)'
 - en: '**Figure 9.6:** Ask follow-up self-critic questions'
+  id: totrans-69
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图9.6：** 提出后续自我批评问题'
 - en: '**Crisp and Concise**'
+  id: totrans-70
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**简洁明了**'
 - en: Forcing the ChatGPT to revise the response and limit it to specific steps or
     words can help increase its response accuracy.
+  id: totrans-71
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 强制ChatGPT修改响应并将其限制在特定步骤或单词可以帮助提高其响应准确性。
 - en: 'While still working on the M Code function for approximate Lookup, we can further
     ask about the steps reduced to three, as shown in *[Figure 9.7](#fig9_7)*:'
+  id: totrans-72
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 在继续研究用于近似查找的M代码功能时，我们可以进一步询问减少到三个步骤的步骤，如*[图9.7](#fig9_7)*所示：
 - en: '![](images/Figure-9.7.jpg)'
+  id: totrans-73
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure-9.7.jpg)'
 - en: '**Figure 9.7:** Limit the steps or words of the response'
+  id: totrans-74
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图9.7：** 限制响应的步骤或单词'
 - en: '**Note:** The more constraint you give ChatGPT, generally the more creative
     the response will be. Try to add a constraint every time and test your functions
     to see which one will be optimized for speed and accuracy.'
+  id: totrans-75
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**注意：** 给ChatGPT的约束越多，通常响应就会更有创意。尝试每次添加一个约束，并测试你的功能，看看哪个会优化速度和准确性。'
 - en: '**Ask ChatGPT to self-prompt**'
+  id: totrans-76
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**要求ChatGPT自我提示**'
 - en: One of the ways to get the best out of ChatGPT is by allowing it to self-prompt.
     This ensures it optimizes its prompts and leads to richer responses.
+  id: totrans-77
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 让ChatGPT发自内心地提示是让其发挥最佳作用的一种方式。这确保了它优化其提示并产生更丰富的响应。
 - en: 'For example, how can ChatGPT assist you in mastering the lookup functionality
     in Excel? (see *[Figure 9.8](#fig9_8)*):'
+  id: totrans-78
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 例如，ChatGPT如何帮助您掌握Excel中的查找功能？（见*[图9.8](#fig9_8)*）：
 - en: '![](images/Figure-9.8.jpg)'
+  id: totrans-79
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure-9.8.jpg)'
 - en: '**Figure 9.8:** Self-prompting in ChatGPT'
+  id: totrans-80
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图9.8：** ChatGPT中的自我提示'
 - en: '**Note:** Whether you are a student or a trainer, the above self-prompting
     and follow-up questions can help you create productive strategies for mastering
     any concept in Excel.'
+  id: totrans-81
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**注意：** 无论您是学生还是培训师，上述自我提示和后续问题都可以帮助您为掌握Excel中的任何概念制定有效的策略。'
 - en: Understand ChatGPT Limitations
+  id: totrans-82
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 了解ChatGPT的局限性
 - en: Knowing the current weaknesses and their walk-around will drastically increase
     your accuracy of responses.
+  id: totrans-83
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 了解当前的弱点及其解决方法将极大地提高您的回应准确性。
 - en: 'Here is a list of limitations:'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里列出了一些限制：
 - en: Understand that the accessible version of ChatGPT’s knowledge is based on its
     training data up until the last update in September 2021\. It might not have access
     to real-time data or recent events.
+  id: totrans-85
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 了解ChatGPT可访问版本的知识基于其截至2021年9月最后更新的训练数据。它可能无法访问实时数据或最新事件。
 - en: While ChatGPT has been trained on diverse topics, it might not be as specialized
     as an expert in a specific field. Its responses should be verified with domain-specific
     sources for accuracy.
+  id: totrans-86
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 尽管ChatGPT已经接受了多样化主题的训练，但它可能不像某个特定领域的专家那样专业。其回应应该通过领域特定的来源进行验证以确保准确性。
 - en: ChatGPT suffers from “AI Hallucination”, that is, the tendency to generate answers
     that sound correct but are factually wrong or biased.
+  id: totrans-87
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ChatGPT遭受“AI幻觉”的困扰，即生成听起来正确但事实上错误或有偏见的答案的倾向。
 - en: The free version is limited to text only. It can’t view, interpret, or analyze
     images, charts, or non-textual data.
+  id: totrans-88
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 免费版本仅限于文本。它无法查看、解释或分析图像、图表或非文本数据。
 - en: '[Tips and tricks to advanced ChatGPT usage](toc.xhtml#s148a)'
+  id: totrans-89
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[高级ChatGPT使用的技巧和窍门](toc.xhtml#s148a)'
 - en: As we have learned so far in this chapter — Prompting is the ultimate skill
     you need to develop to maximize the use of ChatGPT.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在本章中迄今所学到的——提示是您需要培养的终极技能，以最大限度地利用ChatGPT。
 - en: 'Here are some of the helpful ways to advance your skills:'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是一些提升技能的有用方法：
 - en: 'Set a period per day to learn prompting. Start from this free website: [https://learnprompting.org/docs/intro](https://learnprompting.org/docs/intro)'
+  id: totrans-92
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 每天设定一个学习提示的时间段。从这个免费网站开始：[https://learnprompting.org/docs/intro](https://learnprompting.org/docs/intro)
 - en: Start applying prompts frequently. This can be done by identifying a frequent
     manual task and then creating and optimizing a prompt to automate it. For example,
     if you are required to consolidate data from multiple worksheets daily, create
     a prompt that will generate an M code for you that will automate this.
+  id: totrans-93
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 经常开始应用提示。这可以通过识别频繁的手动任务，然后创建和优化提示以自动化它来完成。例如，如果您每天需要 consololidate data from
+    multiple worksheets，创建一个提示，它将为您生成一个M代码，以自动化这个过程。
 - en: Create a database of valuable prompts you have created or found online. Organize
     the prompts by the problems they will help resolve instead of functions for easy
     access and use. For example, store prompts under the header “How to return multiple
     items in a lookup” instead of “INDEX/MATCH prompts.”
+  id: totrans-94
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个有价值的提示数据库，您可以创建或在线找到。根据它们将帮助解决的问题而不是函数来组织提示，以便轻松访问和使用。例如，将提示存储在“如何在查找中返回多个项目”标题下，而不是“INDEX/MATCH提示”下。
 - en: 'Set a daily reading period where ChatGPT is solving real-world cases. See the
     example in the following link:'
+  id: totrans-95
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 设定一个每日阅读时间，ChatGPT正在解决真实案例。请参见以下链接中的示例：
 - en: '[https://blog.enterprisedna.co/chat-gpt-for-excel-a-beginners-guide-with-examples/](https://blog.enterprisedna.co/chat-gpt-for-excel-a-beginners-guide-with-examples/)'
+  id: totrans-96
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '[https://blog.enterprisedna.co/chat-gpt-for-excel-a-beginners-guide-with-examples/](https://blog.enterprisedna.co/chat-gpt-for-excel-a-beginners-guide-with-examples/)'
 - en: 'Join a Newsletter to be kept up to date with the latest developments in AI.
     The Big Brains Newsletter is a recommended option. For more information, please
     visit the following link:'
+  id: totrans-97
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 加入一个新闻简报，以便及时了解人工智能领域的最新发展。Big Brains Newsletter是一个推荐的选择。欲了解更多信息，请访问以下链接：
 - en: '[https://www.bigbraindaily.com/](https://www.bigbraindaily.com/)'
+  id: totrans-98
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '[https://www.bigbraindaily.com/](https://www.bigbraindaily.com/)'
 - en: '[Beyond ChatGPT](toc.xhtml#s149a)'
+  id: totrans-99
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[超越ChatGPT](toc.xhtml#s149a)'
 - en: 'Apart from ChatGPT, a few AI tools and why they are better alternatives are
     worth mentioning, as follows:'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了ChatGPT之外，还值得一提的是一些AI工具以及它们为什么是更好的替代品，如下所示：
 - en: Bing Chat ([https://www.bing.com/search?q=Bing+AI&showconv=1](https://www.bing.com/search?q=Bing+AI&showconv=1))
+  id: totrans-101
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Bing Chat ([https://www.bing.com/search?q=Bing+AI&showconv=1](https://www.bing.com/search?q=Bing+AI&showconv=1))
 - en: Unlike the free version of ChatGPT 3.5, the accessible version of Bing Chat
     provides a way to upload a screenshot of your data and ask AI to analyze it.
+  id: totrans-102
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 与ChatGPT 3.5的免费版本不同，Bing Chat的可访问版本提供了一种上传数据截图并要求AI分析的方法。
 - en: With the uploaded image, you can point to the AI your data cell references and
     where you want to return the results.
+  id: totrans-103
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 通过上传的图片，您可以指向AI您的数据单元引用以及您希望返回结果的位置。
 - en: '![](images/Figure-9.9.jpg)'
+  id: totrans-104
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure-9.9.jpg)'
 - en: '**Figure 9.9:** Uploading Screenshot of Data in Bing'
+  id: totrans-105
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图9.9：** 在Bing中上传数据截图'
 - en: AI Excel Bot ([https://aiexcelbot.com/?anchor=features](https://aiexcelbot.com/?anchor=features))
+  id: totrans-106
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: AI Excel 机器人 ([https://aiexcelbot.com/?anchor=features](https://aiexcelbot.com/?anchor=features))
 - en: This is a freemium service with an addon in your Excel workbook.
+  id: totrans-107
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 这是一个带有Excel工作簿插件的免费服务。
 - en: Formula Bot ([https://formulabot.com/](https://formulabot.com/))
+  id: totrans-108
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 公式机器人 ([https://formulabot.com/](https://formulabot.com/))
 - en: The advantage is that it has an addon and can upload the workbook for quicker
     analysis. Its current limitation is that it can only execute Python Code and not
     Excel functions.
+  id: totrans-109
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 优势在于它具有插件，并且可以上传工作簿以进行更快的分析。它目前的局限性在于它只能���行Python代码而不能执行Excel函数。
 - en: Install AI addon to Excel.
+  id: totrans-110
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在Excel中安装AI插件。
 - en: 'For our case, we will install the AI-aided Formula Editor. Here are the steps:'
+  id: totrans-111
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 对于我们的情况，我们将安装AI辅助公式编辑器。以下是步骤：
 - en: Go to the `**Insert**` tab and click `**Get Add-ins**`.
+  id: totrans-112
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 转到`**插入**`选项卡，然后点击`**获取插件**`。
 - en: Search for the `**AI-aided Formula Editor**` and click `**Add**`.![](images/Figure-9.10.jpg)
+  id: totrans-113
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 搜索`**AI辅助公式编辑器**`，然后点击`**添加**`。![](images/Figure-9.10.jpg)
 - en: '**Figure 9.10:** Adding AI-aided formula editor'
+  id: totrans-114
   prefs:
   - PREF_IND
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 9.10：** 添加AI辅助公式编辑器'
 - en: Sign in using your Gmail, and you are ready to start using it.
+  id: totrans-115
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用您的Gmail登录，您就可以开始使用它了。
 - en: You can upgrade to a premium subscription or use the limited free version to
     generate a formula or explain a formula.
+  id: totrans-116
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 您可以升级到高级订阅或使用有限的免费版本来生成公式或解释公式。
 - en: '[Conclusion](toc.xhtml#s150a)'
+  id: totrans-117
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结论](toc.xhtml#s150a)'
 - en: In this chapter, we explored the integration of artificial intelligence, specifically
     ChatGPT, to tackle lookup challenges in Excel. Understanding the nuances of prompting
     and leveraging ChatGPT effectively is pivotal for accurate and tailored responses.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们探讨了将人工智能，特别是ChatGPT，整合到Excel中以解决查找挑战的方法。了解提示的微妙之处并有效利用ChatGPT对于准确和定制的响应至关重要。
 - en: The chapter introduced us to ChatGPT’s capabilities, emphasizing the importance
     of crafting precise prompts to yield accurate responses. Noteworthy mentions of
     built-in AI features like Flash Fill and Power Query options provided a contextual
     backdrop for our exploration.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章向我们介绍了ChatGPT的能力，强调了精确提示的重要性以产生准确的响应。内置AI功能如Flash Fill和Power Query选项的值得一提，为我们的探索提供了上下文背景。
 - en: Your journey with ChatGPT doesn’t end here; it’s only the beginning. Readers
     are invited to share their experiences or pose questions in Excel forums. Let
     this be a two-way conversation. Ask the experts to share how they have applied
     ChatGPT to Excel tasks and what challenges they faced. Their insights can enrich
     your learning and that of others in the community. Ask questions, share your successes,
     and let’s learn from each other.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 与ChatGPT的旅程并没有结束；这只是一个开始。读者被邀请在Excel论坛中分享他们的经验或提出问题。让这成为一个双向对话。请专家分享他们如何将ChatGPT应用于Excel任务以及他们面临的挑战。他们的见解可以丰富您的学习以及社区中其他人的学习。提出问题，分享您的成功，让我们互相学习。
 - en: Lastly, readers are encouraged to embark on their learning odyssey. They can
     explore reputable online resources, join forums, or participate in tutorial sessions.
     The world of ChatGPT and Excel is vibrant and constantly evolving. By seeking
     knowledge beyond these pages, you empower yourself to navigate the ever-changing
     landscape of AI-driven data solutions.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，鼓励读者踏上他们的学习之旅。他们可以探索权威的在线资源，加入论坛，或参加教程会话。ChatGPT和Excel的世界充满活力，不断发展。通过寻求这些页面之外的知识，您可以赋予自己在人工智能驱动的数据解决方案不断变化的领域中航行的能力。
 - en: '[Points to remember](toc.xhtml#s151a)'
+  id: totrans-122
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[需要记住的要点](toc.xhtml#s151a)'
 - en: '**Clear and Specific Prompts**: Craft precise prompts with specific instructions,
     using action verbs and detailing the desired outcome. Clarity in your queries
     ensures accurate and relevant responses from ChatGPT.'
+  id: totrans-123
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**清晰明确的提示**：使用动作动词和详细说明所需结果，精心制作明确的提示。您的查询的清晰度确保ChatGPT提供准确和相关的响应。'
 - en: '**Provide Context**: Clearly define the context of your Excel analysis, specifying
     the type of data and the scope of your task. Contextual information helps ChatGPT
     tailor its responses to your specific data needs.'
+  id: totrans-124
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**提供上下文**：清晰地定义您Excel分析的上下文，指定数据类型和任务范围。上下文信息有助于ChatGPT根据您特定的数据需求调整其响应。'
 - en: '**Engage in Dialogue**: Treat ChatGPT as a collaborative partner. Ask follow-up
     questions and seek clarification if the initial response is not exact. Iterative
     conversations guide ChatGPT toward the precise solution you’re looking for.'
+  id: totrans-125
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**参与对话**：将ChatGPT视为合作伙伴。如果初始响应不准确，请提出后续问题并寻求澄清。迭代对话将引导ChatGPT朝着您寻找的精确解决方案前进。'
 - en: '**Verify and Learn**: Always verify ChatGPT’s responses by cross-referencing
     with reliable sources and conducting additional analyses in Excel. Human oversight
     is crucial for accuracy. Treat ChatGPT’s suggestions as a starting point for your
     own exploration and learning.'
+  id: totrans-126
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**验证和学习**：始终通过与可靠来源交叉参考和在 Excel 中进行额外分析来验证 ChatGPT 的回应。人类监督对于准确性至关重要。将 ChatGPT
+    的建议视为自己探索和学习的起点。'
 - en: '[Multiple choice questions](toc.xhtml#s152a)'
+  id: totrans-127
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[多项选择题](toc.xhtml#s152a)'
 - en: What is the significance of clear and specific prompts when using ChatGPT in
     Excel tasks?
+  id: totrans-128
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在使用 ChatGPT 进行 Excel 任务时，清晰和具体的提示的重要性是什么？
 - en: Clear prompts enhance ChatGPT’s vocabulary
+  id: totrans-129
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 清晰的提示增强了 ChatGPT 的词汇量
 - en: Specific prompts ensure accurate and relevant responses
+  id: totrans-130
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 具体的提示确保准确和相关的回应
 - en: Clear prompts are essential for ChatGPT to function offline
+  id: totrans-131
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 清晰的提示对于 ChatGPT 在离线状态下运行至关重要
 - en: Specific prompts are only necessary for complex Excel tasks
+  id: totrans-132
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 仅对复杂的 Excel 任务需要具体的提示
 - en: Why is providing context crucial when interacting with ChatGPT for Excel analyses?
+  id: totrans-133
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 为什么在与 ChatGPT 互动进行 Excel 分析时提供上下文至关重要？
 - en: Context enhances ChatGPT’s general knowledge
+  id: totrans-134
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 上下文增强了 ChatGPT 的通识知识
 - en: Contextual information helps ChatGPT tailor responses to specific data needs
+  id: totrans-135
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 上下文信息帮助 ChatGPT 量身定制回应以满足特定数据需求
 - en: Providing context increases ChatGPT’s processing speed
+  id: totrans-136
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 提供上下文可以提高 ChatGPT 的处理速度
 - en: Context is irrelevant when using ChatGPT for Excel tasks
+  id: totrans-137
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在 Excel 任务中使用 ChatGPT 时上下文是无关紧要的
 - en: How should you approach ChatGPT’s responses if they are not precisely what you
     need?
+  id: totrans-138
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 如果 ChatGPT 的回应不完全符合您的需求，您应该如何处理？
 - en: Ignore the response and rephrase the same question
+  id: totrans-139
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 忽略回应并重新表述同一问题
 - en: Treat ChatGPT’s responses as definitive answers
+  id: totrans-140
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将 ChatGPT 的回应视为最终答案
 - en: Engage in a dialogue, ask follow-up questions, and seek clarifications
+  id: totrans-141
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 参与对话，提出后续问题，并寻求澄清
 - en: Discontinue the conversation and start a new one
+  id: totrans-142
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 终止对话并开始新对话
 - en: What role does human oversight play in the interaction with ChatGPT for data
     analysis in Excel?
+  id: totrans-143
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在与 ChatGPT 进行 Excel 数据分析互动中，人类监督扮演什么角色？
 - en: Human oversight is unnecessary; ChatGPT is always accurate
+  id: totrans-144
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 人类监督是不必要的；ChatGPT 总是准确的
 - en: Human oversight ensures ChatGPT’s ethical behavior
+  id: totrans-145
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 人类监督确保 ChatGPT 的道德行为
 - en: Human oversight is indispensable for verifying ChatGPT’s responses and ensuring
     accuracy
+  id: totrans-146
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 人类监督对于验证 ChatGPT 的回应并确保准确性至关重要
 - en: Human oversight only applies to beginners, not experienced users
+  id: totrans-147
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 人类监督仅适用于初学者，而不适用于有经验的用户
 - en: Which of the following best describes the relationship between ChatGPT and the
     user in Excel tasks?
+  id: totrans-148
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 以下哪项最好描述了在 Excel 任务中 ChatGPT 与用户之间的关系？
 - en: ChatGPT is a standalone solution, requiring no user input
+  id: totrans-149
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: ChatGPT 是一个独立的解决方案，不需要用户输入
 - en: ChatGPT’s responses should be accepted without verification
+  id: totrans-150
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 应接受 ChatGPT 的回应而无需验证
 - en: ChatGPT and the user engage in a collaborative partnership, with the user providing
     clear prompts and oversight
+  id: totrans-151
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: ChatGPT 和用户进行合作伙伴关系，用户提供清晰提示和监督
 - en: ChatGPT can handle Excel tasks independently; user input is optional
+  id: totrans-152
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: ChatGPT 可以独立处理 Excel 任务；用户输入是可选的
 - en: '[Answers](toc.xhtml#s153a)'
+  id: totrans-153
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[答案](toc.xhtml#s153a)'
 - en: b
+  id: totrans-154
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: b
 - en: b
+  id: totrans-155
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: b
 - en: c
+  id: totrans-156
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: c
 - en: c
+  id: totrans-157
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: c
 - en: c
+  id: totrans-158
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: c

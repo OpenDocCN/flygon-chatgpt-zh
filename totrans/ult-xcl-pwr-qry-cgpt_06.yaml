@@ -1,657 +1,964 @@
 - en: '[CHAPTER 4](toc.xhtml#c04)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第4章](toc.xhtml#c04)'
 - en: '[LOOKUP](toc.xhtml#c04)'
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[LOOKUP](toc.xhtml#c04)'
 - en: '[Introduction](toc.xhtml#s62a)'
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[介绍](toc.xhtml#s62a)'
 - en: In this chapter, we will discuss the LOOKUP function, which has been in Excel
     since its earliest version. The `**LOOKUP**` function’s longevity and continued
     presence in Excel prove its value and widespread adoption as a fundamental tool
     for data retrieval and spreadsheet analysis.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论LOOKUP函数，这个函数从Excel的最早版本就存在。`**LOOKUP**`函数的长寿和持续存在于Excel中证明了它作为数据检索和电子表格分析基本工具的价值和广泛应用。
 - en: You can use the `**LOOKUP**` function in both the Vector form and Array form.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以在向量形式和数组形式中都使用`**LOOKUP**`函数。
 - en: In the Vector form, you search for an item in one column/row and return an item
     from the same position in another column/row.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在向量形式中，您在一个列/行中搜索一个项目，并从另一个列/行中的相同位置返回一个项目。
 - en: '**The syntax is as follows:**'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: '**语法如下：**'
 - en: '`=LOOKUP (lookup_value, lookup_vector, [result_vector])`'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=LOOKUP (lookup_value, lookup_vector, [result_vector])`'
 - en: 'Where:'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中：
 - en: '`**lookup_value**`: The value you want to find.'
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**lookup_value**`：您要查找的值。'
 - en: '`**lookup_vector**`: The single column/row containing the values to be searched
     (Note: It should be sorted in ascending order).'
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**lookup_vector**`：包含要搜索的值的单列/行（注意：它应按升序排序）。'
 - en: '`**result_vector**`: The single column/row containing the values to be returned.'
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**result_vector**`：包含要返回的值的单列/行。'
 - en: '**Note**'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意**'
 - en: Vector form is most appropriate If you want to specify a column/row containing
     the values you want to search.
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果要指定包含要搜索的值的列/行，则向量形式最为适用。
 - en: If the lookup value is not found, the `**LOOKUP**` function matches the next
     biggest value smaller than the lookup value.
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果未找到查找值，则`**LOOKUP**`函数将匹配小于查找值的下一个最大值。
 - en: 'If the lookup value is not found and is smaller than the smallest value in
     the lookup range, the `**LOOKUP**` function will return the #N/A error value.'
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果未找到查找值并且小于查找范围中的最小值，则`**LOOKUP**`函数将返回`**#N/A**`错误值。
 - en: '`**Lookup_vector**` and `**result_vector**` range must be of the same size.'
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Lookup_vector**`和`**result_vector**`范围必须具有相同的大小。'
 - en: In the Array form, we search for an item in the first column/row of a table
     array (rows and columns) and return values in the same position as the last column/row
     of a table array.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 在数组形式中，我们在表数组（行和列）的第一列/行中搜索项目，并返回表数组的最后一列/行中与之相同位置的值。
 - en: 'The syntax is as follows:'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法如下：
 - en: '`=LOOKUP (lookup_value, array)`'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=LOOKUP (lookup_value, array)`'
 - en: 'Where:'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中：
 - en: '`**lookup_value:**` The value you want to find.'
+  id: totrans-21
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**lookup_value:**` 您要查找的值。'
 - en: '`**Array:**` Columns/rows containing the values to be searched.'
+  id: totrans-22
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Array:**` 包含要搜索的值的列/行。'
 - en: '**Note:**'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意：**'
 - en: Values in the first Row/Column must be sorted in ascending order.
+  id: totrans-24
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 第一行/列中的值必须按升序排序。
 - en: The determination of whether the search will be horizontal or vertical depends
     on the number of rows vs. columns. If the array has more rows than columns, then
     `**LOOKUP**` searches the first column; otherwise, it searches the first row.
+  id: totrans-25
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 搜索是水平还是垂直取决于行数与列数的比较。如果数组的行数多于列数，则`**LOOKUP**`将搜索第一列；否则，它将搜索第一行。
 - en: If the lookup value is not found and is smaller than the smallest value in the
     lookup range, the `**LOOKUP**` function will return the `**#N/A**` error value.
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果未找到查找值并且小于查找范围中的最小值，则`**LOOKUP**`函数将返回`**#N/A**`错误值。
 - en: If the lookup value is not found, the `**LOOKUP**` function matches the next
     biggest value smaller than the lookup value.
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果未找到查找值，则`**LOOKUP**`函数将匹配小于查找值的下一个最大值。
 - en: '[Structure](toc.xhtml#s63a)'
+  id: totrans-28
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结构](toc.xhtml#s63a)'
 - en: 'In this chapter, we will discuss the five cases where we should use the `**LOOKUP**`
     function:'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论应该使用`**LOOKUP**`函数的五种情况：
 - en: Lookup the last match using a criterion
+  id: totrans-30
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用条件查找最后匹配项
 - en: Lookup the last empty cell
+  id: totrans-31
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找最后一个空单元格
 - en: Lookup the last negative number or text
+  id: totrans-32
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找最后一个负数或文本
 - en: Lookup approximate match in an array
+  id: totrans-33
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在数组中查找近似匹配项
 - en: Lookup the most repeated item
+  id: totrans-34
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找最重复的项目
 - en: '[Lookup the Last Match Using a Criterion](toc.xhtml#s64a)'
+  id: totrans-35
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[使用条件查找最后匹配项](toc.xhtml#s64a)'
 - en: One everyday use of the `LOOKUP` function is retrieving the last matching value.
     In this example, we shall use the Vector form.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '`LOOKUP`函数的一个日常用途是检索最后匹配的值。在这个例子中，我们将使用向量形式。'
 - en: 'We are trying to find the last subject offered by Ms Abby in *[Figure 4.1](#fig4_1)*:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们正在尝试找到Ms Abby在*[图4.1](#fig4_1)*中提供的最后一个科目：
 - en: '![](images/Figure-4.1.jpg)'
+  id: totrans-38
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-4.1.jpg)'
 - en: '**Figure 4.1:** Lookup the last match in the column'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图4.1：** 在列中查找最后匹配项'
 - en: '`=LOOKUP(2,1/(Lecturers=F3), Subjects)`'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(2,1/(Lecturers=F3), Subjects)`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: 2 represents a big value that we are sure will not be found in the lookup vector.
+  id: totrans-42
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 2代表一个我们确定不会在查找向量中找到的大值。
 - en: '`**Lecturers=F3**` returns an array of `TRUE/FALSE`, where TRUE represents
     the criteria being met, that is, lecturer = Ms Abby; otherwise, it returns FALSE
     (see *[Figure 4.2](#fig4_2))*:![](images/Figure-4.2.jpg)'
+  id: totrans-43
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**Lecturers=F3**` 返回一个`TRUE/FALSE`数组，其中TRUE表示满足条件，即讲师为Ms Abby；否则返回FALSE（见*[图4.2](#fig4_2)*):![](images/Figure-4.2.jpg)'
 - en: '**Figure 4.2:** Check if the criterion is met'
+  id: totrans-44
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图4.2:** 检查是否符合条件'
 - en: '`**1/(Lecturers=F3)**` convert the TRUE/FALSE into numeric equivalent by dividing
     1 by each value (see *[Figure 4.3](#fig4_3))*:![](images/Figure-4.3.jpg)'
+  id: totrans-45
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**1/(Lecturers=F3)**` 通过将1除以每个值，将TRUE/FALSE转换为数值等效值（见*[图4.3](#fig4_3)*):![](images/Figure-4.3.jpg)'
 - en: '**Figure 4.3:** Convert the TRUE/FALSE into numeric equivalent'
+  id: totrans-46
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图4.3:** 将TRUE/FALSE转换为数值等效值'
 - en: '**Note:** There are four ways to convert boolean values to the numeric equivalent:'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: '**注意:** 有四种方法将布尔值转换为数值等效值：'
 - en: 'By adding Zero: **(Lecturers=F3)+0**'
+  id: totrans-48
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过加上零：**(Lecturers=F3)+0**
 - en: 'By multiplying with One: **(Lecturers=F3)*1**'
+  id: totrans-49
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过乘以1：**(Lecturers=F3)*1**
 - en: 'Using the double Unary method: --**(Lecturers=F3)**'
+  id: totrans-50
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用双重一元方法：--**(Lecturers=F3)**
 - en: 'By dividing with One: 1/**(Lecturers=F3)**'
+  id: totrans-51
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过除以1：1/**(Lecturers=F3)**
 - en: We should opt for the last method because it is the only method that does not
     include a zero in the results; including a zero in the lookup vector may disrupt
     the ascending order and cause the function to return unexpected results or an
     error.
+  id: totrans-52
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们应该选择最后一种方法，因为它是唯一不包含零在结果中的方法；在查找向量中包含零可能会破坏升序排列并导致函数返回意外结果或错误。
 - en: Since 2 is not found, and the largest value in lookup_vector is 1, the LOOKUP
     function matches the last 1 in the array and returns values in the same position
     in the result vector.
+  id: totrans-53
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于找不到2，并且查找向量中最大的值是1，LOOKUP函数匹配数组中的最后一个1，并返回结果向量中相同位置的值。
 - en: 'We are not limited to using a single criterion. For example, in *[Figure 4.4](#fig4_4)*,
     we want to know the last date on which the customer Luke bought the chairs:'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们不仅限于使用单一条件。例如，在*[图4.4](#fig4_4)*中，我们想知道客户Luke购买椅子的最后日期：
 - en: '![](images/Figure-4.4.jpg)'
+  id: totrans-55
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-4.4.jpg)'
 - en: '**Figure 4.4:** Lookup the last match using multiple criteria'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图4.4:** 使用多个条件查找最后一个匹配项'
 - en: '`=LOOKUP(2,`'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(2,`'
 - en: '`1/((tbl_Sales[Customer]=H16)*(tbl_Sales[Product]=H18)),`'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '`1/((tbl_Sales[Customer]=H16)*(tbl_Sales[Product]=H18)),`'
 - en: '`tbl_Sales[Date])`'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: '`tbl_Sales[Date])`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**2**` represents a big value that we are sure will not be found in the lookup
     vector.'
+  id: totrans-61
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**2**` 代表一个我们确定不会在查找向量中找到的大值。'
 - en: '`**(tbl_Sales[Customer]=H16)*(tbl_Sales[Product]=H18)**` returns an array of
     1/0, where 1 represents the row’s position where the customer is Luke and the
     product is chairs.'
+  id: totrans-62
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**(tbl_Sales[Customer]=H16)*(tbl_Sales[Product]=H18)**` 返回一个由1/0组成的数组，其中1表示客户为Luke且产品为椅子的行位置。'
 - en: '`**1/((tbl_Sales[Customer]=H16)*(tbl_Sales[Product]=H18))**` We divide the
     preceding array with 1 to exclude all zeros. Including a zero in the lookup vector
     may disrupt the ascending order and cause the function to return unexpected results
     or an error.'
+  id: totrans-63
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**1/((tbl_Sales[Customer]=H16)*(tbl_Sales[Product]=H18))**` 我们将前述数组除以1，以排除所有零。在查找向量中包含零可能会破坏升序排列并导致函数返回意外结果或错误。'
 - en: Since 2 is not found, and the largest value in lookup_vector is 1, the `**LOOKUP**`
     function matches the last 1 in the array and returns values in the same position
     in the result vector.
+  id: totrans-64
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于找不到2，并且查找向量中最大的值是1，`**LOOKUP**`函数匹配数组中的最后一个1，并返回结果向量中相同位置的值。
 - en: '[Lookup the Last Blank Cell](toc.xhtml#s65a)'
+  id: totrans-65
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找最后一个空单元格](toc.xhtml#s65a)'
 - en: Lookup, the last blank in an array, is similar to the preceding example, with
     the only difference being the logical tests. Similar to the preceding example,
     we will use the vector form of the `LOOKUP` function to do a horizontal lookup.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 查找数组中的最后一个空白与前述示例类似，唯一的区别在于逻辑测试。与前述示例类似，我们将使用`LOOKUP`函数的向量形式进行水平查找。
 - en: 'In *[Figure 4.5](#fig4_5)*, we look up the last month a customer made the payment,
     that is, the last non-blank month:'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 在*[图4.5](#fig4_5)*中，我们查找客户最后一次付款的月份，即最后一个非空月份：
 - en: '![](images/Figure-4.5.jpg)'
+  id: totrans-68
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-4.5.jpg)'
 - en: '**Figure 4.5:** Lookup the last non-blank'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图4.5:** 查找最后一个非空单元格'
 - en: '`=LOOKUP(2, 1/(D33:H33<>””), $D$32:$H$32 )`'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(2, 1/(D33:H33<>””), $D$32:$H$32 )`'
 - en: 'Here is how this function works:'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是此函数的工作原理：
 - en: '`**2**` represents a big value that we are sure will not be found in the lookup
     vector.'
+  id: totrans-72
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**2**` 表示我们确定不会在查找向量中找到的一个大值。'
 - en: '`**D33:H33<>””**` returns an array of `TRUE/FALSE`, where `TRUE` represents
     non-blank cells in the row.'
+  id: totrans-73
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**D33:H33<>””**` 返回一个`TRUE/FALSE`数组，其中`TRUE`表示行中的非空单元格。'
 - en: '`**1/(D33:H33<>””)**` We divide the preceding array with 1 to convert the Boolean
     array to its numeric equivalent as well as to exclude all zeros. Including a zero
     in the lookup vector may disrupt the ascending order and cause the function to
     return unexpected results or an error.'
+  id: totrans-74
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**1/(D33:H33<>””)**` 我们将前面的数组除以1，将布尔数组转换为其数值等效形式，并排除所有零。在查找向量中包含零可能会破坏升序并导致函数返回意外结果或错误。'
 - en: Since 2 is not found, and the largest value in lookup_vector is 1, the LOOKUP
     function matches the last 1 in the array and returns values in the same position
     in the result vector, that is, `**$D$32:$H$32**`.
+  id: totrans-75
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 由于找不到2，并且查找向量中的最大值为1，LOOKUP函数匹配数组中的最后一个1，并返回结果向量中相同位置的值，即`**$D$32:$H$32**`。
 - en: '[Lookup the Last Negative Number or Text](toc.xhtml#s66a)'
+  id: totrans-76
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找最后一个负数或文本](toc.xhtml#s66a)'
 - en: The vector form of the `LOOKUP` function is the most robust function to look
     up any last value in an array. The only trick we need to learn is creating complex
     logical tests for the lookup vector.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: '`LOOKUP`函数的向量形式是查找数组中任何最后一个值的最强大函数。我们需要学习的唯一技巧是为查找向量创建复杂的逻辑测试。'
 - en: 'For example, in *[Figure 4.6](#fig4_6)*, we want to look up the last date we
     had a negative temperature:'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图 4.6](#fig4_6)*中，我们想要查找最后一次出现负温度的日期：
 - en: '![](images/Figure-4.6.jpg)'
+  id: totrans-79
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-4.6.jpg)'
 - en: '**Figure 4.6:** Lookup the last negative number'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 4.6：** 查找最后一个负数'
 - en: '`=LOOKUP(2,1/(tblHarvest[Temp0]<0),tblHarvest[Date])`'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(2,1/(tblHarvest[Temp0]<0),tblHarvest[Date])`'
 - en: This formula works in the same way as the others in the preceding examples,
     except for the logical test. In this example, `**tblHarvest[Temp0]<0**` returns
     an array of `**TRUE/FALSE**`, where TRUE represents all values that are less than
     zero.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个公式的工作方式与前面示例中的其他公式相同，除了逻辑测试。在这个示例中，`**tblHarvest[Temp0]<0**` 返回一个`**TRUE/FALSE**`数组，其中TRUE表示所有小于零的值。
 - en: To look up the last text, as shown in *[Figure 4.7](#fig4_7)*, use the ISTEXT
     function to return an array of TRUE/FALSE values, where TRUE represents the text
     functions.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 要查找最后一个文本，如*[图 4.7](#fig4_7)*所示，使用ISTEXT函数返回一个TRUE/FALSE值数组，其中TRUE表示文本函数。
 - en: Every other aspect of the function is the same as the ones explained earlier.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的其他方面与之前解释的相同。
 - en: '`=LOOKUP(2,1/ISTEXT(D59:D74),D59:D74)`'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(2,1/ISTEXT(D59:D74),D59:D74)`'
 - en: '![](images/Figure-4.7.jpg)'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-4.7.jpg)'
 - en: '**Figure 4.7:** Lookup the last text'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 4.7：** 查找最后一个文本'
 - en: '[Lookup Approximate Match in an Array](toc.xhtml#s67a)'
+  id: totrans-88
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[在数组中查找近似匹配](toc.xhtml#s67a)'
 - en: In all our previous examples, we have used the vector form of the `LOOKUP` function.
     Now, let us learn how to use an array form to look up an approximate match in
     an array.
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们之前的所有示例中，我们都使用了`LOOKUP`函数的向量形式。现在，让我们学习如何使用数组形式在数组中查找近似匹配。
 - en: For example, in *[Figure 4.8](#fig4_8)*, we are looking up the discount percentage
     from the Discounts table using an approximate Match.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，在*[图 4.8](#fig4_8)*中，我们正在查找使用近似匹配从折扣表中获取折扣百分比。
 - en: '![](images/Figure-4.8.jpg)'
+  id: totrans-91
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-4.8.jpg)'
 - en: '**Figure 4.8:** Lookup approximate match in an array'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 4.8：** 在数组中查找近似匹配'
 - en: '`=LOOKUP(D78, Discounts)`'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(D78, Discounts)`'
 - en: 'Here is how this function works:'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是这个函数的工作原理：
 - en: Sales Values stored in column D are used as the lookup value.
+  id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 存储在列D中的销售值被用作查找值。
 - en: The LOOKUP function uses the first column of the discount table as the lookup
     array and returns the approximate values in the same position of the last column.
+  id: totrans-96
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: LOOKUP函数使用折扣表的第一列作为查找数组，并在结果向量的相同位置返回近似值。
 - en: Remember that the values in the first column of the table array must be sorted
     in ascending order.
+  id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 请记住，表数组的第一列中的值必须按升序排序。
 - en: '[Lookup Most Repeated Item](toc.xhtml#s68a)'
+  id: totrans-98
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[查找最重复的项目](toc.xhtml#s68a)'
 - en: 'This is another example of using the `LOOKUP` function’s array form. In *[Figure
     4.9](#fig4_9)*, we are looking for the most frequent customer:'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是使用`LOOKUP`函数的数组形式的另一个示例。在*[图 4.9](#fig4_9)*中，我们正在寻找最频繁的客户：
 - en: '![](images/Figure-4.9.jpg)'
+  id: totrans-100
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure-4.9.jpg)'
 - en: '**Figure 4.9:** Lookup most repeated item'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: '**图 4.9：** 查找最重复的项目'
 - en: '`=LOOKUP(MODE(MATCH(Customer[Name],Customer[Name],0)),`'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(MODE(MATCH(Customer[Name],Customer[Name],0)),`'
 - en: '`CHOOSE({1,2},MATCH(Customer[Name],Customer[Name],0),Customer[Name]))`'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: '`CHOOSE({1,2},MATCH(Customer[Name],Customer[Name],0),Customer[Name]))`'
 - en: 'Here is how the preceding function works:'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是前述函数的工作原理：
 - en: '`**MATCH(Customer[Name], Customer[Name],0)**` The `MATCH` function returns
     an array equal to the customers’ number, where every item in this array represents
     the first position at which a customer name appears in the data (see *[Figure
     4.10](#fig4_10)*).![](images/fig-4.10.jpg)'
+  id: totrans-105
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MATCH(Customer[Name], Customer[Name],0)**` 函数返回一个等于客户数量的数组，其中数组中的每个项目表示数据中客户姓名首次出现的位置（见*[图
+    4.10](#fig4_10)*）。![](images/fig-4.10.jpg)'
 - en: '**Figure 4.10:** Customers’ position'
+  id: totrans-106
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 4.10：** 客户的位置'
 - en: '`**MODE(MATCH(Customer[Name], Customer[Name],0)**` the `MODE` function returns
     the most repeated item in the array.'
+  id: totrans-107
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**MODE(MATCH(Customer[Name], Customer[Name],0)**` 函数返回数组中重复次数最多的项目。'
 - en: We then create a two-column table array using the `CHOOSE` function, whereColumn
     1 is the customers’ position, while Column 2 is the customers’ name (see *[Figure
     4.11](#fig4_11))*.![](images/Figure-4.11.jpg)
+  id: totrans-108
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 我们使用`CHOOSE`函数创建一个两列表格数组，其中第一列是客户的位置，第二列是客户的姓名（见*[图 4.11](#fig4_11)*）。![](images/Figure-4.11.jpg)
 - en: '**Figure 4.11:** Two-column table array'
+  id: totrans-109
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '**图 4.11：** 两列表格数组'
 - en: The `**LOOKUP**` function uses the first column of the two-column table as the
     lookup array and returns the customer name in the second column in the same position
     as the last match value.
+  id: totrans-110
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**LOOKUP**`函数使用两列表格的第一列作为查找数组，并返回第二列中与最后匹配值相同位置的客户姓名。'
 - en: '[Conclusion](toc.xhtml#s69a)'
+  id: totrans-111
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[结论](toc.xhtml#s69a)'
 - en: In this chapter, we learned that the `**LOOKUP**` function is the best when
     looking up the last match. Whether we are using the Vector or Array form, the
     `**LOOKUP**` function can be used to look up data vertically or horizontally,
     provided that the lookup array data is sorted in ascending order.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们了解到`**LOOKUP**`函数在查找最后一个匹配项时是最佳选择。无论是使用向量形式还是数组形式，只要查找数组数据按升序排序，`**LOOKUP**`函数都可以用于垂直或水平查找数据。
 - en: Due to its limitations, it is only recommended for approximate matches and looking
     up the last match.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 由于其限制，仅建议用于近似匹配和查找最后一个匹配项。
 - en: In the next chapter, we will investigate other functions that can be used to
     look up data, although they are not classified as lookup functions.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，我们将探讨其他可用于查找数据的函数，尽管它们不被归类为查找函数。
 - en: '[Points to remember](toc.xhtml#s70a)'
+  id: totrans-115
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[记住的要点](toc.xhtml#s70a)'
 - en: Excel `**LOOKUP**` functionality is limited and thus not recommended for day-to-day
     use. As an alternative, consider using the `**VLOOKUP**` or `**INDEX**`/`**MATCH**`
     function.
+  id: totrans-116
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Excel的`**LOOKUP**`功能有限，因此不建议日常使用。作为替代方案，考虑使用`**VLOOKUP**`或`**INDEX**`/`**MATCH**`函数。
 - en: The `**LOOKUP**` function has no option for an exact match; all of its uses
     default to an approximate match.
+  id: totrans-117
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '`**LOOKUP**`函数没有精确匹配选项；它的所有用途默认为近似匹配。'
 - en: '[Multiple choice questions](toc.xhtml#s71a)'
+  id: totrans-118
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[多项选择题](toc.xhtml#s71a)'
 - en: 'What is the result of the following formula:'
+  id: totrans-119
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 以下公式的结果是什么：
 - en: '`=LOOKUP(0, {1,2,3,4,5}, {“A”,“B”,“C”,“D”,“E”})?`'
+  id: totrans-120
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(0, {1,2,3,4,5}, {“A”,“B”,“C”,“D”,“E”})?`'
 - en: A
+  id: totrans-121
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: A
 - en: B
+  id: totrans-122
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: B
 - en: C
+  id: totrans-123
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: C
 - en: D
+  id: totrans-124
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: D
 - en: E
+  id: totrans-125
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: E
 - en: '#N/A'
+  id: totrans-126
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '#N/A'
 - en: 'What is the result of the following formula:'
+  id: totrans-127
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 以下公式的结果是什么：
 - en: '`=LOOKUP(“Z”, {“A”,“B”,“C”,“D”,“E”}, {1,2,3,4,5})?`'
+  id: totrans-128
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(“Z”, {“A”,“B”,“C”,“D”,“E”}, {1,2,3,4,5})?`'
 - en: '1'
+  id: totrans-129
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '1'
 - en: '2'
+  id: totrans-130
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '2'
 - en: '3'
+  id: totrans-131
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '3'
 - en: '4'
+  id: totrans-132
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '4'
 - en: '5'
+  id: totrans-133
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '5'
 - en: '#N/A'
+  id: totrans-134
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '#N/A'
 - en: 'What is the result of the following formula:'
+  id: totrans-135
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 以下公式的结果是什么：
 - en: '`=LOOKUP(5, {1,2,3,4,6}, {“A”,“B”,“C”,“D”,“E”})`?'
+  id: totrans-136
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '`=LOOKUP(5, {1,2,3,4,6}, {“A”,“B”,“C”,“D”,“E”})`?'
 - en: A
+  id: totrans-137
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: A
 - en: B
+  id: totrans-138
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: B
 - en: C
+  id: totrans-139
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: C
 - en: D
+  id: totrans-140
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: D
 - en: E
+  id: totrans-141
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: E
 - en: '#N/A'
+  id: totrans-142
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '#N/A'
 - en: What is the difference between the Vector form and the Array form of the LOOKUP
     function?
+  id: totrans-143
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: LOOKUP函数的向量形式和数组形式之间有什么区别？
 - en: The Vector form searches for an item in one column/row and returns an item from
     the same position in another column/row, while the Array form searches for an
     item in the first column/row of a table array and returns values in the same position
     as the last column/row of a table array.
+  id: totrans-144
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 向量形式在一列/行中搜索项目，并返回另一列/行中相同位置的项目，而数组形式在表格数组的第一列/行中搜索项目，并返回表格数组的最后一列/行中相同位置的值。
 - en: The Vector form searches for an item in the first column/row of a table array
     and returns values in the same position as the last column/row of a table array,
     while the Array form searches for an item in one column/row and returns an item
     from the same position in another column/row.
+  id: totrans-145
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 向量形式在表格数组的第一列/行中搜索项目，并返回表格数组的最后一列/行中相同位置的值，而数组形式在一列/行中搜索项目，并返回另一列/行中相同位置的项目。
 - en: The Vector form searches for an exact match, while the Array form searches for
     an approximate match.
+  id: totrans-146
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 向量形式搜索精确匹配，而数组形式搜索近似匹配。
 - en: The Vector form searches for an approximate match, while the Array form searches
     for an exact match.
+  id: totrans-147
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 向量形式搜索近似匹配，而数组形式搜索精确匹配。
 - en: '[Answers](toc.xhtml#s72a)'
+  id: totrans-148
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[答案](toc.xhtml#s72a)'
 - en: f
+  id: totrans-149
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: f
 - en: e
+  id: totrans-150
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: e
 - en: d
+  id: totrans-151
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: d
 - en: a
+  id: totrans-152
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: a

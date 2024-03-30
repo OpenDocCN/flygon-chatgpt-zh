@@ -1,84 +1,126 @@
 - en: '| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png)
     |'
+  id: totrans-0
   prefs: []
   type: TYPE_TB
+  zh: '| ![图像](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图像](d2d_images/chapter_title_corner_decoration_right.png)
+    |'
 - en: '![image](d2d_images/chapter_title_above.png)'
+  id: totrans-1
   prefs: []
   type: TYPE_IMG
+  zh: '![图像](d2d_images/chapter_title_above.png)'
 - en: Tokenization and Tokens
+  id: totrans-2
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 标记化和标记
 - en: '![image](d2d_images/chapter_title_below.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![图像](d2d_images/chapter_title_below.png)'
 - en: Tokenization is the process of breaking down text into smaller units called
     tokens, usually words or sub-words. These tokens serve as the input for the neural
     network.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 标记化是将文本分解为称为标记的更小单位的过程，通常是单词或子单词。这些标记作为神经网络的输入。
 - en: Granularity, or the level of detail in tokens, affects how the model processes
     text and learns language patterns.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 粒度，或标记中的细节级别，会影响模型如何处理文本和学习语言模式。
 - en: 'Examples to illustrate the different levels of granularity in tokenization:'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 举例说明标记化的不同粒度级别：
 - en: Character-level tokenization (finer granularity)
+  id: totrans-7
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 字符级标记化（更细粒度）
 - en: 'Input text: "ChatGPT is amazing!"'
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 输入文本：“ChatGPT is amazing!”
 - en: 'Tokens: [''C'', ''h'', ''a'', ''t'', ''G'', ''P'', ''T'', '' '', ''i'', ''s'',
     '' '', ''a'', ''m'', ''a'', ''z'', ''i'', ''n'', ''g'', ''!'']'
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标记：['C', 'h', 'a', 't', 'G', 'P', 'T', ' ', 'i', 's', ' ', 'a', 'm', 'a', 'z',
+    'i', 'n', 'g', '!']
 - en: Here, each character, including spaces and punctuation marks, is treated as
     an individual token.
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在这里，每个字符，包括空格和标点符号，都被视为一个单独的标记。
 - en: Word-level tokenization (coarser granularity)
+  id: totrans-11
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 单词级标记化（更粗粒度）
 - en: 'Input text: "ChatGPT is amazing!"'
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 输入文本：“ChatGPT is amazing!”
 - en: 'Tokens: [''ChatGPT'', ''is'', ''amazing'', ''!'']'
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标记：['ChatGPT', 'is', 'amazing', '!']
 - en: In this case, each word is treated as a separate token, including punctuation
     marks.
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在这种情况下，每个单词都被视为单独的标记，包括标点符号。
 - en: Sub-word-level tokenization
+  id: totrans-15
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 子单词级标记化
 - en: 'Input text: "ChatGPT is amazing!"'
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 输入文本：“ChatGPT is amazing!”
 - en: 'Tokens: [''Chat'', ''G'', ''PT'', '' is'', '' amaz'', ''ing'', ''!'']'
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标记：['Chat', 'G', 'PT', ' is', ' amaz', 'ing', '!']
 - en: Sub-word tokenization breaks the text into smaller units that are larger than
     characters but smaller than full words. These units can be parts of words or even
     combinations of words and spaces, depending on the specific tokenization method
     used.
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 子单词标记化将文本分解为比字符大但比完整单词小的更小单位。这些单位可以是单词的一部分，甚至是单词和空格的组合，具体取决于所使用的特定标记化方法。
 - en: Finer granularity aids the model in learning shared patterns among words and
     generalizing better, while coarser granularity may limit its ability to do so.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 更细粒度有助于模型学习单词之间的共享模式并更好地概括，而更粗粒度可能会限制其能力。

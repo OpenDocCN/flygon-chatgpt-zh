@@ -465,11 +465,61 @@
     19   img = ReportLabImage ( pil_image_path , 20    width = 2.5 * inch , 21    height
     = 2.5 * inch ) 22   contents . append ( img ) 23 24   # Add some text 25   dialog_text
     = '''
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: '![](image-ermfkvwp.jpg) 使用 Python 制作 ChatGPT API 应用程序 Mike Gold 本书在 http://leanpub.com/craftingapplicationswithchatgptinnovatingacrossplatforms
+    上有售 此版本发布于 2023-10-03 ![](image-ixx4fu8m.png) *   *   *   *   * 这是一本 Leanpub 书籍。Leanpub
+    通过 Lean Publishing 过程赋予作者和出版商权力。Lean Publishing 是使用轻量级工具和多次迭代发布正在进行中的电子书的行为，以获得读者反馈，直到您拥有正确的书籍并一旦做到这一点就建立动力。 *   *   *   *   * ©
+    2023 Mike Gold 献给我的妻子：编辑，母亲和最好的朋友  目录 什么是 ChatGPT 以及为什么使用它？介绍ChatGPT的背景ChatGPT的优势和用例这本书是为谁准备的？ 动物聊天从哪里开始设置
+    Python安装 OpenAI 库设计 UI介绍 Tkinter for GUI创建 UI填写 UI 代码运行应用程序获取 API 密钥集成 OpenAI生成图像从我们的故事创建
+    PDF生成 PDF使用 python-dotenv 安全地存储 API 密钥结论 创建你自己的巴别鱼引入库创建巴别鱼 Shell提交（记录）功能分析提交方法记录语音转录语音翻译语音朗读文本 三种成分食谱准备好进行史诗般的烹饪之旅！启动我们的烹饪代码之旅激活虚拟厨房准备厨房主页在
+    Flask 中呈现模板运行应用程序为主页设计样式在 Flask 中利用 ChatGPT 进行烹饪创意生成食谱功能解释选择一种菜系添加食物限制结论 拼图书介绍设置虚拟环境用户界面拼图板创建器类将拼图放入图形文件创建
+    PDF创建整本书创建批量提交功能创建书籍向 UI 添加按钮结论 附录请求审查源代码本书所需的 Python 概念消息结构示例消息获取令牌使用情况 什么是 ChatGPT
+    以及为什么使用它？ 介绍 在技术领域，很少有创新像 ChatGPT 一样引起如此多的兴奋和潜力。想象一下一个世界，机器不仅能理解我们，还能帮助我们创作富有想象力的故事，弥合语言障碍，并发明美味的食谱。本书是您解锁
+    ChatGPT 卓越能力的门户。我��将踏上一段旅程，将熟悉的领域转变为一个拥有无限可能性的游乐场，利用三个非凡的应用程序。 系好安全带，加速前往未开发的创造力和功能性，利用想象力、代码和可能性的协同作用。在接下来的章节中，您将见证尖端人工智能对应用程序开发实践的巨大影响。我们将首先在桌面应用程序中生成动物之间丰富多彩的对话，然后发现如何无缝翻译语言，并最后通过网络应用程序使用您手头的成分即时生成食谱。本书是您在创新领域的指南。 加入我们在想象力和技术的交汇处，在这里，ChatGPT
+    API 将大胆的想法转化为切实的现实。无论您是一名经验丰富的开发人员，希望推动可能性边界，还是一个对基于人工智能驱动的应用程序的未来感到好奇的爱好者，这次激动人心的探险将重塑我们与计算机互动的方式以及前方的可能性。准备好以
+    ChatGPT 为您的指南和灵感见证应用程序开发的新时代的曙光。 在这一开篇章节中，我们揭示了 ChatGPT 的本质，并探讨了在各个领域利用它的引人入胜的原因。 ChatGPT
+    的背景 在现代人工智能的前沿，生成式预训练变压器（GPT）已经成为一个重大突破。由开放人工智能（OpenAI）开发，GPT代表了多年来在自然语言处理（NLP）领域的研究和创新的结晶。GPT
+    系列模型旨在理解和生成类似人类的文本，有效地弥合了人类沟通和机器理解之间的差距。 开放人工智能是一家成立于2015年的开拓性研究机构，在人工智能领域独具创新精神。致力于推动人工智能以造福人类，OpenAI
+    不断突破人工智能所能实现的界限。GPT 是 OpenAI 的旗舰创新之一，多个版本的模型都建立在前任的成功基础上。这些模型以其出色的生成连贯和上下文相关文本的能力而闻名，从根本上改变了机器处理和生成语言的方式。通过研究论文、工具和
+    API（包括备受赞誉的 ChatGPT API）等方式，OpenAI 展示了其致力于使开发人员、研究人员和爱好者能够以前所未有的方式利用人工智能的知识，这些方式曾经只存在于科幻小说的领域。 ChatGPT
+    的优势和用例 ChatGPT 的吸引力超越了其技术复杂性，因为它在各种应用中提供了丰富的实际优势。以下是人们如何利用 OpenAI 的心血结晶——自然语言处理的力量的一些方式。 客户支持和公司正在利用
+    ChatGPT 彻底改变他们的客户支持系统。从回答查询和故障排除到引导用户完成复杂流程，ChatGPT 正在重塑客户服务互动。 内容生成和在内容创作和营销领域，ChatGPT
+    被证明是一种宝贵的工具。它帮助生成引人入胜的博客文章、社交媒体内容和营销文案，释放创意资源，加速内容生产。 编程和在人工智能和编程领域，ChatGPT 出现为一种有价值的工具，有潜力彻底改变编码实践。通过将人工智能能力与编码任务无缝融合，ChatGPT
+    为开发人员提供了一系列优势。它可以协助完成从代码组合到阐明复杂编程概念再到为编码障碍提供解决方案的任务。通过这样做，ChatGPT 既满足初学者又满足熟练的程序员，促进了增强生产力和知识传播的环境。 创意思维
+    ChatGPT 在头脑风暴中的作用在于促进创造力和拓宽视野。通过利用其语言生成能力，API 可以激发独特的想法，这些想法可能不会通过传统方法出现。它可以引入非传统的观点，并挑战已建立的思维模式，丰富您的构思过程。此外，无论您是构思新故事情节、设想视觉杰作、制定战略业务举措还是通过突破性创新改变行业，ChatGPT
+    的适应性见解都可以为这些不同领域提供有价值的输入。将 ChatGPT 集成到您的头脑风暴活动中，使您能够充分利用基于人工智能的创造力。 语言学习和 ChatGPT
+    作为一种多才��艺的语言伙伴，具有增强词汇、纠正语法和促进互动语言实践的能力。这使其适合各种熟练水平的学习者。 这本书是为谁准备的？ 本书是为那些渴望在日常应用中利用人工智能的变革力量的好奇心思维者而设计的。无论您是一名新手开发人员，希望将
+    ChatGPT 集成到您的项目中，还是一个对人工智能的实用性感兴趣的技术爱好者，或者只是对技术和想象力的融合感到着迷的人，本指南提供了适合所有人的见解。深入一个故事栩栩如生的世界，语言无缝交织，食谱从简单的食材中涌现。无需具备人工智能方面的先前专业知识，只需对探索其无限潜力充满热情。借助
+    ChatGPT 提供的数百种创新可能性，不再需要拖延。让我们直接进入我们的第一个应用程序：基于 Python 的讲故事平台。 动物聊天 ![](image-c6qx5dvy.png)图
+    1\. 茶话会 我们的初始应用程序设计简单。我们将从两个下拉菜单中选择两种动物。然后我们将被提示提供对话情景。这可以是我们想象的任何事情，比如两只动物在激烈辩论是否负责倒垃圾。 从哪里开始 我们将首先为我们的项目准备基础工具。首先，我们将为您介绍设置
+    Python 的步骤，这是我们应用程序的基础编程语言。接下来，我们将指导您完成安装 OpenAI 库的过程，这对于将 ChatGPT 的功能集成到我们的应用程序中至关重要。 设置
+    Python 在深入我们的应用程序之前，请确保 Python 在您的计算机上正确设置。我们将提供逐步说明，以及任何必要的依赖项，这样您就可以开始编码而不会遇到任何问题。 步骤
+    1：下载 Python 打开网络浏览器，转到官方 Python 网站：https://www.python.org/ 在主页上找到“下载”选项卡。点击它。 步骤
+    2：选择 Python 版本 在下载页面上，找到最新版本的 Python。可能会有两个可用版本——Python 2.x 和 Python 3.x。我们建议使用
+    Python 3.x，因为 Python 2.x 不再得到积极维护。 步骤 3：下载安装程序 向下滚动找到您想要安装的版本（例如，Python 3.8，Python
+    3.9）。根据您的操作系统（Windows、macOS 或 Linux），单击相应的下载链接。 步骤 4：运行安装程序 找到已下载的安装程序文件（在 Windows
+    上应该是 .exe 扩展名，macOS 上是 .pkg）。双击安装程序运行它。 步骤 5：配置安装 在安装窗口中，我们有各种选项。确保“将 Python x.x
+    添加到 PATH”选项已选中。这将使从命令行更容易运行 Python。如果需要，我们可以自定义安装目录，或者只需将其保留为默认设置。 点击“立即安装”按钮开始安装过程。 步骤
+    6：安装完成 安装完成后，我们将看到一个屏幕，指示 Python 安装成功。 现在我们将关闭安装程序。 步骤 7：验证安装 打开命令提示符（Windows）或终端（macOS/Linux）。键入： 图
+    2 1 python --version 然后按 Enter 键。我们可以看到我们安装的版本号（例如，Python 3.11.4）。恭喜，Python 现在已安装！我们准备开始在
+    Python 中编码，利用其强大的功能。 安装 OpenAI 库 为了利用 ChatGPT 的强大功能，我们需要将 OpenAI 库集成到我们的项目中。我们将指导您完成安装库和设置必要身份验证的过程，实现与
+    ChatGPT API 的无缝通信。在本节结束时，我们将具备利用 ChatGPT 的语言生成能力将其集成到讲故事应用程序中所需的工具。 在 Python 中安装
+    OpenAI 库是一个简单的过程。以下是如何操作： 步骤 1：打开终端或命令提示符 对于 Windows：按 Windows 键，搜索“命令提示符”，然后打开它。对于
+    macOS 和 Linux：打开终端应用程序。 步骤 2：使用 pip 安装 OpenAI 库 在终端或命令提示符中，键入以下命令： 图 3 1 pip install
+    openai 然后按 Enter 键以使�� pip 安装 OpenAI 库，pip 是 Python 的包管理器。要测试是否安装正确，只需在命令提示符中键入： 图
+    4 1 python  然后在 python >>> 提示符下键入： 图 5 1 import openai  如果没有错误，表示 openai 安装正确。 输入
+    ctrl-Z 退出 python。 设计 UI 首先，我们将专注于讲故事应用程序的用户界面（UI）。用户友好且视觉吸引力强的界面对于良好的用户体验至关重要。我们将探索
+    Tkinter 库，这是 Python 中创建图形用户界面的常用选择。 介绍 Tkinter 用于 GUI Tkinter 提供了一种简单而强大的方式来创建交互式
+    GUI 应用程序。我们将介绍 Tkinter 的基础知识，设置窗口，添加小部件并处理用户交互。通过本节结束时，我们将对 Tkinter 的功能有扎实的了解，以及如何为我们的项目利用它。 安装
+    Tkinter 要为 Python 安装 TkInter，只需在命令提示符中键入以下命令并按 Enter 键： 图 6 1 pip install tk  现在我们准备创建一个带有用户输入对话框和一些
+    Tk 控'
 - en: ''' + dialog_text 26   dialog_text = dialog_text . replace ( '' \n '' , 27               '''
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: ''' + dialog_text 26   dialog_text = dialog_text . replace ( '' \n '' , 27               '''
 - en: ''' ) 28   styles = getSampleStyleSheet () 29   paragraph = Paragraph ( dialog_text
     , 30              styles [ ''Normal'' ]) 31   contents . append ( paragraph )
     32 33   # Build the PDF 34   doc . build ( contents ) 35 36   # message box saying
@@ -1474,12 +1524,15 @@
     img1 ) 28 29   # Add the puzzle image 30   img2 = ReportLabImage ( puzzle_image_path
     , 31        width = 5 * inch , height = 5 * inch ) 32   contents . append ( img2
     ) 33 34   # Add the puzzle words 35   puzzle_word_text = '''
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: ''' + puzzle_word_text 36   puzzle_word_text = puzzle_word_text . replace (
     37              '' \n '' , '''
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '''+ 拼图文字 36   拼图文字 = 拼图文字 . 替换 ( 37             '' \n '' , '''
 - en: ''' ) 38   styles = getSampleStyleSheet () 39   paragraph = Paragraph ( puzzle_word_text
     , 40              styles [ ''Normal'' ]) 41   contents . append ( paragraph )
     42 43   # Build the PDF 44   doc . build ( contents )  When we hit the create
@@ -1634,12 +1687,117 @@
     [ i ], 100        width = 4 * inch , 101        height = 4 * inch ) 102      contents
     . append ( img2 ) 103 104      contents . append ( Spacer ( 1 , .25 * 72 )) 105
     106      puzzle_word_text = '''
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: ''' ) 38   styles = getSampleStyleSheet () 39   paragraph = Paragraph ( puzzle_word_text
+    , 40              styles [ ''Normal'' ]) 41   contents . append ( paragraph )
+    42 43   # 构建 PDF 44   doc . build ( contents )  当我们点击创建 PDF 按钮时，它会运行上面的 create_pdf
+    函数，将主题名称、生成的主题图片、谜题和谜题单词列表编译到 output.pdf 中，并生成下面显示的单页谜题表。 ![](image-imrv4k6d.png)图
+    149\. PDF 文件中的单词搜索 创建整本书 现在我们已经准备好所有的部分来创建一整本单词搜索书。我们将使用两级间接策略。我们将使用 ChatGPT 生成我们主题的
+    10 个主题列表，然后我们将取这 10 个主题并制作 10 个谜题，每本书的每一页都有一个谜题。请注意，通过向 ChatGPT 请求更多主题，这可以轻松扩展到
+    100 页，但出于理解如何完成所有这些工作的目的，我们将保持较小规模。 创建 batch_submit 函数 该项目的目标是最终基于特定主题创建一本 10
+    页的谜题书。我们将从下拉列表中选择主题，但之后，我们将使用 ChatGPT 生成来自该主题的主题。然后我们将循环遍历主题并创建谜题。我们已经编写了所有创建谜题的代码，我们只需要在进展中保存每个谜题图像的路径，以及主题图像的路径和谜题单词列表。这里的策略是有三个数组来记住我们生成的所有内容。当我们完成生成书中每一页的所有组件时，我们将把整个内容发送到一个
+    create_book 函数，该函数将在一个 PDF 文件中生成我们的整本书。该书将包含页码以及标题中列出的主题。 如上所述，batch_submit 函数旨在自动化基于主题生成单词搜索谜题并将其编译成一本书的过程。以下是该函数所做的步骤的逐步解释： 初始化空列表以存储谜题、与主题相关的图像、谜题图像和谜题描述。 获取设置等待光标（表示
+    UI 中的加载状态），从组合框中检索所选主题，并构建提示以请求与该主题相关的 40 个单词列表。 首先 OpenAI 向 OpenAI 的 GPT-3.5
+    Turbo 发送消息，使用构建的提示获取与初始主题相关的逗号分隔的 40 个单词列表。 单词检索和检索并打印响应，然后将其拆分和清理为单词列表（主题）。从此列表中仅选择
+    10 个经过清理的、可行的单词。 对于清理列表中的每个主题： 保存当前主题作为谜题描述。后续 OpenAI 调用：使用当前主题构建新提示，并使用另一个 OpenAI
+    调用获取与该主题相关的新的 40 个单词列表。检索、拆分、清理并从响应中选择单词，创建并显示包含这些单词的单词��索谜题，并使用检索的单词和创建的谜题更新
+    UI 元素。 生成并显示与当前主题相关的图像，将其复制到特定路径并将这些路径存储在之前初始化的列表中。 书的创建：在遍历所有主题后，使用单词列表、主题图像、谜题图像和谜题描述的列表调用
+    create_book 函数，以编译和生成一本单词搜索谜题书。 batch_submit 自动化创建单词搜索谜题的过程。对于给定的主题，它使用 OpenAI
+    获取相关单词，生成单词搜索谜题，检索并存储每个谜题和主题的图像，最后将这些元素编译成一本书。每个步骤都涉及与用户界面、文件系统和 OpenAI 的 GPT-3.5
+    Turbo API 的交互。 图 150 1 def batch_submit ():  2   puzzle_words_list = []  3   theme_images_list
+    = []  4   puzzle_images_list = []  5   puzzle_descriptions = []  6  7   set_wait_cursor
+    ()  8   theme = combo1 . get ()  9 10   prompt = f "Create a comma delimited \
+    11        list of 40 words having to do \ 12        with the theme { theme } .
+    None of \ 13        the words in the list \ 14        should repeat \n " 15 16   messages
+    = [{ ''role'' : ''user'' , 17         ''content'' : prompt }] 18 19   response
+    = openai . ChatCompletion . create ( 20     model = "gpt-3.5-turbo" , 21     messages
+    = messages , 22     temperature = 0.8 , 23     top_p = 1.0 , 24     frequency_penalty
+    = 0.0 , 25     presence_penalty = 0.6 , 26   ) 27 28   print ( prompt ) 29 30   #
+    检索由 ChatGPT 创建的单词列表 31   chatGPTAnswer 33   = response [ "choices" ][ 0 ][ "message"
+    ] 34               [ "content" ] 35   print ( chatGPTAnswer ) 36   # 将逗号分隔的单词列表拆分为列表
+    37   # 38   topics = chatGPTAnswer . split ( '','' ) 39   # 选择 10 个可行单词的列表 40   topics
+    = clean_words ( topics )  41   print ( topics ) 42 43   # 现在创建每个单词的单词列表 44   #
+    45   for topic in topics : 46     print ( topic ) 47     # 保存谜题描述 48     puzzle_descriptions
+    . append ( topic ) 49 50     prompt 51      = f "Create a comma delimited list
+    of 52       40 words having to do with the theme 53       { topic } . None of
+    the words in the 54       list should repeat \ n " 55     messages = [{ ''role''
+    : ''user'' , ''content'' : 56             prompt }] 57     response = openai .
+    ChatCompletion . create ( 58       model = "gpt-3.5-turbo" , 59       messages
+    = messages , 60       temperature = 0.8 , 61       top_p = 1.0 , 62       frequency_penalty
+    = 0.0 , 63       presence_penalty = 0.6 , 64     ) 65 66     print ( prompt )
+    67 68     # 检索由 ChatGPT 创建的单词列表 70     chatGPTAnswer 71      = response [ "choices"
+    ][ 0 ][ "message" ] 72           [ "content" ] 73     print ( chatGPTAnswer )
+    74     # 将逗号分隔的单词列表拆分为列表 75     words = chatGPTAnswer . split ( '','' ) 76     #
+    选择 10 个可行单词的列表 77     words = clean_words ( words )  78     print ( words ) 79
+    80     # 从单词创建单词搜索谜题数组 81     ( board , words_to_remove ) = 84        puzzle_board_creator        85        .
+    create_word_search ( words ) 86     # 删除无法放置的单词 87     words = [ word for word
+    in words 88           if word not in 89            words_to_remove ] 90     puzzle_words_list
+    91      . append ( '', '' . join ( words )) 92     # 在控制台上显示谜题 93     puzzle_board_creator
+    . display_board ( board ) 94     label_puzzle_words . config ( text = '', 95                  ''.join(words))
+    96     # 使 result_text 可滚动 97     result_text . config ( state = "normal" ) 98
+    99     # 清除任何先前的结果 100     # 并插入新结果 101     result_text . delete ( 1.0 , tk .
+    END )  102     result_text . insert ( tk . END , chatGPTAnswer ) 103     result_text
+    . config ( state = "disabled" ) 104 105     # 生成主题的卡通图像 106     image_url = generate_image
+    ( topic ) 107 108     # 将字母网格创建为 109     # 谜题图像 110     create_grid_of_letters_image
+    ( board ) 111 112     # 将主题图像添加到 113     # 主题图像列表   114     display_image_from_url
+    ( image_holder , 115                image_url ) 116     dest_theme_image_path
+    = 117      copy_image ( pil_image_path , topic ) 118     theme_images_list 119      .
+    append ( dest_theme_image_path ) 120 121     # 将谜题图像添加到谜题图像列表 122     display_image_from_path
+    ( puzzle_holder , 123               puzzle_image_path ) 124     dest_puzzle_image_path
+    = copy_image 125           ( puzzle_image_path , topic ) 126     puzzle_images_list
+    . append     127           ( dest_puzzle_image_path ) 128 129     puzzle_holder
+    . config ( width = 600 , 130        height = 600 ) 131     set_normal_cursor ()
+    132 133   # 创建整本书为 PDF 134   create_book ( puzzle_words_list , 135         theme_images_list
+    , 136         puzzle_images_list , 137         puzzle_descriptions ) 一旦我们收集了主题图像、谜题图像和谜题关键列表的批次，我们就拥有了创建我们的书所需的一切。 创建书 batch_submit
+    函数通过调用 create_book 来结束���生成的内容。create_book 通过在四个数组中对应索引处的内容来迭代形成页面：puzzle_word_list、theme_images_list、puzzle_image_list
+    和 puzzle_descriptions。这些数组分别包含谜题主题、相关图像、谜题图像和每个谜题中要找到的关键字。该函数处理这些输入，以创建一本单词搜索谜题的
+    PDF 书，每一页展示一个独特的谜题及其相关内容。以下是 create_book 方法的详细说明： 初始化 首先检查任何输入列表是否为空，以及所有列表是否具有相同的长度。如果不是，则显示错误消息并退出函数。 PDF
+    循环遍历所有集合后，构建并保存 PDF 文档。如果成功，显示成功消息。如果在此过程中发生错误，则捕获异常并显示错误消息。 本质上，该函数正在创建一本 PDF
+    书，其中每一页都专门用于展示一个单词搜索谜题及其相关图像和单词，格式整齐地为读者组织。 图 151 1 from reportlab.platypus import  2  SimpleDocTemplate
+    ,  3  Paragraph , Image as ReportLabImage ,  4  PageBreak ,  5  Spacer , Table
+    , TableStyle  6  7 def create_book ( puzzle_words_list ,  8        theme_images_list
+    ,  9        puzzle_images_list , 10        puzzle_descriptions ): 11  try : 12    print
+    ( "creating the book..." ) 13    if not all ([ puzzle_words_list , 14     theme_images_list
+    , puzzle_images_list , 15     puzzle_descriptions ]): 16     messagebox . showerror
+    ( 17        "Error" , 18        "Please provide non-empty lists \ 19        of
+    puzzle words, \ 20        theme images, puzzle images, \ 21        and puzzle
+    descriptions!" ) 22      return 23 24    if not len ( puzzle_words_list ) == 25        len
+    ( theme_images_list ) == 26        len ( puzzle_images_list ) == 27        len
+    ( puzzle_descriptions ): 28      messagebox . showerror ( 29        "Error" ,
+    30        "All input lists must be \ 31         of the same length!" ) 32      return
+    33 34    # 准备 6x9 模板 35    custom_page_size = ( 6 * 72 , 9 * 72 ) 36    custom_margins
+    = 0.5 * 72 37    doc = SimpleDocTemplate ( "output.pdf" , 38         pagesize
+    = custom_page_size , 39         topMargin = custom_margins , 40         bottomMargin
+    = custom_margins , 41         leftMargin = custom_margins , 42         rightMargin
+    = custom_margins ) 43         44    styles = getSampleStyleSheet () 45    contents
+    = [] 46 47    headline_style = styles [ ''Heading1'' ] 48    normal_style = styles
+    [ ''Normal'' ] 49 50    for i in range ( len ( puzzle_words_list )): 51      header_data
+    = [[ Paragraph ( f " 52      { puzzle_descriptions [ i ]} ", 53              styles
+    [ ''Normal'' ]), 54      Paragraph ( f " { i + 1 } " , 55            styles [
+    ''Normal'' ])]] 56 57      # 为标题创建一个表格， 58      # 左侧有间距，中间是主题， 59      # 右侧是页码
+    60      # 61      margin_offset = 1 * 72 62      header_data = [[ '''' , 63 64        Paragraph
+    ( f "Topic: { 65          puzzle_descriptions [ i ] } " ,   66          styles
+    [ ''Normal'' ]), 67 68        Paragraph ( f "Page { i + 1 } " , 69              styles
+    [ ''Normal'' ])]] 70 71      header_table = Table 72        ( header_data , 73         colWidths
+    = [         74             margin_offset , 4 * 72 , 75             2 * 72 76              ]
+    77        ) 78 79      header_table . setStyle ( 80        TableStyle ([ 81         (
+    ''ALIGN'' , ( 1 , 0 ), 82         ( 2 , 0 ), ''RIGHT'' ), 83          ]) 84        )
+    85 86      contents . append ( header_table ) 87      # 在标题和内容之间添加一些空间 88      contents
+    . append ( Spacer ( 1 , .5 * 72 )) 89 90      img1 = ReportLabImage ( 91        theme_images_list
+    [ i ], 92        width = 1.5 * inch , height = 1.5 * inch ) 93      contents .
+    append ( img1 ) 94 95      contents . append ( Spacer ( 1 , .25 * 72 )) 96 97      img2
+    = ReportLabImage ( 98        puzzle_images_list [ i ], 99        width = 4 * inch
+    , 100        height = 4 * inch ) 101      contents . append ( img2 ) 102 103      contents
+    . append ( Spacer ( 1 , .25 * 72 )) 104 105      puzzle_word_text = '''
 - en: ''' + 107             puzzle_words_list [ i ] 108      puzzle_word_text = puzzle_word_text
     109          . replace ( '' \n '' , '''
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: ''' + 107             puzzle_words_list [ i ] 108      puzzle_word_text = puzzle_word_text
+    109          . replace ( '' \n '' , '''
 - en: ''' ) 110      paragraph = Paragraph ( 111        puzzle_word_text , 112        normal_style
     ) 113      contents . append ( paragraph ) 114 115      # add page breaks at the
     end 116      # of the page 117      # if we are not on the last page 118      if
@@ -1844,5 +2002,69 @@
     177 1 token_dictionary = { 2   ''prompt_tokens'':response[''usage''] 3   [''prompt_tokens''],    4   ''completion_tokens'':response[''usage'']
     5   [''completion_tokens''],    6   ''total_tokens'':response[''usage''] 7   [''total_tokens''],    8
     }'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: ''' ) 110      paragraph = Paragraph ( 111        puzzle_word_text , 112        normal_style
+    ) 113      contents . append ( paragraph ) 114 115      # add page breaks at the
+    end 116      # of the page 117      # if we are not on the last page 118      if
+    i < len ( puzzle_words_list ) - 1 : 119        contents . append ( PageBreak ())
+    120 121    # compile the contents into a pdf 122    doc . build ( contents ) 123    messagebox
+    . showinfo ( "PDF Created" , 124        "PDF created successfully!" ) 125  except
+    Exception as e : 126    messagebox . showerror ( "Error" , 127         f "Error
+    creating PDF: { e } " )  Adding a button to the UI  The only remaining task is
+    to add a way to call batch_submit so we can create our book. Here we simply add
+    a new button after the submit button called “create book”. We also needed to adjust
+    the layout a bit to get everything to line up properly:  Figure 1521 app = tk
+    . Tk () 2 app . title ( "Word Puzzle Book" ) 3 4 5 # Label and ComboBox for the
+    first animal 6 label1 = ttk . Label ( app , text = 7 "Select a Word Puzzle \ 8           Theme:"
+    ) 9 label1 . grid ( column = 0 , row = 0 , padx = 10 , pady = 5 ) 10 combo1 =
+    ttk . Combobox ( 11   app , values = [ "Holidays" , "Science" , "Travel" , 12   "AI"
+    , "Cars" , "Food" , "Entertainment" , 13   "Sports" , "Space" , "Work" , "School"
+    , 14   "Animals" , "Nature" , "Art" , "Music" , 15   "Movies" , "Books" , "History"
+    , "Math" ,  16   "Geography" , "Weather" , "Fashion" , 17   "Health" , "Family"
+    , "Money" , 18   "Politics" , "Religion" , 19   "Technology" , "Games" , 20   "Business"
+    , "Crime" , "Law" , "Medicine" , 21   "Psychology" , "Language" , "Culture" ,
+    22   "Relationships" , "Social Media" , "News" , 23   "Shopping" , "Transportation"
+    , 24   "Architecture" , "Design" , "Gardening" , 25   "Hobbies" , "Humor" , "Literature"
+    , 26   "Philosophy" , "Photography" , 27   "Writing" , "Other" ]) 28 combo1 .
+    grid ( column = 1 , row = 0 , padx = 10 , pady = 5 ) 29 combo1 . set ( "Holidays"
+    ) 30 31 32 # Button to submit the details 33 submit_btn = ttk . Button ( app ,
+    text = "Submit" , 34         command = submit ) 35 submit_btn . grid ( column
+    = 0 , row = 3 , padx = 10 , pady = 20 ) 36 37 # Button to submit the details 38
+    create_book_btn = ttk . Button ( app , 39  text = "Create Book" , command = batch_submit
+    ) 40 create_book_btn . grid ( column = 2 , row = 3 , padx = 10 , pady = 20 ) 41
+    42 # make it scrollable 43 # Create a Scrollbar widget 44 scrollbar = tk . Scrollbar
+    ( app ) 45 scrollbar . grid ( row = 4 , column = 3 , sticky = ''ns'' ) 46 47 #
+    Text widget to display results 48 result_text = tk . Text ( app , width = 50 ,
+    height = 10 , 49            wrap = tk . WORD , 50            yscrollcommand =
+    scrollbar . set ) 51 result_text . grid ( column = 0 , row = 4 , rowspan = 1 ,
+    52         columnspan = 4 , padx = 10 , pady = 10 ) 53 result_text . config (
+    state = "disabled" ) 54 # result_text.pack(expand=True, fill=tk.BOTH) 55 56 image_holder
+    = tk . Label ( app ) 57 image_holder . grid ( column = 0 , row = 5 , columnspan
+    = 2 , 58          padx = 10 , pady = 10 ) 59 60 puzzle_holder = tk . Label ( app
+    ) 61 puzzle_holder . grid ( column = 5 , row = 0 , rowspan = 7 ,  62          padx
+    = 2 , pady = 2 ) 63 64 label_key_title = ttk . Label ( app , 65               text
+    = "Puzzle Words" ) 66 label_key_title . grid ( column = 5 , row = 6 , padx = 10
+    , 67           pady = 5 ) 68 69 label_puzzle_words = ttk . Label ( app , text
+    = "" ) 70 label_puzzle_words . grid ( column = 5 , row = 7 , 71              padx
+    = 10 , pady = 10 ) 72 73 # Button to submit the details 74 create_pdf_btn = ttk
+    . Button ( 75   app , text = "Create Pdf" , 76   command = lambda : 77    create_pdf
+    ( label_puzzle_words [ ''text'' ])) 78 create_pdf_btn . grid ( column = 1 , row
+    = 3 , padx = 10 , pady = 20 ) 79 80 scrollbar . config ( command = result_text
+    . yview ) 81 82 83 # Link the scrollbar to the text widget 84 # (so the scrollbar
+    knows how to scroll 85 # the text widget) 86 87 88 app . mainloop ()   This new
+    layout produces the following application screen:  ![](image-7x140yo8.png)  Figure
+    153. Newly laid out UI  Let’s press the “Create Book” button and see what happens.
+    It will take a little bit of time to generate the book on Holidays, but when all
+    is said and done you’ll have a 10-page puzzle book! Here is a sample page from
+    our generated Holiday-themed book:  ![](image-q8mc6fzm.png)  Figure 154. One Page
+    from the Holiday Puzzle Book  Conclusion  In summary, producing a PDF word search
+    book by employing ChatGPT to generate topics and word lists is the next horizon
+    of game development. We have accomplished this using Python’s powerful puzzle
+    creation and assembly to create a PDF book using ReportLab. This approach streamlines
+    the production of diverse and engaging content and provides a unique value proposition
+    for puzzle enthusiasts. Now that we’ve figured out how to generate a fully viable
+    product, you may want to consider selling what you created! For monetization,
+    a strategic move would be to leverage platforms like Amazon’s Kindle Direct Publishing
+    (KDP) and LeanPub. Amazon’s KDP allows for'

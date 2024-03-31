@@ -1,17 +1,25 @@
 - en: 7 LLMs for Data Science
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 7种用于数据科学的LLMs
 - en: Join our book community on Discord
+  id: totrans-1
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 加入我们在Discord上的书籍社区
 - en: '[https://packt.link/EarlyAccessCommunity](https://packt.link/EarlyAccessCommunity)'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: '[https://packt.link/EarlyAccessCommunity](https://packt.link/EarlyAccessCommunity)'
 - en: '![Qr code Description automatically generated](../media/file49.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![自动生成的二维码描述](../media/file49.png)'
 - en: 'This chapter is about how generative AI can automate data science. Generative
     AI, in particular large language models (LLMs) have the potential to accelerate
     scientific progress across various domains, especially by providing efficient
@@ -29,60 +37,84 @@
     approaches to doing data science with LLMs, which you can find in the `data_science`
     directory in the Github repository for the book at [https://github.com/benman1/generative_ai_with_langchain](https://github.com/benman1/generative_ai_with_langchain)The
     main sections are:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章讨论了生成式人工智能如何自动化数据科学。生成式人工智能，特别是大型语言模型（LLMs），有潜力加速各个领域的科学进展，尤其是通过提供对研究数据的高效分析和协助文献回顾过程。许多当前属于AutoML领域的方法可以帮助数据科学家提高生产力，并帮助使数据科学更具可重复性。我将首先概述数据科学中的自动化，然后我们将讨论生成式人工智能对数据科学的影响。接下来，我们将讨论如何以不同方式使用代码生成和工具来回答与数据科学相关的问题。这可以以模拟的形式进行，或者通过为数据集添加额外信息来丰富数据集。最后，我们将重点放在对结构化数据集的探索性分析上。我们可以设置代理来运行SQL或Pandas中的表格数据。我们将看到如何提出关于数据集的问题、关于数据的统计问题，或者要求可视化。在整个章节中，我们将使用LLMs进行数据科学的不同方法，您可以在书籍的Github存储库中的`data_science`目录中找到。主要章节包括：
 - en: Automated data science
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 自动化数据科学
 - en: Agents can answer data science questions
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代理可以回答数据科学问题
 - en: Data exploration with LLMs
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用LLMs进行数据探索
 - en: Let’s start by discussing how data science can be automated and which parts
     of it, and how generative AI will impact data science.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们从讨论数据科学如何自动化以及其中的哪些部分开始，以及生成式人工智能将如何影响数据科学。
 - en: Automated data science
+  id: totrans-9
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 自动化数据科学
 - en: 'Data science is a field that combines computer science, statistics, and business
     analytics to extract knowledge and insights from data. Data scientists use a variety
     of tools and techniques to collect, clean, analyze, and visualize data. They then
     use this information to help businesses make better decisions.The work of a data
     scientist can vary depending on the specific role and industry. However, some
     common tasks that data scientists might perform include:'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据科学是一个结合了计算机科学、统计学和商业分析的领域，从数据中提取知识和见解。数据科学家使用各种工具和技术来收集、清洗、分析和可视化数据。然后他们利用这些信息帮助企业做出更好的决策。数据科学家的工作可能因具体角色和行业而异。然而，数据科学家可能执行的一些常见任务包括：
 - en: Collecting data: Data scientists need to collect data from a variety of sources,
     such as databases, social media, and sensors.
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 收集数据：数据科学家需要从各种来源收集数据，如数据库、社交媒体和传感器。
 - en: Cleaning data: Data scientists need to clean data to remove errors and inconsistencies.
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 清洗数据：数据科学家需要清洗数据以消除错误和不一致性。
 - en: Analyzing data: Data scientists use a variety of statistical and machine learning
     techniques to analyze data.
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分析数据：数据科学家使用各种统计和机器学习技术来分析数据。
 - en: Visualizing data: Data scientists use data visualizations to communicate insights
     to stakeholders.
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据可视化：数据科学家使用数据可视化向利益相关者传达见解。
 - en: Building models: Data scientists build models to predict future outcomes or
     make recommendations.
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 构建模型：数据科学家构建模型以预测未来结果或提出建议。
 - en: 'Data analysis is a subset of data science that focuses on extracting insights
     from data. Data analysts use a variety of tools and techniques to analyze data,
     but they typically do not build models.The overlap between data science and data
@@ -93,26 +125,40 @@
     can be used to make decisions in real time, however, we’ll avoid automatic deployment
     of models in this discussion.Here is a table that summarizes the key differences
     between data science and data analysis:'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据分析是数据科学的一个子集，专注于从数据中提取见解。数据分析师使用各种工具和技术来分析数据，但他们通常不构建模型。数据科学和数据分析之间的重叠之处在于两个领域都涉及与数据一起工作以提取见解。然而，数据科学家通常具有比数据分析师更丰富的技术技能。数据科学家也更有可能构建模型，并有时将模型部署到生产环境中。数据科学家有时将模型部署到生产环境中，以便实时做出决策，但在本讨论中，我们将避免自动部署模型。以下是总结数据科学和数据分析之间关键差异的表格：
 - en: '| **Feature** | **Data Science** | **Data Analysis** |'
+  id: totrans-17
   prefs: []
   type: TYPE_TB
+  zh: '| **特点** | **数据科学** | **数据分析** |'
 - en: '| Technical skillset | More technical | Less technical |'
+  id: totrans-18
   prefs: []
   type: TYPE_TB
+  zh: '| 技术技能 | 更丰富 | 较少 |'
 - en: '| Machine learning | Yes | No |'
+  id: totrans-19
   prefs: []
   type: TYPE_TB
+  zh: '| 机器学习 | 是 | 否 |'
 - en: '| Model deployment | Sometimes | No |'
+  id: totrans-20
   prefs: []
   type: TYPE_TB
+  zh: '| 模型部署 | 有时 | 否 |'
 - en: '| Focus | Extracting insights and building models | Extracting insights |'
+  id: totrans-21
   prefs: []
   type: TYPE_TB
+  zh: '| 焦点 | 提取见解和构建模型 | 提取见解 |'
 - en: 'Figure 7.1: Comparison of Data Science and Data Analysis.'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 7.1：数据科学和数据分析的比较。
 - en: 'The common denominator between the two is collecting data, cleaning data, analyzing
     data, visualizing data, all of which fall into the category of extracting insights.
     Data science, additionally is about training machine learning models and usually
@@ -163,14 +209,25 @@
     LLMs using magic commands in notebook environments. It supports multiple providers
     and offers customization options for the output format. This screenshot from the
     documentation shows the chat feature, the Jupyternaut chat:'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 两者之间的共同点是收集数据、清洗数据、分析数据、可视化数据，所有这些都属于提取见解的范畴。数据科学另外还涉及训练机器学习模型，通常更加注重统计学。在某些情况下，根据公司的设置和行业惯例，部署模型和编写软件可能会被添加到数据科学的任务列表中。自动数据分析和数据科学旨在自动化许多与处理数据相关的繁琐、重复的任务。这包括数据清洗、特征工程、模型训练、调优和部署。目标是通过实现更快的迭代和减少常见工作流程的手动编码，使数据科学家和分析师更加高效。许多这些任务可以在一定程度上自动化。数据科学的一些任务与我们在第6章“开发软件”中讨论的软件开发人员的任务相似，即编写和部署软件，尽管焦点更窄，主要集中在模型上。数据科学平台如Weka、H2O、KNIME、RapidMiner和Alteryx是统一的机器学习和分析引擎，可用于各种任务，包括预处理大量数据和特征提取。所有这些都配备了图形用户界面（GUI），具有集成第三方数据源和编写自定义插件的能力。KNIME主要是开源的，但也提供了一个名为KNIME
+    Server的商业产品。Apache Spark是一种多功能工具，可用于数据科学中涉及的各种任务。它可用于清洁、转换、提取特征和准备大容量数据进行分析，还可用于训练和部署机器学习模型，无论是在流式场景中，当涉及实时决策或监控事件时。此外，在其最基本的层面上，用于科学计算的库，如NumPy，可以用于自动化数据科学中涉及的所有任务。深度学习和机器学习库，如TensorFlow、Pytorch和Scikit-Learn，可用于各种任务，包括创建复杂的机器学习模型以外的数据预处理和特征提取。编排工具，如Airflow、Kedro或其他工具，可以帮助完成所有这些任务，并包含许多与数据科学各个步骤相关的特定工具的集成。几个数据科学工具支持生成式人工智能。在第6章“开发软件”中，我们已经提到了GitHub
+    Copilot，但还有其他工具，如PyCharm AI助手，甚至更为重要的Jupyter AI，它是Project Jupyter的一个子项目，为Jupyter笔记本带来了生成式人工智能。Jupyter
+    AI允许用户生成代码、修复错误、总结内容，甚至使用自然语言提示创建整个笔记本。该工具将Jupyter与各种提供商的LLM连接起来，使用户可以选择其首选模型和嵌入。Jupyter
+    AI优先考虑负责任的人工智能和数据隐私。底层提示、链和组件是开源的，确保透明度。它保存有关模型生成内容的元数据，使跟踪工作流中的AI生成代码变得容易。Jupyter
+    AI尊重用户数据隐私，仅在明确请求时才与LLMs联系，这是通过LangChain集成完成的。要使用Jupyter AI，用户可以安装适用于JupyterLab的适当版本，并通过聊天界面或魔术命令界面访问它。聊天界面具有Jupyternaut，一个可以回答问题、解释代码、修改代码和识别错误的AI助手。用户还可以从文本提示中生成整个笔记本。该软件允许用户教导Jupyternaut有关本地文件，并在笔记本环境中使用魔术命令与LLMs进行交互。它支持多个提供商，并为输出格式提供定制选项。文档中的此截图显示了聊天功能，Jupyternaut聊天：
 - en: '![Figure 7.2: Jupyter AI – Jupyternaut chat.](../media/file50.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![图 7.2：Jupyter AI – Jupyternaut 聊天。](../media/file50.png)'
 - en: 'Figure 7.2: Jupyter AI – Jupyternaut chat.'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 7.2：Jupyter AI – Jupyternaut 聊天。
 - en: It should be plain to see that having a chat like that at your fingertips to
     ask questions, create simple functions, or change existing functions can be a
     boon to data scientists. The benefits of using these tools include improved efficiency,
@@ -184,12 +241,17 @@
     In the following sections, we’ll look into these steps in turn, and we’ll discuss
     automating them, and we’ll highlight how generative AI can make a contribution
     to improving the workflow and create efficiency gains.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 很明显，像这样随时可以提问、创建简单函数或更改现有函数的聊天工具对数据科学家来说是一个福音。使用这些工具的好处包括提高效率，在模型构建或特征选择等任务中减少手动工作量，增强模型的可解释性，识别和解决数据质量问题，与其他
+    scikit-learn 管道（pandas_dq）集成，以及结果可靠性的整体改善。总的来说，自动化数据科学可以极大加速分析和机器学习应用程序的开发。它使数据科学家能够专注于过程的更高价值和创造性方面。为业务分析师民主化数据科学也是自动化这些工作流程的一个关键动机。在接下来的章节中，我们将依次研究这些步骤，并讨论如何自动化它们，以及我们将强调生成式人工智能如何为改善工作流程和创造效率带来贡献。
 - en: Data collection
+  id: totrans-27
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 数据收集
 - en: 'Automated data collection is the process of collecting data without human intervention.
     Automatic data collection can be a valuable tool for businesses. It can help businesses
     to collect data more quickly and efficiently, and it can free up human resources
@@ -197,51 +259,70 @@
     we refer to ETL (Extract, Transform, and Load) as the process that not only takes
     data from one or more sources (the data collection), but also prepares it for
     specific use cases. The ETL process typically follows these steps:'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 自动化数据收集是在没有人为干预的情况下收集数据的过程。自动数据收集可以成为企业的有价值工具。它可以帮助企业更快速、更高效地收集数据，并可以释放人力资源专注于其他任务。通常，在数据科学或分析的背景下，我们将
+    ETL（提取、转换和加载）称为不仅从一个或多个来源获取数据（数据收集），还为特定用例准备数据的过程。ETL 过程通常遵循以下步骤：
 - en: Extract: The data is extracted from the source systems. This can be done using
     a variety of methods, such as web scraping, API integration, or database queries.
+  id: totrans-29
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Extract：数据从源系统中提取出来。可以使用各种方法进行提取，例如网页抓取，API 集成或数据库查询。
 - en: Transform: The data is transformed into a format that can be used by the data
     warehouse or data lake. This may involve cleaning the data, removing duplicates,
     and standardizing the data format.
+  id: totrans-30
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Transform：数据被转换为数据仓库或数据湖可以使用的格式。这可能涉及清洗数据，去重和标准化数据格式。
 - en: Load: The data is loaded into the data warehouse or data lake. This can be done
     using a variety of methods, such as bulk loading or incremental loading.
+  id: totrans-31
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Load：数据被加载到数据仓库或数据湖中。可以使用各种方法进行加载，例如批量加载或增量加载。
 - en: 'ETL and data collection can be done using a variety of tools and techniques,
     such as:'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: ETL 和数据收集可以使用各种工具和技术完成，例如：
 - en: Web scraping: Web scraping is the process of extracting data from websites.
     This can be done using a variety of tools, such as Beautiful Soup, Scrapy, Octoparse,
     .
+  id: totrans-33
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 网页抓取：网页抓取是从网站提取数据的过程。可以使用各种工具进行此操作，例如 Beautiful Soup、Scrapy、Octoparse 等。
 - en: 'APIs (Application Programming Interfaces): These are a way for software applications
     to talk to each other. Businesses can use APIs to collect data from other companies
     without having to build their own systems.'
+  id: totrans-34
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: API（应用程序编程接口）：这是软件应用程序相互通信的一种方式。企业可以使用 API 从其他公司收集数据，而无需构建自己的系统。
 - en: 'Query languages: Any database can serve as data source including of the SQL
     (Structured Query Language) or the no-SQL variety.'
+  id: totrans-35
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查询语言：任何数据库都可以作为数据源，包括 SQL（结构化查询语言）或无 SQL 类型。
 - en: Machine learning: Machine learning can be used to automate the process of data
     collection. For example, businesses can use machine learning to identify patterns
     in data and then collect data based on those patterns.
+  id: totrans-36
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 机器学习：机器学习可以用于自动化数据收集过程。例如，企业可以使用机器学习识别数据中的模式，然后根据这些模式收集数据。
 - en: 'Once the data has been collected, it can be processed to prepare it for use
     in a data warehouse or data lake. The ETL process will typically clean the data,
     remove duplicates, and standardize the data format. The data will then be loaded
@@ -256,44 +337,60 @@
     to connect different applications and services. This can be used to automate the
     process of data collection from a variety of sources.Here are some of the benefits
     of using automated ETL tools:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦数据被收集，就可以对其进行处理，以准备在数据仓库或数据湖中使用。ETL过程通常会清理数据，删除重复项，并标准化数据格式。然后数据将被加载到数据仓库或数据湖中，数据分析师或数据科学家可以利用这些数据来获取对业务的洞察。有许多ETL工具，包括商业工具如AWS
+    Glue、Google Dataflow、Amazon Simple Workflow Service（SWF）、dbt、Fivetran、Microsoft
+    SSIS、IBM InfoSphere DataStage、Talend Open Studio或开源工具如Airflow、Kafka和Spark。在Python中还有许多其他工具，太多了无法列出所有，例如用于数据提取和处理的Pandas，甚至celery和joblib，可以作为ETL编排工具。在LangChain中，与Zapier集成，这是一种可以用于连接不同应用程序和服务的自动化工具。这可以用于自动化从各种来源收集数据的过程。使用自动化ETL工具的一些好处包括：
 - en: Increased accuracy: Automated ETL tools can help to improve the accuracy of
     the data extraction, transformation, and loading process. This is because the
     tools can be programmed to follow a set of rules and procedures, which can help
     to reduce human error.
+  id: totrans-38
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提高准确性：自动化的ETL工具可以帮助提高数据提取、转换和加载过程的准确性。这是因为工具可以编程遵循一套规则和程序，可以帮助减少人为错误。
 - en: Reduced time to market: Automated ETL tools can help to reduce the time it takes
     to get data into a data warehouse or data lake. This is because the tools can
     automate the repetitive tasks involved in the ETL process, such as data extraction
     and loading.
+  id: totrans-39
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 缩短上市时间：自动化的ETL工具可以帮助缩短将数据导入数据仓库或数据湖所需的时间。这是因为工具可以自动化ETL过程中涉及的重复任务，如数据提取和加载。
 - en: Improved scalability: Automated ETL tools can help to improve the scalability
     of the ETL process. This is because the tools can be used to process large volumes
     of data, and they can be easily scaled up or down to meet the needs of the business.
+  id: totrans-40
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提高可扩展性：自动化的ETL工具可以帮助提高ETL过程的可扩展性。这是因为工具可以用于处理大量数据，并且可以轻松地按需扩展或缩减以满足业务需求。
 - en: Improved compliance: Automated ETL tools can help to improve compliance with
     regulations such as GDPR and CCPA. This is because the tools can be programmed
     to follow a set of rules and procedures, which can help to ensure that data is
     processed in a compliant manner.
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提高合规性：自动化的ETL工具可以帮助提高符合GDPR和CCPA等法规的合规性。这是因为工具可以编程遵循一套规则和程序，可以帮助确保数据以符合法规的方式处理。
 - en: The best tool for automatic data collection will depend on the specific needs
     of the business. Businesses should consider the type of data they need to collect,
     the volume of data they need to collect, and the budget they have available.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 自动数据收集的最佳工具将取决于企业的具体需求。企业应考虑他们需要收集的数据类型、需要收集的数据量以及他们可用的预算。
 - en: Visualization and EDA
+  id: totrans-43
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 可视化和探索性数据分析
 - en: 'Automated EDA (Exploratory Data Analysis) and visualization refer to the process
     of using software tools and algorithms to automatically analyze and visualize
     data, without significant manual intervention. Traditional EDA involves manually
@@ -307,44 +404,59 @@
     These tools also enable a more efficient exploration of complex datasets by generating
     interactive visualizations that provide a comprehensive overview of the data.Several
     tools are available for automated EDA and visualization, including:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 自动化探索性数据分析（EDA）和可视化是指使用软件工具和算法自动分析和可视化数据，无需重大手动干预的过程。传统的EDA涉及手动探索和总结数据，以了解其各个方面，然后再执行机器学习或深度学习任务。它有助于识别模式、检测不一致性、测试假设并获得洞察。然而，随着大型数据集的出现和对高效分析的需求，自动化EDA变得重要。自动化EDA和可视化工具提供了几个好处。它们可以加快数据分析过程，减少在数据清洗、处理缺失值、异常值检测和特征工程等任务上花费的时间。这些工具还通过生成交互式可视化，提供对数据的全面概述，实现对复杂数据集的更有效探索。有许多用于自动化EDA和可视化的工具，包括：
 - en: 'D-Tale: A library that facilitates easy visualization of pandas data frames.
     It supports interactive plots, 3D plots, heatmaps, correlation analysis, custom
     column creation.'
+  id: totrans-45
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: D-Tale：一个库，方便地可视化pandas数据框。它支持交互式图表、3D图表、热图、相关性分析、自定义列创建。
 - en: 'ydata-profiling (previously pandas profiling): An open-source library that
     generates interactive HTML reports (`ProfileReport`) summarizing different aspects
     of the dataset such as missing values statistics, variable types distribution
     profiles, correlations between variables. It works with Pandas as well as Spark
     DataFrames.'
+  id: totrans-46
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ydata-profiling（之前称为pandas profiling）：这是一个开源库，生成交互式HTML报告（`ProfileReport`），总结数据集的不同方面，如缺失值统计、变量类型分布概况、变量之间的相关性。它适用于Pandas和Spark
+    DataFrames。
 - en: 'Sweetviz: A Python library that provides visualization capabilities for exploratory
     data analysis with minimal code required. It allows for comparisons between variables
     or datasets.'
+  id: totrans-47
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Sweetviz：一个Python库，提供探索性数据分析的可视化功能，只需很少的代码。它允许在变量或数据集之间进行比较。
 - en: 'Autoviz: This library automatically generates visualizations for datasets regardless
     of their size with just a few lines of code.'
+  id: totrans-48
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Autoviz：这个库可以自动生成数据集的可视化，无论其大小，只需几行代码。
 - en: 'DataPrep: With just a few lines you can collect data from common data sources
     do EDA and data cleaning such as standardization of column names or entries.'
+  id: totrans-49
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: DataPrep：只需几行代码，您就可以从常见数据源中收集数据，进行探索性数据分析和数据清洗，比如标准化列名或条目。
 - en: 'Lux: Displays a set of visualizations with interesting trends and patterns
     in the dataset displayed via an interactive widget that users can quickly browse
     in order to gain insights.'
+  id: totrans-50
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Lux：通过交互式小部件显示数据集中有趣的趋势和模式的一组可视化结果，用户可以快速浏览以获取洞察。
 - en: The use of generative AI in data visualization adds another dimension to automated
     EDA by allowing algorithms to generate new visualizations based on existing ones
     or specific user prompts. Generative AI has the potential to enhance creativity
@@ -360,12 +472,16 @@
     making personalized visualizations tailored to the individual needs of each user.
     Further, Generative AI can be used to create interactive visualizations that allow
     users to explore data in new and innovative ways.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 在数据可视化中使用生成式人工智能为自动探索性数据分析增加了另一个维度，使算法能够基于现有的可视化或特定用户提示生成新的可视化。生成式人工智能有潜力通过自动化设计过程的一部分来增强创造力，同时保持人类对最终输出的控制。总的来说，自动化的探索性数据分析和可视化工具在时间效率、全面分析以及生成有意义的数据可视化方面提供了显著优势。生成式人工智能有潜力以多种方式革新数据可视化。例如，它可以用于创建更真实和引人入胜的可视化，有助于商业沟通并更有效地向利益相关者传达数据，以为每个用户提供他们需要获取洞察并做出明智决策所需的信息。生成式人工智能可以通过制作针对每个用户个性化需求的可视化来增强和扩展传统工具的创作能力。此外，生成式人工智能可以用于创建交互式可视化，让用户以新颖创新的方式探索数据。
 - en: Pre-processing and feature extraction
+  id: totrans-52
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 预处理和特征提取
 - en: Automated data preprocessing is the process of automating the tasks involved
     in data preprocessing. This can include tasks such as data cleaning, data integration,
     data transformation, and feature extraction. It is related to the transform step
@@ -419,26 +535,36 @@
     the feature space to improve model quality. Automated feature engineering is becoming
     essential to leveraging the full power of ML algorithms on complex real-world
     data.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
 - en: AutoML
+  id: totrans-54
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: AutoML
 - en: 'Automated Machine Learning (AutoML) frameworks are tools that automate the
     process of machine learning model development. They can be used to automate tasks
     such as data cleaning, feature selection, model training, and hyperparameter tuning.
     This can save data scientists a lot of time and effort, and it can also help to
     improve the quality of machine learning models.The basic idea of AutoML is illustrated
     in this diagram from the Github repo of the mljar autoML library (source: https://github.com/mljar/mljar-supervised):'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 自动化机器学习（AutoML）框架是一种自动化机器学习模型开发过程的工具。它们可以用于自动化任务，如数据清洗、特征选择、模型训练和超参数调整。这可以节省数据科学家大量的时间和精力，也有助于提高机器学习模型的质量。AutoML
+    的基本思想在 mljar autoML 库的 Github 仓库中有所体现（来源：https://github.com/mljar/mljar-supervised）：
 - en: '![Figure 7.3: How AutoML works.](../media/file51.png)'
+  id: totrans-56
   prefs: []
   type: TYPE_IMG
+  zh: '![图 7.3：AutoML 的工作原理。](../media/file51.png)'
 - en: 'Figure 7.3: How AutoML works.'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 7.3：AutoML 的工作原理。
 - en: 'Load some data, try different combinations of preprocessing methods, ML algorithms,
     training and model parameters, create explanations, compare results in a leaderboard
     together with visualizations. The main value proposition of an AutoML framework
@@ -469,85 +595,119 @@
     remains challenging and autoML does have limitations in flexibility and controllability.
     But rapid progress is being made with more user-friendly and performant solutions
     coming to market.Here’s a tabular summary of frameworks:'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 加载一些数据，尝试不同的预处理方法、机器学习算法、训练和模型参数的组合，创建解释，将结果与可视化一起在排行榜上进行比较。AutoML 框架的主要价值主张在于易用性和提高开发者在找到机器学习模型、理解它并将其投入生产中的生产力。AutoML
+    工具已经存在很长时间了。其中一个最早的广泛框架是 AutoWeka，用 Java 编写，旨在自动化 Weka（Waikato 知识分析环境）机器学习套件中表格数据的机器学习模型开发过程，该套件是在
+    Waikato 大学开发的。自 AutoWeka 发布以来，已经开发了许多其他 AutoML 框架。如今一些最受欢迎的 AutoML 框架包括 auto-sklearn、autokeras、NASLib、Auto-Pytorch、tpot、optuna、autogluon
+    和 ray（tune）。这些框架用各种编程语言编写，支持各种机器学习任务。最近在 autoML 和神经架构搜索方面取得的进展使工具能够自动化机器学习流程的大部分。像
+    Google AutoML、Azure AutoML 和 H2O AutoML/Driverless AI 这样的领先解决方案可以根据数据集和问题类型自动处理数据准备、特征工程、模型选择、超参数调整和部署。这使得机器学习对非专家更加易于接触。当前的
+    autoML 解决方案可以非常有效地处理结构化数据，如表格和时间序列数据。它们可以自动生成相关特征，选择算法如树集成、神经网络或 SVM，并调整超参数。由于大规模超参数搜索，性能通常与手动流程相当甚至更好。对于像图像、视频和音频这样的非结构化数据，autoML
+    也在快速发展，采用神经架构搜索技术。像 AutoKeras、AutoGluon 和 AutoSklearn 这样的开源库也提供了易于访问的 autoML 能力。然而，大多数
+    autoML 工具仍需要一些编码和数据科学专业知识。完全自动化数据科学仍然具有挑战性，autoML 在灵活性和可控性方面存在局限性。但随着更加用户友好和高性能的解决方案进入市场，进展迅速。以下是框架的表格总结：
 - en: '| **Framework** | **Language** | **ML Frameworks** | **First Release** | **Key
     Features** | **Data Types** | **Maintainer** | **Github stars** |'
+  id: totrans-59
   prefs: []
   type: TYPE_TB
+  zh: '| **框架** | **语言** | **机器学习框架** | **首次发布** | **关键特点** | **数据类型** | **维护者** |
+    **Github 星数** |'
 - en: '| Auto-Keras | Python | Keras | 2017 | Neural architecture search, easy to
     use | Images, text, tabular | Keras Team (DATA Lab, Texas A&M) | 8896 |'
+  id: totrans-60
   prefs: []
   type: TYPE_TB
+  zh: '| Auto-Keras | Python | Keras | 2017 | 神经架构搜索，易于使用 | 图像、文本、表格 | Keras 团队（DATA
+    实验室，德克萨斯 A&M 大学） | 8896 |'
 - en: '| Auto-PyTorch | Python | PyTorch | 2019 | Neural architecture search, hyperparameter
     tuning | Tabular, text, image, time series | AutoML Group, Univ. of Freiburg |
     2105 |'
+  id: totrans-61
   prefs: []
   type: TYPE_TB
+  zh: '| Auto-PyTorch | Python | PyTorch | 2019 | 神经架构搜索，超参数调整 | 表格、文本、图像、时间序列 | AutoML
+    Group, 弗莱堡大学 | 2105 |'
 - en: '| Auto-Sklearn | Python | Scikit-learn | 2015 | Automated scikit-learn workflows
     | Tabular | AutoML Group, Univ. of Freiburg | 7077 |'
+  id: totrans-62
   prefs: []
   type: TYPE_TB
 - en: '| Auto-WEKA | Java* | WEKA | 2012 | Bayesian optimization | Tabular | University
     of British Columbia | 315 |'
+  id: totrans-63
   prefs: []
   type: TYPE_TB
 - en: '| AutoGluon | Python | MXNet, PyTorch | 2019 | Optimized for deep learning
     | Text, image, tabular | Amazon | 6032 |'
+  id: totrans-64
   prefs: []
   type: TYPE_TB
 - en: '| AWS SageMaker Autopilot | Python | XGBoost, sklearn | 2020 | Cloud-based,
     simple | Tabular | Amazon | - |'
+  id: totrans-65
   prefs: []
   type: TYPE_TB
 - en: '| Azure AutoML | Python | Scikit-learn, PyTorch | 2018 | Explainable models
     | Tabular | Microsoft | - |'
+  id: totrans-66
   prefs: []
   type: TYPE_TB
 - en: '| DataRobot | Python, R | Multiple | 2012 | Monitoring, explainability | Text,
     image, tabular | DataRobot | - |'
+  id: totrans-67
   prefs: []
   type: TYPE_TB
 - en: '| Google AutoML | Python | TensorFlow | 2018 | Easy to use, cloud-based | Text,
     image, video, tabular | Google | - |'
+  id: totrans-68
   prefs: []
   type: TYPE_TB
 - en: '| H2O AutoML | Python, R | XGBoost, GBMs | 2017 | Automatic workflow, ensembling
     | Tabular, time series, images | h2o.ai | 6430 |'
+  id: totrans-69
   prefs: []
   type: TYPE_TB
 - en: '| hyperopt-sklearn | Python | Scikit-learn | 2014 | Hyperparameter tuning |
     Tabular | Hyperopt team | 1451 |'
+  id: totrans-70
   prefs: []
   type: TYPE_TB
 - en: '| Ludwig | Python | Transformers/Pytorch | 2019 | Low-code framework for building
     and tuning custom LLMs and deep neural networks | Multiple | Linux Foundation
     | 9083 |'
+  id: totrans-71
   prefs: []
   type: TYPE_TB
 - en: '| MLJar | Python | Multiple | 2019 | Explainable, customizable | Tabular |
     MLJar | 2714 |'
+  id: totrans-72
   prefs: []
   type: TYPE_TB
 - en: '| NASLib | Python | PyTorch, TensorFlow/Keras | 2020 | Neural architecture
     search | Images, text | AutoML Group, Univ. of Freiburg | 421 |'
+  id: totrans-73
   prefs: []
   type: TYPE_TB
 - en: '| Optuna | Python | Agnostic | 2019 | Hyperparameter tuning | Agnostic | Preferred
     Networks Inc | 8456 |'
+  id: totrans-74
   prefs: []
   type: TYPE_TB
 - en: '| Ray (Tune) | Python | Agnostic | 2018 | Distributed hyperparameter tuning;
     Accelerating ML workloads | Agnostic | University of California, Berkeley | 26906
     |'
+  id: totrans-75
   prefs: []
   type: TYPE_TB
 - en: '| TPOT | Python | Scikit-learn, XGBoost | 2016 | Genetic programming, pipelines
     | Tabular | Epistasis Lab, Penn State | 9180 |'
+  id: totrans-76
   prefs: []
   type: TYPE_TB
 - en: '| TransmogrifAI | Scala | Spark ML | 2018 | AutoML on Spark | Text, tabular
     | Salesforce | 2203 |'
+  id: totrans-77
   prefs: []
   type: TYPE_TB
 - en: 'Figure 7.4: Comparison of open-source AutoML frameworks. Weka can be accessed
@@ -555,6 +715,7 @@
     rather than only the automl part. The H2O commercial product related to AutoML
     is Driverless AI. Most projects are maintained by a community of contributors
     not affiliated with just one company'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
 - en: 'I have only included the biggest frameworks, libraries or products – omitting
@@ -569,10 +730,12 @@
     and experts to experiment with different kinds of models and deep learning. However,
     users are advised to exercise their own judgement for accurate and explainable
     results.Important features of AutoML frameworks include the following:'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
 - en: 'Deployment: Some solutions, especially those in the cloud, can be directly
     deployed to production. Others export to tensorflow or other formats.'
+  id: totrans-80
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -581,34 +744,40 @@
     rapid comparison and prototyping of ml solutions for images, text, time series
     in addition to tabular data. A few that focus on hyperparameter optimization such
     as optuna and ray tune, are totally agnostic to the format.'
+  id: totrans-81
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Explainability: This can be very important depending on the industry, related
     to regulation (for example, healthcare or insurance) or reliability (finance).
     For a few solutions, this is a unique selling point.'
+  id: totrans-82
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Monitoring: After deployment, the model performance can deteriorate (drift).
     A few providers provide monitoring of performance.'
+  id: totrans-83
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Accessibility: Some providers require coding or at least basic data science
     understanding, others are turnkey solutions that require very little to no code.
     Typically, low and no-code solutions are less customizable.'
+  id: totrans-84
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Open Source: The advantage of open-source platforms is that they are fully
     transparent about the implementation and the availability of methods and their
     parameters, and that they are fully extensible.'
+  id: totrans-85
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Transfer Learning: This capability means being able to extend or customize
     existing foundation models.'
+  id: totrans-86
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -634,43 +803,52 @@
     for each step of the process such as feature selection and feature transformations
     – what differs is the extent to which this is automated. More specifically, the
     advantages of using AutoML frameworks include:'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
 - en: Time savings: AutoML frameworks can save data scientists a lot of time by automating
     the process of machine learning model development.
+  id: totrans-88
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Improved accuracy: AutoML frameworks can help to improve the accuracy of machine
     learning models by automating the process of hyperparameter tuning.
+  id: totrans-89
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Increased accessibility: AutoML frameworks make machine learning more accessible
     to people who do not have a lot of experience with machine learning.
+  id: totrans-90
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'However, there are also some disadvantages to using AutoML frameworks:'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
 - en: Black box: AutoML frameworks can be "black boxes," meaning that it can be difficult
     to understand how they work. This can make it difficult to debug problems with
     AutoML models.
+  id: totrans-92
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Limited flexibility: AutoML frameworks can be limited in terms of the types
     of machine learning tasks that they can automate.
+  id: totrans-93
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: A lot of the above tools have at least some kind of automatic feature engineering
     or preprocessing functionality, however, there are a few more specialized tools
     for this.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
 - en: The impact of generative models
+  id: totrans-95
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -691,73 +869,86 @@
     identify gaps in the literature and guide their own investigations more efficiently.
     We’ve looked at this aspect of using generative AI models in *Chapter 4*, *Question
     Answering*.Other use cases for generative AI can be:'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
 - en: Automatically generate synthetic data: Generative AI can be used to automatically
     generate synthetic data that can be used to train machine learning models. This
     can be helpful for businesses that do not have access to large amounts of real-world
     data.
+  id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Identify patterns in data: Generative AI can be used to identify patterns in
     data that would not be visible to human analysts. This can be helpful for businesses
     that are looking to gain new insights from their data.
+  id: totrans-98
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Create new features from existing data: Generative AI can be used to create
     new features from existing data. This can be helpful for businesses that are looking
     to improve the accuracy of their machine learning models.
+  id: totrans-99
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'According to recent reports by the likes of McKinsey and KPMG, the consequences
     of AI relate to what data scientists will work on, how they will work, and who
     can work on data science tasks. The main areas of key impact include:'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
 - en: 'Democratization of AI: Generative models allow many more people to leverage
     AI by generating text, code, and data from simple prompts. This expands the use
     of AI beyond data scientists.'
+  id: totrans-101
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Increased productivity: By auto-generating code, data, and text, generative
     AI can accelerate development and analysis workflows. This allows data scientists
     and analysts to focus on higher-value tasks.'
+  id: totrans-102
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Innovation in data science: Generative AI is bringing about is the ability
     to explore data in new and more creative ways, and generate new hypotheses and
     insights that would not have been possible with traditional methods'
+  id: totrans-103
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Disruption of industries: New applications of generative AI could disrupt industries
     by automating tasks or enhancing products and services. Data teams will need to
     identify high-impact use cases.'
+  id: totrans-104
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Limitations remain: Current models still have accuracy limitations, bias issues,
     and lack of controllability. Data experts are needed to oversee responsible development.'
+  id: totrans-105
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Importance of governance: Rigorous governance over development and ethical
     use of generative AI models will be critical to maintaining stakeholder trust.'
+  id: totrans-106
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Need for partnerships - Companies will need to build ecosystems with partners,
     communities and platform providers to effectively leverage generative AI capabilities.
+  id: totrans-107
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Changes to data science skills - Demand may shift from coding expertise to abilities
     in data governance, ethics, translating business problems, and overseeing AI systems.
+  id: totrans-108
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -774,12 +965,14 @@
     expertise to create and use data models. This is opening up the field of data
     science to a much wider range of people.LLMs and generative AI can play a crucial
     role in automated data science by offering several benefits:'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
 - en: 'Natural Language Interaction: LLMs allow for natural language interaction,
     enabling users to communicate with the model using plain English or other languages.
     This makes it easier for non-technical users to interact with and explore the
     data using everyday language, without requiring expertise in coding or data analysis.'
+  id: totrans-110
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -788,6 +981,7 @@
     to retrieve data (for example, SQL) clean data, handle missing values, or create
     visualizations (for example in Python). This feature saves time and reduces the
     need for manual coding.'
+  id: totrans-111
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -795,6 +989,7 @@
     the key findings of EDA. These reports provide insights into various aspects of
     the dataset such as statistical summary, correlation analysis, feature importance,
     etc., making it easier for users to understand and present their findings.'
+  id: totrans-112
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -803,6 +998,7 @@
     relationships between variables, outliers or anomalies in the data automatically.
     This helps users gain a holistic understanding of the dataset without manually
     creating each visualization.'
+  id: totrans-113
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -848,9 +1044,11 @@
     summarizing complex analyses, they may not always be suitable for self-service
     analytical tools for non-technical users due to the need for validation by domain
     experts.Let’s start to use agents to run code or call other tools to answer questions!
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
 - en: Agents can answer data science questions
+  id: totrans-115
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -860,11 +1058,14 @@
     practical part of this chapter as we look into the use of generative AI in data
     science.We’ve already seen different agents with tools before. For example, the
     LLMMathChain can execute Python to answer math questions as illustrated here:'
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE0]'
+  id: totrans-117
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: 'While this is useful to extract information and feed it back, it’s less obvious
     to see how to plug this into a traditional EDA process. Similarly, the CPAL (`CPALChain`)
     and PAL (`PALChain`) chains can answer more complex reasoning questions while
@@ -872,44 +1073,58 @@
     for them.With the `PythonREPLTool` we can create simple visualizations of toy
     data or train with synthetic data, which can be nice for illustration or bootstrapping
     of a project. This is an example from the LangChain documentation:'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE1]'
+  id: totrans-119
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: 'Please note that this should be executed with caution since the Python code
     is executed directly on the machine without any safeguards in place. This actually
     works, and creates a dataset, trains a model, and we get a prediction back:'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE2]'
+  id: totrans-121
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'Again, this is very cool, but it’s hard to see how that would scale up without
     more serious engineering similar to what we did in chapter 6, *Developing Software*.LLMs
     and tools can be useful if we want to enrich our data with category or geographic
     information. For example, if our company offers flights from Tokyo, and we want
     to know the distances of our customers from Tokyo, we can use Wolfram Alpha as
     a tool. Here’s a simplistic example:'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE3]'
+  id: totrans-123
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'Please make sure you’ve set the OPENAI_API_KEY and WOLFRAM_ALPHA_APPID environment
     variables as discussed in chapter 3, *Getting Started with LangChain*. Here’s
     the output:'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE4]'
+  id: totrans-125
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: Now, a lot of these questions are very simple. However, we can give agents datasets
     to work with and here’s where it can get very powerful when we connect more tools.
     Let’s start with asking and answering questions about structured datasets!
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
 - en: Data exploration with LLMs
+  id: totrans-127
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -926,63 +1141,84 @@
     capabilities to ask questions about statistical trends in numerical datasets or
     even query visualizations for image classification tasks.Let’s load up a dataset
     and work with that. We can quickly get a dataset from scikit-learn:'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE5]'
+  id: totrans-129
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: The Iris dataset is well-known – it’s a toy dataset, but it will help us illustrate
     the capabilities of using generative AI for data exploration. We’ll use the DataFrame
     in the following. We can create a Pandas dataframe agent now and we’ll see how
     easy it is to get simple stuff done!
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE6]'
+  id: totrans-131
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: 'I’ve put the instruction for the model to say it doesn’t know when in doubt
     and thinking step by step, both to reduce hallucinations. Now we can query our
     agent against the DataFrame:'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE7]'
+  id: totrans-133
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: 'We get the answer `''This dataset is about the measurements of some type of
     flower.`'' which is correct. Let’s show how to get a visualization:'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE8]'
+  id: totrans-135
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: 'It’s not perfect, but we are getting a nice-looking plot:'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 7.5: Iris dataset barplots.](../media/file52.png)'
+  id: totrans-137
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 7.5: Iris dataset barplots.'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
 - en: 'We can also ask to see the distributions of the columns visually, which will
     give us this neat plot:'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 7.6: Iris dataset boxplots.](../media/file53.png)'
+  id: totrans-140
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 7.6: Iris dataset boxplots.'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
 - en: 'We can request the plot to use other plotting backends such as seaborn, however,
     please note that these have to be installed. We can also ask more questions about
     the dataset like which row has the biggest difference between petal length and
     petal width. We get the answer with the intermediate steps as follows (shortened):'
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE9]'
+  id: totrans-143
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: I think that’s worth a pat on the back, LLM!Next steps could be adding more
     instructions to the prompt about plotting such about the sizes of plots. It’s
     a bit harder to implement the same plotting logic in a streamlit app, because
@@ -990,46 +1226,60 @@
     for example, `st.bar_chart()`, however, this can be done as well. You can find
     explanations for this on the Streamlit blog (“Building a Streamlit and scikit-learn
     app with ChatGPT”).What about statistical tests?
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE10]'
+  id: totrans-145
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: 'We get this response:'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE11]'
+  id: totrans-147
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: '''The p-value of 6.639808432803654e-32 indicates that the two variables come
     from different distributions.''That’s check for statistical test! That’s cool.
     We can ask fairly complex questions about the dataset with simple prompts in plain
     English. There’s also the pandas-ai library, which uses LangChain under the hood
     and provides similar functionality. Here’s an example from the documentation with
     an example dataset:'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE12]'
+  id: totrans-149
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: 'This will give us the requested result similarly to before when we were using
     LangChain directly. Please note that pandas-ai is not part of the setup for the
     book, so you’ll have to install it separately if you want to use it.For data in
     SQL-databases, we can connect with a `SQLDatabaseChain`. The LangChain documentation
     shows this example:'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE13]'
+  id: totrans-151
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: We are connecting to a database first. Then we can ask questions about the data
     in natural language. This can also be quite powerful. An LLM will create the queries
     for us. I would expect this to be particularly useful when we don’t know about
     the schema of the database.The `SQLDatabaseChain` can also check queries and autocorrect
     them if the `use_query_checker` option is set.Let’s summarize!
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
 - en: Summary
+  id: totrans-153
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1050,42 +1300,52 @@
     and ChatGPT plugins or Microsoft Fabric are examples of this. However, at the
     current state-of-affairs, AI can’t replace data scientists, only help enable them.Let’s
     see if you remember some of the key takeaways from this chapter!
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
 - en: Questions
+  id: totrans-155
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: 'Please have a look to see if you can come up with the answers to these questions
     from memory. I’d recommend you go back to the corresponding sections of this chapter,
     if you are unsure about any of them:'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
 - en: What’s the difference between data science and data analysis?
+  id: totrans-157
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What steps are involved in data science?
+  id: totrans-158
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: Why would we want to automate data science/analysis?
+  id: totrans-159
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What frameworks exist for automating data science tasks and what can they do?
+  id: totrans-160
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: How can generative AI help data scientists?
+  id: totrans-161
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What kind of agents and tools can we use to answer simple questions?
+  id: totrans-162
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: How can we get an LLM to work with data?
+  id: totrans-163
   prefs:
   - PREF_OL
   type: TYPE_NORMAL

@@ -1976,11 +1976,13 @@
   id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以在Github上查看完整的实现。您可以尝试与聊天机器人互动，看看它是如何工作的，以及当它不工作时。需要注意的是，LangChain对输入大小和成本有限制。您可能需要考虑解决方案来处理更大的知识库或优化API使用的成本。此外，与使用商业解决方案相比，微调模型或在内部托管LLM可能更复杂且不够准确。我们将在*第8章*，*条件和微调*，以及*第9章*，*LLM在生产中的应用*中看到这些用例。让我们看看LangChain中可用的记忆机制。
 - en: Memory mechanisms
   id: totrans-231
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 记忆机制
 - en: 'A memory is a component in the LangChain framework that allows chatbots and
     language models to remember previous interactions and information. It is essential
     in applications like chatbots because it enables the system to maintain context
@@ -1988,6 +1990,7 @@
   id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: 记忆是LangChain框架中的一个组件，允许聊天机器人和语言模型记住先前的互动和信息。在诸如聊天机器人之类的应用中，它是必不可少的，因为它使系统能够在对话中保持上下文和连续性。我们在聊天机器人中需要记忆来：
 - en: 'Remember previous interactions: Memory allows chatbots to retain information
     from previous messages exchanged with the user. This helps in understanding user
     queries and providing relevant responses.'
@@ -1995,6 +1998,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 记住先前的互动：记忆使聊天机器人能够保留与用户交换的先前消息的信息。这有助于理解用户的查询并提供相关的响应。
 - en: 'Maintain context: By recalling previous interactions, chatbots can maintain
     context and continuity in conversations. This allows for more natural and coherent
     conversations with users.'
@@ -2002,6 +2006,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 保持上下文：通过回顾先前的互动，聊天机器人可以在对话中保持上下文和连续性。这使得与用户进行更自然和连贯的对话成为可能。
 - en: 'Extract knowledge: Memory enables the system to extract knowledge and insights
     from a sequence of chat messages. This information can then be used to improve
     the performance and accuracy of the chatbot.'
@@ -2009,6 +2014,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 提取知识：记忆使系统能够从一系列聊天消息中提取知识和见解。然后可以使用这些信息来提高聊天机器人的性能和准确性。
 - en: In summary, memory is crucial in chatbots to create a more personalized and
     human-like conversational experience by remembering and building upon past interactions.Here’s
     a practical example in Python that demonstrates how to use the LangChain memory
@@ -2016,6 +2022,7 @@
   id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，记忆对于聊天机器人至关重要，通过记住和建立在过去互动的基础上，创造出更加个性化和类似人类的对话体验。以下是一个在Python中演示如何使用LangChain记忆功能的实际示例。
 - en: '[PRE27]'
   id: totrans-237
   prefs: []
@@ -2030,6 +2037,7 @@
   id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个示例中，我们使用ConversationBufferMemory创建了一个带有记忆的对话链，它是一个简单的包装器，将消息存储在一个变量中。用户的输入使用对话链的`predict()`方法进行处理。对话链保留了先前互动的记忆，使其能够提供具有上下文意识的响应。与从链中单独构建记忆不同，我们可以简化：
 - en: '[PRE28]'
   id: totrans-239
   prefs: []
@@ -2205,6 +2213,10 @@
   id: totrans-259
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，我们首先实例化语言模型和我们使用的不同类型的记忆 - `ConversationBufferMemory` 用于保留完整的对话历史，`ConversationSummaryMemory`
+    用于创建对话摘要。然后我们使用CombinedMemory组合这些记忆。我们还定义了一个适应我们记忆使用的提示模板，最后，我们通过提供语言模型、记忆和提示来创建和运行`ConversationChain`。`ConversationSummaryBufferMemory`
+    用于在内存中保留最近的交互缓冲，并将旧的交互编译成摘要，而不是完全清除它们。清除交互的阈值是由令牌长度而不是交互数量确定的。要使用这个功能，记忆缓冲需要用LLM模型和`max_token_limit`实例化。`ConversationSummaryBufferMemory`
+    提供了一个名为`predict_new_summary()`的方法，可以直接用来生成对话摘要。Zep是一个设计用于存储、总结、嵌入、索引和丰富聊天机器人或AI应用历史的记忆存储和搜索引擎。它为开发人员提供了一个简单且低延迟的API来访问和操作存储的数据。使用Zep的一个实际例子是将其集成为聊天机器人或AI应用的长期记忆。通过使用`ZepMemory`类，开发人员可以使用Zep服务器URL、API密钥和用户的唯一会话标识符初始化一个`ZepMemory`实例。这使得聊天机器人或AI应用能够存储和检索聊天历史或其他相关信息。例如，在Python中，你可以初始化一个ZepMemory实例如下：
 - en: '[PRE36]'
   id: totrans-260
   prefs: []
@@ -2218,11 +2230,13 @@
   id: totrans-261
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦记忆被设置好，你可以在你的聊天机器人链中使用它，或者与你的AI代理一起使用它来存储和检索聊天历史或其他相关信息。总的来说，Zep简化了持久化、搜索和丰富聊天机器人或AI应用历史的过程，使开发人员能够专注于开发他们的AI应用，而不是构建记忆基础设施。
 - en: Don’t say anything stupid!
   id: totrans-262
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 不要说任何愚蠢的话！
 - en: 'The role of moderation in chatbots is to ensure that the bot’s responses and
     conversations are appropriate, ethical, and respectful. It involves implementing
     mechanisms to filter out offensive or inappropriate content, as well as discouraging
@@ -2239,6 +2253,7 @@
   id: totrans-263
   prefs: []
   type: TYPE_NORMAL
+  zh: 在聊天机器人中，审查的作用是确保机器人的回应和对话是适当的、道德的和尊重的。它涉及实施机制来过滤出冒犯性或不当内容，以及阻止用户的滥用行为。在审查的背景下，宪法指的是一套规范或规则，用于管理聊天机器人的行为和回应。它概述了聊天机器人应遵守的标准和原则，例如避免冒犯性语言、促进尊重互动和维护道德标准。宪法作为确保聊天机器人在期望的边界内运作并提供积极用户体验的框架。在聊天机器人中进行审查和拥有宪法对于为用户创建一个安全、尊重和包容的环境、保护品牌声誉以及遵守法律义务至关重要。在聊天机器人中进行审查和拥有宪法之所以重要有几个原因：
 - en: 'Ensuring ethical behavior: Chatbots have the potential to interact with a wide
     range of users, including vulnerable individuals. Moderation helps ensure that
     the bot’s responses are ethical, respectful, and do not promote harmful or offensive
@@ -2247,6 +2262,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 确保道德行为：聊天机器人有与各种用户互动的潜力，包括脆弱的个人。审查有助于确保机器人的回应是道德的、尊重的，不会宣扬有害或冒犯性内容。
 - en: 'Protecting users from inappropriate content: Moderation helps prevent the dissemination
     of inappropriate or offensive language, hate speech, or any content that may be
     harmful or offensive to users. It creates a safe and inclusive environment for
@@ -2255,6 +2271,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 保护用户免受不当内容：审查有助于防止不当或冒犯性语言、仇恨言论或可能对用户有害或冒犯性的内容的传播。它为用户与聊天机器人互动创造了一个安全和包容的环境。
 - en: 'Maintaining brand reputation: Chatbots often represent a brand or organization.
     By implementing moderation, the developer can ensure that the bot’s responses
     align with the brand’s values and maintain a positive reputation.'
@@ -2262,6 +2279,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 维护品牌声誉：聊天机器人通常代表一个品牌或组织。通过实施审查，开发人员可以确保机器人的回应与品牌的价值观一致，并保持良好声誉。
 - en: 'Preventing abusive behavior: Moderation can discourage users from engaging
     in abusive or improper behavior. By implementing rules and consequences, such
     as the "two strikes" rule mentioned in the example, the developer can discourage
@@ -2270,6 +2288,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 预防滥用行为：审查可以阻止用户参与滥用或不当行为。通过实施规则和后果，例如示例中提到的“两次警告”规则，开发人员可以阻止用户使用挑衅性语言或参与滥用行为。
 - en: 'Legal compliance: Depending on the jurisdiction, there may be legal requirements
     for moderating content and ensuring that it complies with laws and regulations.
     Having a constitution or set of guidelines helps the developer adhere to these
@@ -2278,6 +2297,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 法律合规：根据司法管辖区的不同，可能存在对内容进行审查并确保其符合法律法规的法律要求。拥有一部宪法或一套准则可以帮助开发人员遵守这些法律要求。
 - en: You can add a moderation chain to an LLMChain to ensure that the generated output
     from the language model is not harmful.If the content passed into the moderation
     chain is deemed harmful, there are different ways to handle it. You can choose
@@ -2290,6 +2310,7 @@
   id: totrans-269
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以将审查链添加到LLMChain中，以确保语言模型生成的输出不会有害。如果传入审查链的内容被认为有害，有不同的处理方式。您可以选择在链中抛出错误并在应用程序中处理，或者您可以向用户返回一条消息，解释该文本是有害的。具体的处理方法取决于您的应用程序需求。在LangChain中，首先，您将创建一个`OpenAIModerationChain`类的实例，这是LangChain提供的预构建审查链。该链专门设计用于检测和过滤有害内容。
 - en: '[PRE37]'
   id: totrans-270
   prefs: []
@@ -2301,6 +2322,7 @@
   id: totrans-271
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来，您将创建一个LLMChain类的实例，代表您的语言模型链。这是您定义提示并与语言模型交互的地方。
 - en: '[PRE38]'
   id: totrans-272
   prefs: []
@@ -2312,6 +2334,7 @@
   id: totrans-273
   prefs: []
   type: TYPE_NORMAL
+  zh: 要将审查链附加到语言模型链，您可以使用`SequentialChain`类。这个类允许您以顺序方式将多个链链接在一起。
 - en: '[PRE39]'
   id: totrans-274
   prefs: []
@@ -2323,6 +2346,7 @@
   id: totrans-275
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，当您想使用语言模型生成文本时，您需要先将输入文本通过审查链，然后再通过语言模型链。
 - en: '[PRE40]'
   id: totrans-276
   prefs: []
@@ -2339,6 +2363,7 @@
   id: totrans-277
   prefs: []
   type: TYPE_NORMAL
+  zh: 审查链将评估输入文本并过滤掉任何有害内容。如果输入文本被认为有害，审查链可以选择抛出错误或返回一条消息指示该文本不被允许。我在Github的聊天机器人应用程序中添加了一个审查示例。此外，护栏可用于定义语言模型在特定话题上的行为，防止其参与不受欢迎话题的讨论，引导对话沿着预定义路径进行，强制执行特定语言风格，提取结构化数据等。
 - en: In the context of large language models, **guardrails** (**rails** for short)
     refer to specific ways of controlling the output of the model. They provide a
     means to add programmable constraints and guidelines to ensure the output of the
@@ -2347,10 +2372,12 @@
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 在大型语言模型的背景下，**护栏**（简称**rails**）指的是控制模型输出的特定方式。它们提供了一种添加可编程约束和指导方针的方法，以确保语言模型的输出符合所需标准。
 - en: 'Here are a few ways guardrails can be used:'
   id: totrans-279
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是几种使用护栏的方式：
 - en: 'Controlling Topics: Guardrails allow you to define the behavior of your language
     model or chatbot on specific topics. You can prevent it from engaging in discussions
     on unwanted or sensitive topics like politics.'
@@ -2358,6 +2385,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 控制话题：护栏允许您定义语言模型或聊天机器人在特定话题上的行为。您可以防止其参与关于政治等不受欢迎或敏感话题的讨论。
 - en: 'Predefined Dialog Paths: Guardrails enable you to define a predefined path
     for the conversation. This ensures that the language model or chatbot follows
     a specific flow and provides consistent responses.'
@@ -2365,6 +2393,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 预定义对话路径：护栏使您能够为对话定义一个预定义路径。这确保了语言模型或聊天机器人遵循特定流程并提供一致的回应。
 - en: 'Language Style: Guardrails allow you to specify the language style that the
     language model or chatbot should use. This ensures that the output is in line
     with your desired tone, formality, or specific language requirements.'
@@ -2372,6 +2401,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 语言风格：护栏允许您指定语言模型或聊天机器人应该使用的语言风格。这确保了输出符合您期望的语气、形式或特定语言要求。
 - en: 'Structured Data Extraction: Guardrails can be used to extract structured data
     from the conversation. This can be useful for capturing specific information or
     performing actions based on user inputs.'
@@ -2379,6 +2409,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 结构化数据提取：护栏可用于从对话中提取结构化数据。这对于捕获特定信息或根据用户输入执行操作非常有用。
 - en: Overall, guardrails provide a way to add programmable rules and constraints
     to large language models and chatbots, making them more trustworthy, safe, and
     secure in their interactions with users. By appending the moderation chain to
@@ -2387,11 +2418,13 @@
   id: totrans-284
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，护栏为大型语言模型和聊天机器人添加可编程规则和约束提供了一种方式，使它们在与用户的交互中更加可信、安全和安全。通过将审查链附加到您的语言模型链中，您可以确保生成的文本经过审查，可以安全地在您的应用程序中使用。
 - en: Summary
   id: totrans-285
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总结
 - en: In chapter 4, we discussed Retrieval-Augmented Generation (RAG), which involves
     the utilization of external tools or knowledge resources such as document corpora.
     In that chapter, we focused on the process. In this chapter, the focus is on methods
@@ -2420,64 +2453,77 @@
   id: totrans-286
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第4章中，我们讨论了检索增强生成（RAG），其中涉及利用外部工具或知识资源，如文档语料库。在那一章中，我们关注了过程。在本章中，重点是与基于RALMs构建聊天机器人相关的方法，更具体地说，是利用外部工具检索相关信息，这些信息可以并入内容生成中。本章的主要部分包括聊天机器人简介，检索和向量机制，实现聊天机器人，记忆机制以及适当响应的重要性。本章以聊天机器人概述开始。我们讨论了聊天机器人和语言处理模型（LLMs）的演变和当前状态，强调了当前技术能力的实际影响和增强。然后，我们讨论了积极沟通的重要性以及为上下文、记忆和推理所需的技术实现。我们探讨了包括向量存储在内的检索机制，旨在提高聊天机器人响应的准确性。我们详细介绍了加载文档和信息的方法，包括向量存储和嵌入。此外，我们讨论了用于维护知识和进行中对话状态的记忆机制。本章以审查讨论结束，强调确保响应尊重和符合组织价值观的重要性。我们在本章中实现了一个聊天机器人，探讨了本章讨论的一些功能，并可作为研究记忆和上下文、言论审查等问题的起点，但也可用于探讨幻觉或其他问题。在第9章中，我们将讨论如何在您的文档上训练LLMs，这是另一种在数据上调整模型的方式！让我们看看您是否记得本章的一些关键要点！
 - en: Questions
   id: totrans-287
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 问题
 - en: 'Please have a look to see if you can come up with the answers to these questions
     from memory. I’d recommend you go back to the corresponding sections of this chapter,
     if you are unsure about any of them:'
   id: totrans-288
   prefs: []
   type: TYPE_NORMAL
+  zh: 请看看你是否能够从记忆中回答这些问题。如果对任何问题不确定，建议您回到本章的相应部分查看：
 - en: Please name 5 different chatbots!
   id: totrans-289
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 请列出5个不同的聊天机器人！
 - en: What are some important aspects in developing a chatbot?
   id: totrans-290
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在开发聊天机器人中有哪些重要方面？
 - en: What does RALMs stand for?
   id: totrans-291
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: RALMs代表什么？
 - en: What is an embedding?
   id: totrans-292
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是嵌入？
 - en: What is vector search?
   id: totrans-293
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是向量搜索？
 - en: What is a vector database?
   id: totrans-294
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是向量数据库？
 - en: Please name 5 different vector databases!
   id: totrans-295
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 请列出5个不同的向量数据库！
 - en: What is a retriever in LangChain?
   id: totrans-296
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: LangChain中的检索器是什么？
 - en: What is memory and what are the memory options in LangChain?
   id: totrans-297
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是记忆，LangChain中的记忆选项是什么？
 - en: What is moderation, what’s a constitution, and how do they work?
   id: totrans-298
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是审查，什么是宪法，它们是如何工作的？

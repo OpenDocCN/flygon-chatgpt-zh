@@ -3,21 +3,25 @@
   id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: © 作者，独家许可给 Springer Nature Switzerland AG 2023M. Kurpicz-Briki《不仅仅是聊天机器人》[https://doi.org/10.1007/978-3-031-37690-0_5](https://doi.org/10.1007/978-3-031-37690-0_5)
 - en: 5. The True and the False
   id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 5. 真与假
 - en: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)Applied Machine Intelligence, Bern University
     of Applied Sciences, Biel/Bienne, Switzerland
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)应用机器智能，瑞士比尔/宾讷应用科学大学
 - en: Overview
   id: totrans-3
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 概述
 - en: 'In this chapter, we will dive a bit deeper into a property of state-of-the-art
     language models that were shortly discussed earlier: the sentence created by a
     language model and thus also the answer that a chatbot might provide are *most
@@ -28,44 +32,53 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将更深入地探讨先进语言模型的一个特性，即由语言模型创建的句子以及聊天机器人可能提供的答案*很可能*是一个好结果。很可能，因为正如我们之前所见，这都是关于概率的。根据选项中提供的内容，即使对于给定问题来说最佳选项可能也不是一个很好的答案。因此，以不同方式，先进的聊天机器人可能提供*错误*信息。
 - en: We will also look at some other chatbot architectures that have been used over
     the years. In particular, we will consider the example of ELIZA, one of the first
     chatbots created in the 1960s.
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还将研究多年来使用过的一些其他聊天机器人架构。特别是，我们将考虑 1960 年代创建的 ELIZA 的例子，这是最早的聊天机器人之一。
 - en: In the last part of the chapter, we will investigate evaluation metrics for
     machine learning models. These metrics help us to identify whether a given model
     is working well.
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章的最后部分，我们将研究用于机器学习模型的评估指标。这些指标帮助我们确定给定模型是否运行良好。
 - en: What if the Language Model Is Wrong?
   id: totrans-7
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 如果语言模型错了会怎样？
 - en: Do You Know Pineberries?
   id: totrans-8
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 你知道白草莓吗？
 - en: 'Let’s start with the following example:'
   id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们从以下例子开始：
 - en: 'Human:'
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类：
 - en: “What color does a strawberry have?”
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: “草莓是什么颜色的？”
 - en: 'Chatbot:'
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人：
 - en: “Strawberries are typically a deep red color when they are fully ripe. However,
     when they are not fully ripe, they may have green or white areas on the surface.
     The seeds on the surface of the strawberry are typically a yellow or light brown
@@ -73,24 +86,30 @@
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: “草莓在完全成熟时通常呈深红色。然而，在未完全成熟时，表面可能有绿色或白色区域。草莓表面的种子通常是黄色或浅褐色。”
 - en: Whereas this is a correct answer for most strawberries, this is not the case
     for the pineberry, a white strawberry cultivar, shown in Fig. [5.1](#Fig1).![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig1_HTML.jpg)
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管这对大多数草莓来说是正确的答案，但对于白草莓（一种白色草莓品种）不适用，如图 [5.1](#Fig1) 所示。![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig1_HTML.jpg)
 - en: A photograph of a bunch of Pineberries lying on the surface.
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 一张放在表面上的一堆白草莓的照片。
 - en: Fig. 5.1
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 5.1
 - en: 'Pineberries are white strawberries (Credit: Wikimedia/Emmbean. CC BY 3.0 License,
     available at [https://​commons.​wikimedia.​org/​wiki/​File:​Pineberries.​jpg](https://commons.wikimedia.org/wiki/File:Pineberries.jpg))'
   id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 白草莓是白色草莓（来源：Wikimedia/Emmbean. CC BY 3.0 许可，可在 [https://​commons.​wikimedia.​org/​wiki/​File:​Pineberries.​jpg](https://commons.wikimedia.org/wiki/File:Pineberries.jpg)
+    获取）
 - en: Maybe some readers did not know about this type of strawberry because it is
     not very well-known? The same for the chatbot. The information a chatbot has to
     generate the answers is limited by the training data it was fed to. For this specific
@@ -99,6 +118,7 @@
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 也许有些读者不知道这种草莓，因为它并不是很有名？对于聊天机器人也是一样。聊天机器人生成答案的信息受到其训练数据的限制。对于这个特定问题，一个具有更广泛训练数据和反馈的聊天机器人可能会在对话中得到以下答案：^([1](#Fn1))
 - en: 'Chatbot: “Strawberries are typically a deep red color when they are fully ripe.
     However, when they are not fully ripe, they may have green or white areas on the
     surface. The seeds on the surface of the strawberry are typically a yellow or
@@ -108,6 +128,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 聊天机器人：“草莓在完全成熟时通常呈深红色。然而，在未完全成熟时，表面可能有绿色或白色区域。草莓表面的种子通常是黄色或浅褐色。*偶尔，你可能会遇到一些白色或淡粉色的草莓品种，这些被称为白草莓*。”
 - en: Of course, now, you could say that we are soon there, adding more and more data,
     getting smarter and smarter. However, the problem is that you would not see the
     missing data; you can only see the answer, which might be incomplete (or wrong),
@@ -122,11 +143,13 @@
   id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，现在，你可能会说我们很快就会到达那里，不断添加更多数据，变得越来越聪明。然而，问题在于你看不到缺失的数据；你只能看到答案，这可能是不完整的（或错误的），而且不可能测试所有潜在的用例。统计上不太可能发生的事情，比如草莓是白色的，不太可能被考虑为输出。因此，已经存在的信息被重复和强化，导致语言模型也被称为*随机鹦鹉*，一个“根据其广泛的训练数据中观察到的语言形式序列随意拼接的系统，根据它们如何组合的概率信息，但没有参考任何含义”（Bender等人[2021](#CR3)，第617页）。
 - en: Hallucinations
   id: totrans-21
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 幻觉
 - en: Another problem in state-of-the-art language models are *hallucinations* in
     the generation of texts. The word hallucinations in general describes a sensory
     perception of humans that occurs in absence of an actual external stimulus.^([2](#Fn2))
@@ -137,6 +160,8 @@
   id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 当前最先进的语言模型中存在的另一个问题是在生成文本时出现的*幻觉*。一般来说，幻觉一词描述了人类在没有实际外部刺激的情况下产生的感知。[^2](#Fn2)
+    在文本生成中，我们指的是“文本是荒谬的或不忠于提供的源内容”（Ji等人[2023](#CR22)，第248页：3）。基本上，聊天机器人在编造那些毫无意义或是错误且无法根据使用的训练数据解释的信息。
 - en: Hallucinations in language models can be *intrinsic* or *extrinsic* hallucinations
     (Ji et al. [2023](#CR22)). Intrinsic hallucinations happen when the generated
     output and the source content are contradicting each other. Let’s say in the training
@@ -145,36 +170,44 @@
   id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 语言模型中的幻觉可以是*内在*的或*外在*的幻觉（Ji等人[2023](#CR22)）。内在幻觉发生在生成的输出和源内容相互矛盾的情况下。比如，在语言模型的训练数据中，有关*草莓粉丝*组织的以下文本（以及数百万其他单词和年份）。
 - en: “The strawberry fan organization was founded in 2019, by Anna and Tom, after
     having written a book about the beauty and the wonderful taste of strawberries.”
   id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: “草莓粉丝组织成立于2019年，由安娜和汤姆创立，之前他们写了一本关于草莓美味和美丽的书。”
 - en: 'We then have the following conversation with a chatbot, being based upon this
     language model:'
   id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，我们与一个基于这种语言模型的聊天机器人进行了以下对话：
 - en: 'Human:'
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类：
 - en: “In which year was the organization dealing with strawberries founded?”
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: “草莓组织是在哪一年成立的？”
 - en: 'Chatbot:'
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人：
 - en: “The strawberry fan organization was founded in **2014**.”
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: “草莓粉丝组织成立于**2014**年。”
 - en: Wait, what? Yes, we just experienced an intrinsic hallucination.
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 等等，什么？是的，我们刚刚经历了一次内在幻觉。
 - en: The other type of hallucinations are extrinsic hallucinations. In this case,
     the generated output cannot be verified but can also not be contradicted based
     on the source content. Basically, the information is unknown, but the chatbot
@@ -183,16 +216,19 @@
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一种幻觉是外在幻觉。在这种情况下，生成的输出无法验证，但也无法根据源内容进行反驳。基本上，这些信息是未知的，但聊天机器人却给出了一个答案。这个答案可能是正确的，但也可能是错误的。这是未经验证的信息。
 - en: For example, we could observe an extrinsic hallucination in the case where the
     chatbot is asked to answer a question about the year 2023; however, the training
     data did only include information up to the year 2022.
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，我们可以在聊天机器人被要求回答有关2023年的问题时观察到外在幻觉；然而，训练数据只包含到2022年的信息。
 - en: Figure [5.2](#Fig2) summarizes the two types of hallucinations.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig2_HTML.png)
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 图[5.2](#Fig2)总结了两种幻觉的类型。![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig2_HTML.png)
 - en: An illustration represents the scenarios in intrinsic and extrinsic hallucinations,
     where the answers are provided by the chatbot from the training data. There is
     an x-condition in the case of intrinsic hallucinations that is unverified in extrinsic.
@@ -366,6 +402,7 @@
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 聊天机器人会撒谎吗？
 - en: Let’s get back to our technical explanation on how the sentences are formed,
     based on the prediction of the next word. The way the answers are formed are relying
     on the probability that a specific word comes after the other, under consideration
@@ -381,6 +418,7 @@
   id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们回到我们关于句子如何形成的技术解释，基于对下一个单词的预测。答案的形成方式依赖于特定单词在上下文中出现在另一个单词之后的概率。然而，语言模型并没有对它们创建的单词的*含义*具有类似人类的理解。与情感一样，问题再次出在人类的感知上。语言模型的输出似乎流畅而连贯。因此，人类解释生成的句子，这些句子是用他们说的语言，作为有意义的并对应于交际意图的，具有内容的可靠性（Bender等人[2021](#CR3)）。这就是风险所在。如果聊天机器人产生幻觉，但被用来在互联网上搜索真实信息，然后被用户相信和复制，那么我们就有问题。
 - en: The topic whether using state-of-the-art language models is appropriate for
     web search, and whether it will replace the current search engines, has been intensively
     debated over the past months. Researchers warn to use large language models for
@@ -393,6 +431,8 @@
   id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 过去几个月，关于使用最先进的语言模型是否适合网络搜索，以及它是否会取代当前的搜索引擎的话题一直在激烈讨论中。研究人员警告不要将大型语言模型用于它们未经设计的任务（Shah和Bender
+    [2022](#CR33)）。由于可能存在事实错误，正如我们在前一节中看到的那样，将搜索转向语言模型存在增加错误信息的风险。然而，大型科技公司的演示和公告证实了提供革命性搜索的目标，使任何搜索引擎以对话方式与您互动。
 - en: The question is whether this kind of search is what we are looking for. This
     is more of a societal rather than a technical question. Do we want to ask an expert,
     in the case of this vision an *artificial expert* in form of a language model,
@@ -408,6 +448,7 @@
   id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 问题是这种搜索是否符合我们的期望。这更多是一个社会问题而不是技术问题。在这种愿景中，我们是否想要询问一个*人工专家*，即语言模型，为我们提供汇总信息，可能包含错误信息？还是我们想保持控制，使用工具为我们提供不同信息及其相应来源，并让人类比较和反思信息？在这两种情况下，人类需要意识到工具和提供的内容的局限性，并建立所需的电子素养。我们大多数人已经学会了，在使用搜索引擎时，并非所有出现在结果中的网站都是可信赖的信息来源。使用对话工具时，我们必须反思我们对所提供信息的解释，意识到当以类似人类对话的方式提出时，我们可能会以不同方式解释它们。
 - en: 'Finally, let me make one last observation about the false information produced
     by chatbots. In broad media, often the terminology “the chatbot is lying” or “the
     chatbot is telling lies” is being used. The definition of the verb *to lie* in
@@ -415,26 +456,31 @@
   id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，让我对聊天机器人产生的虚假信息做一个最后的观察。在广泛的媒体中，经常使用术语“聊天机器人在撒谎”或“聊天机器人在说谎”。在这种意义上，“撒谎”动词的定义如*韦氏*词典所述：
 - en: '1.'
   id: totrans-60
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '1.'
 - en: To make an untrue statement with intent to deceive
   id: totrans-61
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 故意发表不实之论
 - en: '2.'
   id: totrans-62
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '2.'
 - en: To create a false or misleading impression
   id: totrans-63
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 制造虚假或误导性印象
 - en: Whereas the first definition refers to humans, the second definition can also
     be applied to objects, such as the mirror. However, when talking about tools,
     we rarely use this expression in other cases, when tools provide the incorrect
@@ -510,15 +556,18 @@
   id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 一组问题和答案模拟了人类和机器生成答案之间的对话。机器的回应以大写字母写成。
 - en: Fig. 5.4
   id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.4
 - en: Extract of the conversation from (Weizenbaum [1966](#CR40)); capitalized expression
     are the machine-generated answers
   id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 从（Weizenbaum [1966](#CR40)）中提取的对话片段；大写表达式是机器生成的答案
 - en: The major difference in this conversation compared to state-of-the-art chatbots
     is that the conversation does not aim to answer questions with real-world knowledge.
     As Weizenbaum states in its original report, participants interacting with ELIZA
@@ -527,6 +576,7 @@
   id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 与现代聊天机器人相比，这种对话的主要区别在于对话不旨在用真实世界知识回答问题。正如Weizenbaum在其原始报告中所述，与ELIZA互动的参与者被指示与其交流，就好像他们在与精神科医生交流一样。为什么会这样？
 - en: This mode of conversation was chosen because the psychiatric interview is one
     of the few examples of categorized dyadic natural language communication in which
     one of the participating pair is free to assume the pose of knowing almost nothing
@@ -535,11 +585,13 @@
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 选择这种对话模式是因为精神病学面试是少数几个例子之一，其中一个参与对话的人可以自由地假设几乎不了解真实世界。（Weizenbaum [1966](#CR40)，第42页）
 - en: Any content that comes into the conversation is the input of the human, who
     brings these topics up.
   id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 进入对话的任何内容都是人类的输入，是他们提出的话题。
 - en: The major limitation of this kind of chatbot is also an advantage. Whereas it
     is not able to provide any knowledge, it is also much more unlikely to provide
     false information. In the worst case, it would provide an answer that seems not
@@ -551,11 +603,13 @@
   id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种类型的聊天机器人的主要局限性也是优点。虽然它无法提供任何知识，但也更不太可能提供错误信息。在最坏的情况下，它会提供一个看起来不符合用户输入文本的答案。由于这种类型解决方案的所有潜在答案都列在规则和模板的某处，实验可以轻松复制。聊天机器人提供的答案可以完全解释和复制。因此，根据用例，受到ELIZA最初开发的方法启发的和基于这些方法的聊天机器人可能非常强大。
 - en: Rule-Based Approaches
   id: totrans-78
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 基于规则的方法
 - en: 'In the example shown above with ELIZA, no information about the world is provided.
     Rule-based approaches can also be used when we want to transmit very specific
     information. For example, consider a chatbot on a retail company’s online shop
@@ -563,31 +617,38 @@
   id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上面展示的ELIZA示例中，没有提供关于世界的信息。当我们想传递非常具体的信息时，也可以使用基于规则的方法。例如，考虑一个零售公司在线商店网站上的聊天机器人，与任何顾客的对话如下：
 - en: 'Chatbot:'
   id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人：
 - en: “Hey, thanks for visiting this shop! What are you looking for?”
   id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: “嘿，谢谢光临这家店！你在找什么？”
 - en: 'Human:'
   id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类：
 - en: “I would like to eat something tasty, maybe strawberries?”
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: “我想吃点好吃的东西，也许草莓？”
 - en: 'Chatbot:'
   id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人：
 - en: “That’s a good idea! Click on this link for strawberries to directly add the
     regional strawberries from our shop to the basket.”
   id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: “这是个好主意！点击这个链接以直接将我们商店的当地草莓添加到购物篮中。”
 - en: This could be implemented in a very simple way, using lists of words and rules.
     Let’s have a closer look at this based on the architecture of a chatbot we have
     seen before. The user interacts with the web application, as in the previous case.
@@ -666,20 +727,24 @@
   id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了做到这一点，我们使用维基百科关于草莓文章的文本。它包含关于草莓历史或栽培的不同部分。我们将这篇文章分成句子，并将每个句子转换为句子向量，如图[5.6](#Fig6)所示。![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig6_HTML.png)
 - en: A diagram illustrates a user query regarding the strawberry plant, going through
     the sentence embedding of the user's question, finding similar embedding, finding
     texts about strawberries, and the sentence embedding of each sentence.
   id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 一张图解释了用户关于草莓植株的查询，通过用户问题的句子嵌入，找到相似的嵌入，找到关于草莓的文本，以及每个句子的句子嵌入。
 - en: Fig. 5.6
   id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.6
 - en: A simple chatbot based on sentence embeddings and similarity
   id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于句子嵌入和相似性的简单聊天机器人
 - en: 'We then do the same with the user input. We take the question, for example,
     “What do you know about strawberry plants?” and create also a vector (sentence
     embedding) from it. As we have seen earlier, the distance between vectors can
@@ -691,43 +756,53 @@
   id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后我们对用户输入做同样的处理。我们拿问题，比如“你知道关于草莓植株的什么？”并从中创建一个向量（句子嵌入）。正如我们之前看到的，向量之间的距离可以用来捕捉单词或句子之间的关系。因此，我们寻找一个接近我们问题句子嵌入的向量，这可能是我们问题的潜在答案。因此，我们确定维基百科文章的哪个句子嵌入最接近，并输出这个句子，如图[5.6](#Fig6)所示。这使得与聊天机器人的以下对话成为可能：
 - en: 'Human:'
   id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类：
 - en: “What do you know about strawberry plants?”
   id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: “你知道关于草莓植株的什么？”
 - en: 'Chatbot:'
   id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人：
 - en: “strawberry plants produce more and better fruit when they are young.”
   id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: “草莓植株在年轻时会产生更多更好的水果。”
 - en: 'This works quite well for different questions, but is far from perfect, as
     the following example shows:'
   id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于不同的问题，这种方法效果相当不错，但远非完美，下面的例子就说明了这一点：
 - en: 'Human:'
   id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类：
 - en: “In which countries are strawberries grown?”
   id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: “草莓在哪些国家种植？”
 - en: 'Chatbot:'
   id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人：
 - en: “strawberries can also be grown indoors in strawberry pots.”
   id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: “草莓也可以在草莓盆中室内种植。”
 - en: Here we used as input the one article about strawberries. When extending this
     by using all books about strawberries that are available at the local library,
     results could probably be improved. The chatbot is only as good as the data it
@@ -735,6 +810,7 @@
   id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，我们以草莓的一篇文章作为输入。如果扩展到使用当地图书馆提供的所有关于草莓的书籍，结果可能会得到改善。聊天机器人的表现取决于其可用的数据。
 - en: Whereas for many tasks the state-of-the-art language models are by far the most
     efficient solutions, I want you to keep in mind that depending on what you are
     looking for, simpler architectures can do a good job as well. A major advantage
@@ -744,17 +820,20 @@
   id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管对于许多任务来说，最先进的语言模型通常是最有效的解决方案，但我希望你记住，根据你所寻找的内容，更简单的架构也可以做得很好。这些简单方法的一个主要优势通常是它们的可解释性，这使我们更容易看到幕后情况，并让我们了解决策是如何做出的。有时我们也可以在实践中找到不同方法的组合。
 - en: What Is a Good Model?
   id: totrans-110
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 什么是一个好的模型？
 - en: We have seen so far that state-of-the-art chatbots rely on powerful language
     models. But how can we know how *well* the language models perform or compare
     them among each other?
   id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我们已经看到，最先进的聊天机器人依赖于强大的语言模型。但我们如何知道语言模型的表现如何或者如何将它们进行比较呢？
 - en: A typical number that is mentioned with regard to language models is the number
     of *parameters* it was trained with. For example, Google’s BERT model has been
     trained with 340 million parameters or GPT-3 with 175 billion parameters. These
@@ -770,6 +849,8 @@
   id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 有关语言模型提到的一个典型数字是它训练时使用的*参数*数量。例如，谷歌的BERT模型使用了3.4亿个参数，或者GPT-3使用了1750亿个参数。这些都是相当大的数字！让我们记住之前看到的语言模型的架构。我们看到了不同类型的神经网络，有些涉及不同层的编码器和解码器。在每个层中，都有神经网络，每个神经网络由多个神经元组成，具有加权的输入。这些权重在训练过程中会被调整，取决于它们对系统最终决策的相关性有多大。这些就是可以调整的“旋钮”，以使模型适应数据（Wolfram
+    [2023](#CR42)）。当说有1750亿个参数时，这意味着神经网络的架构有1750亿个需要调整的权重。
 - en: Does larger mean better? For the moment, yes. We have seen over the last years
     how the number of parameters became bigger and bigger with each new model, and
     the models became better. However, at the same time, more computational power
@@ -778,6 +859,7 @@
   id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 更大是否意味着更好？目前是的。我们在过去几年中看到，随着每个新模型的出现，参数的数量变得越来越大，模型也变得更好。然而，与此同时，需要更多的计算能力，模型的复杂性也增加。有1750亿个参数，很难评估一个单词建议是基于什么的。
 - en: 'The parameters are figured out by the system itself, during the training phase,
     by using the external feedback (e.g., the *correct answers* available to the system).
     What the data engineer can use to optimize the training process of the system
@@ -796,6 +878,7 @@
   id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 参数是系统在训练阶段自行解决的，通过使用外部反馈（例如，系统可用的*正确答案*）。数据工程师可以用来优化系统训练过程的是*超参数*。训练发生在循环中（记住这个例子：一遍又一遍地做同样的事情！）。每个循环称为*epoch*。一个epoch等于每个训练样本被查看一次，并相应地调整权重。训练过程在几个epoch内观察，某个时刻，停止的时刻就到了。这通常发生在学习没有更多改进时。系统在给定的训练数据上不再变得更好。用于训练的epoch数量因此是数据工程师使用的超参数之一。神经网络中的另一个超参数，例如，可以是层数。通常，数据工程师会使用不同的超参数设置来训练模型并比较它们的输出。这个过程称为*超参数调整*，如图[5.7](#Fig7)所示。![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig7_HTML.png)
 - en: A block diagram illustrates how the input from the data engineer goes through
     the language model based on neural networks, where the input passes through three
     layers before obtaining the output. All the layers denote interconnection among
@@ -803,15 +886,18 @@
   id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个块图解说明了数据工程师的输入是如何通过基于神经网络的语言模型进行的，输入在获得输出之前通过三层。所有这些层都表示神经元之间的相互连接。
 - en: Fig. 5.7
   id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.7
 - en: Example of some of the hyperparameters that the data engineer can tune in the
     training process
   id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据工程师可以在训练过程中调整的一些超参数示例
 - en: To compare the performance of machine learning models and to find out which
     hyperparameter configuration is the best, we need some *performance metrics*.
     We will explore those metrics by using the sentiment analysis classification example
@@ -826,6 +912,7 @@
   id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了比较机器学习模型的性能，并找出哪种超参数配置最佳，我们需要一些*性能指标*。我们将通过使用本书中早前介绍的情感分析分类示例来探讨这些指标。我们有一堆文本，并希望确定每个文本是更负面还是更正面的。我们已经使用了训练数据集（类似于标记数据的80%）进行训练阶段，现在有了测试数据集来测试分类器的性能。测试数据集中的每个文本都被标记为负面或正面。然而，分类器看不到这些信息，这意味着它在训练阶段没有使用这些信息。在测试阶段，我们希望使用这些数据来衡量系统在新的、未见过的数据上的表现如何。
 - en: The simplest way is to calculate the *accuracy*. The accuracy indicates how
     many samples from the test data were labeled correctly by the classifier. If in
     our test data we have 100 text samples, 50 labeled as positive and 50 labeled
@@ -839,6 +926,7 @@
   id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 最简单的方法是计算*准确率*。准确率表示分类器正确标记了测试数据中多少样本。如果在我们的测试数据中有100个文本样本，其中50个标记为正面，50个标记为负面，而我们的分类器正确标记了其中的80个，那么我们的准确率为80%。在这个例子中，我们的数据集是*平衡*的。之所以平衡，是因为我们有相同数量的负面和正面样本。在不平衡数据集的情况下，准确率这个指标可能会受到限制。如果我们的测试数据中有90%的负样本，而只有10%的正文本样本，一个将所有文本都分类为负面的分类器将具有90%的准确率。这可能会让我们误以为分类器的性能相当不错，但事实并非如此。
 - en: We want to measure how the classification works for both of the classes. We
     therefore have to do a more fine-grained analysis of the predictions the classifier
     made wrong or right. We are considering separately the cases where the classifier
@@ -858,6 +946,7 @@
   id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想要衡量分类对两个类别的工作情况。因此，我们必须对分类器错误或正确做出更细致的分析。我们分别考虑分类器错误的情况，因为它估计为*正面*但实际上是*负面*的文本，以及分类器建议为*负面*但文本实际上是*正面*的情况。在测试数据中被正确预测为正面的数据项因此被称为真正例（TP）。另一方面，被预测为正面但实际上是负面的数据项被称为假正例（FP）。它在结果中显示为正面，但其分类是错误的。类似地，我们定义真负例（TN）（被正确预测为负面）和假负例（FN）（被预测为负面，但实际上是正面）如图[5.8](#Fig8)所示。在这个例子中，测试数据集中有十个文本，其中五个是正面，五个是负面。请注意，70%的准确率（十个中有七个被正确预测）与假正例和假负例的数量无关。错误预测是关于负面还是正面类别并不影响准确率。![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig8_HTML.png)
 - en: A rectangular block represents a set of 10 texts of test data comprising the
     correct labels and predicted labels. It indicates an accuracy value of 70 percent
     and highlights 3 data points that have a mismatch between the predicted and actual
@@ -865,16 +954,19 @@
   id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个矩形块代表了一个包含正确标签和预测标签的10个测试数据文本集合。它指示了70%的准确度值，并突出显示了3个数据点，其预测和实际结果不匹配。
 - en: Fig. 5.8
   id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.8
 - en: Example of a test dataset with ten texts. Based on the correct labels and the
     predictions, the different metrics can be computed to assess the performance of
     the model
   id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 十个文本的测试数据集示例。基于正确标签和预测，可以计算不同的指标来评估模型的性能。
 - en: The *precision* is another metric that considers these aspects. It tells us
     the fraction of data items that have been predicted as positive and are positive
     in the correct solution. In the example, where we have four true positives and
@@ -884,6 +976,8 @@
   id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: '*精确率* 是考虑这些方面的另一个指标。它告诉我们被预测为正面并在正确解决方案中为正面的数据项的比例。在我们的例子中，我们有四个真正例和总共六个正面预测（真正例
+    + 假正例），精确率为4/6或以百分比表示为66%。在最好的情况下，所有被预测为正面的数据项实际上都是正确的；那么精确率将是100%。'
 - en: Along with the precision, we typically look at the *recall*, which shows us
     the other side. It measures the fraction of positive texts that have been correctly
     identified as positive (=true positives) in comparison to all the positive training
@@ -892,6 +986,7 @@
   id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 除了精确率，我们通常关注 *召回率*，它展示了另一方面。它衡量了被正确识别为正面的正面文本的比例（=真正例）与所有正面训练文本（=真正例 + 假负例）的比较。在我们的例子中，召回率为4/5，或80%。
 - en: Typically, the data engineer wants to achieve a trade-off between recall and
     precision. We therefore need to consider both measures along with each other.
     To assess whether a machine learning classifier is performing well, we need them
@@ -901,6 +996,8 @@
   id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常，数据工程师希望在召回率和精确率之间取得平衡。因此，我们需要同时考虑这两个指标。为了评估一个机器学习分类器是否表现良好，我们需要它们两者。因此，*f1-分数*
+    被发明出来，它计算涉及召回率和精确率的分数。通常，在开发机器分类器时，我们因此尝试最大化 *f1*-分数。
 - en: In our case, positive and negative corresponded to the names of our classes,
     since we are predicting positive and negative texts. This is not necessarily the
     case. For the classification of spam e-mails, the positive label could be that
@@ -910,6 +1007,7 @@
   id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的案例中，正面和负面对应于我们的类别名称，因为我们正在预测正面和负面的文本。这并不一定是这样的。对于垃圾邮件的分类，正面标签可以表示邮件实际上是垃圾邮件，而负面标签表示它不是垃圾邮件。术语真正例、真负例等仍然会像上面描述的那样使用。
 - en: Note that most of the metrics described here referred to the problem of binary
     classification. In binary classification, we have two groups (e.g., positive and
     negative texts), and the classifier aims to estimate which class a new text belongs
@@ -918,6 +1016,7 @@
   id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这里描述的大多数指标都涉及二元分类问题。在二元分类中，我们有两组（例如，正面和负面文本），分类器的目标是估计新文本属于哪一类。在其他情况下，我们可能有多类问题，并且会使用其他类似的指标计算。
 - en: In this section, with *good*, we meant whether the machine learning system performs
     well for a specific task, using accuracy, precision, recall, and *f1*-score to
     quantify the performance. Whether its decisions are fair or ethical is yet another
@@ -925,26 +1024,31 @@
   id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这一部分中，*好* 意味着机器学习系统是否在特定任务中表现良好，使用准确率、精确率、召回率和 *f1*-分数来量化性能。它的决策是否公平或道德是另一个讨论。我们将在下一章更深入地探讨这个话题。
 - en: Summary
   id: totrans-130
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总结
 - en: In this chapter, we have seen how chatbots can provide wrong information for
     different reasons. Examples can be a lack of relevant information in the training
     data as well as intrinsic or extrinsic hallucinations.
   id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们已经看到聊天机器人可能因为不同原因提供错误信息。例子可以是训练数据中缺乏相关信息，以及内在或外在的幻觉。
 - en: We have also looked at some other architectures starting from ELIZA of the 1960s.
     Whereas other architectures are not as performant as the state-of-the-art chatbots
     and language models, it is easier to explain how they came to a given output.
   id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还研究了从上世纪60年代的ELIZA开始的一些其他架构。虽然其他架构不如最先进的聊天机器人和语言模型表现出色，但更容易解释它们如何得出给定的输出。
 - en: In the last part of this chapter, we have learned about different performance
     metrics for machine learning models. Evaluating the efficiency of the model on
     a test dataset, the model can be improved during the training phase.
   id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章的最后部分，我们学习了有关机器学习模型的不同性能指标。通过在测试数据集上评估模型的效率，模型可以在训练阶段得到改进。

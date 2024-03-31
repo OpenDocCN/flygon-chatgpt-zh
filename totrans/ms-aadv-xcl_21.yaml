@@ -1,178 +1,235 @@
 - en: '[CHAPTER 20Arrays and Collections in VBA](contents.xhtml#ch20a)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: '[Introduction](contents.xhtml#sc2_304a)'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
 - en: Arrays and Collections are essential components in VBA programming, enabling
     efficient storage and manipulation of multiple values. In this chapter, we will
     explore their concepts, learn how to declare and use them, understand array indexing
     and dynamic arrays, and examine practical examples of their application in VBA.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: '[Structure](contents.xhtml#sc2_305a)'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
 - en: 'In this chapter, we will discuss the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: Arrays
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Declaring the Arrays
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Using Arrays
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Array Indexing
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Declaring a Dynamic Array
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Resizing a Dynamic Array
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: '[Objectives](contents.xhtml#sc2_306a)'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: By the end of this chapter, the reader will learn the use of arrays and collections
     in VBA programming, learn how to declare, resize, and use arrays efficiently,
     and explore the advantages of collections over arrays for advanced data manipulation
     tasks.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: '[Arrays](contents.xhtml#sc2_307a)'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: Arrays are a set of sequentially indexed elements having the same intrinsic
     data type. Each element of an array has a unique identifying index number.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: Changes made to one element of an array does not affect the other elements.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
 - en: 'The different types of arrays are as follows:'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: An array whose size is specified is a fixed-size array.
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: An array whose size can be changed while a program is running is a dynamic array.
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Single dimension array: Only with rows'
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Multiple Dimension array: With rows and columns'
+  id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: '[Declaring the arrays](contents.xhtml#sc2_308a)'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
 - en: Arrays are declared the same way as other variables.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: 'Syntax:'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: Dim name_Of_array(Size) As Data_Type
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: Example
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: 'Single dimension: Declaring a single dimension array variable of 10 row size
     which can store integer items.'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
 - en: Dim Myarray(10) As Integer
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: 'Multiple dimension (Max 60 dimensions): Declaring a multiple dimension array
     variable of 3 rows and 5 columns which can store 15 integer items.'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: Dim Myarray(3 , 5) As Integer
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
 - en: '[Using arrays](contents.xhtml#sc2_309a)'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: 'Using Arrays can be explained using this example: To store daily expenses for
     each day of the month, you can declare one array variable with 31 elements, rather
     than declaring 31 variables.'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: Each element in an array contains one value.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: '| Sub Single_array()Dim curExpense(31) As CurrencyDim intI As IntegerFor intI
     = 0 to 31curExpense(intI) = 20NextEnd Sub |'
+  id: totrans-33
   prefs: []
   type: TYPE_TB
 - en: 'Note: In the above example array index will start from 0'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
 - en: '[Array indexing](contents.xhtml#sc2_310a)'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: All array indexes begin at zero. Whether an array is indexed from 0 or 1 depends
     on the setting of the Option Base statement.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
 - en: If Option Base 1 is not specified, all array indexes begin at zero.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
 - en: Example
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: '| Option Base 1Sub Single_array()Dim curExpense(31) As CurrencyDim intI As
     IntegerFor intI = 1 to 31curExpense(intI) = 20NextEnd Sub |'
+  id: totrans-39
   prefs: []
   type: TYPE_TB
 - en: 'Note: In the above example, array index will start from 1.'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
 - en: '[Declaring a dynamic array](contents.xhtml#sc2_311a)'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
 - en: By declaring a dynamic array, you can size the array while the code is running.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
 - en: Use a Dim statement to declare an array, leaving the parentheses empty.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用Dim语句声明一个数组，括号留空。
 - en: 'Syntax:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: Dim Name_Of_Array() As Data_Type
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: Dim Name_Of_Array() As Data_Type
 - en: '[Resizing a dynamic array](contents.xhtml#sc2_312a)'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: '[调整动态数组大小](contents.xhtml#sc2_312a)'
 - en: Use the ReDim statement to declare an array implicitly within a procedure.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用ReDim语句在过程内隐式声明一个数组。
 - en: Be careful not to misspell the name of the array when you use the ReDim statement.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 在使用ReDim语句时，小心不要拼错数组的名称。
 - en: '[Array example](contents.xhtml#sc3_313a)'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: '[数组示例](contents.xhtml#sc3_313a)'
 - en: '| Option Base 1 '' Initializing the array index 1Sub Searchdata()Dim mycell_array()
     As String '' Declaring the dynamic arrayDim a, i As Longi = 1Sheets(1).Selecta
     = Range("a65536").End(xlUp).Row - 1ReDim mycell_array(a) '' Redeclaring the array
@@ -180,54 +237,86 @@
     = mycelli = i + 1NextSheets("database").SelectRange("a2", Range("a2").End(xlDown)).Selecti
     = 1For i = 1 To aFor Each mycell In SelectionIf mycell_array(i) = mycell Thenmycell.EntireRow.Delete
     ''mycell.Offset(0, 1).Value = "found"End IfNextEnd Sub |'
+  id: totrans-50
   prefs: []
   type: TYPE_TB
+  zh: '| Option Base 1 '' 初始化数组索引 1Sub Searchdata()Dim mycell_array() As String ''
+    声明动态数组Dim a, i As Longi = 1Sheets(1).Selecta = Range("a65536").End(xlUp).Row -
+    1ReDim mycell_array(a) '' 重新声明数组大小Range("a2", Range("a2").End(xlDown)).SelectFor
+    Each mycell In Selection mycell_array(i) = mycelli = i + 1NextSheets("database").SelectRange("a2",
+    Range("a2").End(xlDown)).Selecti = 1For i = 1 To aFor Each mycell In SelectionIf
+    mycell_array(i) = mycell Thenmycell.EntireRow.Delete ''mycell.Offset(0, 1).Value
+    = "found"End IfNextEnd Sub |'
 - en: '[Conclusion](contents.xhtml#sc2_314a)'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_314a)'
 - en: Arrays and Collections are powerful tools in VBA programming, facilitating the
     management of data sets and enhancing code efficiency. With a solid grasp of these
     concepts, you can optimize your VBA code, improve readability, and handle complex
     data structures effectively. Incorporating arrays and collections into your programming
     repertoire will expand your capabilities and enable you to tackle a wider range
     of VBA projects.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 数组和集合是VBA编程中强大的工具，有助于管理数据集并增强代码效率。掌握这些概念，可以优化VBA代码，提高可读性，并有效处理复杂的数据结构。将数组和集合纳入编程技能范围，将扩展您的能力，使您能够处理更广泛的VBA项目。
 - en: '[Exercise](contents.xhtml#sc2_315a)'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习](contents.xhtml#sc2_315a)'
 - en: Declare a dynamic array to store the daily expenses of 5 employees.
+  id: totrans-54
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 声明一个动态数组，用于存储5名员工的日常开支。
 - en: Use a loop to input the expenses for each employee for a specified number of
     days.
+  id: totrans-55
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用循环输入每位员工在指定天数内的开支。
 - en: Calculate the total expenses for each employee and display the result.
+  id: totrans-56
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 计算每位员工的总开支并显示结果。
 - en: Determine the employee with the highest total expenses and print their name
     and the corresponding amount.
+  id: totrans-57
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 确定总开支最高的员工，并打印其姓名和相应金额。
 - en: Calculate the average expenses per day for the entire team and display the result.
+  id: totrans-58
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 计算整个团队每天的平均开支并显示结果。
 - en: Join our book’s Discord space
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入我们书籍的Discord空间
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入书籍的Discord Workspace，获取最新更新、优惠、全球科技动态、新发布和与作者的交流：
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
 - en: '![](images/fm1.png)'
+  id: totrans-62
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/fm1.png)'

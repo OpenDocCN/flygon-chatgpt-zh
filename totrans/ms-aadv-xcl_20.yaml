@@ -1,377 +1,596 @@
 - en: '[CHAPTER 19Looping Structures in VBA](contents.xhtml#ch19a)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第19章VBA中的循环结构](contents.xhtml#ch19a)'
 - en: '[Introduction](contents.xhtml#sc2_275a)'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_275a)'
 - en: In this chapter, we will delve into the topic of looping structures in Visual
     Basic for Applications (VBA). Loops are powerful tools that enable the repetitive
     execution of code, improving efficiency and automating tasks. This chapter explores
     different types of loops, such as Do...Loop, For...Next, and For Each...Next loops,
     as well as auto-executed macros that run based on specific events.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将深入探讨Visual Basic for Applications（VBA）中的循环结构主题。循环是强大的工具，可以使代码重复执行，提高效率并自动化任务。本章探讨了不同类型的循环，如Do...Loop、For...Next和For
+    Each...Next循环，以及基于特定事件运行的自动执行的宏。
 - en: '[Structure](contents.xhtml#sc2_276a)'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_276a)'
 - en: 'In this chapter, we will go over the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: Using Loops (repeating action)
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用循环（重复动作）
 - en: Using Do…Loop statements
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用Do…Loop语句
 - en: Using For…Next statements
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用For…Next语句
 - en: Using For Each…Next statements
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用For Each…Next语句
 - en: Auto-Executed Macros
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 自动执行的宏
 - en: '[Objectives](contents.xhtml#sc2_277a)'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_277a)'
 - en: By the end of this chapter, the reader will learn looping structures in VBA,
     such as Do...Loop, For...Next, and For Each...Next, and as well as go over practical
     examples for their implementation.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过本章结束时，读者将学习VBA中的循环结构，如Do...Loop、For...Next和For Each...Next，以及实际示例的实现。
 - en: '[Using Loops (repeating action)](contents.xhtml#sc2_278a)'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用循环（重复动作）](contents.xhtml#sc2_278a)'
 - en: Looping allows you to run a group of statements repeatedly. Some loops repeat
     statements until a condition is False; others repeat statements until a condition
     is True. There are also loops that repeat statements a specific number of times
     or for each object in a collection.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 循环允许您重复运行一组语句。一些循环重复语句直到条件为False；其他循环重复语句直到条件为True。还有一些循环重复语句特定次数或对集合中的每个对象重复。
 - en: '[Choosing a Loop to use](contents.xhtml#sc3_279a)'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: '[选择要使用的循环](contents.xhtml#sc3_279a)'
 - en: 'There are various loops you can use, such as:'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 有各种循环可以使用，例如：
 - en: 'Do…Loop : Looping while or until a condition is True.'
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Do…Loop：在条件为True时循环。
 - en: 'For…Next : Using a counter to run statements a specified number of times.'
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: For…Next：使用计数器运行指定次数的语句。
 - en: 'For Each…Next: Repeating a group of statements for each object in a collection.'
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: For Each…Next：为集合中的每个对象重复一组语句。
 - en: '[Using Do…Loop statements](contents.xhtml#sc2_280a)'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用Do…Loop语句](contents.xhtml#sc2_280a)'
 - en: You can use Do...Loop statements to run a block of statements an indefinite
     number of times. The statements are repeated either while a condition is True
     or until a condition becomes True.
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以使用Do...Loop语句无限次运行一组语句。这些语句在条件为True时重复，或者直到条件变为True。
 - en: 'Syntax:'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: Do [{While | Until} condition]
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: Do [{While | Until} 条件]
 - en: '[statements]'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: '[语句]'
 - en: '[Exit Do]'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: '[退出 Do]'
 - en: '[statements]'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: '[语句]'
 - en: Loop
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 循环
 - en: '[Repeating statements while a condition is true](contents.xhtml#sc3_281a)'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: '[在条件为真时重复语句](contents.xhtml#sc3_281a)'
 - en: In a Do...Loop statement there are two ways to use the While keyword to check
     a condition ¾ You can check the condition before you enter the loop , or ¾ You
     can check it after the loop has run at least once.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Do...Loop语句中，有两种使用While关键字检查条件的方式¾您可以在进入循环之前检查条件，或者¾您可以在循环至少运行一次后检查条件。
 - en: '[Checking condition before you enter the loop](contents.xhtml#sc3_282a)'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: '[在进入循环之前检查条件](contents.xhtml#sc3_282a)'
 - en: 'The syntax for checking the condition before you enter the look is:'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 在进入循环之前检查条件的语法是：
 - en: DO WHILE (condition)
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: DO WHILE (条件)
 - en: Code to be repeated
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 要重复的代码
 - en: LOOP
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 循环
 - en: '[Checking condition after the loop has run at least once](contents.xhtml#sc3_283a)'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '[在循环至少运行一次后检查条件](contents.xhtml#sc3_283a)'
 - en: 'The syntax for checking the condition after loop has run at least once, is:'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 在循环至少运行一次后检查条件的语法是：
 - en: DO
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: DO
 - en: Code to be repeated
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 要重复的代码
 - en: LOOP WHILE (condition)
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: LOOP WHILE (条件)
 - en: '[Scenario 17](contents.xhtml#sc3_284a)'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景17](contents.xhtml#sc3_284a)'
 - en: 'Write a code to accept and validate username. Blank name should not be allowed.
     Refer Training File5.xls:'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个接受和验证用户名的代码。不应允许空名称。参考培训文件5.xls：
 - en: 'Refer to [Figure 19.1](#fig19-1):'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图19.1](#fig19-1)：
 - en: '![](images/Figure_19.1.png)'
+  id: totrans-42
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_19.1.png)'
 - en: 'Figure 19.1: Scenario 17'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 图19.1：场景17
 - en: '| Sub validate_name()Dim name As Stringname = InputBox("enter your name")Do
     While Trim(name) = ""MsgBox "Name cannot be blank"name = InputBox("enter your
     name")LoopEnd Sub |'
+  id: totrans-44
   prefs: []
   type: TYPE_TB
+  zh: '| Sub validate_name()Dim name As Stringname = InputBox("输入您的姓名")Do While Trim(name)
+    = ""MsgBox "姓名不能为空"name = InputBox("输入您的姓名")LoopEnd Sub |'
 - en: 'Note: Trim function removes spaces from the beginning and end of the word.'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：Trim函数会删除单词开头和结尾的空格。
 - en: '[Using For…Next statements](contents.xhtml#sc2_285a)'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用For…Next语句](contents.xhtml#sc2_285a)'
 - en: You can use For...Next statements to repeat a block of statements a specific
     number of times.
+  id: totrans-47
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 您可以使用For...Next语句重复执行一组语句特定次数。
 - en: For loop uses a counter variable whose value is increased or decreased with
     each repetition of the loop internally.
+  id: totrans-48
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: For循环使用一个计数器变量，其值在每次循环内部重复时增加或减少。
 - en: 'Syntax:'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: FOR counter_variable = initial_value TO Final_ValueSTEPstep_value
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于计数变量=初始值到最终值STEP步长值
 - en: Code to be repeated
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 要重复的代码
 - en: NEXT
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一个
 - en: 'Note: Smaller the data type , less time it takes to update.'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：数据类型越小，更新所需的时间越短。
 - en: '[Scenario 18](contents.xhtml#sc3_286a)'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景18](contents.xhtml#sc3_286a)'
 - en: Create a macro named fill_series to display numbers from 1 to 10 (starting with
     cell A1)
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个名为fill_series的宏，以显示从1到10的数字（从单元格A1开始）。
 - en: Sub fill_series()
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: Sub fill_series()
 - en: Dim fill_val As Integer
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 声明fill_val为整数
 - en: Range("A1").Select
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: Range("A1").Select
 - en: For fill_val = 1 To 10
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于fill_val = 1到10
 - en: ActiveCell.Value = fill_val
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: ActiveCell.Value = fill_val
 - en: ActiveCell.Offset(1, 0).Select Next
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: ActiveCell.Offset(1, 0).Select Next
 - en: End Sub
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: End Sub
 - en: Offset function() is used to point or refer the object up, down, left, or right
     of the object.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: Offset函数()用于指向或引用对象的上、下、左或右。
 - en: 'Syntax:'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: OFFSET(row , column)
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: OFFSET(行，列)
 - en: Example
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例
 - en: 'Activecell.Offset(1,0).select: This will select the cell 1 row down and 0 column
     to the right of the Activecell ,'
+  id: totrans-67
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Activecell.Offset(1,0).select：这将选择Activecell下面1行，右边0列的单元格，
 - en: 'Activecell.Offset(0,1).select: This will select the cell 0 row down and 1 column
     to the right of the Activecell,'
+  id: totrans-68
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Activecell.Offset(0,1).select：这将选择Activecell右边0行，1列的单元格，
 - en: 'Activecell.Offset(-1,0).select : This will select the cell 1 row up and 0 column
     to the right of the Activecell,'
+  id: totrans-69
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Activecell.Offset(-1,0).select：这将选择Activecell上面1行，右边0列的单元格，
 - en: 'Activecell.Offset(0,-1).select: This will select the cell 0 row down and 1
     column to the left of the Activecell.'
+  id: totrans-70
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Activecell.Offset(0,-1).select：这将选择Activecell下面0行，左边1列的单元格。
 - en: '[Using For Each… Next statements](contents.xhtml#sc2_287a)'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用ForEach…Next语句](contents.xhtml#sc2_287a)'
 - en: For Each...Next statements repeat a block of statements for each object in a
     collection or element in an array.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: For Each...Next语句为集合中的每个对象或数组中的元素重复执行一组语句。
 - en: Visual Basic automatically sets a variable each time the loop runs.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: Visual Basic每次循环运行时都会自动设置一个变量。
 - en: Any number of Exit For statements may be placed anywhere in the loop as an alternative
     way to exit.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以在循环中的任何位置放置任意数量的Exit For语句作为退出的替代方式。
 - en: 'Syntax:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: For Each element  In group
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于每个元素在组中
 - en: '[statements]'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: '[语句]'
 - en: '[Exit For]'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: '[退出For]'
 - en: '[statements]'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: '[语句]'
 - en: Next [element]
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一个[element]
 - en: 'Required: Variable used to iterate through the elements of the collection or
     array. For collections, element can only be a Variant variable, a generic object
     variable, or any specific object variable. For arrays, element can only be a Variant
     variable.'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 必需：用于迭代集合或数组元素的变量。对于集合，元素只能是Variant变量、通用对象变量或任何特定对象变量。对于数组，元素只能是Variant变量。
 - en: 'Group: Required. Name of an object collection or array'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 组：必需。对象集合或数组的名称
 - en: Statements
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 语句
 - en: Optional. One or more statements that are executed on each item in group.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 可选。在组中的每个项目上执行的一个或多个语句。
 - en: '[Scenario 19](contents.xhtml#sc3_288a)'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景19](contents.xhtml#sc3_288a)'
 - en: Create a macro name it as UPPER_CASE to convert data into capital letters. Use
     Ucase () function to convert the case into capital letters
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个名为UPPER_CASE的宏，将数据转换为大写字母。使用Ucase()函数将大小写转换为大写字母
 - en: 'Refer to the following [Figure 19.2](#fig19-2):'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图19.2](#fig19-2)：
 - en: '![](images/Figure_19.2.png)'
+  id: totrans-88
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_19.2.png)'
 - en: 'Figure 19.2: Scenario 19'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 图19.2：场景19
 - en: '| Sub UPPER_CASE()Dim wscell As RangeFor Each wscell In Selectionwscell.Value
     = UCase(wscell.Value)NextEnd Sub |'
+  id: totrans-90
   prefs: []
   type: TYPE_TB
+  zh: '| Sub UPPER_CASE()Dim wscell As RangeFor Each wscell In Selectionwscell.Value
+    = UCase(wscell.Value)NextEnd Sub |'
 - en: '[Scenario 20](contents.xhtml#sc3_289a)'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景20](contents.xhtml#sc3_289a)'
 - en: Create a macro name it as lower_case to convert data into small letters. Use
     lcase () function to convert the case into small letters
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个名为lower_case的宏，将数据转换为小写字母。使用lcase()函数将大小写转换为小写字母
 - en: 'Refer to [Figure 19.3](#fig19-3):'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图19.3](#fig19-3)：
 - en: '![](images/Figure_19.3.png)'
+  id: totrans-94
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_19.3.png)'
 - en: 'Figure 19.3: Scenario 20'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 图19.3：场景20
 - en: '| Sub lower_case()Dim wscell As RangeFor Each wscell In Selectionwscell.Value
     = LCase(wscell.Value)NextEnd Sub |'
+  id: totrans-96
   prefs: []
   type: TYPE_TB
+  zh: '| Sub lower_case()Dim wscell As RangeFor Each wscell In Selectionwscell.Value
+    = LCase(wscell.Value)NextEnd Sub |'
 - en: '[Scenario 21](contents.xhtml#sc3_290a)'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景21](contents.xhtml#sc3_290a)'
 - en: Create a macro name it as Proper_case to convert data into Title case letters.
     Use WorksheetFunction object to use any function from excel in VBA.
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个名为Proper_case的宏，将数据转换为标题大小写字母。使用WorksheetFunction对象在VBA中使用Excel中的任何函数。
 - en: 'Refer to [Figure 19.4](#fig19-4):'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图19.4](#fig19-4)：
 - en: '![](images/Figure_19.4.png)'
+  id: totrans-100
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_19.4.png)'
 - en: 'Figure 19.4: Scenario 21'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 图19.4：场景21
 - en: '| Sub Proper_Case()Dim wscell As RangeFor Each wscell In Selectionwscell.Value
     = Application.WorksheetFunction.Proper(wscell.Value) NextEnd Sub |'
+  id: totrans-102
   prefs: []
   type: TYPE_TB
+  zh: '| Sub Proper_Case()Dim wscell As RangeFor Each wscell In Selectionwscell.Value
+    = Application.WorksheetFunction.Proper(wscell.Value) NextEnd Sub |'
 - en: '[Scenario 22](contents.xhtml#sc3_291a)'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景22](contents.xhtml#sc3_291a)'
 - en: 'Open Scenario 22 and modify. After storing record macro, you should ask the
     user to be continued or not and run as per user response. If the user clicks OK
     then it should continue the data entry. If the user clicks on Cancel, it will
     then display Thanks and end the macro. Refer to [Figure 19.5](#fig19-5):'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 打开场景22并进行修改。在记录宏后，您应该询问用户是否继续，并根据用户的响应运行。如果用户点击确定，则应继续数据输入。如果用户点击取消，则显示“谢谢”并结束宏。参考[图19.5](#fig19-5)：
 - en: '![](images/Figure_19.5.png)'
+  id: totrans-105
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_19.5.png)'
 - en: 'Figure 19.5: Scenario 22'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 图19.5：场景22
 - en: '| Sub Data_Entry1()Dim EmpCode As Integer, next_row As IntegerDim EmpName As
     StringDim doj As DateDim Salary As CurrencyWorksheets("database").SelectRange("a65536").SelectSelection.End(xlUp).Selectnext_row
     = ActiveCell.Row + 1DoEmpCode = InputBox("Enter Employee Code")EmpName = InputBox("Enter
@@ -380,134 +599,220 @@
     = EmpNameCells(next_row , 3).Value = Format(doj, "MMM DD YYYY")Cells(next_row
     , 4).Value = Salarynext_row =next_row + 1Loop While (MsgBox("Do you want to continue?",
     vbOKCancel) = vbOK)MsgBox "Thanks"End Sub |'
+  id: totrans-107
   prefs: []
   type: TYPE_TB
+  zh: '| Sub Data_Entry1()Dim EmpCode As Integer, next_row As IntegerDim EmpName As
+    StringDim doj As DateDim Salary As CurrencyWorksheets("database").SelectRange("a65536").SelectSelection.End(xlUp).Selectnext_row
+    = ActiveCell.Row + 1DoEmpCode = InputBox("输入员工编号")EmpName = InputBox("输入员工姓名")doj
+    = InputBox("输入入职日期 mm/dd/yy")Salary = InputBox("输入员工工资")Cells(next_row , 1).Value
+    = EmpCodeCells(next_row , 2).Value = EmpNameCells(next_row , 3).Value = Format(doj,
+    "MMM DD YYYY")Cells(next_row , 4).Value = Salarynext_row =next_row + 1Loop While
+    (MsgBox("是否继续？", vbOKCancel) = vbOK)MsgBox "谢谢"End Sub |'
 - en: '[Scenario 23](contents.xhtml#sc3_292a)'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景23](contents.xhtml#sc3_292a)'
 - en: Create a macro which will calculate the following for each employee
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个宏，将为每个员工计算以下内容
 - en: HRA (75% of the salary)
+  id: totrans-110
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 住房津贴（工资的75%）
 - en: DA (60% of the salary) and
+  id: totrans-111
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: DA（工资的60%）
 - en: TOTAL (salary + HRA + DA)
+  id: totrans-112
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 总计（工资+住房津贴+DA）
 - en: 'Refer to [Figure 19.6](#fig19-6):'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图19.6](#fig19-6)：
 - en: '![](images/Figure_19.6.png)'
+  id: totrans-114
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_19.6.png)'
 - en: 'Figure 19.6: Scenario 23'
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 图19.6：场景23
 - en: There could be two ways to solve this question
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 解决这个问题可能有两种方法
 - en: Refer Training File6.xls
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考培训文件6.xls
 - en: 'Through macro you can put formulae to the cells:'
+  id: totrans-118
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 通过宏，您可以将公式放入单元格中：
 - en: '| Sub Gross_Salary()''The user will select the range H2:H101 cells As Range.For
     Each wscell In Selectionwscell.Offset(0, 1).Value = "=rc[-1]*75%"wscell.Offset(0,
     2).Value = "=rc[-2]*60%"wscell.Offset(0, 3).Value = "=sum(rc[-1]:rc[-3])"NextEnd
     Sub |'
+  id: totrans-119
   prefs:
   - PREF_IND
   type: TYPE_TB
+  zh: '| Sub Gross_Salary()‘用户将选择范围H2:H101单元格作为范围。对于选择中的每个wscellwscell.Offset(0, 1).Value
+    = "=rc[-1]*75%"wscell.Offset(0, 2).Value = "=rc[-2]*60%"wscell.Offset(0, 3).Value
+    = "=sum(rc[-1]:rc[-3])"NextEnd Sub |'
 - en: 'Calculate in your macro and put only results in the cells:'
+  id: totrans-120
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在您的宏中计算并仅将结果放入单元格中：
 - en: '| Sub Gross_Salary()User will select the range H2:H101 Dim wscell As RangeFor
     Each wscell In Selectionwscell.Offset(0, 1).Value= wscell.Value * .75wscell.Offset(0,
     2).Value = wscell.Value * 60%wscell.Offset(0, 3).Value = wscell.value + wscell.Offset(0,
     1).Value + wscell.Offset(0, 2).ValueNextEnd Sub |'
+  id: totrans-121
   prefs:
   - PREF_IND
   type: TYPE_TB
+  zh: '| Sub Gross_Salary()用户将选择范围H2:H101 Dim wscell As RangeFor Each wscell In Selectionwscell.Offset(0,
+    1).Value= wscell.Value * .75wscell.Offset(0, 2).Value = wscell.Value * 60%wscell.Offset(0,
+    3).Value = wscell.value + wscell.Offset(0, 1).Value + wscell.Offset(0, 2).ValueNextEnd
+    Sub |'
 - en: '[Scenario 24](contents.xhtml#sc3_293a)'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景24](contents.xhtml#sc3_293a)'
 - en: 'Create a macro to display list of names of worksheets in current workbook.
     Refer to [Figure 19.7](#fig19-7):'
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个宏来显示当前工作簿中工作表名称的列表。参考[图19.7](#fig19-7)：
 - en: '![](images/Figure_19.7.png)'
+  id: totrans-124
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_19.7.png)'
 - en: 'Figure 19.7: Scenario 24'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 图19.7：场景24
 - en: '| Sub list_sheets()„ Declare a variable as worksheet objectDim sht As WorksheetFor
     Each sht In WorksheetsActiveCell.Value = sht.nameActiveCell.Offset(1, 0).SelectNextEnd
     Sub |'
+  id: totrans-126
   prefs: []
   type: TYPE_TB
+  zh: '| Sub list_sheets()„ 声明一个工作表对象变量Dim sht As WorksheetFor Each sht In WorksheetsActiveCell.Value
+    = sht.nameActiveCell.Offset(1, 0).SelectNextEnd Sub |'
 - en: '[Auto-Executed Macros](contents.xhtml#sc2_294a)'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: '[自动执行的宏](contents.xhtml#sc2_294a)'
 - en: 'The syntax is:'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法是：
 - en: '| fydyr |'
+  id: totrans-129
   prefs: []
   type: TYPE_TB
+  zh: '| fydyr |'
 - en: 'Refer to the following [Table 19.1](#tab19-1):'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[表19.1](#tab19-1)：
 - en: '| To | Use |'
+  id: totrans-131
   prefs: []
   type: TYPE_TB
+  zh: '| 到 | 使用 |'
 - en: '| Run a macro as soon as workbook gets opened | Sub auto_open()End Sub |'
+  id: totrans-132
   prefs: []
   type: TYPE_TB
+  zh: '| 在工作簿打开时运行宏 | Sub auto_open()End Sub |'
 - en: '| Run a macro as soon as workbook is closed | Sub auto_close()End Sub |'
+  id: totrans-133
   prefs: []
   type: TYPE_TB
+  zh: '| 在工作簿关闭时运行宏 | Sub auto_close()End Sub |'
 - en: 'Table 19.1: Auto-executed macros'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 表19.1：自动执行的宏
 - en: '[Practice 3](contents.xhtml#sc3_295a)'
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习 3](contents.xhtml#sc3_295a)'
 - en: Write a function ("Search_sheet") to check existence of any sheet.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个名为“Search_sheet”的函数来检查任何工作表是否存在。
 - en: '| Function Search_sheet(newSht)Dim sht As WorksheetFor Each sht In WorksheetsIf
     UCase(sht.name) = UCase(newSht) ThenSearch_sheet = "Sheet(" & newSht & ") exists"Exit
     FunctionEnd IfNextSearch_sheet = "Sheet(" & newSht & ") does not exists"End Function
     |'
+  id: totrans-137
   prefs: []
   type: TYPE_TB
+  zh: '| Function Search_sheet(newSht)Dim sht As WorksheetFor Each sht In WorksheetsIf
+    UCase(sht.name) = UCase(newSht) ThenSearch_sheet = "工作表(" & newSht & ") 存在"Exit
+    FunctionEnd IfNextSearch_sheet = "工作表(" & newSht & ") 不存在"End Function |'
 - en: '[Practice 4](contents.xhtml#sc3_296a)'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习 4](contents.xhtml#sc3_296a)'
 - en: Write a macro to increase the salary by 2000 for each employee.
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个宏，为每位员工增加2000的工资。
 - en: '[Scenario 25](contents.xhtml#sc3_297a)'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景 25](contents.xhtml#sc3_297a)'
 - en: Create a macro to generate region-wise and department-wise sum of salary and
     count of employees using pivot table. Modify code such a way that every time pivot
     should be generated on current data.
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个宏，使用数据透视表生成按区域和部门工资总和以及员工数量的总计。修改代码，使每次都在当前数据上生成数据透视表。
 - en: Refer Training File6.xls
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考培训文件6.xls
 - en: '| Sub Pivot_Summary()Range("A2").SelectActiveWorkbook.PivotCaches.Add(SourceType:=xlDatabase,
     SourceData:= _ Range("a2").CurrentRegion).CreatePivotTable TableDestination:="",
     TableName:= _ "PivotTable2", DefaultVersion:=xlPivotTableVersion10ActiveSheet.PivotTableWizard
@@ -517,53 +822,93 @@
     = xlDataField.Caption = "Count of Empcode".Function = xlCountEnd WithRange("C3").SelectWith
     ActiveSheet.PivotTables("PivotTable2").DataPivotField.Orientation = xlColumnField.Position
     = 1End WithEnd Sub |'
+  id: totrans-143
   prefs: []
   type: TYPE_TB
+  zh: '| Sub Pivot_Summary()Range("A2").SelectActiveWorkbook.PivotCaches.Add(SourceType:=xlDatabase,
+    SourceData:= _ Range("a2").CurrentRegion).CreatePivotTable TableDestination:="",
+    TableName:= _ "PivotTable2", DefaultVersion:=xlPivotTableVersion10ActiveSheet.PivotTableWizard
+    TableDestination:=ActiveSheet.Cells(3, 1)ActiveSheet.Cells(3, 1).SelectActiveSheet.PivotTables("PivotTable2").AddFields
+    RowFields:=Array("Region", _ "Dept", "Data")With ActiveSheet.PivotTables("PivotTable2").PivotFields("salary").Orientation
+    = xlDataField.Position = 1End WithWith ActiveSheet.PivotTables("PivotTable2").PivotFields("Empcode").Orientation
+    = xlDataField.Caption = "Count of Empcode".Function = xlCountEnd WithRange("C3").SelectWith
+    ActiveSheet.PivotTables("PivotTable2").DataPivotField.Orientation = xlColumnField.Position
+    = 1End WithEnd Sub |'
 - en: '[Scenario 26](contents.xhtml#sc3_298a)'
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景 26](contents.xhtml#sc3_298a)'
 - en: Write a code to remove duplicate records from “daily” worksheet if they exist
     in “master” worksheet.
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一段代码，如果“master”工作表中存在，则从“daily”工作表中删除重复记录。
 - en: (Use nested loop)
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: （使用嵌套循环）
 - en: '[Solution 26](contents.xhtml#sc4_299a)'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: '[解决方案 26](contents.xhtml#sc4_299a)'
 - en: Refer Training File7.xls
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考培训文件7.xls
 - en: '| Sub duplicates()Dim wscell As Range, tcell As RangeWorksheets("master").SelectRange("a2").SelectRange(ActiveCell,
     ActiveCell.End(xlDown)).SelectFor Each wscell In SelectionWorksheets("daily").SelectRange("a2").SelectRange(ActiveCell,
     ActiveCell.End(xlDown)).SelectFor Each tcell In SelectionIf tcell.Value = wscell.Value
     Thentcell.EntireRow.Delete End IfNextNextActiveCell.SelectEnd Sub |'
+  id: totrans-149
   prefs: []
   type: TYPE_TB
+  zh: '| Sub duplicates()Dim wscell As Range, tcell As RangeWorksheets("master").SelectRange("a2").SelectRange(ActiveCell,
+    ActiveCell.End(xlDown)).SelectFor Each wscell In SelectionWorksheets("daily").SelectRange("a2").SelectRange(ActiveCell,
+    ActiveCell.End(xlDown)).SelectFor Each tcell In SelectionIf tcell.Value = wscell.Value
+    Thentcell.EntireRow.Delete End IfNextNextActiveCell.SelectEnd Sub |'
 - en: The same code can be written using find command as follows
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以使用查找命令编写相同的代码如下
 - en: '| Sub duplicates_With_find()Worksheets("master").SelectRangec("a2").SelectRange(ActiveCell,
     ActiveCell.End(xlDown)).SelectFor Each tcell In SelectionWorksheets("daily").SelectSet
     c = Cells.Find(What:=tcell.Value)If Not c Is Nothing Then Rows(c.Row).DeleteEnd
     IfNextEnd Sub |'
+  id: totrans-151
   prefs: []
   type: TYPE_TB
+  zh: '| Sub duplicates_With_find()Worksheets("master").SelectRangec("a2").SelectRange(ActiveCell,
+    ActiveCell.End(xlDown)).SelectFor Each tcell In SelectionWorksheets("daily").SelectSet
+    c = Cells.Find(What:=tcell.Value)If Not c Is Nothing Then Rows(c.Row).DeleteEnd
+    IfNextEnd Sub |'
 - en: '[Scenario 27](contents.xhtml#sc3_300a)'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景 27](contents.xhtml#sc3_300a)'
 - en: Create a macro named as Merging_Sheets which will copy data from all worksheets
     to one worksheet
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个名为Merging_Sheets的宏，将所有工作表的数据复制到一个工作表中
 - en: Your macro should generate a pivot for the total of quantity sold for region
     wise and then emp code wise after consolidation.
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 你的宏应该生成一个按区域销售数量总计和员工代码总计的数据透视表。
 - en: '[Solution](contents.xhtml#sc4_301a)'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: '[解决方案](contents.xhtml#sc4_301a)'
 - en: '| Sub Merging_Sheets()''Scenario27''Add a sheet at the end and name it as consolidate
     and create headings Worksheets.Add After:=Worksheets(Worksheets.Count)ActiveSheet.Name
     = "consolidate"ActiveSheet.Range("a1").SelectRange("a1").Value = "Product"Range("b1").Value
@@ -576,69 +921,109 @@
     TableDestination:=ActiveSheet.Cells(3, 1) ActiveSheet.Cells(3, 1).SelectActiveSheet.PivotTables("PivotTable1").AddFields
     RowFields:="Product"ActiveSheet.PivotTables("PivotTable1").PivotFields("Sales").Orientation
     = _ xlDataFieldEnd Sub |'
+  id: totrans-156
   prefs: []
   type: TYPE_TB
+  zh: '| Sub Merging_Sheets()''Scenario27''在末尾添加一个工作表，并将其命名为consolidate并创建标题Worksheets.Add
+    After:=Worksheets(Worksheets.Count)ActiveSheet.Name = "consolidate"ActiveSheet.Range("a1").SelectRange("a1").Value
+    = "Product"Range("b1").Value = "Sales"将每个工作表的数据复制到consolidate工作表For Index = 1
+    To Worksheets.Count - 1Worksheets(Index).SelectRange("a2").SelectRange(Selection,
+    Selection.End(xlDown)).SelectRange(Selection, Selection.End(xlToRight)).SelectSelection.CopyWorksheets("consolidate").SelectCells(Range("a65536").End(xlUp).Row
+    + 1, 1).SelectActiveSheet.PasteNext,生成一个关于合并数据的数据透视表Sheets("consolidate").SelectRange("A1").SelectApplication.CutCopyMode
+    = FalseActiveWorkbook.PivotCaches.Add(SourceType:=xlDatabase, SourceData:= _Range("a1").CurrentRegion).CreatePivotTable
+    TableDestination:="", TableName _:="PivotTable1", DefaultVersion:=xlPivotTableVersion10ActiveSheet.PivotTableWizard
+    TableDestination:=ActiveSheet.Cells(3, 1) ActiveSheet.Cells(3, 1).SelectActiveSheet.PivotTables("PivotTable1").AddFields
+    RowFields:="Product"ActiveSheet.PivotTables("PivotTable1").PivotFields("Sales").Orientation
+    = _ xlDataFieldEnd Sub |'
 - en: '[Conclusion](contents.xhtml#sc2_302a)'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_302a)'
 - en: Mastering looping structures is essential for effective VBA programming. By
     utilizing loops, you can automate repetitive tasks, process large amounts of data,
     and enhance the overall efficiency of your VBA programs. This chapter provides
     a comprehensive understanding of loops and their applications in VBA, equipping
     you with the skills to write concise and powerful code that saves time and effort.
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 精通循环结构对于有效的VBA编程至关重要。通过利用循环，您可以自动化重复任务，处理大量数据，并提高VBA程序的整体效率。本章全面介绍了循环及其在VBA中的应用，为您提供了编写简洁而强大的代码的技能，节省时间和精力。
 - en: '[Exercise](contents.xhtml#sc2_303a)'
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习](contents.xhtml#sc2_303a)'
 - en: Write a VBA macro named “PrintNumbers” that prints numbers from 1 to 100 in
     the Immediate Window.
+  id: totrans-160
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写一个名为“PrintNumbers”的VBA宏，将数字从1打印到100在即时窗口中。
 - en: Create a VBA macro named “CalculateSum” that calculates the sum of numbers from
     1 to 10 and displays the result in a message box.
+  id: totrans-161
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个名为“CalculateSum”的VBA宏，用于计算从1到10的数字的总和，并在消息框中显示结果。
 - en: Write a VBA macro named “EvenNumbers” that prints all even numbers from 1 to
     20 in the Immediate Window.
+  id: totrans-162
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写一个名为“EvenNumbers”的VBA宏，在即时窗口中打印从1到20的所有偶数。
 - en: Create a VBA macro named “Factorial” that calculates the factorial of a given
     number. The macro should prompt the user to enter a number and then display the
     factorial result in a message box.
+  id: totrans-163
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个名为“Factorial”的VBA宏，用于计算给定数字的阶乘。该宏应提示用户输入一个数字，然后在消息框中显示阶乘结果。
 - en: Write a VBA macro named “ReverseString” that prompts the user to enter a string
     and then prints the reverse of the string in the Immediate Window.
+  id: totrans-164
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写一个名为“ReverseString”的VBA宏，提示用户输入一个字符串，然后在即时窗口中打印字符串的反转。
 - en: Create a VBA macro named “TableOfSquares” that generates a table of squares
     from 1 to 10\. The macro should display the number and its square in separate
     columns in a new worksheet.
+  id: totrans-165
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个名为“TableOfSquares”的VBA宏，生成从1到10的平方表。该宏应在新工作表中的不同列中显示数字及其平方。
 - en: Write a VBA macro named “CountCharacters” that counts the number of characters
     in a given string. The macro should prompt the user to enter a string and then
     display the count in a message box.
+  id: totrans-166
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写一个���为“CountCharacters”的VBA宏，计算给定字符串中的字符数。该宏应提示用户输入一个字符串，然后在消息框中显示计数。
 - en: Join our book’s Discord space
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入我们书籍的Discord空间
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入书籍的Discord Workspace，获取最新更新、优惠、全球科技动态、新发布和与作者的交流：
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
 - en: '![](images/fm1.png)'
+  id: totrans-170
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/fm1.png)'

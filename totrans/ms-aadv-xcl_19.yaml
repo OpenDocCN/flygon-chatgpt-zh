@@ -252,344 +252,430 @@
   id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 声明语句可以放置在过程中以创建过程级变量。或者它可以放置在模块的顶部，在声明部分中，以创建模块级变量。
 - en: '[Data types of variables and constants](contents.xhtml#sc2_263a)'
   id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: '[变量和常量的数据类型](contents.xhtml#sc2_263a)'
 - en: '[Table 18.1](#tab18-1) shows the various ranges in data type:'
   id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: '[表 18.1](#tab18-1) 显示了数据类型的各种范围：'
 - en: '| Data type | Range |'
   id: totrans-45
   prefs: []
   type: TYPE_TB
+  zh: '| 数据类型 | 范围 |'
 - en: '| --- | --- |'
   id: totrans-46
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- |'
 - en: '| Byte | 0 to 255. |'
   id: totrans-47
   prefs: []
   type: TYPE_TB
+  zh: '| 字节 | 0 到 255。 |'
 - en: '| Integer | – 32,768 to 32,767. |'
   id: totrans-48
   prefs: []
   type: TYPE_TB
+  zh: '| 整型 | -32,768 到 32,767。 |'
 - en: '| Long | – 2,147,483,648 to 2,147,483,647. |'
   id: totrans-49
   prefs: []
   type: TYPE_TB
+  zh: '| 长整型 | -2,147,483,648 到 2,147,483,647。 |'
 - en: '| Single | – 3.402823E38 to – 1.401298E – 45 (negative values). |'
   id: totrans-50
   prefs: []
   type: TYPE_TB
+  zh: '| 单精度 | -3.402823E38 到 -1.401298E-45（负值）。 |'
 - en: '| 1.401298E – 45 to 3.402823E38 (positive values). |'
   id: totrans-51
   prefs: []
   type: TYPE_TB
+  zh: '| -1.401298E-45 到 3.402823E38（正值）。 |'
 - en: '| Double | – 1.7200369313486231E308 to– 4.94065645841247E – 324 (negative values).
     4.94065645841247E – 324 to 1.7200369313486231E308(positive values). |'
   id: totrans-52
   prefs: []
   type: TYPE_TB
+  zh: '| 双精度 | -1.7200369313486231E308 到-4.94065645841247E-324（负值）。4.94065645841247E-324
+    到 1.7200369313486231E308（正值）。 |'
 - en: '| Currency | – 922,337,203,685,477.5808 to 922,337,203,685,477.5807. |'
   id: totrans-53
   prefs: []
   type: TYPE_TB
+  zh: '| 货币 | -922,337,203,685,477.5808 到 922,337,203,685,477.5807。 |'
 - en: '| String | Zero to approximately two billion characters. |'
   id: totrans-54
   prefs: []
   type: TYPE_TB
+  zh: '| 字符串 | 零到大约两十亿个字符。 |'
 - en: '| Variant | Date values: January 1, 100 to December 31, 9999. |'
   id: totrans-55
   prefs: []
   type: TYPE_TB
+  zh: '| 变体 | 日期值：公元 100 年 1 月 1 日到公元 9999 年 12 月 31 日。 |'
 - en: '| Numeric values: same range as Double. |'
   id: totrans-56
   prefs: []
   type: TYPE_TB
+  zh: '| 数值：与双精度浮点数相同的范围。 |'
 - en: '| String values: same range as String. |'
   id: totrans-57
   prefs: []
   type: TYPE_TB
+  zh: '| 字符串值：与字符串相同的范围。 |'
 - en: '| Can also contain Error or Null values. |'
   id: totrans-58
   prefs: []
   type: TYPE_TB
+  zh: '| 也可以包含错误或空值。 |'
 - en: '| Boolean | True or False. |'
   id: totrans-59
   prefs: []
   type: TYPE_TB
+  zh: '| 布尔 | 真或假。 |'
 - en: '| Date | January 1, 100 to December 31, 9999. |'
   id: totrans-60
   prefs: []
   type: TYPE_TB
+  zh: '| 日期 | 公元 100 年 1 月 1 日到公元 9999 年 12 月 31 日。 |'
 - en: '| Object | Any object reference. |'
   id: totrans-61
   prefs: []
   type: TYPE_TB
+  zh: '| 对象 | 任何对象引用。 |'
 - en: 'Table 18.1: Data Types'
   id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 表 18.1：数据类型
 - en: '[Using the option explicit statement](contents.xhtml#sc3_264a)'
   id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用 Option Explicit 语句](contents.xhtml#sc3_264a)'
 - en: Use Option Explicit to enforce explicit declaration of variables. It must appear
     in a module before any procedure. If not used, undeclared variables will be of
     Variant type.
   id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 Option Explicit 强制声明变量。它必须出现在任何过程之前的模块中。如果不使用，未声明的变量将是 Variant 类型。
 - en: '[Message box and input box](contents.xhtml#sc2_265a)'
   id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: '[消息框和输入框](contents.xhtml#sc2_265a)'
 - en: The Msgbox function displays a message in a dialog box, waits for the user to
     click a button, and returns an Integer indicating which button the user clicked.
   id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: Msgbox 函数在对话框中显示消息，等待用户点击按钮，然后返回一个整数，指示用户点击了哪个按钮。
 - en: The InputBox Function displays a prompt in a dialog box, waits for the user
     to input text or click a button, and returns a string containing the contents
     of the text box.
   id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: InputBox 函数在对话框中显示提示，等待用户输入文本或点击按钮，然后返回一个包含文本框内容的字符串。
 - en: 'Example:'
   id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如：
 - en: '| Sub Greet()MsgBox "Hello " & InputBOx("What is your name?")End Sub |'
   id: totrans-69
   prefs: []
   type: TYPE_TB
+  zh: '| 子过程问候()消息框 "你好 " & InputBOx("你叫什么名字？")结束子过程 |'
 - en: '[Selecting and activating cells](contents.xhtml#sc2_266a)'
   id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: '[选择和激活单元格](contents.xhtml#sc2_266a)'
 - en: When you work with Microsoft Excel, you usually select a cell or cells and then
     perform an action, such as formatting the cells or entering values in them.
   id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 当你使用 Microsoft Excel 时，通常会选择一个单元格或多个单元格，然后执行操作，比如格式化单元格或在其中输入值。
 - en: 'Refer to [Table 18.2](#tab18-2), to write the codes for various actions:'
   id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[表 18.2](#tab18-2)，编写各种操作的代码：
 - en: '| To do this | Write this code |'
   id: totrans-73
   prefs: []
   type: TYPE_TB
+  zh: '| 要做这个 | 写下这段代码 |'
 - en: '| Select cell A1 | Range("A1").select or Cells(1,1).select |'
   id: totrans-74
   prefs: []
   type: TYPE_TB
+  zh: '| 选择单元格 A1 | Range("A1").select 或 Cells(1,1).select |'
 - en: '| Select range A1:B5 | Range("A1:b5").select |'
   id: totrans-75
   prefs: []
   type: TYPE_TB
+  zh: '| 选择范围 A1:B5 | Range("A1:b5").select |'
 - en: '| Select range A1:A5 and C2:C10 | Range("A1:A5 , C2:C10").select |'
   id: totrans-76
   prefs: []
   type: TYPE_TB
+  zh: '| 选择范围 A1:A5 和 C2:C10 | Range("A1:A5 , C2:C10").select |'
 - en: '| Select current cell | Activecell.select |'
   id: totrans-77
   prefs: []
   type: TYPE_TB
+  zh: '| 选择当前单元格 | Activecell.select |'
 - en: '| Select range from current cell to b6 | Range(Activecell , "b6").select |'
   id: totrans-78
   prefs: []
   type: TYPE_TB
+  zh: '| 从当前单元格到 b6 选择范围 | Range(Activecell , "b6").select |'
 - en: '| Select current region of activecell | Activecell.currentregion.select |'
   id: totrans-79
   prefs: []
   type: TYPE_TB
+  zh: '| 选择活动单元格的当前区域 | Activecell.currentregion.select |'
 - en: '| Ctrl + Shift+ Down Arrow from Activecell | Range(ActivecellActivecell.End(X
     lDown)).select |'
   id: totrans-80
   prefs: []
   type: TYPE_TB
+  zh: '| 从活动单元格按 Ctrl + Shift+ 下箭头 | Range(ActivecellActivecell.End(X lDown)).select
+    |'
 - en: '| Ctrl + Shift + Down Arrow from cell A2 | Range("A2" , Activecell.End(XlDown)).select
     |'
   id: totrans-81
   prefs: []
   type: TYPE_TB
+  zh: '| 从单元格 A2 按 Ctrl + Shift + 下箭头 | Range("A2" , Activecell.End(XlDown)).select
+    |'
 - en: 'Table 18.2: Codes for various actions'
   id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 表 18.2：各种操作的代码
 - en: '[Selecting and activating rows and columns](contents.xhtml#sc2_267a)'
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: '[选择和激活行和列](contents.xhtml#sc2_267a)'
 - en: Sometimes you need to select specific rows and columns and then perform actions.
   id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时您需要选择特定的行和列，然后执行操作。
 - en: 'To do this write the code shown in the following [Table 18.3](#tab18-3):'
   id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 要做这个，请写下面[表18.3](#tab18-3)中显示的代码：
 - en: '| To do this | Write this code |'
   id: totrans-86
   prefs: []
   type: TYPE_TB
+  zh: '| 要做这个 | 写这个代码 |'
 - en: '| Select a row | Rows("2:2").select |'
   id: totrans-87
   prefs: []
   type: TYPE_TB
+  zh: '| 选择一行 | Rows("2:2").select |'
 - en: '| Select rows from 2 to 5 | Rows("2:5").select |'
   id: totrans-88
   prefs: []
   type: TYPE_TB
+  zh: '| 选择从第2行到第5行 | Rows("2:5").select |'
 - en: '| Select 3 rows from activecell | Activecell.entirerow.Range("1:3"). select
     |'
   id: totrans-89
   prefs: []
   type: TYPE_TB
+  zh: '| 从活动单元格选择3行 | Activecell.entirerow.Range("1:3"). select |'
 - en: '| Select a column | Columns("A:A").select |'
   id: totrans-90
   prefs: []
   type: TYPE_TB
+  zh: '| 选择一列 | Columns("A:A").select |'
 - en: '| Select columns from B to E | Columns("B:E").select |'
   id: totrans-91
   prefs: []
   type: TYPE_TB
+  zh: '| 选择从B到E的列 | Columns("B:E").select |'
 - en: '| Select 3 columns from activecell | Activecell.entirecolumn.Range("A:C").select
     |'
   id: totrans-92
   prefs: []
   type: TYPE_TB
+  zh: '| 从活动单元格选择3列 | Activecell.entirecolumn.Range("A:C").select |'
 - en: '| Select current row | Activecell.entirerow.select |'
   id: totrans-93
   prefs: []
   type: TYPE_TB
+  zh: '| 选择当前行 | Activecell.entirerow.select |'
 - en: '| Select current column | Activecell.entirecolumn.select |'
   id: totrans-94
   prefs: []
   type: TYPE_TB
+  zh: '| 选择当前列 | Activecell.entirecolumn.select |'
 - en: 'Table 18.3: Codes for various actions'
   id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 表18.3：各种操作的代码
 - en: '[Working with sheets](contents.xhtml#sc2_268a)'
   id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: '[与工作表一起工作](contents.xhtml#sc2_268a)'
 - en: 'Many a times, you need to select a specific sheet, or insert new sheet, rename
     a sheet, and so on. Refer to [Table 18.4](#tab18-4):'
   id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 许多时候，您需要选择特定的工作表，或插入新工作表，重命名工作表等。请参考[表18.4](#tab18-4)：
 - en: '| To do This | Write this code |'
   id: totrans-98
   prefs: []
   type: TYPE_TB
+  zh: '| 要做这个 | 写这个代码 |'
 - en: '| Select any sheet by index number | Sheets(2).selectWorksheets(2).select |'
   id: totrans-99
   prefs: []
   type: TYPE_TB
+  zh: '| 通过索引号选择任何工作表 | Sheets(2).selectWorksheets(2).select |'
 - en: '| Select any sheet by name | Sheets("Sheet1").selectWorksheets("Sheet1").select
     |'
   id: totrans-100
   prefs: []
   type: TYPE_TB
+  zh: '| 通过名称选择任何工作表 | Sheets("Sheet1").selectWorksheets("Sheet1").select |'
 - en: '| Renaming a sheet | Sheets("Sheet1").name="newname" |'
   id: totrans-101
   prefs: []
   type: TYPE_TB
+  zh: '| 重命名工作表 | Sheets("Sheet1").name="新名称" |'
 - en: '| Newname | Worksheets("Sheet1").name=Activesheet.name |'
   id: totrans-102
   prefs: []
   type: TYPE_TB
+  zh: '| 新名称 | Worksheets("Sheet1").name=Activesheet.name |'
 - en: '| Deleting a sheet | Sheets("Sheet1").deleteWorksheets("Sheet1").deleteActivesheet.delete
     |'
   id: totrans-103
   prefs: []
   type: TYPE_TB
+  zh: '| 删除工作表 | Sheets("Sheet1").deleteWorksheets("Sheet1").deleteActivesheet.delete
+    |'
 - en: '| Insert a sheet | Sheets.add before:= sheets("Sheet1")Worksheets.add before:=sheets("Sheet1")
     |'
   id: totrans-104
   prefs: []
   type: TYPE_TB
+  zh: '| 插入工作表 | Sheets.add before:= sheets("Sheet1")Worksheets.add before:=sheets("Sheet1")
+    |'
 - en: 'Table 18.4: Codes for various actions'
   id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 表18.4：各种操作的代码
 - en: '[Working with WorkBook](contents.xhtml#sc2_269a)'
   id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: '[与工作簿一起工作](contents.xhtml#sc2_269a)'
 - en: 'Sometimes you need to work with different workbooks. Refer to [Table 18.5](#tab18-5):'
   id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时您需要处理不同的工作簿。请参考[表18.5](#tab18-5)：
 - en: '| To do This | Write this code |'
   id: totrans-108
   prefs: []
   type: TYPE_TB
+  zh: '| 要做这个 | 写这个代码 |'
 - en: '| Open a workbook | Workbooks.open filename:="filename with path" |'
   id: totrans-109
   prefs: []
   type: TYPE_TB
+  zh: '| 打开一个工作簿 | Workbooks.open filename:="带路径的文件名" |'
 - en: '| Open workbook which contains auto macros | Workbooks.openfilename:="Activeworkbook.runautomacros"
     |'
   id: totrans-110
   prefs: []
   type: TYPE_TB
+  zh: '| 打开包含自动宏的工作簿 | Workbooks.openfilename:="Activeworkbook.runautomacros" |'
 - en: '| Close a workbook | Workbooks(2).close |'
   id: totrans-111
   prefs: []
   type: TYPE_TB
+  zh: '| 关闭工作簿 | Workbooks(2).close |'
 - en: '| Adding a new workbook | Workbooks.add |'
   id: totrans-112
   prefs: []
   type: TYPE_TB
+  zh: '| 添加新工作簿 | Workbooks.add |'
 - en: 'Table 18.5: Codes for various actions'
   id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 表18.5：各种操作的代码
 - en: '[Working with application object](contents.xhtml#sc2_270a)'
   id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: '[与应用程序对象一起工作](contents.xhtml#sc2_270a)'
 - en: 'Sometimes to ignore different excel messages you need to work with application
     object, as illustrated in the following [Table 18.6](#tab18-6):'
   id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时为了忽略不同的 Excel 消息，您需要使用应用程序对象，如下所示的[表18.6](#tab18-6)：
 - en: '| To do this | Write this code |'
   id: totrans-116
   prefs: []
   type: TYPE_TB
+  zh: '| 要做这个 | 写这个代码 |'
 - en: '| To switch off the display of messages | Application.DisplayAlert = False
     |'
   id: totrans-117
   prefs: []
   type: TYPE_TB
+  zh: '| 关闭消息显示 | Application.DisplayAlert = False |'
 - en: '| To stop flickering of screen | Application.ScreenUpdating = False |'
   id: totrans-118
   prefs: []
   type: TYPE_TB
+  zh: '| 停止屏幕闪烁 | Application.ScreenUpdating = False |'
 - en: '| To stop copy / cut mode | Application.CutCopyMode = False |'
   id: totrans-119
   prefs: []
   type: TYPE_TB
+  zh: '| 停止复制/剪切模式 | Application.CutCopyMode = False |'
 - en: '| To calculate | Application.Calculate |'
   id: totrans-120
   prefs: []
   type: TYPE_TB
+  zh: '| 计算 | Application.Calculate |'
 - en: 'Table 18.6: Codes for various actions'
   id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 表18.6：各种操作的代码
 - en: '[Scenario 15](contents.xhtml#sc3_271a)'
   id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景15](contents.xhtml#sc3_271a)'
 - en: Create a macro which should accept Name and City of a person and store it in
     excel worksheet in cell A1 and B1\. If user type Mumbai as city then font color
     must be red. Use InputBox function to take input from the user. Use MsgBox function
@@ -597,6 +683,8 @@
   id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个宏，应接受人员的姓名和城市，并将其存储在 Excel 工作表的单元格 A1 和 B1 中。如果用户输入 Mumbai 作为城市，则字体颜色必须为红色。使用
+    InputBox 函数从用户那里获取输入。使用 MsgBox 函数显示结果。
 - en: '| Sub Accept_Details()Dim e_Name , e_City As StringName = InputBox("Enter your
     name")City = InputBox("Enter your city")MsgBox "Your name is " & Name & " and
     city is " & CityCells(1, 1).Value = e_Name Cells(1, 2).Value = e_CityIf Cells(1,
@@ -605,16 +693,22 @@
   id: totrans-124
   prefs: []
   type: TYPE_TB
+  zh: '| Sub Accept_Details()Dim e_Name , e_City As StringName = InputBox("输入您的姓名")City
+    = InputBox("输入您的城市")MsgBox "您的姓名是 " & Name & "，城市是 " & CityCells(1, 1).Value =
+    e_Name Cells(1, 2).Value = e_CityIf Cells(1, 2).Value = "mumbai" ThenCells(1,
+    2).Font.ColorIndex = 3ElseCells(1, 2).Font.ColorIndex = 0EndIfEnd Sub |'
 - en: '[Scenario 16](contents.xhtml#sc3_272a)'
   id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景16](contents.xhtml#sc3_272a)'
 - en: Create a macro name it as Data_Entry. Accept employee code, name, date of joining
     and salary of a person. Insert the values in “Database” worksheet. Every new record
     must be stored after the last record.
   id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个名为 Data_Entry 的宏。接受一个人的员工编号、姓名、入职日期和工资。将这些值插入“数据库”工作表中。每条新记录必须存储在最后一条记录之后。
 - en: '| Sub Data_Entry()Dim EmpCode As integer, Next_Row as integerDim EmpName As
     StringDim doj As DateDim Salary As CurrencyEmpCode = InputBox("Enter Employee
     Code")EmpName = InputBox("Enter Employee Name")doj = InputBox("enter Date of Joining
@@ -625,10 +719,18 @@
   id: totrans-127
   prefs: []
   type: TYPE_TB
+  zh: '| Sub Data_Entry()Dim EmpCode As integer, Next_Row as integerDim EmpName As
+    StringDim doj As DateDim Salary As CurrencyEmpCode = InputBox("Enter Employee
+    Code")EmpName = InputBox("Enter Employee Name")doj = InputBox("enter Date of Joining
+    mm/dd/yy")Salary = InputBox("Enter Salary of Employee")Range("a65536").selectSelection.end(xlup).select
+    Next_Row= activecell.row+1Cells(Next_Row, 1).Value = EmpCode Cells(Next_Row, 2).Value
+    = EmpNameCells(Next_Row, 3).Value = Format(doj, "MMM DD YYYY")Cells(Next_Row,
+    4).Value = SalaryEnd Sub |'
 - en: '[Conclusion](contents.xhtml#sc2_273a)'
   id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_273a)'
 - en: In conclusion, this chapter provided a comprehensive overview of variables and
     data types in VBA. It covered the declaration of variables and constants, explained
     different data types and their ranges, demonstrated the usage of message boxes
@@ -639,10 +741,13 @@
   id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，本章全面介绍了 VBA 中的变量和数据类型。它涵盖了变量和常量的声明，解释了不同数据类型及其范围，演示了消息框和输入框的使用，并探讨了在 Excel
+    中选择和操作单元格、行和列的技巧。本章还涉及与工作表、工作簿和应用程序对象的工作。通过理解这些基础知识，读者可以编写高效且有效的 VBA 代码。
 - en: '[Exercise](contents.xhtml#sc2_274a)'
   id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习](contents.xhtml#sc2_274a)'
 - en: Write a VBA macro that prompts the user to enter their name, age, and favorite
     color using input boxes. The macro should store the values in cells A1, B1, and
     C1 of the active worksheet, respectively. Additionally, if the user’s age is greater
@@ -652,20 +757,26 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写一个 VBA 宏，提示用户使用输入框输入他们的姓名、年龄和喜欢的颜色。该宏应将这些值分别存储在活动工作表的单元格 A1、B1 和 C1 中。此外，如果用户的年龄大于或等于
+    18 岁，则相应单元格的字体颜色应设置为他们喜欢的颜色。通过运行宏并输入不同的值来测试宏。
 - en: Join our book’s Discord space
   id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入我们书籍的 Discord 空间
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
   id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入本书的 Discord 工作区，获取最新更新、优惠、全球科技动态、新发布和与作者的交流：
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
   id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
 - en: '![](images/fm1.png)'
   id: totrans-135
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/fm1.png)'

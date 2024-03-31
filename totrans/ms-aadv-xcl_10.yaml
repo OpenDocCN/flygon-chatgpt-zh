@@ -3,10 +3,12 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第9章数据透视表](contents.xhtml#ch09a)'
 - en: '[Introduction](contents.xhtml#sc2_104a)'
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_104a)'
 - en: A Pivot Table is an interactive worksheet-based table that quickly summarizes
     large amounts of data using the format and calculation methods you choose. It
     is called a Pivot Table because you can rotate its row and column headings around
@@ -18,83 +20,101 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据透视表是一种基于交互式工作表的表格，可以快速汇总大量数据，使用您选择的格式和计算方法。它被称为数据透视表，因为您可以围绕核心数据区域旋转其行和列标题，以便为您提供源数据的不同视图。随着源数据的变化，您可以更新数据透视表。它驻留在工作表上，因此，您可以使用标准公式将数据透视表集成到更大的工作表模型中。您可以使用数据透视表分析Excel工作簿中的数据，或者来自外部数据库，如MS
+    Access或SQL Server。
 - en: '[Structure](contents.xhtml#sc2_105a)'
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_105a)'
 - en: 'In this chapter, we will go over the following topics:'
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: Examining Pivot Tables
   id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 检查数据透视表
 - en: Recommended Pivot Table
   id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 推荐的数据透视表
 - en: Creating a Pivot table
   id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 创建数据透视表
 - en: '% of Grand Total'
   id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 总计的百分比
 - en: Create a graph using Pivot Data
   id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用数据透视数据创建图表
 - en: Slicer
   id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 切片器
 - en: Timeline
   id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 时间轴
 - en: Power View
   id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Power View
 - en: Power Pivot
   id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Power Pivot
 - en: Benefits of Data Model
   id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据模型的好处
 - en: Creating pivot table using power pivot
   id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用 Power Pivot 创建数据透视表
 - en: '[Objectives](contents.xhtml#sc2_106a)'
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_106a)'
 - en: After studying this chapter, the reader will be able to create Pivot Tables,
     make different reports using Pivot Tables, as well as use advanced features of
     Pivot Tables.
   id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 学习本章后，读者将能够创建数据透视表，使用数据透视表制作不同的报告，以及使用数据透视表的高级功能。
 - en: '[Examining Pivot Tables](contents.xhtml#sc2_107a)'
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: '[检查数据透视表](contents.xhtml#sc2_107a)'
 - en: 'The data on which a PivotTable is based, is called the Source Data. Each column
     represents a field or category of information, which you can assign to different
     parts of the PivotTable to determine how the data is arranged. You can add four
@@ -102,10 +122,12 @@
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据透视表所基于的数据称为源数据。每列代表一个字段或信息类别，您可以将其分配给数据透视表的不同部分，以确定数据的排列方式。您可以添加四种类型的字段，这些字段在以下[表9.1](#tab9-1)中进一步解释：
 - en: '| Field | Description |'
   id: totrans-20
   prefs: []
   type: TYPE_TB
+  zh: '| 字段 | 描述 |'
 - en: '| Report Filter | Filter summarized data in PivotTable. If you select an item
     in the report filter, the view of PivotTable varies only to display summarized
     data related to that item. For example, if the area is a report filter, you can
@@ -113,40 +135,49 @@
   id: totrans-21
   prefs: []
   type: TYPE_TB
+  zh: '| 报告筛选器 | 在数据透视表中筛选汇总数据。如果在报告筛选器中选择一个项目，则数据透视表的视图仅变化以显示与该项目相关的汇总数据。例如，如果区域是一个报告筛选器，您可以显示北部、西部或所有区域的简短数据。
+    |'
 - en: '| Row Labels | Row shows items in the field as labels. For example, the row
     label quarters field contains values, which means that the table shows a line
     for each quarter. |'
   id: totrans-22
   prefs: []
   type: TYPE_TB
+  zh: '| 行标签 | 行显示字段中的项目作为标签。例如，行标签季度字段包含值，这意味着表格显示每个季度的一行。 |'
 - en: '| Column Labels | Column labels are the value of the product field, which means
     that the table shows a column for each product, in the field that displays the
     item as a column label. |'
   id: totrans-23
   prefs: []
   type: TYPE_TB
+  zh: '| 列标签 | 列标签是产品字段的值，这意味着表格显示每个产品的列，在显示项目为列标签的字段中。 |'
 - en: '| Σ Values | Summary data are included. These fields usually contain numeric
     data, such as sales and inventory in the area where the data appears is called
     the data area. |'
   id: totrans-24
   prefs: []
   type: TYPE_TB
+  zh: '| Σ 值 | 包含汇总数据。这些字段通常包含数值数据，例如销售和库存，在数据出现的区域称为数据区域。 |'
 - en: 'Table 9.1: Types of field in Pivot tables'
   id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 表9.1：数据透视表中的字段类型
 - en: 'Refer to the following [Figure 9.1](#fig9-1):'
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图9.1](#fig9-1)：
 - en: '![](images/Figure_9.1.png)'
   id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.1.png)'
 - en: 'Figure 9.1: Fields of Pivot tables'
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 图9.1：数据透视表的字段
 - en: Select any cell in a data range that includes a heading for each column in the
     top row. In the Tables group, click the PivotTable button, or click the PivotTable
     list and select PivotTable. In the Table/Range box, select the range that contains
@@ -156,6 +187,7 @@
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 选择数据范围中包含每列顶部行的标题的任何单元格。在“表格”组中，点击“数据透视表”按钮，或点击“数据透视表”列表并选择“数据透视表”。在“表/范围”框中，选择包含数据的范围以在数据透视表中使用。选择数据透视表的位置。你可以将数据透视表放在新工作表或现有工作表中。点击“确定”创建数据透视表。
 - en: You can add fields to a PivotTable to specify the data you want to display.
     The fields of the source data appear in the “PivotTable Field List” task pane.
     To add fields, drag the relevant field from the top of the PivotTable Field List
@@ -164,21 +196,25 @@
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以向数据透视表添加字段以指定要显示的数据。源数据的字段显示在“数据透视表字段列表”任务窗格中。要添加字段，将相关字段从“数据透视表字段列表”顶部拖动到底部的四个区域之一。你可以向一个区域添加多个字段，并且不需要将所有字段都添加到表中。
 - en: 'To display data, use data in Row Labels list and numeric in Values:'
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 要显示数据，使用“行标签”列表中的数据和“数值”中的数字：
 - en: Activate the Insert tab, to open the Create PivotTable dialog box.
   id: totrans-32
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 激活“插入”选项卡，打开“创建数据透视表”对话框。
 - en: Add fields just headings, you need to place at least one field in the S Values
     area.
   id: totrans-33
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 只需添加字段标题，你需要将至少一个字段放在“数值”区域。
 - en: After the field is in place, you can filter the information that appears in
     the table by selecting from the report in the Filter column, the filter rows,
     or the filter list. For example, you can show all the data values or restrict
@@ -186,34 +222,41 @@
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 字段就位后，你可以通过在筛选列、筛选行或筛选列表中从报告中选择信息来过滤出现在表中的信息。例如，你可以显示所有数据值或限制数据透视表仅总结其中的一部分。
 - en: '[Recommended Pivot Table](contents.xhtml#sc2_108a)'
   id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: '[推荐的数据透视表](contents.xhtml#sc2_108a)'
 - en: 'Check the recommendation for pivot. For this, select the database and click
     the Insert tab. Click on the recommended pivot table options, as shown in the
     following [Figure 9.2](#fig9-2):'
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 检查数据透视表的推荐。为此，选择数据库并点击“插入”选项卡。点击推荐的数据透视表选项，如下所示[图 9.2](#fig9-2)：
 - en: '![](images/Figure_9.2.png)'
   id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.2.png)'
 - en: 'Figure 9.2: Recommended pivot table'
   id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: '图 9.2: 推荐的数据透视表'
 - en: Alternatively, simply select the data to make the pivot table. Click on the
     button in the lower right corner and select the table option to create the pivot
     report.
   id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 或者，简单地选择数据以制作数据透视表。点击右下角的按钮，选择表选项以创建数据透视表报告。
 - en: '[Creating a Pivot Table](contents.xhtml#sc2_109a)'
   id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: '[创建数据透视表](contents.xhtml#sc2_109a)'
 - en: To begin our analysis, we will create a pivot table using the provided sales
     data. Follow the steps mentioned earlier to set up a pivot table with the necessary
     fields, including REP, CUSTNAME, PRODUCT, DATE, QTY, CP, S.P., and NET. We will
@@ -221,10 +264,13 @@
   id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 要开始我们的分析，我们将使用提供的销售数据创建一个数据透视表。按照之前提到的步骤设置一个包括 REP、CUSTNAME、PRODUCT、DATE、QTY、CP、S.P.
+    和 NET 等必要字段的数据透视表。我们将使用这些字段从不同角度分析销售数据。
 - en: 'Follow the given steps:'
   id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 按照给定的步骤：
 - en: 'Select the entire range of data, including headers. You can do this by clicking
     and dragging your cursor across the data or by using keyboard shortcuts (for example,
     Ctrl+A). Refer to [Figure 9.3](#fig9-3):'
@@ -232,32 +278,38 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择包括标题在内的整个数据范围。你可以通过点击并拖动鼠标跨越数据或使用键盘快捷键（例如，Ctrl+A）来完成这个操作。参考[图 9.3](#fig9-3)：
 - en: '![](images/Figure_9.3.png)'
   id: totrans-44
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_9.3.png)'
 - en: 'Figure 9.3: Sales Data'
   id: totrans-45
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '图 9.3: 销售数据'
 - en: 'In Excel, go to the “Insert” tab on the ribbon menu, and then click on the
     “PivotTable” button, as shown in [Figure 9.4](#fig9-4):'
   id: totrans-46
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在 Excel 中，转到“插入”选项卡，然后点击“数据透视表”按钮，如[图 9.4](#fig9-4)所示：
 - en: '![](images/Figure_9.4.png)'
   id: totrans-47
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_9.4.png)'
 - en: 'Figure 9.4: Insert PivotTable'
   id: totrans-48
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '图 9.4: 插入数据透视表'
 - en: A “Create PivotTable” dialog box will appear. Ensure that the range of data
     you selected is correct, and choose where you want to place the pivot table (for
     example, a new worksheet or an existing worksheet). Refer to [Figure 9.5](#fig9-5).
@@ -265,64 +317,76 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 会出现一个“创建数据透视表”对话框。确保你选择的数据范围正确，并选择要放置数据透视表的位置（例如，新工作表或现有工作表）。参考[图 9.5](#fig9-5)。
 - en: Click “OK” to create the pivot table.
   id: totrans-50
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“确定”创建数据透视表。
 - en: '![](images/Figure_9.5.png)'
   id: totrans-51
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_9.5.png)'
 - en: 'Figure 9.5: Table/Range'
   id: totrans-52
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '图 9.5: 表/范围'
 - en: 'The pivot table field list will appear on the right side of the screen. This
     list contains the column headers from your sales data. Refer to [Figure 9.6](#fig9-6):'
   id: totrans-53
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '透视表字段列表将显示在屏幕右侧。此列表包含您的销售数据的列标题。参考[图 9.6](#fig9-6):'
 - en: '![](images/Figure_9.6.png)'
   id: totrans-54
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_9.6.png)'
 - en: 'Figure 9.6: Customer wise quantity'
   id: totrans-55
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '图 9.6: 按客户分组的数量'
 - en: Drag and drop the desired fields from the field list into the different areas
     of the pivot table.
   id: totrans-56
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从字段列表中将所需字段拖放到透视表的不同区域。
 - en: Drag the “CUSTNAME” field to the “Rows” area to group the data by customer names.
   id: totrans-57
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将“CUSTNAME”字段拖动到“行”区域，按客户名称对数据进行分组。
 - en: 'Drag the “QTY” field to the “Values” area to calculate the total quantity sold.
     Refer to [Figure 9.7](#fig9-7):'
   id: totrans-58
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '将“QTY”字段拖动到“值”区域以计算总销售数量。参考[图 9.7](#fig9-7):'
 - en: '![](images/Figure_9.7.png)'
   id: totrans-59
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_9.7.png)'
 - en: 'Figure 9.7: Value Field settings'
   id: totrans-60
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '图 9.7: 值字段设置'
 - en: 'You can change the summary function by clicking on the dropdown arrow next
     to the field name in the “Values” area and selecting a different calculation (for
     example, average, count). Refer to [Figure 9.8](#fig9-8):'
@@ -330,166 +394,201 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '您可以通过单击“值”区域中字段名称旁边的下拉箭头并选择不同的计算（例如，平均值、计数）来更改汇总函数。参考[图 9.8](#fig9-8):'
 - en: '![](images/Figure_9.8.png)'
   id: totrans-62
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_9.8.png)'
 - en: 'Figure 9.8: Sum and Average'
   id: totrans-63
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '图 9.8: 总和和平均值'
 - en: '[% of Grand Total](contents.xhtml#sc2_110a)'
   id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: '[总计的百分比](contents.xhtml#sc2_110a)'
 - en: 'To find the % of grad total, follow these steps:'
   id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 要查找总计的百分比，请按照以下步骤操作：
 - en: Right-click on any value in the Qty column of the pivot table.
   id: totrans-66
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 右键单击透视表中“Qty”列中的任何值。
 - en: Select Value Field Settings or Value Settings from the context menu.
   id: totrans-67
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从上下文菜单中选择“值字段设置”或“值设置”。
 - en: In the dialog box that appears, choose the option for % of Grand Total or Percentage
     of the total (exact wording may vary depending on your spreadsheet software).
   id: totrans-68
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在弹出的对话框中，选择“总计百分比”或“总计的百分比”选项（确切的措辞可能因您的电子表格软件而异）。
 - en: Click OK to apply the calculation.
   id: totrans-69
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“确定”以应用计算。
 - en: The pivot table will now display the percentage of the grand total for each
     customer or grouping in the “Qty” column.
   id: totrans-70
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 现在，透视表将显示每个客户或分组的总计百分比在“Qty”列中。
 - en: 'Refer to [Figure 9.9](#fig9-9):'
   id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: '参考[图 9.9](#fig9-9):'
 - en: '![](images/Figure_9.9.png)'
   id: totrans-72
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.9.png)'
 - en: 'Figure 9.9: % of Grand Total'
   id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: '图 9.9: 总计百分比'
 - en: '[Group items in a PivotTable](contents.xhtml#sc3_111a)'
   id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: '[在透视表中对项目进行分组](contents.xhtml#sc3_111a)'
 - en: 'If you want to prepare a report based on the current data for the year based
     or the yearly quarter, then you can use the group option in the pivot table. Follow
     the given steps:'
   id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您想要根据当前年份或年度季度准备报告，则可以在透视表中使用分组选项。按照以下步骤操作：
 - en: Select any cell in a data range.
   id: totrans-76
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择数据范围中的任何单元格。
 - en: Activate the Option tab.
   id: totrans-77
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 激活“选项”选项卡。
 - en: Click on Group Field.
   id: totrans-78
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击“分组字段”。
 - en: In the By box, click one or more time periods for the groups.
   id: totrans-79
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在“按”框中，单击一个或多个时间段以进行分组。
 - en: '[Grouping of Dates](contents.xhtml#sc3_112a)'
   id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: '[日期分组](contents.xhtml#sc3_112a)'
 - en: 'To group dates, follow these steps:'
   id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 要对日期进行分组，请按照以下步骤操作：
 - en: Assuming you already have a pivot table created with the Date field in the Rows
     or Columns area, proceed to the next step.
   id: totrans-82
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 假设您已经创建了一个带有日期字段的透视表，并将其放置在“行”或“列”区域中，请继续下一步。
 - en: Right-click on any date value in the Date column of the pivot table.
   id: totrans-83
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 右键单击透视表中日期列中的任何日期值。
 - en: In the context menu that appears, select Group or Group Field (the specific
     wording may vary depending on your spreadsheet software).
   id: totrans-84
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在弹出的上下文菜单中，选择“分组”或“分组字段”（具体措辞可能因您的电子表格软件而异）。
 - en: In the Grouping dialog box, choose the Months option.
   id: totrans-85
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在分组对话框中，选择“月份”选项。
 - en: Click OK to apply the grouping.
   id: totrans-86
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“确定”以应用分组。
 - en: The pivot table will now display the Date column grouped by month, with each
     month appearing as a separate item in the pivot table.
   id: totrans-87
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 现在，透视表将按月份对日期列进行分组，每个月份在透视表中显示为单独的项目。
 - en: 'Refer to [Figure 9.10](#fig9-10):'
   id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: '参考[图 9.10](#fig9-10):'
 - en: '![](images/Figure_9.10.png)'
   id: totrans-89
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.10.png)'
 - en: 'Figure 9.10: Grouping of Dates'
   id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: '图 9.10: 日期分组'
 - en: '[Month Wise Report](contents.xhtml#sc3_113a)'
   id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: '[按月份报告](contents.xhtml#sc3_113a)'
 - en: 'The month wise report can be seen in the following [Figure 9.11](#fig9-11):'
   id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 月份报告可以在以下[图 9.11](#fig9-11)中查看：
 - en: '![](images/Figure_9.11.png)'
   id: totrans-93
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.11.png)'
 - en: 'Figure 9.11: Month Wise'
   id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: '图 9.11: 按月份'
 - en: '[Create a graph using Pivot Data](contents.xhtml#sc2_114a)'
   id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用数据透视表创建图表](contents.xhtml#sc2_114a)'
 - en: You can use a PivotChart to graphically display data from a PivotTable. A single
     PivotChart provides different views of the same data. When you create a PivotChart,
     the row fields of the PivotTable become the categories, and the column fields
@@ -497,6 +596,7 @@
   id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以使用数据透视图表来图形化显示数据。单个数据透视图表提供相同数据的不同视图。创建数据透视图表时，数据透视表的行字段变为类别，列字段变为系列。
 - en: 'To create a PivotChart, select any cell within a PivotTable, and click Chart
     in the Tools group on the Options tab. Select Options for the chart as you would
     a standard chart, then click OK. You can also create a new PivotChart and PivotTable
@@ -506,53 +606,65 @@
   id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 要创建一个数据透视图表，选择数据透视表内的任何单元格，然后在“选项”选项卡上的“工具”组中点击“图表”。选择图表的选项，然后点击“确定”。您也可以通过在源数据中选择一个单元格，并在“插入”选项卡的“表格”组中的“数据透视图表”列表中选择“数据透视图表”来同时创建新的数据透视图表和数据透视图表。参考[图
+    9.12](#fig9-12)：
 - en: '![](images/Figure_9.12.png)'
   id: totrans-98
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.12.png)'
 - en: 'Figure 9.12: Month Wise Chart'
   id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.12：按月份图表
 - en: 'To group the Date column in your pivot table by both month and year:'
   id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 要按月份和年份对数据透视表中的日期列进行分组：
 - en: Right-click on any date value in the Date column of the pivot table and select
     Group.
   id: totrans-101
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 右键单击数据透视表中日期列中的任何日期值，然后选择“组”。
 - en: In the Grouping dialog box, choose the Months option and choose the Years option
     also. Finally, click OK to apply the grouping.
   id: totrans-102
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在分组对话框中，选择“月份”选项，并同时选择“年份”选项。最后，点击“确定”应用分组。
 - en: 'Refer to [Figure 9.13](#fig9-13):'
   id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图 9.13](#fig9-13)：
 - en: '![](images/Figure_9.13.png)'
   id: totrans-104
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.13.png)'
 - en: 'Figure 9.13: Year Wise Month Wise Grouping'
   id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.13：按年度月份分组
 - en: 'To group the Date column in your pivot table by both and year and Qtr, follow
     these steps:'
   id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 要在数据透视表中按年份和季度对日期列进行分组，请按照以下步骤进行：
 - en: Right-click on any date value in the Date column of the pivot table and select
     Group.
   id: totrans-107
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 右键单击数据透视表中日期列中的任何日期值，然后选择“组”。
 - en: In the Grouping dialog box, choose the Qtr option and Choose the Years option
     as well. Finally, click OK to apply the grouping. (Qtr1 refer here Jan, Feb ,
     March)
@@ -560,109 +672,132 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在分组对话框中，选择“季度”选项，并同时选择“年份”选项。最后，点击“确定”应用分组。（这里Qtr1指一月、二月、三月）
 - en: 'Refer to [Figure 9.14](#fig9-14):'
   id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图 9.14](#fig9-14)：
 - en: '![](images/Figure_9.14.png)'
   id: totrans-110
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.14.png)'
 - en: 'Figure 9.14: Year Wise Quarter Wise Grouping'
   id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.14：按年度季度分组
 - en: '[Weekly Report](contents.xhtml#sc3_115a)'
   id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: '[周报表](contents.xhtml#sc3_115a)'
 - en: If you have grouping on date field, you can group items by weeks. Click Days
     in the By box, and make sure that Days is the only time period selected. Then
     click on 7 in the Number of days box.
   id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果您在日期字段上进行了分组，可以按周对项目进行分组。在“按”框中点击“天”，并确保“天”是唯一选择的时间段。然后在“天数”框中点击7。
 - en: 'Refer to [Figure 9.15](#fig9-15):'
   id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图 9.15](#fig9-15)：
 - en: '![](images/Figure_9.15.png)'
   id: totrans-115
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.15.png)'
 - en: 'Figure 9.15: Day wise Grouping'
   id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.15：按天分组
 - en: 'The pivot table will now display the data grouped by days, allowing you to
     see the weekly report with data summarized on a daily basis, as shown in [Figure
     9.16](#fig9-16):'
   id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，数据透视表将按天分组显示数据，使您可以查看按日汇总的周报表，如[图 9.16](#fig9-16)所示：
 - en: '![](images/Figure_9.16.png)'
   id: totrans-118
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_9.16.png)'
 - en: 'Figure 9.16: Weekly Report'
   id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 9.16：周报表
 - en: '[Grouping of Numbers (Creating Slabs)](contents.xhtml#sc3_116a)'
   id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '[数字分组（创建区间）](contents.xhtml#sc3_116a)'
 - en: 'For grouping of numbers, follow these steps:'
   id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于数字的分组，请按照以下步骤进行：
 - en: Right-click on any value in the Net column of the pivot table.
   id: totrans-122
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 右键单击数据透视表中“净值”列中的任何值。
 - en: 'From the context menu, select Group or Group Field option. Refer to [Figure
     9.17](#fig9-17):'
   id: totrans-123
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从上下文菜单中选择“组”或“组字段”选项。参考[图 9.17](#fig9-17)：
 - en: '![](images/Figure_9.17.png)'
   id: totrans-124
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_9.17.png)'
 - en: 'Figure 9.17: Group by numbers'
   id: totrans-125
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 图 9.17：按数字分组
 - en: In the Grouping dialog box, specify the starting value for your grouping slabs.
     For example, if you want to start with 0, enter 0 in the Starting at field.
   id: totrans-126
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在分组对话框中，指定您的分组区间的起始值。例如，如果您想从0开始，就在“从”字段中输入0。
 - en: In the By field, enter the slab size you want to use. In this case, enter 1000.
   id: totrans-127
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在“按”字段中，输入您想要使用的区间大小。在这种情况下，输入1000。
 - en: Click OK to apply the grouping.
   id: totrans-128
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“确定”应用分组。
 - en: The pivot table will now display the Net column with values grouped into slabs
     of 1000\. This grouping allows you to analyze the “Qty” values based on the defined
     slabs.
   id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据透视表现在将显示“净值”列，其值分组为1000的区间。这种分组方式使您可以根据定义的区间分析“数量”值。
 - en: '[Slicer](contents.xhtml#sc2_117a)'
   id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: '[切片器](contents.xhtml#sc2_117a)'
 - en: 'Slicers are easy-to-use filtering components that contain a set of buttons
     that enable you to quickly filter the data in a PivotTable report, without the
     need to open drop-down lists to find the items that you want to filter. When you
@@ -859,36 +994,44 @@
   id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以利用字段列表查看各种计算，如总和、最小值、最大值、平均值等。此外，通过使用薪资参数，您可以根据所选范围检查和查看数据。这是 Power View
+    选项的整体外观。
 - en: '[Power Pivot](contents.xhtml#sc2_120a)'
   id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '[Power Pivot](contents.xhtml#sc2_120a)'
 - en: 'Power Pivot is an add–in, which we can use to perform powerful data analysis
     in Excel. The add–in is built into Excel but it is not enabled. To enable the
     power Pivot, follow these steps:'
   id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: Power Pivot 是一个插件，我们可以在 Excel 中进行强大的数据分析。该插件内置于 Excel 中，但未启用。要启用 Power Pivot，请按照以下步骤操作：
 - en: Go to the File tab.
   id: totrans-164
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到“文件”选项卡。
 - en: Click on Option | Add–Ins.
   id: totrans-165
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“选项” | “加载项”。
 - en: In the Manage box, click on Com Add – ins.
   id: totrans-166
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在“管理”框中，点击“COM 加载项”。
 - en: Go check the MS office Power Pivot in COM Add - Ins box.
   id: totrans-167
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 前往 COM 加载项中的 MS Office Power Pivot 进行检查。
 - en: This is a user-friendly way to perform data analysis using familiar Excel features
     that you already know, such as the Office Fluent user interface, PivotTable and,
     PivotChart views, and slicers. With Power Pivot, we can mash up large volumes
@@ -897,10 +1040,13 @@
   id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一种用户友好的方式，使用您已经熟悉的 Excel 功能进行数据分析，例如 Office Fluent 用户界面、数据透视表和数据透视图以及切片器。通过
+    Power Pivot，我们可以快速整合来自各种来源的大量数据，快速进行信息分析，并轻松共享见解。
 - en: '[Benefits of Data Model](contents.xhtml#sc2_121a)'
   id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: '[数据模型的优势](contents.xhtml#sc2_121a)'
 - en: In both Excel and Power Point, you can create a data model, which is a collection
     of tables with relationships. The DATA model, which is seen in a workbook in Excel,
     is a similar data model that you see in the power pivot window. Any data you import
@@ -908,32 +1054,39 @@
   id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 在 Excel 和 Power Point 中，您可以创建一个数据模型，这是一个具有关系的表格集合。在 Excel 工作簿中看到的数据模型与在 Power
+    Pivot 窗口中看到的数据模型类似。您导入到 Excel 中的任何数据都可以在 Power Point 中使用，反之亦然。
 - en: Data Model is a collection of tables and their relationships that reflects RE-L-world
     relations between business operations and processes; for example, how the product
     relates to inventory and sales.
   id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据模型是反映业务运营和流程之间 RE-L 世界关系的表格及其关系的集合；例如，产品与库存和销售之间的关系。
 - en: 'Follow the given steps:'
   id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 按照给定的步骤进行操作：
 - en: Convert the data into table.
   id: totrans-173
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将数据转换为表格。
 - en: Import excel table into Power Pivot.
   id: totrans-174
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将 Excel 表格导入 Power Pivot。
 - en: Table field list can have more than one table in the pivot table.
   id: totrans-175
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 表字段列表可以在数据透视表中有多个表。
 - en: We can build the relationships between tables based on one common field so that
     you do not use lookup.
   id: totrans-176
@@ -941,127 +1094,150 @@
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 我们可以基于一个共同字段在表格之间建立关系，这样您就不需要使用查找。
 - en: Power view is enabled by Data model.
   id: totrans-177
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Power View 是由数据模型启用的。
 - en: '[Creating pivot table using power pivot](contents.xhtml#sc2_122a)'
   id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用 Power Pivot 创建数据透视表](contents.xhtml#sc2_122a)'
 - en: 'We have four data in four different sheets: city detail, customer, order and
     order details, and need to create a city wise report, regarding the total quantity
     sold. So, we need to follow the given steps:'
   id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们有四个不同工作表中的四个数据：城市详情、客户、订单和订单详情，需要创建一个按城市划分的报告，关于总销售数量。因此，我们需要按照给定的步骤进行操作：
 - en: Select the data
   id: totrans-180
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择数据
 - en: Go to Home tab.
   id: totrans-181
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到主页选项卡。
 - en: Select Styles group.
   id: totrans-182
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择样式组。
 - en: Format as table.
   id: totrans-183
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 格式化为表格。
 - en: Click on Design tab.
   id: totrans-184
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“设计”选项卡。
 - en: In the Properties group, give a name to the table.
   id: totrans-185
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在“属性”组中，为表格命名。
 - en: Select Power Pivot tab.
   id: totrans-186
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择 Power Pivot 选项卡。
 - en: Go to the Tables group.
   id: totrans-187
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到“表格”组。
 - en: Add to Data Model. All of the table will get added to Data model.
   id: totrans-188
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 添加到数据模型。所有表格都将添加到数据模型中。
 - en: Define the Relationship.
   id: totrans-189
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 定义关系。
 - en: Go to Home tab in Power Pivot view.
   id: totrans-190
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 转到 Power Pivot 视图中的主页选项卡。
 - en: Select Diagram view from View tab.
   id: totrans-191
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从“查看”选项卡中选择“图表”视图。
 - en: Then drag and drop common field to create the link between two tables.
   id: totrans-192
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 然后拖放共同字段以创建两个表格之间的链接。
 - en: Select Data view in View tab.
   id: totrans-193
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在“查看”选项卡中选择“数据”视图。
 - en: Click on Pivot table on Home tab.
   id: totrans-194
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击主页选项卡上的数据透视表。
 - en: Create the pivot table.
   id: totrans-195
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建数据透视表。
 - en: Choose the field from the table (Active and all). Table with black border means
     they are linked with some other table.
   id: totrans-196
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从表格（活动和全部）中选择字段。具有黑色边框的表格表示它们与其他表格链接。
 - en: Select city name from city detail, and quantity from order details.
   id: totrans-197
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从城市详情中选择城市名称，从订单详情中选择数量��
 - en: '[Conclusion](contents.xhtml#sc2_123a)'
   id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_123a)'
 - en: In conclusion, the chapter on Pivot Tables provided a comprehensive understanding
     of this powerful tool in Excel for data analysis and reporting. Pivot Tables allow
     users to summarize and analyze large amounts of data quickly and efficiently,

@@ -1,11 +1,15 @@
 - en: Chapter 3
+  id: totrans-0
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 第三章
 - en: Advancing Your Prompt Engineering Skills
+  id: totrans-1
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 提升您的提示工程技能
 - en: Artificial intelligence has taken many fields by storm, revolutionizing the
     way we approach complex challenges. One such area that has benefited immensely
     from AI is art, with advanced techniques for AI art pushing the boundaries of
@@ -21,40 +25,54 @@
     improve the output quality of your models significantly. We'll also explore how
     leveraging these techniques can help you achieve optimal performance while guiding
     model attention and generating targeted responses.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 人工智能已经在许多领域掀起了风暴，彻底改变了我们解决复杂挑战的方式。艺术是其中受益巨大的领域之一，先进的AI艺术技术推动了可能性的边界。近年来，聊天机器人也取得了长足进步，提供了自然语言处理能力，使它们在各种应用中不可或缺。然而，这些技术并非没有局限性。在本章中，我们探讨了一些改进AI艺术和聊天机器人性能的高级技术，使用了ChatGPT。无论您是艺术家还是开发人员，正在利用AI进行创意用途，或者希望创建更具吸引力的聊天机器人，本文提供了有关前沿技术的宝贵见解，可以帮助您实现目标。从思维列车提示到自一致性提示和从少到多提示（LtM），这些方法提供了一系列的好处，可以显著提高模型的输出质量。我们还将探讨如何利用这些技术帮助您实现最佳性能，同时引导模型的注意力并生成有针对性的回复。
 - en: Train of Thought Prompting for Generating Long Texts in ChatGPT
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于在ChatGPT中生成长文本的思维列车提示
 - en: ChatGPT or Conversational Generative Pretrained Transformer is a deep learning
     model that can generate coherent replies to natural language queries. However,
     sometimes the response appears to be non sequitur and does not match the context
     of previous conversation turns. The Train of Thought Prompting technique addresses
     this problem by encouraging ChatGPT to generate long-form responses that are consistent
     with the context provided in the prompt.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT或对话生成预训练变压器是一个深度学习模型，可以对自然语言查询生成连贯的回复。然而，有时候回复看起来毫无逻辑，与先前对话的上下文不匹配。思维列车提示技术通过鼓励ChatGPT生成与提示中提供的上下文一致的长篇回复来解决这个问题。
 - en: Train of Thought (ToT) prompting is a technique used in AI language models,
     such as ChatGPT, to encourage them to produce long-form responses. This technique
     works by providing a context-specific prompt that gives the model an idea about
     what topic it should talk about next. The prompt can be either a statement or
     question relevant to the conversation's previous turns.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 思维列车（ToT）提示是一种在AI语言模型中使用的技术，例如ChatGPT，用于鼓励它们生成长篇回复。这种技术通过提供一个特定上下文的提示来让模型了解接下来应该谈论什么话题。提示可以是与先前对话相关的陈述或问题。
 - en: How does Train of Thought (ToT) Prompting work?
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: 思维列车（ToT）提示是如何工作的？
 - en: The ToT prompting technique works by providing a dialogue history and an initial
     prompt consisting of one or more sentences that relate to it. Based on this input,
     ChatGPT generates several continuation sentences until it reaches its maximum
     length limit or stops producing reasonable output. This process enables ChatGPT
     to shift its train of thought while generating responses, making it more coherent
     with the conversation's context and providing longer text output for better communication.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: ToT提示技术通过提供对话历史和一个由一句或多句组成的初始提示来工作。基于这个输入，ChatGPT生成若干续句，直到达到最大长度限制或停止产生合理的输出。这个过程使ChatGPT在生成回复时能够转变思路，使其与对话的上下文更加连贯，并提供更长的文本输出以实现更好的沟通。
 - en: Example Usage
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例用法
 - en: 'For instance, consider training ChatGPT on customer support conversations where
     users ask questions related to their current issues. In such cases, ToT prompts
     can help ensure that ChatGPT provides specific answers instead of random ones.
@@ -66,12 +84,17 @@
     that are both contextually appropriate and coherent with previous conversation
     turns. It can help improve the accuracy of AI chatbots by giving them a better
     understanding of user needs and preferences.'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，考虑在客户支持对话中训练ChatGPT，用户在其中询问与他们当前问题相关的问题。在这种情况下，ToT提示可以帮助确保ChatGPT提供具体答案而不是随机答案。例如：提示：“你能告诉我更多关于你的问题吗？”回答：“是的，我的问题是...”
+    在这个例子中，ToT提示有助于引导对话流程，确保聊天机器人的准确性。它们有助于保持对话与用户需求相关，并防止机器人偏离无关的领域。总之，ToT提示是一种有效的技术，用于生成既与上一个对话转折相关又与上下文一致的长篇响应。它可以通过让AI聊天机器人更好地理解用户需求和偏好来提高其准确性。
 - en: Self-Consistency Prompting for AI Art and ChatGPT
+  id: totrans-10
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 自一致性提示用于AI艺术和ChatGPT
 - en: A major challenge faced by creators of AI-based systems for art and chatbots
     is ensuring that the generated outputs are coherent, logical, and internally consistent.
     This problem arises because these systems often generate text or images based
@@ -79,80 +102,104 @@
     fragmented outputs that lack coherence. Self-Consistency Prompting is an advanced
     technique used to address this problem by training models to ensure that their
     generated outputs are always consistent with the prompts provided.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: AI系统的创作者在为艺术和聊天机器人创建基于AI的系统时面临的一个主要挑战是确保生成的输出连贯、逻辑和内部一致。这个问题的根源在于这些系统通常根据用户提供的部分线索或提示生成文本或图像，这可能导致不完整或片段化的输出缺乏连贯性。自一致性提示是一种高级技术，用于通过训练模型确保其生成的输出始终与提供的提示一致，从而解决这个问题。
 - en: Self-Consistency Prompting works by training AI models to compare their previously
     generated outputs with new ones as they continue generating responses to a prompt.
     The model checks each new sentence it generates against previous ones to ensure
     there is no contradiction between them. If a contradiction exists, the model re-adjusts
     its output until the sentences are aligned with each other, creating a coherent
     and self-consistent response.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 自一致性提示通过训练AI模型，使其在继续生成对提示的响应时，将其先前生成的输出与新输出进行比较来工作。模型会检查生成的每个新句子，以确保它们之间没有矛盾。如果存在矛盾，模型会重新调整其输出，直到句子彼此一致，从而创建一个连贯且自洽的响应。
 - en: The self-consistency prompt technique has several advantages over other techniques
     used for ensuring coherence in AI-generated texts. For instance, instead of relying
     on pre-defined rules or heuristics to generate responses, it leverages machine
     learning algorithms that learn from experience how to generate coherent responses
     without any external input. Moreover, it does not require any additional input
     from users beyond the initial prompt.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 自一致性提示技术相对于其他用于确保AI生成文本连贯性的技术具有几个优势。例如，它不依赖于预定义的规则或启发式来生成响应，而是利用机器学习算法，从经验中学习如何生成连贯的响应，而无需任何外部输入。此外，它不需要用户在初始提示之外提供任何额外的输入。
 - en: However, self-consistency prompting also has some limitations and challenges
     that need to be addressed before its full potential can be realized. For example,
     it may lead to repetitive responses if models get stuck on certain ideas or phrasings
     while trying to maintain consistency between sentences. Also, it may not work
     well for more complex prompts where multiple interpretations of a single word
     or phrase exist.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，自一致性提示也存在一些需要解决的限制和挑战，才能充分发挥其潜力。例如，如果模型在试图保持句子之间一致性时卡在某些想法或措辞上，可能会导致重复的响应。此外，它可能不适用于更复杂的提示，其中一个单词或短语存在多种解释。
 - en: Least-to-Most Prompting (LtM) for AI Art and ChatGPT
+  id: totrans-15
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 最小到最大提示（LtM）用于AI艺术和ChatGPT
 - en: The Least-to-Most Prompting (LtM) technique is a novel approach to controlling
     the generation of artwork and text in AI models like AT Art and ChatGPT. The technique
     works by providing the model with initial prompts that are relatively simple or
     vague, and then gradually increasing the level of specificity or complexity until
     the desired output is generated.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 从最小到最大提示（LtM）技术是一种新颖的方法，用于控制AI模型（如AT Art和ChatGPT）中艺术品和文本的生成。该技术通过提供相对简单或模糊的初始提示，然后逐渐增加特定性或复杂性的级别，直到生成所需的输出。
 - en: This technique is particularly useful in cases where users want to have control
     over what kind of output they receive from these models, rather than relying on
     completely random or unguided generation. By providing a gradual progression of
     prompts, users can guide the model towards generating outputs that are more closely
     aligned with their specific needs or preferences.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种技术特别适用于用户希望控制这些模型生成的输出类型的情况，而不是完全依赖于完全随机或无引导的生成。通过提供逐渐递进的提示，用户可以引导模型生成与其特定需求或偏好更加一致的输出。
 - en: LtM prompting can also be used to help ensure that generated outputs are consistent
     with certain criteria or guidelines. For example, if a user wants an AI-generated
     painting to include certain colors or themes, they could start with a more general
     prompt like "paint a landscape," and then gradually add more specific prompts
     like "include blue skies" or "add trees." This would help guide the model towards
     generating outputs that meet the user's requirements.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: LtM提示还可以用来确保生成的输出符合某些标准或指南。例如，如果用户希望AI生成的绘画包含某些颜色或主题，他们可以从一个更一般的提示开始，比如“画一幅风景画”，然后逐渐添加更具体的提示，比如“包括蓝天”或“添加树木”。这将帮助引导模型生成符合用户要求的输出。
 - en: Overall, LtM prompting is an effective tool for controlling AI-generated outputs
     in both art and text models. It offers users greater flexibility and control over
     what kind of outputs they receive while still allowing for some degree of randomness
     and creativity from the model itself.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，LtM提示是控制艺术和文本模型中AI生成输出的有效工具。它为用户提供了更大的灵活性和控制，以决定他们接收到的输出类型，同时还允许模型本身有一定程度的随机性和创造性。
 - en: Leveraging Advanced Techniques for AI Art and ChatGPT
+  id: totrans-20
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 利用高级技术进行AI艺术和ChatGPT
 - en: Advanced techniques are used to improve the quality and consistency of the outputs
     generated by AI art and ChatGPT models. These techniques include various types
     of prompting, such as train of thought prompting, self-consistency prompting,
     least-to-most prompting (LtM), active prompting, general knowledge prompting,
     and direct stimulus prompting. The effective application of these techniques can
     lead to optimal performance in AI art and ChatGPT models.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 高级技术被用来提高AI艺术和ChatGPT模型生成的输出的质量和一致性。这些技术包括各种类型的提示，如思维火车提示、自一致性提示、从最小到最大提示（LtM）、主动提示、常识提示和直接刺激提示。这些技术的有效应用可以导致AI艺术和ChatGPT模型的最佳性能。
 - en: Train of Thought Prompting
+  id: totrans-22
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 思维火车提示
 - en: Train of thought prompting is a technique designed to help the model generate
     long-form text by guiding it through a series of questions or prompts that encourage
     it to continue its natural flow of thoughts. This type of prompt can be useful
@@ -160,99 +207,133 @@
     example, if an AI art model is generating a description about an image, train
     of thought prompts can help it provide more detailed information about the objects
     within the image.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 思维火车提示是一种旨在帮助模型生成长篇文本的技术，通过引导它通过一系列问题或提示来鼓励它继续其自然思维流程。这种类型的提示在生成需要连贯叙述的文章或论文时非常有用。例如，如果一个AI艺术模型正在生成有关一张图片的描述，思维火车提示可以帮助它提供关于图片内物体的更详细信息。
 - en: One creative example could be asking the model "What are some things you notice
     about this image?" followed by "Can you describe any interesting details that
     stand out to you?". By using train-of-thought prompts like these, it helps increase
     engagement with users while also providing relevant information.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 其中一个创意示例可以是向模型提问“你注意到这张图片有什么特点？”，接着是“你能描述出任何吸引你的有趣细节吗？”。通过使用这样的思维火车提示，它有助于增加与用户的互动，同时提供相关信息。
 - en: Self-Consistency Prompting
+  id: totrans-25
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 自一致性提示
 - en: The self-consistency technique involves generating multiple outputs from a single
     input prompt and checking them for coherence with each other. This technique provides
     feedback on how well your model has understood your input by ensuring that outputs
     retain internal consistency across multiple generations. This type of prompt is
     particularly useful in chatbots as it improves their ability to maintain context
     and consistent personalities across multiple interactions.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 自一致性技术涉及从单个输入提示生成多个输出，并检查它们是否相互一致。这种技术通过确保输出在多次生成中保持内部一致性来提供有关模型对输入理解程度的反馈。这种类型的提示在聊天机器人中特别有用，因为它提高了它们在多次互动中保持上下文和一致性个性的能力。
 - en: A creative use-case for this could be having a user interact with an AI-powered
     chatbot over a longer period of time. The prompt could then be used to help the
     chatbot maintain a consistent personality and tone throughout the conversation,
     which would help keep the user engaged and build rapport with them over time.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个创造性的用例可能是让用户与AI驱动的聊天机器人在较长时间内互动。然后可以使用提示来帮助聊天机器人在整个对话中保持一致的个性和语调，这将有助于保持用户的参与并随着时间建立与他们的关系。
 - en: Least-to-Most Prompting (LtM)
+  id: totrans-28
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 最少到最多提示（LtM）
 - en: The least-to-most technique is used to ensure that the model generates outputs
     in a structured way by starting with less complex prompts, gradually building
     towards more complex prompts. This type of prompt can be useful when generating
     outputs for specific tasks that require a particular structure, such as writing
     poetry or generating product descriptions.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 最少到最多技术用于确保模型通过从较简单的提示开始逐渐构建到更复杂的提示的方式生成结构化的输出。这种类型的提示在生成需要特定结构的任务的输出时非常有用，比如写诗或生成产品描述。
 - en: A creative example could be asking an AI art model to generate a description
     of an image starting with "What colors are present in this image?" before moving
     on to "Can you describe any shapes or patterns you see?". By using LtM prompting,
     it ensures that the output is structured and coherent, which is essential for
     certain types of content generation.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个创造性的例子可能是要求一个AI艺术模型从"这幅图像中有哪些颜色？"开始生成描述，然后再转向"你能描述你看到的任何形状或图案吗？"。通过使用LtM提示，确保输出是结构化和连贯的，这对于某些类型的内容生成至关重要。
 - en: Active Prompting
+  id: totrans-31
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 主动提示
 - en: The active prompting technique involves using feedback from users to guide the
     model's attention towards relevant information. This type of prompt can be useful
     when generating content that requires a deep understanding of user context or
     preferences, such as personalized recommendations or chatbot responses tailored
     to individual users.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 主动提示技术涉及使用用户的反馈来引导模型的注意力关注相关信息。这种类型的提示在生成需要深入了解用户背景或偏好的内容时非常有用，比如个性化推荐或针对个别用户定制的聊天机器人回复。
 - en: An example could involve training an AI-powered chatbot to recognize keywords
     within user queries and use these keywords to generate more relevant responses.
     By actively prompting users for feedback on whether the responses are helpful
     or not, it helps refine the AI's understanding of user preferences over time.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个例子可能涉及训练一个AI驱动的聊天机器人识别用户查询中的关键词，并使用这些关键词生成更相关的回复。通过主动提示用户反馈回复是否有帮助，有助于随着时间的推移完善AI对用户偏好的理解。
 - en: General Knowledge Prompting
+  id: totrans-34
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 通用知识提示
 - en: The general knowledge prompting technique involves providing additional context
     beyond what is contained within input prompts themselves. This type of prompt
     can be useful when generating content that requires background knowledge about
     specific topics or subjects.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 通用知识提示技术涉及提供超出输入提示本身所包含的内容的额外背景信息。这种类型的提示在生成需要关于特定主题或主题的背景知识的内容时非常有用。
 - en: A creative use-case would involve training an AT art model in the field of medical
     imaging. By providing additional general knowledge about anatomy and physiology,
     it helps the model generate more accurate and detailed descriptions of medical
     images.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个创造性的用例可能涉及在医学影像领域训练一个AT艺术模型。通过提供有关解剖学和生理学的额外通用知识，它有助于模型生成更准确和详细的医学图像描述。
 - en: Direct Stimulus Prompting
+  id: totrans-37
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 直接刺激提示
 - en: The direct stimulus prompting technique involves prompting the model to generate
     responses that are designed to elicit specific emotions or reactions from users.
     This type of prompt is particularly useful in marketing or advertising applications
     where the goal is to generate engagement with a particular product or service.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 直接刺激提示技术涉及提示模型生成旨在引起用户特定情绪或反应的回复。这种类型的提示在营销或广告应用中特别有用，目标是与特定产品或服务产生参与互动。
 - en: An example could be asking an AT art model to generate images that are designed
     to elicit feelings of joy or happiness in viewers. By using this type of prompt,
     it helps ensure that the generated content is tailored towards specific user preferences
     and goals.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个例子可能是要求 AT 艺术模型生成旨在引起观众喜悦或幸福感的图像。通过使用这种类型的提示，有助于确保生成的内容符合特定用户的偏好和目标。
 - en: Leveraging advanced techniques for optimal performance in AT art and ChatGPT
     models can lead to more consistent and high-quality outputs. These techniques
     include various types of prompting, such as train-of-thought prompting, self-consistency
@@ -261,20 +342,27 @@
     you can improve your AI's ability to understand user context, maintain coherence
     across multiple generations and generate outputs tailored towards specific user
     preferences.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 利用 AT 艺术和 ChatGPT 模型的最佳性能的先进技术可以产生更一致和高质量的输出。这些技术包括各种类型的提示，如思维训练提示、自我一致性提示、最少到最多提示
+    (LtM)、主动提示、普通知识提示和直接刺激提示。通过创造性地应用这些技术，您可以提高您的 AI 理解用户上下文的能力，保持跨多个生成的连贯性，并生成符合特定用户偏好的输出。
 - en: Active Prompting in AI Art and ChatGPT
+  id: totrans-41
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: AI 艺术和 ChatGPT 中的主动提示
 - en: Active prompting is a technique used to guide the attention of AI models to
     specific aspects or features of the input data. This approach can be particularly
     useful in AT art and ChatGPT, where users may want to generate outputs that reflect
     particular styles or themes, for example. By using active prompting, users can
     help direct the model's attention to specific elements within the data that are
     most relevant for generating outputs that align with their desired goals.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 主动提示是一种用于引导 AI 模型注意力集中在输入数据的特定方面或特征的技术。在 AT 艺术和 ChatGPT 中，这种方法尤其有用，用户可能希望生成反映特定风格或主题的输出。通过使用主动提示，用户可以帮助指导模型的注意力集中在数据中最相关的元素上，以生成符合他们期望目标的输出。
 - en: To use active prompting effectively, it is important to select prompts that
     are precise and targeted. These prompts should be designed in such a way as to
     guide the model's attention towards certain aspects of the input data while avoiding
@@ -282,26 +370,35 @@
     an image of a sunset using AT art, you might use prompts specific phrases like
     "orange sky," "golden light," "silhouetted palm trees," etc which all relate directly
     on the desired output without mentioning other unrelated details.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 要有效使用主动提示，选择精确而有针对性的提示至关重要。这些提示应设计为引导模型的注意力集中在输入数据的某些方面，同时避免其他干扰因素。例如，如果您希望您的
+    AI 模型使用 AT 艺术生成日落的图像，您可以使用诸如"橙色天空"、"金色光芒"、"剪影棕榈树"等具体短语的提示，这些短语都直接与所需输出相关，而不提及其他不相关的细节。
 - en: Another key aspect of active prompting is ensuring that users provide feedback
     when necessary. As AI models process large volumes of data, they may not always
     select the most relevant pieces of information for generating outputs. Users should
     be prepared to intervene when necessary by providing additional prompts or adjusting
     existing ones based on output quality.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 主动提示的另一个关键方面是确保用户在必要时提供反馈。由于 AI 模型处理大量数据，它们不总是选择生成输出所需的最相关信息。用户应准备在必要时进行干预，通过提供额外的提示或根据输出质量调整现有提示。
 - en: Overall, active prompting can be an effective technique for guiding AI models'
     attention towards specific aspects of input data in AT art and ChatGPT applications.
     By using this approach appropriately and providing targeted feedback when needed,
     users can improve overall output quality and achieve more desirable results than
     would otherwise be possible.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，主动提示可以是在 AT 艺术和 ChatGPT 应用中引导 AI 模型注意力集中在输入数据特定方面的有效技术。通过适当使用这种方法，并在需要时提供有针对性的反馈，用户可以提高总体输出质量，并实现比以往更为可取的结果。
 - en: General Knowledge Prompting in AI Art and ChatGPT
+  id: totrans-46
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: AI 艺术和 ChatGPT 中的普通知识提示
 - en: One of the main challenges of AI art and ChatGPT is generating outputs that
     are not only coherent but also informative and interesting. General knowledge
     prompting is a technique that leverages external sources of information to enhance
@@ -309,177 +406,241 @@
     with a prompt that includes relevant general knowledge, which can be retrieved
     from various sources such as encyclopedias, news articles, or other pre-existing
     datasets.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: AI艺术和ChatGPT的主要挑战之一是生成不仅连贯而且信息丰富且有趣的输出。通识知识提示是一种利用外部信息源增强生成输出质量的技术。这种技术涉及为模型提供包含相关通识知识的提示，这些知识可以从各种来源（如百科全书、新闻文章或其他现有数据集）中检索。
 - en: By incorporating general knowledge into the prompts for AI art and ChatGPT models,
     they become better equipped to generate outputs that are more informative and
     engaging. This technique can be especially useful when generating long-form texts
     or when attempting to provide detailed information on a topic. The approach has
     been shown to improve coherence, relevance, and diversity in generated content.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过将通识知识纳入AI艺术和ChatGPT模型的提示中，它们变得更有能力生成更具信息量和吸引力的输出。这种技术在生成长篇文本或尝试提供有关某一主题的详细信息时尤其有用。已经证明这种方法可以提高生成内容的连贯性、相关性和多样性。
 - en: One advantage of using general knowledge prompting is its ability to make connections
     between seemingly disparate topics. By having access to a vast array of information
     sources, these models can draw on related concepts or facts that may not have
     been immediately obvious otherwise. This means that generated content can often
     include surprising or thought-provoking insights.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用通识知识提示的一个优点是它能够在看似不相关的主题之间建立联系。通过可以访问大量信息源，这些模型可以利用相关概念或事实，否则可能不会立即显而易见。这意味着生成的内容通常可以包含令人惊讶或发人深省的见解。
 - en: In addition, this technique has been shown to improve overall output quality
     when used in conjunction with other advanced techniques such as Least-to-Most
     Prompting (LtM) and Self-Consistency Prompting (SCP). By providing the model with
     additional context about the topic being discussed, it becomes easier for it to
     generate more detailed and relevant responses.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，已经证明这种技术与其他高级技术（如从最少到最多提示（LtM）和自一致性提示（SCP））结合使用时可以提高整体输出质量。通过为模型提供有关讨论主题的额外背景信息，它更容易生成更详细和相关的响应。
 - en: Direct Stimulus Prompting in AI Art and ChatGPT
+  id: totrans-51
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 在AI艺术和ChatGPT中的直接刺激提示
 - en: Direct stimulus prompting is a powerful technique for generating targeted responses
     in AI art and ChatGPT. This technique involves providing the model with specific
     instructions or stimuli that prompt it to generate output based on a pre-defined
     set of rules. This method can be used to generate specific types of art or text,
     such as landscapes, portraits or stories.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 直接刺激提示是在AI艺术和ChatGPT中生成有针对性响应的强大技术。这种技术涉及为模型提供特定指令或刺激，促使其基于预定义的一组规则生成输出。这种方法可用于生成特定类型的艺术品或文本，如风景、肖像或故事。
 - en: To implement direct stimulus prompts effectively, it is crucial to have a deep
     understanding of the model's capabilities and limitations. For instance, if you
     want the model to create a painting of a sunset over the sea, you would need to
     provide it with stimuli related to this type of scenery such as colors, textures
     and shapes. This would enable the model to generate an output that closely matches
     your expectations.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 要有效实施直接刺激提示，深入了解模型的能力和局限性至关重要。例如，如果您希望模型创作一幅海上日落的画作，您需要为其提供与这种场景相关的刺激，如颜色、纹理和形状。这将使模型能够生成与您期望相匹配的输出。
 - en: Another effective use case for direct stimulus prompting is generating responses
     in chatbots that are tailored towards specific questions or requests. For example,
     if someone asks your company's chatbot about their order status you could use
     direct stimulus prompts such as "Order status query" or "Order tracking number"
     as inputs for generating output related to order information.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 直接刺激提示的另一个有效用例是生成针对特定问题或请求定制的聊天机器人的响应。例如，如果有人询问您公司的聊天机器人有关其订单状态，您可以使用直接刺激提示，如“订单状态查询”或“订单跟踪号码”，作为生成与订单信息相关的输出的输入。
 - en: The effectiveness of direct stimulus prompting highly depends on how well-defined
     your prompts are and how closely they match the desired output. In case there
     is a mismatch between your input stimuli and the desired output quality-wise,
     tweaking some parameters like words structure can help with getting better results.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 直接刺激提示的有效性高度取决于您的提示定义得有多清晰以及它们与期望输出的质量有多接近。如果您的输入刺激与期望的输出在质量上存在不匹配，调整一些参数，如词结构，可以帮助获得更好的结果。
 - en: Example Prompts for Train of Thought Prompting
+  id: totrans-56
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 灵感列车提示的示例提示
 - en: 'Train of thought prompting is a technique used to generate coherent and engaging
     text by prompting the AI with questions or statements that lead it down a specific
     path of thinking. This method helps the model stay on topic and produce text that
     flows logically. Here are some example prompts for train of thought prompting:'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 灵感列车提示是一种通过向 AI 提出问题或陈述来引导其沿着特定思维路径前进，从而生成连贯和引人入胜的文本的技术。这种方法有助于模型保持主题并产生逻辑流畅的文本。以下是灵感列车提示的一些示例提示：
 - en: 'Prompt 1: Describe a typical day in your life.'
+  id: totrans-58
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示 1：描述你生活中的一个典型日常。
 - en: This prompt is designed to encourage the AI model to think about daily routines
     and habits. The response could include details about morning routines, work schedules,
     or leisure activities.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个提示旨在鼓励 AI 模型思考日常例行事务和习惯。回应可能包括有关早晨例行事务、工作时间表或休闲活动的细节。
 - en: 'Prompt 2: Discuss the pros and cons of working remotely.'
+  id: totrans-60
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示 2：讨论远程工作的利弊。
 - en: This prompt encourages the model to think critically about working from home.
     It may lead to responses that discuss productivity, work-life balance, or social
     isolation.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个提示鼓励模型对在家工作进行批判性思考。它可能导致讨论生产力、工作与生活的平衡或社交隔离的回应。
 - en: 'Prompt 3: How does exercise impact mental health?'
+  id: totrans-62
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示 3：运动如何影响心理健康？
 - en: This prompt promotes deeper thinking about mental health and wellness. The AI
     may provide insights into how exercise affects mood, cognitive function, or overall
     well-being.
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个提示促进对心理健康和健康的深入思考。AI 可能提供关于运动如何影响情绪、认知功能或整体幸福感的见解。
 - en: 'Prompt 4: Explain how artificial intelligence works.'
+  id: totrans-64
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示 4：解释人工智能的工作原理。
 - en: This prompt challenges the AI model to explain complex concepts in simple terms.
     The response could provide an overview of machine learning algorithms, neural
     networks, and other AI technologies.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个提示挑战 AI 模型用简单的术语解释复杂概念。回应可能提供机器学习算法、神经网络和其他人工智能技术的概述。
 - en: Example Prompts for Self-Consistency Prompting
+  id: totrans-66
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 自我一致性提示的示例提示
 - en: 'Self-consistency prompting is one of the most effective methods for ensuring
     that the outputs generated by AI models are highly coherent and consistent. This
     method involves prompting the model to generate outputs that are consistent with
     previous outputs, thereby ensuring that there is a logical flow in the generated
     text. Here are some example prompts:'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 自我一致性提示是确保 AI 模型生成的输出高度连贯和一致的最有效方法之一。这种方法涉及提示模型生成与先前输出一致的输出，从而确保生成文本中有逻辑流。以下是一些示例提示：
 - en: 'Prompt 1: Expand on a Previous Idea'
+  id: totrans-68
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示 1：扩展之前的想法
 - en: This prompt involves asking the model to expand on a previous idea or concept
     mentioned in the text. For instance, if the model has already discussed how artificial
     intelligence can help improve healthcare, you can prompt it to expand on this
     idea by discussing specific applications of AI in health care such as drug discovery
     or disease diagnosis.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个提示涉及要求模型扩展文本中提到的先前想法或概念。例如，如果模型已经讨论了人工智能如何帮助改善医疗保健，您可以提示它扩展这个想法，讨论人工智能在医疗保健中的具体应用，如药物发现或疾病诊断。
 - en: 'Prompt 2: Maintain Tone and Style'
+  id: totrans-70
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示 2：保持语调和风格
 - en: When generating long-form text, maintaining tone and style can be challenging.
     Self-consistency prompting helps ensure that there is consistency in tone and
     style throughout the entire piece of text. You can use prompts such as “Maintain
     a conversational tone” or “Use simple language” depending on your desired tone
     and voice.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 在生成长篇文本时，保持语调和风格可能是具有挑战性的。自我一致性提示有助于确保整篇文本中的语调和风格保持一致。您可以根据所需的语调和声音使用提示，如“保持对话的语气”或“使用简单的语言”。
 - en: 'Prompt 3: Ensure Logical Flow'
+  id: totrans-72
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示 3：确保逻辑流
 - en: In order to ensure that generated texts have logical flow and make sense, you
     may use prompts like "Summarize what has been said so far" or "Continue with an
     appropriate transition". These prompts will guide your model to link concepts
     together in a more cohesive manner.
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了确保生成的文本具有逻辑流和意义，您可以使用提示，比如“总结到目前为止所说的内容”或“继续使用适当的过渡”。这些提示将引导您的模型以更连贯的方式将概念联系在一起。
 - en: 'Prompt 4: Stay True To The Context'
+  id: totrans-74
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示4：保持与上下文一致
 - en: In some scenarios, it’s important for AI models to stay true to context while
     generating responses. For example, if you're training an AI chatbot for customer
     support services then self consistency prompts like "Refer back to user's query"
     will help maintain context and ensure that the bot provides a relevant response
     to the customer's query.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 在某些情况下，对于AI模型在生成响应时保持与上下文一致是很重要的。例如，如果您正在为客户支持服务训练AI聊天机器人，那么像“参考用户的查询”这样的自我一致性提示将有助于保持上下文，并确保机器人对客户的查询提供相关的响应。
 - en: By using self-consistency prompting, AI models can generate highly coherent
     and logical outputs, thereby enhancing their overall performance. These prompts
     can be customized according to specific use cases and contexts to ensure optimal
     performance.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过使用自我一致性提示，AI模型可以生成高度连贯和逻辑的输出，从而增强其整体性能。这些提示可以根据特定的用例和上下文进行定制，以确保最佳性能。
 - en: Example Prompts for Least-to-Most Prompting (LtM)
+  id: totrans-77
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: Least-to-Most提示（LtM）的示例提示
 - en: Least-to-Most (LtM) prompting is a technique in which the prompts gradually
     increase in specificity and complexity. This technique is useful when you want
     to guide the model to generate outputs that are more closely related to a specific
     topic or theme.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: Least-to-Most（LtM）提示是一种技术，其中提示逐渐增加具体性和复杂性。当您希望引导模型生成与特定主题或主题更相关的输出时，这种技术非常有用。
 - en: For example, if you want the model to generate a story about a princess, you
     can start with a broad prompt such as "Write a story about royalty" and gradually
     increase the specificity of the prompt by adding more details such as "Write a
@@ -487,15 +648,19 @@
     who goes on an adventure to save her kingdom from an evil sorcerer". This gradual
     increase in specificity will help the model stay on track and generate outputs
     that are more relevant to the intended theme.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，如果你想让模型生成一个关于公主的故事，你可以从一个宽泛的提示开始，比如“写一个关于皇室的故事”，然后逐渐增加提示的具体性，添加更多细节，比如“写一个关于住在城堡里的公主的故事”和“写一个关于公主踏上冒险拯救王国免受邪恶巫师侵害的故事”。这种逐渐增加具体性的方法将帮助模型保持在正确的轨道上，并生成更符合预期主题的输出。
 - en: To apply LtM prompting in ChatGPT, you can start with general prompts such as
     "What do you think about technology?" and gradually add more specific details
     such as "What do you think about artificial intelligence?" and "What is your opinion
     on the ethical implications of AI?". This will help guide the model to generate
     responses that are more focused on the topic at hand.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 要在ChatGPT中应用LtM提示，您可以从一般提示开始，比如“你对技术有什么看法？”然后逐渐添加更具体的细节，比如“你对人工智能有什么看法？”和“你对人工智能的伦理影响有什么看法？”这将帮助引导模型生成更专注于手头主题的响应。
 - en: Another way LtM prompting can be applied is through image captioning. You can
     start with generic captions such as "A man walking on the street" and then gradually
     add more detail such as "A man walking on 5th avenue in New York city" or even
@@ -503,136 +668,182 @@
     coffee”. The result is that this increases specificity and detail for generated
     captions provides even greater value towards language comprehension within AI
     systems
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: LtM提示可以应用的另一种方式是通过图像标题。您可以从通用的标题开始，比如“一个人在街上走路”，然后逐渐添加更多细节，比如“一个人在纽约市第五大道上行走”，甚至更详细的“一个商人在第五大道上行走，一边喝着早晨的咖啡”。结果是，这增加了生成标题的具体性和细节，为AI系统内的语言理解提供了更大的价值。
 - en: The goal of using LtM prompting technique is to provide specific guidance without
     overwhelming or restricting creativity while encouraging natural language generation.
     It is a powerful approach for both AI art and ChatGPT that can help improve the
     coherence and relevance of generated outputs.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用LtM提示技术的目标是在鼓励自然语言生成的同时提供具体的指导，而不会压倒或限制创造力。这是一种对AI艺术和ChatGPT都有帮助的强大方法，可以帮助提高生成输出的连贯性和相关性。
 - en: Example Prompts for Active Prompting
+  id: totrans-83
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 主动提示的示例
 - en: 'Active Prompting is a technique that involves guiding the attention of the
     model towards certain aspects or details of the prompt. This approach allows for
     more targeted responses and can be particularly useful in generating content that
     aligns with specific goals or preferences. Here are some examples of prompts that
     leverage active prompting:'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 积极引导是一种技术，涉及引导模型的注意力关注提示的某些方面或细节。这种方法允许更有针对性的回应，并且在生成符合特定目标或偏好的内容方面特别有用。以下是一些利用积极引导的提示的示例：
 - en: 'Prompt 1: Describe a sunflower field in the late afternoon'
+  id: totrans-85
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示1：描述一个傍晚的向日葵田
 - en: In this prompt, we can use active prompting to guide the model's attention towards
     specific visual details, such as the colors of the sky and flowers, and the way
     the sunlight hits them. For instance, we could use phrases like "imagine you are
     looking up at the sky" or "notice how the light reflects off each petal" to direct
     its focus.
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个提示中，我们可以使用积极引导来引导模型的注意力关注特定的视觉细节，比如天空和花朵的颜色，以及阳光照射的方式。例如，我们可以使用短语如“想象你正在仰望天空”或“注意光线如何反射在每片花瓣上”来引导其注意力。
 - en: 'Prompt 2: Write a news article on recent advances in AI technology'
+  id: totrans-87
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示2：撰写一篇关于AI技术最新进展的新闻文章
 - en: This prompt could benefit from active prompting by directing attention towards
     key developments or applications within AI research. For example, phrases like
     "focus on breakthroughs in natural language processing" or "highlight advances
     in computer vision technology" may help steer responses towards specific topics.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个提示可以通过积极引导来受益，引导注意力关注AI研究中的关键发展或应用。例如，诸如“关注自然语言处理的突破”或“强调计算机视觉技术的进步”等短语可能有助于引导回应朝向特定主题。
 - en: 'Prompt 3: Write a short story about a character who overcomes adversity'
+  id: totrans-89
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示3：写一个关于克服逆境的角色的短篇故事
 - en: In this prompt, active prompting can be used to guide not only attention but
     also emotions and tone. To achieve this goal, we could use phrases like "convey
     a sense of struggle and determination", "portray hopefulness despite challenges",
     or "build suspense leading up to a triumphant moment". These cues can help shape
     both plot and characterization.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个提示中，积极引导不仅可以用来引导注意力，还可以用来引导情感和语气。为了实现这个目标，我们可以使用短语如“传达一种奋斗和决心的感觉”、“描绘尽管面临挑战仍然充满希望”或“在赢得胜利的时刻之前建立悬念”。这些线索可以帮助塑造情节和角色。
 - en: 'Prompt 4: Generate an image inspired by Vincent Van Gogh''s Starry Night painting'
+  id: totrans-91
   prefs:
   - PREF_H5
   type: TYPE_NORMAL
+  zh: 提示4：生成受梵高《星夜》绘画启发的图像
 - en: Active prompting is also applicable to image generation tasks. In this case,
     we can use phrases like "capture the swirling motion of the sky" or "emphasize
     the contrast between dark and bright colors" to guide the model's artistic choices.
     By directing its attention towards specific features, we can encourage more faithful
     adherence to the source material while also allowing for creative interpretation.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 积极引导也适用于图像生成任务。在这种情况下，我们可以使用短语如“捕捉天空的旋转运动”或“强调暗色和亮色之间的对比”来引导模型的艺术选择。通过引导其注意力关注特定特征，我们可以鼓励更忠实地遵循原始材料，同时也允许创造性的诠释。
 - en: Example Prompts for General Knowledge Prompting
+  id: totrans-93
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 通用知识提示的示例提示
 - en: General knowledge prompting is a technique used in AI art and ChatGPT to enhance
     the output quality by providing context-specific information about the topic at
     hand. This method can be particularly useful when generating text or artwork related
     to a specific area, such as science or history.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 通用知识提示是AI艺术和ChatGPT中使用的一种技术，通过提供有关手头主题的特定上下文信息来增强输出质量。当生成与特定领域（如科学或历史）相关的文本或艺术品时，这种方法尤其有用。
 - en: One example of a general knowledge prompt that can be used in AI art is providing
     the model with basic information about a particular subject. For example, if you
     want the model to generate an image of a particular animal, you could provide
     it with information about the animal's physical features, habitat, and behaviors.
     This would help ensure that the generated image is accurate and realistic.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个可以在AI艺术中使用的通用知识提示的例子是向模型提供关于特定主题的基本信息。例如，如果你想让模型生成一幅特定动物的图像，你可以提供有关该动物的外貌特征、栖息地和行为的信息。这将有助于确保生成的图像准确而逼真。
 - en: In ChatGPT, general knowledge prompts can be used to provide context for conversations
     on specific topics. For example, if you are having a conversation about climate
     change, you could provide the model with information on its causes and effects.
     This would help ensure that the model's responses are informed by scientific consensus
     and reflect current understanding of climate change.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 在ChatGPT中，可以使用一般知识提示来为特定主题的对话提供背景。例如，如果你正在谈论气候变化，你可以向模型提供有关其原因和影响的信息。这将有助于确保模型的回应基于科学共识，并反映对气候变化的当前理解。
 - en: Another way to use general knowledge prompts in AI art and ChatGPT is by providing
     them with specific cultural references. For instance, if you want to generate
     an artwork related to mythology, you can give it details relevant to that culture's
     traditions including symbols or motifs associated with various gods or goddesses
     or legendary characters from their stories which will make it easy for the model
     to produce images that are consistent with cultural norms.
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 在AI艺术和ChatGPT中使用一般知识提示的另一种方式是通过提供具体的文化参考。例如，如果你想生成与神话相关的艺术作品，你可以给它提供与该文化传统相关的细节，包括与各种神祇或传说人物相关的符号或图案，这将使模型能够生成符合文化规范的图像。
 - en: Example Prompts for Direct Stimulus Prompting
+  id: totrans-98
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 直接刺激提示的示例
 - en: The direct stimulus prompting technique involves providing specific cues to
     the model to generate targeted responses. This is particularly useful in chatbots
     where the user has a specific goal or question in mind. By providing a direct
     stimulus, the model can quickly provide an accurate response without confusion
     or extraneous information.
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 直接刺激提示技术涉及向模型提供特定线索以生成有针对性的回应。这在聊天机器人中特别有用，用户有特定目标或问题在心中。通过提供直接刺激，模型可以快速提供准确的回应，避免混淆或多余信息。
 - en: For example, consider a weather chatbot where a user wants to know the current
     temperature outside. A direct stimulus prompt could be "What is the current temperature
     in [location]?" This prompt provides clear and concise information to the model
     and allows it to generate an accurate response without requiring too much context
     or additional information.
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，考虑一个天气聊天机器人，用户想知道外面的当前温度。一个直接刺激提示可以是“[地点]的当前温度是多少？”这个提示为模型提供了清晰简洁的信息，使其能够生成准确的回应，而不需要太多的背景或额外信息。
 - en: Another example of direct stimulus prompting can be found in art generation.
     If an artist wants to create a realistic portrait of a person, they may provide
     specific prompts such as "make the eyes blue" or "add some freckles on cheeks."
     These prompts give clear direction to the model and increase accuracy in generating
     outputs that meet specific criteria.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 直接刺激提示的另一个例子可以在艺术生成中找到。如果一位艺术家想要创作一个人的逼真肖像，他们可以提供具体的提示，比如“让眼睛变蓝”或“在脸颊上加一些雀斑”。这些提示为模型提供了明确的方向，并增加了生成符合特定标准的输出的准确性。
 - en: While direct stimulus prompting can be incredibly useful, it is important not
     to rely on this technique too heavily. Overreliance on prompts can lead to models
     that are overly rigid and unable to generate creative outputs when needed. Instead,
     use this technique sparingly and only when there is a clear goal or objective
     in mind.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管直接刺激提示非常有用，但重要的是不要过度依赖这种技术。过度依赖提示可能导致模型过于僵化，无法在需要时生成创造性的输出。相反，要谨慎使用这种技术，只有在有明确的目标或目的时才使用。
 - en: Conclusion
+  id: totrans-103
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 结论
 - en: In conclusion, these advanced techniques for AI Art and ChatGPT are game-changing
     for the field of artificial intelligence. By leveraging these techniques, we can
     ensure that the outputs generated by these systems are coherent, relevant, and
@@ -647,5 +858,7 @@
     even see machines capable of generating truly creative works of art or having
     meaningful conversations with humans on a wide range of subjects. The future possibilities
     with such advancements are
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，这些针对AI艺术和ChatGPT的高级技术对人工智能领域具有改变性的影响。通过利用这些技术，我们可以确保这些系统生成的输出是连贯的、相关的和引人入胜的。通过思维火花提示、自洽提示、从少到多提示（LtM）、主动提示、一般知识提示和直接刺激提示的帮助，我们可以以更加受控的方式引导模型的注意力。这将导致更好的输出和更少的无意义或不相关的回应。然而，就像任何新技术一样，重要的是要记住AI仍处于起步阶段，还有很大的改进空间。通过继续探索这样的新技术，并推动可能性的边界，我们可以从这些系统中释放出更多潜力。随着时间的推移，我们甚至可能会看到机器能够生成真正具有创意的艺术作品，或者与人类在各种主题上进行有意义的对话。这些进步带来的未来可能性是无限的。

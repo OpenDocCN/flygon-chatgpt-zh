@@ -1,73 +1,109 @@
 - en: '[CHAPTER 3Working with Formulas and Functions](contents.xhtml#ch03a)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第3章使用公式和函数](contents.xhtml#ch03a)'
 - en: '[Introduction](contents.xhtml#sc2_32a)'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_32a)'
 - en: In this chapter, we will explore the usage of formulas and functions in Microsoft
     Excel. Formulas are equations that perform calculations on values, while functions
     are predefined formulas that simplify complex tasks. We will cover topics such
     as using formulas in a worksheet, array formulas, using functions, IF function
     and its variations, and lookup functions.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将探讨在Microsoft Excel中使用公式和函数的方法。公式是对值进行计算的方程式，而函数是预定义的简化复杂任务的公式。我们将涵盖诸如在工作表中使用公式、数组公式、使用函数、IF函数及其变体以及查找函数等主题。
 - en: '[Structure](contents.xhtml#sc2_33a)'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_33a)'
 - en: 'In this chapter, we will go over the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: Using formulas in a worksheet
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在工作表中使用公式
 - en: Using functions
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用函数
 - en: Lookup functions
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找函数
 - en: Making V-Lookup Dynamic
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使V-Lookup动态
 - en: Index
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 索引
 - en: '[Objectives](contents.xhtml#sc2_34a)'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_34a)'
 - en: After studying this chapter, the reader will be able to understand the use of
     formula and functions as well as identify the different types of functions, and
     know the working of IF and other logical function.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在学习本章之后，读者将能够理解公式和函数的用法，识别不同类型的函数，并了解IF和其他逻辑函数的工作原理。
 - en: '[Using formulas in a worksheet](contents.xhtml#sc2_35a)'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '[在工作表中使用公式](contents.xhtml#sc2_35a)'
 - en: Formulas are the equations that perform calculations on values. A formula starts
     with an equal sign (=). It contains at least two operands and one operation. For
     example, the following formula multiplies 2 by 3 and add 5 to the result.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 公式是对值进行计算的方程式。公式以等号(=)开头。它至少包含两个操作数和一个操作。例如，以下公式将2乘以3，然后将5加到结果中。
 - en: =5+2*3
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: =5+2*3
 - en: Operand in a formula can be functions, references or constants. Operators may
     be any arithmetic or logical operator.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 公式中的操作数可以是函数、引用或常数。运算符可以是任何算术或逻辑运算符。
 - en: 'Note: In Excel, the BODMAS rule is followed to solve a formula when multiple
     operators are involded.'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：在Excel中，当涉及多个运算符时，遵循BODMAS规则来解决公式。
 - en: '[Array formula](contents.xhtml#sc3_36a)'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: '[数组公式](contents.xhtml#sc3_36a)'
 - en: In [Figure 3.1](#fig3-1), there are five products, for which we know the quantity
     and price. We need to find the Total Sales which is the result of adding together
     the product of quantity and price for all products. In a normal scenario, we would
@@ -76,712 +112,1098 @@
     write =sum (A2:A6*B2:B6) and press Ctrl + Shift + Enter key combination to fill
     the formula {=sum  (A1:A3*B1:B3)} in the selected cell, as shown in [Figure 3.2](#fig3-2).
     This calculates quantity*price for all the products in the cell B8.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 在[图3.1](#fig3-1)中，有五种产品，我们知道其数量和价格。我们需要找到总销售额，这是将所有产品的数量和价格相乘相加的结果。在正常情况下，我们将分别计算每种产品的金额，然后将它们相加以获得答案。但是，为了简化事情，我们也可以使用数组公式。选择B8并写入=sum(A2:A6*B2:B6)，然后按Ctrl
+    + Shift + Enter组合键填充公式{=sum(A1:A3*B1:B3)}到所选单元格中，如[图3.2](#fig3-2)所示。这将计算单元格B8中所有产品的数量*价格。
 - en: 'Note: Curly brackets ({}) around the formula indicates that it is applied to
     an array.'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：公式周围的大括号({})表示它应用于数组。
 - en: '[Figure 3.1](#fig3-1) features the quantity and price of five products:'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图3.1](#fig3-1)展示了五种产品的数量和价格：'
 - en: '![](images/Figure_3.1.png)'
+  id: totrans-21
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.1.png)'
 - en: 'Figure 3.1: Quantity and price of five products'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.1：五种产品的数量和价格
 - en: '[Figure 3.2](#fig3-2) features the Quantity*Price for all products:'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图3.2](#fig3-2)展示了所有产品的数量*价格：'
 - en: '![](images/Figure_3.2.png)'
+  id: totrans-24
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.2.png)'
 - en: 'Figure 3.2: Quantity*Price for all products'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.2：所有产品的数量*价格
 - en: '[Using functions](contents.xhtml#sc2_37a)'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用函数](contents.xhtml#sc2_37a)'
 - en: Performing calculations on each value in a range of cells can be complicated
     and time-consuming. For example, if you have a range consisting of 20 cells, a
     formula that adds each of these values will be very long. Excel functions simplify
     complex tasks.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 对一系列单元格中的每个值进行计算可能会很复杂且耗时。例如，如果您有一个包含20个单元格的范围，一个将这些值相加的公式将会非常长。Excel函数简化了复杂的任务。
 - en: Function is a predefined formula that performs a specific calculation or other
     action on a number or a text string and returns a value. You may specify the values
     on which the function performs calculations. The syntax of a function begins with
     the function name, followed by an opening parenthesis, the arguments for the function
     separated by commas and a closing parenthesis.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: '函数是执行特定计算或其他操作的预定义公式，对数字或文本字符串进行操作并返回一个值。您可以指定函数执行计算的值。函数的语法以函数名称开头，后跟一个开括号，由逗号分隔的函数参数和一个闭括号。 '
 - en: 'If the function starts a formula, type an equal sign (=) before the function
     name. As you create a formula that contains a function, the Formula Palette will
     assist you, as shown in the following [Figure 3.3](#fig3-3):'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果函数开始一个公式，请在函数名称前键入等号（=）。当您创建包含函数的公式时，公式面板将为您提供帮助，如下所示[图3.3](#fig3-3)：
 - en: '![](images/Figure_3.3.png)'
+  id: totrans-30
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.3.png)'
 - en: 'Figure 3.3: Inserting a function'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.3：插入函数
 - en: 'Note: From an empty cell, you may click on the fx symbol near the formula bar
     to see all the available functions in Excel.'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：从空单元格开始，您可以单击公式栏附近的fx符号以查看Excel中所有可用的函数。
 - en: 'The syntax of a function is:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数的语法是：
 - en: '| =Function name (argument1, argument2, ….) |'
+  id: totrans-34
   prefs: []
   type: TYPE_TB
+  zh: '| =函数名称（参数1，参数2，…） |'
 - en: 'Example:'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: '| =SUM (A10, B5: B10, 50, 37) |'
+  id: totrans-36
   prefs: []
   type: TYPE_TB
+  zh: '| =SUM(A10, B5:B10, 50, 37) |'
 - en: There is no need of memorizing all the functions available and the arguments
     necessary for each function. Instead, you can use sigma sign (d) which is used
     for sum, or click on the drop down for some more functions like Max, Min, and
     so on. Excel prompts you for required and optional arguments.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 没有必要记住所有可用的函数以及每个函数所需的参数。相反，您可以使用用于求和的sigma符号（∑），或单击下拉菜单以获取更多函数，如Max、Min等。Excel会提示您所需和可选的参数。
 - en: 'Note: You can use the Alt + = key combination to get the sum function on your
     worksheet.'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：您可以使用Alt + =组合键在工作表上获取求和函数。
 - en: '[IF function](contents.xhtml#sc3_38a)'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: '[IF函数](contents.xhtml#sc3_38a)'
 - en: In [Chapter 2](ch02.xhtml), Cell References and Range, we have studied the calculation
     of income heads such as HRA and DA. The formula we saw was the same for the entire
     database. According to certain conditions, we need to decide the formula to apply.
     For example, incentives may be calculated according to the department. This is
     where conditional functions like “IF” come into the picture.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 在[第二章](ch02.xhtml)中，单元格引用和范围，我们已经学习了诸如HRA和DA之类的收入头的计算。我们看到的公式对整个数据库都是相同的。根据某些条件，我们需要决定应用的公式。例如，奖励可能根据部门计算。这就是条件函数如“IF”出现的地方。
 - en: 'The IF function can be used for evaluating a condition. Depending on the conditions,
     whether it is true or false, IF function returns the values. The syntax for the
     IF function is:'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: IF函数可用于评估条件。根据条件，无论是真还是假，IF函数都会返回值。IF函数的语法是：
 - en: '| If(logical_test, [Value_if_true], [Value_if_false]) |'
+  id: totrans-42
   prefs: []
   type: TYPE_TB
+  zh: '| If(logical_test, [Value_if_true], [Value_if_false]) |'
 - en: The first argument is the condition that you need the function to evaluate.
     The second argument is the value to be returned if the condition is true and the
     third argument is the value to be returned if the condition is false. Second and
     third parameters are optional.
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个参数是函数需要评估的条件。第二个参数是条件为真时返回的值，第三个参数是条件为假时返回的值。第二和第三个参数是可选的。
 - en: 'Example:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: 'Suppose you want to calculate HRA based on designation of the employees. If
     the Designation is Manager, then HRA is 1000 or else 500\. Then the function code
     will be as follows:'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设您想根据员工的职位计算HRA。如果职位是经理，那么HRA是1000，否则是500。那么函数代码将如下所示：
 - en: '| =if (C2="Manager", 1000, 500) |'
+  id: totrans-46
   prefs: []
   type: TYPE_TB
+  zh: '| =if(C2="经理", 1000, 500) |'
 - en: 'Refer to [Figure 3.4](#fig3-4):'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图3.4](#fig3-4)：
 - en: '![](images/Figure_3.4.png)'
+  id: totrans-48
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.4.png)'
 - en: 'Figure 3.4: IF function'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.4：IF函数
 - en: As given in [Figure 3.4](#fig3-4), the above function calculates HRA as 1000
     for Managers and 500 for others.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 如[图3.4](#fig3-4)所示，上述函数计算经理的HRA为1000，其他人为500。
 - en: '[Nested IF](contents.xhtml#sc3_39a)'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '[嵌套IF](contents.xhtml#sc3_39a)'
 - en: A Nested IF function is used when a second IF function is placed inside the
     first order, in order to test additional conditions.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 当第二个IF函数放置在第一个顺序内以测试附加条件时，将使用嵌套IF函数。
 - en: 'The syntax for the Nested IF function is:'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 嵌套IF函数的语法是：
 - en: '| If (logical_test, [Value_if_true], If (logical_test, [Value_if_true], [Value_if_false]))
     |'
+  id: totrans-54
   prefs: []
   type: TYPE_TB
+  zh: '| If(logical_test, [Value_if_true], If(logical_test, [Value_if_true], [Value_if_false]))
+    |'
 - en: 'Example:'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: 'You can use nested IF functions to evaluate the complex conditions. For example,
     if the Salary is <5000, then the tax is 5%. If salary is between 5000 and 1000,
     then it is 10%, or else it is 15%. Since we have already given name range to salary
     column as sal, so one can also use sal instead of h2 =if (sal<5000, salary*.05,
     if (sal<10000, salary*.10, sal*.15)). Refer to [Figure 3.5](#fig3-5):'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以使用嵌套的IF函数来评估复杂的条件。例如，如果工资<5000，则税率为5%。如果工资在5000到1000之间，则为10%，否则为15%。由于我们已经给工资列命名为sal，因此可以使用sal代替h2
+    =if (sal<5000, salary*.05, if (sal<10000, salary*.10, sal*.15))。参考[图3.5](#fig3-5)：
 - en: '![](images/Figure_3.5.png)'
+  id: totrans-57
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.5.png)'
 - en: 'Figure 3.5: Using Nested IF function'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.5：使用嵌套IF函数
 - en: 'Suppose you want to assign letter grades to numbers referenced by the name
     Average Score, as shown in the following [Table 3.1](#tab3-1):'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设您想要为名称为平均分数的数字分配字母等级，如下所示的[表3.1](#tab3-1)：
 - en: '| If Average Score is | The return |'
+  id: totrans-60
   prefs: []
   type: TYPE_TB
+  zh: '| 如果平均分数为 | 返回 |'
 - en: '| Greater than 89 | A |'
+  id: totrans-61
   prefs: []
   type: TYPE_TB
+  zh: '| 大于89 | A |'
 - en: '| From 80 to 89 | B |'
+  id: totrans-62
   prefs: []
   type: TYPE_TB
+  zh: '| 从80到89 | B |'
 - en: '| From 70 to 79 | C |'
+  id: totrans-63
   prefs: []
   type: TYPE_TB
+  zh: '| 从70到79 | C |'
 - en: '| From 60 to 69 | D |'
+  id: totrans-64
   prefs: []
   type: TYPE_TB
+  zh: '| 从60到69 | D |'
 - en: '| Less than 60 | F |'
+  id: totrans-65
   prefs: []
   type: TYPE_TB
+  zh: '| 少于60 | F |'
 - en: 'Table 3.1: Assigning letter grades'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 表3.1：分配字母等级
 - en: 'You can use the following nested IF function:'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以使用以下嵌套的IF函数：
 - en: '| IF (AverageScore>89,"A", IF (AverageScore>79,"B", IF (AverageScore>69,"C",
     IF (AverageScore>59,"D","F")))) |'
+  id: totrans-68
   prefs: []
   type: TYPE_TB
+  zh: '| IF（AverageScore>89，“A”，IF（AverageScore>79，“B”，IF（AverageScore>69，“C”，IF（AverageScore>59，“D”，“F”）））
+    |'
 - en: 'Note: You can nest up to sixty-four levels of IF functions in a single formula.'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：您可以在单个公式中嵌套最多64个级别的IF函数。
 - en: '[IF with AND](contents.xhtml#sc3_40a)'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: '[带有AND的IF](contents.xhtml#sc3_40a)'
 - en: In Excel, OR is a logical function which returns false if any one of the arguments
     returns false.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Excel中，OR是一个逻辑函数，如果任何一个参数返回false，则返回false。
 - en: 'Syntax:'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '| AND (logical1, logical2...) |'
+  id: totrans-73
   prefs: []
   type: TYPE_TB
+  zh: '| AND（逻辑1，逻辑2...） |'
 - en: If there is a scenario where we have two conditions whose combined truth value
     would decide the output of an IF function, we can use AND with IF.
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: ���果存在这样的情况，即我们有两个条件，其联合真值将决定IF函数的输出，则可以使用AND与IF。
 - en: 'Syntax:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '| If (and (Condition1, condition2….), True, False) |'
+  id: totrans-76
   prefs: []
   type: TYPE_TB
+  zh: '| 如果（和（条件1，条件2….），真，假） |'
 - en: 'Example:'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: 'If we need to give 10% of his basic salary as incentive to everyone working
     in “Sales” department in the “North” region, we would use the following formula:'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们需要给在“销售”部门工作且在“北部”地区的每个人提供基本工资的10%作为激励，我们将使用以下公式：
 - en: =IF (AND (Department=”sales”, Region=”north”), 10%*Basic Salary, 0)
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: =IF (AND (Department=”sales”, Region=”north”), 10%*基本工资, 0)
 - en: '[IF with OR](contents.xhtml#sc3_41a)'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: '[带有OR的IF](contents.xhtml#sc3_41a)'
 - en: OR is a logical function in Excel, which returns False if any one of the arguments
     returns false.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: OR是Excel中的逻辑函数，如果任何一个参数返回false，则返回False。
 - en: 'Syntax:'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '| OR (logical1, logical2...) |'
+  id: totrans-83
   prefs: []
   type: TYPE_TB
+  zh: '| OR（逻辑1，逻辑2...） |'
 - en: If there is a scenario where we have two conditions of which any one of the
     conditions is false, then the IF should return the value in the false argument,
     we may use OR with IF.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果存在这样的情况，即我们有两个条件，其中任何一个条件为假，则IF应返回假参数中的值，我们可以在IF中使用OR。
 - en: Syntax using OR with If
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用OR与IF的语法
 - en: '| If (OR (Condition1, condition2….), True, False) |'
+  id: totrans-86
   prefs: []
   type: TYPE_TB
+  zh: '| 如果（OR（条件1，条件2….），真，假） |'
 - en: 'Example:'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: If the employee is in Sales, Mktg or Hrd, then HRA is 50% of Basic salary. Otherwise,
     it is 30% of Basic salary.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果员工在销售、市场营销或人力资源部门，则HRA为基本工资的50%。否则，它是基本工资的30%。
 - en: If (or (Department=”Mktg”, Department =”Sales”, Department=”Hrd”), Basic salary*.5,
     Basic salary*.3)
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果（或（Department=”Mktg”，Department =”Sales”，Department=”Hrd”），基本工资*.5，基本工资*.3）
 - en: '[IF with NOT](contents.xhtml#sc3_42a)'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: '[带有NOT的IF](contents.xhtml#sc3_42a)'
 - en: It is a logical function which is used to negate an argument.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是一个用于否定参数的逻辑函数。
 - en: 'Syntax:'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '| NOT (logical) |'
+  id: totrans-93
   prefs: []
   type: TYPE_TB
+  zh: '| NOT（逻辑） |'
 - en: If we have a condition which when not satisfied, we need to apply the formula,
     we may use NOT with IF.
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们有一个条件，当不满足时，我们需要应用公式，我们可以使用NOT与IF。
 - en: Syntax using NOT with If
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用NOT与IF的语法
 - en: '| If (NOT (Condition), True, False) |'
+  id: totrans-96
   prefs: []
   type: TYPE_TB
+  zh: '| 如果（NOT（条件），真，假） |'
 - en: 'Example:'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: 'If we need to give an incentive to everyone except people working in the “Marketing”
     department, we may use the following formula:'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们需要给除了在“市场营销”部门工作的人之外的所有人提供激励，我们可以使用以下公式：
 - en: IF (NOT (Department=”MT”), 10%*salary, 0)
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: IF（NOT（Department=”MT”），10%*工资，0）
 - en: 'Note: There can be maximum 255 conditions which can be passed to AND/OR function
     and we can pass only one condition to NOT.'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：最多可以传递255个条件给AND/OR函数，而NOT函数只能传递一个条件。
 - en: We may also use multiple NOT inside IF.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还可以在IF内部使用多个NOT。
 - en: 'Example:'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: 'If you need to give an incentive to everyone but not to people from the sales
     and admin department, you may use the following function:'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你需要给每个人提供激励，但不包括销售和行政部门的人员，你可以使用以下函数：
 - en: If (and (not (department=”Sales”), not (department=”admin”)), 10%*salary, 0)
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果（并且（不是（部门=”销售”），不是（部门=”行政”）），10%*工资，0）
 - en: '[Lookup functions](contents.xhtml#sc2_43a)'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '[查找函数](contents.xhtml#sc2_43a)'
 - en: 'Sometimes, we need to search for a value in a database based on a lookup value.
     For example, given Employee Id, how can we look up the incentive value from some
     other sheet or some other file? In such scenarios, depending on the source database,
     we may use one of the following lookup functions:'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时，我们需要根据查找值在数据库中搜索数值。例如，给定员工ID，我们如何从其他表或其他文件中查找激励值？在这种情况下，根据源数据库，我们可以使用以下查找函数之一：
 - en: 'V-lookup (If the database is vertical). Refer to [Figure 3.6](#fig3-6):'
+  id: totrans-107
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: V-lookup（如果数据库是垂直的）。参考[图3.6](#fig3-6)：
 - en: '![](images/Figure_3.6.png)'
+  id: totrans-108
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_3.6.png)'
 - en: 'Figure 3.6: V-lookup'
+  id: totrans-109
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 图3.6：V-lookup
 - en: 'H-lookup (If the database is horizontal): Refer to [Figure 3.7](#fig3-7):'
+  id: totrans-110
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: H-lookup（如果数据库是水平的）：参考[图3.7](#fig3-7)：
 - en: '![](images/Figure_3.7.png)'
+  id: totrans-111
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_3.7.png)'
 - en: 'Figure 3.7: H-lookup'
+  id: totrans-112
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 图3.7：H-lookup
 - en: '[V Lookup](contents.xhtml#sc3_44a)'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: '[V Lookup](contents.xhtml#sc3_44a)'
 - en: If we need to get the value of a column from some other file or sheet based
     on a common field, you may use V-lookup. V-lookup is a function that searches
     for a value (lookup value) in the leftmost column of a given database (table array)
     and returns a value in the same row from a column you specify.
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们需要根据一个共同字段从其他文件或表中获取列的值，可以使用V-lookup。V-lookup是一个函数，它在给定数据库（表格数组）的最左列中搜索一个值（查找值），并返回你指定列中相同行的值。
 - en: 'Syntax:'
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '| VLOOKUP (lookup_value, table_array, col_index_num, range_lookup) |'
+  id: totrans-116
   prefs: []
   type: TYPE_TB
+  zh: '| VLOOKUP (lookup_value, table_array, col_index_num, range_lookup) |'
 - en: 'You can write this function by using the built-in-function Arguments dialog-box.
     Click on the Formulas tab and search in the lookup & Reference category for vlookup.
     You will get a function Arguments dialog box, as shown in [Figure 3.8](#fig3-8):'
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以通过使用内置函数参数对话框来编写此函数。单击公式选项卡，在查找和引用类别中搜索vlookup。您将获得一个函数参数对话框，如[图3.8](#fig3-8)所示：
 - en: '![](images/Figure_3.8.png)'
+  id: totrans-118
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.8.png)'
 - en: 'Figure 3.8: V-lookup function argument'
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.8：V-lookup函数参数
 - en: 'The different values to be selected here are as follows:'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里可以选择的不同数值如下：
 - en: 'Lookup_value:  Value to be found in the first column of the table. It is the
     value that you are looking for. Lookup_value can be a value, a reference or a
     text string.'
+  id: totrans-121
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Lookup_value：要在表格的第一列中找到的值。这是你要查找的值。Lookup_value可以是一个值，一个引用或一个文本字符串。
 - en: 'Table_array:  Table of information in which data is looked up. It is the source
     database. Use a reference to a range or a range name.'
+  id: totrans-122
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Table_array：查找数据的信息表。这是源数据库。使用范围引用或范围名称。
 - en: 'Col_index_num:  Column number in table_array from which the matching value
     must be returned.'
+  id: totrans-123
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Col_index_num：从中返回匹配值的table_array中的列号。
 - en: 'Range_lookup: Logical value that specifies whether you want VLOOKUP to find
     an exact match or an approximate match. If Range Lookup is set as FALSE or 0,
     VLOOKUP will find an exact match. If exact match is not found, the error value
     #N/A is returned. If it is set to TRUE or non- zero, it finds the nearest value
     that is less than lookup value.'
+  id: totrans-124
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Range_lookup：逻辑值，指定是否要让VLOOKUP找到精确匹配还是近似匹配。如果Range Lookup设置为FALSE或0，VLOOKUP将找到精确匹配。如果找不到精确匹配，将返回错误值#N/A。如果设置为TRUE或非零，它会找到小于查找值的最近值。
 - en: '[H-lookup](contents.xhtml#sc3_45a)'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '[H-lookup](contents.xhtml#sc3_45a)'
 - en: H-lookup function searches for a value in the top most row of a table, and then
     returns a value in the same column from a row you specify.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: H-lookup函数在表格的最顶行中搜索数值，然后返回你指定行中相同列的数值。
 - en: 'Syntax:'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: '| HLOOKUP (lookup_value, table_array, row_index_num, range_lookup) |'
+  id: totrans-128
   prefs: []
   type: TYPE_TB
+  zh: '| HLOOKUP (lookup_value, table_array, row_index_num, range_lookup) |'
 - en: H-lookup works the same way as V-lookup. However, in this case, we need to specify
     the row index number, instead of the column index number.
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: H-lookup与V-lookup的工作方式相同。但在这种情况下，我们需要指定行索引号，而不是列索引号。
 - en: 'Note: You may also get the function argument box by the following type. Type
     =VLOOPUP (or =HLOOKUP (as the case may be) and press Ctrl + A.'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：你也可以通过以下方式获取函数参数框。输入 =VLOOPUP（或=HLOOKUP（视情况而定）并按Ctrl + A。
 - en: '[Example of Vlookup with Range 0 (False):](contents.xhtml#sc4_46a)'
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: '[带有范围0（False）的Vlookup示例：](contents.xhtml#sc4_46a)'
 - en: 'Suppose you want to add incentive in the Salary Sheet according to the incentive
     table, the range of which is A1:B12 in the Incentive worksheet. Follow the given
     steps:'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设您想根据激励表在工资表中添加激励，激励表的范围在激励工作表中为A1:B12。按照以下步骤操作：
 - en: Select the cell, where you want the result.
+  id: totrans-133
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择要放置结果的单元格。
 - en: Click on Insert function. Select the Vlookup() function from Lookup and Reference
     category.
+  id: totrans-134
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击插入函数。从查找和引用类别中选择Vlookup()函数。
 - en: 'Lookup Value: Select A2 [The Employee code]'
+  id: totrans-135
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 查找值：选择A2 [员工代码]
 - en: 'Table Array: Select the Incentive Sheet and Select the Range from $A$1:$B$12
     [that is, Employee code and incentive Column]'
+  id: totrans-136
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 表数组：选择激励表并从$A$1:$B$12中选择范围[即，员工代码和激励列]
 - en: 'Column Index: Type 2 [Column 2 is the Incentive column in Incentive table]'
+  id: totrans-137
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 列索引：输入2 [列2是激励表中的激励列]
 - en: 'Range Lookup: Type False [we are searching the exact match from the table for
     the lookup value]'
+  id: totrans-138
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 范围查找：输入False [我们正在从表中搜索查找值的精确匹配]
 - en: 'To remove #NA (Not Available Error), you can use the function Iferror. The
     Syntax of iferror is as follows:'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 要消除#NA（不可用错误），您可以使用Iferror函数。iferror的语法如下：
 - en: '| = iferror (vlookup….,"") |'
+  id: totrans-140
   prefs: []
   type: TYPE_TB
+  zh: '| = iferror (vlookup….,"") |'
 - en: '[Example of Vlookup with Range Non-Zero (True)](contents.xhtml#sc4_47a)'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: '[带有非零范围的Vlookup示例（True）](contents.xhtml#sc4_47a)'
 - en: Suppose you want to add incentive based on salary Slab-wise. In this case, instead
     of IF condition, you can use Vlookup with True range. In this scenario, we would
     create a table such as [Table 3.2](#tab3-2). In table array, select this table
     and in the field for range lookup, type “True” instead of “False”.
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设您想根据工资分级添加激励。在这种情况下，您可以使用带有True范围的Vlookup，而不是IF条件。在这种情况下，我们将创建一个表，如[表3.2](#tab3-2)。在表数组中，选择此表，并在范围查找字段中，输入“True”而不是“False”。
 - en: '| 0 | 2% |'
+  id: totrans-143
   prefs: []
   type: TYPE_TB
+  zh: '| 0 | 2% |'
 - en: '| 5000 | 5% |'
+  id: totrans-144
   prefs: []
   type: TYPE_TB
+  zh: '| 5000 | 5% |'
 - en: '| 10000 | 10% |'
+  id: totrans-145
   prefs: []
   type: TYPE_TB
+  zh: '| 10000 | 10% |'
 - en: '| 15000 | 15% |'
+  id: totrans-146
   prefs: []
   type: TYPE_TB
+  zh: '| 15000 | 15% |'
 - en: 'Table 3.2: Sample example table'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 表3.2：示例表
 - en: 'Note: The table in this case would be sorted in ascending order of first column.'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：在这种情况下，表将按照第一列升序排序。
 - en: 'Example:'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: 'In the Advanced Excel Assignment file, emp_inf sheet, we need to retrieve information
     of the employee based on his employee id. To do this, we may use vlookup, as shown
     in the following [Figure 3.9](#fig3-9):'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 在高级Excel作业文件中，emp_inf表，我们需要根据员工ID检索员工信息。为此，我们可以使用vlookup，如下所示[图3.9](#fig3-9)：
 - en: '![](images/Figure_3.9.png)'
+  id: totrans-151
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.9.png)'
 - en: 'Figure 3.9: Example of Vlookup with Range Non-Zero'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.9：带有非零范围的Vlookup示例
 - en: To find other details, you may use the same formula and change the column index
     number accordingly.
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 要查找其他详细信息，您可以使用相同的公式，并相应更改列索引号。
 - en: '[Making V-Lookup Dynamic](contents.xhtml#sc2_48a)'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使V-Lookup动态化](contents.xhtml#sc2_48a)'
 - en: 'When we have a dynamic database, where a new column gets added to the database
     frequently, position of the current columns may also change. However, column index
     number of Vlookup does not update automatically with the growing database. This
     is where we would need to make VLookup Dynamically, in order to pick up the column
     index number. To do this, we may use one of the following functions to retrieve
     the column index number dynamically:'
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 当我们有一个动态数据库，其中新列经常添加到数据库中时，当前列的位置也可能会改变。然而，Vlookup的列索引号不会随着数据库的增长而自动更新。这就是我们需要使VLookup动态化的地方，以便获取列索引号。为此，我们可以使用以下函数之一动态检索列索引号：
 - en: Column
+  id: totrans-156
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 列
 - en: Match
+  id: totrans-157
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 匹配
 - en: '[Using Column function in Vlookup](contents.xhtml#sc3_49a)'
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: '[在Vlookup中使用列函数](contents.xhtml#sc3_49a)'
 - en: 'To make Vlookup dynamic, we can use the column header as an indicator that
     would dynamically pick up the index number of the particular column in which the
     required value exists. The syntax of using the column functions in vlookup is:'
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使Vlookup动态化，我们可以使用列标题作为指示器，动态地选择所需值存在的特定列的索引号。在vlookup中使用列函数的语法是：
 - en: '| = vlookup (lookup_value, table_array, COLUMN (reference), Range_lookup) |'
+  id: totrans-160
   prefs: []
   type: TYPE_TB
+  zh: '| = vlookup (lookup_value, table_array, COLUMN (reference), Range_lookup) |'
 - en: Here, Reference parameter of column function would contain the cell reference
     of the column header from the original database.
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，列函数的参考参数将包含原始数据库中列标题的单元格引用。
 - en: 'Example:'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: '示例:'
 - en: 'In the preceding example of vlookup, if we need to find the column index number
     dynamically, we may use column function, as shown in the following [Figure 3.10](#fig3-10):'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上述vlookup示例中，如果我们需要动态查找列索引号，我们可以使用列函数，如下所示[图3.10](#fig3-10)：
 - en: '![](images/Figure_3.10.png)'
+  id: totrans-164
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.10.png)'
 - en: 'Figure 3.10: Using Column Function in Vlookup'
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.10：在Vlookup中使用列函数
 - en: B1 is the reference to the column header of the First Name column in the ‘Salary’
     worksheet.
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: B1是“工资”工作表中“名字”列的列标题的引用。
 - en: '[Using Match function in V-Lookup](contents.xhtml#sc3_50a)'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: '[在V-Lookup中使用Match函数](contents.xhtml#sc3_50a)'
 - en: As we saw in the preceding case, we require access to the original database
     or at least an idea as to the current position of the column. However, this information
     would not always be there for us. So, here we need to use a function that can
     retrieve the position of the column header just by the name.
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们在前面的案例中看到的，我们需要访问原始数据库或至少知道列的当前位置。然而，这些信息并不总是为我们所拥有。因此，在这里，我们需要使用一个可以通过名称仅检索列标题位置的函数。
 - en: A Match function does just the same. Match function returns the position of
     a string in a range.
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: Match函数也是一样。Match函数返回范围内字符串的位置。
 - en: 'Syntax of match function is as follows:'
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: match函数的语法如下：
 - en: '| MATCH (lookup_value, lookup_array, [match_type]) |'
+  id: totrans-171
   prefs: []
   type: TYPE_TB
+  zh: '| 匹配（查找值，查找数组，[匹配类型]） |'
 - en: 'The various options to be chosen are:'
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 可选择的各种选项是：
 - en: 'Lookup_Value:  It is the string that we are looking up for. It may be a string,
     for example, “Salary” or a cell reference where the string is stored.'
+  id: totrans-173
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找值：我们正在查找的字符串。它可以是一个字符串，例如“工资”，或存储字符串的单元格引用。
 - en: 'Lookup_Array:  It is the range from which we need to know the position of Lookup_value.'
+  id: totrans-174
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查找数组：我们需要知道查找值位置的范围。
 - en: 'Match_Type:  It is an optional parameter that is used to specify the type of
     match we require 0: Exact match, 1: Less than, -1: Greater Than.'
+  id: totrans-175
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 匹配类型：这是一个可选参数，用于指定我们需要的匹配类型0：精确匹配，1：小于，-1：大于。
 - en: 'Example:'
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: If we need to find out the position of the string “salary” in the first row
     of the salary sheet, we would write,
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果我们需要找出“salary”字符串在工资表第一行中的位置，我们会写，
 - en: '| =match ("salary", salary! $1:$1, 0) |'
+  id: totrans-178
   prefs: []
   type: TYPE_TB
+  zh: '| =match("salary", salary!$1:$1, 0) |'
 - en: We may use the match function instead of column Index number to get the column
     index number dynamically.
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以使用match函数而不是列索引号来动态获取列索引号。
 - en: 'The syntax of using match function in vlookup is:'
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: 在vlookup中使用match函数的语法是：
 - en: '| =vlookup (lookup_value, table_array, match (label, firstrow of source- database,
     0), Range_lookup) |'
+  id: totrans-181
   prefs: []
   type: TYPE_TB
+  zh: '| =vlookup(lookup_value, table_array, match(label,源数据库的第一行标签,0), Range_lookup)
+    |'
 - en: 'Example:'
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: 'In the emp_inf example, if we need to make the vlookup more dynamic using the
     column headers, we may use match with vlookup, as shown in [Figure 3.11](#fig3-11).
     Here, the match looks for the labels on each field in the header of salary database
     and returns the position of the column dynamically:'
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 在emp_inf示例中，如果我们需要使用列标题使vlookup更加动态，我们可以使用match与vlookup，如[图3.11](#fig3-11)所示。在这里，match查找工资数据库标题中每个字段的标签，并动态返回列的位置：
 - en: '![](images/Figure_3.11.png)'
+  id: totrans-184
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.11.png)'
 - en: 'Figure 3.11: Match function in vlookup'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.11：vlookup中的match函数
 - en: '[Index](contents.xhtml#sc2_51a)'
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: '[索引](contents.xhtml#sc2_51a)'
 - en: Sometimes, we need to lookup for a data in the database, based on its row number
     and column number. Index function helps us do this.
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时，我们需要根据其行号和列号在数据库中查找数据。索引函数帮助我们做到这一点。
 - en: 'Syntax of index function is as follows:'
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 索引函数的语法如下：
 - en: '| INDEX (array, row_number, [column_number]) |'
+  id: totrans-189
   prefs: []
   type: TYPE_TB
+  zh: '| 索引（数组，行号，[列号]） |'
 - en: As you can see there are two ways in which you can use the Index function. The
     first syntax is used to look for data in a single database and the second syntax
     is used when more than one database is involved.
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如您所看到的，您可以使用索引函数的两种方式。第一种语法用于在单个数据库中查找数据，第二种语法用于涉及多个数据库时使用。
 - en: 'Example:'
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例：
 - en: 'Suppose we need to find the data at the intersection of row number 3 and column
     number 4 of a database. In that case, we may use the following function:'
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设我们需要在数据库的第3行和第4列的交叉点找到数据。在这种情况下，我们可以使用以下函数：
 - en: '| =index (database, 3, 4) |'
+  id: totrans-193
   prefs: []
   type: TYPE_TB
+  zh: '| =index(database, 3, 4) |'
 - en: '[Index-Match](contents.xhtml#sc3_52a)'
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: '[索引-匹配](contents.xhtml#sc3_52a)'
 - en: As we studied before, vlookup looks for the data on the basis of values in the
     first column of the database. However, if we have a database where our lookup
     value is in the middle and we need to search towards the left, we have to move
     the column to the left most corner before we use vlookup. Index function when
     used along with match helps us search for the data even if the lookup value is
     not present on the left-most column.
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如我们之前学过的，vlookup是根据数据库第一列的值来查找数据。然而，如果我们有一个数据库，其中我们的查找值在中间，我们需要向左搜索，我们必须将列移动到最左上角，然后再使用vlookup。当与match一起使用时，索引函数帮助我们搜索数据，即使查找值不在最左列上。
 - en: 'The syntax for index-match is as follows:'
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: index-match的语法如下：
 - en: '| INDEX (array, [MATCH (lookup_value, lookup_array, [match_type])], [Match
     (lookup_value, lookup_array, [match_type])]) |'
+  id: totrans-197
   prefs: []
   type: TYPE_TB
+  zh: '| INDEX (数组, [MATCH (查找值, 查找数组, [匹配类型])], [Match (查找值, 查找数组, [匹配类型])]) |'
 - en: Here, you may use match function for row number or column number or both.
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，您可以使用匹配函数来获取行号或列号或两者都使用。
 - en: 'Example:'
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 例子：
 - en: 'Suppose, from the data given in the following [Figure 3.12](#fig3-12), we need
     to find the total sales, given year and quarter. We may then use the function:'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设，从以下[图3.12](#fig3-12)中给出的数据中，我们需要找到总销售额，给定年份和季度。然后我们可以使用以下函数：
 - en: '| =INDEX (database, MATCH (qtr 3, column header, 0), MATCH (year, years column,
     0)) |'
+  id: totrans-201
   prefs: []
   type: TYPE_TB
+  zh: '| =INDEX (数据库, MATCH (qtr 3, 列标题, 0), MATCH (year, 年份列, 0)) |'
 - en: '![](images/Figure_3.12.png)'
+  id: totrans-202
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.12.png)'
 - en: 'Figure 3.12: Index-match function'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.12：Index-match函数
 - en: 'In the following [Figure 3.13](#fig3-13), empcode is the third column. Here
     if we need to find out the DA or Salary Based on the empcode, we normally copy
     and paste the column towards the left and use vlookup. Instead, we may use index
     match as given in [Figure 3.13](#fig3-13):'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 在以下[图3.13](#fig3-13)中，empcode是第三列。如果我们需要根据empcode找出DA或工资，通常会复制并粘贴列到左侧并使用vlookup。相反，我们可以使用如[图3.13](#fig3-13)中所示的index
+    match：
 - en: '![](images/Figure_3.13.png)'
+  id: totrans-205
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_3.13.png)'
 - en: 'Figure 3.13: To find out the DA or Salary Based on the empcode by using Index
     match'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.13：通过使用Index match根据empcode找出DA或工资
 - en: '[Conclusion](contents.xhtml#sc2_53a)'
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_53a)'
 - en: In conclusion, the use of formulas and functions in Microsoft Excel is essential
     for performing calculations, data analysis, and automating tasks. Formulas allow
     users to combine values, cell references, and operators to perform mathematical
@@ -789,48 +1211,70 @@
     utilizing formulas and functions effectively, users can save time, minimize errors,
     and perform complex data analysis in Excel. Understanding and mastering these
     tools is crucial for anyone working with data and spreadsheets in Excel.
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，在Microsoft Excel中使用公式和函数对于进行计算、数据分析和自动化任务至关重要。公式允许用户结合数值、单元格引用和运算符进行数学计算，而函数提供了常见任务的预定义公式。通过有效利用公式和函数，用户可以节省时间，减少错误，并在Excel中进行复杂的数据分析。理解和掌握这些工具对于任何在Excel中处理数据和电子表格的人都至关重要。
 - en: '[Exercise](contents.xhtml#sc2_54a)'
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习](contents.xhtml#sc2_54a)'
 - en: 'Make a copy of the Salary worksheet from advanced Excel assignment workbook.
     Calculate the following incentive schemes:'
+  id: totrans-210
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从高级Excel作业工作簿中复制工资工作表。计算以下激励方案：
 - en: 'Incentive 1: Everyone working in “Sales” department gets 10% of their salary
     as incentive all others gets 0'
+  id: totrans-211
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 激励1：所有在“销售”部门工作的人员将获得其工资的10%作为激励，其他人将获得0
 - en: 'Incentive 2: Everyone working in “sales” or “marketing” department gets 5%
     of their salary as incentive all others gets 2%.'
+  id: totrans-212
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 激励2：所有在“销售”或“营销”部门工作的人员将获得其工资的5%作为激励，其他人将获得2%。
 - en: Calculate the incentive scheme in Q.1 c using V-lookup column.
+  id: totrans-213
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用V-lookup列计算Q.1 c中的激励方案。
 - en: Make a column “Reporting Manager” after Salary column and deploy the employee
     code of the managers to the employees according to their employee numbers as follows
     using V-Lookup.
+  id: totrans-214
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在工资列之后制作一个“汇报经理”列，并根据员工编号将经理的员工代码部署给员工，如下所示使用V-Lookup。
 - en: Join our book’s Discord space
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入我们书籍的Discord空间
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入书籍的Discord Workspace，获取最新更新、优惠、全球技术动态、新发布和与作者的交流：
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
 - en: '![](images/fm1.png)'
+  id: totrans-218
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/fm1.png)'

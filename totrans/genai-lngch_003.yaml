@@ -1,17 +1,25 @@
 - en: 2 Introduction to LangChain
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 2 介绍 LangChain
 - en: Join our book community on Discord
+  id: totrans-1
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 在 Discord 上加入我们的书籍社区
 - en: '[https://packt.link/EarlyAccessCommunity](https://packt.link/EarlyAccessCommunity)'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: '[https://packt.link/EarlyAccessCommunity](https://packt.link/EarlyAccessCommunity)'
 - en: '![Qr code Description automatically generated](../media/file8.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![二维码描述自动生成](../media/file8.png)'
 - en: 'In this chapter, we discuss limitations of LLMs, and how combining LLMs with
     tools can overcome these challenges thereby building innovative language-based
     applications. There are a few powerful frameworks that empowers developers by
@@ -33,31 +41,45 @@
     to the framework such as agents, chains, action plan generation and memory. All
     these concepts are important to understand the how LangChain works.The main sections
     are:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们讨论了LLMs的限制，以及如何将LLMs与工具结合起来以克服这些挑战，从而构建创新的基于语言的应用程序。有一些强大的框架为开发人员提供了强大的工具，用于快速工程、链接、数据检索等。无论您是开发人员、数据科学家还是对自然语言处理（NLP）或生成式人工智能的技术进步感兴趣，您都应该了解这些框架中最强大和流行的LangChain。LangChain解决了与使用LLMs相关的痛点，并提供了一个直观的框架来创建定制的NLP解决方案。在LangChain中，像LLMs、互联网搜索和数据库查找这样的组件可以链接在一起，这意味着根据数据或任务的要求按顺序执行不同的任务。通过利用其功能，开发人员可以构建动态和数据感知的应用程序，利用我们在第1章讨论的最新技术突破。我们将列举一些用例，以说明该框架如何帮助不同领域的企业和组织。LangChain对代理和内存的支持使得可以构建比仅通过API调用语言模型更强大和灵活的各种应用程序。我们将讨论与框架相关的重要概念，如代理、链、行动计划生成和内存。理解这些概念对于了解LangChain的工作原理至关重要。主要部分包括：
 - en: What are the limitations of LLMs?
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: LLMs 的限制是什么？
 - en: What is an LLM app?
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 什么是 LLM 应用程序？
 - en: What is LangChain?
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 什么是 LangChain？
 - en: How does LangChain work?
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: LangChain 如何工作？
 - en: We'll start off the chapter by going over the limitations of LLMs.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将从介绍LLMs的限制开始本章。
 - en: What are the limitations of LLMs?
+  id: totrans-10
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: LLMs 的限制是什么？
 - en: '**Large language models** (**LLMs**) have gained significant attention and
     popularity due to their ability to generate human-like text and understand natural
     language, which makes them useful in scenarios that revolve around content generation,
@@ -65,47 +87,61 @@
     they suffer from limitations that can hinder their effectiveness in certain scenarios.
     Understanding these limitations is crucial when developing applications. Some
     pain points associated with large language models include:'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: '**大型语言模型**（**LLMs**）因其生成类似人类文本和理解自然语言的能力而受到广泛关注和流行，这使它们在围绕内容生成、文本分类和摘要的场景中非常有用。虽然**LLMs**提供了令人印象深刻的功能，但它们存在一些限制，可能会影响其在某些场景中的有效性。了解这些限制在开发应用程序时至关重要。与大型语言模型相关的一些痛点包括：'
 - en: '**Outdated Knowledge**: **LLMs** are unable to provide real-time or recent
     data as they rely solely on the training data provided to them.'
+  id: totrans-12
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**过时的知识**：**LLMs**无法提供实时或最新数据，因为它们完全依赖于提供给它们的训练数据。'
 - en: '**Inability to act**: **LLMs** cannot perform actions or interact with external
     systems, limiting their functionality. For example, they cannot initiate web searches,
     query databases in real-time, or use a calculator for multiplying numbers.'
+  id: totrans-13
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**无法执行操作**：**LLMs**无法执行操作或与外部系统交互，限制了其功能。例如，它们无法启动网络搜索、实时查询数据库或使用计算器进行数字乘法。'
 - en: '**Lack of context and additional information**: **LLMs** may struggle to understand
     and incorporate context from previous prompts or conversations. They may not remember
     previously mentioned details or fail to provide additional relevant information
     beyond the given prompt.'
+  id: totrans-14
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**缺乏上下文和额外信息**：**LLMs**可能难以理解和整合来自先前提示或对话的上下文。它们可能不记得先前提到的细节或未能提供除给定提示之外的额外相关信息。'
 - en: '**Complexity and Learning Curve**: Developing applications using large language
     models often requires a deep understanding of AI concepts, complex algorithms,
     and APIs. This can pose a challenge for developers who may not have expertise
     in these areas.'
+  id: totrans-15
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**复杂性和学习曲线**：使用大型语言模型开发应用程序通常需要对人工智能概念、复杂算法和API有深入的理解。这可能对那些在这些领域没有专业知识的开发人员构成挑战。'
 - en: '**Hallucinations**: **LLMs** have a lot of general knowledge about the world
     implicit in their weights. However, they may have an insufficient understanding
     about certain subjects, and generate responses that are not factually correct
     or coherent. For example, they might produce information that does not exist or
     provide inaccurate details.'
+  id: totrans-16
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**幻觉**：**LLMs**在它们的权重中隐含了对世界的许多常识。然而，它们可能对某些主题了解不足，并生成不准确或不连贯的回应。例如，它们可能产生不存在的信息或提供不准确的细节。'
 - en: '**Bias and Discrimination**: Depending on the data they were trained on, LLMs
     can exhibit biases, which can be of religious, ideological, political, and other
     nature.'
+  id: totrans-17
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '**偏见和歧视**：根据它们训练的数据，大型语言模型可能表现出宗教、意识形态、政治等方面的偏见。'
 - en: 'LLMs don''t have information on current events because they don''t have a connection
     to the outside world and they wouldn''t know about anything that they weren''t
     trained on, such as anything after the cutoff date, which is when the training
@@ -114,25 +150,38 @@
     actions or interact with external systems directly, they wouldn''t know the weather,
     don''t have access to your documents.This cutoff day issue is illustrated here
     in the OpenAI ChatGPT chat interface asking about **LangChain**:'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: LLMs没有关于当前事件的信息，因为它们与外部世界没有连接，也不会知道它们没有接受过训练的任何事情，比如截止日期之后的任何事情，即训练数据生成的时间。更重要的是，它们在超出训练数据限制的上下文理解方面遇到困难。例如，由于模型无法执行操作或直接与外部系统交互，它们不会知道天气，也无法访问您的文档。这个截止日期问题在OpenAI
+    ChatGPT聊天界面中询问**LangChain**时得到了说明：
 - en: '![Figure 1.1: ChatGPT - lack of up-to-date information.](../media/file9.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.1：ChatGPT - 缺乏最新信息。](../media/file9.png)'
 - en: 'Figure 1.1: ChatGPT - lack of up-to-date information.'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.1：ChatGPT - 缺乏最新信息。
 - en: 'In this case, the model was able to correctly catch the problem and give the
     correct feedback. However, if we ask the same question in the **GPT-3** playground,
     we''ll get this response:'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，模型能够正确地捕捉问题并给出正确的反馈。然而，如果我们在**GPT-3**游乐场问同样的问题，我们会得到这样的回答：
 - en: '![Figure 1.2: OpenAI playground with GPT 3.5 - Hallucination.](../media/file10.png)'
+  id: totrans-22
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.2：带有GPT 3.5的OpenAI游乐场 - 幻觉。](../media/file10.png)'
 - en: 'Figure 1.2: OpenAI playground with GPT 3.5 - Hallucination.'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.2：带有GPT 3.5的OpenAI游乐场 - 幻觉。
 - en: 'In this case, we can see that the model makes up the term and invents a decentralized
     platform by the name. This is a hallucination. It''s important to watch out for
     these problems.This problem can be remedied by accessing external data, such as
@@ -143,25 +192,37 @@
     **LLMs** perform poorly at high-school level math, and can''t perform simple math
     operations that they haven''t seen before.Again, we can illustrate this with a
     simple demonstration:'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，我们可以看到模型虚构了这个术语，并发明了一个名为去中心化平台。这是一种幻觉。需要注意这些问题。这个问题可以通过访问外部数据来解决，比如天气API、用户偏好或来自网络的相关信息，这对于创建个性化和准确的语言驱动应用程序至关重要。**LLMs**擅长生成文本，但缺乏真正的理解和推理能力。然而，它们可能在逻辑推理方面遇到困难。例如，即使是高级的**LLMs**在高中水平的数学方面表现不佳，无法执行它们之前没有见过的简单数学运算。我们可以通过一个简单的演示来说明这一点：
 - en: '![Figure 1.3: ChatGPT math solving.](../media/file11.png)'
+  id: totrans-25
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.3：ChatGPT数学求解。](../media/file11.png)'
 - en: 'Figure 1.3: ChatGPT math solving.'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.3：ChatGPT数学求解。
 - en: 'So, the model comes up with the correct response for the first question, but
     fails with the second. Just in case if you were wondering what the true result
     is - if we use a calculator we get this:'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，该模型对第一个问题提出了正确的回答，但在第二个问题上失败了。以防你想知道真正的结果是什么 - 如果我们使用计算器，我们会得到这个结果：
 - en: '![Figure 1.4: Multiplication with a Calculator (BC).](../media/file12.png)'
+  id: totrans-28
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.4：使用计算器进行乘法（BC）。](../media/file12.png)'
 - en: 'Figure 1.4: Multiplication with a Calculator (BC).'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.4：使用计算器进行乘法（BC）。
 - en: The LLM hasn't stored the result of the calculation of hasn't encountered it
     often enough in the training data for it to be reliably remembered as in encoded
     in its weights. Therefore, it fails to correctly come up with the solution. A
@@ -181,12 +242,17 @@
     directly can be challenging and time-consuming. This starts with the prompt engineering,
     but extends much further. The inherent challenge lies in navigating these sophisticated
     models, providing prompts that work, and parsing their output.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: LLM没有存储计算结果或者在训练数据中遇到足够多次以便可靠地记住它作为其权重中的编码。因此，它未能正确提出解决方案。在这种情况下，基于Transformer的LLM不是合适的工具。在部署应用程序之前，**LLMs**的输出可能需要监控和校正以确保准确性和偏见以及不当语言。在领域如客户服务、教育和营销中部署应用程序之前，需要监控和校正**LLMs**的输出以确保准确性和偏见。在Chatbot中找到偏见的例子并不难
+    - 只需回想一下Tay Chatbot，因为其中包含种族歧视和其他仇外言论而成为微软的公关灾难。为了解决所有这些问题，**LLMs**需要与外部数据源、内存和能力集成，以便根据提供的数据与其环境动态交互并做出适当的响应。然而，将大型语言模型与不同的数据源和计算连接起来可能会很棘手，需要开发和仔细测试特定的定制工具。因此，使用生成式AI构建数据响应型应用程序可能会很复杂，可能需要大量编码和数据处理。最后，直接使用**LLM**模型可能具有挑战性且耗时。这从提示工程开始，但延伸得更远。困难在于导航这些复杂的模型，提供有效的提示，并解析它们的输出。
 - en: What's an LLM app?
+  id: totrans-31
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 什么是LLM应用？
 - en: To address the aforementioned challenges and limitations, **LLMs** can be combined
     with calls to other programs or services. The main idea is that the ability of
     LLMs can be augmented through the use of tools by connecting them together. Combining
@@ -195,59 +261,79 @@
     done via a chain of one or multiple prompted calls to **LLMs**, but can also make
     use of other external services (such as APIs or data sources) in order to achieve
     particular tasks.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了解决上述挑战和限制，**LLMs**可以与其他程序或服务的调用结合使用。主要思想是通过连接工具来增强LLMs的能力。将**LLMs**与其他工具结合到使用专门工具的应用程序中，**LLM**驱动的应用程序有潜力改变我们的数字世界。通常通过一条或多条提示调用**LLMs**的链来完成这一点，但也可以利用其他外部服务（如API或数据源）来完成特定任务。
 - en: An **LLM app** is an application that uses large language models (LLMs) like
     ChatGPT to assist with various tasks. It operates by sending prompts to the language
     models to generate responses, and it can also integrate with other external services,
     like APIs or data sources, to accomplish specific goals.
+  id: totrans-33
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 一个**LLM应用**是一种使用大型语言模型（LLMs）如ChatGPT来辅助各种任务的应用程序。它通过向语言模型发送提示来生成响应，并且还可以与其他外部服务（如API或数据源）集成，以实现特定目标。
 - en: 'In order to illustrate how an **LLM** app can look like, here''s a very simple
     **LLM** app that includes a prompt and an **LLM** (source: [https://github.com/srush/MiniChain](https://github.com/srush/MiniChain)):'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '为了说明一个**LLM**应用程序可能是什么样子，这里有一个非常简单的**LLM**应用程序，包括一个提示和一个**LLM**（来源：[https://github.com/srush/MiniChain](https://github.com/srush/MiniChain)）:'
 - en: '![Figure 1.5: A simple LLM app that combines a prompt with an LLM.](../media/file13.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.5：一个简单的LLM应用，将提示与LLM结合在一起。](../media/file13.png)'
 - en: 'Figure 1.5: A simple LLM app that combines a prompt with an LLM.'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.5：一个简单的LLM应用，将提示与LLM结合在一起。
 - en: '**LLM** apps have significant potential for humans as they enhance our capabilities,
     streamline processes, and provide valuable assistance in various domains. Here
     are some key reasons why **LLM** apps are important:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: '**LLM**应用对人类有着重要潜力，因为它们增强了我们的能力，简化了流程，并在各个领域提供了有价值的帮助。以下是**LLM**应用重要的几个原因：'
 - en: '**Efficiency and Productivity**: **LLM** apps automate tasks, enabling faster
     and more accurate completion of repetitive or complex operations. They can handle
     data processing, analysis, pattern recognition, and decision-making with speed
     and accuracy that surpasses human capacity. This improves efficiency and productivity
     in areas such as data analysis, customer service, content generation, and more.'
+  id: totrans-38
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**效率和生产力**：**LLM**应用自动化任务，实现重复或复杂操作更快、更准确地完成。它们可以处理数据处理、分析、模式识别和决策，速度和准确性超过人类能力。这提高了数据分析、客户服务、内容生成等领域的效率和生产力。'
 - en: '**Task Simplification**: **LLM** apps simplify complex tasks by breaking them
     down into manageable steps or providing intuitive interfaces for users to interact
     with. These tools can automate complex workflows, making them accessible to a
     wider range of users without specialized expertise.'
+  id: totrans-39
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**任务简化**：**LLM**应用通过将复杂任务分解为可管理的步骤或为用户提供直观界面来简化复杂任务。这些工具可以自动化复杂工作流程，使其对更广泛范围的用户可访问，而无需专业知识。'
 - en: '**Enhanced Decision-Making**: **LLM** apps offer advanced analytics capabilities
     that enable data-driven decision-making. They can analyze large volumes of information
     quickly, identify trends or patterns that may not be apparent to humans alone,
     and provide valuable insights for strategic planning or problem-solving.'
+  id: totrans-40
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**增强决策能力**：**LLM**应用提供先进的分析能力，实现数据驱动的决策。它们可以快速分析大量信息，识别人类无法察觉的趋势或模式，并为战略规划或问题解决提供有价值的见解。'
 - en: '**Personalization**: AI-powered recommendation systems personalize user experiences
     based on individual preferences and behavior patterns. These apps consider user
     data to provide tailored suggestions, recommendations, and personalized content
     across various domains like e-commerce, entertainment, and online platforms.'
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**个性化**：基于个人偏好和行为模式，AI驱动的推荐系统个性化用户体验。这些应用考虑用户数据，提供定制建议、推荐和个性化内容，涵盖电子商务、娱乐和在线平台等各个领域。'
 - en: A particular area of growth is the usage of company data, especially customer
     data, with **LLMs**. However, we have to be careful and consider implications
     for privacy and data protection. We should never feed **personally identifiable**
@@ -256,12 +342,16 @@
     and even training specialized models provide important improvements. This is what
     we'll talk about in chapter 9, *LLM Apps in Production*.Let's compare a few frameworks
     that can help to build **LLM** apps.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 公司数据，尤其是客户数据，与**LLMs**的使用是增长的一个特定领域。然而，我们必须谨慎考虑隐私和数据保护的影响。我们绝不能将**个人可识别**（**PII**）数据输入公共API端点。对于这些用例，部署模型在内部基础设施或私有云中至关重要，细化甚至训练专门模型提供重要改进。这就是我们将在第9章*LLM应用在生产中*中讨论的内容。让我们比较一些可以帮助构建**LLM**应用的框架。
 - en: Framework Comparison
+  id: totrans-43
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 框架比较
 - en: '**LLM** application frameworks have been developed to provide specialized tooling
     that can harness the power of **LLMs** effectively to solve complex problems.
     A few libraries have emerged meeting the requirements of effectively combining
@@ -269,16 +359,22 @@
     several open-source frameworks for **building** dynamic **LLM** applications.
     They all offer value in developing cutting-edge LLM applications. This graph shows
     their popularity over time (data source: github star history; [https://star-history.com/](https://star-history.com/)):'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: '**LLM**应用框架已经发展出来，提供专门的工具，可以有效利用**LLMs**的力量来解决复杂问题。一些库已经出现，满足有效结合生成式AI模型和其他工具构建**LLM**应用的要求。有几个开源框架可用于**构建**动态**LLM**应用。它们在开发尖端LLM应用方面提供价值。这张图显示它们随时间的流行度（数据来源：github星标历史；[https://star-history.com/](https://star-history.com/)）：'
 - en: '![Figure 1.6: Comparison of popularity between different framework in Python.
     We can see the number of stars on github over time for each project.](../media/file14.png)'
+  id: totrans-45
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.6：Python中不同框架受欢迎程度的比较。我们可以看到每个项目随时间在github上的星星数量。](../media/file14.png)'
 - en: 'Figure 1.6: Comparison of popularity between different framework in Python.
     We can see the number of stars on github over time for each project.'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.6：Python中不同框架受欢迎程度的比较。我们可以看到每个项目随时间在github上的星星数量。
 - en: We can see in the chart that Haystack is the oldest of the compared frameworks
     having been started early 2020 (as per github commits). It is also the least popular
     in terms of stars on github. Langchain, **LlamaIndex** (previously called GPTIndex),
@@ -303,12 +399,16 @@
     for example Promptify. There are other LLM app frameworks in languages such as
     Rust, Javascript, Ruby, and Java. For example, Dust, written in Rust, focuses
     on the design of LLM Apps and their deployment.Let's look a bit more at **LangChain**.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以从图表中看到，Haystack是比较的框架中最古老的，始于2020年初（根据github提交记录）。在github上，它也是最不受欢迎的。Langchain，**LlamaIndex**（之前称为GPTIndex），以及**SuperAGI**在2022年末或2023年初开始，它们都在很短的时间内迅速走红，其中**LangChain**增长最为显著。在本书中，我们将看到为什么它的受欢迎程度正在迅速增长。**LlamaIndex**专注于高级检索，而不是**LLM**应用的更广泛方面。同样，Haystack专注于创建大规模搜索系统，其组件专门设计用于可扩展信息检索，使用检索器、阅读器和其他数据处理程序结合通过预训练模型进行语义索引。**LangChain**擅长使用代理将**LLMs**链接在一起，用于将动作委托给模型。其用例强调及时优化和上下文感知信息检索/生成，但是由于其Python式高度模块化界面和庞大的工具集，它是实现复杂业务逻辑的头号工具。**SuperAGI**具有与**LangChain**类似的功能。它甚至配备了一个市场，一个工具和代理的存储库。然而，它不像**LangChain**那样广泛和得到良好支持。我没有包括**AutoGPT**（以及类似的工具如**AutoLlama**），这是一个递归应用，用于分解任务，因为它的推理能力，基于人类和LLM反馈，与**LangChain**相比非常有限。因此，它经常陷入逻辑循环，并经常重复步骤。我还省略了一些专注于提示工程的库，例如Promptify。还有其他语言中的LLM应用框架，如Rust、Javascript、Ruby和Java。例如，用Rust编写的Dust专注于LLM应用的设计和部署。让我们更深入地了解一下**LangChain**。
 - en: What is LangChain?
+  id: totrans-48
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 什么是LangChain？
 - en: LangChain is a framework for developing applications powered by language models
     and enables users to build applications using **LLMs** more effectively. It provides
     a standard interface for connecting language models to other sources of data,
@@ -319,13 +419,20 @@
     or - more precisely - Typescript (LangChain.js), and the fledgling Langchain.rb
     project for Ruby, which comes with a Ruby interpretor for code execution. In this
     book, we focus on the Python flavor of the framework.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain 是一个基于语言模型的应用程序开发框架，使用户能够更有效地使用**LLMs**构建应用程序。它为连接语言模型到其他数据源提供了标准接口，同时也为构建可以与环境交互的代理提供了支持。LangChain
+    被设计为模块化和可扩展的，使得构建适用于各种领域的复杂应用程序变得容易。LangChain 是开源的，使用 Python 编写，尽管还存在使用 JavaScript
+    或者更准确地说是 Typescript（LangChain.js）实现的伴随项目，以及为 Ruby 提供了 Ruby 解释器用于代码执行的新兴项目 Langchain.rb。在本书中，我们专注于该框架的
+    Python 版本。
 - en: '**LangChain** is an open-source framework that allows AI developers to combine
     LLMs like ChatGPT with other sources of computation and information.'
+  id: totrans-50
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**LangChain** 是一个开源框架，允许 AI 开发人员将像 ChatGPT 这样的 LLMs 与其他计算和信息源结合在一起。'
 - en: 'Started in October 2022 by Harrison Chase as an open-source project on github,
     it is licensed under the MIT license, a common license, which allows commercial
     use, modification, distribution, and private use, however, restricts liability
@@ -341,14 +448,24 @@
     around it. As mentioned, it has an immense number of integrations already, with
     many new ones every week. This screenshot showcases a few of the integrations
     (source: `integrations.langchain.com/trending`):'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain 由 Harrison Chase 于 2022 年 10 月作为一个开源项目在 github 上启动，采用 MIT 许可证，这是一种常见的许可证，允许商业使用、修改、分发和私人使用，但限制了责任和保证。LangChain
+    目前仍然很新，但已经拥有数百个集成和工具。在 discord 聊天服务器上有活跃的讨论，有博客，并且定期在旧金山和伦敦举行聚会。甚至有一个名为 ChatLangChain
+    的聊天机器人，可以回答关于 LangChain 文档的问题，该机器人是使用 LangChain 和 FastAPI 构建的，并且可以通过文档网站在线访问！该项目已经吸引了
+    Sequoia Capital 和 Benchmark 等公司的数百万美元的风险投资，这些公司曾为苹果、思科、谷歌、WeWork、Dropbox 等许多成功公司提供资金。LangChain
+    配备了许多扩展和正在围绕它发展的更大生态系统。正如前面提到的，它已经拥有大量的集成，每周还会有许多新的集成。这个截图展示了一些集成（来源：`integrations.langchain.com/trending`）：
 - en: '![Figure 1.7: LangChain integrations.](../media/file15.png)'
+  id: totrans-52
   prefs: []
   type: TYPE_IMG
+  zh: '![图 1.7：LangChain 集成。](../media/file15.png)'
 - en: 'Figure 1.7: LangChain integrations.'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 1.7：LangChain 集成。
 - en: 'For example, LangChainHub is a repository of artifacts that are useful for
     working with **LangChain** such as prompts, chains and agents, which combine together
     to form complex LLM applications. Taking inspiration from HuggingFace Hub, which
@@ -364,14 +481,23 @@
     pipeline. This is a quick way to experiment and prototype pipelines.This is illustrated
     in the following screenshot of a basic chat pipeline with a prompt template and
     a conversation buffer as a memory:'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，LangChainHub 是一个存储库，其中包含对**LangChain**有用的工件，如提示、链和代理，它们结合在一起形成复杂的 LLM 应用程序。受
+    HuggingFace Hub 的启发，这是一个模型集合，旨在成为一个中央资源，用于共享和发现高质量的**LangChain**基元和应用程序。目前，该存储库仅包含一系列提示，但
+    - 希望 - 随着社区不断增加到这个集合，您可能很快就能找到链和代理。此外，**LlamaHub**库通过为**Google Docs**、**SQL 数据库**、**PowerPoints**、**Notion**、**Slack**和**Obsidian**等提供更多数据加载器和阅读器，扩展了
+    LangChain 和 LlamaIndex。**LangFlow**是一个 UI，允许通过将侧边栏组件拖放到画布上并将它们连接在一起来创建您的流水线的可执行流程图。这是一个快速尝试和原型设计流水线的方法。下面是一个基本聊天流水线的屏幕截图，其中包含一个提示模板和一个对话缓冲区作为记忆：
 - en: '![Figure 1.8: LangFlow UI with a basic chat.](../media/file16.png)'
+  id: totrans-55
   prefs: []
   type: TYPE_IMG
+  zh: '![图 1.8：带有基本聊天的 LangFlow UI。](../media/file16.png)'
 - en: 'Figure 1.8: LangFlow UI with a basic chat.'
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 1.8：带有基本聊天的 LangFlow UI。
 - en: In the sidebar of the browser interface (not shown here), you can see all the
     different **LangChain** components like a zero-shot prompt, data loaders, and
     language model wrappers. These flows can be either exported and loaded up in **LangChain**
@@ -386,25 +512,38 @@
     framework that facilitates seamless interaction with diverse models. With **LangChain**,
     you don't need to be an expert in AI or complex algorithms — it simplifies the
     process and reduces the learning curve.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 在浏览器界面的侧边栏（此处未显示），您可以看到所有不同的**LangChain**组件，如零-shot提示、数据加载器和语言模型包装器。这些流程可以直接在**LangChain**中导出和加载，也可以通过
+    API 调用本地服务器来调用。**LangChain**和**LangFlow**可以在本地部署，例如使用 Chainlit 库，也可以在包括 Google
+    Cloud 在内的不同平台上部署。langchain-serve 库有助于通过单个命令将**LangChain**和**LangFlow**部署在**Jina
+    AI 云**上作为 LLM 应用程序服务。**LangChain**提供了一个直观的框架，使开发人员、数据科学家，甚至对 NLP 技术新手来说更容易使用大型语言模型创建应用程序。值得注意的是**LangChain**既不是模型也不是提供者，而是一个促进与不同模型无缝交互的框架。使用**LangChain**，您不需要成为
+    AI 或复杂算法的专家 —— 它简化了流程并减少了学习曲线。
 - en: Please note that although the main focus of LangChain is LLMs, and this is largely
     what we'll talk about in this book, there are also integrations for image generation.
+  id: totrans-58
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 请注意，尽管 LangChain 的主要重点是 LLMs，这在本书中将是我们主要讨论的内容，但也有用于图像生成的集成。
 - en: By being data-aware and agentic, **LangChain** allows for easy integration with
     various data sources, including **Google Drive**, **Notion**, **Wikipedia**, **Apify
     Actors**, and more. This data-awareness enables applications to generate personalized
     and contextually relevant responses based on user preferences or real-time information
     from external sources.Let's explore why **LangChain** is important and then what
     it is used for.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过具有数据意识和代理性，**LangChain**可以轻松集成各种数据源，包括**Google Drive**、**Notion**、**Wikipedia**、**Apify
+    Actors**等。这种数据意识使应用程序能够根据用户偏好或来自外部来源的实时信息生成个性化和上下文相关的响应。让我们探讨一下**LangChain**为什么重要，然后它被用来做什么。
 - en: Why is LangChain relevant?
+  id: totrans-60
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 为什么LangChain很重要？
 - en: '**LangChain** fills a lot of the needs that we outlined before starting with
     the limitations of **LLMs** and the emergence of **LLM** apps. Simply put, it
     simplifies and streamlines the development process of applications using **LLMs**.It
@@ -430,41 +569,55 @@
     understanding extracting interacting source codes from GitHub enriching developer
     experiences robustly enhanced codified performances.There are several benefits
     to using **LangChain**, including:'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '**LangChain**填补了我们在开始时概述的许多需求，包括**LLMs**的限制和**LLM**应用程序的出现。简而言之，它简化和优化了使用**LLMs**构建应用程序的开发过程。它提供了一种构建比通过API简单调用语言模型构建的应用程序更强大和灵活的方式。特别是，**LangChain**对代理和内存的支持允许开发人员以更复杂的方式与其环境进行交互，并且可以随时间存储和重复使用信息。**LangChain**可用于改善各种领域的应用程序的性能和可靠性。在医疗保健领域，它可以用于构建能够回答患者问题并提供医疗建议的聊天机器人。在这种情况下，我们必须非常注意信息可靠性和保密性方面的监管和道德约束。在金融领域，该框架可用于构建可以分析财务数据并进行预测的工具。在这里，我们必须考虑这些模型的可解释性。在教育领域，**LangChain**可以用于构建可以帮助学生学习新概念的工具。这可能是最令人兴奋的领域之一，LLMs可以将完整的教学大纲分解并以定制的互动会话形式传递，个性化地适应个体学习者。**LangChain**的多功能性使其能够以几种动态方式使用，如构建能够回忆先前互动的虚拟个人助手；提取分析结构化数据集；创建提供与提供实时更新的API互动的问答应用程序；执行代码理解，从GitHub提取交互源代码，从而丰富开发人员体验并增强编码性能。使用**LangChain**有许多好处，包括：'
 - en: '**Increased flexibility**: It provides a wide range of tools and features for
     building powerful applications. Further, it''s modular design makes it easy to
     build complex applications that can be adapted to a variety of domains.'
+  id: totrans-62
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**增强的灵活性**：它提供了广泛的工具和功能，用于构建强大的应用程序。此外，其模块化设计使得构建复杂应用程序变得容易，可以适应各种领域。'
 - en: '**Improved performance**: The support for action plan generation can help to
     improve the performance of applications.'
+  id: totrans-63
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**提高性能**：支持行动计划生成可以帮助提高应用程序的性能。'
 - en: '**Enhanced reliability**: LangChain''s support for memory can help to improve
     the reliability of applications by storing and reusing information over time,
     and - by access to external information - it can reduce hallucinations.'
+  id: totrans-64
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**增强可靠性**：LangChain对内存的支持可以通过存储和重复使用信息，以及通过访问外部信息来减少幻觉，从而提高应用程序的可靠性。'
 - en: '**Open source**: An open business-friendly license coupled with a large community
     of developers and users means that you can customize it to your needs and rely
     on broad support.'
+  id: totrans-65
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**开源**：开放的商业友好许可证以及庞大的开发者和用户社区意味着您可以根据自己的需求定制它，并依赖广泛的支持。'
 - en: 'In conclusion: there are many reasons to use **LangChain**. However, I should
     caution that since **LangChain** is still quite new, there might be some bugs
     or issues that have not yet been resolved. The documentation is already relatively
     comprehensive and big, however, in construction in a few places.'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之：有许多理由使用**LangChain**。但是，我应该警告说，由于**LangChain**仍然相当新，可能存在一些尚未解决的错误或问题。文档已经相对全面且庞大，但在某些地方还在建设中。
 - en: What can I build with LangChain?
+  id: totrans-67
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 我可以用LangChain构建什么？
 - en: '**LangChain** empowers various NLP use cases such as virtual assistants, content
     generation models for summaries or translations, question answering systems, and
     more. It has been used to solve a variety of real-world problems. For example,
@@ -472,84 +625,118 @@
     data analysis tools. It has also been used in a number of different domains, including
     healthcare, finance, and education.You can build a wide variety of applications
     with **LangChain**, including:'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: '**LangChain**赋予各种NLP用例权力，例如虚拟助手、用于摘要或翻译的内容生成模型、问答系统等。它已被用于解决各种现实世界问题。例如，**LangChain**已被用于构建聊天机器人、问答系统和数据分析工具。它还被用于许多不同领域，包括医疗保健、金融和教育。您可以使用**LangChain**构建各种应用程序，包括：'
 - en: '**Chatbots**: It can be used to build chatbots that can interact with users
     in a natural way.'
+  id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**聊天机器人**：可用于构建可以以自然方式与用户交互的聊天机器人。'
 - en: '**Question answering**: **LangChain** can be used to build question answering
     systems that can answer questions about a variety of topics.'
+  id: totrans-70
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**问答**：**LangChain**可用于构建能够回答各种主题问题的问答系统。'
 - en: '**Data analysis**: You can use it for automated data analysis and visualization
     to extract insights.'
+  id: totrans-71
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**数据分析**：您可以将其用于自动化数据分析和可视化以提取见解。'
 - en: '**Code generation**: You can set up software pair programming assistants that
     can help to solve business problems.'
+  id: totrans-72
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**代码生成**：您可以设置软件对编程助手，帮助解决业务问题。'
 - en: And much more!
+  id: totrans-73
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 还有更多！
 - en: How does LangChain work?
+  id: totrans-74
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: LangChain如何工作？
 - en: 'With **LangChain**, you can build dynamic applications that harness the power
     of recent breakthroughs in **natural language processing** (**NLP**). By connecting
     components from multiple modules (chaining), you can create unique applications
     tailored around a large language model. From sentiment analysis to chatbots, the
     possibilities are vast.The principal value proposition of the LangChain framework
     consists of the following parts:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用**LangChain**，您可以构建利用最新自然语言处理技术突破的动态应用程序。通过连接多个模块的组件（链接），您可以创建围绕大型语言模型定制的独特应用程序。从情感分析到聊天机器人，可能性是巨大的。LangChain框架的主要价值主张包括以下部分：
 - en: '**Components**:'
+  id: totrans-76
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**组件**：'
 - en: '**Model I/O**: This component provides LLM wrappers as a standardized interface
     for connecting to a language model.'
+  id: totrans-77
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**模型I/O**：此组件提供LLM包装器，作为连接到语言模型的标准化接口。'
 - en: '**Prompt Templates**: This allows you to manage and optimize prompts.'
+  id: totrans-78
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**提示模板**：这使您可以管理和优化提示。'
 - en: '**Memory**: Indexes are used to store and reuse information between calls of
     a chain/agent.'
+  id: totrans-79
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**记忆**：索引用于在链/代理的调用之间存储和重复使用信息。'
 - en: '**Agents**: Agents allow LLMs to interact with their environment. They decide
     the actions to take and take the action.'
+  id: totrans-80
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**代理**：代理允许LLMs与其环境进行交互。它们决定要采取的行动并执行该行动。'
 - en: '**Chains**: These assemble components together in order to solve tasks. They
     can be comprised of sequences of calls to language models and other utilities.'
+  id: totrans-81
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**链**：这些组件将组件组合在一起以解决任务。它们可以由对语言模型和其他实用程序的调用序列组成。'
 - en: 'Here''s a visual representation of these parts:'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是这些部分的可视化表示：
 - en: '![Figure 1.9: LangChain components.](../media/file17.png)'
+  id: totrans-83
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.9：LangChain组件。](../media/file17.png)'
 - en: 'Figure 1.9: LangChain components.'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.9：LangChain组件。
 - en: 'There''s a lot to unwrap about these parts. Let''s go into a bit of detail!Although
     **LangChain** doesn''t supply models itself, it supports integration through **LLM**
     wrappers with various different language model providers enabling the app to interact
@@ -572,18 +759,26 @@
     (**Faiss**), **MongoDB** **Atlas** **Vector** **Search**, **PGVector** as a vector
     similarity search for **Postgres**, **Pinecone**, **Scikit-Learn** (`SKLearnVectorStore`
     for k-nearest neighbor search), and many more.Some other modules are these:'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于这些部分有很多内容需要解释。让我们稍微详细讨论一下！虽然**LangChain**本身不提供模型，但通过与各种不同语言模型提供者的**LLM**包装器进行集成，支持与聊天模型以及文本嵌入模型提供者进行交互。支持的提供者包括**OpenAI**、HuggingFace、Azure和Anthropic。提供标准化接口意味着可以轻松地更换模型以节省金钱和能源，或获得更好的性能。**LangChain**的核心构建块之一是提示类，允许用户通过提供简明的说明或示例与**LLMs**进行交互。提示工程有助于优化提示以获得最佳模型性能。模板在输入和可用提示集合方面提供了灵活性，在各种应用程序中经过了实战测试。当处理大型文档时，向量存储器会发挥作用，其中文档需要被分块以传递给**LLM**。文档的这些部分将被存储为嵌入，这意味着它们是信息的向量表示。所有这些工具增强了**LLMs**的知识，并提高了它们在问答和摘要等应用中的性能。有许多用于向量存储的集成。这些包括阿里巴巴云OpenSearch、AnalyticDB
+    for PostgreSQL、Meta AI的Annoy库用于**近似最近邻**（**ANN**）**搜索**、**Cassandra**、**Chroma**、**ElasticSearch**、**Facebook**
+    **AI相似性搜索**（**Faiss**）、**MongoDB** **Atlas** **向量** **搜索**、**PGVector**作为**Postgres**的向量相似性搜索、**Pinecone**、**Scikit-Learn**（用于k最近邻搜索的`SKLearnVectorStore`），以及许多其他。还有一些其他模块包括：
 - en: '**Data connectors and loaders**: These components provide interfaces for connecting
     to external data sources.'
+  id: totrans-86
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**数据连接器和加载器**：这些组件提供了连接到外部数据源的接口。'
 - en: '**Callbacks**: Callbacks are used to log and stream intermediate steps of any
     chain.'
+  id: totrans-87
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**回调**：回调用于记录和流式传输任何链的中间步骤。'
 - en: Data connectors include modules for storing data and utilities for interacting
     with external systems like web searches or databases, and most importantly data
     retrieval. Examples are Microsoft Doc (docx), HyperText Markup Language (HTML),
@@ -591,25 +786,33 @@
     send emails to prospective customers, tweet funny puns to your followers, or send
     slack messages to your coworkers.Let's see a bit more in detail, what agents can
     be good for and how they make their decisions.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据连接器包括用于存储数据和与外部系统交互的实用程序模块，如网络搜索或数据库，最重要的是数据检索。示例包括Microsoft Doc（docx）、超文本标记语言（HTML）以及其他常见格式，如PDF、文本文件、JSON和CSV。其他工具将向潜在客户发送电子邮件，向您的关注者发送有趣的双关语，或向您的同事发送Slack消息。让我们更详细地看看，代理可以做什么以及它们如何做出决策。
 - en: What is an agent?
+  id: totrans-89
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 什么是代理？
 - en: Agents are used in **LangChain** to control the flow of execution of an application
     to interact with users, the environment, and other agents. Agents can be used
     to make decisions about which actions to take, to interact with external data
     sources, and to store and reuse information over time. Agents can transfer money,
     book flights, or talk to your customers.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 代理在**LangChain**中用于控制应用程序的执行流程，与用户、环境和其他代理进行交互。代理可用于决定采取哪些行动，与外部数据源交互，以及随时间存储和重复使用信息。代理可以转账、预订航班，或与您的客户交谈。
 - en: An **agent** is a software entity that can perform actions and tasks in the
     world and interact with its environment. In **LangChain**, agents take tools and
     chains and combine them for a task taking decisions on which to use.
+  id: totrans-91
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 一个**代理**是一个软件实体，可以在世界中执行动作和任务，并与其环境进行交互。在**LangChain**中，代理获取工具和链，并将它们组合以执行任务并决定使用哪个。
 - en: 'Agents can establish a connection to the outside world. For example, a search
     engine or vector database can be utilized to find up-to-date and relevant information.
     This information can then be provided to models. This is called **retrieval augmentation**.
@@ -621,56 +824,82 @@
     this case, an agent can decide to pass the calculation to a calculator or to a
     Python interpreter. We can see a simple app connecting an OpenAI language model
     output to a Python function here:'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 代理可以与外部世界建立连接。例如，可以利用搜索引擎或向量数据库来查找最新和相关的信息。然后可以将这些信息提供给模型。这被称为**检索增强**。通过整合外部信息源，**LLMs**可以从当前信息和扩展知识中汲取。这是代理如何克服**LLMs**固有弱点并通过将工具与模型结合来增强它们的一个例子。在关于**LLMs**限制的部分，我们已经看到，对于计算，一个简单的计算器胜过由数十亿参数组成的模型。在这种情况下，代理可以决定将计算传递给计算器或Python解释器。我们可以在这里看到一个简单的应用程序，将OpenAI语言模型输出连接到Python函数：
 - en: '![chapter2/langflow_python_function.png](../media/file18.png) Figure 1.10:
     A simple LLM app with a Python function visualized in LangFlow.'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: '![chapter2/langflow_python_function.png](../media/file18.png) 图1.10：在LangFlow中可视化的带有Python函数的简单LLM应用程序。'
 - en: 'We will see this in practice in *Chapter 3*, *Getting Started with LangChain*.
     Agents in **LangChain** can be used to perform a variety of tasks, such as, for
     example:'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将在*第3章*，*开始使用LangChain*中实际看到这一点。**LangChain**中的代理可用于执行各种任务，例如：
 - en: Searching for information
+  id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 搜索信息
 - en: Calling APIs
+  id: totrans-96
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 调用APIs
 - en: Accessing databases
+  id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 访问数据库
 - en: Code execution
+  id: totrans-98
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代码执行
 - en: Each agent can decide on which tool to use and when. Since this is crucial for
     understanding how **LangChain** works, let's see this in a bit of detail.
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个代理都可以决定何时使用哪个工具。由于这对于理解**LangChain**的工作方式至关重要，让我们稍微详细地看一下这一点。
 - en: Action execution
+  id: totrans-100
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 动作执行
 - en: 'Each agent is equipped with these subcomponents:'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 每个代理都配备了这些子组件：
 - en: Tools, which are functional components,
+  id: totrans-102
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 工具，这些是功能组件，
 - en: Toolkits (these are collections of tools), and
+  id: totrans-103
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 工具包（这些是工具的集合），以及
 - en: Agent Executors.
+  id: totrans-104
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代理执行器。
 - en: 'The **agent executor** is the execution mechanism that allows choosing between
     tools. The agent executor can be seen as the intermediary between the agent and
     the execution environment. It receives the requests or commands from the agent
@@ -694,19 +923,33 @@
     ZeroShot pattern, the prompt is really important, which is created from joining
     prefix, a string describing the tools and what they are good for, the format instructions,
     and the suffix:'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '**代理执行器**是允许在工具之间进行选择的执行机制。 代理执行器可以被视为代理和执行环境之间的中介。 它接收来自代理的请求或命令，并将其翻译成可以由底层系统或软件执行的操作。
+    它管理这些操作的执行并向代理提供反馈或结果。 我们将看到不同类型的执行或决策模式。 **ReAct模式**（由普林斯顿大学和Google DeepMind的研究人员于2023年5月发表的“ReACT：在语言模型中协同推理和行动”），简称为Reason
+    and Act，其中代理主动将任务分配给适当的工具，为其定制输入，并解析其输出以解决任务。 在论文中，使用了文档存储库，其中将搜索答案 - 这被实现为**ReAct文档存储模式**。
+    在**LangChain**中，默认情况下，代理遵循**Zero-shot ReAct模式**（`ZERO_SHOT_REACT_DESCRIPTION`），其中决策仅基于工具的描述。
+    可以通过记忆来扩展此机制，以考虑完整的对话历史。 使用**ReAct**，而不是要求**LLM**在您的文本上自动完成，您可以提示它以思考/行动/观察循环回应。
+    **LLM**的提示是逐步回应并将这些步骤与行动相关联。 这些步骤的结果，例如搜索结果，然后传递回**LLM**以进行下一次思考，因为它朝着目标迭代。 对于ZeroShot模式，提示非常重要，它是由连接前缀，描述工具及其用途的字符串，格式说明和后缀组成的：'
 - en: '[PRE0]'
+  id: totrans-106
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: 'To see this in practice, for example, we can ask for the difference between
     **LangChain** agent executor and **LangChain** execution plan. Here''s the log
     in **LangChain** - first the question goes to the language model:'
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 要看到这一实践，例如，我们可以询问**LangChain**代理执行器和**LangChain**执行计划之间的区别。以下是**LangChain**中的日志
+    - 首先问题传递给语言模型：
 - en: '[PRE1]'
+  id: totrans-108
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: 'There are a few more implemented mechanisms. Researchers at the University
     of Washington, **MosaicAI**, Meta AI Research, and Allen Institute (in the paper
     "Measuring and Narrowing the Compositionality Gap in Language Models" by in October
@@ -717,14 +960,22 @@
     the necessary information in order to answer questions. An example for this powerful
     mechanism is discussed on LangChain''s github by user nkov. The question is how
     lived longer, Muhammad Ali or Alan Turing, and the conversation develops thus:'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 还有一些实施的机制。 华盛顿大学的研究人员，**MosaicAI**，Meta AI研究和艾伦研究所（2022年10月的论文“测量和缩小语言模型中的组合性差距”中）发现**LLMs**可能经常无法给出需要组合推理的问题的正确和完整答案，其中必须将多个信息片段放在一起。
+    **自问自答搜索**模式将问题分解为组成部分，并调用搜索引擎方法以检索必要的信息以回答问题。 用户nkov在LangChain的github上讨论了这种强大的机制的示例。
+    问题是谁活得更久，穆罕默德·阿里还是艾伦·图灵，对话发展如下：
 - en: '[PRE2]'
+  id: totrans-110
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: '[PRE3]'
+  id: totrans-111
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'In each step, the **LLM** decides if follow-up searches are needed and this
     information is fed back to the **LLM**.Recently, OpenAI models (gpt-3.5-turbo-0613,
     gpt-4-0613) have been fine-tuned to detect when **function calls** should be executed
@@ -732,16 +983,20 @@
     can also be described in API calls to these language models. This is also implemented
     in **LangChain**.There are a few strategies that are not (yet) implemented as
     execution mechanism in **LangChain**:'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 在每一步中，**LLM**决定是否需要后续搜索，并将此信息反馈给**LLM**。最近，OpenAI模型（gpt-3.5-turbo-0613，gpt-4-0613）已经被微调以检测何时应执行**函数调用**以及应将哪些输入馈送到函数中。为了使其正常工作，函数也可以在API调用中描述给这些语言模型。这也在**LangChain**中实现了。在**LangChain**中，还有一些尚未（尚未）实施为执行机制的策略：
 - en: '**Recursively Criticizes and Improves** its output (**RCI**) methods ("Language
     Models can Solve Computer Tasks"; Kim and others, June 2023) use **LLM** as a
     planner to construct an agent, where the former uses an **LLM** to generate thoughts
     before executing the action, whereas the latter prompts an LLM to think up lessons
     learned for improving subsequent episodes.'
+  id: totrans-113
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**递归批评和改进**其输出（**RCI**）方法（“语言模型可以解决计算机任务”；Kim等人，2023年6月）使用**LLM**作为规划者来构建一个代理，前者在执行动作之前使用**LLM**生成思路，而后者则提示LLM为改进后续情节思考出教训。'
 - en: 'The **Tree of Thought** (**ToT**) algorithm (published as "Tree of Thoughts:
     Deliberate Problem Solving with Large Language Models" in May 2023 by researchers
     at Princeton and Google DeepMind) advances model reasoning by traversing a search
@@ -749,48 +1004,64 @@
     many others can and have been tested such as Best First, Monte Carlo, and A*.
     These strategies have been found to significantly improve the success rate at
     problem solving.'
+  id: totrans-114
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**思维树**（**ToT**）算法（由普林斯顿大学和谷歌DeepMind的研究人员于2023年5月发表的“思维树：使用大型语言模型进行深思熟虑的问题解决”）通过遍历搜索树推进模型推理。基本策略可以是深度优先或广度优先树遍历，然而许多其他策略也可以并且已经被测试，如最佳优先、蒙特卡洛和A*。这些策略已被发现显著提高了问题解决的成功率。'
 - en: 'These decisions can be planned out ahead or can be taken at each step. This
     process of creating a sequence of actions that an agent can take to achieve a
     goal is called the **action plan generation**. There are two different types of
     agents by action plan generation, which can be chosen based on the required dynamism
     of the task:'
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些决策可以提前计划或在每一步中进行。创建代理可以采取的一系列行动序列以实现目标的过程称为**行动计划生成**。根据任务所需的动态性，可以选择两种不同类型的代理通过行动计划生成：
 - en: '**Action agents** decide at each iteration on the next action based on the
     outputs of all previous actions.'
+  id: totrans-116
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**行动代理**根据所有先前行动的输出，在每次迭代中决定下一步行动。'
 - en: '**Plan-and-execute agents** decide on the full plan of actions at the start.
     They then execute all these actions without updating the sequence. This implementation
     in **LangChain** was inspired by **BabyAGI**.'
+  id: totrans-117
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**计划执行代理**在开始时决定所有行动的完整计划。然后他们执行所有这些行动而不更新顺序。这种在**LangChain**中的实现受到**BabyAGI**的启发。'
 - en: Generally, action agents are more flexible, while plan-and-execute agents are
     better at maintaining long-term objectives. If we want to be as flexible as possible
     we can specify a Zero-shot **ReAct** mechanism for our agent to make decisions
     at every turn.Let's have a look at chains now!
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 一般来说，行动代理更加灵活，而计划执行代理更擅长保持长期目标。如果我们希望尽可能灵活，我们可以为我们的代理指定一个零-shot **ReAct**机制，以便在每个转弯时做出决策。现在让我们来看看链条吧！
 - en: What's a chain?
+  id: totrans-119
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 什么是链条？
 - en: The core idea in **LangChain** is the compositionality of **LLMs** and other
     components to work together. For examples, users and developers can put together
     multiple **LLM** calls and other components in a sequence to create complex applications
     like chatbot-like social interactions, data extraction, and data analysis.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '**LangChain**中的核心思想是**LLMs**和其他组件的组合性共同工作。例如，用户和开发人员可以将多个**LLM**调用和其他组件放在一个序列中，以创建类似聊天机器人的社交互动、数据提取和数据分析等复杂应用。'
 - en: In most generic terms, a **chain** is as a sequence of calls to components,
     which can include other chains.
+  id: totrans-121
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 在最通用的术语中，**链**是一系列对组件的调用，其中可以包括其他链。
 - en: 'For example, prompt chaining is a technique that can be used to improve the
     performance of LangChain applications. Prompt chaining involves chaining together
     multiple prompts to autocomplete a more complex response.Simply put, both chains
@@ -815,12 +1086,20 @@
     Refinement with Self-Feedback) this strategy has been found to improve task performance
     by about 20% absolute on average across a benchmark including dialogue responses,
     math reasoning, and code reasoning. Let''s have a look at the memory strategies!'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: '例如，提示链接是一种可以用来提高 LangChain 应用程序性能的技术。提示链接涉及将多个提示链接在一起以自动完成更复杂的响应。简而言之，链和代理都是组件的包装器。它们都可以通过使它们能够与外部系统交互并收集最新信息来扩展
+    LLMs 的功能。将应用程序模块化为链和代理等构建块可以使调试和维护变得更容易。链的最无害的例子可能是`PromptTemplate`，它将格式化的响应传递给语言模型。链的更有趣的例子包括用于数学查询的`LLMMath`和用于查询数据库的`SQLDatabaseChain`。这些被称为**实用链**，因为它们将语言模型与特定工具结合在一起。一些链可以做出自主决策。类似于代理，路由链可以根据其描述决定使用哪个工具。`RouterChain`可以动态选择要使用的检索系统，例如提示或索引。**LangChain**
+    实现链以确保输出内容不会有毒或违反 OpenAI 的管理规则（`OpenAIModerationChain`），或符合道德、法律或自定义原则（`ConstitutionalChain`）。LLMCheckerChain
+    可以通过验证提供的陈述和问题的基础假设来防止幻觉并减少不准确的响应。在 2023 年 5 月的一篇由卡内基梅隆大学、艾伦研究所、华盛顿大学、英伟达、加州大学圣地亚哥分校和谷歌研究人员撰写的论文（"SELF-REFINE:
+    Iterative Refinement with Self-Feedback"）中，发现这种策略可以使任务性能平均提高约 20%。让我们来看看记忆策略！'
 - en: What is memory?
+  id: totrans-123
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 什么是记忆？
 - en: '**LLMs** and tools are stateless in the sense that they don''t retain any information
     about previous responses and conversations. Memory is a key concept in LangChain
     and can be used to improve the performance of LangChain applications by storing
@@ -829,13 +1108,18 @@
     to reduce the number of times that the language model needs to be called and can
     help to ensure that the agent can continue to operate even if the environment
     changes.'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: '**LLMs** 和工具在某种意义上是无状态的，它们不保留任何关于先前响应和对话的信息。记忆是 LangChain 中的一个关键概念，可以通过存储先前调用语言模型、用户、代理操作环境状态以及代理目标的结果来改善
+    LangChain 应用程序的性能。这可以帮助减少语言模型需要被调用的次数，并确保即使环境发生变化，代理也能继续运行。'
 - en: '**Memory** is a data structure that is used to store and reuse information
     over time.'
+  id: totrans-125
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**记忆** 是一种数据结构，用于在一段时间内存储和重复使用信息。'
 - en: Memory helps provide context to the application and can make the LLM outputs
     more coherent and contextually relevant. For example, we can store all the conversation
     (`ConversationBufferMemory`) or use a buffer to retain the last messages in a
@@ -849,119 +1133,160 @@
     an interesting feature is that the conversation with the LLM can be encoded as
     a Knowledge Graph (`ConversationKGMemory`), which can be integrated back into
     prompts or used to predict responses without having to go to the LLM.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 记忆有助于为应用程序提供上下文，并使LLM的输出更连贯和与上下文相关。例如，我们可以存储所有对话（`ConversationBufferMemory`）或使用缓冲区保留对话中最后的消息，使用`ConversationBufferWindowMemory`。记录的消息在每次调用时都包含在模型的历史参数中。然而，我们应该注意，这将增加令牌使用量（因此增加API费用）和响应的延迟。这也可能影响模型的令牌限制。还有一种对话摘要记忆策略，其中LLM用于总结对话历史
+    - 这可能会导致额外的API调用费用。关于这些记忆选项有一些有趣的细微差别。例如，一个有趣的特性是，与LLM的对话可以被编码为知识图（`ConversationKGMemory`），这可以被集成回提示或用于预测响应，而无需访问LLM。
 - en: A **knowledge graph** is a representation of data that uses a graph-structured
     data model to integrate data typically in the shape of triplets, a subject, a
     predicate, and an object, for example subject=Sam, predicate=loves, object=apples.
     This graph stores information about entities like people, places, or events),
     and the connections between them.
+  id: totrans-127
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**知识图**是使用图结构数据模型表示数据的一种形式，通常以三元组的形式集成数据，主语、谓语和宾语，例如主语=Sam，谓语=loves，宾语=apples。这个图存储了关于实体（如人、地点或事件）及其之间关系的信息。'
 - en: 'In summary, memory in **LangChain** can be used to store a variety of information,
     including:'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，**LangChain**中的记忆可以用于存储各种信息，包括：
 - en: The results of previous calls to the language model
+  id: totrans-129
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 先前对语言模型的调用结果
 - en: The state of the environment that the agent is operating in
+  id: totrans-130
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代理操作的环境状态
 - en: The goals that the agent is trying to achieve.
+  id: totrans-131
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代理正在努力实现的目标。
 - en: Now, we'll have a look at the different tools at our disposal.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，我们将看看我们可以使用的不同工具。
 - en: What kind of tools are there?
+  id: totrans-133
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 有哪些种类的工具？
 - en: 'Tools are components in **LangChain** that can be combined with models to extend
     their capability. **LangChain** offers tools like document loaders, indexes, and
     vector stores, which facilitate the retrieval and storage of data for augmenting
     data retrieval in **LLMs**. There are many tools available, and here are just
     a few examples of you can do with tools:'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 工具是**LangChain**中的组件，可以与模型结合以扩展其功能。**LangChain**提供了诸如文档加载器、索引和向量存储等工具，这些工具有助于检索和存储数据，以增强**LLMs**中的数据检索。有许多可用的工具，以下只是一些示例，您可以使用工具做什么：
 - en: '**Machine Translator**: A language model can use a machine translator to better
     comprehend and process text in multiple languages. This tool enables non-translation-dedicated
     language models to understand and answer questions in different languages.'
+  id: totrans-135
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**机器翻译器**：语言模型可以使用机器翻译器更好地理解和处理多种语言的文本。这个工具使非翻译专用的语言模型能够理解并回答不同语言的问题。'
 - en: '**Calculator**: Language models can utilize a simple calculator tool to solve
     math word problems. The calculator supports basic arithmetic operations, allowing
     the model to accurately solve mathematical queries in datasets specifically designed
     for math problem-solving.'
+  id: totrans-136
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**计算器**：语言模型可以利用简单的计算器工具解决数学问题。计算器支持基本算术运算，使模型能够准确解决专门设计用于数学问题解决的数据集中的数学查询。'
 - en: '**Map**: By connecting with Bing Map API or similar services, language models
     can retrieve location information, assist with route planning, provide driving
     distance calculations, and offer details about nearby points of interest.'
+  id: totrans-137
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**地图**：通过连接必应地图API或类似服务，语言模型可以检索位置信息，协助路线规划，提供驾驶距离计算，并提供附近景点的详细信息。'
 - en: '**Weather**: Weather APIs provide language models with real-time weather information
     for cities worldwide. Models can answer queries about current weather conditions
     or forecast the weather for specific locations within varying time frames.'
+  id: totrans-138
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**天气**：天气API为语言模型提供全球城市的实时天气信息。模型可以回答关于当前天气状况或预测特定位置在不同时间范围内的天气的查询。'
 - en: '**Stock**: Connecting with stock market APIs like Alpha Vantage allows language
     models to query specific stock market information such as opening and closing
     prices, highest and lowest prices, and more.'
+  id: totrans-139
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**股票**：连接股票市场API（如Alpha Vantage）使语言模型能够查询特定股票市场信息，如开盘价、收盘价、最高价、最低价等。'
 - en: '**Slides**: Language models equipped with slide-making tools can create slides
     using high-level semantics provided by APIs such as python-pptx library or image
     retrieval from the internet based on given topics. These tools facilitate tasks
     related to slide creation required in various professional fields.'
+  id: totrans-140
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**幻灯片**：配备幻灯片制作工具的语言模型可以利用诸如python-pptx库提供的高级语义或根据给定主题从互联网检索图像来创建幻灯片。这些工具有助于在各种专业领域中需要的幻灯片制作任务。'
 - en: '**Table Processing**: APIs built with pandas DataFrame enable language models
     to perform data analysis and visualization tasks on tables. By connecting to these
     tools, models can provide users with a more streamlined and natural experience
     for handling tabular data.'
+  id: totrans-141
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**表格处理**：使用pandas DataFrame构建的API使语言模型能够在表格上执行数据分析和可视化任务。通过连接这些工具，模型可以为用户提供更流畅和自然的处理表格数据体验。'
 - en: '**Knowledge Graphs**: Language models can query knowledge graphs using APIs
     that mimic human querying processes, such as finding candidate entities or relations,
     sending SPARQL queries, and retrieving results. These tools assist in answering
     questions based on factual knowledge stored in knowledge graphs.'
+  id: totrans-142
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**知识图谱**：语言模型可以使用模拟人类查询过程的API查询知识图谱，例如查找候选实体或关系、发送SPARQL查询并检索结果。这些工具有助于基于知识图谱中存储的事实知识回答问题。'
 - en: '**Search Engine**: By utilizing search engine APIs like Bing Search, language
     models can interact with search engines to extract information and provide answers
     to real-time queries. These tools enhance the model''s ability to gather information
     from the web and deliver accurate responses.'
+  id: totrans-143
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**搜索引擎**：通过利用Bing Search等搜索引擎API，语言模型可以与搜索引擎互动，提取信息并回答实时查询。这些工具增强了模型从网络中收集信息并提供准确响应的能力。'
 - en: '**Wikipedia**: Language models equipped with Wikipedia search tools can search
     for specific entities on Wikipedia pages, look up keywords within a page, or disambiguate
     entities with similar names. These tools facilitate question-answering tasks using
     content retrieved from Wikipedia.'
+  id: totrans-144
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**维基百科**：配备维基百科搜索工具的语言模型可以在维基百科页面上搜索特定实体，查找页面内的关键词，或消除具有相似名称的实体。这些工具有助于使用从维基百科检索的内容进行问答任务。'
 - en: '**Online Shopping**: Connecting language models with online shopping tools
     allows them to perform actions like searching for items, loading detailed information
     about products, selecting item features, going through shopping pages, and making
     purchase decisions based on specific user instructions.'
+  id: totrans-145
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**在线购物**：将语言模型与在线购物工具连接起来，使其能够执行搜索商品、加载有关产品的详细信息、选择商品特性、浏览购物页面，并根据特定用户指令做出购买决策等操作。'
 - en: Additional tools include AI Painting, which allows language models to generate
     images using AI image generation models; 3D Model Construction, enabling language
     models to create three-dimensional (3D) models using a sophisticated 3D rendering
@@ -979,12 +1304,16 @@
     3\. The use of different tools expands the scope of applications for language
     models and enables them to handle various real-world tasks more efficiently and
     effectively.Let's summarize!
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 其他工具包括AI绘画，允许语言模型使用AI图像生成模型生成图像；3D模型构建，使语言模型能够使用先进的3D渲染引擎创建三维（3D）模型；化学性质，利用像PubChem这样的API解决关于化学性质的科学问题；数据库工具促进对数据库数据的自然语言访问，以执行SQL查询并检索结果。这些各种工具为语言模型提供了额外的功能和能力，以执行超出文本处理范围的任务。通过通过API连接这些工具，语言模型可以增强其在翻译、数学问题解决、基于位置的查询、天气预测、股市分析、幻灯片制作、表格处理和分析、图像生成、文本转语音转换以及许多其他专业任务领域的能力。所有这些工具都可以为我们提供先进的AI功能，工具几乎没有限制。我们可以轻松构建自定义工具来扩展LLMs的能力，正如我们将在下一章节3中看到的那样。使用不同的工具扩展了语言模型的应用范围，并使其能够更有效地处理各种现实世界任务。让我们总结一下！
 - en: Summary
+  id: totrans-147
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总结
 - en: In today's world, understanding and processing language accurately is crucial
     in the development of smart applications and for creating personalized and effective
     user experiences. Therefore, **large language models** (**LLMs**) are ideally
@@ -1004,54 +1333,82 @@
     capabilities, developers can unlock the full potential of **LLMs**. In the *Chapter
     3*, *Getting Started with LangChain*, we'll implement our first apps with **Langchain**!Let's
     see if you remember some of the key takeaways from this chapter!
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 在当今世界，准确理解和处理语言对于开发智能应用程序以及创建个性化和有效的用户体验至关重要。因此，**大型语言模型**（**LLMs**）理想地适用于为应用程序提供这种能力。然而，正如我们在本章中讨论的那样，独立的**LLMs**存在其局限性。如果我们用工具补充**LLMs**，我们可以克服其中一些限制，并大大增强它们的性能，创建**LLM**应用程序。这就是LangChain的作用所在，这是一个旨在为AI开发人员建立代理应用程序的框架
+    - 这些代理由计算实体组成，如LLMs和其他可以自主执行某些任务的工具。我们已经讨论了它的重要概念，首先是代理和链条的概念。总之，LangChain是一个有价值的开源框架，旨在简化使用来自OpenAI和Hugging
+    Face等提供商和平台的**大型语言模型**（**LLMs**）开发应用程序。这个框架在释放生成式AI的力量方面提供了巨大价值。在接下来的章节中，我们将通过构建**LLM**应用程序来进一步发展**LangChain**的核心原则。通过利用**LangChain**的能力，开发人员可以释放**LLMs**的全部潜力。在*第3章*，*开始使用LangChain*中，我们将使用**Langchain**实现我们的第一个应用程序！让我们看看你是否记得本章的一些关键要点！
 - en: Questions
+  id: totrans-149
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 问题
 - en: 'Please have a look to see if you can come up with the answers to these questions.
     I''d recommend you go back to the corresponding sections of this chapter, if you
     are unsure about any of them:'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 请看看是否能回答这些问题。如果你对任何问题不确定，我建议你回到本章的相应部分查看：
 - en: What are limitations of LLMs?
+  id: totrans-151
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: LLMs的局限性是什么？
 - en: What are LLM-applications?
+  id: totrans-152
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是LLM应用？
 - en: What is LangChain and why should you use it?
+  id: totrans-153
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是LangChain，为什么你应该使用它？
 - en: What are LangChain's key features?
+  id: totrans-154
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: LangChain的主要特点是什么？
 - en: What is an agent in LangChain?
+  id: totrans-155
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: LangChain中的代理是什么？
 - en: What is action plan generation?
+  id: totrans-156
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是行动计划生成？
 - en: What is a chain?
+  id: totrans-157
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是链？
 - en: Why do you need memory for LangChain applications?
+  id: totrans-158
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 为什么LangChain应用需要记忆？
 - en: What kind of tools are available?
+  id: totrans-159
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 有哪些可用的工具？
 - en: How does LangChain work?
+  id: totrans-160
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: LangChain是如何工作的？

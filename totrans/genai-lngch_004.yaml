@@ -1,15 +1,19 @@
 - en: 3 Getting Started with LangChain
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: Join our book community on Discord
+  id: totrans-1
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: '[https://packt.link/EarlyAccessCommunity](https://packt.link/EarlyAccessCommunity)'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: '![Qr code Description automatically generated](../media/file19.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
 - en: 'In this chapter, we''ll first set up **LangChain** and the libraries needed
@@ -23,24 +27,30 @@
     application, a practical example that illustrate a way that **LangChain** can
     be applied in a real-world business use case in customer service.The main sections
     are:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: How to Set Up **LangChain**?
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Model Integrations
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Customer Service Helper
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: We'll start off the chapter by setting up **LangChain** on your computer.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
 - en: How to Set Up LangChain?
+  id: totrans-9
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -60,9 +70,11 @@
     for pip a `pyproject.toml` for poetry and a `langchain_ai.yml` file for **Conda**
     in the book''s repository at [https://github.com/benman1/generative_ai_with_langchain](https://github.com/benman1/generative_ai_with_langchain)Let''s
     set up our environment starting with Python.'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: Python installation
+  id: totrans-11
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -72,28 +84,37 @@
     through it. You may download the latest version from python.org for your operating
     system or use your platform''s package manager. Let''s see this with Homebrew
     for MacOS and apt-get for Ubuntu.On MacOS, with Homebrew, we can do:'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE0]'
+  id: totrans-13
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: 'For Ubuntu, with apt-get we can do:'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE1]'
+  id: totrans-15
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: '**Tip**: If you are new to programming or Python, it is advised to follow some
     beginner-level tutorials before proceeding with LangChain and the applications
     in this book.'
+  id: totrans-16
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: An important tool for interactively trying out data processing and models is
     the Jupyter notebook and the lab. Let's have a look at this now.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: Jupyter Notebook and JupyterLab
+  id: totrans-18
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -102,6 +123,7 @@
     users to write code, display visualizations, and include explanatory text in a
     single document called a notebook. The primary difference between the two lies
     in their interface and functionality.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
 - en: '**Jupyter Notebook** aims to support various programming languages like Julia,
@@ -109,10 +131,12 @@
     Jupyter Notebook offers a simple user interface that allows users to create, edit,
     and run notebooks with a linear layout. It also supports extensions for additional
     features and customization.'
+  id: totrans-20
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: ''
+  id: totrans-21
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
@@ -122,42 +146,55 @@
     and customizable interface where users can arrange multiple windows (for example,
     notebooks, text editors, terminals) side-by-side, facilitating more efficient
     workflows.'
+  id: totrans-22
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'You can start up a notebook server on your computer from the terminal like
     this:'
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE2]'
+  id: totrans-24
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'You should see your browser opening a new tab with the Jupyter notebook like
     this:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 3.1: Jupyter Notebook with a LangChain Agent.](../media/file20.png)'
+  id: totrans-26
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 3.1: Jupyter Notebook with a LangChain Agent.'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: 'Alternatively, we can also use JupyterLab, the next-generation notebook server
     that brings significant improvements in usability. You can start up a JupyterLab
     notebook server from the terminal like this:'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE3]'
+  id: totrans-29
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'We should see something like this:'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 3.2: Jupyter Lab with a LangChain Agent.](../media/file21.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 3.2: Jupyter Lab with a LangChain Agent.'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: Either one of these two, the `Jupyter notebook` or `JupyterLab`, will give you
@@ -166,9 +203,11 @@
     or lab, let's quickly explore the differences between dependency management tools
     (**Docker**, **Conda**, **Pip**, and **Poetry**) and use them to fully set up
     our environment for our projects with LangChain!
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: Environment management
+  id: totrans-34
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -177,15 +216,18 @@
     between primary dependency management tools: **Docker**, **Conda**, **Pip**, and
     **Poetry**. All four are tools widely used in the realm of software development
     and deployment.'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
 - en: '**Docker** is an open-source platform that provides OS-level virtualization
     through containerization. It automates the deployment of applications inside lightweight,
     portable containers, which run consistently on any system with Docker installed.'
+  id: totrans-36
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: ''
+  id: totrans-37
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
@@ -193,11 +235,13 @@
     managing packages from multiple channels, not limited to Python. Geared predominantly
     toward data science and machine learning projects, it can robustly handle intricate
     dependency trees, catering to complex projects with numerous dependencies.'
+  id: totrans-38
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
 - en: ''
+  id: totrans-39
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
@@ -205,11 +249,13 @@
     to install and manage third-party libraries easily. However, Pip has limitations
     when handling complex dependencies, increasing the risk of dependency conflicts
     arising during package installation.'
+  id: totrans-40
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
 - en: ''
+  id: totrans-41
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
@@ -217,6 +263,7 @@
     Pip and Conda. Boasting a modern and intuitive interface, robust dependency resolution
     system, and support for virtual environments creation, Poetry offers additional
     functionalities such as dependency isolation, lock files, and version control.'
+  id: totrans-42
   prefs:
   - PREF_BQ
   - PREF_BQ
@@ -230,26 +277,34 @@
     (using the Github user interface) or cloned on your computer, and you''ve changed
     into the project''s root directory.Here''s how you can find the download option
     on Github:'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 3.3: Download options in the Github User Interface (UI).](../media/file22.png)'
+  id: totrans-44
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 3.3: Download options in the Github User Interface (UI).'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
 - en: 'If you are new to git, you can press **Download ZIP**, and then unzip the archive
     using your favorite tool.Alternatively, to clone the repository using git and
     change to the project directory, you can type the following commands:'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE4]'
+  id: totrans-47
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: Now that we have the repository on our machine, let's start with Docker!
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
 - en: Docker
+  id: totrans-49
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
@@ -263,38 +318,49 @@
     create a reproducible environment for your project. You can use Docker to create
     an environment with all the libraries and tools you need for your project, and
     share that environment with others.To start with Docker, follow these steps:'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
 - en: 'Install Docker on your machine. You can go to the Docker website.in your web
     browser and follow the installation instructions here: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)'
+  id: totrans-51
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: 'In the terminal, run the following command to build the Docker image (please
     note: you need to be in the project root for this to work).'
+  id: totrans-52
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '[PRE5]'
+  id: totrans-53
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: This will pull, the continuumio/miniconda3 image from Docker Hub, and build
     the image.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
 - en: 'Start the Docker container interactively using the image created:'
+  id: totrans-55
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: '[PRE6]'
+  id: totrans-56
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: 'This should start our notebook within the container. We should be able to navigate
     to the `Jupyter Notebook` from your browser. We can find it at this address: `http://localhost:8080/`Let''s
     look at conda next.'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
 - en: Conda
+  id: totrans-58
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
@@ -310,98 +376,143 @@
     install any dependencies as well as the `conda` tool from the terminal.Let''s
     continue with the `conda` tool and install the dependencies of this book.To create
     a new environment, execute the following command:'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE7]'
+  id: totrans-60
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: '`Conda` lets us create environments with lots of different libraries, but also
     different versions of Python. We are using Python 3.10 throughout this book. Activate
     the environment by running:'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Conda`允许我们创建具有许多不同库的环境，还可以使用不同版本的Python。我们在本书中一直使用Python 3.10。通过运行以下命令激活环境：'
 - en: '[PRE8]'
+  id: totrans-62
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: 'This is all, we are done. We can see this should be painless and straightforward.
     You can now spin up a `jupyter notebook` or `jupyter lab` within the environment,
     for example:'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 这就是全部，我们完成了。我们可以看到这应该是轻松和直接的。您现在可以在环境中启动`jupyter notebook`或`jupyter lab`，例如：
 - en: '[PRE9]'
+  id: totrans-64
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: Let's have a look at pip, an alternative to `conda`.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们来看一下pip，这是`conda`的一个替代方案。
 - en: Pip
+  id: totrans-66
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: Pip
 - en: '`Pip` is the default package manager for Python. It allows you to easily install
     and manage third-party libraries. We can install individual libraries, but also
     maintain a full list of Python libraries.If it''s not already included in your
     Python distribution, install pip following instructions on [https://pip.pypa.io/](https://pip.pypa.io/)To
     install a library with pip, use the following command. For example, to install
     the NumPy library, you would use the following command:'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: '`Pip`是Python的默认软件包管理器。它允许您轻松安装和管理第三方库。我们可以安装单个库，还可以维护完整的Python库列表。如果它尚未包含在您的Python发行版中，请按照[https://pip.pypa.io/](https://pip.pypa.io/)上的说明安装pip。要使用pip安装库，请使用以下命令。例如，要安装NumPy库，您将使用以下命令：'
 - en: '[PRE10]'
+  id: totrans-68
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: 'You can also use `pip` to install a specific version of a library. For example,
     to install version 1.0 of the NumPy library, you would use the following command:'
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 您也可以使用`pip`来安装库的特定版本。例如，要安装NumPy库的1.0版本，您将使用以下命令：
 - en: '[PRE11]'
+  id: totrans-70
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: 'In order to set up a full environment, we can start with a list of requirements
     - by convention, this list is in a file called `requirements.txt`. I''ve included
     this file in the project''s root directory, which lists all essential libraries.You
     can install all the libraries using this command:'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了设置一个完整的环境，我们可以从一个要求列表开始 - 按照惯例，这个列表在一个名为`requirements.txt`的文件中。我已经将这个文件包含在项目的根目录中，列出了所有必要的库。您可以使用以下命令安装所有库：
 - en: '[PRE12]'
+  id: totrans-72
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: 'Please note, however, as mentioned, that Pip doesn''t take care of the environments.
     Virtualenv is a tool that can help to maintain environments, for example different
     versions of libraries. Let''s see this quickly:'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，正如前面提到的，Pip不负责环境。Virtualenv是一个可以帮助维护环境的工具，例如不同版本的库。让我们快速看一下这个：
 - en: '[PRE13]'
+  id: totrans-74
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: Let's do Poetry next.
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 接下来让我们来看一下Poetry。
 - en: Poetry
+  id: totrans-76
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: Poetry
 - en: 'Poetry is a dependency management tool for Python that streamlines library
     installation and version control. Installation and usage is straightforward as
     we''ll see. Here''s a quick run-through of poetry:'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: Poetry是Python的依赖管理工具，简化了库的安装和版本控制。安装和使用都很简单，我们将看到。以下是poetry的快速概述：
 - en: Install poetry following instructions on [https://python-poetry.org/](https://python-poetry.org/)
+  id: totrans-78
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 按照[https://python-poetry.org/](https://python-poetry.org/)上的说明安装poetry
 - en: Run `poetry install` in the terminal (from the project root as mentioned before)
+  id: totrans-79
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在终端中运行`poetry install`（从之前提到的项目根目录）
 - en: The command will automatically create a new environment (if you haven't created
     one already) and install all dependencies. This concludes the setup for Poetry.
     We'll get to model providers now.
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 该命令将自动创建一个新环境（如果您尚未创建），并安装所有依赖项。这就完成了Poetry的设置。现在我们将开始使用模型提供程序。
 - en: Model Integrations
+  id: totrans-81
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 模型集成
 - en: 'Before properly starting with generative AI, we need to set up access to models
     such as **large language models** (**LLMs**) or text to image models so we can
     integrate them into our applications. As discussed in *Chapter 1*, *What are Generative
@@ -426,36 +537,47 @@
     account and obtain an API key. This is free for all of them. With some of them
     you don''t even have to give them your credit card details.In order to set an
     API key in an environment, in Python we can do:'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE14]'
+  id: totrans-83
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE14]'
 - en: 'Here `OPENAI_API_KEY` is the environment key appropriate for OpenAI. Setting
     the keys in your environment has the advantage that we don''t include them in
     our code.You can also expose these variables from your terminal like this:'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE15]'
+  id: totrans-85
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE15]'
 - en: Let's go through a few prominent model providers in turn. We'll give an example
     usage for each of them.Let's' start with a Fake LLM that's used for testing so
     we can show the basic idea!
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
 - en: Fake LLM
+  id: totrans-87
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
 - en: The Fake LM is for testing. The LangChain documentation has an example for the
     tool use with LLMs. You can execute this example in either Python directly or
     in a notebook.
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE16]'
+  id: totrans-89
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE16]'
 - en: 'We connect a tool, a Python **Read-Eval-Print Loop** (**REPL**) that will be
     called depending on the output of the **LLM**. The Fake List **LLM** will give
     two responses, `responses`, that won''t change based on the input. We set up an
@@ -465,11 +587,14 @@
     leads to a call to the Python Interpreter, which returns 4\. Please note that
     the action has to match the `name` attribute of the tool, the `PythonREPLTool`,
     which is starts like this:'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE17]'
+  id: totrans-91
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE17]'
 - en: 'The names and descriptions of the tools are passed to the **LLM**, which then
     decides based on the provided information.The output of the Python interpreter
     is passed to the Fake **LLM**, which ignores the observation and returns 4\. Obviously,
@@ -477,9 +602,11 @@
     wouldn''t correspond to the question.In the next sections, we''ll make this more
     meaningful by using an actual **LLM** rather than a fake one. One of the first
     providers that anyone will think of at the moment is OpenAI.'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
 - en: OpenAI
+  id: totrans-93
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -494,31 +621,39 @@
     and GPT-4 with different token length. You can see the pricing of different models
     at [https://openai.com/pricing](https://openai.com/pricing)We need to obtain an
     OpenAI API key first. In order to create an API key, follow these steps:'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
 - en: You need to create a login at [https://platform.openai.com/](https://platform.openai.com/)
+  id: totrans-95
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: Set up your billing information.
+  id: totrans-96
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: You can see the **API keys** under *Personal -> View API Keys*.
+  id: totrans-97
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: Click **Create new secret key** and give it a **Name**.
+  id: totrans-98
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: 'Here''s how this should look like on the OpenAI platform:'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 3.4: OpenAI API platform - Create new secret key.](../media/file23.png)'
+  id: totrans-100
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 3.4: OpenAI API platform - Create new secret key.'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
 - en: 'After pressing "**Create secret key**", you should see the message "API key
@@ -527,22 +662,30 @@
     every time you construct a class for OpenAI calls.We can use the `OpenAI` language
     model class to set up an **LLM** to interact with. Let''s create an agent that
     calculates using this model - I am omitting the imports from the previous example:'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE18]'
+  id: totrans-103
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE18]'
 - en: 'We should be seeing this output:'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE19]'
+  id: totrans-105
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE19]'
 - en: This looks quite promising, I think. Let's move on to the next provider and
     more examples!
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
 - en: Hugging Face
+  id: totrans-107
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -574,17 +717,22 @@
     can make the token available in your environment as `HUGGINGFACEHUB_API_TOKEN`.Let''s
     see an example, where we use an open-source model developed by Google, the Flan-T5-XXL
     model:'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE20]'
+  id: totrans-109
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE20]'
 - en: 'We get the response "`japan`."The **LLM** takes a text input, a question in
     this case, and returns a completion. The model has a lot of knowledge and can
     come up with answers to knowledge questions. We can also get simple recommendations:'
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
 - en: Azure
+  id: totrans-111
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -600,9 +748,11 @@
     are a few more steps involved, and personally, I found this process annoying and
     frustrating, and I gave up. After set up, the models should be accessible through
     the `AzureOpenAI()` llm class in **LangChain**.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
 - en: Google Cloud
+  id: totrans-113
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -617,121 +767,157 @@
     gcloud **command line interface** (**CLI**) installed. You can find the instructions
     here: [https://cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install)You
     can then authenticate and print a key token with this command from the terminal:'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE21]'
+  id: totrans-115
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE21]'
 - en: You also need to enable Vertex for your project. If you haven't enabled it,
     you should get a helpful error message pointing you to the right website, where
     you have to click on "Enable".Let's run a model!
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE22]'
+  id: totrans-117
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE22]'
 - en: 'We should see this response:'
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE23]'
+  id: totrans-119
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE23]'
 - en: 'I''ve set verbose to True in order to see the reasoning process of the model.
     It''s quite impressive it comes up with the right response even given a misspelling
     of the name. The step by step prompt instruction is key to the correct answer.There
     are various models available through Vertex such as these:'
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
 - en: '| **Model** | **Description** | **Properties** |'
+  id: totrans-121
   prefs: []
   type: TYPE_TB
 - en: '| text-bison | Fine-tuned to follow natural language instructions | Max input
     token: 8,192Max output tokens: 1,024Training data: Up to Feb 2023 |'
+  id: totrans-122
   prefs: []
   type: TYPE_TB
 - en: '| chat-bison | Fine-tuned for multi-turn conversation | Max input token: 4,096
     Max output tokens: 1,024 Training data: Up to Feb 2023 Max turns : 2,500 |'
+  id: totrans-123
   prefs: []
   type: TYPE_TB
 - en: '| code-bison | Fine-tuned to generate code based on a natural language description
     | Max input token: 4,096 Max output tokens: 2,048 |'
+  id: totrans-124
   prefs: []
   type: TYPE_TB
 - en: '| codechat-bison | Fine-tuned for chatbot conversations that help with code-related
     questions | Max input token: 4,096 Max output tokens: 2,048 |'
+  id: totrans-125
   prefs: []
   type: TYPE_TB
 - en: '| code-gecko | Fine-tuned to suggest code completion | Max input tokens: 2,048
     Max output tokens: 64 |'
+  id: totrans-126
   prefs: []
   type: TYPE_TB
 - en: 'Table 3.1: Models available in Vertex Generative AI. You can check out the
     documentation at [https://cloud.google.com/vertex-ai/docs/generative-ai](https://cloud.google.com/vertex-ai/docs/generative-ai)We
     can also generate code. Let''s see if **Code-Bison** model can solve FizzBuzz,
     a common interview question for entry and mid-level software developer positions:'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE24]'
+  id: totrans-128
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE24]'
 - en: 'We are getting this response:'
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE25]python'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
 - en: answer = []
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
 - en: 'for i in range(1, n + 1):'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
 - en: 'if i % 3 == 0 and i % 5 == 0:'
+  id: totrans-133
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
 - en: answer.append("FizzBuzz")
+  id: totrans-134
   prefs:
   - PREF_IND
   - PREF_IND
   type: TYPE_NORMAL
 - en: 'elif i % 3 == 0:'
+  id: totrans-135
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
 - en: answer.append("Fizz")
+  id: totrans-136
   prefs:
   - PREF_IND
   - PREF_IND
   type: TYPE_NORMAL
 - en: 'elif i % 5 == 0:'
+  id: totrans-137
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
 - en: answer.append("Buzz")
+  id: totrans-138
   prefs:
   - PREF_IND
   - PREF_IND
   type: TYPE_NORMAL
 - en: 'else:'
+  id: totrans-139
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
 - en: answer.append(str(i))
+  id: totrans-140
   prefs:
   - PREF_IND
   - PREF_IND
   type: TYPE_NORMAL
 - en: return answer
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE26]'
+  id: totrans-142
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE26]'
 - en: Would you hire code-bison into your team?
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
 - en: Anthropic
+  id: totrans-144
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -745,9 +931,11 @@
     transformer architecture.Unfortunately, Claude is not available to the general
     public (yet). You need to apply for access to use Claude and set the `ANTHROPIC_API_KEY`
     environment variable.
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
 - en: Jina AI
+  id: totrans-146
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -766,12 +954,15 @@
     image embedding, visual question answering, visual reasoning, image upscale, or
     Chinese text embedding.Here, we are setting up a visual question answering API
     with the recommended model:'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 3.5: Visual Question Answering API in Jina AI.](../media/file24.png)'
+  id: totrans-148
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 3.5: Visual Question Answering API in Jina AI.'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
 - en: 'We get examples for client calls in Python and cURL, and a demo, where we can
@@ -781,32 +972,45 @@
     chatbot, this time powered by Jina AI. We can generate the API token, which we
     can set as `JINA_AUTH_TOKEN`, at [https://chat.jina.ai/api](https://chat.jina.ai/api)Let''s
     translate from English to French here:'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE27]'
+  id: totrans-151
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE27]'
 - en: '[PRE28]'
+  id: totrans-152
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE28]'
 - en: '[PRE29]'
+  id: totrans-153
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE29]'
 - en: 'We can set different temperatures, where a low temperature makes the responses
     more predictable. In this case it makes very little difference. We are starting
     the conversation with a system message clarifying the purpose of the chatbot.Let''s
     ask for some food recommendations:'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE30]'
+  id: totrans-155
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE30]'
 - en: 'I am seeing this response in Jupyter:'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE31]'
+  id: totrans-157
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE31]'
 - en: It ignored the one-word instruction, but I actually liked reading the ideas.
     I think I could try this for my son. With other chatbots, I am getting the suggestion
     of Ratatouille.It's important to understand the difference in LangChain between
@@ -818,9 +1022,11 @@
     such as `predict()` and `predict_messages()`. This shared interface allows for
     interchangeability between different types of models in applications as well as
     between Chat and LLM models.
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
 - en: Replicate
+  id: totrans-159
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -846,27 +1052,35 @@
     order to run bigger jobs, you need to set up your credit card (under billing).You
     can find a lot of models available at [https://replicate.com/explore](https://replicate.com/explore)Here''s
     a simple example for creating an image:'
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE32]'
+  id: totrans-161
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE32]'
 - en: 'I got this image:'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 3.7: A Book Cover for a book about generative AI with Python - Stable
     Diffusion.](../media/file25.png)'
+  id: totrans-163
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 3.7: A Book Cover for a book about generative AI with Python - Stable
     Diffusion.'
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
 - en: I think it's a nice image - is that an AI chip that creates art?Let's see quickly
     how to run a model locally in Huggingface transformers or Llama.cpp!
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
 - en: Local Models
+  id: totrans-166
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -880,34 +1094,44 @@
     discussing it here. The advantages of running models locally are complete control
     over the model and not sharing any data over the internet.Let''s see this first
     with the transformers library by Hugging Face.'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
 - en: Hugging Face transformers
+  id: totrans-168
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
 - en: 'I''ll quickly show the general recipe of setting up and running a pipeline:'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE33]'
+  id: totrans-170
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE33]'
 - en: 'This model is quite small (355 million parameters), but relative performant,
     and instruction tuned for conversations.Please note that we don''t need an API
     token for local models!This will download everything that''s needed for the model
     such as the tokenizer and model weights. We can then run a text completion to
     give us some content for this chapter.In order to plug in this pipeline into a
     LangChain agent or chain, we can use it the same way that we''ve seen before:'
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE34]'
+  id: totrans-172
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE34]'
 - en: In this example, we also see the use of a `PromptTemplate` that gives specific
     instructions for the task.Let's do Llama.cpp next.
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
 - en: Llama.cpp
+  id: totrans-174
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
@@ -917,34 +1141,46 @@
     to have an md5 checksum tool installed. This is included by default in several
     Linux distributions such as Ubuntu. On MacOs, you can install it with brew like
     this:'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE35]'
+  id: totrans-176
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE35]'
 - en: 'We need to download the llama.cpp repository from Github. You can do this online
     choosing one of the download options on Github, or you can use a git command from
     the terminal like this:'
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE36]'
+  id: totrans-178
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE36]'
 - en: 'Then we need to install the python requirements, which we can do with the pip
     package installer - let''s also switch to the llama.cpp project root directory
     for convenience:'
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE37]'
+  id: totrans-180
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE37]'
 - en: 'You might want to create a Python environment before you install requirements
     - but this is up to you. Now we need to compile llama.cpp:'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE38]'
+  id: totrans-182
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE38]'
 - en: 'We can parallelize the build with 4 processes. In order to get the Llama model
     weights, you need to sign up with the T&Cs and wait for a registration email from
     Meta. There are tools such as the llama model downloader in the pyllama project,
@@ -958,27 +1194,36 @@
     using the convert script. Then we can optionally quantize the models to save memory
     when doing inference. Quantization refers to reducing the number of bits that
     are used to store weights.'
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE39]'
+  id: totrans-184
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE39]'
 - en: 'This last file is much smaller than the previous files and will take up much
     less space in memory as well, which means that you can run it on smaller machines.Once
     we have chosen a model that we want to run, we can integrate it into an agent
     or a chain for example as follows:'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE40]'
+  id: totrans-186
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE40]'
 - en: )
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
 - en: This concludes the introduction to model providers. Let's build an application!
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
 - en: Customer Service Helper
+  id: totrans-189
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -989,25 +1234,30 @@
     and addressing complaints. Their work is crucial for maintaining customer satisfaction
     and loyalty, which directly affects a company''s reputation and financial success.
     Generative AI can assist customer service agents in several ways:'
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
 - en: 'Sentiment classification: this helps identify customer emotions and allows
     agents to personalize their response.'
+  id: totrans-191
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Summarization: this enables agents to understand the key points of lengthy
     customer messages and save time.'
+  id: totrans-192
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Intent classification: similar to summarization, this helps predict the customer''s
     purpose and allows for faster problem-solving.'
+  id: totrans-193
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Answer suggestions: this provides agents with suggested responses to common
     inquiries, ensuring that accurate and consistent messaging is provided.'
+  id: totrans-194
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -1024,11 +1274,14 @@
     This was analyzed by Zengzhi Wang and others in their April 2023 study "Is ChatGPT
     a Good Sentiment Analyzer? A Preliminary Study". A prompt, for an LLM for sentiment
     analysis could be something like this:'
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE41]'
+  id: totrans-196
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE41]'
 - en: 'LLMs can be also very effective at summarization, much better than any previous
     models. The downside can be that these model calls are slower than more traditional
     ML models and more expensive.If we want to try out more traditional or smaller
@@ -1036,25 +1289,31 @@
     as part of their capabilities. For example, NLP Cloud''s model list includes spacy
     and many others: [https://docs.nlpcloud.com/#models-list](https://docs.nlpcloud.com/#models-list)Many
     Hugging Face models are supported for these tasks including:'
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
 - en: document-question-answering
+  id: totrans-198
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: summarization
+  id: totrans-199
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: text-classification
+  id: totrans-200
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: text-question-answering
+  id: totrans-201
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: translation
+  id: totrans-202
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -1070,78 +1329,105 @@
     make do as much as I can with smaller models that I can find on Hugging Face for
     this exercise.We can list the 5 most downloaded models on Hugging Face Hub for
     text classification through the huggingface API:'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE42]'
+  id: totrans-204
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE42]'
 - en: 'Let''s see the list:'
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
 - en: '| **Model** | **Downloads** |'
+  id: totrans-206
   prefs: []
   type: TYPE_TB
 - en: '| nlptown/bert-base-multilingual-uncased-sentiment | 5805259 |'
+  id: totrans-207
   prefs: []
   type: TYPE_TB
 - en: '| SamLowe/roberta-base-go_emotions | 5292490 |'
+  id: totrans-208
   prefs: []
   type: TYPE_TB
 - en: '| cardiffnlp/twitter-roberta-base-irony | 4427067 |'
+  id: totrans-209
   prefs: []
   type: TYPE_TB
 - en: '| salesken/query_wellformedness_score | 4380505 |'
+  id: totrans-210
   prefs: []
   type: TYPE_TB
 - en: '| marieke93/MiniLM-evidence-types | 4370524 |'
+  id: totrans-211
   prefs: []
   type: TYPE_TB
 - en: 'Tablee 3.2: The most popular text classification models on Hugging Face Hub.We
     can see that these models are about small ranges of categories such as sentiment,
     emotions, irony, or well-formedness. Let''s use the sentiment model.'
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE43]'
+  id: totrans-213
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE43]'
 - en: 'I am getting this result:'
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE44]'
+  id: totrans-215
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE44]'
 - en: 'Not a happy camper. Let''s move on!Let''s see the 5 most popular models for
     summarization as well:'
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
 - en: '| **Model** | **Downloads** |'
+  id: totrans-217
   prefs: []
   type: TYPE_TB
 - en: '| t5-base | 2710309 |'
+  id: totrans-218
   prefs: []
   type: TYPE_TB
 - en: '| t5-small | 1566141 |'
+  id: totrans-219
   prefs: []
   type: TYPE_TB
 - en: '| facebook/bart-large-cnn | 1150085 |'
+  id: totrans-220
   prefs: []
   type: TYPE_TB
 - en: '| sshleifer/distilbart-cnn-12-6 | 709344 |'
+  id: totrans-221
   prefs: []
   type: TYPE_TB
 - en: '| philschmid/bart-large-cnn-samsum | 477902 |'
+  id: totrans-222
   prefs: []
   type: TYPE_TB
 - en: 'Table 3.3: The most popular summarization models on Hugging Face Hub.'
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
 - en: 'All these models have a relatively small footprint compared to large models.
     Let''s execute the summarization model remotely on a server:'
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE45]'
+  id: totrans-225
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE45]'
 - en: 'Please note that you need to have your `HUGGINGFACEHUB_API_TOKEN` set for this
     to work.I am seeing this summary:A customer''s coffee machine arrived ominously
     broken, evoking a profound sense of disbelief and despair. "This heartbreaking
@@ -1153,19 +1439,24 @@
     We could try other models or just go for an LLM with a prompt asking to summarize.
     Let''s move on.It could be quite useful to know what kind of issue the customer
     is writing about. Let''s ask **VertexAI**:'
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE46]'
+  id: totrans-227
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE46]'
 - en: We get "product issues" back, which is correct for the long email example that
     I am using here.I hope it was exciting to see how quickly we can throw a few models
     and tools together in LangChain to get something that looks actually useful. We
     could easily expose this in an interface for customer service agents to see.Let's
     summarize.
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
 - en: Summary
+  id: totrans-229
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1180,42 +1471,52 @@
     answering through augmented retrieval using tools such as web searches and chatbots
     relying on document search through indexing. Let's see if you remember some of
     the key takeaways from this chapter!
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
 - en: Questions
+  id: totrans-231
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: 'Please have a look to see if you can come up with the answers to these questions.
     I''d recommend you go back to the corresponding sections of this chapter, if you
     are unsure about any of them:'
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
 - en: How do you install LangChain?
+  id: totrans-233
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: List at least 4 cloud providers of LLMs apart from OpenAI!
+  id: totrans-234
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What are Jina AI and Hugging Face?
+  id: totrans-235
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: How do you generate images with LangChain?
+  id: totrans-236
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: How do you run a model locally on your own machine rather than through a service?
+  id: totrans-237
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: How do you perform text classification in LangChain?
+  id: totrans-238
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: How can we help customer service agents in their work through generative AI?
+  id: totrans-239
   prefs:
   - PREF_OL
   type: TYPE_NORMAL

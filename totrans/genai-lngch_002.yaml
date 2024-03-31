@@ -725,11 +725,13 @@
   id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: GPT模型还可以处理文本以外的输入和输出形式，正如GPT-4能够处理图像输入和文本一样。此外，它们还为文本到图像技术（如扩散和并行解码）奠定了基础，从而实现了与图像一起工作的**视觉基础模型**（**VFMs**）的发展。总之，GPT模型发展迅速，为创建适用于各种下游任务和形式的多功能基础人工智能模型奠定了基础，最终推动了各种应用和行业的创新。在接下来的部分中，我们将回顾深度学习和生成模型近年来取得的进展，这些进展导致了明显能力的爆炸性增长以及这些模型所受到的关注。
 - en: Why now?
   id: totrans-70
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 为什么现在？
 - en: 'The success of generative AI coming into the public spotlight in 2022 can be
     attributed to several interlinked drivers. The development and success of generative
     models have relied on improved algorithms, considerable advances in compute power
@@ -756,14 +758,18 @@
   id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 2022年生成式人工智能成功进入公众视野的原因可以归因于几个相互关联的推动因素。生成模型的发展和成功依赖于改进的算法、计算能力和硬件设计的显著进步、大规模标记数据集的可用性，以及积极合作的研究社区帮助发展一套工具和技术。更复杂的数学和计算方法的发展在生成模型的进步中发挥了至关重要的作用。上世纪80年代由杰弗里·辛顿、大卫·鲁梅尔哈特和罗纳德·威廉姆斯引入的反向传播算法就是一个例子。它提供了一种有效训练多层神经网络的方法。在21世纪初，**神经网络**开始重新流行，研究人员开发了更复杂的架构。然而，深度学习的出现，一种具有众多层的神经网络，标志着这些模型性能和能力的重大转折点。有趣的是，尽管深度学习的概念已存在一段时间，但生成模型的发展和扩展与硬件的显著进步相关，特别是**图形处理单元**（**GPU**），这些硬件在推动该领域向前发展方面起到了关键作用。正如前面提到的，更便宜和更强大的硬件的可用性是发展更深层模型的关键因素。这是因为深度学习模型需要大量的计算能力来训练和运行。这涉及到处理能力、内存和磁盘空间的所有方面。这张图显示了随着时间推移，不同介质（如磁盘、固态、闪存和内存）的计算机存储成本，以每TB美元的价格计算（来源：Our
+    World in Data；[https://ourworldindata.org/moores-law](https://ourworldindata.org/moores-law)）：
 - en: '![Figure 1.5: Cost of computer storage since the 1950s in dollars per terrabyte.](../media/file4.png)'
   id: totrans-72
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.5：自1950年代以来每TB的计算机存储成本。](../media/file4.png)'
 - en: 'Figure 1.5: Cost of computer storage since the 1950s in dollars per terrabyte.'
   id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.5：自1950年代以来每TB的计算机存储成本。
 - en: While the past, training a deep learning model was prohibitively expensive,
     as the cost of hardware has come down, it has become possible to train bigger
     models on much larger datasets. The model size is one of the factors determining
@@ -882,19 +888,24 @@
   id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 诸如BERT和GPT之类的模型得以实现，得益于**Transformer**深度神经网络架构，这对自然语言处理产生了深远影响。Transformer架构旨在避免递归，以允许并行计算，不同变体的Transformer架构不断推动自然语言处理和生成式人工智能领域的可能性边界。Transformer的一个显著特征是注意力机制。传统的序列到序列模型经常面临处理长依赖性的问题
+    - 如果序列过长，它们很难记住相关信息。Transformer模型引入了注意力机制来解决这个问题。自注意力机制，通常被称为Transformer模型的核心，为序列中的每个单词分配一个分数，确定应该给予该单词多少关注。Transformer由可以堆叠的模块组成，从而创建可以学习大规模数据集的非常大的模型。这些在这里的图表中指示出来：
 - en: '![Figure 1.7: The Transformer architecture (credit: Yuening Jia, Wikimedia
     Commons)](../media/file6.png)'
   id: totrans-82
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.7：Transformer架构（来源：Yuening Jia，Wikimedia Commons）](../media/file6.png)'
 - en: 'Figure 1.7: The Transformer architecture (credit: Yuening Jia, Wikimedia Commons)'
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.7：Transformer架构（来源：Yuening Jia，Wikimedia Commons）
 - en: 'The architectural features that have contributed to the success of Transformers:'
   id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 促成Transformer成功的架构特征：
 - en: '**Encoder-Decoder structure**: The Transformer model follows an Encoder-Decoder
     structure. The encoder takes the input sequence and computes a series of representations,
     (contextual embeddings), for each word. These representations consider not only
@@ -906,6 +917,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**编码器-解码器结构**：Transformer模型遵循编码器-解码器结构。编码器接受输入序列并为每个单词计算一系列表示（上下文嵌入）。这些表示不仅考虑单词的固有含义（语义值），还考虑它们在序列中的上下文。解码器然后使用这些编码信息逐个生成输出序列项，利用先前生成项的上下文。'
 - en: '**Positional Encoding**: Since Transformer doesn''t process words sequentially
     but instead processes all words simultaneously, it lacks any notion of the order
     of words. To remedy this, information about the position of words in the sequence
@@ -916,6 +928,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**位置编码**：由于Transformer不是按顺序处理单词，而是同时处理所有单词，它缺乏单词顺序的概念。为了弥补这一点，将单词在序列中的位置信息通过位置编码注入模型中。这些编码被添加到表示每个单词的输入嵌入中，从而使模型能够考虑序列中单词的顺序。'
 - en: '**Layer Normalization**: To stabilize the network''s learning, Transformer
     uses a technique called Layer Normalization. This technique normalizes the model''s
     inputs across the features dimension (instead of the batch dimension as in Batch
@@ -924,6 +937,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**层归一化**：为了稳定网络的学习，Transformer使用一种称为层归一化的技术。这种技术在特征维度上对模型的输入进行归一化（而不是批量维度，如批量归一化），从而提高了学习的整体速度和稳定性。'
 - en: '**Multi-Head Attention**: Instead of applying attention once, the Transformer
     applies it multiple times in parallel — improving the model''s ability to focus
     on different types of information and thus capturing a richer combination of features.'
@@ -931,6 +945,7 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**多头注意力**：Transformer不是一次应用注意力，而是并行多次应用注意力 - 提高了模型关注不同类型信息的能力，从而捕捉到更丰富的特征组合。'
 - en: 'Another, optional architectural feature, which is not specific to Transformers
     are Skip Connections (also: Residual Connections). These were introduced to mitigate
     degradation problems as networks get deeper, Skip Connections are used. This allows
@@ -963,11 +978,14 @@
   id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一个可选的架构特性，不特定于变压器的是跳跃连接（也称为残差连接）。这些被引入以减轻网络变得更深时的退化问题，使用了跳跃连接。这允许梯度在层间不变地流动，通过将输入直接传递给更深的层。变压器在自然语言处理中推动了NLP的发展，特别是在翻译和语言理解方面。**神经机器翻译**（**NMT**）是一种使用深度学习捕捉句子中长距离依赖关系的机器翻译主流方法。基于变压器的**NMT**优于以往的方法，如使用循环神经网络，特别是**长短期记忆**（**LSTM**）网络。这可以归因于这种强大的架构，首先是注意力，它允许变压器模型以灵活的方式处理单词顺序，无论它们之间有多远，这对每种特定情况都是最佳的。此外，这些架构特性的组合使其能够成功处理涉及理解和生成人类语言以及其他领域的任务。OpenAI强大的用于语言生成的GPT模型也是一个变压器，同样，DeepMind的AlphaFold
+    2是一个从基因序列预测蛋白质结构的模型。变压器能够比其他模型更好地在较长序列上保持性能，例如循环神经网络。这一直是它们成功的原因，然而，变压器架构意味着它们只能捕捉固定输入宽度内的依赖关系。早期的注意力机制随着数据点数量的平方级增长，使其在具有大量输入的情况下无法应用。已经提出了许多方法来获得效率提升，例如稀疏的、低秩的自注意力和潜在的瓶颈，仅举几例。其他工作尝试扩展超出固定输入大小的序列，如Transformer-XL架构通过存储已编码句子的隐藏状态来重新引入递归，以便在后续编码下一个句子时利用它们。GPT的特殊之处及其名称的起源在于预训练。让我们看看这些LLM是如何训练的！
 - en: Pre-training
   id: totrans-90
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 预训练
 - en: The first step in training a **Large Language Model** (**LLM**) is tokenization.
     This process involves converting words into numbers so that they can be processed
     by the model given that **LLMs** are mathematical functions that require numerical
@@ -1014,11 +1032,14 @@
   id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练**大型语言模型**（**LLM**）的第一步是进行标记化。这个过程涉及将单词转换为数字，以便模型可以处理它们，因为**LLMs**是需要数字输入和输出的数学函数。为了进行这种标记化，**LLMs**使用独特的标记器。标记器将文本中的单词映射到相应的整数列表。在训练**LLM**之前，标记器通常会适应整个训练数据集，然后被冻结。常用的标记器类型是字节对编码。需要注意的是，标记器不会产生任意整数。相反，它们输出特定范围内的整数
+    - 从到，其中表示标记器的词汇量。现在，考虑输出，当LLM接收到文本时，主要产生一个落在的向量。然后，将该输出向量通过softmax函数传递，产生另一个向量，称为概率向量。由于其条目为非负且总和为，这个向量可以被解释为**LLM**词汇的概率分布。此外，需要指出**LLMs**只能基于不超过其上下文窗口的一系列标记生成标记。这个上下文窗口指的是**LLM**可以使用的最长标记序列的长度。如果提供了比这个窗口更长的序列，**LLM**需要截断序列或使用算法修改来处理它。**LLMs**的典型上下文窗口大小可以在大约1,000到10,000个标记之间。训练**LLMs**涉及特定的过程，将输入数据标记化，馈送到模型中，并生成一个概率分布，覆盖模型的词汇。这个过程中的具体机制，如softmax函数和上下文窗口，有助于促进**LLMs**对输入数据的理解和响应。**负对数似然**（**NLL**）和**困惑度**（**PPL**）是在训练和评估语言模型过程中使用的重要指标。**NLL**是机器学习算法中使用的损失函数，旨在最大化正确预测的概率。较低的**NLL**表示网络已成功从训练集中学习到模式，因此它将能够准确预测训练样本的标签。需要提到**NLL**是一个在正区间内约束的值。另一方面，**困惑度**（**PPL**）是**NLL**的指数，提供了更直观地理解模型性能的方式。较小的**PPL**值表示训练良好的网络可以准确预测，而较高的值表示学习性能差。直观地说，我们可以说低困惑度意味着模型对下一个词不太惊讶。因此，在预训练中的目标是最小化困惑度，这意味着模型的预测更符合实际结果。在比较不同的语言模型时，困惑度通常被用作各种任务的基准指标。它提供了关于语言模型表现如何的想法，较低的困惑度表示模型对其预测更有把握。因此，与困惑度较高的其他模型相比，困惑度较低的模型将被认为表现更好。
 - en: Scaling
   id: totrans-92
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 缩放
 - en: It is worth talking at least briefly about the choice of architecture, and why
     these models are as large as they are. In a paper from 2020 by researchers from
     OpenAI, Kaplan and others discussed scaling laws and choice of parameters.Interestingly,
@@ -1046,17 +1067,20 @@
   id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 至少简要讨论架构的选择以及为什么这些模型如此庞大是值得的。在2020年的一篇来自OpenAI的研究人员Kaplan等人的论文中，他们讨论了缩放定律和参数选择。有趣的是，他们比较了许多不同的架构选择，并且在其他方面表明，变压器在很大程度上由于更好地利用长上下文而优于**LSTMs**作为语言模型，而这些循环网络在不到100个标记后就达到了平稳状态，而变压器则通过整个上下文改进。因此，变压器不仅在训练和推理速度上比变压器更好，而且在查看相关上下文时也表现更好。此外，他们发现数据集大小、模型大小（参数数量）和训练计算量之间存在幂律关系，换句话说，为了将性能提高一定因子，其中一个因素必须按照该因子的幂进行扩展，然而，为了获得最佳性能，这三个因素必须同时扩展，以避免出现瓶颈效应。DeepMind的研究人员（Hoffmann等人，2022年）分析了**LLMs**的训练计算量和数据集大小，并得出结论，根据缩放定律，**LLMs**在计算预算和数据集大小方面训练不足。他们预测，如果大型模型比现在大大缩小并且训练时间更长，大型模型将表现更好，并且事实上，通过将**70亿参数的Chinchilla模型**与他们的Gopher模型（包含**2800亿参数**）在基准测试中进行比较，他们验证了他们的预测。最近，该团队发现，以更多的纪元进行更长时间的训练或以更多的petaflops进行更多的计算似乎不再改善性能，而较小的网络和更高质量的数据集可以提供非常有竞争力的性能。
 - en: Conditioning
   id: totrans-94
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 条件化
 - en: 'Conditioning large language models refers to adapting the model for specific
     tasks. Different methods of conditioning include fine-tuning, prompting, instruction
     tuning, and reinforcement learning:'
   id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 对大型语言模型进行条件化是指为特定任务调整模型。不同的条件化方法包括微调、提示、指令调整和强化学习：
 - en: Fine-tuning involves modifying a pre-trained language model by training it on
     a specific task using supervised learning. For example, to make a model more amenable
     to chats with humans, the model is trained on examples of tasks formulated as
@@ -1065,11 +1089,13 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 微调涉及通过监督学习在特定任务上训练预训练的语言模型。例如，为了使模型更适合与人类对话，模型会在自然语言指令形式的任务示例上进行训练（指令调整）。
 - en: Prompting techniques present problems as text prompts and expect model completions.
   id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提示技术将问题呈现为文本提示，并期望模型完成。
 - en: For fine-tuning, usually, reinforcement learning combines supervised fine-tuning
     with reinforcement learning using human feedback to train the model based on human
     preferences. LLMs can be trained on a training set of examples which are themselves
@@ -1084,11 +1110,15 @@
   id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于微调，通常，强化学习将监督微调与使用人类反馈的强化学习相结合，根据人类偏好训练模型。LLMs可以在一个由LLM生成的示例训练集上进行训练（从一小部分人类生成的初始示例引导），例如Microsoft
+    Research的phi-1的训练集（"只需教科书"，2023年6月）。通过提示技术，将呈现类似问题及其解决方案的文本示例。零-shot提示涉及没有解决的示例，而少量-shot提示包括少量类似（问题，解决方案）对的示例。这些调节方法不断发展，变得更加有效，对各种应用非常有用。*第8章*
+    *提示工程*将进一步探讨提示工程和调节方法。
 - en: How to give it a go?
   id: totrans-99
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 如何尝试一下？
 - en: You can access OpenAI's model through their website or through their API. If
     you want to try other large language models on your laptop, open-source LLMs are
     a good place to get started. There is a whole zoo of stuff out there!You can access
@@ -1099,11 +1129,14 @@
   id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以通过他们的网站或API访问OpenAI的模型。如果你想在笔记本电脑上尝试其他大型语言模型，开源LLMs是一个很好的起点。这里有一大堆东西！你可以通过Hugginface或其他提供商访问这些模型。你甚至可以下载它们，微调它们，或者
+    - 如果你感觉很高级 - 完全训练一个模型。我们将在*第9章* *LLM在生产中的应用*中更详细地讨论如何使用这些模型。在下一节中，我们将看看稳定扩散以及它是如何工作的。
 - en: What is a Stable Diffusion model?
   id: totrans-101
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 什么是稳定扩散模型？
 - en: Image generation models are a type of generative model that can be used to generate
     images. Image generation models are a powerful tool that can be used to generate
     realistic and creative images. They are still in their early stages of development,
@@ -1115,11 +1148,14 @@
   id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 图像生成模型是一种生成模型，可用于生成图像。图像生成模型是一个强大的工具，可用于生成逼真和创意的图像。它们仍处于早期开发阶段，但有潜力彻底改变我们创建和消费图像的方式。最受欢迎的图像生成模型之一是**稳定扩散**，另一个是**Midjourney**。简单来说，这些是一种深度学习模型，根据文本提示创建图像。Google
+    Brain在2022年宣布了两个文本到图像模型的创建，**Imagen**和**Parti**。
 - en: How does it work?
   id: totrans-103
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 它是如何工作的？
 - en: 'The **Stable Diffusion** model is a deep learning, text-to-image model developed
     by researchers from the CompVis Group at Ludwig Maximilian University of Munich
     and Runway. It generates detailed images conditioned on text descriptions and
@@ -1169,16 +1205,21 @@
   id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: '**稳定扩散**模型是由慕尼黑路德维希·马克西米利安大学的计算机视觉组和Runway的研究人员开发的一种深度学习文本到图像模型。它生成根据文本描述条件的详细图像，并利用潜在扩散模型架构。该模型的源代码甚至权重已经在**CreativeML**
+    **OpenRAIL**-**M许可证**下公开发布，该许可证“不对重用、分发、商业化、适应性施加任何限制”。该模型可以在配备适度GPU的消费者硬件上运行（例如**GeForce
+    40**系列）。**稳定扩散**是一种使用Gumbel分布向图像添加噪声的扩散模型。Gumbel分布是一种连续概率分布，通常在机器学习中使用，因为它易于抽样，并且具有更稳定的特性。稳定性意味着模型不太可能陷入局部最小值，这可能会发生在其他类型的扩散模型中。该模型由**变分自动编码器**（**VAE**）、**U-Net**和**文本编码器**组成。**VAE**有两部分，编码器和解码器，将原始高维图像压缩成较低维的潜在空间，并将其重构回图像空间。潜在空间显著降低了计算复杂性，使扩散过程更快。**VAE**编码器将图像压缩到潜在空间，而**U-Net**通过前向扩散进行去噪以获得潜在表示。然后**VAE**解码器生成最终图像。该模型可以灵活地根据各种形式进行条件化，并利用交叉注意机制来整合条件信息。**U-Net**是一种流行的对称编码器-解码器结构的卷积神经网络（CNN）。它通常用于图像分割任务，但在稳定扩散的背景下，它用于预测图像中的噪声。U-Net将嘈杂图像作为输入，并通过一系列卷积层处理以提取特征和学习表示。这些卷积层通常组织在一个收缩路径中，减少空间维度同时增加通道数。一旦收缩路径达到U-Net的瓶颈，它通过对称扩展路径进行扩展。在扩展路径中，应用转置卷积（也称为上采样或反卷积）逐渐上采样空间维度同时减少通道数。在扩散过程中，U-Net的扩展路径接受嘈杂图像并从前向扩散中重建潜在表示。通过将重建的潜在表示与真实潜在表示进行比较，U-Net预测原始图像中的噪声估计。这种噪声的预测有助于在反向扩散过程中恢复原始图像。扩散模型通过类似于物理学中的扩散的过程运作。它通过向图像添加噪声进行**前向扩散过程**，直到图像变得不典型和嘈杂。这个过程类似于一滴墨水落入水杯中逐渐扩散的过程。这里的独特之处在于**反向扩散过程**，模型试图从嘈杂、无意义的图像中恢复原始图像。通过逐步从嘈杂图像中减去估计的噪声，最终恢复类似于原始图像的图像。去噪过程在这个图中展示（来源：维基共享资源用户Benlisquare）：'
 - en: '![Figure 1.8: European-style castle in Japan, created using the Stable Diffusion
     V1-5 AI diffusion model. Only steps within a 40-step generation process are shown.](../media/file7.png)'
   id: totrans-105
   prefs: []
   type: TYPE_IMG
+  zh: '![图1.8：在日本创造的欧式城堡，使用稳定扩散V1-5 AI扩散模型。仅显示40步生成过程中的步骤。](../media/file7.png)'
 - en: 'Figure 1.8: European-style castle in Japan, created using the Stable Diffusion
     V1-5 AI diffusion model. Only steps within a 40-step generation process are shown.'
   id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 图1.8：在日本创造的欧式城堡，使用稳定扩散V1-5 AI扩散模型。仅显示40步生成过程中的步骤。
 - en: 'In the plot, you can see the image generation step by step, a U-Net denoising
     process using the DDIM sampling method, which repeatedly removes Gaussian noise,
     and then decodes the denoised output into pixel space.Stable Diffusion is a deep
@@ -1187,35 +1228,41 @@
   id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 在图中，您可以逐步看到图像生成过程，使用DDIM采样方法的U-Net去噪过程，该方法重复去除高斯噪声，然后将去噪输出解码为像素空间。稳定扩散是一种利用扩散过程从文本提示生成图像的深度学习模型，通过几个清晰的步骤：
 - en: It starts by producing a random tensor (random image) in the latent space, which
     serves as the noise for our initial image. ]
   id: totrans-108
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 它从在潜在空间中生成一个随机张量（随机图像）开始，这作为我们初始图像的噪声。
 - en: A noise predictor (**U-Net**) takes in both the latent noisy image and the provided
     text prompt and predicts the noise. ]
   id: totrans-109
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 一个噪声预测器（**U-Net**）接收潜在嘈杂图像和提供的文本提示，并预测噪声。
 - en: The model then subtracts the latent noise from the latent image.
   id: totrans-110
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 模型然后从潜在图像中减去潜在噪声。
 - en: Steps 2 and 3 are repeated for a set number of sampling steps, for instance,
     40 times as shown in the plot.
   id: totrans-111
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 步骤2和3会重复进行一定数量的采样步骤，例如，在图中显示的40次。
 - en: Finally, the decoder component of the **VAE** transforms the latent image back
     into pixel space, providing the final output image.
   id: totrans-112
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最后，**VAE**的解码器组件将潜在图像转换回像素空间，提供最终输出图像。
 - en: During the training of image generation models, a loss function is used to evaluate
     the quality of the generated images. One commonly used loss function is the **mean
     squared error** (**MSE**) loss, which quantifies the difference between the generated
@@ -1234,11 +1281,14 @@
   id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 在图像生成模型的训练过程中，使用损失函数来评估生成图像的质量。一个常用的损失函数是**均方误差**（**MSE**）损失，它量化生成图像与目标图像之间的差异。模型被优化以最小化这种损失，鼓励它生成与期望输出密切相似的图像。该模型是在一个名为**LAION-5B**的数据集上训练的，该数据集源自Common
+    Crawl数据，包括数十亿的图像-文本对。训练数据集根据语言、分辨率、水印可能性和美学评分进行分类。稳定扩散是在该数据集的子集上进行训练的。该模型的训练数据来源多样，其中有相当大一部分来自**Pinterest**、**WordPress**、**Blogspot**、**Flickr**、**DeviantArt**等网站。总的来说，像稳定扩散和Midjourney这样的图像生成模型将文本提示处理成生成的图像，利用正向和反向扩散过程的概念，并在较低维度的潜在空间中运行以提高效率。到目前为止，**稳定扩散**有两个主要版本，**版本1**和**2**。让我们看看它们有何不同。
 - en: Model differences
   id: totrans-114
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: 模型差异
 - en: '**Stable Diffusion v1** and **v2** are different in terms of text processing,
     training data and their results. In terms of text processing, **Stable Diffusion
     v2** uses **OpenClip** for text embedding while **v1** uses **Open AI''s** **CLIP
@@ -1271,11 +1321,22 @@
   id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: '**稳定扩散 v1** 和 **v2** 在文本处理、训练数据和结果方面有所不同。在文本处理方面，**稳定扩散 v2** 使用 **OpenClip**
+    进行文本嵌入，而 **v1** 使用 **Open AI** 的 **CLIP ViT-L/14** 进行文本嵌入。**OpenClip** 比 **CLIP**
+    大五倍，提高了图像质量，也让研究人员在研究和优化模型时更加透明。关于训练数据，**稳定扩散 v1.4** 使用三个不同的数据集进行训练，而 **稳定扩散 v2**
+    则是在一个经过过滤的 **LAION-5B** 子集上进行训练，该子集过滤了明确的色情材料（**NSFW 过滤器**）和美学评分高于阈值的内容。**LAION
+    5B** 数据集是一个包含 58.5 亿个 CLIP 过滤的图像文本对的大规模数据集。数据集中超过 23 亿个样本包含英语，而**22 亿个样本**来自其他
+    100 多种语言。剩下的 10 亿个样本不允许特定语言分配，比如姓名。数据集的获取流程复杂，需要大量处理。它包括对 PB 级 Common Crawl 数据集的分布式处理，图像的分布式下载，以及少量
+    **GPU** 节点的数据后处理，生成最终数据集。过滤还删除了重复样本，并将数据集从 500 亿个候选样本削减到不到 60 亿个 **CLIP** 过滤的图像文本对。在结果方面，稳定扩散
+    v2 更难用于控制风格和生成名人。这种差异可能是由于训练数据的不同，因为 Open AI 的专有数据可能包含更多艺术作品和名人照片，这些内容不包含在稳定扩散
+    v2 的训练数据中。总之，**稳定扩散 v2** 使用了不同的文本嵌入模型，并在不同的数据子集上进行了训练，与 **稳定扩散 v1** 相比产生了不同的结果。虽然
+    **稳定扩散 v2** 可能更透明，更适合长期发展，但 **稳定扩散 v1** 可能在特定用例中表现更好，比如控制风格或生成名人，这是由于其训练数据的原因。现在我们将看一下文本到图像使用案例中模型的条件。'
 - en: Conditioning
   id: totrans-116
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 条件化
 - en: The conditioning process allow these models to be influenced by the input textual
     prompts or other input types like depth maps or outlines for greater precision
     in order to create relevant images. During conditioning, the prompt is tokenized,
@@ -1290,11 +1351,13 @@
   id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 条件过程允许这些模型受到输入文本提示或其他输入类型（如深度图或轮廓）的影响，以便更精确地创建相关图像。在条件过程中，提示被标记化，每个标记被转换为一个嵌入，一个长度为某个特定值的向量，有时是768个值。这些嵌入考虑了单词之间的语义关系，然后由文本变压器处理，并馈送给噪声预测器，引导其生成与文本提示相符的图像。在文本到图像的过程中，模型使用文本提示生成一个全新的图像。文本提示被编码到潜在空间中，扩散过程逐渐添加噪声（由去噪强度控制）以使初始图像演变为输出图像。让我们总结本章！
 - en: Summary
   id: totrans-118
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总结
 - en: Generative models like large language models (LLMs) have received considerable
     attention due to their potential to revolutionize numerous industries and tasks.
     Especially their applications in text generation and image synthesis have garnered
@@ -1314,68 +1377,82 @@
   id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 像大型语言模型（LLMs）这样的生成模型因其在革新许多行业和任务方面的潜力而受到广泛关注。特别是它们在文本生成和图像合成方面的应用引起了媒体的极大关注。领先的公司如OpenAI正在推动LLMs的边界，他们的生成式预训练变压器（GPT）系列因其出色的语言生成能力而受到广泛关注。在本章中，我们讨论了最新突破所吸引的媒体关注，深度学习和人工智能的最近历史，生成模型，LLMs和预训练生成模型（GPT）以及支撑它们的理论思想，特别是变压器架构。我们还讨论了图像的扩散模型以及文本，图像，声音和视频的应用。下一章将探讨生成和特别是LLMs的工具化，重点介绍Langchain框架的基础知识，实施和使用这个特定工具来优化和增强LLMs。我认为在阅读技术书籍时检查自己是否消化了材料是一个好习惯。我为本章创建了一些问题。
 - en: Questions
   id: totrans-120
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 问题
 - en: 'If you''ve read and understood this chapter, you should be able to answer these
     questions:'
   id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你已经阅读并理解了本章，你应该能够回答这些问题：
 - en: What is a generative model?
   id: totrans-122
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是生成模型？
 - en: Which applications exist for generative models?
   id: totrans-123
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 生成模型有哪些应用？
 - en: What's a large language model (LLM) and what does it do?
   id: totrans-124
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是大型语言模型（LLM）以及它的作用是什么？
 - en: How can we get bigger performance from LLMs?
   id: totrans-125
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 我们如何从LLMs中获得更好的性能？
 - en: What are the conditions that make these models possible?
   id: totrans-126
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使这些模型成为可能的条件是什么？
 - en: Which companies and organizations are the big players in developing LLMs?
   id: totrans-127
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 哪些公司和组织是开发LLMs的主要参与者？
 - en: What is a transformer and what does it consist of?
   id: totrans-128
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是变压器，它由什么组成？
 - en: What does GPT mean?
   id: totrans-129
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: GPT是什么意思？
 - en: How does stable diffusion work?
   id: totrans-130
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 稳定扩散是如何工作的？
 - en: How is stable diffusion trained?
   id: totrans-131
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 稳定扩散是如何训练的？
 - en: If you struggle to answer these questions, please refer back to the corresponding
     sections in this chapter to make sure you've understood the material.
   id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你在回答这些问题时遇到困难，请回到本章的相应部分，确保你已经理解了材料。

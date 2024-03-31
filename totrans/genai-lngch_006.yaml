@@ -1,17 +1,25 @@
 - en: 5 Building a Chatbot like ChatGPT
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 5 构建类似ChatGPT的聊天机器人
 - en: Join our book community on Discord
+  id: totrans-1
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 加入我们在Discord上的书籍社区
 - en: '[https://packt.link/EarlyAccessCommunity](https://packt.link/EarlyAccessCommunity)'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: '[https://packt.link/EarlyAccessCommunity](https://packt.link/EarlyAccessCommunity)'
 - en: '![Qr code Description automatically generated](../media/file35.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![自动生成的二维码描述](../media/file35.png)'
 - en: 'In this chapter, we’ll discuss chatbots, what they are, what they can do, and
     how they can be implemented. We’ll start this chapter by discussing the evolution
     of chatbots and the current state-of-the-art. Understanding and enhancing the
@@ -35,32 +43,46 @@
     can find in the `chat_with_retrieval` directory in the Github repository for the
     book at [https://github.com/benman1/generative_ai_with_langchain](https://github.com/benman1/generative_ai_with_langchain)The
     main sections are:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论聊天机器人，它们是什么，能做什么，以及如何实现它们。我们将从讨论聊天机器人的演变和当前的最新技术状态开始。了解和增强当前聊天机器人和大型语言模型（LLMs）的能力对于它们在不同领域的安全有效使用具有实际意义，包括像医学和法律这样受监管的领域。积极沟通，重要的是为了满足客户需求，需要在技术方面实现上下文和记忆的机制。本章的重点是检索机制，包括向量存储以提高响应的准确性和聊天机器人对可用信息和当前对话的忠实度。我们将介绍现代聊天机器人的基础知识，如检索增强语言模型（RALMs），我们在LangChain中实现它们所需的技术背景。我们将详细讨论加载文档和信息的方法，包括向量存储和嵌入。我们还将讨论关于记忆的更具体的方法，这些方法涉及维护正在进行对话的知识和状态。最后，我们从声誉和法律的角度讨论另一个重要主题：审查。让我们确保我们的回复不是无礼的、不宽容的，也不违背组织的精神。LangChain允许您通过一个审查链传递任何文本，以检查是否包含有害内容。在整个章节中，我们将使用Streamlit中的界面实现一个聊天机器人，您可以在书的Github存储库中的`chat_with_retrieval`目录中找到。主要章节包括：
 - en: What is a chatbot?
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 什么是聊天机器人？
 - en: Retrieval and vectors
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 检索和向量
 - en: Implementing a chatbot
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 实现一个聊天机器人
 - en: Don’t say anything stupid!
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 不要说蠢话！
 - en: We'll begin the chapter by introducing chatbots and the state-of-the-art of
     the technology.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将通过介绍聊天机器人和技术的最新状态来开始本章。
 - en: What is a chatbot?
+  id: totrans-10
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 什么是聊天机器人？
 - en: 'A **chatbot** is an Artificial Intelligence program that can chat with users,
     provide information and support, book things, and perform various other tasks.
     It is used to reproduce powerful interactions with users and can be utilized in
@@ -76,72 +98,98 @@
     frequently asked questions, assisting with product recommendations, processing
     orders and payments, and resolving simple customer issues. Some more use cases
     of chatbots include:'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: '**聊天机器人**是一种人工智能程序，可以与用户聊天、提供信息和支持、预订事物以及执行各种其他任务。它用于与用户进行强大的互动，并可用于不同行业和不同目的。聊天机器人有益处，因为它们可以自动化任务、提供即时响应，并为用户提供个性化体验。它们可用于客户支持、潜在客户生成、销售、信息检索等。聊天机器人可以节省时间、提高效率、增强客户体验，并简化业务流程。聊天机器人通过利用自然语言处理（NLP）和机器学习算法工作。它们分析用户输入，理解其意图，并生成适当的回应。它们可以设计为与基于文本的消息平台或基于语音的应用程序一起工作。在客户服务中使用聊天机器人的一些用例包括提供全天候支持、处理常见问题、协助产品推荐、处理订单和付款以及解决简单客户问题。聊天机器人的一些更多用例包括：'
 - en: 'Appointment Scheduling: Chatbots can help users schedule appointments, book
     reservations, and manage their calendars.'
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 预约安排：聊天机器人可以帮助用户安排约会、预订餐厅、管理日历。
 - en: 'Information Retrieval: Chatbots can provide users with specific information,
     such as weather updates, news articles, or stock prices.'
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 信息检索：聊天机器人可以为用户提供特定信息，如天气更新、新闻文章或股票价格。
 - en: 'Virtual Assistants: Chatbots can act as personal assistants, helping users
     with tasks like setting reminders, sending messages, or making phone calls.'
+  id: totrans-14
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 虚拟助手：聊天机器人可以充当个人助手，帮助用户设置提醒、发送消息或打电话。
 - en: 'Language Learning: Chatbots can assist in language learning by providing interactive
     conversations and language practice.'
+  id: totrans-15
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 语言学习：聊天机器人可以通过提供互动对话和语言练习来协助语言学习。
 - en: 'Mental Health Support: Chatbots can offer emotional support, provide resources,
     and engage in therapeutic conversations for mental health purposes.'
+  id: totrans-16
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 心理健康支持：聊天机器人可以提供情感支持，提供资源，并进行治疗性对话以用于心理健康目的。
 - en: 'Education: In educational settings, virtual assistants are being explored as
     virtual tutors, helping students learn and assess their knowledge, answer questions,
     and deliver personalized learning experiences.'
+  id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 教育：在教育环境中，虚拟助手被探索为虚拟导师，帮助学生学习和评估他们的知识，回答问题，并提供个性化学习体验。
 - en: 'HR and Recruitment: Chatbots can assist in the recruitment process by screening
     candidates, scheduling interviews, and providing information about job openings.'
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 人力资源和招聘：聊天机器人可以通过筛选候选人、安排面试和提供有关职位空缺的信息来协助招聘流程。
 - en: 'Entertainment: Chatbots can engage users in interactive games, quizzes, and
     storytelling experiences.'
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 娱乐：聊天机器人可以让用户参与互动游戏、测验和故事体验。
 - en: 'Law: Chatbots can be used to provide basic legal information, answer common
     legal questions, assist with legal research, and help users navigate legal processes.
     They can also help with document preparation, such as drafting contracts or creating
     legal forms.'
+  id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 法律：聊天机器人可以用于提供基本法律信息、回答常见法律问题、协助法律研究，并帮助用户导航法律流程。它们还可以帮助准备文件，如起草合同或创建法律表格。
 - en: 'Medicine: Chatbots can assist with symptom checking, provide basic medical
     advice, and offer mental health support. They can improve clinical decision-making
     by providing relevant information and recommendations to healthcare professionals'
+  id: totrans-21
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 医学：聊天机器人可以协助检查症状，提供基本医疗建议，并提供心理健康支持。它们可以通过向医疗专业人员提供相关信息和建议来改善临床决策。
 - en: These are just a few examples, and the use cases of chatbots continue to expand
     across various industries and domains. Chat technology in any field has the potential
     to make information more accessible and provide initial support to individuals
     seeking assistance.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是一些例子，聊天机器人的用例在各行各业不断扩展。任何领域的聊天技术都有潜力使信息更易获取，并为寻求帮助的个人提供初步支持。
 - en: What’s the state-of-the-art?
+  id: totrans-23
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 什么是最先进的技术？
 - en: The Turing Test, named after Alan Turing an English computer scientist, cryptanalyst,
     and mathematician, is a method of inquiry in artificial intelligence (AI) for
     determining whether or not a computer is capable of thinking like a human being.
@@ -227,43 +275,61 @@
     interface have made it a significant advancement in the field of conversational
     AI, offering new possibilities for interactive and personalized interactions with
     AI systems.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 图灵测试，以英国计算机科学家、密码分析家和数学家艾伦·图灵命名，是人工智能（AI）领域的一种探究方法，用于确定计算机是否能够像人类一样思考。尽管关于图灵测试的相关性以及基于该测试的竞赛的有效性存在很多争论，但该测试仍然作为讨论和研究人工智能的哲学起点。随着我们在人工智能领域的不断进步，以及对人类大脑功能的更好理解和映射，图灵测试仍然是定义智能的基础，并且是关于我们应该期望技术达到何种程度才能被视为思考机器的辩论基准。图灵提出，如果计算机能够在特定条件下模仿人类的反应，那么可以说计算机具有人工智能。最初的图灵测试需要三个终端，每个终端都与其他两个物理上分开。一个终端由计算机操作，而另外两个由人类操作。在测试过程中，一个人充当提问者，而第二个人和计算机则充当回答者。提问者在特定主题领域内询问回答者，使用指定的格式和语境。在预设的时间长度或问题数量之后，提问者被要求决定哪个回答者是人类，哪个是计算机。自测试形成以来，许多人工智能已经能够通过测试；其中最早的之一是约瑟夫·韦伊岑鲍姆的ELIZA。1966年，他发表了一篇关于他的聊天机器人ELIZA的文章，“ELIZA
+    - 用于研究人与机器之间自然语言交流的计算机程序。”ELIZA是最早创建的聊天机器人之一，模拟了心理治疗师的角色。出于幽默的目的展示技术的局限性，这个聊天机器人采用简单的规则和模糊的开放式问题，以在对话中给人一种共情理解的印象，这种讽刺性的转折通常被视为人工智能的里程碑。然而，ELIZA的知识有限，只能在特定领域的话题中进行对话。它也无法进行长时间的对话或从讨论中学习。多年来，图灵测试一直受到批评，特别是因为在历史上，提问的性质必须受限，以便计算机展现类似人类的智能。多年来，只有当提问者制定查询时，计算机才能获得高分，因此查询必须有“是”或“否”答案，或者涉及狭窄的知识领域。当问题是开放式的，需要对话回答时，计算机程序成功愚弄提问者的可能性较小。此外，像ELIZA这样的程序可以通过操纵它不完全理解的符号来通过图灵测试。哲学家约翰·西尔尔认为，这并不能确定与人类相媲美的智能。对许多研究人员来说，计算机是否能通过图灵测试已经变得无关紧要。与其专注于如何说服某人他们正在与人类交谈而不是与计算机程序交谈，真正的焦点应该是如何使人机交互更��观和高效。例如，通过使用对话界面。1972年，另一个重要的聊天机器人PARRY被开发出来，它扮演了一个患有精神分裂症的患者。它有一个明确定义的个性，其回应基于一套假设系统，情绪反应是由用户话语的变化触发的。在1979年的一项实验中，五名精神科医生对PARRY进行了测试，他们必须确定他们正在互动的患者是计算机程序还是真正的精神分裂病患者。结果各异，有些精神科医生给出了正确的诊断，而其他人给出了错误的诊断。尽管图灵测试的几种变体通常更适用于我们对人工智能的当前理解，但测试的原始格式至今仍在使用。例如，自1990年以来，Loebner奖每年颁发给由评委会投票选出的最像人类的计算机程序。比赛遵循图灵测试的标准规则。奖项的批评者经常将其视为更多关于宣传而非真正测试机器是否能够思考。IBM沃森是IBM开发的一种认知计算系统，利用自然语言处理、��器学习和其他人工智能技术来回答自然语言中的复杂问题。它通过摄取和处理大量结构化和非结构化数据，包括文本、图像和视频。IBM沃森在2011年参加智力竞赛节目Jeopardy！并击败了两位前冠军时变得著名。沃森已应用于各个领域，包括医疗保健、金融、客户服务和研究。在医疗保健领域，沃森已被用于协助医生诊断和治疗疾病、分析医疗记录和进行研究。它还被应用于烹饪领域，Chef
+    Watson应用程序帮助厨师创作独特和创新的食谱。2018年，Google Duplex成功地在7000人面前通过电话与理发师预约。接待员完全不知道他们正在与真正的人类交谈。一些人认为这是现代图灵测试的通过，尽管并不依赖于艾伦·图灵设计的测试真正格式。由OpenAI开发的ChatGPT是一种语言模型，使用深度学习技术生成类似人类的回应。它于2022年11月30日推出，建立在OpenAI专有的一系列基础GPT模型之上，包括GPT-3.5和GPT-4。ChatGPT允许用户与AI进行连贯、自然和引人入胜的对话，调整和引导对话朝着他们期望的长度、格式、风格、详细程度和使用的语言发展。ChatGPT被认为是一项重大突破，因为它代表了对话式人工智能领域的重大进步。由于其能够生成上下文相关的回应，并理解和回应各种主题和问题，一些人认为这个聊天机器人有最好的机会在真正的测试中击败任何我们今天拥有的技术。但是，即使具有先进的文本生成能力，它也可能被诱使回答荒谬的问题，因此在图灵测试的条件下可能会遇到困难。总的来说，ChatGPT的能力和用户友好的界面使其成为对话式人工智能领域的重大进步，为与AI系统的互动和个性化互动提供了新的可能性。
 - en: 'Here are some examples of chatbots:'
+  id: totrans-25
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 以下是一些聊天机器人的例子：
 - en: 'ELIZA: One of the earliest chatbots, ELIZA was developed in the 1960s and used
     pattern matching to simulate conversation with users.'
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ELIZA：ELIZA是最早的聊天机器人之一，于1960年代开发，使用模式匹配模拟与用户的对话。
 - en: 'Siri: Siri is a popular voice-based chatbot developed by Apple. It is integrated
     into Apple devices and can perform tasks, answer questions, and provide information.'
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Siri：Siri是由苹果开发的一款流行的基于语音的聊天机器人。它集成在苹果设备中，可以执行任务，回答问题并提供信息。
 - en: 'Alexa: Alexa is an intelligent personal assistant developed by Amazon. It can
     respond to voice commands, play music, provide weather updates, and control smart
     home devices.'
+  id: totrans-28
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Alexa：Alexa是亚马逊开发的智能个人助理。它可以响应语音命令，播放音乐，提供天气更新，并控制智能家居设备。
 - en: 'Google Assistant: Google Assistant is a chatbot developed by Google. It can
     answer questions, provide recommendations, and perform tasks based on user commands.'
+  id: totrans-29
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Google Assistant：Google Assistant是由谷歌开发的聊天机器人。它可以回答问题，提供建议，并根据用户命令执行任务。
 - en: 'Mitsuku: Mitsuku is a chatbot that has won the Loebner Prize Turing Test multiple
     times. It is known for its ability to engage in natural and human-like conversations.'
+  id: totrans-30
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Mitsuku：Mitsuku是一款多次赢得Loebner奖图灵测试的聊天机器人。它以能够进行自然和类似人类对话的能力而闻名。
 - en: These are just a few examples, and there are many more chatbots available in
     various industries and applications.
+  id: totrans-31
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 这些只是一些例子，各行业和应用中还有许多其他聊天机器人可用。
 - en: One concern of the use of the Turing test and derivatives is that it focuses
     on imitation and deceit, when it more meaningful tests should emphasize the need
     for developers to focus on creating useful and interesting capabilities rather
@@ -289,12 +355,16 @@
     the chatbot’s dialogues deliver accurate information and responses accurately
     reflective of previous interactions, thus enabling more faithful engagements with
     users. We’ll discuss this in more detail now.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用图灵测试及其衍生物的一个担忧是，它侧重于模仿和欺骗，而更有意义的测试应强调开发者专注于创造有用和有趣的功能，而不仅仅是执行技巧。使用基准和学术/专业考试提供了对AI系统性能的更具体评估。该领域研究人员目前的目标是为测试人工智能（AI）系统的能力提供更好的基准，特别是大型语言模型（LLMs）如GPT-4。他们旨在了解LLMs的极限并确定可能失败的领域。先进的AI系统，包括GPT-4，在与语言处理相关的任务上表现出色，但在简单的视觉逻辑难题上表现不佳。LLMs可以根据统计相关性生成合理的下一个词，但可能缺乏推理或对抽象概念的理解。研究人员对LLMs的能力有不同的看法，有些人将它们的成就归因于有限的推理能力。对LLMs进行测试并了解它们的能力具有实际意义。它可以帮助在医学和法律等现实领域中安全有效地应用LLMs。通过确定LLMs的优势和劣势，研究人员可以确定如何最好地利用它们。ChatGPT的训练使其在处理幻觉方面比以前更好，这意味着它不太可能生成荒谬或无关的回应。然而，重要的是要注意，ChatGPT仍然可以自信地提供不准确的信息，因此用户应谨慎并验证提供的信息。上下文和记忆在确保聊天机器人的对话提供准确信息和准确反映先前互动的响应方面发挥着重要作用，从而使用户能够更忠实地与其互动。我们现在将更详细地讨论这一点。
 - en: Context and Memory
+  id: totrans-33
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 上下文和记忆
 - en: Context and memory are important aspects of chatbot design. They allow chatbots
     to maintain conversational context, respond to multiple queries, and store and
     access long-term memory. They are important factors in conditioning chatbot responses
@@ -326,12 +396,16 @@
     computers and humans.A new aspect of chatbots with LLMs is that they can not only
     respond to intentions, but more intelligently engage in a dialogue with the user.
     This is called being proactive.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 上下文和记忆是聊天机器人设计中重要的方面。它们使聊天机器人能够保持对话上下文，回应多个查询，并存储和访问长期记忆。它们是调整聊天机器人响应准确性和忠实度的重要因素。在聊天机器人中，记忆和上下文的重要性可以与人与人之间对话中记忆和理解的重要性相比。在没有回忆过去交流或理解或了解更广泛背景的对话中，可能会导致不连贯和造成误解，从而导致不满意的对话体验。**上下文理解**极大地影响聊天机器人响应的准确性。它指的是聊天机器人理解整个对话以及一些相关背景而不仅仅是用户最后一条消息的能力。了解上下文的聊天机器人可以保持对话的整体视角，使对话流程更加自然和类似人类。**记忆保持**直接影响聊天机器人性能的忠实度，这涉及识别和记住以前对话中的事实以供将来使用的一致性。这个特性增强了用户的个性化体验。例如，如果用户说：“给我看看最便宜的航班”，然后接着说：“那个地区的酒店怎么样？”如果没有前面消息的上下文，聊天机器人就不知道用户指的是哪个地区。在一个相反的情况下，一个具有上下文意识的聊天机器人会理解用户在谈论与航班目的地相同地区的住宿。缺乏记忆会导致对话中的不一致性（缺乏忠实度）。例如，如果用户在一次对话中用名字标识自己，而机器人在下一次对话中忘记了这些信息，就会导致不自然和不个性化的互动。记忆和上下文对于使聊天机器人交互更加高效、准确、亲切和令人满意至关重要。没有这些元素，机器人可能会显得不足、僵硬，并且无法与人类对话伙伴建立联系。因此，这些特征对于计算机和人类之间复杂而令人满意的互动至关重要。具有LLMs的聊天机器人的一个新方面是它们不仅可以回应意图，而且可以更智能地与用户进行对话。这被称为主动。
 - en: Intentional vs Proactive
+  id: totrans-35
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 有意识 vs 主动
 - en: In the context of language models or chatbots, **proactive** refers to the ability
     of the system to initiate actions or provide information without being explicitly
     prompted by the user. It involves anticipating the user’s needs or preferences
@@ -354,12 +428,16 @@
     mechanisms. This is the focus of this chapter. In the next section, we’ll discuss
     the fundamentals of modern chatbots such as retrieval-augmented language models
     (RALMs) and the technical background of what we need to implement them.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 在语言模型或聊天机器人的背景下，**主动**指的是系统在没有明确提示的情况下启动操作或提供信息的能力。它涉及根据先前的互动或情境线索来预测用户的需求或偏好。另一方面，**有意**意味着聊天机器人被设计为理解和满足用户的意图或请求，并根据这些意图和期望的结果采取特定行动或提供相关响应。主动型聊天机器人很有用，因为它可以与客户建立联系，改善他们的体验，创造更好的客户旅程。这可以通过节省时间和精力来增强用户体验，并且通过在问题出现之前迅速有效地解决客户查询的潜在问题或问题来提高客户满意度。主动沟通对企业的成功至关重要，因为它提高了客户终身价值（CLV）并降低了运营成本。通过积极地预测客户的需求并主动提供信息，企业可以控制沟通并以有利的方式构建对话。这建立了信任、客户忠诚度，并增强了组织的声誉。此外，主动沟通通过在客户提问之前解决客户查询并减少支持电话的数量来帮助提高组织的生产力。在技术方面，这种能力可以通过上下文和记忆以及推理机制来实现。这是本章的重点。在下一节中，我们将讨论现代聊天机器人的基础知识，如检索增强语言模型（RALMs）以及我们需要实现它们的技术背景。
 - en: Retrieval and vectors
+  id: totrans-37
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 检索和向量
 - en: In chapter 4, we discussed Retrieval-Augmented Generation (RAG), which aims
     to enhance the generation process by leveraging external knowledge and ensuring
     that the generated text is accurate and contextually appropriate. In this chapter,
@@ -371,96 +449,126 @@
     filtering and vector storage is utilized to pre-filter relevant information from
     a large corpus of documents and incorporating that information into the generation
     process. This retrieval includes vector storage of documents.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第4章中，我们讨论了检索增强生成（RAG），旨在通过利用外部知识增强生成过程，并确保生成的文本准确且上下文适当。在本章中，我们将进一步讨论如何结合检索和生成技术来提高生成文本的质量和相关性。特别地，我们将讨论检索增强语言模型（RALMs），这是RAG的一个具体实现或应用，指的是在生成过程中受到基础语料库中相关文档的约束的语言模型，这些文档是一组书面文本。在检索中，利用语义过滤和向量存储来从大量文档语料库中预先过滤相关信息，并将该信息纳入生成过程。这种检索包括文档的向量存储。
 - en: '**Retrieval-Augmented Language Models** (**RALMs**) are language models that
     incorporate a retrieval component to enhance their performance. Traditional language
     models generate text based on the input prompt, but RALMs go a step further by
     retrieving relevant information from a large collection of documents and using
     that information to generate more accurate and contextually relevant responses.'
+  id: totrans-39
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**检索增强语言模型**（**RALMs**）是将检索组件纳入以提升性能的语言模型。传统语言模型根据输入提示生成文本，但RALMs更进一步，通过从大量文档中检索相关信息并将该信息用于生成更准确和上下文相关的响应。'
 - en: 'The benefits of RALMs include:'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: RALMs的好处包括：
 - en: 'Improved performance: By incorporating active retrieval, LMs can access relevant
     information from external sources, which can enhance their ability to generate
     accurate and informative responses.'
+  id: totrans-41
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 改进的性能：通过整合主动检索，LM可以访问外部来源的相关信息，从而增强其生成准确和信息丰富响应的能力。
 - en: 'Avoiding input length limitations: Retrieval augmented LMs discard previously
     retrieved documents and only use the retrieved documents from the current step
     to condition the next generation. This helps prevent reaching the input length
     limit of LMs, allowing them to handle longer and more complex queries or tasks.'
+  id: totrans-42
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 避免输入长度限制：检索增强LM丢弃先前检索到的文档，仅使用当前步骤检索到的文档来调节下一代。这有助于防止达到LM的输入长度限制，使其能够处理更长更复杂的查询或任务。
 - en: 'More in detail, the working mechanism of retrieval augmented LMs involves the
     following steps:'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 更详细地说，检索增强LM的工作机制包括以下步骤：
 - en: 'Retrieval: RALMs search for relevant documents or passages from a large corpus.
     The LM retrieves relevant information from external sources based on a vector-based
     similarity search of the query and the current context.'
+  id: totrans-44
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 检索：RALMs从大型语料库中搜索相关文档或段落。LM根据查询和当前上下文的基于向量的相似性搜索从外部来源检索相关信息。
 - en: 'Conditioning: The retrieved information is used to condition the LLM’s next
     generation. This means that the LM incorporates the retrieved information into
     its language model to generate more accurate and contextually appropriate responses.'
+  id: totrans-45
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 调节：检索到的信息用于调节LLM的下一代。这意味着LM将检索到的信息整合到其语言模型中，以生成更准确和上下文适当的响应。
 - en: 'Iterative process: The retrieval and conditioning steps are performed iteratively,
     with each step building upon the previous one. This iterative process allows the
     LLM to gradually improve its understanding and generation capabilities by incorporating
     relevant information from external sources.'
+  id: totrans-46
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 迭代过程：检索和调节步骤是迭代执行的，每一步都建立在前一步的基础上。这种迭代过程允许LLM通过从外部来源整合相关信息逐渐改善其理解和生成能力。
 - en: 'The retrieved information can be used in different ways. It can serve as additional
     context for the language model, helping it generate more accurate and contextually
     appropriate responses. It can also be used to provide factual information or answer
     specific questions within the generated text. There are two main strategies for
     retrieval augmented generation:'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 检索到的信息可以以不同方式使用。它可以作为语言模型的附加上下文，帮助其生成更准确和上下文适当的响应。它还可以用于为生成的文本中的特定问题提供事实信息或回答特定问题。检索增强生成有两种主要策略：
 - en: 'Single-time Retrieval-Augmented Generation: This strategy involves using the
     user input as the query for retrieval and generating the complete answer at once.
     The retrieved documents are concatenated with the user input and used as input
     to the language model for generation.'
+  id: totrans-48
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单次检索增强生成：这种策略涉及使用用户输入作为检索的查询，并一次性生成完整答案。检索到的文档与用户输入连接在一起，并用作语言模型的输入进行生成。
 - en: 'Active Retrieval Augmented Generation: This strategy involves actively deciding
     when and what to retrieve during the generation process. At each step of generation,
     a retrieval query is formulated based on both the user input and the previously
     generated output. The retrieved documents are then used as input to the language
     model for generation. This strategy allows for the interleaving of retrieval and
     generation, enabling the model to dynamically retrieve information as needed.'
+  id: totrans-49
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 主动检索增强生成：这种策略涉及在生成过程中积极决定何时以及检索什么内容。在生成的每一步中，根据用户输入和先前生成的输出，制定一个检索查询。然后使用检索到的文档作为语言模型的输入进行生成。这种策略允许检索和生成交错进行，使模型能够根据需要动态检索信息。
 - en: 'Within the active retrieval augmented generation framework, there are two forward-looking
     methods called FLARE (Forward-Looking Active Retrieval Augmented Generation):'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 在主动检索增强生成框架中，有两种前瞻性方法称为FLARE（前瞻性主动检索增强生成）：
 - en: 'FLARE with Retrieval Instructions: This method prompts the language model to
     generate retrieval queries when necessary while generating the answer. It uses
     retrieval-encouraging instructions, such as "[Search(query)]", to express the
     need for additional information.'
+  id: totrans-51
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 带检索指令的FLARE：该方法在生成答案时提示语言模型生成检索查询。它使用鼓励检索的指令，如“[搜索（查询）]”，来表达对额外信息的需求。
 - en: 'FLARE Direct: This method directly uses the language model’s generation as
     search queries. It iteratively generates the next sentence to gain insight into
     the future topic, and if uncertain tokens are present, it retrieves relevant documents
     to regenerate the next sentence.'
+  id: totrans-52
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 直接FLARE：该方法直接使用语言模型的生成作为搜索查询。它迭代生成下一个句子以了解未来的主题，并且如果存在不确定的标记，则检索相关文档以重新生成下一个句子。
 - en: 'Unlike traditional methods where information is retrieved only once and then
     used for generation, FLARE follows an iterative process. It involves using a prediction
     of the upcoming sentence as a query to retrieve relevant documents. This allows
@@ -478,14 +586,20 @@
     includes data loaders, document transformers, embedding models, vector stores,
     and retrievers. The relationship between them is illustrated in the diagram here
     (source: LangChain documentation):'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 与传统方法不同，传统方法只检索一次信息然后用于生成，FLARE遵循迭代过程。它涉及使用即将到来的句子的预测作为查询来检索相关文档。这使系统能够在初始生成的信心较低时重新生成句子。RALMs在问题回答、对话系统和信息检索等任务中表现出有希望的结果。它们可以通过利用外部知识源提供更准确和信息丰富的响应。此外，通过在特定领域或任务上对其进行培训，可以进一步提高它们在专业应用中的实用性。总的来说，通过整合检索，RALMs可以利用文档语料库中存在的大量知识，使它们在各种自然语言处理任务中更加强大和有用。RALMs利用主动检索来增强其性能，并克服处理复杂查询或任务的限制。LangChain实现了一个由不同构建模块组成的工具链，用于构建检索系统。这包括数据加载器、文档转换器、嵌入模型、向量存储和检索器。它们之间的关系在这里的图表中有所说明（来源：LangChain文档）：
 - en: '![Figure 5.1: Vector stores and data loaders.](../media/file36.jpg)'
+  id: totrans-54
   prefs: []
   type: TYPE_IMG
+  zh: '![图5.1：向量存储和数据加载器。](../media/file36.jpg)'
 - en: 'Figure 5.1: Vector stores and data loaders.'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.1：向量存储和数据加载器。
 - en: In LangChain, we first load documents through data loaders. Then we can transform
     them, pass these documents to a vector store as embedding. We can then query the
     vector store or a retriever associated with the vector store. Retrievers in LangChain
@@ -498,12 +612,16 @@
     image and text search, and anomaly detection. We’ll look into more of the fundamentals
     behind RALMs, and we’ll start with embeddings now. Once you understand embeddings,
     you’ll be able to build everything from search engines to chatbots.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 在LangChain中，我们首先通过数据加载器加载文档。然后我们可以对它们进行转换，将这些文档传递给一个向量存储作为嵌入。然后我们可以查询向量存储或与向量存储相关的检索器。LangChain中的检索器可以将加载和向量存储包装成一个步骤。在本章中，我们将大多数跳过转换，但是你会在数据加载器、嵌入、存储机制和检索器的示例中找到解释。由于我们正在讨论向量存储，我们需要讨论向量搜索，这是一种根据它们与查询向量的相似性来搜索和检索向量（或嵌入）的技术。它通常用于推荐系统、图像和文本搜索以及异常检测等应用中。我们将更深入地了解RALMs背后的基础知识，并且我们将从现在开始介绍嵌入。一旦你理解了嵌入，你就能够构建从搜索引擎到聊天机器人的一切。
 - en: Embeddings
+  id: totrans-57
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 嵌入
 - en: An embedding is a numerical representation of a content in a way that machines
     can process and understand. The essence of the process is to convert an object
     such as an image or a text into a vector that encapsulates its semantic content
@@ -511,17 +629,22 @@
     piece of content, such as a word, sentence, or image, and maps it into a multi-dimensional
     vector space. The distance between two embeddings indicates the semantic similarity
     between the corresponding concepts (the original content).
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 嵌入是内容的数值表示，以便机器可以处理和理解。这个过程的本质是将一个对象，比如一幅图像或一段文本，转换为一个向量，尽可能地封装其语义内容，同时丢弃不相关的细节。一个嵌入将一个内容片段，比如一个单词、句子或图像，映射到一个多维向量空间中。两个嵌入之间的距离表示相应概念（原始内容）之间的语义相似性。
 - en: '**Embeddings** are representations of data objects generated by machine learning
     models to represent. They can represent words or sentences as numerical vectors
     (lists of float numbers). As for the OpenAI language embedding models, the embedding
     is a vector of 1,536 floating point numbers that represent the text. These numbers
     are derived from a sophisticated language model that captures semantic content.'
+  id: totrans-59
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**嵌入**是由机器学习模型生成的数据对象的表示，以表示。它们可以将单词或句子表示为数值向量（浮点数列表）。至于OpenAI语言嵌入模型，嵌入是一个包含1,536个浮点数的向量，代表文本。这些数字来自一个捕捉语义内容的复杂语言模型。'
 - en: ''
+  id: totrans-60
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
@@ -532,10 +655,13 @@
     of these concepts with other words. Roughly speaking, we would expect the concepts
     cat and dog to be closer (more similar) to the concept of animal than to the concept
     of computer or embedding.
+  id: totrans-61
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 举个例子 - 比如我们有单词猫和狗 - 这些可以在一个空间中与词汇表中的所有其他单词一起用数字表示。如果空间是三维的，那么这些可以是向量，比如猫的[0.5,
+    0.2, -0.1]和狗的[0.8, -0.3, 0.6]。这些向量编码了这些概念与其他单词的关系信息。粗略地说，我们期望猫和狗的概念与动物的概念更接近（更相似），而不是计算机或嵌入。
 - en: 'Embeddings can be created using different methods. For texts, one simple method
     is the **bag-of-words** approach, where each word is represented by a count of
     how many times it appears in a text. This approach, which in the scikit-learn
@@ -545,18 +671,25 @@
     a linear model. The general idea of embeddings is illustrated in this figure (source:
     “Analogies Explained: Towards Understanding Word Embeddings” by Carl Allen and
     Timothy Hospedales, 2019; https://arxiv.org/abs/1901.09813):'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 嵌入可以使用不同的方法创建。对于文本，一种简单的方法是**词袋**方法，其中每个单词由其在文本中出现的次数表示。这种方法在scikit-learn库中被实现为`CountVectorizer`，在**word2vec**出现之前很受欢迎。Word2vec大致上通过预测句子中的单词来学习嵌入，忽略了线性模型中单词顺序的其他周围单词。嵌入的一般概念在这张图中有所说明（来源：“解释类比：理解词嵌入”
+    by Carl Allen and Timothy Hospedales, 2019; https://arxiv.org/abs/1901.09813）：
 - en: '![Figure 5.2: Word2Vec word embeddings in a 3D space. We can perform simple
     vector arithmetic with these vectors, for example the vector for king minus man
     plus the vector for woman gives us a vector that comes closer to queen.](../media/file37.png)'
+  id: totrans-63
   prefs: []
   type: TYPE_IMG
+  zh: '![图5.2：Word2Vec单词嵌入在3D空间中。我们可以使用这些向量进行简单的向量运算，例如king的向量减去man的向量再加上woman的向量会得到一个更接近queen的向量。](../media/file37.png)'
 - en: 'Figure 5.2: Word2Vec word embeddings in a 3D space. We can perform simple vector
     arithmetic with these vectors, for example the vector for king minus man plus
     the vector for woman gives us a vector that comes closer to queen.'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.2：Word2Vec单词嵌入在3D空间中。我们可以使用这些向量进行简单的向量运算，例如king的向量减去man的向量再加上woman的向量会得到一个更接近queen的向量。
 - en: As for images, embeddings could come from feature extraction stages such as
     edge detection, texture analysis, and color composition. These features can be
     extracted over different window sizes to make the representations both scale-invariant
@@ -578,88 +711,124 @@
     classify objects, for example by topic or category. For example, we could be performing
     a simple sentiment classifier by checking if embeddings of product reviews are
     closer to the concept of positive or negative.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 至于图像，嵌入可以来自特征提取阶段，例如边缘检测、纹理分析和颜色组成。这些特征可以在不同的窗口大小上提取，使表示既具有尺度不变性又具有平移不变性（**尺度空间表示**）。如今，通常情况下，**卷积神经网络**（**CNNs**）会在大型数据集（如ImageNet）上进行预训练，以学习图像属性的良好表示。由于卷积层在输入图像上应用一系列滤波器（或卷积核）以生成特征图，从概念上讲，这类似于尺度空间。当一个预训练的CNN在新图像上运行时，它可以输出一个嵌入向量。如今，对于大多数领域，包括文本和图像，嵌入通常来自**基于transformer的模型**，这些模型考虑了句子和段落中单词的上下文和顺序。根据模型架构，尤其是参数数量，这些模型可以捕捉非常复杂的关系。所有这些模型都是在大型数据集上训练的，以建立概念及其关系。这些嵌入可以用于各种任务。通过将数据对象表示为数值向量，我们可以对它们执行数学运算并测量它们的相似性，或将它们用作其他机器学习模型的输入。通过计算嵌入之间的距离，我们可以执行搜索和相似性评分等任务，或对对象进行分类，例如按主题或类别。例如，我们可以通过检查产品评论的嵌入是否更接近积极或消极的概念来执行简单的情感分类器。
 - en: '**Distances metrics between embeddings**'
+  id: totrans-66
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**嵌入之间的距离度量标准**'
 - en: ''
+  id: totrans-67
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'There are different distance metrics used in vector similarity calculations
     such as:'
+  id: totrans-68
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 在向量相似度计算中使用了不同的距离度量标准，例如：
 - en: The **cosine distance** is a similarity measure that calculates the cosine of
     the angle between two vectors in a vector space. It ranges from -1 to 1, where
     1 represents identical vectors, 0 represents orthogonal vectors, and -1 represents
     vectors that are diametrically opposed.
+  id: totrans-69
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**余弦距离**是一种相似度度量，计算向量空间中两个向量之间夹角的余弦。它的范围从-1到1，其中1表示相同的向量，0表示正交向量，-1表示完全相反的向量。'
 - en: '**Euclidean distance**: It measures the straight-line distance between two
     vectors in a vector space. It ranges from 0 to infinity, where 0 represents identical
     vectors, and larger values represent increasingly dissimilar vectors.'
+  id: totrans-70
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**欧氏距离**：它衡量向量空间中两个向量之间的直线距离。它的范围从0到无穷大，其中0表示相同的向量，较大的值表示越不相似的向量。'
 - en: '**Dot product**: It measures the product of the magnitudes of two vectors and
     the cosine of the angle between them. It ranges from -∞ to ∞, where a positive
     value represents vectors that point in the same direction, 0 represents orthogonal
     vectors, and a negative value represents vectors that point in opposite directions.'
+  id: totrans-71
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '**点积**：它衡量两个向量的大小乘积和它们之间夹角的余弦。它的范围从-∞到∞，其中正值表示指向相同方向的向量，0表示正交向量，负值表示指向相反方向的向量。'
 - en: 'In LangChain, you can obtain an embedding by using the `embed_query()` method
     from the `OpenAIEmbeddings `class. Here is an example code snippet:'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 在LangChain中，您可以通过`OpenAIEmbeddings`类的`embed_query()`方法获取嵌入。这里是一个示例代码片段：
 - en: '[PRE0]'
+  id: totrans-73
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: 'This code passes a single string input to the embed_query method and retrieves
     the corresponding text embedding. The result is stored in the `query_result` variable.
     The length of the embedding (the number of dimensions) can be obtained using the `len()` function.
     I am assuming you’ve set the API key as environment variable as recommended in
     chapter 3, *Getting started in LangChain*.You can also obtain embeddings for multiple
     document inputs using the `embed_documents() `method. Here is an example:'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 此代码将单个字符串输入传递给`embed_query`方法，并检索相应的文本嵌入。结果存储在`query_result`变量中。可以使用`len()`函数获取嵌入的长度（维度数）。我假设您已经按照第3章“在LangChain中入门”的建议将API密钥设置为环境变量。您还可以使用`embed_documents()`方法获取多个文档输入的嵌入。这里是一个示例：
 - en: '[PRE1]'
+  id: totrans-75
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: 'In this case, the `embed_documents() `method is used to retrieve embeddings
     for multiple text inputs. The result is stored in the `doc_vectors` variable.
     We could have retrieved embeddings for long documents – instead, we’ve retrieved
     the vectors only for single words each.We can also do arithmetic between these
     embeddings, for example calculate distances between them:'
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这种情况下，`embed_documents()`方法用于检索多个文本输入的嵌入。结果存储在`doc_vectors`变量中。我们本可以检索长文档的嵌入
+    - 相反，我们只检索了单词的向量。我们还可以在这些嵌入之间进行算术运算，例如计算它们之间的距离：
 - en: '[PRE2]'
+  id: totrans-77
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'This gives us the Euclidean distances between our words as a square matrix.
     Let’s plot them:'
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 这给我们了单词之间的欧氏距离作为一个方阵。让我们来绘制它们：
 - en: '[PRE3]'
+  id: totrans-79
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'The distance plot should look like this:'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 距离图应该看起来像这样：
 - en: '![Figure 5.3: Euclidean distances between embeddings of the words cat, dog,
     computer, animal.](../media/file38.png)'
+  id: totrans-81
   prefs: []
   type: TYPE_IMG
+  zh: '![图5.3：单词cat，dog，computer，animal的嵌入之间的欧氏距离。](../media/file38.png)'
 - en: 'Figure 5.3: Euclidean distances between embeddings of the words cat, dog, computer,
     animal.'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.3：单词cat，dog，computer，animal的嵌入之间的欧氏距离。
 - en: 'We can confirm: a cat and a dog are indeed closer to an animal than to a computer.
     There could be many questions here, for example, if a dog is more an animal than
     a cat, or why a dog and a cat are only little more distant from a computer than
@@ -673,12 +842,17 @@
     context of this chapter, we’ll use them for retrieval of related information (semantic
     search). However, we still need to talk about the integrations of these embeddings
     into apps and broader systems, and this is where vector storage comes in.'
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以确认：猫和狗确实比计算机更接近动物。这里可能会有很多问题，例如，狗是否比猫更像动物，或者为什么狗和猫距离计算机仅比距离动物稍远。尽管这些问题在某些应用中可能很重要，但让我们记住这只是一个简单的例子。在这些示例中，我们使用了OpenAI的嵌入
+    - 在接下来的示例中，我们将使用Huggingface提供的模型的嵌入。LangChain中有一些集成和工具可以帮助这个过程，其中一些我们将在本章后面遇到。此外，LangChain提供了一个`FakeEmbeddings`类，可用于在不实际调用嵌入提供者的情况下测试您的流程。在本章的背景下，我们将用它们来检索相关信息（语义搜索）。然而，我们仍然需要讨论这些嵌入如何集成到应用程序和更广泛系统中，这就是向量存储的作用所在。
 - en: How can we store embeddings?
+  id: totrans-84
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 我们如何存储嵌入？
 - en: As mentioned, in vector search, each data point is represented as a vector in
     a high-dimensional space. The vectors capture the features or characteristics
     of the data points. The goal is to find the vectors that are most similar to a
@@ -691,8 +865,10 @@
     vector in the collection is calculated, and objects with smaller distances are
     considered more similar to the query.To perform vector search efficiently, vector
     storage mechanisms are used such as vector databases.
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 如前所述，在向量搜索中，每个数据点都被表示为高维空间中的一个向量。这些向量捕捉了数据点的特征或特性。目标是找到与给定查询向量最相似的向量。在向量搜索中，数据集中的每个数据对象都被分配一个向量嵌入。这些嵌入是一组数字，可以用作高维空间中的坐标。可以使用诸如余弦相似度或欧氏距离之类的距离度量来计算向量之间的距离。为了执行向量搜索，将查询向量（表示搜索查询）与集合中的每个向量进行比较。计算查询向量与集合中每个向量之间的距离，并认为距离较小的对象更类似于查询。为了高效执行向量搜索，使用向量存储机制，如向量数据库。
 - en: '**Vector search** refers to the process of searching for similar vectors among
     other stored vectors, for example in a vector database, based on their similarity
     to a given query vector. Vector search is commonly used in various applications
@@ -700,9 +876,11 @@
     The goal of vector search is to efficiently and accurately retrieve vectors that
     are most similar to the query vector, typically using similarity measures such
     as the dot product or cosine similarity.'
+  id: totrans-86
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**向量搜索**是指在其他存储的向量中搜索与给定查询向量相似的向量的过程，例如在向量数据库中，基于它们与给定查询向量的相似性。向量搜索通常用于各种应用程序，如推荐系统、图像和文本搜索以及基于相似性的检索。向量搜索的目标是以高效和准确地检索与查询向量最相似的向量，通常使用诸如点积或余弦相似度之类的相似性度量。'
 - en: 'A vector storage refers to mechanism used to store vector embeddings, and which
     is also relevant to how they can be retrieved. Vector storage can be a standalone
     solution that is specifically designed to store and retrieve vector embeddings
@@ -710,20 +888,28 @@
     embeddings and provide several advantages over using standalone vector indices
     like FAISS. Let’s dive into a few of these concepts a bit more. There are three
     levels to this:'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 向量存储是指用于存储向量嵌入的机制，也与它们如何检索相关。向量存储可以是专门设计用于高效存储和检索向量嵌入的独立解决方案。另一方面，向量数据库是专为管理向量嵌入而构建的，并提供了与使用独立向量索引（如FAISS）相比的几个优势。让我们更深入地探讨一些这些概念。这方面有三个层次：
 - en: Indexing
+  id: totrans-88
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 索引
 - en: Vector libraries
+  id: totrans-89
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 向量库
 - en: Vector databases
+  id: totrans-90
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 向量数据库
 - en: These components work together for the creation, manipulation, storage, and
     efficient retrieval of vector embeddings. Indexing organizes vectors to optimize
     retrieval, structuring them so that vectors can be retrieved quickly. There are
@@ -733,12 +919,16 @@
     large sets of vectors. They use indexing mechanisms to facilitate efficient similarity
     searches on these vectors. Let’s look at these in turn. There’s a fourth level
     in LangChain, which is retrievers, and which we’ll cover last.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些组件共同用于创建、操作、存储和高效检索向量嵌入。索引将向量组织起来以优化检索，将它们结构化，以便可以快速检索向量。有不同的算法，如k-d树或Annoy用于此目的。向量库提供了用于向量操作的函数，如点积和向量索引。最后，像Milvus或Pinecone这样的向量数据库旨在存储、管理和检索大量向量集。它们使用索引机制来促进对这些向量的高效相似性搜索。让我们依次看看这些。LangChain中还有第四个级别，即检索器，我们将在最后讨论。
 - en: Vector indexing
+  id: totrans-92
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 向量索引
 - en: Indexing in the context of vector embeddings is a method of organizing data
     to optimize its retrieval and/or the storage. It’s similar to the concept in traditional
     database systems, where indexing allows quicker access to data records. For vector
@@ -748,84 +938,112 @@
     trees), but many others like Ball Trees, Annoy, and FAISS are often implemented,
     especially for high-dimensional vectors which traditional methods can struggle
     with.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 在向量嵌入的上下文中，索引是一种组织数据以优化其检索和/或存储的方法。这类似于传统数据库系统中的概念，其中索引允许更快地访问数据记录。对于向量嵌入，索引旨在结构化向量
+    - 粗略地说 - 使相似的向量存储在一起，从而实现快速的接近或相似性搜索。在这种情况下应用的典型算法是K维树（k-d树），但许多其他算法如Ball Trees、Annoy和FAISS经常被实现，特别是对于传统方法可能难以处理的高维向量。
 - en: '**K-Nearest Neighbor** (**KNN**) is a simple and intuitive algorithm used for
     classification and regression tasks. In KNN, the algorithm determines the class
     or value of a data point by looking at its k nearest neighbors in the training
     dataset.'
+  id: totrans-94
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**K-最近邻** (**KNN**) 是一种简单直观的用于分类和回归任务的算法。在KNN中，算法通过查看训练数据集中的k个最近邻来确定数据点的类别或值。'
 - en: ''
+  id: totrans-95
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Here’s how KNN works:'
+  id: totrans-96
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 这是KNN的工作原理：
 - en: 'Choose the value of k: Determine the number of nearest neighbors (k) that will
     be considered when making predictions.'
+  id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择k的值：确定在进行预测时将考虑的最近邻居（k）的数量。
 - en: 'Calculate distances: Calculate the distance between the data point you want
     to classify and all other data points in the training dataset. The most commonly
     used distance metric is Euclidean distance, but other metrics like Manhattan distance
     can also be used.'
+  id: totrans-98
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 计算距离：计算您想要分类的数据点与训练数据集中所有其他数据点之间的距离。最常用的距离度量是欧氏距离，但也可以使用其他度量标准，如曼哈顿距离。
 - en: 'Find the k nearest neighbors: Select the k data points with the shortest distances
     to the data point you want to classify.'
+  id: totrans-99
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 找到k个最近邻居：选择与您想要分类的数据点距离最近的k个数据点。
 - en: 'Determine the majority class: For classification tasks, count the number of
     data points in each class among the k nearest neighbors. The class with the highest
     count becomes the predicted class for the data point. For regression tasks, take
     the average of the values of the k nearest neighbors.'
+  id: totrans-100
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 确定多数类别：对于分类任务，在k个最近邻中计算每个类别中数据点的数量。具有最高计数的类别成为数据点的预测类别。对于回归任务，取k个最近邻的值的平均值。
 - en: 'Make predictions: Once the majority class or average value is determined, assign
     it as the predicted class or value for the data point.'
+  id: totrans-101
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 进行预测：一旦确定了多数类或平均值，将其分配为数据点的预测类别或值。
 - en: It’s important to note that KNN is a lazy learning algorithm, meaning it does
     not explicitly build a model during the training phase. Instead, it stores the
     entire training dataset and performs calculations at the time of prediction.
+  id: totrans-102
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 值得注意的是，KNN是一种惰性学习算法，这意味着在训练阶段不会显式构建模型。相反，它存储整个训练数据集，并在预测时进行计算。
 - en: 'As for alternatives to KNN, there are several other algorithms commonly used
     for similarity search indexing. Some of them include:'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为KNN的替代方案，还有几种常用于相似性搜索索引的其他算法。其中一些包括：
 - en: 'Product Quantization (PQ): PQ is a technique that divides the vector space
     into smaller subspaces and quantizes each subspace separately. This reduces the
     dimensionality of the vectors and allows for efficient storage and search. PQ
     is known for its fast search speed but may sacrifice some accuracy.'
+  id: totrans-104
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 产品量化（PQ）：PQ是一种将向量空间划分为较小子空间并分别量化每个子空间的技术。这降低了向量的维度，并允许高效的存储和搜索。PQ以其快速的搜索速度而闻名，但可能会牺牲一些准确性。
 - en: 'Locality Sensitive Hashing (LSH): This is a hashing-based method that maps
     similar data points to the same hash buckets. It is efficient for high-dimensional
     data but may have a higher probability of false positives and false negatives.'
+  id: totrans-105
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 局部敏感哈希（LSH）：这是一种基于哈希的方法，将相似的数据点映射到相同的哈希桶中。它对高维数据高效，但可能存在更高的误报和漏报概率。
 - en: 'Hierarchical Navigable Small World (HNSW): HNSW is a graph-based indexing algorithm
     that constructs a hierarchical graph structure to organize the vectors. It uses
     a combination of randomization and greedy search to build a navigable network,
     allowing for efficient nearest neighbor search. HNSW is known for its high search
     accuracy and scalability.'
+  id: totrans-106
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 分层可导航小世界（HNSW）：HNSW是一种基于图的索引算法，它构建了一个分层图结构来组织向量。它利用随机化和贪婪搜索的组合来构建可导航网络，从而实现高效的最近邻搜索。HNSW以其高搜索准确性和可扩展性而闻名。
 - en: 'Examples for PQ are KD-Trees and Ball Trees. In KD-Trees, a binary tree structure
     is built up that partitions the data points based on their feature values. It
     is efficient for low-dimensional data but becomes less effective as the dimensionality
@@ -840,12 +1058,17 @@
     indexing algorithms have different trade-offs in terms of search speed, accuracy,
     and memory usage. The choice of algorithm depends on the specific requirements
     of the application and the characteristics of the vector data.'
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: PQ的示例包括KD树和Ball树。在KD树中，构建了一个基于二叉树结构，根据其特征值对数据点进行分区。对于低维数据而言，这是高效的，但随着维度的增加，效果会减弱。Ball树：一种将数据点分区为嵌套超球体的树结构。适用于高维数据，但对于低维数据可能比KD树慢。除了HNSW和KNN，还有其他基于图的方法，如图神经网络（GNN）和图卷积网络（GCN），利用图结构进行相似性搜索。Annoy（近似最近邻居Oh
+    Yeah）算法使用随机投影树来索引向量。它构建了一个二叉树结构，其中每个节点表示一个随机超平面。Annoy易于使用，并提供快速的近似最近邻搜索。这些索引算法在搜索速度、准确性和内存使用方面有不同的权衡。算法的选择取决于应用程序的具体要求和向量数据的特征。
 - en: Vector libraries
+  id: totrans-108
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 向量库
 - en: '**Vector libraries**, like Facebook (Meta) Faiss or Spotify Annoy, provide
     functionality for working with vector data. In the context of vector search, a
     vector library is specifically designed to store and perform similarity search
@@ -856,60 +1079,82 @@
     various applications.Here’s a quick overview over some open-source libraries for
     vector storage that shows their popularity in terms of Github stars over time
     (source: star-history.com):'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: '**向量库**，如Facebook（Meta）Faiss或Spotify Annoy，提供了处理向量数据的功能。在向量搜索的背景下，向量库专门设计用于存储和执行向量嵌入的相似性搜索。这些库使用近似最近邻（ANN）算法来高效搜索向量并找到最相似的向量。它们通常提供不同的ANN算法实现，如聚类或基于树的方法，并允许用户为各种应用执行向量相似性搜索。以下是一些用于向量存储的开源库的快速概述，显示它们随时间的Github星标的流行度（来源：star-history.com）：'
 - en: '![Figure 5.4: Star history for several popular open-source vector libraries.](../media/file39.png)'
+  id: totrans-110
   prefs: []
   type: TYPE_IMG
+  zh: '![图5.4：几个流行的开源向量库的星标历史。](../media/file39.png)'
 - en: 'Figure 5.4: Star history for several popular open-source vector libraries.'
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.4：几个流行的开源向量库的星标历史。
 - en: 'You can see that faiss has been starred a lot by Github users. Annoy comes
     second. Others have not found the same popularity yet.Let’s quickly go through
     these:'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到faiss在Github上受到了很多用户的关注。Annoy排名第二。其他库尚未获得同样的流行度。让我们快速浏览一下这些：
 - en: FAISS (Facebook AI Similarity Search) is a library developed by Meta (previously
     Facebook) that provides efficient similarity search and clustering of dense vectors.
     It offers various indexing algorithms, including PQ, LSH, and HNSW. FAISS is widely
     used for large-scale vector search tasks and supports both CPU and GPU acceleration.
+  id: totrans-113
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: FAISS（Facebook AI Similarity Search）是由Meta（之前是Facebook）开发的库，提供了高效的相似性搜索和密集向量的聚类。它提供各种索引算法，包括PQ、LSH和HNSW。FAISS广泛用于大规模向量搜索任务，并支持CPU和GPU加速。
 - en: Annoy is a C++ library for approximate nearest neighbor search in high-dimensional
     spaces maintained and developed by Spotify implementing the Annoy algorithm. It
     is designed to be efficient and scalable, making it suitable for large-scale vector
     data. It works with a forest of random projection trees.
+  id: totrans-114
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Annoy是由Spotify维护和开发的用于高维空间中近似最近邻搜索的C++库，实现了Annoy算法。它旨在高效且可扩展，适用于大规模向量数据。它使用随机投影树的森林。
 - en: hnswlib is a C++ library for approximate nearest neighbor search using the Hierarchical
     Navigable Small World (HNSW) algorithm. It provides fast and memory-efficient
     indexing and search capabilities for high-dimensional vector data.
+  id: totrans-115
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: hnswlib是使用Hierarchical Navigable Small World（HNSW）算法进行近似最近邻搜索的C++库。它为高维向量数据提供快速且内存高效的索引和搜索功能。
 - en: nmslib (Non-Metric Space Library) is an open-source library that provides efficient
     similarity search in non-metric spaces. It supports various indexing algorithms
     like HNSW, SW-graph, and SPTAG.
+  id: totrans-116
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: nmslib（Non-Metric Space Library）是一个提供非度量空间中高效相似性搜索的开源库。它支持各种索引算法，如HNSW、SW-graph和SPTAG。
 - en: SPTAG by Microsoft implements a distributed approximate nearest neighborhood
     search (ANN). It comes with kd-tree and relative neighborhood graph (SPTAG-KDT)
     and balanced k-means tree and relative neighborhood graph (SPTAG-BKT).
+  id: totrans-117
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Microsoft的SPTAG实现了分布式近似最近邻搜索（ANN）。它带有kd树和相对邻域图（SPTAG-KDT）以及平衡的k均值树和相对邻域图（SPTAG-BKT）。
 - en: Both nmslib and hnswlib are maintained by Leo Boytsov, who works as a senior
     research scientist at Amazon, and Yury Malkov.There are a lot more libraries.
     You can see an overview at [https://github.com/erikbern/ann-benchmarks](https://github.com/erikbern/ann-benchmarks)
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: nmslib和hnswlib都由在亚马逊担任高级研究科学家的Leo Boytsov和Yury Malkov维护。还有很多其他库。你可以在[https://github.com/erikbern/ann-benchmarks](https://github.com/erikbern/ann-benchmarks)上查看概述。
 - en: Vector databases
+  id: totrans-119
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 向量数据库
 - en: A **vector database** is a type of database that is specifically designed to
     handle vector embeddings making it easier to search and query data objects. It
     offers additional features such as data management, metadata storage and filtering,
@@ -919,78 +1164,101 @@
     for applications that involve large amounts of data and require flexible and efficient
     search capabilities across various types of vectorized data, such as text, images,
     audio, video, and more.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: '**向量数据库**是一种专门设计用于处理向量嵌入的数据库类型，使得搜索和查询数据对象变得更加容易。它提供了额外的功能，如数据管理、元数据存储和过滤，以及可扩展性。虽然向量存储专注于存储和检索向量嵌入，但向量数据库提供了更全面的解决方案，用于管理和查询向量数据。向量数据库特别适用于涉及大量数据并需要跨各种类型的向量化数据进行灵活和高效搜索的应用程序，如文本、图像、音频、视频等。'
 - en: '**Vector databases** can be used to store and serve machine learning models
     and their corresponding embeddings. The primary application is **similarity search**
     (also: **semantic search**), where efficiently search through large volumes of
     text, images, or videos, identifying objects matching the query based on the vector
     representation. This is particularly useful in applications such as document search,
     reverse image search, and recommendation systems.'
+  id: totrans-121
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**向量数据库**可用于存储和提供机器学习模型及其对应的嵌入。主要应用是**相似性搜索**（又称：**语义搜索**），通过高效地搜索大量文本、图像或视频，根据向量表示识别与查询匹配的对象。这在文档搜索、逆向图像搜索和推荐系统等应用中特别有用。'
 - en: ''
+  id: totrans-122
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Other use cases for vector databases are continually expanding as the technology
     evolves, however, some common use cases for vector databases include:'
+  id: totrans-123
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 向量数据库的其他用例随着技术的发展不断扩展，然而，一些常见的向量数据库用例包括：
 - en: 'Anomaly Detection: Vector databases can be used to detect anomalies in large
     datasets by comparing the vector embeddings of data points. This can be valuable
     in fraud detection, network security, or monitoring systems where identifying
     unusual patterns or behaviors is crucial.'
+  id: totrans-124
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 异常检测：向量数据库可用于通过比较数据点的向量嵌入来检测大型数据集中的异常。这在欺诈检测、网络安全或监控系统中识别异常模式或行为至关重要。
 - en: 'Personalization: Vector databases can be used to create personalized recommendation
     systems by finding similar vectors based on user preferences or behavior.'
+  id: totrans-125
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 个性化：向量数据库可用于通过基于用户偏好或行为找到相似向量来创建个性化推荐系统。
 - en: 'Natural Language Processing (NLP): Vector databases are widely used in NLP
     tasks such as sentiment analysis, text classification, and semantic search. By
     representing text as vector embeddings, it becomes easier to compare and analyze
     textual data.'
+  id: totrans-126
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 自然语言处理（NLP）：向量数据库广泛用于NLP任务，如情感分析、文本分类和语义搜索。通过将文本表示为向量嵌入，比较和分析文本数据变得更加容易。
 - en: 'These databases are popular because they are optimized for scalability and
     representing and retrieving data in high-dimensional vector spaces. Traditional
     databases are not designed to efficiently handle large-dimensional vectors, such
     as those used to represent images or text embeddings.The characteristics of vector
     databases include:'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些数据库很受欢迎，因为它们针对可扩展性进行了优化，并且能够在高维向量空间中表示和检索数据。传统数据库并不设计用于高效处理大维向量，比如用于表示图像或文本嵌入的向量。向量数据库的特点包括：
 - en: 'Efficient retrieval of similar vectors: Vector databases excel at finding close
     embeddings or similar points in a high-dimensional space. This makes them ideal
     for tasks like reverse image search or similarity-based recommendations.'
+  id: totrans-128
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 高效检索相似向量：向量数据库擅长在高维空间中查找接近的嵌入或相似点。这使它们非常适合逆向图像搜索或基于相似性的推荐任务。
 - en: 'Specialized for specific tasks: Vector databases are designed to perform a
     specific task, such as finding close embeddings. They are not general-purpose
     databases and are tailored to handle large amounts of vector data efficiently.'
+  id: totrans-129
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 针对特定任务专门设计：向量数据库旨在执行特定任务，如查找接近的嵌入。它们不是通用数据库，而是专门设计用于高效处理大量向量数据。
 - en: 'Support for high-dimensional spaces: Vector databases can handle vectors with
     thousands of dimensions, allowing for complex representations of data. This is
     crucial for tasks like natural language processing or image recognition.'
+  id: totrans-130
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 支持高维空间：向量数据库可以处理具有数千维的向量，允许对数据进行复杂的表示。这对于自然语言处理或图像识别等任务至关重要。
 - en: 'Enable advanced search capabilities: With vector databases, it becomes possible
     to build powerful search engines that can search for similar vectors or embeddings.
     This opens up possibilities for applications like content recommendation systems
     or semantic search.'
+  id: totrans-131
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 实现高级搜索功能：使用矢量数据库，可以构建强大的搜索引擎，可以搜索相似的矢量或嵌入。这为内容推荐系统或语义搜索等应用程序开辟了新的可能性。
 - en: 'Overall, vector databases offer a specialized and efficient solution for handling
     large-dimensional vector data, enabling tasks like similarity search and advanced
     search capabilities.The market for open-source software and databases is currently
@@ -1009,178 +1277,267 @@
     be the next big thing. This creates a competitive landscape where companies can
     raise significant amounts of funding to develop and scale their products.Some
     examples of vector databases are listed in this table:'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 总的来说，矢量数据库为处理大维度矢量数据提供了专业和高效的解决方案，使得类似搜索和高级搜索功能成为可能。目前，开源软件和数据库市场蓬勃发展，原因有几点。首先，人工智能（AI）和数据管理对企业至关重要，导致对高级数据库解决方案的需求量大。在数据库市场上，新类型的数据库不断涌现并创建新的市场类别的历史悠久。这些市场创造者通常主导行业，吸引风险投资家（VCs）的大量投资。例如，MongoDB、Cockroach、Neo4J和Influx都是成功公司的例子，它们推出了创新的数据库技术并获得了可观的市场份额。流行的Postgres有一个用于高效矢量搜索的扩展：pg_embedding。使用分层可导航小世界（HNSW）提供了一个更快、更高效的替代方案，比IVFFlat索引更好。风险投资家正在积极寻找下一个突破性的数据库类型，而Chroma和Marqo等矢量数据库有可能成为下一个大事件。这创造了一个竞争激烈的格局，公司可以筹集大量资金来开发和扩展其产品。此表列出了一些矢量数据库的示例：
 - en: '| **Database provider** | **Description** | **Business model** | **First released**
     | **License** | **Indexing** | **Organization** |'
+  id: totrans-133
   prefs: []
   type: TYPE_TB
+  zh: '**数据库提供商** | **描述** | **商业模式** | **首次发布** | **许可证** | **索引** | **组织** |'
 - en: '| Chroma | Commercial open-source embedding store | (Partly Open) SaaS model
     | 2022 | Apache-2.0 | HNSW | Chroma Inc |'
+  id: totrans-134
   prefs: []
   type: TYPE_TB
+  zh: '| Chroma | 商业开源嵌入式存储 | （部分开放）SaaS模式 | 2022 | Apache-2.0 | HNSW | Chroma Inc
+    |'
 - en: '| Qdrant | Managed/Self-hosted vector search engine and database with extended
     filtering support | (Partly Open) SaaS model | 2021 | Apache 2.0 | HNSW | Qdrant
     Solutions GmbH |'
+  id: totrans-135
   prefs: []
   type: TYPE_TB
+  zh: '| Qdrant | 具有扩展过滤支持的托管/自托管矢量搜索引擎和数据库 | （部分开放）SaaS模式 | 2021 | Apache 2.0 | HNSW
+    | Qdrant Solutions GmbH |'
 - en: '| Milvus | Vector database built for scalable similarity search | (Partly Open)
     SaaS | 2019 | BSD | IVF, HNSW, PQ, and more | Zilliz |'
+  id: totrans-136
   prefs: []
   type: TYPE_TB
+  zh: '| Milvus | 用于可扩展相似性搜索的矢量数据库 | （部分开放）SaaS | 2019 | BSD | IVF, HNSW, PQ等 | Zilliz
+    |'
 - en: '| Weaviate | Cloud-native vector database that stores both objects and vectors
     | Open SaaS | started in 2018 as a traditional graph database, first released
     in 2019 | BSD | custom HNSW algorithm that supports CRUD | SeMI Technologies |'
+  id: totrans-137
   prefs: []
   type: TYPE_TB
+  zh: '| Weaviate | 云原生矢量数据库，存储对象和矢量 | 开放式SaaS | 2018年作为传统图数据库启动，2019年首次发布 | BSD |
+    支持CRUD的自定义HNSW算法 | SeMI Technologies |'
 - en: '| Pinecone | Fast and scalable applications using embeddings from AI models
     | SaaS | first released in 2019 | proprietary | built on top of Faiss | Pinecone
     Systems Inc |'
+  id: totrans-138
   prefs: []
   type: TYPE_TB
+  zh: '| Pinecone | 使用来自AI模型的嵌入进行快速和可扩展的应用程序 | SaaS | 2019年首次发布 | 专有 | 基于Faiss构建 |
+    Pinecone Systems Inc |'
 - en: '| Vespa | Commercial Open Source vector database which supports vector search,
     lexical search, and search | Open SaaS | originally a web search engine (alltheweb),
     acquired by Yahoo! in 2003 and later developed into and open sourced as Vespa
     in 2017 | Apache 2.0 | HNSW, BM25 | Yahoo! |'
+  id: totrans-139
   prefs: []
   type: TYPE_TB
+  zh: '| Vespa | 商业开源矢量数据库，支持矢量搜索、词法搜索和搜索 | 开放式SaaS | 最初是一个网络搜索引擎（alltheweb），于2003年被雅虎收购，后来于2017年开源为Vespa
+    | Apache 2.0 | HNSW, BM25 | 雅虎 |'
 - en: '| Marqo | Cloud-native commercial Open Source search and analytics engine |
     Open SaaS | 2022 | Apache 2.0 | HNSW | S2Search Australia Pty Ltd |'
+  id: totrans-140
   prefs: []
   type: TYPE_TB
+  zh: '| Marqo | 云原生商业开源搜索和分析引擎 | 开放SaaS | 2022 | Apache 2.0 | HNSW | S2Search Australia
+    Pty Ltd |'
 - en: 'Figure 5.5: Vector databases.'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.5：向量数据库。
 - en: 'I took the liberty to highlight for each search engine the following perspectives:'
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 我特意为每个搜索引擎突出了以下几个方面：
 - en: Value proposition. What is the unique feature that makes the whole vector search
     engine stand out from the crowd?
+  id: totrans-143
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 价值主张。是什么独特的特点使整个向量搜索引擎脱颖而出？
 - en: 'Business model. General type of this engine: vector database, big data platform.
     Managed / Self-hosted.'
+  id: totrans-144
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 商业模式。此引擎的一般类型：向量数据库，大数据平台。托管/自托管。
 - en: Indexing. What algorithm approach to similarity / vector search was taken by
     this search engine and what unique capabilities it offers?
+  id: totrans-145
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 索引。这个搜索引擎采用了什么算法方法来进行相似性/向量搜索，并提供了什么独特的功能？
 - en: 'License: is it open or close source?'
+  id: totrans-146
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 许可证：是开源还是闭源？
 - en: 'I’ve omitted other aspects such as Architecture, for example support for sharding
     or in-memory processing. There are many vector database providers. I’ve omitted
     many solutions such as FaissDB or Hasty.ai, and focused on a few ones, which are
     integrated in LangChain.For the open-source databases, the Github star histories
     give a good idea of their popularity and traction. Here’s the plot over time (source:
     star-history.com):'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 我省略了其他方面，例如对分片或内存处理的支持。有许多向量数据库提供商。我省略了许多解决方案，如FaissDB或Hasty.ai，并专注于一些集成在LangChain中的解决方案。对于开源数据库，Github星标历史记录可以很好地反映它们的受欢迎程度和吸引力。这是随时间变化的情况（来源：star-history.com）：
 - en: '![Figure 5.6: Star history of open-source vector databases on Github.](../media/file40.png)'
+  id: totrans-148
   prefs: []
   type: TYPE_IMG
+  zh: '![图5.6：Github上开源向量数据库的星标历史。](../media/file40.png)'
 - en: 'Figure 5.6: Star history of open-source vector databases on Github.'
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.6：Github上开源向量数据库的星标历史。
 - en: You can see that milvus is very popular, however other libraries such as qdrant,
     weviate, and chroma have been catching up.In LangChain, a vector storage can be
     implemented using the `vectorstores `module. This module provides various classes
     and methods for storing and querying vectors. One example of a vector store implementation
     in LangChain is the Chroma vector store. Let’s see two examples for this!
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以看到milvus非常受欢迎，然而其他库如qdrant、weviate和chroma也在迎头赶上。在LangChain中，可以使用`vectorstores`模块实现向量存储。该模块提供了用于存储和查询向量的各种类和方法。LangChain中的一个向量存储实现示例是Chroma向量存储。让我们看两个关于此的例子！
 - en: Chroma
+  id: totrans-151
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: Chroma
 - en: 'This vector store is optimized for storing and querying vectors using Chroma
     as a backend. Chroma takes over for encoding and comparing vectors based on their
     angular similarity.To use Chroma in LangChain, you need to follow these steps:'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个向量存储经过优化，用于使用Chroma作为后端存储和查询向量。Chroma接管了基于角度相似性对向量进行编码和比较。要在LangChain中使用Chroma，您需要按照以下步骤操作：
 - en: 'Import the necessary modules:'
+  id: totrans-153
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 导入必要的模块：
 - en: '[PRE4]'
+  id: totrans-154
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: 'Create an instance of Chroma and provide the documents (splits) and the embedding
     method:'
+  id: totrans-155
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建Chroma的实例，并提供文档（拆分）和嵌入方法：
 - en: '[PRE5]'
+  id: totrans-156
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: 'The documents (or splits, as seen in chapter 4) will be embedded and stored
     in the Chroma vector database. We’ll discuss document loaders in another section
     of this chapter. We can use other embedding integrations or we can feed embeddings
     like this:'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 文档（或在第4章中看到的拆分）将被嵌入并存储在Chroma向量数据库中。我们将在本章的另一部分讨论文档加载器。我们可以使用其他嵌入集成，或者我们可以像这样提供嵌入：
 - en: '[PRE6]'
+  id: totrans-158
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: 'Here, vectors is a list of numerical vectors (embeddings) that you want to
     store.We can query the vector store to retrieve similar vectors:'
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，`vectors`是您想要存储的数字向量（嵌入）列表。我们可以查询向量存储以检索相似向量：
 - en: '[PRE7]'
+  id: totrans-160
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: Here, `query_vector` is the vector you want to find similar vectors to, and k is
     the number of similar vectors you want to retrieve.
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，`query_vector`是您想要找到相似向量的向量，`k`是您想要检索的相似向量的数量。
 - en: Pinecone
+  id: totrans-162
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: Pinecone
 - en: 'Here are the steps to integrate Pinecone with LangChain:'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里是将Pinecone与LangChain集成的步骤：
 - en: Start by installing the Pinecone Python client library. You can do this by running
     the following command in the terminal: `pip install pinecone`.
+  id: totrans-164
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 首先安装Pinecone Python客户端库。您可以通过在终端中运行以下命令来执行此操作：`pip install pinecone`。
 - en: 'Import Pinecone in your python app: `import pinecone`.'
+  id: totrans-165
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在您的Python应用程序中导入Pinecone：`import pinecone`。
 - en: 'Connect to Pinecone: To connect to the Pinecone service, you need to provide
     your API key. You can obtain an API key by signing up on the Pinecone website.
     Once you have the API key, pass it to the pinecone wrapper or set it as an environment
     variable:'
+  id: totrans-166
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 连接到Pinecone：要连接到Pinecone服务，您需要提供您的API密钥。您可以通过在Pinecone网站上注册来获取API密钥。获得API密钥后，将其传递给pinecone包装器或将其设置为环境变量：
 - en: '[PRE8]'
+  id: totrans-167
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: 'Create a search index like this:'
+  id: totrans-168
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建搜索索引如下：
 - en: '[PRE9]'
+  id: totrans-169
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: The embeddings could be `OpenAIEmbeddings`, for example.
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 嵌入可以是`OpenAIEmbeddings`，例如。
 - en: 'Now we can find the most similar documents for a query by similarity:'
+  id: totrans-171
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 现在我们可以通过相似性找到查询的最相似文档：
 - en: '[PRE10]'
+  id: totrans-172
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: These documents, we can then query again or use in a question answering chain
     as we’ve seen in *Chapter 4*, *Question Answering*.In LangChain, we can load our
     documents from many sources and in a bunch of formats through the integrated document
@@ -1188,12 +1545,16 @@
     loader for your data source. Once you have selected the loader, you can load the
     document using the specified loader. Let’s briefly look at document loaders in
     LangChain!
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 然后，我们可以再次查询这些文档，或者在*第4章*，*问答*中使用。在LangChain中，我们可以通过集成的文档加载器从许多来源和各种格式加载我们的文档。您可以使用LangChain集成中心浏览和选择适合您数据源的适当加载器。选择加载器后，您可以使用指定的加载器加载文档。让我们简要地看一下LangChain中的文档加载器！
 - en: Document loaders
+  id: totrans-174
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 文档加载器
 - en: 'Document loaders are used to load data from a source as **Document** objects,
     which consist of text and associated metadata. There are different types of integrations
     available, such as document loaders for loading a simple .txt file (`TextLoader`),
@@ -1205,30 +1566,42 @@
     returns it as documents. They may also have a `lazy_load()` method for loading
     data into memory as and when they are needed.Here is an example of a document
     loader for loading data from a text file:'
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 文档加载器用于从源加载数据作为**Document**对象，其中包含文本和相关元数据。有不同类型的集成可用，例如用于加载简单`.txt`文件的文档加载器（`TextLoader`），加载网页的文本内容（`WebBaseLoader`），Arxiv文章（`ArxivLoader`）或加载YouTube视频的转录（`YoutubeLoader`）。对于网页，`Diffbot`集成提供了内容的清晰提取。其他集成用于图像，例如提供图像标题（`ImageCaptionLoader`）。文档加载器具有一个`load()`方法，从配置的源加载数据并将其作为文档返回。它们还可以具有一个`lazy_load()`方法，根据需要将数据加载到内存中。以下是用于从文本文件加载数据的文档加载器示例：
 - en: '[PRE11]'
+  id: totrans-176
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: 'The `documents `variable will contain the loaded documents, which can be accessed
     for further processing. Each document consists of the `page_content `(the text
     content of the document) and `metadata `(associated metadata such as the source
     URL or title).Similarly, we can load documents from Wikipedia:'
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: '`documents`变量将包含加载的文档，可以用于进一步处理。每个文档包含`page_content`（文档的文本内容）和`metadata`（相关元数据，如源URL或标题）。类似地，我们可以从维基百科加载文档：'
 - en: '[PRE12]'
+  id: totrans-178
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: It’s important to note that the specific implementation of document loaders
     may vary depending on the programming language or framework being used.In LangChain,
     vector retrieval in agents or chains is done via retrievers, which access the
     vector storage. Let’s now how this works.
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 需要注意的是，文档加载器的具体实现可能会因所使用的编程语言或框架而有所不同。在LangChain中，代理或链中的向量检索是通过检索器完成的，这些检索器访问向量存储。现在让我们看看这是如何工作的。
 - en: Retrievers in LangChain
+  id: totrans-180
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: LangChain中的检索器
 - en: 'Retrievers in LangChain are a type of component that is used to search and
     retrieve information from a given index. In the context of LangChain, a principal
     type of retriever is a `vectorstore` retriever. This type of retriever utilizes
@@ -1236,58 +1609,82 @@
     play a crucial role in question answering over documents, as they are responsible
     for retrieving relevant information based on the given query.Here are a few examples
     of retrievers:'
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain中的检索器是一种组件类型，用于从给定索引中搜索和检索信息。在LangChain的上下文中，一种主要类型的检索器是`vectorstore`检索器。这种类型的检索器利用向量存储作为后端，例如Chroma，用于索引和搜索嵌入。检索器在文档问答中扮演着至关重要的角色，因为它们负责根据给定的查询检索相关信息。以下是一些检索器的示例：
 - en: 'BM25 Retriever: This retriever uses the BM25 algorithm to rank documents based
     on their relevance to a given query. It is a popular information retrieval algorithm
     that takes into account term frequency and document length.'
+  id: totrans-182
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: BM25 检索器：此检索器使用 BM25 算法根据与给定查询的相关性对文档进行排名。这是一种考虑词项频率和文档长度的流行信息检索算法。
 - en: 'TF-IDF Retriever: This retriever uses the TF-IDF (Term Frequency-Inverse Document
     Frequency) algorithm to rank documents based on the importance of terms in the
     document collection. It assigns higher weights to terms that are rare in the collection
     but frequent in a specific document.'
+  id: totrans-183
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: TF-IDF 检索器：此检索器使用 TF-IDF（词项频率-逆文档频率）算法根据文档集合中术语的重要性对文档进行排名。它为在集合中罕见但在特定文档中频繁出现的术语分配更高的权重。
 - en: 'Dense Retriever: This retriever uses dense embeddings to retrieve documents.
     It encodes documents and queries into dense vectors and calculates the similarity
     between them using cosine similarity or other distance metrics.'
+  id: totrans-184
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 稠密检索器：此检索器使用稠密嵌入来检索文档。它将文档和查询编码为稠密向量，并使用余弦相似度或其他距离度量计算它们之间的相似性。
 - en: 'kNN retriever: This utilizes the well-known k-nearest neighbors’ algorithm
     to retrieve relevant documents based on their similarity to a given query.'
+  id: totrans-185
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: kNN 检索器：这利用了著名的 k 最近邻算法，根据与给定查询的相似性来检索相关文档。
 - en: 'These are just a few examples of retrievers available in LangChain. Each retriever
     has its own strengths and weaknesses, and the choice of retriever depends on the
     specific use case and requirements.For example, to use the kNN retriever, you
     need to create a new instance of the retriever and provide it with a list of texts.
     Here is an example of how to create a kNN retriever using embeddings from OpenAI:'
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些只是 LangChain 中可用的检索器的几个示例。每个检索器都有其优点和缺点，选择检索器取决于具体的用例和要求。例如，要使用 kNN 检索器，您需要创建一个检索器的新实例，并为其提供一个文本列表。以下是如何使用来自
+    OpenAI 的嵌入创建 kNN 检索器的示例：
 - en: '[PRE13]'
+  id: totrans-187
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: 'Once the retriever is created, you can use it to retrieve relevant documents
     by calling the `get_relevant_documents() `method and passing a query string. The
     retriever will return a list of documents that are most relevant to the query.Here
     is an example of how to use the kNN retriever:'
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建检索器后，您可以通过调用`get_relevant_documents()`方法并传递查询字符串来使用它来检索相关文档。检索器将返回与查询最相关的文档列表。以下是如何使用
+    kNN 检索器的示例：
 - en: '[PRE14]'
+  id: totrans-189
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE14]'
 - en: 'This will output a list of documents that are relevant to the query. Each document
     contains the page content and metadata:'
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将输出与查询相关的文档列表。每个文档包含页面内容和元数据：
 - en: '[PRE15]'
+  id: totrans-191
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE15]'
 - en: 'There are a few more specialized retrievers in LangChain such as retrievers
     from Arxiv, Pubmed, or Wikipedia. For example, the purpose of an **Arxiv retriever**
     is to retrieve scientific articles from the Arxiv.org archive. It is a tool that
@@ -1306,85 +1703,121 @@
     and retrieve relevant documents based on a given query. The `get_relevant_documents()` method
     of the class takes a query as input and returns a list of relevant documents from
     PubMed.Here’s an example of how to use the PubMed retriever in LangChain:'
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 在LangChain中有一些更专业的检索器，例如来自Arxiv、Pubmed或Wikipedia的检索器。例如，**Arxiv检索器**的目的是从Arxiv.org存档中检索科学文章。这是一个工具，允许用户搜索和下载各个领域的学术文章，如物理学、数学、计算机科学等。Arxiv检索器的功能包括指定要下载的文档的最大数量，根据查询检索相关文档，以及访问检索文档的元数据信息。**Wikipedia检索器**允许用户从Wikipedia网站检索Wikipedia页面或文档。Wikipedia检索器的目的是为用户提供方便访问Wikipedia上大量信息的途径，并使用户能够从中提取特定信息或知识。**PubMed检索器**是LangChain中的一个组件，帮助将生物医学文献检索整合到其语言模型应用中。PubMed包含来自各种来源的数百万篇生物医学文献引用。在LangChain中，`PubMedRetriever`类用于与PubMed数据库交互，并根据给定的查询检索相关文档。该类的`get_relevant_documents()`方法接受查询作为输入，并返回来自PubMed的相关文档列表。以下是如何在LangChain中使用PubMed检索器的示例：
 - en: '[PRE16]'
+  id: totrans-193
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE16]'
 - en: 'In this example, the `get_relevant_documents() `method is called with the query
     “COVID”. The method then retrieves relevant documents related to the query from
     PubMed and returns them as a list. I am getting the following titles as printed
     output:'
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个例子中，使用查询“COVID”调用了`get_relevant_documents()`方法。该方法然后从PubMed中检索与查询相关的文档，并将它们作为列表返回。我得到了以下标题作为打印输出：
 - en: '[PRE17]'
+  id: totrans-195
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE17]'
 - en: 'A custom retriever can be implemented in LangChain by creating a class that
     inherits from the `BaseRetriever `abstract class. The class should implement the `get_relevant_documents()` method,
     which takes a query string as input and returns a list of relevant documents.Here
     is an example of how a retriever can be implemented:'
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 可以通过创建一个继承自`BaseRetriever`抽象类的类来在LangChain中实现自定义检索器。该类应该实现`get_relevant_documents()`方法，该方法接受查询字符串作为输入，并返回相关文档列表。以下是实现检索器的示例：
 - en: '[PRE18]'
+  id: totrans-197
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE18]'
 - en: You can customize this method to perform any retrieval operations you need,
     such as querying a database or searching through indexed documents.Once you have
     implemented your retriever class, you can create an instance of it and call the `get_relevant_documents()`
     method to retrieve relevant documents based on a query.Let’s implement a chatbot
     with a retriever!
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以自定义此方法以执行您需要的任何检索操作，例如查询数据库或搜索索引文档。一旦您实现了您的检索器类，您可以创建一个实例并调用`get_relevant_documents()`方法根据查询检索相关文档。让我们实现一个带有检索器的聊天机器人！
 - en: Implementing a chatbot!
+  id: totrans-199
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 实现一个聊天机器人！
 - en: 'We’ll implement a chatbot now. We start from a similar template as in chapter
     4, Question Answering. Same as in the previous chapter, we’ll assume you have
     the environment installed with the necessary libraries and the API keys as per
     the instructions in chapter 3, *Getting Started with LangChain*. To implement
     a simple chatbot in LangChain, you can follow this recipe:'
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们将实现一个聊天机器人。我们将从第4章问答模板开始。与上一章类似，我们假设您已经按照第3章*开始使用LangChain*中的说明安装了必要的库和API密钥。要在LangChain中实现一个简单的聊天机器人，您可以按照以下步骤进行：
 - en: Load the document
+  id: totrans-201
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 加载文档
 - en: Create a vector storage
+  id: totrans-202
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个向量存储
 - en: Set up a chatbot with retrieval from the vector storage
+  id: totrans-203
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 设置一个具有从向量存储中检索的聊天机器人
 - en: 'We’ll generalize this with several formats and make this available through
     an interface in a web browser through Streamlit. You’ll be able to drop in your
     document and start asking questions. In production, for a corporate deployment
     for customer engagement, you can imagine that these documents are already loaded
     in and your vector storage can just be static.Let’s start with the document reader.
     As mentioned, we want to be able to read different formats:'
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将通过几种格式进行概括，并通过 Streamlit 在 Web 浏览器中提供接口。您可以将您的文档放入其中并开始提问。在生产环境中，对于企业部署以进行客户参与，您可以想象这些文档已经加载进去，您的向量存储可以保持静态。让我们从文档阅读器开始。如前所述，我们希望能够阅读不同格式的文档：
 - en: '[PRE19]'
+  id: totrans-205
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE19]'
 - en: This gives us interfaces to read PDF, text, EPUB, and word documents with different
     extensions. We’ll now implement the loader logic.
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 这为我们提供了读取 PDF、文本、EPUB 和带有不同扩展名的 Word 文档的接口。现在我们将实现加载器逻辑。
 - en: '[PRE20]'
+  id: totrans-207
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE20]'
 - en: This doesn’t handle a lot of errors at the moment, but this can be extended
     if needed. Now we can make this loader available from the interface and connect
     it to vector storage.
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 目前这个版本处理不了很多错误，但如果需要的话可以进行扩展。现在我们可以将这个加载器从界面中提供，并将其连接到向量存储。
 - en: '[PRE21]'
+  id: totrans-209
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE21]'
 - en: 'DocArray is a Python package that provides a high-level API for representing
     and manipulating multimodal data. It provides various features like advanced indexing,
     comprehensive serialization protocols, a unified Pythonic interface, and more.
@@ -1393,18 +1826,26 @@
     can initialize the DocArray in-memory vector storage with different distance metrics
     such as cosine and Euclidean – cosine is the default.For the retriever, we have
     two main options:'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: DocArray 是一个提供高级 API 用于表示和操作多模态数据的 Python 包。它提供各种功能，如高级索引、全面的序列化协议、统一的 Python
+    接口等。此外，它为自然语言处理、计算机视觉和音频处理等任务提供了高效和直观的多模态数据处理。我们可以使用不同的距离度量标准（如余弦和欧氏距离）初始化内存中的
+    DocArray 向量存储，余弦是默认值。对于检索器，我们有两个主要选项：
 - en: 'Similarity-search: We can retrieve document according to similarity, or'
+  id: totrans-211
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 相似性搜索：我们可以根据相似性检索文档，或者
 - en: 'Maximum Marginal Relevance (MMR): We can apply diversity-based re-ranking of
     documents during retrieval to get results that cover different results from the
     documents retrieved so far.'
+  id: totrans-212
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 最大边际相关性（MMR）：我们可以在检索过程中应用基于多样性的文档重新排序，以获得覆盖到目前为止检索到的文档的不同结果。
 - en: 'In the similarity-search, we can set a similarity score threshold. We’ve opted
     for MMR, which should give us better generation. We’ve set the parameter `k` as
     2, which means we can get 2 documents back from retrieval.Retrieval can be improved
@@ -1424,71 +1865,106 @@
     of these documents based on the context of the query. Finally, the compressed
     documents, containing only the relevant information, are returned as the response.We
     have a few options for contextual compression:'
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 在相似度搜索中，我们可以设置相似度分数阈值。我们选择了 MMR，这应该能给我们更好的生成。我们将参数`k`设置为2，这意味着我们可以从检索中获取2个文档。检索可以通过**上下文压缩**来改进，这是一种技术，其中检索到的文档被压缩，无关信息被过滤掉。上下文压缩不是直接返回完整的文档，而是利用给定查询的上下文提取并返回只有相关信息。这有助于降低处理成本，并提高检索系统中响应的质量。基础压缩器负责根据给定查询的上下文压缩单个文档的内容。它使用语言模型，如
+    GPT-3，执行压缩。压缩器可以过滤掉无关信息，只返回文档的相关部分。基础检索器是根据查询检索文档的文档存储系统。它可以是任何检索系统，如搜索引擎或数据库。当向上下文压缩检索器发出查询时，它首先将查询传递给基础检索器以检索相关文档。然后，它使用基础压缩器根据查询的上下文压缩这些文档的内容。最后，只包含相关信息的压缩文档作为响应返回。我们有几种上下文压缩的选项：
 - en: '`LLMChainExtractor` – this passes over the returned documents and extracts
     from each only the relevant content.'
+  id: totrans-214
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`LLMChainExtractor` – 这会遍历返回的文档，并从每个文档中提取相关内容。'
 - en: '`LLMChainFilter` – this is slightly simpler; it only filters only the relevant
     documents (rather than the content from the documents).'
+  id: totrans-215
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`LLMChainFilter` – 这稍微简单一些；它只过滤相关文档（而不是文档内容）。'
 - en: '`EmbeddingsFilter` – this applies a similarity filter based on document and
     the query in terms of embeddings.'
+  id: totrans-216
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: '`EmbeddingsFilter` – 这应用基于嵌入的文档和查询的相似性过滤器。'
 - en: 'The first two compressors require an LLM to call, which means it can be slow
     and costly. Therefore, the `EmbeddingsFilter` can be a more efficient alternative.
     We can integrate compression here with a simple switch statement at the end (replacing
     the return statement):'
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: 前两个压缩器需要调用 LLM，这意味着它可能会很慢且成本高昂。因此，`EmbeddingsFilter`可以是一个更高效的替代方案。我们可以在最后使用一个简单的开关语句集成压缩（替换返回语句）：
 - en: '[PRE22]'
+  id: totrans-218
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE22]'
 - en: 'For our chosen compressor, the `EmbeddingsFilter`, we need to include two more
     additional imports:'
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于我们选择的压缩器`EmbeddingsFilter`，我们需要包括两个额外的导入：
 - en: '[PRE23]'
+  id: totrans-220
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE23]'
 - en: 'We can feed the `use_compression` parameter through the `configure_qa_chain()`
     to the `configure_retriever()` method (not shown here).Now that we have the mechanism
     to create the retriever. We can set up the chat chain:'
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以通过`configure_qa_chain()`将`use_compression`参数传递给`configure_retriever()`方法（此处未显示）。现在我们有了创建检索器的机制。我们可以设置聊天链：
 - en: '[PRE24]'
+  id: totrans-222
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE24]'
 - en: 'One final thing for the retrieval logic is taking the documents and passing
     them to the retriever setup:'
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 检索逻辑的最后一件事是获取文档并将其传递给检索器设置：
 - en: '[PRE25]'
+  id: totrans-224
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE25]'
 - en: 'Now that we have the logic of the chatbot, we need to set up the interface.
     As mentioned, we’ll use streamlit again:'
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经有了聊天机器人的逻辑，我们需要设置界面。如前所述，我们将再次使用 streamlit：
 - en: '[PRE26]'
+  id: totrans-226
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE26]'
 - en: This gives us a chatbot with retrieval usable via a visual interface with drop-in
     of custom documents as needed that you can ask questions about.
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: 这使我们可以通过可视界面使用检索功能的聊天机器人，根据需要插入自定义文档，并提出问题。
 - en: '![Figure 5.7: Chatbot interface with document loaders in different formats.](../media/file41.png)'
+  id: totrans-228
   prefs: []
   type: TYPE_IMG
+  zh: '![图5.7：带有不同格式文档加载器的聊天机器人界面。](../media/file41.png)'
 - en: 'Figure 5.7: Chatbot interface with document loaders in different formats.'
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.7：带有不同格式文档加载器的聊天机器人界面。
 - en: You can see the full implementation on Github. You can play around with the
     chatbot, and see how it works, and when it doesn’t.It’s important to note that
     LangChain has limitations on input size and cost. You may need to consider workarounds
@@ -1497,9 +1973,11 @@
     compared to using commercial solutions. We’ll look at these use cases in *Chapters
     8*, *Conditioning and Fine-Tuning*, and *9*, *LLM applications in Production*.Let’s
     have a look at the available memory mechanisms in LangChain.
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
 - en: Memory mechanisms
+  id: totrans-231
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1507,23 +1985,27 @@
     language models to remember previous interactions and information. It is essential
     in applications like chatbots because it enables the system to maintain context
     and continuity in conversations.We need memory in chatbots to:'
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
 - en: 'Remember previous interactions: Memory allows chatbots to retain information
     from previous messages exchanged with the user. This helps in understanding user
     queries and providing relevant responses.'
+  id: totrans-233
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: 'Maintain context: By recalling previous interactions, chatbots can maintain
     context and continuity in conversations. This allows for more natural and coherent
     conversations with users.'
+  id: totrans-234
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: 'Extract knowledge: Memory enables the system to extract knowledge and insights
     from a sequence of chat messages. This information can then be used to improve
     the performance and accuracy of the chatbot.'
+  id: totrans-235
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
@@ -1531,22 +2013,28 @@
     human-like conversational experience by remembering and building upon past interactions.Here’s
     a practical example in Python that demonstrates how to use the LangChain memory
     feature.
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE27]'
+  id: totrans-237
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE27]'
 - en: 'In this example, we create a conversation chain with memory using ConversationBufferMemory,
     which is a simple wrapper that stores the messages in a variable. The user’s inputs
     are processed using the `predict()` method of the conversation chain. The conversation
     chain retains the memory of previous interactions, allowing it to provide context-aware
     responses.Instead of constructing the memory separately from the chain, we could
     have simplified:'
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE28]'
+  id: totrans-239
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE28]'
 - en: 'We are setting verbose to True in order to see the prompts.After processing
     the user inputs, we print the response generated by the conversation chain. Additionally,
     we print the conversation history stored in memory using `memory.chat_memory.messages`.
@@ -1559,43 +2047,58 @@
     `ConversationBufferWindowMemory` only keeps the last K interactions, where K is
     the window size specified.Here’s a simple example of how to use `ConversationBufferWindowMemory`
     in LangChain:'
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将verbose设置为True，以便查看提示。处理用户输入后，我们打印对话链生成的响应。此外，我们使用`memory.chat_memory.messages`打印存储在内存中的对话历史。`save_context()`方法用于存储输入和输出。您可以使用`load_memory_variables()`方法查看存储的内容。为了将历史记录作为消息列表获取，将`return_messages`参数设置为`True`。我们将在本节中看到这方面的示例。`ConversationBufferWindowMemory`是LangChain提供的一种内存类型，用于跟踪对话随时间的交互。与保留所有先前交互的`ConversationBufferMemory`不同，`ConversationBufferWindowMemory`仅保留最后的K个交互，其中K是指定的窗口大小。以下是在LangChain中如何使用`ConversationBufferWindowMemory`的简单示例：
 - en: '[PRE29]'
+  id: totrans-241
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE29]'
 - en: 'In this example, the window size is set to 1, meaning that only the last interaction
     will be stored in memory.We can use the `save_context()` method to save the context
     of each interaction. It takes two arguments: user_input and model_output. These
     represent the user’s input and the corresponding model’s output for a given interaction.'
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: 在此示例中，窗口大小设置为1，这意味着只有最后一个交互将存储在内存中。我们可以使用`save_context()`方法保存每个交互的上下文。它接受两个参数：user_input和model_output。这些代表给定交互的用户输入和相应模型的输出。
 - en: '[PRE30]'
+  id: totrans-243
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE30]'
 - en: We can see the message with `memory.load_memory_variables({})`In LangChain,
     we can integrate a knowledge graph to enhance the capabilities of language models
     and enable them to leverage structured knowledge during text generation and inference.
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以使用`memory.load_memory_variables({})`查看消息。在LangChain中，我们可以集成知识图谱以增强语言模型的能力，并使其在文本生成和推理过程中利用结构化知识。
 - en: A **knowledge graph** is a structured knowledge representation model that organizes
     information in the form of entities, attributes, and relationships. It represents
     knowledge as a graph, where entities are represented as nodes and relationships
     between entities are represented as edges.
+  id: totrans-245
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**知识图谱**是一种结构化的知识表示模型，以实体、属性和关系的形式组织信息。它将知识表示为图形，其中实体表示为节点，实体之间的关系表示为边。'
 - en: ''
+  id: totrans-246
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: Prominent examples of knowledge graphs include Wikidata, which captures structured
     information from Wikipedia, and Google’s Knowledge Graph, which powers search
     results with rich contextual information.
+  id: totrans-247
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 知识图谱的著名例子包括Wikidata，它从维基百科中捕获结构化信息，以及谷歌的知识图谱，为搜索结果提供丰富的上下文信息。
 - en: 'In a knowledge graph, entities can be any concept, object, or thing in the
     world, and attributes describe properties or characteristics of these entities.
     Relationships capture the connections and associations between entities, providing
@@ -1604,34 +2107,48 @@
     memory components to automatically create a knowledge graph based on our conversation
     messages. Instantiate the `ConversationKGMemory` class and pass your language
     model (LLM) instance as the llm parameter:'
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: 在知识图谱中，实体可以是世界上的任何概念、对象或事物，属性描述这些实体的属性或特征。关系捕获实体之间的连接和关联，提供上下文信息并实现语义推理。LangChain中有用于检索知识图谱的功能，但LangChain还提供内存组件，根据我们的对话消息自动创建知识图谱。实例化`ConversationKGMemory`类，并将您的语言模型（LLM）实例作为llm参数传递：
 - en: '[PRE31]'
+  id: totrans-249
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE31]'
 - en: 'As the conversation progresses, we can save relevant information from the knowledge
     graph into the memory using the `save_context()` function of the `ConversationKGMemory`.
     We can also customize the conversational memory in LangChain, which involves modifying
     the prefixes used for the AI and Human messages, as well as updating the prompt
     template to reflect these changes.To customize the conversational memory, you
     can follow these steps:'
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着对话的进行，我们可以使用`ConversationKGMemory`的`save_context()`函数将知识图中的相关信息保存到记忆中。我们还可以自定义LangChain中的对话记忆，这涉及修改用于AI和人类消息的前缀，以及更新提示模板以反映这些更改。要自定义对话记忆，您可以按照以下步骤操作：
 - en: 'Import the necessary classes and modules from LangChain:'
+  id: totrans-251
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从LangChain导入必要的类和模块：
 - en: '[PRE32]'
+  id: totrans-252
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE32]'
 - en: Define a new prompt template that includes the customized prefixes. You can
     do this by creating a `PromptTemplate` object with the desired template string.
+  id: totrans-253
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 定义一个包含自定义前缀的新提示模板。您可以通过创建一个带有所需模板字符串的`PromptTemplate`对象来实现这一点。
 - en: '[PRE33]'
+  id: totrans-254
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE33]'
 - en: 'In this example, the AI prefix is set to AI Assistant instead of the default
     AI.The `ConversationSummaryMemory` is a type of memory in LangChain that generates
     a summary of the conversation as it progresses. Instead of storing all messages
@@ -1642,20 +2159,28 @@
     Then, use the `save_context()` method to save the interaction context, which includes
     the user input and AI output. To retrieve the summarized conversation history,
     use the `load_memory_variables()` method.Example:'
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个示例中，AI前缀被设置为AI助手，而不是默认的AI。`ConversationSummaryMemory`是LangChain中一种生成对话摘要的记忆类型，随着对话的进行而生成对话摘要。它不是存储所有消息的逐字记录，而是压缩信息，提供对话的摘要版本。这在对话链很长的情况下特别有用，其中包含所有先前消息可能超过令牌限制。要使用`ConversationSummaryMemory`，首先创建一个实例，将语言模型（llm）作为参数传递。然后，使用`save_context()`方法保存交互上下文，其中包括用户输入和AI输出。要检索摘要的对话历史记录，使用`load_memory_variables()`方法。示例：
 - en: '[PRE34]'
+  id: totrans-256
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE34]'
 - en: LangChain also allows combining multiple memory strategies using the CombinedMemory
     class. This is useful when you want to maintain different aspects of the conversation
     history. For instance, one memory could be used to store the complete conversation
     log and
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain还允许使用CombinedMemory类结合多种记忆策略。当您想要保留对话历史的不同方面时，这将非常有用。例如，一个记忆可以用于存储完整的对话记录和
 - en: '[PRE35]'
+  id: totrans-258
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE35]'
 - en: 'In this example, we first instantiate the language model and the different
     types of memories we''re using - `ConversationBufferMemory` for retaining the
     full conversation history and `ConversationSummaryMemory` for creating a summary
@@ -1677,19 +2202,24 @@
     session identifier for the user. This allows the chatbot or AI app to store and
     retrieve chat history or other relevant information.For example, in Python, you
     can initialize a ZepMemory instance as follows:'
+  id: totrans-259
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE36]'
+  id: totrans-260
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE36]'
 - en: Once the memory is set up, you can use it in your chatbot’s chain or with your
     AI agent to store and retrieve chat history or other relevant information.Overall,
     Zep simplifies the process of persisting, searching, and enriching chatbot or
     AI app histories, allowing developers to focus on developing their AI applications
     rather than building memory infrastructure.
+  id: totrans-261
   prefs: []
   type: TYPE_NORMAL
 - en: Don’t say anything stupid!
+  id: totrans-262
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1706,12 +2236,14 @@
     creating a safe, respectful, and inclusive environment for users, protecting brand
     reputation, and complying with legal obligations.Moderation and having a constitution
     are important in chatbots for several reasons:'
+  id: totrans-263
   prefs: []
   type: TYPE_NORMAL
 - en: 'Ensuring ethical behavior: Chatbots have the potential to interact with a wide
     range of users, including vulnerable individuals. Moderation helps ensure that
     the bot’s responses are ethical, respectful, and do not promote harmful or offensive
     content.'
+  id: totrans-264
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
@@ -1719,12 +2251,14 @@
     of inappropriate or offensive language, hate speech, or any content that may be
     harmful or offensive to users. It creates a safe and inclusive environment for
     users to interact with the chatbot.'
+  id: totrans-265
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: 'Maintaining brand reputation: Chatbots often represent a brand or organization.
     By implementing moderation, the developer can ensure that the bot’s responses
     align with the brand’s values and maintain a positive reputation.'
+  id: totrans-266
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
@@ -1732,6 +2266,7 @@
     in abusive or improper behavior. By implementing rules and consequences, such
     as the "two strikes" rule mentioned in the example, the developer can discourage
     users from using provocative language or engaging in abusive behavior.'
+  id: totrans-267
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
@@ -1739,6 +2274,7 @@
     for moderating content and ensuring that it complies with laws and regulations.
     Having a constitution or set of guidelines helps the developer adhere to these
     legal requirements.'
+  id: totrans-268
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
@@ -1751,35 +2287,47 @@
     create an instance of the `OpenAIModerationChain` class, which is a pre-built
     moderation chain provided by LangChain. This chain is specifically designed to
     detect and filter out harmful content.
+  id: totrans-269
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE37]'
+  id: totrans-270
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE37]'
 - en: Next, you would create an instance of the LLMChain class, which represents your
     language model chain. This is where you define your prompt and interact with the
     language model.
+  id: totrans-271
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE38]'
+  id: totrans-272
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE38]'
 - en: To append the moderation chain to the language model chain, you can use the
     `SequentialChain` class. This class allows you to chain multiple chains together
     in a sequential manner.
+  id: totrans-273
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE39]'
+  id: totrans-274
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE39]'
 - en: Now, when you want to generate text using the language model, you would pass
     your input text through the moderation chain first, and then through the language
     model chain.
+  id: totrans-275
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE40]'
+  id: totrans-276
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE40]'
 - en: The moderation chain will evaluate the input text and filter out any harmful
     content. If the input text is deemed harmful, the moderation chain can either
     throw an error or return a message indicating that the text is not allowed. I’ve
@@ -1788,39 +2336,46 @@
     it from engaging in discussions on unwanted topics, guide the conversation along
     a predefined path, enforce a particular language style, extract structured data,
     and more.
+  id: totrans-277
   prefs: []
   type: TYPE_NORMAL
 - en: In the context of large language models, **guardrails** (**rails** for short)
     refer to specific ways of controlling the output of the model. They provide a
     means to add programmable constraints and guidelines to ensure the output of the
     language model aligns with desired criteria.
+  id: totrans-278
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Here are a few ways guardrails can be used:'
+  id: totrans-279
   prefs: []
   type: TYPE_NORMAL
 - en: 'Controlling Topics: Guardrails allow you to define the behavior of your language
     model or chatbot on specific topics. You can prevent it from engaging in discussions
     on unwanted or sensitive topics like politics.'
+  id: totrans-280
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Predefined Dialog Paths: Guardrails enable you to define a predefined path
     for the conversation. This ensures that the language model or chatbot follows
     a specific flow and provides consistent responses.'
+  id: totrans-281
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Language Style: Guardrails allow you to specify the language style that the
     language model or chatbot should use. This ensures that the output is in line
     with your desired tone, formality, or specific language requirements.'
+  id: totrans-282
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Structured Data Extraction: Guardrails can be used to extract structured data
     from the conversation. This can be useful for capturing specific information or
     performing actions based on user inputs.'
+  id: totrans-283
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -1829,9 +2384,11 @@
     secure in their interactions with users. By appending the moderation chain to
     your language model chain, you can ensure that the generated text is moderated
     and safe for use in your application.
+  id: totrans-284
   prefs: []
   type: TYPE_NORMAL
 - en: Summary
+  id: totrans-285
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1860,54 +2417,67 @@
     chapter 9, we’ll discuss how you can train LLMs on your documents as another way
     of conditioning models on your data!Let’s see if you remember some of the key
     takeaways from this chapter!
+  id: totrans-286
   prefs: []
   type: TYPE_NORMAL
 - en: Questions
+  id: totrans-287
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: 'Please have a look to see if you can come up with the answers to these questions
     from memory. I’d recommend you go back to the corresponding sections of this chapter,
     if you are unsure about any of them:'
+  id: totrans-288
   prefs: []
   type: TYPE_NORMAL
 - en: Please name 5 different chatbots!
+  id: totrans-289
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What are some important aspects in developing a chatbot?
+  id: totrans-290
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What does RALMs stand for?
+  id: totrans-291
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What is an embedding?
+  id: totrans-292
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What is vector search?
+  id: totrans-293
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What is a vector database?
+  id: totrans-294
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: Please name 5 different vector databases!
+  id: totrans-295
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What is a retriever in LangChain?
+  id: totrans-296
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What is memory and what are the memory options in LangChain?
+  id: totrans-297
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What is moderation, what’s a constitution, and how do they work?
+  id: totrans-298
   prefs:
   - PREF_OL
   type: TYPE_NORMAL

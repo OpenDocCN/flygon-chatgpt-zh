@@ -1,17 +1,25 @@
 - en: 4 Querying with Tools
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 使用工具进行查询
 - en: Join our book community on Discord
+  id: totrans-1
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 在Discord上加入我们的书籍社区
 - en: '[https://packt.link/EarlyAccessCommunity](https://packt.link/EarlyAccessCommunity)'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: '[https://packt.link/EarlyAccessCommunity](https://packt.link/EarlyAccessCommunity)'
 - en: '![Qr code Description automatically generated](../media/file26.png)'
+  id: totrans-3
   prefs: []
   type: TYPE_IMG
+  zh: '![自动生成的二维码描述](../media/file26.png)'
 - en: 'In today''s fast-paced business and research landscape, keeping up with the
     ever-increasing volume of information can be a daunting task. For engineers and
     researchers in fields like computer science and artificial intelligence staying
@@ -38,35 +46,51 @@
     (or plan-and-solve) and one-shot-agent, and we’ll integrate them into a visual
     interface as a visual app in the browser (using Streamlit) for question answering.The
     main sections are:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在当今快节奏的商业和研究环境中，跟上不断增长的信息量可能是一项艰巨的任务。对于计算机科学和人工智能等领域的工程师和研究人员来说，保持对最新发展的了解至关重要。然而，阅读和理解大量论文可能是耗时且劳动密集的。这就是自动化发挥作用的地方。在本章中，我们将描述一种自动化研究论文摘要和回答问题的方法，使研究人员更容易消化和保持信息。通过利用语言模型和一系列问题，我们将开发的摘要可以以简洁和简化的格式总结论文的核心论点、含义和机制。这不仅可以节省研究主题时的时间和精力，还可以确保我们能有效地应对科学进步的加速步伐。我们还将尝试使用OpenAI模型的功能，并将其应用于信息提取。我们将看到它们如何（或尚未）用于解析简历（CVs）的应用。这个函数语法是特定于OpenAI的API，并且有许多应用，然而，LangChain提供了一个平台，允许创建用于任何大型语言模型（LLMs）的工具，增强它们的功能。这些工具使LLMs能够与API交互，访问实时信息，并执行各种任务，如检索搜索、数据库查询、撰写电子邮件，甚至打电话。我们将使用检索增强生成（RAG）实现一个问答应用程序。这是一种通过将相关数据注入上下文来更新大型语言模型（LLMs）如GPT的技术。最后，我们将讨论代理的不同决策策略。我们将实现两种策略，即计划和执行（或计划和解决）和一次性代理，并将它们集成到一个可视化界面中，作为浏览器中的可视化应用程序（使用Streamlit）用于问答。主要部分包括：
 - en: What are hallucinations?
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 什么是幻觉？
 - en: How to summarize long documents?
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如何总结长篇文档？
 - en: Extracting information from documents
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 从文档中提取信息
 - en: Answer questions with tools
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用工具回答问题
 - en: Reasoning strategies
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 推理策略
 - en: We'll begin the chapter by discussing the problem of reliability of LLMs.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将从讨论LLMs的可靠性问题开始。
 - en: What are hallucinations?
+  id: totrans-11
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 什么是幻觉？
 - en: The rapid development of generative language models, such as GPT-3, Llama, and
     Claude 2, has brought attention to their limitations and potential risks. One
     major concern are hallucinations, where the models generate output that is nonsensical,
@@ -77,8 +101,10 @@
     numbers, and physical addresses. This poses significant privacy concerns as it
     suggests that language models can memorize and recover such private data from
     their training corpus, despite not being present in the source input.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成式语言模型（如GPT-3、Llama和Claude 2）的快速发展引起了人们对其局限性和潜在风险的关注。一个主要关注点是幻觉，即模型生成的输出是荒谬的、不连贯的或与提供的输入不符。幻觉在现实世界的应用中，如医学或机器翻译中，会带来性能和安全风险。幻觉的另一个方面是，LLM生成包含敏感个人信息的文本，如电子邮件地址、电话号码和物理地址。这引发了重大的隐私问题，因为它表明语言模型可以从其训练语料库中记忆和恢复这些私人数据，尽管这些数据不在源输入中。
 - en: '**Hallucination** in the context of LLMs refers to the phenomenon where generated
     text is unfaithful to the intended content or nonsensical. This term draws a parallel
     to psychological hallucinations, which involve perceiving something that does
@@ -86,10 +112,13 @@
     the provided context, but lacks specificity or verifiability. **Faithfulness**,
     where the generated content stays consistent and truthful to the source, is considered
     an antonym of hallucination.'
+  id: totrans-13
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 在LLM的背景下，**幻觉**指的是生成的文本与预期内容不忠实或荒谬的现象。这个术语与心理幻觉类似，涉及感知不存在的事物。在自然语言生成中，幻觉文本可能在提供的上下文中看起来流畅自然，但缺乏特定性或可验证性。**忠实性**，即生成的内容保持与源内容一致和真实，被认为是幻觉的反义词。
 - en: ''
+  id: totrans-14
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
@@ -98,121 +127,159 @@
     that cannot be verified or supported by the source material. Extrinsic hallucinations
     can sometimes include factually correct external information, but their unverifiability
     raises concerns from a factual safety perspective.'
+  id: totrans-15
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**内在幻觉**发生在生成的输出与源内容相矛盾时，而**外在幻觉**涉及生成无法验证或支持的信息。外在幻觉有时可能包含事实正确的外部信息，但其不可验证性引发了从事实安全角度的担忧。'
 - en: 'Efforts to address hallucination are ongoing, but there is a need for a comprehensive
     understanding across different tasks to develop effective mitigation methods.Hallucinations
     in LLMs can be caused by various factors:'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 解决幻觉的努力正在进行中，但需要在不同任务之间全面了解，以开发有效的缓解方法。LLM中的幻觉可能由各种因素引起：
 - en: Imperfect representation learning by the encoder.
+  id: totrans-17
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编码器的不完美表示学习。
 - en: Erroneous decoding, including attending to the wrong part of the source input
     and the choice of decoding strategy.
+  id: totrans-18
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 错误解码，包括关注源输入的错误部分和解码策略的选择。
 - en: Exposure bias, which is the discrepancy between training and inference time.
+  id: totrans-19
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 曝光偏差，即训练和推理时间之间的差异。
 - en: Parametric knowledge bias, where pre-trained models prioritize their own knowledge
     over the input, leading to the generation of excessive information.
+  id: totrans-20
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 参数化知识偏见，即预训练模型优先考虑自己的知识而不是输入，导致生成过多的信息。
 - en: '**Hallucination mitigation methods** can be categorized into two groups: Data-Related
     Methods and Modeling and Inference Methods (after “Survey of Hallucination in
     Natural Language Generation”, Ziwei Ji and others, 2022):'
+  id: totrans-21
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**幻觉缓解方法**可以分为两组：数据相关方法和建模与推理方法（根据“自然语言生成中的幻觉调查”，季子伟等人，2022年）：'
 - en: ''
+  id: totrans-22
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: '**Data-Related Methods:**'
+  id: totrans-23
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**数据相关方法：**'
 - en: ''
+  id: totrans-24
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Building a Faithful Dataset: Constructing datasets with clean and faithful
     targets from scratch or rewriting real sentences while ensuring semantic consistency.'
+  id: totrans-25
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 构建忠实数据集：从头开始构建具有干净和忠实目标的数据集，或者在确保语义一致性的同时重写真实句子。
 - en: ''
+  id: totrans-26
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Cleaning Data Automatically: Identifying and filtering irrelevant or contradictory
     information in the existing corpus to reduce semantic noise.'
+  id: totrans-27
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 自动清理数据：识别和过滤现有语料库中的不相关或矛盾信息，以减少语义噪音。
 - en: ''
+  id: totrans-28
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Information Augmentation: Augmenting inputs with external information, such
     as retrieved knowledge or synthesized data, to improve semantic understanding
     and address source-target divergence.'
+  id: totrans-29
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 信息增强：通过外部信息（如检索的知识或合成数据）增强输入，以改善语义理解并解决源目标分歧。
 - en: ''
+  id: totrans-30
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: '**Modeling and Inference Methods:**'
+  id: totrans-31
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**建模和推理方法：**'
 - en: ''
+  id: totrans-32
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Architecture: Modifying encoder architecture to enhance semantic interpretation,
     attention mechanisms to prioritize source information, and decoder structures
     to reduce hallucination and enforce implicit or explicit constraints.'
+  id: totrans-33
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 架构：修改编码器架构以增强语义解释，注意机制以优先处理源信息，解码器结构以减少虚构并强制隐式或显式约束。
 - en: ''
+  id: totrans-34
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Training: Incorporating planning, reinforcement learning (RL), multi-task learning,
     and controllable generation techniques to mitigate hallucination by improving
     alignment, optimizing reward functions, and balancing faithfulness and diversity.'
+  id: totrans-35
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 训练：结合规划、强化学习（RL）、多任务学习和可控生成技术，通过改善对齐、优化奖励函数和平衡忠实度和多样性来减轻虚构。
 - en: ''
+  id: totrans-36
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Post-Processing: Correcting hallucinations in the output through generate-then-refine
     strategies or refining the results specifically for faithfulness using post-processing
     correction methods.'
+  id: totrans-37
   prefs:
   - PREF_BQ
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 后处理：通过生成然后精炼策略或专门用于忠实度的后处理校正方法，纠正输出中的虚构。
 - en: 'A result of hallucinations, where automatic fact checking can be applied, is
     the danger of spreading incorrect information or misuse for political purposes.
     **Misinformation**, including **disinformation**, deceptive news, and rumors,
@@ -234,29 +301,44 @@
     vast knowledge to answer open-domain questions and using prompts to retrieve specific
     facts. We can see the general idea in this diagram (source: https://github.com/Cartus/Automated-Fact-Checking-Resources
     by Zhijiang Guo):'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 虚构的结果是，自动事实核查可以应用，存在传播不正确信息或滥用政治目的的危险。**错误信息**，包括**虚假信息**、欺骗性新闻和谣言，对社会构成重大威胁，尤其是通过社交媒体轻松创作和传播内容。社会面临的威胁包括对科学、公共卫生叙事、社会极化和民主进程的不信任。新闻学和档案学已广泛研究了这个问题，事实核查倡议也在应对中不断增长。致力于事实核查的组织为独立事实核查员和记者提供培训和资源，从而扩大专家事实核查工作的规模。解决错误信息对保持信息的完整性和对抗其对社会的有害影响至关重要。在文献中，这种问题被称为文本蕴涵，其中模型预测文本对之间的方向性真实关系（即“句子t蕴含h”如果，通常，阅读t的人会推断h最有可能是真实的）。在本章中，我们将重点关注通过信息增强和后处理进行**自动事实核查**。事实可以从LLMs或使用外部工具检索。在前一种情况下，预训练语言模型可以取代知识库和检索模块，利用其广泛的知识回答开放域问题，并使用提示检索特定事实。我们可以在这个图表中看到这个一般想法（来源：https://github.com/Cartus/Automated-Fact-Checking-Resources
+    by Zhijiang Guo）：
 - en: '![Figure 4.1: Automatic fact-checking pipeline in three stages.](../media/file27.png)'
+  id: totrans-39
   prefs: []
   type: TYPE_IMG
+  zh: '![图4.1：三个阶段的自动事实核查流程。](../media/file27.png)'
 - en: 'Figure 4.1: Automatic fact-checking pipeline in three stages.'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.1：三个阶段的自动事实核查流程。
 - en: 'We can distinguish three stages:'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以区分三个阶段：
 - en: Claim detection - identify claims that require verification
+  id: totrans-42
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 主张检测 - 识别需要验证的主张
 - en: Retrieval - retrieve evidence to find sources supporting or refuting the claim
+  id: totrans-43
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 检索 - 检索证据���找到支持或反驳主张的来源
 - en: Claim verification - assess the veracity of the claim based on the evidence
+  id: totrans-44
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 主张验证 - 根据证据评估主张的真实性
 - en: 'Starting with 24-layer BERT-Large in 2018, language models have been pre-trained
     on large knowledge bases such as Wikipedia, and therefore would be able to answer
     knowledge questions from Wikipedia or - since their training set increasingly
@@ -274,40 +356,63 @@
     actively questions the assumptions that went into a statement. In this self-checking
     chain, `LLMCheckerChain`, the model is prompted sequentially times, first to make
     the assumptions explicit - this looks like this:'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 从2018年开始使用24层BERT-Large，语言模型已经在大型知识库（如维基百科）上进行了预训练，因此能够从维基百科或其他来源（因为它们的训练集越来越多地包括其他来源）-
+    互联网、教科书、arxiv和Github回答知识问题。查询事实的工作与简单提示（如掩码提示）一起进行。例如，为了回答问题“微软的总部在哪里？”，问题将被重写为“微软的总部在[MASK]”，然后输入到语言模型中以获取答案。在这种方法中，最终的激活在条件LLM接收到源文本（有条件LLM）产生目标时的损失比未接收源文本的LLM（无条件LLM）产生目标时的损失更小，这表明生成的标记是幻觉的（Fillippova,
+    2020）。幻觉标记与目标标记总数的比率可以作为生成输出中幻觉程度的度量。在LangChain中，我们有一个可用于事实核查的链，其中模型通过提示链式提问对陈述中的假设进行主动质疑。在这个自检链中，`LLMCheckerChain`，模型被依次提示多次，首先明确做出假设
+    - 看起来像这样：
 - en: '[PRE0]'
+  id: totrans-46
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE0]'
 - en: 'Please note that this is a string template, where the elements in curly brackets
     will be replaced by variables. Next, these assumptions are fed back to the model
     in order to check them one by one with a prompt like this:'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 请注意，这是一个字符串模板，其中花括号中的元素将被变量替换。接下来，这些假设将被反馈给模型，以便逐个用类似这样的提示检查它们：
 - en: '[PRE1]'
+  id: totrans-48
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE1]'
 - en: 'Finally, the model is tasked to make a final judgment:'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，模型被要求做出最终判断：
 - en: '[PRE2]'
+  id: totrans-50
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE2]'
 - en: 'The `LLMCheckerChain` does this all by itself as this example shows:'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: '`LLMCheckerChain`就像这个例子展示的那样自动完成所有这些。'
 - en: '[PRE3]'
+  id: totrans-52
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE3]'
 - en: 'The model can return different results to this question, some of which are
     wrong, and some of which it would correctly identify as false. When I was trying
     this out, I got results such as the blue whale, the North American beaver, or
     the extinct Giant Moa. I think this is the right answer:'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个模型对这个问题可能会返回不同的结果，其中一些是错误的，而一些则会被正确识别为错误。当我尝试时，我得到了蓝鲸、北美海狸或已灭绝的巨型恐鸟等结果。我认为这是正确答案：
 - en: '[PRE4]'
+  id: totrans-54
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE4]'
 - en: So, while this doesn’t guarantee correct answers, it can put a stop to some
     incorrect results.As for augmented retrieval (or RAG), we’ve seen the approach
     in this chapter, in the section about question answering. Fact-checking approaches
@@ -319,12 +424,16 @@
     we’ll apply this approach to return results based on web searches and other tools.
     In the next section, we’ll implement a chain to summarize documents. We can ask
     any question to be answered from these documents.
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，虽然这并不能保证正确答案，但它可以阻止一些错误结果。至于增强检索（或RAG），我们在本章中看到了这种方法，在关于问答的部分。事实核查方法涉及将声明分解为更小的可检查查询，这些查询可以被制定为问答任务。专为搜索领域数据集设计的工具可以帮助事实核查人员有效地找到证据。像谷歌和必应这样的现成搜索引擎也可以检索与主题和证据相关的内容，准确捕捉陈述的真实性。在下一节中，我们将应用这种方法基于网络搜索和其他工具返回结果。在下一节中，我们将实现一个链来总结文档。我们可以从这些文档中提出任何问题。
 - en: How to summarize long documents?
+  id: totrans-56
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 如何总结长篇文档？
 - en: 'In this section, we’ll discuss automating the process of summarizing long texts
     and research papers. In today''s fast-paced business and research landscape, keeping
     up with the ever-increasing volume of information can be a daunting task. For
@@ -354,27 +463,39 @@
     the token context length of the LLM, a chain can be applied to each document individually
     and then combine the outputs into a single document. The core assertion is that
     the map reduce process involves two steps:'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这一部分，我们将讨论自动化长文本和研究论文摘要的过程。在当今快节奏的商业和研究环境中，跟上不断增长的信息量可能是一项艰巨的任务。对于计算机科学和人工智能等领域的工程师和研究人员来说，了解最新发展至关重要。然而，阅读和理解大量论文可能是耗时且劳动密集的。这就是自动化发挥作用的地方。作为工程师，我们受到建设和创新的愿望驱使，通过创建管道和流程来自动化避免重复性任务。这种常被误解为懒惰的方法使工程师能够专注于更复杂的挑战，并更有效地利用他们的技能。在这里，我们将构建一个自动化工具，可以快速以更易消化的格式总结长文本的内容。该工具旨在帮助研究人员跟上每天发表的论文数量，特别是在人工智能等快速发展领域。通过自动化摘要过程，研究人员可以节省时间和精力，同时确保他们了解其领域的最新发展。该工具将基于LangChain，并利用大型语言模型（LLMs）以更简洁和简化的方式总结论文的核心论点、含义和机制。它还可以回答关于论文的具体问题，使其成为文献综述和加速科学研究的宝贵资源。作者计划进一步开发该工具，以允许自动处理多个文档并针对特定研究领域进行定制。总体而言，该方法旨在通过提供更高效和更易访问的方式帮助研究人员跟上最新研究。LangChain支持使用LLMs处理文档的映射减少方法，这允许对文档进行高效处理和分析。在阅读大文本并将其分割为适合LLM令牌上下文长度的文档（块）时，可以将链应用于每个文档，并将输出组合成单个文档。核心论点是映射减少过程涉及两个步骤：
 - en: Map step - the LLM chain is applied to each document individually, treating
     the output as a new document, and
+  id: totrans-58
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 映射步骤 - 将LLM链应用于每个文档，将输出视为新文档，并
 - en: Reduce step - all the new documents are passed to a separate combine documents
     chain to obtain a single output.
+  id: totrans-59
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 减少步骤 - 所有新文档都传递到单独的组合文档链以获得单个输出。
 - en: 'This is illustrated in the figure here:'
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 这在这里的图中有所说明：
 - en: '![Figure 4.2: Map reduce chain in LangChain (source: LangChain documentation).](../media/file28.jpg)'
+  id: totrans-61
   prefs: []
   type: TYPE_IMG
+  zh: '![图4.2：LangChain中的映射减少链（来源：LangChain文档）。](../media/file28.jpg)'
 - en: 'Figure 4.2: Map reduce chain in LangChain (source: LangChain documentation).'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.2：LangChain中的映射减少链（来源：LangChain文档）。
 - en: 'The implications of this approach are that it allows for parallel processing
     of documents and enables the use of LLMs for reasoning, generating, or analyzing
     the individual documents as well as combining their outputs. The mechanics of
@@ -382,27 +503,40 @@
     fit within the combine documents chain, which may also involve utilizing LLMs.
     The compression step can be performed recursively if needed. Here’s a simple example
     of loading a PDF document and summarizing it:'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种方法的影响是它允许对文档进行并行处理，并且使LLMs能够用于推理、生成或分析单个文档以及组合它们的输出。该过程的机制涉及压缩或折叠映射文档，以确保它们适合于组合文档链，这可能还涉及利用LLMs。如果需要，压缩步骤可以递归执行。这里是加载PDF文档并对其进行摘要的简单示例：
 - en: '[PRE5]'
+  id: totrans-64
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE5]'
 - en: 'The variable `pdf_file_path` is a string with the path of a PDF file.The default
     prompt for both the map and reduce steps is this:'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 变量`pdf_file_path`是一个包含PDF文件路径的字符串。地图和减少步骤的默认提示是这样的：
 - en: '[PRE6]'
+  id: totrans-66
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE6]'
 - en: 'We can specify any prompt for each step. In the text summarization application
     developed for this chapter on Github, we can see how to pass other prompts. On
     LangChainHub, we can see the qa-with sources prompt, which takes a reduce/combine
     prompt like this:'
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以为每个步骤指定任何提示。在为本章开发的文本摘要应用程序中，我们可以看到如何传递其他提示。在LangChainHub上，我们可以看到qa-with
+    sources提示，它采用了一个类似于这样的减少/组合提示：
 - en: '[PRE7]'
+  id: totrans-68
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE7]'
 - en: In this prompt, we would formulate a concrete question, but equally we could
     give the LLM a more abstract instruction to extract assumption and implications.
     The text would be the summaries from the map steps. An instruction like that would
@@ -411,12 +545,16 @@
     start doing a lot of calls, especially here in the map step, we’ll see costs increasing.
     We are doing a lot of calls and using a lot of tokens in total. Time to give this
     some visibility!
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个提示中，我们会制定一个具体的问题，但同样我们也可以给LLM一个更抽象的指令，以提取假设和推论。文本将是地图步骤的摘要。这样的指令可以帮助防止幻觉。其他指令的例子可能是将文档翻译成另一种语言或以某种风格重新表述。一旦我们开始做很多调用，特别是在地图步骤中，我们会看到成本增加。我们正在做很多调用，并总共使用了很多令牌。是时候让这些变得更加可见了！
 - en: Token usage
+  id: totrans-70
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 令牌使用
 - en: 'When using models, especially in long loops such as with map operations, it’s
     important to track the token usage and understand how much money you are spending.
     For any serious usage of generative AI, we need to understand the capabilities,
@@ -453,39 +591,54 @@
     Users can also request a quota increase if they require more tokens for their
     applications.We can track the token usage in OpenAI models by hooking into the
     OpenAI callback:'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 在使用模型时，特别是在长循环中，比如在地图操作中，跟踪令牌使用量并了解你花费了多少钱是很重要的。对于任何严肃的生成式人工智能使用，我们需要了解不同语言模型的能力、定价选项和用例。OpenAI提供不同的模型，包括GPT-4、ChatGPT和InstructGPT，以满足各种自然语言处理需求。GPT-4是一个强大的语言模型，适用于解决自然语言处理中的复杂问题。它提供基于使用的令牌大小和数量的灵活定价选项。ChatGPT模型，如GPT-3.5-Turbo，专门用于对话应用，如聊天机器人和虚拟助手。它们擅长生成准确流畅的回应。ChatGPT模型的定价基于使用的令牌数量。InstructGPT模型专为单轮指令跟随而设计，并针对快速准确的响应生成进行了优化。InstructGPT系列中的不同模型，如Ada和Davinci，提供不同级别的速度和功率。Ada是最快的模型，适用于速度至关重要的应用，而Davinci是最强大的模型，能够处理复杂的指令。InstructGPT模型的定价取决于模型的能力，从像Ada这样的低成本选项到像Davinci这样的更昂贵选项。OpenAI的DALL·E、Whisper和API服务用于图像生成、语音转录、翻译和访问语言模型。DALL·E是一种AI驱动的图像生成模型，可以无缝集成到应用程序中，用于生成和编辑新颖的图像和艺术品。OpenAI提供三个分辨率层次，允许用户选择他们需要的细节级别。更高的分辨率提供更复杂和详细的内容，而较低的分辨率提供更抽象的表示。每张图像的价格根据分辨率而变化。Whisper是一种可以将语音转录为文本并将多种语言翻译成英语的AI工具。它有助于捕捉对话，促进交流，并提高跨语言理解。使用Whisper的成本基于每分钟的费率。OpenAI的API提供对强大语言模型如GPT-3的访问，使开发人员能够创建高级应用程序。在注册API时，用户会获得一个初始令牌使用限制，代表在特定时间范围内与语言模型交互的令牌数量。随着用户的记录和使用增加，OpenAI可能会增加令牌使用限制，为模型提供更多访问权限。用户还可以请求增加配额，如果他们的应用程序需要更多令牌。我们可以通过连接到OpenAI回调来跟踪OpenAI模型中的令牌使用：
 - en: '[PRE8]'
+  id: totrans-72
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE8]'
 - en: 'In this example, the line with `llm_chain` could be any usage of an OpenAI
     model. We should see an output with the costs and tokens.There are two other ways
     of getting the token usage. Alternative to the OpenAI Callback, the `generate()`
     method of the `llm` class returns a response of type `LLMResult` instead of string. This
     includes token usages and finish reason, for example (from the LangChain docs):'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE9]'
+  id: totrans-74
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE9]'
 - en: 'The result looks like this:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE10]'
+  id: totrans-76
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE10]'
 - en: 'Finally, the chat completions response format in the OpenAI API includes a
     usage object with token information, for example it could look like this (excerpt):'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE11]'
+  id: totrans-78
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE11]'
 - en: Next, we’ll look at how to extract certain pieces of information from documents
     using OpenAI functions with LangChain.
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
 - en: Extracting information from documents
+  id: totrans-80
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -515,36 +668,53 @@
     is a dictionary, but we can also define properties and their types in Pydantic
     providing control and flexibility in the extraction process.Here’s an example
     for a desired schema for information in a Curricum Vitae (CV):'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE12]'
+  id: totrans-82
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE12]'
 - en: We can use this for information extraction from a CV. Here’s an example CV from
     [https://github.com/xitanggg/open-resume](https://github.com/xitanggg/open-resume)
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以利用这个来从简历中提取信息。这里有一个来自[https://github.com/xitanggg/open-resume](https://github.com/xitanggg/open-resume)的示例简历。
 - en: '![Figure 4.3: Extract of an example CV.](../media/file29.png)'
+  id: totrans-84
   prefs: []
   type: TYPE_IMG
+  zh: '![图4.3：示例简历摘录。](../media/file29.png)'
 - en: 'Figure 4.3: Extract of an example CV.'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.3：示例简历摘录。
 - en: 'We are going to try to parse the information from this resume. Utilizing the
     `create_extraction_chain_pydantic()` function in LangChain, we can provide our
     schema as input, and an output will be an instantiated object that adheres to
     it. In its most simple terms, we can try this code snippet:'
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将尝试从这份简历中解析信息。利用LangChain中的`create_extraction_chain_pydantic()`函数，我们可以将我们的模式作为输入提供，输出将是一个符合它的实例化对象。简单来说，我们可以尝试这段代码片段：
 - en: '[PRE13]'
+  id: totrans-87
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE13]'
 - en: 'We should be getting an output like this:'
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们应该得到这样的输出：
 - en: '[PRE14]'
+  id: totrans-89
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE14]'
 - en: It’s far from perfect - only one work experience gets parsed out. But it’s a
     good start given the little effort we’ve put in so far. Please see the example
     on Github for the full example. We could add more functionality, for example to
@@ -555,12 +725,16 @@
     calls as prompts. This means we can use model providers other than OpenAI for
     function calls within LLM apps. We’ll look at this now, and we’ll build this into
     an interactive web-app with Streamlit.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 这还远非完美 - 只有一个工作经验被解析出来。但考虑到我们迄今为止所付出的少量努力，这是一个很好的开始。请查看Github上的示例以获取完整示例。我们可以添加更多功能，例如猜测个性或领导能力。OpenAI将这些函数调用注入到系统消息中，采用一定的语法，这是他们的模型经过优化的。这意味着函数会计入上下文限制，并相应地计入输入令牌。LangChain本身具有将函数调用注入为提示的功能。这意味着我们可以在LLM应用程序中使用除OpenAI之外的模型提供者进行函数调用。我们现在将看看这一点，并将其构建为一个带有Streamlit的交互式Web应用程序。
 - en: Answer questions with tools
+  id: totrans-91
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 用工具回答问题
 - en: LLMs are trained on general corpus data and may not be as effective for tasks
     that require domain-specific knowledge. On their own LLMs can’t interact with
     the environment and access external data sources, however, LangChain provides
@@ -593,34 +767,40 @@
     answers by leveraging external sources of information. By retrieving specific
     context from sources like news articles or websites related to a particular topic,
     the responses will be more accurate.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
 - en: 'RAG (Retrieval Augmented Generation) works by retrieving information from data
     sources to supplement the prompt given to the language model, providing the model
     with the needed context to generate accurate responses. RAG involves several steps:'
+  id: totrans-93
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: '**Prompt**: The user provides a prompt to the chatbot, describing their expectations
     for the output.'
+  id: totrans-94
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: '**Research**: A contextual search is performed and retrieves relevant information
     from various data sources. This could involve querying a database, searching indexed
     documents based on keywords, or invoking APIs to retrieve data from external sources.'
+  id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: '**Update Resource**: The retrieved context is injected into the original prompt,
     augmenting it with additional factual information related to the user''s query.
     This enhanced prompt improves accuracy as it provides access to factual data.'
+  id: totrans-96
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: '**Narrate**: Based on this augmented input, the LLM generates a response that
     includes factually correct information and sends it back to the chatbot for delivery
     to the user.'
+  id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -630,32 +810,41 @@
     of augmenting LLMs through tools and reasoning is shown here (source: https://github.com/billxbf/ReWOO,
     implementation for the paper “Decoupling Reasoning from Observations for Efficient
     Augmented Language Models Resources” by Binfeng Xu and others, May 2023):'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 4.4: Tool-augmented LM paradigm, leveraging foreseeable reasoning ability
     of language models to improve system parameter and prompt efficiency](../media/file30.jpg)'
+  id: totrans-99
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 4.4: Tool-augmented LM paradigm, leveraging foreseeable reasoning ability
     of language models to improve system parameter and prompt efficiency'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
 - en: 'Let’s see this in action!We have quite a few tools available in LangChain,
     and - if that’s not enough - it’s not hard to roll out our own tools. Let’s set
     up an agent with a few tools:'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE15]'
+  id: totrans-102
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE15]'
 - en: 'It’s an important detail to know that an `AgentExecutor` is a chain, and therefore
     - if we wanted we could integrate it into a larger chain if we wanted. We could
     have initialized this chain using a different syntax like this:'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE16]'
+  id: totrans-104
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE16]'
 - en: 'In this syntax, we would pass the tools as chain configurations. MRKL stands
     for Modular Reasoning, Knowledge and Language. The Zero-Shot Agent is the most
     general-purpose action agent in the MRKL framework.Please notice the parameter
@@ -665,24 +854,29 @@
     the OpenAI, ChatOpenAI, and ChatAnthropic implementations support streaming. All
     the tools mentioned have their specific purpose that’s part of the description,
     which is passed to the language model. These tools here are plugged into the agent:'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
 - en: DuckDuckGo - a search engine that focuses on privacy; an added advantage is
     that it doesn’t require developer signup
+  id: totrans-106
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Wolfram Alpha - an integration that combines natural language understanding
     with math capabilities, for questions like “What is 2x+5 = -3x + 7?”
+  id: totrans-107
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Arxiv - search in academic pre-print publications; this is useful for research-oriented
     questions
+  id: totrans-108
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Wikipedia - for any question about entities of significant notoriety
+  id: totrans-109
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -694,73 +888,93 @@
     There’s an Open-Meteo - integration for weather information, however, this information
     is also available through search.Let’s make our agent available as a streamlit
     app.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
 - en: '**Streamlit** is an open-source app framework for Machine Learning and Data
     Science teams. It allows users to create beautiful web apps in minutes using Python.'
+  id: totrans-111
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'Let’s write the code for this using the `load_agent()` function we’ve just
     defined:'
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE17]'
+  id: totrans-113
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE17]'
 - en: 'Please notice that we are using the callback handler in the call to the chain,
     which means that we’ll see responses as they come back from the model. We can
     start the app locally from the terminal like this:'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE18]'
+  id: totrans-115
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE18]'
 - en: Deployment of Streamlit applications can be local or on a server. Alternatively,
     you can deploy this on the Streamlit Community Cloud or on Hugging Face Spaces.
+  id: totrans-116
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'For **Streamlit Community Cloud** do this:'
+  id: totrans-117
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 1\. Create a Github repository
+  id: totrans-118
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 2\. Go to Streamlit Community Cloud, click on "New app" and select the new repo
+  id: totrans-119
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 3\. Click "Deploy!"
+  id: totrans-120
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'As for **Hugging Face Spaces** it works like this:'
+  id: totrans-121
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 1\. Create a Github repo
+  id: totrans-122
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 2\. Create a Hugging Face account at https://huggingface.co/
+  id: totrans-123
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 3\. Go to “Spaces” and click “Create new Space”. In the form, fill in a name,
     type of space as “Streamlit”, and choose the new repo.
+  id: totrans-124
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'Here’s a screenshot from the app looks:'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 4.5: Question answering app in Streamlit.](../media/file31.png)'
+  id: totrans-126
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 4.5: Question answering app in Streamlit.'
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
 - en: 'The search works quite well, although depending on the tools used it might
@@ -769,11 +983,14 @@
     in birds and mammals, and sometimes concludes that the ostrich is the mammal with
     the largest egg, although Platypus also comes back sometimes. Here’s the log output
     (shortened) for the correct reasoning:'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE19]'
+  id: totrans-129
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE19]'
 - en: You can see that with a powerful framework for automation and problem solving
     at your behest, you can compress work that can take hundreds of hours into minutes.
     You can play around with different research questions to see how the tools are
@@ -788,9 +1005,11 @@
     is inspired by BabyAGI and AutoGPT, at [https://github.com/blockpipe/BlockAGI](https://github.com/blockpipe/BlockAGI)In
     the following sections, we’ll compare the main types of agents by their decision
     making strategies.
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
 - en: Reasoning strategies
+  id: totrans-131
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -805,17 +1024,21 @@
     Reasoning, Knowledge, and Language** (**MRKL**) is a framework that combines language
     models and tools to perform reasoning tasks. In LangChain this consists of three
     parts:'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
 - en: tools,
+  id: totrans-133
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: an `LLMChain`, and
+  id: totrans-134
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: the agent itself.
+  id: totrans-135
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
@@ -825,14 +1048,17 @@
     output of the LLMChain to decide which action to take.We’ve discussed tool use
     strategies in *Chapter 2*, *Introduction to LangChain*. We can see the reasoning
     with observation pattern in this diagram:'
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 4.6: Reasoning with observation (source: https://arxiv.org/abs/2305.18323;
     Binfeng Xu and others, May 2023).](../media/file32.png)'
+  id: totrans-137
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 4.6: Reasoning with observation (source: https://arxiv.org/abs/2305.18323;
     Binfeng Xu and others, May 2023).'
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
 - en: '**Observation-dependent reasoning** involves making judgments, predictions,
@@ -846,14 +1072,17 @@
     which is the default setting when you create an agent.As mentioned, plans can
     also be made ahead of any actions. This strategy, in LangChain called the **plan-and-execute
     agent**, is illustrated in the diagram here:'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 4.7: Decoupling Reasoning from Observations (source: https://arxiv.org/abs/2305.18323;
     Binfeng Xu and others, May 2023).](../media/file33.png)'
+  id: totrans-140
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 4.7: Decoupling Reasoning from Observations (source: https://arxiv.org/abs/2305.18323;
     Binfeng Xu and others, May 2023).'
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
 - en: 'The planner (an LLM), which can be fine-tuned for planning and tool usage,
@@ -861,17 +1090,21 @@
     evidence (E) through using tools. P and E are combined with the task, and then
     fed into the Solver (an LLM) for the final answer. We can write a pseudo algorithm
     like this:'
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
 - en: Plan out all the steps (Planner)
+  id: totrans-143
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'For step in steps:'
+  id: totrans-144
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Determine the proper tools to accomplish the step
+  id: totrans-145
   prefs:
   - PREF_IND
   - PREF_UL
@@ -884,67 +1117,87 @@
     For “one-shot-react”, the logic stays the same. For “plan-and-solve”, we’ll define
     a planner and an executor, which we’ll use to create a `PlanAndExecute` agent
     executor:'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE20]'
+  id: totrans-147
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE20]'
 - en: 'For the sake of brevity, I’ve omitted imports that we had already earlier.Let’s
     define a new variable that’s set through a radio button in Streamlit. We’ll pass
     this variable over to the `load_agent()` function:'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE21]'
+  id: totrans-149
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE21]'
 - en: 'You might have noticed that the `load_agent()` take a list of strings, `tool_names`.
     This can be chosen in the user interface (UI) as well:'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE22]'
+  id: totrans-151
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE22]'
 - en: 'Finally, still in the app, the agent is loaded like this:'
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE23]'
+  id: totrans-153
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE23]'
 - en: 'We can see the UI here:'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
 - en: '![Figure 4.8: Implementing plan-and-execute in our research app.](../media/file34.png)'
+  id: totrans-155
   prefs: []
   type: TYPE_IMG
 - en: 'Figure 4.8: Implementing plan-and-execute in our research app.'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
 - en: 'Please have a look at the app and see the different steps for the question
     “What is a plan and solve agent in the context of large language models?”. Just
     briefly, the first step, the plan looks as follows:'
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
 - en: 'Define large language models: Large language models are AI models that are
     trained on vast amounts of text data and can generate human-like text based on
     the input they receive.'
+  id: totrans-158
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: 'Understand the concept of a plan in the context of large language models: In
     the context of large language models, a plan refers to a structured outline or
     set of steps that the model generates to solve a problem or answer a question.'
+  id: totrans-159
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: 'Understand the concept of a solve agent in the context of large language models:
     A solve agent is a component of a large language model that is responsible for
     generating plans to solve problems or answer questions.'
+  id: totrans-160
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: 'Recognize the importance of plans and solve agents in large language models:
     Plans and solve agents help organize the model''s thinking process and provide
     a structured approach to problem-solving or question-answering tasks.'
+  id: totrans-161
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
@@ -953,15 +1206,19 @@
     of steps generated by a solve agent to solve a problem or answer a question. A
     solve agent is a component of a large language model that is responsible for generating
     these plans.'
+  id: totrans-162
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: 'Accordingly, the first step is to perform a look up of LLMs:'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
 - en: '[PRE24]'
+  id: totrans-164
   prefs: []
   type: TYPE_PRE
+  zh: '[PRE24]'
 - en: We didn’t discuss another aspect of this, which is the prompting strategy used
     in these steps. For example, different prompting strategies offer ways to address
     challenges in complex reasoning problems for LLMs. One approach is **few-shot
@@ -990,9 +1247,11 @@
     However, they help improve the quality of generated reasoning steps, increase
     accuracy in problem-solving tasks, and enhance LLMs' ability to handle various
     types of reasoning problems.
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
 - en: Summary
+  id: totrans-166
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1020,54 +1279,67 @@
     can help you significantly increase your efficiency, however, you - as the human
     - have to apply judgment and improve the writing to make sure it’s coherent and
     makes sense.Let’s see if you remember some of the key takeaways from this chapter!
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
 - en: Questions
+  id: totrans-168
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: 'Please have a look to see if you can come up with the answers to these questions
     from memory. I’d recommend you go back to the corresponding sections of this chapter,
     if you are unsure about any of them:'
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
 - en: What is a hallucination?
+  id: totrans-170
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: How does automated fact-checking work?
+  id: totrans-171
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What can we do in LangChain to make sure the output is valid?
+  id: totrans-172
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What is map-reduce in LangChain?
+  id: totrans-173
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: How can we count the tokens we are using (and why should we)?
+  id: totrans-174
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What does RAG stand for and what are the advantages of using it?
+  id: totrans-175
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: What tools are available in LangChain?
+  id: totrans-176
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: Please define plan-and-solve agents
+  id: totrans-177
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: Please define one-shot agents
+  id: totrans-178
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: How can we implement text input fields and radio buttons in Streamlit?
+  id: totrans-179
   prefs:
   - PREF_OL
   type: TYPE_NORMAL

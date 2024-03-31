@@ -3,16 +3,19 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第4章数据验证](contents.xhtml#ch04a)'
 - en: '[Introduction](contents.xhtml#sc2_55a)'
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_55a)'
 - en: Sometimes we want to prevent the user to enter a non-text value in a cell. In
     other words, you can say that you want to restrict the user to enter certain type
     of values in the cell. Data Validation does this work for you.
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时，我们希望阻止用户在单元格中输入非文本值。换句话说，您可以说您希望限制用户在单元格中输入某种类型的值。数据验证为您完成此工作。
 - en: The Data Validation is a process which prevents the users from entering invalid
     data for individual cells or cell range. With the help of data validation, you
     can limit the data entry to a specific data type, like integer numbers, fractional
@@ -20,54 +23,65 @@
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据验证是一个过程，可以防止用户为单个单元格或单元格范围输入无效数据。借助数据验证，您可以将数据输入限制为特定数据类型，如整数、分数（小数）或文本。您还可以设置有效输入的限制。
 - en: '[Structure](contents.xhtml#sc2_56a)'
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_56a)'
 - en: 'In this chapter, we will go over the following topics:'
   id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: Trace Precedents
   id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 跟踪先行
 - en: Trace Dependents
   id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 跟踪从属项
 - en: Setting Data Validation rules
   id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 设置数据验证规则
 - en: Methods of Data Validation
   id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数据验证方法
 - en: '[Objectives](contents.xhtml#sc2_57a)'
   id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_57a)'
 - en: After studying this chapter, students will be able to describe how to restrict
     data entry in any cell or in any worksheet, as well as identify the various Data
     Validation techniques.
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 学习完本章后，学生将能够描述如何限制任何单元格或任何工作表中的数据输入，以及识别各种数据验证技术。
 - en: '[Trace Precedents](contents.xhtml#sc2_58a)'
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '[跟踪先行](contents.xhtml#sc2_58a)'
 - en: 'Trace Precedents and Trace Dependents are two features in Excel that allow
     you to visualize and understand the relationships between cells in a spreadsheet.
     Here’s a brief overview of each:'
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 跟踪先行和跟踪从属是Excel中的两个功能，允许您可视化和理解电子表格中单元格之间的关系。以下是每个功能的简要概述：
 - en: 'Trace Precedents: Trace Precedents allows you to see which cells are referenced
     by a selected cell. This is useful for understanding how data flows through your
     spreadsheet and identifying any potential errors or issues. To use Trace Precedents,
@@ -77,6 +91,7 @@
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 跟踪先行：跟踪先行允许您查看所选单元格引用的哪些单元格。这对于了解数据如何在电子表格中流动以及识别任何潜在错误或问题非常有用。要使用跟踪先行，选择要跟踪的单元格，然后单击功能区中“公式审计”部分的“跟踪先行”按钮。Excel将绘制指向所选单元格引用的单元格的箭头。
 - en: Let’s say you have a spreadsheet that calculates the total revenue for a company
     based on the number of units sold and the price per unit. The formula for the
     total revenue is simply the product of the number of units sold and the price
@@ -86,81 +101,98 @@
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设您有一个电子表格，根据销售的单位数量和每单位价格计算公司的总收入。总收入的公式只是销售单位数量和每单位价格的乘积。在此示例中，单元格C2包含总收入的公式，即“=A2*B2”。单元格A2包含销售单位数量，单元格B2包含每单位价格。
 - en: 'Refer to the following figure:'
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下图示：
 - en: '![](images/Figure_4.1.png)'
   id: totrans-17
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_4.1.png)'
 - en: 'Figure 4.1: Example of Trace Precedent'
   id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.1：跟踪先行示例
 - en: 'To use Trace Precedents to see which cells are referenced by cell C2:'
   id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用跟踪先行查看单元格C2引用的哪些单元格：
 - en: 'Select cell C2, as shown:'
   id: totrans-20
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择单元格C2，如下所示：
 - en: '![](images/Figure_4.2.png)'
   id: totrans-21
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_4.2.png)'
 - en: 'Figure 4.2: Apply formula for Total Revenue'
   id: totrans-22
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 图4.2：为总收入应用公式
 - en: 'Click on the Trace Precedents button in the Formula Auditing section of the
     ribbon, as shown:'
   id: totrans-23
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击功能区中“公式审计”部分的“跟踪先行”按钮，如下所示：
 - en: '![](images/Figure_4.3.png)'
   id: totrans-24
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_4.3.png)'
 - en: 'Figure 4.3: Formulas Tab'
   id: totrans-25
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 图4.3：公式选项卡
 - en: 'Excel will draw arrows pointing to cells A2 and B2, indicating that they are
     the cells referenced by the formula in cell C2, as shown:'
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: Excel将绘制指向单元格A2和B2的箭头，表示它们是单元格C2中公式引用的单元格，如下所示：
 - en: '![](images/Figure_4.4.png)'
   id: totrans-27
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_4.4.png)'
 - en: 'Figure 4.4: Trace Precedent'
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.4：跟踪先行
 - en: This shows you that the formula in cell C2 is dependent on the values in cells
     A2 and B2\. If you change the values in either of these cells, the value in cell
     C2 will also change accordingly.
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 这显示了单元格C2中的公式依赖于单元格A2和B2中的值。如果更改这些单元格中的任何一个的值，单元格C2中的值也会相应更改。
 - en: Using Trace Precedents helps you understand how data flows through your spreadsheet
     and identify any potential errors or issues in your formulas.
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用**Trace Precedents**帮助您了解数据如何在电子表格中流动，并识别公式中的任何潜在错误或问题。
 - en: '[Trace Dependents](contents.xhtml#sc2_59a)'
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: '[Trace Dependents](contents.xhtml#sc2_59a)'
 - en: Trace Dependents allows you to see which cells depend on a selected cell. This
     is useful for understanding the impact that changing a particular cell will have
     on other parts of your spreadsheet. To use Trace Dependents, select the cell you
@@ -170,6 +202,8 @@
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Trace Dependents**允许您查看依赖于所选单元格的单元格。这对于了解更改特定单元格将对电子表格的其他部分产生的影响非常有用。要使用**Trace
+    Dependents**，请选择要跟踪的单元格，然后单击功能区的公式审计部分中的**Trace Dependents**按钮。Excel将绘制指向依赖于所选单元格的单元格的箭头。'
 - en: Both Trace Precedents and Trace Dependents can help you understand the structure
     of your spreadsheet and troubleshoot any errors or issues that may arise. By using
     these features, you can more easily navigate and analyze complex spreadsheets,
@@ -177,10 +211,12 @@
   id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: '**Trace Precedents**和**Trace Dependents**都可以帮助您了解电子表格的结构，并排除可能出现的任何错误或问题。通过使用这些功能，您可以更轻松地浏览和分析复杂的电子表格，并根据您的数据做出更明智的决策。'
 - en: 'Here’s an example of how to use Trace Dependents:'
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 这是如何使用**Trace Dependents**的示例：
 - en: Let’s say you have a spreadsheet that calculates the monthly payment on a loan
     based on the principal, interest rate, and term. The formula for the monthly payment
     is based on the principle, interest rate, and term, which are stored in cells
@@ -189,26 +225,31 @@
   id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 假设您有一个电子表格，根据本金、利率和期限计算贷款的月付款。月付款的公式基于存储在单元格A1、A2和A3中的本金、利率和期限。单元格A4包含使用PMT函数计算的月付款的公式。
 - en: 'To use Trace Dependents to see which cells depend on cell A4:'
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用**Trace Dependents**查看依赖于单元格A4的单元格：
 - en: Select cell A4.
   id: totrans-37
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择单元格A4。
 - en: Click on the Trace Dependents button in the Formula Auditing section of the
     ribbon.
   id: totrans-38
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在功能区的公式审计部分单击**Trace Dependents**按钮。
 - en: Excel will draw arrows pointing to any cells that depend on cell A4.
   id: totrans-39
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: Excel将绘制指向依赖于单元格A4的任何单元格的箭头。
 - en: In this example, cells B4, C4, and D4 depend on cell A4, because they contain
     the breakdown of the monthly payment, including the portion that goes towards
     principal, interest, and any additional fees or charges.
@@ -216,18 +257,22 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在此示例中，单元格B4、C4和D4依赖于单元格A4，因为它们包含月付款的分解，包括用于本金、利息和任何额外费用或收费的部分。
 - en: 'Refer to the following figure:'
   id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下图：
 - en: '![](images/Figure_4.5.png)'
   id: totrans-42
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_4.5.png)'
 - en: 'Figure 4.5: Trace Dependents'
   id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.5：**Trace Dependents**
 - en: By using Trace Dependents, you can see which cells are affected by changing
     the value in cell A4\. If you were to increase the interest rate or change the
     loan term, for example, you could use Trace Dependents to see how this would affect
@@ -235,94 +280,115 @@
   id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过使用**Trace Dependents**，您可以看到更改单元格A4的值会影响哪些单元格。例如，如果您增加利率或更改贷款期限，您可以使用**Trace
+    Dependents**查看这将如何影响月付款及其分解。
 - en: Using Trace Dependents can help you understand the structure of your spreadsheet
     and make more informed decisions based on your data.
   id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用**Trace Dependents**可以帮助您了解电子表格的结构，并根据您的数据做出更明智的决策。
 - en: '[Setting Data Validation rules](contents.xhtml#sc2_60a)'
   id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: '[设置数据验证规则](contents.xhtml#sc2_60a)'
 - en: 'The following are the steps to create a set of rules for data validation:'
   id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是创建数据验证规则集的步骤：
 - en: Select the cells for which you want to create a validation rule.
   id: totrans-48
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择要创建验证规则的单元格。
 - en: On the Data tab, in the Data Tools group, click Data Validation to open the
     Data Validation dialog box (shown in [Figure 4.1](#fig4-1)).
   id: totrans-49
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在“数据”选项卡中，“数据工具”组中，单击“数据验证”以打开“数据验证”对话框（如[图4.1](#fig4-1)所示）。
 - en: Activate the Settings tab.
   id: totrans-50
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 激活“设置”选项卡。
 - en: From the Allow list, select a data validation option.
   id: totrans-51
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从“允许”列表中选择数据验证选项。
 - en: From the Data list, select the operator you want.
   id: totrans-52
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从“数据”列表中选择您想要的运算符。
 - en: Then complete the remaining entries.
   id: totrans-53
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 然后完成剩余的条目。
 - en: Enter the Input Message if required in Input Message tab.
   id: totrans-54
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 如果需要，在输入消息选项卡中输入输入消息。
 - en: Enter the error message if required in Error Alert tab.
   id: totrans-55
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 如果需要，在错误警报选项卡中输入错误消息。
 - en: Click OK to set the validation rule.
   id: totrans-56
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击确定以设置验证规则。
 - en: Close the dialog box.
   id: totrans-57
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 关闭对话框。
 - en: 'Refer to the following figure:'
   id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下图：
 - en: '![](images/Figure_4.6.png)'
   id: totrans-59
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_4.6.png)'
 - en: 'Figure 4.6: Data Validation'
   id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.6：数据验证
 - en: '[Methods of Data Validation](contents.xhtml#sc2_61a)'
   id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '[数据验证方法](contents.xhtml#sc2_61a)'
 - en: Let us now look at a method of data validation, that is, creating a list.
   id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们看看一种数据验证方法，即创建列表。
 - en: '[Creating a list](contents.xhtml#sc3_62a)'
   id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: '[创建列表](contents.xhtml#sc3_62a)'
 - en: A list is an effective form of data validation where the user is allowed to
     select an option from a drop- down list which is built-in to the cell ([Figure
     4.7](#fig4-7)). The data source may be written manually by the user or selected
@@ -330,147 +396,177 @@
   id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 列表是一种有效的数据验证形式，用户可以从内置到单元格中的下拉列表中选择选项（[图4.7](#fig4-7)）。数据源可以由用户手动编写，也可以从同一工作表中选择。
 - en: 'The following are the steps to create a list:'
   id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 下面是创建列表的步骤：
 - en: Select a blank cell
   id: totrans-66
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择空白单元格
 - en: Select Data tab
   id: totrans-67
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择数据选项卡
 - en: Select Data Validation from Data Tool group
   id: totrans-68
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从数据工具组中选择数据验证
 - en: Select List
   id: totrans-69
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择列表
 - en: In Source, select the cell with values, or type the data with comma
   id: totrans-70
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在来源中，选择具有值的单元格，或者使用逗号键入数据
 - en: 'Refer to the following figure:'
   id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下图：
 - en: '![](images/Figure_4.7.png)'
   id: totrans-72
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_4.7.png)'
 - en: 'Figure 4.7: Creating a List'
   id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.7：创建列表
 - en: 'Note: If the source is from a different sheet, create a named range for all
     the values and use the name in the Source field for Data Validation.'
   id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：如果来源于不同工作表，则为所有值创建一个命名范围，并在数据验证的来源字段中使用该名称。
 - en: 'Allow numbers within limits:'
   id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 允许数字在限制内：
 - en: In the Allow box, click Whole Number or Decimal.
   id: totrans-76
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在允许框中，点击整数或小数。
 - en: In the Data box, select the type of restriction you want. For example, to set
     upper and lower limits, select Between.
   id: totrans-77
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在数据框中，选择您想要的限制类型。例如，要设置上限和下限，请选择介于。
 - en: Enter the minimum, maximum, or specific value to allow.
   id: totrans-78
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 输入最小值、最大值或特定值以允许。
 - en: 'Allow dates or times within a timeframe:'
   id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 允许在一定时间范围内的日期或时间：
 - en: In the Allow box, select Date or Time.
   id: totrans-80
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在允许框中，选择日期或时间。
 - en: In the Data box, select the type of restriction you want. For example, to allow
     dates after a certain day, select greater than.
   id: totrans-81
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在数据框中，选择您想要的限制类型。例如，要允许某一天之后的日期，请选择大于。
 - en: Enter the start, end, or specific date or time to allow.
   id: totrans-82
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 输入开始、结束或特定的日期或时间以允许。
 - en: 'Allow text of a specified length:'
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 允许指定长度的文本：
 - en: In the Allow box, click Text Length.
   id: totrans-84
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在允许框中，点击文本长度。
 - en: In the Data box, click the type of restriction you want. For example, to allow
     up to a certain number of characters, click less than or equal to.
   id: totrans-85
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在数据框中，点击您想要的限制类型。例如，要允许最多一定数量的字符，请单击小于或等于。
 - en: Enter the minimum, maximum, or specific length for the text.
   id: totrans-86
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 输入文本的最小、最大或特定长度。
 - en: 'Calculate what is allowed based on the content of another cell:'
   id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据另一个单元格的内容计算允许的内容：
 - en: In the Allow box, select the type of data you want.
   id: totrans-88
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在允许框中，选择您想要的数据类型。
 - en: In the Data box, select the operator (for the criteria) you want.
   id: totrans-89
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在数据框中，选择您想要的运算符（用于条件）。
 - en: In the box or boxes below the Data box, click the cell that you want to use
     to specify what’s allowed.
   id: totrans-90
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在数据框下面的框中，点击要用于指定允许内容的单元格。
 - en: For example, to allow entries for an account only if the result won’t go over
     the budget, click Decimal for Allow, select less than or equal to for Data, and
     in the Maximum box, click the cell that contains the budget amount.
   id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，要仅在结果不超过预算时允许帐户条目，请单击允许，选择小于或等于数据，并在最大框中单击包含预算金额的单元格。
 - en: 'Use a formula to calculate what is allowed:'
   id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用公式计算允许的内容：
 - en: In the Allow box, click Custom.
   id: totrans-93
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在允许框中，点击自定义。
 - en: In the Formula box, enter a formula that calculates a logical value (TRUE for
     valid entries or FALSE for invalid). For example, to give an incentive only if
     the dept. is sales and the region west, you may use the following custom formula
@@ -479,22 +575,27 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在公式框中，输入一个计算逻辑值的公式（对于有效条目为TRUE，对于无效条目为FALSE）。例如，要只在部门为销售且地区为西部时提供奖励，您可以使用以下自定义公式
+    =and(d2=”销售”,e2=”西部”)。
 - en: To display an optional input message when the cell is clicked, click the Input
     Message tab, and the-Show Input Message When Cell is Selected - check-box is selected
     and fill in the title and text for the message.
   id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 若要在单元格被点击时显示可选输入消息，请点击输入消息选项卡，并勾选“单元格被选中时显示输入消息”复选框，并填写消息的标题和文本。
 - en: 'Specify how you want excel to respond when invalid data is entered:'
   id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 指定excel在输入无效数据时的响应方式：
 - en: Click the Error Alert tab, and make sure the Show Error Alert After Invalid
     Data is Entered and check box is selected.
   id: totrans-97
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 单击错误警报选项卡，并确保勾选“在输入无效数据后显示错误警报”复选框。
 - en: 'Select one of the following options for the Style box:'
   id: totrans-98
   prefs:

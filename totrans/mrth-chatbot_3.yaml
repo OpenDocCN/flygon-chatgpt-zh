@@ -355,6 +355,7 @@
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 从应用到方法
 - en: The use case examples we have been going through in this section are not a complete
     list of all possible applications of natural language processing. The selected
     use cases rather aim at giving you an impression of the power of these technologies,
@@ -369,11 +370,13 @@
   id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本节中我们介绍的用例示例并不是自然语言处理的所有可能应用的完整列表。所选用例旨在让您感受到这些技术的强大之处，广泛的用途范围，以及它们如何潜在地支持我们的日常工作和生活。我还希望您从本节中了解到，根据问题的复杂性和预期结果，可以应用非常不同的技术。这可以从简单方法到更复杂的方法，如深度学习和大型语言模型。数据工程师的艺术和技巧之一是在当今工具包和研究成果中提供的广泛可能性中为给定应用程序识别正确的方法。在接下来的章节中，我们将更仔细地研究其中一些技术。
 - en: Introduction to Natural Language Processing Methods
   id: totrans-39
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 自然语言处理方法简介
 - en: Whereas recent developments in natural language processing heavily rely on machine
     learning, this is in general not necessarily the case. A simple text processing
     task could be to identify the appearances of berries in a text, based on a list
@@ -387,20 +390,24 @@
   id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管自然语言处理中的最新发展严重依赖于机器学习，但一般情况下并非总是如此。一个简单的文本处理任务可能是根据程序提供的单词列表识别文本中出现的浆果。在这种情况下，不需要训练数据或训练阶段，而是采用类似于之前看到的传统算法。我们将逐步处理给定的句子，将每个单词与列表中的单词进行比较。这些简单方法有一些局限性，例如，我们必须在列表中添加*草莓*和复数形式*草莓*以确保全部获取。图[3.3](#Fig3)给出了这种情况的一个示例！[](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig3_HTML.png)
 - en: An illustration of keywords in the sentence given which reads the sun was shining
     and the weather was good. A large field full of strawberries, however, no raspberries
     were planted in this region. List of keywords are strawberry, raspberry and blueberry.
   id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 给定句子中关键词的插图，句子为太阳照耀着，天气很好。一个大田地里种满了草莓，然而在这个地区没有种植覆盆子。关键词列表包括草莓、覆盆子和蓝莓。
 - en: Fig. 3.3
   id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 3.3
 - en: 'Keep it simple: identifying specific words in a text based on a keyword list'
   id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 保持简单：根据关键词列表在文本中识别特定单词
 - en: 'A priori, from the computer’s point of view, the text is nothing more than
     a string of letters and symbols. We call the process of adding additional structure
     to these strings *parsing*. When looking at the text as humans, we of course see
@@ -604,24 +611,29 @@
   id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的句子中已经识别出了不同的命名实体，如图[3.8](#Fig8)所示：2023年被识别为日期，欧盟被识别为组织（ORG代表公司、机构、机构），美国被识别为地缘政治实体（GPE），*数千*被分类为数字（CARDINAL）。还有一些更多的类别（比如MONEY代表货币值），但这些是最常见的。在我们的文本中自动识别这样的信息可以作为更高级文本处理的入口点。我们注意到，在这种情况下，欧盟可能被视为地缘政治实体而不是组织。这提醒我们这样的模型可能在所有情况下都不完美地工作。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig8_HTML.png)
 - en: A text reads in 2023 date, thousands cardinal of strawberries were eaten in
     E U o r g countries and the U S G P E.
   id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 一段文本中提到，在2023年，欧盟和美国等国家和地区吃掉了数千个草莓。
 - en: Fig. 3.8
   id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.8
 - en: Result of the named entity recognition example using the SpaCy library
   id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用SpaCy库进行命名实体识别示例的结果
 - en: Inside Machine Learning
   id: totrans-75
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 机器学习内部
 - en: We looked at the basic procedure of machine learning in the previous chapter.
     The interesting question we didn’t fully answer then is *how* does the learning
     actually happen.^([2](#Fn2)) We will first define classical machine learning and
@@ -631,6 +643,7 @@
   id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上一章中，我们看了机器学习的基本过程。我们当时没有完全回答的有趣问题是学习实际上是如何发生的。^([2](#Fn2)) 我们将首先定义经典机器学习，并看看这与深度学习和神经网络有何不同。听起来困难吗？别担心，本部分所需的所有数学背景将逐步介绍。所以，让我们一步一步地进行。
 - en: In this section, we will concentrate on supervised machine learning. We will
     use the task of sentiment analysis as an example. This means that we consider
     a collection of texts that are positive, i.e., express the positive attitude of
@@ -643,61 +656,75 @@
   id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这一部分，我们将集中讨论监督机器学习。我们以情感分析任务为例。这意味着我们考虑一组积极的文本，即表达作者积极态度的文本，以及另一组消极的文本。正如你可能记得的那样，*监督*
+    意味着每个文本片段都标有关于它是积极还是消极的信息。这是一个分类任务，因为我们希望训练一个能够将新的、未见过的文本分类为*积极*或*消极*的模型。图[3.9](#Fig9)显示了我们的机器学习分类器的设置，就像我们之前在其他示例中看到的那样。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig9_HTML.png)
 - en: An illustration represents a simple training data scenario for a binary classification
     task where data samples are labeled as either positive or negative.
   id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图代表了一个简单的二元分类任务的训练数据场景，其中数据样本被标记为积极或消极。
 - en: Fig. 3.9
   id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.9
 - en: 'Sentiment analysis: classifying texts as positive or negative with supervised
     machine learning'
   id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 情感分析：使用监督机器学习将文本分类为积极或消极
 - en: Now, the interesting thing here is what happens during the training phase. How
     is the model created, which is then able to classify the unseen texts?
   id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，这里有趣的事情是在训练阶段发生了什么。模型是如何创建的，然后能够对未见过的文本进行分类的呢？
 - en: Pre-processing the Training Data
   id: totrans-82
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 预处理训练数据
 - en: The training data shown in Fig. [3.9](#Fig9) could be structured in a table,
     containing the text sample in the first row and the label in the second row, as
     shown in Table [3.1](#Tab1).Table 3.1
   id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 在图[3.9](#Fig9)中显示的训练数据可以以表格形式结构化，第一行包含文本样本，第二行包含标签，如表[3.1](#Tab1)所示。表3.1
 - en: The training data can be structured in a table, with one column for the texts
     and another column for the labels
   id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练数据可以以表格形式结构化，其中一列是文本，另一列是标签
 - en: '| Text | Label |'
   id: totrans-85
   prefs: []
   type: TYPE_TB
+  zh: '| 文本 | 标签 |'
 - en: '| --- | --- |'
   id: totrans-86
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- |'
 - en: '| Wow, what a cool website! | Positive |'
   id: totrans-87
   prefs: []
   type: TYPE_TB
+  zh: '| 哇，这是一个多么酷的��站！ | 正面 |'
 - en: '| Oh no, I really think this is bad. | Negative |'
   id: totrans-88
   prefs: []
   type: TYPE_TB
+  zh: '| 哦，我真的觉得这很糟糕。 | 负面 |'
 - en: '| … |   |'
   id: totrans-89
   prefs: []
   type: TYPE_TB
+  zh: '| … |   |'
 - en: 'Before we can start with the training, text *pre-processing* is done. This
     means that we have to clean up the texts we are considering as input (i.e., the
     training data). In our case of sentiment analysis, these are the text samples
@@ -708,39 +735,47 @@
   id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们开始训练之前，需要进行文本*预处理*。这意味着我们必须清理我们考虑作为输入的文本（即训练数据）。在我们进行情感分析的情况下，这些是包含正面或负面文本的文本样本。我们希望排除不相关的信息。在这个阶段需要做什么取决于我们有什么样的文本。例如，一个典型的操作是删除额外信息，比如链接或将所有字母转换为小写并删除标点符号：
 - en: “Wow, this is REALLY a cool website! [http://​www.​springernature.​com](http://www.springernature.com)”
   id: totrans-91
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: “哇，这真的是一个很酷的网站！[http://​www.​springernature.​com](http://www.springernature.com)”
 - en: 'could, for example, be adapted to the following after this phase:'
   id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个阶段之后，可能会被调整为以下形式：
 - en: “wow this is really a cool website”
   id: totrans-93
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: “哇，这真是一个很酷的网站”
 - en: 'We also split the sentence into single words that can be processed separately
     (so-called tokenization):'
   id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还将句子拆分为可以单独处理的单词（所谓的标记化）：
 - en: “wow this is really a cool website”
   id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: “哇，这真是一个很酷的网站”
 - en: 'becomes:'
   id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 变成：
 - en: '[“wow”,”this”,”is”,”really”,”a”,”cool”,”website”]'
   id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[“哇”,”这”,”是”,”真的”,”一个”,”酷”,”网站”]'
 - en: In some cases, we might go further and remove words that are considered insignificant
     for the training, so-called stop words. Lane et al. ([2019](#CR25), p. 51) define
     stop words as “common words in any language that occur with a high frequency but
@@ -749,6 +784,7 @@
   id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 在某些情况下，我们可能会进一步删除被认为对训练无关紧要的单词，即所谓的停用词。Lane等人（[2019](#CR25)，第51页）将停用词定义为“任何语言中频繁出现但携带较少实质信息的常见词语。”常见的停用词包括*the*、*a*或*on*。
 - en: 'Sometimes, it is also useful to use *stemming* or *lemmatization*. Both methods
     have the same goal: modifying words with these methods brings them in a form that
     allows to determine whether two words belong together, meaning that they are the
@@ -768,11 +804,14 @@
   id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: 有时，使用*词干提取*或*词形还原*也是有用的。这两种方法的目标相同：通过这些方法修改单词，使它们以一种形式出现，可以确定两个单词是否属于同一个词，即它们是不同形式的同一个词。词干提取是一种通过截取单词的部分来识别词干的技术。例如，*houses*的词干是*house*，*runs*的词干是*run*。然而，这种方法存在一些局限性，通常过于简化，我们可能想要区分的单词被分配到相同的词干。例如，单词*meetings*被改为*meet*，但也许*meeting*会是更好的词干（Hagiwara
+    [2021](#CR19)）。此外，这种方法通常无法处理不规则的单词，比如*caught*，我们可能更希望得到*catch*而不是词干。另一方面，通过词形还原，与使用词干不同，识别单词的原始形式。这可能看起来与词干提取类似，但实际上有所不同：这里不仅仅是截取单词的部分，而是考虑语言的结构，例如对于动词，是在变位前的基本形式。对于我们的例子*meetings*和*caught*，词形还原后的形式分别为*meeting*和*catch*。
 - en: Feature Selection
   id: totrans-100
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 特征选择
 - en: We define a *feature* as a characteristic or measurable property of our data.
     An important and often tricky part of machine learning is *feature selection*,
     deciding which are the appropriate features and how important they are for training
@@ -785,6 +824,7 @@
   id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将*特征*定义为数据的特征或可测量属性。机器学习中一个重要且常常棘手的部分是*特征选择*，决定哪些是适当的特征以及它们对于训练在其他未见数据上表现最佳的分类器有多重要。在人类决策中，根据上下文，某些方面比其他方面更相关。在对患者进行诊断时，血压或症状描述可能比患者穿的T恤的颜色更相关。因此，血压可能是机器学习训练的一个好特征，而T恤的颜色可能不是最佳选择。
 - en: In the case of text processing, the feature selection could, for example, be
     all the words of a text. In other situations, a good feature selection might be
     to consider the most often occurring words, or only adjectives, depending on the
@@ -802,26 +842,31 @@
   id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 在文本处理的情况下，特征选择可以是文本中的所有单词。在其他情况下，一个好的特征选择可能是考虑最常出现的单词，或者仅考虑形容词，具体取决于用例。假设我们想要根据*词频*进行特征选择。因此，我们需要找出在我们的训练数据中出现最频繁的单词。更具体地说，我们想找出对正面文本和负面文本都*典型*的单词。一些在一般情况下经常出现的单词可能会出现在两组中的前列，例如，像*the*或*a*这样的单词（如果我们之前已经去除了停用词，这可能不是一个大问题）。我们可以通过删除同时出现在正面和负面组中的任何单词来解决这个问题。这样做的直觉是这样的单词对于区分这两组没有任何用处。假设为了这个例子，我们取每组中出现频率最高的三个单词，最终得到以下结果：^([3](#Fn3))
 - en: Positive = [“good”, “happy”, “awesome”]
   id: totrans-103
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 积极 = [“好”, “快乐”, “棒极了”]
 - en: Negative = [“ugly”, “horrible”, “bad”]
   id: totrans-104
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 负面 = [“丑陋”, “可怕”, “糟糕”]
 - en: From Words to Numbers
   id: totrans-105
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 从文字到数字
 - en: As mentioned earlier, computers are much better in dealing with numbers than
     with human language. So, what to do with those words?
   id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如前面提到的，计算机在处理数字方面比处理人类语言更擅长。那么，对于那些单词该怎么办？
 - en: Before getting deeper into this, let’s look at the concept of a mathematical
     *vector*. In general, we are all using numbers daily. Vectors contain more information
     than single numbers. They consist of lists of multiple numbers, and the length
@@ -833,6 +878,8 @@
   id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 在深入探讨这个问题之前，让我们先看看数学中*向量*的概念。一般来说，我们每天都在使用数字。向量包含的信息比单个数字更多。它们由多个数字的列表组成，其长度被称为向量的维度。因此，例如，向量(0,
+    −2, 5.1)是一个三维向量。对于给定维度*n*，所有可能的n维向量的集合是所谓的向量空间的一个示例。向量通常被描绘为箭头，具有相同长度、相同方向且平行的箭头被视为相同的向量。
 - en: 'In a two-dimensional vector space, vectors have two coordinates to specify
     their position. The first coordinate indicates their position with regard to the
     x-axis, and the second coordinate indicates their position with regard to the
@@ -844,24 +891,29 @@
   id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 在二维向量空间中，向量有两个坐标来指定它们的位置。第一个坐标表示它们相对于x轴的位置，第二个坐标表示它们相对于y轴的位置，如图[3.10](#Fig10)所示。对于三维空间，我们可以想象一个具有三个坐标的立方体。从四维开始（向量空间可以具有非常高的维度），想象起来会变得困难，但工作方式类似：在一个具有20维度的向量空间中，生活在该空间中的向量有20个数字组成它们的坐标。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig10_HTML.png)
 - en: An illustration depicts y versus x axis with vector V vector in 2 dimensions
     where V vector = matrix 2, 1.
   id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个插图描述了在二维中y轴与x轴的向量V向量，其中V向量=矩阵2, 1。
 - en: Fig. 3.10
   id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.10
 - en: An example of a vector with two dimensions
   id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个具有两个维度的向量的示例
 - en: We will also need to know that between such vectors, mathematical operations
     such as addition or subtraction can be executed, similar to numbers.
   id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还需要知道，在这样的向量之间，可以执行数学运算，如加法或减法，类似于数字。
 - en: 'We need to transform our words into vectors, so that the machine learning classifier
     can work with them. Each word will be converted into a single vector. The simplest
     way to do this is to use *one-hot vectors*. Each vector has dimension equal to
@@ -871,11 +923,13 @@
   id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们需要将我们的单词转换为向量，以便机器学习分类器可以处理它们。每个单词将被转换为一个单一的向量。这样做的最简单方法是使用*one-hot向量*。每个向量的维度等于我们词汇表中可能的单词数。在实际情况下，这些可能是数十万个可能的单词，但让我们保持简单，假设我们的语言具有以下由四个单词组成的词汇表：
 - en: '[“awesome”, “bad”, “good”, “horrible”]'
   id: totrans-114
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '[“awesome”, “bad”, “good”, “horrible”]'
 - en: The vector space (dimension) would then be 4\. Therefore, each vector has four
     entries (two more than the example vector in Fig. [3.10](#Fig10)). Each word would
     then be represented by having a vector full of *0* and having *1* only at the
@@ -886,11 +940,14 @@
   id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 向量空间（维度）将是4。因此，每个向量有四个条目（比图[3.10](#Fig10)中的示例向量多两个）。然后，每个单词将通过具有*0*的向量表示，并且仅在词汇表中的位置上有*1*。我们所说的位置是什么意思？在上面的词汇表中，单词*awesome*位于位置1，*bad*位于位置2，依此类推。^([4](#Fn4))
+    因此，*bad*的向量表示将在位置2处有一个1，其他位置为0：^([5](#Fn5))
 - en: vector[“bad”] = [0,1,0,0]
   id: totrans-116
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: vector[“bad”] = [0,1,0,0]
 - en: That’s it. We have created a vector representation of our words. Clearly, this
     simple method provides some limitations. In four dimensions, some zeroes are forgivable,
     but if we have vectors of hundreds of thousands of dimensions (to cover all vocabulary
@@ -900,11 +957,13 @@
   id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 就是这样。我们已经创建了我们的单词的向量表示。显然，这种简单的方法存在一些限制。在四维空间中，一些零是可以原谅的，但如果我们有数十万维度的向量（以涵盖英语语言的全部词汇），那么就会有许多需要存储的零。我们将在后面的部分看到更高级的方法来使用更少的维度对单词进行向量化。
 - en: Machine Learning Classifiers
   id: totrans-118
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 机器学习分类器
 - en: After this step of *vectorization*, we have a list of vectors that are typical
     for positive texts and another list of vectors that are typical for negative texts.
     We are thus ready to train our machine learning classifier. The first thing to
@@ -916,6 +975,7 @@
   id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 在*向量化*这一步之后，我们得到了一组典型于正面文本的向量列表，以及另一组典型于负面文本的向量列表。因此，我们准备训练我们的机器学习分类器。首先要做的是选择我们想要使用的分类器类型。存在不同的数学模型，我们根据数据和需求选择其中之一。通常情况下，最佳表现的分类器很难提前预测。因此，有时尝试不同的分类器以找到适合给定数据集或问题的正确分类器是非常有益的。
 - en: One such machine learning classifier is called a *logistic regression classifier*.
     This type of classifier is a type of *discriminative classifier* (Jurafsky and
     Martin [2023](#CR24)), which aims to learn to distinguish between two groups based
@@ -928,6 +988,7 @@
   id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 一种这样的机器学习分类器被称为*逻辑回归分类器*。这种类型的分类器是*判别式分类器*（Jurafsky和Martin [2023](#CR24)）的一种，旨在学会根据统计差异区分两组。评估不同特征在区分两组方面的重要性。这是通过分配权重来实现的，这意味着为每个特征分配一个值，衡量其对结果的重要性。这意味着它试图弄清楚我们提供的输入中哪些词是最相关的。这是通过逐个查看我们提供的所有特征并根据需要调整*权重*来实现的。
 - en: To better understand what we mean by weights, let’s consider the following example.
     We consider a strawberry plant full of wonderful, tasty strawberries in different
     sizes. There are some fruits, so that the plant tends to bend toward the right
@@ -938,20 +999,24 @@
   id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了更好地理解我们所说的权重，让我们考虑以下例子。我们考虑一个长满美味草莓的草莓植物，大小不一。有一些水果，使得植物倾向于向右侧弯曲。我们想研究是什么导致草莓植物弯曲。可能，巨大的草莓对此的贡献比微小的草莓更大。因此，巨大的草莓比微小的草莓有更大的权重，如图[3.11](#Fig11)所示。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig11_HTML.png)
 - en: An illustration depicts a pot with strawberry plant labeled huge strawberry
     causing the plant to bend and tiny strawberry with less impact.
   id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图描绘了一个带有标有巨大草莓导致植物弯曲和微小草莓影响较小的盆栽。
 - en: Fig. 3.11
   id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.11
 - en: The huge strawberry is causing the plant to bend; the tiny strawberry has less
     impact
   id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 巨大的草莓导致植物弯曲；微小的草莓影响较小
 - en: This is similar to the weights of our features. In the beginning of the learning
     procedure, all words might have an equal weight. Over time, the model learns that
     the word *good* indicates positive and therefore gives the word *good* more weight
@@ -962,11 +1027,13 @@
   id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: 这类似于我们特征的权重。在学习过程的开始，所有单词可能具有相等的权重。随着时间的推移，模型会学习到单词*good*表示积极，因此在积极类别中给予单词*good*更多的权重。因此，在训练之后，当单词*good*出现时，模型的决策将更多地向积极方向*倾斜*，类似于具有较大权重的草莓对草莓植物向右弯曲产生重大影响。
 - en: The Loss Function
   id: totrans-126
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 损失函数
 - en: Let’s come back to the example of cutting strawberries in even slices that we
     have seen in an earlier chapter. With each iteration, we are getting a bit better.
     But how do we measure our improvement? Let’s say that the desired slice size is
@@ -987,6 +1054,7 @@
   id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们回到我们在早前章节中看到的将草莓切成均匀片的例子。随着每次迭代，我们都会变得更好一点。但是我们如何衡量我们的改进呢？假设期望的片大小是4毫米。我们希望我们切的每一片都尽可能接近这个参考值，因此我们希望能够熟练地将草莓切成这个特定大小的片。每次我们切一片，我们可以将其大小与期望的片大小进行比较。我们大了2毫米？让我们试着切小一点。这个过程在图[3.12](#Fig12)中展示。我们改进我们的方法，以尽可能接近期望的草莓片大小。在数学术语中，我们希望减少实际片大小和期望片大小之间的差异。在这种情况下，我们谈论的是片大小，但在机器学习的一般术语中，我们谈论的是*损失函数*。学习过程的目标是最小化这个损失函数。在图[3.12](#Fig12)中，第1轮开始时的损失为2毫米，在第N轮为0毫米。损失越接近零，机器学习模型的性能就越好。在学习过程中，机器学习模型的值（例如权重）会被调整以最小化这个损失。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig12_HTML.png)
 - en: An illustration represents a training process conducted in multiple rounds,
     ultimately achieving the goal of minimizing the loss function by reducing the
     difference between the actual and desired slice sizes, concluding with a loss
@@ -994,21 +1062,25 @@
   id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图代表了在多轮中进行的训练过程，最终通过减小实际片大小和期望片大小之间的差异来最小化损失函数，最终实现实际片大小为4毫米时的0毫米损失。
 - en: Fig. 3.12
   id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 3.12
 - en: To train the model, we need to minimize the loss. The closer we get to the desired
     slice size, the lower the loss gets
   id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了训练模型，我们需要最小化损失。我们越接近期望的片大小，损失就越低。
 - en: An important point about the loss function is that it explicitly defines what
     we are *training the model* to do. The entire aim of the training is to modify
     the model in order to minimize the loss. This is what we mean by *learning*.
   id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于损失函数的一个重要观点是，它明确定义了我们*训练模型*要做什么。整个训练的目的是修改模型以最小化损失。这就是我们所说的*学习*。
 - en: Let’s now return from cutting strawberries into slices to our previous task
     of sentiment analysis. We want to classify a text being either positive or negative.
     Depending on the classifier we choose to train (e.g., the logistic regression
@@ -1020,11 +1092,13 @@
   id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们从切草莓片回到我们先前的情感分析任务。我们想要将文本分类为积极或消极。根据我们选择训练的分类器（例如，之前提到的逻辑回归），损失函数被定义。在最简单的情况下，它是预测值和期望值（训练数据的标签）之间的差异。在其他情况下，可以使用稍微复杂一些的函数，但通常以某种方式量化预测值和期望值之间的差异。
 - en: Training and Test Data
   id: totrans-133
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 训练和测试数据
 - en: 'Now we have a model that allows us to classify a text into one of the two categories:
     positive or negative. But how do we know if the classifier actually performs well?
     To understand this better, we introduce the concept of *test data*. Assume that
@@ -1045,6 +1119,7 @@
   id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们有一个模型，可以将文本分类为正面或负面两个类别之一。但是我们如何知道分类器实际表现如何？为了更好地理解这一点，我们引入了*测试数据*的概念。假设我们有100个文本样本标记为正面和100个标记为负面。最好的做法是只使用每个类别的80个样本进行训练过程。将20个正面和20个负面的例子保留下来，以便稍后在这些数据上*验证*我们的机器学习分类器。这意味着我们挑战分类器，让其预测这些片段是正面还是负面，而不包括它们在训练过程中。这就是我们所说的*未见数据*。由于我们知道这些样本的正确分类，我们可以利用这些知识来验证分类器的正确性。如果它能够正确分类40个中的38个（20个正面和20个负面），我们可能对结果感到满意。如果只有40个中的10个被正确分类，我们可能需要重新考虑之前采取的步骤，或者尝试其他特征或调整我们的预处理步骤。^([6](#Fn6))请记住，这只是一个预测，几乎不可能构建一个在所有情况下都正确的系统。
 - en: Figure [3.13](#Fig13) gives an overview of the different steps we have been
     taking to pre-process our text, select features, and finally train and validate
     the classifier. All these steps are typically needed to prepare machine learning
@@ -1052,37 +1127,44 @@
   id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 图[3.13](#Fig13)概述了我们一直在进行的文本预处理、特征选择以及最终训练和验证分类器的不同步骤。通常需要这些步骤来准备机器学习训练。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig13_HTML.png)
 - en: A flow illustration includes preprocessing, feature selection, from words to
     numbers, machine learning classifiers, the loss function and training and test
     data.
   id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 流程图包括预处理、特征选择、从词到数字、机器学习分类器、损失函数以及训练和测试数据。
 - en: Fig. 3.13
   id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.13
 - en: An overview of the different steps needed to prepare for a machine learning
     training
   id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: 准备机器学习训练所需的不同步骤概述
 - en: From Machine Learning to Deep Learning
   id: totrans-139
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 从机器学习到深度学习
 - en: 'We saw in the previous section how machine learning models are trained: The
     features were predefined, and the system learned by minimizing the loss function.
     Let’s call this architecture *classical machine learning*.'
   id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上一节中，我们看到了机器学习模型是如何训练的：特征是预先定义的，系统通过最小化损失函数来学习。让我们称之为*经典机器学习*。
 - en: Limitations of Linear Models
   id: totrans-141
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 线性模型的局限性
 - en: Additionally, logistic regression and some other classical machine learning
     are examples of what are known as *linear models*. For the case of classification,
     this means that they are only able to separate classes that can be separated by
@@ -1092,20 +1174,24 @@
   id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 此外，逻辑回归和一些其他经典机器学习是所谓*线性模型*的例子。对于分类的情况，这意味着它们只能分离可以通过直线（或高维空间中的超平面）分离的类别。在其他情况下，这是不可能的，数据需要非线性处理才能产生良好的结果。这两个例子在图[3.14](#Fig14)中有所说明。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig14_HTML.png)
 - en: 2 comparison chart reads data can be separated with a linear classifier and
     data cannot be separated with a linear classifier.
   id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: 2个比较图表显示数据可以用线性分类器分离和数据无法用线性分类器分离。
 - en: Fig. 3.14
   id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.14
 - en: In some cases, the data can be separated with a linear classifier. In other
     cases, this is not possible
   id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: 在某些情况下，数据可以用线性分类器分离。在其他情况下，这是不可能的。
 - en: 'In cases where we know what to look for and can identify and extract the features
     that are the most useful for distinguishing classes, classical machine learning
     classifiers such as logistic regression might be likely to perform well. Some
@@ -1131,15 +1217,18 @@
   id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们知道要寻找什么并且能够识别和提取对于区分类别最有用的特征的情况下，经典机器学习分类器如逻辑回归可能会表现良好。一些其他经典机器学习分类器甚至允许处理非线性可分数据。然而，在许多情况下，可能不容易识别相关特征。例如，回想一下我们之前看到的想要区分草莓和覆盆子图片的分类器的情况。对于人眼来说，很容易看出图片上是覆盆子还是草莓，但很难形式化我们所看到的并定义机器学习算法能理解的具体特征。这里的潜在特征可能是，例如，浆果是否在外面有种子。然而，明确指导计算机如何从像素值转换为这些特征将会非常困难。将相同的推理应用于文本，人类可以看出文字之间的含义，并根据电子邮件消息了解某人的情绪。但是，如果要求你根据帮助你注意到这一点的特征给出清晰明确的指示，将很难用言语表达。你可能会说这与*语气*有关，但如何从文本中提取*语气*特征以输入到机器学习算法中呢？在这些任务中，很难从数据中识别/提取相关特征的地方，*深度学习*的力量就派上用场了。深度学习是机器学习的一个子集，涉及一种特定技术：*神经网络*。
 - en: Neural Networks
   id: totrans-147
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 神经网络
 - en: 'Masato Hagiwara describes a neural network as:'
   id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: Masato Hagiwara将神经网络描述为：
 - en: A generic mathematical model that transforms a vector to another vector. That’s
     it. Contrary to what you may have read and heard in popular media, its essence
     is simple. (Hagiwara [2021](#CR19), p. 37)
@@ -1147,11 +1236,13 @@
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 一个将向量转换为另一个向量的通用数学模型。就是这样。与您在流行媒体中读到和听到的不同，它的本质很简单。（Hagiwara [2021](#CR19)，第37页）
 - en: 'I like this definition, even though it takes a bit the magic, because it brings
     it to the point: in the end, it’s just math.'
   id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 我喜欢这个定义，尽管它有点揭示了魔法，因为它把事情说到了点上：最终，这只是数学。
 - en: As in the previous example using logistic regression, we will need to do pre-processing
     and finally transform our words into vectors. For now, let’s just consider that
     we already have a numerical representation in the form of vectors from each word
@@ -1159,26 +1250,31 @@
   id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 与之前使用逻辑回归的示例一样，我们需要进行预处理，最终将我们的单词转换为向量。暂时，让我们假设我们已经有了文本中每个单词的向量形式的数值表示。
 - en: Like the classical machine learning seen previously, a neural network also relies
     on a feedback loop to improve the predictions. Very simplified, we can see a neural
     network as the kind of structure shown in Fig. [3.15](#Fig15).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig15_HTML.png)
   id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 像之前看到的经典机器学习一样，神经网络也依赖于反馈循环来改进预测。非常简化地说，我们可以将神经网络看作是图[3.15](#Fig15)中所示结构的一种。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig15_HTML.png)
 - en: A flow illustration depicts input, processing, estimation and based on the result,
     processing is adapted to improve estimation.
   id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 流程图示输入、处理、估计，基于结果，调整处理以改进估计。
 - en: Fig. 3.15
   id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.15
 - en: Similar to what we have seen previously for the classical machine learning,
     neural networks also have a feedback mechanism to improve the predictions
   id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 与我们之前看到的经典机器学习类似，神经网络也有一个反馈机制来改进预测
 - en: A neural network can be seen as a more complex structure that includes in the
     very last part a classical machine learning model, similar to the one that has
     been described before, as shown in Fig. [3.16](#Fig16). Also here, the learning
@@ -1195,31 +1291,37 @@
   id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个神经网络可以被看作是一个更复杂的结构，在最后一部分包括一个经典的机器学习模型，类似于之前描述的模型，如图[3.16](#Fig16)所示。同样，在这里，学习是通过最小化损失来进行的。神经网络可以由多个层组成。第一层接收输入数据并输出一组新的特征，作为下一层的输入。在所有层中重复此过程后，最终一层提取出经典模型可以处理的特征。在训练过程中，每一层提取的特征都可以进行修改，直到找到*正确的处理步骤序列*。当神经网络涉及多个层时，我们称之为*深度学习*。根据神经网络的确切设置，更复杂的数学运算是可能的；此外，特征提取可以自动进行，通常比经典机器学习更高效。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig16_HTML.png)
 - en: A flow illustration represents a neural network architecture with a final layer
     that functions similarly to a traditional machine learning classifier, aiming
     to minimize the loss function.
   id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 流程图表示了一个神经网络架构，最后一层的功能类似于传统的机器学习分类器，旨在最小化损失函数。
 - en: Fig. 3.16
   id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.16
 - en: Neural networks are in general similar to classical machine learning, however,
     allow more complex mathematical operations
   id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 神经网络一般类似于经典机器学习，但允许更复杂的数学运算
 - en: We will now dive a bit deeper into the architectures of neural networks yet
     staying at a rather high-level.^([7](#Fn7))
   id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们将深入探讨神经网络的架构，但仍然保持在一个相当高的层次。^([7](#Fn7))
 - en: 'Neurons: Inspired by the Human Brain'
   id: totrans-161
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 神经元：受人脑启发
 - en: 'Neural networks are loosely inspired by the neurons in the human brain. However,
     we must be clear that such systems are not comparable directly to human brains.
     They are very simplified, and many aspects of the human brain are still not understood.
@@ -1235,6 +1337,8 @@
   id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 神经网络在某种程度上受到人脑中的神经元的启发。然而，我们必须明确，这样的系统不能直接与人脑相比较。它们非常简化，人脑的许多方面仍然不为人所理解。考虑以下类比（Rashid
+    [2017](#CR32)）：人类大约有1000亿个神经元，而其他较小的动物或昆虫只有几十万个神经元。尽管我们能够建模比这些动物的大脑更复杂得多的计算机系统，但这些动物可以完成一些对计算机来说难以解决的有用任务。值得一提的是，最新的语言模型的神经元数量与人类大脑相同数量级。因此，仅仅根据神经元数量来比较人类或动物智能和机器智能是困难的。人类或动物智能似乎还有更多的东西。
 - en: Coming back to our technical system, a neural network is a set of so-called
     neurons that are connected to each other. There is a signal that enters on one
     side of the neural network and passes through the different neurons, and finally,
@@ -1242,6 +1346,7 @@
   id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 回到我们的技术系统，神经网络是一组所谓的神经元相互连接在一起。信号从神经网络的一侧输入，经过不同的神经元，最终产生结果。
 - en: One layer is typically composed of several neurons. A single neuron, as shown
     in Fig. [3.17](#Fig17), has several input values and weights assigned to the connections.
     Inside the neuron, the inputs are processed, and the weights give an indication
@@ -1251,29 +1356,35 @@
   id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个层通常由多个神经元组成。如图 [3.17](#Fig17) 所示，单个神经元具有多个输入值和分配给连接的权重。在神经元内部，输入被处理，权重指示了每个输入对于神经元输出的重要性。当思考权重的含义时，请记住我们之前看到的因为有一个巨大的草莓而向右弯曲的草莓植物。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig17_HTML.png)
 - en: A flow illustration depicts multiple weight input followed by neuron and output.
   id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个流程插图展示了多个权重输入，接着是神经元和输出。
 - en: Fig. 3.17
   id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 3.17
 - en: The weights in the neural network are adapted during the training phase to reduce
     the loss and improve the system’s performance
   id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 神经网络中的权重在训练阶段逐渐调整，以减少损失并提高系统性能
 - en: The good thing is that we do not have to specify these weights. The weights
     are adapted during the training phase, to reduce the loss and improve the overall
     system.
   id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 好处在于我们不必指定这些权重。这些权重在训练阶段逐渐调整，以减少损失并改善整个系统。
 - en: A neural network consists of several neurons, organized in layers.
   id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个神经网络由几个神经元组成，组织在不同的层中。
 - en: In the example in Fig. [3.18](#Fig18), we have three layers with two neurons
     each. The output of the neurons from layer 1 is the input for both neurons of
     layer 2\. Layer 1 is called *input layer*, layer 2 is a *hidden layer* (there
@@ -1286,25 +1397,30 @@
   id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 在图 [3.18](#Fig18) 的示例中，我们有三层，每层有两个神经元。来自第一层神经元的输出是第二层两个神经元的输入。第一层称为*输入层*，第二层是*隐藏层*（可能不止一个），第三层是*输出层*。在每个神经元中，基于输入值和权重进行计算，生成一个输出。这种数学运算依赖于向量和特别是*矩阵*数学，因此重要的是输入和输出是向量而不是人类词语。即使对于高维神经网络，计算机也能够非常有效地执行这些操作。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig18_HTML.png)
 - en: An illustration depicts a neural network with six instances of Neuron in the
     input layer, followed by three hidden layers labeled as Layer 1, Layer 2, and
     Layer 3, ultimately leading to an output layer.
   id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个插图展示了一个神经网络，其中包含六个输入层中的神经元实例，接着是三个隐藏层，标记为层 1、层 2 和层 3，最终导致一个输出层。
 - en: Fig. 3.18
   id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 3.18
 - en: An example of a neural network consisting of three layers
   id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个由三层组成的神经网络示例
 - en: Learning from Our Mistakes
   id: totrans-174
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 从错误中学习
 - en: So how do we learn from mistakes and improve the performance of our neural network?
     As we did earlier, we want to adapt the weights in order to minimize the loss.
     If we do this only with the weights in the last layer, as we did for the example
@@ -1319,26 +1435,32 @@
   id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们如何从错误中学习并提高神经网络的性能呢？就像之前一样，我们希望调整权重以最小化损失。如果我们只调整最后一层的权重，就像我们为逻辑回归的例子所做的那样（只有一层），这只能部分解决问题。最后一层的输出取决于它从前一层接收到的输入。如果我们不调整那里的权重，那么我们又陷入了低复杂度线性模型的情况，因此我们还需要弄清楚如何调整倒数第二层的权重，以此类推。因此，我们必须调整神经网络中每一层的权重。这个过程称为*反向传播*。图
+    [3.19](#Fig19) 展示了我们之前讨论过的神经网络中反向传播的过程。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig19_HTML.png)
 - en: An illustration suggests a neural network processing with the term Neuron at
     3 layers, followed by an Input and Output with Backpropagation possibly indicating
     a training process or learning mechanism,
   id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图显示了一个神经网络处理术语神经元在3层，接着是一个输入和输出，后面可能是反向传播，表明一个训练过程或学习机制，
 - en: Fig. 3.19
   id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.19
 - en: The weights are adapted in all layers of the neural network. This procedure
     is called backpropagation
   id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: 神经网络的所有层中都会调整权重。这个过程被称为反向传播。
 - en: Sentiment Analysis with Neural Networks
   id: totrans-179
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 使用神经网络进行情感分析
 - en: Now let’s come back to our example of sentiment classification and depict this
     problem in a neural network. In sentiment analysis, we want to classify texts
     as negative or positive. For the input, we will need again the vector representations
@@ -1348,21 +1470,25 @@
   id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们回到情感分类的例子，并在神经网络中描述这个问题。在情感分析中，我们希望将文本分类为消极或积极。对于输入，我们将再次需要我们单词的向量表示。如图[3.20](#Fig20)所示，最后一层具有特殊的格式。由于我们的目标是做出二元决策，最后一个神经元被调整为产生这两个输出选项之一（消极或积极）。
 - en: A flow illustration represents a process where Our texts are transformed into
     vectors, then processed through multiple layers, and ultimately result in an output
     classified as either positive or negative in Layer 3.
   id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个流程图表示了一个过程，我们的文本被转换为向量，然后通过多个层处理，最终在第3层产生一个被分类为积极或消极的输出。
 - en: Fig. 3.20
   id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.20
 - en: In the context of sentiment analysis on text, we want to provide texts as input
     and obtain a prediction on whether they are positive or negative
   id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: 在文本情感分析的背景下，我们希望提供文本作为输入，并获得关于它们是积极还是消极的预测。
 - en: As compared to the linear classifiers (such as the logistic regression we have
     seen previously), neural networks often provide important advantages. For example,
     the fact that more complex mathematical operations are possible often leads to
@@ -1376,17 +1502,20 @@
   id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: 与线性分类器（比如我们之前看到的逻辑回归）相比，神经网络通常提供重要的优势。例如，更复杂的数学运算可能导致文本分类的更好性能。有时，在文本中表示积极或消极情感可能会很棘手。讽刺可能是消极情感的一个强烈指标。然而，就像在逻辑回归中给单词分配权重一样，永远无法捕捉到这个复杂的概念。另一方面，可以想象文本中存在或不存在的单词组合的某种复杂函数可能导致文本中讽刺的良好度量。如果是这样，那么神经网络可能能够做到这一点。
 - en: We now have a basic understanding of how neural networks work and are ready
     to go one step further. In the next section, we will have a closer look at word
     embeddings, which are vectors that encode the meaning of words.
   id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们现在对神经网络的工作原理有了基本的了解，并准备进一步深入。在下一节中，我们将更仔细地研究词嵌入，这些向量编码了单词的含义。
 - en: Diving into Word Embeddings
   id: totrans-186
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 深入研究词嵌入
 - en: 'Let’s come back to the problem we have gotten around earlier: the machine learning
     methods need numerical representations (in the form of vectors) and cannot handle
     human-readable texts. To enable our text processing and generation with the advantages
@@ -1395,17 +1524,20 @@
   id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们回到之前遇到的问题：机器学习方法需要数值表示（以向量形式）而无法处理人类可读的文本。为了使我们的文本处理和生成能够利用机器学习方法的优势，提高不同任务的性能，我们需要将单词转换为数学向量。
 - en: So how can we get there? One solution is called *word embeddings*^([9](#Fn9))
     (sometimes also referred to as *word vector*).
   id: totrans-188
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么我们如何实现这一点呢？一个解决方案被称为*词嵌入*（有时也被称为*词向量*）。
 - en: 'Each word from human language, so, for example, the English words *Strawberry*
     or *Raspberry*, has a numerical representation, a specific word embedding,^([10](#Fn10))
     as shown in Fig. [3.21](#Fig21). Let them be as follows for now:'
   id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类语言中的每个单词，比如英语单词*草莓*或*覆盆子*，都有一个数值表示，一个特定的词嵌入，如图[3.21](#Fig21)所示。暂时假设它们如下：
 - en: “Strawberry” = [1,6]
   id: totrans-190
   prefs:
@@ -1605,16 +1737,19 @@
   id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 单词嵌入的词典是使用无监督机器学习方法训练的。在本节中，我们将探讨2013年提出的word2vec方法（Mikolov等人[2013](#CR26)），该方法为一系列自然语言处理任务提供了重大改进。这标志着自然语言处理与单词嵌入的新时代的开始，后来更进一步地改进了基于transformer的模型，我们将在后面的章节中探讨。
 - en: 'The idea behind the word embeddings can be captured by the following quote
     from the linguist J.R. Firth:'
   id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 单词嵌入背后的理念可以用语言学家J.R. Firth的以下引用来概括：
 - en: You shall know a word by the company it keeps (Firth [1962](#CR13), p. 11)
   id: totrans-224
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 你可以通过一个词的周围词了解它（Firth [1962](#CR13)，第11页）
 - en: For example, the word *Strawberry* and the word *Raspberry* might both appear
     along with the words *berries*, *field*, *red*, *yummy*, and others. Having a
     common set of words appearing along with them makes it more probable that those
@@ -1623,6 +1758,7 @@
   id: totrans-225
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，单词*草莓*和单词*覆盆子*可能与*浆果*、*领域*、*红色*、*美味*等词一起出现。这些共同出现的词使得这两个词在意义上更有可能相似。因此，这两个词应该有相似的向量。
 - en: The machine learning method to train word embeddings is *unsupervised*. This
     means that data does not need to be labeled. This is a major advantage in this
     case because labeling would be complex in the case of natural language. There
@@ -1634,6 +1770,7 @@
   id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练单词嵌入的机器学习方法是*无监督*的。这意味着数据不需要被标记。在这种情况下，这是一个重大优势，因为在自然语言的情况下标记会很复杂。有许多关系和背景知识，对于我们人类来说，这些知识是多年学习而来的，很难在标记数据集中表达出来（在之前的示例中使用监督学习时会需要）。例如，草莓是浆果，浆果是植物，植物被人类和动物吃（等等）。
 - en: However, upon closer inspection, the words in a text do have a sort of label.
     The difference compared to the supervised learning scenario is that labels are
     available implicitly and do not need to be added before training. Instead of learning
@@ -1643,6 +1780,7 @@
   id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: 然而，仔细观察后，文本中的单词确实有一种标签。与监督学习场景相比的区别在于，标签是隐含的，不需要在训练之前添加。这些算法不是学习每个单词的*含义*，而是学习与所提到的单词一起出现的常见单词。对于这个任务，文本中每个单词的标签就是紧挨着该单词出现的单词。^([14](#Fn14))
 - en: To give you an intuition about what that means, let’s look at the example shown
     in Fig. [3.24](#Fig24). The words *field* and *with* are just before the word
     *strawberries*, and the words *and* and *raspberries* are right after it. In the
@@ -1654,19 +1792,24 @@
   id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了让你对这意思有所直觉，让我们看一下图[3.24](#Fig24)中显示的例子。单词*领域*和*与*刚好在*草莓*之前，而*和*和*覆盆子*则紧随其后。在skip-gram方法中（word2vec单词嵌入训练中的一种方法^([15](#Fn15)
+    )），我们会尝试预测每个单词周围的单词。在这种情况下，我们会使用例如围绕*草莓*的单词进行训练。由于我们知道正确答案，我们可以利用这些信息来改进学习并减少错误。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig24_HTML.png)
 - en: The text reads there is a field with strawberries and raspberries.
   id: totrans-229
   prefs: []
   type: TYPE_NORMAL
+  zh: 文本中提到有一个有草莓和覆盆子的领域。
 - en: Fig. 3.24
   id: totrans-230
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.24
 - en: The word “Strawberry” and the two words that appear just before and just after
     it
   id: totrans-231
   prefs: []
   type: TYPE_NORMAL
+  zh: 单词“草莓”以及它之前和之后出现的两个单词
 - en: 'To return back to neural networks, the word *strawberries* would be the input
     to our neural network. As an output, we want the neural network to predict the
     surrounding words. The neural network for this is structured as shown in Fig.
@@ -1688,6 +1831,7 @@
   id: totrans-232
   prefs: []
   type: TYPE_NORMAL
+  zh: 要回到神经网络，单词*草莓*将是我们神经网络的输入。作为输出，我们希望神经网络预测周围的单词。为此，神经网络的结构如图[3.25](#Fig25)所示。我们认识到我们在前一节中看到的架构：有神经元和层。特别是，输入层由单词*草莓*的独热向量组成。使用独热向量，所有字段都是0，只有词汇表中特定单词位置的字段设置为1。这个输入层中的条目数对应于我们在词汇表中有的单词数。在中间，我们有一个隐藏层。隐藏层有特定数量的神经元。神经元的数量对应于生成的单词嵌入应该具有的维度数。例如，如果我们想要生成我们之前看到的两维样本单词嵌入，那么我们在这一层中会有两个神经元。在一个更现实的情况下，我们想要生成300维的单词嵌入，那么我们在这里会有300个神经元。最后，输出层输出一个值，该值对应于词汇表中每个单词的概率。在图[3.25](#Fig25)中，我们看到训练对“草莓+和”这对的示例（许多训练步骤中的一个）。
 - en: A neural network processes the word strawberries through a series of layers,
     including an input layer, hidden layer, and output layer. A network assigns probabilities
     to various words as potential next words in a sequence based on learned associations
@@ -1695,15 +1839,18 @@
   id: totrans-233
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个神经网络通过一系列层处理单词草莓，包括输入层、隐藏层和输出层。网络根据训练数据学到的关联为序列中各种单词分配潜在的下一个单词的概率。
 - en: Fig. 3.25
   id: totrans-234
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.25
 - en: Example about the training of word embeddings (based on Lane et al. ([2019](#CR25),
     p. 193))
   id: totrans-235
   prefs: []
   type: TYPE_NORMAL
+  zh: 单词嵌入训练的示例（基于Lane等人([2019](#CR25)，第193页)）
 - en: When talking about probabilities, we use values between 0 and 1\. Some people
     are perhaps more familiar with using percentages, but the conversion from probabilities
     on a 0–1 scale to percentage values is simple. For example, a probability of 0.5
@@ -1712,6 +1859,7 @@
   id: totrans-236
   prefs: []
   type: TYPE_NORMAL
+  zh: 谈到概率时，我们使用0到1之间的值。有些人可能更熟悉使用百分比，但从0到1的概率值转换为百分比值很简单。例如，概率为0.5是50%，0.2是20%。基于此，以98.8%的概率，单词*和*很可能跟在单词*草莓*后面。
 - en: During the training, the pair “strawberry+and” makes the score for *and* go
     up, while the training example “strawberry+with” would make the score for *with*
     go up. The training happens in iterations, depending on the number of surrounding
@@ -1723,6 +1871,7 @@
   id: totrans-237
   prefs: []
   type: TYPE_NORMAL
+  zh: 在训练过程中，“草莓+和”这对使*和*的分数上升，而训练示例“草莓+带”会使*带*的分数上升。训练是在迭代中进行的，取决于我们考虑的周围单词数。例如，在图[3.24](#Fig24)中所示的情况下，我们有四个周围单词，因此在到达下一个单词之前需要进行四次迭代。因此，我们可能不会看到*和*和*草莓*在一般情况下非常相关；然而，在这个训练步骤中这是正确的答案。
 - en: This procedure is repeated a large number of times. First, we iterate over all
     words in the sentence, doing one training step for each surrounding word. We then
     do this not only for a few sentences but for large text corpora including millions
@@ -1730,6 +1879,7 @@
   id: totrans-238
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个过程重复了很多次。首先，我们遍历句子中的所有单词，对每个周围的单词进行一次训练步骤。然后，我们不仅对几个句子这样做，而是对包括数百万页文本的大型文本语料库这样做。
 - en: Surprisingly, once the training is done, the output layer can be ignored. What
     we are actually looking for is in the hidden layer. It generates for each word
     a vector (the word embedding) encoding the semantics in terms of the other words
@@ -1740,6 +1890,7 @@
   id: totrans-239
   prefs: []
   type: TYPE_NORMAL
+  zh: 令人惊讶的是，一旦训练完成，输出层可以被忽略。我们实际上要找的是隐藏层。它为每个单词生成一个向量（单词嵌入），编码了它与词汇表中其他单词在语义上的关系，它们经常一起出现。语义相似的单词将具有相似的向量。这意味着我们可以从隐藏层中提取我们需要用来将英语单词映射到单词嵌入的单词向量，一旦训练结束。^([16](#Fn16))
 - en: This is just one procedure for generating word embeddings. In addition to the
     skip-gram method presented here, Mikolov et al. ([2013](#CR26)) also propose an
     alternative method that works slightly differently, inverting the task to predict
@@ -1748,11 +1899,13 @@
   id: totrans-240
   prefs: []
   type: TYPE_NORMAL
+  zh: 这只是生成单词嵌入的一个过程。除了这里介绍的skip-gram方法，Mikolov等人（[2013](#CR26)）还提出了一种稍有不同的替代方法，该方法反转了任务，根据一组周围的单词预测一个单词。其他方法包括GloVe（Pennington等人[2014](#CR29)）嵌入或fasttext（Mikolov等人[2018](#CR27)）。
 - en: Off-the-Shelf Word Embeddings
   id: totrans-241
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 现成的词嵌入
 - en: As we see in Fig. [3.23](#Fig23), word embeddings can be created once and then
     reused. This is fortunate, because the training of word embeddings requires a
     lot of resources. On one side, you need powerful hardware to execute the computations.
@@ -1775,11 +1928,13 @@
   id: totrans-242
   prefs: []
   type: TYPE_NORMAL
+  zh: 如我们在图[3.23](#Fig23)中看到的，单词嵌入可以创建一次，然后重复使用。这是幸运的，因为训练单词嵌入需要大量资源。一方面，您需要强大的硬件来执行计算。另一方面，您需要耐心，因为这样的训练可能需要几个小时或几天（甚至在我们将在后面章节中看到的大型语言模型的情况下可能需要更长时间）。此外，训练需要大量文本数据（所谓的语料库）。幸运的是，单词嵌入通常是公开可用的，并且可以被文本处理应用程序下载并直接使用。那么，何时值得生成自己的单词嵌入？由于单词嵌入是与语言相关的，您可能需要为特定语言训练自己的单词嵌入。然而，fasttext（Mikolov等人[2018](#CR27)）提供了157种语言的单词嵌入（Grave等人[2018](#CR18)），所以现在很少出现这种情况。在其他情况下，当您需要特定领域的词汇时，您可能需要训练自己的嵌入。现成的词嵌入（如word2vec或fasttext）依赖于涵盖广泛主题的文本，试图对“通用”语言进行建模。但假设您只处理法律文件。这些文件可能包含许多领域特定的词汇，您可能特别感兴趣的是在单词嵌入中编码了这些词之间的关系。
 - en: Working with Libraries
   id: totrans-243
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 使用库
 - en: In a similar fashion, *libraries* implementing the common methods for machine
     learning or data preparation tasks are available to data engineers. This means
     that data engineers, rather than rewriting each time all the instructions in the
@@ -1793,6 +1948,7 @@
   id: totrans-244
   prefs: []
   type: TYPE_NORMAL
+  zh: 类似地，为数据工程师提供了实现机器学习或数据准备任务常见方法的*库*。这意味着数据工程师可以在软件中包含预定义组件，而不是每次都重新编写编程语言中的所有指令。通过使用库，数据工程师可以提供输入数据集，进行特定设置，然后，例如，重复使用他人事先实现的逻辑回归算法。这简化了这些技术的应用视角，并将所需的知识转移到了了解可用的库、它们的用途以及如何应用它们。图[3.26](#Fig26)说明了数据工程师用于模型训练的典型组件！[](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig26_HTML.png)
 - en: An illustration demonstrates the concept of word embeddings, where words like
     good and morning are represented as numerical vectors like 12, 6, 8 and 1, 4,
     190, respectively. The availability of publicly available word embeddings through
@@ -1800,26 +1956,31 @@
   id: totrans-245
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图展示了词嵌入的概念，其中诸如good和morning这样的词被表示为数值向量，如12、6、8和1、4、190。通过库提供的公开可用的词嵌入，具有在数据工程和建模任务中潜在应用的可能性。
 - en: Fig. 3.26
   id: totrans-246
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 3.26
 - en: The data engineer can rely on existing libraries and publicly available word
     embeddings
   id: totrans-247
   prefs: []
   type: TYPE_NORMAL
+  zh: 数据工程师可以依赖现有库和公开可用的词嵌入
 - en: The word embeddings we have seen so far encode one word as one mathematical
     vector. These encodings can be shared and reused in different applications. More
     complex language models can also be shared with the community, once trained.
   id: totrans-248
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我们所见过的词嵌入将一个词编码为一个数学向量。这些编码可以在不同应用中共享和重复使用。一旦训练完成，更复杂的语言模型也可以与社区共享。
 - en: A High-Level View of Language Models
   id: totrans-249
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 语言模型的高层视图
 - en: 'Looking toward these language models, which we will soon meet, I want to give
     you a high-level overview at this point of what we are dealing with. Let’s for
     now define *language models* as statistical models that link probabilities to
@@ -1829,11 +1990,13 @@
   id: totrans-250
   prefs: []
   type: TYPE_NORMAL
+  zh: 展望即将遇到的这些语言模型，我想在这一点上给你一个高层次的概述，我们正在处理什么。让我们暂时将*语言模型*定义为将概率与文本片段联系起来的统计模型。通常，它们被，以非常简化的方式陈述，用于预测（部分）句子中的下一个词，旨在产生最佳的类人文本。让我们考虑以下例子：
 - en: '*Anna goes to the field and collects …*'
   id: totrans-251
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*安娜去田野收集……*'
 - en: With a language model, we can predict what could be the next word in this sentence.
     Probably, based on other texts that language models include in their training
     data, words such as *strawberries*, *carrots*, or *tomatoes* are more likely to
@@ -1844,11 +2007,13 @@
   id: totrans-252
   prefs: []
   type: TYPE_NORMAL
+  zh: 有了语言模型，我们可以预测这个句子中接下来可能是什么词。可能基于语言模型在训练数据中包含的其他文本，像草莓、胡萝卜或番茄这样的词比猫或狗更有可能成为下一个词。训练是通过隐藏原始文本中的一些词然后预测它们来进行的。这在某种程度上类似于我们在本章中看到的词嵌入训练算法，因此我们已经准备好迈向大型语言模型了！
 - en: Summary
   id: totrans-253
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 摘要
 - en: In this chapter, we learned about applications and methods of natural language
     processing. We saw how different solutions with varying levels of complexity can
     be applied to the same problem. The challenge lies in the identification of the
@@ -1856,6 +2021,7 @@
   id: totrans-254
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们了解了自然语言处理的应用和方法。我们看到了如何将不同复杂程度的解决方案应用于同一问题。挑战在于确定给定任务最合适的方法。
 - en: We saw how neural networks can be beneficial for nonlinearly separable data
     by allowing more complex mathematical operations and automating feature extraction.
     Both classical machine learning and deep learning rely on a loss function and
@@ -1863,6 +2029,7 @@
   id: totrans-255
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们看到了神经网络如何有益于非线性可分数据，通过允许更复杂的数学运算和自动化特征提取。经典机器学习和深度学习都依赖于损失函数，并调整模型权重以最小化损失并改进模型的预测。
 - en: In the context of natural language processing, vectorization is important for
     mapping human language to mathematical vectors that can be more easily processed
     by the computer. We have seen different methods for how word embeddings can be
@@ -1871,8 +2038,10 @@
   id: totrans-256
   prefs: []
   type: TYPE_NORMAL
+  zh: 在自然语言处理的背景下，向量化对于将人类语言映射到数学向量非常重要，这样计算机可以更轻松地处理。我们已经看到了不同的方法，用于训练词嵌入以及语义上相似的单词对应到更接近的向量。
 - en: Finally, we saw how publicly available word embeddings and libraries are integrated
     into the data engineer’s workflow.
   id: totrans-257
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我们看到了公开可用的词嵌入和库是如何整合到数据工程师的工作流程中的。

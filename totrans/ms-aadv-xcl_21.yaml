@@ -3,10 +3,12 @@
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第20章VBA中的数组和集合](contents.xhtml#ch20a)'
 - en: '[Introduction](contents.xhtml#sc2_304a)'
   id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_304a)'
 - en: Arrays and Collections are essential components in VBA programming, enabling
     efficient storage and manipulation of multiple values. In this chapter, we will
     explore their concepts, learn how to declare and use them, understand array indexing
@@ -14,48 +16,58 @@
   id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 数组和集合是VBA编程中的基本组件，可以有效地存储和操作多个值。在本章中，我们将探讨它们的概念，学习如何声明和使用它们，了解数组索引和动态数组，并研究它们在VBA中应用的实际示例。
 - en: '[Structure](contents.xhtml#sc2_305a)'
   id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_305a)'
 - en: 'In this chapter, we will discuss the following topics:'
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: Arrays
   id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数组
 - en: Declaring the Arrays
   id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 声明数组
 - en: Using Arrays
   id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用数组
 - en: Array Indexing
   id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 数组索引
 - en: Declaring a Dynamic Array
   id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 声明动态数组
 - en: Resizing a Dynamic Array
   id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 调整动态数组的大小
 - en: '[Objectives](contents.xhtml#sc2_306a)'
   id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_306a)'
 - en: By the end of this chapter, the reader will learn the use of arrays and collections
     in VBA programming, learn how to declare, resize, and use arrays efficiently,
     and explore the advantages of collections over arrays for advanced data manipulation
@@ -63,138 +75,171 @@
   id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章结束时，读者将学习在VBA编程中使用数组和集合，学习如何声明、调整大小和高效使用数组，并探讨集合相对于数组在高级数据操作任务中的优势。
 - en: '[Arrays](contents.xhtml#sc2_307a)'
   id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: '[数组](contents.xhtml#sc2_307a)'
 - en: Arrays are a set of sequentially indexed elements having the same intrinsic
     data type. Each element of an array has a unique identifying index number.
   id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 数组是具有相同内在数据类型的一组按顺序索引的元素。数组的每个元素都有一个唯一的标识索引号。
 - en: Changes made to one element of an array does not affect the other elements.
   id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 对数组的一个元素进行更改不会影响其他元素。
 - en: 'The different types of arrays are as follows:'
   id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 不同类型的数组如下：
 - en: An array whose size is specified is a fixed-size array.
   id: totrans-17
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 指定大小的数组是固定大小的数组。
 - en: An array whose size can be changed while a program is running is a dynamic array.
   id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在程序运行时可以更改大小的数组是动态数组。
 - en: 'Single dimension array: Only with rows'
   id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 单维数组：只有行
 - en: 'Multiple Dimension array: With rows and columns'
   id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 多维数组：带有行和列
 - en: '[Declaring the arrays](contents.xhtml#sc2_308a)'
   id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: '[声明数组](contents.xhtml#sc2_308a)'
 - en: Arrays are declared the same way as other variables.
   id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 数组的声明方式与其他变量相同。
 - en: 'Syntax:'
   id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 语法：
 - en: Dim name_Of_array(Size) As Data_Type
   id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: Dim name_Of_array(Size) As Data_Type
 - en: Example
   id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例
 - en: 'Single dimension: Declaring a single dimension array variable of 10 row size
     which can store integer items.'
   id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 单维数组：声明一个可以存储整数项目的大小为10行的单维数组变量。
 - en: Dim Myarray(10) As Integer
   id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: Dim Myarray(10) As Integer
 - en: 'Multiple dimension (Max 60 dimensions): Declaring a multiple dimension array
     variable of 3 rows and 5 columns which can store 15 integer items.'
   id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 多维数组（最多60维）：声明一个可以存储15个整数项目的3行5列的多维数组变量。
 - en: Dim Myarray(3 , 5) As Integer
   id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: Dim Myarray(3 , 5) As Integer
 - en: '[Using arrays](contents.xhtml#sc2_309a)'
   id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用数组](contents.xhtml#sc2_309a)'
 - en: 'Using Arrays can be explained using this example: To store daily expenses for
     each day of the month, you can declare one array variable with 31 elements, rather
     than declaring 31 variables.'
   id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用数组可以通过以下示例解释：为了存储每个月每天的日常开支，您可以声明一个具有31个元素的数组变量，而不是声明31个变量。
 - en: Each element in an array contains one value.
   id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 数组中的每个元素包含一个值。
 - en: '| Sub Single_array()Dim curExpense(31) As CurrencyDim intI As IntegerFor intI
     = 0 to 31curExpense(intI) = 20NextEnd Sub |'
   id: totrans-33
   prefs: []
   type: TYPE_TB
+  zh: '| Sub Single_array()Dim curExpense(31) As CurrencyDim intI As IntegerFor intI
+    = 0 to 31curExpense(intI) = 20NextEnd Sub |'
 - en: 'Note: In the above example array index will start from 0'
   id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：在上面的示例中，数组索引将从0开始
 - en: '[Array indexing](contents.xhtml#sc2_310a)'
   id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: '[数组索引](contents.xhtml#sc2_310a)'
 - en: All array indexes begin at zero. Whether an array is indexed from 0 or 1 depends
     on the setting of the Option Base statement.
   id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 所有数组索引都从零开始。数组是从0还是1开始索引取决于Option Base语句的设置。
 - en: If Option Base 1 is not specified, all array indexes begin at zero.
   id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果未指定Option Base 1，则所有数组索引都从零开始。
 - en: Example
   id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 示例
 - en: '| Option Base 1Sub Single_array()Dim curExpense(31) As CurrencyDim intI As
     IntegerFor intI = 1 to 31curExpense(intI) = 20NextEnd Sub |'
   id: totrans-39
   prefs: []
   type: TYPE_TB
+  zh: '| 选项基础 1Sub Single_array()Dim curExpense(31) As CurrencyDim intI As IntegerFor
+    intI = 1 to 31curExpense(intI) = 20NextEnd Sub |'
 - en: 'Note: In the above example, array index will start from 1.'
   id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：在上面的示例中，数组索引将从1开始。
 - en: '[Declaring a dynamic array](contents.xhtml#sc2_311a)'
   id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: '[声明动态数组](contents.xhtml#sc2_311a)'
 - en: By declaring a dynamic array, you can size the array while the code is running.
   id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过声明动态数组，您可以在代码运行时调整数组的大小。
 - en: Use a Dim statement to declare an array, leaving the parentheses empty.
   id: totrans-43
   prefs: []

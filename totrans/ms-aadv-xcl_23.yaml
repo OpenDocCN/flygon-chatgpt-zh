@@ -1,361 +1,554 @@
 - en: '[CHAPTER 22User Forms and User Input in VBS](contents.xhtml#ch22a)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第22章VBS中的用户表单和用户输入](contents.xhtml#ch22a)'
 - en: '[Introduction](contents.xhtml#sc2_328a)'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_328a)'
 - en: User Forms and user input are essential aspects of creating interactive and
     user-friendly applications in Visual Basic Scripting (VBS). User Forms allow developers
     to design intuitive interfaces and capture user input for various purposes. By
     utilizing controls such as labels, text boxes, buttons, and more, VBS developers
     can create dynamic and responsive forms that enhance the overall user experience.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 用户表单和用户输入是在Visual Basic Scripting（VBS）中创建交互式和用户友好应用程序的重要方面。用户表单允许开发人员设计直观的界面，并捕获用户输入以实现各种目的。通过利用诸如标签、文本框、按钮等控件，VBS开发人员可以创建动态、响应迅速的表单，从而增强整体用户体验。
 - en: In this chapter, we will explore the process of creating User Forms in VBS,
     including designing the form layout, adding controls, and handling events. We
     will also discuss how to incorporate user input into your scripts, enabling your
     applications to respond to user actions and perform relevant tasks.
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将探讨在VBS中创建用户表单的过程，包括设计表单布局、添加控件和处理事件。我们还将讨论如何将用户输入整合到您的脚本中，使您的应用程序能够响应用户操作并执行相关任务。
 - en: '[Structure](contents.xhtml#sc2_329a)'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_329a)'
 - en: 'In this chapter, we will go over the following topics:'
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将介绍以下主题：
 - en: User Forms
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 用户表单
 - en: Creating user forms
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 创建用户表单
 - en: Adding other controls
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 添加其他控件
 - en: Handling events for the control
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 处理控件的事件
 - en: '[Objectives](contents.xhtml#sc2_330a)'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_330a)'
 - en: By the end of this chapter, the reader will learn about user forms, and how
     to create them, adding other control as well as handling events for the control.
     Understanding User Forms and user input in VBS will enable you to build interactive
     and functional applications that meet the specific needs of your users.
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章结束时，读者将了解用户表单以及如何创建它们，添加其他控件以及处理控件的事件。了解VBS中的用户表单和用户输入将使您能够构建满足用户特定需求的交互式和功能性应用程序。
 - en: '[User forms](contents.xhtml#sc2_331a)'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '[用户表单](contents.xhtml#sc2_331a)'
 - en: 'User Forms are used to create customized Dialogue Box. Refer to the following
     [Figure 22.1](#fig22-1):'
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 用户表单用于创建自定义对话框。参考以下[图22.1](#fig22-1)：
 - en: '![](images/Figure_22.1.png)'
+  id: totrans-14
   prefs: []
   type: TYPE_IMG
+  zh: '![图22.1](images/Figure_22.1.png)'
 - en: 'Figure 22.1: User forms'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 图22.1：用户表单
 - en: '[Creating user forms](contents.xhtml#sc2_332a)'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: '[创建用户表单](contents.xhtml#sc2_332a)'
 - en: 'To create user form, follow these steps:'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 要创建用户表单，请按照以下步骤操作：
 - en: Click Insert Menu
+  id: totrans-18
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击插入菜单
 - en: Select UserForm, as shown in [Figure 22.2](#fig22-2) (a).
+  id: totrans-19
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择UserForm，如[图22.2](#fig22-2)（a）所示。
 - en: This will add one object UserForm1 in your workbook, as shown in [Figure 22.2](#fig22-2)
     (b)
+  id: totrans-20
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 这将在您的工作簿中添加一个对象UserForm1，如[图22.2](#fig22-2)（b）所示。
 - en: Use the Properties window to change the name, behavior, and appearance of the
     form. For example, to change the caption on a form, set the Caption property,
     as shown in [Figure 22.2](#fig22-2) (c)
+  id: totrans-21
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用属性窗口更改表单的名称、行为和外观。例如，要更改表单上的标题，设置Caption属性，如[图22.2](#fig22-2)（c）所示
 - en: 'Refer to [Figure 22.2](#fig22-2):'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图22.2](#fig22-2)：
 - en: '![](images/Figure_22.2.png)'
+  id: totrans-23
   prefs: []
   type: TYPE_IMG
+  zh: '![图22.2](images/Figure_22.2.png)'
 - en: 'Figure 22.2: Creating user forms'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 图22.2：创建用户表单
 - en: '[Adding other controls](contents.xhtml#sc2_333a)'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: '[添加其他控件](contents.xhtml#sc2_333a)'
 - en: 'To add other controls, follow these steps:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 要添加其他控件，请按照以下步骤操作：
 - en: Click toolbox in toolbars, as shown in [Figure 22.3](#fig22-3) (a).
+  id: totrans-27
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击工具栏中的工具箱，如[图22.3](#fig22-3)（a）所示。
 - en: Drag the control onto the form, as shown in [Figure 22.3](#fig22-3) (b).
+  id: totrans-28
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将控件拖放到表单上，如[图22.3](#fig22-3)（b）所示。
 - en: Change the properties such as name, font, and so on, from Property window, as
     shown in [Figure 22.3](#fig22-3) (c)
+  id: totrans-29
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从属性窗口更改属性，如名称、字体等，如[图22.3](#fig22-3)（c）所示
 - en: 'Refer to [Figure 22.3](#fig22-3):'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图22.3](#fig22-3)：
 - en: '![](images/Figure_22.3.png)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![图22.3](images/Figure_22.3.png)'
 - en: 'Figure 22.3: Adding other Controls'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 图22.3：添加其他控件
 - en: '[Handling events for the control](contents.xhtml#sc2_334a)'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: '[处理控件的事件](contents.xhtml#sc2_334a)'
 - en: 'To handle events for the control, follow these steps:'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 要处理控件的事件，请按照以下步骤操作：
 - en: Open code window for the form.
+  id: totrans-35
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 打开表单的代码窗口。
 - en: Select the form control.
+  id: totrans-36
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择表单控件。
 - en: Click View code tool from the project explorer window, as shown in [Figure 22.4](#fig22-4)
     (a).
+  id: totrans-37
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从项目资源管理器窗口中点击查看代码工具，如[图22.4](#fig22-4)（a）所示。
 - en: Select the control which you have placed in your form from [Figure 22.4](#fig22-4)
     (b).
+  id: totrans-38
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从[图22.4](#fig22-4)（b）中选择您在表单中放置的控件。
 - en: Select the event for your control, as shown in [Figure 22.4](#fig22-4) (c).
+  id: totrans-39
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择您控件的事件，如[图22.4](#fig22-4)（c）所示。
 - en: Write code for the event, as shown in [Figure 22.4](#fig22-4) (d).
+  id: totrans-40
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 按照 [图 22.4](#fig22-4)（d）中所示编写事件代码。
 - en: '![](images/Figure_22.4.png)'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_22.4.png)'
 - en: 'Figure 22.4: Handling events for the control'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 22.4：处理控件事件
 - en: '[Scenario 30](contents.xhtml#sc3_335a)'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景 30](contents.xhtml#sc3_335a)'
 - en: Create a UserForm which will accept Participant’s information to get enrolled
     for the training. The form should have “Insert” and “Cancel” command button. When
     the Insert button is clicked, the information entered in the form must go into
     Excel. When Cancel button is clicked the Form should be closed.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个用户表单，用于接受参与者的信息以报名培训。该表单应包含“插入”和“取消”命令按钮。单击“插入”按钮时，表单中输入的信息必须进入 Excel。单击“取消”按钮时，表单应关闭。
 - en: '[Solution](contents.xhtml#sc4_336a)'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: '[解决方案](contents.xhtml#sc4_336a)'
 - en: 'Follow the given steps:'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 按照给定的步骤：
 - en: Insert a UserForm.
+  id: totrans-47
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 插入一个用户表单。
 - en: Change the name and caption from the property window.
+  id: totrans-48
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从属性窗口更改名称和标题。
 - en: Name of the Form should be USR_enrol.
+  id: totrans-49
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 表单的名称应为 USR_enrol。
 - en: Caption should be Training Enrolment Form.
+  id: totrans-50
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 标题应为培训报名表。
 - en: 'Design the form as shown in [Figure 22.5](#fig22-5):'
+  id: totrans-51
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 设计如 [图 22.5](#fig22-5) 所示的表单：
 - en: '![](images/Figure_22.5.png)'
+  id: totrans-52
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_22.5.png)'
 - en: 'Figure 22.5: Scenario 30 solution'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 22.5：场景 30 解决方案
 - en: Here,
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，
 - en: 'Label : Displays descriptive text.'
+  id: totrans-55
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 标签：显示描述性文本。
 - en: 'TextBox : A TextBox is the control most commonly used to display information
     entered by a user.'
+  id: totrans-56
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 文本框：文本框是用户输入信息最常用的控件。
 - en: 'ListBox : Displays a list of values and lets you select one or more.'
+  id: totrans-57
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ListBox：显示值列表并允许选择一个或多个。
 - en: 'ComboBox : Combines the features of a ListBox and a TextBox. The user can enter
     a new value, as with a TextBox, or the user can select an existing value as with
     a ListBox.'
+  id: totrans-58
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ComboBox：结合了 ListBox 和 TextBox 的功能。用户可以像使用 TextBox 一样输入新值，或者像使用 ListBox 一样选择现有值。
 - en: 'Frame : Creates a functional and visual control group.'
+  id: totrans-59
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 框架：创建一个功能性和视觉控制组。
 - en: 'Properties : Attributes (properties or variables).'
+  id: totrans-60
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 属性：属性（��性或变量）。
 - en: 'Methods : Operations the object will perform with the attribute.'
+  id: totrans-61
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 方法：对象将执行的操作与属性。
 - en: 'Refer to the following [Table 22.1](#tab22-1):'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下 [表 22.1](#tab22-1)：
 - en: '| Control | Name | Property | Value |'
+  id: totrans-63
   prefs: []
   type: TYPE_TB
+  zh: '| 控件 | 名称 | 属性 | 值 |'
 - en: '| Label | LBL_header | Caption | Ritu Arora Academy. |'
+  id: totrans-64
   prefs: []
   type: TYPE_TB
+  zh: '| 标签 | LBL_标题 | 标题 | Ritu Arora 学院。|'
 - en: '| Label | LBL_name | Caption | Name |'
+  id: totrans-65
   prefs: []
   type: TYPE_TB
+  zh: '| 标签 | LBL_name | 标题 | 姓名 |'
 - en: '| Label | LBL_address | Caption | Address |'
+  id: totrans-66
   prefs: []
   type: TYPE_TB
+  zh: '| 标签 | LBL_address | 标题 | 地址 |'
 - en: '| Label | LBL_contactno | Caption | Contact No. |'
+  id: totrans-67
   prefs: []
   type: TYPE_TB
+  zh: '| 标签 | LBL_contactno | 标题 | 联系电话 |'
 - en: '| Label | LBL_email | Caption | Email-id |'
+  id: totrans-68
   prefs: []
   type: TYPE_TB
+  zh: '| 标签 | LBL_电子邮件 | 标题 | 电子邮件地址 |'
 - en: '| Label | LBL_Subject | Caption | Subject |'
+  id: totrans-69
   prefs: []
   type: TYPE_TB
+  zh: '| 标签 | LBL_主题 | 标题 | 主题 |'
 - en: '| TextBox | TXT_name |  |  |'
+  id: totrans-70
   prefs: []
   type: TYPE_TB
+  zh: '| 文本框 | TXT_name |  |  |'
 - en: '| TextBox | TXT_address |  |  |'
+  id: totrans-71
   prefs: []
   type: TYPE_TB
+  zh: '| 文本框 | TXT_address |  |  |'
 - en: '| TextBox | TXT_contactno |  |  |'
+  id: totrans-72
   prefs: []
   type: TYPE_TB
+  zh: '| 文本框 | TXT_contactno |  |  |'
 - en: '| TextBox | TXT_email |  |  |'
+  id: totrans-73
   prefs: []
   type: TYPE_TB
+  zh: '| 文本框 | TXT_email |  |  |'
 - en: '| TextBox | TXT_companyname | Text | Enter your company name |'
+  id: totrans-74
   prefs: []
   type: TYPE_TB
+  zh: '| 文本框 | TXT_companyname | 文本 | 输入您的公司名称 |'
 - en: '| Frame | FRM_details | Caption | Other Details |'
+  id: totrans-75
   prefs: []
   type: TYPE_TB
+  zh: '| 框架 | FRM_详细信息 | 标题 | 其他详细信息 |'
 - en: '| Combo Box | CBO_subject | Caption |  |'
+  id: totrans-76
   prefs: []
   type: TYPE_TB
+  zh: '| 组合框 | CBO_subject | 标题 |  |'
 - en: '| Option Button | OPT_company | Caption | Company |'
+  id: totrans-77
   prefs: []
   type: TYPE_TB
+  zh: '| 选项按钮 | OPT_company | 标题 | 公司 |'
 - en: '| Option Button | OPT_Personal | Caption | Personal |'
+  id: totrans-78
   prefs: []
   type: TYPE_TB
+  zh: '| 选项按钮 | OPT_Personal | 标题 | 个人 |'
 - en: '| Command Button | CMD_insert | Caption | Insert |'
+  id: totrans-79
   prefs: []
   type: TYPE_TB
+  zh: '| 命令按钮 | CMD_insert | 标题 | 插入 |'
 - en: '| Command Button | CMD_cancel | Caption | Cancel |'
+  id: totrans-80
   prefs: []
   type: TYPE_TB
+  zh: '| 命令按钮 | CMD_cancel | 标题 | 取消 |'
 - en: 'Table 22.1: Employee UserForm'
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 表 22.1：员工用户表单
 - en: '[Conclusion](contents.xhtml#sc2_337a)'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_337a)'
 - en: In conclusion, User Forms and user input are essential components of Visual
     Basic Scripting (VBS) that allow developers to create interactive and user-friendly
     applications. By utilizing User Forms, developers can design intuitive interfaces,
     capture user input, and enhance the overall user experience. Incorporating User
     Forms and effectively managing user input can greatly improve the functionality
     and usability of VBS applications.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，用户表单和用户输入是 Visual Basic Scripting（VBS）的基本组成部分，允许开发人员创建交互式和用户友好的应用程序。通过利用用户表单，开发人员可以设计直观的界面，捕获用户输入，并增强整体用户体验。整合用户表单并有效管理用户输入可以极大地提高
+    VBS 应用程序的功能性和可用性。
 - en: '[Exercise](contents.xhtml#sc2_338a)'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习](contents.xhtml#sc2_338a)'
 - en: 'Create a UserForm called “RegistrationForm” that captures user information
     for event registration. The form should include the following controls:'
+  id: totrans-85
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个名为“RegistrationForm”的用户表单，用于捕获活动注册的用户信息。该表单应包括以下控件：
 - en: 'Labels: “Name:”, “Email:”, “Phone:”, “Event:”, “Payment Method:”'
+  id: totrans-86
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 标签：“姓名：”，“电子邮件：”，“电话：”，“活动：”，“付款方式：”
 - en: 'Textboxes: for the user to enter their name, email, and phone number.'
+  id: totrans-87
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 文本框：用户输入他们的姓名、电子邮件和电话号码。
 - en: 'Combobox: containing a list of events for the user to select.'
+  id: totrans-88
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 组合框：包含用户可选择的事件列表。
 - en: 'Option buttons: for the user to choose their preferred payment method (e.g.,
     “Credit Card,” “PayPal,” “Cash”).'
+  id: totrans-89
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选项按钮：用户选择他们偏好的付款方式（例如，“信用卡”，“PayPal”，“现金”）。
 - en: 'Command buttons: “Submit” and “Clear.”'
+  id: totrans-90
   prefs:
   - PREF_IND
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 命令按钮：“提交”和“清除”。
 - en: Your task is to design the UserForm with the appropriate controls, set their
     properties, and handle events for the Submit and Clear buttons.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 你的任务是设计具有适当控件的用户表单，设置它们的属性，并处理提交和清除按钮的事件。
 - en: Join our book’s Discord space
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入我们书籍的Discord空间
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入书籍的Discord工作区，获取最新更新、优惠、全球科技动态、新发布和与作者的交流：
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
 - en: '![](images/fm1.png)'
+  id: totrans-95
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/fm1.png)'

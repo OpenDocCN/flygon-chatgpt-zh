@@ -1,10 +1,14 @@
 - en: '[CHAPTER 23Advanced VBA Techniques and Best Practices](contents.xhtml#ch23a)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第23章高级VBA技术和最佳实践](contents.xhtml#ch23a)'
 - en: '[Introduction](contents.xhtml#sc2_339a)'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_339a)'
 - en: In this chapter, we delve into advanced VBA techniques and best practices to
     enhance the functionality and efficiency of Excel applications. We explore topics
     such as initializing control values, working with option buttons, creating custom
@@ -12,156 +16,244 @@
     and creating menus through code. By mastering these advanced techniques, readers
     will gain a deeper understanding of VBA programming and be able to build more
     powerful and user-friendly Excel applications.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们深入探讨了高级VBA技术和最佳实践，以增强Excel应用程序的功能和效率。我们探讨了初始化控件值、使用选项按钮、创建自定义按钮和用户表单、利用Add-ins、实现大小写转换Add-In以及通过代码创建菜单等主题。通过掌握这些高级技术，读者将更深入地了解VBA编程，并能够构建更强大和用户友好的Excel应用程序。
 - en: '[Structure](contents.xhtml#sc2_340a)'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_340a)'
 - en: 'In this chapter, we will go over the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: Code to give initial values to the control
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 给控件初始值的代码
 - en: Code for option buttons
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选项按钮的代码
 - en: Code for Insert Button
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 插入按钮的代码
 - en: Code to show User Form
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 显示用户表单的代码
 - en: Add-ins
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Add-ins
 - en: Code for the Change Case Form
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 更改大小写表单的代码
 - en: Creating menu through the code
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 通过代码创建菜单
 - en: '[Objectives](contents.xhtml#sc2_341a)'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_341a)'
 - en: By the end of this chapter, the reader will learn about advanced VBA techniques
     and best practices to enhance their Excel applications.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过本章结束，读者将学习到关于高级VBA技术和最佳实践以增强其Excel应用程序的知识。
 - en: '[Code to give initial values to the control](contents.xhtml#sc2_342a)'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: '[给控件初始值的代码](contents.xhtml#sc2_342a)'
 - en: 'To give initial values to the control, follow these steps:'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 要给控件初始值，按照以下步骤进行：
 - en: Select View code form Project explorer.
+  id: totrans-16
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 从项目资源管理器中选择查看代码表单。
 - en: Select the UserForm object.
+  id: totrans-17
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择UserForm对象。
 - en: Select Initialize event.
+  id: totrans-18
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择初始化事件。
 - en: 'Refer to the following [Figure 23.1](#fig23-1):'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图23.1](#fig23-1)：
 - en: '![](images/Figure_23.1.png)'
+  id: totrans-20
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_23.1.png)'
 - en: 'Figure 23.1: Giving initial values to the control'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 图23.1：给控件初始值
 - en: 'The code is as follows:'
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 代码如下：
 - en: '| Private Sub UserForm_Initialize()TXT_name.Value = ""TXT_address.Value = ""TXT_contact_no.Value
     = ""TXT_company_name.Value = ""CBO_subject.AddItem "MS Excel"CBO_subject.AddItem
     "VBA with Excel"CBO_subject.AddItem "MS Word"CBO_subject.AddItem "MS Powerpoint"CBO_subject.AddItem
     "MS Office"CBO_subject.AddItem "MS Access"CBO_subject.AddItem "MS Project" OPT_company.Value
     = TrueEnd Sub |'
+  id: totrans-23
   prefs: []
   type: TYPE_TB
+  zh: '| 私有子过程UserForm_Initialize()TXT_name.Value = ""TXT_address.Value = ""TXT_contact_no.Value
+    = ""TXT_company_name.Value = ""CBO_subject.AddItem "MS Excel"CBO_subject.AddItem
+    "VBA with Excel"CBO_subject.AddItem "MS Word"CBO_subject.AddItem "MS Powerpoint"CBO_subject.AddItem
+    "MS Office"CBO_subject.AddItem "MS Access"CBO_subject.AddItem "MS Project" OPT_company.Value
+    = TrueEnd Sub |'
 - en: '[Code for option buttons](contents.xhtml#sc2_343a)'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 选项按钮的代码
 - en: 'To apply option buttons, follow these steps:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 要应用选项按钮，请按照以下步骤进行：
 - en: Double click OPT_company
+  id: totrans-26
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 双击OPT_company
 - en: Private Sub OPT_company_Click()
+  id: totrans-27
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 私有子过程OPT_company_Click()
 - en: '''when the user select this option , txt_companyname text box will be visible.'
+  id: totrans-28
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '''当用户选择此选项时，txt_companyname文本框将可见。'
 - en: TXT_companyname.Visible = True
+  id: totrans-29
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: TXT_companyname.Visible = True
 - en: End Sub
+  id: totrans-30
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 结束子程序
 - en: Double click OPT_personal
+  id: totrans-31
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 双击OPT_personal
 - en: Private Sub OPT_personal_Click()
+  id: totrans-32
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 私有子过程OPT_personal_Click()
 - en: '''when user select this option , txt_companyname text box will not be visible'
+  id: totrans-33
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: '''当用户选择此选项时，txt_companyname文本框将不可见'
 - en: TXT_companyname.Visible = False
+  id: totrans-34
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: TXT_companyname.Visible = False
 - en: End Sub
+  id: totrans-35
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 结束子程序
 - en: 'Refer to the following [Figure 23.2](#fig23-2):'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图23.2](#fig23-2)：
 - en: '![](images/Figure_23.2.png)'
+  id: totrans-37
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_23.2.png)'
 - en: 'Figure 23.2: Adding option buttons'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 图23.2：添加选项按钮
 - en: '[Code for Insert button](contents.xhtml#sc2_344a)'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: '[插入按钮的代码](contents.xhtml#sc2_344a)'
 - en: 'Refer to the following [Figure 23.3](#fig23-3):'
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图23.3](#fig23-3)：
 - en: '![](images/Figure_23.3.png)'
+  id: totrans-41
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_23.3.png)'
 - en: 'Figure 23.3: Adding the insert button'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 图23.3：添加插入按钮
 - en: Double click insert button
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 双击插入按钮
 - en: '| Private Sub CMD_insert_Click()'' Code to find out next blank cellActiveWorkbook.Sheets("Training
     Enrollment").ActivateRange("a1").SelectDoIf IsEmpty(ActiveCell) = False ThenActiveCell.Offset(1,
     0).SelectEnd IfLoop Until IsEmpty(ActiveCell) = True'' Code to put values from
@@ -173,193 +265,312 @@
     ""TXT_contact_no.Value = ""TXT_email.Value = ""TXT_companyname.Value = "Enter
     your Company name "TXT_companyname.Visible = False CBO_subject.Value = ""OPT_company.Value
     = TrueEnd Sub |'
+  id: totrans-44
   prefs: []
   type: TYPE_TB
+  zh: '| Private Sub CMD_insert_Click()'' 代码查找下一个空单元格ActiveWorkbook.Sheets("Training
+    Enrollment").ActivateRange("a1").SelectDoIf IsEmpty(ActiveCell) = False ThenActiveCell.Offset(1,
+    0).SelectEnd IfLoop Until IsEmpty(ActiveCell) = True'' 代码将表单中的值放入ExcelActiveCell.Value
+    = TXT_name.ValueActiveCell.Offset(0, 1).Value = TXT_address.ValueActiveCell.Offset(0,
+    2).Value = TXT_contactno.ValueActiveCell.Offset(0, 3).Value = TXT_email.ValueActiveCell.Offset(0,
+    4).Value = CBO_subject.Value 如果OPT_personal.Value = True ThenActiveCell.Offset(0,
+    5).Value = "个人" ElseActiveCell.Offset(0, 5).Value =  TXT_companyname.ValueEnd
+    IfTXT_name.Value = ""TXT_address.Value = ""TXT_contact_no.Value = ""TXT_email.Value
+    = ""TXT_companyname.Value = "输入您的公司名称"TXT_companyname.Visible = False CBO_subject.Value
+    = ""OPT_company.Value = TrueEnd Sub |'
 - en: 'To clear the form after inserting the values, follow these steps:'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 在插入值后清除表单，请按照以下步骤操作：
 - en: Double click Cancel Button.
+  id: totrans-46
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 双击取消按钮。
 - en: 'Then write the following code:'
+  id: totrans-47
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 然后编写以下代码：
 - en: Private Sub CMD_cancel_Click() Unload me
+  id: totrans-48
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: Private Sub CMD_cancel_Click() 卸载 me
 - en: End Sub
+  id: totrans-49
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: End Sub
 - en: '[Code to show User Form](contents.xhtml#sc2_345a)'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: '[显示用户表单的代码](contents.xhtml#sc2_345a)'
 - en: 'To run the UserForm from Excel, insert a module and write a macro:'
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 要从Excel运行用户表单，插入一个模块并编写一个宏：
 - en: '| Sub Enrol_form()USR_enrol.ShowEnd Sub |'
+  id: totrans-52
   prefs: []
   type: TYPE_TB
+  zh: '| Sub Enrol_form()USR_enrol.ShowEnd Sub |'
 - en: '[Add-ins](contents.xhtml#sc2_346a)'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '[插件](contents.xhtml#sc2_346a)'
 - en: Add-ins are separate utilities. They provide some extra functionality to the
     software. The extension name of an Add Ins is .XLAM. In Excel, we have readymade
     Add Ins such as Solver, Analysis Toolpack, Conditional Sum Wizard, and so on.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 插件是单独的实用程序。它们为软件提供一些额外的功能。插件的扩展名是.XLAM。在Excel中，我们有一些现成的插件，如求解器、分析工具包、条件求和向导等。
 - en: '[Scenario 31](contents.xhtml#sc3_347a)'
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景 31](contents.xhtml#sc3_347a)'
 - en: Create an Add-ins to convert the case into upper/lower/proper, according to
     the option selected by the user.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 创建一个插件，根据用户选择的选项将大小写转换为大写/小写/首字母大写。
 - en: '[Solution](contents.xhtml#sc4_348a)'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: '[解决方案](contents.xhtml#sc4_348a)'
 - en: 'Follow the given steps:'
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 按照给定的步骤操作：
 - en: 'Design a form for Add-ins, as shown in [Figure 23.4](#fig23-4):'
+  id: totrans-59
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 设计一个插件表单，如[图23.4](#fig23-4)所示：
 - en: '![](images/Figure_23.4.png)'
+  id: totrans-60
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_23.4.png)'
 - en: 'Figure 23.4: Designing a form for Add-ins'
+  id: totrans-61
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 图23.4：设计插件表单
 - en: Open a new excel workbook.
+  id: totrans-62
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 打开一个新的Excel工作簿。
 - en: Open Visual Basic Editor.
+  id: totrans-63
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 打开Visual Basic编辑器。
 - en: Insert a User Form and name it as Changecase.
+  id: totrans-64
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 插入一个用户表单，并将其命名为Changecase。
 - en: Give Caption Change Case.
+  id: totrans-65
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 给标题改变大小写。
 - en: Drag Objects over the form.
+  id: totrans-66
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在表单上拖动对象。
 - en: 'Design it as shown in the following [Table 23.1](#tab23-1):'
+  id: totrans-67
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 设计如下所示的[表23.1](#tab23-1)：
 - en: '| Object | Name | Property | Value |'
+  id: totrans-68
   prefs:
   - PREF_IND
   type: TYPE_TB
+  zh: '| 对象 | 名称 | 属性 | 值 |'
 - en: '| Reference Edit | Refselect |  |  |'
+  id: totrans-69
   prefs:
   - PREF_IND
   type: TYPE_TB
+  zh: '| 引用编辑 | Refselect |  |  |'
 - en: '| Option Button | Optupper | Caption | UPPERCASE |'
+  id: totrans-70
   prefs:
   - PREF_IND
   type: TYPE_TB
+  zh: '| 选项按钮 | Optupper | 标题 | 大写 |'
 - en: '| Option Button | Optlower | Caption | lowercase |'
+  id: totrans-71
   prefs:
   - PREF_IND
   type: TYPE_TB
+  zh: '| 选项按钮 | Optlower | 标题 | 小写 |'
 - en: '| Option Button | Optproper | Caption | Proper Case |'
+  id: totrans-72
   prefs:
   - PREF_IND
   type: TYPE_TB
+  zh: '| 选项按钮 | Optproper | 标题 | 首字母大写 |'
 - en: '| Command Button | Cmdexit | Caption | EXIT |'
+  id: totrans-73
   prefs:
   - PREF_IND
   type: TYPE_TB
+  zh: '| 命令按钮 | Cmdexit | 标题 | 退出 |'
 - en: 'Table 23.1: Option Button'
+  id: totrans-74
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 表23.1：选项按钮
 - en: Open the code window for Changecase form
+  id: totrans-75
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 打开Changecase表单的代码窗口
 - en: Write code for the different controls
+  id: totrans-76
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 为不同的控件编写代码
 - en: '[Code for the Change Case form](contents.xhtml#sc2_349a)'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: '[更改大小写表单的代码](contents.xhtml#sc2_349a)'
 - en: Double click OPTupper control.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 双击OPTupper控件。
 - en: '| Private Sub OPTupper_Click()''When user select this option it will convert
     into UppercaseDim rng As Range, wscell As RangeSet rng = Range(refselect)For Each
     wscell In rngwscell.Value = UCase(wscell.Value)NextEnd Sub |'
+  id: totrans-79
   prefs: []
   type: TYPE_TB
+  zh: '| Private Sub OPTupper_Click()''当用户选择此选项时，将转换为大写Dim rng As Range, wscell As
+    RangeSet rng = Range(refselect)For Each wscell In rngwscell.Value = UCase(wscell.Value)NextEnd
+    Sub |'
 - en: 'Refer to the following [Figure 23.5](#fig23-5):'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图23.5](#fig23-5)：
 - en: '![](images/Figure_23.5.png)'
+  id: totrans-81
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_23.5.png)'
 - en: 'Figure 23.5: LowerCase'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 图23.5：小写
 - en: Now, double click OPTlower control.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在，双击OPTlower控件。
 - en: '| Private Sub optlower_Click()''When user select this option it will convert
     into UppercaseDim rng As Range, wscell As RangeSet rng = Range(refselect)For Each
     wscell In rngwscell.Value = LCase(wscell.Value)NextEnd Sub |'
+  id: totrans-84
   prefs: []
   type: TYPE_TB
+  zh: '| Private Sub optlower_Click()''当用户选择此选项时，将转换为大写Dim rng As Range, wscell As
+    RangeSet rng = Range(refselect)For Each wscell In rngwscell.Value = LCase(wscell.Value)NextEnd
+    Sub |'
 - en: 'Refer to the following [Figure 23.6](#fig23-6):'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图 23.6](#fig23-6)：
 - en: '![](images/Figure_23.6.png)'
+  id: totrans-86
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_23.6.png)'
 - en: 'Figure 23.6: ProperCase'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 23.6：ProperCase
 - en: Double click opt_upper control and write the following code
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 双击 opt_upper 控件并编写以下代码
 - en: '| Private Sub optproper_Click()''When user select this option it will convert
     into UppercaseDim rng As Range, wscell As RangeSet rng = Range(refselect)For Each
     wscell In rngwscell.Value = Application.WorksheetFunction.Proper(wscell.Value)NextEnd
     Sub |'
+  id: totrans-89
   prefs: []
   type: TYPE_TB
+  zh: '| Private Sub optproper_Click()''当用户选择此选项时，将转换为大写Dim rng As Range, wscell As
+    RangeSet rng = Range(refselect)For Each wscell In rngwscell.Value = Application.WorksheetFunction.Proper(wscell.Value)NextEnd
+    Sub |'
 - en: Double click cmdexit control
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 双击 cmdexit 控件
 - en: '| Private Sub cmdExit_Click()EndEnd Sub |'
+  id: totrans-91
   prefs: []
   type: TYPE_TB
+  zh: '| Private Sub cmdExit_Click()EndEnd Sub |'
 - en: Insert a module and write a macro to show Changecase form
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 插入一个模块并编写一个宏来显示 Changecase 表单
 - en: '| Sub show()Changecase.showEnd Sub |'
+  id: totrans-93
   prefs: []
   type: TYPE_TB
+  zh: '| Sub show()Changecase.showEnd Sub |'
 - en: '[Creating menu through code](contents.xhtml#sc2_350a)'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: '[通过代码创建菜��](contents.xhtml#sc2_350a)'
 - en: 'Refer to the following code:'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下代码：
 - en: '| Sub auto_open()''This code will create a new menu in the existing menubar,
     which will have one menuitem i.e., Changecase Add-InsDim newmenu As CommandBarPopupDim
     menuitem As CommandBarButtonSet newmenu = CommandBars(1).Controls.Add(Type:=msoControlPopup,
@@ -369,22 +580,37 @@
     menuitem.OnAction = "show"End SubSub auto_close()''This will remove menu when
     add ins is removed from the excel CommandBars(1).Controls("extras").DeleteEnd
     Sub |'
+  id: totrans-96
   prefs: []
   type: TYPE_TB
+  zh: '| Sub auto_open()''此代码将在现有菜单栏中创建一个新菜单，其中将有一个菜单项，即 Changecase Add-InsDim newmenu
+    As CommandBarPopupDim menuitem As CommandBarButtonSet newmenu = CommandBars(1).Controls.Add(Type:=msoControlPopup,
+    before:=CommandBars(1).Controls("help").Index)newmenu.Caption = "E&xtras"''当选择
+    Changecase 菜单项时，应显示 changecase 表单 Set menuitem = newmenu.Controls.Add(Type:=msoControlButton)
+    menuitem.Caption = "&Change Case" menuitem.OnAction = "show"End SubSub auto_close()''当从
+    Excel 中移除加载项时，将删除菜单 CommandBars(1).Controls("extras").DeleteEnd Sub |'
 - en: Here,
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这里，
 - en: 'Auto_Open(): It is the first event that is fired whenever a Workbook is opened.'
+  id: totrans-98
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 'Auto_Open(): 这是在打开工作簿时触发的第一个事件。'
 - en: 'Auto_Close(): It is the last event that is fired whenever a Workbook is opened.'
+  id: totrans-99
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 'Auto_Close(): 这是在打开工作簿时触发的最后一个事件。'
 - en: '[Conclusion](contents.xhtml#sc2_351a)'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_351a)'
 - en: In this chapter, we have explored advanced VBA techniques and best practices
     that can significantly improve the functionality and user experience of Excel
     applications. From initializing control values to handling option buttons, creating
@@ -393,72 +619,103 @@
     the best practices outlined, readers can create more robust, efficient, and user-friendly
     Excel applications. With a solid grasp of these advanced techniques, readers are
     well-equipped to take their VBA skills to the next level.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们探讨了可以显著改进 Excel 应用程序功能和用户体验的高级 VBA 技术和最佳实践。从初始化控件值到处理选项按钮，创建自定义按钮和用户表单，利用加载项，并通过代码创建菜单，我们涵盖了广泛的主题。通过应用这些技术并遵循概述的最佳实践，读者可以创建更强大、高效和用户友好的
+    Excel 应用程序。掌握这些高级技术后，读者将能够将他们的 VBA 技能提升到更高水平。
 - en: '[Exercise](contents.xhtml#sc2_352a)'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习](contents.xhtml#sc2_352a)'
 - en: Let us consider an example-based exercise that combines several of the advanced
     VBA techniques discussed in this chapter.
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑一个基于示例的练习，结合了本章讨论的几种高级 VBA 技术。
 - en: 'Scenario: You are working on a project management tool in Excel. The tool allows
     users to input project details, track progress, and generate reports. Your task
     is to enhance the tool by implementing the following features:'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 场景：您正在 Excel 中开发一个项目管理工具。该工具允许用户输入项目细节，跟踪进度并生成报告。您的任务是通过实现以下功能来增强该工具：
 - en: Add a UserForm called “TaskForm” that allows users to input task details, including
     task name, assigned person, start date, end date, and status (e.g., “Not Started,”
     “In Progress,” “Completed”).
+  id: totrans-105
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 添加一个名为“TaskForm”的用户表单，允许用户输入任务细节，包括任务名称、分配人员、开始日期、结束日期和状态（例如，“未开始”，“进行中”，“已完成”）。
 - en: Implement validation checks in the TaskForm to ensure that all required fields
     are filled and that the end date is not earlier than the start date. Display appropriate
     error messages if any validation fails.
+  id: totrans-106
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在 TaskForm 中实现验证检查，确保所有必填字段都填写完整，并且结束日期不早于开始日期。如果任何验证失败，显示适当的错误消息。
 - en: Create a custom Insert button on the TaskForm that adds the entered task details
     to a designated worksheet, such as “ProjectTasks.” Ensure that each new task is
     inserted on a new row, and clear the input fields after successful insertion.
+  id: totrans-107
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在 TaskForm 上创建一个自定义的“插入”按钮，将输入的任务详情添加到指定的工作表，如“ProjectTasks”。确保每个新任务都插入到新行，并在成功插入后清空输入字段。
 - en: Implement a menu system using VBA code. Create a new menu item called “Project
     Management” in the Excel menu bar. Under the “Project Management” menu, add options
     to open the TaskForm, display a list of all tasks, and generate a summary report.
+  id: totrans-108
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用 VBA 代码实现一个菜单系统。在 Excel 菜单栏中创建一个名为“项目管理”的新菜单项。在“项目管理”菜单下，添加选项以打开 TaskForm，显示所有任务列表，并生成一个汇总报告。
 - en: Develop a summary report function that calculates and displays the total number
     of tasks, the number of tasks in each status category, and the percentage of completed
     tasks. The summary report should be displayed in a new worksheet named “TaskSummary.”
+  id: totrans-109
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 开发一个汇总报告功能，计算并显示任务总数、每个状态类别中的任务数以及已完成任务的百分比。汇总报告应显示在名为“TaskSummary”的新工作表中。
 - en: Implement an Add-In called “TaskUtilities” that provides additional functions
     for task management, such as sorting tasks by name or date, filtering tasks by
     status, and generating specialized reports. Test the Add-In by using it in different
     workbooks and verify its functionality.
+  id: totrans-110
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 实现一个名为“TaskUtilities”的插件，提供额外的任务管理功能，如按名称或日期对任务进行排序，按状态筛选任务，并生成专门的报告。通过在不同的工作簿中使用该插件来测试它，并验证其功能。
 - en: Apply best practices for code organization, error handling, and optimization
     throughout the project to ensure clean and efficient VBA code.
+  id: totrans-111
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在整个项目中应用最佳的代码组织、错误处理和优化实践，以确保清晰高效的 VBA 代码。
 - en: Join our book’s Discord space
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入我们书籍的 Discord 空间
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入书籍的 Discord 工作区，获取最新更新、优惠、全球科技动态、新发布和与作者的交流：
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
 - en: '![](images/fm1.png)'
+  id: totrans-115
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/fm1.png)'

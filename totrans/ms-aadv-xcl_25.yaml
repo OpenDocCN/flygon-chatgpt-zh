@@ -1,187 +1,283 @@
 - en: '[CHAPTER 24Building Custom Add-ins with VBA](contents.xhtml#ch24a)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第24章 使用VBA构建自定义插件](contents.xhtml#ch24a)'
 - en: '[Introduction](contents.xhtml#sc2_353a)'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_353a)'
 - en: In this chapter, we will explore the process of building custom Add-ins with
     Visual Basic for Applications (VBA) in Excel. Add-ins are additional functionalities
     or tools that can be integrated into Excel to enhance its capabilities and streamline
     workflows. We will cover topics such as protecting Add-ins with a password and
     using Add-ins effectively.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将探讨在Excel中使用Visual Basic for Applications（VBA）构建自定义插件的过程。插件是可以集成到Excel中以增强其功能并简化工作流程的附加功能或工具。我们将涵盖诸如使用密码保护插件和有效使用插件等主题。
 - en: '[Structure](contents.xhtml#sc2_354a)'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_354a)'
 - en: 'In this chapter, we will go over the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: Protecting your Add-ins with a password
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用密码保护您的插件
 - en: Using Add-ins
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 使用插件
 - en: '[Objectives](contents.xhtml#sc2_355a)'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_355a)'
 - en: By the end of this chapter, the reader will learn how to protect their Add-ins
     with a password in order to ensure their security, as well as how to utilize Add-ins
     efficiently to enhance Excel’s functionality.
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章结束时，读者将学会如何使用密码保护他们的插件以确保安全性，以及如何有效利用插件来增强Excel的功能。
 - en: '[Protecting your Add-ins with a password](contents.xhtml#sc2_356a)'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用密码保护您的插件](contents.xhtml#sc2_356a)'
 - en: 'To protect your Add-ins with the password, follow the given steps:'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用密码保护您的插件，请按照以下步骤操作：
 - en: Collapse all the object of the project (Excel file in which you have inserted
     forms and modules for add – Ins).
+  id: totrans-11
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 折叠项目的所有对象（插入表单和模块以用于插件的Excel文件）。
 - en: Right click over that project.
+  id: totrans-12
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 右键单击该项目。
 - en: Select VBA project properties.
+  id: totrans-13
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择VBA项目属性。
 - en: Select Protection tab.
+  id: totrans-14
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择“保护”选项卡。
 - en: Select Lock for viewing.
+  id: totrans-15
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择“锁定以查看”。
 - en: Give a password.
+  id: totrans-16
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 设置密码。
 - en: Click OK.
+  id: totrans-17
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“确定”。
 - en: 'Refer to [Figure 24.1](#fig24-1):'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图24.1](#fig24-1)：
 - en: '![](images/Figure_24.1.png)'
+  id: totrans-19
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_24.1.png)'
 - en: 'Figure 24.1: Adding a password'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 图24.1：添加密码
 - en: Once you are ready with the form and modules of your Add-ins, switch to Excel
     environment.
+  id: totrans-21
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 一旦您准备好添加插件的表单和模块，切换到Excel环境。
 - en: 'Save the current file with the type Add-ins (.xlam extension), as shown in
     [Figure 24.2](#fig24-2):'
+  id: totrans-22
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将当前文件保存为插件类型（.xlam扩展名），如[图24.2](#fig24-2)所示：
 - en: '![](images/Figure_24.2.png)'
+  id: totrans-23
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_24.2.png)'
 - en: 'Figure 24.2: Saving the current file'
+  id: totrans-24
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 图24.2：保存当前文件
 - en: '[Using Add-ins](contents.xhtml#sc2_357a)'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: '[使用插件](contents.xhtml#sc2_357a)'
 - en: 'To use Add-ins, follow the given steps:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 要使用插件，请按照以下步骤操作：
 - en: Click on the Office Button.
+  id: totrans-27
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“Office”按钮。
 - en: Click on Excel Options.
+  id: totrans-28
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“Excel选项”。
 - en: Select Add-ins.
+  id: totrans-29
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择“插件”。
 - en: 'Click on the Go… Button, as shown in [Figure 24.3](#fig24-3):'
+  id: totrans-30
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 点击“前往…”按钮，如[图24.3](#fig24-3)所示：
 - en: '![](images/Figure_24.3.png)'
+  id: totrans-31
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_24.3.png)'
 - en: 'Figure 24.3: Selecting the Add-ins'
+  id: totrans-32
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 图24.3：选择插件
 - en: 'Browse to locate your Add- Ins, as shown in [Figure 24.4](#fig24-4):'
+  id: totrans-33
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 浏览以找到您的插件，如[图24.4](#fig24-4)所示：
 - en: '![](images/Figure_24.4.png)'
+  id: totrans-34
   prefs:
   - PREF_IND
   type: TYPE_IMG
+  zh: '![](images/Figure_24.4.png)'
 - en: 'Figure 24.4: Locate your Add-ins'
+  id: totrans-35
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
+  zh: 图24.4：定位您的插件
 - en: '[Conclusion](contents.xhtml#sc2_358a)'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_358a)'
 - en: In conclusion, building custom Add-ins with VBA empowers users to extend Excel’s
     functionality and streamline their workflows. Protecting Add-ins with a password
     ensures their security. Utilizing Add-ins effectively enhances productivity and
     enables users to access additional features and tools within Excel.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 总之，使用VBA构建自定义插件使用户能够扩展Excel的功能并简化其工作流程。通过密码保护插件可以确保其安全性。有效利用插件可以提高生产力，使用户能够在Excel中访问额外的功能和工具。
 - en: '[Exercise](contents.xhtml#sc2_359a)'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习](contents.xhtml#sc2_359a)'
 - en: Open Microsoft Excel and create a new workbook.
+  id: totrans-39
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 打开Microsoft Excel并创建一个新的工作簿。
 - en: Create a simple VBA macro that formats the selected cells with a specific font,
     font size, and background color.
+  id: totrans-40
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个简单的VBA宏，用特定字体、字体大小和背景颜色格式化所选单元格。
 - en: Save the VBA macro as an add-in with a .xlam extension.
+  id: totrans-41
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 将VBA宏保存为具有.xlam扩展名的插件。
 - en: Protect the add-in with a password to ensure its security.
+  id: totrans-42
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 使用密码保护插件以确保其安全性。
 - en: Test the add-in by installing it in Excel and using it to format cells in different
     worksheets.
+  id: totrans-43
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 通过在Excel中安装并使用插件来格式化不同工作表中的单元格来测试插件。
 - en: Join our book’s Discord space
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入我们书籍的Discord空间
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入本书的Discord Workspace，获取最新更新、优惠、全球技术动态、新发布和与作者的交流：
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
 - en: '![](images/fm1.png)'
+  id: totrans-47
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/fm1.png)'

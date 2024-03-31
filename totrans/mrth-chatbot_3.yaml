@@ -1543,32 +1543,39 @@
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: “草莓” = [1,6]
 - en: “Raspberry” = [1,7]
   id: totrans-191
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: “覆盆子” = [1,7]
 - en: “Elephant” = [2,1]
   id: totrans-192
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: “大象” = [2,1]
 - en: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig21_HTML.png)'
   id: totrans-193
   prefs: []
   type: TYPE_IMG
+  zh: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig21_HTML.png)'
 - en: An illustration. Text reads strawberry and numbered 12, 11, 3 and 4.
   id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个插图。文字写着草莓，编号为12、11、3和4。
 - en: Fig. 3.21
   id: totrans-195
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.21
 - en: The word “Strawberry” is mapped from human language to a vector
   id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 单词“草莓”从人类语言映射到一个向量
 - en: For the sake of example, we consider that our vectors live in a two-dimensional
     space (therefore, we have two numbers in the brackets above). This means that
     we are easily able to draw them on a sheet of paper, by using points on a two-dimensional
@@ -1576,11 +1583,13 @@
   id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 举例来说，我们假设我们的向量存在于一个二维空间中（因此，上面括号中有两个数字）。这意味着我们可以轻松地在纸张上绘制它们，通过在二维坐标系上使用点。
 - en: Relations Between Words
   id: totrans-198
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 单词之间的关系
 - en: 'We notice from Fig. [3.22](#Fig22) that the vectors for the words *Strawberry*
     and *Raspberry* are closer to each other than to the vector of the word *Elephant*.
     If two words have a similar meaning, their word embeddings will be closer together
@@ -1591,28 +1600,34 @@
   id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们从图[3.22](#Fig22)中注意到，单词*草莓*和*覆盆子*的向量彼此之间比与单词*大象*的向量更接近。如果两个单词具有相似的含义，它们的词嵌入将在向量空间中更接近。由于草莓和覆盆子都是浆果，而大象是动物，它们的词嵌入更接近。这种特性使我们能够使用数学运算处理单词的含义。例如，考虑以下谜题（Bolukbasi等人[2016](#CR4)）：
 - en: Man is to King, as Woman is to X
   id: totrans-200
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 男人对国王，女人对X
 - en: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig22_HTML.png)'
   id: totrans-201
   prefs: []
   type: TYPE_IMG
+  zh: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig22_HTML.png)'
 - en: A graph illustration presents a sequence of words, including Raspberry, Strawberry,
     and Elephant at different angle along x and y axis.
   id: totrans-202
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个图示呈现了一系列单词，包括草莓、覆盆子和大象在x和y轴上以不同角度。
 - en: Fig. 3.22
   id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.22
 - en: Words that are similar in their meaning have word vectors that are closer together
   id: totrans-204
   prefs: []
   type: TYPE_NORMAL
+  zh: 含义相似的单词具有更接近的词向量
 - en: 'This can be solved by using subtractions and additions. Whereas we often use
     addition or subtraction with numbers (all of us are familiar with doing something
     like 1 + 2 − 1 = 2), the same can be done also with vectors, leading to the solution
@@ -1620,48 +1635,57 @@
   id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可以通过使用减法和加法来解决。虽然我们经常使用数字进行加法或减法（我们都熟悉类似1 + 2 - 1 = 2的操作），但也可以用向量进行相同的操作，从而解决谜题^([11](#Fn11))：
 - en: Vector(“Queen”) = Vector(“King”) - Vector(“Man”) + Vector(“Woman”)
   id: totrans-206
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 向量(“女王”) = 向量(“国王”) - 向量(“男人”) + 向量(“女人”)
 - en: By subtracting the sum of the vector of the word *man* and the word *woman*
     from the vector of the word *king*, we can obtain the resulting word *queen*.
     Fascinating, isn’t it?
   id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过从单词*man*和单词*woman*的向量之和中减去单词*king*的向量，我们可以得到结果单词*queen*。是不是很迷人？
 - en: 'Similarly, analogy questions can be solved, even across different domains,
     for example, getting from science to music (Lane et al. [2019](#CR25)):'
   id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 同样，类比问题可以解决，甚至跨越不同领域，例如从科学到音乐（Lane等人[2019](#CR25)）：
 - en: Who is the Marie Curie of music?
   id: totrans-209
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 谁是音乐界的玛丽·居里？
 - en: 'This would translate to vector mathematics as follows, similarly to the example
     with *king* and *queen* stated above:'
   id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 这将被翻译为向量数学如下，类似于上面提到的*king*和*queen*的例子：
 - en: Vector(“Solution”) = Vector(“Marie Curie”) - Vector(“Science”) + Vector(“Music”)
   id: totrans-211
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 向量(“解决方案”) = 向量(“玛丽·居里”) - 向量(“科学”) + 向量(“音乐”)
 - en: Naturally, we get very excited and want to explore more relations in these word
     embeddings and understand how they can be used as input to machine learning training.
     But where are these word embeddings actually coming from?
   id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 自然地，我们非常兴奋，想要探索这些单词嵌入中更多的关系，并了解它们如何作为机器学习训练的输入。但这些单词嵌入实际上是从哪里来的呢？
 - en: Creating Word Embeddings
   id: totrans-213
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 创建单词嵌入
 - en: 'The main difference between the examples of word embeddings we have seen and
     actual word embeddings is the dimension.^([12](#Fn12)) Whereas we used two dimensions
     in the example to be able to visually look at the word embeddings and their relation
@@ -1677,6 +1701,8 @@
   id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经看到的词嵌入示例与实际词嵌入之间的主要区别是维度。^([12](#Fn12)) 虽然我们在示例中使用了两个维度以便能够直观地查看词嵌入及其彼此之间的关系，但通常它们有大约300个维度。^([13](#Fn13))
+    难以想象吧？我也有同感。但到目前为止我们看到的原理是相同的：基于向量的属性并使用数学运算（幸运的是，它们适用于不同维度的向量），我们仍然能够获得相同的见解。你可能会问，如果我们只能使用2个维度，为什么要使用300个维度？这背后的直觉是，我们有更多的维度，我们可以考虑单词相似的更多方面。更高维度的向量有助于捕获单词的不同属性，从而提高词嵌入之间关系的质量。
 - en: So, let’s see how meaning gets encoded into these word embeddings and how we
     can obtain the word embedding for a specific word in human language. We want to
     have a dictionary of all words, which translates each word to the corresponding
@@ -1687,12 +1713,14 @@
   id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，让我们看看意义是如何被编码到这些词嵌入中的，以及我们如何获得人类语言中特定单词的词嵌入。我们希望有一个包含所有单词的字典，将每个单词翻译成相应的向量。类似于语言词典将单词从英语翻译成，比如西班牙语，在我们的情况下，字典将单词从英语翻译成词嵌入。要创建这样一个字典，可以使用机器学习，或者更准确地说，可以使用神经网络。
 - en: Wait, what? We are using neural networks to generate word embeddings to then
     use them to encode words that we want to feed to a neural network? Let me explain
     that more in detail.
   id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 等等，什么？我们使用神经网络生成词嵌入，然后使用它们来编码我们要馈送给神经网络的单词？让我详细解释一下。
 - en: We want to convert the words of our text to vectors, in order to process them
     in a machine learning task, for example, to train a model for a binary classification
     task in the context of sentiment analysis. This is a supervised machine learning
@@ -1706,6 +1734,7 @@
   id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们想要将文本的单词转换为向量，以便在机器学习任务中处理它们，例如，在情感分析的上下文中训练一个二元分类任务的模型。这是一个监督机器学习任务，因为我们训练数据中的文本被标记为正面或负面。词嵌入字典是在实际训练过程之前独立创建的。那些词嵌入可以被训练一次，然后在不同的任务中重复使用。就像你的语言词典在书架上一样，每当你需要它时，例如写信或从外语文本中翻译一个单词，你只需拿起它并查找你需要的单词。设置如图[3.23](#Fig23)所示。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig23_HTML.png)
 - en: The process of converting words from training data into vector representations,
     potentially for sentiment analysis. It discusses the utilization of word embeddings,
     supervised binary sentiment analysis, and the generation of word embeddings through
@@ -1713,21 +1742,25 @@
   id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: 将训练数据中的单词转换为向量表示的过程，可能用于情感分析。讨论了词嵌入的利用、监督二元情感分析以及通过对文本语料库进行无监督训练生成词嵌入的过程。
 - en: Fig. 3.23
   id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.23
 - en: 'Example procedure of training a sentiment analysis classifier: the textual
     training data uses existing word embeddings (that have been trained separately)
     for vectorization'
   id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: 训练情感分析分类器的示例流程：文本训练数据使用已经单独训练过的现有词嵌入进行向量化。
 - en: Word2Vec Embeddings
   id: totrans-221
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: Word2Vec词嵌入
 - en: The dictionary of word embeddings is trained using unsupervised machine learning
     methods. In this section, we will explore the word2vec method presented in 2013
     (Mikolov et al. [2013](#CR26)), which provided major improvements for a range

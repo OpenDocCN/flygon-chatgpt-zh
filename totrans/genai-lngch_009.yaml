@@ -1319,60 +1319,73 @@
   id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 说明清楚任务给模型解释。示例提供了不同输入应该如何映射到输出的多样演示。输入是模型必须概括的内容。基本提示方法包括仅使用输入文本的零-shot提示，以及使用几个演示示例显示所需的输入-输出对的少-shot提示。研究人员已经确定了像多数标签偏见和最近性偏见这样的偏见，这些偏见导致了少-shot性能的变化。通过示例选择、排序和格式化的仔细提示设计可以帮助减轻这些问题。更高级的提示技术包括指令提示，其中任务要求被明确描述而不仅仅是演示。自一致性抽样生成多个输出并选择与示例最匹配的输出。思维链
+    (CoT) 提示生成导致最终输出的明确推理步骤。这对于复杂的推理任务特别有益。CoT提示可以手动编写，也可以通过增强-修剪-选择等方法自动生成。这张表简要概述了几种提示方法与微调的比较：
 - en: '| **Technique** | **Method** | **Key Idea** | **Results** |'
   id: totrans-158
   prefs: []
   type: TYPE_TB
+  zh: '| **技术** | **方法** | **关键思想** | **结果** |'
 - en: '| Fine-tuning | Fine-tune on explanation dataset generated via prompting |
     Improves model''s reasoning abilities | 73% accuracy on commonsense QA dataset
     |'
   id: totrans-159
   prefs: []
   type: TYPE_TB
+  zh: '| 微调 | 在通过提示生成的解释数据集上进行微调 | 提高模型的推理能力 | 在常识QA数据集上达到73%的准确率 |'
 - en: '| Zero-shot prompting | Simply feeding the task text to the model and asking
     for results. | Text: "i''ll bet the video game is a lot more fun than the film."<br>-
     Sentiment: |  |'
   id: totrans-160
   prefs: []
   type: TYPE_TB
+  zh: '| 零-shot提示 | 简单地将任务文本输入模型并要求结果。 | 文本："我敢打赌视频游戏比电影更有趣。"<br>- 情感： |  |'
 - en: '| Chain-of-Thought (CoT) | Prefix responses with "Let''s think step by step"
     | Gives model space to reason before answering | Quadrupled accuracy on math dataset
     |'
   id: totrans-161
   prefs: []
   type: TYPE_TB
+  zh: '| 思维链 (CoT) | 在响应前加上"让我们一步一步地思考" | 在回答之前给模型推理的空间 | 在数学数据集上将准确率提高了四倍 |'
 - en: '| Few-shot prompting | Provide few demos consisting of input and desired output
     to help the model understand | Shows desired reasoning format | Tripled accuracy
     on grade school math |'
   id: totrans-162
   prefs: []
   type: TYPE_TB
+  zh: '| 少-shot提示 | 提供少量演示，包括输入和期望的输出，以帮助模型理解 | 显示所需的推理格式 | 在小学数学上将准确率提高了三倍 |'
 - en: '| Least-to-most prompting | Prompt model for simpler subtasks to solve incrementally.
     "To solve {question}, we need to first solve: " | Decomposes problems into smaller
     pieces | Boosted accuracy from 16% to 99.7% on some tasks |'
   id: totrans-163
   prefs: []
   type: TYPE_TB
+  zh: '| 由浅入深提示 | 逐步提示模型解决更简单的子任务。"要解决{问题}，我们首先需要解决：" | 将问题分解成较小的部分 | 在某些任务上，将准确率从16%提高到99.7%
+    |'
 - en: '| Selection-inference prompting | Alternate selection and inference prompts
     | Guides model through reasoning steps | Lifts performance on long reasoning tasks
     |'
   id: totrans-164
   prefs: []
   type: TYPE_TB
+  zh: '| 选择-推理提示 | 交替选择和推理提示 | 引导模型进行推理步骤 | 提高了长推理任务的表现 |'
 - en: '| Self-consistency | Pick most frequent answer from multiple samples | Increases
     redundancy | Gained 1-24 percentage points across benchmarks |'
   id: totrans-165
   prefs: []
   type: TYPE_TB
+  zh: '| 自一致性 | 从多个样本中选择最频繁的答案 | 增加冗余性 | 在各项基准测试中获得了1-24个百分点的提升 |'
 - en: '| Verifiers | Train separate model to evaluate responses | Filters out incorrect
     responses | Lifted grade school math accuracy ~20 percentage points |'
   id: totrans-166
   prefs: []
   type: TYPE_TB
+  zh: '| 验证器 | 训练单独的模型来评估响应 | 过滤掉不正确的响应 | 将小学数学准确率提高了约20个百分点 |'
 - en: 'Figure 8.6: Pronpting techniques for LLMs.'
   id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 图8.6：LLM的提示技术。
 - en: 'Some prompting techniques incorporate external information retrieval to provide
     missing context to the LLM before generating the output. For open-domain QA, relevant
     paragraphs can be retrieved via search engines and incorporated into the prompt.
@@ -1382,6 +1395,7 @@
   id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 一些提示技术结合外部信息检索，在生成输出之前为LLM提供缺失的上下文。对于开放领域的问答，可以通过搜索引擎检索相关段落并纳入提示中。对于封闭书籍问答，具有证据-问题-答案格式的少样本示例比问题-答案格式效果更好。有不同的技术可以提高大型语言模型（LLMs）在复杂推理任务中的可靠性：
 - en: 'Prompting and Explanation: prompting the model to explain its reasoning step-by-step
     before answering using prompts like "Let''s think step by step" (as in CoT) significantly
     improves accuracy in reasoning tasks.'
@@ -1389,12 +1403,14 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 提示和解释：在回答之前，提示模型逐步解释其推理过程，使用类似“让我们逐步思考”（如CoT中）的提示显著提高推理任务的准确性。
 - en: Providing few-shot examples of reasoning chains helps demonstrate the desired
     format and guides LLMs in generating coherent explanations.
   id: totrans-170
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 提供推理链的少样本示例有助于展示所需的格式，并指导LLMs生成连贯的解释。
 - en: 'Alternate Selection and Inference Prompts: Utilizing a combination of specialized
     selection prompts (narrow down the answer space) and inference prompts (generate
     the final response) leads to better results compared to generic reasoning prompts
@@ -1403,6 +1419,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 交替选择和推理提示：利用专门的选择提示（缩小答案空间）和推理提示（生成最终响应）的组合，与仅使用通用推理提示相比，可以获得更好的结果。
 - en: 'Problem Decomposition: Breaking down complex problems into smaller subtasks
     or components using a least-to-most prompting approach helps improve reliability,
     as it allows for a more structured and manageable problem-solving process.'
@@ -1410,6 +1427,7 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 问题分解：将复杂问题分解为较小的子任务或组件，使用从最少到最多的提示方法有助于提高可靠性，因为这样可以实现更有结构和可管理的问题解决过程。
 - en: 'Sampling Multiple Responses: Sampling multiple responses from LLMs during generation
     and picking the most common answer increases consistency, reducing reliance on
     a single output. In particular, training separate verifier models that evaluate
@@ -1419,11 +1437,13 @@
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 采样多个响应：在生成过程中从LLMs中采样多个响应，并选择最常见的答案，可以增加一致性，减少对单一输出的依赖。特别是训练单独的验证器模型，评估LLMs生成的候选响应，有助于过滤出不正确或不可靠的答案，提高整体可靠性。
 - en: Finally, fine-tuning LLMs on explanation datasets generated through prompting
     enhances their performance and reliability in reasoning tasks
   id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，通过提示生成的解释数据集对LLMs进行微调可以增强它们在推理任务中的性能和可靠性。
 - en: '**Few-shot learning** presents the LLM with just a few input-output examples
     relevant to the task, without explicit instructions. This allows the model to
     infer the intentions and goals purely from demonstrations. Carefully selected,
@@ -1436,6 +1456,7 @@
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '**少样本学习**向LLM提供与任务相关的少量输入-输出示例，而无需明确说明。这使模型能够纯粹从演示中推断出意图和目标。精心选择、排序和格式化的示例可以极大地提高模型的推理能力。然而，少样本学习可能容易受到偏见和试验间的变异性影响。添加明确的说明可以使意图对模型更加透明，并提高鲁棒性。总的来说，提示结合了指令和示例的优势，以最大程度地引导LLM完成手头任务。'
 - en: Instead of hand-engineering prompts, methods like automatic prompt tuning learn
     optimal prompts by directly optimizing prefix tokens on the embedding space. The
     goal is to increase the likelihood of desired outputs given inputs. Overall, prompt
@@ -1716,59 +1737,71 @@
   id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第1章中，我们讨论了生成模型的基本原理，特别是LLMs及其训练。我们主要关注预训练步骤，通常是调整模型以适应单词和更广泛文本段之间的相关性。对齐是评估模型输出与期望之间的关系，而调节是确保输出符合期望的过程。调节允许引导生成式AI以提高安全性和质量，但这并不是一个完整的解决方案。在本章中，重点是调节，特别是通过微调和提示。在微调中，语言模型被训练在许多任务示例上，这些任务被制定为自然语言指令，以及适当的回应。通常这是通过强化学习与人类反馈（RLHF）来完成的，其中包括在人类生成的数据集上进行训练（提示，回应）对，然后通过人类反馈进行强化学习，然而，已经开发出其他技术，已经显示出具有较低资源占用的竞争性结果。在本章的第一个示例中，我们实现了一个用于问答的小型开源模型的微调。有许多技术可以提高LLMs在复杂推理任务中的可靠性，包括逐步提示，备选选择和推理提示，问题分解，多个响应的采样，以及使用单独的验证器模型。这些方法已经显示出在推理任务中提高准确性和一致性。我们已经讨论并比较了几种技术。LangChain提供了解锁高级提示策略的构建模块，如少样本学习，动态示例选择和链式推理分解，正如我们在示例中展示的那样。精心设计的提示工程是将语言模型与复杂目标对齐的关键。通过分解问题并添加冗余性可以提高推理的可靠性。我们在本章中讨论的原则和技术为与LLMs一起工作的专家提供了工具包。我们可以期待模型训练和提示技术的未来进展。随着这些方法和LLMs的持续发展，它们很可能会变得更加有效和有用，适用于更广泛的应用领域。让我们看看你是否记得本章的一些关键要点！
 - en: Questions
   id: totrans-215
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 问题
 - en: 'Please have a look to see if you can come up with the answers to these questions
     from memory. I’d recommend you go back to the corresponding sections of this chapter,
     if you are unsure about any of them:'
   id: totrans-216
   prefs: []
   type: TYPE_NORMAL
+  zh: 请看看你是否能够凭记忆回答这些问题。如果你对任何问题不确定，我建议你回到本章的相应部分查看：
 - en: What’s alignment in the context of LLMs?
   id: totrans-217
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 在LLMs的背景下，什么是对齐？
 - en: What are different methods of conditioning and how can we distinguish them?
   id: totrans-218
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 有哪些不同的调节方法，我们如何区分它们？
 - en: How’s moderation related to conditioning?
   id: totrans-219
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 调节与调节有什么关系？
 - en: What is instruction tuning and what’s its importance?
   id: totrans-220
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是指令调整，它的重要性是什么？
 - en: What is quantization?
   id: totrans-221
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是量化？
 - en: What are a few methods for fine-tuning?
   id: totrans-222
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 有哪些微调的方法？
 - en: What is few-shot learning?
   id: totrans-223
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是少样本学习？
 - en: What is Chain of Thought prompting?
   id: totrans-224
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 什么是思维链提示？
 - en: Explain Tree of Thought prompting!
   id: totrans-225
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 解释一下思维树提示！

@@ -1,36 +1,50 @@
 - en: © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023M.
     Kurpicz-BrikiMore than a Chatbot[https://doi.org/10.1007/978-3-031-37690-0_2](https://doi.org/10.1007/978-3-031-37690-0_2)
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: © 作者，独家许可给 Springer Nature Switzerland AG 2023M. Kurpicz-Briki超越聊天机器人[https://doi.org/10.1007/978-3-031-37690-0_2](https://doi.org/10.1007/978-3-031-37690-0_2)
 - en: 2. An Introduction to Machine Learning
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 2. 机器学习简介
 - en: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)Applied Machine Intelligence, Bern University
     of Applied Sciences, Biel/Bienne, Switzerland
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: Mascha Kurpicz-Briki^([1](#Aff2) )(1)应用机器智能，伯尔尼应用科学大学，比尔/宾讷，瑞士
 - en: Overview
+  id: totrans-3
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 概述
 - en: Whereas historically different methods were used to build AI systems, nowadays
     the term artificial intelligence has become almost synonymous with *machine learning*.
     In this chapter, we will dive deeper into this topic and understand better how
     and in what sense machines are capable of learning. To do so, we will introduce
     some analogies and terminology that will follow us throughout the book when looking
     at technical aspects of the text processing technologies we will eventually discuss.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管历史上使用了不同的方法来构建人工智能系统，但如今人工智能这个术语几乎已经成为*机器学习*的同义词。在本章中，我们将深入探讨这个主题，更好地理解机器如何以及在什么意义上能够学习。为此，我们将介绍一些类比和术语，这些类比和术语将贯穿整本书，当我们讨论最终将讨论的文本处理技术的技术方面时。
 - en: We begin with the key differences between traditional computer programming and
     machine learning. Next, we will look at the different subdomains of machine learning,
     namely, supervised, unsupervised, and reinforcement learning.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们从传统计算机编程和机器学习之间的关键区别开始。接下来，我们将看一下机器学习的不同子领域，即监督学习、无监督学习和强化学习。
 - en: Traditional Computer Programming and Machine Learning
+  id: totrans-6
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 传统计算机编程和机器学习
 - en: 'To start, let us discuss how *machine learning* makes AI technology different
     from other software. In general, when producing software, programmers generate
     *code* in a *programming language* (a set of keywords that can be translated to
@@ -38,37 +52,56 @@
     Traditionally, this includes a set of instructions, being executed one after the
     other, leading to a specific result. Let’s look at the following example borrowed
     from human life rather than software:'
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，让我们讨论*机器学习*如何使人工智能技术与其他软件不同。一般来说，在生成软件时，程序员会用*编程语言*（一组关键字，可以转换为机器可读格式，因此可以轻松地被计算机处理和理解）编写*代码*。^([1](#Fn1))
+    传统上，这包括一组指令，按顺序执行，导致特定结果。让我们看一个从人类生活而不是软件借鉴的例子：
 - en: Take 10 strawberries, 1 apple and 1 banana
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 拿10个草莓，1个苹果和1个香蕉
 - en: Cut the strawberry into small pieces and add them in a bowl
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 把草莓切成小块放入碗中
 - en: Cut the apple into slices and add them to the bowl
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 把苹果切成片加入碗中
 - en: Peal the banana, cut it into small pieces and add it to the bowl as well
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 剥香蕉，切成小块，也加入碗中
 - en: Add 1 spoon of sugar and 3 spoons of lemon juice to the bowl
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 在碗里加入1勺糖和3勺柠檬汁
 - en: Mix all the ingredients
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 混合所有的配料
 - en: Put the bowl in the fridge for at least 30 minutes
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 把碗放入冰箱至少30分钟
 - en: If all goes well and instructions are followed, at each execution, the same
     result – a tasty fruit salad – will be produced. This is similar to a traditional
     software program. A set of instructions – often referred to as an *algorithm*
     – is implemented in a programming language. In such software, we have specific
     *input data* (in our case, the strawberries, the apples, the lemon juice, etc.)
     and an *output* being produced (the fruit salad).
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果一切顺利并且遵循指示，每次执行时都会产生相同的结果 - 一份美味的水果沙拉。这类似于传统软件程序。一组指令 - 通常称为*算法* - 在编程语言中实现。在这种软件中，我们有特定的*输入数据*（在我们的例子中，草莓、苹果、柠檬汁等）和产生的*输出*（水果沙拉）。
 - en: Machine learning on the other hand works differently. Based on given data (e.g.,
     the ingredients of our fruit salad), the machine learns or detects patterns. This
     is what we call the *training data* of our machine learning procedure. Simplified,
@@ -82,12 +115,16 @@
     of ingredients and fruit salad, the machine learning procedure constructs its
     own set of rules for obtaining a fruit salad. We do not have control over how
     the machine eventually completes the task.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，机器学习的工作方式有所不同。基于给定的数据（例如，我们水果沙拉的成分），机器学习或检测模式。这就是我们机器学习过程中所谓的*训练数据*。简化来说，传统算法中的问题是“你如何逐步从成分中获得水果沙拉？”，而在机器学习中，我们问的是“你能用成分做什么或找出什么？”对于第一个问题，我们会得到水果沙拉。而在机器学习的情况下，结果更加开放。如果在机器学习的情况下，我们想要获得水果沙拉，我们会向机器展示成分和成品，但是，至关重要的是，不展示从一个到另一个的步骤。在看到许多成分和水果沙拉的例子之后，机器学习过程构建自己的一套规则来获得水果沙拉。我们无法控制机器最终如何完成任务。
 - en: Supervised Machine Learning
+  id: totrans-17
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 监督机器学习
 - en: Let’s first take a look at supervised learning by staying in our metaphorical
     kitchen, where we want to train a supervised machine learning program to differentiate
     between pictures of raspberries and strawberries. To select whether a picture
@@ -109,24 +146,34 @@
     it can also be *wrong*. This is one of the key takeaways to bear in mind for the
     remainder of this book. Figure [2.1](#Fig1) illustrates the process of supervised
     learning based on pictures of strawberries and raspberries.![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig1_HTML.png)
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们首先看一下监督学习，留在我们比喻的厨房里，我们想要训练一个监督机器学习程序来区分覆盆子和草莓的图片。选择一张图片是否包含覆盆子或草莓是一种所谓的分类任务。我们向系统提供了几个例子（是的，通常我们需要*许多*这样的例子，取决于我们讨论的应用，我们可能需要数千到数百万的例子）的草莓和覆盆子的图片。每张图片旁边，我们提供一个文本，说明这是草莓还是覆盆子。这是分类任务的*正确解决方案*，基于此，机器可以学习这两种浆果的外观，更重要的是，如何区分它们。这种训练的结果是一个*模型*。模型是一个能够对新图片进行分类的软件组件（这些图片不是训练数据的一部分），确定它是否属于训练过程中的一个类别。在我们的情况下，模型对新图片是否显示草莓或覆盆子进行预测。细心的读者可能已经注意到了术语*预测*的使用。预测是一种估计，根据系统在训练过程中识别的模式指示最有可能的选项。虽然根据模型提出的结果是最有可能的选项，但我们必须明白，它也可能是*错误的*。这是本书其余部分需要牢记的关键要点之一。图[2.1](#Fig1)说明了基于草莓和覆盆子图片的监督学习过程！[](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig1_HTML.png)
 - en: An illustration represents a set of illustrations of strawberries and raspberries
     going through the training data, followed by a Machine learning model that recognizes
     an image of the strawberry.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图代表了一组草莓和覆盆子经过训练数据，然后是一个机器学习模型识别草莓图像的过程。
 - en: Fig. 2.1
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.1
 - en: 'Supervised machine learning for a classification task: Is it a strawberry or
     a raspberry on the picture?'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于分类任务的监督机器学习：图片上是草莓还是覆盆子？
 - en: Unsupervised Machine Learning
+  id: totrans-22
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 无监督机器学习
 - en: In the second type of learning strategy, unsupervised learning, we also have
     training data; however, we do not have *labels*. Labels are the *right solutions*
     we have seen in the previous paragraph, indicating whether on each picture in
@@ -146,32 +193,44 @@
     store domesticated large strawberry, but wild strawberries are much smaller and
     could, to the untrained eye, be mistaken for raspberries). Figure [2.2](#Fig2)
     illustrates this example of unsupervised machine learning.![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig2_HTML.png)
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第二种学习策略中，无监督学习，我们也有训练数据；然而，我们没有*标签*。标签是我们在前一段中看到的*正确解决方案*，指示训练数据中的每张图片上是否有覆盆子或草莓。这意味着我们的训练数据包含一堆图片，有些是草莓，有些是覆盆子，没有任何指示显示图片上显示的是什么。无监督机器学习的一个应用是解决*聚类任务*。在聚类任务中，机器学习算法分析数据并尝试识别相似样本的组。没有标签，我们不知道每个组包含什么，但我们知道单个组内的图像彼此更相似，而不同组的图像至少根据模型来说更相似。理想情况下，我们会有两个簇，一个包括所有草莓的图片，另一个包括所有覆盆子的图片。与前面的例子一样，聚类可能不完美。可能有一些棘手的覆盆子图片，与典型的草莓图片有共同之处，被放入错误的组中（例如，你可能最熟悉杂货店里的驯化大草莓，但野生草莓要小得多，对于不熟悉的人来说，可能会被误认为是覆盆子）。图[2.2](#Fig2)说明了这个无监督机器学习示例！[](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig2_HTML.png)
 - en: An illustration represents the illustrations of strawberries and raspberries
     grouped in 2 clusters. Cluster 1 comprises images of strawberries and cluster
     2 has raspberries. The training data is at the bottom.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图展示了被分为2个簇的草莓和覆盆子的插图。簇1包括草莓的图像，簇2包含覆盆子。训练数据在底部。
 - en: Fig. 2.2
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.2
 - en: 'Clustering pictures of strawberries and raspberries in groups: an unsupervised
     machine learning task'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 将草莓和覆盆子的图片分组：一项无监督机器学习任务
 - en: Reinforcement Learning
+  id: totrans-27
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 强化学习
 - en: Finally, the last type of machine learning is reinforcement learning. This type
     of learning is similar to the supervised approach, where we gave the system information
     along with each image (saying, e.g., that we see a strawberry in a given picture).
     In the case of reinforcement learning, there is an interaction between the machine
     and the (possibly virtual) environment, which provides feedback during the learning
     process. You can imagine this as a *trial-and-error* approach.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，最后一种机器学习类型是强化学习。这种学习类型类似于监督方法，在这种方法中，我们在每个图像旁边提供了系统信息（例如，我们看到给定图片中有一个草莓）。在强化学习中，机器与（可能是虚拟的）环境之间存在互动，在学习过程中提供反馈。你可以将其想象为一种*试错*方法。
 - en: Let’s take a real-world example to illustrate this. Imagine you are asked to
     cut a strawberry into slices of approximately of the same size. One way to improve
     your skills could be by receiving feedback about the strawberry slices that have
@@ -180,20 +239,28 @@
     cutting method for the upcoming slices. Step by step, the results would get better.
     At some point, the results would be good enough to stop the training process.
     This process is illustrated in Fig. [2.3](#Fig3).![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig3_HTML.png)
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们通过一个现实世界的例子来说明这一点。想象一下，有人让你把草莓切成大致相同大小的薄片。提高技能的一种方法可能是接受已经切好的草莓薄片的反馈。例如，旁边的人可能会说，“这片比其他的大很多！”有了这个反馈，你会调整你的切片方法来处理接下来的薄片。一步一步，结果会变得更好。在某个时候，结果会足够好以停止训练过程。这个过程在图[2.3](#Fig3)中有所说明。![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig3_HTML.png)
 - en: An illustration represents a set of illustrations of sliced strawberries grouped
     under rounds 1 and N. Round 1 indicates a sliced piece and gives feedback that
     the slice is quite large. Round N denotes that the slices are quite even and is
     the conclusion of the training process.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个插图代表了一组切成薄片的草莓的插图，分组在第1轮和N轮下。第1轮表示一个切片，并给出了切片相当大的反馈。第N轮表示切片相当均匀，是训练过程的结论。
 - en: Fig. 2.3
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.3
 - en: 'Reinforcement learning: improvement through feedback'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 强化学习：通过反馈改进
 - en: Similarly, it is possible to provide such external feedback in machine learning.
     Specific results can be rewarded, and thus this behavior will be reinforced in
     the final model. A crucial factor in reinforcement learning is how we give feedback
@@ -201,12 +268,16 @@
     of slices, you could exploit the lack of specificity and simply not slice the
     strawberry at all, resulting in a trivially perfectly even slice and a pat on
     the back from your supervisor.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 同样，在机器学习中也可以提供这种外部反馈。特定结果可以得到奖励，因此这种行为将在最终模型中得到强化。强化学习中的一个关键因素是我们如何向机器提供反馈。例如，如果反馈没有考虑到切片的数量，你可以利用缺乏具体性，干脆不切草莓，导致一个完全均匀的切片，然后得到主管的赞赏。
 - en: Algorithms and Artificial Intelligence
+  id: totrans-34
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 算法和人工智能
 - en: 'So where is the artificial intelligence (AI) here? There are a few things to
     clarify. In the media, often, the term *algorithm* is used in the context of AI.
     I want to give you some context here about this word and how its origin is slightly
@@ -218,31 +289,48 @@
     to communicate to a computer. In traditional software, this processing is like
     a recipe. For example, to find the first appearance of the letter “a” in a word,
     we could use the following algorithm:'
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么人工智能（AI）在哪里呢？有一些事情需要澄清。在媒体上，通常会在AI的背景下使用术语*算法*。我想在这里给你一些关于这个词的背景以及它的起源与当前在AI背景下使用方式略有不同的上下文。一般来说，*算法*这个词（源自九世纪波斯数学家M.
+    al-Khwarizmi的名字）意味着一组实现特定目标的指令，例如，正如我们之前所见，如何根据一份食材清单准备水果沙拉。算法也可以是我们想要传达给计算机的一组数据处理步骤。在传统软件中，这种处理就像一道菜谱。例如，要找到一个单词中字母“a”的第一次出现，我们可以使用以下算法：
 - en: 'Input: word written in English'
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入：用英语书写的单词
 - en: 'Steps to proceed:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 进行的步骤：
 - en: 'Read the first letter: is it “a”? Then result is 1.'
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 读取第一个字母：是“a”吗？那么结果是1。
 - en: 'If not, read the second letter: is it “a”? Then result is 2.'
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果不是，读取第二个字母：是“a”吗？那么结果是2。
 - en: etc.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 等。
 - en: 'Output: Position of the first appearance of “a” in the input word.'
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 输出：输入单词中第一个“a”的位置。
 - en: In the context of contemporary AI, the word algorithm is used to refer to the
     software as a whole. For example, personalized recommendations for music or movies
     are generally considered to be machine learning-based algorithms.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 在当代人工智能的背景下，算法一词用来指代整个软件。例如，个性化的音乐或电影推荐通常被认为是基于机器学习的算法。
 - en: Technically, when talking about AI or machine learning and using this wording,
     there are actually two separate algorithms at play. For the scope of this example
     (and most future examples), we will consider a supervised learning setting, where
@@ -256,22 +344,31 @@
     algorithm is the training data and an untrained model, for example, one that guesses
     randomly. The output is a trained model. This is where the actual machine learning
     happens.![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig4_HTML.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 从技术上讲，当谈论人工智能或机器学习并使用这种措辞时，实际上有两个独立的算法在起作用。在本例（以及大多数未来的例子）的范围内，我们将考虑监督学习设置，其中模型是在带标签的训练数据上训练的。为了说明这一点，我想借用Katharina
+    Zweig的定义，她将机器学习定义为“通过示例自动学习，在其中搜索决策规则，然后将其存储在统计模型中”（Zweig [2022](#CR43)，第95页）。一方面，我们有用于根据训练数据训练模型的算法，这是“搜索决策规则”的过程。我们将这个过程称为*训练阶段*，如图[2.4](#Fig4)所示。这个训练算法的输入是训练数据和一个未经训练的模型，例如，一个随机猜测的模型。输出是一个经过训练的模型。这是实际的机器学习发生的地方。![](../images/604345_1_En_2_Chapter/604345_1_En_2_Fig4_HTML.png)
 - en: An illustration represents the scenarios in the training phase and prediction
     phase. Algorithm 1 trains the model with images of strawberries and raspberries
     using the training data. Algorithm 2 in the production phase recognizes the image
     of a strawberry.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图代表了训练阶段和预测阶段的场景。算法1使用训练数据中的草莓和覆盆子的图像来训练模型。在生产阶段，算法2识别草莓的图像。
 - en: Fig. 2.4
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 图2.4
 - en: In the training phase, the machine learning model is trained using the training
     data. This is where the actual machine learning happens. The resulting model is
     then applied in the prediction phase to new data
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 在训练阶段，机器学习模型使用训练数据进行训练。这是实际的机器学习过程发生的地方。然后，得到的模型在预测阶段应用于新数据。
 - en: On the other hand, we have the statistical or *trained* model, which is the
     outcome of the training process and itself an algorithm that takes as input one
     instance of data and provides as output a prediction, based on the rules learned
@@ -281,12 +378,16 @@
     input a new picture, distinct from those in the training data, and ask whether
     it depicts a strawberry or a raspberry. We feed the photo to the model and receive
     as output its answer to that question, as illustrated on the right in Fig. [2.4](#Fig4).
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 另一方面，我们有统计或*训练*模型，这是训练过程的结果，本身是一个算法，接受一个数据实例作为输入，并根据在训练阶段学到的规则提供预测作为输出。这是*预测阶段*，在这个阶段，训练过的机器学习模型应用于新数据，通常是在模型被训练的任何生产环境中部署后。例如，我们可以输入一张新图片，与训练数据中的图片不同，并询问它是否描绘了一个草莓或覆盆子。我们将照片输入模型，并得到它对这个问题的答案，如图[2.4](#Fig4)右侧所示。
 - en: Text Processing Ahead!
+  id: totrans-48
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 文本处理进行中！
 - en: So far, we have discussed machine learning with examples based on images. The
     training data consisted of pictures of strawberries or raspberries. Nevertheless,
     the learning strategies we have seen can be applied in the same or similar manner
@@ -296,12 +397,16 @@
     processing and generation, the concepts and limitations we describe also apply,
     to a certain extent, to models dealing with other data types, such as images,
     video, or multimodal systems.^([2](#Fn2))
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我们已经讨论了基于图像的机器学习示例。训练数据包括草莓或覆盆子的图片。然而，我们所看到的学习策略可以以相同或类似的方式应用于不同类型的数据，例如文本。我们现在将从图像转移到文本，并探索本书剩余部分如何将这些机器学习技术应用于自然语言处理。尽管我们将专注于文本处理和生成，但我们描述的概念和限制在一定程度上也适用于处理其他数据类型的模型，如图像、视频或多模态系统。^([2](#Fn2))
 - en: Summary
+  id: totrans-50
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总结
 - en: In this chapter, we looked at three different types of machine learning. In
     supervised machine learning, the training data is labeled (e.g., indicating whether
     or not we see a strawberry in a given picture). We examined a simple classification
@@ -310,21 +415,29 @@
     we looked at the example of clustering, and finally, we learned how reinforcement
     learning can be used to provide feedback during the learning process and improve
     the results.
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们看了三种不同类型的机器学习。在监督机器学习中，训练数据是有标签的（例如，指示我们在给定图片中是否看到草莓）。我们研究了一个简单的分类任务，训练一个模型来区分草莓和覆盆子，并对新的、未见过的图片进行预测。对于无监督机器学习，我们看了聚类的例子，最后，我们学习了如何使用强化学习在学习过程中提供反馈并改善结果。
 - en: In the examples, we learned that machine learning models can make mistakes.
     Whereas they make a prediction by proposing the option that is, according to the
     model, the most probable solution, this solution can easily be wrong. This is
     a crucial point to consider when using AI technology.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这些例子中，我们了解到机器学习模型可能会犯错。虽然它们通过提出根据模型最有可能的解决方案来进行预测，但这个解决方案很容易是错误的。在使用人工智能技术时，这是一个需要考虑的关键点。
 - en: We also examined the differences between traditional algorithms and machine
     learning. A supervised machine learning algorithm takes data in the form of inputs
     and desired outputs (labels) and outputs rules for getting from one to the other,
     whereas a traditional algorithm consists solely of rules for getting from input
     to desired output.
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还研究了传统算法和机器学习之间的区别。监督机器学习算法接受以输入和期望输出（标签）形式的数据，并输出从一个到另一个的规则，而传统算法仅包含从输入到期望输出的规则。
 - en: Let’s now move on and dive into the fascinating world of text processing!
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们继续深入探讨迷人的文本处理世界吧！

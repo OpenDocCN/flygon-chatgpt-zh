@@ -1,19 +1,27 @@
 - en: © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023M.
     Kurpicz-BrikiMore than a Chatbot[https://doi.org/10.1007/978-3-031-37690-0_3](https://doi.org/10.1007/978-3-031-37690-0_3)
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: © 作者，独家许可给 Springer Nature Switzerland AG 2023M. Kurpicz-Briki不仅仅是一个聊天机器人[https://doi.org/10.1007/978-3-031-37690-0_3](https://doi.org/10.1007/978-3-031-37690-0_3)
 - en: 3. Processing Written Language
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 3. 处理书面语言
 - en: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)Applied Machine Intelligence, Bern University
     of Applied Sciences, Biel/Bienne, Switzerland
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)应用机器智能，瑞士比尔/宾讷伯恩应用科学大学
 - en: Overview
+  id: totrans-3
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 概述
 - en: Human language viewed from a technical perspective has been fascinating researchers
     for a long time. The first application of natural language processing was in 1948
     at the Birkbeck College in London and consisted of a dictionary lookup system
@@ -22,8 +30,11 @@
     processing technologies are used in our daily lives, sometimes explicitly (e.g.,
     when interacting with a chatbot) and sometimes behind the scenes (e.g., when using
     online search).
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 从技术角度来看，人类语言长期以来一直吸引着研究人员的兴趣。自然语言处理的第一个应用是在1948年在伦敦的伯贝克学院进行的，这是一个字典查找系统（Hancox
+    [1996](#CR20)）。虽然1948年在其他领域可能相对较近，但在计算机科学领域，这已经非常早了。从那时起，发生了很多事情。如今，自然语言处理技术在我们的日常生活中得到应用，有时是显性的（例如，与聊天机器人交互时），有时是在幕后（例如，在使用在线搜索时）。
 - en: In this chapter, we will learn more about how text is processed automatically.
     Natural language processing refers to the automated processing (including generation)
     of speech and text. In this book, we use the terms text processing and natural
@@ -35,22 +46,30 @@
     the advantages and disadvantages of deep learning and neural networks. Finally,
     we will understand how words from human language can be represented as mathematical
     vectors and why this is beneficial for machine learning.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将更多地了解文本如何被自动处理。自然语言处理是指对语音和文本的自动处理（包括生成）。在本书中，我们将文本处理和自然语言处理这两个术语互换使用。我们将看一些常见的自然语言处理应用程序，我相信您在最近与这些系统互动时会认出其中一些。然后，我们将看一些来自自然语言处理领域的常见方法。接着，我们将加深我们的机器学习知识，介绍和理解深度学习和神经网络的优缺点。最后，我们将了解人类语言如何被表示为数学向量以及为什么这对机器学习有益。
 - en: Natural Language Processing Applications
+  id: totrans-6
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 自然语言处理应用
 - en: Automatic processing of text can be useful in many settings. Loosely inspired
     by the categorization of NLP applications of Lane et al. ([2019](#CR25)), we explore
     some of the use cases together to unveil the potential that lies within such applications.
     Many of us interact unknowingly on a day-to-day basis with these technologies.
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 文本的自动处理在许多场景中都是有用的。受 Lane 等人（[2019](#CR25)）对自然语言处理应用的分类启发，我们一起探讨一些用例，揭示这些应用中潜在的潜力。我们中的许多人每天都在与这些技术无意识地互动。
 - en: Search Engines and Writing Suggestions
+  id: totrans-8
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 搜索引擎和写作建议
 - en: Web and document search applications rely heavily on natural language processing
     technologies for assessing the search query (the sentence or word that you have
     written in the search field) and the available documents (e.g., the existing websites
@@ -60,19 +79,25 @@
     Furthermore, some search engines propose corrections to your search query (*Did
     you mean*:) or provide *autocomplete* functionality by assessing the search queries
     entered by the user.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 网络和文档搜索应用程序在评估搜索查询（您在搜索框中输入的句子或单词）和可用文档（例如，已收集和索引的互联网上的现有网站）以及识别最佳匹配结果方面严重依赖自然语言处理技术。所有这些通常在一秒钟内完成，您可能并不知道背景中正在进行的极其高效的处理。此外，一些搜索引擎会提出对搜索查询的更正（*您是不是想要*：）或通过评估用户输入的搜索查询提供*自动完成*功能。
 - en: Natural language processing technologies can also support us while writing text.
     Many text processing programs underline spelling mistakes or make suggestions,
     on how to adapt grammar and style. Does it sound familiar to you? Then this is
     another use case where you have actively interacted with natural language processing
     technologies similar to the ones we explore in this book.
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 自然语言处理技术也可以在我们撰写文本时提供支持。许多文本处理程序会标出拼写错误或提出如何调整语法和风格的建议。这听起来熟悉吗？那么这是另一个用例，您在其中积极与我们在本书中探讨的自然语言处理技术类似的技术进行交互。
 - en: Text Classification
+  id: totrans-11
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 文本分类
 - en: Let’s look at another example. Have you ever wondered how the *spam filter*
     in your e-mail inbox works? Text processing technologies drive the analysis of
     the incoming e-mails and the decision of whether they are of interest to you or
@@ -81,8 +106,10 @@
     processing with e-mails does not end there. A further use case could be automated
     ranking by priority or proposing answers to e-mails, functionalities that have
     recently been introduced by different providers.
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们看另一个例子。您是否曾想过您电子邮件收件箱中的*垃圾邮件过滤器*是如何工作的？文本处理技术驱动着对传入电子邮件的分析，以及它们是否对您感兴趣或是垃圾邮件的决定。一些电子邮件提供商使用更先进的过滤，例如提供垃圾邮件、广告或社交媒体通知等类别。但是电子邮件的文本处理并不止于此。进一步的用例可能是按优先级自动排名或提出电子邮件答复，这些功能最近已被不同提供商引入。
 - en: But let’s stay with spam detection for now. Depending on the complexity of the
     underlying technology used by a given software product, the mechanisms to detect
     spam can function differently, leading also to results of varying qualities. In
@@ -95,8 +122,10 @@
     uses. It’s an arms race between improving technology used to develop very realistically
     looking spam e-mails and technology to detect spam, both of which using the latest
     machine-learning-driven advancements in natural language processing.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 但让我们现在继续讨论垃圾邮件检测。根据给定软件产品所使用的底层技术的复杂性，检测垃圾邮件的机制可能会有所不同，也会导致不同质量的结果。在最简单的情况下，可以基于预定义句子或发件人地址进行关键词分析。当然，这可能仍然会让大量垃圾邮件进入您的收件箱。因此，很可能（也希望）没有垃圾邮件检测系统仅依赖于预定义列表。我们还应该记住，垃圾邮件制作者在应对更好的过滤器时变得越来越好。自动文本生成器现在能够编写非常可信的文本，这些文本是专门为不同用途定制的。这是一场关于改进技术的武器竞赛，用于开发看起来非常逼真的垃圾邮件和检测垃圾邮件的技术，两者都使用自然语言处理中最新的机器学习驱动进展。
 - en: Sorting e-mails into different categories is an example of what we, in the field
     of natural language processing, call a *text classification task*. When approached
     using machine learning, this can be quite similar to the image classification
@@ -108,28 +137,38 @@
     then identifies the particularities that differentiate these groups of texts.
     Finally, the model can classify a new text sample into one of the four categories,
     as shown in Fig. [3.1](#Fig1).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig1_HTML.png)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 将电子邮件分类到不同类别是我们在自然语言处理领域称之为*文本分类任务*的一个例子。当使用机器学习方法时，这与我们在上一章中看到的将图像分类为草莓或覆盆子的过程非常相似。假设我们有大量垃圾邮件、广告邮件、社交媒体通知和其他邮件的示例。我们训练数据集中来自这四个类别的所有示例都被标记，这意味着它们被分配了一个*标签*，指示它们属于哪个类别。在训练阶段，机器然后识别区分这些文本组的特点。最后，模型可以将新的文本样本分类到这四个类别中的一个，如图[3.1](#Fig1)所示。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig1_HTML.png)
 - en: An illustration depicts a process of classifying emails as either Spam or Normal
     E-Mail using a machine learning model. The model is trained on Training Data,
     and it distinguishes between Advertisement and Social Media categories when deciding
     whether an email is spam or not.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图描述了使用机器学习模型将电子邮件分类为垃圾邮件或正常邮件的过程。该模型在训练数据上进行训练，并在决定电子邮件是否为垃圾邮件时区分广告和社交媒体类别。
 - en: Fig. 3.1
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.1
 - en: Classification of e-mails into different categories using supervised machine
     learning
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用监督机器学习将电子邮件分类为不同类别
 - en: Recall from the previous chapter that these predicted classes are best guesses
     based on probability and that the quality of the result depends on the completeness
     and quality of the training data. And even in the best case, there can be mistakes.
     With that in mind, you will not be surprised the next time an e-mail is misclassified
     in your inbox.
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: 回顾前一章节，这些预测的类别是基于概率得出的最佳猜测，结果的质量取决于训练数据的完整性和质量。即使在最好的情况下，也可能出现错误。牢记这一点，下次收件箱中的电子邮件被错误分类时你也不会感到惊讶。
 - en: Such text classification can also be used in other use cases. It is, for example,
     possible to train a machine learning model on a large number of texts from two
     or more different authors and thus obtain a classifier that identifies the author
@@ -140,12 +179,17 @@
     applied in the context of scientific publishing, as well as to check student papers.
     Other work in the field investigates how machine learning can be used to identify
     hate speech or fake news on the Internet.
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种文本分类也可以用于其他用例。例如，可以对来自两个或更多不同作者的大量文本进行机器学习模型训练，从而获得一个能够识别文本作者的分类器。这种技术已被用于确定莎士比亚剧作《亨利八世》中可能由他人撰写的部分，这一问题长期以来一直受到学者们的争论（Plecháč
+    [2021](#CR31)）。作者归属也在*抄袭检测*中发挥着重要作用，这种软件通常应用于科学出版的背景下，以及检查学生论文。该领域的其他工作探讨了如何利用机器学习来识别互联网上的仇恨言论或虚假新闻。
 - en: Sentiment Analysis
+  id: totrans-20
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 情感分析
 - en: Text classification is also applied in the field of *sentiment analysis*. These
     methods aim to extract information from text that indicates sentiment or opinion,
     for example, whether a text carries a positive or negative attitude of the writer
@@ -163,8 +207,10 @@
     or negative. Whenever we have a problem where we want to categorize text into
     two or more classes, and we have sufficiently many examples available for the
     different classes, we can utilize this supervised learning approach.
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 文本分类也应用于*情感分析*领域。这些方法旨在从文本中提取表明情感或观点的信息，例如，一篇评论文本中作者对产品持有积极还是消极态度。同样，这个任务可以通过不同的方式解决，从非常简单的方法开始。如果我们发现表达如“质量差”，“设计可怕”，或“界面丑陋”，或者相反，“产品精彩”，“设计惊人”，“我喜欢它”等，我们可以很容易地了解评论作者对产品的喜好或厌恶。然而，情感可以以不可数的方式表达，人类的创造力几乎是无限的，因此当我们创建一个包含所有可能的积极和消极表达的词汇表时，我们很快就会达到极限。因此，另一种（除其他方法外）是使用监督机器学习的方法，就像我们讨论过的电子邮件分类的情况一样。基于积极文本和消极文本的示例，训练一个分类器，能够预测新的文本样本是积极还是消极。每当我们有一个问题，想要将文本分类为两个或更多类别，并且对于不同类别有足够多的示例可用时，我们可以利用这种监督学习方法。
 - en: In general, in the context of text classification tasks, we refer to *binary
     classification* when we have two possible groups to distinguish between, e.g.,
     positive and negative texts and *multiclass classification* otherwise. A common
@@ -174,12 +220,16 @@
     to predict the star rating (which is the label/*right answer*), based on the review
     texts written by the users. This would be a multiclass classification with five
     classes.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 一般来说，在文本分类任务的背景下，当我们有两个可能的组别需要区分时，我们称之为*二元分类*，例如，正面和负面文本，否则称为*多类分类*。多类情感分类的一个常见例子是将评论文本映射到它们的1到5星评级，通常在用户提供反馈的网站上看到，例如电影或餐厅。我们会尝试使用机器学习来预测星级评分（即标签/*正确答案*），基于用户撰写的评论文本。这将是一个包含五个类别的多类分类。
 - en: Text Generation
+  id: totrans-23
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 文本生成
 - en: As opposed to text classification tasks, where the model takes a text as input
     and predicts one of the specified categories as output, other tasks take text
     as an input and also have text as output. We refer to these tasks as *text generation*.
@@ -202,12 +252,16 @@
     one language to another, for example, from English to German. Text generation
     can also be the result of non-textual input, for example, when automatically generating
     captions for images.
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 与文本分类任务相反，模型将文本作为输入并预测指定类别之一作为输出，其他任务将文本作为输入并且输出也是文本。我们称这些任务为*文本生成*。这种任务的一个例子是*文本摘要*。当处理数百页的文本时，通常，内容也可以在几页甚至更少的表面层次上进行聚合。语言模型可以自动支持这项任务。*聊天机器人*是文本生成的另一个应用。基于文本作为输入，它们提供类似于人类的文本回答。聊天机器人可以有不同的目标，例如回答客户查询并提供客户正在寻找的信息。在这里，信息的正确性非常重要。正如我们最近看到的ChatGPT的崛起一样，语言模型和特别是聊天机器人产生的内容的正确性并不总是确定的（这自然可能会让某些读者感到惊讶）。我们将在后面的章节中进一步探讨这个问题。目前，我想指出一些聊天机器人的目的也可以是提供尽可能接近人类选择的措辞的最合理文本。文本生成的其他应用包括机器学习模型自动生成电影剧本、歌词或诗歌，文本生成的另一个重要用例是*机器翻译*，其中文本从一种语言翻译为另一种语言，例如从英语到德语。文本生成也可以是非文本输入的结果，例如自动生成图像标题。
 - en: Information Extraction
+  id: totrans-25
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 信息提取
 - en: Another task we can conduct on texts is *information extraction*. We want to
     obtain structured information based on the texts, which, in contrast, is typically
     considered to be *unstructured data* (this applies to images too). Unstructured
@@ -221,14 +275,19 @@
     also sometimes called *semi-structured* data, which can be extended by additional
     information such as identifying the subject of the sentence or adding tags for
     the type of word (e.g., by marking *to be* as a verb).
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们可以在文本上进行的另一个任务是*信息提取*。我们希望基于文本获取结构化信息，而这种信息通常被认为是*非结构化数据*（这也适用于图像）。非结构化是因为数据没有预定义的组织原则，与按行和列标识结构化的值表相对。在书面语言的上下文中，术语*非结构化*可能有点令人困惑。在处理给定语言的文本时，当然存在外部约束，比如语言的语法可能会在一定程度上限制句子中单词或对象的顺序。然而，仍然存在灵活性，并非所有句子或文本具有相同的结构。因此，文本有时也被称为*半结构化*数据，可以通过附加信息进行扩展，例如标识句子的主语或为单词类型添加标记（例如，将*to
+    be*标记为动词）。
 - en: Raw text data itself is not equivalent to data arranged in a table, with columns
     corresponding to say subject, verb, and object. We could extract such structured
     data from the text, but it’s not equivalent in the sense that we can’t recover
     the original text only from the structured table.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 原始文本数据本身并不等同于以表格形式排列的数据，其中列对应于主语、动词和宾语。我们可以从文本中提取这样的结构化数据，但从结构化表格中我们无法仅仅恢复原始文本。
 - en: In the information extraction process, we want to obtain very specific data
     from the text. We therefore define a data structure, meaning that we describe
     the structured data we would like to obtain from all the different texts we plan
@@ -237,43 +296,62 @@
     interest to extract the paragraphs and laws mentioned in the texts. In the case
     of doctor’s notes, we might want to extract the diagnosis from the text and ideally
     convert it into a standardized format, e.g., a diagnosis code.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 在信息提取过程中，我们希望从文本中获取非常具体的数据。因此，我们定义了一个数据结构，意味着我们描述了我们希望从计划处理的所有不同文本中获取的结构化数据。这个数据结构可能会因应用程序的用例而有很大不同。例如，在处理法律文本时，提取文本中提到的段落和法律可能是感兴趣的。在医生的笔记中，我们可能希望从文本中提取诊断，并最好将其转换为标准化格式，例如诊断代码。
 - en: 'Let’s look at this in an example. The left side of Fig. [3.2](#Fig2) contains
     unstructured text. We want to extract two things from the texts (the data structure
     is prepared in the table on the right):'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们通过一个例子来看这个问题。图[3.2](#Fig2)的左侧包含非结构化文本。我们希望从文本中提取两件事（数据结构准备在右侧的表格中）：
 - en: Which types of berries are mentioned
+  id: totrans-30
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 提到了哪些种类的浆果
 - en: Whether there are persons mentioned (e.g., by using their name)
+  id: totrans-31
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 是否提到了人物（例如，通过使用他们的名字）
 - en: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig2_HTML.png)'
+  id: totrans-32
   prefs: []
   type: TYPE_IMG
+  zh: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig2_HTML.png)'
 - en: An illustration showcases the transformation of unstructured text into structured
     data for two different texts. It highlights the berries mentioned and the people
     mentioned in each text, with text 1 referencing strawberries, raspberries, and
     Anna, while text 2 mentions blueberries and Anna.
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图展示了将非结构化文本转化为结构化数据的过程，其中突出显示了每个文本中提到的浆果和人物，文本1提到草莓、覆盆子和安娜，而文本2提到蓝莓和安娜。
 - en: Fig. 3.2
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 3.2
 - en: Extracting structured information from unstructured texts
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 从非结构化文本中提取结构化信息
 - en: The aim of the information extraction is to provide structured information about
     the texts that can be further processed, either by humans or by another software
     component. For example, the data table generated could be easily used to quickly
     get all the texts where Anna is mentioned or including information about strawberries.
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 信息提取的目的是提供关于文本的结构化信息，这些信息可以进一步由人类或另一个软件组件处理。例如，生成的数据表格可以轻松地用于快速获取所有提到安娜或包含有关草莓信息的文本。
 - en: From Applications to Methods
+  id: totrans-37
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -288,9 +366,11 @@
     to identify the right method for the given application, among the vast range of
     possibilities available in today’s toolkits and research outcomes. In the upcoming
     sections, we will have a closer look at some of these technologies.
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
 - en: Introduction to Natural Language Processing Methods
+  id: totrans-39
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -304,17 +384,21 @@
     methods have some limitations, for example, we would have to add both the word
     *strawberry* and the plural form *strawberries* on the list to make sure to get
     them all. Figure [3.3](#Fig3) gives an example of such a scenario.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig3_HTML.png)
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
 - en: An illustration of keywords in the sentence given which reads the sun was shining
     and the weather was good. A large field full of strawberries, however, no raspberries
     were planted in this region. List of keywords are strawberry, raspberry and blueberry.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.3
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
 - en: 'Keep it simple: identifying specific words in a text based on a keyword list'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
 - en: 'A priori, from the computer’s point of view, the text is nothing more than
@@ -328,68 +412,98 @@
     specifying that after each blank space, a new word starts. Or that after a period,
     a new sentence starts. We are instructing the computer to do so by writing our
     instructions in a programming language.'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 从计算机的角度来看，文本只是一串字母和符号。我们称将额外结构添加到这些字符串的过程为*parsing*。当人类看文本时，我们当然看到更多的结构 - 比如分开的单词或语法结构。问题在于计算机更喜欢处理数字和进行数学运算，并且通常没有我们在头脑中自动和立即构建这样的文本所需的多年训练。在解析文本时，我们指示计算机，例如进行单词或句子的*tokenization*：我们分隔单词和句子，指定在每个空格后，一个新单词开始。或者在句号后，一个新句子开始。我们通过用编程语言编写指令来指示计算机这样做。
 - en: More advanced tagging of a text can be done by using *part-of-speech tagging*,
     *dependency parsing*, or *named entity recognition*.
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 更高级的文本标记可以通过使用*词性标注*、*依存句法分析*或*命名实体识别*来完成。
 - en: Part-of-Speech Tagging
+  id: totrans-46
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 词性标注
 - en: Part-of-speech tagging refers to the process of annotating each word with a
     *tag* identifying the type of word. For example, strawberry is a *noun*.
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 词性标注是指用*标签*注释每个单词的类型的过程。例如，strawberry 是一个*名词*。
 - en: As you might imagine, these are regular tasks that need to be done over and
     over again in different applications. Instead of reinventing the wheel each time,
     the data engineer has existing software components available (so-called libraries)
     that can be reused as needed.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 正如你所想象的那样，这些是需要在不同应用程序中一遍又一遍地完成的常规任务。数据工程师有现有的软件组件（称为库）可供重复使用，而不是每次都重新发明轮子。
 - en: In Fig. [3.4](#Fig4), we see an example how this information is provided automatically
     by a library called SpaCy^([1](#Fn1)) that is commonly used for natural language
     processing.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig4_HTML.png)
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 在图[3.4](#Fig4)中，我们看到一个例子，说明了这些信息是如何由一个名为 SpaCy 的库自动提供的^([1](#Fn1))，这个库通常用于自然语言处理。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig4_HTML.png)
 - en: A text read anna is eating the strawberry. This sentence is partitioned in part
     of speech tagging in pronoun, verb and noun.
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个文本 read anna is eating the strawberry. 这个句子在词性标注中被分为代词、动词和名词。
 - en: Fig. 3.4
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.4
 - en: 'An example of part-of-speech tagging: extracting information about the type
     of the words. For example, “.” is considered a punctuation (PUNCT), “eating” is
     classified as verb, and the name “Anna” is a proper noun (PROPN)'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 词性标注的一个例子：提取有关单词类型的信息。例如，“.” 被视为标点符号（PUNCT），“eating” 被分类为动词，而名字“Anna” 是专有名词（PROPN）。
 - en: Dependency Parsing
+  id: totrans-53
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 依存句法分析
 - en: Let’s now look at an example for dependency parsing. Dependency parsing gives
     us information about how the words in the sentence relate to each other. Some
     of us, especially the ones with a more technical background, will need to grab
     our grammar books when working with this kind of parsing.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们看一个依存句法分析的例子。依存句法分析提供了关于句子中单词如何相互关联的信息。我们中的一些人，特别是那些具有更多技术背景的人，在处理这种类型的分析时可能需要查阅我们的语法书。
 - en: To give you some intuition, we will look at a short snippet of such programming
     code using the programming language Python and the library SpaCy shown in Fig.
     [3.5](#Fig5).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig5_HTML.png)
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了让你有一些直觉，我们将看一段使用编程语言 Python 和库 SpaCy 的编程代码的简短片段，如图[3.5](#Fig5)所示。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig5_HTML.png)
 - en: The code utilizes s p a C y to process the text there was a large strawberry
     field and visualizes its dependency parse tree using the dep style.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
+  zh: 该代码利用 s p a C y 处理文本 there was a large strawberry field，并使用 dep 样式可视化其依存解析树。
 - en: Fig. 3.5
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: 图3.5
 - en: Code snippet to visualize dependency parsing using SpaCy library
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 SpaCy 库可视化依存句法分析的代码片段
 - en: The first line loads a model for the English language from this existing library.
     This would be different when processing another language. To be able to consider,
     for example, grammatical concepts to parse our text, we will need to have the
@@ -398,25 +512,36 @@
     parsing and enables a visualization. Don’t worry if you do not understand the
     meaning of every single word in the above code snippet; the main goal is to get
     an understanding of how these things work.
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一行加载了这个现有库中英语语言的模型。处理另一种语言时会有所不同。例如，为了考虑语法概念来解析我们的文本，我们需要有给定语言的具体信息。在第二行，我们定义了要解析的句子。最后一行启动了依赖解析并启用了可视化。如果你不理解上述代码片段中每个单词的含义，不要担心；主要目标是理解这些工作原理。
 - en: Based on these three lines of programming code, the visualization shown in Fig.
     [3.6](#Fig6) is generated about our sentence.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig6_HTML.png)
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于这三行编程代码，生成了关于我们句子的图示，如图 [3.6](#Fig6) 所示。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig6_HTML.png)
 - en: An illustration represents a syntactic analysis of the sentence there was a
     large strawberry field using dependency labels, with words categorized by their
     parts of speech and connections defined by attributes such as a t t r, d e t,
     a m o d, e x p l, and compound.
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图展示了对句子“there was a large strawberry field”进行句法分析，使用依赖标签，单词按其词性分类，连接由属性如
+    a t t r、d e t、a m o d、e x p l 和 compound 定义。
 - en: Fig. 3.6
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 3.6
 - en: Visualization of the dependency parsing of an example sentence using the SpaCy
     library
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 SpaCy 库可视化一个示例句子的依赖解析
 - en: 'We have two different kinds of information in this illustration: On one side,
     we can see the type of word at the bottom, which we called part-of-speech tag
     before (*was* is a verb, *large* is an adjective). The arrows indicate us the
@@ -424,32 +549,48 @@
     the words *strawberry* and *field* have been recognized as compound words. The
     word *large* was marked as adjectival modifier (*amod*) to the word *field* (we
     are not going to go too deeply into grammar at this point, but you get the idea).'
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这幅插图中我们有两种不同的信息：一方面，我们可以看到底部的单词类型，我们之前称之为词性标签（*was* 是动词，*large* 是形容词）。箭头指示了句子中单词之间的关系，句法依赖。例如，单词
+    *strawberry* 和 *field* 被识别为复合词。单词 *large* 被标记为形容词修饰语（*amod*）到单词 *field*（我们在这一点上不会深入讨论语法，但你明白了）。
 - en: Named Entity Recognition
+  id: totrans-65
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 命名实体识别
 - en: We will now consider an example of the task of *named entity recognition*, which
     involves extracting relevant information from text, for example, by classifying
     words as organizations, geopolitical entities, or numbers.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们将考虑一个 *命名实体识别* 任务的示例，这涉及从文本中提取相关信息，例如通过将单词分类为组织、地缘政治实体或数字。
 - en: To see this example, we use a similar code example as before, but we change
     the sentence and one word in the last line (replacing simply *dep* as in *dependency*
     with *ent* as in *entity*), as shown in Fig. [3.7](#Fig7).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig7_HTML.png)
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 要查看这个示例，我们使用了与之前类似的代码示例，但是我们改变了句子和最后一行的一个单词（将简单的 *dep* 替换为 *ent*，如 *dependency*
+    替换为 *entity*），如图 [3.7](#Fig7) 所示。![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig7_HTML.png)
 - en: A code loads the s p a C y English model, processes the given text, and then
     visualizes the named entities using the entity style.
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: 一段代码加载了 SpaCy 的英文模型，处理了给定的文本，然后使用实体样式可视化了命名实体。
 - en: Fig. 3.7
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 3.7
 - en: Code snippet to visualize named entity recognition using the SpaCy library
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 用 SpaCy 库可视化命名实体识别的代码片段
 - en: 'Different named entities have been identified in our sentence, as shown in
     Fig. [3.8](#Fig8): The year 2023 has been identified as a date, the EU as an organization
     (ORG stands for companies, agencies, institutions), the US as geopolitical entity
@@ -460,19 +601,24 @@
     that in this context, the EU could be considered as a geopolitical entity rather
     than an organization. This serves as a reminder that such models might not work
     perfectly in all situations.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig8_HTML.png)'
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
 - en: A text reads in 2023 date, thousands cardinal of strawberries were eaten in
     E U o r g countries and the U S G P E.
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.8
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
 - en: Result of the named entity recognition example using the SpaCy library
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
 - en: Inside Machine Learning
+  id: totrans-75
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -482,6 +628,7 @@
     see how this is different from deep learning and neural networks. Sounds difficult?
     No worries, all mathematical backgrounds required to follow this part will be
     gently introduced as needed. So, let’s go step by step.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
 - en: In this section, we will concentrate on supervised machine learning. We will
@@ -493,49 +640,62 @@
     to train a model that is able to classify a new, unseen text into one of the two
     classes, *positive* or *negative*. Figure [3.9](#Fig9) shows the setup of our
     machine learning classifier as we have seen previously for the other examples.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig9_HTML.png)
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
 - en: An illustration represents a simple training data scenario for a binary classification
     task where data samples are labeled as either positive or negative.
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.9
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
 - en: 'Sentiment analysis: classifying texts as positive or negative with supervised
     machine learning'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
 - en: Now, the interesting thing here is what happens during the training phase. How
     is the model created, which is then able to classify the unseen texts?
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
 - en: Pre-processing the Training Data
+  id: totrans-82
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
 - en: The training data shown in Fig. [3.9](#Fig9) could be structured in a table,
     containing the text sample in the first row and the label in the second row, as
     shown in Table [3.1](#Tab1).Table 3.1
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
 - en: The training data can be structured in a table, with one column for the texts
     and another column for the labels
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
 - en: '| Text | Label |'
+  id: totrans-85
   prefs: []
   type: TYPE_TB
 - en: '| --- | --- |'
+  id: totrans-86
   prefs: []
   type: TYPE_TB
 - en: '| Wow, what a cool website! | Positive |'
+  id: totrans-87
   prefs: []
   type: TYPE_TB
 - en: '| Oh no, I really think this is bad. | Negative |'
+  id: totrans-88
   prefs: []
   type: TYPE_TB
 - en: '| … |   |'
+  id: totrans-89
   prefs: []
   type: TYPE_TB
 - en: 'Before we can start with the training, text *pre-processing* is done. This
@@ -545,31 +705,39 @@
     not relevant. What exactly needs to be done in this phase depends on what texts
     we have. For example, a typical operation is to remove additional information
     such as links or transforming all letters to lowercase and removing punctuation:'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
 - en: “Wow, this is REALLY a cool website! [http://​www.​springernature.​com](http://www.springernature.com)”
+  id: totrans-91
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'could, for example, be adapted to the following after this phase:'
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
 - en: “wow this is really a cool website”
+  id: totrans-93
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'We also split the sentence into single words that can be processed separately
     (so-called tokenization):'
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
 - en: “wow this is really a cool website”
+  id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: 'becomes:'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
 - en: '[“wow”,”this”,”is”,”really”,”a”,”cool”,”website”]'
+  id: totrans-97
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -578,6 +746,7 @@
     stop words as “common words in any language that occur with a high frequency but
     carry much less substantive information about the meaning of a phrase.” Common
     stop words are, for example, *the*, *a*, or *on*.
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
 - en: 'Sometimes, it is also useful to use *stemming* or *lemmatization*. Both methods
@@ -596,9 +765,11 @@
     about cutting of parts of the word but under consideration of the language’s structure,
     for example, for verbs, the base form before conjugation. For our examples *meetings*
     and *caught*, the lemmatized forms would therefore be *meeting* and *catch* respectively.'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
 - en: Feature Selection
+  id: totrans-100
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -611,6 +782,7 @@
     is likely to be more relevant than the color of the T-shirt the person is wearing.
     Thus, the blood pressure would be a good feature for the machine learning training,
     whereas the color of the t-shirt would probably not be the best choice.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
 - en: In the case of text processing, the feature selection could, for example, be
@@ -627,22 +799,27 @@
     fact that such words will not be of any use to differentiate between the two groups.
     Let’s say we take for the sake of this example the three most frequent words of
     each group and end up with the following:^([3](#Fn3))
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
 - en: Positive = [“good”, “happy”, “awesome”]
+  id: totrans-103
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Negative = [“ugly”, “horrible”, “bad”]
+  id: totrans-104
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: From Words to Numbers
+  id: totrans-105
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
 - en: As mentioned earlier, computers are much better in dealing with numbers than
     with human language. So, what to do with those words?
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
 - en: Before getting deeper into this, let’s look at the concept of a mathematical
@@ -653,6 +830,7 @@
     of all possible n-dimensional vectors is an example of what’s called a vector
     space. Vectors are typically depicted as arrows, and arrows with (a) the same
     length, (b) the same orientation, and (c) that are in parallel are the same vector.
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
 - en: 'In a two-dimensional vector space, vectors have two coordinates to specify
@@ -663,20 +841,25 @@
     can have very high dimensions), it gets difficult to imagine but works analogously:
     in a vector space with 20 dimensions, vectors living in that space have 20 numbers
     composing their coordinates.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig10_HTML.png)'
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
 - en: An illustration depicts y versus x axis with vector V vector in 2 dimensions
     where V vector = matrix 2, 1.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.10
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
 - en: An example of a vector with two dimensions
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
 - en: We will also need to know that between such vectors, mathematical operations
     such as addition or subtraction can be executed, similar to numbers.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
 - en: 'We need to transform our words into vectors, so that the machine learning classifier
@@ -685,9 +868,11 @@
     the number of possible words in our vocabulary. In a realistic case, these can
     be hundreds of thousands of possible words, but let’s keep it simple and assume
     our language has the following vocabulary consisting of four words:'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
 - en: '[“awesome”, “bad”, “good”, “horrible”]'
+  id: totrans-114
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -698,9 +883,11 @@
     above, the word *awesome* is at position 1, *bad* at position 2, and so on.^([4](#Fn4))
     Therefore, the vector representation of *bad* would have a 1 at the position 2
     and 0 for the rest of the positions:^([5](#Fn5))
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
 - en: vector[“bad”] = [0,1,0,0]
+  id: totrans-116
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -710,9 +897,11 @@
     of the English language), there will be many zeros that need to be stored. We
     will see more advanced ways to vectorize words using fewer dimensions in a later
     section.
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
 - en: Machine Learning Classifiers
+  id: totrans-118
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -724,6 +913,7 @@
     is also often the case that the best performing classifier cannot be predicted
     easily in advance. Thus, sometimes, it is very beneficial to try out different
     ones to find the right one for a given dataset or problem.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
 - en: One such machine learning classifier is called a *logistic regression classifier*.
@@ -735,6 +925,7 @@
     the outcome. This means that it tries to figure out which are the most relevant
     among the words we have provided as input. This happens by looking at all the
     features we have provided one by one and adapting the *weights* as necessary.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
 - en: To better understand what we mean by weights, let’s consider the following example.
@@ -744,17 +935,21 @@
     the huge strawberry contributes more to this than the tiny strawberry. Thus, the
     huge strawberry has a bigger weight than the tiny strawberry, as shown in Fig.
     [3.11](#Fig11).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig11_HTML.png)
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
 - en: An illustration depicts a pot with strawberry plant labeled huge strawberry
     causing the plant to bend and tiny strawberry with less impact.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.11
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
 - en: The huge strawberry is causing the plant to bend; the tiny strawberry has less
     impact
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
 - en: This is similar to the weights of our features. In the beginning of the learning
@@ -764,9 +959,11 @@
     more* in the direction of positive when the word *good* is present, similar as
     strawberries with larger weights that have major impact on the strawberry plant
     bending to the right.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
 - en: The Loss Function
+  id: totrans-126
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -787,24 +984,29 @@
     performance of the machine learning model. During the learning, the values of
     the machine learning model (such as weights) are adapted in order to minimize
     this loss.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig12_HTML.png)
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
 - en: An illustration represents a training process conducted in multiple rounds,
     ultimately achieving the goal of minimizing the loss function by reducing the
     difference between the actual and desired slice sizes, concluding with a loss
     of 0mm for an actual slice size of 4 millimeter.
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.12
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
 - en: To train the model, we need to minimize the loss. The closer we get to the desired
     slice size, the lower the loss gets
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
 - en: An important point about the loss function is that it explicitly defines what
     we are *training the model* to do. The entire aim of the training is to modify
     the model in order to minimize the loss. This is what we mean by *learning*.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
 - en: Let’s now return from cutting strawberries into slices to our previous task
@@ -815,9 +1017,11 @@
     training data). In other cases, slightly more complex functions can be used, but
     generally quantifying in some way the difference between the predicted value and
     the expected value.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
 - en: Training and Test Data
+  id: totrans-133
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -838,36 +1042,44 @@
     other features or adapt our pre-processing steps.^([6](#Fn6)) Remember that this
     is a prediction, and it is highly unlikely that we will build a system that is
     correct in 100% of the cases.'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
 - en: Figure [3.13](#Fig13) gives an overview of the different steps we have been
     taking to pre-process our text, select features, and finally train and validate
     the classifier. All these steps are typically needed to prepare machine learning
     training.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig13_HTML.png)
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
 - en: A flow illustration includes preprocessing, feature selection, from words to
     numbers, machine learning classifiers, the loss function and training and test
     data.
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.13
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
 - en: An overview of the different steps needed to prepare for a machine learning
     training
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
 - en: From Machine Learning to Deep Learning
+  id: totrans-139
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: 'We saw in the previous section how machine learning models are trained: The
     features were predefined, and the system learned by minimizing the loss function.
     Let’s call this architecture *classical machine learning*.'
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
 - en: Limitations of Linear Models
+  id: totrans-141
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -877,17 +1089,21 @@
     a straight line (or hyperplane in higher dimensions). In other cases, this is
     not possible, and the data requires nonlinear processing to deliver good results.
     The two examples are illustrated in Fig. [3.14](#Fig14).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig14_HTML.png)
+  id: totrans-142
   prefs: []
   type: TYPE_NORMAL
 - en: 2 comparison chart reads data can be separated with a linear classifier and
     data cannot be separated with a linear classifier.
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.14
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
 - en: In some cases, the data can be separated with a linear classifier. In other
     cases, this is not possible
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
 - en: 'In cases where we know what to look for and can identify and extract the features
@@ -912,45 +1128,55 @@
     the relevant features from the data, are where the power of *deep learning* saves
     the day. Deep learning is a subset of machine learning involving one specific
     technique: *neural networks*.'
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
 - en: Neural Networks
+  id: totrans-147
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
 - en: 'Masato Hagiwara describes a neural network as:'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
 - en: A generic mathematical model that transforms a vector to another vector. That’s
     it. Contrary to what you may have read and heard in popular media, its essence
     is simple. (Hagiwara [2021](#CR19), p. 37)
+  id: totrans-149
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'I like this definition, even though it takes a bit the magic, because it brings
     it to the point: in the end, it’s just math.'
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
 - en: As in the previous example using logistic regression, we will need to do pre-processing
     and finally transform our words into vectors. For now, let’s just consider that
     we already have a numerical representation in the form of vectors from each word
     in our text.
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
 - en: Like the classical machine learning seen previously, a neural network also relies
     on a feedback loop to improve the predictions. Very simplified, we can see a neural
     network as the kind of structure shown in Fig. [3.15](#Fig15).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig15_HTML.png)
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
 - en: A flow illustration depicts input, processing, estimation and based on the result,
     processing is adapted to improve estimation.
+  id: totrans-153
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.15
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
 - en: Similar to what we have seen previously for the classical machine learning,
     neural networks also have a feedback mechanism to improve the predictions
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
 - en: A neural network can be seen as a more complex structure that includes in the
@@ -966,25 +1192,31 @@
     neural network, more complex mathematical operations are possible; additionally,
     the feature extraction can happen automatically, making it often more performant
     than classical machine learning.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig16_HTML.png)
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
 - en: A flow illustration represents a neural network architecture with a final layer
     that functions similarly to a traditional machine learning classifier, aiming
     to minimize the loss function.
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.16
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
 - en: Neural networks are in general similar to classical machine learning, however,
     allow more complex mathematical operations
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
 - en: We will now dive a bit deeper into the architectures of neural networks yet
     staying at a rather high-level.^([7](#Fn7))
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
 - en: 'Neurons: Inspired by the Human Brain'
+  id: totrans-161
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1000,12 +1232,14 @@
     of neurons as the human brain. Therefore, the comparison of human or animal intelligence
     and machine intelligence referring only to the number of neurons is difficult.
     There seems to be something more to human or animal intelligence.'
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
 - en: Coming back to our technical system, a neural network is a set of so-called
     neurons that are connected to each other. There is a signal that enters on one
     side of the neural network and passes through the different neurons, and finally,
     a result comes out.
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
 - en: One layer is typically composed of several neurons. A single neuron, as shown
@@ -1014,24 +1248,30 @@
     of how important each input is with regard to the output of the neuron. When thinking
     about what the weights mean, remember the strawberry plant we saw earlier that
     was bending to the right because of the huge strawberry with a large weight.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig17_HTML.png)
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
 - en: A flow illustration depicts multiple weight input followed by neuron and output.
+  id: totrans-165
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.17
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
 - en: The weights in the neural network are adapted during the training phase to reduce
     the loss and improve the system’s performance
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
 - en: The good thing is that we do not have to specify these weights. The weights
     are adapted during the training phase, to reduce the loss and improve the overall
     system.
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
 - en: A neural network consists of several neurons, organized in layers.
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
 - en: In the example in Fig. [3.18](#Fig18), we have three layers with two neurons
@@ -1043,20 +1283,25 @@
     and therefore it is important that input and output are vectors and not human
     words. Such operations can be performed by computers very efficiently even for
     high-dimensional neural networks.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig18_HTML.png)
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
 - en: An illustration depicts a neural network with six instances of Neuron in the
     input layer, followed by three hidden layers labeled as Layer 1, Layer 2, and
     Layer 3, ultimately leading to an output layer.
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.18
+  id: totrans-172
   prefs: []
   type: TYPE_NORMAL
 - en: An example of a neural network consisting of three layers
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
 - en: Learning from Our Mistakes
+  id: totrans-174
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1071,21 +1316,26 @@
     We thus have to adapt the weights for each of the layers in the neural network.
     The process is called *backpropagation*. Figure [3.19](#Fig19) shows how the backpropagation
     happens in the neural network we have discussed before.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig19_HTML.png)
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
 - en: An illustration suggests a neural network processing with the term Neuron at
     3 layers, followed by an Input and Output with Backpropagation possibly indicating
     a training process or learning mechanism,
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.19
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
 - en: The weights are adapted in all layers of the neural network. This procedure
     is called backpropagation
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
 - en: Sentiment Analysis with Neural Networks
+  id: totrans-179
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1095,18 +1345,22 @@
     of our words. As shown in Fig. [3.20](#Fig20), the last layer has a special format.
     Since we aim to have a binary decision, the last neuron is adapted to produce
     one of these two output options (negative or positive).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig20_HTML.png)
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
 - en: A flow illustration represents a process where Our texts are transformed into
     vectors, then processed through multiple layers, and ultimately result in an output
     classified as either positive or negative in Layer 3.
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.20
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
 - en: In the context of sentiment analysis on text, we want to provide texts as input
     and obtain a prediction on whether they are positive or negative
+  id: totrans-183
   prefs: []
   type: TYPE_NORMAL
 - en: As compared to the linear classifiers (such as the logistic regression we have
@@ -1119,14 +1373,17 @@
     conceivable that some complex function of the combination of words present or
     not in a text could result in a good measure of sarcasm in text. If so, then neural
     networks could be able to do this.
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
 - en: We now have a basic understanding of how neural networks work and are ready
     to go one step further. In the next section, we will have a closer look at word
     embeddings, which are vectors that encode the meaning of words.
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
 - en: Diving into Word Embeddings
+  id: totrans-186
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1135,48 +1392,60 @@
     human-readable texts. To enable our text processing and generation with the advantages
     of machine learning methods, increasing the performance for different tasks, we
     need to convert the words to mathematical vectors.'
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
 - en: So how can we get there? One solution is called *word embeddings*^([9](#Fn9))
     (sometimes also referred to as *word vector*).
+  id: totrans-188
   prefs: []
   type: TYPE_NORMAL
 - en: 'Each word from human language, so, for example, the English words *Strawberry*
     or *Raspberry*, has a numerical representation, a specific word embedding,^([10](#Fn10))
     as shown in Fig. [3.21](#Fig21). Let them be as follows for now:'
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
 - en: “Strawberry” = [1,6]
+  id: totrans-190
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: “Raspberry” = [1,7]
+  id: totrans-191
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: “Elephant” = [2,1]
+  id: totrans-192
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig21_HTML.png)'
+  id: totrans-193
   prefs: []
   type: TYPE_IMG
 - en: An illustration. Text reads strawberry and numbered 12, 11, 3 and 4.
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.21
+  id: totrans-195
   prefs: []
   type: TYPE_NORMAL
 - en: The word “Strawberry” is mapped from human language to a vector
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
 - en: For the sake of example, we consider that our vectors live in a two-dimensional
     space (therefore, we have two numbers in the brackets above). This means that
     we are easily able to draw them on a sheet of paper, by using points on a two-dimensional
     coordinate system.
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
 - en: Relations Between Words
+  id: totrans-198
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1187,62 +1456,77 @@
     to the elephant being an animal, their word embeddings are closer together. This
     property allows us to use mathematical operations to deal with the meaning of
     words. For example, consider the following puzzle (Bolukbasi et al. [2016](#CR4)):'
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
 - en: Man is to King, as Woman is to X
+  id: totrans-200
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: '![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig22_HTML.png)'
+  id: totrans-201
   prefs: []
   type: TYPE_IMG
 - en: A graph illustration presents a sequence of words, including Raspberry, Strawberry,
     and Elephant at different angle along x and y axis.
+  id: totrans-202
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.22
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
 - en: Words that are similar in their meaning have word vectors that are closer together
+  id: totrans-204
   prefs: []
   type: TYPE_NORMAL
 - en: 'This can be solved by using subtractions and additions. Whereas we often use
     addition or subtraction with numbers (all of us are familiar with doing something
     like 1 + 2 − 1 = 2), the same can be done also with vectors, leading to the solution
     of the puzzle^([11](#Fn11)):'
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
 - en: Vector(“Queen”) = Vector(“King”) - Vector(“Man”) + Vector(“Woman”)
+  id: totrans-206
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: By subtracting the sum of the vector of the word *man* and the word *woman*
     from the vector of the word *king*, we can obtain the resulting word *queen*.
     Fascinating, isn’t it?
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
 - en: 'Similarly, analogy questions can be solved, even across different domains,
     for example, getting from science to music (Lane et al. [2019](#CR25)):'
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
 - en: Who is the Marie Curie of music?
+  id: totrans-209
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: 'This would translate to vector mathematics as follows, similarly to the example
     with *king* and *queen* stated above:'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
 - en: Vector(“Solution”) = Vector(“Marie Curie”) - Vector(“Science”) + Vector(“Music”)
+  id: totrans-211
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
 - en: Naturally, we get very excited and want to explore more relations in these word
     embeddings and understand how they can be used as input to machine learning training.
     But where are these word embeddings actually coming from?
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
 - en: Creating Word Embeddings
+  id: totrans-213
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1258,6 +1542,7 @@
     have, the more aspects in which words can be similar we can consider. Higher-dimensional
     vectors help to capture different properties of the words and thus improve the
     quality of the relations between the word embeddings.'
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
 - en: So, let’s see how meaning gets encoded into these word embeddings and how we
@@ -1267,11 +1552,13 @@
     say Spanish, in our case the dictionary is translating words from English to word
     embeddings. To create such a dictionary, machine learning, or, more precisely,
     neural networks can be used.
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
 - en: Wait, what? We are using neural networks to generate word embeddings to then
     use them to encode words that we want to feed to a neural network? Let me explain
     that more in detail.
+  id: totrans-216
   prefs: []
   type: TYPE_NORMAL
 - en: We want to convert the words of our text to vectors, in order to process them
@@ -1284,23 +1571,28 @@
     and whenever you need it, for example, to write a letter or translate a word from
     a text in a foreign language, you just grab it and look up the word you need.
     The setup is shown in Fig. [3.23](#Fig23).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig23_HTML.png)
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
 - en: The process of converting words from training data into vector representations,
     potentially for sentiment analysis. It discusses the utilization of word embeddings,
     supervised binary sentiment analysis, and the generation of word embeddings through
     unsupervised training from a text corpus.
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.23
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
 - en: 'Example procedure of training a sentiment analysis classifier: the textual
     training data uses existing word embeddings (that have been trained separately)
     for vectorization'
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
 - en: Word2Vec Embeddings
+  id: totrans-221
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1310,13 +1602,16 @@
     of natural language processing tasks. This was the beginning of a new era of natural
     language processing with word embeddings, which was later improved even further
     with transformer-based models, which we will explore in a later chapter.
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
 - en: 'The idea behind the word embeddings can be captured by the following quote
     from the linguist J.R. Firth:'
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
 - en: You shall know a word by the company it keeps (Firth [1962](#CR13), p. 11)
+  id: totrans-224
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
@@ -1325,6 +1620,7 @@
     common set of words appearing along with them makes it more probable that those
     two words are similar to each other in terms of meaning. Therefore, the two words
     should have similar vectors.
+  id: totrans-225
   prefs: []
   type: TYPE_NORMAL
 - en: The machine learning method to train word embeddings is *unsupervised*. This
@@ -1335,6 +1631,7 @@
     (which would be required when using supervised learning as in the examples before).
     For example, that a strawberry is a berry and that berries are plants and that
     plants are eaten by people and animals (and so on).
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
 - en: However, upon closer inspection, the words in a text do have a sort of label.
@@ -1343,6 +1640,7 @@
     the *meaning* of each word, these algorithms learn the common words that appear
     along with the mentioned word. For this task, the labels for each word in a text
     are simply the words that appear just before or just after the word itself.^([14](#Fn14))
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
 - en: To give you an intuition about what that means, let’s look at the example shown
@@ -1353,16 +1651,20 @@
     for example, the words surrounding the word *strawberries* for training. Since
     we know the correct answers, we can use this information to improve the learning
     and reduce the error.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig24_HTML.png)
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
 - en: The text reads there is a field with strawberries and raspberries.
+  id: totrans-229
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.24
+  id: totrans-230
   prefs: []
   type: TYPE_NORMAL
 - en: The word “Strawberry” and the two words that appear just before and just after
     it
+  id: totrans-231
   prefs: []
   type: TYPE_NORMAL
 - en: 'To return back to neural networks, the word *strawberries* would be the input
@@ -1383,19 +1685,23 @@
     a probability for each of the words in the vocabulary. In Fig. [3.25](#Fig25),
     we see the example for the training pair “strawberries+and” (one out of many training
     steps).![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig25_HTML.png)'
+  id: totrans-232
   prefs: []
   type: TYPE_NORMAL
 - en: A neural network processes the word strawberries through a series of layers,
     including an input layer, hidden layer, and output layer. A network assigns probabilities
     to various words as potential next words in a sequence based on learned associations
     from training data.
+  id: totrans-233
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.25
+  id: totrans-234
   prefs: []
   type: TYPE_NORMAL
 - en: Example about the training of word embeddings (based on Lane et al. ([2019](#CR25),
     p. 193))
+  id: totrans-235
   prefs: []
   type: TYPE_NORMAL
 - en: When talking about probabilities, we use values between 0 and 1\. Some people
@@ -1403,6 +1709,7 @@
     on a 0–1 scale to percentage values is simple. For example, a probability of 0.5
     is 50%, and 0.2 is 20%. Based on that, with a probability of 98.8%, the word *and*
     is very likely to follow the word *strawberries*.
+  id: totrans-236
   prefs: []
   type: TYPE_NORMAL
 - en: During the training, the pair “strawberry+and” makes the score for *and* go
@@ -1413,12 +1720,14 @@
     to the next word. Therefore, we might not see the words *and* and *strawberries*
     being very related in general; however, this is the right answer in this training
     step.
+  id: totrans-237
   prefs: []
   type: TYPE_NORMAL
 - en: This procedure is repeated a large number of times. First, we iterate over all
     words in the sentence, doing one training step for each surrounding word. We then
     do this not only for a few sentences but for large text corpora including millions
     of pages of text.
+  id: totrans-238
   prefs: []
   type: TYPE_NORMAL
 - en: Surprisingly, once the training is done, the output layer can be ignored. What
@@ -1428,6 +1737,7 @@
     will have similar vectors. This means that we can extract the word vectors that
     we need to create our dictionary to map English words to word embeddings from
     the hidden layer, once the training is concluded.^([16](#Fn16))
+  id: totrans-239
   prefs: []
   type: TYPE_NORMAL
 - en: This is just one procedure for generating word embeddings. In addition to the
@@ -1435,9 +1745,11 @@
     alternative method that works slightly differently, inverting the task to predict
     a word based on a collection of surrounding words. Other methods are GloVe (Pennington
     et al. [2014](#CR29)) embeddings or fasttext (Mikolov et al. [2018](#CR27)).
+  id: totrans-240
   prefs: []
   type: TYPE_NORMAL
 - en: Off-the-Shelf Word Embeddings
+  id: totrans-241
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1460,9 +1772,11 @@
     Those documents might contain many domain-specific words, and you might be particularly
     interested in seeing the relations between precisely those words encoded in the
     word embeddings.
+  id: totrans-242
   prefs: []
   type: TYPE_NORMAL
 - en: Working with Libraries
+  id: totrans-243
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1476,27 +1790,33 @@
     an applied perspective and shifts the required knowledge to knowing which libraries
     are available, what they are used for, and how to apply them. Figure [3.26](#Fig26)
     illustrates the typical components available to the data engineer for model training.![](../images/604345_1_En_3_Chapter/604345_1_En_3_Fig26_HTML.png)
+  id: totrans-244
   prefs: []
   type: TYPE_NORMAL
 - en: An illustration demonstrates the concept of word embeddings, where words like
     good and morning are represented as numerical vectors like 12, 6, 8 and 1, 4,
     190, respectively. The availability of publicly available word embeddings through
     libraries, with potential applications in data engineering and modeling tasks.
+  id: totrans-245
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 3.26
+  id: totrans-246
   prefs: []
   type: TYPE_NORMAL
 - en: The data engineer can rely on existing libraries and publicly available word
     embeddings
+  id: totrans-247
   prefs: []
   type: TYPE_NORMAL
 - en: The word embeddings we have seen so far encode one word as one mathematical
     vector. These encodings can be shared and reused in different applications. More
     complex language models can also be shared with the community, once trained.
+  id: totrans-248
   prefs: []
   type: TYPE_NORMAL
 - en: A High-Level View of Language Models
+  id: totrans-249
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -1506,9 +1826,11 @@
     pieces of text. Often, they are, stated in a very simplified way, used to predict
     the next word in a (partial) sentence, aiming to produce the best human-like text.
     Let’s consider the following example:'
+  id: totrans-250
   prefs: []
   type: TYPE_NORMAL
 - en: '*Anna goes to the field and collects …*'
+  id: totrans-251
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -1519,9 +1841,11 @@
     by hiding some words from the original texts and then predicting them. This is
     somewhat similar to the word embedding training algorithm we saw in this chapter,
     and so we are well equipped to move toward large language models!
+  id: totrans-252
   prefs: []
   type: TYPE_NORMAL
 - en: Summary
+  id: totrans-253
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -1529,12 +1853,14 @@
     processing. We saw how different solutions with varying levels of complexity can
     be applied to the same problem. The challenge lies in the identification of the
     most suitable method for the given task.
+  id: totrans-254
   prefs: []
   type: TYPE_NORMAL
 - en: We saw how neural networks can be beneficial for nonlinearly separable data
     by allowing more complex mathematical operations and automating feature extraction.
     Both classical machine learning and deep learning rely on a loss function and
     adapting the model weights to minimize the loss and improve the model’s predictions.
+  id: totrans-255
   prefs: []
   type: TYPE_NORMAL
 - en: In the context of natural language processing, vectorization is important for
@@ -1542,9 +1868,11 @@
     by the computer. We have seen different methods for how word embeddings can be
     trained and how semantically similar words correspond to vectors that are closer
     together.
+  id: totrans-256
   prefs: []
   type: TYPE_NORMAL
 - en: Finally, we saw how publicly available word embeddings and libraries are integrated
     into the data engineer’s workflow.
+  id: totrans-257
   prefs: []
   type: TYPE_NORMAL

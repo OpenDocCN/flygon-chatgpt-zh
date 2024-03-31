@@ -1,105 +1,155 @@
 - en: '[CHAPTER 17Conditional Statements in VBA](contents.xhtml#ch17a)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第17章VBA中的条件语句](contents.xhtml#ch17a)'
 - en: '[Introduction](contents.xhtml#sc2_246a)'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_246a)'
 - en: 'In Visual Basic for Applications (VBA), conditional statements are used to
     make decisions in your code based on certain conditions. They allow you to execute
     different blocks of code depending on the outcome of a logical expression. In
     this chapter, we will focus on two commonly used conditional statements in VBA:
     Select Case and If...End If.'
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在Visual Basic for Applications（VBA）中，条件语句用于根据特定条件在代码中做出决策。它们允许您根据逻辑表达式的结果执行不同的代码块。在本章中，我们将重点介绍VBA中两种常用的条件语句：选择情况和如果…那么结束如果。
 - en: '[Structure](contents.xhtml#sc2_247a)'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_247a)'
 - en: 'In this chapter, we will go over the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: If…End If
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 如果…那么结束如果
 - en: Select Case
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择情况
 - en: Select Case Vs. If … End If
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择情况 Vs. 如果…那么结束如果
 - en: '[Objectives](contents.xhtml#sc2_248a)'
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_248a)'
 - en: By the end of this chapter, the reader will learn  the differences between Select
     Case and If...End If statements in VBA and learn their appropriate usage in different
     scenarios.
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过本章的学习，读者将了解VBA中选择情况和如果…那么结束如果语句之间的区别，并学会在不同场景中正确使用它们。
 - en: '[If…End If](contents.xhtml#sc2_249a)'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: '[如果…那么结束如果](contents.xhtml#sc2_249a)'
 - en: 'In VBA, the “If...End If” statement is used to evaluate a condition and execute
     a block of code if the condition is true. It can also be combined with “ElseIf”
     and “Else” clauses to handle multiple conditions. Here is an example of the basic
     syntax for the “If...End If” statement:'
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 在VBA中，“如果…那么结束如果”语句用于评估条件并在条件为真时执行一段代码块。它还可以与“否则如果”和“否则”子句结合使用以处理多个条件。以下是“如果…那么结束如果”语句的基本语法示例：
 - en: '| If condition1 Then'' Code block to execute if condition1 is TrueElseIf condition2
     Then'' Code block to execute if condition2 is True and condition1 is FalseElse''
     Code block to execute if none of the previous conditions are TrueEnd If |'
+  id: totrans-12
   prefs: []
   type: TYPE_TB
+  zh: '| 如果 条件1 那么'' 如果条件1为真，则执行的代码块否则如果 条件2 那么'' 如果条件2为真且条件1为假，则执行的代码块否则'' 如果前面的条件都不为真，则执行的代码块结束如果
+    |'
 - en: The “condition” and “condition2” in the above example are Boolean expressions
     that evaluate to either true or false.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 上述示例中的“条件”和“条件2”是布尔表达式，其结果为真或假。
 - en: It is important to note that the “If...End If” statement can be nested within
     other control structures like loops and can be used in combination with other
     statements and keywords to create more complex logic in your VBA code.
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 需要注意的是，“如果…那么结束如果”语句可以嵌套在其他控制结构中，如循环中，并且可以与其他语句和关键字结合使用，以在您的VBA代码中创建更复杂的逻辑。
 - en: '[Example](contents.xhtml#sc2_250a)'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: '[示例](contents.xhtml#sc2_250a)'
 - en: 'If the score is equal to or greater than 90, it displays “Grade: A”. If it
     is between 80 and 89, it displays “Grade: B”, and so on. If the score does not
     meet any of the specified conditions, it displays “Grade: F”.'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果分数等于或大于90，则显示“等级：A”。如果在80到89之间，则显示“等级：B”，依此类推。如果分数不符合任何指定条件，则显示“等级：F”。
 - en: '| Sub GradeEvaluation()Dim score As Integer'' Prompt the user to enter a scorescore
     = InputBox("Enter the score:")'' Evaluate the score and provide a corresponding
     gradeIf score >= 90 ThenMsgBox "Grade: A"ElseIf score >= 80 ThenMsgBox "Grade:
     B"ElseIf score >= 70 ThenMsgBox "Grade: C"ElseIf score >= 60 ThenMsgBox "Grade:
     D"ElseMsgBox "Grade: F"End IfEnd Sub |'
+  id: totrans-17
   prefs: []
   type: TYPE_TB
+  zh: '| 子 评分评估()如分数为整数'' 提示用户输入分数分数 = 输入框("输入分数：")'' 评估分数并提供相应等级如果 分数 >= 90 则消息框
+    "等级：A"否则如果 分数 >= 80 则消息框 "等级：B"否则如果 分数 >= 70 则消息框 "等级：C"否则如果 分数 >= 60 则消息框 "等级：D"否则消息框
+    "等级：F"结束 如果结束 子 |'
 - en: '[Select Case](contents.xhtml#sc2_251a)'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: '[选择情况](contents.xhtml#sc2_251a)'
 - en: 'The Select Case statement in VBA provides a concise and structured way to handle
     multiple conditions and execute different code blocks based on the value of a
     single expression. Here is a comprehensive explanation of its syntax and usage:'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: VBA中的选择情况语句提供了一种简洁和结构化的方式来处理多个条件，并根据单个表达式的值执行不同的代码块。以下是其语法和用法的全面解释：
 - en: '| Select Case expressionCase value1'' Code to execute if expression matches
     value1Case value2'' Code to execute if expression matches value2Case Else'' Code
     to execute if expression does not match any previous casesEnd Select |'
+  id: totrans-20
   prefs: []
   type: TYPE_TB
+  zh: '| 选择情况 表达式情况 值1'' 如果表达式匹配值1，则执行的代码情况 值2'' 如果表达式匹配值2，则执行的代码情况 其他'' 如果表达式与任何先前情况都不匹配，则执行的代码结束选择
+    |'
 - en: '[Example](contents.xhtml#sc3_252a)'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: '[示例](contents.xhtml#sc3_252a)'
 - en: In this example, program prompts the user to enter a fruit name. The Select
     Case statement then evaluates the input and displays a corresponding message based
     on the selected fruit. If the fruit is “apple”, it displays a message about it
     being a healthy choice. If it’s “banana”, it mentions its potassium content. If
     it is “orange” or “mandarin”, it highlights the citrus goodness. For any other
     input, it displays a generic message.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个示例中，程序提示用户输入一个水果名称。然后，Select Case 语句评估输入并根据所选水果显示相应的消息。如果水果是“苹果”，它会显示有关其健康选择的消息。如果是“香蕉”，它会提到其钾含量。如果是“橙子”或“柑橘”，它会突出柑橘的好处。对于任何其他输入，它会显示一个通用消息。
 - en: '| Sub FruitSelection()Dim fruit As String'' Prompt the user to enter a fruit
     namefruit = InputBox("Enter a fruit name:")'' Evaluate the fruit name and display
     corresponding messageSelect Case fruitCase "apple"MsgBox "You selected an apple.
@@ -107,55 +157,86 @@
     source of potassium."Case "orange", "mandarin"MsgBox "You selected an orange or
     a mandarin. Enjoy the citrus goodness!"Case ElseMsgBox "That’s an interesting
     choice!"End SelectEnd Sub |'
+  id: totrans-23
   prefs: []
   type: TYPE_TB
+  zh: '| Sub FruitSelection()Dim fruit As String'' 提示用户输入一个水果名称fruit = InputBox("请输入一个水果名称：")''
+    评估水果名称并显示相应的消息Select Case fruitCase "apple"MsgBox "你选择了一个苹果。这是一个健康的选择！"Case "banana"MsgBox
+    "你选择了一个香蕉。它是钾的良好来源。"Case "orange", "mandarin"MsgBox "你选择了一个橙子或柑橘。享受柑橘的好处！"Case
+    ElseMsgBox "这是一个有趣的选择！"End SelectEnd Sub |'
 - en: '[Select Case Vs. If … End If](contents.xhtml#sc2_253a)'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: '[Select Case Vs. If … End If](contents.xhtml#sc2_253a)'
 - en: Use the Select Case statement as an alternative to using ElseIf in If...Then...Else
     statements when comparing one expression to several different values.
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 当将一个表达式与几个不同的值进行比较时，使用 Select Case 语句作为 If...Then...Else 语句中 ElseIf 的替代方法。
 - en: While If...Then...Else statements can evaluate a different expression for each
     ElseIf statement, the Select Case statement evaluates an expression only once,
     at the top of the control structure.
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然 If...Then...Else 语句可以为每个 ElseIf 语句评估不同的表达式，但 Select Case 语句仅在控制结构的顶部评估一次表达式。
 - en: '[Conclusion](contents.xhtml#sc2_254a)'
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_254a)'
 - en: In this chapter, we explored the differences between Select Case and If...End
     If statements in VBA. We learned that Select Case is a useful alternative when
     you have multiple conditions to evaluate against a single expression. It simplifies
     your code and improves readability. However, If...End If statements are more appropriate
     when you have distinct and unrelated conditions to consider.
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们探讨了 VBA 中 Select Case 和 If...End If 语句之间的区别。我们了解到，当您有多个条件要评估针对单个表达式时，Select
+    Case 是一个有用的替代方案。它简化了您的代码并提高了可读性。然而，当您有不同且无关的条件要考虑时，If...End If 语句更合适。
 - en: '[Exercise](contents.xhtml#sc2_255a)'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习](contents.xhtml#sc2_255a)'
 - en: Write a VBA program that asks the user to enter a day of the week (as a number
     from 1 to 7) and displays the corresponding day name. Use both Select Case and
     If...End If statements to implement the program.
+  id: totrans-30
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写一个 VBA 程序，询问用户输入一周中的一天（从 1 到 7 的数字），并显示相应的星期几名称。使用 Select Case 和 If...End
+    If 语句来实现该程序。
 - en: Write a VBA program that asks the user to enter a number and determines if it
     is positive, negative, or zero. Use both Select Case and If...End If statements
     to implement the program
+  id: totrans-31
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写一个 VBA 程序，询问用户输入一个数字，并确定它是正数、负数还是零。使用 Select Case 和 If...End If 语句来实现该程序。
 - en: Join our book’s Discord space
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入我们书籍的 Discord 空间
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入本书的 Discord 工作空间，了解最新更新、优惠、世界各地的技术动态、新发布和作者的会议：
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
 - en: '![](images/fm1.png)'
+  id: totrans-35
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/fm1.png)'

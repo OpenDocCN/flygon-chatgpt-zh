@@ -1,618 +1,958 @@
 - en: '[CHAPTER 16Functions and Subroutines in VBA](contents.xhtml#ch16a)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第16章VBA 中的函数和子例程](contents.xhtml#ch16a)'
 - en: '[Introduction](contents.xhtml#sc2_223a)'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_223a)'
 - en: The chapter will introduce the concepts of functions and subroutines in Excel’s
     VBA programming. It explains the differences between the two and will then delve
     into writing code inside modules using the Visual Basic Editor. The chapter also
     covers branching techniques to control the flow of code execution within procedures.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章将介绍 Excel VBA 编程中函数和子例程的概念。它解释了两者之间的区别，然后深入探讨在模块中使用 Visual Basic Editor 编写代码。本章还涵盖了用于控制过程内代码执行流程的分支技术。
 - en: '[Structure](contents.xhtml#sc2_224a)'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_224a)'
 - en: 'In this chapter, we will go over the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将讨论以下主题：
 - en: Writing procedures
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 编写过程
 - en: Visual Basic Editor
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Visual Basic Editor
 - en: Inserting Modules
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 插入模块
 - en: Writing Code Inside Module
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在模块内编写代码
 - en: Sub Procedure
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 子过程
 - en: Function Procedure
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 函数过程
 - en: Branching a procedure
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 分支过程
 - en: '[Objectives](contents.xhtml#sc2_225a)'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_225a)'
 - en: After studying this chapter, the reader will be able to write procedures and
     understand Visual Basic Editor, in order to insert modules, write codes and so
     on. The reader will also learn about sub procedure, function procedure as well
     as branching a procedure.
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
+  zh: 学习完本章后，读者将能够编写过程并了解 Visual Basic Editor，以便插入模块、编写代码等。读者还将了解子过程、函数过程以及分支过程。
 - en: '[Writing procedures](contents.xhtml#sc2_226a)'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: '[编写过程](contents.xhtml#sc2_226a)'
 - en: You can write code for each action that you record. All the procedures are written
     inside a Module.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 您可以为记录的每个操作编写代码。所有过程都写在一个模块内。
 - en: For writing the code, you need to open Visual Basic Editor. The shortcut to
     open Visual Basic Editor, is Alt + F11.
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: 要编写代码，您需要打开 Visual Basic Editor。打开 Visual Basic Editor 的快捷键是 Alt + F11。
 - en: 'A module is a collection of procedures. There are two types of procedures:'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 模块是一组过程。有两种类型的过程：
 - en: 'Sub procedures: Sub are used to automate Excel actions. A Sub procedure is
     a unit of code enclosed between the Sub and End Sub block. A sub procedure without
     any argument is a Macro.'
+  id: totrans-18
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 子过程：子过程用于自动化 Excel 操作。子过程是在 Sub 和 End Sub 块之间封装的代码单元。没有任何参数的子过程是一个宏。
 - en: 'Function procedures: Functions are used to automate any complex calculation.
     A Function procedure is enclosed between the Function and End Function block.'
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 函数过程：函数用于自动化任何复杂计算。函数过程在 Function 和 End Function 块之间封装。
 - en: 'The differences between the sub procedures and function procedures are explored
     in the following [Table 16.1](#tab16-1):'
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: 子过程和函数过程之间的区别在下表[表16.1](#tab16-1)中有所探讨：
 - en: '| Sub Procedure | Function Procedure |'
+  id: totrans-21
   prefs: []
   type: TYPE_TB
+  zh: '| 子过程 | 函数过程 |'
 - en: '| It cannot return a value | It can return a value |'
+  id: totrans-22
   prefs: []
   type: TYPE_TB
+  zh: '| 它不能返回值 | 它可以返回值 |'
 - en: '| It can perform actions on excel objects | It cannot perform actions on excel
     objects |'
+  id: totrans-23
   prefs: []
   type: TYPE_TB
+  zh: '| 它可以在 Excel 对象上执行操作 | 它不能在 Excel 对象上执行操作 |'
 - en: 'Table 16.1: Differences between procedures'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 表16.1：过程之间的区别
 - en: 'Here are some more points that you can keep in mind:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里有一些你可以记住的要点：
 - en: Both procedures may or may not have arguments.
+  id: totrans-26
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 两种过程可能有或没有参数。
 - en: A sub procedure with no arguments is a Macro.
+  id: totrans-27
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 没有参数的子过程是一个宏。
 - en: All macros are procedures, but not all procedures are macros.
+  id: totrans-28
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 所有宏都是过程，但并非所有过程都是宏。
 - en: '[Visual Basic Editor](contents.xhtml#sc2_227a)'
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: '[Visual Basic Editor](contents.xhtml#sc2_227a)'
 - en: 'The following [Figure 16.1](#fig16-1) shows the code window in Visual Basic
     Editor:'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 下图[图16.1](#fig16-1)显示了 Visual Basic Editor 中的代码窗口：
 - en: '![](images/Figure_16.1.jpg)'
+  id: totrans-31
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_16.1.jpg)'
 - en: 'Figure 16.1: Code window in Visual Basic Editor'
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 图16.1：Visual Basic Editor 中的代码窗口
 - en: 'The different parts in the Code window in Visual Basic Editor are as follows:'
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: Visual Basic Editor 中代码窗口的不同部分如下：
 - en: 'Project Explorer: It displays a hierarchical list of the projects (Excel Workbooks)
     and all of the items contained and referenced by each project.'
+  id: totrans-34
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 项目资源管理器：它显示了项目（Excel 工作簿）的分层列表以及每个项目包含和引用的所有项目。
 - en: 'Properties Window: It lists the design-time properties for selected objects
     and their current settings. You can change these properties at design time. When
     you select multiple controls, the Properties window contains a list of the properties
     common to all the selected controls.'
+  id: totrans-35
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 属性窗口：它列出了所选对象的设计时属性及其当前设置。您可以在设计时更改这些属性。当选择多个控件时，属性窗口包含所有所选控件共有的属性列表。
 - en: 'Code Window: Use the Code window to write, display, and edit Visual Basic code.
     You can open as many Code windows as you have modules, so you can easily view
     the code in different forms or modules, and copy and paste between them.'
+  id: totrans-36
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 代码窗口：使用代码窗口编写、显示和编辑 Visual Basic 代码。您可以打开与模块数量相同的代码窗口，以便轻松查看不同形式或模块中的代码，并在它们之间复制和粘贴。
 - en: '[Figure 16.2](#fig16-2) explores the Project Explorer in more detail:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图 16.2](#fig16-2)更详细地探讨了项目资源管理器：'
 - en: 'View Code: Displays the Code window so you can write and edit code associated
     with the selected item.'
+  id: totrans-38
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查看代码：显示代码窗口，以便您编写和编辑与所选项目相关的代码。
 - en: 'View Object: Displays the Object window for the selected item, an existing
     Document or User form.'
+  id: totrans-39
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 查看对象：显示所选项目的对象窗口，一个现有文档或用户表单。
 - en: 'Toggle Folders: Hides and shows the object folders while still showing the
     individual items contained within them.'
+  id: totrans-40
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 切换文件夹：隐藏和显示对象文件夹，同时仍显示其中包含的各个项目。
 - en: 'List window: Lists the all loaded projects and the items included in each project'
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 列表窗口：列出所有加载的项目及每个项目中包含的项目。
 - en: 'A Property is characteristic of any object. The Property Window shows in [Figure
     16.2](#fig16-2) shows properties of selected object:'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 属性是任何对象的特征。属性窗口显示了所选对象的属性，如[图 16.2](#fig16-2)所示：
 - en: '![](images/Figure_16.2.jpg)'
+  id: totrans-43
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_16.2.jpg)'
 - en: 'Figure 16.2: Project Explorer and Property Window'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 16.2：项目资源管理器和属性窗口
 - en: 'Let us now look at the different parts of the Code window (refer to [Figure
     16.3](#fig16-3)):'
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们来看看代码窗口的不同部分（参考[图 16.3](#fig16-3)）：
 - en: 'Object Box: It displays a list of objects from current projects.'
+  id: totrans-46
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 对象框：显示当前项目中对象的列表。
 - en: 'Procedure Window: It contains all procedures of current module or events of
     selected object.'
+  id: totrans-47
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过程窗口：包含当前模块的所有过程或所选对象的事件。
 - en: 'Procedure View: It displays only one procedure at a time.'
+  id: totrans-48
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 过程视图：一次只显示一个过程。
 - en: 'Full Module View: It displays all procedures from current module.'
+  id: totrans-49
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 完整模块视图：显示当前模块中的所有过程。
 - en: 'Refer to the following [Figure 16.3](#fig16-3):'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图 16.3](#fig16-3)：
 - en: '![](images/Figure_16.3.jpg)'
+  id: totrans-51
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_16.3.jpg)'
 - en: 'Figure 16.3: Code window'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 16.3：代码窗口
 - en: '[Project Explorer keyboard shortcuts](contents.xhtml#sc3_228a)'
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: '[项目资源管理器键盘快捷键](contents.xhtml#sc3_228a)'
 - en: 'Let us now look at the various keyboard shortcuts:'
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们来看看各种键盘快捷键：
 - en: 'ENTER + Æ: Open the selected file from the list, or expand and collapse the
     list to show its subentries.'
+  id: totrans-55
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 回车 + Æ：打开列表中的所选文件，或展开和折叠列表以显示其子条目。
 - en: 'SHIFT+ENTERÆ: Open the Code window for the selected file.'
+  id: totrans-56
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: SHIFT+ENTERÆ：打开所选文件的代码窗口。
 - en: 'F7 + Æ: Open the Code window for the selected file.'
+  id: totrans-57
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: F7 + Æ：打开所选文件的代码窗口。
 - en: 'SHIFT+F10 Æ: View shortcut menu.'
+  id: totrans-58
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: SHIFT+F10 Æ：查看快捷菜单。
 - en: 'HOME + Æ: Select the first file in the list.'
+  id: totrans-59
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: HOME + Æ：选择列表中的第一个文件。
 - en: 'END + Æ: Select the last file in the list.'
+  id: totrans-60
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: END + Æ：选择列表中的最后一个文件。
 - en: 'RIGHT ARROW + Æ: Expands a list and then selects a subentry in the list each
     time you press it.'
+  id: totrans-61
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 右箭头 + Æ：展开列表，然后每次按下时选择列表中的子条目。
 - en: 'LEFT ARROW + Æ: Selects a subentry in the list and then moves up the list each
     time you press it until the subentry list collapses into a folder.'
+  id: totrans-62
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 左箭头 + Æ：选择列表中的子条目，然后每次按下时���上移动列表，直到子条目列表折叠为文件夹。
 - en: 'UP ARROW + Æ: Moves up the list one entry at a time.'
+  id: totrans-63
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 上箭头 + Æ：逐个向上移动列表中的条目。
 - en: 'DOWN ARROW + Æ: Moves down the list one entry at a time.'
+  id: totrans-64
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 下箭头 + Æ：逐个向下移动列表中的条目。
 - en: '[Inserting modules](contents.xhtml#sc2_229a)'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: '[插入模块](contents.xhtml#sc2_229a)'
 - en: 'To insert a module, follow the given steps:'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: 要插入模块，请按照给定步骤进行：
 - en: Select the book in which you want to store your procedures, as shown in [Figure
     16.4](#fig16-4) (1).
+  id: totrans-67
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择要存储过程的书籍，如[图 16.4](#fig16-4)（1）所示。
 - en: Select Insert menu, and then select Module, as shown in [Figure 16.4](#fig16-4)
     (2).
+  id: totrans-68
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 选择“插入”菜单，然后选择“模块”，如[图 16.4](#fig16-4)（2）所示。
 - en: Module1 is added. You can change name through the property window, as shown
     in [Figure 16.4](#fig16-4) (3).
+  id: totrans-69
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 已添加 Module1。你可以通过属性窗口更改名称，如[图 16.4](#fig16-4)（3）所示。
 - en: 'Refer to [Figure 16.4](#fig16-4):'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考[图 16.4](#fig16-4)：
 - en: '![](images/Figure_16.4.png)'
+  id: totrans-71
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_16.4.png)'
 - en: 'Figure 16.4: Inserting modules'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 16.4：插入模块
 - en: '[Writing code inside Modules](contents.xhtml#sc2_230a)'
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: '[在模块内编写代码](contents.xhtml#sc2_230a)'
 - en: 'To write code inside modules, follow these steps:'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 要在模块内编写代码，请按照以下步骤进行：
 - en: Double click the Module inside which you want to write your code for the procedures,
     as shown in the following [Figure 16.5](#fig16-5) (a).
+  id: totrans-75
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 双击要在其中编写过程代码的模块，如下所示的[图 16.5](#fig16-5)（a）。
 - en: Write your code for the procedures, as shown in the following [Figure 16.5](#fig16-5)
     (b).
+  id: totrans-76
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写您的过程代码，如下所示的[图 16.5](#fig16-5)（b）。
 - en: 'Refer to the following [Figure 16.5](#fig16-5):'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图 16.5](#fig16-5)：
 - en: '![](images/Figure_16.5.png)'
+  id: totrans-78
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_16.5.png)'
 - en: 'Figure 16.5: Writing code inside module'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 16.5：在模块内编写代码
 - en: '[Sub Procedure](contents.xhtml#sc2_231a)'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: '[子过程](contents.xhtml#sc2_231a)'
 - en: Sub procedure is a series of Visual Basic statements enclosed by the Sub and
     End Sub statements that performs actions, but does not return a value.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 子过程是一系列由 Sub 和 End Sub 语句包围的 Visual Basic 语句，执行操作但不返回值。
 - en: A Sub procedure can take arguments, such as constants, variables, or expressions
     that are passed by a calling procedure.
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 子过程可以接受参数，如常量、变量或由调用过程传递的表达式。
 - en: If a Sub procedure has no arguments, the Sub statement must include an empty
     set of parentheses
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果一个子过程没有参数，子语句必须包含一对空括号
 - en: '[Macro](contents.xhtml#sc3_232a)'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: '[宏](contents.xhtml#sc3_232a)'
 - en: 'The macro is as follows:'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 宏如下所示：
 - en: '| Sub HelloWorld()MsgBOx "Hello World"End Sub |'
+  id: totrans-86
   prefs: []
   type: TYPE_TB
+  zh: '| Sub HelloWorld()MsgBOx "Hello World"End Sub |'
 - en: '[Figure 16.6](#fig16-6) features a macro:'
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: '[图 16.6](#fig16-6) 包含一个宏：'
 - en: '![](images/Figure_16.6.png)'
+  id: totrans-88
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_16.6.png)'
 - en: 'Figure 16.6: Macro'
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 16.6：宏
 - en: '[Function procedure](contents.xhtml#sc2_233a)'
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: '[函数过程](contents.xhtml#sc2_233a)'
 - en: A Function procedure is a series of Visual Basic statements enclosed by the
     Function and End Function statements.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数过程是一系列由 Function 和 End Function 语句包围的 Visual Basic 语句。
 - en: A Function procedure is similar to a Sub procedure, but a function can also
     return a value. A Function procedure can take arguments, that are passed to it
     by a calling procedure.
+  id: totrans-92
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数过程类似于子过程，但函数还可以返回一个值。函数过程可以接受由调用过程传递给它的参数。
 - en: If a Function procedure has no arguments, its Function statement must include
     an empty set of parentheses. A function returns a value by assigning a value to
     its name in one or more statements of the procedure.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果一个函数过程没有参数，其函数语句必须包含一对空括号。函数通过在过程的一个或多个语句中为其名称赋值来返回一个值。
 - en: For example,
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，
 - en: '| Function Celsius (fDegrees)Celsius = (fDegrees - 32) * 5 / 9End Function
     |'
+  id: totrans-95
   prefs: []
   type: TYPE_TB
+  zh: '| Function Celsius (fDegrees)Celsius = (fDegrees - 32) * 5 / 9End Function
+    |'
 - en: 'Refer to the following [Figure 16.7](#fig16-7):'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考以下[图 16.7](#fig16-7)：
 - en: '![](images/Figure_16.7.png)'
+  id: totrans-97
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/Figure_16.7.png)'
 - en: 'Figure 16.7: User Defined Function'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 16.7：用户定义函数
 - en: '[Syntax to write functions](contents.xhtml#sc3_234a)'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
+  zh: '[编写函数的语法](contents.xhtml#sc3_234a)'
 - en: '| Function name_of_function( argument1 , argument2 , …)processing the arguments
     name_of_function= ResultEnd Function |'
+  id: totrans-100
   prefs: []
   type: TYPE_TB
+  zh: '| Function name_of_function( argument1 , argument2 , …)processing the arguments
+    name_of_function= ResultEnd Function |'
 - en: 'Note: Arguments are the inputs you want from the end user to calculate result.'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 注意：参数是您希望从最终用户那里获得以计算结果的输入。
 - en: 'Both procedures may or may not have arguments:'
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 两个过程可能有或没有参数：
 - en: 'Passing by Value Æ: If you pass an argument by value, the called procedure
     receives only a copy of the variable passed from the calling procedure. If the
     called procedure changes the value, the change affects only the copy and not the
     variable in the calling procedure.'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过值传递 Æ：如果通过值传递参数，则被调用过程仅接收从调用过程传递的变量的副本。如果被调用过程���改值，则更改仅影响副本而不影响调用过程中的变量。
 - en: 'Passing by Reference Æ: Whereas if you pass an argument by reference when calling
     a procedure, the procedure has access to the actual variable in memory. As a result,
     the variable’s value can be changed by the procedure. By default, arguments are
     by reference.'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过引用传递 Æ：如果在调用过程时通过引用传递参数，则过程可以访问内存中的实际变量。因此，过程可以更改变量的值。默认情况下，参数是通过引用传递的。
 - en: '[Scenario 9](contents.xhtml#sc3_235a)'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景 9](contents.xhtml#sc3_235a)'
 - en: Write a function to calculate Profit where profit is the difference of Selling
     price and Cost price. Profit function requires two arguments, that is, cost price
     and selling price.
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个函数来计算利润，其中利润是销售价格和成本价格的差额。利润函数需要两个参数，即成本价格和销售价格。
 - en: Refer to Training File5.xls
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考 Training File5.xls
 - en: '| Function Profit(CP, SP)Profit = SP - CPEnd Function |'
+  id: totrans-108
   prefs: []
   type: TYPE_TB
+  zh: '| Function Profit(CP, SP)Profit = SP - CPEnd Function |'
 - en: '[Branching a Procedure](contents.xhtml#sc2_236a)'
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: '[分支过程](contents.xhtml#sc2_236a)'
 - en: If you want to run a block of code depending on the value of a condition, you
     can use the following decision structures.
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果你想根据条件的值运行一段代码块，可以使用以下决策结构。
 - en: ¾ If...Then...Endif
+  id: totrans-111
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ¾ 如果...那么...Endif
 - en: ¾ If...Then...Else…Endif
+  id: totrans-112
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ¾ 如果...那么...否则...Endif
 - en: ¾ If...Then...Elseif…Then…Else…Endif
+  id: totrans-113
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ¾ 如果...那么...否则如果...那么...否则...Endif
 - en: ¾ Select Case …End Select
+  id: totrans-114
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: ¾ 选择 Case …End Select
 - en: Use If...Then...Endif
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 如果...那么...Endif
 - en: A single condition and it runs a single statement or a block of statements.
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 单个条件并运行单个语句或一组语句。
 - en: Use If...Then...Else…Endif
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用 如果...那么...否则...Endif
 - en: A single condition but it runs two different statement or a block of statements,
     depending on result of the condition.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 单个条件，但根据条件的结果运行两个不同的语句或语句块。
 - en: Use If...Then...Elseif…Then…Else…Endif OR Select Case… End
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用If...Then...Elseif…Then…Else…Endif或Select Case…End
 - en: Selects more than one condition and runs one of several statement blocks.
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
+  zh: 选择多个条件并运行多个语句块中的一个。
 - en: '[Scenario 10](contents.xhtml#sc3_237a)'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景10](contents.xhtml#sc3_237a)'
 - en: Write a function to check whether person is eligible for voting or not. To check
     eligibility, the Vote function requires age as an argument.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个函数来检查人是否有资格投票。为了检查资格，Vote函数需要年龄作为参数。
 - en: Refer Training File5.xls
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考培训文件5.xls
 - en: '| Function Vote(Age)If Age >= 18 ThenVote = "Eligible"ElseVote = "not eligible"EndIfEnd
     Function |'
+  id: totrans-124
   prefs: []
   type: TYPE_TB
+  zh: '| 函数 Vote(Age)If Age >= 18 ThenVote = "有资格"ElseVote = "不符合资格"EndIfEnd Function
+    |'
 - en: '[Scenario 11](contents.xhtml#sc3_238a)'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景11](contents.xhtml#sc3_238a)'
 - en: 'Write a function to find grade of employee based on basic salary as per given
     criteria (Using If Elseif):'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个函数根据基本工资找到员工的等级（使用If Elseif）：
 - en: Grade Salary
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
+  zh: 等级工资
 - en: D <8000
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: D <8000
 - en: C 8000 – 15000
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: C 8000 – 15000
 - en: B 15000 – 25000
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: B 15000 – 25000
 - en: A >=25000
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: A >=25000
 - en: Refer Training File5.xls
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考培训文件5.xls
 - en: '| Function Grade (salary)If salary<8000 ThenGrade = "D"ElseIf salary<15000
     ThenGrade = "C"ElseIf salary<25000 ThenGrade = "B"ElseGrade ="A"End IfEnd Function
     |'
+  id: totrans-133
   prefs: []
   type: TYPE_TB
+  zh: '| 函数 Grade (salary)If salary<8000 ThenGrade = "D"ElseIf salary<15000 ThenGrade
+    = "C"ElseIf salary<25000 ThenGrade = "B"ElseGrade ="A"End IfEnd Function |'
 - en: '[Scenario 12](contents.xhtml#sc3_239a)'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景12](contents.xhtml#sc3_239a)'
 - en: Write a function to find bonus based on grade (Using Select Case)
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个函数根据等级找到奖金（使用Select Case）
 - en: Grade bonus
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 等级奖金
 - en: A 25000
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: A 25000
 - en: B 20000
+  id: totrans-138
   prefs: []
   type: TYPE_NORMAL
+  zh: B 20000
 - en: C 15000
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: C 15000
 - en: D 10000
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: D 10000
 - en: Refer Training File5.xls
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 参考培训文件5.xls
 - en: '| Function bonus(grade)Select Case gradeCase "a", "A"bonus = 25000Case "b",
     "B"bonus = 20000Case "c", "C"bonus = 15000Case Elsebonus = 10000End SelectEnd
     Function |'
+  id: totrans-142
   prefs: []
   type: TYPE_TB
+  zh: '| 函数 bonus(grade)Select Case gradeCase "a", "A"bonus = 25000Case "b", "B"bonus
+    = 20000Case "c", "C"bonus = 15000Case Elsebonus = 10000End SelectEnd Function
+    |'
 - en: '[Scenario 13](contents.xhtml#sc3_240a)'
+  id: totrans-143
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景13](contents.xhtml#sc3_240a)'
 - en: Write a function to calculate DA based on region. DA is 5% if region is either
     east or west, or else it will be 10%. Use OR Operator to check multiple conditions.
+  id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个函数来根据地区计算津贴。如果地区是东部或西部，则津贴为5%，否则为10%。使用OR运算符来检查多个条件。
 - en: '[OR operator](contents.xhtml#sc4_241a)'
+  id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: '[OR运算符](contents.xhtml#sc4_241a)'
 - en: The OR operator is used to perform a logical conjunction on two expressions.
     It results true if any one of the expression results true.
+  id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: OR运算符用于对两个表达式执行逻辑合取。如果任一表达式结果为真，则结果为真。
 - en: '| Function CalcDa(Region, sal)If Region = "east" Or Region = "west" ThenCalcDa
     = sal * 0.05ElseCalcDa = sal * 0.1EndIfEnd Function |'
+  id: totrans-147
   prefs: []
   type: TYPE_TB
+  zh: '| 函数 CalcDa(Region, sal)If Region = "east" Or Region = "west" ThenCalcDa =
+    sal * 0.05ElseCalcDa = sal * 0.1EndIfEnd Function |'
 - en: '[Scenario 14](contents.xhtml#sc3_242a)'
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: '[场景14](contents.xhtml#sc3_242a)'
 - en: Write a function to calculate DA based on region. DA is 5% if region is east
     and salary >10000, and otherwise, it is 10%
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 编写一个函数来根据地区计算津贴。如果地区是东部且工资>10000，则为5%，否则为10%。
 - en: Use AND Operator to check multiple condition.
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用AND运算符来检查多个条件。
 - en: '[AND Operator](contents.xhtml#sc4_243a)'
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: '[AND运算符](contents.xhtml#sc4_243a)'
 - en: Used to perform a logical conjunction on two expressions. AND results true if
     all the expressions result true.
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 用于对两个表达式执行逻辑合取。AND如果所有表达式结果为真，则结果为真。
 - en: '| Function CalcDa(Region, sal)If Region = "east" And sal > 10000 ThenCalcDa
     = sal * 0.05ElseCalcDa = sal * 0.1EndIf |'
+  id: totrans-153
   prefs: []
   type: TYPE_TB
+  zh: '| 函数 CalcDa(Region, sal)If Region = "east" And sal > 10000 ThenCalcDa = sal
+    * 0.05ElseCalcDa = sal * 0.1EndIf |'
 - en: '[Conclusion](contents.xhtml#sc2_244a)'
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结论](contents.xhtml#sc2_244a)'
 - en: Functions and Subroutines are powerful tools in VBA that help you automate tasks
     and perform calculations in Excel. By understanding how to write procedures, use
     the Visual Basic Editor, and apply branching techniques, you can enhance your
     VBA programming skills and create more efficient and dynamic Excel applications.
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 函数和子程序是VBA中强大的工具，帮助您自动化任务并在Excel中执行计算。通过了解如何编写过程，使用Visual Basic Editor，并应用分支技术，您可以增强您的VBA编程技能，并创建更高效和动态的Excel应用程序。
 - en: '[Exercise](contents.xhtml#sc2_245a)'
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: '[练习](contents.xhtml#sc2_245a)'
 - en: Write a Function to calculate the area of a rectangle given its length and width.
+  id: totrans-157
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写一个函数来计算矩形的面积，给定其长度和宽度。
 - en: Create a Subroutine to format a range of cells based on specific conditions,
     such as highlighting cells with values above a certain threshold.
+  id: totrans-158
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个子程序来根据特定条件格式化一系列单元格，例如突出显示值高于某个阈值的单元格。
 - en: Develop a Function that converts a temperature from Fahrenheit to Celsius.
+  id: totrans-159
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 开发一个将华氏温度转换为摄氏温度的函数。
 - en: Write a Subroutine to sort a column of data in ascending order.
+  id: totrans-160
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 编写一个子程序，将数据列按升序排序。
 - en: Create a Function to calculate the factorial of a given number.
+  id: totrans-161
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: 创建一个函数来计算给定数字的阶乘。
 - en: Join our book’s Discord space
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入我们书籍的 Discord 空间
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 加入书籍的 Discord 工作区，获取最新更新、优惠、全球科技动态、新发布内容以及与作者的交流：
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
 - en: '![](images/fm1.png)'
+  id: totrans-165
   prefs: []
   type: TYPE_IMG
+  zh: '![](images/fm1.png)'

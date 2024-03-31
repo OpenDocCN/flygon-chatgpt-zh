@@ -1,10 +1,14 @@
 - en: '[CHAPTER 18Variables and Data Types in VBA](contents.xhtml#ch18a)'
+  id: totrans-0
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '[第18章VBA中的变量和数据类型](contents.xhtml#ch18a)'
 - en: '[Introduction](contents.xhtml#sc2_256a)'
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: '[介绍](contents.xhtml#sc2_256a)'
 - en: In this chapter, we will explore the fundamentals of variables and data types
     in VBA (Visual Basic for Applications). Variables are essential elements in programming
     that store and manipulate data during program execution, while data types define
@@ -13,53 +17,79 @@
     such as declaring variables and constants, specifying data types, working with
     message boxes and input boxes, selecting cells, rows, and columns, and working
     with sheets, workbooks, and the application object.
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将探讨VBA（Visual Basic for Applications）中变量和数据类型的基础知识。变量是编程中的基本元素，它们在程序执行过程中存储和操作数据，而数据类型定义了变量中存储的数据的性质。理解变量和数据类型对于编写高效和有效的VBA代码至关重要。我们将涵盖声明变量和常量、指定数据类型、使用消息框和输入框、选择单元格、行和列以及与工作表、工作簿和应用程序对象一起工作等主题。
 - en: '[Structure](contents.xhtml#sc2_257a)'
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: '[结构](contents.xhtml#sc2_257a)'
 - en: 'In this chapter, we will cover the following topics:'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们将涵盖以下主题：
 - en: Variables and constants
+  id: totrans-5
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 变量和常量
 - en: Declaring variables and constants
+  id: totrans-6
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 声明变量和常量
 - en: Data types of variables and constants
+  id: totrans-7
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 变量和常量的数据类型
 - en: Message box and input box
+  id: totrans-8
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 消息框和输入框
 - en: Selecting and activating cells
+  id: totrans-9
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择和激活单元格
 - en: Selecting and activating rows and columns
+  id: totrans-10
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 选择和激活行和列
 - en: Working with Sheets
+  id: totrans-11
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与工作表一起工作
 - en: Working with WorkBook
+  id: totrans-12
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与工作簿一起工作
 - en: Working with application object
+  id: totrans-13
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 与应用程序对象一起工作
 - en: '[Objectives](contents.xhtml#sc2_258a)'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: '[目标](contents.xhtml#sc2_258a)'
 - en: By the end of the chapter, the reader will be able to understand the concept
     of variables and constants in VBA and learn how to declare them, familiarize themselves
     with different data types available in VBA and their respective ranges, and explore
@@ -67,368 +97,504 @@
     the reader will also learn techniques for selecting and activating cells, rows,
     and columns in Excel, and gain knowledge on working with sheets, workbooks, and
     the application object in VBA.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过本章结束时，读者将能够理解VBA中变量和常量的概念，并学会如何声明它们，熟悉VBA中可用的不同数据类型及其各自的范围，并探索消息框和输入框用于用户交互的用法。此外，读者还将学习在Excel中选择和激活单元格、行和列的技巧，并了解在VBA中使用工作表、工作簿和应用程序对象的知识。
 - en: '[Variables and constants](contents.xhtml#sc2_259a)'
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: '[变量和常量](contents.xhtml#sc2_259a)'
 - en: Let us now learn about variables and constants.
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们学习关于变量和常量。
 - en: '[Variable](contents.xhtml#sc3_260a)'
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: '[变量](contents.xhtml#sc3_260a)'
 - en: 'The features of variables are as follows:'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 变量的特点如下：
 - en: A variable is a named storage location containing data that can be modified
     during program execution.
+  id: totrans-20
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 变量是一个命名的存储位置，其中包含在程序执行过程中可以修改的数据。
 - en: Each variable has a name that uniquely identifies it within its scope.
+  id: totrans-21
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 每个变量都有一个名称，用于在其范围内唯一标识它。
 - en: A data type can be specified or not.
+  id: totrans-22
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 可以指定或不指定数据类型。
 - en: 'Variable names:'
+  id: totrans-23
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 变量名称：
 - en: Must begin with an alphabetic character,
+  id: totrans-24
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 必须以字母字符开头，
 - en: Must be unique within the same scope,
+  id: totrans-25
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 在相同范围内必须是唯一的，
 - en: Cannot be longer than 255 characters, and
+  id: totrans-26
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 不能超过255个字符，并且
 - en: Contain an embedded period or type-declaration character.
+  id: totrans-27
   prefs:
   - PREF_IND
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 包含嵌入的句点或类型声明字符。
 - en: '[Constant](contents.xhtml#sc3_261a)'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
+  zh: '[常量](contents.xhtml#sc3_261a)'
 - en: A named item that retains a constant value throughout the execution of a program.
     A constant can be a string or numeric literal.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在程序执行过程中保持恒定值的命名项目。常量可以是字符串或数字文字。
 - en: '[Declaring variables and constants](contents.xhtml#sc2_262a)'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: '[声明变量和常量](contents.xhtml#sc2_262a)'
 - en: 'The syntax to declare a variable is:'
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 声明变量的语法是：
 - en: DIM name_of_variable AS type_of_variable
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: DIM name_of_variable AS type_of_variable
 - en: For example
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如
 - en: Dim strName As String
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: Dim strName As String
 - en: Dim intX As Integer
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: Dim intX As Integer
 - en: Dim intX , intYAs Integer
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: Dim intX，intYAs Integer
 - en: 'The syntax to declare a constant is:'
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 声明常量的语法是：
 - en: Const name_of_variable AS type_of_variable = constant value
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: Const name_of_variable AS type_of_variable = constant value
 - en: For example
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如
 - en: Const conAge As Integer = 34
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: Const conAge As Integer = 34
 - en: When declaring variables, use a Dim statement where for constants use a Const
     statement.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 在声明变量时，使用Dim语句，而对于常量使用Const语句。
 - en: A declaration statement can be placed within a procedure to create a procedure
     level variable. Or it may be placed at the top of a module, in the Declarations
     section, to create a module level variable.
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
 - en: '[Data types of variables and constants](contents.xhtml#sc2_263a)'
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
 - en: '[Table 18.1](#tab18-1) shows the various ranges in data type:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
 - en: '| Data type | Range |'
+  id: totrans-45
   prefs: []
   type: TYPE_TB
 - en: '| --- | --- |'
+  id: totrans-46
   prefs: []
   type: TYPE_TB
 - en: '| Byte | 0 to 255. |'
+  id: totrans-47
   prefs: []
   type: TYPE_TB
 - en: '| Integer | – 32,768 to 32,767. |'
+  id: totrans-48
   prefs: []
   type: TYPE_TB
 - en: '| Long | – 2,147,483,648 to 2,147,483,647. |'
+  id: totrans-49
   prefs: []
   type: TYPE_TB
 - en: '| Single | – 3.402823E38 to – 1.401298E – 45 (negative values). |'
+  id: totrans-50
   prefs: []
   type: TYPE_TB
 - en: '| 1.401298E – 45 to 3.402823E38 (positive values). |'
+  id: totrans-51
   prefs: []
   type: TYPE_TB
 - en: '| Double | – 1.7200369313486231E308 to– 4.94065645841247E – 324 (negative values).
     4.94065645841247E – 324 to 1.7200369313486231E308(positive values). |'
+  id: totrans-52
   prefs: []
   type: TYPE_TB
 - en: '| Currency | – 922,337,203,685,477.5808 to 922,337,203,685,477.5807. |'
+  id: totrans-53
   prefs: []
   type: TYPE_TB
 - en: '| String | Zero to approximately two billion characters. |'
+  id: totrans-54
   prefs: []
   type: TYPE_TB
 - en: '| Variant | Date values: January 1, 100 to December 31, 9999. |'
+  id: totrans-55
   prefs: []
   type: TYPE_TB
 - en: '| Numeric values: same range as Double. |'
+  id: totrans-56
   prefs: []
   type: TYPE_TB
 - en: '| String values: same range as String. |'
+  id: totrans-57
   prefs: []
   type: TYPE_TB
 - en: '| Can also contain Error or Null values. |'
+  id: totrans-58
   prefs: []
   type: TYPE_TB
 - en: '| Boolean | True or False. |'
+  id: totrans-59
   prefs: []
   type: TYPE_TB
 - en: '| Date | January 1, 100 to December 31, 9999. |'
+  id: totrans-60
   prefs: []
   type: TYPE_TB
 - en: '| Object | Any object reference. |'
+  id: totrans-61
   prefs: []
   type: TYPE_TB
 - en: 'Table 18.1: Data Types'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
 - en: '[Using the option explicit statement](contents.xhtml#sc3_264a)'
+  id: totrans-63
   prefs: []
   type: TYPE_NORMAL
 - en: Use Option Explicit to enforce explicit declaration of variables. It must appear
     in a module before any procedure. If not used, undeclared variables will be of
     Variant type.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
 - en: '[Message box and input box](contents.xhtml#sc2_265a)'
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
 - en: The Msgbox function displays a message in a dialog box, waits for the user to
     click a button, and returns an Integer indicating which button the user clicked.
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
 - en: The InputBox Function displays a prompt in a dialog box, waits for the user
     to input text or click a button, and returns a string containing the contents
     of the text box.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
 - en: 'Example:'
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
 - en: '| Sub Greet()MsgBox "Hello " & InputBOx("What is your name?")End Sub |'
+  id: totrans-69
   prefs: []
   type: TYPE_TB
 - en: '[Selecting and activating cells](contents.xhtml#sc2_266a)'
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
 - en: When you work with Microsoft Excel, you usually select a cell or cells and then
     perform an action, such as formatting the cells or entering values in them.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
 - en: 'Refer to [Table 18.2](#tab18-2), to write the codes for various actions:'
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
 - en: '| To do this | Write this code |'
+  id: totrans-73
   prefs: []
   type: TYPE_TB
 - en: '| Select cell A1 | Range("A1").select or Cells(1,1).select |'
+  id: totrans-74
   prefs: []
   type: TYPE_TB
 - en: '| Select range A1:B5 | Range("A1:b5").select |'
+  id: totrans-75
   prefs: []
   type: TYPE_TB
 - en: '| Select range A1:A5 and C2:C10 | Range("A1:A5 , C2:C10").select |'
+  id: totrans-76
   prefs: []
   type: TYPE_TB
 - en: '| Select current cell | Activecell.select |'
+  id: totrans-77
   prefs: []
   type: TYPE_TB
 - en: '| Select range from current cell to b6 | Range(Activecell , "b6").select |'
+  id: totrans-78
   prefs: []
   type: TYPE_TB
 - en: '| Select current region of activecell | Activecell.currentregion.select |'
+  id: totrans-79
   prefs: []
   type: TYPE_TB
 - en: '| Ctrl + Shift+ Down Arrow from Activecell | Range(ActivecellActivecell.End(X
     lDown)).select |'
+  id: totrans-80
   prefs: []
   type: TYPE_TB
 - en: '| Ctrl + Shift + Down Arrow from cell A2 | Range("A2" , Activecell.End(XlDown)).select
     |'
+  id: totrans-81
   prefs: []
   type: TYPE_TB
 - en: 'Table 18.2: Codes for various actions'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
 - en: '[Selecting and activating rows and columns](contents.xhtml#sc2_267a)'
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
 - en: Sometimes you need to select specific rows and columns and then perform actions.
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
 - en: 'To do this write the code shown in the following [Table 18.3](#tab18-3):'
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
 - en: '| To do this | Write this code |'
+  id: totrans-86
   prefs: []
   type: TYPE_TB
 - en: '| Select a row | Rows("2:2").select |'
+  id: totrans-87
   prefs: []
   type: TYPE_TB
 - en: '| Select rows from 2 to 5 | Rows("2:5").select |'
+  id: totrans-88
   prefs: []
   type: TYPE_TB
 - en: '| Select 3 rows from activecell | Activecell.entirerow.Range("1:3"). select
     |'
+  id: totrans-89
   prefs: []
   type: TYPE_TB
 - en: '| Select a column | Columns("A:A").select |'
+  id: totrans-90
   prefs: []
   type: TYPE_TB
 - en: '| Select columns from B to E | Columns("B:E").select |'
+  id: totrans-91
   prefs: []
   type: TYPE_TB
 - en: '| Select 3 columns from activecell | Activecell.entirecolumn.Range("A:C").select
     |'
+  id: totrans-92
   prefs: []
   type: TYPE_TB
 - en: '| Select current row | Activecell.entirerow.select |'
+  id: totrans-93
   prefs: []
   type: TYPE_TB
 - en: '| Select current column | Activecell.entirecolumn.select |'
+  id: totrans-94
   prefs: []
   type: TYPE_TB
 - en: 'Table 18.3: Codes for various actions'
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
 - en: '[Working with sheets](contents.xhtml#sc2_268a)'
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
 - en: 'Many a times, you need to select a specific sheet, or insert new sheet, rename
     a sheet, and so on. Refer to [Table 18.4](#tab18-4):'
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
 - en: '| To do This | Write this code |'
+  id: totrans-98
   prefs: []
   type: TYPE_TB
 - en: '| Select any sheet by index number | Sheets(2).selectWorksheets(2).select |'
+  id: totrans-99
   prefs: []
   type: TYPE_TB
 - en: '| Select any sheet by name | Sheets("Sheet1").selectWorksheets("Sheet1").select
     |'
+  id: totrans-100
   prefs: []
   type: TYPE_TB
 - en: '| Renaming a sheet | Sheets("Sheet1").name="newname" |'
+  id: totrans-101
   prefs: []
   type: TYPE_TB
 - en: '| Newname | Worksheets("Sheet1").name=Activesheet.name |'
+  id: totrans-102
   prefs: []
   type: TYPE_TB
 - en: '| Deleting a sheet | Sheets("Sheet1").deleteWorksheets("Sheet1").deleteActivesheet.delete
     |'
+  id: totrans-103
   prefs: []
   type: TYPE_TB
 - en: '| Insert a sheet | Sheets.add before:= sheets("Sheet1")Worksheets.add before:=sheets("Sheet1")
     |'
+  id: totrans-104
   prefs: []
   type: TYPE_TB
 - en: 'Table 18.4: Codes for various actions'
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
 - en: '[Working with WorkBook](contents.xhtml#sc2_269a)'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
 - en: 'Sometimes you need to work with different workbooks. Refer to [Table 18.5](#tab18-5):'
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
 - en: '| To do This | Write this code |'
+  id: totrans-108
   prefs: []
   type: TYPE_TB
 - en: '| Open a workbook | Workbooks.open filename:="filename with path" |'
+  id: totrans-109
   prefs: []
   type: TYPE_TB
 - en: '| Open workbook which contains auto macros | Workbooks.openfilename:="Activeworkbook.runautomacros"
     |'
+  id: totrans-110
   prefs: []
   type: TYPE_TB
 - en: '| Close a workbook | Workbooks(2).close |'
+  id: totrans-111
   prefs: []
   type: TYPE_TB
 - en: '| Adding a new workbook | Workbooks.add |'
+  id: totrans-112
   prefs: []
   type: TYPE_TB
 - en: 'Table 18.5: Codes for various actions'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
 - en: '[Working with application object](contents.xhtml#sc2_270a)'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
 - en: 'Sometimes to ignore different excel messages you need to work with application
     object, as illustrated in the following [Table 18.6](#tab18-6):'
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
 - en: '| To do this | Write this code |'
+  id: totrans-116
   prefs: []
   type: TYPE_TB
 - en: '| To switch off the display of messages | Application.DisplayAlert = False
     |'
+  id: totrans-117
   prefs: []
   type: TYPE_TB
 - en: '| To stop flickering of screen | Application.ScreenUpdating = False |'
+  id: totrans-118
   prefs: []
   type: TYPE_TB
 - en: '| To stop copy / cut mode | Application.CutCopyMode = False |'
+  id: totrans-119
   prefs: []
   type: TYPE_TB
 - en: '| To calculate | Application.Calculate |'
+  id: totrans-120
   prefs: []
   type: TYPE_TB
 - en: 'Table 18.6: Codes for various actions'
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
 - en: '[Scenario 15](contents.xhtml#sc3_271a)'
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
 - en: Create a macro which should accept Name and City of a person and store it in
     excel worksheet in cell A1 and B1\. If user type Mumbai as city then font color
     must be red. Use InputBox function to take input from the user. Use MsgBox function
     to display results.
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
 - en: '| Sub Accept_Details()Dim e_Name , e_City As StringName = InputBox("Enter your
@@ -436,14 +602,17 @@
     city is " & CityCells(1, 1).Value = e_Name Cells(1, 2).Value = e_CityIf Cells(1,
     2).Value = "mumbai" ThenCells(1, 2).Font.ColorIndex = 3ElseCells(1, 2).Font.ColorIndex
     = 0EndIfEnd Sub |'
+  id: totrans-124
   prefs: []
   type: TYPE_TB
 - en: '[Scenario 16](contents.xhtml#sc3_272a)'
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
 - en: Create a macro name it as Data_Entry. Accept employee code, name, date of joining
     and salary of a person. Insert the values in “Database” worksheet. Every new record
     must be stored after the last record.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
 - en: '| Sub Data_Entry()Dim EmpCode As integer, Next_Row as integerDim EmpName As
@@ -453,9 +622,11 @@
     Next_Row= activecell.row+1Cells(Next_Row, 1).Value = EmpCode Cells(Next_Row, 2).Value
     = EmpNameCells(Next_Row, 3).Value = Format(doj, "MMM DD YYYY")Cells(Next_Row,
     4).Value = SalaryEnd Sub |'
+  id: totrans-127
   prefs: []
   type: TYPE_TB
 - en: '[Conclusion](contents.xhtml#sc2_273a)'
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
 - en: In conclusion, this chapter provided a comprehensive overview of variables and
@@ -465,9 +636,11 @@
     rows, and columns in Excel. The chapter also touched upon working with sheets,
     workbooks, and the application object. By understanding these fundamentals, readers
     can write efficient and effective VBA code.
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
 - en: '[Exercise](contents.xhtml#sc2_274a)'
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
 - en: Write a VBA macro that prompts the user to enter their name, age, and favorite
@@ -475,19 +648,24 @@
     C1 of the active worksheet, respectively. Additionally, if the user’s age is greater
     than or equal to 18, the font color of the corresponding cell should be set to
     their favorite color. Test the macro by running it and entering different values.
+  id: totrans-131
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: Join our book’s Discord space
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
 - en: 'Join the book’s Discord Workspace for Latest updates, Offers, Tech happenings
     around the world, New Release and Sessions with the Authors:'
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
 - en: '**[https://discord.bpbonline.com](https://discord.bpbonline.com)**'
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
 - en: '![](images/fm1.png)'
+  id: totrans-135
   prefs: []
   type: TYPE_IMG

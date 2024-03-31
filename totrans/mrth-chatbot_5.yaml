@@ -1,16 +1,20 @@
 - en: © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023M.
     Kurpicz-BrikiMore than a Chatbot[https://doi.org/10.1007/978-3-031-37690-0_5](https://doi.org/10.1007/978-3-031-37690-0_5)
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
 - en: 5. The True and the False
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
 - en: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)Applied Machine Intelligence, Bern University
     of Applied Sciences, Biel/Bienne, Switzerland
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: Overview
+  id: totrans-3
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
@@ -21,56 +25,70 @@
     it is all about probabilities. Depending on what is available in the options,
     even the best option for a given problem might not be a very good answer. Therefore,
     in different ways, state-of-the-art chatbots can provide *wrong* information.'
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: We will also look at some other chatbot architectures that have been used over
     the years. In particular, we will consider the example of ELIZA, one of the first
     chatbots created in the 1960s.
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
 - en: In the last part of the chapter, we will investigate evaluation metrics for
     machine learning models. These metrics help us to identify whether a given model
     is working well.
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL
 - en: What if the Language Model Is Wrong?
+  id: totrans-7
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: Do You Know Pineberries?
+  id: totrans-8
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
 - en: 'Let’s start with the following example:'
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
 - en: 'Human:'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
 - en: “What color does a strawberry have?”
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
 - en: 'Chatbot:'
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
 - en: “Strawberries are typically a deep red color when they are fully ripe. However,
     when they are not fully ripe, they may have green or white areas on the surface.
     The seeds on the surface of the strawberry are typically a yellow or light brown
     color.”
+  id: totrans-13
   prefs: []
   type: TYPE_NORMAL
 - en: Whereas this is a correct answer for most strawberries, this is not the case
     for the pineberry, a white strawberry cultivar, shown in Fig. [5.1](#Fig1).![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig1_HTML.jpg)
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
 - en: A photograph of a bunch of Pineberries lying on the surface.
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 5.1
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
 - en: 'Pineberries are white strawberries (Credit: Wikimedia/Emmbean. CC BY 3.0 License,
     available at [https://​commons.​wikimedia.​org/​wiki/​File:​Pineberries.​jpg](https://commons.wikimedia.org/wiki/File:Pineberries.jpg))'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
 - en: Maybe some readers did not know about this type of strawberry because it is
@@ -78,6 +96,7 @@
     generate the answers is limited by the training data it was fed to. For this specific
     question, a chatbot with a wider range of training data and feedback might get
     to the following answer in the conversation:^([1](#Fn1))
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
 - en: 'Chatbot: “Strawberries are typically a deep red color when they are fully ripe.
@@ -85,6 +104,7 @@
     surface. The seeds on the surface of the strawberry are typically a yellow or
     light brown color. *Occasionally, you may come across a variety of strawberries
     that are white or pale pink in color, and these are known as white strawberries*.”'
+  id: totrans-19
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
@@ -99,9 +119,11 @@
     in its vast training data, according to probabilistic information about how they
     combine, but without any reference to meaning” (Bender et al. [2021](#CR3), p.
     617).
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
 - en: Hallucinations
+  id: totrans-21
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -112,6 +134,7 @@
     source content” (Ji et al. [2023](#CR22), p. 248:3). Basically, the chatbot is
     making up information that are not making any sense or are making sense but are
     wrong and cannot be explained based on the training data that was used.
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
 - en: Hallucinations in language models can be *intrinsic* or *extrinsic* hallucinations
@@ -119,29 +142,37 @@
     output and the source content are contradicting each other. Let’s say in the training
     data of the language model, there is the following text about the *strawberry
     fan* organization (along with millions of other words and years).
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
 - en: “The strawberry fan organization was founded in 2019, by Anna and Tom, after
     having written a book about the beauty and the wonderful taste of strawberries.”
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
 - en: 'We then have the following conversation with a chatbot, being based upon this
     language model:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
 - en: 'Human:'
+  id: totrans-26
   prefs: []
   type: TYPE_NORMAL
 - en: “In which year was the organization dealing with strawberries founded?”
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
 - en: 'Chatbot:'
+  id: totrans-28
   prefs: []
   type: TYPE_NORMAL
 - en: “The strawberry fan organization was founded in **2014**.”
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
 - en: Wait, what? Yes, we just experienced an intrinsic hallucination.
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
 - en: The other type of hallucinations are extrinsic hallucinations. In this case,
@@ -149,28 +180,37 @@
     on the source content. Basically, the information is unknown, but the chatbot
     states an answer to it. This answer might be true but might also be wrong. It
     is unverified information.
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
 - en: For example, we could observe an extrinsic hallucination in the case where the
     chatbot is asked to answer a question about the year 2023; however, the training
     data did only include information up to the year 2022.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
 - en: Figure [5.2](#Fig2) summarizes the two types of hallucinations.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig2_HTML.png)
+  id: totrans-33
   prefs: []
   type: TYPE_NORMAL
 - en: An illustration represents the scenarios in intrinsic and extrinsic hallucinations,
     where the answers are provided by the chatbot from the training data. There is
     an x-condition in the case of intrinsic hallucinations that is unverified in extrinsic.
+  id: totrans-34
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图代表了内在和外在幻觉的情景，其中聊天机器人从训练数据中提供答案。在内在幻觉的情况下存在一个未经验证的x条件，在外在幻觉中则不存在。
 - en: Fig. 5.2
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 5.2
 - en: The difference between intrinsic and extrinsic hallucinations (Based on the
     explanations in Ji et al. [2023](#CR22))
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 内在幻觉和外在幻觉的区别（基于Ji等人[2023](#CR22)的解释）
 - en: In the case of hallucinations, we assume that the training data is a ground
     truth, that is, correct, and that it is desirable that this information is reflected
     in the texts that the language model produces. However, depending on where the
@@ -179,20 +219,26 @@
     no manual verification of the contents by humans are feasible. Typically, the
     language models that are being trained, shared, and used in many applications
     are based on texts from the Internet.
+  id: totrans-37
   prefs: []
   type: TYPE_NORMAL
+  zh: 在幻觉的情况下，我们假设训练数据是一个基本事实，即正确的，并且希望这些信息能够体现在语言模型生成的文本中。然而，根据训练数据的来源，情况并非总是如此。考虑到训练一种最先进的语言模型所需的大量文本，人工对内容进行验证是不可行的。通常，正在训练、共享和用于许多应用程序的语言模型都是基于互联网文本的。
 - en: Trained on Fake News?
+  id: totrans-38
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 训练于假新闻？
 - en: Fake news and conspiracy theories are itself a problem of today’s society. A
     study has shown that lies spread faster on the Internet than the truth (Vosoughi
     et al. [2018](#CR39)). Interestingly, and as opposed to the general opinion that
     bots^([3](#Fn3)) are a major source of distributing fake news, the study concludes
     that bots distribute fake news and real information at the same rate. On the other
     side, humans are more likely to spread fake news than the bots.
+  id: totrans-39
   prefs: []
   type: TYPE_NORMAL
+  zh: 假新闻和阴谋论本身就是当今社会的问题。一项研究表明，在互联网上谎言传播得比真相更快（Vosoughi等人[2018](#CR39)）。有趣的是，与一般观点认为机器人^([3](#Fn3))是传播假新闻的主要来源相反，该研究得出结论，机器人以相同的速度传播假新闻和真实信息。另一方面，人类更有可能传播假新闻而不是机器人。
 - en: So, this means basically that the Internet is full of fake news. Nowadays, more
     and more people start to select the sources of their search engine’s results carefully,
     being aware that not everything that is written on the Internet is necessarily
@@ -201,8 +247,10 @@
     corresponding references? Whereas we have learned to be suspicious about websites
     with unknown names, we get trapped by chatbots and interpret meaning and accountability
     for content, even if there is not.
+  id: totrans-40
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，这基本意味着互联网充斥着假新闻。如今，越来越多的人开始谨慎选择他们搜索引擎结果的来源，意识到并非所有在互联网上写的东西都一定是真实的。但是当我们基于这些内容训练一个语言模型，提供关于事实信息的类人回答却没有提供相应的参考资料时，会发生什么？尽管我们已经学会对于那些名不见经传的网站保持怀疑，但我们却被聊天机器人所困扰，解释内容的意义和责任，即使事实并非如此。
 - en: In computer science, we have the well-known term *garbage in, garbage out*.^([4](#Fn4))
     It refers to the fact that incorrect or non-sense input data to a computer program
     will produce incorrect or nonsense output, no matter how good the logic is. Whereas
@@ -211,12 +259,16 @@
     other unwanted things in the training data, we can expect it to have an impact
     of the outcome of our machine learning applications. The classifiers or language
     models are only as good as the data they have been trained on.
+  id: totrans-41
   prefs: []
   type: TYPE_NORMAL
+  zh: 在计算机科学中，我们有一个众所周知的术语*垃圾进，垃圾出*。^([4](#Fn4)) 它指的是向计算机程序提供不正确或无意义的输入数据将产生不正确或无意义的输出，无论逻辑多么出色。尽管这个表达来自计算的早期阶段，但对于机器学习领域也同样适用。如果我们在训练数据中看到假新闻、歧视性内容或其他不良内容，我们可以预期这将对我们的机器学习应用的结果产生影响。分类器或语言模型的好坏取决于它们所训练的数据。
 - en: Different Reasons for Wrong Answers
+  id: totrans-42
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 错误答案的不同原因
 - en: We have seen different scenarios how wrong information in language models can
     happen. Information about statistically rather rare events can be simply left
     out, intrinsic or extrinsic hallucinations can be produced due to the internal
@@ -224,20 +276,28 @@
     news or conspiracy theories. That’s a pretty bad starting point for a trustworthy
     software application. Figure [5.3](#Fig3) shows these different influence factors
     on the quality and trustworthiness of the sentences produced by the language model.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig3_HTML.png)
+  id: totrans-43
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经看到了语言模型中错误信息发生的不同场景。关于统计上相当罕见事件的信息可能会被简单地忽略，由于语言模型的内部功能，可能会产生内在或外在的幻觉，而训练数据本身可能包含虚假新闻或阴谋论。这对于一个值得信赖的软件应用来说是一个非常糟糕的起点。图[5.3](#Fig3)显示了这些不同因素对语言模型生成的句子质量和可信度的影响！[](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig3_HTML.png)
 - en: An illustration indicates the rare information not contained in the training
     data, the wrong information contained in the training data, and the sentences
     produced by the language model that contradict or are unverified with regard to
     the training data.
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图显示了训练数据中不包含的罕见信息、训练数据中包含的错误信息，以及语言模型生成的与训练数据相矛盾或未经验证的句子。
 - en: Fig. 5.3
+  id: totrans-45
   prefs: []
   type: TYPE_NORMAL
+  zh: 图5.3
 - en: Different reasons can cause a chatbot to produce a wrong information
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 不同原因可能导致聊天机器人生成错误信息
 - en: 'It is good to know that these kinds of things happen *by design*. The way how
     state-of-the-art language models work and the data that are used to train them
     make this happen. Even the creators of large language models are not safe of it:
@@ -249,8 +309,11 @@
     Earth’s solar system was taken by this telescope. However, as confirmed by NASA,
     this information was wrong. This was an expensive error, contributing to a loss
     of 100 billion dollars in market value following the demo.'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 很好知道这些事情是*有意设计*的。最先进的语言模型的工作方式以及用于训练它们的数据使这种情况发生。即使是大型语言模型的创建者也无法幸免：当谷歌的聊天机器人巴德在2023年被介绍时，在第一次演示中出现了事实错误（Coulter和Bensinger
+    [2023](#CR8)）。谷歌展示的演示显示巴德回答了问题，“詹姆斯·韦伯空间望远镜（JWST）有哪些新发现可以告诉我9岁的孩子？”巴德提供了一系列答案，包括一条信息表明这个望远镜拍摄了地球太阳系之外行星的第一张图片。然而，根据NASA的确认，这个信息是错误的。这是一个昂贵的错误，导致演示后市值损失了1000亿美元。
 - en: One more thing to discuss here is the fact that language models can not only
     generate wrong information but also produce non-existing words. As we have quickly
     remarked previously, the input tokens are not necessarily entire words but can
@@ -258,32 +321,48 @@
     of compound, rare, or non-English words (Wolfram [2023](#CR42)). However, this
     can also lead to tokens being put together in a new way, resulting in completely
     new words.
+  id: totrans-48
   prefs: []
   type: TYPE_NORMAL
+  zh: 这里还有一件事要讨论，那就是语言模型不仅可以生成错误信息，还可以产生不存在的词。正如我们之前快速提到的，输入标记不一定是整个单词，还可以是像*pre*、*ing*或*ized*这样的片段，这样可以更有效地处理复合、罕见或非英语单词（Wolfram
+    [2023](#CR42)）。然而，这也可能导致标记以新的方式组合在一起，从而产生全新的词。
 - en: 'When using prompts of tools like ChatGPT,^([5](#Fn5)) this can also be explicitly
     triggered:'
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 在使用ChatGPT等工具的提示时，^([5](#Fn5))这也可以被明确触发：
 - en: 'Human:'
+  id: totrans-50
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类：
 - en: “Can you think of a new word composed of the tokens *pre* and *strawberry*?”
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: “你能想到一个由*pre*和*strawberry*组成的新词吗？”
 - en: 'Chatbot:'
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人：
 - en: “Sure, how about *preberry*? It could refer to a strawberry that is not yet
     fully ripe or has not yet reached its peak sweetness, but is still edible. It
     could also be used more generally to describe something that is in the early or
     preliminary stages of development or readiness, similar to the prefix *pre-*.”
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: “当然，*preberry*怎么样？它可以指代尚未完全成熟或尚未达到最佳甜度的草莓，但仍然可食用。它也可以更普遍地用来描述处于早期或初步发展或准备阶段的事物，类似于前缀*pre-*。”
 - en: Whereas here we explicitly asked the system to create a new word, we can also
     find them spontaneously in answers or texts generated by large language models.
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然在这里我们明确要求系统创建一个新词，但我们也可以在大型语言模型生成的答案或文本中自发地找到它们。
 - en: Do Chatbots Lie?
+  id: totrans-55
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -299,6 +378,7 @@
     this is where the risk lies. If the chatbot is hallucinating but is used to search
     truthful information on the Internet, which is then believed and replicated by
     the user, then we have a problem.
+  id: totrans-56
   prefs: []
   type: TYPE_NORMAL
 - en: The topic whether using state-of-the-art language models is appropriate for
@@ -310,6 +390,7 @@
     However, demos and announcements of large tech companies confirm the aim of providing
     revolution to search, to make any search engine interact with you in a conversational
     manner.
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
 - en: The question is whether this kind of search is what we are looking for. This
@@ -324,27 +405,33 @@
     showing up in the results are a trustworthy source of information. With conversational
     tools, we have to reflect our interpretation of the information provided, being
     aware that we might interpret them differently when proposed in a human-like conversation.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
 - en: 'Finally, let me make one last observation about the false information produced
     by chatbots. In broad media, often the terminology “the chatbot is lying” or “the
     chatbot is telling lies” is being used. The definition of the verb *to lie* in
     this sense as of *Merriam-Webster* dictionary is as follows:'
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
 - en: '1.'
+  id: totrans-60
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: To make an untrue statement with intent to deceive
+  id: totrans-61
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
 - en: '2.'
+  id: totrans-62
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
 - en: To create a false or misleading impression
+  id: totrans-63
   prefs:
   - PREF_IND
   type: TYPE_NORMAL
@@ -358,17 +445,23 @@
     is likely interpreted into such conversations by humans. However, we have to keep
     in mind that human intention can lead to the creation of malicious use cases of
     the technology.
+  id: totrans-64
   prefs: []
   type: TYPE_NORMAL
+  zh: 第一个定义涉及人类，而第二个定义也可以应用于物体，比如镜子。然而，当谈论工具时，在其他情况下，当工具提供与预期不符的结果时，我们很少使用这个表达。如果咖啡机冲出的咖啡太稀，你可能会说它坏了，而不是说它在欺骗你。欺骗，或者用我们通常使用这个术语的一般方式来说就是撒谎，需要一些意图，而在聊天机器人的情况下是不存在的，但是人类可能会在这样的对话中解读出这种意图。然而，我们必须记住，人类的意图可能导致技术被滥用。
 - en: So overall, we have chatbots hallucinating false information and humans with
     social hallucinations, seeing intent and humanlike meaning where there is not.
     We have some work ahead as digital society.
+  id: totrans-65
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，总体而言，我们有聊天机器人产生虚假信息，以及人类产生社交幻觉，看到意图和人类意义的地方。我们在数字社会中还有一些工作要做。
 - en: A Short History of Chatbots
+  id: totrans-66
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 聊天机器人的简史
 - en: We have seen in previous sections how state-of-the-art chatbots based on the
     transformer architecture work. We will now gain some background knowledge of other
     (mostly previous) variants. Chatbots are also referred to as *dialog systems*
@@ -379,12 +472,16 @@
     information. We limit our discussion in this section to text-based methods to
     see how they relate to the text processing and generation techniques we have seen
     previously.
+  id: totrans-67
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们已经在前几节中看到了基于变压器架构的最先进聊天机器人是如何工作的。现在我们将获得其他（主要是以前的）变体的一些背景知识。聊天机器人也被称为*对话系统*或*对话引擎*。通常，它们的任务是以书面形式与人类进行对话。当对话以口头形式进行时，它们也被称为*语音机器人*。这些对话系统可以是数字助手，如Siri或Alexa，也可以集成到网站中，以允许客户搜索相关信息。在本节中，我们将限制讨论文本为基础的方法，以了解它们与我们之前看到的文本处理和生成技术的关系。
 - en: ELIZA
+  id: totrans-68
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: ELIZA
 - en: A very famous example of an early chatbot is ELIZA, developed by Joseph Weizenbaum
     at the Massachusetts Institute of Technology (MIT) in the 1960s (Weizenbaum [1966](#CR40)).
     Its creator wanted to explore how the communication between machines and humans
@@ -398,20 +495,28 @@
     Content-free remarks were identified and not considered, and under some conditions,
     earlier transformations were considered too. Using this rule-based, hard-coded
     approach, there was no training data or machine learning involved.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个早期聊天机器人的非常著名的例子是**ELIZA**，由约瑟夫·魏岑鲍姆（Joseph Weizenbaum）在1960年代在麻省理工学院（MIT）开发（Weizenbaum
+    [1966](#CR40)）。它的创造者想要探索如何实现机器和人之间使用自然语言进行交流。与今天的方法相比，ELIZA的技术实现相对简单。用户输入（人类写给聊天机器人提问的文本）被检查是否包含特定的*关键词*。这在某种程度上类似于我们之前看到的非常简单的文本分析方法，通过检查文本中是否出现*草莓*或*草莓*这些词来确定文本是否与草莓有关。如果用户的问题中包含关键词，答案将基于*规则*生成。无内容的评论被识别并不予考虑，在某些情况下，还考虑了早期的转换。使用这种基于规则的硬编码方法，没有涉及训练数据或机器学习。
 - en: Using ELIZA, conversations as the one shown in Fig. [5.4](#Fig4) were possible.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig4_HTML.png)
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用ELIZA，可以进行如图[5.4](#Fig4)所示的对话！[](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig4_HTML.png)
 - en: A set of questions and answers simulates the conversation between a human and
     a machine-generated answer. The responses from the machines are written in uppercase.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 5.4
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
 - en: Extract of the conversation from (Weizenbaum [1966](#CR40)); capitalized expression
     are the machine-generated answers
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
 - en: The major difference in this conversation compared to state-of-the-art chatbots
@@ -419,17 +524,20 @@
     As Weizenbaum states in its original report, participants interacting with ELIZA
     were instructed to communicate with it as if they were communicating with a psychiatrist.
     Why is that?
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
 - en: This mode of conversation was chosen because the psychiatric interview is one
     of the few examples of categorized dyadic natural language communication in which
     one of the participating pair is free to assume the pose of knowing almost nothing
     of the real world. (Weizenbaum [1966](#CR40), p. 42)
+  id: totrans-75
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
 - en: Any content that comes into the conversation is the input of the human, who
     brings these topics up.
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
 - en: The major limitation of this kind of chatbot is also an advantage. Whereas it
@@ -440,9 +548,11 @@
     be replicated easily. The answers provided by the chatbot can be fully explained
     and reproduced. Therefore, depending on the use case, chatbots inspired by and
     based on the methods initially developed in ELIZA can be powerful.
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
 - en: Rule-Based Approaches
+  id: totrans-78
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
@@ -450,25 +560,32 @@
     Rule-based approaches can also be used when we want to transmit very specific
     information. For example, consider a chatbot on a retail company’s online shop
     website that enters the conversation with any customer as follows:'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
 - en: 'Chatbot:'
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
 - en: “Hey, thanks for visiting this shop! What are you looking for?”
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
 - en: 'Human:'
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
 - en: “I would like to eat something tasty, maybe strawberries?”
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
 - en: 'Chatbot:'
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
 - en: “That’s a good idea! Click on this link for strawberries to directly add the
     regional strawberries from our shop to the basket.”
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
 - en: This could be implemented in a very simple way, using lists of words and rules.
@@ -483,27 +600,37 @@
     the right product and generate the answer as in the conversation above. More advanced
     versions can make use of other text processing methods we have seen earlier, for
     example, stemming, lemmatization, or tagging or more complex rule systems.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig5_HTML.png)
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可以以非常简单的方式实现，使用单词列表和规则。让我们更仔细地看一下这一点，基于我们之前看到的聊天机器人的架构。用户与网络应用进行交互，就像之前的情况一样。现在，与其在后台使用复杂的基于变压器的语言模型架构提供答案，这个示例中使用了不同的方法。如图[5.5](#Fig5)所示，用户的输入文本被分析以查找关键词。我们正在寻找能帮助我们向客户推荐产品的特定单词。在最简单的情况下，这是我们商店中所有产品名称的列表。通过将找到的关键词与此列表匹配，我们确定正确的产品并生成答案，就像上面的对话中一样。更高级的版本可以利用我们之前看到的其他文本处理方法，例如词干提取、词形还原、标记或更复杂的规则系统。![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig5_HTML.png)
 - en: A diagram illustrates a set of user-provided input prompts on a web application
     along with their generated answers. It highlights the keyword named strawberry
     and indicates to identify the keywords in the input and map them to the available
     products for generating the answer.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 一张图示了一个网络应用中一组用户提供的输入提示以及它们生成的答案。它突出显示了名为草莓的关键词，并指示识别输入中的关键词并将其映射到可用产品以生成答案。
 - en: Fig. 5.5
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 5.5
 - en: Example of a simple rule-based chatbot for an online shop
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 在线商店简单基于规则的聊天机器人示例
 - en: Of course, everybody would easily notice how our method works if the text is
     each time exactly the same. A simple yet efficient way to get around this is that
     we make another list of ten alternative versions of “That’s a good idea.” These
     alternatives could include “Good choice!” or “Sounds like a plan.” Each time an
     answer is generated, one of these ten alternatives can be chosen randomly.
+  id: totrans-90
   prefs: []
   type: TYPE_NORMAL
+  zh: 当然，如果每次文本都完全相同，每个人都会很容易注意到我们的方法是如何工作的。一个简单而有效的方法是我们制作另一个包含十个“这是个好主意”的替代版本的列表。这些替代版本可以包括“不错的选择！”或“听起来像个计划。”每次生成答案时，可以随机选择其中一个。
 - en: This solution is feasible, because the context of the information is limited
     in this case or, at least, for the questions we can answer. The customer might
     of course ask for something not related at all to this online shop, then it would
@@ -512,35 +639,45 @@
     this for?” If we would like to extend this program to a system using these techniques
     to communicate with a human about any kind of topic, we would find ourselves with
     more rules and keywords than we could ever create or manage.
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个解决方案是可行的，因为在这种情况下信息的上下文是有限的，或者至少对我们可以回答的问题是有限的。当然，客户可能会要求与这家在线商店完全无关的东西，那么它就不起作用了。我们需要考虑在没有识别到关键词的情况下可能的答案。例如，“你能详细解释一下你需要这个东西的原因吗？”如果我们想将这个程序扩展到使用这些技术与人类交流关于任何主题的系统，我们将发现自己需要比我们能够创建或管理的规则和关键词更多。
 - en: A Simple Chatbot with Sentence Embeddings
+  id: totrans-92
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 使用句子嵌入创建的简单聊天机器人
 - en: Let’s now consider another example of a method to create a chatbot by using
     the information stored in sentence embeddings. We saw earlier that there are different
     ways to store the meaning of words or sentences in vectors. Based on their position
     in the vector space, and using mathematical operations, we were able to extract
     information about similarity of the words or sentences. We assume that we want
     to create a chatbot that can answer questions about strawberries.
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们考虑另一个使用句子嵌入中存储的信息创建聊天机器人的方法示例。我们之前看到存储单词或句子含义的不同方法。根据它们在向量空间中的位置，并使用数学运算，我们能够提取有关单词或句子相似性的信息。我们假设我们想要创建一个可以回答关于草莓的问题的聊天机器人。
 - en: To do this, we use the text from Wikipedia on the article about strawberries.
     It contains different sections about the history or the cultivation of strawberries.
     We split this article into sentences and convert each sentence into a sentence
     vector, as shown in Fig. [5.6](#Fig6).![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig6_HTML.png)
+  id: totrans-94
   prefs: []
   type: TYPE_NORMAL
 - en: A diagram illustrates a user query regarding the strawberry plant, going through
     the sentence embedding of the user's question, finding similar embedding, finding
     texts about strawberries, and the sentence embedding of each sentence.
+  id: totrans-95
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 5.6
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
 - en: A simple chatbot based on sentence embeddings and similarity
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
 - en: 'We then do the same with the user input. We take the question, for example,
@@ -551,40 +688,51 @@
     answer to our question. We thus identify which of the sentence embeddings of the
     Wikipedia article is the closest and output this sentence, as shown in Fig. [5.6](#Fig6).
     This enables the following conversation with the chatbot:'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
 - en: 'Human:'
+  id: totrans-99
   prefs: []
   type: TYPE_NORMAL
 - en: “What do you know about strawberry plants?”
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
 - en: 'Chatbot:'
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
 - en: “strawberry plants produce more and better fruit when they are young.”
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
 - en: 'This works quite well for different questions, but is far from perfect, as
     the following example shows:'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
 - en: 'Human:'
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
 - en: “In which countries are strawberries grown?”
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
 - en: 'Chatbot:'
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
 - en: “strawberries can also be grown indoors in strawberry pots.”
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
 - en: Here we used as input the one article about strawberries. When extending this
     by using all books about strawberries that are available at the local library,
     results could probably be improved. The chatbot is only as good as the data it
     has available.
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
 - en: Whereas for many tasks the state-of-the-art language models are by far the most
@@ -593,15 +741,18 @@
     of these simpler methods is often their explainability, which allows us to see
     behind the scenes easier and let us understand how decisions were made. Sometimes
     we can also find combinations of different methods combined in practice.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
 - en: What Is a Good Model?
+  id: totrans-110
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: We have seen so far that state-of-the-art chatbots rely on powerful language
     models. But how can we know how *well* the language models perform or compare
     them among each other?
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
 - en: A typical number that is mentioned with regard to language models is the number
@@ -616,6 +767,7 @@
     the model fit the data (Wolfram [2023](#CR42)). When saying that there are 175
     billion parameters, it means that the architecture of the neural network has 175
     billion weights to tweak.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
 - en: Does larger mean better? For the moment, yes. We have seen over the last years
@@ -623,6 +775,7 @@
     the models became better. However, at the same time, more computational power
     is required, and the complexity of the model increases. With 175 billion parameters,
     it is pretty hard to assess what a word suggestion was based on.
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
 - en: 'The parameters are figured out by the system itself, during the training phase,
@@ -640,19 +793,23 @@
     data engineer would train models with different hyperparameter settings and compare
     their output. This process is called *hyperparameter tuning*, as shown in Fig.
     [5.7](#Fig7).![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig7_HTML.png)'
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
 - en: A block diagram illustrates how the input from the data engineer goes through
     the language model based on neural networks, where the input passes through three
     layers before obtaining the output. All the layers denote interconnection among
     the neurons.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 5.7
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
 - en: Example of some of the hyperparameters that the data engineer can tune in the
     training process
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
 - en: To compare the performance of machine learning models and to find out which
@@ -666,6 +823,7 @@
     this information is unseen by the classifier, meaning that it was not used in
     the training phase. In the test phase, we want to use this data to measure how
     good the system performs in new, unseen data.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
 - en: The simplest way is to calculate the *accuracy*. The accuracy indicates how
@@ -678,6 +836,7 @@
     test data, and only 10% positive text samples, a classifier that classes all text
     as negative would have an accuracy of 90%. This could lead us to think that the
     performance of the classifier is quite good, which is not the case.
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
 - en: We want to measure how the classification works for both of the classes. We
@@ -696,20 +855,24 @@
     70% (seven out of ten are predicted correctly) is independent of the number of
     false positives and false negatives. Whether the wrong predictions are concerning
     the negative or the positive class does not impact the accuracy.![](../images/604345_1_En_5_Chapter/604345_1_En_5_Fig8_HTML.png)
+  id: totrans-120
   prefs: []
   type: TYPE_NORMAL
 - en: A rectangular block represents a set of 10 texts of test data comprising the
     correct labels and predicted labels. It indicates an accuracy value of 70 percent
     and highlights 3 data points that have a mismatch between the predicted and actual
     outcomes.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
 - en: Fig. 5.8
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
 - en: Example of a test dataset with ten texts. Based on the correct labels and the
     predictions, the different metrics can be computed to assess the performance of
     the model
+  id: totrans-123
   prefs: []
   type: TYPE_NORMAL
 - en: The *precision* is another metric that considers these aspects. It tells us
@@ -718,6 +881,7 @@
     a total of six positive predictions (true positives + false positives), the precision
     is 4/6 or, expressed in percentage, 66%. In the best case, all data items predicted
     as positive are actually correct; then the precision would be 100%.
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
 - en: Along with the precision, we typically look at the *recall*, which shows us
@@ -725,6 +889,7 @@
     identified as positive (=true positives) in comparison to all the positive training
     texts (=true positives + false negatives). In our example, the recall is 4/5,
     or 80%.
+  id: totrans-125
   prefs: []
   type: TYPE_NORMAL
 - en: Typically, the data engineer wants to achieve a trade-off between recall and
@@ -733,6 +898,7 @@
     both. Therefore, the *f1-score* was invented, which computes a score involving
     both recall and precision. Often, when developing a machine classifier, we therefore
     try to maximize the *f1*-score.
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
 - en: In our case, positive and negative corresponded to the names of our classes,
@@ -741,6 +907,7 @@
     the e-mail is effectively spam, and the negative label is that it is not spam.
     The terms true positive, true negative, etc. would still be used as described
     above.
+  id: totrans-127
   prefs: []
   type: TYPE_NORMAL
 - en: Note that most of the metrics described here referred to the problem of binary
@@ -748,30 +915,36 @@
     negative texts), and the classifier aims to estimate which class a new text belongs
     to. In other cases, we might have multiclass problems, and other yet similar metrics
     calculations would be used.
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
 - en: In this section, with *good*, we meant whether the machine learning system performs
     well for a specific task, using accuracy, precision, recall, and *f1*-score to
     quantify the performance. Whether its decisions are fair or ethical is yet another
     discussion. We will dive deeper into this topic in the next chapter.
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
 - en: Summary
+  id: totrans-130
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
 - en: In this chapter, we have seen how chatbots can provide wrong information for
     different reasons. Examples can be a lack of relevant information in the training
     data as well as intrinsic or extrinsic hallucinations.
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
 - en: We have also looked at some other architectures starting from ELIZA of the 1960s.
     Whereas other architectures are not as performant as the state-of-the-art chatbots
     and language models, it is easier to explain how they came to a given output.
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
 - en: In the last part of this chapter, we have learned about different performance
     metrics for machine learning models. Evaluating the efficiency of the model on
     a test dataset, the model can be improved during the training phase.
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL

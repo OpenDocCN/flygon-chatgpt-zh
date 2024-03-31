@@ -1,19 +1,27 @@
 - en: © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023M.
     Kurpicz-BrikiMore than a Chatbot[https://doi.org/10.1007/978-3-031-37690-0_4](https://doi.org/10.1007/978-3-031-37690-0_4)
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: © 作者，独家许可给 Springer Nature Switzerland AG 2023M. Kurpicz-Briki[更多内容请查看](https://doi.org/10.1007/978-3-031-37690-0_4)
 - en: 4. Do Chatbots Have Emotions?
+  id: totrans-1
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 4. 聊天机器人是否有情感？
 - en: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)Applied Machine Intelligence, Bern University
     of Applied Sciences, Biel/Bienne, Switzerland
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
+  zh: Mascha Kurpicz-Briki^([1](#Aff2)  )(1)应用机器智能，伯尔尼应用科学大学，比尔/比尔，瑞士
 - en: Overview
+  id: totrans-3
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 概述
 - en: The idea of creating *intelligent* machines has always been a fascination to
     humanity, resulting in a large variety of books and movies dealing with these
     kinds of scenarios. With the rise of advanced language models, the question of
@@ -22,16 +30,22 @@
     the second part of the chapter, we will deepen our technical skills and look at
     state-of-the-art language models. Finally, I will describe a typical example of
     chatbot architecture.
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: 创造*智能*机器的想法一直是人类的迷恋，导致了大量涉及这类情景的书籍和电影的出现。随着先进语言模型的崛起，我们再次思考什么是*智能*。在本章中，我们将讨论这个问题，并看看它是如何受人类感知影响的。在本章的第二部分，我们将深入研究技术技能，并查看最先进的语言模型。最后，我将描述一个典型的聊天机器人架构。
 - en: Machines and Emotions
+  id: totrans-5
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 机器与情感
 - en: The Turing Test
+  id: totrans-6
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 图灵测试
 - en: Already in early years of computer science, in the 1950s, the challenge of measuring
     whether a machine could have the same thinking capabilities as a human was discussed.
     A test nowadays referred to as *Turing Test* (originally called *Imitation Game*
@@ -44,24 +58,35 @@
     illustrates this setup. If after an intensive conversation the human is not able
     to identify who the machine is and who the human, then the test assumes that the
     machine has the same thinking capabilities as a human.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig1_HTML.png)
+  id: totrans-7
   prefs: []
   type: TYPE_NORMAL
+  zh: 早在计算机科学的早期，即上世纪50年代，就讨论了衡量机器是否具有与人类相同思维能力的挑战。当今经常在讨论这个话题时提到的一个测试被称为*图灵测试*（最初称为*模仿游戏*（图灵[1950](#CR37)））。在这个实验中，一个人与两个对话伙伴（基本上就像现在的聊天机器人对话）进行交互，其中一个是人类，另一个是机器。参与者无法看到或听到这两个对话伙伴。接下来，参与者会询问这两个对话伙伴，试图找出哪个是机器，哪个是人类。图
+    [4.1](#Fig1) 描述了这个设置。如果经过一番深入的对话后，人类无法确定哪个是机器，哪个是人类，那么测试假定机器具有与人类相同的思维能力。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig1_HTML.png)
 - en: A diagrammatic illustration of human and machine interaction where the text
     reads Hello, Hi, and Who is the human, who is the machine?
+  id: totrans-8
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类和机器互动的图示，文本内容为“你好，嗨，谁是人类，谁是机器？”
 - en: Fig. 4.1
+  id: totrans-9
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 4.1
 - en: 'The setup of the Turing Test: who is the human, and who is the machine?'
+  id: totrans-10
   prefs: []
   type: TYPE_NORMAL
+  zh: 图灵测试的设置：谁是人类，谁是机器？
 - en: When having conversations with ChatGPT or similar chatbots based on state-of-the-art
     language models, the one or other of you might have the impression that this criterion
     could be fulfilled. Does it mean that we have reached the point of machines having
     the same thinking capabilities as humans?
+  id: totrans-11
   prefs: []
   type: TYPE_NORMAL
+  zh: 当与 ChatGPT 或基于最先进语言模型的类似聊天机器人进行对话时，你可能会有这样的印象，即这个标准可能会被满足。这是否意味着我们已经达到了机器具有与人类相同的思维能力的程度？
 - en: The Turing test has been criticized for the fact that it is all about deception
     that it tests the gullibility of persons rather than the actual intelligence of
     the system (Tegmark [2018](#CR36)). What is tested in the scenario described above
@@ -74,49 +99,74 @@
     not, all it did was to apply mathematical operations on vectors, and the vectors
     were sorted the way they are in the vector space, due to all the examples seen
     in the training data.^([1](#Fn1))
+  id: totrans-12
   prefs: []
   type: TYPE_NORMAL
+  zh: 图灵测试因其测试人的轻信而不是系统的实际智能而受到批评（Tegmark [2018](#CR36)）。在上述场景中测试的是写作*像*人类的能力，而不是执行人类的思考或理解。我们可以通过更具体地研究我们之前看到的词向量化示例来更深入地探讨这一点。基于数学运算，我们能够根据单词*king,
+    man*和*woman*的词向量获得单词*queen*。这是否意味着系统*理解*了做国王的概念或男人和女人之间的区别？可能不是，它所做的只是对向量应用数学运算，而向量在向量空间中的排序是由训练数据中看到的所有示例决定的。^([1](#Fn1))
 - en: Emotional Chatbots?
+  id: totrans-13
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 情感聊天机器人？
 - en: 'What about the emotions expressed by chatbots? Let’s consider the following
     conversation with a state-of-the-art chatbot (based on a GPT-3 model):'
+  id: totrans-14
   prefs: []
   type: TYPE_NORMAL
+  zh: 那么聊天机器人表达的情感呢？让我们考虑与一款最先进的聊天机器人（基于GPT-3模型）的以下对话：
 - en: 'Human:'
+  id: totrans-15
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类：
 - en: “Hello, how are you?”
+  id: totrans-16
   prefs: []
   type: TYPE_NORMAL
+  zh: “你好，你好吗？”
 - en: 'Chatbot:'
+  id: totrans-17
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人：
 - en: “Hi, I am doing well. Thank you for asking. How about you? How are you feeling
     today?”
+  id: totrans-18
   prefs: []
   type: TYPE_NORMAL
+  zh: “嗨，我过得很好。谢谢你的关心。你呢？今天感觉怎么样？”
 - en: 'Human:'
+  id: totrans-19
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类：
 - en: “I’m OK. A bit low since it’s cloudy outside. What is going well for you?”
+  id: totrans-20
   prefs: []
   type: TYPE_NORMAL
+  zh: “我还好。因为外面阴天，有点低落。你最近有什么好事吗？”
 - en: 'Chatbot:'
+  id: totrans-21
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人：
 - en: “I’m sorry to hear that you are feeling a bit low today. It’s completely understandable
     to feel that way when the weather is gloomy. As for me, I am feeling grateful
     for the people in my life who support me and make me happy. I also feel content
     knowing that I have the ability to recognize and process my emotions in a healthy
     way, which helps me to stay mentally and emotionally balanced.”
+  id: totrans-22
   prefs: []
   type: TYPE_NORMAL
+  zh: “很抱歉听到你今天有点低落。在天气阴沉的时候感到这样完全可以理解。至于我，我感到感激生活中支持我并让我快乐的人。我也感到满足，因为我有能力识别和处理自己的情绪，这有助于我保持心理和情感平衡。”
 - en: Not bad right? Would this chatbot pass the Turing test? Maybe yes. Does the
     chatbot *understand* the texts it produces in a way a human would? No, it doesn’t.
+  id: totrans-23
   prefs: []
   type: TYPE_NORMAL
+  zh: 不错吧？这个聊天机器人能通过图灵测试吗？也许可以。这个聊天机器人是否*理解*它所产生的文本，就像人类一样理解吗？不，它不会。
 - en: 'The fact that this is hard to believe is rooted in the nature of how humans
     communicate. This was pointed out in detail in a key scientific paper that appeared
     in 2021 and warned of the dangers and risks behind large language models (Bender
@@ -129,20 +179,26 @@
     produces, humans assume *implicit meaning*, which creates an illusion of our singular
     human understanding of language. Basically, we are tricked by the chatbot simulating
     to write like a human.'
+  id: totrans-24
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种难以置信的事实根源于人类沟通方式的本质。这在一篇关键的科学论文中被详细指出，该论文于2021年发表，警告大型语言模型背后的危险和风险（Bender等人[2021](#CR3)）。它指出（除了我们稍后将讨论的许多其他有趣观点之外），大型语言模型生成的文本缺乏两个人之间通常沟通模式的不同关键方面，这两个人共享一个共同基础：交际意图、世界模型和读者心理状态模型。这导致了一个问题，即即使沟通的一方（聊天机器人）在其产出中没有更深层含义，人类也会假设*隐含含义*，这创造了我们对语言的独特人类理解的错觉。基本上，我们被聊天机器人欺骗，以模拟像人类一样写作。
 - en: 'The way robots, AI and, in particular, also language models process information
     and present answers or results to humans can be seen as *simulations* of human
     behavior or activities:'
+  id: totrans-25
   prefs: []
   type: TYPE_NORMAL
+  zh: 机器人、人工智能，尤其是语言模型处理信息并向人类呈现答案或结果的方式可以被视为对人类行为或活动的*模拟*：
 - en: We have to realize that *thinking*, *calculating*, the *reactions*, the *decisions*
     of a robot are only *simulations* of thinking, calculating, reactions, decisions
     and not – in the human sense – real thinking processes. (Nida-Rümelin and Weidenfeld
     [2022](#CR9001), p.59)
+  id: totrans-26
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 我们必须意识到*思考*、*计算*、*反应*、*决策*的机器人只是对思考、计算、反应、决策的*模拟*，而不是以人类意义上的真实思维过程。（Nida-Rümelin和Weidenfeld[2022](#CR9001)，p.59）
 - en: This fact was in an interview with regard to humanoid robots also referred to
     as *social hallucinations* by the German philosopher Thomas Metzinger (Honert
     [2017](#CR21)). He states that humans have the capacity to imagine that they are
@@ -160,12 +216,16 @@
     the authors thus assume that there must be some consistent information that is
     perceived by humans in car fronts. The participants thus evaluated the cars in
     biological terms, even though being inanimate structures.
+  id: totrans-27
   prefs: []
   type: TYPE_NORMAL
+  zh: 这一事实在关于类人机器人的一次采访中也被德国哲学家托马斯·梅辛格（Honert [2017](#CR21)）称为*社会幻觉*。他指出，人类有能力想象自己在与有意识的对等体打交道，即使事实并非如此。这不仅适用于看起来像人类的机器人，还可能适用于聊天机器人。在其他情况下，甚至可能发生我们将人类特征赋予更为被动的物体，如汽车。例如，一项研究表明，人们会将个性特征或面部表情赋予汽车（Windhager等人[2008](#CR41)）。在这项研究中，40名参与者被展示了来自不同制造商的不同汽车的3D计算机模型。参与者被要求说出他们是否将汽车的前部与人类（或动物）的脸部联系起来，识别出对应于嘴巴、眼睛或脸部其他部分的部位。此外，他们还被要求评价汽车在多大程度上看起来快乐、愤怒、惊讶、支配或悲伤等。有趣的是，人们在他们的评价中普遍达成一致，因此作者认为必须存在一些一致的信息被人类感知在汽车前部。参与者因此用生物学术语评估汽车，尽管它们是无生命的结构。
 - en: The Uncanny Valley
+  id: totrans-28
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 神秘的山谷
 - en: In the case of robots and avatars,^([2](#Fn2)) being too humanlike leads to
     negative emotions in humans. It is observed that objects that are clearly artificial
     and distinguishable from real humans (such as humanoid robots clearly looking
@@ -173,8 +233,11 @@
     of the *uncanny valley* (first proposed in 1970 by the Japanese Robotics Professor
     Masahiro Mori (Mori [1970](#CR28))) predicts that an entity appearing almost human
     on the other hand will cause the feeling of cold and spookiness in humans.
+  id: totrans-29
   prefs: []
   type: TYPE_NORMAL
+  zh: 在机器人和头像的情况下，^([2](#Fn2))过于类人会引起人类的负面情绪。观察表明，那些明显人造且与真实人类有所区别的物体（例如明显与人类不同的类人机器人或填充动物）更容易被接受。*神秘的山谷*假设（最初由日本机器人学教授森正洋（Mori
+    [1970](#CR28)）于1970年提出）预测，一个几乎看起来像人类的实体会在人类中引起冷漠和毛骨悚然的感觉。
 - en: 'This uncanny valley effect can also be applied to chatbots. A study (Ciechanowski
     et al. [2019](#CR7)) has observed how two different groups of human participants
     interact with two groups of chatbots: The first chatbot was a very simple text-based
@@ -182,29 +245,39 @@
     only displaying them on the screen. In the results, the authors conclude that
     the participants were experiencing less uncanny effects and less negative affect
     when dealing with the simpler chatbot than with the animated chatbot.'
+  id: totrans-30
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种神秘的山谷效应也可以应用于聊天机器人。一项研究（Ciechanowski等人[2019](#CR7)）观察了两组不同的人类参与者如何与两组聊天机器人互动：第一个聊天机器人是一个非常简单的基于文本的聊天机器人，而第二个则还有一个阅读答案的头像，而不仅仅是在屏幕上显示答案。在结果中，作者得出结论，参与者在处理简单的聊天机器人时体验到的神秘效应和负面情绪要少于与动画聊天机器人交互时。
 - en: It seems that state-of-the-art language models have not only enabled a revolution
     in the field of natural language processing, making several tasks more efficient.
     They furthermore seem to raise new questions of human-chatbot interaction, leading
     us to interpret their eloquent and well-phrased texts as emotions or making us
     feel eerie when interacting with them. Has some sort of language model uncanny
     valley been reached?
+  id: totrans-31
   prefs: []
   type: TYPE_NORMAL
+  zh: 看起来最先进的语言模型不仅在自然语言处理领域引发了革命，使多项任务更加高效。它们似乎还引发了有关人类与聊天机器人互动的新问题，导致我们将它们优雅而措辞得当的文本解释为情感，或者在与它们互动时让我们感到怪异。是否已经达到了某种语言模型的怪异谷？
 - en: You are still thinking about the over-emotional chatbot conversation and not
     convinced it is only an illusion? Let’s now get back to the technical part now
     and have a closer look at how chatbots work and how their answers are generated.
+  id: totrans-32
   prefs: []
   type: TYPE_NORMAL
+  zh: 你仍在思考过于情绪化的聊天机器人对话，不确定它是否只是一种幻觉？现在让我们回到技术部分，更仔细地看看聊天机器人是如何工作以及它们的答案是如何生成的。
 - en: Entering the World of Language Models
+  id: totrans-33
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 进入语言模型的世界
 - en: Vectors of Entire Sentences
+  id: totrans-34
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 整个句子的向量
 - en: So far, when looking at word embeddings, we have considered settings where one
     word corresponds to one vector. Each word in our example had one numerical representation,
     being of two dimensions for the toy example and of larger dimensions in the real-world
@@ -215,52 +288,74 @@
     on sentences and using a machine learning model that takes entire sentences as
     input, we have a *sentence classification task*. Other examples of similar tasks
     are a spam filter or identifying whether a given text is about a specific topic.
+  id: totrans-35
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，在查看单词嵌入时，我们考虑了一个单词对应一个向量的情况。我们示例中的每个单词都有一个数值表示，对于玩具示例是两个维度，对于真实世界的单词嵌入则是更大的维度。在某些情况下，可能需要或更好地将几个单词聚合在一起。在进行文本情感分析时，通常我们希望了解整个句子（或文本块）是积极还是消极，而不仅仅是单个单词。当在句子上执行此类操作并使用将整个句子作为输入的机器学习模型时，我们有一个*句子分类任务*。类似任务的其他示例包括垃圾邮件过滤器或识别给定文本是否涉及特定主题。
 - en: Consider the following sentence, which we want to feed to a machine learning
     model and estimate whether it is positive or negative:^([3](#Fn3))
+  id: totrans-36
   prefs: []
   type: TYPE_NORMAL
+  zh: 考虑以下句子，我们希望将其提供给一个机器学习模型，并估计它是积极还是消极:^([3](#Fn3))
 - en: '*Anna eats a tasty strawberry.*'
+  id: totrans-37
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*安娜吃了一个美味的草莓。*'
 - en: Based on the word embeddings discussed earlier, we can now easily encode each
     word as a vector:^([4](#Fn4))
+  id: totrans-38
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于之前讨论的单词嵌入，我们现在可以轻松地将每个单词编码为一个向量:^([4](#Fn4))
 - en: Vector(“Anna”) = (0, 2)
+  id: totrans-39
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Vector(“安娜”) = (0, 2)
 - en: Vector (“eats”) = (1, 3)
+  id: totrans-40
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Vector (“吃”) = (1, 3)
 - en: …
+  id: totrans-41
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: …
 - en: 'We now want to aggregate these word embeddings to a so-called sentence embedding,
     a vector representing not only a single word but the entire sentence. One simple
     method to do so is to just take the average of all word vectors in the sentence.
     Based on the mathematical properties of vectors, we can apply mathematical operations,
     as if we could be taking the average of numbers:'
+  id: totrans-42
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们想要将这些单词嵌入聚合成所谓的句子嵌入，一个代表不仅是单个单词而是整个句子的向量。一个简单的方法是只需取句子中所有单词向量的平均值。基于向量的数学属性，我们可以应用数学运算，就像我们在计算平均数一样：
 - en: Average = [Vector(“Anna”)+Vector(“eats”)+…+Vector(“strawberry”)]/5
+  id: totrans-43
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 平均值 = [Vector(“安娜”)+Vector(“吃”)+…+Vector(“草莓”)]/5
 - en: 'We sum up all the vectors and divide by the number of vectors (= the number
     of words). The result is one vector (in the same dimension as the word vectors)
     that represents the entire sentence:'
+  id: totrans-44
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们将所有向量相加，然后除以向量的数量（=单词的数量）。结果是一个向量（与单词向量相同维度的向量），代表整个句子：
 - en: Vector(“Anna eats a tasty strawberry.”)
+  id: totrans-45
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: Vector(“安娜吃了一个美味的草莓。”)
 - en: 'These methods also help to deal with the handling of *sequences of variable-length*.
     When dealing with language, words (which can be seen as *sequences* of characters)
     can be longer (as the word *strawberry*) or shorter (as the word *the*). In the
@@ -273,45 +368,63 @@
     Using the average is a simple yet efficient solution to that: no matter how many
     words there are in the sentence, we will end up with a single vector (of fixed
     dimension).'
+  id: totrans-46
   prefs: []
   type: TYPE_NORMAL
+  zh: 这些方法还有助于处理*可变长度的序列*。在处理语言时，单词（可以看作是字符的*序列*）可以更长（如单词*strawberry*）或更短（如单词*the*）。同样，我们可以将句子视为单词的*序列*，每个句子中的单词数量可能不同。因此，我们可以将要提供给机器学习模型的句子视为*可变长度输入*。根据我们想要分类的句子，我们可能有更少或更多的单词要处理。大多数情况下，我们事先无法知道这些信息，因此需要在软件中准备好处理非常短的句子以及长句子。使用平均值是一个简单而有效的解决方案：无论句子中有多少单词，我们最终都会得到一个单一向量（固定维度）。
 - en: 'Whereas this solution solves our problem for now, it comes with some major
     limitations. For instance, the order in which the words appear in the sentence
     is not considered when using this method. This results in the following sentence
     having the same sentence vector as our example above:'
+  id: totrans-47
   prefs: []
   type: TYPE_NORMAL
+  zh: 尽管这种解决方案暂时解决了我们的问题，但它也带来了一些主要限制。例如，当使用这种方法时，不考虑单词在句子中出现的顺序。这导致以下句子与我们上面的示例具有相同的句子向量：
 - en: '*A tasty strawberry eats Anna.*'
+  id: totrans-48
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*一个美味的草莓吃安娜。*'
 - en: Not quite the same, right? In some cases, this difference can be very relevant
     for the classification task, and thus, we need more advanced methods that allow
     to consider the order of the words in the sentence. Additionally, the longer a
     sentence is, the less information the average vector contains.
+  id: totrans-49
   prefs: []
   type: TYPE_NORMAL
+  zh: 这不完全相同，对吧？在某些情况下，这种差异对于分类任务可能非常重要，因此，我们需要更先进的方法，可以考虑句子中单词的顺序。此外，句子越长，平均向量包含的信息就越少。
 - en: Keeping Some Words in Mind
+  id: totrans-50
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 记住一些单词
 - en: To overcome this limitation, we need a different approach that allows us to
     keep in mind the order of words, by reading them step by step from left to right,
     as a human reader would do. Let’s consider this by an example^([5](#Fn5)) as shown
     in Fig. [4.2](#Fig2).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig2_HTML.png)
+  id: totrans-51
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了克服这一限制，我们需要一种不同的方法，允许我们按照从左到右逐步阅读单词的顺序，就像人类读者所做的那样。让我们通过一个示例来考虑这个问题^([5](#Fn5))，如图[4.2](#Fig2)所示。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig2_HTML.png)
 - en: A diagrammatic illustration of human and machine interaction where the text
     reads anna eats a tasty strawberry. It read, understand and store in memory.
+  id: totrans-52
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类和机器交互的图解，文本内容为“anna eats a tasty strawberry”。它读取、理解并存储在记忆中。
 - en: Fig. 4.2
+  id: totrans-53
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.2
 - en: Example of a human reading a sentence word by word (based on the explanations
     of Hagiwara ([2021](#CR19)))
+  id: totrans-54
   prefs: []
   type: TYPE_NORMAL
+  zh: 人类逐字阅读句子的示例（基于Hagiwara的解释（[2021](#CR19)））
 - en: We consider the same example sentence from before. The human reader reads the
     sentence word by word.^([6](#Fn6)) As a first step, the word *Anna* is read and
     stored in the short-term memory. Then, the next word, in this case *eats*, is
@@ -322,12 +435,18 @@
     also be referred to as a *mental state*, that is, updated step by step based on
     the new words that are being read while going through the sentence word by word
     (Hagiwara [2021](#CR19)).
+  id: totrans-55
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们考虑之前相同的示例句子。人类读者逐字阅读句子。^([6](#Fn6)) 作为第一步，单词*Anna*被阅读并存储在短期记忆中。然后，阅读下一个单词，本例中为*eats*。它与之前已经阅读的单词放在上下文中，并且也存储在短期记忆中。在这里，短期记忆被更新为“Anna
+    eats”，记录了两个单词之间的关系，意味着Anna执行了一个动作。这种短期记忆也可以称为*心理状态*，根据逐字阅读句子时阅读的新单词逐步更新（Hagiwara
+    [2021](#CR19)）。
 - en: Neural Networks with Loops
+  id: totrans-56
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 具有循环的神经网络
 - en: 'We now want to bring together this mechanism of reading a sentence and the
     neural networks that we saw in the previous chapter. These neural networks are
     called *recurrent neural networks* (*RNNs*). We can translate the human reader’s
@@ -335,19 +454,27 @@
     the concept of the *state* of a neural network as an analog for the short-term
     memory of the reader, updating it after each word vector in a similar manner,
     as shown in Fig. [4.3](#Fig3).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig3_HTML.png)'
+  id: totrans-57
   prefs: []
   type: TYPE_NORMAL
+  zh: '-   现在我们想要将阅读句子的机制与前一章中看到的神经网络结合起来。这些神经网络被称为*循环神经网络*（*RNNs*）。我们可以将前面示例中的人类阅读过程转化为更技术化的设置，如下所示：我们引入神经网络的*状态*的概念，作为读者的短期记忆的类比，在每个单词向量后更新它，如图[4.3](#Fig3)所示。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig3_HTML.png)'
 - en: A diagrammatic illustration of human and machine interaction where the text
     reads anna eats a tasty strawberry at 4 states.
+  id: totrans-58
   prefs: []
   type: TYPE_NORMAL
+  zh: '-   一个图解人类和机器互动的示例，文本显示anna在4个状态下吃了一个美味的草莓。'
 - en: Fig. 4.3
+  id: totrans-59
   prefs: []
   type: TYPE_NORMAL
+  zh: '-   图4.3'
 - en: A neural network processing a sentence vector by vector (based on the explanations
     of Hagiwara ([2021](#CR19)))
+  id: totrans-60
   prefs: []
   type: TYPE_NORMAL
+  zh: '-   一个神经网络逐个向量处理句子（基于Hagiwara的解释（[2021](#CR19)））'
 - en: 'To begin, the neural network receives the vector of the word *Anna*. It then
     receives the second vector: the vector of the word *eats*. This vector is combined
     with the output of the hidden layer from the previous step and passed to the next
@@ -355,8 +482,10 @@
     additional information that the new word brings to the entire sentence read so
     far. This operation is repeated until the end of the sentence has been reached.
     By then, the content of the entire sentence is stored in this *final state*.'
+  id: totrans-61
   prefs: []
   type: TYPE_NORMAL
+  zh: '-   神经网络首先接收单词*Anna*的向量。然后接收第二个向量：单词*eats*的向量。这个向量与上一步隐藏层的输出结合在一起，并传递到下一步。换句话说，神经网络的状态被更新，反映了新单词对到目前为止已读句子带来的额外信息。这个操作重复进行直到句子结束。到那时，整个句子的内容被存储在这个*最终状态*中。'
 - en: 'In the previous chapter, we have seen the neural network architecture, consisting
     of an input layer, several hidden layers, and an output layer. Each layer consisted
     of several neurons, which were each processing an input and some weights and providing
@@ -370,33 +499,47 @@
     computer to execute it several times. This is analogous to the following scenario:
     If you have ten bowls of strawberries and want to instruct somebody to bring them
     all from the kitchen to the table in the living room, you could either say:'
+  id: totrans-62
   prefs: []
   type: TYPE_NORMAL
+  zh: '-   在前一章中，我们已经看到了神经网络的架构，包括一个输入层，几个隐藏层和一个输出层。每一层都由几个神经元组成，每个神经元都处理一个输入和一些权重，并将输出提供给下一层。你可能记得信号从输入层进入我们的神经网络，逐层到达输出层。由于逐字阅读句子时，我们一遍又一遍地执行相同的操作，相同的神经网络结构被重复使用。处理中存在*循环*。循环是计算机编程中常见的结构。每当需要多次执行相同操作时，可以使用特定的结构仅编写一次指令，并告诉计算机执行多次。这类似于以下情景：如果你有十碗草莓，并想指示某人把它们从厨房带到客厅的桌子上，你可以说：'
 - en: '*Please go to the kitchen and bring the first bowl of strawberries to the table.*'
+  id: totrans-63
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '-   *请去厨房，把第一碗草莓端到桌子上。*'
 - en: '*Then, please go again to the kitchen and bring the second bowl of strawberries
     to the table.*'
+  id: totrans-64
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '-   *然后，请再次去厨房，把第二碗草莓端到桌子上。*'
 - en: '*and so on.*'
+  id: totrans-65
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '-   *等等。*'
 - en: 'However, you would probably not be doing that. You would be saying something
     like:'
+  id: totrans-66
   prefs: []
   type: TYPE_NORMAL
+  zh: '-   但是，你可能不会这样做。你可能会说：'
 - en: '*For each of the ten bowls, please go to the kitchen and bring the bowl to
     the table.*'
+  id: totrans-67
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '-   *对于这十碗草莓，每碗，请去厨房，把碗端到桌子上。*'
 - en: So, you just created a loop with ten iterations.
+  id: totrans-68
   prefs: []
   type: TYPE_NORMAL
+  zh: '-   因此，你刚刚创建了一个有十次迭代的循环。'
 - en: The idea of reusing a neural network in a loop structure gives rise to the concept
     of so-called recurrent neural networks. The same structure can be reused as the
     next word comes in. At each step, we take the hidden layer output from the previous
@@ -406,51 +549,77 @@
     the person picking up the bowls could have a notebook and a pen in the kitchen,
     taking note each time which bowls were already taken to the table and how they
     were placed.
+  id: totrans-69
   prefs: []
   type: TYPE_NORMAL
+  zh: 在循环结构中重复使用神经网络的想法引出了所谓的循环神经网络的概念。相同的结构可以在下一个单词到来时被重复使用。在每一步中，我们将上一次迭代的隐藏层输出（状态）以及当前步骤的单词向量作为输入传入网络。这使得神经网络能够将输入的单词与句子的其余部分连接起来。回到厨房里的草莓碗，拿起碗的人可能在厨房里有一个笔记本和一支笔，每次记下哪些碗已经被拿到桌子上以及它们是如何摆放的。
 - en: The architecture of our recurrent neural network therefore looks as shown in
     Fig. [4.4](#Fig4). The *state* corresponds to the short-term memory mentioned
     earlier and stores information about each word’s context.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig4_HTML.png)
+  id: totrans-70
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们的循环神经网络的架构如图[4.4](#Fig4)所示。*状态*对应于前面提到的短期记忆，并存储了关于每个单词上下文的信息。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig4_HTML.png)
 - en: A flow diagram illustrates a recurrent neural network consist of input, neural
     network state and output.
+  id: totrans-71
   prefs: []
   type: TYPE_NORMAL
+  zh: 流程图说明了一个由输入、神经网络状态和输出组成的循环神经网络。
 - en: Fig. 4.4
+  id: totrans-72
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.4
 - en: The architecture of a recurrent neural network
+  id: totrans-73
   prefs: []
   type: TYPE_NORMAL
+  zh: 循环神经网络的架构
 - en: 'Why is this useful? Suppose we want to generate text by predicting the next
     word of a partial sentence:'
+  id: totrans-74
   prefs: []
   type: TYPE_NORMAL
+  zh: 这有什么用？假设我们想通过预测部分句子的下一个单词来生成文本：
 - en: 'Step 1:'
+  id: totrans-75
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤1：
 - en: Anna eats …
+  id: totrans-76
   prefs: []
   type: TYPE_NORMAL
+  zh: 安娜吃…
 - en: 'Step 2:'
+  id: totrans-77
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤2：
 - en: Anna eats a …
+  id: totrans-78
   prefs: []
   type: TYPE_NORMAL
+  zh: 安娜吃了一个…
 - en: 'Step 3:'
+  id: totrans-79
   prefs: []
   type: TYPE_NORMAL
+  zh: 步骤3：
 - en: Anna eats a strawberry …
+  id: totrans-80
   prefs: []
   type: TYPE_NORMAL
+  zh: 安娜吃了一个草莓…
 - en: The word generated at each step is given by the neural network’s prediction
     for the next word. In each of the steps, the same neural network is used, and
     the state is the output of the hidden layer, which stores information about everything
     seen so far.
+  id: totrans-81
   prefs: []
   type: TYPE_NORMAL
+  zh: 每一步生成的单词由神经网络对下一个单词的预测给出。在每一步中，使用相同的神经网络，并且状态是隐藏层的输出，其中存储了迄今为止所见的所有信息。
 - en: So, let’s come back to our initial problem. We wanted to find a better way than
     the averaging method to produce a fixed-length vector from a variable-length input.
     And with recurrent neural networks, we have found a solution. As shown in Fig.
@@ -460,95 +629,133 @@
     by using the loop inside the neural network, we can use it for very short sentences
     as well as sentences containing many words. Furthermore, as advantage over the
     averaging method, the order of the words in the sentence is considered here.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig5_HTML.png)
+  id: totrans-82
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，让我们回到我们最初的问题。我们想找到一种比平均方法更好的方法，以从可变长度的输入中生成固定长度的向量。通过循环神经网络，我们找到了一个解决方案。如图[4.5](#Fig5)所示，我们可以输入一个句子（每个单词编码为一个向量），并通过使用这种类型的神经网络得到一个句子嵌入。句子嵌入是神经网络的最终状态。由于在神经网络内部使用循环可能导致的重复，我们可以用它来处理非常短的句子以及包含许多单词的句子。此外，与平均方法相比，这里考虑了句子中单词的顺序。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig5_HTML.png)
 - en: In an illustration of a neural network labeled M State, the sentence Anna eats
     a tasty strawberry is processed through vectors, including Vector Anna, Vector
     eats, and Vector strawberry. The resulting vector for the sentence is represented
     as Vector for the sentence Anna eats a tasty strawberry with values 2.3, 55.6,
     and 33.4.
+  id: totrans-83
   prefs: []
   type: TYPE_NORMAL
+  zh: 在标有M State的神经网络示例中，句子安娜吃了一个美味的草莓通过向量进行处理，包括安娜向量、吃向量和草莓向量。句子的结果向量表示为句子安娜吃了一个美味的草莓的向量，其值为2.3、55.6和33.4。
 - en: Fig. 4.5
+  id: totrans-84
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.5
 - en: A recurrent neural network generating a vector for a complete sentence
+  id: totrans-85
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个循环神经网络为完整句子生成一个向量
 - en: Often, we will find a visual representation as shown in Fig. [4.6](#Fig6) to
     illustrate the same network. Instead of the loop, the recurrent neural network
     is *unfolded* and displayed as several identical layers. This can be beneficial,
     as it allows to display how the sequence of words (the sentence) is processed
     step by step. The state of each copy of the neural network represents the information
     about the words that has been introduced up to that point.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig6_HTML.png)
+  id: totrans-86
   prefs: []
   type: TYPE_NORMAL
+  zh: 通常，我们会发现一个如图[4.6](#Fig6)所示的可视化表示来说明相同的网络。与循环不同，递归神经网络被*展开*并显示为几个相同的层。这是有益的，因为它可以展示单词序列（句子）是如何逐步处理的。神经网络的每个副本状态表示到目前为止已经引入的单词的信息。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig6_HTML.png)
 - en: AN illustration of a neural network receives the sentence Anna eats a tasty
     strawberry and processes it into vectors, ultimately reaching a final state with
     vector values. The network transitions through various states in the process before
     arriving at the final result.
+  id: totrans-87
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个神经网络的插图接收句子“Anna吃了一个美味的草莓”并将其处理为向量，最终达到具有向量值的最终状态。在到达最终结果之前，网络在过程中经过各种状态的转换。
 - en: Fig. 4.6
+  id: totrans-88
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.6
 - en: Unfolded representation of the recurrent neural network
+  id: totrans-89
   prefs: []
   type: TYPE_NORMAL
+  zh: 递归神经网络的展开表示
 - en: Here They Are, the Language Models!
+  id: totrans-90
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 这就是，语言模型！
 - en: 'We are now approaching the heart of this book, introducing the concept of language
     models. Let’s look at the following definition:'
+  id: totrans-91
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们现在正在接近本书的核心，介绍语言模型的概念。让我们看看以下定义：
 - en: Formally, a language model is a statistical model that gives a probability to
     a piece of text. […] The more grammatical and the more “sense” the sentence makes,
     the higher the probability is. (Hagiwara [2021](#CR19), p. 131)
+  id: totrans-92
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: 形式上，语言模型是一个给文本赋予概率的统计模型。[...] 句子越符合语法，越有“意义”，概率就越高。（Hagiwara [2021](#CR19)，第131页）
 - en: 'Let’s consider the following two sentences:'
+  id: totrans-93
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑以下两个句子：
 - en: '*There is a field full of strawberries.*'
+  id: totrans-94
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*有一个满是草莓的地方。*'
 - en: '*There is a field full of cats.*'
+  id: totrans-95
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*有一个满是猫的地方。*'
 - en: With our world and language knowledge, it is easy to determine for a human that
     the first sentence is much more likely than the second sentence. This feeling
     of *being likely* is expressed in probabilities in language models. For the sentences
     above, we would expect a language model to give a *higher probability* to the
     first sentence and a lower probability to the second one.
+  id: totrans-96
   prefs: []
   type: TYPE_NORMAL
+  zh: 对于一个人来说，很容易确定第一个句子比第二个句子更有可能。这种*可能性*的感觉在语言模型中以概率的形式表达。对于上面的句子，我们期望语言模型给予第一个句子��高的概率，而给第��个句子较低的概率。
 - en: Language models are the foundation of many natural language processing tasks.
     Examples range from machine translation to speech recognition and answer generation
     in chatbots.
+  id: totrans-97
   prefs: []
   type: TYPE_NORMAL
+  zh: 语言模型是许多自然语言处理任务的基础。例子包括机器翻译、语音识别和聊天机器人中的答案生成。
 - en: 'Put simply, to get the probability of the sentence, the probabilities of each
     word under consideration of the context (the words before and/or after it) are
     combined. For example, consider the following sentence:'
+  id: totrans-98
   prefs: []
   type: TYPE_NORMAL
+  zh: 简单来说，为了得到句子的概率，考虑上下文（之前和/或之后的单词）下每个单词的概率被结合起来。例如，考虑以下句子：
 - en: '*There is a field full of strawberries.*'
+  id: totrans-99
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*有一个满是草莓的地方。*'
 - en: 'We would consider questions like: How likely is it that a sentence starts with
     *There*? How likely is it that the word *is* comes after the word *There*? The
     answers to all these questions would provide us an overall probability, which
     could then be compared with the overall probability of another sentence, to decide
     which of the sentences is more likely to be a *real*, *good* sentence (a combination
     of words that a human is likely to use).'
+  id: totrans-100
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们会考虑这样的问题：一个句子以*There*开头的可能性有多大？单词*is*在单词*There*之后出现的可能性有多大？所有这些问题的答案将为我们提供一个总体概率，然后可以将其与另一个句子的总体概率进行比较，以决定哪个句子更有可能是一个*真实*、*好的*句子（一个人类可能使用的单词组合）。
 - en: When looking at these questions, you might have recognized some similarity to
     the task before, where we created the sentence embeddings. To generate the sentence
     embeddings, we were processing the sentence word by word, considering also the
@@ -556,65 +763,89 @@
     *likeliness* raised in the previous paragraph, we also need to process the sentence
     word by word and consider the probability of the word being in a given position
     of the sentence.
+  id: totrans-101
   prefs: []
   type: TYPE_NORMAL
+  zh: 当看到这些问题时，你可能会发现与之前创建句子嵌入时的任务有些相似。为了生成句子嵌入，我们逐词处理句子，考虑上下文并将含义存储在我们的*状态*中。为了回答上一段提出的关于*相似性*的问题，我们也需要逐词处理句子，并考虑单词在句子中出现的概率。
 - en: We can thus use the architecture of a recurrent neural network and train our
     first language model.
+  id: totrans-102
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，我们可以使用循环神经网络的架构并训练我们的第一个语言模型。
 - en: 'To start, we return to the unfolded recurrent neural network we have seen previously.
     In particular, we are now interested in the intermediate values of the *state*.
     When looking at this without the output in Fig. [4.7](#Fig7), we realize that
     we actually do the following: based on a sequence of inputs (sequence of words
     in form of vectors), we generate a sequence of outputs (the intermediate values
     of state). Such an architecture is called *sequence-to-sequence encoder*.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig7_HTML.png)'
+  id: totrans-103
   prefs: []
   type: TYPE_NORMAL
+  zh: 首先，我们回到之前看到的展开的循环神经网络。特别是，我们现在对*状态*的中间值感兴趣。当在图[4.7](#Fig7)中没有输出的情况下看这个时，我们意识到我们实际上在做以下事情：基于一系列输入（以向量形式的单词序列），我们生成一系列输出（*状态*的中间值）。这样的架构被称为*序列到序列编码器*。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig7_HTML.png)
 - en: In the neural network processing pipeline, the input sequence begins with Vector
     Anna, followed by Vector eats and Vector strawberry. These inputs are processed
     through various states, ultimately leading to the Output Sequence.
+  id: totrans-104
   prefs: []
   type: TYPE_NORMAL
+  zh: 在神经网络处理流程中，输入序列以向量Anna开始，然后是向量eats和向量strawberry。这些输入通过各种状态处理，最终导致输出序列。
 - en: Fig. 4.7
+  id: totrans-105
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.7
 - en: The architecture of a sequence-to-sequence encoder
+  id: totrans-106
   prefs: []
   type: TYPE_NORMAL
+  zh: 序列到序列编码器的架构
 - en: Whereas the intermediate values of the *state* are useful, it is not what we
     want as output for our language model. What we want is an indication of the probability
     of potential next words, based on the partial sequence (the partial sentence)
     we have read so far.
+  id: totrans-107
   prefs: []
   type: TYPE_NORMAL
+  zh: 虽然*状态*的中间值很有用，但这不是我们语言模型的输出。我们想要的是根据我们迄今为止读取的部分序列（部分句子）来指示潜在下一个单词的概率。
 - en: In Fig. [4.8](#Fig8), we consider the example of reading the first word of the
     sentence, *Anna*. The output of this step is the probability of the next word.
     Whereas it is very likely that the word *Anna* is followed by the word *eats*,
     it is rather unlikely that it is followed by *strawberry* or *tasty*. As in the
     previous chapter, we express probabilities as numbers ranging from 0.0 to 1.0
     that can be easily mapped to percentages of 0% to 100%.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig8_HTML.png)
+  id: totrans-108
   prefs: []
   type: TYPE_NORMAL
+  zh: 在图[4.8](#Fig8)中，我们考虑阅读句子第一个单词*Anna*的例子。这一步的输出是下一个单词的概率。虽然单词*Anna*后面跟着单词*eats*的可能性很高，但跟着*strawberry*或*tasty*的可能性相对较低。与上一章类似，我们将概率表示为从0.0到1.0的数字，可以轻松映射到0%到100%的百分比。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig8_HTML.png)
 - en: The neural network predicts the next word in the sequence. Given the input Anna,
     it assigns the highest probability of 0.9 to eats, followed by tasty with 0.3
     unlikely and strawberry with 0.2 unlikely.
+  id: totrans-109
   prefs: []
   type: TYPE_NORMAL
+  zh: 神经网络预测序列中的下一个单词。给定输入Anna，它将概率最高的0.9分配给eats，其次是tasty，概率为0.3，而strawberry的概率为0.2。
 - en: Fig. 4.8
+  id: totrans-110
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.8
 - en: The word following the word “Anna” in the sentence is predicted. Whereas the
     word “eats” seems to be likely a good choice, the words “strawberry” and “tasty”
     have lower probabilities
+  id: totrans-111
   prefs: []
   type: TYPE_NORMAL
+  zh: 预测句子中跟在“Anna”后面的单词。虽然“eats”这个词似乎是一个不错的选择，但“strawberry”和“tasty”这两个词的概率较低。
 - en: As stated before, we want to use this architecture to *train* the language model.
     We are thus applying the above principle to a large number of texts, *hiding*
     specific words and predicting them, in order to be able to control and adjust
     the result as needed. Reducing the loss here means getting closer to correctly
     predicting the hidden words.
+  id: totrans-112
   prefs: []
   type: TYPE_NORMAL
+  zh: 如前所述，我们想要使用这种架构来*训练*语言模型。因此，我们将上述原则应用于大量文本，*隐藏*特定单词并预测它们，以便根据需要控制和调整结果。在这里减少损失意味着更接近正确预测隐藏单词。
 - en: 'In the example above, we know that the word *eats* follows the word *Anna*
     in our text. Thus, *eats* is the correct answer, for which, in a fully trained
     system (in the prediction phase), we expect to have the highest probability. However,
@@ -625,8 +856,10 @@
     predictions happens (this happens as we have seen before by adapting the weights
     inside the neural network to minimize the loss), sentence by sentence, text by
     text, for millions or billions of words.'
+  id: totrans-113
   prefs: []
   type: TYPE_NORMAL
+  zh: 在上面的例子中，我们知道单词*eats*在文本中跟在单词*Anna*后面。因此，*eats*是正确答案，对于一个完全训练好的系统（在预测阶段），我们期望它有最高的概率。然而，在训练阶段的开始，也许答案还不正确，模型可能会给其他单词估计更高的概率。这就是学习发生的地方：基于这一步的估计值和正确答案，对系统进行*改进*以做出更好的预测（正如我们之前看到的通过调整神经网络内部的权重来最小化损失），逐句、逐文本地进行，数以百万计或十亿计的单词。
 - en: Once the language model has been trained, we can use it to construct new sentences!
     This occurs in the *prediction phase*. By providing the first part of the sentence,
     we can make a prediction of the next word, as shown in Fig. [4.9](#Fig9). We ask
@@ -634,19 +867,28 @@
     …”, and (hopefully) the answer of our language model is *strawberry*. Behind the
     scenes, there is again a probability score for every word in the vocabulary leading
     to this answer.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig9_HTML.png)
+  id: totrans-114
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦语言模型训练完成，我们就可以用它来构建新的句子！这发生在*预测阶段*。通过提供句子的第一部分，我们可以预测下一个单词，如图[4.9](#Fig9)所示。我们要求语言模型预测句子“Anna
+    eats a tasty …”中的下一个单词，（希望）我们的语言模型的答案是*strawberry*。在幕后，词汇表中每个单词都有一个导致这个答案的概率分数。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig9_HTML.png)
 - en: An illustration, a language model labeled Neural Network processes the input
     Anna eats a tasty and predicts the next word, which is strawberry. The model uses
     its internal state M to make this prediction.
+  id: totrans-115
   prefs: []
   type: TYPE_NORMAL
+  zh: 一幅插图，一个标记为神经网络的语言模型处理输入Anna eats a tasty并预测下一个单词，这个单词是strawberry。模型使用其内部状态M进行这个预测。
 - en: Fig. 4.9
+  id: totrans-116
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.9
 - en: Using a language model to predict the next word in a sentence
+  id: totrans-117
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用语言模型预测句子中的下一个单词
 - en: The main difference between the training of the word embeddings earlier and
     this procedure is the input. In the training of the word embeddings, we were calculating
     the probability of a word being a context word to the target word (the word being
@@ -654,23 +896,31 @@
     in this section, the input to predict the probability of a next word considers
     not only one word but the previous state, which included information about several
     words.
+  id: totrans-118
   prefs: []
   type: TYPE_NORMAL
+  zh: 早期的词嵌入训练和这个过程之间的主要区别是输入。在词嵌入训练中，我们计算一个单词作为上下文单词到目标单词（被编码的单词）的概率。唯一的输入是目标单词。在本节的神经网络情况下，用于预测下一个单词的输入不仅考虑一个单词，还考虑了前一个状态，其中包含有关多个单词的信息。
 - en: We now have seen how to build a language model by using a recurrent neural network
     as a first example of a sequence-to-sequence encoder. That’s an achievement, congratulations!
+  id: totrans-119
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在我们已经看到如何通过使用循环神经网络构建语言模型作为序列到序列编码器的第一个示例。这是一个成就，恭喜！
 - en: Toward Transformer Models
+  id: totrans-120
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 走向Transformer模型
 - en: There is now only one last step left to bring us to the latest state-of-the-art
     language models. Current models such as Google’s BERT (Devlin et al. [2019](#CR10))
     or GPT-3 or GPT-4 from OpenAI are so-called transformer-based models (Vaswani
     et al. [2017](#CR38)). We will discover in this section what this architecture
     looks like and why it is so powerful.
+  id: totrans-121
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在只剩下最后一步，将我们带到最新的最先进语言模型。当前模型如谷歌的BERT（Devlin等人[2019](#CR10)）或OpenAI的GPT-3或GPT-4都是所谓的基于transformer的模型（Vaswani等人[2017](#CR38)）。在本节中，我们将发现这种架构是什么样的，以及为什么它如此强大。
 - en: We saw in the previous section how we can create a language model that can generate
     text by predicting the next word in a partial sentence. In the example, we observed
     the transformation from a sequence of words (a sentence) to a sequence of probabilities
@@ -681,86 +931,121 @@
     matching answer. To achieve this, we will connect two models as the one seen before
     and transform a sequence of text to another sequence of text. In particular, we
     will deal with a question-answering task in this section.
+  id: totrans-122
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在上一节中看到了如何创建一个语言模型，通过预测部分句子中的下一个单词来生成文本。在这个例子中，我们观察了从一系列单词（一个句子）到一系列概率（最可能的下一个单词是什么？）的转换。现在，我们想稍微调整用例，并将一系列单词转换为*另一系列*单词。这可以是一个英文句子作为输入，被翻译为另一个西班牙文句子，或者用户向聊天机器人提出的问题，被转换为匹配的答案。为了实现这一点，我们将连接两个模型，就像之前看到的那样，并将一系列文本转换为另一系列文本。特别是，在本节中我们将处理一个问答任务。
 - en: Encoders and Decoders
+  id: totrans-123
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 编码器和解码器
 - en: 'To illustrate the idea, let’s consider the following query a user might ask
     to a chatbot:'
+  id: totrans-124
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了说明这个想法，让我们考虑用户可能向聊天机器人提出的以下查询：
 - en: '*In what countries do strawberries grow?*'
+  id: totrans-125
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*草莓在哪些国家生长？*'
 - en: 'To generate an answer, we need to process this user input and find the most
     appropriate answer. This assumes that the training process of the model was already
     concluded, and we are in the prediction phase here. Let’s assume for our example
     that the chatbot will generate the following (not so helpful) answer:'
+  id: totrans-126
   prefs: []
   type: TYPE_NORMAL
+  zh: 要生成一个答案，我们需要处理这个用户输入并找到最合适的答案。这假设模型的训练过程已经结束，我们现在处于预测阶段。让我们假设对于我们的例子，聊天机器人将生成以下（不太有用的）答案：
 - en: '*Strawberries grow in different countries.*'
+  id: totrans-127
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*草莓在不同的国家生长。*'
 - en: To do that, we use one model to create a sentence embedding of the first sentence
     and then pass it to another model and use this second model to generate the answer.
     The first model is called *encoder*, as it encodes the meaning of the input sentence
     in a sentence embedding (a vector representation of the entire sentence). The
     second model is called *decoder*, as it decodes this embedding and generates the
     answer sentence. Figure [4.10](#Fig10) shows the high-level view of this architecture.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig10_HTML.png)
+  id: totrans-128
   prefs: []
   type: TYPE_NORMAL
+  zh: 要做到这一点，我们使用一个模型来创建第一句的句子嵌入，然后将其传递给另一个模型，并使用这第二个模型生成答案。第一个模型称为*编码器*，因为它将输入句子的含义编码为句子嵌入（整个句子的向量表示）。第二个模型称为*解码器*，因为它解码这个嵌入并生成答案句子。图[4.10](#Fig10)显示了这种架构的高层视图。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig10_HTML.png)
 - en: In the illustration, the Encoder processes the question in what countries do
     strawberries grow? and generates a numerical sentence embedding. The Decoder uses
     this embedding to produce the answer 'Strawberries grow in different countries.
+  id: totrans-129
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这个示例中，编码器处理问题“草莓在哪些国家生长？”并生成一个数字化的句子嵌入。解码器使用这个嵌入来生成答案“草莓在不同的国家生长”。
 - en: Fig. 4.10
+  id: totrans-130
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.10
 - en: A high-level view of the encoder-decoder architecture
+  id: totrans-131
   prefs: []
   type: TYPE_NORMAL
+  zh: 编码器-解码器架构的高层视图
 - en: 'Based on what we have seen previously, we can have a closer look now what happens
     inside these two components – the encoder and the decoder. The way such sequence-to-sequence
     models can be implemented can vary: depending on the specific natural language
     processing task, the encoder or decoder can be implemented differently.'
+  id: totrans-132
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据我们之前看到的内容，现在我们可以更仔细地看看这两个组件内部发生了什么 - 编码器和解码器。这种序列到序列模型的实现方式可能会有所不同：根据特定的自然语言处理任务，编码器或解码器可以以不同的方式实现。
 - en: Let’s create an encoder that is based on the recurrent neural network architecture
     we have seen previously to generate the sentence embeddings. The sentence embedding
     corresponded to the hidden state after the final iteration. This network is actually
     already doing the task of the encoder, so we can just take it from the previous
     section and include it as encoder in this new system.^([7](#Fn7)) Phew, first
     step is done!
+  id: totrans-133
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们创建一个基于我们之前看到的递归神经网络架构的编码器，以生成句子嵌入。句子嵌入对应于最终迭代后的隐藏状态。这个网络实际上已经在执行编码器的任务，所以我们可以直接从上一节中获取它，并将其包含在这个新系统中作为编码器。^([7](#Fn7))
+    哦，第一步完成了！
 - en: Let’s now look at the decoder. Whereas in the previous example, the estimation
     of the next word was based on the context of the words that had been generated
     so far, for the decoder, the input the model receives from the encoder is considered
     as well. Based on that, the output sentence is generated, word by word, as shown
     in Fig. [4.11](#Fig11).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig11_HTML.png)
+  id: totrans-134
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们看看解码器。在前面的例子中，下一个单词的估计是基于到目前为止已生成的单词的上下文，而对于解码器，模型从编码器接收的输入也被考虑在内。基于此，逐字生成输出句子，如图[4.11](#Fig11)所示。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig11_HTML.png)
 - en: An illustration, the encoder processes the question in what countries do strawberries
     grow? into a numerical sentence embedding. The decoder then uses this embedding
     to generate the response Strawberries grow in countries.
+  id: totrans-135
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个插图，编码器将问题“草莓在哪些国家生长？”处理成一个数字化的句子嵌入。解码器然后使用这个嵌入来生成响应“草莓在国家生长”。
 - en: Fig. 4.11
+  id: totrans-136
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 4.11
 - en: A more detailed view on the two parts of the encoder-decoder architecture. The
     output of the encoder is the input to the decoder
+  id: totrans-137
   prefs: []
   type: TYPE_NORMAL
+  zh: 对编码器-解码器架构的两个部分进行更详细的观察。编码器的输出是解码器的输入。
 - en: Pre-Training and Fine-Tuning
+  id: totrans-138
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 预训练和微调
 - en: 'Let’s now look more in detail into the training process of our question answering
     task. The training phase for this example has two parts. We assume that we have
     a recurrent neural network as seen previously that was already *pre-trained*.
@@ -773,50 +1058,72 @@
     optimized further. In particular, since the model was trained in general for text
     generation, the fine-tuning allows to specialize for a specific task, in our case,
     the question answering.'
+  id: totrans-139
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在让我们更详细地了解我们问答任务的训练过程。这个例子的训练阶段有两部分。我们假设我们有一个像之前看到的那样已经*预训练*的循环神经网络。这意味着它已经用大量文本语料库进行了训练，因此权重已经配置得相当不错。一般来说，它已经准备好预测句子中的下一个单词。我们拿这个模型的两个实例：一个用来编码我们的句子（编码器），另一个用来生成答案文本（解码器）。我们准备了一个数据集来*微调*这个模型。在额外的训练阶段，使用额外的训练数据，进一步优化权重。特别是，由于模型通常是为文本生成而训练的，微调允许专门针对特定任务进行优化，在我们的情况下是问答。
 - en: Table [4.1](#Tab1) shows an example on how the training data for this fine-tuning
     could look like.Table 4.1
+  id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 表[4.1](#Tab1)展示了这种微调训练数据可能的示例。表 4.1
 - en: Example of the training data for the fine-tuning task
+  id: totrans-141
   prefs: []
   type: TYPE_NORMAL
+  zh: 微调任务的训练数据示例
 - en: '| Question | Answer |'
+  id: totrans-142
   prefs: []
   type: TYPE_TB
+  zh: '| 问题 | 答案 |'
 - en: '| --- | --- |'
+  id: totrans-143
   prefs: []
   type: TYPE_TB
+  zh: '| --- | --- |'
 - en: '| <START> In what countries do strawberries grow? <END> | <START> Strawberries
     grow in different countries. <END> |'
+  id: totrans-144
   prefs: []
   type: TYPE_TB
+  zh: '| <START> 草莓在哪些国家生长？ <END> | <START> 草莓在不同的国家生长。 <END> |'
 - en: '| <START> Which color do strawberries have? <END> | <START> With exceptions,
     strawberries are mostly red <END> |'
+  id: totrans-145
   prefs: []
   type: TYPE_TB
+  zh: '| <START> 草莓是什么颜色？ <END> | <START> 除了例外，草莓大多是红色的。 <END> |'
 - en: '| … | … |'
+  id: totrans-146
   prefs: []
   type: TYPE_TB
+  zh: '| … | … |'
 - en: 'Let’s define *tokens* as common sequences of characters found in text.^([8](#Fn8))
     We will consider in the following examples entire words as input tokens. In reality,
     not every word necessarily matches exactly one token. For example, the word *sequences*
     is split in two tokens: *sequ* and *ences*.'
+  id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们将*标记*定义为在文本中找到的常见字符序列。^([8](#Fn8)) 在以下示例中，我们将整个单词作为输入标记。实际上，并非每个单词都一定完全匹配一个标记。例如，单词*sequences*被分成两个标记：*sequ*和*ences*。
 - en: In the context of our encoder-decoder architecture, one aspect to consider is
     the length of words in the input and the output. Naturally, the question from
     the user to the chatbot and the answer from the chatbot can have a different number
     of words. Special words, so-called special tokens, are used to mark the beginning
     (<START>) and the end (<END>) of an input or output sequence.
+  id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: 在我们的编码器-解码器架构的背景下，需要考虑的一个方面是输入和输出中单词的长度。用户向聊天机器人提出的问题和聊天机器人的回答可能包含不同数量的单词。特殊单词，即所谓的特殊标记，用于标记输入或输出序列的开始（<START>）和结束（<END>）。
 - en: The question and the answers with these special tokens are shown in Table [4.1](#Tab1).
     Of course, we would need a long list of these question-and-answer pairs to fine-tune
     the language model.
+  id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: 具有这些特殊标记的问题和答案显示在表[4.1](#Tab1)中。当然，我们需要一长串这些问题和答案对来微调语言模型。
 - en: In the fine-tuning process, the first question is fed to the encoder, generating
     the sentence embedding. The decoder receives the output of the encoder (the sentence
     embedding). Since we are in the fine-tuning, which is part of the training phase,
@@ -833,8 +1140,10 @@
     the system. Again, we want to adapt the weights in order to reduce the loss. As
     before, the system improves over many iterations and many training examples, repeating
     the steps mentioned in this paragraph.
+  id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: 在微调过程中，第一个问题被输入到编码器中，生成句子嵌入。解码器接收编码器的输出（句子嵌入）。由于我们处于微调阶段，这是训练阶段的一部分，我们知道这个问题的答句来自我们的训练数据。因此，第一个单词被生成，学习的目标是最大化我们正在寻找的单词的概率。然而，在开始阶段，其他单词将被提出。系统仍然需要学习。在生成答句的第二个单词时，我们将从编码器接收到的句子嵌入和*正确*答案的第一个单词作为输入。特意提到正确答案，而不是学习过程中可能错误的第一步生成的单词，因为这可能会在估计后续单词时产生错误信息。对于每个生成的单词，考虑该单词与正确答案之间的差异以改进系统。同样，我们希望调整权重以减少损失。与以前一样，系统通过许多迭代和许多训练示例进行改进，重复本段中提到的步骤。
 - en: Once the system has been fine-tuned and is applied to new user queries where
     we do not know the correct answer, we are in the prediction phase (or in this
     case, actually more a *generation* phase). The decoder now works slightly differently
@@ -843,23 +1152,32 @@
     now the predicted word from the previous position is considered to generate the
     next word (there is no right answer that could be taken anyways, because we are
     assuming this input is a new question that was not seen during training).
+  id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: 一旦系统经过调优并应用于我们不知道正确答案的新用户查询时，我们就处于预测阶段（或在这种情况下，实际上更多是*生成*阶段）。解码器现在的工作方式与训练阶段的解释略有不同。再次，编码器的输出和<START>标记启动整个过程。与训练阶段相比，现在考虑以前位置的预测单词以生成下一个单词（因为我们假设这个输入是在训练期间没有见过的新问题，所以没有正确答案可以采取）。
 - en: So, now that we have the sequence-to-sequence model up and running and know
     how encoders and decoders work, we can finally get to the transformer models.
+  id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: 因此，现在我们已经启动并了解了编码器和解码器的工作方式的序列到序列模型，我们终于可以开始使用变压器模型了。
 - en: Transformer Models Architecture Overview
+  id: totrans-153
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 变压器模型架构概述
 - en: The transformer models that were initially presented in 2017 (Vaswani et al.
     [2017](#CR38)) are a new type of encoder-decoder neural network and started in
     the field of natural language processing the “era of the transformer” (Hagiwara
     [2021](#CR19), p. 185), providing remarkable improvement for different text processing
     and text generation tasks.
+  id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 最初在2017年提出的变压器模型（Vaswani等人[2017](#CR38)）是一种新型的编码器-解码器神经网络，在自然语言处理领域开启了“变压器时代”（Hagiwara
+    [2021](#CR19)，第185页），为不同的文本处理和文本生成任务提供了显著的改进。
 - en: Compared to the encoder-decoder architecture we saw in detail, the transformer-based
     models are *more of the same*. In these systems, different layers of encoders
     and decoders are combined. Multiple encoder layers are thus passed through to
@@ -867,33 +1185,50 @@
     six layers were used, it can be many more in practice (Hagiwara [2021](#CR19)).
     Similarly, the decoder consists of different layers. The architecture is illustrated
     in Fig. [4.12](#Fig12).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig12_HTML.png)
+  id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 与我们详细了解的编码器-解码器架构相比，基于Transformer的模型*更多相同*。在这些系统中，不同层的编码器和解码器被组合在一起。因此，多个编码器层被传递以进一步改善结果。而在原始论文中介绍这种架构时使用了六层，实际上可以使用更多层（Hagiwara
+    [2021](#CR19)）。同样，解码器由不同层组成。该架构在图[4.12](#Fig12)中有所说明。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig12_HTML.png)
 - en: A flow diagram of input sentence to multiple encoder and decoder and output
     sentence.
+  id: totrans-156
   prefs: []
   type: TYPE_NORMAL
+  zh: 输入句子到多个编码器和解码器以及输出句子的流程图。
 - en: Fig. 4.12
+  id: totrans-157
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 4.12
 - en: A high-level view of the transformer architecture
+  id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: Transformer架构的高层视图
 - en: Figure [4.13](#Fig13) shows in more detail what is inside each encoder and decoder
     component of the transformer model.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig13_HTML.png)
+  id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: 图[4.13](#Fig13)更详细地展示了Transformer模型中每个编码器和解码器组件的内部情况。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig13_HTML.png)
 - en: The illustration depicts an encoder and decoder with feedforward neural networks,
     self-attention mechanisms, and cross-attention mechanisms.
+  id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: 该插图描述了具有前馈神经网络、自注意力机制和交叉注意力机制的编码器和解码器。
 - en: Fig. 4.13
+  id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 4.13
 - en: The inner life of the encoder and decoder in the transformer architecture (inspired
     by the excellent visualization of transformer models from Alammar ([2018](#CR2)))
+  id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: Transformer架构中编码器和解码器的内部结构（灵感来自Alammar的Transformer模型出色的可视化([2018](#CR2))）
 - en: As opposed to the example we have seen in detail before, the transformer model
     does not use recurrent neural networks. Recurrent neural networks and their states
     have progressively more problems with dependencies between tokens that are far
@@ -907,18 +1242,25 @@
     of neural networks we have seen. Going through different layers, the input goes
     from the left to the right through in the neural network, and finally, an output
     is produced.
+  id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: 与我们之前详细了解的示例相反，Transformer模型不使用循环神经网络。随着句子变得越来越长，循环神经网络及其状态在远离彼此的标记之间的依赖性问题逐渐增多（Hagiwara
+    [2021](#CR19)）。换句话说，状态开始*遗忘*关于序列中较早出现的单词的信息。当使用称为*自注意力*的机制时，这些长距离依赖性可以得到更好的覆盖。Transformer多次应用这种自注意力，结合*前馈神经网络*。前馈神经网络没有循环，如循环神经网络，因此大致对应于我们所见过的最初类型的神经网络。通过不同的层，输入从神经网络的左侧经过到右侧，最终产生输出。
 - en: This *attention mechanism* is probably the most important component of what
     makes the difference of the transformer-based architecture compared to previous
     natural language processing approaches. We will explore it in more detail in the
     next sections.
+  id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: 这种*注意力机制*可能是使基于Transformer的架构与以前的自然语言处理方法有所不同的最重要组成部分。我们将在接下来的章节中更详细地探讨它。
 - en: Self-Attention
+  id: totrans-165
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 自注意力
 - en: When looking at the encoder-decoder architecture of sequence-to-sequence models,
     we notice the high relevance of the sentence embeddings that relate the encoder
     with the decoder. This vector includes all the information available from the
@@ -933,43 +1275,57 @@
     RNN) parts of a long sequence. Thus, in summary, we can conclude that the decoder
     needs more information to refer to different aspects of the input it receives
     from the encoder. And this is what *self-attention* provides.
+  id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: 当看到序列到序列模型的编码器-解码器架构时，我们注意到句子嵌入的高相关性，将编码器与解码器联系起来。这个向量包含了从用户查询中可用的所有信息，以生成聊天机器人的答案。然而，这个向量相当有限。即使它包含了一些百维度，它是*固定长度*的。而固定长度可能不适合我们可能遇到的所有用例。无论输入句子是3个单词还是20个单词，用于表示所有这些信息的可用空间始终是相同的。事实上，在我们之前看到的架构中，当输入句子非常长时，性能会受到影响。如果有一些机制只考虑长序列中最重要的部分（而不仅仅是最近的，如RNN的情况），这个问题就可以得到缓解。因此，总结一下，我们可以得出结论，解码器需要更多信息来参考来自编码器的输入的不同方面。这就是*self-attention*提供的。
 - en: 'For intuition: we want it to concentrate on the most relevant information.
     Imagine you are looking at a page of text and are asked to spot where the word
     *strawberry* appears in the text. Automatically, we will scan the text and leave
     out other information, trying to *focus* on the words relevant for our task. Similarly,
     we want the transformer model to focus on the relevant information for each given
     word.'
+  id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 直觉上：我们希望它集中在最相关的信息上。想象一下，你正在看一张文字页面，并被要求找出文字*草莓*在文本中出现的位置。自动地，我们会扫描文本，略过其他信息，试图*专注*于对我们任务有关的单词。同样，我们希望变压器模型专注于每个给定单词的相关信息。
 - en: Rather than having a sentence embedding with a fixed-length vector to contain
     all the information relevant to the input sentence, we return to word embeddings.
     Each word from the input sentence will have one embedding. However, there is an
     important difference between the word embeddings we have seen earlier and the
     word embeddings here. The word embeddings here contain information about the entire
     context of the word.
+  id: totrans-168
   prefs: []
   type: TYPE_NORMAL
+  zh: 与具有固定长度向量的句子嵌入以包含与输入句子相关的所有信息不同，我们回到了单词嵌入。输入句子中的每个单词都将有一个嵌入。然而，我们之前看到的单词嵌入和这里的单词嵌入之间有一个重要的区别。这里的单词嵌入包含了单词的整个上下文的信息。
 - en: To generate these *context-based summaries* for each word is the task of the
     self-attention mechanism. One could say that based on the word embedding representing
     a word in form of a vector, a more advanced word embedding is created representing
     both the word *and* its context.
+  id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 生成这些*基于上下文的摘要*对于每个单词来说是自注意力机制的任务。可以说，基于表示单词的词嵌入形式的向量，创建了一个更高级的词嵌入，代表了单词*和*它的上下文。
 - en: When computing these advanced word embeddings using self-attention for a given
     word, each other word in the same sentence is attributed a weight. The weight
     determines how relevant it is to the given word, like the relevance of the huge
     strawberry to make the strawberry plant bend, always the same story.
+  id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: 在使用自注意力计算给定单词的这些高级词嵌入时，同一句子中的每个其他单词都被赋予一个权重。权重决定了它对给定单词的相关性，就像巨大草莓对使草莓植物弯曲的相关性一样，总是同一个故事。
 - en: 'Let’s consider the following example:'
+  id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: 让我们考虑以下例子：
 - en: '*There is a field of strawberries, and* ***it*** *is so beautiful!*'
+  id: totrans-172
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*有一片草莓地，而* ***它*** *是如此美丽！*'
 - en: When using self-attention to compute the context-based summary for the word
     *it*, the weight for the word *field* would be expected to be higher as for other
     words, since *it* is referring to the field of strawberries. Using this mechanism
@@ -977,30 +1333,42 @@
     have appeared previously in the sentence. This is a typical problem of systems
     not using self-attention, especially when the sentence gets long, and there are
     many words between the word and the reference to that word.
+  id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: 当使用自注意力计算单词*it*的基于上下文的摘要时，预计单词*field*的权重会比其他单词更高，因为*it*指的是草莓地。使用这种自注意力机制，我们不会忽略指向先前出现在句子中的其他单词的单词。这是不使用自注意力系统的典型问题，特别是当句子变长时，单词和指向该单词的引用之间有许多单词时。
 - en: For example, the attention weights and thus dependencies from the word *it*
     to the context words could be visualized in a simplified manner as in Fig. [4.14](#Fig14).![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig14_HTML.png)
+  id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: 例如，可以简化地将从单词*it*到上下文单词的注意力权重和依赖关系可视化，如图[4.14](#Fig14)所示。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig14_HTML.png)
 - en: An illustration of a strawberries and text reads there is a field of strawberries,
     and it is so beautiful.
+  id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个草莓的插图，文字写着有一片草莓地，非常美丽。
 - en: Fig. 4.14
+  id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.14
 - en: The dependencies from the word “it” reflected in the different weights attributed
     to different words
+  id: totrans-177
   prefs: []
   type: TYPE_NORMAL
+  zh: 从单词“it”反映出的依赖关系体现在不同单词所赋予的权重上
 - en: Words directly relating to the word *it*, such as the word *field* it refers
     to, or the word *beautiful* describing it, are more important for its context-dependent
     summary. Other words, such as *of strawberries* or the verb *is* referring to
     the word *it*, are relevant but maybe less important than the other words. Therefore,
     they have smaller weights.
+  id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: 与单词*it*直接相关的单词，如它所指的*field*或描述它的*beautiful*，对于其基于上下文的摘要更为重要。其他单词，如*of strawberries*或动词*is*指向单词*it*，是相关的但可能比其他单词不那么重要。因此，它们的权重较小。
 - en: The context-dependent summaries are created and processed in the encoder. As
     shown in Fig. [4.15](#Fig15), the word *In*, under the consideration of the context,
     results in one vector that is passed from the encoder to the decoder. With context
@@ -1008,32 +1376,44 @@
     which is followed by the word *countries*. The second vector would be the context-aware
     representation of the word *which*, the second word of the input sentence and
     so on for the rest of the words in the input sentence.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig15_HTML.png)
+  id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于上下文的摘要是在编码器中创建和处理的。如图[4.15](#Fig15)所示，单词*在*在考虑上下文的情况下产生一个向量，从编码器传递到解码器。这里的上下文是指，例如，单词*在*后面跟着单词*哪些*，再后面跟着单词*国家*。第二个向量将是单词*哪些*的上下文感知表示，输入句子的第二个单词，以此类推处理输入句子中的其他单词。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig15_HTML.png)
 - en: A flow diagram. The input sentence, in which countries do strawberries grow?
     is processed through an encoder and decoder. Context-based values are generated
     during this process. The output sentence is in, which serves as a summary for
     the word in.
+  id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个流程图。输入句子“在哪些国家种植草莓？”经过编码器和解码器处理。在此过程中生成基于上下文的值。输出句子是“在哪里”，作为“在”这个词的摘要。
 - en: Fig. 4.15
+  id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.15
 - en: The context-based summaries are created and processed in the encoder
+  id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于上下文的摘要是在编码器中创建和处理的
 - en: Cross-Attention and Positional Encoding
+  id: totrans-183
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 交叉注意力和位置编码
 - en: 'In the decoder, another form of attention is used: *cross-attention*. This
     mechanism is similar to the self-attention used inside the encoder and the decoder
     to generate the context-aware word embeddings. Cross-attention is used in the
     decoder to summarize the information obtained from the encoder (*cross* in the
     sense that is crosses the border between encoder and decoder). The idea is here
     again to obtain the most relevant information under consideration of the context.'
+  id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: 在解码器中，使用另一种形式的注意力：*交叉注意力*。这种机制类似于编码器和解码器内部使用的自注意力，用于生成上下文感知的词嵌入。交叉注意力在解码器中用于总结从编码器获得的信息（*交叉*是指它跨越编码器和解码器之间的边界）。这里的想法是再次在考虑上下文的情况下获得最相关的信息。
 - en: 'When reading about the self-attention mechanism primarily focusing on how words
     are related, you might have been wondering if we do not have the same problem
     here as earlier in the book that we miss information about the order of the words
@@ -1041,24 +1421,32 @@
     Anna* was represented in the same way). Actually, this could be a problem in the
     described approach. However, the transformer encoders take care of this by an
     additional calculation: the *positional encoding*.'
+  id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: 当阅读关于自注意力机制的内容时，主要关注单词之间的关系，你可能会想知道我们是否会遇到与本书早期相同的问题，即我们会错过单词顺序的信息（记得例子，*安娜吃草莓*和*草莓吃安娜*被表示为相同）。实际上，在描述的方法中可能会遇到这个问题。然而，transformer编码器通过额外的计算来解决这个问题：*位置编码*。
 - en: The positional encoding is an additional component that is added to the word
     embedding of a word and contains information about the position. The positional
     encoding of the word *Anna* in *Anna eats a strawberry* (Anna is in position 1)
     would be different from the positional encoding of *Anna* in *The strawberry eats
     Anna* (where Anna is in position 4).
+  id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: 位置编码是一个额外的组件，添加到单词的词嵌入中，包含有关位置的信息。在*安娜吃草莓*中，*安娜*的位置编码（安娜在位置1）会与*草莓吃安娜*中*安娜*的位置编码（安娜在位置4）不同。
 - en: Including information about the position of a word in the calculations of the
     contextualized word embeddings, this information can be kept, and we are safe
     from problems such as the strawberry eating Anna.
+  id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: 在计算上下文化词嵌入时包含有关单词位置的信息，这些信息可以被保留，我们就不会遇到像草莓吃安娜这样的问题。
 - en: Static and Contextualized Word Embeddings
+  id: totrans-188
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 静态和上下文化词嵌入
 - en: The word embeddings we have seen earlier in the book, and that do not consider
     the context of a word, are also referred to *static* or *traditional word embeddings*.
     More advanced embeddings as the ones resulting from the transformer-based models
@@ -1072,8 +1460,10 @@
     and reflected in the embeddings when training a transformer-based model. Therefore,
     the contextualized word embedding of orange (the color) would be different from
     the embedding for the other orange (the fruit).
+  id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们在本书中之前看到的词嵌入，不考虑单词的上下文，也被称为*静态*或*传统词嵌入*。在本节中看到的基于transformer模型的更高级的嵌入被称为*上下文化词嵌入*。在静态词嵌入中，单词*橙色*指代颜色和同样的单词*橙色*指代水果会被编码为相同的词嵌入。在上下文化词嵌入中，情况会有所不同，因为会考虑这些单词在训练数据中出现的上下文。例如，水果可能会与草莓、苹果或香蕉一起出现，而颜色可能会与紫色、蓝色或绿色等其他颜色一起出现。在训练基于transformer模型时，这种差异会被考虑并反映在嵌入中。因此，橙色（颜色）的上下文化词嵌入会与橙色（水果）的嵌入不同。
 - en: These language models we have trained using the transformer architecture can
     be used as foundation to predict sentences in different situations, like chatbots
     or next sentence prediction. The language models, or more precisely the *contextualized
@@ -1086,20 +1476,28 @@
     model requires powerful (and thus expensive) hardware, large corpora of texts
     (we talk about thousands of millions of words), and (depending on your hardware)
     patience for the training to be executed over days or weeks or months.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig16_HTML.png)
+  id: totrans-190
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们使用变压器架构训练的这些语言模型可以作为预测不同情况下的句子的基础，比如聊天机器人或下一个句子的预测。这些语言模型，或者更准确地说是由这些训练过程产生的*上下文化词嵌入*，也可以应用于不同的任务，比如分类。这让我们想起了我们在本书中早些时候看到的将人类语言中的单词映射到向量表示的字典。至于这个字典，基于变压器的语言模型可以训练一次，然后在不同的用例中共享和使用，如图[4.16](#Fig16)所示。这是个好消息，因为训练一款最先进的基于变压器的模型需要强大（因此昂贵）的硬件，大量的文本语料库（我们谈论的是数以亿计的单词），以及（取决于您的硬件）对训练的耐心，可能需要数天、数周或数月的时间才能执行完毕。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig16_HTML.png)
 - en: A flow diagram. Transformer-based language models, trained once and publicly
     accessible, leverage extensive training data to perform specific machine learning
     tasks efficiently and effectively using the transformer architecture.
+  id: totrans-191
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个流程图。基于变压器的语言模型，训练一次并且公开可访问，利用大量的训练数据使用变压器架构高效有效地执行特定的机器学习任务。
 - en: Fig. 4.16
+  id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.16
 - en: Transformer-based models can be trained and made available to be used in other
     applications
+  id: totrans-193
   prefs: []
   type: TYPE_NORMAL
+  zh: 基于变压器的模型可以训练并提供给其他应用程序使用。
 - en: 'Before these word embeddings and language models appeared in the landscape
     of natural language processing, a machine learning model was often trained for
     one very specific task. As mentioned here and previously, these *pre-trained components*
@@ -1109,16 +1507,22 @@
     may find it beneficial to know that raspberries and strawberries are somewhat
     similar, because they are both berries. A wonderful analogy to describe this setup
     has been provided by (Hagiwara [2021](#CR19)):'
+  id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 在这些词嵌入和语言模型出现在自然语言处理领域之前，机器学习模型通常是针对一个非常具体的任务进行训练的。正如在这里和之前提到的，这些*预训练组件*（语言模型或词嵌入）可以被提供并立即使用，这改变了最近构建自然语言处理应用程序的方式。这是一个优势，因为不同的自然语言处理任务可能会发现知道覆盆子和草莓有些相似是有益的，因为它们都是浆果。描述这种设置的一个很好的类比已经由（Hagiwara
+    [2021](#CR19)）提供：
 - en: '[This compares to] teaching a baby (=NLP Model) how to dance. By letting babies
     learn how to walk steadily first (=training word embeddings), dance teachers (=task
     specific datasets and training objectives) can focus on teaching specific dance
     moves without worrying whether babies can even stand and walk properly. (Hagiwara
     [2021](#CR19), p. 220)'
+  id: totrans-195
   prefs:
   - PREF_BQ
   type: TYPE_NORMAL
+  zh: '[这相当于]教一个婴儿（=NLP模型）如何跳舞。通过让婴儿先学会稳定地行走（=训练词嵌入），舞蹈老师（=特定任务的数据集和训练目标）可以专注于教授具体的舞蹈动作，而不必担心婴儿是否能够站立和行走得当。（Hagiwara
+    [2021](#CR19)，第220页）'
 - en: This process of using pre-trained components and adapting them to the needs
     of the actual task (a process called *adaption* or *fine-tuning*) can generally
     be referred to as *transfer learning*. The insights from the first learning phase,
@@ -1126,8 +1530,10 @@
     *transferred* to a different type of task. This avoids training models over and
     over again from scratch, when it is possible to benefit from already existing
     language models.
+  id: totrans-196
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用预训练组件并根据实际任务的需求进行调整（称为*适应*或*微调*的过程）通常可以称为*迁移学习*。第一学习阶段中存储在语言模型或词嵌入中的见解可以被*转移*到不同类型的任务中。这避免了当可以从已经存在的语言模型中受益时，一遍又一遍地从头开始训练模型。
 - en: This usually leads the data engineer to have a setup as described in Fig. [4.17](#Fig17).
     It relies on publicly available word embeddings or language models that have been
     trained on a large amount of data and can be included easily in the data engineer’s
@@ -1137,29 +1543,41 @@
     weights, training from scratch means that we are starting the training phase with
     random weights. In the case of fine-tuning, the weights have been already learned
     from a different task and are just adjusted from there.![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig17_HTML.png)
+  id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 这通常导致数据工程师设置如图[4.17](#Fig17)所述。它依赖于公开可用的单词嵌入或在大量数据上训练过的语言模型，并且可以通过使用库轻松地包含在数据工程师的项目中。基于这些组件和一个较小的训练数据集，微调过程对实际所需任务进行机器学习训练，例如前面描述的情感分析任务。在权重方面，从头开始训练意味着我们从随机权重开始训练阶段。在微调的情况下，权重已经从不同任务中学习过，并且只是从那里调整过来。![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig17_HTML.png)
 - en: A flow diagram. Publicly available language models are trained on large text
     corpora, making them accessible for various tasks. Alternatively, you can fine-tune
     these models with smaller datasets to tailor them for specific tasks during the
     training phase.
+  id: totrans-198
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个流程图。公开可用的语言模型是在大型文本语料库上训练的，使它们可以用于各种任务。或者，您可以使用较小的数据集对这些模型进行微调，以在训练阶段为特定任务定制它们。
 - en: Fig. 4.17
+  id: totrans-199
   prefs: []
   type: TYPE_NORMAL
+  zh: 图4.17
 - en: Pre-trained language models can be fine-tuned for other machine learning tasks
+  id: totrans-200
   prefs: []
   type: TYPE_NORMAL
+  zh: 预训练语言模型可以为其他机器学习任务进行微调
 - en: Having the language models and word embeddings readily available is convenient;
     however, there are also limitations in them (e.g., bias) that are easily propagated
     this way. We will discuss more about this in a later chapter.
+  id: totrans-201
   prefs: []
   type: TYPE_NORMAL
+  zh: 拥有语言模型和单词嵌入是方便的；然而，它们也存在一些限制（例如，偏见），这些限制很容易通过这种方式传播。我们将在后面的章节中更多地讨论这个问题。
 - en: The BERT Model
+  id: totrans-202
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: BERT模型
 - en: 'As an example, let’s have a closer look on which tasks Google’s language model
     BERT was trained (Devlin et al. [2019](#CR10)). The BERT model has been trained
     on two tasks: *masked language modeling* and *next sentence prediction*. Let’s
@@ -1167,12 +1585,16 @@
     hidden in the training data (a large text corpora). The transformer-model had
     then to predict those masked tokens. This is similar to examples we have seen
     before. The token <MASK> indicates the word that was covered and needs to be predicted.'
+  id: totrans-203
   prefs: []
   type: TYPE_NORMAL
+  zh: 举个例子，让我们更仔细地看一下Google的语言模型BERT是如何训练的（Devlin等人[2019](#CR10)）。BERT模型已经在两个任务上进行了训练：*遮蔽语言建模*和*下一个句子预测*。让我们看看这意味着什么。对于遮蔽语言建模，训练数据中有15%的标记被隐藏（一个大型文本语料库）。然后，变压器模型必须预测这些被遮蔽的标记。这类似于我们之前看到的例子。标记<MASK>表示被覆盖的单词，需要进行预测。
 - en: '*There is a field full of <MASK>.*'
+  id: totrans-204
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: '*有一片充满<MASK>的地方。*'
 - en: 'In the second task, the focus was on the relation between different sentences.
     This is not covered in the first task, relying only on words within one sentence.
     The system had to predict for two sentences A and B whether sentence B is the
@@ -1180,45 +1602,69 @@
     was true, and in 50% of the cases, it was not the case. Consider the following
     example, where the system would be expected to predict that sentence B is following
     sentence A:'
+  id: totrans-205
   prefs: []
   type: TYPE_NORMAL
+  zh: 在第二个任务中，重点是不同句子之间的关系。这在第一个任务中没有涵盖，仅依赖于一个句子内的单词。系统必须预测两个句子A和B，句子B是否是原始文本中跟在句子A后面的句子。在50%的情况下，这是正确的，在另外50%的情况下，这不是情况。考虑以下示例，系统应该预测句子B跟在句子A后面：
 - en: 'Sentence A:'
+  id: totrans-206
   prefs: []
   type: TYPE_NORMAL
+  zh: 句子A：
 - en: Anna goes to the field of strawberries.
+  id: totrans-207
   prefs: []
   type: TYPE_NORMAL
+  zh: 安娜去草莓地。
 - en: 'Sentence B:'
+  id: totrans-208
   prefs: []
   type: TYPE_NORMAL
+  zh: 句子B：
 - en: She collects many berries and takes them home.
+  id: totrans-209
   prefs: []
   type: TYPE_NORMAL
+  zh: 她采集了许多浆果并把它们带回家。
 - en: 'In the following example, the system should rather predict that it is not the
     case:'
+  id: totrans-210
   prefs: []
   type: TYPE_NORMAL
+  zh: 在以下示例中，系统应该更倾向于预测这不是情况：
 - en: 'Sentence A:'
+  id: totrans-211
   prefs: []
   type: TYPE_NORMAL
+  zh: 句子A：
 - en: Anna goes to the field of strawberries.
+  id: totrans-212
   prefs: []
   type: TYPE_NORMAL
+  zh: 安娜去草莓地。
 - en: 'Sentence B:'
+  id: totrans-213
   prefs: []
   type: TYPE_NORMAL
+  zh: 句子B：
 - en: Cats like to sleep.
+  id: totrans-214
   prefs: []
   type: TYPE_NORMAL
+  zh: 猫喜欢睡觉。
 - en: The name BERT stands for Bidirectional Encoder Representations from Transformers.
     This powerful system based on the transformer architecture introduced important
     advances to the field of natural language processing in 2019.
+  id: totrans-215
   prefs: []
   type: TYPE_NORMAL
+  zh: BERT的名称代表双向编码器来自变压器的表示。这个基于变压器架构的强大系统在2019年为自然语言处理领域带来了重要进展。
 - en: The Architecture of a Chatbot
+  id: totrans-216
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 聊天机器人的架构
 - en: Based on what we have seen so far, we can now draw the architecture of a state-of-the-art
     transformer-based chatbot. As shown in Fig. [4.18](#Fig18), there are different
     software components involved. In particular, we find the language model with the
@@ -1241,34 +1687,47 @@
     have seen earlier. The sentence that is returned is *most probably* a good answer
     to the question that the user entered the input prompt. How good it really is
     depends on the input data and training setup of the language model.^([9](#Fn9))![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig18_HTML.png)
+  id: totrans-217
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据我们迄今所见，我们现在可以绘制一流的基于变压器的聊天机器人的架构。如图[4.18](#Fig18)所示，涉及不同的软件组件。特别是，我们发现具有变压器架构的语言模型在背景中。正如我们之前所见，它由不同层的编码器和解码器组成。通常，在这种类型的应用程序中，还有另一个软件组件，允许人类与语言模型进行交互。通常，希望与软件交互的人类我们通常称之为*用户*。用户的期望通常是有一个*图形用户界面*与软件交互。希望有黑色背景和小白色字体而没有任何图形插图的用户群体非常小，可能仅限于非常技术的人群。您可能从电影中了解到这种类型的应用程序，当涉及黑客或关键系统关闭时。一般来说，用户更喜欢更具图形化的东西，即易于使用。在聊天机器人的情况下，这通常由*Web
+    应用*提供。用户可以通过在网络浏览器中打开链接或在智能手机上安装应用程序来启动 Web 应用。通常，在与聊天机器人开始对话时，他们将收到问候消息，然后可以输入他们的*输入提示*。这个输入提示将由语言模型处理，并且将使用我们之前看到的方法生成答句。返回的句子*很可能*是对用户输入的输入提示问题的一个很好的答案。它到底有多好取决于语言模型的输入数据和训练设置。^([9](#Fn9))![](../images/604345_1_En_4_Chapter/604345_1_En_4_Fig18_HTML.png)
 - en: A flow diagram. The user provides an input prompt, in which countries do strawberries
     grow? The language model processes this input through an encoder and decoder within
     a web application. In response, the chatbot, introduced as Hello, I am a chatbot,
     how may I help you? engages in conversation.
+  id: totrans-218
   prefs: []
   type: TYPE_NORMAL
+  zh: 一个流程图。用户提供一个输入提示，草莓是在哪些国家生长的？语言模型通过 Web 应用程序中的编码器和解码器处理此输入。作为回应，聊天机器人，自我介绍为你好，我是一个聊天机器人，我可以帮助你吗？开始对话。
 - en: Fig. 4.18
+  id: totrans-219
   prefs: []
   type: TYPE_NORMAL
+  zh: 图 4.18
 - en: 'The architecture of a chatbot: often web applications are used as an interface
     between the user and the language model'
+  id: totrans-220
   prefs: []
   type: TYPE_NORMAL
+  zh: 聊天机器人的架构：通常使用 Web 应用作为用户和语言模型之间的接口。
 - en: Finally, in some setups, the user is also used as a *trainer* for the language
     model. It is possible to gather feedback from users to improve the language model’s
     prediction or make them safer. For example, the user can rate the answer, saying
     whether it was useful or not. In other cases, we would want to flag specific types
     of answers as inappropriate. The more input and corrections from human trainers
     are achieved, the better the system can adapt.
+  id: totrans-221
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，在某些设置中，用户也被用作语言模型的*训练者*。可以从用户那里收集反馈以改进语言模型的预测或使其更安全。例如，用户可以对答案进行评分，表明其是否有用。在其他情况下，我们可能希望标记特定类型的答案为不当。从人类训练者那里获得的更多输入和更正，系统就能更好地适应。
 - en: That’s it. Now we understand how state-of-the-art language models and chatbots
     work. Let’s now get back to the example conversation of the chatbot exposing its
     emotions that we have seen earlier in this chapter.
+  id: totrans-222
   prefs: []
   type: TYPE_NORMAL
+  zh: 就是这样。现在我们明白了最先进的语言模型和聊天机器人是如何工作的。现在让我们回到本章前面看到的聊天机器人展示情感的示例对话。
 - en: At a first sight, it seemed counterintuitive that there is no understanding
     or meaning in a human-sense behind the texts produced by the chatbot, given the
     fluent and eloquent way it phrases its answers. The answers seemed coherent and
@@ -1276,8 +1735,10 @@
     and the generation of the most likely next word based on probabilities, you might
     want to reconsider the option that these languages’ models reason and produce
     text in the same way that you do.
+  id: totrans-223
   prefs: []
   type: TYPE_NORMAL
+  zh: 乍一看，似乎令人费解的是，聊天机器人产生的文本背后没有人类意义或理解，尽管它以流利而雄辩的方式表达其答案。答案看起来连贯，并且自然而自发地发音。当考虑技术背景和基于概率生成最有可能的下一个词时，您可能会重新考虑这些语言模型是否像您一样推理和产生文本的选项。
 - en: The philosophical debate about what consciousness, reasoning, or intelligence
     mean in a deeper sense, and whether this can be achieved with materials other
     than the human brain, is not part of this book. I want to give you a basic understanding
@@ -1286,28 +1747,38 @@
     intentions, or fears. As argued by Nida-Rümelin and Weidenfeld ([2022](#CR9001),
     p. 17), “digital states and processes *simulate* mental ones but are not identical
     to them, even if that simulation were perfect.”
+  id: totrans-224
   prefs: []
   type: TYPE_NORMAL
+  zh: 关于意识、推理或智能在更深层次上意味着什么，以及是否可以用人脑以外的材料实现这一点的哲学辩论不在本书的讨论范围之内。我想给你一个关于语言模型如何工作的基本理解，以及它们（目前）无法与人类推理的能力相比，没有像信念、欲望、意图或恐惧等心理状态。正如Nida-Rümelin和Weidenfeld（[2022](#CR9001)，第17页）所论证的，“数字状态和过程*模拟*心理状态，但并非与之相同，即使该模拟是完美的。”
 - en: Summary
+  id: totrans-225
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 总结
 - en: In this chapter, we have discussed whether chatbots can have emotions. We have
     seen that even though the texts they produce are often eloquent and empathic,
     behind the scenes, it is more about the prediction of the most likely next word,
     based on probabilities.
+  id: totrans-226
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，我们讨论了聊天机器人是否能拥有情感。我们已经看到，尽管它们产生的文本通常是雄辩和富有同情心的，但在幕后，更多的是关于基于概率预测最有可能的下一个词。
 - en: We have also learned what recurrent neural networks are and how we can build
     sequence-to-sequence models from them using an encoder-decoder architecture. Based
     on that, we understood how the transformer architecture works and how self-attention
     enables efficient state-of-the-art language models. We have also explored how
     pre-trained language models can be fine-tuned to a specific task, avoiding starting
     from scratch each time.
+  id: totrans-227
   prefs: []
   type: TYPE_NORMAL
+  zh: 我们还学习了什么是循环神经网络，以及如何使用编码器-解码器架构从中构建序列到序列模型。基于此，我们了解了变压器架构的工作原理以及自注意力如何实现高效的最先进语言模型。我们还探讨了如何对预训练语言模型进行微调以适应特定任务，避免每次都从头开始。
 - en: Finally, we have seen the architecture of a typical chatbot. Using a language
     model in the background, often web applications are used as an interface between
     the user and the chatbot.
+  id: totrans-228
   prefs: []
   type: TYPE_NORMAL
+  zh: 最后，我们已经看到了典型聊天机器人的架构。在背后使用语言模型，通常会使用Web应用作为用户和聊天机器人之间的接口。

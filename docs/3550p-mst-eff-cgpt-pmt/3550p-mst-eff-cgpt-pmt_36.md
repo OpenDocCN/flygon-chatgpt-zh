@@ -1,13 +1,13 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 37.内容质量提示
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
-以下是50个提示，旨在帮助您获取关于如何持续创造引人入胜和相关内容以吸引目标受众，并在您的行业特定背景下建立品牌信誉的见解，以便您在开展新业务时使用。请将"[您的行业]"替换为与您业务相关的实际行业：
+以下是 50 个提示，旨在帮助您获取关于如何持续创造引人入胜和相关内容以吸引目标受众，并在您的行业特定背景下建立品牌信誉的见解，以便您在开展新业务时使用。请将"[您的行业]"替换为与您业务相关的实际行业：
 
 1.  "提供在[您的行业]领域持续创造引人入胜和相关内容的策略，以吸引我的目标受众。"
 
@@ -37,7 +37,7 @@
 
 ––––––––
 
-![image](d2d_images/scene_break.png)
+![image](img/scene_break.png)
 
 1.  "分析在[您的行业]数字营销中移动友好内容的影响。我如何确保我的内容对各种设备上的用户都是可访问且引人入胜的？"
 
@@ -61,7 +61,7 @@
 
 1.  "探讨在[您的行业]内容营销中客户推荐和案例研究的影响。我如何融入真实的成功故事来建立信任和可信度？"
 
-1.  "探讨在[您的行业]社交媒体平台上微内容的使用。我如何在像Instagram和Twitter这样的平台上创建简洁而有影响力的内容，与用户产生共鸣？"
+1.  "探讨在[您的行业]社交媒体平台上微内容的使用。我如何在像 Instagram 和 Twitter 这样的平台上创建简洁而有影响力的内容，与用户产生共鸣？"
 
 1.  "分析[您的行业]中成功的播客内容策略。我如何创建引人入胜且信息丰富的播客剧集，以与我的目标受众建立联系？"
 

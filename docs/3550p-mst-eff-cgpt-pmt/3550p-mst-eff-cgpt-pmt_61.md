@@ -1,11 +1,11 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 62.客户获取提示
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
 1.  "概述一个全面的在线营销策略，有效地接触和吸引我们的目标受众。"
 
@@ -23,6 +23,6 @@
 
 1.  "制定一份电子邮件营销计划，通过定向活动培养潜在客户，保留客户，并鼓励重复业务。"
 
-1.  "调查付费广告渠道的使用（例如Google广告、Facebook广告），并提供一个注重预算的计划，以最大化投资回报率。"
+1.  "调查付费广告渠道的使用（例如 Google 广告、Facebook 广告），并提供一个注重预算的计划，以最大化投资回报率。"
 
 1.  "制定一个客户反馈系统，收集见解，解决问题，并改进我们的产品/服务，以提高客户满意度和留存率。"

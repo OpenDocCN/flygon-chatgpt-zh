@@ -1,10 +1,10 @@
-# [第16章VBA 中的函数和子例程](contents.xhtml#ch16a)
+# 第十六章 VBA 中的函数和子例程
 
-[介绍](contents.xhtml#sc2_223a)
+介绍
 
 本章将介绍 Excel VBA 编程中函数和子例程的概念。它解释了两者之间的区别，然后深入探讨在模块中使用 Visual Basic Editor 编写代码。本章还涵盖了用于控制过程内代码执行流程的分支技术。
 
-[结构](contents.xhtml#sc2_224a)
+结构
 
 在本章中，我们将讨论以下主题：
 
@@ -22,11 +22,11 @@
 
 +   分支过程
 
-[目标](contents.xhtml#sc2_225a)
+目标
 
 学习完本章后，读者将能够编写过程并了解 Visual Basic Editor，以便插入模块、编写代码等。读者还将了解子过程、函数过程以及分支过程。
 
-[编写过程](contents.xhtml#sc2_226a)
+编写过程
 
 您可以为记录的每个操作编写代码。所有过程都写在一个模块内。
 
@@ -38,14 +38,14 @@
 
 +   函数过程：函数用于自动化任何复杂计算。函数过程在 Function 和 End Function 块之间封装。
 
-子过程和函数过程之间的区别在下表[表16.1](#tab16-1)中有所探讨：
+子过程和函数过程之间的区别在下表表 16.1 中有所探讨：
 
 | 子过程 | 函数过程 |
 | --- | --- |
 | 它不能返回值 | 它可以返回值 |
 | 它可以在 Excel 对象上执行操作 | 它不能在 Excel 对象上执行操作 |
 
-表16.1：过程之间的区别
+表 16.1：过程之间的区别
 
 这里有一些你可以记住的要点：
 
@@ -55,13 +55,13 @@
 
 +   所有宏都是过程，但并非所有过程都是宏。
 
-[Visual Basic Editor](contents.xhtml#sc2_227a)
+Visual Basic Editor
 
-下图[图16.1](#fig16-1)显示了 Visual Basic Editor 中的代码窗口：
+下图图 16.1 显示了 Visual Basic Editor 中的代码窗口：
 
-![](images/Figure_16.1.jpg)
+![](img/Figure_16.1.jpg)
 
-图16.1：Visual Basic Editor 中的代码窗口
+图 16.1：Visual Basic Editor 中的代码窗口
 
 Visual Basic Editor 中代码窗口的不同部分如下：
 
@@ -71,7 +71,7 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 +   代码窗口：使用代码窗口编写、显示和编辑 Visual Basic 代码。您可以打开与模块数量相同的代码窗口，以便轻松查看不同形式或模块中的代码，并在它们之间复制和粘贴。
 
-[图 16.2](#fig16-2)更详细地探讨了项目资源管理器：
+图 16.2 更详细地探讨了项目资源管理器：
 
 +   查看代码：显示代码窗口，以便您编写和编辑与所选项目相关的代码。
 
@@ -81,13 +81,13 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 +   列表窗口：列出所有加载的项目及每个项目中包含的项目。
 
-属性是任何对象的特征。属性窗口显示了所选对象的属性，如[图 16.2](#fig16-2)所示：
+属性是任何对象的特征。属性窗口显示了所选对象的属性，如图 16.2 所示：
 
-![](images/Figure_16.2.jpg)
+![](img/Figure_16.2.jpg)
 
 图 16.2：项目资源管理器和属性窗口
 
-现在让我们来看看代码窗口的不同部分（参考[图 16.3](#fig16-3)）：
+现在让我们来看看代码窗口的不同部分（参考图 16.3）：
 
 +   对象框：显示当前项目中对象的列表。
 
@@ -97,13 +97,13 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 +   完整模块视图：显示当前模块中的所有过程。
 
-参考以下[图 16.3](#fig16-3)：
+参考以下图 16.3：
 
-![](images/Figure_16.3.jpg)
+![](img/Figure_16.3.jpg)
 
 图 16.3：代码窗口
 
-[项目资源管理器键盘快捷键](contents.xhtml#sc3_228a)
+项目资源管理器键盘快捷键
 
 现在让我们来看看各种键盘快捷键：
 
@@ -127,37 +127,37 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 +   下箭头 + Æ：逐个向下移动列表中的条目。
 
-[插入模块](contents.xhtml#sc2_229a)
+插入模块
 
 要插入模块，请按照给定步骤进行：
 
-1.  选择要存储过程的书籍，如[图 16.4](#fig16-4)（1）所示。
+1.  选择要存储过程的书籍，如图 16.4（1）所示。
 
-1.  选择“插入”菜单，然后选择“模块”，如[图 16.4](#fig16-4)（2）所示。
+1.  选择“插入”菜单，然后选择“模块”，如图 16.4（2）所示。
 
-1.  已添加 Module1。你可以通过属性窗口更改名称，如[图 16.4](#fig16-4)（3）所示。
+1.  已添加 Module1。你可以通过属性窗口更改名称，如图 16.4（3）所示。
 
-参考[图 16.4](#fig16-4)：
+参考图 16.4：
 
-![](images/Figure_16.4.png)
+![](img/Figure_16.4.png)
 
 图 16.4：插入模块
 
-[在模块内编写代码](contents.xhtml#sc2_230a)
+在模块内编写代码
 
 要在模块内编写代码，请按照以下步骤进行：
 
-1.  双击要在其中编写过程代码的模块，如下所示的[图 16.5](#fig16-5)（a）。
+1.  双击要在其中编写过程代码的模块，如下所示的图 16.5（a）。
 
-1.  编写您的过程代码，如下所示的[图 16.5](#fig16-5)（b）。
+1.  编写您的过程代码，如下所示的图 16.5（b）。
 
-参考以下[图 16.5](#fig16-5)：
+参考以下图 16.5：
 
-![](images/Figure_16.5.png)
+![](img/Figure_16.5.png)
 
 图 16.5：在模块内编写代码
 
-[子过程](contents.xhtml#sc2_231a)
+子过程
 
 子过程是一系列由 Sub 和 End Sub 语句包围的 Visual Basic 语句，执行操作但不返回值。
 
@@ -165,20 +165,20 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 如果一个子过程没有参数，子语句必须包含一对空括号
 
-[宏](contents.xhtml#sc3_232a)
+宏
 
 宏如下所示：
 
 | Sub HelloWorld()MsgBOx "Hello World"End Sub |
 | --- |
 
-[图 16.6](#fig16-6) 包含一个宏：
+图 16.6 包含一个宏：
 
-![](images/Figure_16.6.png)
+![](img/Figure_16.6.png)
 
 图 16.6：宏
 
-[函数过程](contents.xhtml#sc2_233a)
+函数过程
 
 函数过程是一系列由 Function 和 End Function 语句包围的 Visual Basic 语句。
 
@@ -191,13 +191,13 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 | Function Celsius (fDegrees)Celsius = (fDegrees - 32) * 5 / 9End Function |
 | --- |
 
-参考以下[图 16.7](#fig16-7)：
+参考以下图 16.7：
 
-![](images/Figure_16.7.png)
+![](img/Figure_16.7.png)
 
 图 16.7：用户定义函数
 
-[编写函数的语法](contents.xhtml#sc3_234a)
+编写函数的语法
 
 | Function name_of_function( argument1 , argument2 , …)processing the arguments name_of_function= ResultEnd Function |
 | --- |
@@ -210,7 +210,7 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 通过引用传递 Æ：如果在调用过程时通过引用传递参数，则过程可以访问内存中的实际变量。因此，过程可以更改变量的值。默认情况下，参数是通过引用传递的。
 
-[场景 9](contents.xhtml#sc3_235a)
+场景 9
 
 编写一个函数来计算利润，其中利润是销售价格和成本价格的差额。利润函数需要两个参数，即成本价格和销售价格。
 
@@ -219,7 +219,7 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 | Function Profit(CP, SP)Profit = SP - CPEnd Function |
 | --- |
 
-[分支过程](contents.xhtml#sc2_236a)
+分支过程
 
 如果你想根据条件的值运行一段代码块，可以使用以下决策结构。
 
@@ -239,22 +239,22 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 单个条件，但根据条件的结果运行两个不同的语句或语句块。
 
-使用If...Then...Elseif…Then…Else…Endif或Select Case…End
+使用 If...Then...Elseif…Then…Else…Endif 或 Select Case…End
 
 选择多个条件并运行多个语句块中的一个。
 
-[场景10](contents.xhtml#sc3_237a)
+场景 10
 
-编写一个函数来检查人是否有资格投票。为了检查资格，Vote函数需要年龄作为参数。
+编写一个函数来检查人是否有资格投票。为了检查资格，Vote 函数需要年龄作为参数。
 
-参考培训文件5.xls
+参考培训文件 5.xls
 
 | 函数 Vote(Age)If Age >= 18 ThenVote = "有资格"ElseVote = "不符合资格"EndIfEnd Function |
 | --- |
 
-[场景11](contents.xhtml#sc3_238a)
+场景 11
 
-编写一个函数根据基本工资找到员工的等级（使用If Elseif）：
+编写一个函数根据基本工资找到员工的等级（使用 If Elseif）：
 
 等级工资
 
@@ -266,14 +266,14 @@ B 15000 – 25000
 
 A >=25000
 
-参考培训文件5.xls
+参考培训文件 5.xls
 
 | 函数 Grade (salary)If salary<8000 ThenGrade = "D"ElseIf salary<15000 ThenGrade = "C"ElseIf salary<25000 ThenGrade = "B"ElseGrade ="A"End IfEnd Function |
 | --- |
 
-[场景12](contents.xhtml#sc3_239a)
+场景 12
 
-编写一个函数根据等级找到奖金（使用Select Case）
+编写一个函数根据等级找到奖金（使用 Select Case）
 
 等级奖金
 
@@ -285,40 +285,40 @@ C 15000
 
 D 10000
 
-参考培训文件5.xls
+参考培训文件 5.xls
 
 | 函数 bonus(grade)Select Case gradeCase "a", "A"bonus = 25000Case "b", "B"bonus = 20000Case "c", "C"bonus = 15000Case Elsebonus = 10000End SelectEnd Function |
 | --- |
 
-[场景13](contents.xhtml#sc3_240a)
+场景 13
 
-编写一个函数来根据地区计算津贴。如果地区是东部或西部，则津贴为5%，否则为10%。使用OR运算符来检查多个条件。
+编写一个函数来根据地区计算津贴。如果地区是东部或西部，则津贴为 5%，否则为 10%。使用 OR 运算符来检查多个条件。
 
-[OR运算符](contents.xhtml#sc4_241a)
+OR 运算符
 
-OR运算符用于对两个表达式执行逻辑合取。如果任一表达式结果为真，则结果为真。
+OR 运算符用于对两个表达式执行逻辑合取。如果任一表达式结果为真，则结果为真。
 
 | 函数 CalcDa(Region, sal)If Region = "east" Or Region = "west" ThenCalcDa = sal * 0.05ElseCalcDa = sal * 0.1EndIfEnd Function |
 | --- |
 
-[场景14](contents.xhtml#sc3_242a)
+场景 14
 
-编写一个函数来根据地区计算津贴。如果地区是东部且工资>10000，则为5%，否则为10%。
+编写一个函数来根据地区计算津贴。如果地区是东部且工资>10000，则为 5%，否则为 10%。
 
-使用AND运算符来检查多个条件。
+使用 AND 运算符来检查多个条件。
 
-[AND运算符](contents.xhtml#sc4_243a)
+AND 运算符
 
-用于对两个表达式执行逻辑合取。AND如果所有表达式结果为真，则结果为真。
+用于对两个表达式执行逻辑合取。AND 如果所有表达式结果为真，则结果为真。
 
 | 函数 CalcDa(Region, sal)If Region = "east" And sal > 10000 ThenCalcDa = sal * 0.05ElseCalcDa = sal * 0.1EndIf |
 | --- |
 
-[结论](contents.xhtml#sc2_244a)
+结论
 
-函数和子程序是VBA中强大的工具，帮助您自动化任务并在Excel中执行计算。通过了解如何编写过程，使用Visual Basic Editor，并应用分支技术，您可以增强您的VBA编程技能，并创建更高效和动态的Excel应用程序。
+函数和子程序是 VBA 中强大的工具，帮助您自动化任务并在 Excel 中执行计算。通过了解如何编写过程，使用 Visual Basic Editor，并应用分支技术，您可以增强您的 VBA 编程技能，并创建更高效和动态的 Excel 应用程序。
 
-[练习](contents.xhtml#sc2_245a)
+练习
 
 1.  编写一个函数来计算矩形的面积，给定其长度和宽度。
 
@@ -334,6 +334,6 @@ OR运算符用于对两个表达式执行逻辑合取。如果任一表达式结
 
 加入书籍的 Discord 工作区，获取最新更新、优惠、全球科技动态、新发布内容以及与作者的交流：
 
-**[https://discord.bpbonline.com](https://discord.bpbonline.com)**
+**[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](images/fm1.png)
+![](img/fm1.png)

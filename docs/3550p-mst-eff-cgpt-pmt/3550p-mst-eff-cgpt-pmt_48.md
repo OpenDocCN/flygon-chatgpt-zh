@@ -1,13 +1,13 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 49.负面反馈管理提示
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
-这里有50个提示，旨在帮助您收集有关在您行业中建立和运营新业务时处理数字营销中的负面评论或评价的见解。请将"[Your Industry]"替换为与您业务相关的实际行业： 
+这里有 50 个提示，旨在帮助您收集有关在您行业中建立和运营新业务时处理数字营销中的负面评论或评价的见解。请将"[Your Industry]"替换为与您业务相关的实际行业： 
 
 1.  "提供有效监控和识别初创企业在[Your Industry]中数字空间中的负面评论或评价的策略。"
 
@@ -113,4 +113,4 @@
 
 新业务设置提示
 
-![C:\Users\hitech\Downloads\content creator(11).png](d2d_images/image013.png)
+![C:\Users\hitech\Downloads\content creator(11).png](img/image013.png)

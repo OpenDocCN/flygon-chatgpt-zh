@@ -4,11 +4,11 @@
 
 只需点击这里，我将通过电子邮件发送给您完整的列表，包括本指南中提示的模板：
 
-[https://theauthorlife.com/aistorytelling/](https://theauthorlife.com/aistorytelling/)
+[`theauthorlife.com/aistorytelling/`](https://theauthorlife.com/aistorytelling/)
 
 您将订阅我的每周通讯《创意人工智能摘要》。如果您已经订阅了《创意人工智能摘要》，只需回复任何一封电子邮件，我将回复您并提供资源链接。
 
-![image-placeholder](images/50ddc5a9-88bd-43c9-800f-e856855e08d7.jpeg)
+![image-placeholder](img/50ddc5a9-88bd-43c9-800f-e856855e08d7.jpeg)
 
 ## 关键词
 
@@ -18,7 +18,7 @@
 
 写作风格定制
 
-ChatGPT写作
+ChatGPT 写作
 
 非虚构写作风格
 
@@ -38,13 +38,13 @@ ChatGPT写作
 
 人工智能辅助写作
 
-面向专业人士的ChatGPT
+面向专业人士的 ChatGPT
 
 风格指南创建
 
 使用人工智能进行内容个性化
 
-面向营销人员的ChatGPT
+面向营销人员的 ChatGPT
 
 销售写作风格指南
 
@@ -56,13 +56,13 @@ ChatGPT写作
 
 专业品牌和写作
 
-与ChatGPT一起进行创意写作
+与 ChatGPT 一起进行创意写作
 
 非虚构写作趋势
 
 内容中的个人轶事
 
-ChatGPT内容主题
+ChatGPT 内容主题
 
 一致的团队写作
 
@@ -70,7 +70,7 @@ ChatGPT内容主题
 
 个人风格指南修订
 
-用于销售和营销的ChatGPT
+用于销售和营销的 ChatGPT
 
 个人品牌写作风格
 
@@ -78,7 +78,7 @@ ChatGPT内容主题
 
 报告写作定制
 
-ChatGPT白皮书
+ChatGPT 白皮书
 
 自定义内容格式
 
@@ -90,23 +90,23 @@ ChatGPT白皮书
 
 个人风格指南更新
 
-ChatGPT创意技巧
+ChatGPT 创意技巧
 
 非虚构写作技巧
 
 风格指南见证
 
-面向创意专业人士的ChatGPT
+面向创意专业人士的 ChatGPT
 
 非虚构内容个性化
 
 写作风格对齐
 
-ChatGPT风格指南示例
+ChatGPT 风格指南示例
 
 个人风格指南方法论
 
-ChatGPT写作见解
+ChatGPT 写作见解
 
 优化内容创作
 

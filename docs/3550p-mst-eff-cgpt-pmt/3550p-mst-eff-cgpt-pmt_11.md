@@ -1,19 +1,19 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 12.影响力营销提示
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
-![C:\Users\hitech\Downloads\content creator(6).png](d2d_images/image000.png)
+![C:\Users\hitech\Downloads\content creator(6).png](img/image000.png)
 
 1.  "我需要一个有吸引力的影响营销活动计划，通过展示[特定类型的内容]，由[影响者类型]吸引我的[理想客户人物]。这种合作旨在以引人入胜和真实的方式展示我们[产品/服务]的独特特点和好处。"
 
 1.  "我需要一个有计划的影响者营销活动大纲，将利用[影响者类型]的影响力和影响力增强我们的[产品/服务]在我的[理想客户人物]中的意识和销售。"
 
-1.  "我正寻找一种影响营销策略，将通过展示[影响者类型]来为我的[理想客户人物]产生紧迫感和FOMO，并揭示我们[产品/服务]的独家交易和促销活动。"
+1.  "我正寻找一种影响营销策略，将通过展示[影响者类型]来为我的[理想客户人物]产生紧迫感和 FOMO，并揭示我们[产品/服务]的独家交易和促销活动。"
 
 1.  "我正在寻找一个专门设计为将我的[产品/服务]展示给我的[理想客户人物]，并鼓励他们参与[期望的行动]的影响者营销计划。这将通过与一个与我们品牌价值观 resonates 的[影响者类型]的合作来实现。"
 

@@ -1,6 +1,6 @@
 ## 关于我
 
-![image-placeholder](images/0be2567b-f2cc-4504-bf56-a1efbd1c3685.jpeg)
+![image-placeholder](img/0be2567b-f2cc-4504-bf56-a1efbd1c3685.jpeg)
 
 J. Thorn 已经出版了两百万字，并在全球销售了超过 185,000 本书。他是美国科幻和奇幻作家协会、恐怖作家协会以及大湖恐怖作家协会的正式成员。
 

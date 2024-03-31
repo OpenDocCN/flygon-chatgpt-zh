@@ -1,6 +1,6 @@
 同时由吉姆·斯蒂芬斯撰写
 
-[Kindle出版简易指南：通过亚马逊Kindle实现自动化现金！](https://www.draft2digital.com/catalog/531252?distributor=scribd)
+[Kindle 出版简易指南：通过亚马逊 Kindle 实现自动化现金！](https://www.draft2digital.com/catalog/531252?distributor=scribd)
 
 [亚马逊联盟百万美元秘密：他们如何从最大的在线购物商城赚钱](https://www.draft2digital.com/catalog/533055?distributor=scribd)
 
@@ -72,7 +72,7 @@
 
 文章营销秘诀
 
-初学者黑帽SEO指南
+初学者黑帽 SEO 指南
 
 雪地摩托指南：度过美好时光的最佳地点
 

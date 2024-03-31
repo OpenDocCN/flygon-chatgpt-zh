@@ -1,11 +1,11 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 21.销售预测和赋能
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
 1.  你能评估我们的销售数据，并为接下来的季度/年度生成预测吗？
 

@@ -1,11 +1,11 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 65.融资提示
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
 (确定如何为您的企业融资—无论是通过个人储蓄、贷款、投资者还是其他来源)
 

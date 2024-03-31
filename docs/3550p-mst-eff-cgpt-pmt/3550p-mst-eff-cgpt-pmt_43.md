@@ -1,13 +1,13 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 44.适应趋势提示
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
-这里有50个提示，旨在帮助您收集关于了解行业趋势并在设置和运营新业务时将其适应为数字营销的见解。请将"[您的行业]"替换为与您业务相关的实际行业：
+这里有 50 个提示，旨在帮助您收集关于了解行业趋势并在设置和运营新业务时将其适应为数字营销的见解。请将"[您的行业]"替换为与您业务相关的实际行业：
 
 1.  "提供关于了解[您的行业]最新趋势和发展的策略，以指导数字营销策略。"
 
@@ -33,7 +33,7 @@
 
 1.  "探讨行业特定播客和网络研讨会在了解趋势并将其纳入数字营销计划中的作用。"
 
-1.  "提供关于设置Google警报和其他通知系统以实时接收[您的行业]趋势的更新的见解，用于数字营销。"
+1.  "提供关于设置 Google 警报和其他通知系统以实时接收[您的行业]趋势的更新的见解，用于数字营销。"
 
 1.  "分析与行业协会合作以获得有关影响数字营销的监管变化和趋势的见解的相关性。"
 

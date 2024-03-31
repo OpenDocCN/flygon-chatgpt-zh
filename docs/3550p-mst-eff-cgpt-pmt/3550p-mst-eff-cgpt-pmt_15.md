@@ -1,11 +1,11 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 16.本地化提示
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
 1.  能否制定一项国际营销策略，将我的品牌和信息针对不同的文化和语言进行定制？
 
@@ -17,6 +17,6 @@
 
 1.  如何有效利用影响力营销和合作伙伴关系进入新市场？
 
-1.  实施本地SEO策略，以吸引我们地理区域的客户。建议相关的本地SEO策略和工具。
+1.  实施本地 SEO 策略，以吸引我们地理区域的客户。建议相关的本地 SEO 策略和工具。
 
-1.  有哪些有效的方法可以利用本地SEO吸引本地区域的客户？
+1.  有哪些有效的方法可以利用本地 SEO 吸引本地区域的客户？

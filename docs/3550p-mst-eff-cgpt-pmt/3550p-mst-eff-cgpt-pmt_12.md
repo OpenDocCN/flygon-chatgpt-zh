@@ -1,11 +1,11 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 13.关键词研究
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
 1.  进行关键词研究和为特定关键词优化内容的最有效方法是什么？
 
@@ -25,4 +25,4 @@
 
 1.  为我们制定一个与内容相关的关键词列表，以改善搜索引擎排名。
 
-1.  创建一个与[主题/行业/利基]相关的20个长尾关键词短语列表。
+1.  创建一个与[主题/行业/利基]相关的 20 个长尾关键词短语列表。

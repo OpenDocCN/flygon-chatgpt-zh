@@ -1,13 +1,13 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 
 
 # 23.视频营销提示
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
 1.  "请为一个强调我们的[产品/服务]优势的视频广告制作剧本，面向我们指定的观众。"
 
@@ -15,7 +15,7 @@
 
 1.  "我们如何才能利用视频营销来增强我们的品牌知名度并接触到新的受众群体？"
 
-1.  "提出建议，改进我们的视频营销内容，更好地 resonating with我们的[理想客户形象]。"
+1.  "提出建议，改进我们的视频营销内容，更好地 resonating with 我们的[理想客户形象]。"
 
 1.  "提供一个视频营销分析报告，确定我们最成功的视频内容以及改进的空间。"
 

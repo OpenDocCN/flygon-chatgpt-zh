@@ -2144,4 +2144,4 @@ Chronogarchy 技术是一种高度先进的技术，使得爬行动物阿尔克�
 
 (东京: Ugaku Sha, 1975)
 
-^(1) [`medium.com/@exopolitics/seven-2015-16-symposia-offer-soulutions-sentient-pathogenic-invading-ai-artificial-intelligence-1259f256fa10`](https://medium.com/@exopolitics/seven-2015-16-symposia-offer-soulutions-sentient-pathogenic-invading-ai-artificial-intelligence-1259f256fa10)
+¹ [`medium.com/@exopolitics/seven-2015-16-symposia-offer-soulutions-sentient-pathogenic-invading-ai-artificial-intelligence-1259f256fa10`](https://medium.com/@exopolitics/seven-2015-16-symposia-offer-soulutions-sentient-pathogenic-invading-ai-artificial-intelligence-1259f256fa10)

@@ -2,17 +2,17 @@
 
 *"教学不是一种职业；它是一种激情。" - 未知*
 
-![](images/image-9.png)
+![](img/image-9.png)
 
-学校生活 - Midjourney AI生成的图像
+学校生活 - Midjourney AI 生成的图像
 
-## 兼职教师Mamdooh
+## 兼职教师 Mamdooh
 
-Mamdooh是一个勤奋的博士生，同时也兼职教授学校和本科生，以支持他的学业。他使用Skype和Zoom指导高级学生，并根据他们的学科、水平和表现为每个学生定制测试来评估他们的进展。虽然Mamdooh喜欢创建自己的测试，但这个过程非常耗时，特别是考虑到需要为每个学生定制测试。
+Mamdooh 是一个勤奋的博士生，同时也兼职教授学校和本科生，以支持他的学业。他使用 Skype 和 Zoom 指导高级学生，并根据他们的学科、水平和表现为每个学生定制测试来评估他们的进展。虽然 Mamdooh 喜欢创建自己的测试，但这个过程非常耗时，特别是考虑到需要为每个学生定制测试。
 
-### 使用ChatGPT帮助进行测试
+### 使用 ChatGPT 帮助进行测试
 
-幸运的是，Mamdooh发现了ChatGPT提供的巨大生产力提升。有了这个工具，他可以在几秒钟内生成测试和模型答案，大大减少了为学生提供有效指导所需的时间和精力。ChatGPT彻底改变了Mamdooh教学的方式，使他能够简化工作流程，高效地为学生提供高质量教育。
+幸运的是，Mamdooh 发现了 ChatGPT 提供的巨大生产力提升。有了这个工具，他可以在几秒钟内生成测试和模型答案，大大减少了为学生提供有效指导所需的时间和精力。ChatGPT 彻底改变了 Mamdooh 教学的方式，使他能够简化工作流程，高效地为学生提供高质量教育。
 
 #### 提示 - 历史测试：
 
@@ -125,7 +125,7 @@ Create 5 case study questions on the topic of Business Management
 
 ## 散文
 
-除了选择题，Mamdooh的学生还被要求写作文。Mamdooh可以使用ChatGPT来批改这些作文。
+除了选择题，Mamdooh 的学生还被要求写作文。Mamdooh 可以使用 ChatGPT 来批改这些作文。
 
 这里是一个学生关于幸福写作的糟糕尝试，她的拼写不太好，语法也不是最好的。
 
@@ -141,7 +141,7 @@ Create 5 case study questions on the topic of Business Management
 
 * * *
 
-Mamdooh可以请ChatGPT纠正作文并指出错误所在。
+Mamdooh 可以请 ChatGPT 纠正作文并指出错误所在。
 
 #### 提示 - 作文审阅和评分：
 
@@ -161,9 +161,9 @@ Every day, we try to find happiness in complete chaos, and that's what we strugg
 This essay shows a good understanding of the topic and presents a clear argument about the importance of social relations, acceptance, and independence for achieving permanent happiness. However, there are several spelling and grammatical errors throughout the essay, which can make it difficult to understand in some places. For example, "temprary happyness" should be "temporary happiness," "evrywhre" should be "everywhere," "kitn" should be "kitten," "freinds" should be "friends," and "elemnts" should be "elements." To improve the essay, the writer should focus on proofreading and correcting these errors before submitting the final draft. Additionally, the essay could benefit from more specific examples and evidence to support the argument. Overall, the essay is well-written and thoughtful, and the writer has done a good job of conveying their ideas about the topic. Grade: B
 ```
 
-好的，学生得了一个B，Mamdooh节省了很多时间来纠正那份作业。
+好的，学生得了一个 B，Mamdooh 节省了很多时间来纠正那份作业。
 
-ChatGPT在写作作文方面同样出色，让我们请ChatGPT以一个14岁孩子的身份写一篇永远受欢迎的作文题目：“我在暑假里做了什么”
+ChatGPT 在写作作文方面同样出色，让我们请 ChatGPT 以一个 14 岁孩子的身份写一篇永远受欢迎的作文题目：“我在暑假里做了什么”
 
 #### 提示 - 我的暑假作文：
 
@@ -171,7 +171,7 @@ ChatGPT在写作作文方面同样出色，让我们请ChatGPT以一个14岁孩�
 you are a 14 year old male student, you went on holiday in Egypt  for 10 days last summer, you stayed in Cairo for a few days and visited all the famous places, and you also went to Sharm El Sheikh where you enjoyed the beach and related activities. Write me a 500 word essay on my summer vacation
 ```
 
-让我们尽可能多地给ChatGPT关于写作内容的提示，然后看看我们会得到什么。请注意，在提示中，我们设置了一个500字的字数限制，否则，ChatGPT会很高兴地为你的作文写出许多页。
+让我们尽可能多地给 ChatGPT 关于写作内容的提示，然后看看我们会得到什么。请注意，在提示中，我们设置了一个 500 字的字数限制，否则，ChatGPT 会很高兴地为你的作文写出许多页。
 
 #### 输出 - 我的暑假作文
 
@@ -183,6 +183,6 @@ Last summer, I had the opportunity to travel to Egypt for 10 days with my family
 
 ## 结论
 
-正如你所看到的，ChatGPT非常灵活，擅长生成甚至是非学术性的、仅存在于职业世界中的主题的测试。作文也很容易创建或修正，你提供的背景信息越多，作文结果就会越好。
+正如你所看到的，ChatGPT 非常灵活，擅长生成甚至是非学术性的、仅存在于职业世界中的主题的测试。作文也很容易创建或修正，你提供的背景信息越多，作文结果就会越好。
 
 *"要做出伟大的工作，唯一的方法就是热爱自己的工作。" - 史蒂夫·乔布斯*

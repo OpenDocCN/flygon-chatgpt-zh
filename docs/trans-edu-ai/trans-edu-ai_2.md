@@ -1,1 +1,1 @@
-内容[标题页](xhtml-0-0.xhtml#aid_18)[版权](xhtml-0-1.xhtml#aid_23)[致辞](xhtml-0-3.xhtml#aid_17)[第一章](xhtml-0-4.xhtml#aid_24)[第二章](xhtml-0-5.xhtml#aid_28)[第三章](xhtml-0-6.xhtml#aid_19)[第四章](xhtml-0-7.xhtml#aid_27)[第五章](xhtml-0-8.xhtml#aid_16)[第六章](xhtml-0-9.xhtml#aid_21)[结论](xhtml-0-10.xhtml#aid_25)[附录](xhtml-0-11.xhtml#aid_26)[关于作者](xhtml-0-12.xhtml#aid_29)[创业者的人工智能系列](xhtml-0-13.xhtml#aid_22)[本作者的书籍](xhtml-0-14.xhtml#aid_20)
+内容标题页版权致辞第一章第二章第三章第四章第五章第六章结论附录关于作者创业者的人工智能系列本作者的书籍

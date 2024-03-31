@@ -32,7 +32,7 @@ OpenAI 也积极参与 AI 研究，专注于创建安全和有益的人工智能
 
 要通过 OpenAI 使用 ChatGPT，您将需要注册 API 密钥并设置您的开发环境。以下是注册并开始使用 OpenAI 的步骤：
 
-1.  首先，访问 OpenAI 网站：转到 OpenAI 网站[https://openai.com/](https://openai.com/)。
+1.  首先，访问 OpenAI 网站：转到 OpenAI 网站[`openai.com/`](https://openai.com/)。
 
 1.  注册账户：点击主页右上角的“获取 API 密钥”按钮。您将被提示输入您的电子邮件地址并创建一个密码来注册账户。
 
@@ -48,7 +48,7 @@ OpenAI 也积极参与 AI 研究，专注于创建安全和有益的人工智能
 
 如果您有兴趣使用 OpenAI API，您将需要选择最适合您需求的计划。OpenAI 提供了几种计划，每种都具有不同的访问级别和功能。以下是选择 OpenAI 计划的步骤：
 
-1.  首先，访问 OpenAI 网站：转到 OpenAI 网站[https://openai.com/](https://openai.com/)。
+1.  首先，访问 OpenAI 网站：转到 OpenAI 网站[`openai.com/`](https://openai.com/)。
 
 1.  选择计划：点击顶部导航栏中的“定价”选项卡。您将看到一系列具有不同访问级别和功能的计划。选择最适合您需求的计划。
 
@@ -66,7 +66,7 @@ OpenAI 也积极参与 AI 研究，专注于创建安全和有益的人工智能
 
 一旦您注册了计划并提供了付款信息，就可以开始访问 OpenAI API。以下是访问 OpenAI 的步骤：
 
-1.  登录您的账户：转到 OpenAI 网站[https://openai.com/](https://openai.com/)，使用您的电子邮件地址和密码登录您的账户。
+1.  登录您的账户：转到 OpenAI 网站[`openai.com/`](https://openai.com/)，使用您的电子邮件地址和密码登录您的账户。
 
 1.  导航到 API：单击顶部导航栏中的“API”选项卡，以访问 API 仪表板。
 

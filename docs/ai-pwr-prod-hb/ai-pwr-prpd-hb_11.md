@@ -2,7 +2,7 @@
 
 *"最好的错误消息是永远不会出现的。" - 托马斯·福克斯*
 
-![](images/image-26.png)
+![](img/image-26.png)
 
 编码 - 由 Midjourney AI 生成的图像
 
@@ -158,7 +158,7 @@ In C, you can concatenate several strings using the strcat function from the str
 
 ## 学习新技能
 
-你得到了一份新工作，你大学的大部分工作都是用Python完成的，新工作的地方主要使用Objective-C，你需要快速学习它。
+你得到了一份新工作，你大学的大部分工作都是用 Python 完成的，新工作的地方主要使用 Objective-C，你需要快速学习它。
 
 #### 提示 - Obj C：
 
@@ -199,7 +199,7 @@ what are good books that will help me learn objective C fast
 Here are some books that could help you learn Objective-C: "Programming in Objective-C" by Stephen G. Kochan - This is a popular book that covers the basics of the Objective-C programming language. "Objective-C Programming: The Big Nerd Ranch Guide" by Aaron Hillegass and Mikey Ward - This is a comprehensive guide to Objective-C programming, which covers topics such as memory management, design patterns, and debugging. "Objective-C for Absolute Beginners: iPhone, iPad, and Mac Programming Made Easy" by Gary Bennett, Brad Lees, and Mitchell Fisher - This book is designed for those who have no prior programming experience and teaches the basics of Objective-C programming with a focus on iOS and macOS development. "iOS Programming: The Big Nerd Ranch Guide" by Joe Conway and Aaron Hillegass - This book covers iOS programming with Objective-C, as well as Swift. It includes practical exercises and detailed explanations of iOS development. "Objective-C Fundamentals" by Matt Neuburg - This book provides a thorough introduction to Objective-C programming, with an emphasis on object-oriented programming concepts. "Effective Objective-C 2.0: 52 Specific Ways to Improve Your iOS and OS X Programs" by Matt Galloway - This book focuses on advanced topics in Objective-C programming, providing tips and best practices for writing efficient and effective code. These books can help you learn Objective-C programming at different levels of expertise, so you can choose the one that best suits your needs.
 ```
 
-也许我们从视频中学习更好，让我们看看ChatGPT告诉我们什么：
+也许我们从视频中学习更好，让我们看看 ChatGPT 告诉我们什么：
 
 #### 提示 - 视频：
 
@@ -220,7 +220,7 @@ Objective-C Programming for iOS Development by Treehouse: https://www.youtube.co
 I hope you find these resources helpful!
 ```
 
-经过检查，所有链接似乎都无法使用，可能已过时。然而，这个问题可能会在未来得到解决。或者，我们可以再次询问ChatGPT以获取更新的资源。
+经过检查，所有链接似乎都无法使用，可能已过时。然而，这个问题可能会在未来得到解决。或者，我们可以再次询问 ChatGPT 以获取更新的资源。
 
 #### 提示 - 损坏的链接：
 
@@ -240,11 +240,11 @@ Objective-C Programming Course for Beginners by CodeWithChris: https://www.youtu
 I hope this helps. Please let me know if you have any further questions or concerns.
 ```
 
-提供的新链接似乎都无法使用，除了一个重定向到Java教程的链接。这突显了以谨慎验证ChatGPT提供的信息的重要性。虽然ChatGPT的回答大多是准确的，但仔细核实信息可以增强你对其准确性的信心。
+提供的新链接似乎都无法使用，除了一个重定向到 Java 教程的链接。这突显了以谨慎验证 ChatGPT 提供的信息的重要性。虽然 ChatGPT 的回答大多是准确的，但仔细核实信息可以增强你对其准确性的信心。
 
 ## 模板和片段
 
-ChatGPT非常适合代码模板，你可以专注于实际的代码。
+ChatGPT 非常适合代码模板，你可以专注于实际的代码。
 
 #### 提示 - COBOL 模板：
 
@@ -260,7 +260,7 @@ Sure, here's a sample code template in COBOL that prints out "Hello World" to th
 IDENTIFICATION DIVISION. PROGRAM-ID. HELLO-WORLD. PROCEDURE DIVISION. DISPLAY 'Hello World'. STOP RUN. The IDENTIFICATION DIVISION specifies the name of the program as HELLO-WORLD, while the PROCEDURE DIVISION contains the instructions to display the message and stop the program. When you run this program, it will simply display the message "Hello World" on the console.
 ```
 
-这里有一个更加当前的例子，可能会有用，涉及HTML和Javascript
+这里有一个更加当前的例子，可能会有用，涉及 HTML 和 Javascript
 
 #### 提示 - html：
 
@@ -296,6 +296,6 @@ The button element creates a button that triggers the playBeeps() function when 
 
 ## 结论
 
-虽然ChatGPT可能无法完全取代编码，但它可以通过帮助检测错误、调试、文档编写以及分析他人的代码来显著提高生产力。这些好处真的是无价的。
+虽然 ChatGPT 可能无法完全取代编码，但它可以通过帮助检测错误、调试、文档编写以及分析他人的代码来显著提高生产力。这些好处真的是无价的。
 
 *"一个好的程序员是那种在穿过单行道之前总是看两边的人。" - 道格·林德*

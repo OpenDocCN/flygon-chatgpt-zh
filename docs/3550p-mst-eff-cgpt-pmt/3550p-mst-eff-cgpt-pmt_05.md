@@ -1,13 +1,13 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 6.聊天机器人和对话营销
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
-![图片](d2d_images/image002.png)
+![图片](img/image002.png)
 
 1.  你能设计一个能够与我的[目标受众]互动并向他们提供有关我的[产品/服务]相关信息的聊天机器人吗？
 

@@ -2,7 +2,7 @@
 
 *"学习的能力是一种天赋；学习的技能是一种能力；学习的意愿是一种选择。" - 布莱恩·赫伯特*
 
-![](images/image-12.png)
+![](img/image-12.png)
 
 自我教育 - 由 Midjourney AI 生成的图像
 
@@ -112,7 +112,7 @@ With their skills and expertise, your team can provide a range of services that 
 
 1.  会计和簿记服务
 
-1、2和4号业务已经由卡勒德的原始业务处理。第10号业务，会计，并不是很令人兴奋，也不是卡勒德真正感兴趣的。现在缩短的列表如下：
+1、2 和 4 号业务已经由卡勒德的原始业务处理。第 10 号业务，会计，并不是很令人兴奋，也不是卡勒德真正感兴趣的。现在缩短的列表如下：
 
 管道服务
 
@@ -197,12 +197,12 @@ Human Resources Manager - responsible for recruitment, training, and development
 The key advantage of this organizational structure is that it allows for a clear separation of responsibilities and decision-making authority. The COO can oversee day-to-day operations of all functions, while the Logistics Director, Store Manager, Engineering Director, and Service Manager can focus on the specific needs of their respective areas. The Sales and Marketing Director and Purchasing Manager can work together to ensure that the company has a steady supply of materials and a steady stream of customers. The CFO and Human Resources Manager can provide support and guidance to all areas of the business, ensuring that the company operates efficiently and profitably.
 ```
 
-卡勒德的企业已经涵盖了一些方面，而其他方面需要额外关注。然而，卡勒德已经制定了一个全面的计划，包括必要的步骤，他在一个下午的会议中就完成了这一计划，而没有产生昂贵的管理咨询费用。此外，他意识到可以通过ChatGPT进行进一步分析，并寻找与业务或扩张相关问题的答案。
+卡勒德的企业已经涵盖了一些方面，而其他方面需要额外关注。然而，卡勒德已经制定了一个全面的计划，包括必要的步骤，他在一个下午的会议中就完成了这一计划，而没有产生昂贵的管理咨询费用。此外，他意识到可以通过 ChatGPT 进行进一步分析，并寻找与业务或扩张相关问题的答案。
 
-如果卡勒德想要将他的新创业变成一个成功的企业，他需要一个坚实的战略、商业计划、愿景、使命和品牌。幸运的是，他也可以利用ChatGPT来发展这些方面。卡勒德可以再花一个下午的时间与ChatGPT合作制定一个全面的计划，几天后就可以开始实施。
+如果卡勒德想要将他的新创业变成一个成功的企业，他需要一个坚实的战略、商业计划、愿景、使命和品牌。幸运的是，他也可以利用 ChatGPT 来发展这些方面。卡勒德可以再花一个下午的时间与 ChatGPT 合作制定一个全面的计划，几天后就可以开始实施。
 
 ## 结论
 
-卡勒德的未来看起来很有前途，他可以通过利用ChatGPT获得额外的答案和资源来拓展自己的视野。
+卡勒德的未来看起来很有前途，他可以通过利用 ChatGPT 获得额外的答案和资源来拓展自己的视野。
 
 *"世界上最大的房间是改进的空间。" - 赫尔穆特·施密特*

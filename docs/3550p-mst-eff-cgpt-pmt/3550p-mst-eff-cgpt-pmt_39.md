@@ -1,13 +1,13 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 40.预算限制提示
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
-这里有50个提示，旨在帮助您在设立和经营新业务时聚集见解，明智分配预算并最大化数字营销工作的影响。请将"[你的行业]"替换为与您业务相关的实际行业：
+这里有 50 个提示，旨在帮助您在设立和经营新业务时聚集见解，明智分配预算并最大化数字营销工作的影响。请将"[你的行业]"替换为与您业务相关的实际行业：
 
 1.  "提供为[你的行业]初创企业需求量身定制的全面数字营销预算策略。"
 
@@ -39,7 +39,7 @@
 
 1.  "提供进行彻底市场研究以识别在[你的行业]内成本效益数字营销机会的技巧。"
 
-1.  "分析在[您的行业]中为A/B测试和实验分配预算的重要性。如何基于数据驱动的见解优化活动？"
+1.  "分析在[您的行业]中为 A/B 测试和实验分配预算的重要性。如何基于数据驱动的见解优化活动？"
 
 1.  "探索利用用户生成内容作为[您的行业]内经济有效数字营销工具的策略。"
 

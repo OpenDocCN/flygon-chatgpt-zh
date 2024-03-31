@@ -1,11 +1,11 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 8.客户保留
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
 1.  如何利用电子邮件营销来维护当前客户群的忠诚度，并鼓励重复购买？
 
@@ -27,7 +27,7 @@
 
 1.  开发一个能够协助客户解决产品或服务常见问题的聊天机器人。
 
-1.  提供一份针对我们行业和受众群体定制的10项客户保留策略清单，旨在增加我们客户的生命周期价值。
+1.  提供一份针对我们行业和受众群体定制的 10 项客户保留策略清单，旨在增加我们客户的生命周期价值。
 
 1.  你能推荐增强我们客户服务以提升客户体验的方法吗？我们如何灌输以客户为中心的文化，并衡量客户满意度？
 

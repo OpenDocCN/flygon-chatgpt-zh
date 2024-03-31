@@ -26,7 +26,7 @@
 
 A.A. KABIR
 
-（[realaakabir@yahoo.com](mailto:realaakabir@yahoo.com)）
+（realaakabir@yahoo.com）
 
 > 介绍
 
@@ -124,7 +124,7 @@ ChatGPT 对人工智能和自然语言处理领域做出了重大贡献，其发
 
 一旦设置了您的 OpenAI 帐户并安装了 OpenAI Python 库，您可以按照以下步骤访问 ChatGPT：
 
-![](Image00000.jpg)
+![](img/Image00000.jpg)
 
 1. **导入 openai 模块**：
 
@@ -440,4 +440,4 @@ ChatGPT 可以帮助您提高沟通技巧的另一种方式是为您提供有关
 
 A.A. KABIR
 
-（[realaakabir@yahoo.com](mailto:realaakabir@yahoo.com)）
+（realaakabir@yahoo.com）

@@ -1,11 +1,11 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 26. PPC 广告
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
 1.  针对我的[目标受众]和[产品/服务]，最具影响力的关键词和广告文案是什么？
 

@@ -1,4 +1,4 @@
-## 激发您的创造力 - 掌握AI艺术和ChatGPT的提示工程
+## 激发您的创造力 - 掌握 AI 艺术和 ChatGPT 的提示工程
 
 #### Frank Zanish
 
@@ -14,24 +14,24 @@
 
 2.负面和零提示
 
-[3\. 提升您的提示工程技能](chapter0003.html)
+3\. 提升您的提示工程技能
 
-4.ReAct提示
+4.ReAct 提示
 
-5.为AI艺术设计提示在中途和其他工具中
+5.为 AI 艺术设计提示在中途和其他工具中
 
 6.迭代提示优化以获得最佳结果
 
-7.ChatGPT的对话提示工程
+7.ChatGPT 的对话提示工程
 
 8.语言和形象在提示中的力量
 
-[9\. 使用AI艺术工具和ChatGPT的技巧](chapter0009.html)
+9\. 使用 AI 艺术工具和 ChatGPT 的技巧
 
-10.使用Leonardo应用进行AI艺术
+10.使用 Leonardo 应用进行 AI 艺术
 
-11.带提示的样本AI艺术
+11.带提示的样本 AI 艺术
 
-[12\. 使用AI艺术工具和ChatGPT的技巧（拆分）](chapter0012.html)
+12\. 使用 AI 艺术工具和 ChatGPT 的技巧（拆分）
 
-13.结论：拥抱AI艺术和ChatGPT之旅
+13.结论：拥抱 AI 艺术和 ChatGPT 之旅

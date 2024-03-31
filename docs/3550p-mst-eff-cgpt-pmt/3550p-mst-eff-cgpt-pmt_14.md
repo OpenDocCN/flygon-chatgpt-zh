@@ -1,11 +1,11 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 潜在客户生成
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
 1.  您能否制定一个旨在吸引我们[产品/服务]新客户的潜在客户生成活动？
 
@@ -17,7 +17,7 @@
 
 1.  创建一个潜在客户评分模型，帮助根据其潜在价值对潜在客户进行优先排序和资格认定。
 
-1.  制定一个包含10个高转化的潜在客户磁铁创意，与[行业/领域]相关，对我们的目标受众有价值且易消化的想法清单。
+1.  制定一个包含 10 个高转化的潜在客户磁铁创意，与[行业/领域]相关，对我们的目标受众有价值且易消化的想法清单。
 
 1.  根据客户数据和市场趋势，提供建议如何优化我们的潜在客户生成策略。
 

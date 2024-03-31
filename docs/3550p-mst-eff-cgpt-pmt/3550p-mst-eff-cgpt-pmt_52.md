@@ -1,11 +1,11 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 53.市场研究提示
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
 1.  探索为新电子商务平台确定和定义目标受众的方法。考虑人口统计分析、心理画像和用户行为研究。
 
@@ -19,7 +19,7 @@
 
 1.  探索为食品配送服务市场确定空白和机会的方法。考虑分析客户评论、识别未满足的人口群体和预测新兴食品趋势。
 
-1.  提供关于为软件开发公司进行SWOT分析的指导。包括确定内部优势和劣势，以及外部机会和威胁，以指导战略决策。
+1.  提供关于为软件开发公司进行 SWOT 分析的指导。包括确定内部优势和劣势，以及外部机会和威胁，以指导战略决策。
 
 1.  就健身行业市场研究中收集初级和次级数据提供建议。考虑进行客户调查、分析行业报告和研究竞争对手提供的产品。
 

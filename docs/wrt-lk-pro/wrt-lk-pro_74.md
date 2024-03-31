@@ -1,6 +1,6 @@
-## 在社交媒体平台上撰写，如Facebook、Twitter和Instagram
+## 在社交媒体平台上撰写，如 Facebook、Twitter 和 Instagram
 
-像Facebook、Twitter和Instagram这样的社交媒体平台是高度视觉化的，需要简短、吸引人的文字。在撰写社交媒体内容时，确保您的文字引人注目且易于分享。使用图片、图形和视频来支持您的文字，帮助它脱颖而出。
+像 Facebook、Twitter 和 Instagram 这样的社交媒体平台是高度视觉化的，需要简短、吸引人的文字。在撰写社交媒体内容时，确保您的文字引人注目且易于分享。使用图片、图形和视频来支持您的文字，帮助它脱颖而出。
 
 Facebook
 

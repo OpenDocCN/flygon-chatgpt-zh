@@ -1,13 +1,13 @@
-| ![图像](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图像](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图像](img/chapter_title_corner_decoration_left.png) |  | ![图像](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图像](d2d_images/chapter_title_above.png)
+![图像](img/chapter_title_above.png)
 
 # 11. 写作提示
 
-![图像](d2d_images/chapter_title_below.png)
+![图像](img/chapter_title_below.png)
 
-![C:\Users\hitech\Downloads\content creator(5).png](d2d_images/image001.png)
+![C:\Users\hitech\Downloads\content creator(5).png](img/image001.png)
 
 1.  "制作一种引人入胜的[内容类型]，旨在 resonant with 我的[理想客户角色]，激励他们在我的[网站/产品]上完成[期望的行动]。"
 

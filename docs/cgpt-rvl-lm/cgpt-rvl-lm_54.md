@@ -1,12 +1,12 @@
-Kenneth Caraballo的其他作品
+Kenneth Caraballo 的其他作品
 
-[新手的Dropshipping](https://www.draft2digital.com/catalog/993201?distributor=scribd)
+[新手的 Dropshipping](https://www.draft2digital.com/catalog/993201?distributor=scribd)
 
 [创业者：终极指南](https://www.draft2digital.com/catalog/993174?distributor=scribd)
 
 新手投资
 
-百万富翁的思维：25个关键
+百万富翁的思维：25 个关键
 
 停止过度思考，开始生活：平静心灵的简单策略
 
@@ -16,7 +16,7 @@ Kenneth Caraballo的其他作品
 
 [释放品牌魔力的力量：改变您的营销策略指南](https://www.draft2digital.com/catalog/1006324?distributor=scribd)
 
-[专注：与ADHD一起航行](https://www.draft2digital.com/catalog/1006990?distributor=scribd)
+[专注：与 ADHD 一起航行](https://www.draft2digital.com/catalog/1006990?distributor=scribd)
 
 [心理超越：认知行为疗法实用指南](https://www.draft2digital.com/catalog/1007682?distributor=scribd)
 

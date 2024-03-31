@@ -18,15 +18,15 @@
 
 P.S. 如果你没有获取之前提到的免费奖励，请再次点击这里。
 
-包含了本书中ChatGPT提示的快速参考描述，另外还有一本免费的《财富简明指南》副本。
+包含了本书中 ChatGPT 提示的快速参考描述，另外还有一本免费的《财富简明指南》副本。
 
 [*点击这里免费下载这两个资源*](https://retiredecadesearly.com/lpkdp1/)
 
 ***或者，用手机相机扫描下面的二维码下载额外的内容：***
 
-![](../images/00002.unknown)
+![](img/00002.unknown)
 
-**我在撰写本书时使用的工具（除了ChatGPT）**
+**我在撰写本书时使用的工具（除了 ChatGPT）**
 
 JasperAI：[jaspergpt.com](http://jaspergpt.com/)
 

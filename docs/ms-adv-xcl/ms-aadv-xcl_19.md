@@ -1,10 +1,10 @@
-# [第18章VBA中的变量和数据类型](contents.xhtml#ch18a)
+# 第十八章 VBA 中的变量和数据类型
 
-[介绍](contents.xhtml#sc2_256a)
+介绍
 
-在本章中，我们将探讨VBA（Visual Basic for Applications）中变量和数据类型的基础知识。变量是编程中的基本元素，它们在程序执行过程中存储和操作数据，而数据类型定义了变量中存储的数据的性质。理解变量和数据类型对于编写高效和有效的VBA代码至关重要。我们将涵盖声明变量和常量、指定数据类型、使用消息框和输入框、选择单元格、行和列以及与工作表、工作簿和应用程序对象一起工作等主题。
+在本章中，我们将探讨 VBA（Visual Basic for Applications）中变量和数据类型的基础知识。变量是编程中的基本元素，它们在程序执行过程中存储和操作数据，而数据类型定义了变量中存储的数据的性质。理解变量和数据类型对于编写高效和有效的 VBA 代码至关重要。我们将涵盖声明变量和常量、指定数据类型、使用消息框和输入框、选择单元格、行和列以及与工作表、工作簿和应用程序对象一起工作等主题。
 
-[结构](contents.xhtml#sc2_257a)
+结构
 
 在本章中，我们将涵盖以下主题：
 
@@ -26,15 +26,15 @@
 
 +   与应用程序对象一起工作
 
-[目标](contents.xhtml#sc2_258a)
+目标
 
-通过本章结束时，读者将能够理解VBA中变量和常量的概念，并学会如何声明它们，熟悉VBA中可用的不同数据类型及其各自的范围，并探索消息框和输入框用于用户交互的用法。此外，读者还将学习在Excel中选择和激活单元格、行和列的技巧，并了解在VBA中使用工作表、工作簿和应用程序对象的知识。
+通过本章结束时，读者将能够理解 VBA 中变量和常量的概念，并学会如何声明它们，熟悉 VBA 中可用的不同数据类型及其各自的范围，并探索消息框和输入框用于用户交互的用法。此外，读者还将学习在 Excel 中选择和激活单元格、行和列的技巧，并了解在 VBA 中使用工作表、工作簿和应用程序对象的知识。
 
-[变量和常量](contents.xhtml#sc2_259a)
+变量和常量
 
 现在让我们学习关于变量和常量。
 
-[变量](contents.xhtml#sc3_260a)
+变量
 
 变量的特点如下：
 
@@ -50,15 +50,15 @@
 
     +   在相同范围内必须是唯一的，
 
-    +   不能超过255个字符，并且
+    +   不能超过 255 个字符，并且
 
     +   包含嵌入的句点或类型声明字符。
 
-[常量](contents.xhtml#sc3_261a)
+常量
 
 在程序执行过程中保持恒定值的命名项目。常量可以是字符串或数字文字。
 
-[声明变量和常量](contents.xhtml#sc2_262a)
+声明变量和常量
 
 声明变量的语法是：
 
@@ -80,13 +80,13 @@ Const name_of_variable AS type_of_variable = constant value
 
 Const conAge As Integer = 34
 
-在声明变量时，使用Dim语句，而对于常量使用Const语句。
+在声明变量时，使用 Dim 语句，而对于常量使用 Const 语句。
 
 声明语句可以放置在过程中以创建过程级变量。或者它可以放置在模块的顶部，在声明部分中，以创建模块级变量。
 
-[变量和常量的数据类型](contents.xhtml#sc2_263a)
+变量和常量的数据类型
 
-[表 18.1](#tab18-1) 显示了数据类型的各种范围：
+表 18.1 显示了数据类型的各种范围：
 
 | 数据类型 | 范围 |
 | --- | --- |
@@ -108,11 +108,11 @@ Const conAge As Integer = 34
 
 表 18.1：数据类型
 
-[使用 Option Explicit 语句](contents.xhtml#sc3_264a)
+使用 Option Explicit 语句
 
 使用 Option Explicit 强制声明变量。它必须出现在任何过程之前的模块中。如果不使用，未声明的变量将是 Variant 类型。
 
-[消息框和输入框](contents.xhtml#sc2_265a)
+消息框和输入框
 
 Msgbox 函数在对话框中显示消息，等待用户点击按钮，然后返回一个整数，指示用户点击了哪个按钮。
 
@@ -123,11 +123,11 @@ InputBox 函数在对话框中显示提示，等待用户输入文本或点击�
 | 子过程问候()消息框 "你好 " & InputBOx("你叫什么名字？")结束子过程 |
 | --- |
 
-[选择和激活单元格](contents.xhtml#sc2_266a)
+选择和激活单元格
 
 当你使用 Microsoft Excel 时，通常会选择一个单元格或多个单元格，然后执行操作，比如格式化单元格或在其中输入值。
 
-参考[表 18.2](#tab18-2)，编写各种操作的代码：
+参考表 18.2，编写各种操作的代码：
 
 | 要做这个 | 写下这段代码 |
 | --- | --- |
@@ -142,28 +142,28 @@ InputBox 函数在对话框中显示提示，等待用户输入文本或点击�
 
 表 18.2：各种操作的代码
 
-[选择和激活行和列](contents.xhtml#sc2_267a)
+选择和激活行和列
 
 有时您需要选择特定的行和列，然后执行操作。
 
-要做这个，请写下面[表18.3](#tab18-3)中显示的代码：
+要做这个，请写下面表 18.3 中显示的代码：
 
 | 要做这个 | 写这个代码 |
 | --- | --- |
 | 选择一行 | Rows("2:2").select |
-| 选择从第2行到第5行 | Rows("2:5").select |
-| 从活动单元格选择3行 | Activecell.entirerow.Range("1:3"). select |
+| 选择从第 2 行到第 5 行 | Rows("2:5").select |
+| 从活动单元格选择 3 行 | Activecell.entirerow.Range("1:3"). select |
 | 选择一列 | Columns("A:A").select |
-| 选择从B到E的列 | Columns("B:E").select |
-| 从活动单元格选择3列 | Activecell.entirecolumn.Range("A:C").select |
+| 选择从 B 到 E 的列 | Columns("B:E").select |
+| 从活动单元格选择 3 列 | Activecell.entirecolumn.Range("A:C").select |
 | 选择当前行 | Activecell.entirerow.select |
 | 选择当前列 | Activecell.entirecolumn.select |
 
-表18.3：各种操作的代码
+表 18.3：各种操作的代码
 
-[与工作表一起工作](contents.xhtml#sc2_268a)
+与工作表一起工作
 
-许多时候，您需要选择特定的工作表，或插入新工作表，重命名工作表等。请参考[表18.4](#tab18-4)：
+许多时候，您需要选择特定的工作表，或插入新工作表，重命名工作表等。请参考表 18.4：
 
 | 要做这个 | 写这个代码 |
 | --- | --- |
@@ -174,11 +174,11 @@ InputBox 函数在对话框中显示提示，等待用户输入文本或点击�
 | 删除工作表 | Sheets("Sheet1").deleteWorksheets("Sheet1").deleteActivesheet.delete |
 | 插入工作表 | Sheets.add before:= sheets("Sheet1")Worksheets.add before:=sheets("Sheet1") |
 
-表18.4：各种操作的代码
+表 18.4：各种操作的代码
 
-[与工作簿一起工作](contents.xhtml#sc2_269a)
+与工作簿一起工作
 
-有时您需要处理不同的工作簿。请参考[表18.5](#tab18-5)：
+有时您需要处理不同的工作簿。请参考表 18.5：
 
 | 要做这个 | 写这个代码 |
 | --- | --- |
@@ -187,11 +187,11 @@ InputBox 函数在对话框中显示提示，等待用户输入文本或点击�
 | 关闭工作簿 | Workbooks(2).close |
 | 添加新工作簿 | Workbooks.add |
 
-表18.5：各种操作的代码
+表 18.5：各种操作的代码
 
-[与应用程序对象一起工作](contents.xhtml#sc2_270a)
+与应用程序对象一起工作
 
-有时为了忽略不同的 Excel 消息，您需要使用应用程序对象，如下所示的[表18.6](#tab18-6)：
+有时为了忽略不同的 Excel 消息，您需要使用应用程序对象，如下所示的表 18.6：
 
 | 要做这个 | 写这个代码 |
 | --- | --- |
@@ -200,27 +200,27 @@ InputBox 函数在对话框中显示提示，等待用户输入文本或点击�
 | 停止复制/剪切模式 | Application.CutCopyMode = False |
 | 计算 | Application.Calculate |
 
-表18.6：各种操作的代码
+表 18.6：各种操作的代码
 
-[场景15](contents.xhtml#sc3_271a)
+场景 15
 
 创建一个宏，应接受人员的姓名和城市，并将其存储在 Excel 工作表的单元格 A1 和 B1 中。如果用户输入 Mumbai 作为城市，则字体颜色必须为红色。使用 InputBox 函数从用户那里获取输入。使用 MsgBox 函数显示结果。
 
 | Sub Accept_Details()Dim e_Name , e_City As StringName = InputBox("输入您的姓名")City = InputBox("输入您的城市")MsgBox "您的姓名是 " & Name & "，城市是 " & CityCells(1, 1).Value = e_Name Cells(1, 2).Value = e_CityIf Cells(1, 2).Value = "mumbai" ThenCells(1, 2).Font.ColorIndex = 3ElseCells(1, 2).Font.ColorIndex = 0EndIfEnd Sub |
 | --- |
 
-[场景16](contents.xhtml#sc3_272a)
+场景 16
 
 创建一个名为 Data_Entry 的宏。接受一个人的员工编号、姓名、入职日期和工资。将这些值插入“数据库”工作表中。每条新记录必须存储在最后一条记录之后。
 
 | Sub Data_Entry()Dim EmpCode As integer, Next_Row as integerDim EmpName As StringDim doj As DateDim Salary As CurrencyEmpCode = InputBox("Enter Employee Code")EmpName = InputBox("Enter Employee Name")doj = InputBox("enter Date of Joining mm/dd/yy")Salary = InputBox("Enter Salary of Employee")Range("a65536").selectSelection.end(xlup).select Next_Row= activecell.row+1Cells(Next_Row, 1).Value = EmpCode Cells(Next_Row, 2).Value = EmpNameCells(Next_Row, 3).Value = Format(doj, "MMM DD YYYY")Cells(Next_Row, 4).Value = SalaryEnd Sub |
 | --- |
 
-[结论](contents.xhtml#sc2_273a)
+结论
 
 总之，本章全面介绍了 VBA 中的变量和数据类型。它涵盖了变量和常量的声明，解释了不同数据类型及其范围，演示了消息框和输入框的使用，并探讨了在 Excel 中选择和操作单元格、行和列的技巧。本章还涉及与工作表、工作簿和应用程序对象的工作。通过理解这些基础知识，读者可以编写高效且有效的 VBA 代码。
 
-[练习](contents.xhtml#sc2_274a)
+练习
 
 1.  编写一个 VBA 宏，提示用户使用输入框输入他们的姓名、年龄和喜欢的颜色。该宏应将这些值分别存储在活动工作表的单元格 A1、B1 和 C1 中。此外，如果用户的年龄大于或等于 18 岁，则相应单元格的字体颜色应设置为他们喜欢的颜色。通过运行宏并输入不同的值来测试宏。
 
@@ -228,6 +228,6 @@ InputBox 函数在对话框中显示提示，等待用户输入文本或点击�
 
 加入本书的 Discord 工作区，获取最新更新、优惠、全球科技动态、新发布和与作者的交流：
 
-**[https://discord.bpbonline.com](https://discord.bpbonline.com)**
+**[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](images/fm1.png)
+![](img/fm1.png)

@@ -20,7 +20,7 @@ ChatGPT 获得了大部分的宣传，但重要的是要意识到有许多类似
 
 [Sydney](https://gizmodo.com/bing-ai-chatgpt-microsoft-alter-ego-sydney-dead-1850149974)
 
-微软改进的搜索引擎 Bing 背后的聊天机器人的内部代号。Sydney 基于 GPT-4，^(1)并经过额外的训练。
+微软改进的搜索引擎 Bing 背后的聊天机器人的内部代号。Sydney 基于 GPT-4，¹并经过额外的训练。
 
 [Kosmos-1](https://arstechnica.com/information-technology/2023/03/microsoft-unveils-kosmos-1-an-ai-language-model-with-visual-perception-abilities/)
 
@@ -146,11 +146,11 @@ ChatGPT 可以像律师一样写作，而 GPT-4 在统一行为考试中取得�
 
 个人助理
 
-构建个人助手与构建自动客户服务代理几乎没有太大的不同。现在我们已经有亚马逊的 Alexa 快有十年了，而苹果的 Siri 更久。尽管它们还不够完善，像 ChatGPT 这样的技术将使将门槛设得更高成为可能。基于 ChatGPT 的助手不仅能够播放歌曲、推荐电影、在亚马逊上订购物品；它还能够接听电话和电子邮件，进行对话，并与供应商协商。你甚至可以创建[数字克隆](https://www.linkedin.com/events/chatgptanditsimpactonthebusines7026555142103552000/comments/)^(5)来代替你参与咨询和其他业务场合。
+构建个人助手与构建自动客户服务代理几乎没有太大的不同。现在我们已经有亚马逊的 Alexa 快有十年了，而苹果的 Siri 更久。尽管它们还不够完善，像 ChatGPT 这样的技术将使将门槛设得更高成为可能。基于 ChatGPT 的助手不仅能够播放歌曲、推荐电影、在亚马逊上订购物品；它还能够接听电话和电子邮件，进行对话，并与供应商协商。你甚至可以创建[数字克隆](https://www.linkedin.com/events/chatgptanditsimpactonthebusines7026555142103552000/comments/)⁵来代替你参与咨询和其他业务场合。
 
 翻译
 
-对于 ChatGPT 支持多少种语言存在不同的说法；数字范围从 9 到“100 多种”。^(6) 然而，翻译是另一回事。ChatGPT 告诉我它不懂意大利语，尽管意大利语出现在所有（非正式）“支持”的语言列表上。抛开语言不谈，ChatGPT 总是偏向西方（特别是美国）文化。未来的语言模型几乎肯定会支持更多语言；谷歌的[1000 种语言计划](https://www.siliconrepublic.com/machines/google-universal-speech-model-ai-1000-language-translation)展示了我们可以期待什么。这些未来模型是否会有类似的文化限制，任何人都无法预料。
+对于 ChatGPT 支持多少种语言存在不同的说法；数字范围从 9 到“100 多种”。⁶ 然而，翻译是另一回事。ChatGPT 告诉我它不懂意大利语，尽管意大利语出现在所有（非正式）“支持”的语言列表上。抛开语言不谈，ChatGPT 总是偏向西方（特别是美国）文化。未来的语言模型几乎肯定会支持更多语言；谷歌的[1000 种语言计划](https://www.siliconrepublic.com/machines/google-universal-speech-model-ai-1000-language-translation)展示了我们可以期待什么。这些未来模型是否会有类似的文化限制，任何人都无法预料。
 
 搜索和研究
 
@@ -200,17 +200,17 @@ OpenAI，ChatGPT 的制造商，已经做出了相当不错的工作，构建了
 
 我们将会建设什么？
 
-^(1) 为了区分传统必应和升级版的人工智能驱动必应，我们将后者称为必应/悉尼（或简称为悉尼）。
+¹ 为了区分传统必应和升级版的人工智能驱动必应，我们将后者称为必应/悉尼（或简称为悉尼）。
 
-^(2) 欲了解更深入、技术性的解释，请参阅 Lewis Tunstall 等人的[*使用 Transformer 进行自然语言处理*](https://learning.oreilly.com/library/view/natural-language-processing/9781098136789/)（O’Reilly，2022）。
+² 欲了解更深入、技术性的解释，请参阅 Lewis Tunstall 等人的[*使用 Transformer 进行自然语言处理*](https://learning.oreilly.com/library/view/natural-language-processing/9781098136789/)（O’Reilly，2022）。
 
-^(3) 此例取自[*https://blogs.nvidia.com/blog/2022/03/25/what-is-a-transformer-model*](https://blogs.nvidia.com/blog/2022/03/25/what-is-a-transformer-model)。
+³ 此例取自[*https://blogs.nvidia.com/blog/2022/03/25/what-is-a-transformer-model*](https://blogs.nvidia.com/blog/2022/03/25/what-is-a-transformer-model)。
 
-^(4) 个人对话，尽管他可能也在他的博客中说过这句话。
+⁴ 个人对话，尽管他可能也在他的博客中说过这句话。
 
-^(5) 相关部分从这段视频的 20:40 开始。
+⁵ 相关部分从这段视频的 20:40 开始。
 
-^(6) 维基百科目前[支持](https://meta.wikimedia.org/wiki/List_of_Wikipedias)320 种活跃语言，尽管其中一些语言中只有少数几篇文章。ChatGPT 很可能对所有这些语言都有所了解。
+⁶ 维基百科目前[支持](https://meta.wikimedia.org/wiki/List_of_Wikipedias)320 种活跃语言，尽管其中一些语言中只有少数几篇文章。ChatGPT 很可能对所有这些语言都有所了解。
 
 # 关于作者
 

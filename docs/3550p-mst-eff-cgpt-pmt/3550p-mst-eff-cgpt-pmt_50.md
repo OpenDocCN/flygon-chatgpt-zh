@@ -1,11 +1,11 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 51. 寻找商业创意的提示
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
 1.  生成利用人工智能、区块链或增强现实等尖端技术的商业创意。考虑这些技术可以彻底改变现有实践的行业。
 
@@ -45,7 +45,7 @@
 
 1.  探索虚拟现实在教育中的应用。提出沉浸式学习体验、虚拟教室或增强现实教育内容的创意。
 
-1.  提出围绕AI驱动个人助手的创新业务理念。考虑在生产力、组织或日常生活管理方面的应用。
+1.  提出围绕 AI 驱动个人助手的创新业务理念。考虑在生产力、组织或日常生活管理方面的应用。
 
 1.  创建一个[行业]领域内十个创意商业概念的汇编。
 

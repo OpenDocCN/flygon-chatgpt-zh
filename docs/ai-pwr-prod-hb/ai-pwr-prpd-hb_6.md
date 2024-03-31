@@ -2,15 +2,15 @@
 
 *"关键不在于想法，而在于实现想法。" - 斯科特·贝尔斯基*
 
-![](images/image-10.png)
+![](img/image-10.png)
 
-现代商人 - 由Midjourney AI生成的图像
+现代商人 - 由 Midjourney AI 生成的图像
 
-## 介绍由萨米开发的FamilyGram应用程序
+## 介绍由萨米开发的 FamilyGram 应用程序
 
-萨米打算基于他已经创建的应用程序开展自己的业务。这款类似于Instagram的应用程序使用户可以拍照并与家人独家分享。它旨在通过与社交媒体平台保持分离为用户提供更高的隐私保护。该应用程序需要订阅费，但它保证父母和孩子他们的个人时刻将保持私密，并且只与他们亲近的人分享。他想将其命名为FamilyGram。
+萨米打算基于他已经创建的应用程序开展自己的业务。这款类似于 Instagram 的应用程序使用户可以拍照并与家人独家分享。它旨在通过与社交媒体平台保持分离为用户提供更高的隐私保护。该应用程序需要订阅费，但它保证父母和孩子他们的个人时刻将保持私密，并且只与他们亲近的人分享。他想将其命名为 FamilyGram。
 
-现在应用程序已经开发并准备就绪，可以在Android和iPhone上运行，萨米不知道接下来该做什么，所以他问ChatGPT接下来的步骤是什么。
+现在应用程序已经开发并准备就绪，可以在 Android 和 iPhone 上运行，萨米不知道接下来该做什么，所以他问 ChatGPT 接下来的步骤是什么。
 
 #### 提示 - 应用程序发布步骤：
 
@@ -26,7 +26,7 @@ Launching an app as a viable and profitable business requires careful planning a
 Conduct market research: Sami needs to research the market to understand the competition, target audience, and potential demand for his app. This can be done through surveys, focus groups, and other market research methods. Develop a business plan: A business plan will help Sami define his goals, target audience, revenue model, and marketing strategies. It should also include financial projections, such as expected revenue and costs. Build a website and social media presence: Creating a website and social media profiles will help Sami promote his app and build a strong brand image. He can also use social media to engage with potential customers and gather feedback. Launch the app on app stores: Sami needs to list his app on the App Store and Google Play Store. This will require complying with their submission guidelines and paying any associated fees. Launch marketing campaigns: Sami needs to promote his app through digital marketing campaigns such as social media advertising, search engine optimization, and email marketing. He can also reach out to influencers or bloggers who specialize in family-related content. Continuously improve the app: Sami should gather feedback from customers and use it to improve the app's user experience. This can help attract new customers and retain existing ones. By following these steps, Sami can launch Familygram as a profitable business and grow it over time.
 ```
 
-这需要考虑和做的事情很多，而萨米是一个优秀的编码人员，但在商业方面缺乏经验。ChatGPT列出了以下步骤：
+这需要考虑和做的事情很多，而萨米是一个优秀的编码人员，但在商业方面缺乏经验。ChatGPT 列出了以下步骤：
 
 1.  进行市场调研
 
@@ -40,11 +40,11 @@ Conduct market research: Sami needs to research the market to understand the com
 
 1.  持续改进应用程序。
 
-是时候让萨米开始工作了，最好的方法是向ChatGPT寻求建议。
+是时候让萨米开始工作了，最好的方法是向 ChatGPT 寻求建议。
 
 ## 进行市场调研
 
-在向ChatGPT提问时，最好将问题尽可能详细地提出，这样你就可以得到最适合你想要实现的答案。
+在向 ChatGPT 提问时，最好将问题尽可能详细地提出，这样你就可以得到最适合你想要实现的答案。
 
 让我们询问如何进行市场调研而不必花费很多钱。
 
@@ -86,7 +86,7 @@ Use social media to conduct surveys or polls. Conduct customer interviews with f
 
 现在他待办事项清单上的下一个任务是制定一个商业计划，问题是：萨米以前从未制定过商业计划。
 
-再次，他请AI给他提出问题，以便他可以使他的商业计划更加有效和有用。
+再次，他请 AI 给他提出问题，以便他可以使他的商业计划更加有效和有用。
 
 #### 提示 - 商业计划：
 
@@ -102,7 +102,7 @@ To develop a business plan for your app, here are some key questions that you sh
 What is the market opportunity for FamilyGram? Who is your target audience, and what are their needs? What is the competitive landscape? Who are your competitors, and what are their strengths and weaknesses? What is your unique value proposition? What sets FamilyGram apart from other photo-sharing apps, and how does it solve your target audience's problems? What is your pricing strategy? How much will you charge for subscriptions, and how does this compare to other photo-sharing apps? What is your marketing strategy? How will you promote FamilyGram to your target audience, and what channels will you use to reach them? What is your sales strategy? How will you acquire new subscribers, and what will your customer acquisition cost be? What is your operational plan? How will you manage the day-to-day operations of the business, and what resources will you need? What is your financial plan? How much revenue do you project to generate, and what are your expenses? What are your key performance indicators (KPIs), and how will you measure success? What are the risks and challenges that you anticipate, and how will you mitigate them? By answering these questions, you can develop a comprehensive business plan that will guide your app's development, marketing, and growth.
 ```
 
-现在萨米有了问题，而且他已经从市场调研中得到了许多答案，他可以回答这些问题，然后要求ChatGPT提供一个商业计划。
+现在萨米有了问题，而且他已经从市场调研中得到了许多答案，他可以回答这些问题，然后要求 ChatGPT 提供一个商业计划。
 
 好的，现在萨米需要回答这些问题：
 
@@ -112,7 +112,7 @@ What is the market opportunity for FamilyGram? Who is your target audience, and 
 
 **你的竞争对手是谁，你的应用程序的市场机会是什么？**
 
-*竞争对手是Instagram和Facebook，他们的弱点是隐私不能得到保证，第三方可以看到成员发布的帖子。FamilyGram致力于隐私，并且只会存储和与预期受众分享图片，并使用高度安全的方法保证隐私。*
+*竞争对手是 Instagram 和 Facebook，他们的弱点是隐私不能得到保证，第三方可以看到成员发布的帖子。FamilyGram 致力于隐私，并且只会存储和与预期受众分享图片，并使用高度安全的方法保证隐私。*
 
 **你的独特价值主张是什么？**
 
@@ -120,7 +120,7 @@ What is the market opportunity for FamilyGram? Who is your target audience, and 
 
 **你的定价策略是什么？**
 
-*定价将为每年订阅5美元。这将用于使应用程序独立，无需向订阅者出售客户信息，也将用于维护运行所需的计算资源。*
+*定价将为每年订阅 5 美元。这将用于使应用程序独立，无需向订阅者出售客户信息，也将用于维护运行所需的计算资源。*
 
 **你的营销策略是什么？**
 
@@ -128,7 +128,7 @@ What is the market opportunity for FamilyGram? Who is your target audience, and 
 
 **你的销售策略是什么？**
 
-*最初，将通过推荐获得客户，客户获取将通过口碑传播，后来将有现有客户的促销推荐，目标客户将获得20%的折扣，推荐客户将获得10%的奖金。*
+*最初，将通过推荐获得客户，客户获取将通过口碑传播，后来将有现有客户的促销推荐，目标客户将获得 20%的折扣，推荐客户将获得 10%的奖金。*
 
 **你的运营计划是什么，你将需要什么资源？**
 
@@ -158,9 +158,9 @@ What is the market opportunity for FamilyGram? Who is your target audience, and 
 
 ### 制定商业计划
 
-回答了所有问题后，现在我们可以向ChatGPT提供我们的答案，并告诉它为我们提供一个商业计划。
+回答了所有问题后，现在我们可以向 ChatGPT 提供我们的答案，并告诉它为我们提供一个商业计划。
 
-由于我们向ChatGPT提供了所有问题的答案，这将是一个很长的提示
+由于我们向 ChatGPT 提供了所有问题的答案，这将是一个很长的提示
 
 #### 提示 - 商业计划开发：
 
@@ -382,7 +382,7 @@ You should be able to save this as a CSV file and then import it into Excel or a
 
 在 Excel 中，调整列宽后，应该看起来像这样：
 
-![](images/image-11.png)
+![](img/image-11.png)
 
 在 MS Excel 中的显示方式
 

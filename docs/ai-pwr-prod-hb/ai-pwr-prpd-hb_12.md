@@ -24,7 +24,7 @@
 
 ## 准备工作
 
-![](images/image-27.png)
+![](img/image-27.png)
 
 准备工作 - 由 Midjourney AI 生成的图像
 
@@ -50,7 +50,7 @@ Toyota Prius Eco - A hybrid vehicle that uses regenerative braking system and ac
 
 ## 孵化
 
-![](images/image-28.png)
+![](img/image-28.png)
 
 孵化 - 由 Midjourney AI 生成的图像
 
@@ -72,17 +72,17 @@ There are several ways that car manufacturers and consumers can continue to impr
 Improve engine technology: Car manufacturers can continue to improve internal combustion engines by using turbocharging, direct fuel injection, and other advanced technologies to improve fuel efficiency. Increase use of hybrid and electric powertrains: Hybrid and electric vehicles are already some of the most fuel-efficient cars on the market, but car manufacturers can continue to improve these technologies and make them more affordable for consumers. Reduce weight: By using lightweight materials like aluminum, carbon fiber, and high-strength steel, car manufacturers can reduce the weight of cars, which can lead to improved fuel efficiency. Improve aerodynamics: Cars with lower wind resistance require less power to maintain speed, which can improve fuel efficiency. Car manufacturers can use wind tunnel testing and computer simulations to optimize the aerodynamics of their vehicles. Increase use of alternative fuels: Biofuels, hydrogen fuel cells, and other alternative fuels can reduce the amount of petroleum-based fuels that cars consume, which can improve fuel efficiency and reduce emissions. Improve driving habits: Consumers can improve fuel efficiency by adopting more efficient driving habits, such as reducing speed, avoiding rapid acceleration and braking, and maintaining proper tire pressure. Implement government policies: Governments can implement policies that encourage the development and adoption of more fuel-efficient vehicles, such as tax incentives, fuel efficiency standards, and investments in research and development. In conclusion, there are several ways that car manufacturers and consumers can continue to improve fuel efficiency in cars, including improving engine technology, increasing the use of hybrid and electric powertrains, reducing weight, improving aerodynamics, increasing the use of alternative fuels, improving driving habits, and implementing government policies.
 ```
 
-艾哈迈德在通勤途中、洗澡时甚至午餐休息时经常会心不在焉。当他在不同的想法和概念之间建立心理联系时，他意识到他的想法与行业一致，正如ChatGPT所建议的那样。这一认识使他考虑到两种可能性：改进现有解决方案或探索全新的解决方案。此外，艾哈迈德发现他一直在研究的新材料可以用来制造既轻便又耐用的小部件，潜在地降低燃油消耗。
+艾哈迈德在通勤途中、洗澡时甚至午餐休息时经常会心不在焉。当他在不同的想法和概念之间建立心理联系时，他意识到他的想法与行业一致，正如 ChatGPT 所建议的那样。这一认识使他考虑到两种可能性：改进现有解决方案或探索全新的解决方案。此外，艾哈迈德发现他一直在研究的新材料可以用来制造既轻便又耐用的小部件，潜在地降低燃油消耗。
 
 ## 洞察
 
-![](images/image-29.png)
+![](img/image-29.png)
 
-洞察 - 由Midjourney AI生成的图像
+洞察 - 由 Midjourney AI 生成的图像
 
 洞察：一天，当艾哈迈德在进行完全不同的项目时，他突然有了一个“啊哈！”的时刻。他意识到他可以使用某种类型的聚合物来创建一个中空结构，可以填充一种减少摩擦并提高燃油效率的气体。他冲到白板前开始勾画设计，对这个想法感到兴奋和激动。
 
-艾哈迈德正在正确的道路上，但想知道在哪里可以利用它来改善燃油消耗。他向ChatGPT提出提示。
+艾哈迈德正在正确的道路上，但想知道在哪里可以利用它来改善燃油消耗。他向 ChatGPT 提出提示。
 
 #### 提示 - 最大摩擦：
 
@@ -98,9 +98,9 @@ The most friction in a car that wastes energy and increases fuel consumption is 
 
 ## 评估
 
-![](images/image-30.png)
+![](img/image-30.png)
 
-评估 - 由Midjourney AI生成的图像
+评估 - 由 Midjourney AI 生成的图像
 
 评估：艾哈迈德退后一步，开始更加批判地评估这个想法。
 
@@ -139,13 +139,13 @@ It's worth noting that other parts of the car, such as the brakes and tires, can
 
 ## 实施
 
-![](images/image-31.png)
+![](img/image-31.png)
 
-实施 - 由Midjourney AI生成的图像
+实施 - 由 Midjourney AI 生成的图像
 
 实施：艾哈迈德花了接下来的几个月时间研究小部件的原型，完善设计并测试不同的材料和制造技术。
 
-尽管艾哈迈德有许多好主意，但在发明世界中还缺乏经验，因此他向ChatGPT寻求关于追求自己想法最有效方法的建议。
+尽管艾哈迈德有许多好主意，但在发明世界中还缺乏经验，因此他向 ChatGPT 寻求关于追求自己想法最有效方法的建议。
 
 #### 提示 - 需要计划：
 

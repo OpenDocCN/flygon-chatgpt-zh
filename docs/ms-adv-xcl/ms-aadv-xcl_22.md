@@ -1,10 +1,10 @@
-# [第21章VBA中的调试和错误处理](contents.xhtml#ch21a)
+# 第二十一章 VBA 中的调试和错误处理
 
-[介绍](contents.xhtml#sc2_316a)
+介绍
 
-在本章中，我们将探讨在Visual Basic for Applications（VBA）中调试和错误处理的重要概念。调试是识别和解决VBA代码中的运行时错误和逻辑错误的过程。错误处理涉及实施策略来处理和管理在代码执行过程中发生的错误。通过理解这些概念并利用适当的技术，我们可以创建更健壮和可靠的VBA宏。
+在本章中，我们将探讨在 Visual Basic for Applications（VBA）中调试和错误处理的重要概念。调试是识别和解决 VBA 代码中的运行时错误和逻辑错误的过程。错误处理涉及实施策略来处理和管理在代码执行过程中发生的错误。通过理解这些概念并利用适当的技术，我们可以创建更健壮和可靠的 VBA 宏。
 
-[结构](contents.xhtml#sc2_317a)
+结构
 
 在本章中，我们将讨论以下主题：
 
@@ -16,21 +16,21 @@
 
 +   调试宏
 
-[目标](contents.xhtml#sc2_318a)
+目标
 
-通过本章，读者将了解有关错误、错误处理和错误编号的内容，这些内容与调试一起在VBA中至关重要。
+通过本章，读者将了解有关错误、错误处理和错误编号的内容，这些内容与调试一起在 VBA 中至关重要。
 
-[错误](contents.xhtml#sc2_319a)
+错误
 
 如果语句失败，将生成一个错误。有三种类型的错误：
 
 +   逻辑：当宏没有给出预期结果时。这些错误可以通过改变逻辑和试错方法来处理
 
-+   技术：当运行时出现任何语句失败时。使用On Error语句来处理这些错误。
++   技术：当运行时出现任何语句失败时。使用 On Error 语句来处理这些错误。
 
-+   语法：这些包括拼写错误的关键字、括号不匹配以及各种其他错误。Excel会标记您的语法错误，直到它们被纠正之前，您无法执行您的代码。
++   语法：这些包括拼写错误的关键字、括号不匹配以及各种其他错误。Excel 会标记您的语法错误，直到它们被纠正之前，您无法执行您的代码。
 
-[错误处理](contents.xhtml#sc2_320a)
+错误处理
 
 处理错误有三种方式：
 
@@ -46,22 +46,22 @@
 
     +   On Error GoTo 0
 
-注意：错误处理例程不是一个子过程或函数过程。它是由一行标签或行号标记的代码部分。如果不使用On Error语句，任何发生的运行时错误都是致命的；也就是说，会显示错误消息并停止执行。
+注意：错误处理例程不是一个子过程或函数过程。它是由一行标签或行号标记的代码部分。如果不使用 On Error 语句，任何发生的运行时错误都是致命的；也就是说，会显示错误消息并停止执行。
 
-[场景 28](contents.xhtml#sc3_321a)
+场景 28
 
-打开[场景 22](ch19.xhtml#sc3_291)。如果数据库工作表不存在，将会生成一个错误。修改代码以处理此错误，也就是说，你的程序应该在数据库工作表不存在时添加一个新的工作表。
+打开场景 22。如果数据库工作表不存在，将会生成一个错误。修改代码以处理此错误，也就是说，你的程序应该在数据库工作表不存在时添加一个新的工作表。
 
-注意：使用On Error GoTo line / label
+注意：使用 On Error GoTo line / label
 
-[解决方案](contents.xhtml#sc4_322a)
+解决方案
 
 | Sub Error_handling1()On Error GoTo err_handlerDim EmpCode As Integer, next_row As IntegerDim EmpName As StringDim doj As DateDim Salary As CurrencyWorksheets("database").SelectRange("a65536").SelectSelection.End(xlUp).Selectnext_row = ActiveCell.Row + 1DoEmpCode = InputBox("输入员工代码")EmpName = InputBox("输入员工姓名")doj = InputBox("输入入职日期 mm/dd/yy")Salary = InputBox("输入员工薪水")Cells(next_row , 1).Value = EmpCodeCells(next_row , 2).Value = EmpNameCells(next_row , 3).Value = Format(doj, "MMM DD YYYY")Cells(next_row , 4).Value = Salarynext_row =next_row + 1Loop While (MsgBox("是否继续?", vbOKCancel) = vbOK)MsgBox "谢谢"Exit Suberr_handler: Worksheets.AddActiveSheet.name ="database"Range("a1").Value = "员工代码"Range("b1").Value = "员工姓名"Range("c1").Value = "入职日期"Range("d1").Value = "薪水"Resume NextEnd Sub |
 | --- |
 
-[错误编号](contents.xhtml#sc2_323a)
+错误编号
 
-每个运行时错误都有一个编号。如果您知道编号，可以通过编号捕获错误。例如，请参考以下[表 21.1](#tab21-1)：
+每个运行时错误都有一个编号。如果您知道编号，可以通过编号捕获错误。例如，请参考以下表 21.1：
 
 | 错误编号 | 描述 |
 | --- | --- |
@@ -77,20 +77,20 @@
 | Sub Show_Error():Dim ErrorNumber   For ErrorNumber = 61 To 64 ' 循环值为 61 – 64。       Msgbox Error(ErrorNumber)   Next ErrorNumberEnd Sub |
 | --- |
 
-[场景 29](contents.xhtml#sc3_324a)
+场景 29
 
-打开[场景 28](#sc3_321)。如果留空输入框，您的宏将生成一个错误。按照以下方式修改代码（使用 On error resume next）
+打开场景 28。如果留空输入框，您的宏将生成一个错误。按照以下方式修改代码（使用 On error resume next）
 
-| Sub Error_handling2()Dim EmpCode As Integer, next_row As IntegerDim EmpName As StringDim doj As DateDim Salary As Currency' 如果有任何错误，应继续下一行On Error resume NextWorksheets("database").SelectRange("a65536").SelectSelection.End(xlUp).Select next_row= ActiveCell.Row + 1DoEmpCode = InputBox("输入员工代码")EmpName = InputBox("输入员工姓名")doj = InputBox("输入入职日期 mm/dd/yy")Salary = InputBox("输入员工薪水")Cells(next_row , 1).Value = EmpCode Cells(next_row , 2).Value = EmpNameCells(next_row , 3).Value = Format(doj, "MMM DD YYYY")Cells(next_row , 4).Value = Salary next_row =next_row + 1Loop While (MsgBox("是否继续?", vbOKCancel) = vbOK) MsgBox "谢谢"End Sub |
+| Sub Error_handling2()Dim EmpCode As Integer, next_row As IntegerDim EmpName As StringDim doj As DateDim Salary As Currency' 如果有任何错误，应继续下一行 On Error resume NextWorksheets("database").SelectRange("a65536").SelectSelection.End(xlUp).Select next_row= ActiveCell.Row + 1DoEmpCode = InputBox("输入员工代码")EmpName = InputBox("输入员工姓名")doj = InputBox("输入入职日期 mm/dd/yy")Salary = InputBox("输入员工薪水")Cells(next_row , 1).Value = EmpCode Cells(next_row , 2).Value = EmpNameCells(next_row , 3).Value = Format(doj, "MMM DD YYYY")Cells(next_row , 4).Value = Salary next_row =next_row + 1Loop While (MsgBox("是否继续?", vbOKCancel) = vbOK) MsgBox "谢谢"End Sub |
 | --- |
 
-[调试宏](contents.xhtml#sc2_325a)
+调试宏
 
 调试是找到和纠正运行时错误和逻辑错误的过程。按 F8 逐行执行代码。
 
-调试工具栏可在以下[图 21.1](#fig21-1)中看到：
+调试工具栏可在以下图 21.1 中看到：
 
-![](images/Figure_21.1.png)
+![](img/Figure_21.1.png)
 
 图 21.1: 调试工具栏
 
@@ -124,11 +124,11 @@
 
 这里有一些提示，将帮助您将错误最小化：
 
-+   使用Option Explicit：这将强制您为每个使用的变量定义数据类型。这将避免常见的拼写变量名错误。
++   使用 Option Explicit：这将强制您为每个使用的变量定义数据类型。这将避免常见的拼写变量名错误。
 
-+   使用缩进格式化您的代码：如果您有几个嵌套的For...Next循环，例如，一致的缩进将使跟踪它们变得更加容易。
++   使用缩进格式化您的代码：如果您有几个嵌套的 For...Next 循环，例如，一致的缩进将使跟踪它们变得更加容易。
 
-+   谨慎使用On Error Resume Next：此语句导致Excel忽略任何错误并继续。在某些情况下，使用此语句将导致Excel忽略不应被忽略的错误。您可能会有错误而自己都没有意识到。
++   谨慎使用 On Error Resume Next：此语句导致 Excel 忽略任何错误并继续。在某些情况下，使用此语句将导致 Excel 忽略不应被忽略的错误。您可能会有错误而自己都没有意识到。
 
 +   使用注释：养成写注释的习惯，这样当您重新访问您的代码时，您可以理解逻辑。添加一些描述您逻辑的注释可以节省您大量的时间。
 
@@ -136,19 +136,19 @@
 
 +   使用宏录制器识别属性和方法：如果您不记得属性或方法的名称或语法，录制一个宏并查看录制的代码。
 
-+   考虑采用不同的方法：如果您在使特定例程正常工作方面遇到困难，您可能希望放弃这个想法，尝试完全不同的方法。在大多数情况下，Excel提供了几种实现相同目标的替代方法。
++   考虑采用不同的方法：如果您在使特定例程正常工作方面遇到困难，您可能希望放弃这个想法，尝试完全不同的方法。在大多数情况下，Excel 提供了几种实现相同目标的替代方法。
 
 +   使用调试工具栏
 
-[结论](contents.xhtml#sc2_326a)
+结论
 
-调试和错误处理是VBA开发人员必备的技能。通过有效地管理错误和调试我们的代码，我们可以创建更健壮和无错误的宏。应用最佳实践，如适当的代码格式化、注释和使用可用的调试工具，将帮助我们高效地预防和解决错误。
+调试和错误处理是 VBA 开发人员必备的技能。通过有效地管理错误和调试我们的代码，我们可以创建更健壮和无错误的宏。应用最佳实践，如适当的代码格式化、注释和使用可用的调试工具，将帮助我们高效地预防和解决错误。
 
-[练习](contents.xhtml#sc2_327a)
+练习
 
-1.  打开一个新的Excel工作簿并导航到Visual Basic编辑器（VBE）。
+1.  打开一个新的 Excel 工作簿并导航到 Visual Basic 编辑器（VBE）。
 
-1.  在VBE中，插入一个新模块来编写VBA代码。
+1.  在 VBE 中，插入一个新模块来编写 VBA 代码。
 
 1.  创建一个名为“CalculateStatistics”的子例程，不带任何参数。
 
@@ -174,10 +174,10 @@
 
 1.  通过使用不同的输入执行宏来测试它，并验证它有效地处理错误并提供准确的结果。
 
-加入我们书籍的Discord空间
+加入我们书籍的 Discord 空间
 
-加入书籍的Discord Workspace，获取最新更新、优惠、全球技术动态、新发布和与作者的会话：
+加入书籍的 Discord Workspace，获取最新更新、优惠、全球技术动态、新发布和与作者的会话：
 
-**[https://discord.bpbonline.com](https://discord.bpbonline.com)**
+**[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](images/fm1.png)
+![](img/fm1.png)

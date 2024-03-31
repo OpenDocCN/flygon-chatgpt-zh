@@ -2,7 +2,7 @@
 
 ### 作者：Jamal Faisal Almutawa
 
-![](images/image-1.png)
+![](img/image-1.png)
 
 人工智能超能力
 
@@ -20,7 +20,7 @@
 
 #### 封面设计由 Midjourney AI 生成
 
-#### 第一版：2023年3月
+#### 第一版：2023 年 3 月
 
 BISAC 类别：计算机 / 人工智能 - COM051110
 

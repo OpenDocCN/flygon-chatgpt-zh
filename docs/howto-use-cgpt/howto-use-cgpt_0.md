@@ -1,6 +1,6 @@
-![image-JCETL9S6.jpg](../Images/image-JCETL9S6.jpg)
+![image-JCETL9S6.jpg](img/image-JCETL9S6.jpg)
 
-如何使用Chatgpt：使用Chatgpt；在线赚钱从未如此简单
+如何使用 Chatgpt：使用 Chatgpt；在线赚钱从未如此简单
 
 Moses Omojola
 
@@ -10,14 +10,14 @@ Moses Omojola
 
 目录
 
-[总体介绍](chapter0001.html)
+总体介绍
 
-[1\. ChatGPT简介](chapter0002.html)
+1\. ChatGPT 简介
 
-[2\. 开始使用ChatGPT](chapter0003.html)
+2\. 开始使用 ChatGPT
 
-[3\. 利用ChatGPT进行在线业务](chapter0004.html)
+3\. 利用 ChatGPT 进行在线业务
 
-[4\. 最大化ChatGPT的赚钱潜力](chapter0005.html)
+4\. 最大化 ChatGPT 的赚钱潜力
 
-[5\. ChatGPT成功的高级技巧和诀窍](chapter0006.html)
+5\. ChatGPT 成功的高级技巧和诀窍

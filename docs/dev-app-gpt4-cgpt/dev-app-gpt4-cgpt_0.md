@@ -44,13 +44,13 @@
 
 可下载补充材料（代码示例、练习等）[*https://oreil.ly/DevAppsGPT_GitHub*](https://oreil.ly/DevAppsGPT_GitHub)。
 
-如果您有技术问题或在使用代码示例时遇到问题，请发送电子邮件至[*support@oreilly.com*](mailto:support@oreilly.com)。
+如果您有技术问题或在使用代码示例时遇到问题，请发送电子邮件至*support@oreilly.com*。
 
 本书旨在帮助您完成工作。一般来说，如果本书提供了示例代码，您可以在您的程序和文档中使用它。除非您复制了代码的大部分内容，否则无需征得我们的许可。例如，编写一个使用本书中几个代码块的程序不需要许可。出售或分发 O'Reilly 图书中的示例需要许可。引用本书并引用示例代码来回答问题不需要许可。将本书中大量的示例代码整合到产品文档中需要许可。
 
 我们感谢，但通常不要求署名。署名通常包括标题、作者、出版商和 ISBN。例如：“*使用 GPT-4 和 ChatGPT 开发应用程序*，作者 Olivier Caelen 和 Marie-Alice Blete（O'Reilly）。版权所有 2023 年 Olivier Caelen 和 Marie-Alice Blete，978-1-098-15248-2。”
 
-如果您觉得您使用的代码示例超出了合理使用范围或上述给出的许可，请随时与我们联系[*permissions@oreilly.com*](mailto:permissions@oreilly.com)。
+如果您觉得您使用的代码示例超出了合理使用范围或上述给出的许可，请随时与我们联系*permissions@oreilly.com*。
 
 # O'Reilly 在线学习
 
@@ -76,7 +76,7 @@
 
 +   707-829-0104（传真）
 
-+   [*support@oreilly.com*](mailto:support@oreilly.com)
++   *support@oreilly.com*
 
 +   [*https://www.oreilly.com/about/contact.html*](https://www.oreilly.com/about/contact.html)
 

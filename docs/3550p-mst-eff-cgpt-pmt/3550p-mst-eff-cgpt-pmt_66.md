@@ -1,11 +1,11 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 67.客户服务和满意度提示
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
 1.  写下五种让我的[行业]业务客户满意的好方法。
 
@@ -45,7 +45,7 @@
 
 1.  提供面对客户相关挑战的企业危机沟通指导。包括透明度策略、及时沟通和在挑战情况下重建信任的策略。
 
-1.  就通过关键绩效指标（KPI）衡量和改善客户满意度提供建议。包括客户满意度调查、NPS分数和基于客户反馈的可行步骤的建议。
+1.  就通过关键绩效指标（KPI）衡量和改善客户满意度提供建议。包括客户满意度调查、NPS 分数和基于客户反馈的可行步骤的建议。
 
 1.  "为电子商务行业的初创公司制定一个促进积极关系并鼓励重复业务的客户服务策略。"
 
@@ -69,4 +69,4 @@
 
 随时根据您行业的具体特征自定义这些提示。
 
-![C:\Users\hitech\Downloads\Untitled design(7).png](d2d_images/image006.png)
+![C:\Users\hitech\Downloads\Untitled design(7).png](img/image006.png)

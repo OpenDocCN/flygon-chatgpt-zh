@@ -1,14 +1,14 @@
-### 第11章
+### 第十一章
 
-## 使用提示的样本AI艺术
+## 使用提示的样本 AI 艺术
 
-这里是Leonardo应用程序内部设计的一些提示示例以及生成的艺术作品。所有提示都是从应用程序中现有模型修改而来。
+这里是 Leonardo 应用程序内部设计的一些提示示例以及生成的艺术作品。所有提示都是从应用程序中现有模型修改而来。
 
-例1：这本书的封面
+例 1：这本书的封面
 
-提示（从现有的Leonardo模型修改）：
+提示（从现有的 Leonardo 模型修改）：
 
-艺术家在PC上创作艺术的特写视图，T恤艺术，T恤设计，衬衫印刷，溅墨艺术，风格，肖像海报，Adobe Illustrator，矢量，3D插图，抽象艺术，印刷插图，深色背景，充满活力的颜色，非常丰富多彩，时尚多彩的渐变，居中，正面视图，超详细，照片级渲染，8k高清，聚焦，超详细，头部羽毛，错综复杂的溅墨艺术三色趋势Artstation虚幻引擎5体积光，哥特，高分辨率，特写，环境光，尼康15mm f/1.8G，由GIlSam-paio octane渲染描绘创新和真相，8k，魅力，错综复杂的环境，花边，污点，华丽，虚幻引擎，奇幻
+艺术家在 PC 上创作艺术的特写视图，T 恤艺术，T 恤设计，衬衫印刷，溅墨艺术，风格，肖像海报，Adobe Illustrator，矢量，3D 插图，抽象艺术，印刷插图，深色背景，充满活力的颜色，非常丰富多彩，时尚多彩的渐变，居中，正面视图，超详细，照片级渲染，8k 高清，聚焦，超详细，头部羽毛，错综复杂的溅墨艺术三色趋势 Artstation 虚幻引擎 5 体积光，哥特，高分辨率，特写，环境光，尼康 15mm f/1.8G，由 GIlSam-paio octane 渲染描绘创新和真相，8k，魅力，错综复杂的环境，花边，污点，华丽，虚幻引擎，奇幻
 
 负面提示
 
@@ -16,27 +16,27 @@
 
 结果
 
-![在Leonardo.ai中创建的AI艺术](../Images/image-IOL54T2U.jpg)
+![在 Leonardo.ai 中创建的 AI 艺术](img/image-IOL54T2U.jpg)
 
-在Leonardo.ai中创建的AI艺术
+在 Leonardo.ai 中创建的 AI 艺术
 
-例2：快乐的女孩（使用Leonardo的“Finetuned Model”）
+例 2：快乐的女孩（使用 Leonardo 的“Finetuned Model”）
 
 提示
 
-快乐的人享受生活。使用特写和聚焦。索尼α7 III相机，35mm镜头，F 1.2
+快乐的人享受生活。使用特写和聚焦。索尼α7 III 相机，35mm 镜头，F 1.2
 
 结果
 
-![image-placeholder](../Images/image-FP5FKMU6.jpg)
+![image-placeholder](img/image-FP5FKMU6.jpg)
 
-使用Leonardo中的“Finetuned Model”创建的“快乐女孩”。
+使用 Leonardo 中的“Finetuned Model”创建的“快乐女孩”。
 
-例3：黑豹（使用Leonardo的“Finetuned Model”）
+例 3：黑豹（使用 Leonardo 的“Finetuned Model”）
 
 提示
 
-(杰作)，现实主义，黑豹超级英雄面向观众，风格化，生物发光，8倍生活大小，8k分辨率，接近完美，动态，高度详细，概念艺术，肌肉超级英雄，直接面向观众，使其身体对称平衡，令人惊叹的肌肉超级英雄外观，详细，
+(杰作)，现实主义，黑豹超级英雄面向观众，风格化，生物发光，8 倍生活大小，8k 分辨率，接近完美，动态，高度详细，概念艺术，肌肉超级英雄，直接面向观众，使其身体对称平衡，令人惊叹的肌肉超级英雄外观，详细，
 
 负面提示
 
@@ -44,6 +44,6 @@
 
 结果
 
-![image-placeholder](../Images/image-ABIPBQFG.jpg)
+![image-placeholder](img/image-ABIPBQFG.jpg)
 
 "黑豹"是由莱昂纳多的"Finetuned Model"创建的

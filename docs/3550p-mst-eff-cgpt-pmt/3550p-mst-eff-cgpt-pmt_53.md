@@ -1,11 +1,11 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 54.商业规划和战略提示
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
 1.  就科技行业初创公司的有效营销策略提供见解。
 
@@ -13,7 +13,7 @@
 
 1.  为推出基于订阅的在线服务制定一份逐步业务计划。包括关键里程碑、营销方法和财务预测。
 
-1.  为考虑扩展至电子商务的小型零售企业进行SWOT分析。突出影响其成功的关键因素。
+1.  为考虑扩展至电子商务的小型零售企业进行 SWOT 分析。突出影响其成功的关键因素。
 
 1.  为医疗保健初创公司提供数字营销策略的建议。考虑符合行业法规和患者参与。
 
@@ -29,7 +29,7 @@
 
 1.  为[行业]初创公司起草一份业务计划。
 
-1.  为[行业]内的业务理念制定SWOT分析。
+1.  为[行业]内的业务理念制定 SWOT 分析。
 
 1.  制定针对[行业]业务的营销计划。
 

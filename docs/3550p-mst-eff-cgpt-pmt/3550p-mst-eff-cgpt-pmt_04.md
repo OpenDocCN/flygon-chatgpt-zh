@@ -1,13 +1,13 @@
-| ![image](d2d_images/chapter_title_corner_decoration_left.png) |  | ![image](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![image](d2d_images/chapter_title_above.png)
+![image](img/chapter_title_above.png)
 
 # 5.品牌定位
 
-![image](d2d_images/chapter_title_below.png)
+![image](img/chapter_title_below.png)
 
-![C:\Users\hitech\Downloads\content creator(3).png](d2d_images/image008.png)
+![C:\Users\hitech\Downloads\content creator(3).png](img/image008.png)
 
 这里有一些提示来生成品牌内容，每个提示都有内容的简要描述和特点：
 
@@ -127,7 +127,7 @@
 
 1.  您能提出方法来增强我们的品牌定位，打造一个与目标受众联系紧密且使我们与竞争对手区别开来的独特品牌身份吗？
 
-1.  生成包含我们品牌个性和价值主张的10个口号/标语概念，旨在让目标受众能记住并产生共鸣。
+1.  生成包含我们品牌个性和价值主张的 10 个口号/标语概念，旨在让目标受众能记住并产生共鸣。
 
 1.  您会推荐哪些策略来区别我的品牌与竞争对手，并制定独特的价值主张？
 

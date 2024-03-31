@@ -1,13 +1,13 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 45.一致的品牌形象
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
-这里有50个提示，旨在帮助您收集关于在您的行业中建立和经营新业务时如何在所有数字渠道上保持一致品牌形象的见解。请将"[您的行业]"替换为与您的业务相关的实际行业：
+这里有 50 个提示，旨在帮助您收集关于在您的行业中建立和经营新业务时如何在所有数字渠道上保持一致品牌形象的见解。请将"[您的行业]"替换为与您的业务相关的实际行业：
 
 1.  "提供建立一个可以在所有数字渠道上一致传达的品牌身份的策略在[您的行业]中。"
 
@@ -97,7 +97,7 @@
 
 1.  "分析在行业活动和会议期间保持一致品牌存在的成功策略，以及在[您的行业]数字营销中。"
 
-1.  "探讨A/B测试的相关性，以优化数字营销元素，同时确保变化与[您的行业]整体品牌形象一致。"
+1.  "探讨 A/B 测试的相关性，以优化数字营销元素，同时确保变化与[您的行业]整体品牌形象一致。"
 
 1.  "提供调整电子邮件营销活动以保持品牌在[您的行业]各客户群体中语调、设计和信息传递一致性的技巧。"
 

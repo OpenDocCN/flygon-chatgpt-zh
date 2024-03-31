@@ -1,11 +1,11 @@
-| ![图片](d2d_images/chapter_title_corner_decoration_left.png) |  | ![图片](d2d_images/chapter_title_corner_decoration_right.png) |
+| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
 | --- | --- | --- |
 
-![图片](d2d_images/chapter_title_above.png)
+![图片](img/chapter_title_above.png)
 
 # 61.法律和合规提示
 
-![图片](d2d_images/chapter_title_below.png)
+![图片](img/chapter_title_below.png)
 
 1.  解释开始[行业]企业需要遵循的主要规则。
 
@@ -31,7 +31,7 @@
 
 1.  提供关于为扩展全球业务的企业导航国际贸易法规的见解。涉及海关合规、出口管制和可能影响公司的贸易协定。
 
-1.  就处理客户数据的电子商务平台的数据保护和隐私合规措施提供建议。包括符合GDPR的建议、数据加密和用户同意机制。
+1.  就处理客户数据的电子商务平台的数据保护和隐私合规措施提供建议。包括符合 GDPR 的建议、数据加密和用户同意机制。
 
 1.  分享为跨国公司制定有效反腐败和贿赂政策的策略。考虑培训计划、尽职调查程序和报告机制以确保合规性。
 
@@ -41,7 +41,7 @@
 
 1.  提供关于制造业企业遵守环境法规的见解。包括废物管理、排放控制和可持续实践的建议，以满足环境标准。
 
-1.  提供关于为公司的数字产品和服务制定无障碍合规策略的指导。包括网络无障碍、ADA合规和创建包容性用户体验的考虑因素。
+1.  提供关于为公司的数字产品和服务制定无障碍合规策略的指导。包括网络无障碍、ADA 合规和创建包容性用户体验的考虑因素。
 
 1.  就不断发展的初创企业的就业法合规性提供建议。包括招聘实践、雇佣合同和维持公平合规工作场所的策略的指导。
 

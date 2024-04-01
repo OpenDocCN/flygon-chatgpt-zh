@@ -1,3 +1,4 @@
++   [在课堂中使用 ChatGPT 的 80 个方式](docs/80ways-cgpt-clsrm/README.md)
 +   [ChatGPT 商业金矿](docs/cgpt-biz-gdmn/README.md)
 +   [ChatGPT 商业提示词攻略书](docs/cgpt-biz-pmp-pb/README.md)
 +   [ChatGPT 淘金潮](docs/cgpt-gdrs/README.md)

@@ -1,4 +1,4 @@
-+   [人工智能的真实盈利：掌握 ChatGPT-4 用于业务营销](ai-rl-prft_0.md)
++   [人工智能的真实盈利：掌握 ChatGPT-4 用于业务营销](README.md)
 +   [第一部分：理解基础知识](ai-rl-prft_1.md)
 +   [第二部分：用于商业营销的 ChatGPT-4](ai-rl-prft_2.md)
 +   [第三部分：高级技术和策略](ai-rl-prft_3.md)

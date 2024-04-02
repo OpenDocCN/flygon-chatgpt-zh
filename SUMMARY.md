@@ -1,3 +1,4 @@
++   [由 ChatGPT 打造的 100 个令人惊叹的电子邮件模板](docs/100-mnd-blw-eml-tmpl-cgpt/README.md)
 +   [在课堂中使用 ChatGPT 的 80 个方式](docs/80ways-cgpt-clsrm/README.md)
 +   [ChatGPT 商业金矿](docs/cgpt-biz-gdmn/README.md)
 +   [ChatGPT 商业提示词攻略书](docs/cgpt-biz-pmp-pb/README.md)

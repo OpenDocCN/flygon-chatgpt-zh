@@ -1,17 +1,16 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # VIII. 法律与道德考虑
 
-![image](img/chapter_title_below.png)
+
 
 版权和知识产权问题
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 了解版权法和内容所有权
 
@@ -25,7 +24,7 @@
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 确保遵守法律要求
 
@@ -39,13 +38,13 @@
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 围绕 AI 生成内容的道德关切
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 解决 ChatGPT-4 输出中的偏见
 
@@ -59,7 +58,7 @@
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 促进透明度和负责任的 AI 使用
 

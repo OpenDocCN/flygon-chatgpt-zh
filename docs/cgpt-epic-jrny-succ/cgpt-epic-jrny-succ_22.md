@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 最佳 ChatGPT 插件
 
-![image](img/chapter_title_below.png)
+
 
 ChatGPT 插件是可以与 ChatGPT 模型集成以增强其功能并为特定任务或应用程序定制的附加功能或功能。这些插件通过提供专门功能和领域特定知识来扩展 ChatGPT 的基本对话能力。
 
@@ -19,7 +18,7 @@ Fiscal Note
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 Instacart
 
@@ -51,7 +50,7 @@ Speak
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 Wolfram
 

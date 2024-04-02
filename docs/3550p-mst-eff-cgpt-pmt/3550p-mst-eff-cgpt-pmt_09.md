@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 10.转化率优化
 
-![image](img/chapter_title_below.png)
+
 
 1.  你能制定一个增强我的网站用户体验并提高关键行动（如注册、下载和购买）转化率的 CRO 策略吗？
 

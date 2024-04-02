@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 49.负面反馈管理提示
 
-![image](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您收集有关在您行业中建立和运营新业务时处理数字营销中的负面评论或评价的见解。请将"[Your Industry]"替换为与您业务相关的实际行业： 
 

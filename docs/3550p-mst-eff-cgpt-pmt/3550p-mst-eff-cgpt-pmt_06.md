@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 7.客户获取
 
-![图片](img/chapter_title_below.png)
+
 
 1.  我可以采用什么策略来准确找到我最重要的客户群，并提高针对他们的营销活动的精准度？
 

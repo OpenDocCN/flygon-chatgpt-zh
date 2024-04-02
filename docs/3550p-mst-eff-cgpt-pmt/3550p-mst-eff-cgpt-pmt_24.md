@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 25.Google Ads
 
-![image](img/chapter_title_below.png)
+
 
 1.  如何降低每次点击的成本并提高我的 Google Ads 相关性得分？
 

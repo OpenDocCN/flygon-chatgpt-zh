@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 第五章：ChatGPT 的未来
 
-![image](img/chapter_title_below.png)
+
 
 作为当今最先进的自然语言处理工具之一，ChatGPT 有望对各行各业产生重大影响。然而，该技术仍处于早期阶段，还有很大的发展空间。在本章中，我们将探讨 ChatGPT 未来可能发展的一些方向。
 

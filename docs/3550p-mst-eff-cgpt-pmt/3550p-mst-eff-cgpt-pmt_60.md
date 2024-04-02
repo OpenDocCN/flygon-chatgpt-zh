@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 61.法律和合规提示
 
-![图片](img/chapter_title_below.png)
+
 
 1.  解释开始[行业]企业需要遵循的主要规则。
 

@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 训练数据与理解
 
-![image](img/chapter_title_below.png)
+
 
 训练数据指用来教授模型的文本语料库。由于 ChatGPT 接触了大量的文本数据，它学会了语言内部的结构和模式。
 

@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 对社会和劳动力的影响
 
-![图片](img/chapter_title_below.png)
+
 
 像 ChatGPT 这样的 AI 语言模型对社会、经济和就业市场具有深远影响。虽然它们提供了创新和效率的机会，但也带来了需要解决的挑战。以下是对更广泛影响的审视：
 

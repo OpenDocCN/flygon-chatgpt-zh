@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 其他考虑事项
 
-![图片](img/chapter_title_below.png)
+
 
 ![包含文本、电子设备、电路的图片  自动生成描述](img/image005.jpg)
 
@@ -609,7 +608,7 @@ return this.shuffleService.shuffle(deck);
 
 *
 
-![image](img/scene_break.png)
+
 
 * @param {number} numberOfCards - number - 要生成的卡片数量
 

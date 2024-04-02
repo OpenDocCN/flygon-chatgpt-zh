@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 53.市场研究提示
 
-![image](img/chapter_title_below.png)
+
 
 1.  探索为新电子商务平台确定和定义目标受众的方法。考虑人口统计分析、心理画像和用户行为研究。
 

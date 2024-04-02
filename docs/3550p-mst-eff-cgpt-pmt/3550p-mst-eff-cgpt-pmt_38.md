@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 39.数据隐私和合规提示
 
-![image](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您收集关于遵守数据保护法规、确保用户隐私以及在您的行业设置和成功运营新业务时保持信任和法律合规性的见解。请将"[您的行业]"替换为您业务相关的实际行业：
 

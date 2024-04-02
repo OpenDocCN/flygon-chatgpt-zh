@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 43.技术整合提示
 
-![image](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您收集见解，以便在您的行业中建立和运营新业务时，实施和整合各种营销工具和技术进行数字营销。请将“[Your Industry]”替换为与您的业务相关的实际行业：
 

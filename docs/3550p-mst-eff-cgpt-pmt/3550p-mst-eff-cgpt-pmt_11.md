@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 12.影响力营销提示
 
-![图片](img/chapter_title_below.png)
+
 
 ![C:\Users\hitech\Downloads\content creator(6).png](img/image000.png)
 

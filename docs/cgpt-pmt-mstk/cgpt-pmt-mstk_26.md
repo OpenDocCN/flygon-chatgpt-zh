@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 与 SEO 任务相关的错误
 
-![image](img/chapter_title_below.png)
+
 
 这里是用户在提示常规 ChatGPT 进行与 SEO 相关任务时所犯的 20 个错误：
 

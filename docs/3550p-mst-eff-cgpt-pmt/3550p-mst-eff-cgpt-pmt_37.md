@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 38.平台选择提示
 
-![image](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您收集关于根据您的目标受众和数字营销业务目标选择正确数字平台的见解，以便在您的行业中建立和运营新业务的背景下使用。请将"[您的行业]"替换为与您业务相关的实际行业：
 

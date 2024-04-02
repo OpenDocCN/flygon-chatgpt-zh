@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 33.脸书营销
 
-![image](img/chapter_title_below.png)
+
 
 1.  写下我们有机护肤品的所有优点，用图片制作一个 Facebook 广告。
 

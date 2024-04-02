@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # DIY ChatGPT 项目
 
-![image](img/chapter_title_below.png)
+
 
 聊天机器人开发：通过将 ChatGPT 集成到 Web 或移动应用程序中，创建一个简单的聊天机器人。在 Web 开发中使用 Flask 或 Django 等框架，或在移动应用程序开发中使用 Flutter 等工具。提供一个对话界面，让用户与 ChatGPT 互动，并根据特定用例定制聊天机器人的行为和响应。
 

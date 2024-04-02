@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # Transformer 架构
 
-![image](img/chapter_title_below.png)
+
 
 Transformer 架构是专为自然语言处理而设计的神经网络，包括文本生成和语言翻译。
 

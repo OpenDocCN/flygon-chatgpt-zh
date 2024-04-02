@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 46.社交媒体管理提示
 
-![image](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您收集关于在您行业中设置和运行新业务时有效管理社交媒体平台进行数字营销的见解。请将"[你的行业]"替换为与您业务相关的实际行业：
 

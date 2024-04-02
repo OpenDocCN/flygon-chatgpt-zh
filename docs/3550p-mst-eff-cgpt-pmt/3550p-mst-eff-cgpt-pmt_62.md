@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 63.风险管理提示
 
-![image](img/chapter_title_below.png)
+
 
 (识别可能对您的企业造成风险并制定减轻风险的策略)
 

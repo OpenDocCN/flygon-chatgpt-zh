@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 在软件开发中使用 AI
 
-![image](img/chapter_title_below.png)
+
 
 ![AI 程序员查看网页代码-来自 Pixabay.com 的图片](img/image002.jpg)
 

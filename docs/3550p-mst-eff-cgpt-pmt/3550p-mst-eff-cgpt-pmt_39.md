@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 40.预算限制提示
 
-![图片](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您在设立和经营新业务时聚集见解，明智分配预算并最大化数字营销工作的影响。请将"[你的行业]"替换为与您业务相关的实际行业：
 

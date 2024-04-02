@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 42.衡量投资回报率提示
 
-![图片](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您收集关于在您的行业中建立清晰指标并有效衡量数字营销投资回报率（ROI）的见解，当您在您的行业中建立和运营新业务时。请将"[您的行业]"替换为与您业务相关的实际行业：
 

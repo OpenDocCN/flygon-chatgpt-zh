@@ -1,11 +1,10 @@
-| ![图像](img/chapter_title_corner_decoration_left.png) |  | ![图像](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图像](img/chapter_title_above.png)
+
+
 
 # 标记化和标记
 
-![图像](img/chapter_title_below.png)
+
 
 标记化是将文本分解为称为标记的更小单位的过程，通常是单词或子单词。这些标记作为神经网络的输入。
 

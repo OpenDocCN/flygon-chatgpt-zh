@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 开始使用 ChatGPT？
 
-![image](img/chapter_title_below.png)
+
 
 首先在您偏好的搜索引擎上搜索“OpenAI ChatGPT”。点击名为“介绍 ChatGPT”的链接。
 

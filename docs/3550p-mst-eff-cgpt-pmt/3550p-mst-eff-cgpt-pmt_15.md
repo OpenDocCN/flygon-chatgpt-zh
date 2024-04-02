@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 16.本地化提示
 
-![image](img/chapter_title_below.png)
+
 
 1.  能否制定一项国际营销策略，将我的品牌和信息针对不同的文化和语言进行定制？
 

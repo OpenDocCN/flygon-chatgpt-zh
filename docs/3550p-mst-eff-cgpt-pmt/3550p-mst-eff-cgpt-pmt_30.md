@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 31.推特营销
 
-![图片](img/chapter_title_below.png)
+
 
 1.  "精心制作一份简洁的内容，比如推特或 Instagram 标题，来推广我们即将到来的[活动/网络研讨会/产品发布会]，确保包含明确的行动号召。"
 

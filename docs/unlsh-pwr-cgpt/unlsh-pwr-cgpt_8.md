@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # IX. 结论
 
-![image](img/chapter_title_below.png)
+
 
 ChatGPT-4 收入生成机会回顾
 
@@ -23,7 +22,7 @@ ChatGPT-4 收入生成机会回顾
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 强调适应技术进步的重要性
 
@@ -31,7 +30,7 @@ ChatGPT-4 收入生成机会回顾
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 鼓励在各个领域探索和尝试 ChatGPT-4
 

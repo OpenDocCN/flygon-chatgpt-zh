@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 学习 RxJS
 
-![image](img/chapter_title_below.png)
+
 
 ![人体的抽象图像，二进制数和行星](img/image015.jpg)
 

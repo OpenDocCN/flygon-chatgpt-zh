@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # ChatGPT
 
-![image](img/chapter_title_below.png)
+
 
 ChatGPT 代表 Chat Generative Pre-Trained Transformer。
 
@@ -149,7 +148,7 @@ GPT 模型菜单
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 ![图片](img/image015.png)
 

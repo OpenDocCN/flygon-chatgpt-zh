@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 关系
 
-![image](img/chapter_title_below.png)
+
 
 这 9 个因素如何影响您的 ChatGPT 输出？
 

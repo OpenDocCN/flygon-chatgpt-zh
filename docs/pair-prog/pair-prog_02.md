@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # Shell 脚本命令
 
-![图片](img/chapter_title_below.png)
+
 
 ![一个坐在电脑前的人 由机器自动生成的描述，中等置信度](img/image014.jpg)
 

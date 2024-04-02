@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 常见算法
 
-![图片](img/chapter_title_below.png)
+
 
 ![一个屏幕的特写 由低置信度自动生成的描述](img/image003.jpg)
 
@@ -487,13 +486,13 @@ printTable(demoPuzzles);
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 ID  Size  Solution
 
 ——————————-
 
-![image](img/scene_break.png)
+
 
 88  4  abetbabeebontent
 

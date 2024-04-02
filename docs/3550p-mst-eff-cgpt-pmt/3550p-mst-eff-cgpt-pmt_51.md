@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 52.目标市场、竞争对手和行业趋势发现提示
 
-![image](img/chapter_title_below.png)
+
 
 1.  "你能帮我了解[你的行业]目标市场的人口统计和偏好吗？"
 

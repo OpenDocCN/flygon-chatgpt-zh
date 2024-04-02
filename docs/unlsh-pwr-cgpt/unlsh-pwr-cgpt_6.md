@@ -1,17 +1,16 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # VII. 建立基于 ChatGPT-4 的创业公司
 
-![image](img/chapter_title_below.png)
+
 
 识别 ChatGPT-4 的利基应用
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 市场调研与分析
 
@@ -27,7 +26,7 @@
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 ChatGPT-4 的创新用例
 
@@ -41,13 +40,13 @@ ChatGPT-4 的创新用例
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 制定商业计划
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 定义产品/服务提供
 
@@ -61,7 +60,7 @@ ChatGPT-4 的创新用例
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 金融规划和资金策略
 

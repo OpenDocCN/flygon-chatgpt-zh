@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 用户故事和案例研究
 
-![image](img/chapter_title_below.png)
+
 
 OpenAI 和 COVID-19 研究：在 COVID-19 大流行期间，OpenAI 发布了 ChatGPT 的研究预览，以支持研究人员努力寻找解决方案并更好地了解病毒。通过与 ChatGPT 等 AI 语言模型合作，研究人员能够探索广泛的与 COVID-19 相关的主题，提出复杂问题，并更有效地获取相关的科学文献，有助于推动研究和应对大流行病的工作。
 

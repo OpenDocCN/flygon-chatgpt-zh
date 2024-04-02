@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 第二章：ChatGPT 的工作原理
 
-![image](img/chapter_title_below.png)
+
 
 ChatGPT 是一种先进的人工智能语言模型，可以根据用户输入生成类似人类的文本响应。在本章中，我们将研究 ChatGPT 架构、训练过程和推理算法的技术方面。
 

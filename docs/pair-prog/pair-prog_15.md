@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 与 GPT-4 一起使用 ChatGPT
 
-![image](img/chapter_title_below.png)
+
 
 在这本书印刷出版的一两天内，GPT-4 发布了。我觉得看看 GPT-4 是否比 GPT-3.5 做得更好会很有趣，所以我粘贴了书中的每个 ChatGPT 提示，并要求它使用新模型重新评估答案。
 

@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 67.客户服务和满意度提示
 
-![图片](img/chapter_title_below.png)
+
 
 1.  写下五种让我的[行业]业务客户满意的好方法。
 

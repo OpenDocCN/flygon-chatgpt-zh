@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 48.客户关系管理（CRM）提示
 
-![image](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您通过有效的 CRM（客户关系管理）策略在设立和经营新业务时收集见解，建立和维护客户关系。请将"[您的行业]"替换为与您业务相关的实际行业：
 

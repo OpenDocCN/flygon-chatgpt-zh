@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 黑匣子
 
-![图片](img/chapter_title_below.png)
+
 
 "黑匣子"一词指的是解释复杂的神经网络（如 ChatGPT）得出结论的困难。
 

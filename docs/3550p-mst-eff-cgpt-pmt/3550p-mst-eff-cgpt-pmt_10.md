@@ -1,11 +1,10 @@
-| ![图像](img/chapter_title_corner_decoration_left.png) |  | ![图像](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图像](img/chapter_title_above.png)
+
+
 
 # 11. 写作提示
 
-![图像](img/chapter_title_below.png)
+
 
 ![C:\Users\hitech\Downloads\content creator(5).png](img/image001.png)
 

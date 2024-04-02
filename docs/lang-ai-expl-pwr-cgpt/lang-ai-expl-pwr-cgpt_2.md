@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 第三章：ChatGPT 的能力
 
-![图片](img/chapter_title_below.png)
+
 
 ChatGPT 是一个强大的语言模型，可以根据用户输入生成类似人类的文本。在本章中，我们将探讨 ChatGPT 的一些具体能力，包括其执行各种语言任务的能力以及其创造力和灵活性。
 

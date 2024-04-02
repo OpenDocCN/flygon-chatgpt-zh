@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 45.一致的品牌形象
 
-![图片](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您收集关于在您的行业中建立和经营新业务时如何在所有数字渠道上保持一致品牌形象的见解。请将"[您的行业]"替换为与您的业务相关的实际行业：
 

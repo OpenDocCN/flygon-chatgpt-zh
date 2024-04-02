@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 利用 ChatGPT 赚钱的最佳方法
 
-![image](img/chapter_title_below.png)
+
 
 以下是您可以潜在利用 ChatGPT 能力支持收入的 150 种方式
 

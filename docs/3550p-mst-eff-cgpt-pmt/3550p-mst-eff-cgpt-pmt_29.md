@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 30.Instagram 营销
 
-![图片](img/chapter_title_below.png)
+
 
 1.  "我正在寻找一个有效突出我的[产品/服务]的独特特点和优势的 Instagram 故事概念，以创意和迷人的方式向我的[理想客户画像]展示。"
 

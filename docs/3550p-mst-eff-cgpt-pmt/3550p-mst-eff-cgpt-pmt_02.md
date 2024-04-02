@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 3.电子邮件营销提示
 
-![image](img/chapter_title_below.png)
+
 
 ![C:\Users\hitech\Downloads\content creator(1).png](img/image003.png)
 
@@ -23,7 +22,7 @@
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 1.  写一封关于[新订阅者专享]的电子邮件："以[新订阅者专享]的风格欢迎新订阅者，这是一个引人注目的模板，包含特别的欢迎优惠、个性化推荐和号召行动，鼓励立即参与。"
 
@@ -145,7 +144,7 @@
 
 ——————————————————————————————————————————
 
-![图片](img/scene_break.png)
+
 
 1.  撰写一封邮件，致[重新参与活动]，以诱人的优惠和有力的理由针对不活跃的订阅者。
 

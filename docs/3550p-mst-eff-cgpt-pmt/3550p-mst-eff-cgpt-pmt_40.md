@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 41.适应算法变化提示
 
-![image](img/chapter_title_below.png)
+
 
 以下是 50 个提示，旨在帮助您收集关于数字平台频繁更新算法及其对数字营销可见性的影响的见解，当您在您的行业中建立和运营新业务时。请将"[您的行业]"替换为与您的业务相关的实际行业：
 

@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 37.内容质量提示
 
-![image](img/chapter_title_below.png)
+
 
 以下是 50 个提示，旨在帮助您获取关于如何持续创造引人入胜和相关内容以吸引目标受众，并在您的行业特定背景下建立品牌信誉的见解，以便您在开展新业务时使用。请将"[您的行业]"替换为与您业务相关的实际行业：
 
@@ -37,7 +36,7 @@
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 1.  "分析在[您的行业]数字营销中移动友好内容的影响。我如何确保我的内容对各种设备上的用户都是可访问且引人入胜的？"
 

@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 54.商业规划和战略提示
 
-![图片](img/chapter_title_below.png)
+
 
 1.  就科技行业初创公司的有效营销策略提供见解。
 

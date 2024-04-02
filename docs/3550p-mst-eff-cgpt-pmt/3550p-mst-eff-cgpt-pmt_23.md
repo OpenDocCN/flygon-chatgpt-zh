@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 #  24.网站用户体验
 
-![image](img/chapter_title_below.png)
+
 
 1.  "考虑我们的目标市场，请提出增强我们网站用户体验的改进建议。"
 

@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 我们所涵盖的内容
 
-![image](img/chapter_title_below.png)
+
 
 我们踏上了一段穿越 ChatGPT 多方面领域的旅程，审视其核心组成部分、局限性和潜在解决方案。
 

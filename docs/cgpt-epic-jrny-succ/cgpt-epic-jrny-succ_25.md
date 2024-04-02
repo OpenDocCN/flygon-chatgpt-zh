@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # ChatGPT 的未来
 
-![image](img/chapter_title_below.png)
+
 
 ChatGPT 目前的状态代表了人工智能语言模型发展的重要里程碑。通过其参与类人对话的能力，ChatGPT 展示了其潜力，并吸引了全球研究人员、开发人员和用户的兴趣。然而，像 ChatGPT 这样的人工智能语言模型的旅程远未结束，未来将带来更多的进展和完善的可能性。
 

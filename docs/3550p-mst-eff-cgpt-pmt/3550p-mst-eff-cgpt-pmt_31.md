@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 32. Youtube 视频创意
 
-![image](img/chapter_title_below.png)
+
 
 1.  "我需要一个创意展示我[产品/服务]独特特点和优势的 YouTube 视频创意，说服我的[理想客户画像]购买。"
 

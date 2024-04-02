@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 人类与 AI 的协作
 
-![image](img/chapter_title_below.png)
+
 
 人类与 AI 协作的概念突显了人类和 ChatGPT 等 AI 系统之间的协同作用，共同努力实现共同目标并增强人类能力。这种合作在各个领域带来了独特的机会。以下是探讨 ChatGPT 如何与人类合作的内容：
 

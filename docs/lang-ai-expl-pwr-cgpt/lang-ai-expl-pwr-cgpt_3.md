@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 第四章：伦理考虑
 
-![image](img/chapter_title_below.png)
+
 
 作为一款强大的语言模型，ChatGPT 有潜力影响从商业到娱乐再到教育等各个领域。然而，这种潜力伴随着对 ChatGPT 使用的伦理影响负责的责任。在本章中，我们将探讨在使用 ChatGPT 时必须考虑的一些关键伦理考虑。
 

@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 自然语言处理（NLP）
 
-![image](img/chapter_title_below.png)
+
 
 NLP 是人工智能（AI）领域的一个研究方向，它专注于计算机和人类语言之间的交互。
 

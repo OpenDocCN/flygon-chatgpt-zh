@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 我最喜欢的 15 个提示
 
-![image](img/chapter_title_below.png)
+
 
 我已经和 ChatGPT 聊了一段时间了。我正在途中学到一些东西。
 

@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 负责任使用指南
 
-![image](img/chapter_title_below.png)
+
 
 负责任和道德地使用 ChatGPT，像任何 AI 技术一样，对于确保积极结果和避免潜在伤害至关重要。以下是一些个人和组织的指南和最佳实践：
 

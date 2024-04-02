@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 51. 寻找商业创意的提示
 
-![图片](img/chapter_title_below.png)
+
 
 1.  生成利用人工智能、区块链或增强现实等尖端技术的商业创意。考虑这些技术可以彻底改变现有实践的行业。
 

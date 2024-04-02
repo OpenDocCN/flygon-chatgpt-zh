@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # ChatGPT 概述 - ChatGPT 是什么，其能力以及在各个领域的潜在应用
 
-![图片](img/chapter_title_below.png)
+
 
 ChatGPT 是一个巧妙的人工智能（AI）语言模型，旨在使您与技术的互动更直观和类似人类。由 OpenAI 开发，ChatGPT 采用最先进的深度学习技术来理解和回应您的自然语言查询。
 

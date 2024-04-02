@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 47.SEO 优化提示
 
-![image](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您收集见解，确保您的网站在设置和运行新业务时针对搜索引擎进行优化。请将"[您的行业]"替换为与您业务相关的实际行业：
 

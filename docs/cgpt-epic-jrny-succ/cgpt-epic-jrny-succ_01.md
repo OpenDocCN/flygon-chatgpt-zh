@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 什么是 ChatGPT 提示？
 
-![图片](img/chapter_title_below.png)
+
 
 ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对话或生成回应。它作为 AI 系统理解上下文并生成相关回复的起点。提示可以是一个问题、一个陈述，或者任何设定对话方向的文本。提示的质量和清晰度显著影响 ChatGPT 生成的输出。
 

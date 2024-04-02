@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 揭示对话式人工智能在 100 多种实际场景中的多功能性
 
-![image](img/chapter_title_below.png)
+
 
 ChatGPT 具有进行类似人类对话的能力，可以在许多行业中有多样化的应用。以下是 ChatGPT 如何被利用的一些示例：
 

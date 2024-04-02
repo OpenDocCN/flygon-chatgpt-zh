@@ -16,7 +16,7 @@ ChatGPT 的一个关键特点是其理解上下文并生成相关和信息丰富
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 ChatGPT 的几种基本用途：
 

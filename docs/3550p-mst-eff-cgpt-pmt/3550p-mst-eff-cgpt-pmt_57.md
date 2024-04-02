@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 58.技术和基础设施
 
-![image](img/chapter_title_below.png)
+
 
 1.  "从零开始建立小型企业的技术基础设施的建议？"
 

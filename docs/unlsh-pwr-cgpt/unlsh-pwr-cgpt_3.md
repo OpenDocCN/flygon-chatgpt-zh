@@ -1,17 +1,16 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # IV. 定制聊天机器人开发
 
-![图片](img/chapter_title_below.png)
+
 
 客户支持聊天机器人
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 使用 ChatGPT-4 进行客户支持的好处
 
@@ -29,7 +28,7 @@
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 开发和实施聊天机器人
 
@@ -47,13 +46,13 @@
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 虚拟助手
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 设计和编程个性化虚拟助手
 
@@ -71,7 +70,7 @@
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 辨识潜在客户和营销策略
 

@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 28.受众建设内容
 
-![图片](img/chapter_title_below.png)
+
 
 这里是 AI 网站生成受众建设内容的提示，每个提示都附有内容的简要描述和特点：
 

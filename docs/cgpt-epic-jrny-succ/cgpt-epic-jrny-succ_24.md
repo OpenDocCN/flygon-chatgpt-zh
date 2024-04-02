@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 提升人类创造力
 
-![image](img/chapter_title_below.png)
+
 
 ChatGPT 确实可以成为增强人类创造力的宝贵工具，涵盖写作、艺术、音乐和设计等各个领域。以下是 ChatGPT 如何促进和增强创造过程
 

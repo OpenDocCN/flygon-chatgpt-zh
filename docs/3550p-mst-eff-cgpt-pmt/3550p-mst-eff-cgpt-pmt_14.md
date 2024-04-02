@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 潜在客户生成
 
-![图片](img/chapter_title_below.png)
+
 
 1.  您能否制定一个旨在吸引我们[产品/服务]新客户的潜在客户生成活动？
 

@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 2.Top of Form 内容营销提示
 
-![image](img/chapter_title_below.png)
+
 
 ![C:\Users\hitech\Downloads\content creator.png](img/image014.png)
 

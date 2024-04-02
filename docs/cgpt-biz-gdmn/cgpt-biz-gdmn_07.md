@@ -138,7 +138,7 @@
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 结论
 

@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 让我们构建一个应用程序！
 
-![image](img/chapter_title_below.png)
+
 
 ![image](img/image011.jpg)
 

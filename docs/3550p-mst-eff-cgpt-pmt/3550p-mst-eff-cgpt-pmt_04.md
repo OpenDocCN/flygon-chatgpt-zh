@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 5.品牌定位
 
-![image](img/chapter_title_below.png)
+
 
 ![C:\Users\hitech\Downloads\content creator(3).png](img/image008.png)
 

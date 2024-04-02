@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # I. 介绍
 
-![图片](img/chapter_title_below.png)
+
 
 在当今快速发展的数字领域中，人工智能（AI）已经成为无数行业的重要组成部分，彻底改变了我们生活和工作的方式。其中最具变革性的 AI 技术之一是由 OpenAI 开发的 ChatGPT-4 模型。作为一系列强大语言模型的最新版本，ChatGPT-4 展示了在理解和生成类似人类文本方面的卓越能力，使其成为各种应用的宝贵工具。
 
@@ -17,13 +16,13 @@
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 ChatGPT-4 简要概述
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 特点与能力
 
@@ -39,7 +38,7 @@ CHATGPT-4 是由 OpenAI 开发的先进自然语言处理（NLP）模型。它�
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 在当今数字经济中的重要性
 
@@ -47,13 +46,13 @@ CHATGPT-4 是由 OpenAI 开发的先进自然语言处理（NLP）模型。它�
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 ChatGPT-4 在收入生成方面的潜力
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 可能的收入来源概述
 
@@ -71,7 +70,7 @@ CHATGPT-4 的多样能力为生成收入提供了许多途径。一些最有前�
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 使用 ChatGPT-4 的好处
 

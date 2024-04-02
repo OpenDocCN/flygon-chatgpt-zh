@@ -146,7 +146,7 @@ D. 这里有一些提示，你可以给 ChatGPT 生成想法，用于政治戏�
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 E. 这里有一些提示，你可以给 ChatGPT 生成想法，用于创作恐怖小说：
 

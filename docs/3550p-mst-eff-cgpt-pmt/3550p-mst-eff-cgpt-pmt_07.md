@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 8.客户保留
 
-![image](img/chapter_title_below.png)
+
 
 1.  如何利用电子邮件营销来维护当前客户群的忠诚度，并鼓励重复购买？
 

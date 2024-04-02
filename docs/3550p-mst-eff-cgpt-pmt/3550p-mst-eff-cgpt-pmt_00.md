@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 1.数字营销提示
 
-![图片](img/chapter_title_below.png)
+
 
 ![图片](img/image010.png)
 

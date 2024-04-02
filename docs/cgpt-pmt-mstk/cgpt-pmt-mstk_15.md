@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 用新的理解提示
 
-![图片](img/chapter_title_below.png)
+
 
 这里是您在制定提示时如何将这些因素联系在一起的分解：
 

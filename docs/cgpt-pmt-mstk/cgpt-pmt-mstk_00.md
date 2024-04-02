@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 接下来的页面
 
-![图片](img/chapter_title_below.png)
+
 
 准备踏上一段激动人心的旅程，了解 ChatGPT 可能会犯的错误。 附有解决方案和示例。 这些与常见用法书写、搜索引擎优化和文案写作有关。
 

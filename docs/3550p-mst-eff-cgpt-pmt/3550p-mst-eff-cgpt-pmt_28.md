@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 29.社交媒体营销
 
-![image](img/chapter_title_below.png)
+
 
 ![C:\Users\hitech\Downloads\content creator(9).png](img/image011.png)
 

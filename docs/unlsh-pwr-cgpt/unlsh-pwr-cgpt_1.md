@@ -1,17 +1,16 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # II. 理解 ChatGPT-4 及其特点
 
-![image](img/chapter_title_below.png)
+
 
 ChatGPT-4 的工作原理
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 训练过程
 
@@ -23,7 +22,7 @@ ChatGPT-4 的训练过程基于两步方法：预训练和微调。
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 与之前版本的主要区别
 
@@ -37,13 +36,13 @@ CHATGPT-4 是其前身 ChatGPT-3 的演进，并带来了几项改进和完善�
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 访问和使用 ChatGPT-4
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 API 访问
 
@@ -51,7 +50,7 @@ API 访问
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 定价与限制
 

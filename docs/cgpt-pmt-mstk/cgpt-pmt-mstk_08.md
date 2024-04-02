@@ -1,11 +1,10 @@
-| ![图像](img/chapter_title_corner_decoration_left.png) |  | ![图像](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图像](img/chapter_title_above.png)
+
+
 
 # 注意机制和自注意力
 
-![图像](img/chapter_title_below.png)
+
 
 注意机制在神经网络中帮助模型在生成输出时专注于输入的相关部分。
 

@@ -42,7 +42,7 @@
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 第 4 步：发展您的 ChatGPT 和电子邮件通讯技能
 

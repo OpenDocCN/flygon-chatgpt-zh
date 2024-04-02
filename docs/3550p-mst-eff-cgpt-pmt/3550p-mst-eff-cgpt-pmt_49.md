@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 50.建立新业务的基本提示
 
-![image](img/chapter_title_below.png)
+
 
 1.  开设新（您的企业）的完整步骤是什么？
 

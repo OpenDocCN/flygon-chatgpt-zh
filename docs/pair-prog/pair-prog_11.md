@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 单元测试
 
-![image](img/chapter_title_below.png)
+
 
 ![自动生成描述的夜空图片](img/image013.jpg)
 
@@ -445,7 +444,7 @@ httpMock.verify();
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 it('should be created', () => {
 

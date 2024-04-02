@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 20.推荐营销
 
-![image](img/chapter_title_below.png)
+
 
 1.  您能建立一个推荐营销计划，激励我的现有客户向他们的朋友和家人推荐我的[产品/服务]吗？
 

@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 13.关键词研究
 
-![image](img/chapter_title_below.png)
+
 
 1.  进行关键词研究和为特定关键词优化内容的最有效方法是什么？
 

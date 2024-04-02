@@ -1,11 +1,11 @@
 | ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |  |
 | --- | --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
 
 # 道德考虑
 
-![image](img/chapter_title_below.png)
+
 
 AI 语言模型如 ChatGPT 带来了巨大的潜力和能力，但也伴随着需要仔细考虑的道德影响和挑战。以下是一些关键方面：
 

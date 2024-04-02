@@ -1,13 +1,12 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 
 
 # 23.视频营销提示
 
-![image](img/chapter_title_below.png)
+
 
 1.  "请为一个强调我们的[产品/服务]优势的视频广告制作剧本，面向我们指定的观众。"
 

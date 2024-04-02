@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 不当内容
 
-![图片](img/chapter_title_below.png)
+
 
 尽管有内容过滤器和审查工作，ChatGPT 仍可能生成具有冒犯性、政治偏见或其他不当内容。
 

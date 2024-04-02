@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 35.目标受众识别提示
 
-![图片](img/chapter_title_below.png)
+
 
 1.  "为一个以[指定你的目标受众，例如年轻专业人士、父母、科技爱好者]为目标的新业务提供全面的数字营销策略。包括渠道、内容类型和参与策略。"
 

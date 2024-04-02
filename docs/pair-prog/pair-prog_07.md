@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 正则表达式
 
-![图片](img/chapter_title_below.png)
+
 
 ![在黑板上指导学生的教师](img/image018.jpg)
 

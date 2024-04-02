@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 62.客户获取提示
 
-![image](img/chapter_title_below.png)
+
 
 1.  "概述一个全面的在线营销策略，有效地接触和吸引我们的目标受众。"
 

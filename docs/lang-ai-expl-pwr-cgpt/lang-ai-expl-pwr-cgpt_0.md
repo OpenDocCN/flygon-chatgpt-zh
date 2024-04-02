@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 第一章：ChatGPT 简介
 
-![image](img/chapter_title_below.png)
+
 
 ChatGPT 是一种人工智能语言模型，具有处理和生成类似人类文本的能力。它是自然语言处理（NLP）和机器学习最新突破的产物，使其成为迄今为止最先进的语言模型之一。
 

@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 44.适应趋势提示
 
-![image](img/chapter_title_below.png)
+
 
 这里有 50 个提示，旨在帮助您收集关于了解行业趋势并在设置和运营新业务时将其适应为数字营销的见解。请将"[您的行业]"替换为与您业务相关的实际行业：
 

@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 神经网络的语义层
 
-![图片](img/chapter_title_below.png)
+
 
 语义层指的是神经网络中信息的分层结构。随着信息通过网络的层传递，它变得更加抽象和有意义。
 

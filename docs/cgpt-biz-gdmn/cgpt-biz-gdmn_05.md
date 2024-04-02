@@ -14,7 +14,7 @@ ChatGPT 是一种强大的语言翻译服务，利用最先进的人工智能技
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 什么是语言翻译服务？
 
@@ -68,7 +68,7 @@ ChatGPT 是一种强大的语言翻译服务，利用最先进的人工智能技
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 如何使用 ChatGPT 进行语言翻译
 

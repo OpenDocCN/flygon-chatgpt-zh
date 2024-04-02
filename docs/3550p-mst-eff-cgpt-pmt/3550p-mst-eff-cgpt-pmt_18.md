@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 19.产品描述
 
-![image](img/chapter_title_below.png)
+
 
 1.  制作[number]份产品描述，突出我们[产品/服务]的独特卖点，并旨在提升销售额。
 

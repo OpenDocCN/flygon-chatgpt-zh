@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 敏捷项目管理
 
-![image](img/chapter_title_below.png)
+
 
 ![image](img/image004.jpg)
 

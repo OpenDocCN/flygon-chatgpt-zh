@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 制定良好提示的艺术（附例子）
 
-![图片](img/chapter_title_below.png)
+
 
 制定良好提示的艺术在于制定清晰、具体和引人入胜的问题或陈述，有效地引导 AI 语言模型（如 ChatGPT）产生期望的输出。以下是掌握制定良好提示的技巧，以及示例：
 
@@ -19,7 +18,7 @@
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 例子和场景：在提示中包含例子或场景可以帮助模型理解真实世界的应用。
 

@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 引人注目的 LinkedIn 广告文案
 
-![图片](img/chapter_title_below.png)
+
 
 提示：“根据此登陆页内容，撰写五个引人注目的 LinkedIn 广告文案”
 

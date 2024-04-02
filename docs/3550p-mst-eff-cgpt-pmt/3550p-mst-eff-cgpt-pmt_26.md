@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 27. Youtube 广告脚本
 
-![图片](img/chapter_title_below.png)
+
 
 1.  "我需要一个向我的[理想客户画像]介绍我的[产品/服务]的 YouTube 广告脚本，敦促他们通过引人入胜的行动号召和视觉采取[期望的行动]。"
 

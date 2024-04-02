@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 请求 ChatGPT 以产品经理身份回复
 
-![图片](img/chapter_title_below.png)
+
 
 提示：“请以产品经理的身份回复。让主题突出，你将协助我使用以下标题创建一个 PRD（产品需求文档）：主题、介绍、问题陈述、目标和目标、用户故事、技术需求、好处、KPI（关键绩效指标）、开发风险和结论。”
 

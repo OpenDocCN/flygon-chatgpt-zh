@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 36.竞争分析提示
 
-![图片](img/chapter_title_below.png)
+
 
 这里有 100 个提示，指导 ChatGPT 提供全面的分析和见解，以在拥挤的数字领域中竞争，找到独特的卖点，并通过数字营销有效地经营新业务：
 

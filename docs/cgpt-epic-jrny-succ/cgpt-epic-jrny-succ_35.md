@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 100 个热门 ChatGPT 提示
 
-![image](img/chapter_title_below.png)
+
 
 (带有它们的用例)
 
@@ -75,7 +74,7 @@ ChatGPT 可以生成有趣且不太为人知的各种主题事实，作为一个
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 "创作一首诗/故事/歌曲，关于[主题]"
 
@@ -111,7 +110,7 @@ ChatGPT 可以生成有趣且不太为人知的各种主题事实，作为一个
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 "[任务/活动]的步骤是什么？"
 
@@ -275,7 +274,7 @@ ChatGPT 可以生成有趣且不太为人知的各种主题事实，作为一个
 
 ––––––––
 
-![image](img/scene_break.png)
+
 
 "告诉我有关运动对心理健康的好处。"
 
@@ -375,7 +374,7 @@ ChatGPT 可以生成有趣且不太为人知的各种主题事实，作为一个
 
 ––––––––
 
-![图片](img/scene_break.png)
+
 
 "告诉我冥想对情感幸福感的好处。"
 

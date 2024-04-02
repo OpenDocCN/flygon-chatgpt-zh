@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 与文案任务相关的错误
 
-![image](img/chapter_title_below.png)
+
 
 这里是用户在提示 ChatGPT 进行与文案相关任务时常犯的 20 个错误：
 

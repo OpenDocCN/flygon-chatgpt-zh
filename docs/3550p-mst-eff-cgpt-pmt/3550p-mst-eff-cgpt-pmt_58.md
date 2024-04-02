@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 59.生产力和时间管理提示
 
-![图片](img/chapter_title_below.png)
+
 
 1.  提供在远程工作环境中提高团队生产力的策略。考虑沟通工具、协作平台和时间跟踪方法。
 

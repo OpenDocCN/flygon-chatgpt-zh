@@ -1,11 +1,10 @@
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![image](img/chapter_title_above.png)
+
+
 
 # 66.供应链提示
 
-![image](img/chapter_title_below.png)
+
 
 (与供应商建立可靠关系，确保产品或服务的顺畅供应链)
 

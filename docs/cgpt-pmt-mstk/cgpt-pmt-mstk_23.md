@@ -1,11 +1,10 @@
-| ![图片](img/chapter_title_corner_decoration_left.png) |  | ![图片](img/chapter_title_corner_decoration_right.png) |
-| --- | --- | --- |
 
-![图片](img/chapter_title_above.png)
+
+
 
 # 您犯了这些错误吗？
 
-![图片](img/chapter_title_below.png)
+
 
 当使用 ChatGPT 时，您可能会无意中犯一些常见错误，这些错误可能会影响您的工作质量，最终会浪费宝贵的时间。
 

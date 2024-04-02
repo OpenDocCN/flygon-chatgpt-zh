@@ -1,5 +1,11 @@
 # 人工智能的真实盈利：掌握 ChatGPT-4 用于业务营销
 
+> 原文：[Artificial Intelligence, Real Profits](https://zh.annas-archive.org/md5/5a0e6f14e00791fba9cc6255f4d6e64a)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 作者：Bo Bennett 博士
 
 https://www.BoBennett.com

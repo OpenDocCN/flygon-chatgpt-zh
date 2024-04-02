@@ -2,6 +2,7 @@
 +   [超过 3550 个最有效的 ChatGPT 提示词](docs/3550p-mst-eff-cgpt-pmt/README.md)
 +   [超过 500 个 ChatGPT 顶级提示词](docs/500p-ult-cgpt-pmt/README.md)
 +   [在课堂中使用 ChatGPT 的 80 个方式](docs/80ways-cgpt-clsrm/README.md)
++   [人工智能驱动的生产力手册](docs/ai-pwr-prod-hb/README.md)
 +   [ChatGPT 商业金矿](docs/cgpt-biz-gdmn/README.md)
 +   [ChatGPT 商业提示词攻略书](docs/cgpt-biz-pmp-pb/README.md)
 +   [ChatGPT 淘金潮](docs/cgpt-gdrs/README.md)

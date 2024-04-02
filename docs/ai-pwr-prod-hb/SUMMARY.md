@@ -1,4 +1,4 @@
-+   [人工智能驱动的生产力手册](ai-pwr-prpd-hb_1.md)
++   [人工智能驱动的生产力手册](README.md)
 +   [品牌 AI](ai-pwr-prpd-hb_10.md)
 +   [用于编码的人工智能](ai-pwr-prpd-hb_11.md)
 +   [创意过程](ai-pwr-prpd-hb_12.md)

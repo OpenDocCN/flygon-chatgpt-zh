@@ -13,7 +13,7 @@
 +   [12.影响力营销提示](3550p-mst-eff-cgpt-pmt_11.md)
 +   [13.关键词研究](3550p-mst-eff-cgpt-pmt_12.md)
 +   [14.落地页优化提示](3550p-mst-eff-cgpt-pmt_13.md)
-+   [潜在客户生成](3550p-mst-eff-cgpt-pmt_14.md)
++   [15. 潜在客户生成](3550p-mst-eff-cgpt-pmt_14.md)
 +   [16.本地化提示](3550p-mst-eff-cgpt-pmt_15.md)
 +   [17.市场营销研究和分析](3550p-mst-eff-cgpt-pmt_16.md)
 +   [18.个性化营销](3550p-mst-eff-cgpt-pmt_17.md)

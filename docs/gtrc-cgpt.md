@@ -1,4 +1,4 @@
-# ChatGPT 盈利指南（一）
+# ChatGPT 盈利指南
 
 > 原文：[Get Rich With ChatGPT:: How To Make Money Online](https://annas-archive.org/md5/6488bf71b6eb001249d50fdef00921ac)
 > 

@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 之每月一万刀
 
+> 原文：[ChatGPT $10,000 Per month](https://annas-archive.org/md5/f5ba82209bd5eeab849c596f5c4c1bdd)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 ### 介绍

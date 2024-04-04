@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 写作完全指南
 
+> 原文：[Continue Please: a comprehensive guide to writing with ChatGPT](https://annas-archive.org/md5/8669f1911898e1e1958f2b4c3173b6c8)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 # 序言

@@ -1,5 +1,0 @@
-+   [第二章](cgpt-afl-mkt_0.md)
-+   [第三章](cgpt-afl-mkt_1.md)
-+   [第四章](cgpt-afl-mkt_2.md)
-+   [第五章](cgpt-afl-mkt_3.md)
-+   [第六章](cgpt-afl-mkt_4.md)

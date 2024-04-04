@@ -1,8 +1,0 @@
-+   [序言](cmp-gd-wrt-cgpt_0.md)
-+   [ChatGPT 简介](cmp-gd-wrt-cgpt_1.md)
-+   [对话艺术](cmp-gd-wrt-cgpt_2.md)
-+   [通过 ChatGPT 增强对话](cmp-gd-wrt-cgpt_3.md)
-+   [使用 ChatGPT 进行对话的高级技巧](cmp-gd-wrt-cgpt_4.md)
-+   [了解 ChatGPT 的限制和风险](cmp-gd-wrt-cgpt_5.md)
-+   [结论](cmp-gd-wrt-cgpt_6.md)
-+   [结语和展望](cmp-gd-wrt-cgpt_7.md)

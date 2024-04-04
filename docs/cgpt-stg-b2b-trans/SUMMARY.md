@@ -1,1 +1,0 @@
-+   [致谢](cgpt-stg-b2b-trans_09.md)

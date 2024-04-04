@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 之赚钱机密
 
+> 原文：[The secrets to earning with chatgpt](https://annas-archive.org/md5/c04324e282e11a6b0f912bd369c49d73)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 ## 书籍介绍：

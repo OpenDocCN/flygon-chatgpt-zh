@@ -1,4 +1,4 @@
-# ChatGPT 与生成式 AI 的崛起（一）
+# ChatGPT 与生成式 AI 的崛起
 
 > 原文：[Rise of Generative AI and ChatGPT](https://annas-archive.org/md5/ef12a5965cfd57118e949c1e1c16054e)
 > 

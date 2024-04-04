@@ -1,4 +1,4 @@
-# 面向企业的 ChatGPT 究极手册（一）
+# 面向企业的 ChatGPT 究极手册
 
 > 原文：[Ultimate ChatGPT Handbook for Enterprises](https://annas-archive.org/md5/c14c4c4627121325ad8f5b8397501d65)
 > 

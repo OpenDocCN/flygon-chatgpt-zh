@@ -1,5 +1,10 @@
-# （一）
+# 与 ChatGPT 对话
 
+> 原文：[Conversing With ChatGPT](https://annas-archive.org/md5/79fa3c57a12986ee98c36176381cadf4)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 ChatGPT ![](img/cnvs-cgpt-image-6a9y9dck.png)

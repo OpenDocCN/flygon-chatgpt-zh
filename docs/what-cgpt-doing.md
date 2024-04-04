@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 在做什么，为什么有效？
 
+> 原文：[What Is ChatGPT Doing ... and Why Does It Work?](https://annas-archive.org/md5/98cd48134f8636092e6d2b2e123f5008)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 # 序言

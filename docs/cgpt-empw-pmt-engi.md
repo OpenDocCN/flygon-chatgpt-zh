@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 之赋能提示词工程
 
+> 原文：[Chatgpt Empowers Your Prompt Engineering with AI Tools](https://annas-archive.org/md5/f8f7eda8589ef5f005b616498070953f)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 ![图片](img/cgpt-empw-pmt-engi-image5.png)

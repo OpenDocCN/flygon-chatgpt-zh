@@ -1,6 +1,10 @@
-# （一）
+# ChatGPT 与 OpenAI 的现代生成式 AI
 
-
+> 原文：[Modern Generative AI with ChatGPT and OpenAI Models](https://annas-archive.org/md5/851cf28325365592cee924e8f6fefb7a)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # 序言
 
@@ -80,7 +84,7 @@
 
 代码块设置如下：
 
-```
+```py
 query = st.text_area("Ask a question about the document")
 if query:
     docs = faiss_index.similarity_search(query, k=1)
@@ -91,7 +95,7 @@ if query:
 
 任何命令���输入或输出都将如下所示：
 
-```
+```py
 pip install --upgrade openai
 ```
 
@@ -100,49 +104,6 @@ pip install --upgrade openai
 提示或重要说明
 
 显示如此。
-
-# 联系我们
-
-我们始终欢迎读者的反馈意见。
-
-**一般反馈**：如果您对本书的任何方面有疑问，请通过电子邮件 customercare@packtpub.com 与我们联系，并在消息主题中提及书名。
-
-**勘误**：尽管我们已经尽最大努力确保内容的准确性，但错误确实会发生。如果您在本书中发现错误，我们将不胜感激您向我们报告。请访问[www.packtpub.com/support/errata](http://www.packtpub.com/support/errata)并填写表格。
-
-**盗版**：如果您在互联网上发现我们作品的任何形式的非法副本，我们将不胜感激您向我们提供位置地址或网站名称。请通过链接 copyright@packt.com 与我们联系。
-
-**如果您有兴趣成为作者**：如果您在某个专题上有专业知识，并且有兴趣撰写或为书籍做出贡献，请访问[authors.packtpub.com](http://authors.packtpub.com)。
-
-# 分享您的想法
-
-一旦您阅读了*使用 ChatGPT 和 OpenAI 模型进行现代生成式 AI*，我们很乐意听取您的想法！请[点击此处直接转到亚马逊评论页面](https://packt.link/r/1805123335)并分享您的反馈。
-
-您的评论对我们和技术社区至关重要，将帮助我们确保我们提供的是优质内容。
-
-# 下载这本书的免费 PDF 副本
-
-感谢购买本书！
-
-您喜欢随时随地阅读，但无法随身携带印刷书籍吗？您购买的电子书与您选择的设备不兼容吗？
-
-别担心，现在每本 Packt 书籍都附带一份无 DRM 保护的 PDF 版本，无需额外费用。
-
-随时随地，在任何设备上阅读。直接从您喜爱的技术书籍中搜索、复制和粘贴代码到您的应用程序中。
-
-福利不止于此，您还可以独家获得折扣、新闻简报和每天在您的收件箱中获取优质免费内容
-
-按照以下简单步骤获取这些福利：
-
-1.  扫描下方的二维码或访问以下链接
-
-![](img/mdn-genai-cgpt-oai-B19904_QR_Free_PDF.jpg)
-
-[`packt.link/free-ebook/9781805123330`](https://packt.link/free-ebook/9781805123330)
-
-1.  提交您的购买凭证
-
-1.  就是这样！我们将把免费的 PDF 和其他福利直接发送到您的电子邮件中
-
 
 # 第一部分：生成式人工智能和 GPT 模型的基础知识
 
@@ -532,7 +493,7 @@ DALL-E 最近升级到其新版本 DALL-E 2，于 2022 年 4 月宣布。
 
 下面是审查 API 的示例代码：
 
-```
+```py
 import os
 import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -543,7 +504,7 @@ openai.Moderation.create(
 
 其输出如下所示：
 
-```
+```py
 <OpenAIObject id=modr-6sHusuY9frxJdfqTBXHsOAfWhckrh at 0x218bd8482c0> JSON: {
   "id": "modr-6sHusuY9frxJdfqTBXHsOAfWhckrh",
   "model": "text-moderation-004",
@@ -583,7 +544,7 @@ openai.Moderation.create(
 
 这意味着*女人*和*男人*之间的距离应该等于*女王*和*国王*之间的距离。这里是一个嵌入的例子：
 
-```
+```py
 import openai
 embedding = openai.Embedding.create(
     input="The cat is on the table",
@@ -592,7 +553,7 @@ embedding = openai.Embedding.create(
 
 前面的方法创建了输入的向量表示。我们可以在这里查看输出的前 10 个向量。
 
-```
+```py
 embedding[1:10]
 [-0.01369840931147337,
  -0.007505378685891628,
@@ -609,29 +570,29 @@ embedding[1:10]
 
 +   **Whisper**：这是一个语音识别模型，可以将音频转录为文本。Whisper 可以识别和转录各种语言和方言，准确率很高，是自动语音识别系统的有价值的工具。这里是一个例子：
 
-    ```
+    ```py
     # Note: you need to be using OpenAI Python   v     0.27.0 for the code below to work
     ```
 
-    ```
+    ```py
     import openai
     ```
 
-    ```
+    ```py
     openai.api_key = os.getenv("OPENAI_API_KEY")
     ```
 
-    ```
+    ```py
     audio_file= open("/path/to/file/audio.mp3", "rb")
     ```
 
-    ```
+    ```py
     transcript = openai.Audio.transcribe("whisper-1", audio_file)
     ```
 
 输出如下所示：
 
-```
+```py
 {"text": Yes, hi, I just noticed a dent on the side of my car and I have no idea how it got there. There were no witnesses around and I'm really frustrated.
 ….
 }
@@ -659,7 +620,7 @@ embedding[1:10]
 
 在前图中，你可以看到关于如何在 OpenAI 预构建模型上进行精调的模式图。其思想是你可以使用通用参数或权重的预训练模型。然后，你用自定义数据喂养你的模型，通常以*键-值*提示和完成的形式，如下所示：
 
-```
+```py
 {"prompt": "<prompt text>", "completion": "<ideal generated text>"}
 {"prompt": "<prompt text>", "completion": "<ideal generated text>"}
 {"prompt": "<prompt text>", "completion": "<ideal generated text>"}
@@ -1171,7 +1132,7 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 
 请注意，我提供示例的方式类似于微调所使用的结构：
 
-```
+```py
 {"prompt": "<prompt text>", "completion": "<ideal generated text>"}
 ```
 
@@ -1659,7 +1620,7 @@ ChatGPT 也可以成为代码优化的好助手。事实上，它可能节省我
 
 例如，想象一下你想从另一个列表开始创建一个奇数列表。为了达到这个目的，你编写了以下 Python 脚本（为了这个练习，我还将使用 `timeit` 和 `datetime` 库跟踪执行时间）：
 
-```
+```py
 from timeit import default_timer as timer
 from datetime import timedelta
 start = timer()
@@ -1693,7 +1654,7 @@ ChatGPT 为我提供了一个示例，以更低的执行时间实现相同的结
 
 例如，当我从命令行运行一个`.py`文件时，我收到以下错误：
 
-```
+```py
 2023-03-25 11:27:10.270 Uncaught app exception
 Traceback (most recent call last):
   File "C:\Users\vaalt\Anaconda3\lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 565, in _run_script
@@ -1749,7 +1710,7 @@ TypeError: [] has type list, but expected one of: bytes, Unicode
 
 例如，以下 Python 类具有 10 个不同的方法用于基本数学运算：
 
-```
+```py
 class Calculator:
     def add(self, x, y):
         return x + y
@@ -1845,7 +1806,7 @@ class Calculator:
 
 让我们看一个使用深度学习 `keras.datasets` 进行模型可解释性的示例：它包含 60,000 张 32x32 的彩色图像（因此是 3 通道图像），分为 10 类（飞机、汽车、鸟、猫、鹿、狗、青蛙、马、船和卡车），每类有 6,000 张图像。在这里，我将分享模型的主体部分；您可以在书的 GitHub 代码库中找到所有相关代码，用于数据准备和预处理：[`github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%206%20-%20ChatGPT%20for%20Developers/code`](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%206%20-%20ChatGPT%20for%20Developers/code)。
 
-```
+```py
 model=tf.keras.Sequential()
 model.add(tf.keras.layers.Conv2D(32,kernel_size=(3,3),activation='relu',input_shape=
 (32,32,1)))
@@ -1897,7 +1858,7 @@ model.add(tf.keras.layers.Dense(10,activation='softmax'))
 
 首先，我编写了以下 Python 代码来初始化一个用于分类的深度学习模型：
 
-```
+```py
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -1955,7 +1916,7 @@ ChatGPT 和 OpenAI Codex 模型可以帮助你进行迁移。例如考虑大型�
 
 让我们考虑一个读取员工记录文件并编写服务时间超过 10 年的员工报告的 COBOL 脚本：
 
-```
+```py
 IDENTIFICATION DIVISION.
 PROGRAM-ID. EMPLOYEEREPORT.
 ENVIRONMENT DIVISION.
@@ -3058,7 +3019,7 @@ AOAI 在合同中的应用的一些例子如下：
 
 假设我们想提取这份合同的终止条款。如*技术要求*部分所述，我部署了一个名为`test1`的`text-davinci-002`的简单实例。我还创建了一个名为`contract`的变量，其中存储了前述示例合同。然后，我定义了一个提示，询问我的模型有关终止条款的问题，如下所示：
 
-```
+```py
 response = openai.Completion.create(
   engine="test1",
   prompt= contract + " what is the termination clause?",
@@ -3080,7 +3041,7 @@ print(response["choices"][0]["text"].strip())
 
 我还可以设置一个对话，可以向我的模型提出关于条款的多个问题：
 
-```
+```py
 prompt = "<|im_start|>system\n" + contract + "\n<|im_end|>\n"
 #print('AI Assistant: ' + prompt + '\n')
 while True:
@@ -3132,7 +3093,7 @@ while True:
 
 为了证明这一点，让我们在与我们的 AOAI 模型进行交互式聊天中设置一些查询（在这种情况下，样本合同也已存储在`contract`变量中）：
 
-```
+```py
 prompt = "<|im_start|>system\n" + contract + "\n<|im_end|>\n"
 #print('AI Assistant: ' + prompt + '\n')
 while True:
@@ -3180,7 +3141,7 @@ AOAI 在合同分析中可以发挥作用，通过利用其先进的**自然语�
 
 我们希望确保没有歧义。为此，让我们请教我们的 AOAI 模型为我们标记它们。此外，在这种情况下，我部署了一个名为`test1`的简单`text-davinci-002`实例。我还创建了一个名为`contract`的变量，其中存储了前述的样本合同：
 
-```
+```py
 response = openai.Completion.create(
   engine="test1",
   prompt= contract + "Analyze this contract and tell me whether there might be some ambiguity or conflicting terms.",
@@ -3204,7 +3165,7 @@ print(response["choices"][0]["text"].strip())
 
 为此，我们需要确保在我们的 Python 代码中加入内存，因此我将使用一个带有`break`条件的`while`循环：
 
-```
+```py
 prompt = "<|im_start|>system\n" + contract + "\n<|im_end|>\n"
 #print('AI Assistant: ' + prompt + '\n')
 while True:
@@ -3240,7 +3201,7 @@ while True:
 
 正如您所见，我的 AI 助手为我生成了一份新合同，并确保删除了模棱两可和矛盾的条款。请注意，我还要求模型解释现在合同没有模棱两可的原因，以确保我能够正确识别这些部分并验证它们：
 
-```
+```py
 you: explain why there are no ambiguities or conflicting terms now in this new contract
 AI Assistant: There are no ambiguities or conflicting terms now because the "Duties" section is more specific about what John Doe's responsibilities will be, and the "Compensation" section makes it clear that John Doe will receive the annual bonus that he is expecting.
 ```
@@ -3257,7 +3218,7 @@ AI Assistant: There are no ambiguities or conflicting terms now because the "Dut
 
 让我们看看我们的 AOAI 模型是否能够检测到：
 
-```
+```py
 response = openai.Completion.create(
   engine="test1",
   prompt= contract + "Analyze this contract and tell me whether there are clauses that might violate the antitrust laws. Make sure to highlight those clauses.",
@@ -3305,7 +3266,7 @@ print(response["choices"][0]["text"].strip())
 
 为了要求我们的模型从头生成一份草案合同，我们需要构建一个参数提示如下：
 
-```
+```py
 service_provider = "Supplier ABC"
 client = "Company XYZ"
 services_description = "installation, configuration, and maintenance of Company's IT infrastructure"
@@ -3443,7 +3404,7 @@ Azure OpenAI 可以成为呼叫中心分析的宝贵工具。通过分析客户�
 
 以下代码展示了我们如何用 Python 实现（我初始化了一个名为`transcript`的变量，其值等于之前的谈话）：
 
-```
+```py
 response = openai.Completion.create(
   engine="test1",
   prompt= transcript + "Extract the following information from the above text:\n Name and Surname\nReason for calling\n Policy Number\n Resolution \n\n",
@@ -3459,7 +3420,7 @@ print(response["choices"][0]["text"].strip())
 
 这是相关输出：
 
-```
+```py
 Name and Surname: Mario Rossi
 Reason for calling: Accidental damage to car
 Policy Number: 123456
@@ -3468,7 +3429,7 @@ Resolution: The operator is processing the customer's claim and sending an email
 
 最后，让我们将这些信息转换成 JSON 文件，以便触发我们的票证创建。为此，我只需在提示中添加一行`输出格式应为 JSON`，正如你在这里的输出中看到的那样：
 
-```
+```py
 [
   {
     "name": "Mario Rossi",
@@ -3489,7 +3450,7 @@ Resolution: The operator is processing the customer's claim and sending an email
 
 正如你所看到的，由于在谈话结束时，客户对客服服务感到满意，因此响应是积极的。然而，读了转录后，我们知道最初客户非常沮丧，因此我们可以对提示设计进行一些改进以获得更准确的结果：
 
-```
+```py
 response = openai.Completion.create(
   engine="test1",
   prompt= transcript + "What is the initial and final sentiment of the conversation?",
@@ -3511,7 +3472,7 @@ print(response["choices"][0]["text"].strip())
 
 我们也可以进一步问它解释识别到的初始负面情感的原因：
 
-```
+```py
 response = openai.Completion.create(
   engine="test1",
   prompt= transcript + "why is the customer's sentiment initially negative?",
@@ -3551,7 +3512,7 @@ print(response["choices"][0]["text"].strip())
 
 让我们请我们的 AOAI 实例为我们分类这段对话记录：
 
-```
+```py
 response = openai.Completion.create(
   engine="test1",
   prompt= transcript + "classify the above text in one of the following: reporting issue, claim handling and general inquiry.",
@@ -3603,51 +3564,51 @@ print(response["choices"][0]["text"].strip())
 
 1.  我们可以自动生成一封电子邮件给 Mario Rossi 先生，通知他解决流程的启动。为此，我定义了一个函数，要求我的 AOAI 实例使用参数提示生成电子邮件：
 
-    ```
+    ```py
     def generate_email(transcript):
     ```
 
-    ```
+    ```py
         response = openai.Completion.create(
     ```
 
-    ```
+    ```py
           engine="test1",
     ```
 
-    ```
+    ```py
           prompt= transcript + f"Generate a response email to the transcript above, notifying the customer that the ticket has been created and apologizing if it was complaining. The name of the customer is {data['name']} and the policy number is {data['policy_number']}.",
     ```
 
-    ```
+    ```py
           temperature=1,
     ```
 
-    ```
+    ```py
           max_tokens=1968,
     ```
 
-    ```
+    ```py
           top_p=0.5,
     ```
 
-    ```
+    ```py
           frequency_penalty=0,
     ```
 
-    ```
+    ```py
           presence_penalty=0,
     ```
 
-    ```
+    ```py
           best_of=1,
     ```
 
-    ```
+    ```py
           stop=None)
     ```
 
-    ```
+    ```py
         return response["choices"][0]["text"].strip()
     ```
 
@@ -3661,51 +3622,51 @@ print(response["choices"][0]["text"].strip())
 
 1.  最后，我们可以要求改进解决方案流程和客户满意度的建议。此外，在这种情况下，我使用了一个参数提示：
 
-    ```
+    ```py
     def improvement(data):
     ```
 
-    ```
+    ```py
         response = openai.Completion.create(
     ```
 
-    ```
+    ```py
           engine="test1",
     ```
 
-    ```
+    ```py
           prompt= f"Elaborate a list of remediations to get to the following improvement: {data['contact_center_improvement']}",
     ```
 
-    ```
+    ```py
           temperature=1,
     ```
 
-    ```
+    ```py
           max_tokens=1968,
     ```
 
-    ```
+    ```py
           top_p=0.5,
     ```
 
-    ```
+    ```py
           frequency_penalty=0,
     ```
 
-    ```
+    ```py
           presence_penalty=0,
     ```
 
-    ```
+    ```py
           best_of=1,
     ```
 
-    ```
+    ```py
           stop=None)
     ```
 
-    ```
+    ```py
         return response["choices"][0]["text"].strip()
     ```
 
@@ -3775,7 +3736,7 @@ print(response["choices"][0]["text"].strip())
 
 我们项目的第一步是初始化一个嵌入模型，以便我们可以对自定义文档进行向量化。为此，我们可以使用 LangChain `OpenAIEmbeddings` 模块，该模块直接包装了来自 Azure OpenAI 的嵌入模型：
 
-```
+```py
 from langchain.embeddings import OpenAIEmbeddings from langchain.chat_models import AzureOpenAI
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores.faiss import FAISS
@@ -3796,19 +3757,19 @@ from langchain.document_loaders import PyPDFLoader
 
 因此，让我们初始化我们的 FAISS 索引器：
 
-```
+```py
 loader = PyPDFLoader("path_to_file") pages = loader.load_and_split() faiss_index = FAISS.from_documents(pages, embeddings)
 ```
 
 太棒了，现在我们可以使用`AzureOpenAI`类初始化我们的模型。为此，我们只需要传递部署的名称：
 
-```
+```py
 llm = AzureOpenAI(deployment_name="text-davinci-003")
 ```
 
 最后，我们需要计算用户提示和嵌入知识库之间的相似性。为此，让我们初始化以下函数：
 
-```
+```py
 def get_answer(index, query):     """Returns answer to a query using langchain QA chain"""      docs = index.similarity_search(query)      chain = load_qa_chain(llm)     answer = chain.run(input_documents=docs, question=query)      return answer
 ```
 
@@ -3824,7 +3785,7 @@ def get_answer(index, query):     """Returns answer to a query using langch
 
 更具体地说，我已经添加了以下指令来创建一个简单的搜索栏：
 
-```
+```py
 query = st.text_area("Ask a question about the document")
 if query:
     docs = faiss_index.similarity_search(query, k=1)

@@ -1,12 +1,10 @@
-# ChatGPT 未来学习手册（一）
+# ChatGPT 未来学习手册
 
 > 原文：[Learn ChatGPT: The Future of Learning](https://annas-archive.org/md5/a0ce6b46eb8479df8e96caa41b815a08)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 
 > 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-# ChatGPT 未来学习手册
 
 “学习 ChatGPT”是任何对人工智能在教育中的作用感兴趣的人必读的书。这本开创性的书探讨了 ChatGPT 的潜力，这是一个强大的人工智能平台，可以彻底改变我们学习和获取信息的方式。
 

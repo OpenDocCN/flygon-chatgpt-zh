@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 百万富翁手册
 
+> 原文：[The ChatGPT Millionaire's Handbook](https://annas-archive.org/md5/553ef3659c9861c516513946ee6f2e66)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 ## 介绍

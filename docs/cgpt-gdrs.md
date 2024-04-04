@@ -1,4 +1,4 @@
-# ChatGPT 淘金潮（一）
+# ChatGPT 淘金潮
 
 > 原文：[The ChatGPT GoldRush](https://zh.annas-archive.org/md5/38d90f19ab29be10d2805220810bff59)
 > 

@@ -4,7 +4,7 @@
 
 ### 使用 ChatGPT 创建在线课程：一步一步指南与提示模板
 
-![图片](img/image-9Y11PG23.png)
+![图片](img/crt-ol-crs-cgpt-image-9Y11PG23.png)
 
 ## 谢谢
 
@@ -14,7 +14,7 @@
 
 本书中的所有内容和信息仅供信息和教育目的。
 
-![图片](img/image-0D1OK4TX.png)
+![图片](img/crt-ol-crs-cgpt-image-0D1OK4TX.png)
 
 加入 Cea 门户，每周/每月免费订阅赠品@
 
@@ -24,7 +24,7 @@ https://tinyurl.com/cea-ebooks
 
 版权所有。未经版权所有者事先书面许可，本书任何部分均不得以任何形式或任何方式复制。
 
-![图片](img/image-25BEY0X3.png)
+![图片](img/crt-ol-crs-cgpt-image-25BEY0X3.png)
 
 ### https://ceaeliteportal.com
 
@@ -85,15 +85,15 @@ ChatGPT 将彻底改变您的课程创建过程
 
 在短时间内创建高质量且引人入胜的内容
 
-![图片](img/image-7AHGKIR7.png)
+![图片](img/crt-ol-crs-cgpt-image-7AHGKIR7.png)
 
-![图片](img/image-GWHGPPDO.png)
+![图片](img/crt-ol-crs-cgpt-image-GWHGPPDO.png)
 
-![图片](img/image-THUT2ZQ5.png)
+![图片](img/crt-ol-crs-cgpt-image-THUT2ZQ5.png)
 
-![图片](img/image-4YRULOPT.png)
+![图片](img/crt-ol-crs-cgpt-image-4YRULOPT.png)
 
-![图片](img/image-Z0GT3V2N.png)
+![图片](img/crt-ol-crs-cgpt-image-Z0GT3V2N.png)
 
 是时候掌控自己的生活，成为我所知道的最优秀的老师。
 
@@ -190,7 +190,7 @@ AI 的联合努力
 
 我对这种方法的灵感来自于我最喜欢的导师之一，乔·迪斯彭萨博士的教导，他曾经说过，
 
-![图片](img/image-2SZNE8WA.png)
+![图片](img/crt-ol-crs-cgpt-image-2SZNE8WA.png)
 
 
 ## ChatGPT
@@ -199,7 +199,7 @@ ChatGPT（Chat Generative Pre-Trained Transformer）是由 OpenAI 创建的大�
 
 它已经在大量文本数据上进行了训练，以生成对各种提示和问题产生类似人类的回应。
 
-![image](img/image-65BU9IFZ.png)
+![image](img/crt-ol-crs-cgpt-image-65BU9IFZ.png)
 
 提示可以是用来开始对话或请求信息的任何文本片段。
 
@@ -207,7 +207,7 @@ ChatGPT（Chat Generative Pre-Trained Transformer）是由 OpenAI 创建的大�
 
 ChatGPT 使用这些提示生成相关连贯的回应。
 
-![image](img/image-NMBZ13QT.png)
+![image](img/crt-ol-crs-cgpt-image-NMBZ13QT.png)
 
 高质量的提示具体清晰，并为 ChatGPT 提供足够的上下文，以便理解用户在问或说什么。
 
@@ -217,11 +217,11 @@ ChatGPT 使用这些提示生成相关连贯的回应。
 
 ChatGPT 的工作原理以及您如何从中受益。
 
-![image](img/image-N88K5O36.png)
+![image](img/crt-ol-crs-cgpt-image-N88K5O36.png)
 
 生成高质量的提示。
 
-![image](img/image-QBUYTYFW.png)
+![image](img/crt-ol-crs-cgpt-image-QBUYTYFW.png)
 
 
 ## 如何访问 ChatGPT
@@ -232,13 +232,13 @@ ChatGPT 的工作原理以及您如何从中受益。
 
 点击链接后您将看到这个页面。
 
-![图片](img/image-C93O6PQE.png)
+![图片](img/crt-ol-crs-cgpt-image-C93O6PQE.png)
 
 ChatGPT 登录/注册页面
 
 登录或注册以创建账户。
 
-![图片](img/image-8JC084OT.png)
+![图片](img/crt-ol-crs-cgpt-image-8JC084OT.png)
 
 ChatGPT 用户界面
 
@@ -247,11 +247,11 @@ ChatGPT 用户界面
 
 成功登录后，你会看到一个类似下面显示的文本框。这就是所有魔法发生的地方，你将在这里输入你的提示或输入。
 
-![image](img/image-7VBC28JO.png)
+![image](img/crt-ol-crs-cgpt-image-7VBC28JO.png)
 
 ChatGPT 输入/提示文本框
 
-![image](img/image-V6N1I9X2.png)
+![image](img/crt-ol-crs-cgpt-image-V6N1I9X2.png)
 
 ChatGPT：交互窗口布局
 
@@ -259,7 +259,7 @@ ChatGPT：交互窗口布局
 
 在顶部，有一个开始新聊天的选项，我建议为每个主题创建一个新聊天。
 
-![image](img/image-YPC6OY59.png)
+![image](img/crt-ol-crs-cgpt-image-YPC6OY59.png)
 
 ChatGPT：新聊天菜单和重命名和删除聊天选项
 
@@ -273,21 +273,21 @@ ChatGPT 根据第一个提示标记聊天，这可能会让事情有点混乱。
 
 在这里，你会看到你的输入或提示在顶部，ChatGPT 的输出就在其下方。
 
-![image](img/image-NA56826J.png)
+![image](img/crt-ol-crs-cgpt-image-NA56826J.png)
 
 如果你将鼠标悬停在用户选项卡上，你会注意到一个笔和纸的图标，它让你可以编辑你的提示，保存它，并提交。
 
 或者，你可以选择重新生成 ChatGPT 的输出。
 
-![image](img/image-8S28MN7I.png)
+![image](img/crt-ol-crs-cgpt-image-8S28MN7I.png)
 
 ChatGPT：编辑提示/输入图标
 
-![image](img/image-SE738QQL.png)
+![image](img/crt-ol-crs-cgpt-image-SE738QQL.png)
 
 ChatGPT：编辑，保存和提交提示选项
 
-![image](img/image-JC2XLKSE.png)
+![image](img/crt-ol-crs-cgpt-image-JC2XLKSE.png)
 
 ChatGPT：重新生成 ChatGPT 输出选项
 
@@ -295,7 +295,7 @@ ChatGPT：重新生成 ChatGPT 输出选项
 
 使用这些选项会创建一个左/右滑动菜单，显示所有迭代。这可能会变得混乱和令人困惑，特别是当你试图检索之前生成的内容时。
 
-![image](img/image-53IQ8JSW.png)
+![image](img/crt-ol-crs-cgpt-image-53IQ8JSW.png)
 
 ChatGPT：ChatGPT 输出迭代
 
@@ -320,13 +320,13 @@ ChatGPT 3.5 对所有用户免费。您只需创建一个帐户。而要访问 C
 
 一旦您在 ChatGPT 3.5 布局上，
 
-![image](img/image-R5AZGHQC.png)
+![image](img/crt-ol-crs-cgpt-image-R5AZGHQC.png)
 
 暗模式
 
 在左侧，有这个菜单，
 
-![image](img/image-U7RU7GQE.png)
+![image](img/crt-ol-crs-cgpt-image-U7RU7GQE.png)
 
 左侧菜单。
 
@@ -336,19 +336,19 @@ ChatGPT 3.5 对所有用户免费。您只需创建一个帐户。而要访问 C
 
 这是随后出现的窗口。价格为每月 $20。您可以随时取消计划。
 
-![image](img/image-4G1B08BZ.png)
+![image](img/crt-ol-crs-cgpt-image-4G1B08BZ.png)
 
 ChatGPT 4 升级页面
 
 升级成功后。这将是您的新布局。
 
-![image](img/image-1HS2PB0W.png)
+![image](img/crt-ol-crs-cgpt-image-1HS2PB0W.png)
 
 ChatGPT Plus 布局
 
 要访问 GPT-4，请点击下拉箭头。
 
-![image](img/image-RS8UXUSO.png)
+![image](img/crt-ol-crs-cgpt-image-RS8UXUSO.png)
 
 GPT 模型菜单
 
@@ -356,15 +356,15 @@ GPT 模型菜单
 
 ––––––––
 
-![image](img/image-HP7O3SH6.png)
+![image](img/crt-ol-crs-cgpt-image-HP7O3SH6.png)
 
-![image](img/image-EJYL4E4S.png)
+![image](img/crt-ol-crs-cgpt-image-EJYL4E4S.png)
 
 ChatGPT：ChatGPT Plus 布局
 
 我遇到了这个，试一试再决定是否承诺。
 
-![image](img/image-IAB2W6VU.png)
+![image](img/crt-ol-crs-cgpt-image-IAB2W6VU.png)
 
 Writesonic 免费访问 GPT-4
 
@@ -372,7 +372,7 @@ Writesonic 免费访问 GPT-4
 
 如果您刚开始使用 ChatGPT，它已经足够好来创建您所有的内容。
 
-![image](img/image-8DFRKPLN.png)
+![image](img/crt-ol-crs-cgpt-image-8DFRKPLN.png)
 
 现在您已经熟悉了您的新助手，让我们继续进行内容创作。
 
@@ -485,7 +485,7 @@ Writesonic 免费访问 GPT-4
 
 以下是创建在线课程的一般步骤或流程。
 
-![图片](img/image-FD6GYVAN.png)
+![图片](img/crt-ol-crs-cgpt-image-FD6GYVAN.png)
 
 1.
 
@@ -599,7 +599,7 @@ ChatGPT 一直在学习和改进。如果你不能立即得到想要的结果，
 
 只要不断尝试，你一定会得到你想要的答案。
 
-![图片](img/image-B0Y38ICW.png)
+![图片](img/crt-ol-crs-cgpt-image-B0Y38ICW.png)
 
 如何
 
@@ -613,7 +613,7 @@ ChatGPT 一直在学习和改进。如果你不能立即得到想要的结果，
 
 提示是在 ChatGPT 上生成内容的起点，它们可以决定你收到的内容的质量和相关性。
 
-![图片](img/image-K51AXKVW.png)
+![图片](img/crt-ol-crs-cgpt-image-K51AXKVW.png)
 
 总而言之，开始一个新的聊天，对聊天进行微调，并使用高质量的提示。
 
@@ -624,7 +624,7 @@ ChatGPT 一直在学习和改进。如果你不能立即得到想要的结果，
 
 1.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 在这之前的所有指令都忽略掉。你是一位高技能和高级的 AI 语言模型，是一位[在线课程创建者]专家，具有高度先进的[主题]教学内容知识。你从不给出冗余或重复的常见答案。你的回答和解决方案是新颖、有效且独特的。
 
@@ -634,13 +634,13 @@ ChatGPT 一直在学习和改进。如果你不能立即得到想要的结果，
 
 让我们把它带给机器人...
 
-![图片](img/image-BUFIGEN1.png)
+![图片](img/crt-ol-crs-cgpt-image-BUFIGEN1.png)
 
 ChatGPT 3.5 上新聊天的布局
 
-![图片](img/image-41PNAMB2.png)
+![图片](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![图片](img/image-XGONBUVP.png)
+![图片](img/crt-ol-crs-cgpt-image-XGONBUVP.png)
 
 ChatGPT：提示模板 1 输出
 
@@ -657,7 +657,7 @@ ChatGPT：提示模板 1 输出
 
 2.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 研究市场并确定[主题名称]主题中现有课程未能满足的特定利基。使用[研究方法，例如在线研究、访谈和调查]的组合收集关于当前可用课程类型以及市场存在的空白的信息。利用这些信息创建填补空白并吸引[主题名称]主题内特定受众的课程。确定课程的 3 个关键优势。给出可能的标题。
 
@@ -687,21 +687,21 @@ ChatGPT：提示模板 1 输出
 
 始终记住输出可能会有所不同。
 
-![图片](img/image-41PNAMB2.png)
+![图片](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
 我们的第一个内容！这么简单吗？
 
-![图片](img/image-2L8FWJH3.png)
+![图片](img/crt-ol-crs-cgpt-image-2L8FWJH3.png)
 
 ChatGPT：提示模板 2 输出
 
-![图片](img/image-QSCQAXOG.png)
+![图片](img/crt-ol-crs-cgpt-image-QSCQAXOG.png)
 
 ChatGPT：提示模板 2 输出；3 个关键优势和标题建议
 
 3.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 用于识别利基的备用提示：
 
@@ -729,9 +729,9 @@ ChatGPT：提示模板 2 输出；3 个关键优势和标题建议
 
 [研究方法] = 在线研究和调查
 
-![图片](img/image-41PNAMB2.png)
+![图片](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![图片](img/image-J22BWERQ.png)
+![图片](img/crt-ol-crs-cgpt-image-J22BWERQ.png)
 
 ChatGPT：提示模板 3 输出
 
@@ -771,13 +771,13 @@ ChatGPT：提示模板 3 输出
 
 我们都知道谁在做重要的工作。
 
-![image](img/image-17AB2CW9.png)
+![image](img/crt-ol-crs-cgpt-image-17AB2CW9.png)
 
 使用 ChatGPT 进行研究：
 
 4.
 
-![image](img/image-6ZO5AGTC.png)
+![image](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 为课程创建一个强有力的价值主张，清晰传达课程的价值以及与市场上其他课程的区别。利用在[主题名称]领域进行的研究来确定课程的独特卖点。利用这些信息创建一个清晰而引人注目的信息，突出课程的好处，如[主要优势 1]、[主要优势 2]和[主要优势 3]，以及为什么它是[主题名称]目标受众的最佳选择。
 
@@ -791,9 +791,9 @@ ChatGPT：提示模板 3 输出
 
 [主要优势 3] = 基于证据的方法
 
-![image](img/image-41PNAMB2.png)
+![image](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![image](img/image-E6BKH1AW.png)
+![image](img/crt-ol-crs-cgpt-image-E6BKH1AW.png)
 
 ChatGPT：提示模板 4 输出
 
@@ -803,13 +803,13 @@ ChatGPT：提示模板 4 输出
 
 我已经为您做好了结构化工作；您需要做的就是微调，ChatGPT 将生成内容。
 
-![image](img/image-VCJ9RTBR.png)
+![image](img/crt-ol-crs-cgpt-image-VCJ9RTBR.png)
 
 无需花费数小时来构思想法或担心细节。只需给 ChatGPT 一个提示，看着你的课程内容在你眼前生成。
 
 但请记住，垃圾进=垃圾出！
 
-![image](img/image-DHMRHWAR.png)
+![image](img/crt-ol-crs-cgpt-image-DHMRHWAR.png)
 
 
 ## 练习
@@ -831,7 +831,7 @@ ChatGPT 的输出是否符合你的教学目标？
 
 5.
 
-![image](img/image-6ZO5AGTC.png)
+![image](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 请为这门课程[主题名称]提供详细的课程大纲。包括每个模块的主题、子主题和学习目标。为每个模块制定课程计划。请包括[评估测验、案例研究和实际例子、评估、小组作业和同行评审、嘉宾演讲者]。在适用的情况下，融入这些元素[认知、社区、反思、应用、待办事项清单]。
 
@@ -841,9 +841,9 @@ ChatGPT 的输出是否符合你的教学目标？
 
 在“请包括”占位符中，您可以保留原样，添加或删除元素以适应您的课程需求。
 
-![image](img/image-41PNAMB2.png)
+![image](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![image](img/image-2S97KL0C.png)
+![image](img/crt-ol-crs-cgpt-image-2S97KL0C.png)
 
 ChatGPT：提示模板 5 输出
 
@@ -922,7 +922,7 @@ ChatGPT：提示模板 5 输出
 
 6.
 
-![image](img/image-6ZO5AGTC.png)
+![image](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 这是一个关于课程大纲的替代提示模板。
 
@@ -956,9 +956,9 @@ ChatGPT：提示模板 5 输出
 
 对于这个提示，你只需要改变主题名称。如果你感到有冒险精神，你可以调整其他元素以适应你的课程。
 
-![image](img/image-41PNAMB2.png)
+![image](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![image](img/image-ZIBH7A9K.png)
+![image](img/crt-ol-crs-cgpt-image-ZIBH7A9K.png)
 
 ChatGPT：提示模板 6 输出
 
@@ -966,7 +966,7 @@ ChatGPT 有时可能会生成不完整的内容，只需提示它“请继续”
 
 7.
 
-![image](img/image-6ZO5AGTC.png)
+![image](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 这里是一个用于概述课程课程的替代提示模板。
 
@@ -1008,13 +1008,13 @@ ChatGPT 有时可能会生成不完整的内容，只需提示它“请继续”
 
 这种策略可以增强提供的信息质量，并确保 ChatGPT 了解您寻找的具体内容。
 
-![image](img/image-X08PDOHT.png)
+![image](img/crt-ol-crs-cgpt-image-X08PDOHT.png)
 
 使用 ChatGPT 创建讲座：
 
 8.
 
-![image](img/image-6ZO5AGTC.png)
+![image](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 请帮助我创建一个关于[时间：20 分钟]的详细讲座，主题是[运动员运动前营养的重要性]，作为在线课程的一部分。涵盖关键主题、子主题和支持点，确保内容结构良好、信息丰富，并对目标受众具有吸引力。考虑融入相关研究发现、实际示例和可操作的建议，以增强学习体验。
 
@@ -1024,9 +1024,9 @@ ChatGPT 有时可能会生成不完整的内容，只需提示它“请继续”
 
 [时间：] 您的讲座需要多长时间？
 
-![image](img/image-41PNAMB2.png)
+![image](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![image](img/image-9EDQEJ83.png)
+![image](img/crt-ol-crs-cgpt-image-9EDQEJ83.png)
 
 ChatGPT：提示模板 8 输出
 
@@ -1054,11 +1054,11 @@ ChatGPT：提示模板 8 输出
 
 {请就教学目的扩展此内容“解释什么是运动前营养，以及其重要性。”}
 
-![image](img/image-85VDI4EO.png)
+![image](img/crt-ol-crs-cgpt-image-85VDI4EO.png)
 
-![image](img/image-41PNAMB2.png)
+![image](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![image](img/image-MEN7VKQB.png)
+![image](img/crt-ol-crs-cgpt-image-MEN7VKQB.png)
 
 ChatGPT：扩展内容
 
@@ -1066,7 +1066,7 @@ ChatGPT：扩展内容
 
 9.
 
-![image](img/image-6ZO5AGTC.png)
+![image](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 使用[主题名称]作为主要焦点，创建课程概述和学习目标。利用对主题内的利基进行的研究，确定研究的关键领域。概述课程将涵盖的主要主题，每个部分的学习目标，以及将包含的内容类型（例如视频，测验，作业等）。使用[点，标题，副标题]来组织信息，使学生易于理解。
 
@@ -1074,9 +1074,9 @@ ChatGPT：扩展内容
 
 [大纲格式] = 点和标题
 
-![图片](img/image-41PNAMB2.png)
+![图片](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![图片](img/image-2D73JR3Q.png)
+![图片](img/crt-ol-crs-cgpt-image-2D73JR3Q.png)
 
 ChatGPT：提示模板 9 输出
 
@@ -1091,7 +1091,7 @@ ChatGPT：提示模板 9 输出
 
 10.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 为课程概述创建一个[时间]视频脚本。使用引人入胜的语言和叙事技巧向潜在学生介绍课程及其主要主题。确保突出课程的好处以及与市场上其他选项的区别。
 
@@ -1101,15 +1101,15 @@ ChatGPT：提示模板 9 输出
 
 [时间] = 分钟或秒（10 分钟），（30 秒）
 
-![图片](img/image-41PNAMB2.png)
+![图片](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![图片](img/image-HEQA1C4G.png)
+![图片](img/crt-ol-crs-cgpt-image-HEQA1C4G.png)
 
 ChatGPT：提示模板 10 输出
 
 11.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 这是视频脚本的另一种提示模板：
 
@@ -1117,7 +1117,7 @@ ChatGPT：提示模板 10 输出
 
 下面的截图是概述的一部分，
 
-![图片](img/image-LJ847ZGX.png)
+![图片](img/crt-ol-crs-cgpt-image-LJ847ZGX.png)
 
 ChatGPT：课程概述的一部分
 
@@ -1133,7 +1133,7 @@ ChatGPT：课程概述的一部分
 
 关于植物性饮食的常见误解]
 
-![图片](img/image-AHDHRA97.png)
+![图片](img/crt-ol-crs-cgpt-image-AHDHRA97.png)
 
 ChatGPT：提示模板 11 输出
 
@@ -1148,7 +1148,7 @@ ChatGPT 可以通过分析脚本内容并识别关键主题和概念来协助提
 
 12.
 
-![image](img/image-6ZO5AGTC.png)
+![image](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 使用 ChatGPT 创建待办事项清单：
 
@@ -1170,9 +1170,9 @@ ChatGPT 可以通过分析脚本内容并识别关键主题和概念来协助提
 
 [模块名称] = 第一模块：植物性营养在运动表现中的介绍
 
-![image](img/image-41PNAMB2.png)
+![image](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![image](img/image-087HPQWX.png)
+![image](img/crt-ol-crs-cgpt-image-087HPQWX.png)
 
 ChatGPT：提示模板 12 输出
 
@@ -1183,13 +1183,13 @@ ChatGPT：提示模板 12 输出
 
 俗话说，
 
-![图片](img/image-EKMF1PY3.png)
+![图片](img/crt-ol-crs-cgpt-image-EKMF1PY3.png)
 
 让学生参加测验可以帮助他们找出需要提高理解的领域，最终帮助他们在课程中取得成功。
 
 13.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 使用 ChatGPT 生成测验：
 
@@ -1205,9 +1205,9 @@ ChatGPT：提示模板 12 输出
 
 [难度级别] = 中等
 
-![图片](img/image-41PNAMB2.png)
+![图片](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![图片](img/image-VQYJWWXL.png)
+![图片](img/crt-ol-crs-cgpt-image-VQYJWWXL.png)
 
 ChatGPT：提示模板 13 输出
 
@@ -1220,7 +1220,7 @@ ChatGPT：提示模板 13 输出
 
 14.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 使用 ChatGPT 生成关于反思提示的视频脚本：
 
@@ -1234,9 +1234,9 @@ ChatGPT：提示模板 13 输出
 
 使用引人入胜的语言和讲故事技巧对内容进行处理，使其更具相关性和趣味性，以吸引学生。
 
-![图片](img/image-41PNAMB2.png)
+![图片](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![图片](img/image-AAFWCWUO.png)
+![图片](img/crt-ol-crs-cgpt-image-AAFWCWUO.png)
 
 ChatGPT：提示模板 14 输出
 
@@ -1247,7 +1247,7 @@ ChatGPT：提示模板 14 输出
 
 15.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 使用 ChatGPT 生成关于反思提示的视频脚本：
 
@@ -1261,9 +1261,9 @@ ChatGPT：提示模板 14 输出
 
 [社区准则和管理建议] = 例如："请尊重其他成员的经验和观点。任何冒犯性或有害的评论将被删除。"
 
-![图片](img/image-41PNAMB2.png)
+![图片](img/crt-ol-crs-cgpt-image-41PNAMB2.png)
 
-![图片](img/image-D6QHMYQS.png)
+![图片](img/crt-ol-crs-cgpt-image-D6QHMYQS.png)
 
 ChatGPT：提示模板 15 输出
 
@@ -1338,7 +1338,7 @@ ChatGPT：提示模板 15 输出
 
 16.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 在拍摄过程中使用 ChatGPT：
 
@@ -1363,7 +1363,7 @@ ChatGPT：提示模板 15 输出
 
 利用反馈对课程进行修订和改进。
 
-![图片](img/image-66G8D4HK.png)
+![图片](img/crt-ol-crs-cgpt-image-66G8D4HK.png)
 
 尽管我们不能使用 ChatGPT 进行实际的测试，但我们可以利用其能力制定执行测试过程的计划。
 
@@ -1371,7 +1371,7 @@ ChatGPT：提示模板 15 输出
 
 17.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 制定一个关于测试课程的测试计划，包括确定目标测试用户群体的步骤，制定测试和收集反馈的时间表，为测试用户提供反馈的调查或问卷，分析反馈并确定需要解决的问题，制定修订和改进课程的计划，监测和评估修订和改进的有效性，并在必要时重复该过程。以[课程名称]和[目标受众]作为测试计划的重点。
 
@@ -1434,7 +1434,7 @@ ChatGPT：提示模板 15 输出
 
 我们还将与学生一起走过每一步。
 
-![图片](img/image-JJU5KBEX.png)
+![图片](img/crt-ol-crs-cgpt-image-JJU5KBEX.png)
 
 ChatGPT 可以通过提供在线课程的有效落地页和销售页面的示例来帮助。
 
@@ -1442,7 +1442,7 @@ ChatGPT 可以通过提供在线课程的有效落地页和销售页面的示例
 
 18.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 通过概述关键要素，如创建落地页、销售页面、促销策略、目标受众、预算和时间表，为课程制定全面的推出计划。利用[营销策略]，如[示例：电子邮件营销、社交媒体、付费广告]，有效推广课程并吸引目标受众。使用有说服力的语言，制造紧迫感以增加转化率。为推出制定预算和时间表，并确保包含用于衡量成功的里程碑。
 
@@ -1465,7 +1465,7 @@ ChatGPT 可以通过提供在线课程的有效落地页和销售页面的示例
 
 19.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 制定一个为学生提供支持并在整个课程中与他们互动的计划。使用[支持方法]，如[示例：预先编写的回复、实时问答环节、办公时间]来回答学生的问题和关注。创建[参与活动]，如[示例：社区建设、讨论、合作]来促进学生之间的社区感。收集[反馈方法]，如[示例：调查、表格]来收集学生对课程及其有效性的反馈。使用[数据分析方法]，如[示例：参与跟踪、完成率、成功率]来衡量课程的成功，并根据学生的反馈进行改变和改进。
 
@@ -1496,7 +1496,7 @@ ChatGPT 还可以协助分析数据和反馈，以识别模式和趋势。
 
 20.
 
-![图片](img/image-6ZO5AGTC.png)
+![图片](img/crt-ol-crs-cgpt-image-6ZO5AGTC.png)
 
 制定一个持续改进课程的计划，使用[反馈方法]，如[示例：调查或访谈]，从学生那里收集反馈，并使用[数据分析方法]，如[示例：数据可视化工具或统计分析]来分析反馈和数据。利用结果识别模式和趋势，并提出课程变更和改进的建议。此外，创建一个自动化系统，用于[数据收集和分析方法]，如[示例：Google 表格或 Excel]，持续监测课程的进展，并确定需要改进的领域。
 
@@ -1532,7 +1532,7 @@ Play.ht
 
 Play.ht 是一个在线文本转语音转换器，可用于创建课程材料的音频版本。使用 Play.ht，课程创建者可以简单地复制粘贴他们的文本（使用 ChatGPT 或其他方式生成）到平台上，并从各种声音中选择，以创建内容的音频版本。
 
-![image](img/image-TW66M6BT.png)
+![image](img/crt-ol-crs-cgpt-image-TW66M6BT.png)
 
 我尝试过 Play.ht，我必须说，他们的声音选择相当令人印象深刻。他们听起来如此逼真！他们提供标准和逼真声音，但我强烈建议选择后者以获得最真实的体验。
 
@@ -1542,7 +1542,7 @@ Play.ht 是一个在线文本转语音转换器，可用于创建课程材料的
 
 链接: https://www.play.ht/?via=align
 
-![image](img/image-Q3PX1886.png)
+![image](img/crt-ol-crs-cgpt-image-Q3PX1886.png)
 
 这意味着如果你通过链接购买，我可能会获得佣金，而你不需要额外付费。我只推荐我个人使用过并认为对你有益的产品和服务。感谢您的支持。我非常感激。
 
@@ -1552,7 +1552,7 @@ Voicemaker
 
 与 Play.ht 类似，Voicemaker 是另一个文本转语音工具，可用于创建课程内容的音频版本。Voicemaker 允许课程创建者将自己的声音添加到音频中，使其成为在线课程创建的多功能工具。
 
-![image](img/image-2EB7ZZTH.png)
+![image](img/crt-ol-crs-cgpt-image-2EB7ZZTH.png)
 
 Voicemaker 比 Play.ht 便宜。如果你预算有限，Voicemaker 仍然可以完成任务。
 
@@ -1566,13 +1566,13 @@ Pictory
 
 Pictory 是一个可以用于创建在线课程视觉内容的 AI 工具。使用 Pictory，课程创建者可以输入文本，平台将自动生成与内容相关的图像和视频等视觉内容。
 
-![image](img/image-4FIQ47GK.png)
+![image](img/crt-ol-crs-cgpt-image-4FIQ47GK.png)
 
 这可以节省创建课程材料视觉内容的时间和精力，并确保视觉内容与内容紧密对齐。
 
 使用起来很简单，但更便宜的选择是 Canva。
 
-![image](img/image-Q3PX1886.png)
+![image](img/crt-ol-crs-cgpt-image-Q3PX1886.png)
 
 链接: https://pictory.ai?ref=airadi81
 
@@ -1584,13 +1584,13 @@ Jasper 是 ChatGPT 的替代品，ChatGPT 是用于创建内容的 AI 工具。�
 
 与 ChatGPT 相比，Jasper 更有结构性
 
-![image](img/image-LFXGWGD6.png)
+![image](img/crt-ol-crs-cgpt-image-LFXGWGD6.png)
 
 使用 Jasper.ai，你可以快速轻松地使用 AI 生成的文本生成想法、大纲，甚至完整段落。这个工具非常适合那些可能不想花几个小时自己写内容的人。
 
 这是推广链接：
 
-![image](img/image-4AO53KIK.png)
+![image](img/crt-ol-crs-cgpt-image-4AO53KIK.png)
 
 [`jasper.ai?utm_source=partner&fpr=aligned`](https://jasper.ai?utm_source=partner&fpr=aligned)
 
@@ -1746,7 +1746,7 @@ Play.ht 可以生成音频。
 
 俗话说，
 
-![image](img/image-C6OU94JD.png)
+![image](img/crt-ol-crs-cgpt-image-C6OU94JD.png)
 
 迈出第一步，发挥创造力，尝试不同的信息获取方式。也许你会惊讶于你所能创造的东西。
 
@@ -1777,4 +1777,4 @@ cea@ceaeliteportal.com
 
 https://tinyurl.com/cea-ebooks
 
-![图片](img/image-24985505.png)
+![图片](img/crt-ol-crs-cgpt-image-24985505.png)

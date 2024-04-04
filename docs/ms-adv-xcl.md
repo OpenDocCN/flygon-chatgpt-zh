@@ -90,7 +90,7 @@
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 目录
@@ -936,7 +936,7 @@ Excel 窗口的组成部分
 
 图 1.1 展示了 Excel 窗口：
 
-![](img/Figure_1.1.png)
+![](img/ms-adv-xcl-Figure_1.1.png)
 
 图 1.1：Excel 欢迎窗口
 
@@ -946,7 +946,7 @@ Excel 窗口的组成部分
 
 当您双击空白窗口选项时，会打开一个空白的电子表格，如图 1.2 所示：
 
-![](img/Figure_1.2.png)
+![](img/ms-adv-xcl-Figure_1.2.png)
 
 图 1.2：Excel 2016 窗口的各种组件
 
@@ -954,7 +954,7 @@ Excel 窗口的组成部分
 
 在后台视图中，您可以管理与文档及其相关数据。在这里，您可以创建、保存、发送、检查文档中的隐藏元数据或个人信息。文件选项卡取代了早期版本 MS Office 中使用的 MS Office 按钮和文件菜单。图 1.3 展示了后台视图中的各种选项：
 
-![](img/Figure_1.3.png)
+![](img/ms-adv-xcl-Figure_1.3.png)
 
 图 1.3：后台视图中的选项
 
@@ -966,7 +966,7 @@ Excel 窗口的组成部分
 
 +   画廊：它可能显示在功能区内，但更常见的是一组命令或功能的下拉式菜单。它们使用图标或其他图形来展示命令的结果，而不是命令本身。图 1.4 展示了画廊选项：
 
-![](img/Figure_1.4.png)
+![](img/ms-adv-xcl-Figure_1.4.png)
 
 图 1.4：画廊选项
 
@@ -974,7 +974,7 @@ Excel 窗口的组成部分
 
 即使您没有 MS Office 365 或其任何版本，您仍然可以免费在线访问和查看您的重要内容。参考图 1.5：
 
-![](img/Figure_1.5.png)
+![](img/ms-adv-xcl-Figure_1.5.png)
 
 图 1.5：后台视图中的共享选项
 
@@ -994,7 +994,7 @@ Excel 窗口的组成部分
 
 Excel 允许您自定义各种方面、行为和与其交互的方式。您可以更改 Excel 的默认设置，例如字体、迭代次数、文件位置以及启动 Excel 时打开的文件。要选择选项对话框，您需要点击“文件”选项卡按钮，然后选择“选项”，如图 1.6 所示：
 
-![](img/Figure_1.6.png)
+![](img/ms-adv-xcl-Figure_1.6.png)
 
 图 1.6：MS Excel 的选项窗口
 
@@ -1022,7 +1022,7 @@ Excel 允许您自定义各种方面、行为和与其交互的方式。您可�
 
 参考图 1.7：
 
-![](img/Figure_1.7.png)
+![](img/ms-adv-xcl-Figure_1.7.png)
 
 图 1.7：自定义自定义选项卡和自定义组的步骤
 
@@ -1048,7 +1048,7 @@ Excel 提供了带有实时预览功能的粘贴选项，使您在重复使用�
 
 这是一个令人兴奋的新功能，承诺节省时间。举个例子：如果您在列 A 中写入名字，列 B 中写入姓氏，要将两个名字连接在列 C 中，Excel 具有自动填充整个列的功能，如 图 1.8 (a) 所示。再举一个例子，假设我们在列 A 中有包含全名的电子邮件地址。您可以开始在新列中输入名字，Excel 将自动填充整个列，如 图 1.8 (b) 所示。
 
-![](img/Figure_1.8.png)
+![](img/ms-adv-xcl-Figure_1.8.png)
 
 图 1.8：闪填充
 
@@ -1058,7 +1058,7 @@ Excel 提供了带有实时预览功能的粘贴选项，使您在重复使用�
 
 举个例子：有一个按部门工资排列的数据，需要以适当的格式呈现。你需要在这里进行快速分析。参考 图 1.9：
 
-![](img/Figure_1.9.png)
+![](img/ms-adv-xcl-Figure_1.9.png)
 
 图 1.9：快速数据分析工具
 
@@ -1068,43 +1068,43 @@ Excel 提供了带有实时预览功能的粘贴选项，使您在重复使用�
 
 +   数据透视表：数据透视表允许您快速轻松地总结和分析大型数据集。您可以使用数据透视表创建交互式报告，识别趋势，并发现数据中的模式。图 1.10 显示了数据透视表图标：
 
-    ![](img/Figure_1.10.png)
+    ![](img/ms-adv-xcl-Figure_1.10.png)
 
     图 1.10：数据透视表
 
 +   条件格式设置：条件格式设置允许您根据特定标准突出显示特定数据。这对于识别异常值、发现趋势和识别数据中的模式非常有用。图 1.11 显示了条件格式设置的图标：
 
-    ![](img/Figure_1.11.png)
+    ![](img/ms-adv-xcl-Figure_1.11.png)
 
     图 1.11：条件格式设置
 
 +   数据验证：数据验证允许您为电子表格中的数据输入设置规则。这有助于确保数据的完整性和准确性，这对于有效的数据挖掘非常重要。图 1.12 显示了数据验证的图标：
 
-    ![](img/Figure_1.12.png)
+    ![](img/ms-adv-xcl-Figure_1.12.png)
 
     图 1.12：数据验证
 
 +   假设分析：假设分析允许您探索不同情景及其潜在结果。这对于预测、风险分析和决策制定非常有用。图 1.13 显示了假设分析的图标：
 
-    ![](img/Figure_1.13.png)
+    ![](img/ms-adv-xcl-Figure_1.13.png)
 
     图 1.13：假设分析
 
 +   求解器：求解器是 Excel 的一个附加组件，允许您优化复杂模型并解决问题。它可用于优化问题、线性规划等。参考图 1.14：
 
-    ![](img/Figure_1.14.png)
+    ![](img/ms-adv-xcl-Figure_1.14.png)
 
     图 1.14：求解器
 
 +   Power Query：Power Query 是一个数据转换和清洗工具，可用于从多个来源提取、转换和加载数据。它可以帮助自动化数据清理任务并准备数据进行分析。参考图 1.15：
 
-    ![](img/Figure_1.15.png)
+    ![](img/ms-adv-xcl-Figure_1.15.png)
 
     图 1.15：Power Query
 
 +   文本分列：文本分列功能允许您根据分隔符或模式将列中的数据拆分为多个列。这对于清理和重组数据非常有用。图 1.16 显示了文本分列的图标
 
-    ![](img/Figure_1.16.png)
+    ![](img/ms-adv-xcl-Figure_1.16.png)
 
     图 1.16：文本分列
 
@@ -1118,43 +1118,43 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 +   使用公式和函数：Excel 提供了广泛的内置公式和函数，可以自动化许多任务并节省时间。例如，一些常用函数包括 SUM、AVERAGE、COUNT、IF 和 VLOOKUP。公式栏可以在图 1.17 中看到：
 
-    ![](img/Figure_1.17.png)
+    ![](img/ms-adv-xcl-Figure_1.17.png)
 
     图 1.17：Excel 中的公式
 
 +   使用数据验证：数据验证是 Excel 中的一个强大功能，允许您控制可以输入单元格的数据类型。这可以通过减少纠正错误的需求来帮助防止错误并节省时间。此选项可以在以下图 1.18 中看到：
 
-    ![](img/Figure_1.18.png)
+    ![](img/ms-adv-xcl-Figure_1.18.png)
 
     图 1.18：数据验证
 
 +   使用条件格式化：条件格式化允许您突出显示符合特定条件的单元格，从而更容易分析数据并识别趋势。这可以通过减少手动搜索特定数值或模式的需求来节省时间。此选项可在图 1.19 中看到：
 
-    ![](img/Figure_1.19.png)
+    ![](img/ms-adv-xcl-Figure_1.19.png)
 
     图 1.19：条件格式化
 
 +   使用数据透视表：数据透视表是总结和分析大型数据集的强大工具。它们可以帮助您快速识别数据中的趋势和模式，并使创建报告和图表变得更加容易。参考图 1.20：
 
-    ![](img/Figure_1.20.png)
+    ![](img/ms-adv-xcl-Figure_1.20.png)
 
     图 1.20：数据透视表
 
 +   使用 Excel 模板：Excel 模板可以通过提供预先设计的带有内置公式、格式和布局的电子表格来节省时间。这可以通过消除从头开始创建电子表格的需求来节省时间。参考图 1.21：
 
-    ![](img/Figure_1.21.png)
+    ![](img/ms-adv-xcl-Figure_1.21.png)
 
     图 1.21：Excel 模板
 
 +   使用自动填充功能：Excel 中的自动填充功能可以通过自动填充所选单元格范围内的一系列数值或公式来节省时间。要使用自动填充功能，请选择具有所需数值或公式的单元格，然后将填充手柄拖动到要显示数值或公式的单元格范围上。参考图 1.22：
 
-    ![](img/Figure_1.22.png)
+    ![](img/ms-adv-xcl-Figure_1.22.png)
 
     图 1.22：自动填充功能
 
 +   使用 Excel 的排序和筛选功能：Excel 的排序和筛选功能可以通过快速组织和分析数据来节省时间。要对数据进行排序，请选择要按其排序的列，然后单击“升序排序”或“降序排序”按钮。要筛选数据，请单击“筛选”按钮，并选择要用于筛选数据的条件，如图 1.23 所示：
 
-    ![](img/Figure_1.23.png)
+    ![](img/ms-adv-xcl-Figure_1.23.png)
 
     图 1.23：Excel 中的排序和筛选
 
@@ -1198,7 +1198,7 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第二章 单元格引用和范围
@@ -1237,7 +1237,7 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 参考以下图 2.1：
 
-![](img/Figure_2.1.png)
+![](img/ms-adv-xcl-Figure_2.1.png)
 
 图 2.1：单元格引用类型
 
@@ -1245,13 +1245,13 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 这是 Excel 中的默认单元格引用。在这种引用中，当您将相对单元格引用复制并粘贴到一个单元格中时，该单元格会根据从中复制的单元格所做的更改而自动更新。例如，假设您想要计算 HRA，即基本工资的 50%。为此，您需要在 HRA 列的第一个单元格中键入公式=H2*50%，如图 2.2 所示：
 
-![](img/Figure_2.2.png)
+![](img/ms-adv-xcl-Figure_2.2.png)
 
 图 2.2：在 HRA 列的第一个单元格中键入公式=H2*50%
 
 要找到所有员工的 HRA，将鼠标左键放在 HRA 列中第一个单元格边框的右下角上，并向下拖动直到最后一条记录，如图 2.3 所示：
 
-![](img/Figure_2.3.png)
+![](img/ms-adv-xcl-Figure_2.3.png)
 
 图 2.3：拖动公式
 
@@ -1263,19 +1263,19 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 假设您想要找到 1000、2000、3000 和 4000 的 10%，如图 2.4 所示：
 
-![](img/Figure_2.4.png)
+![](img/ms-adv-xcl-Figure_2.4.png)
 
 图 2.4：计算 1000、2000、3000 和 4000 的 10%
 
 如果你按照前面的图示进行编写，当复制到右侧时，公式会自动变为 C1*B2，D1*C2 等。然而，这并不是正确的计算。我们需要冻结单元格引用 A2，使其在每次复制公式时保持不变。在这里，A2 需要更改为 $A$2 才能达到所需的输出，如图 2.5 所示：
 
-![](img/Figure_2.5.png)
+![](img/ms-adv-xcl-Figure_2.5.png)
 
 图 2.5：将 A2 写成 $A$2
 
 所需结果可在图 2.6 中看到：
 
-![](img/Figure_2.6.png)
+![](img/ms-adv-xcl-Figure_2.6.png)
 
 图 2.6：使用绝对单元格引用制作的公式结果
 
@@ -1285,25 +1285,25 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 有时候你可能只想冻结单元格引用中的行或列。在下面的图 2.7 中，我们需要计算 1000、2000、3000、4000 等的 10%、20%、30%、40% 和 50%：
 
-![](img/Figure_2.7.png)
+![](img/ms-adv-xcl-Figure_2.7.png)
 
 图 2.7：计算 1000、2000、3000、4000、5000 的 10%、20%、30%、40% 和 50%
 
 如果你向右拖动公式，它会变成 C2*B3，D2*C3 等。一旦向下拖动，它会变成 B3*A4，B4*A5 等。然而，这些不是正确的公式。参考图 2.8：
 
-![](img/Figure_2.8.png)
+![](img/ms-adv-xcl-Figure_2.8.png)
 
 图 2.8：引用单元格中的错误公式
 
 如果我们仔细观察图 2.8，我们可以看到，如果我们需要得到正确的答案，我们需要冻结 B2 的行号（因为它对所有向右和向下的公式都是相同的）和 A3 的列名（因为它对所有向右和向下的公式都是相同的）。复制后，结果公式将如图 2.9 所示：
 
-![](img/Figure_2.9.png)
+![](img/ms-adv-xcl-Figure_2.9.png)
 
 图 2.9：结果公式
 
 答案如图 2.10 所示。这种引用中，行或列号被冻结的称为混合单元格引用。
 
-![](img/Figure_2.10.png)
+![](img/ms-adv-xcl-Figure_2.10.png)
 
 图 2.10：结果值
 
@@ -1319,7 +1319,7 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 1.  选择范围（例如，H2:H101）并在名称框中输入名称（例如，Sal），如图 2.11 所示：
 
-    ![](img/Figure_2.11.png)
+    ![](img/ms-adv-xcl-Figure_2.11.png)
 
     图 2.11：创建命名区域
 
@@ -1335,7 +1335,7 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 1.  现在，您可以在工作簿中的任何地方使用给定的名称而不是范围。参考图 2.12：
 
-    ![](img/Figure_2.12.png)
+    ![](img/ms-adv-xcl-Figure_2.12.png)
 
     图 2.12：使用命名范围而不是单元格引用
 
@@ -1347,7 +1347,7 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 1.  打开一个名称管理器对话框，如图 2.13 所示：
 
-    ![](img/1.png)
+    ![](img/ms-adv-xcl-1.png)
 
     图 2.13：名称管理器对话框
 
@@ -1355,7 +1355,7 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 1.  出现一个编辑名称对话框，如图 2.14 所示：
 
-    ![](img/Figure_2.14.png)
+    ![](img/ms-adv-xcl-Figure_2.14.png)
 
     图 2.14：编辑名称对话框
 
@@ -1396,7 +1396,7 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第三章使用公式和函数
@@ -1441,13 +1441,13 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 图 3.1 展示了五种产品的数量和价格：
 
-![](img/Figure_3.1.png)
+![](img/ms-adv-xcl-Figure_3.1.png)
 
 图 3.1：五种产品的数量和价格
 
 图 3.2 展示了所有产品的数量*价格：
 
-![](img/Figure_3.2.png)
+![](img/ms-adv-xcl-Figure_3.2.png)
 
 图 3.2：所有产品的数量*价格
 
@@ -1459,7 +1459,7 @@ Excel 中的 TAT（交付时间）节省技术可以指的是旨在加快处理 
 
 如果函数开始一个公式，请在函数名称前键入等号（=）。当您创建包含函数的公式时，公式面板将为您提供帮助，如下所示图 3.3：
 
-![](img/Figure_3.3.png)
+![](img/ms-adv-xcl-Figure_3.3.png)
 
 图 3.3：插入函数
 
@@ -1499,7 +1499,7 @@ IF 函数可用于评估条件。根据条件，无论是真还是假，IF 函�
 
 参考图 3.4：
 
-![](img/Figure_3.4.png)
+![](img/ms-adv-xcl-Figure_3.4.png)
 
 图 3.4：IF 函数
 
@@ -1518,7 +1518,7 @@ IF 函数可用于评估条件。根据条件，无论是真还是假，IF 函�
 
 您可以使用嵌套的 IF 函数来评估复杂的条件。例如，如果工资<5000，则税率为 5%。如果工资在 5000 到 1000 之间，则为 10%，否则为 15%。由于我们已经给工资列命名为 sal，因此可以使用 sal 代替 h2 =if (sal<5000, salary*.05, if (sal<10000, salary*.10, sal*.15))。参考图 3.5：
 
-![](img/Figure_3.5.png)
+![](img/ms-adv-xcl-Figure_3.5.png)
 
 图 3.5：使用嵌套 IF 函数
 
@@ -1623,13 +1623,13 @@ IF（NOT（Department=”MT”），10%*工资，0）
 
 +   V-lookup（如果数据库是垂直的）。参考图 3.6：
 
-    ![](img/Figure_3.6.png)
+    ![](img/ms-adv-xcl-Figure_3.6.png)
 
     图 3.6：V-lookup
 
 +   H-lookup（如果数据库是水平的）：参考图 3.7：
 
-    ![](img/Figure_3.7.png)
+    ![](img/ms-adv-xcl-Figure_3.7.png)
 
     图 3.7：H-lookup
 
@@ -1644,7 +1644,7 @@ V Lookup
 
 您可以通过使用内置函数参数对话框来编写此函数。单击公式选项卡，在查找和引用类别中搜索 vlookup。您将获得一个函数参数对话框，如图 3.8 所示：
 
-![](img/Figure_3.8.png)
+![](img/ms-adv-xcl-Figure_3.8.png)
 
 图 3.8：V-lookup 函数参数
 
@@ -1710,7 +1710,7 @@ H-lookup 与 V-lookup 的工作方式相同。但在这种情况下，我们需�
 
 在高级 Excel 作业文件中，emp_inf 表，我们需要根据员工 ID 检索员工信息。为此，我们可以使用 vlookup，如下所示图 3.9：
 
-![](img/Figure_3.9.png)
+![](img/ms-adv-xcl-Figure_3.9.png)
 
 图 3.9：带有非零范围的 Vlookup 示例
 
@@ -1737,7 +1737,7 @@ H-lookup 与 V-lookup 的工作方式相同。但在这种情况下，我们需�
 
 在上述 vlookup 示例中，如果我们需要动态查找列索引号，我们可以使用列函数，如下所示图 3.10：
 
-![](img/Figure_3.10.png)
+![](img/ms-adv-xcl-Figure_3.10.png)
 
 图 3.10：在 Vlookup 中使用列函数
 
@@ -1780,7 +1780,7 @@ match 函数的语法如下：
 
 在 emp_inf 示例中，如果我们需要使用列标题使 vlookup 更加动态，我们可以使用 match 与 vlookup，如图 3.11 所示。在这里，match 查找工资数据库标题中每个字段的标签，并动态返回列的位置：
 
-![](img/Figure_3.11.png)
+![](img/ms-adv-xcl-Figure_3.11.png)
 
 图 3.11：vlookup 中的 match 函数
 
@@ -1820,13 +1820,13 @@ index-match 的语法如下：
 | =INDEX (数据库, MATCH (qtr 3, 列标题, 0), MATCH (year, 年份列, 0)) |
 | --- |
 
-![](img/Figure_3.12.png)
+![](img/ms-adv-xcl-Figure_3.12.png)
 
 图 3.12：Index-match 函数
 
 在以下图 3.13 中，empcode 是第三列。如果我们需要根据 empcode 找出 DA 或工资，通常会复制并粘贴列到左侧并使用 vlookup。相反，我们可以使用如图 3.13 中所示的 index match：
 
-![](img/Figure_3.13.png)
+![](img/ms-adv-xcl-Figure_3.13.png)
 
 图 3.13：通过使用 Index match 根据 empcode 找出 DA 或工资
 
@@ -1852,7 +1852,7 @@ index-match 的语法如下：
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第四章数据验证
@@ -1889,7 +1889,7 @@ index-match 的语法如下：
 
 参考以下图示：
 
-![](img/Figure_4.1.png)
+![](img/ms-adv-xcl-Figure_4.1.png)
 
 图 4.1：跟踪先行示例
 
@@ -1897,19 +1897,19 @@ index-match 的语法如下：
 
 1.  选择单元格 C2，如下所示：
 
-    ![](img/Figure_4.2.png)
+    ![](img/ms-adv-xcl-Figure_4.2.png)
 
     图 4.2：为总收入应用公式
 
 1.  单击功能区中“公式审计”部分的“跟踪先行”按钮，如下所示：
 
-    ![](img/Figure_4.3.png)
+    ![](img/ms-adv-xcl-Figure_4.3.png)
 
     图 4.3：公式选项卡
 
 Excel 将绘制指向单元格 A2 和 B2 的箭头，表示它们是单元格 C2 中公式引用的单元格，如下所示：
 
-![](img/Figure_4.4.png)
+![](img/ms-adv-xcl-Figure_4.4.png)
 
 图 4.4：跟踪先行
 
@@ -1939,7 +1939,7 @@ Trace Dependents
 
 参考以下图：
 
-![](img/Figure_4.5.png)
+![](img/ms-adv-xcl-Figure_4.5.png)
 
 图 4.5：**Trace Dependents**
 
@@ -1973,7 +1973,7 @@ Trace Dependents
 
 参考以下图：
 
-![](img/Figure_4.6.png)
+![](img/ms-adv-xcl-Figure_4.6.png)
 
 图 4.6：数据验证
 
@@ -1999,7 +1999,7 @@ Trace Dependents
 
 参考以下图：
 
-![](img/Figure_4.7.png)
+![](img/ms-adv-xcl-Figure_4.7.png)
 
 图 4.7：创建列表
 
@@ -2093,7 +2093,7 @@ Trace Dependents
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第五章保护
@@ -2126,13 +2126,13 @@ Trace Dependents
 
 在 emp_inf 示例中，如图 5.1 所示，如果我们希望将工作表用作公共模板，我们需要防止未经授权访问 Vlookup 公式。我们只希望将数据输入限制在单元格 B3 中。为此，我们可以使用保护功能。
 
-![](img/Figure_5.1.png)
+![](img/ms-adv-xcl-Figure_5.1.png)
 
 图 5.1：员工信息系统。
 
 在 Excel 中，有 3 个保护级别，如图 5.2 所示：
 
-![](img/Figure_5.2.png)
+![](img/ms-adv-xcl-Figure_5.2.png)
 
 图 5.2：保护级别
 
@@ -2164,7 +2164,7 @@ Trace Dependents
 
 +   保护工作簿窗口，确保工作簿的窗口在每次打开时都是相同的大小和位置。
 
-    ![](img/Figure_5.3.png)
+    ![](img/ms-adv-xcl-Figure_5.3.png)
 
     图 5.3：保护工作簿
 
@@ -2180,7 +2180,7 @@ Trace Dependents
 
 1.  在“保护工作簿”对话框中指定选项后，点击确定。参考以下图 5.4：
 
-    ![](img/Figure_5.4.png)
+    ![](img/ms-adv-xcl-Figure_5.4.png)
 
     图 5.4：保护结构和窗口
 
@@ -2240,7 +2240,7 @@ Trace Dependents
 
 1.  然后点击“常规选项”，如图 5.5 所示。
 
-    ![](img/Figure_5.5.png)
+    ![](img/ms-adv-xcl-Figure_5.5.png)
 
     图 5.5：使用密码保护文件
 
@@ -2268,7 +2268,7 @@ Trace Dependents
 
 1.  第一个“序号”将由供应商填写，其余内容仅在从产品列表中选择产品时才会出现，如下图所示：
 
-    ![](img/Figure_5.6.png)
+    ![](img/ms-adv-xcl-Figure_5.6.png)
 
     图 5.6：产品发票
 
@@ -2290,7 +2290,7 @@ Trace Dependents
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第六章 数据库排序
@@ -2329,7 +2329,7 @@ Trace Dependents
 
 1.  在“排序和筛选”组中，单击“升序排序”或“降序排序”按钮。如图 6.1 所示，这将对整个数据库进行排序：
 
-    ![](img/Figure_6.1.png)
+    ![](img/ms-adv-xcl-Figure_6.1.png)
 
     图 6.1：简单排序
 
@@ -2355,7 +2355,7 @@ Trace Dependents
 
 1.  当所有“然后按”字段都填写完毕后，单击“确定”，如图 6.2 所示：
 
-    ![](img/Figure_6.2.png)
+    ![](img/ms-adv-xcl-Figure_6.2.png)
 
     图 6.2：多级排序
 
@@ -2426,7 +2426,7 @@ Trace Dependents
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第七章 数据库筛选
@@ -2473,7 +2473,7 @@ Trace Dependents
 
 1.  点击确定，如图 7.1 所示：
 
-    ![](img/Figure_7.1.png)
+    ![](img/ms-adv-xcl-Figure_7.1.png)
 
     图 7.1：筛选器
 
@@ -2489,19 +2489,19 @@ Excel 提供了两种指定复杂筛选条件的工具：
 
 一旦向数据添加筛选器，每个字段都会根据该列中的数据类型获得数字、文本或日期筛选器选项。这些可以用于字段特定的筛选，如文本字段的“以...开头”，“包含”，数字字段的“大于”，“小于”，“介于”，日期字段的“之前”，“之后”。每个筛选字段都有一个自定义筛选选项，您可以在其中指定除已提供的选项之外的公式或选项。参考图 7.2：
 
-![](img/Figure_7.2.png)
+![](img/ms-adv-xcl-Figure_7.2.png)
 
 图 7.2：数字筛选器
 
 参考以下图 7.3：
 
-![](img/Figure_7.3.png)
+![](img/ms-adv-xcl-Figure_7.3.png)
 
 图 7.3：文本筛选器
 
 参考以下图 7.4：
 
-![](img/Figure_7.4.png)
+![](img/ms-adv-xcl-Figure_7.4.png)
 
 图 7.4：日期筛选器
 
@@ -2509,7 +2509,7 @@ Excel 提供了两种指定复杂筛选条件的工具：
 
 1.  在包含条件标签的单元格下方输入比较标准。您可以在同一行中使用“AND”条件，也可以在不同行中使用“OR”条件。例如，图 7.5 中给出的条件可用于仅显示北部或南部地区的人员记录。
 
-    ![](img/Figure_7.5.png)
+    ![](img/ms-adv-xcl-Figure_7.5.png)
 
     图 7.5：条件范围
 
@@ -2517,7 +2517,7 @@ Excel 提供了两种指定复杂筛选条件的工具：
 
 1.  在“排序和筛选”组中，单击“高级”以打开高级筛选对话框（如图 7.6 所示）。
 
-    ![](img/Figure_7.6.png)
+    ![](img/ms-adv-xcl-Figure_7.6.png)
 
     图 7.6：高级筛选
 
@@ -2581,7 +2581,7 @@ Excel 提供了两种指定复杂筛选条件的工具：
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第八章小计和数据合并
@@ -2622,7 +2622,7 @@ Excel 提供了一种有效的方法来使用子总计功能完成这项工作�
 
 1.  出现一个子总计对话框，如图 8.1 所示：
 
-    ![](img/Figure_8.1.png)
+    ![](img/ms-adv-xcl-Figure_8.1.png)
 
     图 8.1：子总计
 
@@ -2664,7 +2664,7 @@ Excel 提供了一种有效的方法来使用子总计功能完成这项工作�
 
 1.  在单击“确定”按钮之前，清除“替换当前小计”的复选框，如图 8.2 所示。
 
-    ![](img/Figure_8.2.png)
+    ![](img/ms-adv-xcl-Figure_8.2.png)
 
     图 8.2：用于嵌套小计的子总对话框
 
@@ -2676,37 +2676,37 @@ Excel 提供了一种有效的方法来使用子总计功能完成这项工作�
 
 1.  打开一个新的工作表，您想要合并数据的地方，如图 8.3 所示：
 
-    ![](img/Figure_8.3.png)
+    ![](img/ms-adv-xcl-Figure_8.3.png)
 
     图 8.3：打开一个新的工作表
 
 1.  选择要放置合并数据的单元格，如图 8.4 所示：
 
-    ![](img/Figure_8.4.png)
+    ![](img/ms-adv-xcl-Figure_8.4.png)
 
     图 8.4：选择单元格
 
 1.  单击顶部菜单栏中的“数据”选项卡，然后单击“数据工具”组中的“合并”按钮，如图 8.5 所示：
 
-    ![](img/Figure_8.5.png)
+    ![](img/ms-adv-xcl-Figure_8.5.png)
 
     图 8.5：合并选项
 
 1.  在合并对话框中，选择要用于合并的函数，例如 SUM、AVERAGE、COUNT 等，如图 8.6 所示：
 
-    ![](img/Figure_8.6.png)
+    ![](img/ms-adv-xcl-Figure_8.6.png)
 
     图 8.6：合并对话框
 
 1.  通过单击“引用”字段旁边的“折叠对话框”按钮并选择要合并的单元格来选择要合并的单元格范围。参考图 8.7：
 
-    ![](img/Figure_8.7.png)
+    ![](img/ms-adv-xcl-Figure_8.7.png)
 
     图 8.7：选择要合并的单元格
 
 1.  如果您想 consolide 来自多个工作表的数据，请单击“所有引用”字段中的“添加”按钮，然后选择要 consolide 的附加工作表和单元格范围。参考 图 8.8：
 
-    ![](img/Figure_8.8.png)
+    ![](img/ms-adv-xcl-Figure_8.8.png)
 
     图 8.8：从多个工作表 consolide 数据
 
@@ -2714,13 +2714,13 @@ Excel 提供了一种有效的方法来使用子总计功能完成这项工作�
 
 1.  确保如果您不想在 consolide 中包括这些项目，则取消选中“顶部行”和“左列”复选框，如 图 8.9 所示：
 
-    ![](img/Figure_8.9.png)
+    ![](img/ms-adv-xcl-Figure_8.9.png)
 
     图 8.9：标签使用复选框
 
 1.  单击“确定”以 consolide 数据，如 图 8.10 所示：
 
-    ![](img/Figure_8.10.png)
+    ![](img/ms-adv-xcl-Figure_8.10.png)
 
     图 8.10：单击“确定”
 
@@ -2730,7 +2730,7 @@ consolide 数据示例
 
 假设您有三个工作表，每个工作表包含不同地区（东部、西部和南部）的销售数据。每个工作表具有相同的格式，包括产品、销售代表和销售金额列，如 图 8.11 所示：
 
-![](img/Figure_8.11.png)
+![](img/ms-adv-xcl-Figure_8.11.png)
 
 图 8.11：示例工作表
 
@@ -2740,7 +2740,7 @@ consolide 数据示例
 
 1.  选择要放置 consolide 数据的单元格，例如，如 图 8.12 所示的单元格 A1：
 
-    ![](img/Figure_8.12.png)
+    ![](img/ms-adv-xcl-Figure_8.12.png)
 
     图 8.12：选择一个单元格
 
@@ -2750,13 +2750,13 @@ consolide 数据示例
 
 1.  通过单击“引用”字段旁边的“折叠对话框”按钮选择要 consolide 的单元格范围，然后在东工作表上选择要 consolide 的单元格，例如 A1:C10，如 图 8.13 所示：
 
-    ![](img/Figure_8.13.png)
+    ![](img/ms-adv-xcl-Figure_8.13.png)
 
     图 8.13：选择要 consolide 的单元格
 
 1.  如果您想 consolide 来自多个工作表的数据，请单击“所有引用”字段中的“添加”按钮，然后选择要 consolide 的附加工作表和单元格范围（例如，在西工作表上选择范围，然后在南工作表上选择范围），如 图 8.14 所示：
 
-    ![](img/Figure_8.14.png)
+    ![](img/ms-adv-xcl-Figure_8.14.png)
 
     图 8.14：从多个工作表 consolide 数据
 
@@ -2766,7 +2766,7 @@ consolide 数据示例
 
 最终合并的数据可以在以下图 8.15 中看到：
 
-![](img/Figure_8.15.png)
+![](img/ms-adv-xcl-Figure_8.15.png)
 
 图 8.15: 最终合并的数据
 
@@ -2828,7 +2828,7 @@ consolide 数据示例
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第九章数据透视表
@@ -2882,7 +2882,7 @@ consolide 数据示例
 
 参考以下图 9.1：
 
-![](img/Figure_9.1.png)
+![](img/ms-adv-xcl-Figure_9.1.png)
 
 图 9.1：数据透视表的字段
 
@@ -2902,7 +2902,7 @@ consolide 数据示例
 
 检查数据透视表的推荐。为此，选择数据库并点击“插入”选项卡。点击推荐的数据透视表选项，如下所示图 9.2：
 
-![](img/Figure_9.2.png)
+![](img/ms-adv-xcl-Figure_9.2.png)
 
 图 9.2: 推荐的数据透视表
 
@@ -2916,13 +2916,13 @@ consolide 数据示例
 
 1.  选择包括标题在内的整个数据范围。你可以通过点击并拖动鼠标跨越数据或使用键盘快捷键（例如，Ctrl+A）来完成这个操作。参考图 9.3：
 
-    ![](img/Figure_9.3.png)
+    ![](img/ms-adv-xcl-Figure_9.3.png)
 
     图 9.3: 销售数据
 
 1.  在 Excel 中，转到“插入”选项卡，然后点击“数据透视表”按钮，如图 9.4 所示：
 
-    ![](img/Figure_9.4.png)
+    ![](img/ms-adv-xcl-Figure_9.4.png)
 
     图 9.4: 插入数据透视表
 
@@ -2930,13 +2930,13 @@ consolide 数据示例
 
 1.  点击“确定”创建数据透视表。
 
-    ![](img/Figure_9.5.png)
+    ![](img/ms-adv-xcl-Figure_9.5.png)
 
     图 9.5: 表/范围
 
 1.  透视表字段列表将显示在屏幕右侧。此列表包含您的销售数据的列标题。参考图 9.6:
 
-    ![](img/Figure_9.6.png)
+    ![](img/ms-adv-xcl-Figure_9.6.png)
 
     图 9.6: 按客户分组的数量
 
@@ -2946,13 +2946,13 @@ consolide 数据示例
 
 1.  将“QTY”字段拖动到“值”区域以计算总销售数量。参考图 9.7:
 
-    ![](img/Figure_9.7.png)
+    ![](img/ms-adv-xcl-Figure_9.7.png)
 
     图 9.7: 值字段设置
 
 1.  您可以通过单击“值”区域中字段名称旁边的下拉箭头并选择不同的计算（例如，平均值、计数）来更改汇总函数。参考图 9.8:
 
-    ![](img/Figure_9.8.png)
+    ![](img/ms-adv-xcl-Figure_9.8.png)
 
     图 9.8: 总和和平均值
 
@@ -2972,7 +2972,7 @@ consolide 数据示例
 
 参考图 9.9:
 
-![](img/Figure_9.9.png)
+![](img/ms-adv-xcl-Figure_9.9.png)
 
 图 9.9: 总计百分比
 
@@ -3006,7 +3006,7 @@ consolide 数据示例
 
 参考图 9.10:
 
-![](img/Figure_9.10.png)
+![](img/ms-adv-xcl-Figure_9.10.png)
 
 图 9.10: 日期分组
 
@@ -3014,7 +3014,7 @@ consolide 数据示例
 
 月份报告可以在以下图 9.11 中查看：
 
-![](img/Figure_9.11.png)
+![](img/ms-adv-xcl-Figure_9.11.png)
 
 图 9.11: 按月份
 
@@ -3024,7 +3024,7 @@ consolide 数据示例
 
 要创建一个数据透视图表，选择数据透视表内的任何单元格，然后在“选项”选项卡上的“工具”组中点击“图表”。选择图表的选项，然后点击“确定”。您也可以通过在源数据中选择一个单元格，并在“插入”选项卡的“表格”组中的“数据透视图表”列表中选择“数据透视图表”来同时创建新的数据透视图表和数据透视图表。参考图 9.12：
 
-![](img/Figure_9.12.png)
+![](img/ms-adv-xcl-Figure_9.12.png)
 
 图 9.12：按月份图表
 
@@ -3036,7 +3036,7 @@ consolide 数据示例
 
 参考图 9.13：
 
-![](img/Figure_9.13.png)
+![](img/ms-adv-xcl-Figure_9.13.png)
 
 图 9.13：按年度月份分组
 
@@ -3048,7 +3048,7 @@ consolide 数据示例
 
 参考图 9.14：
 
-![](img/Figure_9.14.png)
+![](img/ms-adv-xcl-Figure_9.14.png)
 
 图 9.14：按年度季度分组
 
@@ -3058,13 +3058,13 @@ consolide 数据示例
 
 参考图 9.15：
 
-![](img/Figure_9.15.png)
+![](img/ms-adv-xcl-Figure_9.15.png)
 
 图 9.15：按天分组
 
 现在，数据透视表将按天分组显示数据，使您可以查看按日汇总的周报表，如图 9.16 所示：
 
-![](img/Figure_9.16.png)
+![](img/ms-adv-xcl-Figure_9.16.png)
 
 图 9.16：周报表
 
@@ -3076,7 +3076,7 @@ consolide 数据示例
 
 1.  从上下文菜单中选择“组”或“组字段”选项。参考图 9.17：
 
-    ![](img/Figure_9.17.png)
+    ![](img/ms-adv-xcl-Figure_9.17.png)
 
     图 9.17：按数字分组
 
@@ -3092,7 +3092,7 @@ consolide 数据示例
 
 切片器是易于使用的过滤组件，包含一组按钮，使您可以快速过滤数据透视表报告中的数据，无需打开下拉列表以查找要过滤的项目。当您使用常规数据透视表报告筛选器来筛选多个项目时，筛选器指示仅筛选了多个项目，并且您必须打开下拉列表以查找筛选详细信息。然而，切片器清楚地标记了应用的筛选器，并提供详细信息，以便您可��轻松理解在过滤的数据透视表报告中显示的数据。参考 图 9.18：
 
-![](img/Figure_9.18.png)
+![](img/ms-adv-xcl-Figure_9.18.png)
 
 图 9.18：按天分组
 
@@ -3106,13 +3106,13 @@ consolide 数据示例
 
 1.  在“插入切片器”对话框中，选中“客户名称”旁边的复选框以选择它。参考 图 9.19：
 
-    ![](img/Figure_9.19.png)
+    ![](img/ms-adv-xcl-Figure_9.19.png)
 
     图 9.19 切片器
 
 1.  点击“确定”按钮以插入切片器。参考 图 9.20：
 
-    ![](img/Figure_9.20.png)
+    ![](img/ms-adv-xcl-Figure_9.20.png)
 
     图 9.20：按客户名称切片器
 
@@ -3124,13 +3124,13 @@ consolide 数据示例
 
 现在，您可以使用数据透视表时间轴而不是玩弄筛选器来显示日期。它是一个可以添加到您的数据透视表中的框，让您可以按时间筛选，并放大您想要的时间段。点击“分析” | “插入时间轴”来调用它。参考 图 9.21：
 
-![](img/Figure_9.21.png)
+![](img/ms-adv-xcl-Figure_9.21.png)
 
 图 9.21：时间轴
 
 图 9.22 显示了日期时间轴：
 
-![](img/Figure_9.22.png)
+![](img/ms-adv-xcl-Figure_9.22.png)
 
 图 9.22：日期时间轴
 
@@ -3260,7 +3260,7 @@ Power Pivot 是一个插件，我们可以在 Excel 中进行强大的数据分�
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十章条件格式设置
@@ -3291,7 +3291,7 @@ Excel 中的条件格式设置允许我们根据特定条件将格式设置规�
 
 当数据需要根据特定条件进行格式化时，我们可以使用条件格式设置。通过使用数据条、颜色刻度或图标集，可以轻松突出显示单元格或单元格范围，强调异常值，并通过可视化数据来可视化数据。条件格式设置会根据条件（或标准）更改单元格范围的外观。如果条件为真，则根据该条件格式化单元格范围。如果条件为假，则不会格式化单元格范围。参考图 10.1：
 
-![](img/Figure_10.1.png)
+![](img/ms-adv-xcl-Figure_10.1.png)
 
 图 10.1：条件格式设置
 
@@ -3378,7 +3378,7 @@ Excel 中的条件格式设置允许我们根据特定条件将格式设置规�
 
 参考以下图 10.2：
 
-![](img/Figure_10.2.png)
+![](img/ms-adv-xcl-Figure_10.2.png)
 
 图 10.2：新格式规则
 
@@ -3452,7 +3452,7 @@ Excel 中的条件格式设置允许我们根据特定条件将格式设置规�
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十一章假设分析
@@ -3529,7 +3529,7 @@ Excel 中的目标搜索功能帮助我们计算电子表格输入的值，使�
 
 参考图 11.1：
 
-![](img/Figure_11.1.png)
+![](img/ms-adv-xcl-Figure_11.1.png)
 
 图 11.1：目标搜索
 
@@ -3545,7 +3545,7 @@ Excel 中的目标搜索功能帮助我们计算电子表格输入的值，使�
 
 当我们改变利率时，函数中的月付款 PMT(b5/12, 36, 100000) 会受到影响。在此函数中，A5 被称为输入单元格，各种输入值从数据表中替换。参见 图 11.2：
 
-![](img/Figure_11.2.png)
+![](img/ms-adv-xcl-Figure_11.2.png)
 
 图 11.2：单变量数据表示例
 
@@ -3633,7 +3633,7 @@ Excel 中的目标搜索功能帮助我们计算电子表格输入的值，使�
 
 参考以下图 11.3：
 
-![](img/Figure_11.3.png)
+![](img/ms-adv-xcl-Figure_11.3.png)
 
 图 11.3：场景管理器
 
@@ -3659,7 +3659,7 @@ Excel 中的目标搜索功能帮助我们计算电子表格输入的值，使�
 
 参考以下图 11.4：
 
-![](img/Figure_11.4.png)
+![](img/ms-adv-xcl-Figure_11.4.png)
 
 图 11.4：场景摘要
 
@@ -3755,7 +3755,7 @@ Excel 中的目标搜索功能帮助我们计算电子表格输入的值，使�
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十二章使用多个工作表、工作簿和应用程序
@@ -3786,7 +3786,7 @@ Excel 中的目标搜索功能帮助我们计算电子表格输入的值，使�
 
 如果不同工作表中有按月份排列的数据，我们需要在不同工作表中有年度数据，如图 12.1 所示，我们可以使用工作表间引用：
 
-![](img/Figure_12.1.png)
+![](img/ms-adv-xcl-Figure_12.1.png)
 
 图 12.1: 按月份排列的数据
 
@@ -3796,13 +3796,13 @@ Sheetname!引用
 
 图 12.2 显示了在不同工作表中找到单元格求和的示例：
 
-![](img/Figure_12.2.png)
+![](img/ms-adv-xcl-Figure_12.2.png)
 
 图 12.2: 求和
 
 然而，如果其他工作表中的产品名称不相同或不按相同顺序排列，这种方法将不会证明有用。在这些情况下，您可以使用 Excel 的合并功能，如图 12.3 所示：
 
-![](img/Figure_12.3.png)
+![](img/ms-adv-xcl-Figure_12.3.png)
 
 图 12.3: 合并功能
 
@@ -3812,7 +3812,7 @@ Sheetname!引用
 
 1.  选择合并。将打开合并对话框，如图 12.4 所示：
 
-    ![](img/Figure_12.4.png)
+    ![](img/ms-adv-xcl-Figure_12.4.png)
 
     图 12.4: 合并对话框
 
@@ -3830,7 +3830,7 @@ Sheetname!引用
 
 参考以下图 12.5
 
-![](img/Figure_12.5.png)
+![](img/ms-adv-xcl-Figure_12.5.png)
 
 图 12.5: 结果数据
 
@@ -4046,7 +4046,7 @@ Sheetname!引用
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十三章使用图表
@@ -4093,7 +4093,7 @@ Sheetname!引用
 
 参考以下图例 13.1：
 
-![Figure_13.1](img/Figure_13.1.png)
+![Figure_13.1](img/ms-adv-xcl-Figure_13.1.png)
 
 图例 13.1: 图表
 
@@ -4101,7 +4101,7 @@ Sheetname!引用
 
 Excel 为每种图表类型提供了不同的图表设计，我们可以从设计选项卡中进行选择。可以在以下图例 13.2 中看到设计画廊的示例：
 
-![Figure_13.2](img/Figure_13.2.png)
+![Figure_13.2](img/ms-adv-xcl-Figure_13.2.png)
 
 图例 13.2: 图表设计
 
@@ -4119,7 +4119,7 @@ Excel 为我们提供了一些内置布局。这些可以从图表工具的设�
 
 参考以下图例 13.3：
 
-![Figure_13.3](img/Figure_13.3.png)
+![Figure_13.3](img/ms-adv-xcl-Figure_13.3.png)
 
 图例 13.3: 图表的关联选项
 
@@ -4185,13 +4185,13 @@ Excel 提供了一种更改默认设计模板中各部分默认颜色的方法�
 
 1.  Excel 将根据图 13.4 中提供的选定数据生成瀑布图：
 
-    ![](img/Figure_13.png)
+    ![](img/ms-adv-xcl-Figure_13.png)
 
     图 13.4：用于图表的数据
 
 图表可以在以下图 13.5 中看到：
 
-![](img/Figure_13.5.png)
+![](img/ms-adv-xcl-Figure_13.5.png)
 
 图 13.5：瀑布图
 
@@ -4215,13 +4215,13 @@ Excel 提供了一种更改默认设计模板中各部分默认颜色的方法�
 
 迷你图是可以放入单元格中的小图表。迷你图帮助用户在数据旁边查看摘要趋势。它占用很少的空间。特别适用于仪表板或其他需要以易于理解的视觉格式显示业务快照而不添加大量细节的地方。例如，以下图 13.6 和图 13.7 展示了迷你图如何让您一目了然地看到每个部门在五月份的表现：
 
-![](img/Figure_13.6.png)
+![](img/ms-adv-xcl-Figure_13.6.png)
 
 图 13.6：迷你图示例 1
 
 参考图 13.7：
 
-![](img/Figure_13.7.png)
+![](img/ms-adv-xcl-Figure_13.7.png)
 
 图 13.7：迷你图示例 2
 
@@ -4289,7 +4289,7 @@ Excel 提供了一种更改默认设计模板中各部分默认颜色的方法�
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十四章在 VBA 中创建和记录宏
@@ -4378,7 +4378,7 @@ VBA 的一些用途如下：
 
 1.  在“自定义功能区”选项卡上，选择在功能区中显示“开发者”选项卡，如图 14.1 所示：
 
-    ![](img/Figure_14.1.png)
+    ![](img/ms-adv-xcl-Figure_14.1.png)
 
     图 14.1：在功能区添加开发者选项卡
 
@@ -4390,7 +4390,7 @@ VBA 的一些用途如下：
 
 1.  在“代码”组中，单击“录制宏”按钮，如图 14.2 所示：
 
-    ![](img/Figure_14.2.png)
+    ![](img/ms-adv-xcl-Figure_14.2.png)
 
     图 14.2：录制宏
 
@@ -4398,7 +4398,7 @@ VBA 的一些用途如下：
 
 要定义宏，请按照以下步骤进行：
 
-![](img/Figure_14.3.png)
+![](img/ms-adv-xcl-Figure_14.3.png)
 
 图 14.3：定义宏
 
@@ -4444,7 +4444,7 @@ VBA 的一些用途如下：
 
 参考以下图 14.4：
 
-![](img/Figure_14.4.png)
+![](img/ms-adv-xcl-Figure_14.4.png)
 
 图 14.4：停止录制宏
 
@@ -4454,7 +4454,7 @@ VBA 的一些用途如下：
 
 参考图 14.5：
 
-![](img/Figure_14.5.png)
+![](img/ms-adv-xcl-Figure_14.5.png)
 
 图 14.5：停止录制宏
 
@@ -4490,7 +4490,7 @@ VBA 的一些用途如下：
 
 参考以下图 14.6：
 
-![](img/Figure_14.6.png)
+![](img/ms-adv-xcl-Figure_14.6.png)
 
 图 14.6：场景 1
 
@@ -4520,7 +4520,7 @@ VBA 的一些用途如下：
 
 参考以下图 14.7：
 
-![](img/Figure_14.7.png)
+![](img/ms-adv-xcl-Figure_14.7.png)
 
 图 14.7：按名称运行宏
 
@@ -4546,7 +4546,7 @@ VBA 的一些用途如下：
 
 参考以下图 14.8：
 
-![](img/Figure_14.8.png)
+![](img/ms-adv-xcl-Figure_14.8.png)
 
 图 14.8：场景 2
 
@@ -4576,7 +4576,7 @@ VBA 的一些用途如下：
 
 参考以下图 14.9：
 
-![](img/Figure_14.9.png)
+![](img/ms-adv-xcl-Figure_14.9.png)
 
 图 14.9：场景 3
 
@@ -4598,7 +4598,7 @@ VBA 的一些用途如下：
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十五章将按钮分配给宏
@@ -4639,7 +4639,7 @@ VBA 的一些用途如下：
 
 参考以下图 15.1：
 
-![](img/Figure_15.1.png)
+![](img/ms-adv-xcl-Figure_15.1.png)
 
 图 15.1：在快速访问工具栏上创建按钮
 
@@ -4657,7 +4657,7 @@ VBA 的一些用途如下：
 
 参考以下图 15.2：
 
-![](img/Figure_15.2.png)
+![](img/ms-adv-xcl-Figure_15.2.png)
 
 图 15.2：修改菜单或按钮
 
@@ -4665,7 +4665,7 @@ VBA 的一些用途如下：
 
 创建一个宏，该宏将提取按区域划分的薪水总和（使用“薪水工作表”）。单击“小计”按钮后，应在新工作表上添加按区域划分的小计，如下所示图 15.3：
 
-![](img/Figure_15.3.png)
+![](img/ms-adv-xcl-Figure_15.3.png)
 
 图 15.3：场景 4
 
@@ -4679,7 +4679,7 @@ VBA 的一些用途如下：
 
 1.  按照图 15.4 中显示的方式对区域进行排序：
 
-    ![](img/Figure_15.4.png)
+    ![](img/ms-adv-xcl-Figure_15.4.png)
 
     图 15.4：场景 4 解决方案
 
@@ -4701,7 +4701,7 @@ VBA 的一些用途如下：
 
     参考图 15.5：
 
-    ![](img/Figure_15.5.png)
+    ![](img/ms-adv-xcl-Figure_15.5.png)
 
     图 15.5：场景 4 解决方案
 
@@ -4731,7 +4731,7 @@ VBA 的一些用途如下：
 
 参考以下图 15.6：
 
-![](img/Figure_15.6.png)
+![](img/ms-adv-xcl-Figure_15.6.png)
 
 图 15.6：场景 4 解决方案
 
@@ -4751,7 +4751,7 @@ VBA 的一些用途如下：
 
 参考以下图 15.7：
 
-![](img/Figure_15.7.png)
+![](img/ms-adv-xcl-Figure_15.7.png)
 
 图 15.7：在 Excel 工作表上创建按钮
 
@@ -4759,7 +4759,7 @@ VBA 的一些用途如下：
 
 创建一个宏，将从不同部门和区域提取记录。用户将输入所需的部门和区域，然后点击筛选按钮，如图 15.8 所示：
 
-![](img/Figure_15.8.png)
+![](img/ms-adv-xcl-Figure_15.8.png)
 
 图 15.8：场景 5
 
@@ -4787,7 +4787,7 @@ VBA 的一些用途如下：
 
     参考图 15.9：
 
-    ![](img/Figure_15.9.png)
+    ![](img/ms-adv-xcl-Figure_15.9.png)
 
     图 15.9：场景 5 解决方案
 
@@ -4805,7 +4805,7 @@ VBA 的一些用途如下：
 
 参考图 15.10：
 
-![](img/Figure_15.10.png)
+![](img/ms-adv-xcl-Figure_15.10.png)
 
 图 15.10：场景 5 解决方案
 
@@ -4829,7 +4829,7 @@ VBA 的一些用途如下：
 
 打开场景 5 并修改代码以执行以下操作。用户应该获得一个 InputBox 来输入所需的部门和地区，然后单击筛选按钮。参考图 15.11：
 
-![](img/Figure_15.11.png)
+![](img/ms-adv-xcl-Figure_15.11.png)
 
 图 15.11：场景 6
 
@@ -4847,7 +4847,7 @@ VBA 的一些用途如下：
 
 参考图 15.12：
 
-![](img/Figure_15.12.png)
+![](img/ms-adv-xcl-Figure_15.12.png)
 
 图 15.12：场景 6 解决方案
 
@@ -4863,7 +4863,7 @@ VBA 的一些用途如下：
 
 参考图 15.13：
 
-![](img/Figure_15.13.png)
+![](img/ms-adv-xcl-Figure_15.13.png)
 
 图 15.13：场景 6 解决方案
 
@@ -4904,7 +4904,7 @@ VBA 的一些用途如下：
 
 1.  点击下一步。
 
-    ![](img/Figure_15.14.png)
+    ![](img/ms-adv-xcl-Figure_15.14.png)
 
     图 15.14：场景 7 解决方案
 
@@ -4920,7 +4920,7 @@ VBA 的一些用途如下：
 
 1.  停止录制。
 
-    ![](img/Figure_15.15.png)
+    ![](img/ms-adv-xcl-Figure_15.15.png)
 
     图 15.15：场景 7 解决方案
 
@@ -5041,7 +5041,7 @@ C6：销售数量
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十六章 VBA 中的函数和子例程
@@ -5105,7 +5105,7 @@ Visual Basic Editor
 
 下图图 16.1 显示了 Visual Basic Editor 中的代码窗口：
 
-![](img/Figure_16.1.jpg)
+![](img/ms-adv-xcl-Figure_16.1.jpg)
 
 图 16.1：Visual Basic Editor 中的代码窗口
 
@@ -5129,7 +5129,7 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 属性是任何对象的特征。属性窗口显示了所选对象的属性，如图 16.2 所示：
 
-![](img/Figure_16.2.jpg)
+![](img/ms-adv-xcl-Figure_16.2.jpg)
 
 图 16.2：项目资源管理器和属性窗口
 
@@ -5145,7 +5145,7 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 参考以下图 16.3：
 
-![](img/Figure_16.3.jpg)
+![](img/ms-adv-xcl-Figure_16.3.jpg)
 
 图 16.3：代码窗口
 
@@ -5185,7 +5185,7 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 参考图 16.4：
 
-![](img/Figure_16.4.png)
+![](img/ms-adv-xcl-Figure_16.4.png)
 
 图 16.4：插入模块
 
@@ -5199,7 +5199,7 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 参考以下图 16.5：
 
-![](img/Figure_16.5.png)
+![](img/ms-adv-xcl-Figure_16.5.png)
 
 图 16.5：在模块内编写代码
 
@@ -5220,7 +5220,7 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 图 16.6 包含一个宏：
 
-![](img/Figure_16.6.png)
+![](img/ms-adv-xcl-Figure_16.6.png)
 
 图 16.6：宏
 
@@ -5239,7 +5239,7 @@ Visual Basic Editor 中代码窗口的不同部分如下：
 
 参考以下图 16.7：
 
-![](img/Figure_16.7.png)
+![](img/ms-adv-xcl-Figure_16.7.png)
 
 图 16.7：用户定义函数
 
@@ -5382,7 +5382,7 @@ AND 运算符
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十七章 VBA 中的条件语句
@@ -5459,7 +5459,7 @@ Select Case Vs. If … End If
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十八章 VBA 中的变量和数据类型
@@ -5694,7 +5694,7 @@ InputBox 函数在对话框中显示提示，等待用户输入文本或点击�
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第十九章 VBA 中的循环结构
@@ -5781,7 +5781,7 @@ LOOP WHILE (条件)
 
 参考图 19.1：
 
-![](img/Figure_19.1.png)
+![](img/ms-adv-xcl-Figure_19.1.png)
 
 图 19.1：场景 17
 
@@ -5874,7 +5874,7 @@ Visual Basic 每次循环运行时都会自动设置一个变量。
 
 参考以下图 19.2：
 
-![](img/Figure_19.2.png)
+![](img/ms-adv-xcl-Figure_19.2.png)
 
 图 19.2：场景 19
 
@@ -5887,7 +5887,7 @@ Visual Basic 每次循环运行时都会自动设置一个变量。
 
 参考图 19.3：
 
-![](img/Figure_19.3.png)
+![](img/ms-adv-xcl-Figure_19.3.png)
 
 图 19.3：场景 20
 
@@ -5900,7 +5900,7 @@ Visual Basic 每次循环运行时都会自动设置一个变量。
 
 参考图 19.4：
 
-![](img/Figure_19.4.png)
+![](img/ms-adv-xcl-Figure_19.4.png)
 
 图 19.4：场景 21
 
@@ -5911,7 +5911,7 @@ Visual Basic 每次循环运行时都会自动设置一个变量。
 
 打开场景 22 并进行修改。在记录宏后，您应该询问用户是否继续，并根据用户的响应运行。如果用户点击确定，则应继续数据输入。如果用户点击取消，则显示“谢谢”并结束宏。参考图 19.5：
 
-![](img/Figure_19.5.png)
+![](img/ms-adv-xcl-Figure_19.5.png)
 
 图 19.5：场景 22
 
@@ -5930,7 +5930,7 @@ Visual Basic 每次循环运行时都会自动设置一个变量。
 
 参考图 19.6：
 
-![](img/Figure_19.6.png)
+![](img/ms-adv-xcl-Figure_19.6.png)
 
 图 19.6：场景 23
 
@@ -5952,7 +5952,7 @@ Visual Basic 每次循环运行时都会自动设置一个变量。
 
 创建一个宏来显示当前工作簿中工作表名称的列表。参考图 19.7：
 
-![](img/Figure_19.7.png)
+![](img/ms-adv-xcl-Figure_19.7.png)
 
 图 19.7：场景 24
 
@@ -6050,7 +6050,7 @@ Visual Basic 每次循环运行时都会自动设置一个变量。
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第二十章 VBA 中的数组和集合
@@ -6180,7 +6180,7 @@ Dim Name_Of_Array() As Data_Type
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第二十一章 VBA 中的调试和错误处理
@@ -6275,7 +6275,7 @@ Dim Name_Of_Array() As Data_Type
 
 调试工具栏可在以下图 21.1 中看到：
 
-![](img/Figure_21.1.png)
+![](img/ms-adv-xcl-Figure_21.1.png)
 
 图 21.1: 调试工具栏
 
@@ -6365,7 +6365,7 @@ Dim Name_Of_Array() As Data_Type
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第二十二章 VBS 中的用户表单和用户输入
@@ -6396,7 +6396,7 @@ Dim Name_Of_Array() As Data_Type
 
 用户表单用于创建自定义对话框。参考以下图 22.1：
 
-![图 22.1](img/Figure_22.1.png)
+![图 22.1](img/ms-adv-xcl-Figure_22.1.png)
 
 图 22.1：用户表单
 
@@ -6414,7 +6414,7 @@ Dim Name_Of_Array() As Data_Type
 
 参考图 22.2：
 
-![图 22.2](img/Figure_22.2.png)
+![图 22.2](img/ms-adv-xcl-Figure_22.2.png)
 
 图 22.2：创建用户表单
 
@@ -6430,7 +6430,7 @@ Dim Name_Of_Array() As Data_Type
 
 参考图 22.3：
 
-![图 22.3](img/Figure_22.3.png)
+![图 22.3](img/ms-adv-xcl-Figure_22.3.png)
 
 图 22.3：添加其他控件
 
@@ -6450,7 +6450,7 @@ Dim Name_Of_Array() As Data_Type
 
 1.  按照 图 22.4（d）中所示编写事件代码。
 
-![](img/Figure_22.4.png)
+![](img/ms-adv-xcl-Figure_22.4.png)
 
 图 22.4：处理控件事件
 
@@ -6472,7 +6472,7 @@ Dim Name_Of_Array() As Data_Type
 
 1.  设计如 图 22.5 所示的表单：
 
-![](img/Figure_22.5.png)
+![](img/ms-adv-xcl-Figure_22.5.png)
 
 图 22.5：场景 30 解决方案
 
@@ -6542,7 +6542,7 @@ Dim Name_Of_Array() As Data_Type
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第二十三章高级 VBA 技术和最佳实践
@@ -6585,7 +6585,7 @@ Dim Name_Of_Array() As Data_Type
 
 参考以下图 23.1：
 
-![](img/Figure_23.1.png)
+![](img/ms-adv-xcl-Figure_23.1.png)
 
 图 23.1：给控件初始值
 
@@ -6620,7 +6620,7 @@ Dim Name_Of_Array() As Data_Type
 
 参考以下图 23.2：
 
-![](img/Figure_23.2.png)
+![](img/ms-adv-xcl-Figure_23.2.png)
 
 图 23.2：添加选项按钮
 
@@ -6628,7 +6628,7 @@ Dim Name_Of_Array() As Data_Type
 
 参考以下图 23.3：
 
-![](img/Figure_23.3.png)
+![](img/ms-adv-xcl-Figure_23.3.png)
 
 图 23.3：添加插入按钮
 
@@ -6668,7 +6668,7 @@ Dim Name_Of_Array() As Data_Type
 
 1.  设计一个插件表单，如图 23.4 所示：
 
-    ![](img/Figure_23.4.png)
+    ![](img/ms-adv-xcl-Figure_23.4.png)
 
     图 23.4：设计插件表单
 
@@ -6707,7 +6707,7 @@ Dim Name_Of_Array() As Data_Type
 
 参考以下图 23.5：
 
-![](img/Figure_23.5.png)
+![](img/ms-adv-xcl-Figure_23.5.png)
 
 图 23.5：小写
 
@@ -6718,7 +6718,7 @@ Dim Name_Of_Array() As Data_Type
 
 参考以下图 23.6：
 
-![](img/Figure_23.6.png)
+![](img/ms-adv-xcl-Figure_23.6.png)
 
 图 23.6：ProperCase
 
@@ -6780,7 +6780,7 @@ Dim Name_Of_Array() As Data_Type
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第二十四章 使用 VBA 构建自定义插件
@@ -6821,7 +6821,7 @@ Dim Name_Of_Array() As Data_Type
 
 参考图 24.1：
 
-![](img/Figure_24.1.png)
+![](img/ms-adv-xcl-Figure_24.1.png)
 
 图 24.1：添加密码
 
@@ -6829,7 +6829,7 @@ Dim Name_Of_Array() As Data_Type
 
 1.  将当前文件保存为插件类型（.xlam 扩展名），如图 24.2 所示：
 
-    ![](img/Figure_24.2.png)
+    ![](img/ms-adv-xcl-Figure_24.2.png)
 
     图 24.2：保存当前文件
 
@@ -6845,13 +6845,13 @@ Dim Name_Of_Array() As Data_Type
 
 1.  点击“前往…”按钮，如图 24.3 所示：
 
-    ![](img/Figure_24.3.png)
+    ![](img/ms-adv-xcl-Figure_24.3.png)
 
     图 24.3：选择插件
 
 1.  浏览以找到您的插件，如图 24.4 所示：
 
-    ![](img/Figure_24.4.png)
+    ![](img/ms-adv-xcl-Figure_24.4.png)
 
     图 24.4：定位您的插件
 
@@ -6877,7 +6877,7 @@ Dim Name_Of_Array() As Data_Type
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)
 
 
 # 第二十五章 ChatGPT 与 Excel
@@ -6902,37 +6902,37 @@ Excel 是一个强大的组织和分析数据的工具，另一方面，ChatGPT 
 
 +   请求 Excel 函数和公式的帮助：您可以向 ChatGPT 请求帮助解决您遇到困难的特定 Excel 函数或公式。只需描述问题或提供示例，ChatGPT 可以提供解决方案或提供逐步指南，如图 25.1 所示：
 
-    ![](img/Figure_25.1.png)
+    ![](img/ms-adv-xcl-Figure_25.1.png)
 
     图 25.1：向 ChatGPT 请求 Excel 函数和公式的帮助
 
 +   获取使用 Excel 的技巧和窍门：ChatGPT 可以为更有效地使用 Excel 提供技巧和窍门。例如，您可以要求快捷方式、格式设置技巧或自动化任务的方法，如图 25.2 所示：
 
-    ![](img/Figure_25.2.png)
+    ![](img/ms-adv-xcl-Figure_25.2.png)
 
     图 25.2：向 ChatGPT 询问如何使用 Excel 的技巧和窍门
 
 +   从数据分析中获取见解：Excel 可用于分析数据并生成见解，如图 25.3 所示。ChatGPT 可以帮助您解释分析结果或建议新的查看数据的方式，如图 25.4 所示：
 
-    ![](img/Figure_25.3.png)
+    ![](img/ms-adv-xcl-Figure_25.3.png)
 
     图 25.3：Excel 上的数据
 
 转到 ChatGPT，在聊天中写下如何分析这些数据。回应如图 25.4 所示：
 
-![](img/Figure_25.4.png)
+![](img/ms-adv-xcl-Figure_25.4.png)
 
 图 25.4：ChatGPT 如何分析这些数据
 
 +   在 Excel 电子表格上进行协作：您可以使用 ChatGPT 与他人在 Excel 电子表格上进行协作。例如，您可以要求 ChatGPT 建议对电子表格进行更改或改进，或者就数据的特定方面提供反馈。图 25.5 展示了一个带有数据的电子表格：
 
-    ![](img/Figure_25.5.png)
+    ![](img/ms-adv-xcl-Figure_25.5.png)
 
     图 25.5：带有数据的电子表格
 
 请求 ChatGPT 对图 25.5 中显示的数据透视表提供反馈，生成以下回应：
 
-![](img/Figure_25.6.png)
+![](img/ms-adv-xcl-Figure_25.6.png)
 
 图 25.6：ChatGPT 的回应
 
@@ -6946,7 +6946,7 @@ Excel 是一个强大的组织和分析数据的工具，另一方面，ChatGPT 
 
 1.  在新模块中，复制并粘贴图 25.7 中显示的代码：
 
-    ![](img/Figure_25.7.png)
+    ![](img/ms-adv-xcl-Figure_25.7.png)
 
     图 25.7：要复制到新模块的代码
 
@@ -6972,7 +6972,7 @@ Excel 是一个强大的组织和分析数据的工具，另一方面，ChatGPT 
 
 1.  ChatGPT 可以根据最佳实践和设计原则提供建议。如果您不确定如何使用 Excel 中的特定功能或设置，也可以向 ChatGPT 询问。参考图 25.8 作为示例：
 
-    ![](img/Figure_25.8.png)
+    ![](img/ms-adv-xcl-Figure_25.8.png)
 
     图 25.8：向 ChatGPT 寻求有关 Excel 中特定功能或设置的帮助
 
@@ -7013,4 +7013,4 @@ Excel 是一个强大的组织和分析数据的工具，另一方面，ChatGPT 
 
 **[`discord.bpbonline.com`](https://discord.bpbonline.com)**
 
-![](img/fm1.png)
+![](img/ms-adv-xcl-fm1.png)

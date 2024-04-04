@@ -187,19 +187,19 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 首先在您偏好的搜索引擎上搜索“OpenAI ChatGPT”。点击名为“介绍 ChatGPT”的链接。
 
-![image](img/image003.jpg)
+![image](img/cgpt-epic-jrny-succ-image003.jpg)
 
 点击“注册”按钮创建账户。
 
-![image](img/image000.jpg)
+![image](img/cgpt-epic-jrny-succ-image000.jpg)
 
 填写必要信息，如您的姓名、电子邮件地址和密码。按照任何额外步骤，如同意条款和条件。用户还可以通过 Google、Microsoft 或 Apple 账户登录。
 
-![image](img/image009.jpg)
+![image](img/cgpt-epic-jrny-succ-image009.jpg)
 
 成功创建账户后，返回 OpenAI 网站并点击“登录”按钮。输入您注册的电子邮件地址和密码以访问您的账户。登录后，它将给您三个选项供选择，点击 ChatGPT
 
-![image](img/image008.jpg)
+![image](img/cgpt-epic-jrny-succ-image008.jpg)
 
 现在是时候写下你的第一个提示了！！！开始测试你的提示并与 ChatGPT 互动。优化和迭代你的提示以达到期望的结果。尝试不同的问题、场景或对话风格，探索 ChatGPT 的能力。
 
@@ -207,23 +207,23 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 屏幕 1
 
-![image](img/image024.jpg)
+![image](img/cgpt-epic-jrny-succ-image024.jpg)
 
 屏幕 2
 
-![image](img/image031.jpg)
+![image](img/cgpt-epic-jrny-succ-image031.jpg)
 
 现在，输入文本“澳大利亚的首都是哪里”并检查输出（如下面截图 screen3 所示）
 
 屏幕 3
 
-![image](img/image002.jpg)
+![image](img/cgpt-epic-jrny-succ-image002.jpg)
 
 现在，输入文本“在 chatgpt 上写一首诗。保持简短。”并检查输出（如下面截图 screen4 所示）
 
 屏幕 4
 
-![image](img/image006.jpg)
+![image](img/cgpt-epic-jrny-succ-image006.jpg)
 
 继续尝试不同的问题、场景或对话风格，探索 ChatGPT 的能力！！！
 
@@ -249,7 +249,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 提示：“请给微软的人力资源团队写一封专业的求职邮件。”
 
-![图片](img/image018.jpg)
+![图片](img/cgpt-epic-jrny-succ-image018.jpg)
 
 
 
@@ -262,7 +262,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 -   提示：“为了申请工作，我需要突出我的技术技能。请写一封描述我在 Web 技术方面有 5 年经验的求职信。作为前端开发人员已有 8 个月，我熟练掌握了 Bootstrap、Angular JS、CodePen、React、SaSss 等工具。现在，我渴望提升我的全栈开发专业知识。请使用突出的主题，让求职信更简洁有意义。”
 
-![图片](img/image017.jpg)
+![图片](img/cgpt-epic-jrny-succ-image017.jpg)
 
 
 
@@ -275,7 +275,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 提示：作为科技公司的招聘人员，我的工作是面试符合条件的候选人。不知何故，我在生成实际结果方面遇到困难。请帮忙准备一份潜在问题清单，以便招聘经理可能会关心正在进行的搜索。
 
-![图片](img/image029.jpg)
+![图片](img/cgpt-epic-jrny-succ-image029.jpg)
 
 
 
@@ -288,7 +288,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 提示：“您能否建议哪个标题最适合电子书 1\. "对于那些寻求轻松解决日常业务挑战的人来说，这是一本必读之作" 或 2."对于那些寻求轻松解决日常例行挑战的人来说，这是一本必读之作"。请给出您的理由。”
 
-![image](img/image014.jpg)
+![image](img/cgpt-epic-jrny-succ-image014.jpg)
 
 
 
@@ -301,13 +301,13 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 提示：“请以产品经理的身份回复。让主题突出，你将协助我使用以下标题创建一个 PRD（产品需求文档）：主题、介绍、问题陈述、目标和目标、用户故事、技术需求、好处、KPI（关键绩效指标）、开发风险和结论。”
 
-![图片](img/image027.jpg)
+![图片](img/cgpt-epic-jrny-succ-image027.jpg)
 
 请求 ChatGPT 担任技术撰稿人
 
 提示：“我需要你帮忙撰写关于“人工智能革命”主题的创意文章。请确保文章既具信息性又富有趣味性，以吸引我们的读者。此外，你可以自由地在文章中加入相关的截图。我会在后期提供必要的截图来补充内容。”
 
-![图片](img/image015.jpg)
+![图片](img/cgpt-epic-jrny-succ-image015.jpg)
 
 请求 ChatGPT 进行文案撰写
 
@@ -315,7 +315,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 “周二晚上 9:37，美国地质调查局报告称，贝尔发生了一次 3.0 级地震。这次地震距离亨廷顿公园、库达海、核桃公园和梅伍德不到一英里。在过去的 10 天里，附近已经发生了一次 3.0 级或更大级别的地震。根据最近三年的数据样本，每年大洛杉矶地区平均发生五次 3.0 到 4.0 级的地震。这次地震发生在深度 8.9 英里处。”
 
-![图片](img/image004.jpg)
+![图片](img/cgpt-epic-jrny-succ-image004.jpg)
 
 
 
@@ -328,11 +328,11 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 提示：请为这篇文章生成 100 字摘要，"复制并粘贴文章帖子在这里"。
 
-![图片](img/image001.jpg)
+![图片](img/cgpt-epic-jrny-succ-image001.jpg)
 
 请根据上述 ChatGPT 提示找到以下输出屏幕。
 
-![图片](img/image016.jpg)
+![图片](img/cgpt-epic-jrny-succ-image016.jpg)
 
 
 
@@ -345,7 +345,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 提示："我需要在 Facebook 上分享一篇关于“人工智能”的帖子。你能帮忙想出令人惊叹的标签吗"？
 
-![图片](img/image040.jpg)
+![图片](img/cgpt-epic-jrny-succ-image040.jpg)
 
 
 
@@ -358,7 +358,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 提示：“需要帮助撰写 LinkedIn 小组帖子，以提升网站流量并促进品牌认知度吗？你能帮忙写吗？”
 
-![图片](img/image025.jpg)
+![图片](img/cgpt-epic-jrny-succ-image025.jpg)
 
 
 
@@ -371,7 +371,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 提示：“请提出 10 个引人注目的 LinkedIn 帖子创意，展示我在 Python 方面的熟练程度，并为不同年龄群体（16 至 60 岁）提供有价值的见解”
 
-![image](img/image039.jpg)
+![image](img/cgpt-epic-jrny-succ-image039.jpg)
 
 
 
@@ -404,7 +404,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 最终结果：
 
-![图片](img/image010.jpg)
+![图片](img/cgpt-epic-jrny-succ-image010.jpg)
 
 
 
@@ -417,7 +417,7 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 提示：这篇文章会让读者产生什么样的情绪？“据韩国联合参谋本部称，朝鲜发射了两枚短程弹道导弹，落在朝鲜半岛和日本之间的海域。这些导弹是从朝鲜的顺安地区发射的，联参说，当地时间周三清晨发射。每枚导弹飞行约 550 公里后落入海中，它补充道。‘这些导弹的详细规格正在韩国和美国情报机构进行分析，’联参表示。日本政府也在一份声明中描述了这两枚导弹，称它们落在其专属经济区之外。这次发射发生在半岛局势紧张的时期。”
 
-![图片](img/image033.jpg)
+![图片](img/cgpt-epic-jrny-succ-image033.jpg)
 
 
 
@@ -449,39 +449,39 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 最近，一位客户与我们联系，特别要求在我们尊贵的平台“EasyUX.net”上展示他们的文章。对于他们的询问，我们迅速确认了他们的兴趣，并相应地分享了我们的收费结构。客户对我们的网站表示真诚的钦佩，并表现出与我们合作发布他们文章的强烈愿望。然而，在评估我们网站的数据后，他们注意到虽然我们的域权（DA）很高，但流量似乎有点低。因此，他们友好地要求降低费用。请查看与客户的电子邮件交流截图如下：
 
-![image](img/image030.jpg)
+![image](img/cgpt-epic-jrny-succ-image030.jpg)
 
 我们决心不在费用上妥协，因为我们对其公平性充满信心。然而，我们也理解突出其他关键因素的重要性，比如我们庞大的 Facebook 粉丝、Twitter 粉丝和电子邮件订阅者。这些令人印象深刻的指标可以为客户提供额外价值，并增强他们对我们网站的信心。为了帮助我们撰写积极的回复，我们求助于 ChatGPT。我们只需复制并粘贴客户的回复，然后要求 ChatGPT 根据此生成合适的回复。下面是同一截图的实际截图。
 
-![image](img/image011.jpg)
+![image](img/cgpt-epic-jrny-succ-image011.jpg)
 
 根据及时的请求，ChatGPT 生成了以下输出，完全符合我们的期望，利用了其 100%的文本。
 
-![image](img/image012.jpg)
+![image](img/cgpt-epic-jrny-succ-image012.jpg)
 
 这是 ChatGPT 生成的文本，我们在向客户发送电子邮件时使用。我们依赖 ChatGPT 的帮助来撰写一条清晰和专业的消息，旨在满足客户的需求并确保有效沟通。
 
-![图片](img/image038.jpg)
+![图片](img/cgpt-epic-jrny-succ-image038.jpg)
 
 示例 2
 
 在下面的示例中，客户给我们发送了一封跟进电子邮件，包括他们之前的消息。他们想要将他们的一个链接添加到我们已经发布的文章中。您可以在附加的截图中看到客户的请求电子邮件。
 
-![图片](img/image007.jpg)
+![图片](img/cgpt-epic-jrny-succ-image007.jpg)
 
 我们相应地复制并粘贴了客户的回复，并要求 ChatGPT 根据此生成一个合适的回复。在下面，您将找到相同的实际截图。
 
 我们请求的提示是“我想给这位客户发送一封回复，告诉他我们无法将他的链接添加到我们现有的文章中，但我们可以为他制作一篇新文章，并以非常合理的费用将他们的链接发布在其中。您能写一封用礼貌语气的专业电子邮件回复吗？请将字数限制在 150 字以内。”
 
-![图片](img/image034.jpg)
+![图片](img/cgpt-epic-jrny-succ-image034.jpg)
 
 根据提示要求，ChatGPT 生成了以下输出，完全符合我们的期望，利用了其 100%的文本。
 
-![图片](img/image005.jpg)
+![图片](img/cgpt-epic-jrny-succ-image005.jpg)
 
 以下是 ChatGPT 生成的文本，我们在发送电子邮件给客户时使用。
 
-![图片](img/image013.jpg)
+![图片](img/cgpt-epic-jrny-succ-image013.jpg)
 
 
 
@@ -498,13 +498,13 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 文本内容的 70%至 80%是使用 ChatGPT 生成的。
 
-![image](img/image037.jpg)
+![image](img/cgpt-epic-jrny-succ-image037.jpg)
 
 实时链接：[`easyux.net/ux-titanic-learning-from-historys-mistakes/`](https://easyux.net/ux-titanic-learning-from-historys-mistakes/)
 
 请查看下面的“提示截图”及其输出，这是在创建本文时使用的。
 
-![image](img/image028.jpg)
+![image](img/cgpt-epic-jrny-succ-image028.jpg)
 
 吸引眼球的标题！
 
@@ -512,11 +512,11 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 下面是由 ChatGPT 生成的几个标题列表选项。虽然我们没有完全使用原样的标题列表，但我们通过添加自己的词语进行了一些修改。红色标记的边框区域表示我们利用了 ChatGPT 分享的选项。请注意，您可以灵活调整标题以符合您的业务偏好和品牌。
 
-![image](img/image035.jpg)
+![image](img/cgpt-epic-jrny-succ-image035.jpg)
 
 下面是本电子书中使用的标题的实际截图。
 
-![image](img/image021.png)
+![image](img/cgpt-epic-jrny-succ-image021.png)
 
 
 
@@ -533,19 +533,19 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 下面的结果是由 ChatGPT 生成的，基于书面提示。我们很高兴地分享，结果完全符合我们的期望，我们利用了其 100%的文本。
 
-![图片](img/image036.jpg)
+![图片](img/cgpt-epic-jrny-succ-image036.jpg)
 
 实时链接：[`twitter.com/EaseUX/status/1681651887114780672?s=20`](https://twitter.com/EaseUX/status/1681651887114780672?s=20)
 
-![图片](img/image019.jpg)
+![图片](img/cgpt-epic-jrny-succ-image019.jpg)
 
 脸书帖子
 
 下面的结果是由 ChatGPT 生成的，基于书面提示。结果完全符合我们的期望，我们利用了其 100%的文本。
 
-![图片](img/image032.jpg)
+![图片](img/cgpt-epic-jrny-succ-image032.jpg)
 
-![图片](img/image020.jpg)
+![图片](img/cgpt-epic-jrny-succ-image020.jpg)
 
 实时链接：[`www.facebook.com/easyux/`](https://www.facebook.com/easyux/)
 
@@ -560,11 +560,11 @@ ChatGPT 提示是提供给 AI 模型的初始输入或指令，用于开始对�
 
 下面是 ChatGPT 提供的提示截图，以及其输出，作为增强段落文本的请求。
 
-![图片](img/image023.jpg)
+![图片](img/cgpt-epic-jrny-succ-image023.jpg)
 
 用于创建横幅的输出文本！！！
 
-![图片](img/image026.jpg)
+![图片](img/cgpt-epic-jrny-succ-image026.jpg)
 
 
 
@@ -943,7 +943,7 @@ Zapier
 与 Google Sheets、Trello、Gmail、HubSpot、Salesforce 等 5,000 多个应用进行交互。
 
 
-| ![image](img/chapter_title_corner_decoration_left.png) |  | ![image](img/chapter_title_corner_decoration_right.png) |  |
+| ![image](img/cgpt-epic-jrny-succ-chapter_title_corner_decoration_left.png) |  | ![image](img/cgpt-epic-jrny-succ-chapter_title_corner_decoration_right.png) |  |
 | --- | --- | --- | --- |
 
 

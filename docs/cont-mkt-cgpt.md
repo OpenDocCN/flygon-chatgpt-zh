@@ -1559,7 +1559,7 @@ Text Blaze 价格实惠，您可以通过我的推广链接访问。
 
 您将订阅我的每周通讯《创意人工智能摘要》。如果您已经订阅了《创意人工智能摘要》，只需回复任何一封电子邮件，我将回复您并提供资源链接。
 
-![image-placeholder](img/50ddc5a9-88bd-43c9-800f-e856855e08d7.jpeg)
+![image-placeholder](img/cont-mkt-cgpt-50ddc5a9-88bd-43c9-800f-e856855e08d7.jpeg)
 
 ## 关键词
 
@@ -1668,7 +1668,7 @@ ChatGPT 写作见解
 
 ## 关于我
 
-![image-placeholder](img/0be2567b-f2cc-4504-bf56-a1efbd1c3685.jpeg)
+![image-placeholder](img/cont-mkt-cgpt-0be2567b-f2cc-4504-bf56-a1efbd1c3685.jpeg)
 
 J. Thorn 已经出版了两百万字，并在全球销售了超过 185,000 本书。他是美国科幻和奇幻作家协会、恐怖作家协会以及大湖恐怖作家协会的正式成员。
 

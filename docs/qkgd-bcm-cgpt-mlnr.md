@@ -25,11 +25,11 @@ ChatGPT 教育课程 - 这是一个出色的学习平台，旨在帮助您在各
 
 点击下面任何一张图片以了解更多信息：
 
-![image-placeholder](img/image-SK21BGDX.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-SK21BGDX.png)
 
-![image-placeholder](img/image-C0TRQJ8N.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-C0TRQJ8N.png)
 
-![image-placeholder](img/image-ZXDVCDBZ.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-ZXDVCDBZ.png)
 
 注意：本书包含指向联盟产品和服务的链接。
 
@@ -197,7 +197,7 @@ ChatGPT 内容生成能力中最好的一点是它可以大规模创建内容。
 
 所以，让我们从 ChatGPT 的起始页面开始：
 
-![image-placeholder](img/image-CMFIKEC3.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-CMFIKEC3.png)
 
 ChatGPT 的起始页面提供了一些示例供你尝试，以及其功能和限制的简要选择。如果你往下看，你会注意到一个输入框。这是你开始与 ChatGPT“对话”的地方。
 
@@ -209,7 +209,7 @@ ChatGPT 的起始页面提供了一些示例供你尝试，以及其功能和限
 
 这可能看起来是这样的：
 
-![image-placeholder](img/image-SL4SDFUA.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-SL4SDFUA.png)
 
 现在你有了二十个可以写文章的想法（当然要以 ChatGPT 为你的副驾驶）！
 
@@ -217,7 +217,7 @@ ChatGPT 的起始页面提供了一些示例供你尝试，以及其功能和限
 
 这里我问了 ChatGPT 关于罗马帝国最大成就的问题：
 
-![image-placeholder](img/image-QYA48D15.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-QYA48D15.png)
 
 有了这些结果，学生可以选择关注列表中的所有或任何一项来撰写他们的文章或项目。简单吧？
 
@@ -307,11 +307,11 @@ ChatGPT 如此强大，它可以帮助你编写一些厉害的代码。我的意
 
 这是我如何开始与 ChatGPT 进行对话的：
 
-![image-placeholder](img/image-PZI1W199.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-PZI1W199.png)
 
 我将这段代码复制到了 Visual Studio（代码编辑软件）中，这是测试页面的样子：
 
-![image-placeholder](img/image-S9SFTRLD.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-S9SFTRLD.png)
 
 这里你可以看到左边的代码，右边是实时页面展示。很酷，对吧？目前布局相当简单，但你可以通过请求 ChatGPT 为你编写代码片段来改变布局、颜色、功能等。所以基本上，只要稍加耐心、独创性和创造力，你可以做任何事情！
 
@@ -392,17 +392,17 @@ ChatGPT 如此强大，它可以帮助你编写一些厉害的代码。我的意
 
 要开始，让我们看看社交媒体平台在多少房地产经纪人使用它们方面的排名。我让 ChatGPT 考虑这一点来排名社交媒体平台，以下是结果：
 
-![image-placeholder](img/image-P3C1MF67.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-P3C1MF67.png)
 
 看起来 Facebook 是我们应该集中精力的平台，如果我们想要接触到房地产经纪人。
 
 接下来，让我们请 ChatGPT 为我们编写一则广告脚本，以吸引房地产经纪人来到我们的潜在客户生成业务：
 
-![image-placeholder](img/image-OOV7I7TT.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-OOV7I7TT.png)
 
 这是 ChatGPT 的回应：
 
-![image-placeholder](img/image-S9EUPPFQ.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-S9EUPPFQ.png)
 
 太棒了！现在我们有了一些脚本可以使用，我们可以开始进行 A/B 测试和启动广告活动来吸引我们的受众。在这种情况下，我们希望从这些广告中获得的潜在客户前往一个注册页面，在那里我们可以收集他们的电子邮件地址，并发送给他们我们承诺的免费指南的链接。顺便说一句，有很多工具可以帮助实现这一点（请参见附录）。
 
@@ -410,15 +410,15 @@ ChatGPT 如此强大，它可以帮助你编写一些厉害的代码。我的意
 
 一旦你有了潜在客户并成功签约了一两个客户，你就能帮助他们解决各种品牌挑战。以下是一些示例：
 
-![image-placeholder](img/image-K7XNWICY.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-K7XNWICY.png)
 
 ChatGPT 还可以帮助构思一个新业务的标志：
 
-![image-placeholder](img/image-BM4XM204.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-BM4XM204.png)
 
 ChatGPT 可以为您的客户想出产品名称：
 
-![image-placeholder](img/image-7VX832SC.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-7VX832SC.png)
 
 
 #### 第二章：电子邮件营销
@@ -639,23 +639,23 @@ Businessofapps.com 提供以下应用程序开发基准：
 
 我将从给 ChatGPT 一个非常简单直接的提示开始，就像这样：
 
-![image-placeholder](img/image-VUEU2137.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-VUEU2137.png)
 
 它将继续生成步骤和相应的代码，并且你可以通过复制代码并将其添加到你的开发环境中来跟随，本例中我们正在使用 Android Kotlin 开发这个应用程序。这是 ChatGPT 可能会提供的内容：
 
-![image-placeholder](img/image-E8JZI0LC.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-E8JZI0LC.png)
 
-![image-placeholder](img/image-O4EIEVJX.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-O4EIEVJX.png)
 
-![image-placeholder](img/image-GHEUTCX4.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-GHEUTCX4.png)
 
 在某个时候，ChatGPT 会暂停或停止，就好像它已经给了你完整的指示。不要绝望，只需要求它“继续生成”，它将开始提供如何添加更多功能和功能的指示：
 
-![image-placeholder](img/image-0T0WD1J7.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-0T0WD1J7.png)
 
 在这种情况下，ChatGPT 开始为我们提供展示壁纸的方法，以及在下载壁纸时显示进度条。ChatGPT 甚至继续建议可以增强应用程序功能的库和 API：
 
-![image-placeholder](img/image-KJFQM2X0.png)
+![image-placeholder](img/qkgd-bcm-cgpt-mlnr-image-KJFQM2X0.png)
 
 你可以继续这样下去，一步一步地挖掘更多的步骤和功能。记住，要求它继续生成只是让 ChatGPT 深入构建的一种方式。例如，尝试通过要求 ChatGPT 建议一些库或特定的 API 以及它们如何改进你的应用程序，选择一个并要求 ChatGPT 向你展示如何将其实现到你的构建中。很疯狂吧？
 

@@ -49,7 +49,7 @@ Greathouse Fall 说他是“人类对应物”并且“做了一切”聊天机�
 
 1
 
-![](img/image-LR7WWYF8.png)
+![](img/cgpt-bgr-image-LR7WWYF8.png)
 
 #### ChatGPT 及其应用简介
 
@@ -224,7 +224,7 @@ AI 是模拟人类智能的总称。它涵盖了模仿认知能力的模型，�
 
 2
 
-![](img/image-LR7WWYF8.png)
+![](img/cgpt-bgr-image-LR7WWYF8.png)
 
 #### 开始使用 CHATGPT
 
@@ -491,7 +491,7 @@ document.head.appendChild(script);
 
 3
 
-![](img/image-LR7WWYF8.png)
+![](img/cgpt-bgr-image-LR7WWYF8.png)
 
 #### 利用您的技能和知识使用 ChatGPT 赚钱
 
@@ -784,7 +784,7 @@ ChatGPT 可能还远非完美，可能会生成需要大量编辑和人工输入
 
 4
 
-![](img/image-LR7WWYF8.png)
+![](img/cgpt-bgr-image-LR7WWYF8.png)
 
 #### 使用 ChatGPT 生成创意和引人入胜的内容
 
@@ -1179,7 +1179,7 @@ ChatGPT 用于制作病毒钩子
 
 5
 
-![](img/image-LR7WWYF8.png)
+![](img/cgpt-bgr-image-LR7WWYF8.png)
 
 #### 自动化重复性任务并节省时间使用 ChatGPT
 
@@ -1354,7 +1354,7 @@ ChatGPT 还可以提供个性化的生产力提示和建议，帮助你更高效
 
 6
 
-![](img/image-LR7WWYF8.png)
+![](img/cgpt-bgr-image-LR7WWYF8.png)
 
 #### 使用 CHATGPT 提高生产力和效率
 
@@ -1537,7 +1537,7 @@ ChatGPT 在许多情况下都可以非常有帮助是事实。从协助学校项
 
 7
 
-![](img/image-LR7WWYF8.png)
+![](img/cgpt-bgr-image-LR7WWYF8.png)
 
 #### 克服对人工智能和 ChatGPT 的恐惧和误解
 
@@ -1772,7 +1772,7 @@ AI 允许企业基于算法预测做出准确决策。它还能实现分类和�
 
 8
 
-![](img/image-LR7WWYF8.png)
+![](img/cgpt-bgr-image-LR7WWYF8.png)
 
 #### 使用 ChatGPT 进行故障排除
 

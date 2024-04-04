@@ -266,7 +266,7 @@
 
 我上次发布课程是在 2019 年：
 
-![](img/00002.jpg)我回来并创建这一系列新 Playbooks 的原因是……
+![](img/cgpt-biz-pmp-pb-00002.jpg)我回来并创建这一系列新 Playbooks 的原因是……
 
 我押注于人工智能的力量。
 
@@ -434,7 +434,7 @@ ChatGPT 意味着联盟营销正处于一个拐点，使用人工智能的企业
 
 提示输出
 
-![博客领域创意输出。](img/00003.jpg)
+![博客领域创意输出。](img/cgpt-biz-pmp-pb-00003.jpg)
 
 > 2. 进行关键词研究
 
@@ -452,7 +452,7 @@ ChatGPT 意味着联盟营销正处于一个拐点，使用人工智能的企业
 
 提示输出
 
-![SEO 关键词输出。](img/00004.jpg)
+![SEO 关键词输出。](img/cgpt-biz-pmp-pb-00004.jpg)
 
 专业提示️
 
@@ -478,7 +478,7 @@ ChatGPT 可以帮助您：
 
 使用[创业和健身]作为领域：
 
-![健身领域输出。](img/00005.jpg)
+![健身领域输出。](img/cgpt-biz-pmp-pb-00005.jpg)
 
 > 4. 验证您的领域
 
@@ -492,7 +492,7 @@ ChatGPT 可以协助进行此验证：
 
 提示输出
 
-![市场可行性检查输出。](img/00006.jpg)
+![市场可行性检查输出。](img/cgpt-biz-pmp-pb-00006.jpg)
 
 > 整合在一起
 
@@ -533,7 +533,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![博客平台输出。](img/00007.jpg)
+![博客平台输出。](img/cgpt-biz-pmp-pb-00007.jpg)
 
 > 2. 给您的博客命名
 
@@ -561,7 +561,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![商业名称输出。](img/00008.jpg)
+![商业名称输出。](img/cgpt-biz-pmp-pb-00008.jpg)
 
 一旦你生成了一个名单，浏览并选择你喜欢听起来的名字。
 
@@ -571,7 +571,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 继续做下去，直到你有 10 个以上你喜欢的名字。
 
-下一步是去[`www.namecheckr.com/`](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5uYW1lY2hlY2tyLmNvbS8_dXRtX3NvdXJjZT1wcm9tcHRlbnRyZXByZW5ldXIuYmVlaGlpdi5jb20mdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249c3RhcnRpbmctYW4tYWZmaWxpYXRlLW1hcmtldGluZy1ibG9nLXdpdGgtY2hhdGdwdC1wYXJ0LTIiLCJwb3N0X2lkIjoiNDBjN2M2YWQtMTc5ZS00Yzk2LWI2ZDItNmFiMTdkODYyMTJhIiwicHVibGljYXRpb25faWQiOiIzZDQzNTAwOC1kYWIwLTQ5MjAtODBjMy00NWM1MzBhNzE2NWEiLCJ2aXNpdF90b2tlbiI6ImFlOTM3NjhmLWNkMmEtNGEwZS1iYWFmLTJmMWQyMGRlYTFmMyIsImlhdCI6MTY4OTU4ODkwMC44MDMsImlzcyI6Im9yY2hpZCJ9.xP1JCUQzTLrY-aXuLLl2uTClPh0X0sa7kaUHJhnYgHE)![商业名称检查器。](img/00009.jpg)
+下一步是去[`www.namecheckr.com/`](https://flight.beehiiv.net/v2/clicks/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJodHRwczovL3d3dy5uYW1lY2hlY2tyLmNvbS8_dXRtX3NvdXJjZT1wcm9tcHRlbnRyZXByZW5ldXIuYmVlaGlpdi5jb20mdXRtX21lZGl1bT1yZWZlcnJhbCZ1dG1fY2FtcGFpZ249c3RhcnRpbmctYW4tYWZmaWxpYXRlLW1hcmtldGluZy1ibG9nLXdpdGgtY2hhdGdwdC1wYXJ0LTIiLCJwb3N0X2lkIjoiNDBjN2M2YWQtMTc5ZS00Yzk2LWI2ZDItNmFiMTdkODYyMTJhIiwicHVibGljYXRpb25faWQiOiIzZDQzNTAwOC1kYWIwLTQ5MjAtODBjMy00NWM1MzBhNzE2NWEiLCJ2aXNpdF90b2tlbiI6ImFlOTM3NjhmLWNkMmEtNGEwZS1iYWFmLTJmMWQyMGRlYTFmMyIsImlhdCI6MTY4OTU4ODkwMC44MDMsImlzcyI6Im9yY2hpZCJ9.xP1JCUQzTLrY-aXuLLl2uTClPh0X0sa7kaUHJhnYgHE)![商业名称检查器。](img/cgpt-biz-pmp-pb-00009.jpg)
 
 这个网站可以让您一次检查多个平台上的名称是否可用。插入您的业务名称以查看是否可用。
 
@@ -603,7 +603,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![品牌指南输出。](img/00010.jpg)
+![品牌指南输出。](img/cgpt-biz-pmp-pb-00010.jpg)
 
 根据需要进行调整，直接向 ChatGPT 指定更改，直到您对每个部分都满意。我们将在下一节中使用所有这些，因此请确保您
 
@@ -637,7 +637,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![文案输出。](img/00011.jpg)
+![文案输出。](img/cgpt-biz-pmp-pb-00011.jpg)
 
 需要额外的具体文案吗？使用相同的提示+详细信息，只需更改您想要的输出。
 
@@ -667,7 +667,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![标志设计简介输出。](img/00012.jpg)
+![标志设计简介输出。](img/cgpt-biz-pmp-pb-00012.jpg)
 
 现在我们有了文本描述，我们有几个选择。
 
@@ -675,7 +675,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 或者，您可以使用 AI 生成器创建您的标志。这是 Midjourney 尝试的第一个标志（Leafy Muscle）：
 
-![标志示例输出。](img/00013.jpg)
+![标志示例输出。](img/cgpt-biz-pmp-pb-00013.jpg)
 
 您会注意到 Midjourney 擅长视觉元素，但不擅长文本元素！因此，这些需要进行编辑以调整文本。如果您擅长 Photoshop，这是一个很好的选择。
 
@@ -734,7 +734,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![内容策略输出。](img/00014.jpg)
+![内容策略输出。](img/cgpt-biz-pmp-pb-00014.jpg)
 
 如果任何内容支柱或博客格式不合您的兴趣，请要求 ChatGPT 进行适当的更改。
 
@@ -772,7 +772,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 这是仅针对其中一个内容支柱的输出：
 
-![博客标题输出。](img/00015.jpg)
+![博客标题输出。](img/cgpt-biz-pmp-pb-00015.jpg)
 
 每种格式类型有 20 个博客标题。每个内容支柱有 3 种格式类型。总共有 300 个博客文章标题。
 
@@ -832,7 +832,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 这将为你生成一整篇博客文章。这就是它，对尺寸感到抱歉！
 
-![博客文章输出。](img/00016.jpg)
+![博客文章输出。](img/cgpt-biz-pmp-pb-00016.jpg)
 
 这篇文章将包括你以前的所有工作，这样它就更难以被 AI 识别。
 
@@ -884,7 +884,7 @@ ChatGPT 不会为我们建立博客。这不是它的用途。
 
 提示输出
 
-![联盟推荐输出。](img/00017.jpg)
+![联盟推荐输出。](img/cgpt-biz-pmp-pb-00017.jpg)
 
 这将产生 20 个潜在的联盟推荐。
 
@@ -961,7 +961,7 @@ meta 描述是页面内容的简要摘要，同样对谷歌很有价值。
 
 提示输出
 
-![经过 SEO 优化的博客文章输出。](img/00018.jpg)
+![经过 SEO 优化的博客文章输出。](img/cgpt-biz-pmp-pb-00018.jpg)
 
 将 alt 标签和 meta 描述插入到您的页面中。您确切的操作方式将取决于您的博客平台-谷歌搜索“平台名称+meta 描述”和“平台名称+alt 标签”以获取教程。
 
@@ -993,7 +993,7 @@ SEO 需要时间。谷歌不会立即注意到您的网站。
 
 提示输出
 
-![社交媒体发布输出。](img/00019.jpg)
+![社交媒体发布输出。](img/cgpt-biz-pmp-pb-00019.jpg)
 
 如果您想调整语气，可以添加额外的约束，比如“使用严肃、教育性的语气”或“使用有趣、古怪的语气”。
 
@@ -1089,7 +1089,7 @@ SEO 需要时间。谷歌不会立即注意到您的网站。
 
 提示输出
 
-![客座帖子输出。](img/00022.jpg)
+![客座帖子输出。](img/cgpt-biz-pmp-pb-00022.jpg)
 
 让我们来详细讨论一下。
 
@@ -1115,7 +1115,7 @@ SEO 需要时间。谷歌不会立即注意到您的网站。
 
 提示输出
 
-![编入联盟产品输出。](img/00023.jpg)
+![编入联盟产品输出。](img/cgpt-biz-pmp-pb-00023.jpg)
 
 这将需要你推荐的产品，并调整原始文章，使其自然地适应其中。
 

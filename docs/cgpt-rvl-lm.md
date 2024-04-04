@@ -1068,18 +1068,18 @@ ChatGPT 有潜力在各个领域带来积极变革，但我们需要引导其发
 
 [`books2read.com/r/B-I-FXMW-JITGC`](https://books2read.com/r/B-I-FXMW-JITGC)
 
-![Sign Me Up](img/image-ILO9E1ZV.png)
+![Sign Me Up](img/cgpt-rvl-lm-image-ILO9E1ZV.png)
 
 [`books2read.com/r/B-I-FXMW-JITGC`](https://books2read.com/r/B-I-FXMW-JITGC)
 
-![books2read](img/image-Z65I2NZT.png)
+![books2read](img/cgpt-rvl-lm-image-Z65I2NZT.png)
 
 连接独立读者与独立作家。
 
 
 你是否喜欢《ChatGPT：改变世界的革命性语言模型》？那么你应该阅读肯尼斯·卡拉巴洛（Kenneth Caraballo）的《量子世界：探索多元宇宙的奥秘》！
 
-![量子世界：探索多元宇宙的奥秘](img/image-WCVS4Y1M.jpg)
+![量子世界：探索多元宇宙的奥秘](img/cgpt-rvl-lm-image-WCVS4Y1M.jpg)
 
 量子物理长期以来一直引起科学家和公众的兴趣，因为它的令人费解的理论和悖论现象。在《量子世界》中，读者将踏上探索量子力学迷人世界的旅程，并探索正在改变我们对宇宙理解的前沿研究。
 

@@ -55,7 +55,7 @@ ChatGPT 是由 OpenAI 开发的创新语言模型，利用人工智能的力量�
 
 1
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 使用 ChatGPT 为博客和网站撰写内容
 
@@ -129,15 +129,15 @@ ChatGPT 对自由撰稿作家的特点和优��
 
 使用以下提示从 ChatGPT 获取博客主题创意：
 
-![](img/image_rsrc20N.jpg)
+![](img/cgpt-csfl-image_rsrc20N.jpg)
 
 使用以下提示与 ChatGPT 生成文章：
 
-![](img/image_rsrc20P.jpg)
+![](img/cgpt-csfl-image_rsrc20P.jpg)
 
 使用以下提示与 ChatGPT 校对文章：
 
-![](img/image_rsrc20R.jpg)
+![](img/cgpt-csfl-image_rsrc20R.jpg)
 
 # 博客和内容写作兼职的提示
 
@@ -236,7 +236,7 @@ ChatGPT 对自由撰稿作家的特点和优��
 
 2
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 使用 ChatGPT 进行视频脚本和描述撰写
 
@@ -316,11 +316,11 @@ ChatGPT 为视频脚本和描述撰写者提供的特点和优势
 
 使用以下提示生成 Nas Daily 风格的 YouTube 视频：
 
-![](img/image_rsrc20S.jpg)
+![](img/cgpt-csfl-image_rsrc20S.jpg)
 
 使用以下提示生成 Mr. Beast 风格的 YouTube 视频：
 
-![](img/image_rsrc20T.jpg)
+![](img/cgpt-csfl-image_rsrc20T.jpg)
 
 # 视频脚本和描述撰写提示
 
@@ -407,7 +407,7 @@ ChatGPT 为视频脚本和描述撰写者提供的特点和优势
 
 3
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 使用 ChatGPT 进行文案写作服务
 
@@ -463,11 +463,11 @@ ChatGPT 可以以各种方式为您的客户撰写内容。以下是一些示例
 
 使用以下提示生成电子邮件主题行：
 
-![](img/image_rsrc20U.jpg)
+![](img/cgpt-csfl-image_rsrc20U.jpg)
 
 使用以下提示生成商业口号：
 
-![](img/image_rsrc20V.jpg)
+![](img/cgpt-csfl-image_rsrc20V.jpg)
 
 # 使用 ChatGPT 进行文案撰写服务的提示
 
@@ -544,7 +544,7 @@ ChatGPT 可以以各种方式为您的客户撰写内容。以下是一些示例
 
 4
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 利用 CHATGPT 将社交媒体管理作为兼职
 
@@ -592,11 +592,11 @@ ChatGPT 可以以各种方式为您的客户撰写内容。以下是一些示例
 
 使用以下提示创建社交媒体内容日历：
 
-![](img/image_rsrc20W.jpg)
+![](img/cgpt-csfl-image_rsrc20W.jpg)
 
 使用以下提示创建社交媒体内容日历：
 
-![](img/image_rsrc20X.jpg)
+![](img/cgpt-csfl-image_rsrc20X.jpg)
 
 # 社交媒体管理兼职的提示
 
@@ -677,7 +677,7 @@ ChatGPT 可以以各种方式为您的客户撰写内容。以下是一些示例
 
 5
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 利用 CHATGPT 在 Fiverr 上写简历和个人简介作为兼职
 
@@ -723,11 +723,11 @@ Fiverr 是一个受欢迎的在线自由职业服务市场，个人可以在各�
 
 使用以下提示为网���撰写个人简介：
 
-![](img/image_rsrc20Y.jpg)
+![](img/cgpt-csfl-image_rsrc20Y.jpg)
 
 使用以下提示为网站撰写个人简介：
 
-![](img/image_rsrc20Z.jpg)
+![](img/cgpt-csfl-image_rsrc20Z.jpg)
 
 # 撰写简历和个人简介的提示
 
@@ -823,7 +823,7 @@ Fiverr 是一个受欢迎的在线自由职业服务市场，个人可以在各�
 
 6
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 使用 ChatGPT 作为兼职虚拟助理
 
@@ -879,11 +879,11 @@ Fiverr 是一个受欢迎的在线自由职业服务市场，个人可以在各�
 
 使用以下提示为虚拟助理编写专业网站：
 
-![](img/image_rsrc210.jpg)
+![](img/cgpt-csfl-image_rsrc210.jpg)
 
 使用以下提示作为虚拟助理：
 
-![](img/image_rsrc211.jpg)
+![](img/cgpt-csfl-image_rsrc211.jpg)
 
 # 作为兼职的虚拟助理的提示
 
@@ -942,7 +942,7 @@ Fiverr 是一个受欢迎的在线自由职业服务市场，个人可以在各�
 
 7
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 使用 ChatGPT 将儿童图书写作和销售作为副业
 
@@ -996,7 +996,7 @@ Fiverr 是一个受欢迎的在线自由职业服务市场，个人可以在各�
 
 使用以下提示生成儿童图书的故事点子：
 
-![](img/image_rsrc212.jpg)
+![](img/cgpt-csfl-image_rsrc212.jpg)
 
 # 写作和销售儿童图书的提示
 
@@ -1057,7 +1057,7 @@ Fiverr 是一个受欢迎的在线自由职业服务市场，个人可以在各�
 
 8
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 使用 ChatGPT 作为一种副业参与在线调查
 
@@ -1119,7 +1119,7 @@ ChatGPT 可以成为在线调查参与者的宝贵工具。它可以帮助您：
 
 使用以下提示在调查平台上进行研究：
 
-![](img/image_rsrc213.jpg)
+![](img/cgpt-csfl-image_rsrc213.jpg)
 
 # 在线调查参与的提示
 
@@ -1166,7 +1166,7 @@ ChatGPT 可以成为在线调查参与者的宝贵工具。它可以帮助您：
 
 9
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 在线客户支持作为一种兼职使用 ChatGPT
 
@@ -1214,7 +1214,7 @@ ChatGPT 可以成为在线调查参与者的宝贵工具。它可以帮助您：
 
 使用以下提示来获取改进客户支持兼职的建议：
 
-![](img/image_rsrc214.jpg)
+![](img/cgpt-csfl-image_rsrc214.jpg)
 
 # 作为在线客户支持兼职的提示
 
@@ -1275,7 +1275,7 @@ ChatGPT 可以帮助起草回复，解决问题，提供知识，语言协助和
 
 10
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 # 使用 ChatGPT 作为兼职语言翻译服务
 
@@ -1331,7 +1331,7 @@ ChatGPT 对自由职业翻译者来说是一种宝贵的工具。它可以帮助
 
 使用以下提示将英文文本翻译成西班牙文：
 
-![](img/image_rsrc215.jpg)
+![](img/cgpt-csfl-image_rsrc215.jpg)
 
 # 语言翻译服务提示
 
@@ -1388,7 +1388,7 @@ ChatGPT 对自由职业翻译者来说是一种宝贵的工具。它可以帮助
 
 # 119 个盈利副业的必备提示
 
-![](img/image_rsrc20K.jpg)
+![](img/cgpt-csfl-image_rsrc20K.jpg)
 
 将这些提示视为启动下一个副业或扩展当前副业的捷径。结合指南《ChatGPT for Cash Flow》使用这些提示。
 
@@ -1667,7 +1667,7 @@ ChatGPT 对自由职业翻译者来说是一种宝贵的工具。它可以帮助
 
 前往亚马逊，让其他读者知道这本书如何帮助了你。只需一两句话就足以帮助他们意识到他们的赚钱潜力。
 
-![](img/image_rsrc216.jpg)
+![](img/cgpt-csfl-image_rsrc216.jpg)
 
 感谢你帮助我在探索如何利用 ChatGPT 的赚钱潜力帮助他人的道路上。我希望你能激励他们构思出他们计划向这位宝贵语言助手提出的第一个问题。
 

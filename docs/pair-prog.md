@@ -73,7 +73,7 @@
 
 
 
-![AI 程序员查看网页代码-来自 Pixabay.com 的图片](img/image002.jpg)
+![AI 程序员查看网页代码-来自 Pixabay.com 的图片](img/pair-prog-image002.jpg)
 
 图片由[Gerd Altmann 在 Pixabay 上](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2167835)提供
 
@@ -244,7 +244,7 @@ Copilot 使用 GitHub 的代码库来训练其模型并提出建议，而由此�
 
 
 
-![一个坐在电脑前的人 由机器自动生成的描述，中等置信度](img/image014.jpg)
+![一个坐在电脑前的人 由机器自动生成的描述，中等置信度](img/pair-prog-image014.jpg)
 
 图片由 [cocoandwifi](https://pixabay.com/users/cocoandwifi-4330980/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4996834) 提供自 [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4996834)
 
@@ -280,15 +280,15 @@ fi
 
 正如我所提到的，Copilot 需要知道文件的类型才能为您编写代码。通过进一步的实验，我发现让 Copilot 理解文件类型的不是文件扩展名。相反，是 VS Code 本身。将文件保存为.sh 扩展名告诉 VS Code 这是一个 Shell 脚本文件。
 
-![图片](img/image021.png)
+![图片](img/pair-prog-image021.png)
 
 文件扩展名不如 VS Code 认为的文件类型重要。在大多数情况下，VS Code 会自动正确识别。如果没有，您可以点击底部状态栏中的“纯文本”短语。页面顶部将出现一个菜单，允许您手动选择文件类型。
 
-![图形用户界面，文本，应用程序 由机器自动生成的描述](img/image009.png)
+![图形用户界面，文本，应用程序 由机器自动生成的描述](img/pair-prog-image009.png)
 
 在我的情况下，将文件保存为.sh 就解决了问题。在另一种情况下，添加“Shebang”行就解决了问题。结果似乎不一致，所以请仔细检查类型。
 
-![图片](img/image019.png)
+![图片](img/pair-prog-image019.png)
 
 记住的重要一点是，Copilot 只关心文件类型而不关心扩展名。
 
@@ -863,7 +863,7 @@ ChatGPT 是一个高级人工智能模型，能够理解并回答更复杂和微
 
 
 
-![GitHub 提交图](img/image016.png)
+![GitHub 提交图](img/pair-prog-image016.png)
 
 GitHub 提交图按作者
 
@@ -873,7 +873,7 @@ GitHub 提交图按作者
 
 ## 基本 Git 命令
 
-![VS Code 中的文件类型选择器](img/image008.png)
+![VS Code 中的文件类型选择器](img/pair-prog-image008.png)
 
 就像我在 shell 脚本中所做的那样，我在 VS Code 中创建了一个空白文档，并将其类型设置为 Shell 脚本。接下来，我开始在文档中添加注释，看看 Copilot 会建议什么。在下面的每种情况中，我尽可能少地输入，以充分运用 Copilot。
 
@@ -1146,7 +1146,7 @@ git filter-repo—path-glob '!secrets.txt'
 
 
 
-![一个屏幕的特写 由低置信度自动生成的描述](img/image003.jpg)
+![一个屏幕的特写 由低置信度自动生成的描述](img/pair-prog-image003.jpg)
 
 图片由[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1486361)的[Markus Spiske](https://pixabay.com/users/markusspiske-670330/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1486361)提供
 
@@ -1869,7 +1869,7 @@ document.body.appendChild(table);
 
 
 
-![人体的抽象图像，二进制数和行星](img/image015.jpg)
+![人体的抽象图像，二进制数和行星](img/pair-prog-image015.jpg)
 
 由 [Gerd Altmann from Pixabay](https://pixabay.com/users/geralt-9301/?amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3175073) 的图像
 
@@ -2106,7 +2106,7 @@ ChatGPT，另一方面，在帮助新手理解代码方面表现出色。只需�
 
 
 
-![image](img/image017.jpg)
+![image](img/pair-prog-image017.jpg)
 
 图片由[Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2528410)提供，来自[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2528410)
 
@@ -2539,7 +2539,7 @@ export class AppModule { }
 
 
 
-![在黑板上指导学生的教师](img/image018.jpg)
+![在黑板上指导学生的教师](img/pair-prog-image018.jpg)
 
 作者和 OpenAI 提供的图片
 
@@ -3086,7 +3086,7 @@ ChatGPT 给出的实际上是几乎相同的正则表达式。
 
 
 
-![带有骰子、卡片和筹码的赌桌](img/image020.jpg)
+![带有骰子、卡片和筹码的赌桌](img/pair-prog-image020.jpg)
 
 图片由[Pixabay 的 Thorsten Frenzel](https://pixabay.com/users/thorstenf-7677369/?amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4178462)提供
 
@@ -3909,7 +3909,7 @@ console.log(`${stock.symbol}: $${stock.price}`);
 
 
 
-![image](img/image004.jpg)
+![image](img/pair-prog-image004.jpg)
 
 图片由[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4784909)的[14995841](https://pixabay.com/users/14995841-14995841/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4784909)提供
 
@@ -4128,7 +4128,7 @@ ChatGPT 可用于撰写简明清晰的营销摘要，创建敏捷史诗和用户
 
 
 
-![image](img/image011.jpg)
+![image](img/pair-prog-image011.jpg)
 
 图片由 [Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4025614) 提供，来自 [Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4025614)
 
@@ -4266,7 +4266,7 @@ icon: 'list'
 
 在这一点上，我实际上还没有检查这些代码是否有效，但记得我在打开项目后使用了 npm start。我切换到了我的浏览器，项目已经渲染出来，发现这个等着我：
 
-![大部分由 GitHub Copilot 编写的 Ionic 分割窗格应用](img/image012.png)大部分由 GitHub Copilot 编写的 Ionic 分割窗格应用
+![大部分由 GitHub Copilot 编写的 Ionic 分割窗格应用](img/pair-prog-image012.png)大部分由 GitHub Copilot 编写的 Ionic 分割窗格应用
 
 点击菜单可以切换到所选页面，所以它有效！
 
@@ -4472,11 +4472,11 @@ HttpClientModule,
 
 现在终于是时候再次审查浏览器了。
 
-![由 GitHub Copilot 几乎整个编写的博客文章应用程序，显示一个具有侧栏菜单的响应式网格布局。](img/image001.png)由 GitHub Copilot 在 Ionic Framework 中几乎完全编写的博客文章应用
+![由 GitHub Copilot 几乎整个编写的博客文章应用程序，显示一个具有侧栏菜单的响应式网格布局。](img/pair-prog-image001.png)由 GitHub Copilot 在 Ionic Framework 中几乎完全编写的博客文章应用
 
 这甚至是响应式的。
 
-![展示只有两列内容和没有侧栏菜单的响应式版本。](img/image000.png)
+![展示只有两列内容和没有侧栏菜单的响应式版本。](img/pair-prog-image000.png)
 
 响应式版本只有两列内容，没有侧栏菜单。
 
@@ -4771,7 +4771,7 @@ ionic serve
 
 
 
-![自动生成描述的夜空图片](img/image013.jpg)
+![自动生成描述的夜空图片](img/pair-prog-image013.jpg)
 
 图片由[Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3625406)提供, 来自[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3625406)
 
@@ -5274,7 +5274,7 @@ Copilot 尝试了，但没有给我任何可以使用的东西。结果甚至不
 
 
 
-![包含文本、电子设备、电路的图片  自动生成描述](img/image005.jpg)
+![包含文本、电子设备、电路的图片  自动生成描述](img/pair-prog-image005.jpg)
 
 图片由[Vicki Hamilton](https://pixabay.com/users/flutie8211-17475707/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7772914)从[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7772914)获取
 
@@ -5907,7 +5907,7 @@ Codeium 相信人工智能可以加速软件开发的各种“模式”，但与
 
 
 
-![Text  Description automatically generated](img/image010.jpg)
+![Text  Description automatically generated](img/pair-prog-image010.jpg)
 
 图片由[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1938449)的[NoName_13](https://pixabay.com/users/noname_13-2364555/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1938449)提供
 
@@ -5958,7 +5958,7 @@ Codeium 相信人工智能可以加速软件开发的各种“模式”，但与
 
 
 
-![图片](img/image007.jpg)
+![图片](img/pair-prog-image007.jpg)
 
 图片由[Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1419275)提供，来自[Pixabay](https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1419275)
 
@@ -7066,7 +7066,7 @@ import { TestBed } from '@angular/core/testing'; import { ShuffleService } from 
 
 掩盖名称的重要性可能是为了保护个人或实体的身份，隐藏敏感信息，或者保持隐私。在 ShuffleService 的背景下，不清楚掩盖名称可能指的是什么，因为该服务似乎是一个用于洗牌数组和生成哈希码的通用实用程序。
 
-![image](img/image006.png)![Michael Callaghan](img/image006.png)
+![image](img/pair-prog-image006.png)![Michael Callaghan](img/pair-prog-image006.png)
 
 鉴于以下拉取请求的提交消息字符串，请生成一些发布说明，按常见主题分组并按 perceived 重要性排序。
 
@@ -7165,7 +7165,7 @@ import { TestBed } from '@angular/core/testing'; import { ShuffleService } from 
 
 [`books2read.com/r/B-H-FCXP-JBGUC`](https://books2read.com/r/B-H-FCXP-JBGUC)
 
-![books2read](img/b2r_image.png)
+![books2read](img/pair-prog-b2r_image.png)
 
 连接独立读者与独立作家。
 
@@ -7199,7 +7199,7 @@ P-AI-R 编程：如何像 GitHub Copilot 和 ChatGPT 这样的 AI 工具彻底�
 更多内容请访问[迈克尔·D·卡拉汉的网站](https://walkingriver.com)。
 
 
-![Michael D Callaghan](img/ata_image.jpg)
+![Michael D Callaghan](img/pair-prog-ata_image.jpg)
 
 # 关于作者
 

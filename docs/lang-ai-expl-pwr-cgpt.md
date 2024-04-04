@@ -183,7 +183,7 @@ ChatGPT 是一种快速发展的技术，具有广泛的潜在应用。随着模
 
 [`books2read.com/r/B-Q-VNEK-PGSFC`](https://books2read.com/r/B-Q-VNEK-PGSFC)
 
-![books2read](img/b2r_image.png)
+![books2read](img/lang-ai-expl-pwr-cgpt-b2r_image.png)
 
 连接独立读者和独立作家。
 

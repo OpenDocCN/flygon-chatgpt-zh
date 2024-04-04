@@ -132,7 +132,7 @@ ChatGPT 对人工智能和自然语言处理领域做出了重大贡献，其发
 
 一旦设置了您的 OpenAI 帐户并安装了 OpenAI Python 库，您可以按照以下步骤访问 ChatGPT：
 
-![](img/Image00000.jpg)
+![](img/lrn-cgpt-ftr-lrn-Image00000.jpg)
 
 1. **导入 openai 模块**：
 

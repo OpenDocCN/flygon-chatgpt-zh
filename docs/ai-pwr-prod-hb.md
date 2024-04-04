@@ -10,7 +10,7 @@
 
 *"你在一个迷宫般的曲折小通道中。" - 庞大洞穴冒险*
 
-![](img/image-2.png)
+![](img/ai-pwr-prod-hb-image-2.png)
 
 AI 简介 - 由 Midjourney AI 生成的图像
 
@@ -72,19 +72,19 @@ I hope this helps! Let me know if you have any other questions.
 
 当我们再次询问一年中的月份时，现在的答案是：
 
-![](img/image-3.png)
+![](img/ai-pwr-prod-hb-image-3.png)
 
 一年中的月份
 
 当答案旁边的点赞按钮被按下时，如果有积极的回应，您将被要求提供。
 
-![](img/image-4.png)
+![](img/ai-pwr-prod-hb-image-4.png)
 
 点赞
 
 如果按下踩按钮，您将被要求再次回答，并对为什么回答不好进行分类。
 
-![](img/image-5.png)
+![](img/ai-pwr-prod-hb-image-5.png)
 
 踩
 
@@ -124,7 +124,7 @@ I hope this helps! Let me know if you have any other questions.
 
 1.  这个实验说明了机器在真正理解语言和拥有智能方面的局限性。它表明机器只是执行指令，而不理解其背后的含义。
 
-![](img/image-6.png)
+![](img/ai-pwr-prod-hb-image-6.png)
 
 中国屋是一个思维实验，挑战了计算机程序是否真正能够像人类那样“理解”或具有“意识”的想法。它通过将一个不懂中文的人放在一个房间里，里面有中文符号和操作指令，能够正确回答问题而不理解背后的含义。
 
@@ -189,7 +189,7 @@ Midjourney 的技术目前处于公开测试阶段，始于 2022 年 7 月。用
 
 *“最好的设计是最简单的能够工作的设计。” - 阿尔伯特·爱因斯坦*
 
-![](img/image-7.png)
+![](img/ai-pwr-prod-hb-image-7.png)
 
 办公椅设计 - 由 Midjourney AI 生成的图像
 
@@ -359,7 +359,7 @@ Meet Jack, the inventor of the perfect chair. Jack had been working in an office
 
 *"我唯一比谈论食物更喜欢的事情就是吃东西。" - 约翰·沃尔特斯*
 
-![](img/image-8.png)
+![](img/ai-pwr-prod-hb-image-8.png)
 
 食品 - 由 Midjourney AI 生成的图像
 
@@ -609,7 +609,7 @@ Please note that the calorie counts for each item may vary depending on the spec
 
 *"教学不是一种职业；它是一种激情。" - 未知*
 
-![](img/image-9.png)
+![](img/ai-pwr-prod-hb-image-9.png)
 
 学校生活 - Midjourney AI 生成的图像
 
@@ -799,7 +799,7 @@ Last summer, I had the opportunity to travel to Egypt for 10 days with my family
 
 *"关键不在于想法，而在于实现想法。" - 斯科特·贝尔斯基*
 
-![](img/image-10.png)
+![](img/ai-pwr-prod-hb-image-10.png)
 
 现代商人 - 由 Midjourney AI 生成的图像
 
@@ -1179,7 +1179,7 @@ You should be able to save this as a CSV file and then import it into Excel or a
 
 在 Excel 中，调整列宽后，应该看起来像这样：
 
-![](img/image-11.png)
+![](img/ai-pwr-prod-hb-image-11.png)
 
 在 MS Excel 中的显示方式
 
@@ -1424,7 +1424,7 @@ Virtual assistant or administrative support: As your business grows, administrat
 
 *"学习的能力是一种天赋；学习的技能是一种能力；学习的意愿是一种选择。" - 布莱恩·赫伯特*
 
-![](img/image-12.png)
+![](img/ai-pwr-prod-hb-image-12.png)
 
 自我教育 - 由 Midjourney AI 生成的图像
 
@@ -1634,7 +1634,7 @@ The key advantage of this organizational structure is that it allows for a clear
 
 *未来并非已定。没有命运，只有我们为自己创造的 - 莎拉·康纳 - 终结者 2*
 
-![](img/image-13.png)
+![](img/ai-pwr-prod-hb-image-13.png)
 
 职业道路 - 由 Midjourney AI 生成的图像
 
@@ -1908,7 +1908,7 @@ Jassem 找到了一份他觉得令人愉快、薪酬丰厚，并让每个工作�
 
 *"如果你玩游戏，生活会更有趣。" - 罗尔德·达尔*
 
-![](img/image-14.png)
+![](img/ai-pwr-prod-hb-image-14.png)
 
 游戏机 - 由 Midjourney AI 生成的图像
 
@@ -2183,7 +2183,7 @@ It's worth noting that the list of popular games developed with each engine is b
 
 *"普通是容易被遗忘的，但独特性留下深刻印象。" - 作者未知*
 
-![](img/image-15.png)
+![](img/ai-pwr-prod-hb-image-15.png)
 
 品牌 - 由 Midjourney AI 生成的图像
 
@@ -2258,7 +2258,7 @@ A sailboat with the name "Sail Away" incorporated in the design, possibly with w
 
 #### DALL-E 输出
 
-![](img/image-16.png)
+![](img/ai-pwr-prod-hb-image-16.png)
 
 一艘帆船，设计中包含“Sail Away”这个名字，可能背景是波浪或海洋
 
@@ -2276,7 +2276,7 @@ A compass rose with "Sail Away" written around it, possibly with a vintage or ag
 
 #### DALL-E 输出
 
-![](img/image-17.png)
+![](img/ai-pwr-prod-hb-image-17.png)
 
 一个指南针玫瑰，周围写着“Sail Away”，设计可能具有复古或陈旧的外观
 
@@ -2290,7 +2290,7 @@ A globe with "Sail Away" written across it, highlighting the international sourc
 
 #### DALL-E 输出
 
-![](img/image-18.png)
+![](img/ai-pwr-prod-hb-image-18.png)
 
 一个地球仪，上面写着“Sail Away”，突出产品的国际采购，可能有一些国家或大陆被突出显示
 
@@ -2304,7 +2304,7 @@ An anchor with "Sail Away" written in a bold font, possibly with a rope or chain
 
 #### DALL-E 输出
 
-![](img/image-19.png)
+![](img/ai-pwr-prod-hb-image-19.png)
 
 一个带有“Sail Away”粗体字的锚，可能有绕着它的绳索或链条
 
@@ -2318,7 +2318,7 @@ A lighthouse with "Sail Away" written in cursive underneath it, possibly with wa
 
 #### DALL-E 输出
 
-![](img/image-20.png)
+![](img/ai-pwr-prod-hb-image-20.png)
 
 一个灯塔，下面用草书体写着“Sail Away”，可能有海浪拍打在上面
 
@@ -2332,7 +2332,7 @@ A cartoon wave with the business name written in a playful font, possibly with a
 
 #### DALL-E 输出
 
-![](img/image-21.png)
+![](img/ai-pwr-prod-hb-image-21.png)
 
 一个卡通波浪，商业名称用俏皮的字体书写，可能有一个笑脸或眨眼的角色在波浪上冲浪。
 
@@ -2346,7 +2346,7 @@ A map of the world with "Sail Away" written in bold letters across it, possibly 
 
 #### DALL-E 输出
 
-![](img/image-22.png)
+![](img/ai-pwr-prod-hb-image-22.png)
 
 一幅世界地图，上面用粗体字写着“Sail Away”，可能在不同区域用不同的产品或类别进行了突出显示
 
@@ -2360,7 +2360,7 @@ An image of a sail with the business name written in a modern font, possibly wit
 
 #### DALL-E 输出
 
-![](img/image-23.png)
+![](img/ai-pwr-prod-hb-image-23.png)
 
 一幅帆的图像，商业名称用现代字体书写，可能有渐变或渐变效果
 
@@ -2374,7 +2374,7 @@ A nautical rope with the business name in a circular design around it, possibly 
 
 #### DALL-E 输出
 
-![](img/image-24.png)
+![](img/ai-pwr-prod-hb-image-24.png)
 
 一根航海绳，商业名称以环形设计围绕在周围，可能设计中有结或环
 
@@ -2388,7 +2388,7 @@ A steering wheel with "Sail Away" written across it, highlighting the company's 
 
 #### DALL-E 输出
 
-![](img/image-25.png)
+![](img/ai-pwr-prod-hb-image-25.png)
 
 一个方向盘，上面写着“Sail Away”，突出公司在行业中的领导地位，可能有航海或海事背景
 
@@ -2439,7 +2439,7 @@ give me 10 memorable line ideas  that can be used for the "sail away" brand
 
 *"最好的错误消息是永远不会出现的。" - 托马斯·福克斯*
 
-![](img/image-26.png)
+![](img/ai-pwr-prod-hb-image-26.png)
 
 编码 - 由 Midjourney AI 生成的图像
 
@@ -2764,7 +2764,7 @@ The button element creates a button that triggers the playBeeps() function when 
 
 ## 准备工作
 
-![](img/image-27.png)
+![](img/ai-pwr-prod-hb-image-27.png)
 
 准备工作 - 由 Midjourney AI 生成的图像
 
@@ -2790,7 +2790,7 @@ Toyota Prius Eco - A hybrid vehicle that uses regenerative braking system and ac
 
 ## 孵化
 
-![](img/image-28.png)
+![](img/ai-pwr-prod-hb-image-28.png)
 
 孵化 - 由 Midjourney AI 生成的图像
 
@@ -2816,7 +2816,7 @@ Improve engine technology: Car manufacturers can continue to improve internal co
 
 ## 洞察
 
-![](img/image-29.png)
+![](img/ai-pwr-prod-hb-image-29.png)
 
 洞察 - 由 Midjourney AI 生成的图像
 
@@ -2838,7 +2838,7 @@ The most friction in a car that wastes energy and increases fuel consumption is 
 
 ## 评估
 
-![](img/image-30.png)
+![](img/ai-pwr-prod-hb-image-30.png)
 
 评估 - 由 Midjourney AI 生成的图像
 
@@ -2879,7 +2879,7 @@ It's worth noting that other parts of the car, such as the brakes and tires, can
 
 ## 实施
 
-![](img/image-31.png)
+![](img/ai-pwr-prod-hb-image-31.png)
 
 实施 - 由 Midjourney AI 生成的图像
 
@@ -2908,7 +2908,7 @@ Define the Prototype: Ahmed should start by defining the specifications and feat
 
 # 作者简介：
 
-![](img/image-32.png)
+![](img/ai-pwr-prod-hb-image-32.png)
 
 图书馆 - 由 Midjourney AI 生成的图像
 

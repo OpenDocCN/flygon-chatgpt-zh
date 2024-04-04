@@ -2,7 +2,7 @@
 
 
 
-![image-JCETL9S6.jpg](img/image-JCETL9S6.jpg)
+![image-JCETL9S6.jpg](img/howto-use-cgpt-image-JCETL9S6.jpg)
 
 如何使用 Chatgpt：使用 Chatgpt；在线赚钱从未如此简单
 

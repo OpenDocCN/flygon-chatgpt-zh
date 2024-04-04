@@ -215,7 +215,7 @@ AI 与文案撰写的未来
 
 ## ChatGPT 概述
 
-![图片](img/image-PQCOOS32.jpg)
+![图片](img/wrt-lk-pro-image-PQCOOS32.jpg)
 
 ChatGPT 是由 OpenAI 开发的语言模型，能够根据输入提示生成类似人类的文本。凭借其庞大的知识库和先进的机器学习算法，ChatGPT 可以在各种写作任务中提供帮助，从生成标题到创作整篇内容。
 
@@ -285,7 +285,7 @@ ChatGPT 是由 OpenAI 开发的语言模型，能够根据输入提示生成类�
 
 ChatGPT 提示通过将提示或种子文本输入到语言模型中，然后生成文本作为输出来工作。生成的文本基于模型训练的广泛知识库，以及它在单词和短语之间学习的模式和关系。本指南将教你如何有效地构建你的提示，以创建出色的内容，无论是为你的客户还是为你自己的目的。
 
-![图片](img/image-Z0RTGI7T.jpg)
+![图片](img/wrt-lk-pro-image-Z0RTGI7T.jpg)
 
 
 ## 不同类型的 ChatGPT 提示
@@ -325,7 +325,7 @@ chat.openai.com 网站提供了一个与 OpenAI 的 GPT-3 语言模型实时交�
 
 •继续通过在文本框中输入后续问题或提示与 OpenAI 进行对话，并接收模型的回复。
 
-![图片](img/image-HSTC70YB.jpg)
+![图片](img/wrt-lk-pro-image-HSTC70YB.jpg)
 
 
 ### 使用 ChatGPT 提示的最佳实践
@@ -478,7 +478,7 @@ ChatGPT 是一种高度灵活和可定制的技术，为特定用例进行训练
 
 ### 优化的提示模板
 
-![图片](img/image-G74G3KIH.jpg)
+![图片](img/wrt-lk-pro-image-G74G3KIH.jpg)
 
 亲爱的读者，你即将拥有一项宝贵的工具！这个经过优化的模板专为像你这样的文案撰写人员和营销人员设计，为生成精确结果提供清晰简明的指导。无论你是为网站、电子邮件还是其他任何媒介撰写文案，这个模板都能帮到你。
 
@@ -598,7 +598,7 @@ ChatGPT 是一种高度灵活和可定制的技术，为特定用例进行训练
 
 额外说明：强调产品的独特卖点
 
-![image](img/image-3G724XP6.jpg)
+![image](img/wrt-lk-pro-image-3G724XP6.jpg)
 
 一家新餐厅的社交媒体帖子
 
@@ -614,7 +614,7 @@ ChatGPT 是一种高度灵活和可定制的技术，为特定用例进行训练
 
 额外说明：强调餐厅独特的氛围
 
-![image](img/image-DD5YXWDJ.jpg)
+![image](img/wrt-lk-pro-image-DD5YXWDJ.jpg)
 
 非营利组织的电子通讯
 
@@ -632,7 +632,7 @@ ChatGPT 是一种高度灵活和可定制的技术，为特定用例进行训练
 
 输出（部分内容）：
 
-![image](img/image-8SPHD0YY.jpg)
+![image](img/wrt-lk-pro-image-8SPHD0YY.jpg)
 
 一款新的健身器材的产品描述
 
@@ -680,7 +680,7 @@ ChatGPT 是一种高度灵活和可定制的技术，为特定用例进行训练
 
 输出（部分内容）：
 
-![image](img/image-UPJQ14E0.jpg)
+![image](img/wrt-lk-pro-image-UPJQ14E0.jpg)
 
 利用这个模板，让您的 ChatGPT 和其他 AI 写作平台的文案效果更上一层楼。天空是极限！
 
@@ -690,7 +690,7 @@ ChatGPT 是一种高度灵活和可定制的技术，为特定用例进行训练
 
 “创建一个有趣且吸引人的社交媒体帖子，以促进一家新餐厅，面向美食爱好者和餐厅所在地区的当地居民。使用让人垂涎欲滴的描述来描述餐厅的菜肴，并强调独特的氛围。尝试使用关键词如餐厅、食物、菜单、当地、美食和氛围。使用食物的吸引人照片使帖子更具吸引力。保持长度在 100-150 字之间。”
 
-![image](img/image-7UDN3SSM.jpg)
+![image](img/wrt-lk-pro-image-7UDN3SSM.jpg)
 
 针对非营利组织的电子通讯：
 
@@ -709,7 +709,7 @@ ChatGPT 是一种高度灵活和可定制的技术，为特定用例进行训练
 
 使用示例提示的文案内容类型
 
-![image](img/image-1IHH9LHO.jpg)
+![image](img/wrt-lk-pro-image-1IHH9LHO.jpg)
 
 
 ## 撰写产品描述
@@ -1263,7 +1263,7 @@ OUTPUT:
 
 ### 文案框架
 
-![图片](img/image-X1U259VH.jpg)
+![图片](img/wrt-lk-pro-image-X1U259VH.jpg)
 
 在本章中，我们将深入探讨用于制作高质量内容的文案框架。这些框架不仅有助于使您的文案脱颖而出并实现其预期目的，而且至关重要。ChatGPT 使用这些文案框架通过结合每个框架的不同元素来打造具有说服力和吸引力的信息。我们将涵盖最流行的框架，如 AIDA、问题-解决方案、独特卖点（USP）、特点-优势-利益、叙事、情感吸引、价值主张和直接回应。这些框架适用于各种内容类型，如落地页、电子邮件营销、直邮、广告、销售信函、产品包装、视频脚本等。
 
@@ -1506,7 +1506,7 @@ AIDA（注意-兴趣-渴望-行动）
 
 不同行业的文案撰写
 
-![image](img/image-QND3DS6Z.jpg)
+![image](img/wrt-lk-pro-image-QND3DS6Z.jpg)
 
 
 ## 理解行业特定的语言和术语
@@ -1570,7 +1570,7 @@ AIDA（注意-兴趣-渴望-行动）
 
 为不同渠道撰写
 
-![图片](img/image-N0EDHHKP.jpg)
+![图片](img/wrt-lk-pro-image-N0EDHHKP.jpg)
 
 
 ## 理解不同渠道的独特需求
@@ -1659,7 +1659,7 @@ ChatGPT 可以是一个有价值的工具，因为它可以仅通过几个输入
 
 为本地市场撰写文案
 
-![image](img/image-4ZEMFSLF.jpg)
+![image](img/wrt-lk-pro-image-4ZEMFSLF.jpg)
 
 
 ## 理解文化敏感性在文案撰写中的重要性
@@ -1746,7 +1746,7 @@ ChatGPT 可用于研究当地语言和文化趋势，这有助于文案撰写人
 
 在下面的示例中，您可以看到 ChatGPT 在要求生成 10 个关键词、5 个标题、5 个元描述和 5 个内容主题以用于目标关键词“mortgage”后的输出。
 
-![图片](img/image-1FDFB61V.jpg)
+![图片](img/wrt-lk-pro-image-1FDFB61V.jpg)
 
 
 ## 理解 SEO 对于文案写作的重要性

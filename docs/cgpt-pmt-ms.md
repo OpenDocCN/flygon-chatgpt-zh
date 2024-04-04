@@ -4,7 +4,7 @@
 
 ## 前言
 
-![](img/image00130.jpeg)
+![](img/cgpt-pmt-ms-image00130.jpeg)
 
 欢迎来到《ChatGPT 提示大师：精通有效提示指南》！这个详尽的教程将教会你一切关于创建简洁有效的 ChatGPT 提示，激发有趣和教育性对话的知识。
 
@@ -19,7 +19,7 @@
 那么让我们开始吧！通过这本书你将获得的知识和技能，你将能够像专业人士一样驱动富有成效和引人入胜的 ChatGPT 对话。
 
 
-![](img/image00131.jpeg)
+![](img/cgpt-pmt-ms-image00131.jpeg)
 
 克里斯蒂安·布朗
 
@@ -29,7 +29,7 @@
 
 ## 介绍
 
-![](img/image00130.jpeg)
+![](img/cgpt-pmt-ms-image00130.jpeg)
 
 这本详尽的指南将教会您关于创建简洁有效的 ChatGPT 提示的一切，从而引发有趣和教育性的对话。
 
@@ -53,7 +53,7 @@ ChatGPT 是一个允许用户与基于计算机的代理进行对话的聊天机
 
 因此，无论您是初次接触 ChatGPT 还是经验丰富的用户，希望将您的技能提升到更高水平，这本书都适合您。让我们开始吧！
 
-![](img/image00132.gif)
+![](img/cgpt-pmt-ms-image00132.gif)
 
 这就是 ChatGPT 界面的样子。
 
@@ -119,7 +119,7 @@ ChatGPT 是市场上可用的几种聊天机器人之一。那么，ChatGPT 与�
 
 ## 提示在 ChatGPT 对话中的作用
 
-![](img/image00130.jpeg)
+![](img/cgpt-pmt-ms-image00130.jpeg)
 
 正如我们之前提到的，ChatGPT 对话中使用的提示的质量可以显著影响对话的成功。明确定义的提示可以帮助确保对话保持在正确的轨道上，并涵盖用户感兴趣的主题，从而实现更引人入胜和信息丰富的体验。
 
@@ -220,7 +220,7 @@ ChatGPT 是市场上可用的几种聊天机器人之一。那么，ChatGPT 与�
 
 ## 构建有效的提示
 
-![](img/image00130.jpeg)
+![](img/cgpt-pmt-ms-image00130.jpeg)
 
 ### 制作有效 ChatGPT 提示的步骤
 
@@ -338,7 +338,7 @@ ChatGPT 是市场上可用的几种聊天机器人之一。那么，ChatGPT 与�
 
 ## 故障排除
 
-![](img/image00130.jpeg)
+![](img/cgpt-pmt-ms-image00130.jpeg)
 
 ### 在使用 ChatGPT 时可能出现的常见问题
 
@@ -370,7 +370,7 @@ ChatGPT 是市场上可用的几种聊天机器人之一。那么，ChatGPT 与�
 
 ## 案例研究
 
-![](img/image00130.jpeg)
+![](img/cgpt-pmt-ms-image00130.jpeg)
 
 在本章中，我们将探讨一些案例研究，说明了如何有效地使用 ChatGPT 以及如何制定清晰、简洁的提示以实现特定目标。我们还将探讨使用 ChatGPT 的最佳实践以及如何避免常见错误。
 
@@ -422,7 +422,7 @@ ChatGPT 是市场上可用的几种聊天机器人之一。那么，ChatGPT 与�
 
 ## 成功的 ChatGPT 提示的现实世界示例
 
-![](img/image00130.jpeg)
+![](img/cgpt-pmt-ms-image00130.jpeg)
 
 在本章中，我们将看一些成功的 ChatGPT 提示的现实世界示例，这些示例已被用于实现特定目标。这些示例将说明清晰、简洁的提示如何帮助引导 ChatGPT 对话朝着有意义的方向发展并实现特定的结果。
 
@@ -1291,7 +1291,7 @@ Prompt: 我希望你扮演我的急救交通或家庭事故紧急响应危机专
 
 ## 结论
 
-![](img/image00130.jpeg)
+![](img/cgpt-pmt-ms-image00130.jpeg)
 
 正如我们在整本电子书中所看到的，为 ChatGPT 对话撰写清晰简洁的提示对于成功和有意义的互动至关重要。通过制定有针对性和具体的提示，您可以引导 ChatGPT 朝着您希望对话发展的方向前进，并确保输出相关且有用。
 

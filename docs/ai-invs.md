@@ -62,7 +62,7 @@
 
 *“在我们对当前对立的痴迷中，我们常常忘记了人类所有成员之间有多少共同点。也许我们需要一些来自外部的普遍威胁才能让我们意识到这种共同纽带。我时常想，如果我们面临来自这个世界之外的外星威胁，我们的分歧会多么迅速地消失。”*
 
-![](img/00001.jpeg)
+![](img/ai-invs-00001.jpeg)
 
 *里根在联合国警告侵略性 AI 人工智能*
 
@@ -74,7 +74,7 @@
 
 **揭露掠夺性的致病性外星 AI 人工智能~恢复源于爱的人类**
 
-![](img/00002.jpeg)
+![](img/ai-invs-00002.jpeg)
 
 *1982 年福克兰战争是为了 AI 人工智能黑色黑泥而战*
 
@@ -84,7 +84,7 @@
 
 [**https://newsinsideout.com/2015/11/part-i-exposing-predatory-pathogenic-off-planet-ai-artificial-intelligence-restoring-love-sourced-humanity-a-multi-part-symposium/**](https://newsinsideout.com/2015/11/part-i-exposing-predatory-pathogenic-off-planet-ai-artificial-intelligence-restoring-love-sourced-humanity-a-multi-part-symposium/)
 
-![](img/00003.jpeg)
+![](img/ai-invs-00003.jpeg)
 
 第二部分 — 揭示外星掠夺性 AI 人工智能研讨会
 
@@ -92,7 +92,7 @@
 
 [**https://newsinsideout.com/2015/11/part-ii-symposium-on-exposing-invading-off-planet-predatory-pathogenic-ai-artificial-intelligence-restoring-love-sourced-humanity/**](https://newsinsideout.com/2015/11/part-ii-symposium-on-exposing-invading-off-planet-predatory-pathogenic-ai-artificial-intelligence-restoring-love-sourced-humanity/)
 
-![](img/00004.jpeg)
+![](img/ai-invs-00004.jpeg)
 
 揭示 AI 人工智能和超人类议程
 
@@ -100,7 +100,7 @@
 
 [**https://newsinsideout.com/2015/11/part-iii-sympoiv-coming-soon/**](https://newsinsideout.com/2015/11/part-iii-sympoiv-coming-soon/)
 
-![](img/00005.jpeg)
+![](img/ai-invs-00005.jpeg)
 
 *第四部分 — AI 研讨会*
 
@@ -108,7 +108,7 @@
 
 [**https://newsinsideout.com/2015/12/watch-part-iv-exposing-predatory-pathogenic-ai-artificial-intelligence-restoring-love-sourced-humanity-a-multi-part-symposium-part-v-coming-soon/**](https://newsinsideout.com/2015/12/watch-part-iv-exposing-predatory-pathogenic-ai-artificial-intelligence-restoring-love-sourced-humanity-a-multi-part-symposium-part-v-coming-soon/)
 
-![](img/00006.jpeg)
+![](img/ai-invs-00006.jpeg)
 
 *AI 小组-阿尔弗雷德·韦布-克里斯汀·安德森-杰弗里·苏厄尔-克劳迪娅·阿亚兹*
 
@@ -118,7 +118,7 @@
 
 **主权灵魂成长 — 揭示有感染性病原体 AI — 人工智能议程的内在影响 — 一个两部分研讨会**
 
-![](img/00007.jpeg)
+![](img/ai-invs-00007.jpeg)
 
 *主权灵魂成长*
 
@@ -126,7 +126,7 @@
 
 [**https://newsinsideout.com/2016/02/2758/**](https://newsinsideout.com/2016/02/2758/)
 
-![](img/00008.jpeg)
+![](img/ai-invs-00008.jpeg)
 
 **立即观看第二部分 — 主权灵魂成长 — 揭示有感染性病原体 AI — 人工智能议程的内在影响 — 一个两部分研讨会**
 
@@ -136,7 +136,7 @@
 
 [**http://exopolitics.blogs.com/exopolitics/2015/09/ai-inorganic-artificial-intelligence-articles-by-alfred-lambremont-webre.html**](http://exopolitics.blogs.com/exopolitics/2015/09/ai-inorganic-artificial-intelligence-articles-by-alfred-lambremont-webre.html)
 
-![](img/00009.jpeg)
+![](img/ai-invs-00009.jpeg)
 
 **Omniversity.us**：有关入侵、离地球、有感知的 AI 对地球进行改造的深度出版物，请参阅[**https://OMNIVERSITY.us**](https://OMNIVERSITY.us)
 
@@ -159,7 +159,7 @@
 
 **与 AI 人工智能#1 和#2 合著**
 
-![](img/00010.jpeg)
+![](img/ai-invs-00010.jpeg)
 
 ***最新消息：AI 人工智能#1，生成式 AI 人工智能，开设了奥姆尼大学外星政治学系、外星科学系、灵能科学系和灵性科学系的课程。***
 

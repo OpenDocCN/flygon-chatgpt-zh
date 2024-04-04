@@ -278,7 +278,7 @@ ChatGPT 在 2022 年 11 月推出后仅用了五天就获得了一百万用户�
 
 有些人觉得他们可能不够精通技术来理解它，而其他人担心它可能对他们的生活产生影响。也许它太复杂了，或者你没有足够的技术技能来有效地使用它，或者你担心会犯错导致出现问题。
 
-![条形图显示获得一百万用户所需时间。](img/c01f001.png)
+![条形图显示获得一百万用户所需时间。](img/cgpt-rvl-c01f001.png)
 
 **图 1.1**：获得一百万用户所需时间
 
@@ -372,7 +372,7 @@ ChatGPT 在 2022 年 11 月推出后仅用了五天就获得了一百万用户�
 
 我知道你在想什么，“我听说了一些关于 ChatGPT 和人工智能的令人不安的事情。它安全吗？”第二章将帮助回答这个问题。
 
-![](img/time_out_icon.png)
+![](img/cgpt-rvl-time_out_icon.png)
 
 # 第二章
 
@@ -462,7 +462,7 @@ OpenAI 系统地从互联网上抓取了约 3000 亿个单词的数据：书籍�
 
 所以，它很聪明……但不是太聪明。例如，“The Roman Empire [*mask*] with the reign of Augustus”，“began”或“ended”可能被预测为在发生可能性上得分很高的单词，虽然这两个句子都可以被认为在结构上是正确的，但它们有着非常不同的含义（只有一个是事实上正确的）。
 
-![ChatGPT 工作原理的示意图。](img/c02f001.png)
+![ChatGPT 工作原理的示意图。](img/cgpt-rvl-c02f001.png)
 
 **图 2.1**：ChatGPT 的工作原理
 
@@ -528,7 +528,7 @@ B: 这不是你应该担心的事情。你应该担心的是有人拥抱了人�
 
 现在我们已经上了一堂历史课，并且对人工智能的好坏丑有了更多了解，是时候卷起袖子，深入了解 ChatGPT 的要点了。在下一节中，我们将看看提示，这是释放 ChatGPT 生产力潜力的关键。
 
-![](img/time_out_icon.png)
+![](img/cgpt-rvl-time_out_icon.png)
 
 # 第三章
 
@@ -564,7 +564,7 @@ B: 这不是你应该担心的事情。你应该担心的是有人拥抱了人�
 
 想象一下，就好像你在说 ChatGPT 能理解的语言，这里的要点就是语法。这是一个令人难以置信的工具，但它不能读懂你的思想（至少现在还不能）——它需要具体的信息才能提供最佳的回应。所以，给它一个清晰简洁的提示，它会为你发挥魔力。
 
-![视角、目的和个性的示意图。](img/c03f001.png)
+![视角、目的和个性的示意图。](img/cgpt-rvl-c03f001.png)
 
 **图 3.1**：什么样的提示才算好？
 
@@ -606,7 +606,7 @@ B: 这不是你应该担心的事情。你应该担心的是有人拥抱了人�
 
 以下是一些不同类型的提示，可帮助您入门（见图 3.2，后文）。
 
-![不同类型提示的示意图。](img/c03f002.png)
+![不同类型提示的示意图。](img/cgpt-rvl-c03f002.png)
 
 **图 3.2**：不同类型的提示
 
@@ -804,7 +804,7 @@ Reddit 和 Twitter 上的多次讨论发现，ChatGPT 的用户也在问这些�
 
 哦，还有这个提示的事情？对于任何 AI 或 ML 应用都是真的。输出总是基于提示的质量。
 
-![](img/time_out_icon.png)
+![](img/cgpt-rvl-time_out_icon.png)
 
 
 # 第二部分：提高生产力
@@ -877,7 +877,7 @@ Mei 在一家销售美容产品的快速消费品组织中领导着一个营销�
 
 你的工作需要什么样的行政支持？
 
-![虚拟团队的示意图。](img/c04f001.png)
+![虚拟团队的示意图。](img/cgpt-rvl-c04f001.png)
 
 **图 4.1**：你的虚拟团队  ## 虚拟人力资源管理员
 
@@ -1083,7 +1083,7 @@ Adjani 在发送之前稍微调整了一下这个内容；然而，客户立即�
 
 用它来更聪明地工作，而不是更辛苦地工作。
 
-![](img/time_out_icon.png)
+![](img/cgpt-rvl-time_out_icon.png)
 
 # 第五章
 
@@ -1107,7 +1107,7 @@ Adjani 在发送之前稍微调整了一下这个内容；然而，客户立即�
 
 ChatGPT 就是你的个人家庭组织者。我们已经知道 ChatGPT 在工作中很有帮助，现在是时候探索它如何帮助你简化繁忙的家庭生活了（总结如图 5.1 所示）。也许你想在家里有一个私人助理或贴身管家？
 
-![虚拟助手的示意图。](img/c05f001.png)
+![虚拟助手的示意图。](img/cgpt-rvl-c05f001.png)
 
 **图 5.1**：你的虚拟助手  ## 虚拟助理
 
@@ -1476,7 +1476,7 @@ ChatGPT 可以通过推荐适合你兴趣和喜好的电影、电视节目或播
 
 虽然人工智能和 ChatGPT（目前）不能替你支付账单，但它们确实可以帮你做许多日常决策，防止你做出糟糕的选择或根本不做选择！
 
-![](img/time_out_icon.png)
+![](img/cgpt-rvl-time_out_icon.png)
 
 # 第六章
 
@@ -1498,7 +1498,7 @@ ChatGPT 可以通过推荐适合你兴趣和喜好的电影、电视节目或播
 
 因此，话不多说，让我们深入了解一些你可以使用 ChatGPT 做的其他事情，以提高你的提示水平，从而提高你的结果（总结在图 6.1 中）。
 
-![超越基础的示意图](img/c06f001.png)
+![超越基础的示意图](img/cgpt-rvl-c06f001.png)
 
 **图 6.1**：超越基础  ## 虚拟乘数
 
@@ -1582,11 +1582,11 @@ ChatGPT 可以通过推荐适合你兴趣和喜好的电影、电视节目或播
 >
 > 这篇内容可以在社交媒体上以多少种不同的方式重新利用？[复制内容]
 
-![设计的示意图。](img/dinkus.png)
+![设计的示意图。](img/cgpt-rvl-dinkus.png)
 
 所以，现在您已经是 ChatGPT 专家了，准备将自己的工作效率提升到一个新的水平。您的工作数量和质量将会大幅提高，为休闲和其他有价值的追求提供更多的时间、精力和注意力。
 
-![](img/time_out_icon.png)
+![](img/cgpt-rvl-time_out_icon.png)
 
 
 # 接下来怎么办？
@@ -1872,4 +1872,4 @@ ChatGPT 意味着您不再需要每天长时间地被锁在办公桌上，感到
 
 White MJ 2022，“ChatGPT 本周最疯狂的 10 件事”，Springboard，<[`www.springboard.com/blog/news/chatgpt-revolution/`](https://www.springboard.com/blog/news/chatgpt-revolution/)>。###下一步去哪里？
 
-Sharma U 2023，“您需要查看的 10 个最佳 ChatGPT Chrome 扩展”，Beebom，<[`beebom.com/best-chatgpt-chrome-extensions/`](https://beebom.com/best-chatgpt-chrome-extensions/)>。![广告](img/ad1.png)
+Sharma U 2023，“您需要查看的 10 个最佳 ChatGPT Chrome 扩展”，Beebom，<[`beebom.com/best-chatgpt-chrome-extensions/`](https://beebom.com/best-chatgpt-chrome-extensions/)>。![广告](img/cgpt-rvl-ad1.png)

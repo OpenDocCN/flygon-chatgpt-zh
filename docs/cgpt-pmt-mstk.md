@@ -46,11 +46,11 @@
 
 +   你将发现常见的陷阱和一般用途、搜索引擎优化、文案写作和写书的解决方案。
 
-![图片](img/image002.png)
+![图片](img/cgpt-pmt-mstk-image002.png)
 
-![图片](img/image022.png)
+![图片](img/cgpt-pmt-mstk-image022.png)
 
-![图片](img/image012.png)
+![图片](img/cgpt-pmt-mstk-image012.png)
 
 # 目录
 
@@ -158,13 +158,13 @@ ChatGPT 代表 Chat Generative Pre-Trained Transformer。
 
 当您打开链接时，您会看到这个。
 
-![image](img/image025.png)
+![image](img/cgpt-pmt-mstk-image025.png)
 
 ChatGPT 登录/注册页面
 
 登录或注册创建账户。
 
-![image](img/image024.png)
+![image](img/cgpt-pmt-mstk-image024.png)
 
 ChatGPT 用户界面
 
@@ -174,11 +174,11 @@ ChatGPT 用户界面
 
 这是所有魔术发生的地方，也是您输入提示或输入的地方。
 
-![image](img/image020.png)
+![image](img/cgpt-pmt-mstk-image020.png)
 
 ChatGPT 的输入/提示文本框
 
-![image](img/image004.png)
+![image](img/cgpt-pmt-mstk-image004.png)
 
 ChatGPT：交互窗口布局
 
@@ -186,7 +186,7 @@ ChatGPT：交互窗口布局
 
 最顶部有一个开始新聊天的选项，我建议为每个话题创建一个新的聊天。
 
-![image](img/image010.png)
+![image](img/cgpt-pmt-mstk-image010.png)
 
 ChatGPT：新聊天菜单和重命名和删除聊天选项
 
@@ -200,21 +200,21 @@ ChatGPT 根据第一个提示标签化聊天，这可能会使事情有点混乱
 
 在这里，您将在顶部看到您的输入或提示，下面就是 ChatGPT 的输出。
 
-![image](img/image021.png)
+![image](img/cgpt-pmt-mstk-image021.png)
 
 如果您将鼠标悬停在用户标签上，您会注意到一个钢笔和纸张图标，这个选项可以让您编辑您的提示，保存并提交。
 
 或者，您可以选择重新生成 ChatGPT 的输出。
 
-![image](img/image028.png)
+![image](img/cgpt-pmt-mstk-image028.png)
 
 ChatGPT：编辑提示/输入图标
 
-![image](img/image003.png)
+![image](img/cgpt-pmt-mstk-image003.png)
 
 ChatGPT：编辑、保存和提交提示选项
 
-![image](img/image029.png)
+![image](img/cgpt-pmt-mstk-image029.png)
 
 ChatGPT：重新生成 ChatGPT 输出选项
 
@@ -222,7 +222,7 @@ ChatGPT：重新生成 ChatGPT 输出选项
 
 使用这些选项会创建一个左/右滑动菜单，其中包含所有迭代。这可能会变得混乱和令人困惑，特别是当你试图检索之前生成的内容时。
 
-![图片](img/image009.png)
+![图片](img/cgpt-pmt-mstk-image009.png)
 
 ChatGPT：ChatGPT 输出迭代
 
@@ -246,13 +246,13 @@ ChatGPT 3.5 对所有用户免费。你只需创建一个帐户即可。而要�
 
 一旦你处于 ChatGPT 3.5 布局，
 
-![图片](img/image026.png)
+![图片](img/cgpt-pmt-mstk-image026.png)
 
 暗黑模式
 
 左侧有这个菜单，
 
-![图片](img/image007.png)
+![图片](img/cgpt-pmt-mstk-image007.png)
 
 左侧菜单。
 
@@ -262,19 +262,19 @@ ChatGPT 3.5 对所有用户免费。你只需创建一个帐户即可。而要�
 
 这是随之而来的窗口。价格为每月 20 美元。你可以随时取消计划。
 
-![图片](img/image023.png)
+![图片](img/cgpt-pmt-mstk-image023.png)
 
 ChatGPT 4 升级页面
 
 升级成功后，这将是你的新布局。
 
-![图片](img/image019.png)
+![图片](img/cgpt-pmt-mstk-image019.png)
 
 ChatGPT Plus 布局
 
 要访问 GPT-4，点击下拉箭头。
 
-![图片](img/image016.png)
+![图片](img/cgpt-pmt-mstk-image016.png)
 
 GPT 模型菜单
 
@@ -284,13 +284,13 @@ GPT 模型菜单
 
 
 
-![图片](img/image015.png)
+![图片](img/cgpt-pmt-mstk-image015.png)
 
 ChatGPT：ChatGPT Plus 布局
 
 在尝试真实的功能之前尝试一下。
 
-![图片](img/image008.png)
+![图片](img/cgpt-pmt-mstk-image008.png)
 
 Writesonic 免费访问 GPT-4
 
@@ -298,7 +298,7 @@ Writesonic 免费访问 GPT-4
 
 如果你刚开始使用 ChatGPT，它足够创建你所有的内容。
 
-![图片](img/image018.png)
+![图片](img/cgpt-pmt-mstk-image018.png)
 
 现在你已经与你的新助手相处，让我们更好地了解 ChatGPT。
 
@@ -2403,31 +2403,31 @@ ChatGPT 可以生成冗长或过于啰嗦的回应，重申相同的信息，这
 
 为每个新话题开始一个新的聊天：此提示有助于通过分隔来维持组织和专注
 
-![image](img/image005.png)"[远程团队管理]的最佳实践是什么？（话题结束）" 新聊天：“讨论[人工智能]对[就业市场]的影响。”
+![image](img/cgpt-pmt-mstk-image005.png)"[远程团队管理]的最佳实践是什么？（话题结束）" 新聊天：“讨论[人工智能]对[就业市场]的影响。”
 
 2.
 
 通过提示微调聊天：这在特定领域建立专业知识，引导 ChatGPT 生成与该领域相关的内容。
 
-![image](img/image005.png)"你是一位[在线课程创建]的 AI 语言模型专家。描述成功在线课程的关键要素。"
+![image](img/cgpt-pmt-mstk-image005.png)"你是一位[在线课程创建]的 AI 语言模型专家。描述成功在线课程的关键要素。"
 
 3.
 
 要准确：这提供清晰的指示和约束，确保生成的内容相关且简洁。
 
-![image](img/image005.png)"撰写一篇关于[植物性饮食]对整体健康和福祉的[500 字]博客文章，包括精神，身体和环境方面的好处。"
+![image](img/cgpt-pmt-mstk-image005.png)"撰写一篇关于[植物性饮食]对整体健康和福祉的[500 字]博客文章，包括精神，身体和环境方面的好处。"
 
 4.
 
 使用相关关键词：这包括关键词，以指导 ChatGPT 生成准确和上下文适当的内容。
 
-![image](img/image005.png)“你能为我的[在线商店]提供一些[可持续材料]和成本效益的[环保替代品]，重点是[塑料包装]的吗？”
+![image](img/cgpt-pmt-mstk-image005.png)“你能为我的[在线商店]提供一些[可持续材料]和成本效益的[环保替代品]，重点是[塑料包装]的吗？”
 
 5.
 
 探索变化：鼓励用户尝试不同的措辞，以确定他们所需输出的最有效方法。
 
-![image](img/image005.png)A: "解释如何从头开始制作一份[自制比萨]。"
+![image](img/cgpt-pmt-mstk-image005.png)A: "解释如何从头开始制作一份[自制比萨]。"
 
 B: "提供一份使用[新鲜食材]在家制作[比萨]的逐步指南。"
 
@@ -2435,55 +2435,55 @@ B: "提供一份使用[新鲜食材]在家制作[比萨]的逐步指南。"
 
 提供背景信息：为您的提示提供背景信息，以帮助 ChatGPT 更好地理解所需的输出。
 
-![image](img/image005.png)"制作适合有[饮食限制]的人的[无麸质，无乳制品]巧克力蛋糕食谱。"
+![image](img/cgpt-pmt-mstk-image005.png)"制作适合有[饮食限制]的人的[无麸质，无乳制品]巧克力蛋糕食谱。"
 
 7.
 
 分解任务：将任务分解为较小的步骤，使 ChatGPT 更容易生成全面的响应。
 
-![image](img/image005.png)“制作一份[素食千层面]配[番茄酱]的食谱。包括[食材清单]，[制作番茄酱的说明]和[组装千层面的说明]。”
+![image](img/cgpt-pmt-mstk-image005.png)“制作一份[素食千层面]配[番茄酱]的食谱。包括[食材清单]，[制作番茄酱的说明]和[组装千层面的说明]。”
 
 8.
 
 保持简洁：通过指定字符或字数限制响应长度，避免生成内容过多或令人困惑。
 
-![image](img/image005.png)"创建一条[推特帖子]，宣传我们的新产品，限制在[280 个字符]内，突出其[独特功能]和[优势]。"
+![image](img/cgpt-pmt-mstk-image005.png)"创建一条[推特帖子]，宣传我们的新产品，限制在[280 个字符]内，突出其[独特功能]和[优势]。"
 
 9.
 
 定义输出格式：设定生成文本的响应格式，如项目符号或段落，以确保输出符合所需的结构和风格。
 
-![图片](img/image005.png)"针对我们的[新系列护肤产品]撰写产品描述，侧重于[成分]和[功效]，以[项目符号格式]呈现。"
+![图片](img/cgpt-pmt-mstk-image005.png)"针对我们的[新系列护肤产品]撰写产品描述，侧重于[成分]和[功效]，以[项目符号格式]呈现。"
 
 10.
 
 使用示例：提供所需输出的示例，以帮助 ChatGPT 理解提示并生成准确的文本。
 
-![图片](img/image005.png)"撰写一篇针对我们的[新无线耳机]的产品评论，风格和语调类似于我们网站上的此样本评论[插入样本评论链接]。"
+![图片](img/cgpt-pmt-mstk-image005.png)"撰写一篇针对我们的[新无线耳机]的产品评论，风格和语调类似于我们网站上的此样本评论[插入样本评论链接]。"
 
 11.
 
 请求多个解决方案：要求获取多个输出，以提供多种内容供您选择。
 
-![图片](img/image005.png)"就气候变化对野生动物的影响撰写一篇新闻文章的[三个不同标题]，突出紧急性和情感。"
+![图片](img/cgpt-pmt-mstk-image005.png)"就气候变化对野生动物的影响撰写一篇新闻文章的[三个不同标题]，突出紧急性和情感。"
 
 12.
 
 迭代和精化：根据生成的输出不断迭代和精化提示，调整措辞、用词或结构，以改善结果。
 
-![图片](img/image005.png)"撰写一份关于[历史人物]的简短传记，聚焦于他们的[主要成就]和[挑战]。（根据输出优化提示，直到满意为止。）"
+![图片](img/cgpt-pmt-mstk-image005.png)"撰写一份关于[历史人物]的简短传记，聚焦于他们的[主要成就]和[挑战]。（根据输出优化提示，直到满意为止。）"
 
 13.
 
 利用外部资源：利用外部参考资料，如研究论文或网站，以帮助构建产生高质量输出的提示。
 
-![图片](img/image005.png)"总结[最新研究]关于[冥想]对[压力水平]的影响，结合来自[三个不同科学研究]的信息（插入研究链接）。"
+![图片](img/cgpt-pmt-mstk-image005.png)"总结[最新研究]关于[冥想]对[压力水平]的影响，结合来自[三个不同科学研究]的信息（插入研究链接）。"
 
 14.
 
 使用不同的提示：尝试不同类型的提示对于找到最适合您需求的方式也是非常重要的。
 
-![图片](img/image005.png)"列出[五个创新的想法]来减少[海洋中的塑料废物]，考虑各种方法和技术。"
+![图片](img/cgpt-pmt-mstk-image005.png)"列出[五个创新的想法]来减少[海洋中的塑料废物]，考虑各种方法和技术。"
 
 15.
 
@@ -2558,9 +2558,9 @@ B: "提供一份使用[新鲜食材]在家制作[比萨]的逐步指南。"
 
 您可以购买一套结构良好的定制提示进行转售。
 
-![image](img/image000.png)cea@ceaeliteportal.com
+![image](img/cgpt-pmt-mstk-image000.png)cea@ceaeliteportal.com
 
-![image](img/image001.png)如果您有兴趣创建类似于这样的儿童单词书。我可以发送给您一个免费的结构良好的提示，以帮助您入门。其中有 3 种不同的游戏可以创建。
+![image](img/cgpt-pmt-mstk-image001.png)如果您有兴趣创建类似于这样的儿童单词书。我可以发送给您一个免费的结构良好的提示，以帮助您入门。其中有 3 种不同的游戏可以创建。
 
 联系我们。
 
@@ -2578,8 +2578,8 @@ https://tinyurl.com/cea-ebooks
 
 这些可能会对您感兴趣...
 
-![image](img/image017.png)
+![image](img/cgpt-pmt-mstk-image017.png)
 
-![image](img/image011.png)![image](img/image027.png)
+![image](img/cgpt-pmt-mstk-image011.png)![image](img/cgpt-pmt-mstk-image027.png)
 
-![image](img/image014.png)
+![image](img/cgpt-pmt-mstk-image014.png)

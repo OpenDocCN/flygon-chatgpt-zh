@@ -541,7 +541,7 @@ Excel 中的复杂任务需要一些公式，其中包含超过五个嵌套函�
 
 每日有意识学习提高了学习者教授他人的信心，从而导致更深入的理解。用户进入学习教授和教授学习的生产力循环：
 
-![](img/Figure-1.1.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-1.1.jpg)
 
 **图 1.1：** 生产力循环
 
@@ -555,7 +555,7 @@ Excel 公式和函数是 Excel 的核心。您必须学习公式和函数才能�
 
 例如，在*图 1.2*中，如何使用公式计算每张发票的总付款？
 
-![](img/Figure-1.2.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-1.2.jpg)
 
 **图 1.2：** 在 Excel 中使用公式
 
@@ -565,7 +565,7 @@ Excel 公式和函数是 Excel 的核心。您必须学习公式和函数才能�
 
 例如，在*图 1.3*中，如何使用函数计算每张发票的总付款？
 
-![](img/Figure-1.3.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-1.3.jpg)
 
 **图 1.3：** 在 Excel 中使用 Sum 函数
 
@@ -603,13 +603,13 @@ Excel 拥有 500 多个函数，但您只需要学习其中一些才能提高生
 
 +   **可访问性：** Excel 函数可以通过公式栏（*图 1.4*）和函数向导轻松访问：
 
-![](img/Figure-1.4.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-1.4.jpg)
 
 **图 1.4：** 通过公式栏访问函数
 
 或者，通过直接在单元格中键入函数（*图 1.5*）：
 
-![](img/Figure-1.5.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-1.5.jpg)
 
 **图 1.5：** 通过直接在单元格中键入访问函数
 
@@ -641,7 +641,7 @@ Excel 拥有 500 多个函数，但您只需要学习其中一些才能提高生
 
 +   `**MONTH**`函数返回日期的月份部分。这些结果用于`**AND**`函数的第一个逻辑测试中，以检查月份是否为一月（1）。
 
-+   AND 函数评估两个逻辑测试（检查月份是否为一月和金额是否大于或等于 50,000），并返回由 IF 函数使用的 TRUE/FALSE 结果，以确定优先级是`**YES**`/`**NO**`。![](img/Figure-1.6.jpg)
++   AND 函数评估两个逻辑测试（检查月份是否为一月和金额是否大于或等于 50,000），并返回由 IF 函数使用的 TRUE/FALSE 结果，以确定优先级是`**YES**`/`**NO**`。![](img/ult-xcl-pwr-qry-cgpt-Figure-1.6.jpg)
 
     **图 1.6：** 嵌套函数
 
@@ -699,7 +699,7 @@ Excel 中的每个单元格都由列字母和行号的唯一组合称为“单�
 
     例如，在*图 1.7*中，每张发票的总和（`=SUM(C3:G3)`，一行中的单元格范围），每日总和（`=SUM(C3:C7)`，一列中的单元格范围）和总体总和（=`**SUM**`(C3:G7)，两列和两行中的单元格范围）。
 
-    ![](img/Figure-1.7.jpg)
+    ![](img/ult-xcl-pwr-qry-cgpt-Figure-1.7.jpg)
 
     **图 1.7：** 单元格范围引用
 
@@ -745,7 +745,7 @@ Excel 表格只是帮助您轻松组织、分析和简洁呈现数据的容器�
 
 此外，Excel 表格还允许您在公式中使用结构化引用，使您的公式更易读且更易维护。例如，不是通过它们的单元格地址引用单元格，您可以使用类似 `**=SUM(tblSales[Amount])**` 的公式，即，在名为 Sales 的表中，总计名为 `**Amount**` 的列中的所有数据。
 
-![](img/Figure-1.8.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-1.8.jpg)
 
 **图 1.8：** 在公式中使用结构化引用
 
@@ -755,15 +755,15 @@ Excel 表格只是帮助您轻松组织、分析和简洁呈现数据的容器�
 
 +   使用快捷键 **Ctrl + A** 选择全部。
 
-+   转到“主页”选项卡，选择“格式为表格”，或使用快捷键 **Ctrl + T**。将弹出一个窗口（见 *图 1.9*）显示格式为表格的数据范围。如果您的数据范围中的第一行包含标题，请勾选“我的表格有标题”复选框。否则，Excel 将在您的范围顶部创建一个额外的标题行。![](img/Figure-1.9.jpg)
++   转到“主页”选项卡，选择“格式为表格”，或使用快捷键 **Ctrl + T**。将弹出一个窗口（见 *图 1.9*）显示格式为表格的数据范围。如果您的数据范围中的第一行包含标题，请勾选“我的表格有标题”复选框。否则，Excel 将在您的范围顶部创建一个额外的标题行。![](img/ult-xcl-pwr-qry-cgpt-Figure-1.9.jpg)
 
     **图 1.9：** 在 Excel 中创建表格
 
-+   单击表格的任意位置，转到“**表格设计**”选项卡，并为您的表格指定一个描述性名称。默认情况下，Excel 给出一个通用的表格（见 *图 1.10*）：![](img/Figure-1.10.jpg)
++   单击表格的任意位置，转到“**表格设计**”选项卡，并为您的表格指定一个描述性名称。默认情况下，Excel 给出一个通用的表格（见 *图 1.10*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-1.10.jpg)
 
     **图 1.10：** 重命名您的表格
 
-+   要将表格转换回范围，请转到“**表格设计**”选项卡，然后单击“转换为范围”：![](img/Figure-1.11.jpg)
++   要将表格转换回范围，请转到“**表格设计**”选项卡，然后单击“转换为范围”：![](img/ult-xcl-pwr-qry-cgpt-Figure-1.11.jpg)
 
     **图 1.11：** 将表格转换为范围
 
@@ -773,19 +773,19 @@ Excel 表格只是帮助您轻松组织、分析和简洁呈现数据的容器�
 
 +   它们可以快速且轻松地进行格式化。
 
-+   您可以通过单击轻松选择整个表格、列或行。要选择整个表格，请将鼠标悬停在左上角并单击（见*图 1.12*）。![](img/Figure-1.12.jpg)
++   您可以通过单击轻松选择整个表格、列或行。要选择整个表格，请将鼠标悬停在左上角并单击（见*图 1.12*）。![](img/ult-xcl-pwr-qry-cgpt-Figure-1.12.jpg)
 
     **图 1.12：** 选择整个表格
 
     要仅选择包含数据的列范围，请将鼠标悬停在列标题上并单击一次（见*图 1.13*）。
 
-    ![](img/Figure-1.13.jpg)
+    ![](img/ult-xcl-pwr-qry-cgpt-Figure-1.13.jpg)
 
     **图 1.13：** 选择整个列
 
     将鼠标悬停在表格的左边缘以选择行范围并单击（见*图 1.14*）。
 
-    ![](img/Figure-1.14.jpg)
+    ![](img/ult-xcl-pwr-qry-cgpt-Figure-1.14.jpg)
 
     **图 1.14：** 选择整个行
 
@@ -932,7 +932,7 @@ Excel 技能对于任何工作职责包括任何形式的数据操作的专业�
 
 **注意**：Excel 将布尔值存储为整数，值为`**0**`表示`**FALSE**`，任何其他值表示 TRUE。当您在单元格中输入`**TRUE**`或`**FALSE**`时，Excel 会自动将其转换为其等效的整数。
 
-![](img/Figure-2.1.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.1.jpg)
 
 **图 2.1：** 基本 VLOOKUP 精确匹配
 
@@ -950,13 +950,13 @@ Excel 技能对于任何工作职责包括任何形式的数据操作的专业�
 
 尽管如此，当分组数据时（例如，为学生分配成绩时；*图 2.2*），近似匹配是有益的。
 
-![](img/Figure-2.2.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.2.jpg)
 
 **图 2.2：** VLOOKUP 近似匹配数据分组
 
 在搜索范围内查找值时，近似匹配也适用（例如，根据销售范围给出折扣时；*图 2.3*）：
 
-![](img/Figure-2.3.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.3.jpg)
 
 **图 2.3：** 从范围内 VLOOKUP 近似匹配值
 
@@ -992,7 +992,7 @@ Excel 技能对于任何工作职责包括任何形式的数据操作的专业�
 
 在这种情况下，默认的`**VLOOKUP**`函数将无法工作。您必须嵌套 IF 函数，如下图所示：
 
-![](img/Figure-2.4.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.4.jpg)
 
 **图 2.4：** VLOOKUP 左查找
 
@@ -1018,7 +1018,7 @@ Excel 技能对于任何工作职责包括任何形式的数据操作的专业�
 
 +   点击**Ctrl + Shift + Enter**返回以下值：
 
-![](img/Figure-2.5.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.5.jpg)
 
 **图 2.5：** VLOOKUP 返回多列
 
@@ -1042,7 +1042,7 @@ Excel 技能对于任何工作职责包括任何形式的数据操作的专业�
 
 `IF({1,0}, tblSalesT[Customer]&tblSalesT[Sales Date], tblSalesT[Amount]), 2, 0 )`
 
-![](img/Figure-2.6.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.6.jpg)
 
 **图 2.6：** VLOOKUP 多条件
 
@@ -1066,7 +1066,7 @@ Excel 技能对于任何工作职责包括任何形式的数据操作的专业�
 
 在我们的情况下，`**MATCH**`函数在销售表头中查找存储在单元格 F2 中的文本`**Amount**`，并始终返回其位置，使其具有动态性。
 
-![](img/Figure-2.7.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.7.jpg)
 
 **图 2.7：** VLOOKUP 处理插入和删除
 
@@ -1088,7 +1088,7 @@ Excel 技能对于任何工作职责包括任何形式的数据操作的专业�
 
 由于我们不能在表头中有重复项，MATCH 函数将始终返回正确的列号。
 
-![](img/Figure-2.8.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.8.jpg)
 
 **图 2.8：** VLOOKUP 双向查找
 
@@ -1114,7 +1114,7 @@ VLOOKUP 只有近似匹配和精确匹配，但也可以进行部分匹配。
 
 请注意，该公式返回第一个`TRUE`值。在本章后面，我们将学习如何在重复项的情况下返回多个值。
 
-![](img/Figure-2.9.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.9.jpg)
 
 **图 2.9：** VLOOKUP 部分匹配
 
@@ -1128,7 +1128,7 @@ VLOOKUP 只有近似匹配和精确匹配，但也可以进行部分匹配。
 
 请记住，由于发票不以字母“P”结尾，我们必须在标准后面插入一个星号来代表它后面的任意数量的字符。
 
-![](img/Figure-2.10.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.10.jpg)
 
 **图 2.10：** VLOOKUP 部分匹配单个字符
 
@@ -1156,7 +1156,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 `*   使用 IF 函数创建一个自定义的两列表数组。第一列包含这个由 `**TRUE/FALSE**`（查找值列）组成的数组，第二列包含发票金额（返回值列）。*   由于我们的查找值是 `**TRUE/FALSE**` 值，`**VLOOKUP**` 函数应该查找一个 `**TRUE**` 值并返回第一个 `**TRUE**` 值。*   由于这是一个数组函数，如果您没有 Office 365 订阅，请单击 **Ctrl + Shift + Enter**。
 
-`![](img/Figure-2.11.jpg)
+`![](img/ult-xcl-pwr-qry-cgpt-Figure-2.11.jpg)
 
 **图 2.11：** VLOOKUP 部分区分大小写匹配
 
@@ -1184,7 +1184,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 +   由于这是一个数组函数，如果您没有 Office 365 订阅，请单击 **Ctrl + Shift + Enter**。
 
-![](img/Figure-2.12.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.12.jpg)
 
 **图 2.12：** VLOOKUP 完全区分大小写匹配
 
@@ -1220,7 +1220,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 +   由于这是一个数组函数，如果您没有 Office 365 订阅，请点击**Ctrl + Shift + Enter**。
 
-![](img/Figure-2.13.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.13.jpg)
 
 **图 2.13：** VLOOKUP 多个结果
 
@@ -1232,7 +1232,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 使用上一章的示例，要从后往前搜索，我们只需要用`LARGE`函数替换`SMALL`函数，如*图 2.14*所示：
 
-![](img/Figure-2.14.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.14.jpg)
 
 **图 2.14：** VLOOKUP 多个结果
 
@@ -1254,7 +1254,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 通过嵌套`SMALL`或`LARGE`函数，`VLOOKUP`可以快速返回未排序列表中的前 N 个或后 N 个金额（见*图 2.15*）：
 
-![](img/Figure-2.15.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.15.jpg)
 
 **图 2.15：** VLOOKUP 前三个销售金额
 
@@ -1288,7 +1288,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 例如，如*图 2.16*所示，您正在寻找给患者的医生和相应的会话。
 
-![](img/Figure-2.16.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.16.jpg)
 
 **图 2.16：**VLOOKUP 反向查找
 
@@ -1314,13 +1314,13 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 现在，前述函数的执行方式如下：
 
-+   `**IF(Clients=F86, ROW(Clients))**`检查单元格 F86 中的客户是否在命名范围中的客户数组中。假设没有重复项，IF 函数将返回客户的行号；否则，返回 FALSE 值（见*图 2.17*）：![](img/Figure-2.17.jpg)
++   `**IF(Clients=F86, ROW(Clients))**`检查单元格 F86 中的客户是否在命名范围中的客户数组中。假设没有重复项，IF 函数将返回客户的行号；否则，返回 FALSE 值（见*图 2.17*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-2.17.jpg)
 
     **图 2.17：**返回客户行
 
 +   `**MAX(IF(Clients=F86, ROW(Clients)))**``**:**`MAX 函数忽略`FALSE`值并返回行号。这成为`VLOOKUP`函数的查找值。
 
-+   `**CHOOSE({1,2,3}, ROW(Clients), Doctors&”-Morning”, Doctors&”-Afternoon”):**` `CHOOSE`创建了一个表数组，用于`VLOOKUP`函数，其中客户行号作为查找值列，将医生与会话组合为返回值列。![](img/Figure-2.18.jpg)
++   `**CHOOSE({1,2,3}, ROW(Clients), Doctors&”-Morning”, Doctors&”-Afternoon”):**` `CHOOSE`创建了一个表数组，用于`VLOOKUP`函数，其中客户行号作为查找值列，将医生与会话组合为返回值列。![](img/ult-xcl-pwr-qry-cgpt-Figure-2.18.jpg)
 
     **图 2.18：** VLOOKUP 自定义表数组
 
@@ -1334,7 +1334,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 在以下示例中，您应该查找每个项目报价最低的代表。
 
-![](img/Figure-2.19.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.19.jpg)
 
 **图 2.19：** VLOOKUP 水平查找
 
@@ -1350,11 +1350,11 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 +   `**MIN(C101:E101)**` 返回每个项目的最低金额。这成为`VLOOKUP`函数的查找值。
 
-+   `**IF({1;0}, C101:E101, Reps)**` 返回一个两行表数组，其中第一行包含报价，第二行包含代表（见**图 2.20**）：![](img/Figure-2.20.jpg)
++   `**IF({1;0}, C101:E101, Reps)**` 返回一个两行表数组，其中第一行包含报价，第二行包含代表（见**图 2.20**）：![](img/ult-xcl-pwr-qry-cgpt-Figure-2.20.jpg)
 
     **图 2.20：** 两行表数组
 
-+   由于`VLOOKUP`只能垂直查找数据，我们需要使用`TRANSPOSE`函数将两行表转置为两列表（见**图 2.21**）：![](img/Figure-2.21.jpg)
++   由于`VLOOKUP`只能垂直查找数据，我们需要使用`TRANSPOSE`函数将两行表转置为两列表（见**图 2.21**）：![](img/ult-xcl-pwr-qry-cgpt-Figure-2.21.jpg)
 
     **图 2.21：** 两列表数组
 
@@ -1366,7 +1366,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 在我们的示例中（**图 2.22**），我们必须返回金额和地区列的数据：
 
-![](img/Figure-2.22.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.22.jpg)
 
 **图 2.22：** VLOOKUP 非连续列
 
@@ -1376,7 +1376,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 如果您希望以行方式返回值，则唯一要记住的技巧是在列号之间使用分号（;）而不是逗号（,）作为分隔符（见**图 2.23**）：
 
-![](img/Figure-2.23.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.23.jpg)
 
 **图 2.23：** VLOOKUP 逐行查找非连续列
 
@@ -1398,7 +1398,7 @@ Excel 有两个流行的区分大小写的函数：`**FIND**` 和 `**EXACT**`。
 
 +   `VLOOKUP`函数然后检查所选折扣表金额中的销售额，并返回近似折扣。
 
-![](img/Figure-2.24.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-2.24.jpg)
 
 **图 2.24：** VLOOKUP 非连续查找表
 
@@ -1471,7 +1471,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 我们将首先查找多行和多列数组，如*图 3.1*所示。我们试图回答问题，“*客户 Gupta 从西部地区购买了多少？*”：
 
-![](img/Figure-3.1.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.1.jpg)
 
 **图 3.1：** 索引多行和多列查找
 
@@ -1495,7 +1495,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `=INDEX(RegionSales[Western],10,1)`
 
-![](img/Figure-3.2.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.2.jpg)
 
 **图 3.2：** 索引单列查找
 
@@ -1503,7 +1503,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `=INDEX( A11:D11, 3 )`
 
-![](img/Figure-3.3.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.3.jpg)
 
 **图 3.3：** 索引单行查找
 
@@ -1519,7 +1519,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 正如我们在*第二章，“VLOOKUP 已死：还是吗”*中学到的，MATCH 函数返回数组中项目的相对位置。例如，在*图 3.2*中，我们可以动态获取行号而不是硬编码。我们使用`**MATCH**`函数来实现这一点，如*图 3.4*所示：
 
-![](img/Figure-3.4.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.4.jpg)
 
 **图 3.4:** MATCH 函数获取行号
 
@@ -1539,7 +1539,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 +   使用`**MATCH**`函数获取条件行/列而不是硬编码它。
 
-![](img/Figure-3.5.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.5.jpg)
 
 **图 3.5:** INDEX 和 MATCH 函数
 
@@ -1551,7 +1551,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `MATCH(G3,RegionSales[#Headers],0))`
 
-![](img/Figure-3.6.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.6.jpg)
 
 **图 3.6:** 动态二向查找
 
@@ -1565,7 +1565,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `MATCH(G20,RegionSales[#Headers],0))`
 
-![](img/Figure-3.7.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.7.jpg)
 
 **图 3.7:** 动态三向查找
 
@@ -1585,7 +1585,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 +   请记住这是一个数组函数，因为我们正在进行条件和列的连接。因此，如果您没有 Office 365 订阅，请在完成编写时记得单击**Ctrl + Shift + Enter**。
 
-![](img/Figure-3.8.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.8.jpg)
 
 **图 3.8：** 单向数组
 
@@ -1613,13 +1613,13 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 +   请记住这是一个数组函数，因为我们创建了自定义导师和会话表。因此，如果您没有 Office 365 订阅，请在完成编写时记得单击**Ctrl + Shift + Enter**。
 
-![](img/Figure-3.9.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.9.jpg)
 
 **图 3.9：** 考试行号
 
 **提示：** 如果您尚未在表数组中包含行或列标题，请在计数中减去它们。
 
-![](img/Figure-3.10.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.10.jpg)
 
 **图 3.10：** 反向查找
 
@@ -1641,13 +1641,13 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 +   `**医生&“ ”&会话**` 返回一个包含每位医生和会话组合的自定义表。
 
-+   `**IF(Patients=$G$47, COLUMN(Patients)-COLUMN(Doctor))**` 检查我们的条件患者是否在患者列表中，并返回这些条件为`**TRUE**`的列号，否则为`**FALSE**`（见***图 3.11***）：![](img/Figure-3.11.jpg)
++   `**IF(Patients=$G$47, COLUMN(Patients)-COLUMN(Doctor))**` 检查我们的条件患者是否在患者列表中，并返回这些条件为`**TRUE**`的列号，否则为`**FALSE**`（见***图 3.11***）：![](img/ult-xcl-pwr-qry-cgpt-Figure-3.11.jpg)
 
     **图 3.11：** 检查列
 
 +   `**LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),ROW(A1))**` 返回最大的列号，即 2。我们使用`ROW(A1)`，返回 1，随着我们向下滚动公式，数字递增。
 
-+   `**INDEX(Patients,,LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),ROW(A1)))**` 使用`**INDEX**`函数按列过滤数据（见***图 3.12***）：![](img/Figure-3.12.jpg)
++   `**INDEX(Patients,,LARGE(IF(Patients=$G$47,COLUMN(Patients)-COLUMN(Doctor)),ROW(A1)))**` 使用`**INDEX**`函数按列过滤数据（见***图 3.12***）：![](img/ult-xcl-pwr-qry-cgpt-Figure-3.12.jpg)
 
     **图 3.12：** 逐列过滤
 
@@ -1659,7 +1659,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 +   请记住这是一个数组函数，因为我们创建了自定义医生和会话表。因此，如果您没有 Office 365 订阅，请在完成编写时记得单击**Ctrl + Shift + Enter**。
 
-![](img/Figure-3.13.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.13.jpg)
 
 **图 3.13：** 反向查找多个项目
 
@@ -1673,7 +1673,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `MATCH(E60&F60,tblSalesT20[Customer]&tblSalesT20[Sales Date],0))`
 
-![](img/Figure-3.14.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.14.jpg)
 
 **图 3.14：** 多条件查找
 
@@ -1681,7 +1681,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 +   `**E60&F60**` 返回客户和日期的单个组合条件**“Carl Jackson40192.”**
 
-+   `**tblSalesT20[Customer]&tblSalesT20[Sales Date]**` 返回客户和日期的单个组合数组（见*图 3.15*）：![](img/Figure-3.15.jpg)
++   `**tblSalesT20[Customer]&tblSalesT20[Sales Date]**` 返回客户和日期的单个组合数组（见*图 3.15*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-3.15.jpg)
 
     **图 3.15：** 组合数组
 
@@ -1699,7 +1699,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `MATCH(G74:H74,RegionSale21[#Headers],0))`
 
-![](img/Figure-3.16.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.16.jpg)
 
 **图 3.16：** 多列
 
@@ -1715,7 +1715,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `MATCH( MIN(B91:D91),B91:D91,0))`
 
-![](img/Figure-3.17.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.17.jpg)
 
 **图 3.17：** 水平查找
 
@@ -1739,7 +1739,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
     +   范围在`**[area_num]**`参数中被选择的`**INDEX**`函数中。
 
-![](img/Figure-3.18.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.18.jpg)
 
 **图 3.18：** INDEX 参考选项
 
@@ -1753,7 +1753,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `IF([@Product]=”Chairs”,1,2))`
 
-![](img/Figure-3.19.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.19.jpg)
 
 **图 3.19：** INDEX 非连续数组
 
@@ -1775,7 +1775,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 例如，在*图 3.20*中，我们想要查找包含字母“P”的发票的金额：
 
-![](img/Figure-3.20.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.20.jpg)
 
 **图 3.20：** 使用星号通配符字符的 INDEX
 
@@ -1803,7 +1803,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 在这种情况下，我们将使用问号（?）作为通配符字符，表示任何单个字符（见***图 3.21***）：
 
-![](img/Figure-3.21.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.21.jpg)
 
 **图 3.21：** 使用混合通配符字符的 INDEX
 
@@ -1823,7 +1823,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 在*图 3.22*中，我们假设所有发票的后订单都可以通过发票号的长度（即 8 个字符）来识别：
 
-![](img/Figure-3.22.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.22.jpg)
 
 **图 3.22：** 基于长度查找文本
 
@@ -1853,7 +1853,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `))`
 
-![](img/Figure-3.23.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.23.jpg)
 
 **图 3.23：** 查找最后匹配项
 
@@ -1877,7 +1877,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 在 *图 3.24* 中，我们想要查找第一个从我们这里购买的客户，使用单元格 G 中列表中的任何货币。
 
-![](img/Figure-3.24.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.24.jpg)
 
 **图 3.24：** 列表中的查找项目
 
@@ -1919,7 +1919,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 +   请注意，当所有客户都返回后，`**INDEX**` 函数会返回 `**#VALUE**` 错误。
 
-![](img/Figure-3.25.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.25.jpg)
 
 **图 3.25:** 在列表中查找多个项目
 
@@ -1955,7 +1955,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 +   **INDEX** 函数返回相同行号的客户。
 
-![](img/Figure-3.26.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.26.jpg)
 
 **图 3.26:** 查找唯一项目
 
@@ -1963,7 +1963,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 如果我们首先了解 `**IF**` 和 `**SMALL**` 函数，查找底部值就相对容易了。例如，在 *图 3.27* 中，我们查找三个销售额最低的客户：
 
-![](img/Figure-3.27.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-3.27.jpg)
 
 **图 3.27:** 查找底部项目
 
@@ -2102,7 +2102,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 我们正在尝试找到 Ms Abby 在*图 4.1*中提供的最后一个科目：
 
-![](img/Figure-4.1.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-4.1.jpg)
 
 **图 4.1：** 在列中查找最后匹配项
 
@@ -2112,11 +2112,11 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 +   2 代表一个我们确定不会在查找向量中找到的大值。
 
-+   `**Lecturers=F3**` 返回一个`TRUE/FALSE`数组，其中 TRUE 表示满足条件，即讲师为 Ms Abby；否则返回 FALSE（见*图 4.2*):![](img/Figure-4.2.jpg)
++   `**Lecturers=F3**` 返回一个`TRUE/FALSE`数组，其中 TRUE 表示满足条件，即讲师为 Ms Abby；否则返回 FALSE（见*图 4.2*):![](img/ult-xcl-pwr-qry-cgpt-Figure-4.2.jpg)
 
     **图 4.2:** 检查是否符合条件
 
-+   `**1/(Lecturers=F3)**` 通过将 1 除以每个值，将 TRUE/FALSE 转换为数值等效值（见*图 4.3*):![](img/Figure-4.3.jpg)
++   `**1/(Lecturers=F3)**` 通过将 1 除以每个值，将 TRUE/FALSE 转换为数值等效值（见*图 4.3*):![](img/ult-xcl-pwr-qry-cgpt-Figure-4.3.jpg)
 
     **图 4.3:** 将 TRUE/FALSE 转换为数值等效值
 
@@ -2136,7 +2136,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 我们不仅限于使用单一条件。例如，在*图 4.4*中，我们想知道客户 Luke 购买椅子的最后日期：
 
-![](img/Figure-4.4.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-4.4.jpg)
 
 **图 4.4:** 使用多个条件查找最后一个匹配项
 
@@ -2162,7 +2162,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 在*图 4.5*中，我们查找客户最后一次付款的月份，即最后一个非空月份：
 
-![](img/Figure-4.5.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-4.5.jpg)
 
 **图 4.5:** 查找最后一个非空单元格
 
@@ -2184,7 +2184,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 例如，在*图 4.6*中，我们想要查找最后一次出现负温度的日期：
 
-![](img/Figure-4.6.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-4.6.jpg)
 
 **图 4.6：** 查找最后一个负数
 
@@ -2198,7 +2198,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 `=LOOKUP(2,1/ISTEXT(D59:D74),D59:D74)`
 
-![](img/Figure-4.7.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-4.7.jpg)
 
 **图 4.7：** 查找最后一个文本
 
@@ -2208,7 +2208,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 例如，在*图 4.8*中，我们正在查找使用近似匹配从折扣表中获取折扣百分比。
 
-![](img/Figure-4.8.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-4.8.jpg)
 
 **图 4.8：** 在数组中查找近似匹配
 
@@ -2226,7 +2226,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 这是使用`LOOKUP`函数的数组形式的另一个示例。在*图 4.9*中，我们正在寻找最频繁的客户：
 
-![](img/Figure-4.9.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-4.9.jpg)
 
 **图 4.9：** 查找最重复的项目
 
@@ -2236,13 +2236,13 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 以下是前述函数的工作原理：
 
-+   `**MATCH(Customer[Name], Customer[Name],0)**` 函数返回一个等于客户数量的数组，其中数组中的每个项目表示数据中客户姓名首次出现的位置（见*图 4.10*）。![](img/fig-4.10.jpg)
++   `**MATCH(Customer[Name], Customer[Name],0)**` 函数返回一个等于客户数量的数组，其中数组中的每个项目表示数据中客户姓名首次出现的位置（见*图 4.10*）。![](img/ult-xcl-pwr-qry-cgpt-fig-4.10.jpg)
 
     **图 4.10：** 客户的位置
 
 +   `**MODE(MATCH(Customer[Name], Customer[Name],0)**` 函数返回数组中重复次数最多的项目。
 
-+   我们使用`CHOOSE`函数创建一个两列表格数组，其中第一列是客户的位置，第二列是客户的姓名（见*图 4.11*）。![](img/Figure-4.11.jpg)
++   我们使用`CHOOSE`函数创建一个两列表格数组，其中第一列是客户的位置，第二列是客户的姓名（见*图 4.11*）。![](img/ult-xcl-pwr-qry-cgpt-Figure-4.11.jpg)
 
     **图 4.11：** 两列表格数组
 
@@ -2371,7 +2371,7 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
 *图 5.1*展示了使用高级筛选查找所有椅子购买的情况：
 
-![](img/Figure-5.1.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.1.jpg)
 
 **图 5.1:** 使用高级筛选在表中查找项目
 
@@ -2391,19 +2391,19 @@ INDEX 函数返回给定行和列的交点处的数据。因此，该函数需�
 
     1.  在`**复制到**`字段中，选择一个单元格来复制筛选后的表格。
 
-    1.  最后，点击`**确定**`。![](img/Figure-5.2.jpg)
+    1.  最后，点击`**确定**`。![](img/ult-xcl-pwr-qry-cgpt-Figure-5.2.jpg)
 
     **图 5.2:** 选择列表中项目的高级筛选选项
 
 要查找不在表中的项目，将标准改为包含“不等于”运算符（<>），然后按照前面的步骤操作。
 
-![](img/Figure-5.3.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.3.jpg)
 
 **图 5.3:** 使用高级筛选查找列表中不在的项目
 
 如果我们想查找唯一值，高级筛选也有这个选项。如*图 5.4*所示，假设我们想知道我们种植的独特作物：
 
-![](img/Figure-5.4.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.4.jpg)
 
 **图 5.4:** 使用高级筛选查找列表中的唯一项目
 
@@ -2419,7 +2419,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 在*图 5.5*中，交集运算符用于返回由客户 Joshua 在西部地区进行的销售：
 
-![](img/Figure-5.5.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.5.jpg)
 
 **图 5.5：** 使用 Excel 交集运算进行双向查找
 
@@ -2429,11 +2429,11 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 1.  转到`**公式**`选项卡，在`**定义名称**`下，点击`**从选择创建**`。
 
-1.  `**从选择创建名称**`弹出窗口将出现，如*图 5.6*所示。选择从顶部行和左侧列的值创建名称。![](img/Figure-5.6.jpg)
+1.  `**从选择创建名称**`弹出窗口将出现，如*图 5.6*所示。选择从顶部行和左侧列的值创建名称。![](img/ult-xcl-pwr-qry-cgpt-Figure-5.6.jpg)
 
     **图 5.6：** 创建用于交集的名称
 
-1.  创建名称后，您可以使用交集运算符。输入行标题（Joshua）和列标题（Western），它们之间用空格分隔，这就是交集运算符，如*图 5.7*所示：![](img/Figure-5.7.jpg)
+1.  创建名称后，您可以使用交集运算符。输入行标题（Joshua）和列标题（Western），它们之间用空格分隔，这就是交集运算符，如*图 5.7*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-5.7.jpg)
 
     **图 5.7：** 使用交集运算
 
@@ -2441,7 +2441,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 `=SUM(Joshua Western:Southern)`
 
-![](img/Figure-5.8.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.8.jpg)
 
 **图 5.8：** 使用多个条件进行交集运算的双向查找
 
@@ -2453,7 +2453,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 最后，将金额相加以获得总额。
 
-![](img/Figure-5.9.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.9.jpg)
 
 **图 5.9：** 多条件结果
 
@@ -2465,7 +2465,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 `=Joshua Eastern + Joshua Southern`
 
-![](img/Figure-5.10.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.10.jpg)
 
 **图 5.10：** 多个 OR 条件结果
 
@@ -2493,7 +2493,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 例如，在*图 5.11*中，我们要查找 3 月销售的钢笔数量：
 
-![](img/Figure-5.11.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.11.jpg)
 
 **图 5.11：** 多个 OR 条件结果
 
@@ -2507,13 +2507,13 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 1.  **条件**：包含列标题和作为条件的字段值的范围。有关更多信息，请参见*图 5.12*。
 
-![](img/Figure-5.12.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.12.jpg)
 
 **图 5.12：** 数据库函数中的参数
 
 数据库函数不仅限于简单条件，如前面的示例所示；您可以创建复杂条件，如*图 5.13*所示：
 
-![](img/Figure-5.13.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.13.jpg)
 
 **图 5.13：** 数据库函数中的复杂条件
 
@@ -2537,7 +2537,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 例如，在*图 5.14*中，我们要返回发票“224-VV-004”的付款金额：
 
-![](img/Figure-5.14.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.14.jpg)
 
 **图 5.14：** 使用 SUMIFS 函数查找数值数据
 
@@ -2571,7 +2571,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 `**SUMIFS**` 函数的替代方案是`**SUMPRODUCT**`函数（见*图 5.15*）：
 
-![](img/Figure-5.15.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.15.jpg)
 
 **图 5.15：** 使用 SUMPRODUCT 函数查找数值数据
 
@@ -2599,13 +2599,13 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 `**(Payments [Invoice]=G100)+0.**`
 
-![](img/Figure-5.16.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.16.jpg)
 
 **图 5.16：** SUMPRODUCT 数组乘法
 
 最后，让我们看看`**AGGREGATE**`函数以及我们如何使用它查找数值，如*图 5.17*所示：
 
-![](img/Figure-5.17.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.17.jpg)
 
 **图 5.17：** 使用 AGGREGATE 函数查找数值数据
 
@@ -2655,7 +2655,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 1.  `**MAX**`函数返回前述数组中的最大值。
 
-![](img/Figure-5.18.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.18.jpg)
 
 **图 5.18：** 使用 MAX 函数查找数值数据
 
@@ -2663,7 +2663,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 `=MAXIFS(Payments[Amt], Payments[Invoice],G100 )`
 
-![](img/Figure-5.19.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.19.jpg)
 
 **图 5.19：** 使用 MAXIFS 函数查找数值数据
 
@@ -2679,7 +2679,7 @@ Excel 交集运算符是解决双向查找问题的最少为人知但理想的�
 
 Excel 中的查找功能比仅限于文本和数字更全面。我们将学习如何查找图像，如*图 5.20*所示：
 
-![](img/Figure-5.20.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.20.jpg)
 
 **图 5.20：** 查找图像
 
@@ -2689,7 +2689,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 1.  为每个产品复制一个标志图像，并将其粘贴到每个产品名称旁边的空白单元格中。调整大小以适应。
 
-1.  要将图像锁定到单元格，右键单击并选择`**格式图片**`。转到格式图片窗格，选择`**大小和属性**`，在`**属性**`部分选择`**随单元格移动和调整大小**`（见*图 5.21*）：![](img/Figure-5.21.jpg)
+1.  要将图像锁定到单元格，右键单击并选择`**格式图片**`。转到格式图片窗格，选择`**大小和属性**`，在`**属性**`部分选择`**随单元格移动和调整大小**`（见*图 5.21*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-5.21.jpg)
 
     **图 5.21：** 将图像锁定到单元格
 
@@ -2701,7 +2701,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
     1.  选择`**粘贴特殊**`，将其粘贴为链接图像（见*图 5.22*）。
 
-    1.  你选择的单元格中的标志将被粘贴到新单元格中。![](img/Figure-5.22.jpg)
+    1.  你选择的单元格中的标志将被粘贴到新单元格中。![](img/ult-xcl-pwr-qry-cgpt-Figure-5.22.jpg)
 
     **图 5.22：** 粘贴为链接图片
 
@@ -2711,11 +2711,11 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
     1.  在新名称对话框中，在名称字段中写入 ►：**标志**，在引用中写入：`**=INDEX($E$116:$E$120, MATCH($G$116,$D$116:$D$120,0))**`（见*图 5.22*）。
 
-    1.  其中`**$E$116:$E$120**` ► 包含标志图像的列，`**$G$116**` ► 包含要查找其标志图像的产品的单元���，`**$D$116:$D$120**` ► 包含产品名称的列。![](img/Figure-5.23.jpg)
+    1.  其中`**$E$116:$E$120**` ► 包含标志图像的列，`**$G$116**` ► 包含要查找其标志图像的产品的单元���，`**$D$116:$D$120**` ► 包含产品名称的列。![](img/ult-xcl-pwr-qry-cgpt-Figure-5.23.jpg)
 
     **图 5.23：** 创建名称范围
 
-1.  最后，选择我们在上一步中创建的链接图像，并用创建的名称范围中的动态引用替换其引用（见*图 5.24*）：![](img/Figure-5.24.jpg)
+1.  最后，选择我们在上一步中创建的链接图像，并用创建的名称范围中的动态引用替换其引用（见*图 5.24*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-5.24.jpg)
 
     **图 5.24：** 将图像引用更改为创建的名称范围
 
@@ -2731,7 +2731,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 如*图 5.25*所示，我们想知道作物“`**Traka**`”的最后一个单元格地址。
 
-![](img/Figure-5.25.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.25.jpg)
 
 **图 5.25：** 查找带有条件的最后一个单元格地址
 
@@ -2755,7 +2755,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 **注意：** 默认情况下，`**ADDRESS**`函数返回绝对单元格引用。如果您想返回混合或相对地址，请按照*图 5.26*中所示的选项进行选择。
 
-![](img/Figure-5.26.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.26.jpg)
 
 **图 5.26：** 在 ADDRESS 函数中返回相对或混合引用
 
@@ -2765,21 +2765,21 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 它还可以用于查找列表中的唯一项，如*图 5.27*所示：
 
-![](img/Figure-5.27.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-5.27.jpg)
 
 **图 5.27：** 使用数据透视表查找唯一项
 
 以下是要遵循的步骤：
 
-1.  将您的范围转换为表格，单击 Excel 表格的任意位置，转到`**表格设计**`选项卡，然后单击使用数据透视表进行汇总（见*图 5.28*）:![](img/Figure-5.28.jpg)
+1.  将您的范围转换为表格，单击 Excel 表格的任意位置，转到`**表格设计**`选项卡，然后单击使用数据透视表进行汇总（见*图 5.28*）:![](img/ult-xcl-pwr-qry-cgpt-Figure-5.28.jpg)
 
     **图 5.28：** 创建数据透视表
 
-1.  在弹出窗口中，单击现有工作表，然后在位置下拉菜单中选择放置数据透视表的单元格（见*图 5.29*）:![](img/Figure-5.29.jpg)
+1.  在弹出窗口中，单击现有工作表，然后在位置下拉菜单中选择放置数据透视表的单元格（见*图 5.29*）:![](img/ult-xcl-pwr-qry-cgpt-Figure-5.29.jpg)
 
     **图 5.29：** 选择放置数据透视表的位置
 
-1.  在数据透视表字段中勾选`**作物**`字段或将该字段拖放到行区域。这将生成一个唯一字段列表（见*图 5.30*）:![](img/Figure-5.30.jpg)
+1.  在数据透视表字段中勾选`**作物**`字段或将该字段拖放到行区域。这将生成一个唯一字段列表（见*图 5.30*）:![](img/ult-xcl-pwr-qry-cgpt-Figure-5.30.jpg)
 
     **图 5.30：** 选择数据透视表字段
 
@@ -2868,7 +2868,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 例如，在 *图 6.1* 中，我们正在查找 1 月 15 日的销售额：
 
-![](img/Figure-6.1.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.1.jpg)
 
 **图 6.1:** XLOOKUP 默认精确匹配
 
@@ -2878,7 +2878,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 结果必须使用 `**VLOOKUP**` 进行校正，如 *图 6.2* 所示，因为查找数组未排序，而且我们已跳过匹配模式。
 
-![](img/Figure-6.2.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.2.jpg)
 
 **图 6.2：** VLOOKUP 近似匹配默认
 
@@ -2900,13 +2900,13 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 返回多列的唯一技巧是确保将它们选择为返回数组。在前面的例子中，我们选择了日期和金额两列：`**SalesTable[[ Date]:[Amount]]**`
 
-![](img/Figure-6.3.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.3.jpg)
 
 **图 6.3：** XLOOKUP 返回多个相邻列
 
 要返回多个非相邻列，我们需要在返回数组参数中使用 CHOOSECOLS 函数来返回所选列（参见 *图 6.4*）：
 
-![](img/Figure-6.4.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.4.jpg)
 
 **图 6.4：** XLOOKUP 返回多个非相邻列
 
@@ -2922,7 +2922,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 在 *图 6.5* 中，我们正在查找客户“Luke”的销售日期。
 
-![](img/Figure-6.5.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.5.jpg)
 
 **图 6.5：** XLOOKUP 向左查找
 
@@ -2934,7 +2934,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 使用 `**VLOOKUP**` 时，您必须使用 IF 函数创建自定义表数组，就像我们在上一章中看到的那样。
 
-![](img/Figure-6.6.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.6.jpg)
 
 **图 6.6：** `VLOOKUP` 向左查找
 
@@ -2944,13 +2944,13 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 例如，*图 6.7* 显示了在插入新列之前两个函数的结果。
 
-![](img/Figure-6.7.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.7.jpg)
 
 **图 6.7：** 在插入列之前的 `VLOOKUP` 和 `XLOOKUP` 函数
 
 当您在表中插入列时，`**VLOOKUP**` 返回错误的值，但 `**XLOOKUP**` 可以动态处理插入（参见 *图 6.8*）：
 
-![](img/Figure-6.8.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.8.jpg)
 
 **图 6.8：** 在插入列后的 `VLOOKUP` 和 `XLOOKUP` 函数
 
@@ -2964,7 +2964,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 `**VLOOKUP**` 函数返回错误，因为找不到返回列，即第 4 列。
 
-![](img/Figure-6.9.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.9.jpg)
 
 **图 6.9：** 在删除列后的 `VLOOKUP` 和 `XLOOKUP` 函数
 
@@ -2974,7 +2974,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 在 *图 6.10* 中，我们查找了最低报价的供应商：
 
-![](img/Figure-6.10.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.10.jpg)
 
 **图 6.10：** 在删除列后的 `VLOOKUP` 和 `XLOOKUP` 函数
 
@@ -2998,7 +2998,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 在 *图 6.11* 中，我们查找了最后一次客户“Clay Rozendal”向我们购买的日期：
 
-![](img/Figure-6.11.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.11.jpg)
 
 **图 6.11：** `XLOOKUP` 函数从下到上查找
 
@@ -3018,7 +3018,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 `2,0)`
 
-![](img/Figure-6.12.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.12.jpg)
 
 **图 6.12：** VLOOKUP 函数从底部向顶部查找
 
@@ -3030,7 +3030,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 例如，在*图 6.13*中，我们查找包含字母“P”的成本代码的日期。
 
-![](img/Figure-6.13.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.13.jpg)
 
 **图 6.13：** 使用星号通配符的 XLOOKUP
 
@@ -3048,7 +3048,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 如讨论的，问号（?）通配符代表文本字符串中的单个字符。因此，查找值“????P*”将找到第五个字符为字母“P”后跟任意字符的任何文本字符串。
 
-![](img/Figure-6.14.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.14.jpg)
 
 **图 6.14：** 使用问号和星号通配符的 XLOOKUP
 
@@ -3058,7 +3058,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 尽管单元格引用是看不见的，不像返回的值，但仍然可以使用，如*图 6.15*所示：
 
-![](img/Figure-6.15.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.15.jpg)
 
 **图 6.15：** XLOOKUP 返回单元格引用
 
@@ -3068,7 +3068,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 公式的工作原理如下：
 
-+   **步骤 1**：为公式中使用的部分创建命名范围。选择每个地区，如*图 6.16*所示，转到名称框，并给它一个名称。![](img/Figure-6.16.jpg)
++   **步骤 1**：为公式中使用的部分创建命名范围。选择每个地区，如*图 6.16*所示，转到名称框，并给它一个名称。![](img/ult-xcl-pwr-qry-cgpt-Figure-6.16.jpg)
 
     **图 6.16：** 创建命名范围
 
@@ -3086,7 +3086,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
         `**XLOOKUP(I95,客户, XLOOKUP(K95,地区,数据))**`
 
-        ![](img/Figure-6.17.jpg)
+        ![](img/ult-xcl-pwr-qry-cgpt-Figure-6.17.jpg)
 
     **图 6.17：** XLOOKUP 返回单元格范围
 
@@ -3108,13 +3108,13 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 例如，在*图 6.19*中，我们只应该为打折商品获得折扣，而对其他商品返回零。
 
-![](img/Figure-6.18.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.18.jpg)
 
 **图 6.18：** XLOOKUP if_not_found 参数
 
 我们必须使用`**if_not_found**`参数来捕获非打折商品的零，如*图 6.18*所示：
 
-![](img/Figure-6.19.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.19.jpg)
 
 **图 6.19：** XLOOKUP 如果未找到匹配项则返回一个值
 
@@ -3122,7 +3122,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 与 VLOOKUP 函数不同，嵌套的 XLOOKUP 函数可以轻松进行三向查找，如*图 6.20*所示：
 
-![](img/Figure-6.20.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.20.jpg)
 
 **图 6.20：** XLOOKUP 三向查找
 
@@ -3138,7 +3138,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
     +   嵌套的`**XLOOKUP**`函数，`**XLOOKUP(L126, 月份, 金额)**`，返回准则月份数据。这形成了主 XLOOKUP 函数的返回数组。
 
-    +   至于主要的`**XLOOKUP**`函数，首先创建一个连接的标准 — `**J126&K126**`。这返回销售代表和产品标准的组合。然后创建组合的销售代表和产品列，如*图 6.21*所示：![](img/Figure-6.21.jpg)
+    +   至于主要的`**XLOOKUP**`函数，首先创建一个连接的标准 — `**J126&K126**`。这返回销售代表和产品标准的组合。然后创建组合的销售代表和产品列，如*图 6.21*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-6.21.jpg)
 
     **图 6.21：** XLOOKUP 连接列作为查找数组
 
@@ -3152,7 +3152,7 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 使用上面的示例，现在让我们使用 XLOOKUP 函数返回一月和三月的金额，如*图 6.22*所示：
 
-![](img/Figure-6.22.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.22.jpg)
 
 **图 6.22：** XLOOKUP 返回非相邻列值
 
@@ -3172,13 +3172,13 @@ Excel 中的查找功能比仅限于文本和数字更全面。我们将学习�
 
 `**=XLOOKUP(J126&K126, SaleReps&Products, CHOOSE({1,2},Jan,Mar))**`
 
-![](img/Figure-6.23.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.23.jpg)
 
 **图 6.23：** IF 返回非相邻列
 
 另一种方法是使用 Filter 函数返回非相邻列，如*图 6.24*所示：
 
-![](img/Figure-6.24.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.24.jpg)
 
 **图 6.24：** FILTER 函数返回非相邻列
 
@@ -3192,7 +3192,7 @@ Filter 函数的“包含”部分通常指定应在过滤结果中包含哪些�
 
 除了`**LOOKUP**`函数外，获取最后/第一个非空单元格的更好选择是`**XLOOKUP**`函数，如*图 6.25*所示：
 
-![](img/Figure-6.25.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.25.jpg)
 
 **图 6.25：** XLOOKUP 最后/第一个非空单元格
 
@@ -3206,7 +3206,7 @@ Filter 函数的“包含”部分通常指定应在过滤结果中包含哪些�
 
 函数的工作原理如下。
 
-+   **步骤 1**：使用 ISBLANK 函数检查单元格是否为空。这将返回一个 TRUE/FALSE 值数组，如*图 6.26*所示：![](img/Figure-6.26.jpg)
++   **步骤 1**：使用 ISBLANK 函数检查单元格是否为空。这将返回一个 TRUE/FALSE 值数组，如*图 6.26*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-6.26.jpg)
 
     **图 6.26：** ISBLANK TRUE/FALSE 数组
 
@@ -3218,7 +3218,7 @@ Filter 函数的“包含”部分通常指定应在过滤结果中包含哪些�
 
 嵌套的 XLOOKUP 函数还可以轻松地从非连续数组中获取值，如*图 6.27*所示：
 
-![](img/Figure-6.27.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.27.jpg)
 
 **图 6.27：** XLOOKUP 非连续数组
 
@@ -3246,7 +3246,7 @@ Filter 函数的“包含”部分通常指定应在过滤结果中包含哪些�
 
 但是，如果嵌套`**LARGE**`函数，则可以实现这一点，如*图 6.28*所示：
 
-![](img/Figure-6.28.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-6.28.jpg)
 
 **图 6.28：** XLOOKUP 返回重复查找值。
 
@@ -3260,7 +3260,7 @@ Filter 函数的“包含”部分通常指定应在过滤结果中包含哪些�
 
 +   `**(Vendors=$J$183)**` 检查哪个供应商等于“Emily”并返回一个 TRUE/FALSE 数组。
 
-+   `**(Vendors=$J$183)*ROW(Vendors)**` 将上述 TRUE/FALSE 数组与行号相乘。这将返回供应商 Emily 的行号数组；否则，返回零（见 *图 6.29*）：![](img/Figure-6.29.jpg)
++   `**(Vendors=$J$183)*ROW(Vendors)**` 将上述 TRUE/FALSE 数组与行号相乘。这将返回供应商 Emily 的行号数组；否则，返回零（见 *图 6.29*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-6.29.jpg)
 
     **图 6.29：** 标准供应商的行号
 
@@ -3419,7 +3419,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 例如，在*图 7.1*中，我们想查找所有员工“卡尔·杰克逊”的贡献及相应日期。
 
-![](img/Figure-7.1.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.1.jpg)
 
 **图 7.1：** 返回多行和多列
 
@@ -3431,13 +3431,13 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 +   检查我们的标准（卡尔·杰克逊）在员工名单中出现的所有情况→ `**tblContribution[Staff]=F3.**` 这将返回一个布尔数组（参见*图 7.2*），确定要包含在筛选器中的值。
 
-![](img/Figure-7.2.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.2.jpg)
 
 **图 7.2：** 创建包含参数
 
 **注意**：由于 FILTER 函数根据您的筛选数组在垂直/水平方向或两者之间溢出结果，请确保有足够的空单元格，否则将出现`**#SPILL!**`错误（参见*图 7.3*）。
 
-![](img/Figure-7.3.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.3.jpg)
 
 **图 7.3：** 阻止文本导致溢出错误
 
@@ -3447,7 +3447,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 在这个例子中，我们想要返回所有捐赠物品和金额。
 
-![](img/Figure-7.4.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.4.jpg)
 
 **图 7.4：** 返回非相邻列
 
@@ -3463,7 +3463,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 +   检查所有员工列表中出现我们标准（卡尔·杰克逊）的情况→ `**tblContribution[Staff]=F3**`。这将返回一个布尔数组，确定筛选器中要包含的值**。**
 
-![](img/Figure-7.5.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.5.jpg)
 
 **图 7.5：** CHOOSECOLS 函数动态返回非相邻列
 
@@ -3505,19 +3505,19 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 +   `**Filter**`函数返回所有对应于值为 1 的捐赠者。
 
-![](img/Figure-7.6.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.6.jpg)
 
 **图 7.6：** 使用 COUNTIF 函数的 FILTER 函数多条件 OR 逻辑
 
 使用加号（+）表示 OR 逻辑是使用`**COUNTIF**`函数的替代方法，如*图 7.7*所示。
 
-![](img/Figure-7.7.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.7.jpg)
 
 **图 7.7：** 使用加号（+）表示的 FILTER 函数多条件 OR 逻辑
 
 在*图 7.8*中，我们想知道员工`**Carl Jackson**`何时以及捐赠了多少书籍。
 
-![](img/Figure-7.8.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.8.jpg)
 
 **图 7.8：** 使用 FILTER 函数多条件 AND 逻辑
 
@@ -3531,7 +3531,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 +   由于 FILTER 函数不接受`**AND**`函数的嵌套，我们使用星号（*）来表示 AND 逻辑。当你将前两个布尔数组相乘时，只有在满足所有条件时才会得到值为 1。参见*图 7.9*。
 
-![](img/Figure-7.9.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.9.jpg)
 
 **图 7.9：** 使用星号（*）表示 AND 逻辑
 
@@ -3541,7 +3541,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 如*图 7.10*所示，我们想查找所有成绩为 A 但不在英语科目中的学生。
 
-![](img/Figure-7.10.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.10.jpg)
 
 **图 7.10：** 使用 NOT 比较运算符（<>）过���数据
 
@@ -3555,7 +3555,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 使用大于比较运算符的替代方法，如*图 7.11*所示。
 
-![](img/Figure-7.11.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.11.jpg)
 
 **图 7.11：** 使用大于（>）比较运算符过滤数据
 
@@ -3563,7 +3563,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 这里需要学习的唯一技巧是 Excel 将 FALSE 值视为零（0），将 TRUE 视为一（1）；然后，只有在 1>0 的情况下结果才为 TRUE。参见*图 7.12*。
 
-![](img/Figure-7.12.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.12.jpg)
 
 **图 7.12：** 比较布尔值
 
@@ -3571,7 +3571,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 与先前学习的查找函数不同，FILTER 函数可以轻松返回前几项或底部项目，如 *图 7.13* 所示。
 
-![](img/Figure-7.13.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.13.jpg)
 
 **图 7.13：** 过滤前几项或底部项目
 
@@ -3599,7 +3599,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 我们需要查找所有得到 A 等级或参加英语考试的学生，但不是两者都有。参见 *图 7.14*。
 
-![](img/Figure-7.14.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.14.jpg)
 
 **图 7.14：** 过滤所有 X 或 Y 但不是两者都有
 
@@ -3611,7 +3611,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 如果一个比较是 `TRUE`（1） 而另一个是 `FALSE`（0），那么比较结果将是 1-0=1。因此，总体上是 `TRUE`。当比较两个 `FALSE` 条件时，0-0=0，因此总体上是 `FALSE`。当比较两个 `TRUE` 条件时，1-1=0，这也将是总体上的 `FALSE`。参见 *图 7.15*。
 
-![](img/Figure-7.15.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.15.jpg)
 
 **图 7.15：** 减号（-）比较运算符
 
@@ -3629,7 +3629,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 任务是过滤所有产品中包含单词“牛奶”的生产商。
 
-![](img/Figure-7.16.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.16.jpg)
 
 **图 7.16：** 使用通配符过滤数据
 
@@ -3661,7 +3661,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 +   对于工作日日期，这些日期的日期编号小于 6，而周末日期的日期编号大于或等于 6
 
-![](img/Figure-7.17.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.17.jpg)
 
 **图 7.17：** 筛选工作日或周末数据
 
@@ -3681,7 +3681,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 `FILTER` 函数仅返回与前述数组中的 `TRUE` 值对应的物品。
 
-![](img/Figure-7.18.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.18.jpg)
 
 **图 7.18：** 仅筛选工作日数据
 
@@ -3707,7 +3707,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 `=FILTER(B147:B158,ISODD(0+B147:B158))`
 
-![](img/Figure-7.19.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.19.jpg)
 
 **图 7.19：** 仅过滤偶数值
 
@@ -3715,7 +3715,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 利用之前的贡献数据，让我们看看如何过滤所有捐赠超过两次的员工，如 *图 7.20* 所示：
 
-![](img/Figure-7.20.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.20.jpg)
 
 **图 7.20：** 过滤重复 n 次的项目
 
@@ -3723,13 +3723,13 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 以下是前述函数的工作原理：
 
-+   `**COUNTIF(Staff, Staff)**` COUNTIF 函数返回列表中员工重复次数的数组。参考 *图 7.21*。![](img/Figure-7.21.jpg)
++   `**COUNTIF(Staff, Staff)**` COUNTIF 函数返回列表中员工重复次数的数组。参考 *图 7.21*。![](img/ult-xcl-pwr-qry-cgpt-Figure-7.21.jpg)
 
     **图 7.21：** COUNTIF 函数显示每个物品的重复次数
 
 +   接下来，我们检查哪些物品重复超过两次 `**COUNTIF(Staff, Staff)>2.**` 这将返回一个 `TRUE/FALSE` 数组。
 
-+   `FILTER` 函数仅包括对应于 TRUE 值的员工，如 *图 7.22* 所示。![](img/Figure-7.22.jpg)
++   `FILTER` 函数仅包括对应于 TRUE 值的员工，如 *图 7.22* 所示。![](img/ult-xcl-pwr-qry-cgpt-Figure-7.22.jpg)
 
     **图 7.22：** 过滤重复值
 
@@ -3743,7 +3743,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 因此，时间将是 DateTime 序列号中的小数部分。
 
-![](img/Figure-7.23.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.23.jpg)
 
 **图 7.23：** 基于时间过滤
 
@@ -3763,7 +3763,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 在 *图 7.24* 中，我们正在查找所有在第 3 周售出的物品。
 
-![](img/Figure-7.24.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.24.jpg)
 
 **图 7.24：** 基于周数筛选
 
@@ -3779,13 +3779,13 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 +   `FILTER`函数用于筛选前一步中数值为`TRUE`的行。
 
-![](img/Figure-7.25.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.25.jpg)
 
 **图 7.25：** WEEKNUM 返回一个周数数组
 
 要筛选特定月份的数据，请使用如*图 7.26*所示的月份函数。
 
-![](img/Figure-7.26.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.26.jpg)
 
 **图 7.26：** 基于月份筛选
 
@@ -3795,7 +3795,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 最后，*图 7.27*展示了如何使用年份值来筛选数据。
 
-![](img/Figure-7.27.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.27.jpg)
 
 **图 7.27：** 基于年份筛选
 
@@ -3819,7 +3819,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 `**►COUNTIF(LastYear_Customers, Current_Customers)**` 计算同时出现在 LastYear_Customers 范围和 Current_Customers 范围中的客户数量。它返回一个由 1 和 0 组成的数组。其中 1=两者共同，0=不常见。
 
-![](img/Figure-7.28.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.28.jpg)
 
 **图 7.28：** 筛选列表之间的常见/不常见项目
 
@@ -3827,7 +3827,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 当您想要返回任何月份最后一天出售的物品时，就像在*图 7.29*中所示，您必须使用`**EOMONTH**`函数。
 
-![](img/Figure-7.29.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-7.29.jpg)
 
 **图 7.29：** 筛选在月底出售的项目
 
@@ -3837,7 +3837,7 @@ FILTER 函数具有最简单和最易于理解的语法之一——仅三个参�
 
 +   `**EOMONTH**`函数不接受数据范围。它会返回`**#VALUE**`错误。但是，我们可以通过在范围后添加零（SportSales[Date]+0）来强制执行。
 
-+   `**EOMONTH**`函数返回给定日期的月份的最后一天的数组（参考*图 7.30*）。![](img/Figure-7.30.jpg)
++   `**EOMONTH**`函数返回给定日期的月份的最后一天的数组（参考*图 7.30*）。![](img/ult-xcl-pwr-qry-cgpt-Figure-7.30.jpg)
 
     **图 7.30：** EOMONTH 返回月份的最后一天的数组
 
@@ -4042,53 +4042,53 @@ Power Query 已经集成，但您可能需要启用它。
 
 例如，在*图 8.1*中，我们想要获取单元格 E2 中任何债务人的日期：
 
-![](img/Figure-8.1.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.1.jpg)
 
 **图 8.1：** Power Query 精确匹配查找
 
 以下是要遵循的步骤：
 
-1.  将包含准则的单元格转换为表。如*图 8.2*所示，将表命名为准则：![](img/Figure-8.2.jpg)
+1.  将包含准则的单元格转换为表。如*图 8.2*所示，将表命名为准则：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.2.jpg)
 
     **图 8.2：** 创建一个准则表
 
-1.  将要查找的数据也转换为表，并将其命名为`**tblDebtors**`，如*图 8.3*所示：![](img/Figure-8.3.jpg)
+1.  将要查找的数据也转换为表，并将其命名为`**tblDebtors**`，如*图 8.3*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.3.jpg)
 
     **图 8.3：** 创建一个查找数据表
 
-1.  首先将准则表加载到 Power Query 中。要做到这一点，单击表中的任意位置 ► 转到“数据”选项卡 ► 单击“从表/范围获取”（参见*图 8.4*）：![](img/Figure-8.4.jpg)
+1.  首先将准则表加载到 Power Query 中。要做到这一点，单击表中的任意位置 ► 转到“数据”选项卡 ► 单击“从表/范围获取”（参见*图 8.4*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.4.jpg)
 
     **图 8.4：** 将准则表加载到 Power Query Editor
 
-1.  转到`**Power Query Editor**`，仅作为连接加载准则表，如*图 8.5*所示：![](img/Figure-8.5.jpg)
+1.  转到`**Power Query Editor**`，仅作为连接加载准则表，如*图 8.5*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.5.jpg)
 
     **图 8.5：** 仅作为连接加载准则表
 
-1.  按照第 3 步中概述的相同步骤加载 Power Query 中的数据表。现在，您应该在 Power Query Editor 中看到`**准则**`和查找表，如*图 8.6*所示：![](img/Figure-8.6.jpg)
+1.  按照第 3 步中概述的相同步骤加载 Power Query 中的数据表。现在，您应该在 Power Query Editor 中看到`**准则**`和查找表，如*图 8.6*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.6.jpg)
 
     **图 8.6：** Power Query Editor 中的准则和查找表
 
-1.  转到`**债务人**`表，并根据第一个债务人进行筛选，如*图 8.7*所示：![](img/Figure-8.7.jpg)
+1.  转到`**债务人**`表，并根据第一个债务人进行筛选，如*图 8.7*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.7.jpg)
 
     **图 8.7：** 在查找表上应用筛选器
 
-1.  通过右键单击值并展开，将准则表转换为值，如*图 8.8*所示：![](img/Figure-8.8.jpg)
+1.  通过右键单击值并展开，将准则表转换为值，如*图 8.8*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.8.jpg)
 
     **图 8.8：** 将准则表转换为值
 
-1.  用第 6 步中的准则值替换筛选值，如*图 8.9*所示：![](img/Figure-8.9.jpg)
+1.  用第 6 步中的准则值替换筛选值，如*图 8.9*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.9.jpg)
 
     **图 8.9：** 用准则值替换筛选值
 
-1.  由于我们想要返回日期值，我们应该选择并删除其他列，如图 8.10 所示：![](img/Figure-8.10.jpg)
+1.  由于我们想要返回日期值，我们应该选择并删除其他列，如图 8.10 所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.10.jpg)
 
     **图 8.10：** 用准则值替换筛选值
 
-1.  关闭并加载检索到的日期（参见*图 8.11*）：![](img/Figure-8.11.jpg)
+1.  关闭并加载检索到的日期（参见*图 8.11*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.11.jpg)
 
     **图 8.11：** 加载返回的数据
 
-1.  最后一步是将筛选后的客户/债务人的日期加载到现有工作表而不是连接（见*图 8.12*）：![](img/Figure-8.12.jpg)
+1.  最后一步是将筛选后的客户/债务人的日期加载到现有工作表而不是连接（见*图 8.12*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.12.jpg)
 
     **图 8.12：** 将数据加载到现有工作表
 
@@ -4102,7 +4102,7 @@ Power Query 已经集成，但您可能需要启用它。
 
 现在，让我们假设我们有多个债务人的交易，并且希望返回所有交易和多个列，如*图 8.13*所示：
 
-![](img/Figure-8.13.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.13.jpg)
 
 **图 8.13：** Power Query 返回多个项目和多个列
 
@@ -4112,7 +4112,7 @@ Power Query 已经集成，但您可能需要启用它。
 
 在第 9 步中，我们删除不需要的列，这次我们只删除债务人的列，如*图 8.14*所示：
 
-![](img/Figure-8.14.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.14.jpg)
 
 **图 8.14：** 允许返回多个列
 
@@ -4124,33 +4124,33 @@ Power Query 已经集成，但您可能需要启用它。
 
 在本节中，我们将学习使用近似查找来查找成绩的步骤，如*图 8.15*所示。请注意，您的成绩表需要按升序排序：
 
-![](img/Figure-8.15.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.15.jpg)
 
 **图 8.15：** Power Query 近似匹配
 
 以下是要遵循的步骤：
 
-1.  仅将成绩表(`**tblGrade**`)加载为连接，然后加载考试表(`**tblExams**`)。然后，按照前一节中概述的步骤 3-5 进行操作（见*图 8.16*）：![](img/Figure-8.16.jpg)
+1.  仅将成绩表(`**tblGrade**`)加载为连接，然后加载考试表(`**tblExams**`)。然后，按照前一节中概述的步骤 3-5 进行操作（见*图 8.16*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.16.jpg)
 
     **图 8.16：** 为表命名并加载到 Power Query
 
-1.  单击考试表，转到“合并”选项卡，并追加查询为新的（见*图 8.17*）：![](img/Figure-8.17.jpg)
+1.  单击考试表，转到“合并”选项卡，并追加查询为新的（见*图 8.17*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.17.jpg)
 
     **图 8.17：** 在 Power Query 中追加查询
 
-1.  追加考试表(`**tblExams**`)和成绩表(`**tblGrade**`)（见*图 8.18*）：![](img/Figure-8.18.jpg)
+1.  追加考试表(`**tblExams**`)和成绩表(`**tblGrade**`)（见*图 8.18*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.18.jpg)
 
     **图 8.18：** 追加两个表
 
-1.  在追加的查询中，转到`**添加列**`选项卡并添加一个`**索引列**`。我们将在稍后使用此列对数据进行排序（见*图 8.19*）：![](img/Figure-8.19.jpg)
+1.  在追加的查询中，转到`**添加列**`选项卡并添加一个`**索引列**`。我们将在稍后使用此列对数据进行排序（见*图 8.19*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.19.jpg)
 
     **图 8.19：** 为追加的查询添加索引列
 
-1.  将分数按升序排序（见*图 8.20*）：![](img/Figure-8.20.jpg)
+1.  将分数按升序排序（见*图 8.20*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.20.jpg)
 
     **图 8.20：** 将分数按升序排序
 
-1.  单击成绩列，转到`**转换**`选项卡，然后在填充选项中点击“向下”（见*图 8.21*）：![](img/Figure-8.21.jpg)
+1.  单击成绩列，转到`**转换**`选项卡，然后在填充选项中点击“向下”（见*图 8.21*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.21.jpg)
 
     **图 8.21：** 填充成绩
 
@@ -4160,11 +4160,11 @@ Power Query 已经集成，但您可能需要启用它。
 
 1.  高亮显示成绩表，然后转到`**主页**`选项卡，在删除列选项下，单击删除其他列。
 
-1.  单击附加的查询，转到`**主页**`选项卡，然后在关闭和加载选项下，单击`**关闭并加载到**`（见*图 8.22*）：![](img/Figure-8.22.jpg)
+1.  单击附加的查询，转到`**主页**`选项卡，然后在关闭和加载选项下，单击`**关闭并加载到**`（见*图 8.22*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.22.jpg)
 
     **图 8.22：** 从近似查找加载成绩
 
-1.  将成绩加载为一个表，放在考试表旁边（见*图 8.23*）：![](img/Figure-8.23.jpg)
+1.  将成绩加载为一个表，放在考试表旁边（见*图 8.23*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.23.jpg)
 
     **图 8.23：** 将成绩加载到考试表旁边
 
@@ -4178,7 +4178,7 @@ Power Query 已经集成，但您可能需要启用它。
 
 在下面的示例中，见*图 8.24*，我���希望从`**tblCars**`中查找那些车辆已经服务过的客户（满意顾客）和那些车辆未服务过的客户（不满意顾客）：
 
-![](img/Figure-8.24.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.24.jpg)
 
 **图 8.24：** 使用表连接查找数据
 
@@ -4186,19 +4186,19 @@ Power Query 已经集成，但您可能需要启用它。
 
 1.  将汽车表（`**tblCars**`）和服务表（`**tblServiced**`）仅作为连接加载。按照先前提到的精确查找部分的步骤 3-5 进行操作。
 
-1.  单击汽车表，转到`**主页**`选项卡。在`**合并**`组下，选择合并查询，然后选择`**合并查询**`作为新查询（见*图 8.25*）：![](img/Figure-8.25.jpg)
+1.  单击汽车表，转到`**主页**`选项卡。在`**合并**`组下，选择合并查询，然后选择`**合并查询**`作为新查询（见*图 8.25*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.25.jpg)
 
     **图 8.25：** 合并查询
 
-1.  在合并弹出表中，从第二个下拉菜单中选择`**tblServiced**`。然后从`**tblCars**`中选择`**Car Serviced**`列，从`**tblServiced**`表中选择`**Serviced Cars**`列。最后，从连接类型中选择内连接。这将只显示满意顾客的数据（见*图 8.26*）：![](img/Figure-8.26.jpg)
+1.  在合并弹出表中，从第二个下拉菜单中选择`**tblServiced**`。然后从`**tblCars**`中选择`**Car Serviced**`列，从`**tblServiced**`表中选择`**Serviced Cars**`列。最后，从连接类型中选择内连接。这将只显示满意顾客的数据（见*图 8.26*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.26.jpg)
 
     **图 8.26：** 内连接表合并
 
-1.  将查询重命名为`**满意顾客**`，选择客户列，然后单击删除其他列（见*图 8.27*）：![](img/Figure-8.27.jpg)
+1.  将查询重命名为`**满意顾客**`，选择客户列，然后单击删除其他列（见*图 8.27*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.27.jpg)
 
     **图 8.27：** 重命名查询
 
-1.  重复前述步骤 1-3，创建一个新的合并查询。这次，不选择内连接，而是选择左反连接。这将只显示未服务车辆的不满意顾客的数据（见*图 8.28*）：![](img/Figure-8.28.jpg)
+1.  重复前述步骤 1-3，创建一个新的合并查询。这次，不选择内连接，而是选择左反连接。这将只显示未服务车辆的不满意顾客的数据（见*图 8.28*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.28.jpg)
 
     **图 8.28：** 左反连接表合并
 
@@ -4212,7 +4212,7 @@ Power Query 已经集成，但您可能需要启用它。
 
 例如，*图 8.29*展示了如何查找前五名债权人：
 
-![](img/Figure-8.29.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.29.jpg)
 
 **图 8.29：** 查找前五名债权人
 
@@ -4222,15 +4222,15 @@ Power Query 已经集成，但您可能需要启用它。
 
 1.  通过右键单击值并进行下钻，将`**tblTop**`表转换为值。请参考前面提到的精确查找部分的第 7 步。
 
-1.  点击债权人表，转到“**主页**”选项卡，在“保留行”选项下，选择“保留前几行”。在弹出窗口中，输入 5 作为行数（参见*图 8.30*）：![](img/Figure-8.30.jpg)
+1.  点击债权人表，转到“**主页**”选项卡，在“保留行”选项下，选择“保留前几行”。在弹出窗口中，输入 5 作为行数（参见*图 8.30*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.30.jpg)
 
     **图 8.30：** 保留前五行
 
-1.  转到“**查看**”选项卡，点击“**高级编辑器**”（参见*图 8.31*）。这一步的原因是将硬编码的五行替换为我们在`**tblTop**`表中的条件：![](img/Figure-8.31.jpg)
+1.  转到“**查看**”选项卡，点击“**高级编辑器**”（参见*图 8.31*）。这一步的原因是将硬编码的五行替换为我们在`**tblTop**`表中的条件：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.31.jpg)
 
     **图 8.31：** 调用高级编辑器
 
-1.  在“tblTop”表中用我们的动态条件替换硬编码的 5（参见*图 8.32*）：![](img/Figure-8.32.jpg)
+1.  在“tblTop”表中用我们的动态条件替换硬编码的 5（参见*图 8.32*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.32.jpg)
 
     **图 8.32：** 用动态条件替换硬编码的条件
 
@@ -4246,7 +4246,7 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 我们将查找成绩和导师表，如*图 8.33*所示：
 
-![](img/Figure-8.33.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.33.jpg)
 
 **图 8.33：** 使用列表函数的近似和精确函数
 
@@ -4254,11 +4254,11 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 1.  将所有三个表仅作为连接加载。
 
-1.  选择班级表（`**tblClass**`），转到“**添加列**”选项卡，点击“**自定义列**”（参见*图 8.34*）：![](img/Figure-8.34.jpg)
+1.  选择班级表（`**tblClass**`），转到“**添加列**”选项卡，点击“**自定义列**”（参见*图 8.34*）：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.34.jpg)
 
     **图 8.34：** 创建自定义列
 
-1.  将您的列重命名为`**Tutor**`，并按照*图 8.35*所示编写函数：![](img/Figure-8.35.jpg)
+1.  将您的列重命名为`**Tutor**`，并按照*图 8.35*所示编写函数：![](img/ult-xcl-pwr-qry-cgpt-Figure-8.35.jpg)
 
     **图 8.35：** 使用 List.PositionOf 函数进行精确查找
 
@@ -4288,7 +4288,7 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 `Table.SelectRows(Grades,(IT)=> IT[Marks]<=[Marks])[Grade])`
 
-![](img/Figure-8.36.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.36.jpg)
 
 **图 8.36:** 使用 Table.SelectRows 和 List.Last 进行近似查找
 
@@ -4316,7 +4316,7 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 例如，使用*图 8.37*中显示的数据，让我们看看如何查找我们在周末和工作日给信用的人。
 
-![](img/Figure-8.37.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.37.jpg)
 
 **图 8.37:** 查找工作日和周末数据
 
@@ -4368,7 +4368,7 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 假设我们有以下收集的数据和假期日期，如 *图 8.38* 所示。让我们学习如何查找不包括假期的收集数据。
 
-![](img/Figure-8.38.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.38.jpg)
 
 **图 8.38：** 查找不包括假期的日期
 
@@ -4376,11 +4376,11 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 1.  仅将这两个表加载为连接。
 
-1.  转到查询和连接，右键单击已获取的表，然后单击 `**Merge**`（参见 *图 8.39*）:![](img/Figure-8.39.jpg)
+1.  转到查询和连接，右键单击已获取的表，然后单击 `**Merge**`（参见 *图 8.39*）:![](img/ult-xcl-pwr-qry-cgpt-Figure-8.39.jpg)
 
     **图 8.39：** 合并查询
 
-1.  在合并弹出窗口中，选择第二个下拉菜单中的假期表。然后，在已获取的表和假期中选择日期列。最后，选择左反连接以从已获取的表中排除假期（参见 *图 8.40*）:![](img/Figure-8.40.jpg)
+1.  在合并弹出窗口中，选择第二个下拉菜单中的假期表。然后，在已获取的表和假期中选择日期列。最后，选择左反连接以从已获取的表中排除假期（参见 *图 8.40*）:![](img/ult-xcl-pwr-qry-cgpt-Figure-8.40.jpg)
 
     **图 8.40：** 合并查询
 
@@ -4392,7 +4392,7 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 请注意，我们希望一种解决方案，可以用任何数字替换 2，Power Query 将查找这些项目。
 
-![](img/Figure-8.41.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.41.jpg)
 
 **图 8.41：** 查找重复 2 次的项目
 
@@ -4400,23 +4400,23 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 1.  仅将这两个表加载为连接。
 
-1.  将 `**RepeatN**` 表转换为值 ► 右键单击值并展开（参见 *图 8.42*）:![](img/Figure-8.42.jpg)
+1.  将 `**RepeatN**` 表转换为值 ► 右键单击值并展开（参见 *图 8.42*）:![](img/ult-xcl-pwr-qry-cgpt-Figure-8.42.jpg)
 
     **图 8.42：**将表转换为值
 
-1.  转到`**SportSales**`表格，选择项目列。然后，转到“转换”选项卡，点击`**GroupBy**`。在操作下，选择`**CountRows**`，然后点击`**确定**` (见*图 8.43*)*:*![](img/Figure-8.43.jpg)
+1.  转到`**SportSales**`表格，选择项目列。然后，转到“转换”选项卡，点击`**GroupBy**`。在操作下，选择`**CountRows**`，然后点击`**确定**` (见*图 8.43*)*:*![](img/ult-xcl-pwr-qry-cgpt-Figure-8.43.jpg)
 
     **图 8.43：**按项目分组
 
-1.  转到新的计数列，并按 1 进行筛选(见*图 8.44*):![](img/Figure-8.44.jpg)
+1.  转到新的计数列，并按 1 进行筛选(见*图 8.44*):![](img/ult-xcl-pwr-qry-cgpt-Figure-8.44.jpg)
 
     **图 8.44：**按任意计数筛选
 
-1.  用我们的`**RepeatN**`值替换硬编码的筛选条件。转到查看选项卡，点击`**高级编辑器**`。删除硬编码的筛选条件(1)，输入`**RepeatN**` (见*图 8.45*):![](img/Figure-8.45.jpg)
+1.  用我们的`**RepeatN**`值替换硬编码的筛选条件。转到查看选项卡，点击`**高级编辑器**`。删除硬编码的筛选条件(1)，输入`**RepeatN**` (见*图 8.45*):![](img/ult-xcl-pwr-qry-cgpt-Figure-8.45.jpg)
 
     **图 8.45：**按任意计数筛选
 
-1.  删除`**Count**`列并加载数据(见*图 8.46*)*:*![](img/Figure-8.46.jpg)
+1.  删除`**Count**`列并加载数据(见*图 8.46*)*:*![](img/ult-xcl-pwr-qry-cgpt-Figure-8.46.jpg)
 
     **图 8.46：**删除计数列并加载数据
 
@@ -4426,7 +4426,7 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 使用*图 8.47*中显示的数据，仅返回每月末支付的债权人：
 
-![](img/Figure-8.47.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.47.jpg)
 
 **图 8.47：**查找月末交易
 
@@ -4436,7 +4436,7 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 1.  转到`**查看**`选项卡，点击高级编辑器。
 
-1.  按照*图 8.48*中显示的方式编写函数:![](img/Figure-8.48.jpg)
+1.  按照*图 8.48*中显示的方式编写函数:![](img/ult-xcl-pwr-qry-cgpt-Figure-8.48.jpg)
 
     **图 8.48：**选择月末项目的 M 代码
 
@@ -4464,7 +4464,7 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 例如，我们如何使用`**tblClean**`中的`**Lookup Company**`列查找`**tblDirty**`中的员工，如*图 8.49*所示：
 
-![](img/Figure-8.49.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-8.49.jpg)
 
 **图 8.49：** 模糊查找
 
@@ -4476,11 +4476,11 @@ Power Query 中有超过 45 个与列表相关的函数。让我们学习如何�
 
 1.  选择`**tblClean**`，然后选择要匹配的列，如*图 8.50*所示。
 
-1.  单击`**使用模糊匹配执行合并**`并展开模糊匹配选项。这些选项允许您微调匹配过程。较低的相似性阈值降低了模糊匹配算法的严格性。![](img/Figure-8.50.jpg)
+1.  单击`**使用模糊匹配执行合并**`并展开模糊匹配选项。这些选项允许您微调匹配过程。较低的相似性阈值降低了模糊匹配算法的严格性。![](img/ult-xcl-pwr-qry-cgpt-Figure-8.50.jpg)
 
     **图 8.50：** 左外部模糊查找
 
-1.  展开合并表（见*图 8.51*）并仅选择查找列。![](img/Figure-8.51.jpg)
+1.  展开合并表（见*图 8.51*）并仅选择查找列。![](img/ult-xcl-pwr-qry-cgpt-Figure-8.51.jpg)
 
     **图 8.51：** 展开合并表
 
@@ -4617,15 +4617,15 @@ ChatGPT 代表了由 OpenAI 领先的语言生成领域的尖端发展。它属�
 
 以下是要遵循的步骤：
 
-1.  要访问您的自定义说明设置，请单击您的个人资料，然后单击自定义说明，如*图 9.1*所示：![](img/Figure-9.1.jpg)
+1.  要访问您的自定义说明设置，请单击您的个人资料，然后单击自定义说明，如*图 9.1*所示：![](img/ult-xcl-pwr-qry-cgpt-Figure-9.1.jpg)
 
     **图 9.1：** 访问自定义说明
 
-1.  告诉 ChatGPT 一些关于你自己的事情。这有助于 ChatGPT 给出更与你的工作/目标/兴趣相关的回应。例如，查看我的示例在*图 9.2*：![](img/Figure-9.2.jpg)
+1.  告诉 ChatGPT 一些关于你自己的事情。这有助于 ChatGPT 给出更与你的工作/目标/兴趣相关的回应。例如，查看我的示例在*图 9.2*：![](img/ult-xcl-pwr-qry-cgpt-Figure-9.2.jpg)
 
     **图 9.2：** 为 ChatGPT 提供关于你自己的背景
 
-1.  下一步是告诉 ChatGPT 你希望它如何回应。回应是正式/随意的，长/短的，中立/主观的？例如，查看我的示例在*图 9.3*：![](img/Figure-9.3.jpg)
+1.  下一步是告诉 ChatGPT 你希望它如何回应。回应是正式/随意的，长/短的，中立/主观的？例如，查看我的示例在*图 9.3*：![](img/ult-xcl-pwr-qry-cgpt-Figure-9.3.jpg)
 
     **图 9.3：** 为 ChatGPT 提供关于您希望回应的指示
 
@@ -4639,7 +4639,7 @@ ChatGPT 代表了由 OpenAI 领先的语言生成领域的尖端发展。它属�
 
 参见*图 9.4*，了解在 ChatGPT 中配置置信水平和 URL 设置。
 
-![](img/Figure-9.4.jpg)
+![](img/ult-xcl-pwr-qry-cgpt-Figure-9.4.jpg)
 
 **图 9.4：** 要求置信水平和事实 URL
 
@@ -4691,7 +4691,7 @@ ChatGPT 代表了由 OpenAI 领先的语言生成领域的尖端发展。它属�
 
     如*图 9.5*所示，ChatGPT 将确保响应与提供的人物角色的写作风格相关且一致。
 
-    ![](img/Figure-9.5.jpg)
+    ![](img/ult-xcl-pwr-qry-cgpt-Figure-9.5.jpg)
 
     **图 9.5：** 为 ChatGPT 提供人物角色
 
@@ -4717,7 +4717,7 @@ ChatGPT 代表了由 OpenAI 领先的语言生成领域的尖端发展。它属�
 
     这是一个我们可以询问的后续自我批评问题，如*图 9.6*所示：
 
-    ![](img/Figure-9.6.jpg)
+    ![](img/ult-xcl-pwr-qry-cgpt-Figure-9.6.jpg)
 
     **图 9.6：** 提出后续自我批评问题
 
@@ -4727,7 +4727,7 @@ ChatGPT 代表了由 OpenAI 领先的语言生成领域的尖端发展。它属�
 
     在继续研究用于近似查找的 M 代码功能时，我们可以进一步询问减少到三个步骤的步骤，如*图 9.7*所示：
 
-    ![](img/Figure-9.7.jpg)
+    ![](img/ult-xcl-pwr-qry-cgpt-Figure-9.7.jpg)
 
     **图 9.7：** 限制响应的步骤或单词
 
@@ -4739,7 +4739,7 @@ ChatGPT 代表了由 OpenAI 领先的语言生成领域的尖端发展。它属�
 
     例如，ChatGPT 如何帮助您掌握 Excel 中的查找功能？（见*图 9.8*）：
 
-    ![](img/Figure-9.8.jpg)
+    ![](img/ult-xcl-pwr-qry-cgpt-Figure-9.8.jpg)
 
     **图 9.8：** ChatGPT 中的自我提示
 
@@ -4789,7 +4789,7 @@ ChatGPT 代表了由 OpenAI 领先的语言生成领域的尖端发展。它属�
 
     通过上传的图片，您可以指向 AI 您的数据单元引用以及您希望返回结果的位置。
 
-    ![](img/Figure-9.9.jpg)
+    ![](img/ult-xcl-pwr-qry-cgpt-Figure-9.9.jpg)
 
     **图 9.9：** 在 Bing 中上传数据截图
 
@@ -4807,7 +4807,7 @@ ChatGPT 代表了由 OpenAI 领先的语言生成领域的尖端发展。它属�
 
     +   转到`**插入**`选项卡，然后点击`**获取插件**`。
 
-    +   搜索`**AI 辅助公式编辑器**`，然后点击`**添加**`。![](img/Figure-9.10.jpg)
+    +   搜索`**AI 辅助公式编辑器**`，然后点击`**添加**`。![](img/ult-xcl-pwr-qry-cgpt-Figure-9.10.jpg)
 
         **图 9.10：** 添加 AI 辅助公式编辑器
 

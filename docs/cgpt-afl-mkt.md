@@ -528,7 +528,7 @@ ChatGPT 是由 OpenAI 开发的最先进的语言模型。它基于 GPT-3 架构
 
 要安装所需的库，请打开终端窗口并运行以下命令：
 
-![图片](img/image.jpeg)
+![图片](img/cgpt-afl-mkt-image.jpeg)
 
 上述命令将安装 TensorFlow、Keras、OpenAI 和 Flask 库，这些库是使用 ChatGPT 构建聊天机器人所必需的。
 
@@ -546,13 +546,13 @@ Python – 您可以使用 OpenAI Python 库与 API 进行交互。使用 pip �
 
 此代码使用 text-davinci-002 引擎生成对提示的响应。它将最大标记数设置为 60，温度设置为 0.5。响应将打印到控制台。
 
-![图片](img/image-2.jpeg)JavaScript – 您可以使用 OpenAI JavaScript 库与 API 进行交互。使用 npm 安装库，并在您的 JavaScript 文件中导入它。以下是一个示例代码片段：
+![图片](img/cgpt-afl-mkt-image-2.jpeg)JavaScript – 您可以使用 OpenAI JavaScript 库与 API 进行交互。使用 npm 安装库，并在您的 JavaScript 文件中导入它。以下是一个示例代码片段：
 
 此代码使用 text-davinci-002 引擎生成对提示的响应。它将最大标记数设置为 60，温度设置为 0.5。响应将打印到控制台。
 
 Node.js – 您可以使用 OpenAI Node.js 库与 API 进行交互。使用 npm 安装库，并在您的 Node.js 文件中引入它。以下是一个示例代码片段：
 
-![图片](img/image-3.jpeg)
+![图片](img/cgpt-afl-mkt-image-3.jpeg)
 
 此代码使用 text-davinci-002 引擎生成对提示的响应。它将最大标记数设置为 60，温度设置为 0.5。响应将打印到控制台。
 

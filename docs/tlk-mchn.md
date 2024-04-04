@@ -4,7 +4,7 @@
 
 ## 从 ELIZA 到 ChatGPT：会话式人工智能的简史
 
-![image](img/image-C3WYIVK6.png)
+![image](img/tlk-mchn-image-C3WYIVK6.png)
 
 会话式人工智能是人工智能（AI）的一个分支，专注于创建能够与人类进行自然语言对话的计算机程序。自上世纪 60 年代诞生以来，这项技术已经取得了长足的进步，如今已成为我们日常生活中许多应用程序和设备的重要组成部分。从早期的聊天机器人到现代的 AI 语言模型如 ChatGPT，本章概述了会话式人工智能的历史。
 
@@ -35,7 +35,7 @@
 
 ## 语言模型的崛起：机器如何学会交谈
 
-![image](img/image-C3WYIVK6.png)
+![image](img/tlk-mchn-image-C3WYIVK6.png)
 
 语言模型已经存在几十年了，但是最近在机器学习和自然语言处理方面的进展导致了强大的新模型的发展，这些模型能够以非常高的准确性理解和生成自然语言。在本章中，我们将探讨语言模型的崛起以及使其成为可能的技术。
 
@@ -58,7 +58,7 @@ RNNs 的一个关键优势是它们可以使用反向传播和梯度下降等技
 
 ## 自然语言处理的科学：理解基础知识
 
-![图片](img/image-C3WYIVK6.png)
+![图片](img/tlk-mchn-image-C3WYIVK6.png)
 
 自然语言处理（NLP）是计算机科学和人工智能领域的一个重要组成部分，专注于计算机与人类语言之间的交互。NLP 是许多应用程序的关键组件，包括聊天机器人、虚拟助手和自动语言翻译系统。在本章中，我们将探讨 NLP 的基础知识，包括其关键组件和技术。
 
@@ -81,7 +81,7 @@ NLP 的另一个重要组成部分是自然语言生成（NLG）。NLG 关注于
 
 ## 创建 ChatGPT 的挑战：AI 实验室内部
 
-![image](img/image-C3WYIVK6.png)
+![image](img/tlk-mchn-image-C3WYIVK6.png)
 
 创建像 ChatGPT 这样的 AI 语言模型是一个复杂而具有挑战性的过程，需要重要的专业知识和资源。在本章中，我们将探讨研究人员和工程师在开发 ChatGPT 时面临的一些关键挑战，以及他们如何克服这些挑战，创建了世界上最先进的语言模型之一。
 
@@ -100,7 +100,7 @@ NLP 的另一个重要组成部分是自然语言生成（NLG）。NLG 关注于
 
 ## 上下文的力量：ChatGPT 如何理解世界
 
-![image](img/image-C3WYIVK6.png)
+![image](img/tlk-mchn-image-C3WYIVK6.png)
 
 上下文是人类沟通中的关键元素，帮助我们根据情况和可用信息理解和解释单词和短语的含义。在自然语言处理中，上下文同样重要，并且在像 ChatGPT 这样的语言模型的成功中发挥着关键作用。
 
@@ -125,7 +125,7 @@ ChatGPT 将上下文融入其语言生成的另一种方式是通过使用上下
 
 ## AI 的伦理：好的、坏的和神秘的
 
-![图片](img/image-C3WYIVK6.png)
+![图片](img/tlk-mchn-image-C3WYIVK6.png)
 
 AI 技术的快速发展引发了关于这些技术如何被开发和使用的新的伦理关切。虽然 AI 有潜力给社会带来巨大的好处，但它也带来了重大风险，无论是在隐私和安全方面，还是在意外后果和偏见方面。
 
@@ -148,7 +148,7 @@ AI 周围的另一个主要伦理关切是隐私和安全问题。随着 AI 技�
 
 ## AI 在行动：ChatGPT 及其在现实世界中的应用
 
-![image](img/image-C3WYIVK6.png)
+![image](img/tlk-mchn-image-C3WYIVK6.png)
 
 ChatGPT 是一种强大的 AI 语言模型，在自然语言处理任务中表现出色，引起了广泛关注。虽然最初是为研究目的开发的，但它很快在各行各业和用例中找到了应用。
 
@@ -169,7 +169,7 @@ ChatGPT 也被应用于金融领域，可以用于分析金融数据并预测股
 
 ## 与 ChatGPT 对话：探索机器对话的极限
 
-![image](img/image-C3WYIVK6.png)
+![image](img/tlk-mchn-image-C3WYIVK6.png)
 
 随着人工智能领域的不断发展，研究人员和爱好者对机器对话的能力越来越感兴趣。特别是 ChatGPT 在自然语言处理任务中表现出色，因此引起了广泛关注。但是当涉及到类似人类对话时，ChatGPT 究竟能走多远呢？
 
@@ -192,7 +192,7 @@ ChatGPT 的另一个局限性是其倾向于生成安全和非争议性的回复
 
 ## 人工智能的未来：语言模型及其未来发展方向
 
-![image](img/image-C3WYIVK6.png)
+![image](img/tlk-mchn-image-C3WYIVK6.png)
 
 人工智能领域近年来取得了巨大的增长，像 ChatGPT 这样的语言模型处于创新的前沿。随着研究人员继续推动人工智能的可能性边界，语言模型及其未来发展方向是什么？
 
@@ -213,7 +213,7 @@ jin 语言模型之外，人工智能可能会在我们生活的许多领域继�
 
 ## 注意偏见：人工智能如何反映和强化社会偏见
 
-![图片](img/image-C3WYIVK6.png)
+![图片](img/tlk-mchn-image-C3WYIVK6.png)
 
 人工智能有潜力改变我们生活的许多方面，从医疗保健到交通运输再到娱乐。然而，随着人工智能越来越多地融入我们的社会，考虑偏见和歧视的潜力变得非常重要。
 
@@ -238,7 +238,7 @@ jin 语言模型之外，人工智能可能会在我们生活的许多领域继�
 
 ## 教会机器共情：情感人工智能的承诺与陷阱
 
-![图片](img/image-C3WYIVK6.png)
+![图片](img/tlk-mchn-image-C3WYIVK6.png)
 
 人工智能（AI）研究中最令人兴奋且具有潜在变革性的领域之一是情感人工智能的发展，即能够识别、理解和回应人类情绪的 AI 系统。情感人工智能有潜力彻底改变许多行业，从医疗保健到教育再到客户服务。然而，与任何新技术一样，需要考虑其中的承诺和陷阱。
 
@@ -261,7 +261,7 @@ jin 语言模型之外，人工智能可能会在我们生活的许多领域继�
 
 ## 人类理解的限制：对 ChatGPT 和智能本质的思考
 
-![图片](img/image-C3WYIVK6.png)
+![图片](img/tlk-mchn-image-C3WYIVK6.png)
 
 当我们探索像 ChatGPT 这样的 AI 语言模型的能力和限制时，我们不可避免地会遇到一些关于智能本质以及理解某事物意味着什么的根本问题。
 
@@ -288,11 +288,11 @@ jin 语言模型之外，人工智能可能会在我们生活的许多领域继�
 
 [`books2read.com/r/B-I-VNEK-SZYFC`](https://books2read.com/r/B-I-VNEK-SZYFC)
 
-![注册我](img/image-5TMH2VON.png)
+![注册我](img/tlk-mchn-image-5TMH2VON.png)
 
 [`books2read.com/r/B-I-VNEK-SZYFC`](https://books2read.com/r/B-I-VNEK-SZYFC)
 
-![books2read](img/image-9VV8KW7D.png)
+![books2read](img/tlk-mchn-image-9VV8KW7D.png)
 
 连接独立读者和独立作家。
 

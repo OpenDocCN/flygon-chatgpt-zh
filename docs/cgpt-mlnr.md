@@ -73,11 +73,11 @@ JasperAI：[JasperGPT.com](http://jaspergpt.com)
 
 在[`<wbr class="calibre6">chat.<wbr class="calibre6">openai.com`](https://chat.openai.com)上开始使用 ChatGPT 的第一步是注册一个 OpenAI 账户。这将允许您通过网站访问 ChatGPT 和其他 OpenAI 语言模型。
 
-![ChatGPT 注册页面](img/00003.unknown)
+![ChatGPT 注册页面](img/cgpt-mlnr-00003.unknown)
 
 要注册账户，只需访问 OpenAI 网站，点击页面上的“注册”按钮，然后创建一个账户。您需要提供一些基本信息，如您的姓名和电子邮件地址，并同意服务条款。完成注册流程后，您就可以用新账户登录了。
 
-![ChatGPT 注册页面](img/00004.unknown)
+![ChatGPT 注册页面](img/cgpt-mlnr-00004.unknown)
 
 ### 步骤 2：探索 ChatGPT 模型
 
@@ -89,7 +89,7 @@ JasperAI：[JasperGPT.com](http://jaspergpt.com)
 
 下面的图片显示了我询问提示：“告诉我关于你的 7 个有趣的事实”
 
-![结果](img/00005.unknown)
+![结果](img/cgpt-mlnr-00005.unknown)
 
 这是 ChatGPT 的界面，如果您还没有，请访问 chat.openai.com 并尝试一下。
 
@@ -183,7 +183,7 @@ JasperAI：[JasperGPT.com](http://jaspergpt.com)
 
 [您的姓名]
 
-![图片](img/svgimg0003.svg)
+![图片](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -217,7 +217,7 @@ JasperAI：[JasperGPT.com](http://jaspergpt.com)
 
 [您的姓名]
 
-![图片](img/svgimg0003.svg)
+![图片](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -249,7 +249,7 @@ JasperAI：[JasperGPT.com](http://jaspergpt.com)
 
 PS：如果您感兴趣，我也很乐意分享我们最近的客户推荐。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -283,7 +283,7 @@ PS：如果您感兴趣，我也很乐意分享我们最近的客户推荐。
 
 [你的名字]
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -421,7 +421,7 @@ VII. 无人机飞行员的保险考虑
 
 FAA 负责监管美国的空域，因此对无人机制定了具体的规定。这些规定包括注册规则、飞行限制和操作指南。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -439,7 +439,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 首先，美国联邦航空管理局（FAA）是在美国监管无人机时的大 boss。他们有一堆规定和法规，你在开始像打了兴奋剂的苍蝇一样嗡嗡作响之前需要了解。这些包括注册要求、飞行限制和操作指南。熟悉这些法规很重要，否则您可能会面临巨额罚款，或者更糟的是，入狱。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -479,7 +479,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 首先，让我们从 FAA 法规的基础知识开始。在美国，联邦航空管理局负责监管无人机。如果您的无人机重量超过 0.55 磅或 250 克，必须向 FAA 注册。这包括无人机本身的重量，以及任何额外的有效载荷或设备。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -583,7 +583,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 +   赞助本地体育队或活动。”
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -609,7 +609,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 帖子可以展示一组清晰吸引人的产品图片或视频，展示环保产品。它提供了明确的呼吁行动和一个限时优惠的紧迫感。帖子的标签也将有助于增加对对环保和可持续性感兴趣的观众的可见性。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -627,7 +627,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 推特的帖子比 Instagram 的帖子要短，因此信息必须简洁而引人入胜。我试图保留信息的精髓，突出订阅盒的主要优势和其环保特性。我还包括了一个订阅的呼吁，一个促销和相关的标签以增加可见性。添加的表情符号引人入胜，与对绿色生活感兴趣的观众建立联系。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -697,7 +697,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 保持健康和阳光明媚！#维生素 D #健康生活方式 #营养
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -731,7 +731,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 +   **总计**：1271 卡路里
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -779,7 +779,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 +   星期日：休息
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -831,7 +831,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 +   D. 繁殖
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -887,7 +887,7 @@ FAA 负责监管美国的空域，因此对无人机制定了具体的规定。�
 
 这个程序使用 for 循环来迭代从 1 到 100 的数字。它首先检查当前数字是否能被 15 整除。如果是，它打印“fizzbuzz”。如果不是，则检查当前数字是否能被 3 整除，如果是，它打印“fizz”。然后，它检查当前数字是否能被 5 整除，如果是，它打印“buzz”。如果没有满足任何条件，则打印当前数字。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1122,7 +1122,7 @@ E. 本书内容的简要概述
 
 F. 鼓励读者暂时远离技术，并尝试进行数字戒断。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1146,7 +1146,7 @@ F. 鼓励读者暂时远离技术，并尝试进行数字戒断。
 
 数字排毒指的是个人在一段时间内与科技断开连接，限制使用电子设备。这可以包括关闭通知，放下智能手机，避免社交媒体和其他形式的数字通讯。数字排毒的目标是摆脱科技带来的持续信息流和干扰，给予我们的头脑和身体一个急需的休息。它让我们能够专注于当下，并以更深刻和有意义的方式与周围的世界连接。数字排毒可以采取多种形式，从几小时的短暂休息到更长的时间，比如一个周末甚至一周或更长时间。这是一个个性化的过程，可以根据个人的需求、偏好和生活方式进行调整。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1192,7 +1192,7 @@ F. 鼓励读者暂时远离技术，并尝试进行数字戒断。
 
 **这只是撰写销售页面的一种可能方式，但你可以根据你的书的重点、目标受众和写作风格来更改内容。**
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1226,7 +1226,7 @@ F. 鼓励读者暂时远离技术，并尝试进行数字戒断。
 
 [你的名字]
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1320,7 +1320,7 @@ Youtube 视频非常适合 passiv income，因为随着时间的推移，你的�
 
 谢谢观看...下次再见，大家都开心园艺！
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1358,7 +1358,7 @@ Youtube 视频非常适合 passiv income，因为随着时间的推移，你的�
 
 1.  "**建筑无人机：** 无人机如何使建筑工地更安全、更高效" - 本文可以重点介绍无人机如何通过为建筑管理人员提供一种新的调查和管理工地的方式，使建筑工地更安全、更高效。可以包含购买专门设计用于建筑的无人机的联盟链接。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1394,7 +1394,7 @@ Youtube 视频非常适合 passiv income，因为随着时间的推移，你的�
 
 **飞行体验：** Mavic Air 2 易于控制，对指令反应迅速。它还具有先进的避障技术，确保飞行安全。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1426,7 +1426,7 @@ Youtube 视频非常适合 passiv income，因为随着时间的推移，你的�
 
 5 "债务管理：如何摆脱债务并远离债务" - 本课程可以涵盖债务管理基础知识，包括理解不同类型的债务、制定债务偿还计划，以及理解信用咨询和财务教育的重要性。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1576,7 +1576,7 @@ Youtube 视频非常适合 passiv income，因为随着时间的推移，你的�
 
 *这给了我我请求的代码，要在这里展示需要很多页，但它都在一个 html 页面中，而不是 3 个不同的文件，而且它还能正常工作！*
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1814,7 +1814,7 @@ font-size: 16px;
 
 padding: 10px
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1834,7 +1834,7 @@ padding: 10px
 
 5 现在扩展应该已安装并正常工作。您可以点击浏览器右上角的扩展图标打开弹出窗口并阻止或解除当前标签页的阻止。您还可以点击“选项”链接打开选项页面并将网站添加到分散注意力的网站列表中。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
@@ -1865,7 +1865,7 @@ padding: 10px
 
 **我们在本书中早些时候看到了如何从头脑风暴的主题和标题创建博客文章，到创建内容并为 SEO 格式化。**
 
-![Seo posts charges](img/00006.unknown)
+![Seo posts charges](img/cgpt-mlnr-00006.unknown)
 
 从图片中可以看出，收取£160（$200）的费用来写 1000 字的文章是相当标准的，而且在 4 天后交付，但这并不是什么大问题，因为 Fiverr 本身声明“人们会不断回来”，而卖家已经接近 500 个订单。
 
@@ -1877,7 +1877,7 @@ padding: 10px
 
 请看下面人们为一分钟内从 ChatGPT 生成的书籍大纲收取多少费用：
 
-![Book outline charges](img/00007.unknown)
+![Book outline charges](img/cgpt-mlnr-00007.unknown)
 
 £60（$75）的费用用于交付需要 3 天时间的 12 章大纲，而你可以在几分钟内用 ChatGPT 完成，正如你所看到的，人们会不断回来！
 
@@ -1891,7 +1891,7 @@ padding: 10px
 
 让我们看看人们为写作一本 4 万字的电子书（大约 200 页）收取多少费用。
 
-![非虚构书籍写作费用](img/00008.unknown)
+![非虚构书籍写作费用](img/cgpt-mlnr-00008.unknown)
 
 £1700（$2100），人们不断回头购买，卖家以这个价格销售了近 100 件商品。
 
@@ -1923,13 +1923,13 @@ padding: 10px
 
 Das ist ein Test, zeige mir deine Macht.
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
 这里是你可以通过翻译服务赚取的金额的快速预览：
 
-![英语到西班牙语翻译图片](img/00009.unknown)
+![英语到西班牙语翻译图片](img/cgpt-mlnr-00009.unknown)
 
 £130（$160）翻译 3000 字的价格是将英语翻译成西班牙语、德语等的一个相当普遍的价格。这通常需要几个小时，但你可以在几分钟内完成，然而，当你用它来增强你现有的技能时，ChatGPT 的效果最佳。
 
@@ -1957,13 +1957,13 @@ Das ist ein Test, zeige mir deine Macht.
 
 行动：不要错过这个升级您无人机游戏的绝佳机会。点击这里了解更多并立即购买。
 
-![](img/svgimg0003.svg)
+![](img/cgpt-mlnr-svgimg0003.svg)
 
 * * *
 
 这只是一个非常基础的例子，但 ChatGPT 可以生成一些非常引人注目的结果（您甚至可以要求它“标题党”）。
 
-![AIDA](img/00010.unknown)
+![AIDA](img/cgpt-mlnr-00010.unknown)
 
 在这里，你可以看到人们要收取£26（$40）的费用，而你可以在不到一分钟内生成这样的东西。
 
@@ -2157,7 +2157,7 @@ P.S. 如果你没有获取之前提到的免费奖励，请再次点击这里。
 
 ***或者，用手机相机扫描下面的二维码下载额外的内容：***
 
-![](img/00002.unknown)
+![](img/cgpt-mlnr-00002.unknown)
 
 **我在撰写本书时使用的工具（除了 ChatGPT）**
 

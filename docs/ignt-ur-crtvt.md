@@ -1083,7 +1083,7 @@ Leonardo 应用程序以其持续更新和创新的承诺脱颖而出。该应�
 
 结果
 
-![在 Leonardo.ai 中创建的 AI 艺术](img/image-IOL54T2U.jpg)
+![在 Leonardo.ai 中创建的 AI 艺术](img/ignt-ur-crtvt-image-IOL54T2U.jpg)
 
 在 Leonardo.ai 中创建的 AI 艺术
 
@@ -1095,7 +1095,7 @@ Leonardo 应用程序以其持续更新和创新的承诺脱颖而出。该应�
 
 结果
 
-![image-placeholder](img/image-FP5FKMU6.jpg)
+![image-placeholder](img/ignt-ur-crtvt-image-FP5FKMU6.jpg)
 
 使用 Leonardo 中的“Finetuned Model”创建的“快乐女孩”。
 
@@ -1111,7 +1111,7 @@ Leonardo 应用程序以其持续更新和创新的承诺脱颖而出。该应�
 
 结果
 
-![image-placeholder](img/image-ABIPBQFG.jpg)
+![image-placeholder](img/ignt-ur-crtvt-image-ABIPBQFG.jpg)
 
 "黑豹"是由莱昂纳多的"Finetuned Model"创建的
 

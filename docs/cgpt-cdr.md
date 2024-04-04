@@ -185,7 +185,7 @@ ChatGPT 的编码功能使其成为程序员和开发人员的宝贵工具，因
 
 例如，以下是在 Python 中定义变量的一种方式：
 
-![图片](img/image-1.png)
+![图片](img/cgpt-cdr-image-1.png)
 
 在这个特定的例子中，name 变量是一个字符串变量，其值为"John"。age 变量是一个整数变量，其值为 30。
 
@@ -199,13 +199,13 @@ ChatGPT 的编码功能使其成为程序员和开发人员的宝贵工具，因
 
 例如，以下是在 Python 中创建函数的一种方式：
 
-![图片](img/image-2.png)
+![图片](img/cgpt-cdr-image-2.png)
 
 在这个例子中，“greet”函数接受一个参数“name”，并使用“name”的值打印问候语。该函数可以多次调用，使用不同的“name”值，从而实现代码的重用。
 
 +   控制结构：控制结构用于控制程序的流程，允许编码人员根据特定条件执行不同的代码块。常见的控制结构包括“if”语句、“for”循环和“while”循环。
 
-![图片](img/image-3.png)
+![图片](img/cgpt-cdr-image-3.png)
 
 在这个例子中，“if”语句检查“age”的值，并根据结果打印消息。这使得程序可以根据数据做出决策，使代码更加灵活和动态。
 
@@ -219,7 +219,7 @@ ChatGPT 的编码功能使其成为程序员和开发人员的宝贵工具，因
 
 例如，在 Python 中，您可以如下使用‘input’函数从键盘读取数据：
 
-![图片](img/image-4.png)
+![图片](img/cgpt-cdr-image-4.png)
 
 在这个例子中，‘input’函数被用来从键盘读取数据，并将结果存储在‘name’变量中。程序然后使用‘name’的值打印问候语。
 
@@ -227,7 +227,7 @@ ChatGPT 的编码功能使其成为程序员和开发人员的宝贵工具，因
 
 例如，在 Python 中，您可以如下使用‘print’函数将数据输出到屏幕上：
 
-![图片](img/image-5.png)
+![图片](img/cgpt-cdr-image-5.png)
 
 在这个例子中，‘print’函数被用来将字符串“Hello, world”输出到屏幕上。
 
@@ -241,7 +241,7 @@ ChatGPT 的编码功能使其成为程序员和开发人员的宝贵工具，因
 
 例如，在 Python 中，您可以如下定义一个类：
 
-![图片](img/image-6.png)
+![图片](img/cgpt-cdr-image-6.png)
 
 在这个例子中，‘Dog’类被定义为具有两个属性‘name’和‘breed’以及一个方法‘bark’。创建一个类的实例并将其存储在‘dog’变量中，然后在实例上调用‘bark’方法。
 
@@ -249,7 +249,7 @@ ChatGPT 的编码功能使其成为程序员和开发人员的宝贵工具，因
 
 例如，在 Python 中，您可以如下定义一个子类：
 
-![图片](img/image-7.png)
+![图片](img/cgpt-cdr-image-7.png)
 
 在这个例子中，‘GoldenRetriever’类被定义为‘Dog’类的子类，这意味着它继承了‘Dog’类的属性和方法。创建一个‘GoldenRetriever’类的实例并将其存储在‘golden’变量中，然后在实例上调用‘bark’方法。
 
@@ -257,7 +257,7 @@ ChatGPT 的编码功能使其成为程序员和开发人员的宝贵工具，因
 
 例如，在 Python 中，您可以如下使用多态性：
 
-![图片](img/image-8.png)
+![图片](img/cgpt-cdr-image-8.png)
 
 在这个例子中，‘pet bark’函数接受一个‘pet’参数，该参数可以是‘dog’类或‘GoldenRetriever’类的实例。函数调用‘pet’实例的‘bark’方法，而不管其类别。
 

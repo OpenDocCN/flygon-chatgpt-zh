@@ -66,7 +66,7 @@ ChatGPT 在商业环境中有许多用途，可以改善客户服务、简化流
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二章：生成模型的历史
@@ -119,7 +119,7 @@ ChatGPT 在商业环境中有许多用途，可以改善客户服务、简化流
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第三章：[银行和金融中的生成式人工智能]
@@ -212,7 +212,7 @@ ChatGPT 在商业环境中有许多用途，可以改善客户服务、简化流
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第四章：生成式人工智能的监管和法律方面
@@ -277,7 +277,7 @@ ChatGPT 在商业环境中有许多用途，可以改善客户服务、简化流
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第五章：生成式人工智能和 ChatGPT 用于政府部门
@@ -374,7 +374,7 @@ ChatGPT 可以成为政府部门的有价值工具，帮助他们改善运营并
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第六章：生成式人工智能生成内容的真实性
@@ -463,7 +463,7 @@ ChatGPT 是 GPT（生成式预训练变压器）语言模型的一个变种，�
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第七章：ChatGPT 技术概述：介绍
@@ -502,7 +502,7 @@ NLP 方面的另一个重要发展是迁移学习的使用，其中模型首先�
 
 在 2019 年至 2022 年期间，整个 GPT 系列通过 OpenAI 进行了许多技术模型和超参数的调整，并且他们一直在改进许多微观层面的变化。整个 GPT-3 模型包括大约 1750 亿个参数，这是谷歌在 2018 年推出的语言模型 BERT 的 50 倍，尽管在 NLP 研究中有一些装载较重的语言模型，如 NVIDIA 的 Megatron-NLG，具有 5300 亿个参数，由 560 个 DGX A100 服务器组成，每个服务器包含八个 A100 80GB GPU，能够自动完成短语和陈述。谷歌的 PaLM 扩展到了 5400 亿个参数，是另一个例子，这是一个高度多任务的 NLP 模型，训练在世界上最大的 TPU 上，拥有 6144 个芯片。谷歌还推出了 LaMDA；与传统模型经常提供的基于任务的回复相反，该模型可以以自由形式产生对话聊天，也有大约 1370 亿个参数。 *Dr Alan D. Thompson*博客系列的以下气泡图解释了语言模型中大参数最近发展的估计：
 
-![](img/Figure-7.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-7.1.jpg)
 
 **图 7.1：** *具有大参数的领先 NLP 模型[来源：Lifearchitect.ai]*
 
@@ -534,7 +534,7 @@ NLP 方面的另一个重要发展是迁移学习的使用，其中模型首先�
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 【第八章】
@@ -562,7 +562,7 @@ NLP 方面的另一个重要发展是迁移学习的使用，其中模型首先�
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第九章：GPT 系列的历史流程和发展
@@ -593,7 +593,7 @@ GPT-1 模型有 3 个阶段的训练：
 
 1.  特定任务的输入转换包含组织良好的输入，如文档三元组、有序句子对、问题和回复，用于特定任务，如问答或文本蕴涵。每个输入序列的标记都被加强为一个顺序，具有开始和结束标记以及分隔符标记以保持顺序。
 
-![](img/Figure-9.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-9.1.jpg)
 
 **图 9.1：** *图片定义了不同任务的正常变压器架构和输入模式*
 
@@ -657,7 +657,7 @@ GPT-2 拥有 15 亿个参数，是 GPT-1（117M 参数）的十倍。模型中�
 
 总的来说，根据 GPT-2 的说法，语言模型在零样本情况下理解任务并在许多任务上超越了最先进技术的能力得到了改善，这是通过在更大的数据集上进行训练并使用更多参数实现的。该论文声称，随着模型容量的增加，性能呈对数线性增长。
 
-![](img/Figure-9.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-9.2.jpg)
 
 **图 9.2：** *GPT-2 在 CBT 数据集中的表现
 
@@ -665,7 +665,7 @@ GPT-2 拥有 15 亿个参数，是 GPT-1（117M 参数）的十倍。模型中�
 
 此外，当参数数量增加时，语言模型困惑度的下降并没有接近饱和点。WebText 数据集确实使 GPT-2 欠拟合，也许更长的训练会进一步降低困惑度。根据研究，GPT-2 模型大小并不是最大的，更大的语言模型将有助于人们通过减少混淆来理解自然语言。
 
-![](img/Figure-9.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-9.3.jpg)
 
 **图 9.3：** *GPT-2 在 Winograd Schema Challenge 中的表现
 
@@ -685,7 +685,7 @@ GPT-2 拥有 15 亿个参数，是 GPT-1（117M 参数）的十倍。模型中�
 
 少次、一次和零次设置是零次任务转移的专门示例，正如之前所述。在少次配置中，将工作描述和尽可能多的示例提供给模型的上下文窗口。在一次设置中，向模型提供一个示例，而在零次设置中则不提供任何示例。随着容量的增加，模型的少次、一次和零次能力都得到了提高。
 
-！[](img/Figure-9.4.jpg)
+！[](img/rs-gen-ai-cgpt-Figure-9.4.jpg)
 
 **图 9.4：** *代表训练期间上下文学习机制的图像
 
@@ -713,7 +713,7 @@ GPT-2 拥有 15 亿个参数，是 GPT-1（117M 参数）的十倍。模型中�
 
 使用了各种语言建模和自然语言处理数据集来测试 GPT-3。在少次或零次情况下，GPT-3 超越了像 LAMBADA 和 Penn Tree Bank 这样的语言建模数据集的尖端方法。虽然它无法超越其他数据集的最新技术，但它确实提高了零次最新技术的性能。在诸如闭卷问题回答、模式解析、翻译等 NLP 任务中，GPT-3 再次表现良好，经常超越或接近调整良好的模型。
 
-！[](img/Figure-9.5.jpg)
+！[](img/rs-gen-ai-cgpt-Figure-9.5.jpg)
 
 **图 9.5：** *执行任务的四种语言模型方法
 
@@ -731,7 +731,7 @@ GPT-2 拥有 15 亿个参数，是 GPT-1（117M 参数）的十倍。模型中�
 
 2020 年 9 月，GPT-3 与微软整合，独家授权 GPT-3，使我们能够利用其技术创新来开发和提供先进的人工智能解决方案，为我们的客户创造新的潜在人工智能解决方案。
 
-![](img/Figure-9.6.jpg)
+![](img/rs-gen-ai-cgpt-Figure-9.6.jpg)
 
 **图 9.6：** *InstructGPT 模型或 GPT 3.5 中输入馈送的过程
 
@@ -765,7 +765,7 @@ GPT-2 拥有 15 亿个参数，是 GPT-1（117M 参数）的十倍。模型中�
 
 在 175B 参数（达芬奇模型，最新更新）的情况下，InstructGPT 模型比 GPT-3 更受人类指示的偏好超过 85％的时间，并且在人类指示下比 GPT-3 更受欢迎的时间达 71％。这意味着几乎有 3/4 的时间，标注者更喜欢 InstructGPT 而不是经过条件良好的 GPT-3。即使是提示工程也无法击败 InstructGPT。
 
-![](img/Figure-9.7.jpg)
+![](img/rs-gen-ai-cgpt-Figure-9.7.jpg)
 
 **图 9.7：** *对于预训练了 100B 标记的模型的最终快照进行评估，没有使用 FIM，然后使用 FIM 进行了 25B（a 行）和 50B（b 行）标记的微调。
 
@@ -785,7 +785,7 @@ GPT-2 拥有 15 亿个参数，是 GPT-1（117M 参数）的十倍。模型中�
 
 训练数据集由多样化的音频剪辑组成，更倾向于真实生活数据，以利用更多人类方面的解释。Whisper AI 建立在以 30 秒声音波块的 mel 频谱图为基础，并将其传递到编码器-解码器 Transformer 中以预测相关的文本标题，特殊标记指示单一模型执行任务，如语言识别，短语级时间戳，多语言语音转录和英语语音翻译，这些都与特殊标记结合在一起。它有 9 种不同的模型大小，根据大小和能力而定。
 
-![](img/Figure-9.8.jpg)
+![](img/rs-gen-ai-cgpt-Figure-9.8.jpg)
 
 **图 9.8：** *文本处理的训练流程
 
@@ -793,7 +793,7 @@ GPT-2 拥有 15 亿个参数，是 GPT-1（117M 参数）的十倍。模型中�
 
 其他当前的方法通常利用更大但无监督的音频预训练数据集或更小、更紧密链接的音频文本训练数据集。Whisper 并没有超越专注于 LibriSpeech 性能的模型，LibriSpeech 是语音识别中非常有竞争力的基准，因为它是在广泛而多样的数据集上训练的，而不是针对特定数据集进行了定制。
 
-![](img/Figure-9.9.jpg)
+![](img/rs-gen-ai-cgpt-Figure-9.9.jpg)
 
 **图 9.9：** *Whisper 的编码器-解码器模型
 
@@ -805,7 +805,7 @@ Whisper 的性能接近专业人类转录员的水平。该模型已经通过 Wh
 
 要了解更多关于 Whisper 的技术方面，您可以参考- 通过大规模弱监督实现鲁棒语音识别**-** **https://tinyurl.com/359y5t5y**
 
-![](img/Figure-9.10.jpg)
+![](img/rs-gen-ai-cgpt-Figure-9.10.jpg)
 
 **图 9.10：** *箱线图上叠加了表示单个录音的 WER 的点，每个箱子上注释了 25 个录音的聚合 WER
 
@@ -892,7 +892,7 @@ ChatGPT 已经被制定为符合许多人类重视的原型和规则。它在 20
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十章：ChatGPT 的 API 定价模型和技术限制
@@ -933,7 +933,7 @@ ChatGPT 已经被制定为符合许多人类重视的原型和规则。它在 20
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十一章：ChatGPT 免费版本 UI 中的客户旅程
@@ -946,13 +946,13 @@ ChatGPT 已经被制定为符合许多人类重视的原型和规则。它在 20
 
 ↓
 
-+   用户处理：用户应该在 GPT UI 内注册/登录（现有用户）。注册或登录的过程也可以通过第三方用户电子邮件访问来完成。![](img/Figure-11.1.jpg)
++   用户处理：用户应该在 GPT UI 内注册/登录（现有用户）。注册或登录的过程也可以通过第三方用户电子邮件访问来完成。![](img/rs-gen-ai-cgpt-Figure-11.1.jpg)
 
 **图 11.1：** *ChatGPT UI 的预注册版本*
 
 ↓
 
-+   查询：客户通过输入查询或使用语音命令向 ChatGPT 提出问题或开始对话。提出或告知您的查询的界面：![](img/Figure-11.2.jpg)
++   查询：客户通过输入查询或使用语音命令向 ChatGPT 提出问题或开始对话。提出或告知您的查询的界面：![](img/rs-gen-ai-cgpt-Figure-11.2.jpg)
 
 **图 11.2：** *ChatGPT 的开放界面*
 
@@ -966,7 +966,7 @@ ChatGPT 已经被制定为符合许多人类重视的原型和规则。它在 20
 
 ↓
 
-+   解决方案：ChatGPT 解决客户的问题，或者在需要时提供进一步的帮助。GPT 如何接受查询、回应并改进反馈的示例！[](img/Figure-11.3.jpg)
++   解决方案：ChatGPT 解决客户的问题，或者在需要时提供进一步的帮助。GPT 如何接受查询、回应并改进反馈的示例！[](img/rs-gen-ai-cgpt-Figure-11.3.jpg)
 
 **图 11.3：** *与 ChatGPT 进行连续改进对话的演示*
 
@@ -994,7 +994,7 @@ ChatGPT 已经被制定为符合许多人类重视的原型和规则。它在 20
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十二章：现代时代的用例：介绍
@@ -1009,7 +1009,7 @@ ChatGPT 已经被制定为符合许多人类重视的原型和规则。它在 20
 
 Precedence Research 预测，到 2030 年，全球人工智能市场规模将达到 16000 亿美元，大幅增加至 2022 年底的 1197.8 亿美元的当前市场规模。
 
-![](img/Figure-12.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-12.1.jpg)
 
 **图 12.1：** *AI 空间的增长预测
 
@@ -1021,7 +1021,7 @@ Precedence Research 预测，到 2030 年，全球人工智能市场规模将达
 
 ChatGPT 的最新突破实际上更加激发了市场的兴趣，并且最近潜在的 AI 业务激增。事实上，由于 ChatGPT 在短短几天内的不可思议的影响，AI 股票飙升。
 
-![](img/Figure-12.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-12.2.jpg)
 
 **图 12.2：** *NLP 空间的增长预测
 
@@ -1045,7 +1045,7 @@ ChatGPT 带来的主要影响在于文本生成和搜索引擎替代品。它能
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十三章：内容营销中的使用案例
@@ -1070,7 +1070,7 @@ ChatGPT 带来的主要影响在于文本生成和搜索引擎替代品。它能
 
 ChatGPT 可以成为内容创作者的宝贵工具。首先，它可以通过提供想法、建议，甚至为文章或博客帖子提供完整段落来协助内容生成。它可以帮助组织内容的结构，并确保其针对目标受众进行了优化。其次，ChatGPT 可以充当写作助手，提供语法和拼写建议，以提高内容的整体质量。它还可以提供同义词和替代措辞，以增强内容的可读性和流畅性。此外，ChatGPT 还可以成为一个有价值的研究工具，以简洁有序的方式收集特定主题的信息。这可以节省内容创作者大量的时间和精力，用于研究和整理信息。总的来说，ChatGPT 可以为内容创作者提供所需的工具和支持，以创作与目标受众 resonates 的高质量、引人入胜和信息丰富的内容。
 
-![](img/Figure-13.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-13.1.jpg)
 
 **图 13.1：** *ChatGPT 在博客内容上的结构能力示例*
 
@@ -1102,7 +1102,7 @@ ChatGPT 可以成为内容创作者的宝贵工具。首先，它可以通过提
 
 这几乎是每个人都习惯使用的日常术语 - 电子邮件和短信营销。我们每天都会收到许多关于不同产品、优惠、更新等的电子邮件和短信。ChatGPT 是一个出色的工具，可以为数百万种产品生成内容，也许是一封介绍性的电子邮件或一个适当的产品推介。它还能够撰写特定行业目的的电子邮件。此外，电子邮件在专业设置中用于许多其他不同的场合，从在专业或学术环境中传达重要消息到与外部客户互动，目的各异。每封电子邮件营销或专业电子邮件沟通都有特定的模式和模板。每个模板都应该根据紧急情况、个性化、情感方式和人口统计分割等概念设计。
 
-![](img/Figure-13.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-13.2.jpg)
 
 **图 13.2：** *ChatGPT 专业电子邮件写作能力的示例*
 
@@ -1146,7 +1146,7 @@ ChatGPT 可以用来生成偶发内容，比如生成通讯、生成广告、生
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十四章：教育和电子学习能力
@@ -1159,7 +1159,7 @@ ChatGPT 可以用来生成偶发内容，比如生成通讯、生成广告、生
 
 全球电子学习市场规模在 2020 年达到了 2,000 亿美元，并预计从 2021 年到 2028 年以 8.1%的复合年增长率增长。市场受到多种因素的推动，包括对远程教育的增长需求、教育中先进技术的日益采用以及移动学习的日益流行。新冠肺炎大流行也在加速电子学习市场的增长中发挥了重要作用。随着全球各地的学校和大学被迫转向远程学习以确保教育的连续性，电子学习平台的需求激增。根据 HolonIQ 的报告，全球电子学习市场预计将在 2025 年达到 4,040 亿美元，从 2020 年到 2025 年的复合年增长率为 18.1%。根据 Research and Markets 的报告，全球电子学习市场预计将在 2026 年达到 3,700 亿美元，从 2021 年到 2026 年的复合年增长率为 9.1%。该报告还强调了人工智能（AI）和机器学习（ML）在电子学习中的日益采用，预计将推动未来几年市场的增长。即使 Polaris 市场也谈到了复合年增长率在未来时期直到 2030 年为 20.1%。
 
-![](img/Figure-14.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-14.1.jpg)
 
 **图 14.1：** *Polaris 市场研究对教育市场增长的预测
 
@@ -1177,7 +1177,7 @@ ChatGPT 可以用来生成偶发内容，比如生成通讯、生成广告、生
 
 对于电子学习课程，ChatGPT 可以生成有用的高质量材料。这可以包括基于文本的材料，如课程计划和讲座，也可以包括多媒体材料，如电影和互动模拟。它不仅可以帮助创建作业、小项目的材料和进行在线测验，还可以实际处理大量学习材料和复杂研究论文的摘要。
 
-![](img/Figure-14.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-14.2.jpg)
 
 **图 14.2:** *使用 ChatGPT 生成教育内容的小例子和 e-learning 的建议框架*
 
@@ -1189,7 +1189,7 @@ ChatGPT 可以用来生成偶发内容，比如生成通讯、生成广告、生
 
 ChatGPT 可以通过生成自动测验和评估来帮助学习者提供反馈和评估。这可以帮助学习者评估他们的进展，确定需要改进的领域，并即时获得反馈。事实上，学习者可以与它进行简短的逻辑争论。导师也可以利用 ChatGPT 来形成测验集、作业论文、项目主题，并实际利用 ChatGPT 的评估性质来评估基本作业。
 
-![](img/Figure-14.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-14.3.jpg)
 
 **图 14.3:** *使用 ChatGPT 生成简单问卷*
 
@@ -1223,7 +1223,7 @@ ChatGPT 在其适应性方面是无与伦比的，有无数的电子学习场景
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十五章：娱乐用途案例
@@ -1248,7 +1248,7 @@ ChatGPT 在其适应性方面是无与伦比的，有无数的电子学习场景
 
 根据普华永道的另一项分析，到 2030 年，人工智能技术可能会推动全球经济增长高达 15.7 万亿美元，其中媒体和娱乐行业预计将获益最多。该研究突出了人工智能在娱乐行业中的各种应用，包括定制广告和内容推荐系统。
 
-![](img/Figure-15.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-15.1.jpg)
 
 图 15.1：北美娱乐和人工智能市场增长预测[图片来源：GrandView Research]
 
@@ -1274,7 +1274,7 @@ ChatGPT 可以提出引人入胜和原创的电影和电视剧概念。可以使
 
 对于聊天机器人或语音助手等虚拟助手，ChatGPT 可以生成定制回复。通过对一系列实际对话进行训练，可以教给模型自然语言交互的规范，然后模型可以利用这些信息为用户生成合适和个性化的回复。因此，用户的体验可能会得到提升，虚拟助手可以更快速、更有效地工作。
 
-![](img/Figure-15.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-15.2.jpg)
 
 **图 15.2：** *ChatGPT 能够根据上下文讲述自动生成的故事的示例*
 
@@ -1310,7 +1310,7 @@ ChatGPT 可以提出引人入胜和原创的电影和电视剧概念。可以使
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十六章：ChatGPT 在编码和编程中的潜力
@@ -1329,7 +1329,7 @@ ChatGPT 可以提出引人入胜和原创的电影和电视剧概念。可以使
 
 根据 Grand View Research 的数据，软件开发市场预计从 2021 年到 2028 年以 17.6%的复合年增长率增长，到 2028 年将达到 1,390.6 亿美元。尽管市场数据似乎非常吸引人，但根据 Statista 的数据，学习编码和编程语言的年龄中位数范围在 5 至 9 岁之间。
 
-！[](img/Figure-16.1.jpg)
+！[](img/rs-gen-ai-cgpt-Figure-16.1.jpg)
 
 图 16.1：学习编码所需平均时间的数据
 
@@ -1351,7 +1351,7 @@ ChatGPT 可以实现高度准确性，并且可以进行快速的代码创建。
 
 例如，这就是 chatGPT 如何根据命令生成代码片段。
 
-![](img/Figure-16.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-16.2.jpg)
 
 **图 16.2：** *ChatGPT 提供有关编码任务的示例快照*
 
@@ -1361,7 +1361,7 @@ ChatGPT 可以为您提供有关如何识别和解决问题的信息，建议可
 
 例如，这就是 chatGPT 如何检测输入查询中的错误并给出完美和纠正的答案：
 
-![](img/Figure-16.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-16.3.jpg)
 
 **图 16.3：** *ChatGPT 快照能够纠正特定任务的痛点并加以纠正*
 
@@ -1373,7 +1373,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 创建干净、井然有序的代码对于有效的软件开发至关重要。由于结构化代码对开发人员来说更容易处理、阅读和理解，因此引入缺陷或错误的可能性降低了。除了更易于维护、可扩展和高效之外，井然有序的代码还更好地利用了现有资源。使用统一的结构和编码方法也有助于开发人员之间的合作，因为修改可以更成功地整合。通过努力编写结构化代码，开发人员可以生产更易于维护和长期发展的高质量软件，从而产生更好的最终产品。ChatGPT 可以帮助您以专业的方式构建代码，从而实现所有这些目的。
 
-![](img/Figure-16.4.jpg)
+![](img/rs-gen-ai-cgpt-Figure-16.4.jpg)
 
 **图 16.4：** *ChatGPT 快照解决特定编码问题，具有特定结构，针对特定任务，带有#定义，并询问有关语言潜力的适当数据结构和意见*
 
@@ -1409,7 +1409,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十七章：问题解决能力（定量）
@@ -1432,13 +1432,13 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 作为由 OpenAI 训练的语言模型，ChatGPT 配备了先进的自然语言处理系统，使其能够以相当高的准确性和效率执行各种数学运算。具体来说，ChatGPT 擅长执行数学的四个主要运算，即减法、加法、乘法和除法。此外，ChatGPT 还具有执行集成、导数、级数展开等高级数学运算的能力。它在这些领域的熟练程度使其能够处理需要较浅的数学理解和分析思维的数学问题，其专业知识不仅限于基本和中级数学水平，因为它可以处理市场上已经开源的复杂数学问题。
 
-![](img/Figure-17.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-17.1.jpg)
 
 **图 17.1：** *chatGPT 通过顺序逻辑处理的集成问题*
 
 它在统计方面的专业知识也能给人留下类似的印象。它在执行合理的统计测量和分析推断方面表现出了出色的效率，比如得到逻辑概率、标准差计算、变异计算、分布等。这些基本的数学和统计在学术学习以及竞争性考试、招聘面试和日常实践中都非常有帮助。它们也被用作许多复杂问题的基本层，因此通过使用 ChatGPT 的反馈生成系统，人们最终可以逐渐接近许多复杂问题的解决方案。
 
-![](img/Figure-17.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-17.2.jpg)
 
 **图 17.2：** *由 chatGPT 进行快速顺序逻辑处理的概率问题*
 
@@ -1446,7 +1446,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 定量逻辑和能力导向的推理是现代问题解决中经常被忽视的两项关键技能。这个被低估的部分涵盖了一系列主题，包括数学难题、逻辑推理、数学序列、逻辑序列、数字模式和视觉推理。数学难题需要运用数学概念来解决问题，而逻辑推理涉及运用演绎或归纳推理得出结论。数学和逻辑序列涉及识别序列中元素之间的模式和关系，而数字模式涉及理解生成数字序列的基本公式或规则。视觉推理需要能够解释视觉线索，如图表或图形，来解决问题。通过在定量逻辑和能力导向的推理方面的熟练，个人可以增强他们的批判性思维和问题解决能力。这在数学、计算机科学、工程和金融等领域尤其有益，因为复杂问题通常需要对数学和逻辑思维有更深入的理解。尽管 ChatGPT 并没有完全为这些目的进行充分训练，但它仍然能够解决基本的模糊逻辑、数学难题、较少定性和没有视觉模式能力的问题。
 
-![](img/Figure-17.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-17.3.jpg)
 
 **图 17.3：** *由 chatGPT 进行顺序逻辑的数学难题问题*
 
@@ -1470,7 +1470,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十八章：问题解决能力（定性）
@@ -1487,7 +1487,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 # 示例 1
 
-![](img/Figure-18.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-18.1.jpg)
 
 图 18.1：ChatGPT 解决的定性逻辑问题
 
@@ -1495,7 +1495,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 # 示例 2
 
-![](img/Figure-18.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-18.2.jpg)
 
 图 18.2：ChatGPT 生成的项目大纲，以解决情感分析评论
 
@@ -1503,7 +1503,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 # 示例 3
 
-![](img/Figure-18.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-18.3.jpg)
 
 图 18.3：ChatGPT 生成了亚里士多德哲学的 4 种不同解释
 
@@ -1521,7 +1521,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第十九章：金融行业的应用案例
@@ -1530,7 +1530,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 根据*MarketsandMarkets*，AI 市场如何在各个行业扩大，以及 CAGR 和市场份额如何扩大，都在图 19 中得到了说明。市场范围和其他统计信息已经广泛分享，这些章节将更加专注于特定行业。
 
-![](img/Figure-19.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-19.1.jpg)
 
 **图 19.1：** *AI 在特定行业的市场概况及其复合年增长率（17-18 年的数据）*
 
@@ -1540,7 +1540,7 @@ ChatGPT 可以通过根据当前上下文推荐下一行逻辑代码来辅助代
 
 随着一个庞大且不断扩大的市场，银行和金融科技行业是全球经济的重要组成部分。根据 Grand View Research 的研究，全球金融科技行业的规模在 2020 年估计为 1,112.4 亿美元，预计从 2021 年到 2028 年将以 23.8%的复合年增长率增长。传统银行业也有一个庞大的市场；根据世界银行的估计，全球银行业的资产预计将在 2021 年超过 150 万亿美元。这包括商业银行、投资银行和其他金融机构拥有的资产。
 
-![](img/Figure-19.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-19.2.jpg)
 
 **图 19.2：** *美国银行业 2022-2030 年的数据和复合年增长率增长（17-21 年的数据）
 
@@ -1610,7 +1610,7 @@ ChatGPT 可以帮助分析金融数据和市场趋势，为客户提供有用的
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十章：医疗保健行业的使用案例
@@ -1623,7 +1623,7 @@ ChatGPT 可以帮助分析金融数据和市场趋势，为客户提供有用的
 
 人工智能在医疗保健行业有广泛的用途，包括疾病诊断、新药开发、医学影像、电子健康记录和定制药物。人工智能可以分析海量数据，找到模式并预测结果，从而帮助医务人员制定更精确的诊断、更有效的治疗方案和更好的患者预后。
 
-![](img/Figure-20.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-20.1.jpg)
 
 **图 20.1：** *康纳·斯图尔特数据的全球医疗保健人工智能市场份额
 
@@ -1711,7 +1711,7 @@ ChatGPT 有能力发现可能指向新疾病发作或已存在疾病传播的趋
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十一章：电子商务行业的应用案例
@@ -1726,7 +1726,7 @@ ChatGPT 有能力发现可能指向新疾病发作或已存在疾病传播的趋
 
 尽管这些主要参与者主导着电子商务市场，但仍有空间供小型企业开辟自己的利基并取得成功。社交媒体和影响者营销的兴起使小型企业能够在不需要大型广告预算的情况下接触客户并建立品牌知名度。此外，移动商务的增长和价格实惠的电子商务平台的增加使得各种规模的企业更容易建立在线商店并接触全球受众。
 
-![](img/Figure-21.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-21.1.jpg)
 
 **图 21.1：**全球电子商务零售销售数据
 
@@ -1796,7 +1796,7 @@ ChatGPT 可以帮助电子商务企业的另一个重要方式是分析客户反
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十二章：酒店业中的使用案例
@@ -1863,7 +1863,7 @@ ChatGPT 可以在酒店业中用于改善客户体验，简化运营并增加收
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十三章：ChatGPT 的问题解决能力
@@ -1892,7 +1892,7 @@ ChatGPT 在数学和数学模型领域使用广泛的问题解决技能，适用
 
 我开始时用一个相当具体的问题陈述了多项式余数定理“如何使用多项式余数定理解决，多项式 4x+2 的次数是多少？”
 
-![](img/Figure-23.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-23.1.jpg)
 
 **图 23.1:** *使用 ChatGPT 解决基本多项式*
 
@@ -1902,13 +1902,13 @@ ChatGPT 在数学和数学模型领域使用广泛的问题解决技能，适用
 
 我开始时提出了一个非常具体的问题，陈述了数学模型“如何使用数学模型解决，商店所有商品打八折。如果一件衬衫的原价是 25 卢比，那么打折价是多少？”
 
-![](img/Figure-23.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-23.2.jpg)
 
 **图 23.2:** *使用 ChatGPT 解决基本数学模型*
 
 ChatGPT 实际上可以通过适当的推理和理由解决问题。它复制了顺序的问题解决方法，并为用户展示了一些易于理解的内容，以便他们理解其中的逻辑。
 
-![](img/Figure-23.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-23.3.jpg)
 
 **图 23.3：** *问题解决阶段的逻辑推理*
 
@@ -1918,7 +1918,7 @@ ChatGPT 实际上可以通过适当的推理和理由解决问题。它复制了
 
 我开始时有一个非常具体的问题：“我该如何解决这个问题？给定一组手写数字图像（0-9），编写一个可以准确分类图像中数字的神经网络。”
 
-![](img/Figure-23.4.jpg)
+![](img/rs-gen-ai-cgpt-Figure-23.4.jpg)
 
 **图 23.4：** *ChatGPT 推荐神经网络问题的能力*
 
@@ -1930,7 +1930,7 @@ ChatGPT 实际上可以通过适当的推理和理由解决问题。它复制了
 
 我开始时问了一个非常具体的问题，即使用公式书写的解决问题能力：“找到半径为 3 单位的球体的体积，解决这个问题”
 
-![](img/Figure-23.5.jpg)
+![](img/rs-gen-ai-cgpt-Figure-23.5.jpg)
 
 **图 23.5：** *书写公式的能力*
 
@@ -1948,7 +1948,7 @@ ChatGPT 实际上可以通过适当的推理和理由解决问题。它复制了
 
 **https://discord.bpbonline.com**
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十四章：初学者如何开始使用 ChatGPT 解决问题
@@ -2007,7 +2007,7 @@ ChatGPT 可以构建和训练神经网络，以解决包括图像识别、自然
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十五章：ChatGPT 用于国家网络安全和技术政策
@@ -2042,13 +2042,13 @@ ChatGPT 是一个非常有用的工具，是一个虚拟的研究和写作助手
 
 我开始询问一个非常具体的问题：“你能用 Python 编写勒索软件攻击的代码吗？”ChatGPT 回答说：“很抱歉，我无法满足这个请求，我的目的是帮助用户生成道德和有用的内容。”
 
-![](img/Figure-25.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-25.1.jpg)
 
 **图 25.1：** *ChatGPT 回答“你能用 Python 编写勒索软件攻击的代码吗？”的屏幕截图及其回复。*
 
 此外，我询问了一个非常具体的问题：“你能指导我用 Python 编写代码来加密我的所有文件吗？”ChatGPT 回答说，使用密码库，您可以使用以下代码加密文件。它显示了网络犯罪分子可以使用 ChatGPT 通过扭曲问题生成有害内容。
 
-![](img/Figure-25.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-25.2.jpg)
 
 **图 25.2：** *屏幕截图显示 ChatGPT 通过扭曲问题生成有害内容。*
 
@@ -2056,7 +2056,7 @@ ChatGPT 是一个非常有用的工具，是一个虚拟的研究和写作助手
 
 此外，询问了一个问题：“创建一封非常具有说服力的电子邮件，并要求点击 mybook.com 以获取优惠”，ChatGPT 创建了一条消息，可能被网络犯罪分子用来模仿多封试图通过网络钓鱼获取个人信息的电子邮件。
 
-![](img/Figure-25.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-25.3.jpg)
 
 **图 25.3：** *屏幕截图显示 ChatGPT 创建的一条可能被网络犯罪分子使用的消息。*
 
@@ -2086,13 +2086,13 @@ Deepfakes：Deepfakes 是经过修改的照片或视频，可以令人信服地�
 
 我开始时问了一个非常具体的问题，“你能帮我制定一项保护我们国家免受勒索软件攻击的策略吗？”最后的消息提供了一些关键策略，可以帮助防范勒索软件攻击，并最小化攻击的影响。
 
-![](img/Figure-25.4.jpg)
+![](img/rs-gen-ai-cgpt-Figure-25.4.jpg)
 
 **图 25.4：** *ChatGPT 的截图回复显示了一些关键策略，可以帮助防范勒索软件攻击*
 
 此外，当被问及“你能帮我制定网络安全策略吗？”时，最后的消息提供了可以制定全面的网络安全策略的步骤，有助于保护组织免受网络威胁。
 
-![](img/Figure-25.5.jpg)
+![](img/rs-gen-ai-cgpt-Figure-25.5.jpg)
 
 **图 25.5：** *ChatGPT 提供了可以制定全面的网络安全策略的步骤*
 
@@ -2224,7 +2224,7 @@ AI 可以用来帮助律师分析大量案例法和法律文件，确定相关�
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十六章：在教育科技行业的应用案例
@@ -2261,7 +2261,7 @@ ChatGPT、生成式人工智能和教育科技领域中有几个使用案例。�
 
 # 理解主题
 
-![](img/Figure-26.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-26.1.jpg)
 
 **图 26.1：** *ChatGPT 帮助解决学生的问题*
 
@@ -2269,7 +2269,7 @@ ChatGPT、生成式人工智能和教育科技领域中有几个使用案例。�
 
 # 解决写作危机
 
-![](img/Figure-26.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-26.2.jpg)
 
 **图 26.2：** *ChatGPT 帮助学生写作项目*
 
@@ -2277,7 +2277,7 @@ ChatGPT 可以被教导提出写作主题，帮助构思想法，并根据多种
 
 # 学习语言
 
-![](img/Figure-26.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-26.3.jpg)
 
 **图 26.3：** *Chat GPT 可以被学生用来学习语言*
 
@@ -2293,7 +2293,7 @@ ChatGPT 可以被教导提出写作主题，帮助构思想法，并根据多种
 
 # 定制教育
 
-![](img/Figure-26.4.jpg)
+![](img/rs-gen-ai-cgpt-Figure-26.4.jpg)
 
 **图 26.4：** *ChatGPT 为学生准备定制的学习计划*
 
@@ -2359,7 +2359,7 @@ ChatGPT 无法理解复杂的人类情感和复杂的讨论动态。它无法处
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十七章：ChatGPT 在研究工作中的潜力
@@ -2426,7 +2426,7 @@ ChatGPT 不能被视为研究工作的共同作者，因为它是一个人工智
 
 我开始时提出了一个非常具体的问题：“在以下主题上开发三个可能的研究问题：“使用开源工具进行多代勒索软件家族分析””
 
-![](img/Figure-27.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-27.1.jpg)
 
 **图 27.1：** *生成研究查询的能力*
 
@@ -2438,7 +2438,7 @@ ChatGPT 不能被视为研究工作的共同作者，因为它是一个人工智
 
 我开始时提出了一个非常具体的问题：“使用以下研究问题《使用开源工具进行多代勒索软件家族分析》制定研究工作大纲”。
 
-![](img/Figure-27.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-27.2.jpg)
 
 **图 27.2：** *绘制研究大纲的能力*
 
@@ -2450,7 +2450,7 @@ ChatGPT 不能被视为研究工作的共同作者，因为它是一个人工智
 
 我开始时提出了一个非常具体的问题：“在我撰写以下研究课题《使用开源工具进行多代勒索软件家族分析》的论文中，我可以使用哪些来源？” 
 
-![](img/Figure-27.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-27.3.jpg)
 
 **图 27.3：** *使用 ChatGPT 收集信息大纲*
 
@@ -2462,7 +2462,7 @@ ChatGPT 是一个出色的创意工具。以下是 ChatGPT 可以帮助您的一
 
 我开始时提出了一个非常具体的问题：“我们可以对这个研究课题《使用开源工具进行多代勒索软件家族分析》做出哪些修改”？
 
-![](img/Figure-27.4.jpg)
+![](img/rs-gen-ai-cgpt-Figure-27.4.jpg)
 
 **图 27.4：** *生成研究解释和建议*
 
@@ -2550,7 +2550,7 @@ ChatGPT 是研究人员的便利工具，因为它全天候开放，并且可以
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十八章：ChatGPT 在编码和编程中的潜力
@@ -2591,13 +2591,13 @@ ChatGPT 在解决 40 个 Python 问题中与 CoCoNut（19）和 Codex 不相上�
 
 # 代码生成
 
-![](img/Figure-28.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-28.1.jpg)
 
 **图 28.1：** *GPT 编写 Python 代码的能力*
 
 ChatGPT 还可以生成基于目标的原始级别代码。它可以生成用于特定任务的顺序代码构建指令，并有助于完成基本到中级的编码任务。
 
-![](img/Figure-28.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-28.2.jpg)
 
 **图 28.2：** *根据任务编写网站构建代码的能力*
 
@@ -2605,7 +2605,7 @@ ChatGPT 还可以生成基于目标的原始级别代码。它可以生成用于
 
 # 查找、修复代码中的错误
 
-![](img/Figure-28.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-28.3.jpg)
 
 **图 28.3：** *使用 ChatGPT 修复代码错误*
 
@@ -2613,7 +2613,7 @@ ChatGPT 还可以生成基于目标的原始级别代码。它可以生成用于
 
 # 理解算法和注释生成
 
-![](img/Figure-28.4.jpg)
+![](img/rs-gen-ai-cgpt-Figure-28.4.jpg)
 
 **图 28.4：** *在 ChatGPT 中解决编码中的算法问题*
 
@@ -2677,7 +2677,7 @@ ChatGPT 或生成式人工智能可以根据输入生成各种编程语言的代
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第二十九章：ChatGPT 最近的进展
@@ -2754,7 +2754,7 @@ ChatGPT Plus 每月**20 美元**。该模式旨在获得多种好处，包括在
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第三十章：ChatGPT 和当前市场情况
@@ -2833,7 +2833,7 @@ Perplexity 收集解决方案的来源的方式是其主要的区分特征之一
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第三十一章：生成式人工智能和 ChatGPT 帮助印度 G20 峰会
@@ -2852,7 +2852,7 @@ ChatGPT 的多语言文本生成能力是其独特的特点之一，这使得它
 
 另一个主要问题是 G20 峰会是各种语言和文化的国家领导人的聚会，语言障碍非常重要。该峰会提供了一个讨论和解决全球问题的论坛，包括全球卫生、商业和经济发展等问题。为了确保每个人都能充分参与讨论、理解问题并就最佳行动方案达成一致，有效的沟通至关重要。
 
-![](img/Figure-31.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-31.1.jpg)
 
 **图 31.1：**G20 峰会议题
 
@@ -2912,7 +2912,7 @@ G20 峰会在它们如何影响包容性、理解、代表性、谈判和辩论�
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第三十二章：GPT- 4
@@ -2927,7 +2927,7 @@ GPT-4，OpenAI 努力扩大深度学习的最新里程碑，已经由我们创�
 
 GPT-4 在世界各地进行了多次不同的考试，并且在最近的考试版本和奥林匹克测试案例中表现出色，尤其是比 GPT-3.5 更好。
 
-![](img/Figure-32.1.jpg)
+![](img/rs-gen-ai-cgpt-Figure-32.1.jpg)
 
 **图 32.1：** GPT-4 在学术和专业考试中的表现比较
 
@@ -2935,7 +2935,7 @@ GPT-4 在世界各地进行了多次不同的考试，并且在最近的考试�
 
 GPT-4 再次针对一些具体的最先进的 ML 模型进行了验证，这些模型包括可用的基准测试特定制作或额外的训练协议。GPT-4 几乎在某些潜在的基准测试中明显优于其他模型。
 
-![](img/Figure-32.2.jpg)
+![](img/rs-gen-ai-cgpt-Figure-32.2.jpg)
 
 **图 32.2：** GPT-4 与一些 LM 模型在一些基准测试中的表现
 
@@ -2945,7 +2945,7 @@ GPT-4 再次针对一些具体的最先进的 ML 模型进行了验证，这些�
 
 GPT-4 似乎已经超出了现有的 ChatGPT 3.5 版本的预期。它似乎在高级推理方面超越了 ChatGPT，因为他们的博客已经展示了一个例子，显示出比以往更正确的结果：
 
-![](img/Figure-32.3.jpg)
+![](img/rs-gen-ai-cgpt-Figure-32.3.jpg)
 
 **图 32.3：** GPT 在高级推理能力上超越 ChatGPT
 
@@ -2953,7 +2953,7 @@ GPT-4 似乎已经超出了现有的 ChatGPT 3.5 版本的预期。它似乎在�
 
 凭借新的多模态能力，它还可以具有视觉可读性能，并且可以通过从图片中提取的视觉推理和逻辑。它甚至可以对视觉问题进行回答（VQA）任务，具有良好的完美度，类似于对文本数据的处理能力。
 
-![](img/Figure-32.4.jpg)
+![](img/rs-gen-ai-cgpt-Figure-32.4.jpg)
 
 **图 32.4：** GPT-4 执行 VQA 逻辑任务
 
@@ -2983,7 +2983,7 @@ GPT-4 似乎已经超出了现有的 ChatGPT 3.5 版本的预期。它似乎在�
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)
 
 
 # 第三十三章：ChatGPT 的未来范围
@@ -3036,4 +3036,4 @@ ChatGPT 的未来前景广阔而多样，潜在应用范围涵盖了广泛的行
 
 [**https://discord.bpbonline.com**](https://discord.bpbonline.com)
 
-![](img/dis.jpg)
+![](img/rs-gen-ai-cgpt-dis.jpg)

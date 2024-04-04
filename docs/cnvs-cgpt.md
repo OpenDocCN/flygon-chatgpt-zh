@@ -2,7 +2,7 @@
 
 
 
-ChatGPT ![](img/image-6a9y9dck.png)
+ChatGPT ![](img/cnvs-cgpt-image-6a9y9dck.png)
 
 人工智能
 

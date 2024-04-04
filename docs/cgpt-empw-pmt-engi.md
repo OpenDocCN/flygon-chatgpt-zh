@@ -2,19 +2,19 @@
 
 
 
-![图片](img/image5.png)
+![图片](img/cgpt-empw-pmt-engi-image5.png)
 
 # 介绍
 
 * * *
 
-![图片](img/image1.png)
+![图片](img/cgpt-empw-pmt-engi-image1.png)
 
 在当今这个时代，设计和人工智能工具对于企业在不断发展的市场中蓬勃发展至关重要。ChatGPT 为探索一系列可能性提供了机会，这些可能性可以帮助将您的设计项目提升到一个新的水平。本电子书将指导您如何利用 ChatGPT 的力量优化您的设计流程并最大化生产效率。
 
 人工智能（人工智能）技术在设计任务中的协调已经改变了企业处理简报设计的方式。随着强大的自然语言处理（NLP）工具的出现，例如 ChatGPT，企业现在可以利用人工智能驱动的对话专家来优化流程，提高效率并改善协作。
 
-![图片](img/image10.png)
+![图片](img/cgpt-empw-pmt-engi-image10.png)
 
 这本名为“ChatGPT Engages Your Brief Designing with man-made intelligence Devices - Releasing Limitless Potential outcomes”的电子书探讨了企业如何利用 ChatGPT 的力量改变他们的设计任务。从自动化例行任务到实现更好的导航，该电子书为将 ChatGPT 整合到设计工作流程中提供了全面指南。
 
@@ -29,7 +29,7 @@
 
 * * *
 
-![图片](img/image7.png)
+![图片](img/cgpt-empw-pmt-engi-image7.png)
 
 通过 ChatGPT 发挥提示工程的全部潜力的全面指南
 
@@ -57,7 +57,7 @@
 
 简洁设计中最有趣的部分之一是它作为将变压器架构扩展到训练大型语言模型的新兴属性而出现。就像你表达的期望可能会出卖你一样，当你向机器简要说明时，你表达它需要做什么的方式可以决定性地改变结果。
 
-![图片](img/image9.png)
+![图片](img/cgpt-empw-pmt-engi-image9.png)
 
 最有趣的部分是什么？挑战并不是人工智能专家创造的功能。它是一个不断发展的特征。简而言之，通过开发这些庞大的人工智能模型，挑战成为让机器执行输入的方法。
 
@@ -694,7 +694,7 @@ ChatGPT 是一个令人惊讶的工具，但是人工智能还没有达到超越
 
 * * *
 
-![图片](img/image8.jpeg)
+![图片](img/cgpt-empw-pmt-engi-image8.jpeg)
 
 人工智能工具概述
 

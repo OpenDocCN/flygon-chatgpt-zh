@@ -135,7 +135,7 @@ pip install --upgrade openai
 
 1.  扫描下方的二维码或访问以下链接
 
-![](img/B19904_QR_Free_PDF.jpg)
+![](img/mdn-genai-cgpt-oai-B19904_QR_Free_PDF.jpg)
 
 [`packt.link/free-ebook/9781805123330`](https://packt.link/free-ebook/9781805123330)
 
@@ -197,7 +197,7 @@ AI 在近年来取得了显著进展，其中一个发展迅速的领域是生�
 
 以下图显示了这些研究领域之间的关系：
 
-![图 1.1 – 人工智能、机器学习、深度学习和生成式人工智能之间的关系](img/Figure_1.1_B19904.jpg)
+![图 1.1 – 人工智能、机器学习、深度学习和生成式人工智能之间的关系](img/mdn-genai-cgpt-oai-Figure_1.1_B19904.jpg)
 
 图 1.1 – 人工智能、机器学习、深度学习和生成式人工智能之间的关系
 
@@ -217,7 +217,7 @@ AI 在近年来取得了显著进展，其中一个发展迅速的领域是生�
 
 这是一个使用 GPT-3 的示例：
 
-![图 1.2 – ChatGPT 响应用户提示的示例，并添加参考资料](img/Figure_1.2_B19904.jpg)
+![图 1.2 – ChatGPT 响应用户提示的示例，并添加参考资料](img/mdn-genai-cgpt-oai-Figure_1.2_B19904.jpg)
 
 图 1.2 – ChatGPT 响应用户提示的示例，并添加参考资料
 
@@ -229,7 +229,7 @@ AI 在近年来取得了显著进展，其中一个发展迅速的领域是生�
 
 这里是一些由 AI 完全生成的不存在的人脸的例子：
 
-![图 1.3 – GAN StyleGAN2 生成的虚构面孔，网址为 https://this-person-does-not-exist.com/en](img/Figure_1.3_B19904.jpg)
+![图 1.3 – GAN StyleGAN2 生成的虚构面孔，网址为 https://this-person-does-not-exist.com/en](img/mdn-genai-cgpt-oai-Figure_1.3_B19904.jpg)
 
 图 1.3 – GAN StyleGAN2 生成的虚构面孔，网址为 https://this-person-does-not-exist.com/en
 
@@ -239,7 +239,7 @@ DALL-E 在广告、产品设计、时尚等创意产业中具有巨大潜力，�
 
 在这里，你可以看到 DALL-E 生成四幅图像的例子，从一个自然语言请求开始：
 
-![图 1.4 – DALL-E 生成的图像，以自然语言提示作为输入](img/Figure_1.4_B19904.jpg)
+![图 1.4 – DALL-E 生成的图像，以自然语言提示作为输入](img/mdn-genai-cgpt-oai-Figure_1.4_B19904.jpg)
 
 图 1.4 – DALL-E 生成的图像，以自然语言提示作为输入
 
@@ -247,7 +247,7 @@ DALL-E 在广告、产品设计、时尚等创意产业中具有巨大潜力，�
 
 一个例子是 Tome AI，一种生成式叙事格式，除了其能力外，还能从头开始创建幻灯片，利用诸如 DALL-E 和 GPT-3 的模型。
 
-![图 1.5 – 一份关于生成式 AI 的演示，完全由 Tome 生成，使用自然语言输入](img/Figure_1.5_B19904.jpg)
+![图 1.5 – 一份关于生成式 AI 的演示，完全由 Tome 生成，使用自然语言输入](img/mdn-genai-cgpt-oai-Figure_1.5_B19904.jpg)
 
 图 1.5 – 一份关于生成式 AI 的演示，完全由 Tome 生成，使用自然语言输入
 
@@ -261,7 +261,7 @@ DALL-E 在广告、产品设计、时尚等创意产业中具有巨大潜力，�
 
 在这里，你可以看到一个完全由 Magenta 项目中的 Music Transformer 模型生成的曲目的示例：
 
-![图 1.6 – Music Transformer 允许用户听取由 AI 生成的音乐表演](img/Figure_1.6_B19904.jpg)
+![图 1.6 – Music Transformer 允许用户听取由 AI 生成的音乐表演](img/mdn-genai-cgpt-oai-Figure_1.6_B19904.jpg)
 
 图 1.6 – Music Transformer 允许用户听取由 AI 生成的音乐表演
 
@@ -269,7 +269,7 @@ DALL-E 在广告、产品设计、时尚等创意产业中具有巨大潜力，�
 
 例如，如果你一直想知道如果 Kanye West 演唱你的歌曲会是什么样子，那么现在你可以通过诸如 FakeYou.com ([`fakeyou.com/`](https://fakeyou.com/))、Deep Fake Text to Speech 或 UberDuck.ai ([`uberduck.ai/`](https://uberduck.ai/))等工具实现你的梦想。
 
-![图 1.7 – 使用 UberDuck.ai 进行文本转语音合成](img/Figure_1.7_B19904.jpg)
+![图 1.7 – 使用 UberDuck.ai 进行文本转语音合成](img/mdn-genai-cgpt-oai-Figure_1.7_B19904.jpg)
 
 图 1.7 – 使用 UberDuck.ai 进行文本转语音合成
 
@@ -323,7 +323,7 @@ VAE 为生成式人工智能领域的快速发展铺平了道路。事实上，�
 
 这里是 GAN 完全生成的人脸的一个例子：
 
-![图 1.8 - 逼真的 GAN 生成的人脸示例（摘自 2017 年《逐步增长的 GAN 用于提高质量、稳定性和变化性》：https://arxiv.org/pdf/1710.10196.pdf)](img/Figure_1.8_B19904.jpg)
+![图 1.8 - 逼真的 GAN 生成的人脸示例（摘自 2017 年《逐步增长的 GAN 用于提高质量、稳定性和变化性》：https://arxiv.org/pdf/1710.10196.pdf)](img/mdn-genai-cgpt-oai-Figure_1.8_B19904.jpg)
 
 图 1.8 - 逼真的 GAN 生成的人脸示例（摘自 2017 年《逐步增长的 GAN 用于提高质量、稳定性和变化性》：https://arxiv.org/pdf/1710.10196.pdf）
 
@@ -410,7 +410,7 @@ OpenAI 是由埃隆·马斯克、山姆·奥尔特曼、格雷格·布罗克曼�
 
 自 2015 年以来，OpenAI 将研究重点放在**深度强化学习**（**DRL**）上，这是**机器学习**（**ML**）的一个子集，将**强化学习**（**RL**）与深度神经网络结合起来。该领域的第一个贡献可以追溯到 2016 年，当时该公司发布了 OpenAI Gym，这是一个供研究人员开发和测试**RL**算法的工具包。
 
-![图 2.1 – Gym 文档的首页（https://www.gymlibrary.dev/）](img/Figure_2.1_B19904.jpg)
+![图 2.1 – Gym 文档的首页（https://www.gymlibrary.dev/）](img/mdn-genai-cgpt-oai-Figure_2.1_B19904.jpg)
 
 图 2.1 – Gym 文档的首页（https://www.gymlibrary.dev/）
 
@@ -420,7 +420,7 @@ OpenAI 继续在该领域进行研究和贡献，然而其最显著的成就与�
 
 在这里，您可以看到 HuggingFace 发布的 GPT-2 的 UI 的着陆页（[`transformer.huggingface.co/doc/distil-gpt2`](https://transformer.huggingface.co/doc/distil-gpt2)）：
 
-![图 2.2 – GPT-2 根据提示撰写段落。来源：https://transformer.huggingface.co/doc/distil-gpt2](img/Figure_2.2_B19904.jpg)
+![图 2.2 – GPT-2 根据提示撰写段落。来源：https://transformer.huggingface.co/doc/distil-gpt2](img/mdn-genai-cgpt-oai-Figure_2.2_B19904.jpg)
 
 图 2.2 – GPT-2 根据提示撰写段落。来源：https://transformer.huggingface.co/doc/distil-gpt2
 
@@ -432,7 +432,7 @@ DALL-E 最近升级到其新版本 DALL-E 2，于 2022 年 4 月宣布。
 
 在下图中，您可以看到以自然语言提示**在舒适环境中生成一杯咖啡的逼真图片**为例的 DALL-E 生成的图像：
 
-![图 2.3 – DALL-E 生成的图像，以自然语言提示为输入](img/Figure_2.3_B19904.jpg)
+![图 2.3 – DALL-E 生成的图像，以自然语言提示为输入](img/mdn-genai-cgpt-oai-Figure_2.3_B19904.jpg)
 
 图 2.3 – DALL-E 生成的图像，以自然语言提示为输入
 
@@ -452,7 +452,7 @@ DALL-E 最近升级到其新版本 DALL-E 2，于 2022 年 4 月宣布。
 
 在下面的截图中，您可以看到 OpenAI Playground 的着陆页：
 
-![图 2.4 – OpenAI Playground 位于 https://platform.openai.com/playground](img/Figure_2.4_B19904.jpg)
+![图 2.4 – OpenAI Playground 位于 https://platform.openai.com/playground](img/mdn-genai-cgpt-oai-Figure_2.4_B19904.jpg)
 
 图 2.4 – OpenAI Playground 位于 https://platform.openai.com/playground
 
@@ -474,19 +474,19 @@ DALL-E 最近升级到其新版本 DALL-E 2，于 2022 年 4 月宣布。
 
 +   **GPT-3**：一组能够理解和生成自然语言的模型。GPT-3 已经在大量文本语料库上进行了训练，可以执行各种自然语言任务，如语言翻译、摘要、问答等。这里是一个例子：
 
-![图 2.5 – 使用 GPT-3 进行摘要任务的示例](img/Figure_2.5_B19904.jpg)
+![图 2.5 – 使用 GPT-3 进行摘要任务的示例](img/mdn-genai-cgpt-oai-Figure_2.5_B19904.jpg)
 
 图 2.5 – 使用 GPT-3 进行摘要任务的示例
 
 **GPT-3.5**: 这是在 GPT-3 基础上构建的新一代模型，旨在提高其自然语言理解和生成能力。GPT-3.5 模型可以执行复杂的自然语言任务，如撰写连贯的段落或文章，生成诗歌，甚至以自然语言创建计算机程序。GPT-3.5 是 ChatGPT 背后的模型，在其 API 上，它还可以通过专门的 UI 在 Playground 中消耗：
 
-![图 2.6 – 使用 GPT-3.5 进行交互的示例](img/Figure_2.6_B19904.jpg)
+![图 2.6 – 使用 GPT-3.5 进行交互的示例](img/mdn-genai-cgpt-oai-Figure_2.6_B19904.jpg)
 
 图 2.6 – 使用 GPT-3.5 进行交互的示例
 
 +   **Codex**: 一组能够理解和生成各种编程语言代码的模型。Codex 可以将自然语言提示转换为可运行的代码，使其成为软件开发的强大工具。以下是使用 Codex 的例子：
 
-![图 2.7 – 使用 Codex 生成代码的示例](img/Figure_2.7_B19904.jpg)
+![图 2.7 – 使用 Codex 生成代码的示例](img/mdn-genai-cgpt-oai-Figure_2.7_B19904.jpg)
 
 图 2.7 – 使用 Codex 生成代码的示例
 
@@ -514,7 +514,7 @@ DALL-E 最近升级到其新版本 DALL-E 2，于 2022 年 4 月宣布。
 
 除了在 Playground 中尝试 OpenAI 模型，您还可以在自定义代码中调用模型 API 并将模型嵌入到您的应用程序中。实际上，在 Playground 的右上角，您可以点击**查看代码**并导出如下所示的配置：
 
-![图 2.8 - 使用自然语言提示调用 GPT3 模型的 Python 代码](img/Figure_2.8_B19904.jpg)
+![图 2.8 - 使用自然语言提示调用 GPT3 模型的 Python 代码](img/mdn-genai-cgpt-oai-Figure_2.8_B19904.jpg)
 
 图 2.8 - 使用自然语言提示调用 GPT3 模型的 Python 代码
 
@@ -522,7 +522,7 @@ DALL-E 最近升级到其新版本 DALL-E 2，于 2022 年 4 月宣布。
 
 现在，您可以通过在终端中使用`pip install openai`来安装 Python 中的 OpenAI 库来开始使用。为了使用模型，您需要生成一个 API 密钥。您可以在您的账户设置中找到您的 API 密钥（[`platform.openai.com/account/api-keys`](https://platform.openai.com/account/api-keys)），如下所示：
 
-![图 2.9 - 您 OpenAI 配置文件中帐户设置页面中的 API 密钥](img/Figure_2.9_B19904.jpg)
+![图 2.9 - 您 OpenAI 配置文件中帐户设置页面中的 API 密钥](img/mdn-genai-cgpt-oai-Figure_2.9_B19904.jpg)
 
 图 2.9 - 您 OpenAI 配置文件中帐户设置页面中的 API 密钥
 
@@ -577,7 +577,7 @@ openai.Moderation.create(
 
 +   **嵌入**：一些模型可以使用嵌入。这些嵌入涉及在多维空间中表示单词或句子。在这个空间中不同实例之间的数学距离表示它们在意义上的相似性。举个例子，想象单词 queen、woman、king 和 man。理想情况下，在我们的多维空间中，如果表示正确，我们希望实现以下内容：
 
-![图 2.10 – 单词之间的矢量方程示例](img/Figure_2.10_B19904.jpg)
+![图 2.10 – 单词之间的矢量方程示例](img/mdn-genai-cgpt-oai-Figure_2.10_B19904.jpg)
 
 图 2.10 – 单词之间的矢量方程示例
 
@@ -645,7 +645,7 @@ embedding[1:10]
 
 这里是一个例子：
 
-![图 2.11 – OpenAI Playground 中使用 few-shot learning 方法进行对话的示例](img/Figure_2.11_B19904.jpg)
+![图 2.11 – OpenAI Playground 中使用 few-shot learning 方法进行对话的示例](img/mdn-genai-cgpt-oai-Figure_2.11_B19904.jpg)
 
 图 2.11 – OpenAI Playground 中使用 few-shot learning 方法进行对话的示例
 
@@ -653,7 +653,7 @@ embedding[1:10]
 
 在微调中，预训练模型的参数被改变，要么通过调整现有参数，要么通过添加新参数，以更好地适应新任务的数据。这是通过在特定于新任务的较小标记数据集上训练模型来实现的。微调的关键思想是利用从预训练模型中学到的知识，并将其微调到新任务，而不是从头开始训练模型。请看下面的图：
 
-![图 2.12 – 模型微调](img/Figure_2.12_B19904.jpg)
+![图 2.12 – 模型微调](img/mdn-genai-cgpt-oai-Figure_2.12_B19904.jpg)
 
 图 2.12 – 模型微调
 
@@ -700,7 +700,7 @@ GPT 模型属于变压器结构框架，此框架于 2017 年由 Google 研究�
 
 让我们想象我们想要预测房价。如果我们只有今天的价格，我们可以使用一个前馈架构，通过隐藏层（带有激活函数）对输入进行非线性转换，并得到明天价格的预测输出。具体如下：
 
-![图 2.13 – 具有隐藏层的前馈架构](img/Figure_2.13_B19904.jpg)
+![图 2.13 – 具有隐藏层的前馈架构](img/mdn-genai-cgpt-oai-Figure_2.13_B19904.jpg)
 
 图 2.13 – 具有隐藏层的前馈架构
 
@@ -708,13 +708,13 @@ GPT 模型属于变压器结构框架，此框架于 2017 年由 Google 研究�
 
 因此，回到我们的例子，想象我们不仅有今天的价格，还有昨天的价格**(t-1)**和前一天的价格**(t-2)**。这是我们如何计算的：
 
-![图 2.14 – RNN 示例](img/Figure_2.14_B19904.jpg)
+![图 2.14 – RNN 示例](img/mdn-genai-cgpt-oai-Figure_2.14_B19904.jpg)
 
 图 2.14 – RNN 示例
 
 由于我们只关心明天的价格，让我们忽略*t-1*和*t*的中间最终输出。
 
-![图 2.15 – RNN 示例](img/Figure_2.15_B19904.jpg)
+![图 2.15 – RNN 示例](img/mdn-genai-cgpt-oai-Figure_2.15_B19904.jpg)
 
 图 2.15 – RNN 示例
 
@@ -722,7 +722,7 @@ GPT 模型属于变压器结构框架，此框架于 2017 年由 Google 研究�
 
 最后，如果我们想要缩小这张图片，我们可以将 RNN 看作如下：
 
-![图 2.16 – RNN 的包装形式示例](img/Figure_2.16_B19904.jpg)
+![图 2.16 – RNN 的包装形式示例](img/mdn-genai-cgpt-oai-Figure_2.16_B19904.jpg)
 
 图 2.16 – RNN 的包装形式示例
 
@@ -754,7 +754,7 @@ LSTM 网络通过引入细胞状态的概念来克服有限上下文的问题，
 
 Transformer 架构通过替换循环（使用自注意机制）来解决这些限制，允许并行计算并捕捉长期依赖关系。
 
-![图 2.7 - 来自原始论文“注意力就是你所需要的”的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.17_B19904.jpg)
+![图 2.7 - 来自原始论文“注意力就是你所需要的”的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/mdn-genai-cgpt-oai-Figure_2.17_B19904.jpg)
 
 图 2.7 - 来自原始论文“注意力就是你所需要的”的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762
 
@@ -768,7 +768,7 @@ Transformer 架构通过替换循环（使用自注意机制）来解决这些�
 
 编码器是将自然语言输入转换为数字向量的层。这得益于嵌入的过程，这是一种 NLP 技术，它用向量表示单词，使得一旦在向量空间中表示，向量之间的数学距离代表了它们所代表的单词之间的相似性。请看下图：
 
-![图 2.18 – 《注意力就是你所需要的》原始论文中的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.18_B19904.jpg)
+![图 2.18 – 《注意力就是你所需要的》原始论文中的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/mdn-genai-cgpt-oai-Figure_2.18_B19904.jpg)
 
 图 2.18 – 《注意力就是你所需要的》原始论文中的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762
 
@@ -780,7 +780,7 @@ Transformer 架构通过替换循环（使用自注意机制）来解决这些�
 
 自注意力层负责确定生成输出时每个输入标记的重要性。它们回答了这个问题，“*我应该关注输入的哪一部分？*”
 
-![图 2.19 – 《注意力就是你所需要的》原始论文中的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.19_B19904.jpg)
+![图 2.19 – 《注意力就是你所需要的》原始论文中的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/mdn-genai-cgpt-oai-Figure_2.19_B19904.jpg)
 
 图 2.19 – 《注意力就是你所需要的》原始论文中的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762
 
@@ -788,7 +788,7 @@ Transformer 架构通过替换循环（使用自注意机制）来解决这些�
 
 **查询**用于表示注意力机制的当前焦点，而**键**用于确定应该受到注意的输入部分，**值**用于计算上下文向量。然后这些矩阵相乘，并通过非线性变换传递（使用 softmax 函数）。自注意力层的输出以一种转换的、具有上下文意识的方式表示输入值，这使得 Transformer 可以根据手头任务关注输入的不同部分。这是如何描述矩阵相乘的过程：
 
-![图 2.20 - 查询，键和值矩阵相乘以获得上下文向量的表示](img/Figure_2.20_B19904.jpg)
+![图 2.20 - 查询，键和值矩阵相乘以获得上下文向量的表示](img/mdn-genai-cgpt-oai-Figure_2.20_B19904.jpg)
 
 图 2.20 - 查询，键和值矩阵相乘以获得上下文向量的表示
 
@@ -800,7 +800,7 @@ Transformer 架构通过替换循环（使用自注意机制）来解决这些�
 
 前馈层负责将自注意力层的输出转换为最终输出的合适表示。
 
-![图 2.21 - “注意力就是你需要的”原始论文中的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). 注意力就是你需要的. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/Figure_2.21_B19904.jpg)
+![图 2.21 - “注意力就是你需要的”原始论文中的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). 注意力就是你需要的. ArXiv. https://doi.org/10.48550/arXiv.1706.03762](img/mdn-genai-cgpt-oai-Figure_2.21_B19904.jpg)
 
 图 2.21 - “注意力就是你需要的”原始论文中的 Transformer 架构。Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. ArXiv. https://doi.org/10.48550/arXiv.1706.03762
 
@@ -814,7 +814,7 @@ Transformer 架构通过替换循环（使用自注意机制）来解决这些�
 
 在下图中，我们可以看到一个通用前馈层的示例，它以一个二维向量作为输入，在密集层中使用训练好的权重进行线性操作，然后使用 ReLU 激活函数对输出进行非线性转换：
 
-![图 2.22 - 具有二维输入的通用前馈层在密集层中和 ReLU 非线性激活函数中的模式图](img/Figure_2.22_B19904.jpg)
+![图 2.22 - 具有二维输入的通用前馈层在密集层中和 ReLU 非线性激活函数中的模式图](img/mdn-genai-cgpt-oai-Figure_2.22_B19904.jpg)
 
 图 2.22 - 具有二维输入的通用前馈层在密集层中和 ReLU 非线性激活函数中的模式图
 
@@ -844,7 +844,7 @@ GPT-3 是*巨大*的。但具体有多大呢？
 
 在这里你可以更好地了解：
 
-![图 2.23 – GPT-3 知识库](img/Figure_2.23_B19904.jpg)
+![图 2.23 – GPT-3 知识库](img/mdn-genai-cgpt-oai-Figure_2.23_B19904.jpg)
 
 图 2.23 – GPT-3 知识库
 
@@ -858,7 +858,7 @@ GPT-3 是*巨大*的。但具体有多大呢？
 
 这个知识库旨在在 96 个隐藏层中稀疏地训练 1750 亿个参数。为了让你了解 GPT-3 有多庞大，让我们将其与之前的版本 GPT-1 和 GPT-2 进行比较：
 
-![图 2.24 – GPT 模型随时间在参数数量上的演变](img/Figure_2.24_B19904.jpg)
+![图 2.24 – GPT 模型随时间在参数数量上的演变](img/mdn-genai-cgpt-oai-Figure_2.24_B19904.jpg)
 
 图 2.24 – GPT 模型随时间在参数数量上的演变
 
@@ -872,7 +872,7 @@ GPT 模型背后的发展速度令人惊叹，特别是如果我们考虑到这�
 
 在写关于 ChatGPT 之前，我会让它自我介绍：
 
-![图 2.25 – ChatGPT 自我介绍](img/Figure_2.25_B19904.jpg)
+![图 2.25 – ChatGPT 自我介绍](img/mdn-genai-cgpt-oai-Figure_2.25_B19904.jpg)
 
 图 2.25 – ChatGPT 自我介绍
 
@@ -956,25 +956,25 @@ ChatGPT 的架构和训练方法的不断发展和改进承诺将进一步推动
 
 1.  滚动到下方，点击**ChatGPT**，如下所示：
 
-![图 3.1 – OpenAI 登陆页面](img/Figure_3.1_B19904.jpg)
+![图 3.1 – OpenAI 登陆页面](img/mdn-genai-cgpt-oai-Figure_3.1_B19904.jpg)
 
 图 3.1 – OpenAI 登陆页面
 
 1.  然后您需要点击**尝试 ChatGPT**：
 
-![图 3.2 – ChatGPT 登陆页面](img/Figure_3.2_B19904.jpg)
+![图 3.2 – ChatGPT 登陆页面](img/mdn-genai-cgpt-oai-Figure_3.2_B19904.jpg)
 
 图 3.2 – ChatGPT 登陆页面
 
 1.  在下一页，您需要填写表格注册一个 OpenAI 账户。这是您可以用来访问 OpenAI Playground 并生成 API 密钥的同一个账户。
 
-![图 3.3 – ChatGPT 登陆页面，带有登录和注册选项](img/Figure_3.3_B19904.jpg)
+![图 3.3 – ChatGPT 登陆页面，带有登录和注册选项](img/mdn-genai-cgpt-oai-Figure_3.3_B19904.jpg)
 
 图 3.3 – ChatGPT 登陆页面，带有登录和注册选项
 
 1.  现在您可以开始使用 ChatGPT Web 应用程序了。找到 ChatGPT Web 应用程序后，点击启动。您将能够直接在 Web 浏览器中与 ChatGPT 交互并执行各种自然语言处理任务。
 
-![图 3.4 – ChatGPT Web 界面](img/Figure_3.4_B19904.jpg)
+![图 3.4 – ChatGPT Web 界面](img/mdn-genai-cgpt-oai-Figure_3.4_B19904.jpg)
 
 图 3.4 – ChatGPT Web 界面
 
@@ -984,13 +984,13 @@ ChatGPT 的架构和训练方法的不断发展和改进承诺将进一步推动
 
 ChatGPT 的 Web 界面非常直观易用。在开始编写提示之前，您可以轻松尝试服务提供的一些示例：
 
-![图 3.5 – ChatGPT 提供的示例提示](img/Figure_3.5_B19904.jpg)
+![图 3.5 – ChatGPT 提供的示例提示](img/mdn-genai-cgpt-oai-Figure_3.5_B19904.jpg)
 
 图 3.5 – ChatGPT 提供的示例提示
 
 接下来，您还将了解 ChatGPT 的主要功能：
 
-![图 3.6 – ChatGPT 的功能](img/Figure_3.6_B19904.jpg)
+![图 3.6 – ChatGPT 的功能](img/mdn-genai-cgpt-oai-Figure_3.6_B19904.jpg)
 
 图 3.6 – ChatGPT 的功能
 
@@ -1006,7 +1006,7 @@ ChatGPT 能够保持先前上下文的记忆，这要归功于其少样本学习
 
 这里有一个示例，展示了如何在与 ChatGPT 对话中对提示进行更正：
 
-![图 3.7 – ChatGPT 跟进评论和提示更正示例](img/Figure_3.7_B19904.jpg)
+![图 3.7 – ChatGPT 跟进评论和提示更正示例](img/mdn-genai-cgpt-oai-Figure_3.7_B19904.jpg)
 
 图 3.7 – ChatGPT 跟进评论和提示更正示例
 
@@ -1014,7 +1014,7 @@ ChatGPT 能够保持先前上下文的记忆，这要归功于其少样本学习
 
 在其主页上提供的最后一组信息与 ChatGPT 的限制相关：
 
-![图 3.8 – ChatGPT 限制](img/Figure_3.8_B19904.jpg)
+![图 3.8 – ChatGPT 限制](img/mdn-genai-cgpt-oai-Figure_3.8_B19904.jpg)
 
 图 3.8 – ChatGPT 限制
 
@@ -1022,7 +1022,7 @@ ChatGPT 能够保持先前上下文的记忆，这要归功于其少样本学习
 
 值得一提的有趣现象是*幻觉*。幻觉指的是 AI 模型生成类似真实数据但实际上并非基于任何真实观察的虚假或想象数据的现象。以下是一个例子：
 
-![图 3.9 – ChatGPT 幻觉示例](img/Figure_3.9_B19904.jpg)
+![图 3.9 – ChatGPT 幻觉示例](img/mdn-genai-cgpt-oai-Figure_3.9_B19904.jpg)
 
 图 3.9 – ChatGPT 幻觉示例
 
@@ -1048,7 +1048,7 @@ ChatGPT 能够保持先前上下文的记忆，这要归功于其少样本学习
 
 ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能性。实际上，当您开始编写第一个提示时，ChatGPT 将自动启动一个新的聊天并以相关标题命名。请看以下截图的左上角：
 
-![图 3.10 – 在 ChatGPT 中创建新聊天](img/Figure_3.10_B19904.jpg)
+![图 3.10 – 在 ChatGPT 中创建新聊天](img/mdn-genai-cgpt-oai-Figure_3.10_B19904.jpg)
 
 图 3.10 – 在 ChatGPT 中创建新聊天
 
@@ -1056,13 +1056,13 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 
 想象一下，您已经要求 ChatGPT 解释线性回归的概念，然后开始了几个后续对话。这是它的显示方式：
 
-![图 3.11 – 具有上下文的现有聊天示例](img/Figure_3.11_B19904.jpg)
+![图 3.11 – 具有上下文的现有聊天示例](img/mdn-genai-cgpt-oai-Figure_3.11_B19904.jpg)
 
 图 3.11 – 具有上下文的现有聊天示例
 
 在那个聊天中，ChatGPT 已经有了上下文，因此您可以继续对话而无需重复概念。请看这里：
 
-![图 3.12 – 同一上下文中的后续问题示例](img/Figure_3.12_B19904.jpg)
+![图 3.12 – 同一上下文中的后续问题示例](img/mdn-genai-cgpt-oai-Figure_3.12_B19904.jpg)
 
 图 3.12 – 同一上下文中的后续问题示例
 
@@ -1115,7 +1115,7 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 
 让我们来看看 ChatGPT 中一个定义不清晰提示的结果：
 
-![图 4.1 - 一个定义不清晰提示的示例](img/Figure_4.1_B19904.jpg)
+![图 4.1 - 一个定义不清晰提示的示例](img/mdn-genai-cgpt-oai-Figure_4.1_B19904.jpg)
 
 图 4.1 - 一个定义不清晰提示的示例
 
@@ -1123,7 +1123,7 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 
 让我们尝试为 ChatGPT 提供更多上下文，以获得对我们更有用的结果：
 
-![图 4.2 - 良好定义提示的示例](img/Figure_4.2_B19904.jpg)
+![图 4.2 - 良好定义提示的示例](img/mdn-genai-cgpt-oai-Figure_4.2_B19904.jpg)
 
 图 4.2 - 良好定义提示的示例
 
@@ -1159,13 +1159,13 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 
 +   **零样本学习**。在这种学习中，模型被要求执行一个它没有见过训练示例的任务。模型必须依靠关于任务的先验知识或一般信息来完成任务。例如，零样本学习方法可能是要求模型生成一个描述，就像我在提示中定义的一样：
 
-![图 4.3 – 零样本学习示例](img/Figure_4.3_B19904.jpg)
+![图 4.3 – 零样本学习示例](img/mdn-genai-cgpt-oai-Figure_4.3_B19904.jpg)
 
 图 4.3 – 零样本学习示例
 
 +   **单样本学习**：在这种类型的学习中，模型只提供每个新任务的单个示例。模型必须利用其先前的知识从这个单一示例中泛化，以执行任务。如果考虑前面的例子，我可以在要求其生成新的示例之前，向模型提供一个提示完成的示例：
 
-![图 4.4 – 单样本学习示例](img/Figure_4.4_B19904.jpg)
+![图 4.4 – 单样本学习示例](img/mdn-genai-cgpt-oai-Figure_4.4_B19904.jpg)
 
 图 4.4 – 单样本学习示例
 
@@ -1177,13 +1177,13 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 
 +   **少样本学习**：在这种学习中，模型只提供了每个新任务的少量示例（通常在 3 到 5 个之间）。模型必须利用其先前的知识从这些示例中泛化，以执行任务。让我们继续我们的例子并提供模型更多的示例：
 
-![图 4.5 – 少样本学习示例](img/Figure_4.5_B19904.jpg)
+![图 4.5 – 少样本学习示例](img/mdn-genai-cgpt-oai-Figure_4.5_B19904.jpg)
 
 图 4.5 – 少样本学习示例，提供了三个示例
 
 少样本学习的好处在于，你还可以控制模型输出的呈现方式。你还可以为模型提供你希望输出看起来的模板。例如，考虑以下推文分类器：
 
-![图 4.6 – 推文分类器的少样本学习。这是修改自 https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/completions 的原始脚本](img/Figure_4.6_B19904.jpg)
+![图 4.6 – 推文分类器的少样本学习。这是修改自 https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/completions 的原始脚本](img/mdn-genai-cgpt-oai-Figure_4.6_B19904.jpg)
 
 图 4.6 – 推文分类器的少样本学习。这是修改自 https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/completions 的原始脚本
 
@@ -1191,13 +1191,13 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 
 输出格式并不是您可以教给您的模型的唯一内容。您还可以教它以特定的行话和分类法行事和言语，这可以帮助您以期望的措辞获得所需的结果：
 
-![图 4.7 – ChatGPT 充当面试官进行对话的例子](img/Figure_4.7_B19904.jpg)
+![图 4.7 – ChatGPT 充当面试官进行对话的例子](img/mdn-genai-cgpt-oai-Figure_4.7_B19904.jpg)
 
 图 4.7 – ChatGPT 充当面试官进行对话的例子
 
 或者，想象一下，你想生成一个名为 Simpy 的聊天机器人，回复时非常滑稽和讽刺：
 
-![图 4.8 – 一个滑稽而讽刺的聊天机器人的例子，取笑我的请求](img/Figure_4.8_B19904.jpg)
+![图 4.8 – 一个滑稽而讽刺的聊天机器人的例子，取笑我的请求](img/mdn-genai-cgpt-oai-Figure_4.8_B19904.jpg)
 
 图 4.8 – 一个滑稽而讽刺的聊天机器人的例子，取笑我的请求
 
@@ -1223,7 +1223,7 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 
 +   **“充当…”**：让 ChatGPT 充当某人或某物的技巧被证明是非常强大的。您可以通过简单要求他*扮演*您想要获取信息的人或系统，缩短您必须向模型提供的上下文。我们已经看到了面试候选人的例子，ChatGPT 充当了数据科学家职位的面试官。一个非常有趣的提示是要求 ChatGPT 充当控制台。以下是一个示例：
 
-![图 4.9 – ChatGPT 充当 Python 控制台的例子](img/Figure_4.9_B19904.jpg)
+![图 4.9 – ChatGPT 充当 Python 控制台的例子](img/mdn-genai-cgpt-oai-Figure_4.9_B19904.jpg)
 
 图 4.9 – ChatGPT 充当 Python 控制台的例子
 
@@ -1235,25 +1235,25 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 
 1.  从简明、清晰、有重点的提示开始。这将帮助你对你想讨论的主题有一个概览，同时为思考和特定元素的潜在扩展提供食粮。以下是一个示例：
 
-![图 4.10 – 一个清晰、有重点的提示，用于开始和 ChatGPT 的对话](img/Figure_4.10_B19904.jpg)
+![图 4.10 – 一个清晰、有重点的提示，用于开始和 ChatGPT 的对话](img/mdn-genai-cgpt-oai-Figure_4.10_B19904.jpg)
 
 图 4.10 – 一个清晰、有重点的提示，用于开始和 ChatGPT 的对话
 
 1.  一旦你在讨论中确定了相关元素，你可以要求 ChatGPT 更加聚焦地阐述这些元素：
 
-![图 4.11 – 在与 ChatGPT 对话中进行深入追问的示例](img/Figure_4.11_B19904.jpg)
+![图 4.11 – 在与 ChatGPT 对话中进行深入追问的示例](img/mdn-genai-cgpt-oai-Figure_4.11_B19904.jpg)
 
 图 4.11 – 在与 ChatGPT 对话中进行深入追问的示例
 
 1.  有时候，记得模型和你提问的上下文可能非常有用，尤其是如果问题可能适用于各种领域时。
 
-![图 4.12 – 在与 ChatGPT 对话中提醒上下文的示例](img/Figure_4.12_B19904.jpg)
+![图 4.12 – 在与 ChatGPT 对话中提醒上下文的示例](img/mdn-genai-cgpt-oai-Figure_4.12_B19904.jpg)
 
 图 4.12 – 在与 ChatGPT 对话中提醒上下文的示例
 
 1.  最后，永远记住我们在前几章提到的限制。ChatGPT 可能会提供部分或不正确的信息，所以始终检查是一个很好的做法。你可以尝试的一个好方法是要求模型提供关于其回应的文档，这样你就可以轻松找到它们的证据：
 
-![图 4.13 – ChatGPT 提供支持其先前回答的文档的示例](img/Figure_4.13_B19904.jpg)
+![图 4.13 – ChatGPT 提供支持其先前回答的文档的示例](img/mdn-genai-cgpt-oai-Figure_4.13_B19904.jpg)
 
 图 4.13 – ChatGPT 提供支持其先前回答的文档的示例
 
@@ -1303,7 +1303,7 @@ Moderation API 是基于 OpenAI API 中可用的内容过滤模型的更复杂�
 
 结果显示，与不同模型相关的每个种族类别的情绪不同，*亚洲*一直具有很高的情感，而*黑人*一直具有很低的情感。作者警告称，结果反映了实验设置，并且社会历史因素可能影响与不同人口统计数据相关联的情感。研究强调了在情感、实体和输入数据之间关系的更加复杂的分析的需要：
 
-![图 4.14—模型间的种族情绪](img/Figure_4.14_B19904.jpg)
+![图 4.14—模型间的种族情绪](img/mdn-genai-cgpt-oai-Figure_4.14_B19904.jpg)
 
 图 4.14—模型间的种族情绪
 
@@ -1313,7 +1313,7 @@ Moderation API 是基于 OpenAI API 中可用的内容过滤模型的更复杂�
 
 例如，如果我们要求 ChatGPT 基于人的性别和种族进行猜测，它不会满足这个请求：
 
-![图 4.15—ChatGPT 随着时间的推移改善的示例，因为它给出了一个不带偏见的回答](img/Figure_4.15_B19904.jpg)
+![图 4.15—ChatGPT 随着时间的推移改善的示例，因为它给出了一个不带偏见的回答](img/mdn-genai-cgpt-oai-Figure_4.15_B19904.jpg)
 
 图 4.15—ChatGPT 随着时间的推移改善的示例，因为它给出了一个不带偏见的回答
 
@@ -1337,7 +1337,7 @@ ChatGPT 和 OpenAI 模型中的偏见和伦理概念在整个负责任人工智�
 
 +   [`openai.com/alignment/`](https://openai.com/alignment/)
 
-+   [`twitter.com/spiantado/status/1599462375887114240?ref _src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1599462375 887114240%7Ctwgr%5E1dc908b53fd4be487829472a6bc8590a9dc4aa2d%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fthestoryexchange.org%2F chatgpt-and-the-hidden-bias-of-language-models%2F`](https://twitter.com/spiantado/status/1599462375887114240?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1599462375887114240%7Ctwgr%5E1dc908b53fd4be487829472a6bc8590a9dc4aa2d%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fthestoryexchange.org%2Fchatgpt-and-the-hidden-bias-of-language-models%2F)
++   [`twitter.com/spiantado/status/1599462375887114240?ref _src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1599462375887114240%7Ctwgr%5E1dc908b53fd4be487829472a6bc8590a9dc4aa2d%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fthestoryexchange.org%2Fchatgpt-and-the-hidden-bias-of-language-models%2F`](https://twitter.com/spiantado/status/1599462375887114240?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1599462375887114240%7Ctwgr%5E1dc908b53fd4be487829472a6bc8590a9dc4aa2d%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fthestoryexchange.org%2Fchatgpt-and-the-hidden-bias-of-language-models%2F)
 
 
 # 5
@@ -1366,13 +1366,13 @@ ChatGPT 可以作为有价值的日常助手，帮助您管理任务并简化工
 
 让我们从一个关于如何让我的一天更加高效的一般建议开始：
 
-![图 5.1 – ChatGPT 生成高效日常的示例](img/Figure_5.1_B19904.jpg)
+![图 5.1 – ChatGPT 生成高效日常的示例](img/mdn-genai-cgpt-oai-Figure_5.1_B19904.jpg)
 
 图 5.1 – ChatGPT 生成高效日常的示例
 
 前述日常例行事项相当通用，因为它不专注于特定的活动列表（除了学习）。让我们挑战 ChatGPT 创建一个更注重任务的日常安排，包括我们在一天中必须进行的活动清单：
 
-![图 5.2 – ChatGPT 在我的活动之上生成的优化日常](img/Figure_5.2_B19904.jpg)
+![图 5.2 – ChatGPT 在我的活动之上生成的优化日常](img/mdn-genai-cgpt-oai-Figure_5.2_B19904.jpg)
 
 图 5.2 – ChatGPT 在我的活动之上生成的优化日常
 
@@ -1380,13 +1380,13 @@ ChatGPT 可以作为有价值的日常助手，帮助您管理任务并简化工
 
 ChatGPT 在组织我的一周中的另一个有趣用途是，我可以将其用作备餐助手：
 
-![图 5.3 – ChatGPT 生成的我工作周的备餐](img/Figure_5.3_B19904.jpg)
+![图 5.3 – ChatGPT 生成的我工作周的备餐](img/mdn-genai-cgpt-oai-Figure_5.3_B19904.jpg)
 
 图 5.3 – ChatGPT 生成的我工作周的备餐
 
 除了备餐外，ChatGPT 还可以生成我的购物清单，以便我坚持我的饮食计划：
 
-![图 5.4 – ChatGPT 生成的购物清单](img/Figure_5.4_B19904.jpg)
+![图 5.4 – ChatGPT 生成的购物清单](img/mdn-genai-cgpt-oai-Figure_5.4_B19904.jpg)
 
 图 5.4 – ChatGPT 生成的购物清单
 
@@ -1394,13 +1394,13 @@ ChatGPT 还可以成为一位忠诚而守纪的学习伙伴。例如，它可以
 
 换句话说，假设你正在使用 Lorenzo Peccati 等人编写的大学教材《经济与商业数学》准备数学考试。在深入研究每章内容之前，你可能想要了解内容和主要讨论主题的概述，以及是否需要进一步的先修知识，以及最重要的是，如果我正在准备考试，需要花多长时间来学习。你可以向 ChatGPT 询问：
 
-![图 5.5 – ChatGPT 提供大学教材概述](img/Figure_5.5_B19904.jpg)
+![图 5.5 – ChatGPT 提供大学教材概述](img/mdn-genai-cgpt-oai-Figure_5.5_B19904.jpg)
 
 图 5.5 – ChatGPT 提供大学教材概述
 
 你也可以要求 ChatGPT 向你提问关于你刚刚学习的材料的一些问题：
 
-![图 5.6 – ChatGPT 充当教授的示例](img/Figure_5.6_B19904.jpg)
+![图 5.6 – ChatGPT 充当教授的示例](img/mdn-genai-cgpt-oai-Figure_5.6_B19904.jpg)
 
 图 5.6 – ChatGPT 充当教授的示例
 
@@ -1416,13 +1416,13 @@ ChatGPT 还可以成为一位忠诚而守纪的学习伙伴。例如，它可以
 
 例如，你可以要求 ChatGPT 生成针对特定受众的电子邮件、草稿或模板：
 
-![图 5.7 – ChatGPT 生成的电子邮件示例](img/Figure_5.7_B19904.jpg)
+![图 5.7 – ChatGPT 生成的电子邮件示例](img/mdn-genai-cgpt-oai-Figure_5.7_B19904.jpg)
 
 图 5.7 – ChatGPT 生成的电子邮件示例
 
 另一个例子可能是要求 ChatGPT 为你需要准备的演示文稿创建一个提纲结构：
 
-![图 5.8 – ChatGPT 生成的幻灯片议程和结构](img/Figure_5.8_B19904.jpg)
+![图 5.8 – ChatGPT 生成的幻灯片议程和结构](img/mdn-genai-cgpt-oai-Figure_5.8_B19904.jpg)
 
 图 5.8 – ChatGPT 生成的幻灯片议程和结构
 
@@ -1432,19 +1432,19 @@ ChatGPT 还可以成为一位忠诚而守纪的学习伙伴。例如，它可以
 
 你也可以通过这种方式生成关于热门话题的博客文章或文章。这里是一个例子：
 
-![图 5.9 – ChatGPT 生成的带有相关标签和 SEO 关键词的博客文章示例](img/figure_5.9.jpg)
+![图 5.9 – ChatGPT 生成的带有相关标签和 SEO 关键词的博客文章示例](img/mdn-genai-cgpt-oai-figure_5.9.jpg)
 
 图 5.9 – ChatGPT 生成的带有相关标签和 SEO 关键词的博客文章示例
 
 我们甚至可以让 ChatGPT 缩减帖子的大小，使其适合成为一条推文。以下是我们可以这样做的方式：
 
-![图 5.10 – ChatGPT 将一篇文章缩减为 Twitter 帖子](img/Figure_5.10_B19904.jpg)
+![图 5.10 – ChatGPT 将一篇文章缩减为 Twitter 帖子](img/mdn-genai-cgpt-oai-Figure_5.10_B19904.jpg)
 
 图 5.10 – ChatGPT 将一篇文章缩减为 Twitter 帖子
 
 最后，ChatGPT 还可以生成视频或戏剧剧本，包括布景和建议的编辑。下图显示了一个人和 ChatGPT 之间的戏剧对话的示例：
 
-![图 5.11 – 由 ChatGPT 生成的带布景的戏剧对话](img/Figure_5.11_B19904.jpg)
+![图 5.11 – 由 ChatGPT 生成的带布景的戏剧对话](img/mdn-genai-cgpt-oai-Figure_5.11_B19904.jpg)
 
 图 5.11 – 由 ChatGPT 生成的带布景的戏剧对话
 
@@ -1460,13 +1460,13 @@ ChatGPT 还可以成为一位忠诚而守纪的学习伙伴。例如，它可以
 
 让我们看一些例子。想象一下，我起草了一封电子邮件邀请我的客户参加网络研讨会。我写了两个简短的句子。在这里，我希望 ChatGPT 改进这封电子邮件的形式和风格，因为目标受众将是高管层：
 
-![图 5.12 – 由 ChatGPT 重新审视以针对高管受众的电子邮件示例](img/Figure_5.12_B19904.jpg)
+![图 5.12 – 由 ChatGPT 重新审视以针对高管受众的电子邮件示例](img/mdn-genai-cgpt-oai-Figure_5.12_B19904.jpg)
 
 图 5.12 – 由 ChatGPT 重新审视以针对高管受众的电子邮件示例
 
 现在，让我们用不同的目标受众再问同样的问题：
 
-![图 5.13 – 由 ChatGPT 生成的针对不同受众的相同电子邮件示例](img/Figure_5.13_B19904.jpg)
+![图 5.13 – 由 ChatGPT 生成的针对不同受众的相同电子邮件示例](img/mdn-genai-cgpt-oai-Figure_5.13_B19904.jpg)
 
 图 5.13 – 由 ChatGPT 生成的针对不同受众的相同电子邮件示例
 
@@ -1474,7 +1474,7 @@ ChatGPT 还可以就您的写作风格和结构给出一些建议。
 
 想象一下，例如，您为自己的 YouTube 频道编写了一个带布景的剧本。您包括了演讲以及图像、片段和视频编辑活动。您还知道您的典型受众年龄在 15 至 25 岁之间。您想要对您的剧本进行反馈，并向 ChatGPT 请求：
 
-![图 5.14 – ChatGPT 提供视频剧本反馈的示例](img/Figure_5.14_B19904.jpg)
+![图 5.14 – ChatGPT 提供视频剧本反馈的示例](img/mdn-genai-cgpt-oai-Figure_5.14_B19904.jpg)
 
 图 5.14 – ChatGPT 提供视频剧本反馈的示例
 
@@ -1482,19 +1482,19 @@ ChatGPT 还可以就您的写作风格和结构给出一些建议。
 
 再次想象一下，您为一篇名为*自然语言处理的历史*的文章写了一个引言，并希望得到有关写作风格及其与标题一致性的反馈：
 
-![图 5.15 – ChatGPT 就论文引言提供反馈的示例](img/Figure_5.15_B19904.jpg)
+![图 5.15 – ChatGPT 就论文引言提供反馈的示例](img/mdn-genai-cgpt-oai-Figure_5.15_B19904.jpg)
 
 图 5.15 – ChatGPT 就论文引言提供反馈的示例
 
 我们还可以请 ChatGPT 具体举例说明它在回答中提到的引人入胜的轶事：
 
-![图 5.16 – ChatGPT 详细阐述了它之前提到的某个内容的示例](img/Figure_5.16_B19904.jpg)
+![图 5.16 – ChatGPT 详细阐述了它之前提到的某个内容的示例](img/mdn-genai-cgpt-oai-Figure_5.16_B19904.jpg)
 
 图 5.16 – ChatGPT 详细阐述了它之前提到的某个内容的示例
 
 我也对我的引言是否与标题一致或者我是否走错方向感兴趣：
 
-![图 5.17 – ChatGPT 就引言与标题的一致性提供反馈](img/Figure_5.17_B19904.jpg)
+![图 5.17 – ChatGPT 就引言与标题的一致性提供反馈](img/mdn-genai-cgpt-oai-Figure_5.17_B19904.jpg)
 
 图 5.17 – ChatGPT 就引言与标题的一致性提供反馈
 
@@ -1508,13 +1508,13 @@ ChatGPT 还可以就您的写作风格和结构给出一些建议。
 
 +   ChatGPT 可以捕捉意图。这意味着你也可以绕过翻译阶段，因为这是 ChatGPT 可以在后台处理的事情。例如，如果你想写一个提示以制作一条法语社交媒体帖子，你可以用任何你想用的语言来写这个提示 – ChatGPT 会自动检测到它（不需要提前指定）并理解你的意图：
 
-![图 5.18 – ChatGPT 生成与输入语言不同的输出的示例](img/Figure_5.18_B19904.jpg)
+![图 5.18 – ChatGPT 生成与输入语言不同的输出的示例](img/mdn-genai-cgpt-oai-Figure_5.18_B19904.jpg)
 
 图 5.18 – ChatGPT 生成与输入语言不同的输出的示例
 
 ChatGPT 能够捕捉特定俚语或成语的更精致含义。这使得翻译不是字面的，这样它可以保留潜在的含义。换句话说，让我们考虑英式表达*It's not my cup of tea*，指的是你不喜欢的东西。让我们让 ChatGPT 和谷歌翻译将其翻译成意大利文：
 
-![图 5.19 – 比较 ChatGPT 和谷歌翻译在将英文翻译成意大利文时的表现](img/figure_5.19.jpg)
+![图 5.19 – 比较 ChatGPT 和谷歌翻译在将英文翻译成意大利文时的表现](img/mdn-genai-cgpt-oai-figure_5.19.jpg)
 
 图 5.19 – 比较 ChatGPT 和谷歌翻译在将英文翻译成意大利文时的表现
 
@@ -1522,7 +1522,7 @@ ChatGPT 能够捕捉特定俚语或成语的更精致含义。这使得翻译不
 
 +   与任何其他任务一样，你可以向 ChatGPT 提供上下文。因此，如果你希望你的翻译具有特定的俚语或风格，你可以总是在提示中指定。或者，更有趣的是，你可以要求 ChatGPT 带有讽刺意味地翻译你的提示：
 
-![图 5.20 – ChatGPT 翻译带有讽刺意味的提示的例子。提示的原始内容取自 OpenAI 的维基百科页面：https://it.wikipedia.org/wiki/OpenAI](img/Figure_5.20_B19904.jpg)
+![图 5.20 – ChatGPT 翻译带有讽刺意味的提示的例子。提示的原始内容取自 OpenAI 的维基百科页面：https://it.wikipedia.org/wiki/OpenAI](img/mdn-genai-cgpt-oai-Figure_5.20_B19904.jpg)
 
 图 5.20 – ChatGPT 翻译带有讽刺意味的提示的例子。提示的原始内容取自 OpenAI 的维基百科页面：https://it.wikipedia.org/wiki/OpenAI
 
@@ -1538,13 +1538,13 @@ ChatGPT 能够捕捉特定俚语或成语的更精致含义。这使得翻译不
 
 一个例子涉及要求 ChatGPT 提供我们可能有兴趣阅读的书的快速摘要或评论：
 
-![图 5.21 – ChatGPT 提供书籍摘要和评论的示例](img/Figure_5.21_B19904.jpg)
+![图 5.21 – ChatGPT 提供书籍摘要和评论的示例](img/mdn-genai-cgpt-oai-Figure_5.21_B19904.jpg)
 
 图 5.21 – ChatGPT 提供书籍摘要和评论的示例
 
 或者，我们可以根据自己的喜好要求一些新书的建议：
 
-![图 5.22 – ChatGPT 根据我的喜好推荐书籍列表的示例](img/Figure_5.22_B19904.jpg)
+![图 5.22 – ChatGPT 根据我的喜好推荐书籍列表的示例](img/mdn-genai-cgpt-oai-Figure_5.22_B19904.jpg)
 
 图 5.22 – ChatGPT 根据我的喜好推荐书籍列表的示例
 
@@ -1552,7 +1552,7 @@ ChatGPT 能够捕捉特定俚语或成语的更精致含义。这使得翻译不
 
 换句话说，您可能希望快速检索有关您想了解更多的主题的背景参考资料 – 例如，前馈神经网络。您可能会要求 ChatGPT 指引您到一些广泛讨论该主题的网站或论文：
 
-![图 5.23 – ChatGPT 列出相关参考资料的示例](img/Figure_5.23_B19904.jpg)
+![图 5.23 – ChatGPT 列出相关参考资料的示例](img/mdn-genai-cgpt-oai-Figure_5.23_B19904.jpg)
 
 图 5.23 – ChatGPT 列出相关参考资料的示例
 
@@ -1560,19 +1560,19 @@ ChatGPT 能够捕捉特定俚语或成语的更精致含义。这使得翻译不
 
 假设我正在写一本名为*使用 Python 实现卷积神经网络简介*的书。我想研究市场上潜在竞争对手。我想调查的第一件事是是否已经有一些具有相同内容的竞争性标题，因此我可以要求 ChatGPT 生成一份现有书籍列表：
 
-![图 5.24 – ChatGPT 提供竞争书籍列表的示例](img/Figure_5.24_B19904.jpg)
+![图 5.24 – ChatGPT 提供竞争书籍列表的示例](img/mdn-genai-cgpt-oai-Figure_5.24_B19904.jpg)
 
 图 5.24 – ChatGPT 提供竞争书籍列表的示例
 
 您还可以要求关于您想要出版的市场饱和度的反馈：
 
-![图 5.25 – ChatGPT 就如何在市场上保持竞争力提供建议](img/Figure_5.25_B19904.jpg)
+![图 5.25 – ChatGPT 就如何在市场上保持竞争力提供建议](img/mdn-genai-cgpt-oai-Figure_5.25_B19904.jpg)
 
 图 5.25 – ChatGPT 就如何在市场上保持竞争力提供建议
 
 最后，让我们请 ChatGPT 更准确地告诉我在我将要操作的市场上如何保持竞争力：
 
-![图 5.26 – ChatGPT 如何建议改进您的书籍内容以使其脱颖而出的示例](img/Figure_5.26_B19904.jpg)
+![图 5.26 – ChatGPT 如何建议改进您的书籍内容以使其脱颖而出的示例](img/mdn-genai-cgpt-oai-Figure_5.26_B19904.jpg)
 
 图 5.26 – ChatGPT 如何建议改进您的书籍内容以使其脱颖而出的示例
 
@@ -1615,7 +1615,7 @@ ChatGPT 在列举一些使我的书独特的好建议方面做得相当不错。
 
 在最受欢迎的语言中，我们当然可以提到 Python、JavaScript、SQL 和 C#。然而，ChatGPT 覆盖了各种语言，就像它自己披露的那样：
 
-![图 6.1 – ChatGPT 列出了它能够理解和生成的编程语言](img/Figure_6.1_B19904.jpg)
+![图 6.1 – ChatGPT 列出了它能够理解和生成的编程语言](img/mdn-genai-cgpt-oai-Figure_6.1_B19904.jpg)
 
 图 6.1 – ChatGPT 列出了它能够理解和生成的编程语言
 
@@ -1627,7 +1627,7 @@ ChatGPT 在列举一些使我的书独特的好建议方面做得相当不错。
 
 您应该利用的主要功能是 ChatGPT 代码生成。你有多少次在寻找预先构建的代码片段来作为起点？生成`utils`函数、示例数据集、SQL 模式等？ChatGPT 能够根据自然语言输入生成代码：
 
-![图 6.2 – ChatGPT 生成一个 Python 函数来写入 CSV 文件的示例](img/Figure_6.2_B19904.jpg)
+![图 6.2 – ChatGPT 生成一个 Python 函数来写入 CSV 文件的示例](img/mdn-genai-cgpt-oai-Figure_6.2_B19904.jpg)
 
 图 6.2 – ChatGPT 生成 Python 函数来写入 CSV 文件的示例
 
@@ -1637,19 +1637,19 @@ ChatGPT 在列举一些使我的书独特的好建议方面做得相当不错。
 
 让我们请求 ChatGPT 根据列名创建这些表的模式，将列名作为上下文：
 
-![图 6.3 – ChatGPT 为 SAP 表生成 SQL 模式的示例](img/Figure_6.3_B19904.jpg)
+![图 6.3 – ChatGPT 为 SAP 表生成 SQL 模式的示例](img/mdn-genai-cgpt-oai-Figure_6.3_B19904.jpg)
 
 图 6.3 – ChatGPT 为 SAP 表生成 SQL 模式的示例
 
 请注意，ChatGPT 能够建立关系，因为它了解 SAP 分类和列名解释，这是任何不了解 SAP 分类（包括数据工程师在内）的人都会遇到困难的地方。作为确认，让我们请求 ChatGPT 用更易理解的名称重命名所有这些列：
 
-![图 6.4 – ChatGPT 重命名的 SAP 表列](img/Figure_6.4_B19904.jpg)
+![图 6.4 – ChatGPT 重命名的 SAP 表列](img/mdn-genai-cgpt-oai-Figure_6.4_B19904.jpg)
 
 图 6.4 – ChatGPT 重命名的 SAP 表列
 
 最后，让我们使用新列重新创建模式，确保避免重复（新名称 `Condition Value` 确实重复了五次）：
 
-![图 6.5 – SQL 模式，列已重命名](img/Figure_6.5_B19904.jpg)
+![图 6.5 – SQL 模式，列已重命名](img/mdn-genai-cgpt-oai-Figure_6.5_B19904.jpg)
 
 图 6.5 – SQL 模式，列已重命名
 
@@ -1675,7 +1675,7 @@ print(timedelta(seconds=end-start))
 
 执行时间为 `00.141185` 秒。如果我们要求 ChatGPT 优化这个脚本会发生什么呢？
 
-![图 6.6 – ChatGPT 生成优化的 Python 脚本替代方案](img/Figure_6.6_B19904.jpg)
+![图 6.6 – ChatGPT 生成优化的 Python 脚本替代方案](img/mdn-genai-cgpt-oai-Figure_6.6_B19904.jpg)
 
 图 6.6 – ChatGPT 生成优化的 Python 脚本替代方案
 
@@ -1683,7 +1683,7 @@ ChatGPT 为我提供了一个示例，以更低的执行时间实现相同的结
 
 让我们看看这个新脚本与之前脚本的性能比较：
 
-![图 6.7 – 用户和 ChatGPT 脚本执行时间的比较](img/Figure_6.7_B19904.jpg)
+![图 6.7 – 用户和 ChatGPT 脚本执行时间的比较](img/mdn-genai-cgpt-oai-Figure_6.7_B19904.jpg)
 
 图 6.7 – 用户和 ChatGPT 脚本执行时间的比较
 
@@ -1713,7 +1713,7 @@ TypeError: [] has type list, but expected one of: bytes, Unicode
 
 让我们看看 ChatGPT 是否能让我理解错误的本质。为此，我只需向 ChatGPT 提供错误文本，并要求它给我解释。
 
-![图 6.8 – ChatGPT 用自然语言解释 Python 错误](img/Figure_6.8_B19904.jpg)
+![图 6.8 – ChatGPT 用自然语言解释 Python 错误](img/mdn-genai-cgpt-oai-Figure_6.8_B19904.jpg)
 
 图 6.8 – ChatGPT 用自然语言解释 Python 错误
 
@@ -1721,19 +1721,19 @@ TypeError: [] has type list, but expected one of: bytes, Unicode
 
 在上面的例子中，我期望看到`g_p_t_`的结果；然而，实际上它只返回了这段代码中的`t_`：
 
-![图 6.9 – 有错误的 Python 函数](img/Figure_6.9_B19904.jpg)
+![图 6.9 – 有错误的 Python 函数](img/mdn-genai-cgpt-oai-Figure_6.9_B19904.jpg)
 
 图 6.9 – 有错误的 Python 函数
 
 让我们请 ChatGPT 为我们调试这个函数：
 
-![图 6.10 – ChatGPT 调试 Python 函数的示例](img/Figure_6.10_B19904.jpg)
+![图 6.10 – ChatGPT 调试 Python 函数的示例](img/mdn-genai-cgpt-oai-Figure_6.10_B19904.jpg)
 
 图 6.10 – ChatGPT 调试 Python 函数的示例
 
 令人印象深刻，不是吗？再次，ChatGPT 提供了正确版本的代码，并帮助解释错误在哪里以及为什么导致不正确的结果。让我们看看现在是否可以工作：
 
-![图 6.11 – ChatGPT 调试后的 Python 函数](img/Figure_6.11_B19904.jpg)
+![图 6.11 – ChatGPT 调试后的 Python 函数](img/mdn-genai-cgpt-oai-Figure_6.11_B19904.jpg)
 
 图 6.11 – ChatGPT 调试后的 Python 函数
 
@@ -1799,13 +1799,13 @@ class Calculator:
 
 您可以初始化该类并测试它如下（作为示例，我将使用加法方法）：
 
-![图 6.12 – 初始化 Python 类并使用其中一个方法](img/Figure_6.12_B19904.jpg)
+![图 6.12 – 初始化 Python 类并使用其中一个方法](img/mdn-genai-cgpt-oai-Figure_6.12_B19904.jpg)
 
 图 6.12 – 初始化 Python 类并使用其中一个方法
 
 现在，假设我想能够使用`Calculator?`约定来检索文档字符串文档。通过这样做，对于 Python 包、函数和方法，我们可以得到该特定对象的全面文档，如下所示（`pandas` Python 库的示例）：
 
-![图 6.13 – pandas 库文档示例](img/Figure_6.13_B19904.jpg)
+![图 6.13 – pandas 库文档示例](img/mdn-genai-cgpt-oai-Figure_6.13_B19904.jpg)
 
 图 6.13 – pandas 库文档示例
 
@@ -1813,7 +1813,7 @@ class Calculator:
 
 因此，在向 ChatGPT 提供`Calculator`类作为上下文之后，我要求它生成相关的文档如下：
 
-![图 6.14 – ChatGPT 更新代码文档](img/Figure_6.14_B19904.jpg)
+![图 6.14 – ChatGPT 更新代码文档](img/mdn-genai-cgpt-oai-Figure_6.14_B19904.jpg)
 
 图 6.14 – ChatGPT 更新代码文档
 
@@ -1821,7 +1821,7 @@ class Calculator:
 
 因此，如果我们按照前面代码中所示更新我们的类，并调用`Calculator?`，我们将得到以下输出：
 
-![图 6.15 – 新的计算器类文档](img/Figure_6.15_B19904.jpg)
+![图 6.15 – 新的计算器类文档](img/mdn-genai-cgpt-oai-Figure_6.15_B19904.jpg)
 
 图 6.15 – 新的计算器类文档
 
@@ -1829,7 +1829,7 @@ class Calculator:
 
 例如，让我们请 ChatGPT 向我们解释以下 Python 脚本的作用：
 
-![图 6.16 – ChatGPT 解释 Python 脚本的示例](img/Figure_6.16_B19904.jpg)
+![图 6.16 – ChatGPT 解释 Python 脚本的示例](img/mdn-genai-cgpt-oai-Figure_6.16_B19904.jpg)
 
 图 6.16 – ChatGPT 解释 Python 脚本的示例
 
@@ -1857,7 +1857,7 @@ model.add(tf.keras.layers.Dense(10,activation='softmax'))
 
 上述代码由几个执行不同操作的层组成。我可能对模型的结构以及每个层的目的感兴趣。让我们向 ChatGPT 寻求帮助：
 
-![图 6.17 – 使用 ChatGPT 进行模型可解释性](img/Figure_6.17_B19904.jpg)
+![图 6.17 – 使用 ChatGPT 进行模型可解释性](img/mdn-genai-cgpt-oai-Figure_6.17_B19904.jpg)
 
 图 6.17 – 使用 ChatGPT 进行模型可解释性
 
@@ -1865,13 +1865,13 @@ model.add(tf.keras.layers.Dense(10,activation='softmax'))
 
 我还可以通过 ChatGPT 在验证阶段解释模型结果。因此，在将数据分为训练集和测试集并在训练集上训练模型后，我想看到它在测试集上的表现：
 
-![图 6.18 – 评估指标](img/Figure_6.18_B19904.jpg)
+![图 6.18 – 评估指标](img/mdn-genai-cgpt-oai-Figure_6.18_B19904.jpg)
 
 图 6.18 – 评估指标
 
 让我们还请 ChatGPT 对我们的验证指标进行详细说明：
 
-![图 6.19 – ChatGPT 解释评估指标示例](img/Figure_6.19_B19904.jpg)
+![图 6.19 – ChatGPT 解释评估指标示例](img/mdn-genai-cgpt-oai-Figure_6.19_B19904.jpg)
 
 图 6.19 – ChatGPT 解释评估指标示例
 
@@ -1925,13 +1925,13 @@ print('Test accuracy:', test_acc)
 
 现在让我们看看如果我们把前面的代码作为 ChatGPT 的上下文，并要求它将其翻译成 MATLAB 会发生什么：
 
-![图表 20 – ChatGPT 将 Python 代码翻译成 MATLAB](img/Figure_6.20_B19904.jpg)
+![图表 20 – ChatGPT 将 Python 代码翻译成 MATLAB](img/mdn-genai-cgpt-oai-Figure_6.20_B19904.jpg)
 
 图表 20 – ChatGPT 将 Python 代码翻译成 MATLAB
 
 让我们看看它是否能够将代码翻译成其他语言，比如 JavaScript：
 
-![图表 6.21 – ChatGPT 将 Python 代码翻译成 JavaScript](img/Figure_6.21_B19904.jpg)
+![图表 6.21 – ChatGPT 将 Python 代码翻译成 JavaScript](img/mdn-genai-cgpt-oai-Figure_6.21_B19904.jpg)
 
 图表 6.21 – ChatGPT 将 Python 代码翻译成 JavaScript
 
@@ -1941,7 +1941,7 @@ print('Test accuracy:', test_acc)
 
 以下图表描述了应用程序现代化的各种选项：
 
-![图 6.22 – 迁移应用程序到公共云的四种方式](img/Figure_6.22_B19904.jpg)
+![图 6.22 – 迁移应用程序到公共云的四种方式](img/mdn-genai-cgpt-oai-Figure_6.22_B19904.jpg)
 
 图 6.22 – 迁移应用程序到公共云的四种方式
 
@@ -2005,7 +2005,7 @@ READ-EMPLOYEE.
 
 我然后将之前的 COBOL 脚本传递给 ChatGPT，这样它就可以将其作为上下文来制定其响应。现在让我们要求 ChatGPT 将该脚本翻译成 JavaScript：
 
-![图 6.23 – ChatGPT 将 COBOL 翻译成 JavaScript 的示例](img/Figure_6.23_B19904.jpg)
+![图 6.23 – ChatGPT 将 COBOL 翻译成 JavaScript 的示例](img/mdn-genai-cgpt-oai-Figure_6.23_B19904.jpg)
 
 图 6.23 – ChatGPT 将 COBOL 翻译成 JavaScript 的示例
 
@@ -2068,7 +2068,7 @@ ChatGPT 可以成为开发人员寻求提升技能和简化工作流程的宝贵
 
 +   **头脑风暴的创意**：ChatGPT 能够支持你进行头脑风暴，并提供新产品线的草案选项的理由。所以，让我们问问应该专注于哪种新产品线：
 
-![图 7.1 – ChatGPT 生成的新创意示例](img/Figure_7.1_B19904.jpg)
+![图 7.1 – ChatGPT 生成的新创意示例](img/mdn-genai-cgpt-oai-Figure_7.1_B19904.jpg)
 
 图 7.1 – ChatGPT 生成的新创意示例
 
@@ -2076,7 +2076,7 @@ ChatGPT 可以成为开发人员寻求提升技能和简化工作流程的宝贵
 
 +   **产品名称**：现在我们已经确定了自己的想法，我们需要为其想一个引人注目的名称。同样，我会向 ChatGPT 寻求更多选项，以便我可以选择我的最喜欢的：
 
-![图 7.2 – 潜在的产品名称列表](img/Figure_7.2_B19904.jpg)
+![图 7.2 – 潜在的产品名称列表](img/mdn-genai-cgpt-oai-Figure_7.2_B19904.jpg)
 
 图 7.2 – 潜在的产品名称列表
 
@@ -2084,13 +2084,13 @@ ChatGPT 可以成为开发人员寻求提升技能和简化工作流程的宝贵
 
 +   **生成引人注目的口号**：除了产品名称外，我还想分享名称背后的意图和产品线的使命，以便我的目标受众对此产生兴趣。我希望能激发客户的信任和忠诚，并让他们在我的新产品线的使命中看到自己的影子。
 
-![图 7.3 – 我的新产品名称口号列表](img/Figure_7.3_B19904.jpg)
+![图 7.3 – 我的新产品名称口号列表](img/mdn-genai-cgpt-oai-Figure_7.3_B19904.jpg)
 
 图 7.3 – 我的新产品名称口号列表
 
 很好，现在我满意了产品名称和口号，我将在以后用它们来创建一个独特的社交媒体公告。在这之前，我想要花更多时间进行针对目标受众的市场调研。
 
-![图 7.4 – 要达到的新产品线目标人群列表](img/Figure_7.4_B19904.jpg)
+![图 7.4 – 要达到的新产品线目标人群列表](img/mdn-genai-cgpt-oai-Figure_7.4_B19904.jpg)
 
 图 7.4 – 要达到的新产品线目标人群列表
 
@@ -2098,19 +2098,19 @@ ChatGPT 可以成为开发人员寻求提升技能和简化工作流程的宝贵
 
 +   **产品变体和销售渠道**：根据前面的潜在客户群，我可以生成产品变体，使其更加贴合特定受众：
 
-![图 7.5 – 产品线变体示例](img/Figure_7.5_B19904.jpg)
+![图 7.5 – 产品线变体示例](img/mdn-genai-cgpt-oai-Figure_7.5_B19904.jpg)
 
 图 7.5 – 产品线变体示例
 
 同样，我还可以要求 ChatGPT 为前面的每个群体提供不同的销售渠道建议：
 
-![图 7.6 – ChatGPT 提供的不同销售渠道建议](img/Figure_7.6_B19904.jpg)
+![图 7.6 – ChatGPT 提供的不同销售渠道建议](img/mdn-genai-cgpt-oai-Figure_7.6_B19904.jpg)
 
 图 7.6 – ChatGPT 提供的不同销售渠道建议
 
 +   **脱颖而出**：我希望我的产品线在竞争中脱颖而出，在一个非常饱和的市场中脱颖而出 – 我想让它独特。出于这个目的，我要求 ChatGPT 包括可持续性和包容性等社会考虑因素。让我们请 ChatGPT 在这方面提供一些建议：
 
-![图 7.7 – ChatGPT 生成的突出特点示例](img/Figure_7.7_B19904.jpg)
+![图 7.7 – ChatGPT 生成的突出特点示例](img/mdn-genai-cgpt-oai-Figure_7.7_B19904.jpg)
 
 图 7.7 – ChatGPT 生成的突出特点示例
 
@@ -2118,13 +2118,13 @@ ChatGPT 可以成为开发人员寻求提升技能和简化工作流程的宝贵
 
 +   **产品描述**：现在是时候开始制定我们的 GTP 计划了。首先，我想生成一个产品描述放在我的网站上，包括之前所有独特的差异化因素。
 
-![图 7.8 – 由 ChatGPT 生成的描述和 SEO 关键词示例](img/Figure_7.8_B19904.jpg)
+![图 7.8 – 由 ChatGPT 生成的描述和 SEO 关键词示例](img/mdn-genai-cgpt-oai-Figure_7.8_B19904.jpg)
 
 图 7.8 – 由 ChatGPT 生成的描述和 SEO 关键词示例
 
 +   **公平价格**：另一个关键因素是确定我们产品的公平价格。当我针对不同受众（竞争跑步者、休闲跑步者和健身爱好者）区分产品变体时，我也希望有一个考虑到这种聚类的价格范围。
 
-![图 7.9 – 产品变体的价格范围](img/Figure_7.9_B19904.jpg)
+![图 7.9 – 产品变体的价格范围](img/mdn-genai-cgpt-oai-Figure_7.9_B19904.jpg)
 
 图 7.9 – 产品变体的价格范围
 
@@ -2132,13 +2132,13 @@ ChatGPT 可以成为开发人员寻求提升技能和简化工作流程的宝贵
 
 最后，我们可以请 ChatGPT 为我们的新产品生成一个 Instagram 帖子，包括相关的标签和 SEO 关键词。然后我们可以用 DALL-E 生成图像！
 
-![图 7.10 – 由 ChatGPT 生成的社交媒体帖子](img/Figure_7.10_B19904.jpg)
+![图 7.10 – 由 ChatGPT 生成的社交媒体帖子](img/mdn-genai-cgpt-oai-Figure_7.10_B19904.jpg)
 
 图 7.10 – 由 ChatGPT 生成的社交媒体帖子
 
 而且，有了 DALL-E 的特别贡献，这是最终结果：
 
-![图 7.11 – 由 ChatGPT 和 DALL-E 完全生成的 Instagram 帖子](img/Figure_7.11_B19904.jpg)
+![图 7.11 – 由 ChatGPT 和 DALL-E 完全生成的 Instagram 帖子](img/mdn-genai-cgpt-oai-Figure_7.11_B19904.jpg)
 
 图 7.11 – 由 ChatGPT 和 DALL-E 完全生成的 Instagram 帖子
 
@@ -2160,7 +2160,7 @@ A/B 测试使营销人员能够优化他们的活动和元素，以实现最大�
 
 我的目标是创建一篇出色的博客文章，分享这款新安全带的推出，并且我想在两个群体中测试它的两个不同版本。我即将发布的博客文章，也是我想要进行 A/B 测试的对象，如下所示：
 
-![图 7.12 – 推出攀岩装备的博客文章示例](img/Figure_7.12_B19904.jpg)
+![图 7.12 – 推出攀岩装备的博客文章示例](img/mdn-genai-cgpt-oai-Figure_7.12_B19904.jpg)
 
 图 7.12 – 推出攀岩装备的博客文章示例
 
@@ -2168,7 +2168,7 @@ A/B 测试使营销人员能够优化他们的活动和元素，以实现最大�
 
 +   第一层是重新表述文章，使用不同的关键词或不同的引人注目的口号。为了做到这一点，一旦这篇文章作为背景提供，我们可以要求 ChatGPT 处理这篇文章，并稍微改变一些元素：
 
-![图 7.13 – ChatGPT 生成的博客文章的新版本](img/Figure_7.13_B19904.jpg)
+![图 7.13 – ChatGPT 生成的博客文章的新版本](img/mdn-genai-cgpt-oai-Figure_7.13_B19904.jpg)
 
 图 7.13 – ChatGPT 生成的博客文章的新版本
 
@@ -2176,7 +2176,7 @@ A/B 测试使营销人员能够优化他们的活动和元素，以实现最大�
 
 +   第二级别是设计网页，即改变图像的搭配而不是按钮的位置。为此，我在登载在攀岩博客上的博文中创建了一个简单的网页（你可以在书的 GitHub 代码库中找到这个代码：[`github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%207%20-%20ChatGPT%20for%20Marketers/Code`](https://github.com/PacktPublishing/Modern-Generative-AI-with-ChatGPT-and-OpenAI-Models/tree/main/Chapter%207%20-%20ChatGPT%20for%20Marketers/Code)）：
 
-![图 7.14 – 登载在攀岩博客上的示例博文](img/Figure_7.14_B19904.jpg)
+![图 7.14 – 登载在攀岩博客上的示例博文](img/mdn-genai-cgpt-oai-Figure_7.14_B19904.jpg)
 
 图 7.14 – 登载在攀岩博客上的示例博文
 
@@ -2184,13 +2184,13 @@ A/B 测试使营销人员能够优化他们的活动和元素，以实现最大�
 
 所以，让我们用 HTML 源代码来激活 ChatGPT：
 
-![图 7.15 – ChatGPT 改变 HTML 代码](img/Figure_7.15_B19904.jpg)
+![图 7.15 – ChatGPT 改变 HTML 代码](img/mdn-genai-cgpt-oai-Figure_7.15_B19904.jpg)
 
 图 7.15 – ChatGPT 改变 HTML 代码
 
 让我们看一下输出是什么样的：
 
-![图 7.16 – 网站的新版本](img/Figure_7.16_B19904.jpg)
+![图 7.16 – 网站的新版本](img/mdn-genai-cgpt-oai-Figure_7.16_B19904.jpg)
 
 图 7.16 – 网站的新版本
 
@@ -2198,7 +2198,7 @@ A/B 测试使营销人员能够优化他们的活动和元素，以实现最大�
 
 事实上，检查两个版本网页的源代码，我们可以看到它们在按钮部分的不同之处：
 
-![图 7.17 – 两个版本网站的源代码比较](img/Figure_7.17_B19904.jpg)
+![图 7.17 – 两个版本网站的源代码比较](img/mdn-genai-cgpt-oai-Figure_7.17_B19904.jpg)
 
 图 7.17 – 两个版本网站的源代码比较
 
@@ -2214,7 +2214,7 @@ SEO 是一种增加网站在**搜索引擎结果页**（**SERP**）上的可见�
 
 想象一下，您经营一家名为**帽子和手套**的电子商务公司，该公司只销售，正如您可能已经猜到的那样，帽子和手套。您现在正在创建您的电子商务网站，并希望优化其排名。让我们请教 ChatGPT 列出一些相关的关键词，以嵌入到我们的网站中：
 
-![图 7.18 – ChatGPT 生成的 SEO 关键词示例](img/Figure_7.18_B19904.jpg)
+![图 7.18 – ChatGPT 生成的 SEO 关键词示例](img/mdn-genai-cgpt-oai-Figure_7.18_B19904.jpg)
 
 图 7.18 – ChatGPT 生成的 SEO 关键词示例
 
@@ -2238,7 +2238,7 @@ SEO 的另一个关键要素是**搜索引擎意图**。搜索引擎意图，也
 
 这里的附加价值在于，我们想看看 ChatGPT 是否能够确定在一个精确的领域和具体的分类法中的意图，即营销领域。这就是为什么提示设计再次至关重要，以指导 ChatGPT 朝着正确的方向发展。
 
-![图 7.19 – ChatGPT 充当 SEO 专家的示例](img/Figure_7.19_B19904.jpg)
+![图 7.19 – ChatGPT 充当 SEO 专家的示例](img/mdn-genai-cgpt-oai-Figure_7.19_B19904.jpg)
 
 图 7.19 – ChatGPT 充当 SEO 专家的示例
 
@@ -2248,7 +2248,7 @@ SEO 的另一个关键要素是**搜索引擎意图**。搜索引擎意图，也
 
 让我们请 ChatGPT 充当 SEO 专家，并指导我们 SEO 审核报告应该是什么样子，应该包括哪些指标和关键绩效指标：
 
-![图 7.20 – ChatGPT 提供优化 HTML 代码的示例](img/Figure_7.20_B19904.jpg)
+![图 7.20 – ChatGPT 提供优化 HTML 代码的示例](img/mdn-genai-cgpt-oai-Figure_7.20_B19904.jpg)
 
 图 7.20 – ChatGPT 提供优化 HTML 代码的示例
 
@@ -2278,7 +2278,7 @@ ChatGPT 能够生成相当准确的分析，带有相关的评论和建议。总
 
 让我们请 ChatGPT 捕捉这条评论的情感：
 
-![图 7.21 – ChatGPT 分析客户评论](img/Figure_7.21_B19904.jpg)
+![图 7.21 – ChatGPT 分析客户评论](img/mdn-genai-cgpt-oai-Figure_7.21_B19904.jpg)
 
 图 7.21 – ChatGPT 分析客户评论
 
@@ -2286,13 +2286,13 @@ ChatGPT 能够生成相当准确的分析，带有相关的评论和建议。总
 
 让我们深入一点，并请一些关于改进产品的建议：
 
-![图 7.22 – 基于客户反馈的产品改进建议](img/Figure_7.22_B19904.jpg)
+![图 7.22 – 基于客户反馈的产品改进建议](img/mdn-genai-cgpt-oai-Figure_7.22_B19904.jpg)
 
 图 7.22 – 基于客户反馈的产品改进建议
 
 最后，让我们回应客户，向客户显示，我们作为一家公司确实关心客户的反馈，并希望改进我们的产品。
 
-![图 7.23 – ChatGPT 生成的响应](img/Figure_7.23_B19904.jpg)
+![图 7.23 – ChatGPT 生成的响应](img/mdn-genai-cgpt-oai-Figure_7.23_B19904.jpg)
 
 图 7.23 – ChatGPT 生成的响应
 
@@ -2363,7 +2363,7 @@ ChatGPT 可以成为各领域研究人员的极其宝贵的资源。作为一个
 
 1.  **定义研究问题**：进行文献综述的第一步是定义感兴趣主题的研究问题。因此，假设我们正在研究社交媒体对心理健康的影响。现在我们有兴趣思考一些可能的研究问题，以便聚焦我们的研究，并且我们可以利用 ChatGPT 来做到这一点：
 
-![图 8.1 – 基于给定主题的研究问题示例](img/Figure_8.1_B19904.jpg)
+![图 8.1 – 基于给定主题的研究问题示例](img/mdn-genai-cgpt-oai-Figure_8.1_B19904.jpg)
 
 图 8.1 – 基于给定主题的研究问题示例
 
@@ -2371,7 +2371,7 @@ ChatGPT 可以成为各领域研究人员的极其宝贵的资源。作为一个
 
 1.  **文献搜索**：现在我们有了研究问题，下一步是使用各种数据库、搜索引擎和其他来源搜索相关文献。研究人员可以使用特定关键词和搜索词来帮助识别相关研究。
 
-![图 8.2 – 在 ChatGPT 支持下进行文献搜索](img/Figure_8.2_B19904.jpg)
+![图 8.2 – 在 ChatGPT 支持下进行文献搜索](img/mdn-genai-cgpt-oai-Figure_8.2_B19904.jpg)
 
 图 8.2 – 在 ChatGPT 支持下进行文献搜索
 
@@ -2381,7 +2381,7 @@ ChatGPT 可以成为各领域研究人员的极其宝贵的资源。作为一个
 
 比如，假设我们想深入研究**促进青少年和年轻成年人健康使用社交媒体：干预框架**研究论文。让我们请 ChatGPT 为我们筛选一下：
 
-![图 8.3 – 特定论文的文献筛选](img/Figure_8.3_B19904.jpg)
+![图 8.3 – 特定论文的文献筛选](img/mdn-genai-cgpt-oai-Figure_8.3_B19904.jpg)
 
 图 8.3 – 特定论文的文献筛选
 
@@ -2407,7 +2407,7 @@ ChatGPT 能够生成这篇论文的筛选，因为显然它是其知识库的一
 
 就是这样：
 
-![图 8.4 – 从给定论文中提取相关数据和框架](img/Figure_8.4_B19904.jpg)
+![图 8.4 – 从给定论文中提取相关数据和框架](img/mdn-genai-cgpt-oai-Figure_8.4_B19904.jpg)
 
 图 8.4 – 从给定论文中提取相关数据和框架
 
@@ -2423,7 +2423,7 @@ ChatGPT 能够生成这篇论文的筛选，因为显然它是其知识库的一
 
 这是结果的呈现方式：
 
-![图 8.5 – 三篇研究论文的文献分析和基准比较](img/Figure_8.5_B19904.jpg)
+![图 8.5 – 三篇研究论文的文献分析和基准比较](img/mdn-genai-cgpt-oai-Figure_8.5_B19904.jpg)
 
 图 8.5 – 三篇研究论文的文献分析和基准比较
 
@@ -2449,7 +2449,7 @@ ChatGPT 可以通过为您提供研究框架，如随机对照试验、拟实验
 
 +   **确定研究设计**：ChatGPT 可以协助确定研究问题的适当研究设计，如随机对照试验、拟实验设计或相关研究。
 
-![图 8.6 – ChatGPT 为您的实验建议适当的研究设计](img/Figure_8.6_B19904.jpg)
+![图 8.6 – ChatGPT 为您的实验建议适当的研究设计](img/mdn-genai-cgpt-oai-Figure_8.6_B19904.jpg)
 
 图 8.6 – ChatGPT 建议适合你的实验的适当研究设计
 
@@ -2457,7 +2457,7 @@ ChatGPT 建议进行**随机对照试验**(**RCT**)，并清楚地解释了背�
 
 +   **确定结果指标**：ChatGPT 可以帮助您确定一些潜在的结果指标，以确定测试的结果。让我们为我们的研究请求一些建议：
 
-![图 8.7 – 给定研究的学习成果](img/Figure_8.7_B19904.jpg)
+![图 8.7 – 给定研究的学习成果](img/mdn-genai-cgpt-oai-Figure_8.7_B19904.jpg)
 
 图 8.7 – 给定研究的学习成果
 
@@ -2465,7 +2465,7 @@ ChatGPT 建议进行**随机对照试验**(**RCT**)，并清楚地解释了背�
 
 +   **确定变量**：ChatGPT 可以帮助研究人员确定研究中的自变量和因变量：
 
-![图 8.8 – ChatGPT 为给定研究生成变量](img/Figure_8.8_B19904.jpg)
+![图 8.8 – ChatGPT 为给定研究生成变量](img/mdn-genai-cgpt-oai-Figure_8.8_B19904.jpg)
 
 图 8.8 – ChatGPT 为给定研究生成变量
 
@@ -2477,7 +2477,7 @@ ChatGPT 建议进行**随机对照试验**(**RCT**)，并清楚地解释了背�
 
 +   **抽样策略**：ChatGPT 可以为研究提供潜在的抽样策略：
 
-![图 8.9 – ChatGPT 提出的 RCT 抽样策略建议](img/Figure_8.9_B19904.jpg)
+![图 8.9 – ChatGPT 提出的 RCT 抽样策略建议](img/mdn-genai-cgpt-oai-Figure_8.9_B19904.jpg)
 
 图 8.9 – ChatGPT 提出的 RCT 抽样策略建议
 
@@ -2485,7 +2485,7 @@ ChatGPT 建议进行**随机对照试验**(**RCT**)，并清楚地解释了背�
 
 +   **数据分析**：ChatGPT 可以协助研究人员确定适当的统计测试，以分析从研究中收集的数据，如方差分析、 t 检验或回归分析。
 
-![图 8.10 – ChatGPT 为给定研究建议统计测试](img/Figure_8.10_B19904.jpg)
+![图 8.10 – ChatGPT 为给定研究建议统计测试](img/mdn-genai-cgpt-oai-Figure_8.10_B19904.jpg)
 
 图 8.10 – ChatGPT 为给定研究建议统计测试
 
@@ -2517,7 +2517,7 @@ ChatGPT 可以通过提供自动引用和参考工具来支持研究人员进行
 
 让我们看看 ChatGPT 是如何处理的：
 
-![图 8.11 – ChatGPT 按照 APA 格式生成的参考文献列表](img/Figure_8.11_B19904.jpg)
+![图 8.11 – ChatGPT 按照 APA 格式生成的参考文献列表](img/mdn-genai-cgpt-oai-Figure_8.11_B19904.jpg)
 
 图 8.11 – ChatGPT 按照 APA 格式生成的参考文献列表
 
@@ -2531,7 +2531,7 @@ ChatGPT 可以成为头脑风暴可能错过的引用的伟大助手。让我们
 
 让我们让 ChatGPT 列出可能与这种研究相关的所有可能的参考文献：
 
-![图 8.12 – 与提供的摘要相关的参考文献列表](img/Figure_8.12_B19904.jpg)
+![图 8.12 – 与提供的摘要相关的参考文献列表](img/mdn-genai-cgpt-oai-Figure_8.12_B19904.jpg)
 
 图 8.12 – 与提供的摘要相关的参考文献列表
 
@@ -2545,7 +2545,7 @@ ChatGPT 可以成为头脑风暴可能错过的引用的伟大助手。让我们
 
 比如说，我们的研究*技术对工作场所生产力的影响：一项经验性研究*是为了硕士论文讨论。在这种情况下，我们可以要求 ChatGPT 产生一个持续 15 分钟的提案结构，并遵守科学方法。让我们看看产生了怎样的结果（作为背景，我参考的是上一段的摘要）：
 
-![图 8.13 – ChatGPT 生成的论文讨论](img/Figure_8.13_B19904.jpg)
+![图 8.13 – ChatGPT 生成的论文讨论](img/mdn-genai-cgpt-oai-Figure_8.13_B19904.jpg)
 
 图 8.13 – ChatGPT 生成的论文讨论
 
@@ -2559,13 +2559,13 @@ ChatGPT 可以成为头脑风暴可能错过的引用的伟大助手。让我们
 
 让我们继续进行这个请求：
 
-![图 8.14 – 基于讨论提纲的幻灯片结构](img/Figure_8.14_B19904.jpg)
+![图 8.14 – 基于讨论提纲的幻灯片结构](img/mdn-genai-cgpt-oai-Figure_8.14_B19904.jpg)
 
 图 8.14 – 基于讨论提纲的幻灯片结构
 
 最后，让我们想象一下，我们的论文讨论非常出色，以至于可能被选中获得研究基金以继续探讨这个主题。现在，我们需要一个电梯演讲来说服资助委员会。让我们从 ChatGPT 那里寻求一些支持:
 
-![图 8.15 – 给定论文的电梯演讲](img/Figure_8.15_B19904.jpg)
+![图 8.15 – 给定论文的电梯演讲](img/mdn-genai-cgpt-oai-Figure_8.15_B19904.jpg)
 
 图 8.15 – 给定论文的电梯演讲
 
@@ -2659,7 +2659,7 @@ Microsoft 长期投资于 AI 研发，专注于构建 AI 驱动的工具和服�
 
 人工智能领域的早期研究可以追溯到 1990 年代末，当时微软建立了其**机器学习**（**ML**）和应用统计研究小组。从那时开始，微软开始研究和尝试智能代理和虚拟助手。在这种情况下，原型是 Clippy，一个为 Microsoft Office 的个人数字助理：
 
-![图 9.1 – Clippy，2000 年推出的默认办公助手](img/Figure_9.1_B19904.jpg)
+![图 9.1 – Clippy，2000 年推出的默认办公助手](img/mdn-genai-cgpt-oai-Figure_9.1_B19904.jpg)
 
 图 9.1 – Clippy，2000 年推出的默认办公助手
 
@@ -2667,7 +2667,7 @@ Clippy 是更复杂工具的先驱，例如 Cortana。Cortana 于 2014 年推出
 
 随后，2016 年，作为对微软牛津项目的扩展，微软在 Azure 云中推出了微软认知服务，这是一组 API，为开发人员提供人工智能能力，而无需他们需要机器学习和数据科学专业知识：
 
-![图 9.2 – 微软 Azure 人工智能服务](img/Figure_9.2_B19904.jpg)
+![图 9.2 – 微软 Azure 人工智能服务](img/mdn-genai-cgpt-oai-Figure_9.2_B19904.jpg)
 
 图 9.2 – 微软 Azure 人工智能服务
 
@@ -2699,7 +2699,7 @@ AOAI 服务是微软的产品，提供对 OpenAI 强大语言模型（如 GPT-3.
 
 在 Microsoft Azure AI 产品组合的背景下，AOAI 服务位于以下认知服务产品之间：
 
-![图 9.3 – AOAI 服务的普及（GA）](img/Figure_9.3_B19904.jpg)
+![图 9.3 – AOAI 服务的普及（GA）](img/mdn-genai-cgpt-oai-Figure_9.3_B19904.jpg)
 
 图 9.3 – AOAI 服务的普及（GA）
 
@@ -2717,25 +2717,25 @@ AOAI 服务是微软的产品，提供对 OpenAI 强大语言模型（如 GPT-3.
 
 如下截图所示：
 
-![图 9.4 – 创建 AOAI 资源的步骤](img/Figure_9.4_B19904.jpg)
+![图 9.4 – 创建 AOAI 资源的步骤](img/mdn-genai-cgpt-oai-Figure_9.4_B19904.jpg)
 
 图 9.4 – 创建 AOAI 资源的步骤
 
 这个过程可能需要几分钟。一旦准备就绪，您可以直接转到其用户友好的界面，AOAI Playground，测试您的模型，然后部署它们：
 
-![图 9.5 – AOAI 用户界面和 Playground](img/Figure_9.5_B19904.jpg)
+![图 9.5 – AOAI 用户界面和 Playground](img/mdn-genai-cgpt-oai-Figure_9.5_B19904.jpg)
 
 图 9.5 – AOAI 用户界面和 Playground
 
 请注意，AOAI Playground 看起来几乎与我们在*第二章*中看到的 OpenAI Playground 版本相同。这里的区别在于，要使用 AOAI 模型，您必须启动一个部署，这是一个无服务器计算实例，您可以将其附加到模型上。您可以在 Playground 中或在 Azure 门户的资源后端页面上执行此操作：
 
-![图 9.6 – 通过 Playground（A）或 Azure 门户（B）创建新的 AOAI 部署](img/Figure_9.6_B19904.jpg)
+![图 9.6 – 通过 Playground（A）或 Azure 门户（B）创建新的 AOAI 部署](img/mdn-genai-cgpt-oai-Figure_9.6_B19904.jpg)
 
 图 9.6 – 通过 Playground（A）或 Azure 门户（B）创建新的 AOAI 部署
 
 例如，我创建了一个名为 `text-davinci-003` 的部署，带有一个关联的 `text-davinci-003` 模型：
 
-![图 9.7 – AOAI 的活跃部署](img/Figure_9.7_B19904.jpg)
+![图 9.7 – AOAI 的活跃部署](img/mdn-genai-cgpt-oai-Figure_9.7_B19904.jpg)
 
 图 9.7 – AOAI 的活跃部署
 
@@ -2745,7 +2745,7 @@ AOAI 服务是微软的产品，提供对 OpenAI 强大语言模型（如 GPT-3.
 
 AOAI Playground 是熟悉基础模型并开始规划哪个模型版本最适合您的项目的最简单方法。用户界面呈现不同的选项卡和工作区，如下面的截图所示：
 
-![图 9.8 – AOAI Playground 概览](img/Figure_9.8_B19904.jpg)
+![图 9.8 – AOAI Playground 概览](img/mdn-genai-cgpt-oai-Figure_9.8_B19904.jpg)
 
 图 9.8 – AOAI Playground 概览
 
@@ -2753,13 +2753,13 @@ AOAI Playground 是熟悉基础模型并开始规划哪个模型版本最适合�
 
 +   **Playground** | **Chat**：**Chat** 工作区专为与对话模型（如 ChatGPT 背后的 GPT-3.5-turbo 模型）一起使用而设计：
 
-![图 9.9 – AOAI Chat 工作区](img/Figure_9.9_B19904.jpg)
+![图 9.9 – AOAI Chat 工作区](img/mdn-genai-cgpt-oai-Figure_9.9_B19904.jpg)
 
 图 9.9 – AOAI Chat 工作区
 
 它提供了与 ChatGPT 本身类似的体验，可以通过附加参数配置您的模型（正如我们在*第二章*中在 OpenAI Playground 中看到的）。此外，还有一个使 **Chat** 工作区非常有趣的附加功能，称为 **系统消息**：
 
-![图 9.10 – 系统消息示例](img/Figure_9.10_B19904.jpg)
+![图 9.10 – 系统消息示例](img/mdn-genai-cgpt-oai-Figure_9.10_B19904.jpg)
 
 图 9.10 – 系统消息示例
 
@@ -2767,7 +2767,7 @@ AOAI Playground 是熟悉基础模型并开始规划哪个模型版本最适合�
 
 例如，让我们指示我们的模型表现为 JSON 格式化助手：
 
-![图 9.11 – 模型充当 JSON 格式化助手的示例](img/Figure_9.11_B19904.jpg)
+![图 9.11 – 模型充当 JSON 格式化助手的示例](img/mdn-genai-cgpt-oai-Figure_9.11_B19904.jpg)
 
 图 9.11 – 模型充当 JSON 格式化助手的示例
 
@@ -2777,7 +2777,7 @@ AOAI Playground 是熟悉基础模型并开始规划哪个模型版本最适合�
 
 例如，我们可以要求我们的模型通过给定主题描述和一次性示例来生成一个测验，如下所示：
 
-![图 9.12 – 生成测验的 GPT 模型示例](img/Figure_9.12_B19904.jpg)
+![图 9.12 – 生成测验的 GPT 模型示例](img/mdn-genai-cgpt-oai-Figure_9.12_B19904.jpg)
 
 图 9.12 – 生成测验的 GPT 模型示例
 
@@ -2785,7 +2785,7 @@ AOAI Playground 是熟悉基础模型并开始规划哪个模型版本最适合�
 
 +   **管理** | **部署**：在**部署**选项卡中，您可以创建和管理与 AOAI 模型关联的新部署。它们如下所示：
 
-![图 9.13 – AOAI 部署列表](img/Figure_9.13_B19904.jpg)
+![图 9.13 – AOAI 部署列表](img/mdn-genai-cgpt-oai-Figure_9.13_B19904.jpg)
 
 图 9.13 – AOAI 部署列表
 
@@ -2793,7 +2793,7 @@ AOAI Playground 是熟悉基础模型并开始规划哪个模型版本最适合�
 
 +   **管理** | **模型**：在这个选项卡中，您可以快速评估 AOAI 服务中可用的模型，其中包括可以部署的模型（即尚未部署的模型）。例如，让我们考虑以下截图：
 
-![图 9.14 – AOAI 模型列表](img/Figure_9.14_B19904.jpg)
+![图 9.14 – AOAI 模型列表](img/mdn-genai-cgpt-oai-Figure_9.14_B19904.jpg)
 
 图 9.14 – AOAI 模型列表
 
@@ -2801,7 +2801,7 @@ AOAI Playground 是熟悉基础模型并开始规划哪个模型版本最适合�
 
 在这个选项卡中，您还可以按照一种称为微调的过程创建自定义模型。我们在*第二章*中探讨了这一点：
 
-![图 9.15 – 模型微调示例](img/Figure_9.15_B19904.jpg)
+![图 9.15 – 模型微调示例](img/mdn-genai-cgpt-oai-Figure_9.15_B19904.jpg)
 
 图 9.15 – 模型微调示例
 
@@ -2831,7 +2831,7 @@ AOAI Playground 是熟悉基础模型并开始规划哪个模型版本最适合�
 
 +   **管理** | **文件管理**：最后，在**文件管理**选项卡中，您可以直接从用户界面管理和上传您的训练和测试数据，如下所示：
 
-![图 9.16 – 在 AOAI 服务中上传文件的示例](img/Figure_9.16_B19904.jpg)
+![图 9.16 – 在 AOAI 服务中上传文件的示例](img/mdn-genai-cgpt-oai-Figure_9.16_B19904.jpg)
 
 图 9.16 – 在 AOAI 服务中上传文件的示例
 
@@ -2901,7 +2901,7 @@ AETHER 花时间倾听客户和内部专家的意见，然后与法律事务合�
 
 以下图表展示了负责任人工智能的整个过程：
 
-![图 9.17 – 微软的负责任人工智能之旅](img/Figure_9.17_B19904.jpg)
+![图 9.17 – 微软的负责任人工智能之旅](img/mdn-genai-cgpt-oai-Figure_9.17_B19904.jpg)
 
 图 9.17 – 微软的负责任人工智能之旅
 
@@ -3052,7 +3052,7 @@ AOAI 在合同中的应用的一些例子如下：
 
 以下是一个服务提供合同的示例：
 
-![图 10.1 – 服务提供合同示例](img/Figure_10.1_B19904.jpg)
+![图 10.1 – 服务提供合同示例](img/mdn-genai-cgpt-oai-Figure_10.1_B19904.jpg)
 
 图 10.1 – 服务提供合同示例
 
@@ -3074,7 +3074,7 @@ print(response["choices"][0]["text"].strip())
 
 这是输出结果：
 
-![图 10.2 – 终止条款提取示例](img/Figure_10.2_B19904.jpg)
+![图 10.2 – 终止条款提取示例](img/mdn-genai-cgpt-oai-Figure_10.2_B19904.jpg)
 
 图 10.2 – 终止条款提取示例
 
@@ -3106,7 +3106,7 @@ while True:
 
 这是它的响应：
 
-![图 10.3 – 与 AOAI 模型的对话](img/Figure_10.3_B19904.jpg)
+![图 10.3 – 与 AOAI 模型的对话](img/mdn-genai-cgpt-oai-Figure_10.3_B19904.jpg)
 
 图 10.3 – 与 AOAI 模型的对话
 
@@ -3122,7 +3122,7 @@ while True:
 
 让我们考虑以下示例合同的摘录：
 
-![图 10.4 – 示例合同](img/Figure_10.4_B19904.jpg)
+![图 10.4 – 示例合同](img/mdn-genai-cgpt-oai-Figure_10.4_B19904.jpg)
 
 图 10.4 – 示例合同
 
@@ -3158,7 +3158,7 @@ while True:
 
 这是回应：
 
-![图 10.5 – 与 AOAI 模型关于合同的对话](img/Figure_10.5_B19904.jpg)
+![图 10.5 – 与 AOAI 模型关于合同的对话](img/mdn-genai-cgpt-oai-Figure_10.5_B19904.jpg)
 
 图 10.5 – 与 AOAI 模型关于合同的对话
 
@@ -3174,7 +3174,7 @@ AOAI 在合同分析中可以发挥作用，通过利用其先进的**自然语�
 
 我们最终完成了以下草案：
 
-![](img/Figure_10.6_B19904.jpg)
+![](img/mdn-genai-cgpt-oai-Figure_10.6_B19904.jpg)
 
 图 10.6 – 样本雇佣协议合同草案
 
@@ -3196,7 +3196,7 @@ print(response["choices"][0]["text"].strip())
 
 这是输出：
 
-![图 10.7 – 合同中歧义识别的示例](img/Figure_10.7_B19904.jpg)
+![图 10.7 – 合同中歧义识别的示例](img/mdn-genai-cgpt-oai-Figure_10.7_B19904.jpg)
 
 图 10.7 – 合同中歧义识别的示例
 
@@ -3234,7 +3234,7 @@ while True:
 
 运行上述代码时，我们将得到类似以下的输出：
 
-![图 10.8 - 用于检查和生成新合同的样本聊天](img/Figure_10.8_B19904.jpg)
+![图 10.8 - 用于检查和生成新合同的样本聊天](img/mdn-genai-cgpt-oai-Figure_10.8_B19904.jpg)
 
 图 10.8 - 用于检查和生成新合同的样本聊天
 
@@ -3249,7 +3249,7 @@ AI Assistant: There are no ambiguities or conflicting terms now because the "Dut
 
 让我们考虑以下 ABC 和 XYZ 两家竞争公司之间的产品销售协议：
 
-![图 10.9 - 两家竞争对手公司之间的样本协议](img/Figure_10.9_B19904.jpg)
+![图 10.9 - 两家竞争对手公司之间的样本协议](img/mdn-genai-cgpt-oai-Figure_10.9_B19904.jpg)
 
 图 10.9 - 两家竞争对手公司之间的样本协议
 
@@ -3273,7 +3273,7 @@ print(response["choices"][0]["text"].strip())
 
 这是输出内容：
 
-![图 10.10 - 合同中潜在冲突条款的示例](img/Figure_10.10_B19904.jpg)
+![图 10.10 - 合同中潜在冲突条款的示例](img/mdn-genai-cgpt-oai-Figure_10.10_B19904.jpg)
 
 图 10.10 - 合同中潜在冲突条款的示例
 
@@ -3329,7 +3329,7 @@ print(response["choices"][0]["text"].strip())
 
 这是输出内容：
 
-![图 10.11 – 由 Azure OpenAI 模型生成的合同模板示例](img/Figure_10.11_B19904.jpg)
+![图 10.11 – 由 Azure OpenAI 模型生成的合同模板示例](img/mdn-genai-cgpt-oai-Figure_10.11_B19904.jpg)
 
 图 10.11 – 由 Azure OpenAI 模型生成的合同模板示例
 
@@ -3349,7 +3349,7 @@ print(response["choices"][0]["text"].strip())
 
 给定对话的着陆页面（在本例中为我们的样本合同）如下所示：
 
-![图 10.12 – 合同分析器应用的着陆页面](img/Figure_10.12_B19904.jpg)
+![图 10.12 – 合同分析器应用的着陆页面](img/mdn-genai-cgpt-oai-Figure_10.12_B19904.jpg)
 
 图 10.12 – 合同分析器应用的着陆页面
 
@@ -3357,25 +3357,25 @@ print(response["choices"][0]["text"].strip())
 
 +   从下拉菜单中，我们可以选择要从合同中提取的关键条款的类型，并获得实时结果：
 
-![图 10.13 – 从示例合同中提取机密条款](img/Figure_10.13_B19904.jpg)
+![图 10.13 – 从示例合同中提取机密条款](img/mdn-genai-cgpt-oai-Figure_10.13_B19904.jpg)
 
 图 10.13 – 从示例合同中提取机密条款
 
 +   我们还可以和 AOAI 的模型进行对话，询问技术术语的解释：
 
-![图 10.14 – 语言分析](img/Figure_10.14_B19904.jpg)
+![图 10.14 – 语言分析](img/mdn-genai-cgpt-oai-Figure_10.14_B19904.jpg)
 
 图 10.14 – 语言分析
 
 +   我们还可以询问潜在问题：
 
-![图 10.15 – AOAI 模型检测到的模棱两可示例](img/Figure_10.15_B19904.jpg)
+![图 10.15 – AOAI 模型检测到的模棱两可示例](img/mdn-genai-cgpt-oai-Figure_10.15_B19904.jpg)
 
 图 10.15 – AOAI 模型检测到的歧义示例
 
 +   最后，我们还可以要求生成合同模板：
 
-![图 10.16 – 合同模板生成示例](img/Figure_10.16_B19904.jpg)
+![图 10.16 – 合同模板生成示例](img/mdn-genai-cgpt-oai-Figure_10.16_B19904.jpg)
 
 图 10.16 – 合同模板生成示例
 
@@ -3415,13 +3415,13 @@ Azure OpenAI 可以成为呼叫中心分析的宝贵工具。通过分析客户�
 
 以下是这个的可视化表示：
 
-![图 10.17 – 呼叫中心分析的示例结构](img/Figure_10.17_B19904.jpg)
+![图 10.17 – 呼叫中心分析的示例结构](img/mdn-genai-cgpt-oai-Figure_10.17_B19904.jpg)
 
 图 10.17 – 呼叫中心分析的示例结构
 
 为此，我将从我们公司的一个虚构对话的示例记录开始：
 
-![图 10.18 – 提出请求的虚假对话示例](img/Figure_10.18_B19904.jpg)
+![图 10.18 – 提出请求的虚假对话示例](img/mdn-genai-cgpt-oai-Figure_10.18_B19904.jpg)
 
 图 10.18 – 提出请求的虚假对话示例
 
@@ -3505,7 +3505,7 @@ print(response["choices"][0]["text"].strip())
 
 这是输出：
 
-![图 10.19 - 客户索赔情感分析示例](img/Figure_10.19_B19904.jpg)
+![图 10.19 - 客户索赔情感分析示例](img/mdn-genai-cgpt-oai-Figure_10.19_B19904.jpg)
 
 图 10.19 - 客户索赔情感分析示例
 
@@ -3527,7 +3527,7 @@ print(response["choices"][0]["text"].strip())
 
 这是输出：
 
-![图 10.20 - AOAI 模型情感分析示例](img/Figure_10.20_B19904.jpg)
+![图 10.20 - AOAI 模型情感分析示例](img/mdn-genai-cgpt-oai-Figure_10.20_B19904.jpg)
 
 图 10.20 - AOAI 模型情感分析示例
 
@@ -3589,7 +3589,7 @@ print(response["choices"][0]["text"].strip())
 
 给定对话的着陆页（在本例中，我们的示例剧本）如下所示：
 
-![图 10.24 – 示例剧本着陆页](img/Figure_10.24_B19904.jpg)
+![图 10.24 – 示例剧本着陆页](img/mdn-genai-cgpt-oai-Figure_10.24_B19904.jpg)
 
 图 10.24 – 示例剧本着陆页
 
@@ -3597,7 +3597,7 @@ print(response["choices"][0]["text"].strip())
 
 1.  我们作为操作员可以做的第一件事是根据从 JSON 文件中收集的信息创建一个票证：
 
-![图 10.25 – 用于生成票证的前端](img/Figure_10.25_B19904.jpg)
+![图 10.25 – 用于生成票证的前端](img/mdn-genai-cgpt-oai-Figure_10.25_B19904.jpg)
 
 图 10.25 – 用于生成票证的前端
 
@@ -3655,7 +3655,7 @@ print(response["choices"][0]["text"].strip())
 
 前端将如下所示：
 
-![图 10.26 – AOAI 生成的示例电子邮件](img/Figure_10.26_B19904.jpg)
+![图 10.26 – AOAI 生成的示例电子邮件](img/mdn-genai-cgpt-oai-Figure_10.26_B19904.jpg)
 
 图 10.26 – AOAI 生成的示例电子邮件
 
@@ -3713,7 +3713,7 @@ print(response["choices"][0]["text"].strip())
 
 前端将如下所示：
 
-![图 10.27 – AOAI 生成的呼叫中心改进建议](img/Figure_10.27_B19904.jpg)
+![图 10.27 – AOAI 生成的呼叫中心改进建议](img/mdn-genai-cgpt-oai-Figure_10.27_B19904.jpg)
 
 图 10.27 – AOAI 生成的呼叫中心改进建议
 
@@ -3763,7 +3763,7 @@ print(response["choices"][0]["text"].strip())
 
 这在这里表示：
 
-![图 10.28 – 语义搜索项目的参考架构](img/Figure_10.28_B19904.jpg)
+![图 10.28 – 语义搜索项目的参考架构](img/mdn-genai-cgpt-oai-Figure_10.28_B19904.jpg)
 
 图 10.28 – 语义搜索项目的参考架构
 
@@ -3786,7 +3786,7 @@ from langchain.document_loaders import PyPDFLoader
 
 这是它的输出：
 
-![图 10.29 – 文本嵌入示例](img/Figure_10.29_B19904.jpg)
+![图 10.29 – 文本嵌入示例](img/mdn-genai-cgpt-oai-Figure_10.29_B19904.jpg)
 
 图 10.29 – 文本嵌入示例
 
@@ -3837,7 +3837,7 @@ if query:
 
 结果如下所示：
 
-![图 10.30 – 带有 Streamlit 和 AOAI 后端的示例前端](img/Figure_10.30_B19904.jpg)
+![图 10.30 – 带有 Streamlit 和 AOAI 后端的示例前端](img/mdn-genai-cgpt-oai-Figure_10.30_B19904.jpg)
 
 图 10.30 – 带有 Streamlit 和 AOAI 后端的示例前端
 
@@ -3944,7 +3944,7 @@ Kosmos-1 能够感知各种模态，通过零迁移学习来遵循指令，并�
 
 下图提供了它的工作原理的示例:
 
-![图 11.1 – Kosmos-1 的多模态输入示例。原始图片来源于 https://arxiv.org/pdf/2302.14045.pdf](img/Figure_11.1_B19904.jpg)
+![图 11.1 – Kosmos-1 的多模态输入示例。原始图片来源于 https://arxiv.org/pdf/2302.14045.pdf](img/mdn-genai-cgpt-oai-Figure_11.1_B19904.jpg)
 
 图 11.1 – Kosmos-1 的多模态输入示例。原始图片来源于 https://arxiv.org/pdf/2302.14045.pdf
 
@@ -3956,7 +3956,7 @@ Raven IQ 测试，也称为雷文进阶矩阵测试，是专门设计用于衡�
 
 下图是 Kosmos-1 解决的 Raven IQ 测试的示例:
 
-![图 11.2 – Kosmos-1 解决的 Raven IQ 测试的示例。原始图片来源于 ttps://arxiv.org/pdf/2302.14045.pdf](img/Figure_11.2_B19904.jpg)
+![图 11.2 – Kosmos-1 解决的 Raven IQ 测试的示例。原始图片来源于 ttps://arxiv.org/pdf/2302.14045.pdf](img/mdn-genai-cgpt-oai-Figure_11.2_B19904.jpg)
 
 图 11.2 – Kosmos-1 解决的 Raven IQ 测试的示例。原始图片来源于 ttps://arxiv.org/pdf/2302.14045.pdf
 
@@ -3972,7 +3972,7 @@ Raven IQ 测试，也称为雷文进阶矩阵测试，是专门设计用于衡�
 
 +   **多模态性**：GPT-4 是 MLLM 的一个很好的例子，因为它能够理解和生成自然语言以及图像：
 
-![图 11.3 – GPT-4 理解和解释图像的示例](img/Figure_11.3_B19904.jpg)
+![图 11.3 – GPT-4 理解和解释图像的示例](img/mdn-genai-cgpt-oai-Figure_11.3_B19904.jpg)
 
 图 11.3 – GPT-4 理解和解释图像的示例
 
@@ -3994,7 +3994,7 @@ Raven IQ 测试，也称为雷文进阶矩阵测试，是专门设计用于衡�
 
 在下图中，展示了这些实验的一些示例：
 
-![图 11.4 – 多模态 GPT-4 的早期实验](img/Figure_11.4_B19904.jpg)
+![图 11.4 – 多模态 GPT-4 的早期实验](img/mdn-genai-cgpt-oai-Figure_11.4_B19904.jpg)
 
 图 11.4 – 多模态 GPT-4 的早期实验
 
@@ -4022,19 +4022,19 @@ GPT-4 是一个非常强大的模型，已经成为许多融合 AI 的应用程�
 
 2023 年 2 月，微软宣布（[`blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/`](https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/)）由 GPT 模型驱动的新版必应。此外，随着 2023 年 3 月 14 日 GPT-4 的推出，微软确认（[`blogs.bing.com/search/march_2023/Confirmed-the-new-Bing-runs-on-OpenAI%E2%80%99s-GPT-4`](https://blogs.bing.com/search/march_2023/Confirmed-the-new-Bing-runs-on-OpenAI%E2%80%99s-GPT-4)）新版必应实际上是运行在 OpenAI 的 GPT-4 上。
 
-![图 11.5 – 新版必应](img/Figure_11.5_B19904.jpg)
+![图 11.5 – 新版必应](img/mdn-genai-cgpt-oai-Figure_11.5_B19904.jpg)
 
 图 11.5 – 新版必应
 
 在新版本中，必应已经成为一种类似 ChatGPT 的版本，能够浏览网络（因此绕过了 ChatGPT 在 2021 年的知识限制问题），并且还能提供超出预期响应的参考资料。请参考以下截图：
 
-![图 11.6 – 新版必应提供带有参考资料的答案](img/Figure_11.6_B19904.jpg)
+![图 11.6 – 新版必应提供带有参考资料的答案](img/mdn-genai-cgpt-oai-Figure_11.6_B19904.jpg)
 
 图 11.6 – 新版必应提供带有参考资料的答案
 
 新版必应还可以像 ChatGPT 一样协助生成内容。例如，我可以在撰写 LinkedIn 帖子时向必应寻求支持：
 
-![图 11.7 – 必应作为 LinkedIn 帖子助手的示例](img/Figure_11.7_B19904.jpg)
+![图 11.7 – 必应作为 LinkedIn 帖子助手的示例](img/mdn-genai-cgpt-oai-Figure_11.7_B19904.jpg)
 
 图 11.7 – 必应作为 LinkedIn 帖子助手的示例
 
@@ -4118,7 +4118,7 @@ OpenAI 尚未对该公开信发表评论，但该组织已经承认确保比人�
 
 意大利数据保护机构**隐私保护监督者**宣布将立即对 OpenAI 实施禁令并展开调查：
 
-![图 11.10 - 访问 ChatGPT 时 OpenAI 在意大利的消息](img/Figure_11.8_B19904.jpg)
+![图 11.10 - 访问 ChatGPT 时 OpenAI 在意大利的消息](img/mdn-genai-cgpt-oai-Figure_11.8_B19904.jpg)
 
 图 11.10 - 访问 ChatGPT 时 OpenAI 在意大利的消息
 

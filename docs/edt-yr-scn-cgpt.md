@@ -1429,7 +1429,7 @@ ChatGPT 写作技巧
 
 ## 十三、关于我
 
-![image-placeholder](img/0e973e1e-cd14-4bce-a577-88d7bf526f07.jpeg)
+![image-placeholder](img/edt-yr-scn-cgpt-0e973e1e-cd14-4bce-a577-88d7bf526f07.jpeg)
 
 J.索恩已经出版了两百万字，并在全球销售了超过 18.5 万本书。他是美国科幻和奇幻作家协会、恐怖作家协会和大湖恐怖作家协会的正式成员。
 

@@ -417,6 +417,6 @@ https://bit.ly/ChatGPTTemplates
 
 您使用 ChatGPT 的方式仅受您的限制。
 
-![末页](img/image-3CPEW6NF.jpg)
+![末页](img/nsdr-gd-cgpt-image-3CPEW6NF.jpg)
 
-![](img/image-KTFSF23K.jpg)
+![](img/nsdr-gd-cgpt-image-KTFSF23K.jpg)

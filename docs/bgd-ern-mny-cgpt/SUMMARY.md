@@ -1,3 +1,4 @@
++   [ChatGPT 赚钱初学者指南](README.md)
 +   [第一章：理解基础知识](bgd-ern-mny-cgpt_00.md)
 +   [第二章：ChatGPT 的潜力](bgd-ern-mny-cgpt_01.md)
 +   [第三章：奠定基础](bgd-ern-mny-cgpt_02.md)

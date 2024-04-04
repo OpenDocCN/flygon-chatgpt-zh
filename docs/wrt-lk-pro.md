@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 指南之像专家一样写作
 
+> 原文：[Write Like A Pro The ChatGPT Guide for Crafting Killer Copywriting](https://annas-archive.org/md5/f6de601484fd1d6b51851bb281813a29)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 ### 前言

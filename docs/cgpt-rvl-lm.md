@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 之改变世界的革命性的语言模型
 
+> 原文：[ChatGPT: The Revolutionary Language Model that Changed the World](https://annas-archive.org/md5/acd6e06f029db47d3abbc67e58bb0d39)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 简介：ChatGPT 是一种最先进的语言模型，改变了人类与技术互动的方式。在本书中，我们探讨了 ChatGPT 从一个小型项目发展到如今成为全球现象的历史。
@@ -1062,84 +1067,3 @@ ChatGPT 有潜力在各个领域带来积极变革，但我们需要引导其发
 再次感谢您阅读本书。我希望它能激发您对语言处理技术潜力及其对未来的影响的思考。
 
 
-## 不要错过！
-
-点击下面的按钮，您可以注册以接收 Kenneth Caraballo 发布新书时的电子邮件。没有费用，也没有义务。
-
-[`books2read.com/r/B-I-FXMW-JITGC`](https://books2read.com/r/B-I-FXMW-JITGC)
-
-![Sign Me Up](img/cgpt-rvl-lm-image-ILO9E1ZV.png)
-
-[`books2read.com/r/B-I-FXMW-JITGC`](https://books2read.com/r/B-I-FXMW-JITGC)
-
-![books2read](img/cgpt-rvl-lm-image-Z65I2NZT.png)
-
-连接独立读者与独立作家。
-
-
-你是否喜欢《ChatGPT：改变世界的革命性语言模型》？那么你应该阅读肯尼斯·卡拉巴洛（Kenneth Caraballo）的《量子世界：探索多元宇宙的奥秘》！
-
-![量子世界：探索多元宇宙的奥秘](img/cgpt-rvl-lm-image-WCVS4Y1M.jpg)
-
-量子物理长期以来一直引起科学家和公众的兴趣，因为它的令人费解的理论和悖论现象。在《量子世界》中，读者将踏上探索量子力学迷人世界的旅程，并探索正在改变我们对宇宙理解的前沿研究。
-
-本书将向读者介绍量子物理的基本原理，包括波粒二象性、不确定性和纠缠等。从那里开始，它将深入探讨该领域的最新发现，如多元宇宙理论、量子传输和量子计算。
-
-读者还将发现量子物理如何在从密码学到生物学等各个领域引发革命，并探讨这种新技术的伦理影响。
-
-在整本书中，作者将运用现实世界的例子和生动的比喻，使复杂的概念易于理解普通读者。无论你是科学爱好者还是对宇宙奥秘感到好奇，"量子世界"都将带你踏上一场激动人心的旅程，探索奇妙的量子力学世界。
-
-
-Kenneth Caraballo 的其他作品
-
-[新手的 Dropshipping](https://www.draft2digital.com/catalog/993201?distributor=scribd)
-
-[创业者：终极指南](https://www.draft2digital.com/catalog/993174?distributor=scribd)
-
-新手投资
-
-百万富翁的思维：25 个关键
-
-停止过度思考，开始生活：平静心灵的简单策略
-
-[感觉良好：新的情绪疗法](https://www.draft2digital.com/catalog/995254?distributor=scribd)
-
-[财务稳定：实现短期和长期资金管理的指南](https://www.draft2digital.com/catalog/1005181?distributor=scribd)
-
-[释放品牌魔力的力量：改变您的营销策略指南](https://www.draft2digital.com/catalog/1006324?distributor=scribd)
-
-[专注：与 ADHD 一起航行](https://www.draft2digital.com/catalog/1006990?distributor=scribd)
-
-[心理超越：认知行为疗法实用指南](https://www.draft2digital.com/catalog/1007682?distributor=scribd)
-
-[失落的传家宝](https://www.draft2digital.com/catalog/1008294?distributor=scribd)
-
-[一见钟情](https://www.draft2digital.com/catalog/1009384?distributor=scribd)
-
-[简单投资：建立财富的初学者指南](https://www.draft2digital.com/catalog/1014248?distributor=scribd)
-
-[狂躁情绪：航行双相情感世界](https://www.draft2digital.com/catalog/1014621?distributor=scribd)
-
-[从想法到推出：创办自己业务的逐步指南](https://www.draft2digital.com/catalog/1015087?distributor=scribd)
-
-[心灵-身体之谜：探索心灵哲学](https://www.draft2digital.com/catalog/1015395?distributor=scribd)
-
-[寻找真相：探索科学哲学](https://www.draft2digital.com/catalog/1016628?distributor=scribd)
-
-[量子世界：探索多元宇宙的奥秘](https://www.draft2digital.com/catalog/1017896?distributor=scribd)
-
-[生命的秘密：生物学之旅](https://www.draft2digital.com/catalog/1020583?distributor=scribd)
-
-[人体内部：解剖和生理学探索](https://www.draft2digital.com/catalog/1022119?distributor=scribd)
-
-[量子回声](https://www.draft2digital.com/catalog/1025546?distributor=scribd)
-
-[成功艺术的掌握：来自世界上最成功人士的教训](https://www.draft2digital.com/catalog/1027626?distributor=scribd)
-
-[生命的分子：生物化学探索](https://www.draft2digital.com/catalog/1028144?distributor=scribd)
-
-[宇宙奥德赛：穿越天文奇观之旅](https://www.draft2digital.com/catalog/1028689?distributor=scribd)
-
-ChatGPT：改变世界的革命性语言模型
-
-[化学奇迹：学生理解周围世界的指南](https://www.draft2digital.com/catalog/1030144?distributor=scribd)

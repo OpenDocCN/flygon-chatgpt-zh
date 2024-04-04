@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 之 B2B 转化策略
 
+> 原文：[ChatGPT Strategies for B2B Transformation](https://annas-archive.org/md5/fd9dba97518907e063ed22eed9bd99fa)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 ![](img/cgpt-stg-b2b-trans-comm.jpg)

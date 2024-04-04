@@ -1,4 +1,4 @@
-# ChatGPT 革命：如何使用 AI 简化你的工作和生活管理（一）
+# ChatGPT 革命：如何使用 AI 简化你的工作和生活管理
 
 > 原文：[The ChatGPT Revolution](https://annas-archive.org/md5/225e7efbe2f28f1c7e9c75c868d3816a)
 > 

@@ -1,4 +1,4 @@
-# ChatGPT 赚钱初学者指南（一）
+# ChatGPT 赚钱初学者指南
 
 > 原文：[The Beginner's Guide to Earning Money Online with ChatGPT](https://annas-archive.org/md5/71e71d957c04afb46a5b6439083f12c7)
 > 

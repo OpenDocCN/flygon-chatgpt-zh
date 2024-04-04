@@ -1,4 +1,4 @@
-# 人工智能驱动的生产力手册（一）
+# 人工智能驱动的生产力手册
 
 > 原文：[The AI-Powered Productivity Handbook](https://zh.annas-archive.org/md5/1d55973fc6a4358b97df089db60c6fe1)
 > 

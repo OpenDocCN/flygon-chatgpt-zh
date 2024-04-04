@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 之百万富翁
 
+> 原文：[The ChatGPT Millionaire](https://annas-archive.org/md5/098cc93d5bea291be55b82a644170211)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 # 介绍
@@ -1600,219 +1605,133 @@ Youtube 视频非常适合 passiv income，因为随着时间的推移，你的�
 
 manifest.json
 
+
+```json
 {
-
-"manifest_version": 2,
-
-"name": "阻止分散注意力的网站",
-
-"version": "1.0",
-
-"description": "此扩展程序通过阻止分散注意力的网站帮助您保持专注。",
-
-"permissions": [
-
-"declarativeContent",
-
-"storage",
-
-"tabs"
-
-],
-
-"background": {
-
-"scripts": ["background.js"]
-
-},
-
-"page_action": {
-
-"default_popup": "popup.html"
-
-},
-
-"options_page": "options.html",
-
-"content_scripts": [
-
-{
-
-"matches": ["<all_urls>"],
-
-"js": ["content.js"]
-
+    "manifest_version": 2,
+    "name": "阻止分散注意力的网站",
+    "version": "1.0",
+    "description": "此扩展程序通过阻止分散注意力的网站帮助您保持专注。",
+    "permissions": [
+        "declarativeContent",
+        "storage",
+        "tabs"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "page_action": {
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
+        "content_scripts": [
+            {
+                "matches": ["<all_urls>"],
+                "js": ["content.js"]
+            }
+    ]
 }
-
-]
-
-}
+```
 
 background.js:
 
+```js
 // 加载分散注意力网站列表
-
 const distractingWebsites = [];
-
 chrome.storage.sync.get('distractingWebsites', function(items) {
-
-distractingWebsites = items.distractingWebsites;
-
+    distractingWebsites = items.distractingWebsites;
 });
-
 // 监听当前标签页的变化
-
 chrome.declarativeContent.onPageChanged.addRules([{
-
-conditions: [new chrome.declarativeContent.PageStateMatcher({
-
-pageUrl: { hostContains: '.com' },
-
-})],
-
-actions: [new chrome.declarrativeContent.ShowPageAction()]
-
+    conditions: [new chrome.declarativeContent.PageStateMatcher({
+        pageUrl: { hostContains: '.com' },
+    })],
+    actions: [new chrome.declarrativeContent.ShowPageAction()]
 }]);
-
 // 如果当前标签页是分散注意力的网站，则阻止它
-
 chrome.pageAction.onClicked.addListener(function(tab) {
-
-if (distractingWebsites.includes(tab.url)) {
-
-chrome.tabs.update(tab.id, {url: "about:blank"});
-
-} else {
-
-chrome.tabs.update(tab.id, {url: "about:blank"});
-
-chrome.tabs.create({url: tab.url});
-
-}
-
+    if (distractingWebsites.includes(tab.url)) {
+        chrome.tabs.update(tab.id, {url: "about:blank"});
+    } else {
+        chrome.tabs.update(tab.id, {url: "about:blank"});
+        chrome.tabs.create({url: tab.url});
+    }
 });
-
 // 当选项页面保存时更新分散注意力网站列表
-
 chrome.storage.onChanged.addListener(function(changes, namespace) {
-
-if (namespace === "sync" && "distractingWebsites" in changes) {
-
-distractingWebsites = changes.distractingWebsites.newValue;
-
+    if (namespace === "sync" && "distractingWebsites" in changes) {
+        distractingWebsites = changes.distractingWebsites.newValue;
 }
-
 });
+```
+
 
 popup.html
 
+```html
 <!DOCTYPE html>
-
 <html>
-
-<head>
-
-<style>
-
-button {
-
-width: 100%;
-
-height: 30px;
-
-font-size: 16px;
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<button id="blockButton">阻止</button>
-
-<button id="unblockButton">解除阻止</button>
-
-<script src="popup.js"></script>
-
-</body>
-
+    <head>
+        <style>
+            button {
+                width: 100%;
+                height: 30px;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="blockButton">阻止</button>
+        <button id="unblockButton">解除阻止</button>
+        <script src="popup.js"></script>
+    </body>
 </html>
+```
 
 popup.js
 
+```js
 // 获取当前标签页
-
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-
-const tab = tabs[0];
-
-// 阻止或解除当前标签页的阻止
-
-document.getElementById('blockButton').addEventListener('click', function() {
-
-chrome.tabs.update(tab.id, {url: "about:blank"});
-
+    const tab = tabs[0];
+    // 阻止或解除当前标签页的阻止
+    document.getElementById('blockButton').addEventListener('click', function() {
+        chrome.tabs.update(tab.id, {url: "about:blank"});
+    });
+    document.getElementById('unblockButton').addEventListener('click', function() {
+        chrome.tabs.update(tab.id, {url: tab.url});
+    });
 });
-
-document.getElementById('unblockButton').addEventListener('click', function() {
-
-chrome.tabs.update(tab.id, {url: tab.url});
-
-});
-
-});
+```
 
 Options.html
 
+```html
 <!DOCTYPE html>
-
 <html>
-
-<head>
-
-<style>
-
-form {
-
-display: flex;
-
-flex-direction: column;
-
-align-items: stretch;
-
-width: 300px;
-
-padding: 20px;
-
-box-sizing: border-box;
-
-}
-
-input[type="text"] {
-
-margin-bottom: 20px;
-
-font-size: 16px;
-
-padding: 10px;
-
-border: 1px solid #ccc;
-
-border-radius: 4px;
-
-box-sizing: border-box;
-
-}
-
-input[type="submit"] {
-
-margin-bottom: 20px;
-
-font-size: 16px;
-
-padding: 10px
+    <head>
+        <style>
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                width: 300px;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            input[type="text"] {
+                margin-bottom: 20px;
+                font-size: 16px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            input[type="submit"] {
+                margin-bottom: 20px;
+                font-size: 16px;
+                padding: 10px
+```
 
 ![](img/cgpt-mlnr-svgimg0003.svg)
 

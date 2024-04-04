@@ -1,39 +1,14 @@
-# （一）
+# 生成式人工智能与 LangChain（预览）
+
+> 原文：[Generative AI with LangChain](https://annas-archive.org/md5/2e3ab9ce96c35c507253e57a41b1a6f1)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
+# 一、生成模型是什么？
 
-# 使用 LangChain 进行生成式人工智能：使用 Python、ChatGPT 和其他模型构建大型语言模型（LLM）应用
-
-**欢迎来到 Packt 早期访问**。在这本书上市之前，我们为您提供了独家预览。写一本书可能需要很多个月的时间，但我们的作者们有最前沿的信息与您分享。早期访问通过提供章节草稿，让您了解最新的发展。目前这些章节可能还有些粗糙，但我们的作者将会随着时间更新它们。您可以随时翻阅本书，或者从头到尾跟随；早期访问旨在灵活设计。我们希望您喜欢了解 Packt 书籍编写的过程。
-
-1.  第一章：什么是生成模型？
-
-1.  第二章：LangChain：核心基础知识
-
-1.  第三章：开始使用 LangChain
-
-1.  第四章：文档问答
-
-1.  第五章：构建类似 ChatGPT/Bard 的聊天机器人
-
-1.  第六章：使用 LangChain Coder 开发软件
-
-1.  第七章：用于数据分析的 LLM
-
-1.  第八章：提示工程
-
-1.  第九章：LLM 在生产中的应用
-
-1.  第十章：生成模型的未来
-
-
-# 1 生成模型是什么？
-
-## 加入我们的书籍社区 Discord
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![自动生成的二维码描述](img/genai-lngch-file0.png)
 
 **人工智能**（**AI**）取得了重大进展，影响着企业、社会和个人。在过去的十年左右，深度学习已经发展到可以处理和生成文本、图像、视频等非结构化数据。这些基于深度学习的先进 AI 模型在各行各业中备受青睐，包括**大型语言模型**（**LLMs**）。目前，媒体和行业对 AI 存在相当大的炒作。这是由多种因素驱动的，包括技术的进步、知名应用以及在多个领域产生变革性影响的潜力。在本章中，我们将讨论生成模型，特别是 LLMs，以及它们在文本、图像、声音和视频等领域的应用。我们将介绍一些技术背景，解释它们的工作原理以及它们是如何训练的。我们将从介绍开始，澄清我们在技术发展的最前沿所处的位置，以及炒作的原因。
 
@@ -290,13 +265,7 @@ GANs 由两个网络组成，在类似游戏的设置中相互对抗 - 生成器
 如果你在回答这些问题时遇到困难，请回到本章的相应部分，确保你已经理解了材料。
 
 
-# 2 介绍 LangChain
-
-## 在 Discord 上加入我们的书籍社区
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![二维码描述自动生成](img/genai-lngch-file8.png)
+# 二、介绍 LangChain
 
 在本章中，我们讨论了 LLMs 的限制，以及如何将 LLMs 与工具结合起来以克服这些挑战，从而构建创新的基于语言的应用程序。有一些强大的框架为开发人员提供了强大的工具，用于快速工程、链接、数据检索等。无论您是开发人员、数据科学家还是对自然语言处理（NLP）或生成式人工智能的技术进步感兴趣，您都应该了解这些框架中最强大和流行的 LangChain。LangChain 解决了与使用 LLMs 相关的痛点，并提供了一个直观的框架来创建定制的 NLP 解决方案。在 LangChain 中，像 LLMs、互联网搜索和数据库查找这样的组件可以链接在一起，这意味着根据数据或任务的要求按顺序执行不同的任务。通过利用其功能，开发人员可以构建动态和数据感知的应用程序，利用我们在第一章讨论的最新技术突破。我们将列举一些用例，以说明该框架如何帮助不同领域的企业和组织。LangChain 对代理和内存的支持使得可以构建比仅通过 API 调用语言模型更强大和灵活的各种应用程序。我们将讨论与框架相关的重要概念，如代理、链、行动计划生成和内存。理解这些概念对于了解 LangChain 的工作原理至关重要。主要部分包括：
 
@@ -502,7 +471,7 @@ LangChain 由 Harrison Chase 于 2022 年 10 月作为一个开源项目在 gith
 
 **代理执行器**是允许在工具之间进行选择的执行机制。 代理执行器可以被视为代理和执行环境之间的中介。 它接收来自代理的请求或命令，并将其翻译成可以由底层系统或软件执行的操作。 它管理这些操作的执行并向代理提供反馈或结果。 我们将看到不同类型的执行或决策模式。 **ReAct 模式**（由普林斯顿大学和 Google DeepMind 的研究人员于 2023 年 5 月发表的“ReACT：在语言模型中协同推理和行动”），简称为 Reason and Act，其中代理主动将任务分配给适当的工具，为其定制输入，并解析其输出以解决任务。 在论文中，使用了文档存储库，其中将搜索答案 - 这被实现为**ReAct 文档存储模式**。 在**LangChain**中，默认情况下，代理遵循**Zero-shot ReAct 模式**（`ZERO_SHOT_REACT_DESCRIPTION`），其中决策仅基于工具的描述。 可以通过记忆来扩展此机制，以考虑完整的对话历史。 使用**ReAct**，而不是要求**LLM**在您的文本上自动完成，您可以提示它以思考/行动/观察循环回应。 **LLM**的提示是逐步回应并将这些步骤与行动相关联。 这些步骤的结果，例如搜索结果，然后传递回**LLM**以进行下一次思考，因为它朝着目标迭代。 对于 ZeroShot 模式，提示非常重要，它是由连接前缀，描述工具及其用途的字符串，格式说明和后缀组成的：
 
-```
+```py
 PREFIX = """Answer the following questions as best you can. You have access to the following tools:"""
 FORMAT_INSTRUCTIONS = """Use the following format:
 Question: the input question you must answer
@@ -520,7 +489,7 @@ Thought:{agent_scratchpad}"""
 
 要看到这一实践，例如，我们可以询问**LangChain**代理执行器和**LangChain**执行计划之间的区别。以下是**LangChain**中的日志 - 首先问题传递给语言模型：
 
-```
+```py
 I'm not familiar with these terms, so I should search for information about them.
 Action: Search
 Action Input: "difference between langchain agent executor and langchain execution plan"
@@ -531,7 +500,7 @@ Final Answer: A langchain agent executor executes actions one step at a time, wh
 
 还有一些实施的机制。 华盛顿大学的研究人员，**MosaicAI**，Meta AI 研究和艾伦研究所（2022 年 10 月的论文“测量和缩小语言模型中的组合性差距”中）发现**LLMs**可能经常无法给出需要组合推理的问题的正确和完整答案，其中必须将多个信息片段放在一起。 **自问自答搜索**模式将问题分解为组成部分，并调用搜索引擎方法以检索必要的信息以回答问题。 用户 nkov 在 LangChain 的 github 上讨论了这种强大的机制的示例。 问题是谁活得更久，穆罕默德·阿里还是艾伦·图灵，对话发展如下：
 
-```
+```py
 Question: Who lived longer, Muhammad Ali or Alan Turing?
 Are follow up questions needed here: Yes.
 Follow up: How old was Muhammad Ali when he died?
@@ -540,7 +509,7 @@ Follow up: How old was Alan Turing when he died?
 Intermediate answer: Alan Turing was 41 years old when he died.
 ```
 
-```
+```py
 So the final answer is: Muhammad Ali
 ```
 
@@ -643,13 +612,7 @@ So the final answer is: Muhammad Ali
 1.  LangChain 是如何工作的？
 
 
-# 3 使用 LangChain 入门
-
-## 在 Discord 上加入我们的书籍社区
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![自动生成的二维码描述](img/genai-lngch-file19.png)
+# 三、使用 LangChain 入门
 
 在本章中，我们将首先设置**LangChain**和本书所需的库，提供了关于常见依赖管理工具如**Docker**、**Conda**、**Pip**和**Poetry**的说明。然后我们将介绍可以使用的模型集成，如**OpenAI**的**Chatgpt**，Huggingface 和 Jina AI 上的模型等。我们将依次介绍、设置和使用几个提供商。我们将获取 API 密钥令牌，然后进行一个简短的实际示例。这将为我们提供更多关于如何有效使用**LangChain**的上下文，并介绍使用它的技巧和窍门。作为最后一部分，我们将开发一个**LangChain**应用程序，这是一个实际示例，说明了在客户服务的实际业务用例中如何应用**LangChain**。主要部分包括：
 
@@ -669,13 +632,13 @@ So the final answer is: Muhammad Ali
 
 在设置 Python 环境并安装相关依赖项之前，通常应该安装 Python 本身。我假设，大多数购买本书的人都已经安装了 Python，但是，为了确保，让我们来看看。您可以从 python.org 下载最新版本适用于您操作系统的版本，或者使用您平台的软件包管理器。让我们看看在 MacOS 使用 Homebrew 和在 Ubuntu 使用 apt-get。在 MacOS 上，使用 Homebrew，我们可以：
 
-```
+```py
 brew install python
 ```
 
 对于 Ubuntu，我们可以使用 apt-get：
 
-```
+```py
 sudo apt-get updatesudo apt-get install python3.10
 ```
 
@@ -693,7 +656,7 @@ Jupyter Notebook 和 JupyterLab 是用于创建、共享和协作计算文档的
 
 您可以像这样从终端在计算机上启动笔记本服务器：
 
-```
+```py
 jupyter notebook
 ```
 
@@ -705,7 +668,7 @@ jupyter notebook
 
 或者，我们也可以使用 JupyterLab，这是下一代带来显著改进的笔记本服务器。您可以像这样从终端启动 JupyterLab 笔记本服务器：
 
-```
+```py
 jupyter lab
 ```
 
@@ -737,7 +700,7 @@ jupyter lab
 
 如果您是 git 的新手，您可以按下 **Download ZIP**，然后使用您喜欢的工具解压缩存档。或者，使用 git 克隆存储库并切换到项目目录，您可以输入以下命令：
 
-```
+```py
 git clone https://github.com/benman1/generative_ai_with_langchain.git
 cd generative_ai_with_langchain
 ```
@@ -752,7 +715,7 @@ Docker 是一个平台，使开发人员能够自动化部署、打包和管理�
 
 1.  在终端中运行以下命令构建 Docker 镜像（请注意：您需要在项目根目录中才能正常工作）。
 
-```
+```py
 docker build -t langchain_ai
 ```
 
@@ -760,7 +723,7 @@ docker build -t langchain_ai
 
 1.  使用创建的镜像交互式地启动 Docker 容器：
 
-```
+```py
 docker run -it langchain_ai
 ```
 
@@ -770,19 +733,19 @@ docker run -it langchain_ai
 
 `Conda` 允许用户为不同项目管理多个环境。它适用于 Python、R 和其他语言，并通过维护与 Python 库相关的库列表来帮助安装系统库。开始使用 conda 的最佳方法是按照此链接中的说明安装 anaconda 或 miniconda：[`docs.continuum.io/anaconda/install/`](https://docs.continuum.io/anaconda/install/)虽然 conda 环境占用的磁盘空间比 Docker 少，但从 anaconda 开始，完整环境仍然需要大约 2.5 千兆字节。miniconda 设置可能会节省一些磁盘空间。还有一个图形界面可以使用 `conda`，Anaconda Navigator，可以安装在 macOS 和 Windows 上，并且可以从终端安装任何依赖项以及 `conda` 工具。让我们继续使用 `conda` 工具并安装本书的依赖项。要创建一个新环境，请执行以下命令：
 
-```
+```py
 conda env create --file langchain_ai.yml
 ```
 
 `Conda`允许我们创建具有许多不同库的环境，还可以使用不同版本的 Python。我们在本书中一直使用 Python 3.10。通过运行以下命令激活环境：
 
-```
+```py
 conda activate langchain_ai
 ```
 
 这就是全部，我们完成了。我们可以看到这应该是轻松和直接的。您现在可以在环境中启动`jupyter notebook`或`jupyter lab`，例如：
 
-```
+```py
 jupyter notebook
 ```
 
@@ -792,25 +755,25 @@ jupyter notebook
 
 `Pip`是 Python 的默认软件包管理器。它允许您轻松安装和管理第三方库。我们可以安装单个库，还可以维护完整的 Python 库列表。如果它尚未包含在您的 Python 发行版中，请按照[`pip.pypa.io/`](https://pip.pypa.io/)上的说明安装 pip。要使用 pip 安装库，请使用以下命令。例如，要安装 NumPy 库，您将使用以下命令：
 
-```
+```py
 pip install numpy
 ```
 
 您也可以使用`pip`来安装库的特定版本。例如，要安装 NumPy 库的 1.0 版本，您将使用以下命令：
 
-```
+```py
 pip install numpy==1.0
 ```
 
 为了设置一个完整的环境，我们可以从一个要求列表开始 - 按照惯例，这个列表在一个名为`requirements.txt`的文件中。我已经将这个文件包含在项目的根目录中，列出了所有必要的库。您可以使用以下命令安装所有库：
 
-```
+```py
 pip install -r requirements.txt
 ```
 
 请注意，正如前面提到的，Pip 不负责环境。Virtualenv 是一个可以帮助维护环境的工具，例如不同版本的库。让我们快速看一下这个：
 
-```
+```py
 # create a new environment myenv:
 virtualenv myenv
 # activate the myenv environment:
@@ -840,14 +803,14 @@ Poetry 是 Python 的依赖管理工具，简化了库的安装和版本控制�
 
 在正式开始生成式人工智能之前，我们需要设置访问**大型语言模型**（**LLMs**）或文本到图像模型等模型的访问权限，以便将它们集成到我们的应用程序中。正如在*第一章*中讨论的*生成模型是什么*中所述，各大科技巨头都有各种**LLMs**，如**OpenAI**的**GPT-4**，**Google**的**BERT**和**PaLM-2**，**Meta AI**的**LLaMA**等等。借助**LangChain**的帮助，我们可以与所有这些模型进行交互，例如通过**应用程序编程接口**（**APIs**），或者我们可以调用我们在计算机上下载的开源模型。其中一些集成支持文本生成和嵌入。在本章中，我们将重点讨论文本生成，并在*第五章*中讨论嵌入、向量数据库和神经搜索，构建类似 ChatGPT 的聊天机器人。有许多模型托管提供商。目前，**OpenAI**、**Hugging Face**、**Cohere**、**Anthropic**、**Azure**、**Google Cloud Platform Vertex AI**（**PaLM-2**）和**Jina AI**是**LangChain**支持的众多提供商之一，但这个列表一直在不断增长。您可以在[`integrations.langchain.com/llms`](https://integrations.langchain.com/llms)查看所有支持的**LLMs**的集成。至于图像模型，主要开发者包括**OpenAI**（**DALL-E**）、Midjourney 公司（Midjourney）和 Stability AI（**Stable Diffusion**）。**LangChain**目前没有直接处理非文本模型的功能，但其文档描述了如何与 Replicate 合作，后者也提供了与 Stable Diffusion 模型交互的接口。对于这些提供商中的每一个，要调用他们的应用程序编程接口（API），您首先需要创建一个帐户并获取一个 API 密钥。这对所有人都是免费的。有些提供商甚至不需要您提供信用卡信息。为了在环境中设置 API 密钥，在 Python 中我们可以这样做：
 
-```
+```py
 import os
 os.environ["OPENAI_API_KEY"] = "<your token>"
 ```
 
 这里`OPENAI_API_KEY`是适用于 OpenAI 的环境密钥。将密钥设置在您的环境中的好处是我们不需要将它们包含在我们的代码中。您也可以像这样从终端暴露这些变量：
 
-```
+```py
 export OPENAI_API_KEY=<your token>
 ```
 
@@ -857,7 +820,7 @@ export OPENAI_API_KEY=<your token>
 
 Fake LM 是用于测试的。LangChain 文档中有一个关于该工具与 LLMs 一起使用的示例。您可以直接在 Python 中执行此示例，也可以在笔记本中执行。
 
-```
+```py
 from langchain.llms.fake import FakeListLLM
 from langchain.agents import load_tools
 from langchain.agents import initialize_agent
@@ -873,7 +836,7 @@ agent.run("whats 2 + 2")
 
 我们连接了一个工具，一个名为 Python **Read-Eval-Print Loop**（**REPL**）的工具，根据**LLM**的输出来调用。虚拟列表**LLM**将给出两个响应，`responses`，这些响应不会根据输入而改变。我们设置了一个代理，根据我们在第二章中解释的 ReAct 策略做出决策，这个策略是基于 LangChain 的介绍（`ZERO_SHOT_REACT_DESCRIPTION`）。我们用一个文本运行代理，问题是“2 + 2 等于多少”。我们可以观察到虚拟 LLM 的输出如何导致调用 Python 解释器，后者返回 4。请注意，操作必须与工具的`name`属性匹配，即`PythonREPLTool`，它的启动方式如下：
 
-```
+```py
 class PythonREPLTool(BaseTool):
     """A tool for running python code in a REPL."""
     name = "Python_REPL"
@@ -907,7 +870,7 @@ class PythonREPLTool(BaseTool):
 
 点击“**创建秘钥**”后，您应该会看到消息“API 秘钥已生成”。您需要将该秘钥复制到剪贴板并保存。我们可以将该秘钥设置为环境变量（`OPENAI_API_KEY`），或者在每次构建 OpenAI 调用类时作为参数传递。我们可以使用`OpenAI`语言模型类来建立一个**LLM**以进行交互。让我们创建一个使用这个模型进行计算的代理 - 我省略了前一个示例中的导入部分：
 
-```
+```py
 from langchain.llms import OpenAI
 llm = OpenAI(temperature=0., model="text-davinci-003")
 agent = initialize_agent(
@@ -918,7 +881,7 @@ agent.run("whats 4 + 4")
 
 我们应该看到以下输出：
 
-```
+```py
 > Entering new  chain...
  I need to add two numbers
 Action: Python_REPL
@@ -936,7 +899,7 @@ Final Answer: 4 + 4 = 8
 
 Hugging Face 是自然语言处理领域中非常重要的参与者，在开源和托管解决方案方面具有相当大的影响力。该公司是一家美国公司，开发用于构建机器学习应用程序的工具。其员工开发和维护 Transformers Python 库，用于自然语言处理任务，包括 BERT 和 GPT-2 等最先进和流行的模型的实现，并兼容**PyTorch**、**TensorFlow**和**JAX**。Hugging Face 还提供 Hugging Face Hub，这是一个托管基于 Git 的代码存储库、机器学习模型、数据集和 Web 应用程序的平台，提供超过 12 万个模型、2 万个数据集和 5 万个演示应用程序（Spaces）供机器学习使用。这是一个在线平台，人们可以在此协作并共同构建机器学习。这些工具允许用户加载和使用来自 Hugging Face 的模型、嵌入和数据集。例如，`HuggingFaceHub`集成提供了访问不同模型的功能，如文本生成和文本分类。`HuggingFaceEmbeddings`集成允许用户使用句子转换模型。他们在其生态系统中还提供了其他各种库，包括用于数据集处理的 Datasets，用于模型评估的*Evaluate*，用于模拟的*Simulate*，以及用于机器学习演示的*Gradio*。除了他们的产品，Hugging Face 还参与了一些倡议，如 BigScience 研究研讨会，他们发布了一个名为 BLOOM 的开放大型语言模型，拥有 1760 亿个参数。他们获得了大量资金，包括 4 亿美元的 B 轮融资和最近由 Coatue 和 Sequoia 领投的 C 轮融资，估值 20 亿美元。Hugging Face 还与 Graphcore 和亚马逊网络服务等公司合作，优化其产品并使其面向更广泛的客户群体。要将 Hugging Face 用作您模型的提供商，您可以在[`huggingface.co/settings/profile`](https://huggingface.co/settings/profile)上创建帐户和 API 秘钥。您可以将令牌作为`HUGGINGFACEHUB_API_TOKEN`在您的环境中使用。让我们看一个示例，我们使用了由 Google 开发的开源模型 Flan-T5-XXL：
 
-```
+```py
 from langchain.llms import HuggingFaceHub
 llm = HuggingFaceHub(
     model_kwargs={"temperature": 0.5, "max_length": 64},
@@ -957,13 +920,13 @@ print(completion)
 
 通过**Google Cloud Platform**（**GCP**）和其机器学习平台 Vertex 提供许多模型和功能。Google Cloud 提供访问**LLM**，如**LaMDA**、**T5**和**PaLM**。Google 还更新了 Google Cloud **自然语言**（**NL**）API，使用基于 LLM 的新模型进行内容分类。这个更新版本提供了一个广泛的预训练分类分类法，以帮助广告定位和基于内容的过滤。**NL** API 的改进 v2 分类模型增加了超过 1,000 个标签，并支持 11 种语言，具有更高的准确性。对于 GCP 中的模型，您需要安装 gcloud **命令行界面**（**CLI**）。您可以在这里找到说明：[`cloud.google.com/sdk/docs/install`](https://cloud.google.com/sdk/docs/install)然后可以通过终端使用以下命令进行身份验证并打印一个密钥令牌：
 
-```
+```py
 gcloud auth application-default login
 ```
 
 您还需要为您的项目启用 Vertex。如果您还没有启用它，您应该会收到一个有用的错误消息，指向正确的网站，在那里您必须点击"启用"。让我们运行一个模型！
 
-```
+```py
 from langchain.llms import VertexAI
 from langchain import PromptTemplate, LLMChain
 template = """Question: {question}
@@ -977,7 +940,7 @@ llm_chain.run(question)
 
 我们应该看到这个回应：
 
-```
+```py
 [1m> Entering new chain...[0m
 Prompt after formatting:
 [[Question: What NFL team won the Super Bowl in the year Justin Beiber was born?
@@ -998,7 +961,7 @@ Justin Beiber was born on March 1, 1994\. The Super Bowl in 1994 was won by the 
 
 表 3.1：Vertex Generative AI 中可用的模型。您可以查看文档[`cloud.google.com/vertex-ai/docs/generative-ai`](https://cloud.google.com/vertex-ai/docs/generative-ai)。我们还可以生成代码。让我们看看**Code-Bison**模型是否能解决 FizzBuzz，这是入门和中级软件开发人员职位常见的面试问题：
 
-```
+```py
 question = """
 Given an integer n, return a string array answer (1-indexed) where:
 answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
@@ -1013,8 +976,7 @@ print(llm_chain.run(question))
 
 我们得到这个响应：
 
-```
-```python
+```py
 
 答案 = []
 
@@ -1039,7 +1001,6 @@ for i in range(1, n + 1)：
 返回答案
 
 ```
-```
 
 你会雇用代码-野牛加入你的团队吗？
 
@@ -1057,7 +1018,7 @@ Jina AI 成立于 2020 年 2 月，由韩潇和何选斌创立，是一家总部
 
 我们可以在 Python 和 cURL 中获取客户端调用的示例，以及一个演示，我们可以提出问题。这很酷，不幸的是，这些 API 目前还不能通过**LangChain**使用。我们可以通过在**LangChain**中将`LLM`类子类化为自定义**LLM**接口来实现这些调用。让我们再设置一个聊天机器人，这次由 Jina AI 提供支持。我们可以生成 API 令牌，并将其设置为`JINA_AUTH_TOKEN`，在[`chat.jina.ai/api`](https://chat.jina.ai/api)上设置。让我们在这里将英语翻译成法语：
 
-```
+```py
 from langchain.chat_models import JinaChat
 from langchain.schema import HumanMessage
 chat = JinaChat(temperature=0.)
@@ -1069,17 +1030,17 @@ messages = [
 chat(messages)
 ```
 
-```
+```py
 We should be seeing 
 ```
 
-```
+```py
 AIMessage(content="J'adore l'IA générative !", additional_kwargs={}, example=False).
 ```
 
 我们可以设置不同的温度，低温会使响应更可预测。在这种情况下，几乎没有什么区别。我们将以系统消息开始对话，澄清聊天机器人的目的。让我们询问一些食物推荐：
 
-```
+```py
 chat = JinaChat(temperature=0.)
 chat(
     [
@@ -1095,7 +1056,7 @@ chat(
 
 我在 Jupyter 中看到了这个响应：
 
-```
+```py
 AIMessage(content='A tasty and nutritious option could be a vegetable pasta dish. Depending on your taste, you can choose a sauce that complements the vegetables. Try adding broccoli, spinach, bell peppers, and zucchini to your pasta with some grated parmesan cheese on top. This way, you get to enjoy your pasta with cheese while incorporating some veggies into your meal.', additional_kwargs={}, example=False)
 ```
 
@@ -1105,7 +1066,7 @@ AIMessage(content='A tasty and nutritious option could be a vegetable pasta dish
 
 成立于 2019 年的 Replicate Inc.是一家总部位于旧金山的初创公司，为人工智能开发者提供了一个简化的流程，他们可以通过利用云技术以最少的代码输入实现和发布人工智能模型。该平台可以与私有模型和公共模型一起工作，并实现模型推理和微调。该公司最近一轮融资来自一笔总额为 1250 万美元的 A 轮融资，由 Andreessen Horowitz 领投，Y Combinator、Sequoia 以及各种独立投资者参与其中。Ben Firshman 曾在 Docker 负责开源产品工作，Andreas Jansson 曾是 Spotify 的前机器学习工程师，他们共同创立了 Replicate Inc.，共同的愿景是消除阻碍人工智能大规模接受的技术障碍。因此，他们创建了 Cog，这是一个开源工具，可以将机器学习模型打包成标准的生产就绪容器，可以在任何当前操作系统上运行，并自动生成 API。这些容器也可以通过 Replicate 平台部署在 GPU 集群上。因此，开发者可以集中精力进行其他重要任务，从而提高他们的生产力。您可以在[`replicate.com/`](https://replicate.com/)上使用您的 Github 凭据进行身份验证。然后，如果您点击左上角的用户图标，您会找到 API 令牌 - 只需复制 API 密钥并在您的环境中提供`REPLICATE_API_TOKEN`。为了运行更大的作业，您需要设置您的信用卡（在账单下）。您可以在[`replicate.com/explore`](https://replicate.com/explore)找到许多可用的模型。这里有一个创建图像的简单示例：
 
-```
+```py
 from langchain.llms import Replicate
 text2image = Replicate(
     model="stability-ai/stable-diffusion:db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf",
@@ -1130,7 +1091,7 @@ image_url = text2image("a book cover for a book about creating generative ai app
 
 我将快速展示设置和运行流水线的一般步骤：
 
-```
+```py
 from transformers import pipeline
 import torch
 generate_text = pipeline(
@@ -1145,7 +1106,7 @@ generate_text("In this chapter, we'll discuss first steps with generative AI in 
 
 这个模型非常小（3.55 亿个参数），但相对性能良好，并且针对对话进行了调整。请注意，对于本地模型，我们不需要 API 令牌！这将下载模型所需的一切，如分词器和模型权重。然后我们可以运行文本完成以为本章提供一些内容。为了将此流水线插入 LangChain 代理或链中，我们可以像之前看到的那样使用它：
 
-```
+```py
 from langchain import PromptTemplate, LLMChain
 template = """Question: {question}
 Answer: Let's think step by step."""
@@ -1161,39 +1122,39 @@ print(llm_chain.run(question))
 
 Llama.cpp 是一个 C++程序，执行基于 Llama 架构的模型，Llama 是 Meta AI 发布的第一个大型开源模型之一，随后衍生出许多其他模型的开发。请注意，您需要安装 md5 校验工具。这在几个 Linux 发行版中默认包含，如 Ubuntu。在 MacOs 上，您可以像这样使用 brew 安装：
 
-```
+```py
 brew install md5sha1sum
 ```
 
 我们需要从 Github 下载 llama.cpp 存储库。您可以在线选择 Github 上的下载选项之一进行此操作，或者您可以从终端使用 git 命令，如下所示：
 
-```
+```py
 git clone https://github.com/ggerganov/llama.cpp.git
 ```
 
 然后我们需要安装 python 要求，可以使用 pip 软件包安装程序来完成 - 为了方便起见，让我们也切换到 llama.cpp 项目根目录：
 
-```
+```py
 cd llama.cpp
 pip install -r requirements.txt
 ```
 
 您可能希望在安装要求之前创建一个 Python 环境 - 但这取决于您。现在我们需要编译 llama.cpp：
 
-```
+```py
 make -C . -j4 # runs make in subdir with 4 processes
 ```
 
 我们可以使用 4 个进程并行构建。为了获得 Llama 模型权重，您需要注册并等待来自 Meta 的注册电子邮件。有一些工具，比如 pyllama 项目中的 llama 模型下载器，但请注意它们可能不符合 Meta 的许可规定。您可以从 Hugging Face 下载模型 - 这些模型应与 llama.cpp 兼容，比如 Vicuna 或 Alpaca。假设您已将 7B Llama 模型的模型权重下载到 models/7B 目录中。您可以下载更大尺寸的模型，如 13B、30B、65B，但是这里需要注意一点：这些模型在内存和磁盘空间方面都相当大。我们需要将模型转换为 llama.cpp 格式，称为**ggml**，使用转换脚本。然后我们可以选择对模型进行量化，以节省推理时的内存。量化是指减少用于存储权重的位数。
 
-```
+```py
 python3 convert.py models/7B/
 ./quantize ./models/ggml-model-f16.bin ./models/7B/ggml-model-q4_0.bin q4_0
 ```
 
 这个最后的文件比之前的文件要小得多，在内存中占用的空间也要少得多，这意味着您可以在较小的机器上运行它。一旦我们选择了要运行的模型，我们可以将其集成到代理或链中，例如：
 
-```
+```py
 llm = LlamaCpp(
     model_path="./ggml-model-q4_0.bin",
     verbose=True
@@ -1217,7 +1178,7 @@ llm = LlamaCpp(
 
 这些方法的结合可以帮助客服代理更准确地并及时地回应，最终提高客户满意度。在这里，我们将集中讨论前三点。我们将记录查找，这可以用于答案建议在*第五章*，*构建类似 ChatGPT 的聊天机器人*。**LangChain**是一个非常灵活的库，具有许多集成，可以使我们解决各种文本问题。我们可以在执行这些任务时选择许多不同的集成。我们可以要求任何 LLM 为我们提供一个开放域（任何类别）分类或在多个类别之间进行选择。特别是由于它们的大训练规模，LLMs 是非常强大的模型，特别是在给定少量提示的情况下，用于情感分析，不需要任何额外的训练。这是由 Zengzhi Wang 等人在他们 2023 年 4 月的研究“ChatGPT 是一个好的情感分析器吗？初步研究”中分析的。对于情感分析的 LLM 的提示可能是这样的：
 
-```
+```py
 Given this text, what is the sentiment conveyed? Is it positive, neutral, or negative?
 Text: {sentence}
 Sentiment:
@@ -1237,7 +1198,7 @@ LLMs 在摘要方面也非常有效，比以往任何模型都要好。缺点可
 
 我们可以在本地执行这些模型，通过在 transformer 中运行`pipeline`，在 Hugging Face Hub 服务器上远程执行（`HuggingFaceHub`），或者作为`load_huggingface_tool()`加载器的工具。Hugging Face 包含了成千上万的模型，许多经过特定领域微调。例如，`ProsusAI/finbert`是一个在 Financial PhraseBank 数据集上训练的 BERT 模型，可以分析金融文本的情感。我们也可以使用任何本地模型。对于文本分类，模型往往要小得多，因此这对资源的消耗会较小。最后，文本分类也可能是嵌入的一个案例，我们将在*第五章*，*构建类似 ChatGPT 的聊天机器人*中讨论。我决定尽可能多地使用我在 Hugging Face 上找到的较小模型来进行这个练习。我们可以通过 huggingface API 列出 Hugging Face Hub 上用于文本分类的下载量最高的 5 个模型：
 
-```
+```py
 def list_most_popular(task: str):
     for rank, model in enumerate(
         list_models(filter=task, sort="downloads", direction=-1)
@@ -1260,7 +1221,7 @@ list_most_popular("text-classification")
 
 表 3.2：Hugging Face Hub 上最受欢迎的文本分类模型。我们可以看到这些模型涉及到情感、情绪、讽刺或格式良好等小范围的类别。让我们使用情感模型。
 
-```
+```py
 I've asked GPT-3.5 to put together a long rambling customer email complaining about a coffee machine. You can find the email on GitHub. Let's see what our sentiment model has to say:
 from transformers import pipeline
 sentiment_model = pipeline(
@@ -1272,7 +1233,7 @@ print(sentiment_model(customer_email))
 
 我得到了这个结果：
 
-```
+```py
 [{'label': '2 stars', 'score': 0.28999224305152893}]
 ```
 
@@ -1290,7 +1251,7 @@ print(sentiment_model(customer_email))
 
 所有这些模型与大型模型相比具有相对较小的占用空间。让我们在服务器上远程执行摘要模型：
 
-```
+```py
 from langchain import HuggingFaceHub
 summarizer = HuggingFaceHub(
     repo_id="facebook/bart-large-cnn",
@@ -1303,7 +1264,7 @@ summarize(summarizer, customer_email)
 
 请注意，您需要设置您的`HUGGINGFACEHUB_API_TOKEN`才能使其工作。我看到了这个摘要：一个顾客的咖啡机到达时已经破损，引发了一种深深的不信和绝望感。顾客写道：“这种令人心碎的疏忽行为粉碎了我对每天享受完美咖啡的梦想，让我情感上感到痛苦和无法安慰。”他补充道：“我希望这封邮件能在我写信时内心充满理解的氛围中找到你。”这个摘要还算过得去，但不是很令人信服。摘要中仍然有很多啰嗦的内容。我们可以尝试其他模型，或者直接使用一个带有摘要提示的 LLM。让我们继续。了解客户写的是什么问题可能会很有用。让我们问问**VertexAI**：
 
-```
+```py
 from langchain.llms import VertexAI
 from langchain import PromptTemplate, LLMChain
 template = """Given this text, decide what is the issue the customer is concerned about. Valid categories are these:
@@ -1349,13 +1310,8 @@ print(llm_chain.run(customer_email))
 1.  如何通过生成式人工智能帮助客服代理工作？
 
 
-# 使用工具进行查询
+# 四、使用工具进行查询
 
-## 在 Discord 上加入我们的书籍社区
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![自动生成的二维码描述](img/genai-lngch-file26.png)
 
 在当今快节奏的商业和研究环境中，跟上不断增长的信息量可能是一项艰巨的任务。对于计算机科学和人工智能等领域的工程师和研究人员来说，保持对最新发展的了解至关重要。然而，阅读和理解大量论文可能是耗时且劳动密集的。这就是自动化发挥作用的地方。在本章中，我们将描述一种自动化研究论文摘要和回答问题的方法，使研究人员更容易消化和保持信息。通过利用语言模型和一系列问题，我们将开发的摘要可以以简洁和简化的格式总结论文的核心论点、含义和机制。这不仅可以节省研究主题时的时间和精力，还可以确保我们能有效地应对科学进步的加速步伐。我们还将尝试使用 OpenAI 模型的功能，并将其应用于信息提取。我们将看到它们如何（或尚未）用于解析简历（CVs）的应用。这个函数语法是特定于 OpenAI 的 API，并且有许多应用，然而，LangChain 提供了一个平台，允许创建用于任何大型语言模型（LLMs）的工具，增强它们的功能。这些工具使 LLMs 能够与 API 交互，访问实时信息，并执行各种任务，如检索搜索、数据库查询、撰写电子邮件，甚至打电话。我们将使用检索增强生成（RAG）实现一个问答应用程序。这是一种通过将相关数据注入上下文来更新大型语言模型（LLMs）如 GPT 的技术。最后，我们将讨论代理的不同决策策略。我们将实现两种策略，即计划和执行（或计划和解决）和一次性代理，并将它们集成到一个可视化界面中，作为浏览器中的可视化应用程序（使用 Streamlit）用于问答。主要部分包括：
 
@@ -1423,13 +1379,13 @@ print(llm_chain.run(customer_email))
 
 从 2018 年开始使用 24 层 BERT-Large，语言模型已经在大型知识库（如维基百科）上进行了预训练，因此能够从维基百科或其他来源（因为它们的训练集越来越多地包括其他来源）- 互联网、教科书、arxiv 和 Github 回答知识问题。查询事实的工作与简单提示（如掩码提示）一起进行。例如，为了回答问题“微软的总部在哪里？”，问题将被重写为“微软的总部在[MASK]”，然后输入到语言模型中以获取答案。在这种方法中，最终的激活在条件 LLM 接收到源文本（有条件 LLM）产生目标时的损失比未接收源文本的 LLM（无条件 LLM）产生目标时的损失更小，这表明生成的标记是幻觉的（Fillippova, 2020）。幻觉标记与目标标记总数的比率可以作为生成输出中幻觉程度的度量。在 LangChain 中，我们有一个可用于事实核查的链，其中模型通过提示链式提问对陈述中的假设进行主动质疑。在这个自检链中，`LLMCheckerChain`，模型被依次提示多次，首先明确做出假设 - 看起来像这样：
 
-```
+```py
 Here’s a statement: {statement}\nMake a bullet point list of the assumptions you made when producing the above statement.\n
 ```
 
 请注意，这是一个字符串模板，其中花括号中的元素将被变量替换。接下来，这些假设将被反馈给模型，以便逐个用类似这样的提示检查它们：
 
-```
+```py
 Here is a bullet point list of assertions:
     {assertions}
     For each assertion, determine whether it is true or false. If it is false, explain why.\n\n
@@ -1437,13 +1393,13 @@ Here is a bullet point list of assertions:
 
 最后，模型被要求做出最终判断：
 
-```
+```py
 In light of the above facts, how would you answer the question '{question}'
 ```
 
 `LLMCheckerChain`就像这个例子展示的那样自动完成所有这些。
 
-```
+```py
 from langchain.chains import LLMCheckerChain
 from langchain.llms import OpenAI
 llm = OpenAI(temperature=0.7)
@@ -1454,7 +1410,7 @@ checker_chain.run(text)
 
 这个模型对这个问题可能会返回不同的结果，其中一些是错误的，而一些则会被正确识别为错误。当我尝试时，我得到了蓝鲸、北美海狸或已灭绝的巨型恐鸟等结果。我认为这是正确答案：
 
-```
+```py
 Monotremes, a type of mammal found in Australia and parts of New Guinea, lay the largest eggs in the mammalian world. The eggs of the American echidna (spiny anteater) can grow as large as 10 cm in length, and dunnarts (mouse-sized marsupials found in Australia) can have eggs that exceed 5 cm in length.
 • Monotremes can be found in Australia and New Guinea
 • The largest eggs in the mammalian world are laid by monotremes
@@ -1486,7 +1442,7 @@ The largest eggs in the mammalian world are laid by monotremes, which can be fou
 
 这种方法的影响是它允许对文档进行并行处理，并且使 LLMs 能够用于推理、生成或分析单个文档以及组合它们的输出。该过程的机制涉及压缩或折叠映射文档，以确保它们适合于组合文档链，这可能还涉及利用 LLMs。如果需要，压缩步骤可以递归执行。这里是加载 PDF 文档并对其进行摘要的简单示例：
 
-```
+```py
 from langchain.chains.summarize import load_summarize_chain
 from langchain import OpenAI
 from langchain.document_loaders import PyPDFLoader
@@ -1499,7 +1455,7 @@ chain.run(docs)
 
 变量`pdf_file_path`是一个包含 PDF 文件路径的字符串。地图和减少步骤的默认提示是这样的：
 
-```
+```py
 Write a concise summary of the following:
 {text}
 CONCISE SUMMARY:
@@ -1507,7 +1463,7 @@ CONCISE SUMMARY:
 
 我们可以为每个步骤指定任何提示。在为本章开发的文本摘要应用程序中，我们可以看到如何传递其他提示。在 LangChainHub 上，我们可以看到 qa-with sources 提示，它采用了一个类似于这样的减少/组合提示：
 
-```
+```py
 Given the following extracted parts of a long document and a question, create a final answer with references (\"SOURCES\"). \nIf you don't know the answer, just say that you don't know. Don't try to make up an answer.\nALWAYS return a \"SOURCES\" part in your answer.\n\nQUESTION: {question}\n=========\nContent: {text}
 ```
 
@@ -1517,7 +1473,7 @@ Given the following extracted parts of a long document and a question, create a 
 
 在使用模型时，特别是在长循环中，比如在地图操作中，跟踪令牌使用量并了解你花费了多少钱是很重要的。对于任何严肃的生成式人工智能使用，我们需要了解不同语言模型的能力、定价选项和用例。OpenAI 提供不同的模型，包括 GPT-4、ChatGPT 和 InstructGPT，以满足各种自然语言处理需求。GPT-4 是一个强大的语言模型，适用于解决自然语言处理中的复杂问题。它提供基于使用的令牌大小和数量的灵活定价选项。ChatGPT 模型，如 GPT-3.5-Turbo，专门用于对话应用，如聊天机器人和虚拟助手。它们擅长生成准确流畅的回应。ChatGPT 模型的定价基于使用的令牌数量。InstructGPT 模型专为单轮指令跟随而设计，并针对快速准确的响应生成进行了优化。InstructGPT 系列中的不同模型，如 Ada 和 Davinci，提供不同级别的速度和功率。Ada 是最快的模型，适用于速度至关重要的应用，而 Davinci 是最强大的模型，能够处理复杂的指令。InstructGPT 模型的定价取决于模型的能力，从像 Ada 这样的低成本选项到像 Davinci 这样的更昂贵选项。OpenAI 的 DALL·E、Whisper 和 API 服务用于图像生成、语音转录、翻译和访问语言模型。DALL·E 是一种 AI 驱动的图像生成模型，可以无缝集成到应用程序中，用于生成和编辑新颖的图像和艺术品。OpenAI 提供三个分辨率层次，允许用户选择他们需要的细节级别。更高的分辨率提供更复杂和详细的内容，而较低的分辨率提供更抽象的表示。每张图像的价格根据分辨率而变化。Whisper 是一种可以将语音转录为文本并将多种语言翻译成英语的 AI 工具。它有助于捕捉对话，促进交流，并提高跨语言理解。使用 Whisper 的成本基于每分钟的费率。OpenAI 的 API 提供对强大语言模型如 GPT-3 的访问，使开发人员能够创建高级应用程序。在注册 API 时，用户会获得一个初始令牌使用限制，代表在特定时间范围内与语言模型交互的令牌数量。随着用户的记录和使用增加，OpenAI 可能会增加令牌使用限制，为模型提供更多访问权限。用户还可以请求增加配额，如果他们的应用程序需要更多令牌。我们可以通过连接到 OpenAI 回调来跟踪 OpenAI 模型中的令牌使用：
 
-```
+```py
 with get_openai_callback() as cb:
     response = llm_chain.predict(text=”Complete this text!”)
     print(f"Total Tokens: {cb.total_tokens}")
@@ -1528,7 +1484,7 @@ with get_openai_callback() as cb:
 
 在这个例子中，带有`llm_chain`的行可以是对 OpenAI 模型的任何使用。我们应该看到一个包含成本和令牌的输出。还有另外两种获取令牌使用情况的方法。作为 OpenAI 回调的替代方案，`llm`类的`generate()`方法返回一个`LLMResult`类型的响应，而不是字符串。这包括令牌使用情况和完成原因，例如（来自 LangChain 文档）：
 
-```
+```py
 input_list = [
     {"product": "socks"},
     {"product": "computer"},
@@ -1539,13 +1495,13 @@ llm_chain.generate(input_list)
 
 结果看起来像这样：
 
-```
+```py
  LLMResult(generations=[[Generation(text='\n\nSocktastic!', generation_info={'finish_reason': 'stop', 'logprobs': None})], [Generation(text='\n\nTechCore Solutions.', generation_info={'finish_reason': 'stop', 'logprobs': None})], [Generation(text='\n\nFootwear Factory.', generation_info={'finish_reason': 'stop', 'logprobs': None})]], llm_output={'token_usage': {'prompt_tokens': 36, 'total_tokens': 55, 'completion_tokens': 19}, 'model_name': 'text-davinci-003'})
 ```
 
 最后，OpenAI API 中的聊天完成响应格式包括一个带有令牌信息的使用对象，例如它可能看起来像这样（摘录）：
 
-```
+```py
  {
   "model": "gpt-3.5-turbo-0613",
   "object": "chat.completion",
@@ -1563,7 +1519,7 @@ llm_chain.generate(input_list)
 
 2023 年 6 月，OpenAI 宣布了 OpenAI API 的更新，包括对函数调用的新功能，这将开启增强功能。开发人员现在可以描述函数给 gpt-4-0613 和 gpt-3.5-turbo-0613 模型，并让模型智能地生成一个包含调用这些函数参数的 JSON 对象。此功能旨在增强 GPT 模型与外部工具和 API 之间的连接，提供一种可靠的方式从模型中检索结构化数据。函数调用使开发人员能够创建能够使用外部工具或 OpenAI 插件回答问题的聊天机器人。它还允许将自然语言查询转换为 API 调用或数据库查询，并从文本中提取结构化数据。更新的机制涉及使用新的 API 参数，即`functions`，在`/v1/chat/completions`端点中。函数参数通过名称、描述、参数和要调用的函数本身进行定义。开发人员可以使用 JSON Schema 描述模型的函数，并指定要调用的所需函数。在 LangChain 中，我们可以使用这些函数调用在 OpenAI 中进行信息提取或调用插件。对于信息提取，我们可以从文本和文档中的提取链中使用 OpenAI 聊天模型来指定实体及其属性。例如，这可以帮助识别文本中提到的人物。通过使用 OpenAI 函数参数并指定模式，可以确保模型输出所需的实体和属性及其适当的类型。这种方法的影响是它允许通过定义具有所需属性和类型的模式来精确提取实体。它还可以指定哪些属性是必需的，哪些是可选的。模式的默认格式是字典，但我们也可以在 Pydantic 中定义属性及其类型，提供对提取过程的控制和灵活性。这里是一个关于 Curricum Vitae（简历）中信息的所需模式的示例：
 
-```
+```py
 from typing import Optional
 from pydantic import BaseModel
 class Experience(BaseModel):
@@ -1598,7 +1554,7 @@ class Resume(BaseModel):
 
 我们将尝试从这份简历中解析信息。利用 LangChain 中的`create_extraction_chain_pydantic()`函数，我们可以将我们的模式作为输入提供，输出将是一个符合它的实例化对象。简单来说，我们可以尝试这段代码片段：
 
-```
+```py
 from langchain.chains import create_extraction_chain_pydantic
 from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import PyPDFLoader
@@ -1612,7 +1568,7 @@ return chain.run(docs)
 
 我们应该得到这样的输出：
 
-```
+```py
 [Resume(first_name='John', last_name='Doe', linkedin_url='linkedin.com/in/john-doe', email_address='hello@openresume.com', nationality=None, skill='React', study=None, work_experience=WorkExperience(start_date='May 2023', end_date='Present', description='Lead a cross-functional team of 5 engineers in developing a search bar, which enables thousands of daily active users to search content across the entire platform. Create stunning home page product demo animations that drives up sign up rate by 20%. Write clean code that is modular and easy to maintain while ensuring 100% test coverage.', company='ABC Company', job_title='Software Engineer'), hobby=None)]
 ```
 
@@ -1640,7 +1596,7 @@ LLMs 是在一般语料库数据上训练的，可能对需要领域特定知识
 
 让我们看看这个过程！在 LangChain 中有很多可用的工具，如果这还不够的话，自己开发工具也不难。让我们设置一个带有几个工具的代理：
 
-```
+```py
 from langchain.agents import (
     AgentExecutor, AgentType, initialize_agent, load_tools
 )
@@ -1660,7 +1616,7 @@ def load_agent() -> AgentExecutor:
 
 要知道`AgentExecutor`是一个链的重要细节，因此 - 如果我们愿意的话，我们可以将其集成到更大的链中。我们可以使用不同的语法初始化这个链，就像这样：
 
-```
+```py
 return MRKLChain.from_chains(llm, chains, verbose=True)
 ```
 
@@ -1680,7 +1636,7 @@ return MRKLChain.from_chains(llm, chains, verbose=True)
 
 让我们使用我们刚刚定义的`load_agent()`函数编写代码：
 
-```
+```py
 import streamlit as st
 from langchain.callbacks import StreamlitCallbackHandler
 chain = load_agent()
@@ -1695,7 +1651,7 @@ if prompt := st.chat_input():
 
 请注意，我们在调用链时使用了回调处理程序，这意味着我们将看到从模型返回的响应。我们可以像这样从终端本地启动应用程序：
 
-```
+```py
 PYTHONPATH=. streamlit run question_answering/app.py
 ```
 
@@ -1725,7 +1681,7 @@ PYTHONPATH=. streamlit run question_answering/app.py
 
 搜索效果相当不错，尽管根据使用的工具不同，可能仍会出现错误结果。对于关于哺乳动物中哪种动物有最大蛋的问题，使用 DuckDuckGo 会返回一个讨论鸟类和哺乳动物蛋的结果，并有时得出鸵鸟是哺乳动物中有最大蛋的结论，尽管鸭嘴兽有时也会出现。以下是正确推理的日志输出（缩短版）：
 
-```
+```py
 > Entering new AgentExecutor chain...
 I'm not sure, but I think I can find the answer by searching online.
 Action: duckduckgo_search
@@ -1769,7 +1725,7 @@ Final Answer: The platypus is the mammal that lays the biggest eggs.
 
 规划者和求解器可以是不同的语言模型。这打开了使用更小、专门的模型进行规划者和求解器，并为每个调用使用更少标记的可能性。我们可以在我们的研究应用程序中实现计划和解决方案，让我们开始吧！首先，让我们向`load_agent()`函数添加一个`strategy`变量。它可以取两个值，要么是“计划和解决”，要么是“一次性反应”。对于“一次性反应”，逻辑保持不变。对于“计划和解决”，我们将定义一个规划者和一个执行者，我们将用它们创建一个`PlanAndExecute`代理执行者：
 
-```
+```py
 from typing import Literal
 from langchain.experimental import load_chat_planner, load_agent_executor, PlanAndExecute
 ReasoningStrategies = Literal["one-shot-react", "plan-and-solve"]
@@ -1793,7 +1749,7 @@ def load_agent(
 
 为简洁起见，我省略了我们之前已经导入的内容。让我们定义一个通过 Streamlit 中的单选按钮设置的新变量。我们将这个变量传递给`load_agent()`函数：
 
-```
+```py
 strategy = st.radio(
     "Reasoning strategy",
     ("plan-and-solve", "one-shot-react", ))
@@ -1801,7 +1757,7 @@ strategy = st.radio(
 
 你可能已经注意到`load_agent()`接受一个字符串列表`tool_names`。这也可以在用户界面（UI）中选择：
 
-```
+```py
 tool_names = st.multiselect(
     'Which tools do you want to use?',
     [
@@ -1813,7 +1769,7 @@ tool_names = st.multiselect(
 
 最后，在应用程序中，代理是这样加载的：
 
-```
+```py
 agent_chain = load_agent(tool_names=tool_names, strategy=strategy)
 ```
 
@@ -1837,7 +1793,7 @@ agent_chain = load_agent(tool_names=tool_names, strategy=strategy)
 
 因此，第一步是执行 LLMs 的查找：
 
-```
+```py
 Action:
 {
 "action": "Wikipedia",
@@ -1876,13 +1832,7 @@ Action:
 1.  我们如何在 Streamlit 中实现文本输入字段和单选按钮？
 
 
-# 5 构建类似 ChatGPT 的聊天机器人
-
-## 加入我们在 Discord 上的书籍社区
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![自动生成的二维码描述](img/genai-lngch-file35.png)
+# 五、构建类似 ChatGPT 的聊天机器人
 
 在本章中，我们将讨论聊天机器人，它们是什么，能做什么，以及如何实现它们。我们将从讨论聊天机器人的演变和当前的最新技术状态开始。了解和增强当前聊天机器人和大型语言模型（LLMs）的能力对于它们在不同领域的安全有效使用具有实际意义，包括像医学和法律这样受监管的领域。积极沟通，重要的是为了满足客户需求，需要在技术方面实现上下文和记忆的机制。本章的重点是检索机制，包括向量存储以提高响应的准确性和聊天机器人对可用信息和当前对话的忠实度。我们将介绍现代聊天机器人的基础知识，如检索增强语言模型（RALMs），我们在 LangChain 中实现它们所需的技术背景。我们将详细讨论加载文档和信息的方法，包括向量存储和嵌入。我们还将讨论关于记忆的更具体的方法，这些方法涉及维护正在进行对话的知识和状态。最后，我们从声誉和法律的角度讨论另一个重要主题：审查。让我们确保我们的回复不是无礼的、不宽容的，也不违背组织的精神。LangChain 允许您通过一个审查链传递任何文本，以检查是否包含有害内容。在整个章节中，我们将使用 Streamlit 中的界面实现一个聊天机器人，您可以在书的 Github 存储库中的`chat_with_retrieval`目录中找到。主要章节包括：
 
@@ -2018,7 +1968,7 @@ RALMs 的好处包括：
 
 在 LangChain 中，您可以通过`OpenAIEmbeddings`类的`embed_query()`方法获取嵌入。这里是一个示例代码片段：
 
-```
+```py
 from langchain.embeddings.openai import OpenAIEmbeddings  
 embeddings = OpenAIEmbeddings()  
 text = "This is a sample query."  
@@ -2029,7 +1979,7 @@ print(len(query_result))
 
 此代码将单个字符串输入传递给`embed_query`方法，并检索相应的文本嵌入。结果存储在`query_result`变量中。可以使用`len()`函数获取嵌入的长度（维度数）。我假设您已经按照第三章“在 LangChain 中入门”的建议将 API 密钥设置为环境变量。您还可以使用`embed_documents()`方法获取多个文档输入的嵌入。这里是一个示例：
 
-```
+```py
 from langchain.embeddings.openai import OpenAIEmbeddings  
 words = ["cat", "dog", "computer", "animal"]
 embeddings = OpenAIEmbeddings()
@@ -2038,7 +1988,7 @@ doc_vectors = embeddings.embed_documents(words)
 
 在这种情况下，`embed_documents()`方法用于检索多个文本输入的嵌入。结果存储在`doc_vectors`变量中。我们本可以检索长文档的嵌入 - 相反，我们只检索了单词的向量。我们还可以在这些嵌入之间进行算术运算，例如计算它们之间的距离：
 
-```
+```py
 from scipy.spatial.distance import pdist, squareform
 import pandas as pd
 X = np.array(doc_vectors)
@@ -2047,7 +1997,7 @@ dists = squareform(pdist(X))
 
 这给我们了单词之间的欧氏距离作为一个方阵。让我们来绘制它们：
 
-```
+```py
 import pandas as pd
 df = pd.DataFrame(
     data=dists,
@@ -2195,20 +2145,20 @@ nmslib 和 hnswlib 都由在亚马逊担任高级研究科学家的 Leo Boytsov 
 
 1.  导入必要的模块：
 
-```
+```py
 from langchain.vectorstores import Chroma  
 from langchain.embeddings import OpenAIEmbeddings
 ```
 
 1.  创建 Chroma 的实例，并提供文档（拆分）和嵌入方法：
 
-```
+```py
 vectorstore = Chroma.from_documents(documents=docs, embedding=OpenAIEmbeddings())
 ```
 
 文档（或在第四章中看到的拆分）将被嵌入并存储在 Chroma 向量数据库中。我们将在本章的另一部分讨论文档加载器。我们可以使用其他嵌入集成，或者我们可以像这样提供嵌入：
 
-```
+```py
 vector_store = Chroma()
 # Add vectors to the vector store:
 vector_store.add_vectors(vectors)
@@ -2216,7 +2166,7 @@ vector_store.add_vectors(vectors)
 
 在这里，`vectors`是您想要存储的数字向量（嵌入）列表。我们可以查询向量存储以检索相似向量：
 
-```
+```py
 similar_vectors = vector_store.query(query_vector, k)
 ```
 
@@ -2232,13 +2182,13 @@ similar_vectors = vector_store.query(query_vector, k)
 
 1.  连接到 Pinecone：要连接到 Pinecone 服务，您需要提供您的 API 密钥。您可以通过在 Pinecone 网站上注册来获取 API 密钥。获得 API 密钥后，将其传递给 pinecone 包装器或将其设置为环境变量：
 
-```
+```py
 pinecone.init()
 ```
 
 1.  创建搜索索引如下：
 
-```
+```py
 Docsearch = Pinecone.from_texts([“dog”, “cat”], embeddings)
 ```
 
@@ -2246,7 +2196,7 @@ Docsearch = Pinecone.from_texts([“dog”, “cat”], embeddings)
 
 1.  现在我们可以通过相似性找到查询的最相似文档：
 
-```
+```py
 docs = docsearch.similarity_search(“terrier”, include_metadata=True)
 ```
 
@@ -2256,7 +2206,7 @@ docs = docsearch.similarity_search(“terrier”, include_metadata=True)
 
 文档加载器用于从源加载数据作为**Document**对象，其中包含文本和相关元数据。有不同类型的集成可用，例如用于加载简单`.txt`文件的文档加载器（`TextLoader`），加载网页的文本内容（`WebBaseLoader`），Arxiv 文章（`ArxivLoader`）或加载 YouTube 视频的转录（`YoutubeLoader`）。对于网页，`Diffbot`集成提供了内容的清晰提取。其他集成用于图像，例如提供图像标题（`ImageCaptionLoader`）。文档加载器具有一个`load()`方法，从配置的源加载数据并将其作为文档返回。它们还可以具有一个`lazy_load()`方法，根据需要将数据加载到内存中。以下是用于从文本文件加载数据的文档加载器示例：
 
-```
+```py
 from langchain.document_loaders import TextLoader
 loader = TextLoader(file_path="path/to/file.txt")
 documents = loader.load()
@@ -2264,7 +2214,7 @@ documents = loader.load()
 
 `documents`变量将包含加载的文档，可以用于进一步处理。每个文档包含`page_content`（文档的文本内容）和`metadata`（相关元数据，如源 URL 或标题）。类似地，我们可以从维基百科加载文档：
 
-```
+```py
 from langchain.document_loaders import WikipediaLoader
 loader = WikipediaLoader("LangChain")
 documents = loader.load()
@@ -2286,7 +2236,7 @@ LangChain 中的检索器是一种组件类型，用于从给定索引中搜索�
 
 这些只是 LangChain 中可用的检索器的几个示例。每个检索器都有其优点和缺点，选择检索器取决于具体的用例和要求。例如，要使用 kNN 检索器，您需要创建一个检索器的新实例，并为其提供一个文本列表。以下是如何使用来自 OpenAI 的嵌入创建 kNN 检索器的示例：
 
-```
+```py
 from langchain.retrievers import KNNRetriever  
 from langchain.embeddings import OpenAIEmbeddings  
 words = ["cat", "dog", "computer", "animal"]
@@ -2295,14 +2245,14 @@ retriever = KNNRetriever.from_texts(words, OpenAIEmbeddings())
 
 创建检索器后，您可以通过调用`get_relevant_documents()`方法并传递查询字符串来使用它来检索相关文档。检索器将返回与查询最相关的文档列表。以下是如何使用 kNN 检索器的示例：
 
-```
+```py
 result = retriever.get_relevant_documents("dog")  
 print(result)
 ```
 
 这将输出与查询相关的文档列表。每个文档包含页面内容和元数据：
 
-```
+```py
 [Document(page_content='dog', metadata={}),
  Document(page_content='animal', metadata={}),
  Document(page_content='cat', metadata={}),
@@ -2311,7 +2261,7 @@ print(result)
 
 在 LangChain 中有一些更专业的检索器，例如来自 Arxiv、Pubmed 或 Wikipedia 的检索器。例如，**Arxiv 检索器**的目的是从 Arxiv.org 存档中检索科学文章。这是一个工具，允许用户搜索和下载各个领域的学术文章，如物理学、数学、计算机科学等。Arxiv 检索器的功能包括指定要下载的文档的最大数量，根据查询检索相关文档，以及访问检索文档的元数据信息。**Wikipedia 检索器**允许用户从 Wikipedia 网站检索 Wikipedia 页面或文档。Wikipedia 检索器的目的是为用户提供方便访问 Wikipedia 上大量信息的途径，并使用户能够从中提取特定信息或知识。**PubMed 检索器**是 LangChain 中的一个组件，帮助将生物医学文献检索整合到其语言模型应用中。PubMed 包含来自各种来源的数百万篇生物医学文献引用。在 LangChain 中，`PubMedRetriever`类用于与 PubMed 数据库交互，并根据给定的查询检索相关文档。该类的`get_relevant_documents()`方法接受查询作为输入，并返回来自 PubMed 的相关文档列表。以下是如何在 LangChain 中使用 PubMed 检索器的示例：
 
-```
+```py
 from langchain.retrievers import PubMedRetriever  
 retriever = PubMedRetriever()  
 documents = retriever.get_relevant_documents("COVID")
@@ -2321,7 +2271,7 @@ for document in documents:
 
 在这个例子中，使用查询“COVID”调用了`get_relevant_documents()`方法。该方法然后从 PubMed 中检索与查询相关的文档，并将它们作为列表返回。我得到了以下标题作为打印输出：
 
-```
+```py
 The COVID-19 pandemic highlights the need for a psychological support in systemic sclerosis patients.
 Host genetic polymorphisms involved in long-term symptoms of COVID-19.
 Association Between COVID-19 Vaccination and Mortality after Major Operations.
@@ -2329,7 +2279,7 @@ Association Between COVID-19 Vaccination and Mortality after Major Operations.
 
 可以通过创建一个继承自`BaseRetriever`抽象类的类来在 LangChain 中实现自定义检索器。该类应该实现`get_relevant_documents()`方法，该方法接受查询字符串作为输入，并返回相关文档列表。以下是实现检索器的示例：
 
-```
+```py
 from langchain.retriever import BaseRetriever  
 from langchain.schema import Document  
 class MyRetriever(BaseRetriever):  
@@ -2356,7 +2306,7 @@ class MyRetriever(BaseRetriever):
 
 我们将通过几种格式进行概括，并通过 Streamlit 在 Web 浏览器中提供接口。您可以将您的文档放入其中并开始提问。在生产环境中，对于企业部署以进行客户参与，您可以想象这些文档已经加载进去，您的向量存储可以保持静态。让我们从文档阅读器开始。如前所述，我们希望能够阅读不同格式的文档：
 
-```
+```py
 from typing import Any
 from langchain.document_loaders import (
   PyPDFLoader, TextLoader, 
@@ -2381,7 +2331,7 @@ class DocumentLoader(object):
 
 这为我们提供了读取 PDF、文本、EPUB 和带有不同扩展名的 Word 文档的接口。现在我们将实现加载器逻辑。
 
-```
+```py
 import logging
 import pathlib
 from langchain.schema import Document
@@ -2401,7 +2351,7 @@ def load_document(temp_filepath: str) -> list[Document]:
 
 目前这个版本处理不了很多错误，但如果需要的话可以进行扩展。现在我们可以将这个加载器从界面中提供，并将其连接到向量存储。
 
-```
+```py
 from langchain.embeddings import HuggingFaceEmbeddings 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import DocArrayInMemorySearch
@@ -2435,7 +2385,7 @@ DocArray 是一个提供高级 API 用于表示和操作多模态数据的 Pytho
 
 前两个压缩器需要调用 LLM，这意味着它可能会很慢且成本高昂。因此，`EmbeddingsFilter`可以是一个更高效的替代方案。我们可以在最后使用一个简单的开关语句集成压缩（替换返回语句）：
 
-```
+```py
 if not use_compression:
     return retriever
 embeddings_filter = EmbeddingsFilter(
@@ -2449,14 +2399,14 @@ return ContextualCompressionRetriever(
 
 对于我们选择的压缩器`EmbeddingsFilter`，我们需要包括两个额外的导入：
 
-```
+```py
 from langchain.retrievers.document_compressors import EmbeddingsFilter
 from langchain.retrievers import ContextualCompressionRetriever
 ```
 
 我们可以通过`configure_qa_chain()`将`use_compression`参数传递给`configure_retriever()`方法（此处未显示）。现在我们有了创建检索器的机制。我们可以设置聊天链：
 
-```
+```py
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chains.base import Chain
 from langchain.chat_models import ChatOpenAI
@@ -2478,7 +2428,7 @@ def configure_chain(retriever: BaseRetriever) -> Chain:
 
 检索逻辑的最后一件事是获取文档并将其传递给检索器设置：
 
-```
+```py
 import os
 import tempfile
 def configure_qa_chain(uploaded_files):
@@ -2496,11 +2446,11 @@ def configure_qa_chain(uploaded_files):
 
 现在我们已经有了聊天机器人的逻辑，我们需要设置界面。如前所述，我们将再次使用 streamlit：
 
-```
+```py
 import streamlit as st
 from langchain.callbacks import StreamlitCallbackHandler
-st.set_page_config(page_title="LangChain: Chat with Documents", page_icon="🦜")
-st.title("🦜 LangChain: Chat with Documents")
+st.set_page_config(page_title="LangChain: Chat with Documents", page_icon="\U0001f99c")
+st.title("\U0001f99c LangChain: Chat with Documents")
 uploaded_files = st.sidebar.file_uploader(
     label="Upload files",
     type=list(DocumentLoader.supported_extentions.keys()),
@@ -2538,7 +2488,7 @@ if user_query:
 
 总之，记忆对于聊天机器人至关重要，通过记住和建立在过去互动的基础上，创造出更加个性化和类似人类的对话体验。以下是一个在 Python 中演示如何使用 LangChain 记忆功能的实际示例。
 
-```
+```py
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 # Creating a conversation chain with memory
@@ -2562,7 +2512,7 @@ print(memory.chat_memory.messages)
 
 在这个示例中，我们使用 ConversationBufferMemory 创建了一个带有记忆的对话链，它是一个简单的包装器，将消息存储在一个变量中。用户的输入使用对话链的`predict()`方法进行处理。对话链保留了先前互动的记忆，使其能够提供具有上下文意识的响应。与从链中单独构建记忆不同，我们可以简化：
 
-```
+```py
 conversation = ConversationChain(
     llm=llm, 
     verbose=True, 
@@ -2572,14 +2522,14 @@ conversation = ConversationChain(
 
 我们将 verbose 设置为 True，以便查看提示。处理用户输入后，我们打印对话链生成的响应。此外，我们使用`memory.chat_memory.messages`打印存储在内存中的对话历史。`save_context()`方法用于存储输入和输出。您可以使用`load_memory_variables()`方法查看存储的内容。为了将历史记录作为消息列表获取，将`return_messages`参数设置为`True`。我们将在本节中看到这方面的示例。`ConversationBufferWindowMemory`是 LangChain 提供的一种内存类型，用于跟踪对话随时间的交互。与保留所有先前交互的`ConversationBufferMemory`不同，`ConversationBufferWindowMemory`仅保留最后的 K 个交互，其中 K 是指定的窗口大小。以下是在 LangChain 中如何使用`ConversationBufferWindowMemory`的简单示例：
 
-```
+```py
 from langchain.memory import ConversationBufferWindowMemory
 memory = ConversationBufferWindowMemory(k=1)
 ```
 
 在此示例中，窗口大小设置为 1，这意味着只有最后一个交互将存储在内存中。我们可以使用`save_context()`方法保存每个交互的上下文。它接受两个参数：user_input 和 model_output。这些代表给定交互的用户输入和相应模型的输出。
 
-```
+```py
 memory.save_context({"input": "hi"}, {"output": "whats up"})
 memory.save_context({"input": "not much you"}, {"output": "not much"})
 ```
@@ -2592,7 +2542,7 @@ memory.save_context({"input": "not much you"}, {"output": "not much"})
 
 在知识图谱中，实体可以是世界上的任何概念、对象或事物，属性描述这些实体的属性或特征。关系捕获实体之间的连接和关联，提供上下文信息并实现语义推理。LangChain 中有用于检索知识图谱的功能，但 LangChain 还提供内存组件，根据我们的对话消息自动创建知识图谱。实例化`ConversationKGMemory`类，并将您的语言模型（LLM）实例作为 llm 参数传递：
 
-```
+```py
 from langchain.memory import ConversationKGMemory
 from langchain.llms import OpenAI
 llm = OpenAI(temperature=0)
@@ -2603,7 +2553,7 @@ memory = ConversationKGMemory(llm=llm)
 
 1.  从 LangChain 导入必要的类和模块：
 
-```
+```py
 from langchain.llms import OpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
@@ -2613,7 +2563,7 @@ llm = OpenAI(temperature=0)
 
 1.  定义一个包含自定义前缀的新提示模板。您可以通过创建一个带有所需模板字符串的`PromptTemplate`对象来实现这一点。
 
-```
+```py
 template = """The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.
 Current conversation:
 {history}
@@ -2630,7 +2580,7 @@ conversation = ConversationChain(
 
 在这个示例中，AI 前缀被设置为 AI 助手，而不是默认的 AI。`ConversationSummaryMemory`是 LangChain 中一种生成对话摘要的记忆类型，随着对话的进行而生成对话摘要。它不是存储所有消息的逐字记录，而是压缩信息，提供对话的摘要版本。这在对话链很长的情况下特别有用，其中包含所有先前消息可能超过令牌限制。要使用`ConversationSummaryMemory`，首先创建一个实例，将语言模型（llm）作为参数传递。然后，使用`save_context()`方法保存交互上下文，其中包括用户输入和 AI 输出。要检索摘要的对话历史记录，使用`load_memory_variables()`方法。示例：
 
-```
+```py
 from langchain.memory import ConversationSummaryMemory
 from langchain.llms import OpenAI
 # Initialize the summary memory and the language model
@@ -2643,7 +2593,7 @@ memory.load_memory_variables({})
 
 LangChain 还允许使用 CombinedMemory 类结合多种记忆策略。当您想要保留对话历史的不同方面时，这将非常有用。例如，一个记忆可以用于存储完整的对话记录和
 
-```
+```py
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationChain
@@ -2673,7 +2623,7 @@ conversation.run("Hi!")
 
 在这个例子中，我们首先实例化语言模型和我们使用的不同类型的记忆 - `ConversationBufferMemory` 用于保留完整的对话历史，`ConversationSummaryMemory` 用于创建对话摘要。然后我们使用 CombinedMemory 组合这些记忆。我们还定义了一个适应我们记忆使用的提示模板，最后，我们通过提供语言模型、记忆和提示来创建和运行`ConversationChain`。`ConversationSummaryBufferMemory` 用于在内存中保留最近的交互缓冲，并将旧的交互编译成摘要，而不是完全清除它们。清除交互的阈值是由令牌长度而不是交互数量确定的。要使用这个功能，记忆缓冲需要用 LLM 模型和`max_token_limit`实例化。`ConversationSummaryBufferMemory` 提供了一个名为`predict_new_summary()`的方法，可以直接用来生成对话摘要。Zep 是一个设计用于存储、总结、嵌入、索引和丰富聊天机器人或 AI 应用历史的记忆存储和搜索引擎。它为开发人员提供了一个简单且低延迟的 API 来访问和操作存储的数据。使用 Zep 的一个实际例子是将其集成为聊天机器人或 AI 应用的长期记忆。通过使用`ZepMemory`类，开发人员可以使用 Zep 服务器 URL、API 密钥和用户的唯一会话标识符初始化一个`ZepMemory`实例。这使得聊天机器人或 AI 应用能够存储和检索聊天历史或其他相关信息。例如，在 Python 中，你可以初始化一个 ZepMemory 实例如下：
 
-```
+```py
 from langchain.memory import ZepMemory  
 # Set this to your Zep server URL  
 ZEP_API_URL = "http://localhost:8000"  
@@ -2706,28 +2656,28 @@ memory = ZepMemory(
 
 您可以将审查链添加到 LLMChain 中，以确保语言模型生成的输出不会有害。如果传入审查链的内容被认为有害，有不同的处理方式。您可以选择在链中抛出错误并在应用程序中处理，或者您可以向用户返回一条消息，解释该文本是有害的。具体的处理方法取决于您的应用程序需求。在 LangChain 中，首先，您将创建一个`OpenAIModerationChain`类的实例，这是 LangChain 提供的预构建审查链。该链专门设计用于检测和过滤有害内容。
 
-```
+```py
 from langchain.chains import OpenAIModerationChain  
 moderation_chain = OpenAIModerationChain()
 ```
 
 接下来，您将创建一个 LLMChain 类的实例，代表您的语言模型链。这是您定义提示并与语言模型交互的地方。
 
-```
+```py
 from langchain.chains import LLMChain  
 llm_chain = LLMChain(model_name="gpt-3.5-turbo")
 ```
 
 要将审查链附加到语言模型链，您可以使用`SequentialChain`类。这个类允许您以顺序方式将多个链链接在一起。
 
-```
+```py
 from langchain.chains import SequentialChain  
 chain = SequentialChain([llm_chain, moderation_chain])
 ```
 
 现在，当您想使用语言模型生成文本时，您需要先将输入文本通过审查链，然后再通过语言模型链。
 
-```
+```py
 input_text = "Can you generate a story for me?"  
 output = chain.generate(input_text)
 ```
@@ -2777,13 +2727,8 @@ output = chain.generate(input_text)
 1.  什么是审查，什么是宪法，它们是如何工作的？
 
 
-# 6 开发软件
+# 六、开发软件
 
-## 加入我们在 Discord 上的书籍社区
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![自动生成的二维码描述](img/genai-lngch-file42.png)
 
 虽然这本书是关于将生成式人工智能，特别是大型语言模型（LLMs）集成到软件应用程序中，但在本章中，我们将讨论如何利用 LLMs 来帮助软件开发。这是一个重要的主题，软件开发被几家咨询公司如 KPMG 和麦肯锡的报告所强调，是受生成式人工智能影响最大的领域之一。我们首先讨论 LLMs 如何帮助编码任务，并概述我们在自动化软件工程师方面取得了多大进展。我们还将讨论许多最新进展和新模型。然后，我们将尝试几种模型，定性评估生成的代码。接下来，我们将实现一个完全自动化的软件开发任务代理。我们将讨论设计选择，并展示我们在 LangChain 中仅用几行 Python 代码实现的代理实现的一些结果。这种方法有许多可能的扩展，我们也将讨论。在整个章节中，我们将探讨软件开发的不同方法，您可以在书籍的 Github 存储库中的`software_development`目录中找到。主要部分包括：
 
@@ -2887,7 +2832,7 @@ AI 编程助手将早期系统的互动性与尖端自然语言处理相结合�
 
 请注意，正如描述所说，StarCoder 模型没有经过指令调整，这意味着我们不能给它任务去执行。我们不能说“编写一个包含…”，但我们可以要求它完成一个文本，就像截图中展示的那样，我们用“`# dataclass of customer including an alphanumeric id, a name, and a birthday`”提示模型 – 让我们试试这个！我们可以切换温度、最大新标记、top-n 和重复惩罚的设置。对于任何非平凡的事情，我们需要调整最大新标记的设置。我得到了这段代码，为我们的假想客户提供了一个有用的数据模型：
 
-```
+```py
 @dataclass(frozen=True)  # frozen means that the class cannot be modified after creation. This is useful for storing data in databases or other persistent storages (e.g., files).
 class Customer:
     cust_id : str = field()   # this defines how to create instances from the class; it's called "field" because we're creating fields within our object/instance
@@ -2920,14 +2865,14 @@ class Customer:
 
 这里缺少了导入部分，通常应该在注释提示之前，所以我不能因此责怪模型，我们需要在顶部添加这两行：
 
-```
+```py
 import re
 from dataclasses import dataclass, field
 ```
 
 当我们按原样运行时，这不会引发错误，这令人印象深刻，但是，当我们更详细地查看时，有一些事情并不理想，甚至是错误的。乍一看，我个人不喜欢注释风格和缺乏文档字符串。代码中留下了一些`print()`语句；通常这是为了调试目的而做的。这不应该出现在生产代码中。将空字符串作为`firstname`和`lastname`的默认值可能并不理想。我希望客户 ID 是基于哈希函数分配的 - 我不明白为什么 ID 应该在验证属性的验证函数中强制为 8 个字符。这段代码还有更多问题影响其正确性和可读性，但代码中还有一些更为关键的问题，包括尝试编写只读属性。在数据类中的`firstname`和`lastname` - 在数据类中，`frozen=True`意味着属性在创建后无法更改。使用非标准语法中的正则表达式从`firstname`和`lastname`创建变量名的逻辑至少是奇怪的 - 且不正确。姓氏在这个过程中被丢弃。对反转名称的过滤也是非常可疑的。我就说到这里。这给了我们一些好的想法和一个开始的结构，但这不是生产代码。它甚至不起作用。您可以在书的 Github 存储库中看到这段代码作为`customer.py`。让我们再试一次。也许我们一开始就走错了。我们以初学者预期的错误语法开始了一个代码片段，并期望能够运行的代码。这是不现实的。让我们再试一次，并从一个更符合标准的提示开始：
 
-```
+```py
 """Customer data model.
 Here we implement our data model for customers, a dataclass with
 fields firstname, lastname, customer_id (a hash).
@@ -2936,7 +2881,7 @@ fields firstname, lastname, customer_id (a hash).
 
 我们得到了以下结果：
 
-```
+```py
 @dataclass(frozen=True)  # frozen means that the object cannot be modified after creation!
 class Customer:
     """A class representing one single customer."""
@@ -2991,7 +2936,7 @@ class Customer:
 
 您可以在 Github 上找到完整的代码清单。对于这个在第一年计算机科学课程中应该很有名的例子，不需要导入任何内容。算法的实现很简单。它立即执行并给出预期的结果。在 LangChain 中，我们可以像这样使用`HuggingFaceHub`集成：
 
-```
+```py
 from langchain import HuggingFaceHub
 llm = HuggingFaceHub(
     task="text-generation",
@@ -3012,7 +2957,7 @@ print(llm(text))
 
 请注意，这只是输出的开始。Llama2 找到了一个很好的实现，解释也很到位。干得好，StarCoder 和 Llama2！ - 或者，这太容易了？有很多方法可以获得代码完成或生成。我们甚至可以尝试一个小型本地模型：
 
-```
+```py
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 checkpoint = "Salesforce/codegen-350M-mono"
 model = AutoModelForCausalLM.from_pretrained(checkpoint)
@@ -3035,14 +2980,14 @@ def calculate_primes(n):
 
 CodeGen 是 Salesforce AI Research 的一个模型。 CodeGen 350 Mono 在 HumanEval 中的通过率为 12.76%。截至 2023 年 7 月，发布了新版本的 CodeGen，只有 6B 参数，非常具有竞争力，性能达到 26.13%。这个最后的模型是在包含 C、C++、Go、Java、Javascript 和 Python 的 BigQuery 数据集上训练的，以及包含 5.5TB Python 代码的 BigPython 数据集。另一个有趣的小型模型是微软的 CodeBERT（2020），这是一个用于程序合成的模型，已经在 Ruby、Javascript、Go、Python、Java 和 PHP 上进行了训练和测试。由于这个模型是在 HumanEval 基准发布之前发布的，因此基准的性能统计数据不是初始出版物的一部分。我们现在可以直接从流水线中获取输出，就像这样：
 
-```
+```py
 completion = pipe(text)
 print(completion[0]["generated_text"])
 ```
 
 或者，我们可以通过 LangChain 集成来包装这个流水线：
 
-```
+```py
 llm = HuggingFacePipeline(pipeline=pipe)
 llm(text)
 ```
@@ -3053,7 +2998,7 @@ llm(text)
 
 现在我们将编写一个完全自动化的代理，它将为我们编写代码并根据反馈修复任何问题。在 LangChain 中，我们有几个用于执行代码的集成，比如`LLMMathChain`，它执行 Python 代码来解决数学问题，以及`BashChain`，它执行 Bash 终端命令，可以帮助处理系统管理任务。然而，这些是用于通过代码解决问题而不是创建软件。不过，这种方法可能效果很好。
 
-```
+```py
 from langchain.llms.openai import OpenAI
 from langchain.agents import load_tools, initialize_agent, AgentType
 llm = OpenAI()
@@ -3065,7 +3010,7 @@ print(result)
 
 我们可以看到在 OpenAI 的 LLM 和 Python 解释器之间，质数计算是如何在内部很好地处理的：
 
-```
+```py
 Entering new AgentExecutor chain...
 I need to find a way to check if a number is prime
 Action: Python_REPL
@@ -3092,7 +3037,7 @@ Finished chain.
 
 我们已经得出了关于质数的正确答案，然而，目前还不太清楚这种方法在构建软件产品方面的可扩展性，其中涉及模块、抽象、关注点分离和可维护代码。目前有一些有趣的实现方法。MetaGPT 库通过代理模拟来处理这个问题，其中不同的代理代表公司或 IT 部门中的工作角色：
 
-```
+```py
 from metagpt.software_company import SoftwareCompany
 from metagpt.roles import ProjectManager, ProductManager, Architect, Engineer
 async def startup(idea: str, investment: float = 3.0, n_round: int = 5):
@@ -3112,7 +3057,7 @@ async def startup(idea: str, investment: float = 3.0, n_round: int = 5):
 
 这些步骤中的许多都包括发送给 LLMs 的具体提示，指示其拆分项目或设置环境。通过使用所有工具实现完整的反馈循环是非常令人印象深刻的。在 LangChain 中，我们可以以不同的方式实现相对简单的反馈循环，例如使用`PlanAndExecute`链，`ZeroShotAgent`或`BabyAGI`。让我们选择`PlanAndExecute`！主要思想是设置一个链并执行它，目的是编写软件，就像这样：
 
-```
+```py
 llm = OpenAI()
 planner = load_chat_planner(llm)
 executor = load_agent_executor(
@@ -3132,7 +3077,7 @@ agent_executor.run("Write a tetris game in python!")
 
 我在这里省略了导入部分，但你可以在书籍的 Github 仓库中找到完整的实现。其他选项也可以在那里找到。这还有一些其他要点，但根据我们给出的指示，这已经可以编写一些代码了。我们需要的一件事是为语言模型提供清晰的指令，以便以某种形式编写 Python 代码：
 
-```
+```py
 DEV_PROMPT = (
     "You are a software engineer who writes Python code given tasks or objectives. "
     "Come up with a python code for this task: {task}"
@@ -3150,7 +3095,7 @@ software_llm = LLMChain(
 
 我们需要确保选择一个能够生成代码的模型。我们已经讨论了我们可以选择的模型。我选择了一个较长的上下文，这样我们就不会在函数中间被切断，以及一个较低的温度，这样它就不会变得太疯狂。然而，单独使用这个模型无法将其存储到文件中，也无法对其进行有意义的操作，并根据执行的反馈进行操作。我们需要想出代码然后测试它，看看它是否有效。让我们看看我们如何实现这一点 - 这是传递给代理执行器的`tools`参数，让我们看看这是如何定义的！
 
-```
+```py
 software_dev = PythonDeveloper(llm_chain=software_llm)
 code_tool = Tool.from_function(
     func=software_dev.run,
@@ -3164,7 +3109,7 @@ code_tool = Tool.from_function(
 
 `PythonDeveloper` 类包含了关于接受任何形式任务并将其转换为代码的所有逻辑。我不会在这里详细介绍，但主要思想在这里：
 
-```
+```py
 class PythonDeveloper():
     """Execution environment for Python code."""
     def __init__(
@@ -3209,13 +3154,13 @@ class PythonDeveloper():
 
 我已经实现了为`ModuleNotFoundError`安装包的逻辑，并为其中一些问题提供了更清晰的消息。在缺少图像的情况下，我们可以添加一个生成图像模型来创建这些图像。将所有这些作为丰富的反馈返回给代码生成，会产生越来越具体的输出，例如：
 
-```
+```py
 Write a basic tetris game in Python with no syntax errors, properly closed strings, brackets, parentheses, quotes, commas, colons, semi-colons, and braces, no other potential syntax errors, and including the necessary imports for the game
 ```
 
 Python 代码本身被编译并在子目录中执行，我们重定向 Python 执行的输出以捕获它 - 这两者都被实现为 Python 上下文。请谨慎在您的系统上执行代码，因为其中一些方法对安全性非常敏感，因为它们缺乏沙盒环境，尽管存在诸如 codebox-api、RestrictedPython、pychroot 或 setuptools 的 DirectorySandbox 等工具和框架，仅举几例供 Python 使用。所以让我们设置工具：
 
-```
+```py
 ddg_search = DuckDuckGoSearchResults()
 tools = [
     codetool,
@@ -3233,7 +3178,7 @@ tools = [
 
 通过进行互联网搜索，确保我们正在实现与我们目标相关的内容是绝对值得的。我看过一些实现了石头、剪刀、布而不是俄罗斯方块的例子。我们可以定义额外的工具，比如将任务分解为函数的计划工具。你可以在仓库中看到这一点。每次以实现俄罗斯方块为目标来运行我们的代理执行器时，结果都会有些不同。我看到了几次搜索需求和游戏机制，以及几次生成和运行代码。pygame 库已安装。最终的代码片段并不是最终产品，但它会弹出一个窗口：
 
-```
+```py
 # This code is written in PEP8 syntax and includes comments to explain the code
 # Import the necessary modules
 import pygame
@@ -3286,13 +3231,8 @@ while True:
 1.  你认为生成式人工智能对软件开发有什么影响？
 
 
-# 7 种用于数据科学的 LLMs
+# 七、用于数据科学的 LLMs
 
-## 加入我们在 Discord 上的书籍社区
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![自动生成的二维码描述](img/genai-lngch-file49.png)
 
 本章讨论了生成式人工智能如何自动化数据科学。生成式人工智能，特别是大型语言模型（LLMs），有潜力加速各个领域的科学进展，尤其是通过提供对研究数据的高效分析和协助文献回顾过程。许多当前属于 AutoML 领域的方法可以帮助数据科学家提高生产力，并帮助使数据科学更具可重复性。我将首先概述数据科学中的自动化，然后我们将讨论生成式人工智能对数据科学的影响。接下来，我们将讨论如何以不同方式使用代码生成和工具来回答与数据科学相关的问题。这可以以模拟的形式进行，或者通过为数据集添加额外信息来丰富数据集。最后，我们将重点放在对结构化数据集的探索性分析上。我们可以设置代理来运行 SQL 或 Pandas 中的表格数据。我们将看到如何提出关于数据集的问题、关于数据的统计问题，或者要求可视化。在整个章节中，我们将使用 LLMs 进行数据科学的不同方法，您可以在书籍的 Github 存储库中的`data_science`目录中找到。主要章节包括：
 
@@ -3500,7 +3440,7 @@ ETL 和数据收集可以使用各种工具和技术完成，例如：
 
 正如我们在 Jupyter AI（Jupyternaut chat）中看到的 - 以及在第六章*开发软件*中看到的 - 利用生成式 AI（代码 LLMs）提高创建和编写软件的效率的潜力很大。这是本章实践部分的一个很好的起点，因为我们将探讨在数据科学中使用生成式 AI 的用途。我们之前已经看到了不同的带有工具的代理。例如，LLMMathChain 可以执行 Python 来回答数学问题，如下所示：
 
-```
+```py
 from langchain import OpenAI, LLMMathChain
 llm = OpenAI(temperature=0)
 llm_math = LLMMathChain.from_llm(llm, verbose=True)
@@ -3509,7 +3449,7 @@ llm_math.run("What is 2 raised to the 10th power?")
 
 虽然这对提取信息并反馈信息很有用，但如何将其插入传统的 EDA 过程并不那么明显。同样，CPAL（`CPALChain`）和 PAL（`PALChain`）链可以回答更复杂的推理问题，同时保持幻觉受控，但很难想出它们的真实用例。通过`PythonREPLTool`，我们可以创建玩具数据的简单可视化或使用合成数据进行训练，这对于项目的说明或引导可能很好。这是 LangChain 文档中的一个示例：
 
-```
+```py
 from langchain.agents.agent_toolkits import create_python_agent
 from langchain.tools.python.tool import PythonREPLTool
 from langchain.llms.openai import OpenAI
@@ -3529,7 +3469,7 @@ Return prediction for x = 5"""
 
 请注意，这应该谨慎执行，因为 Python 代码直接在机器上执行而没有任何保障。这实际上是有效的，可以创建数据集，训练模型，然后我们得到一个预测：
 
-```
+```py
 Entering new AgentExecutor chain...
 I need to write a neural network in PyTorch and train it on the given data
 Action: Python_REPL
@@ -3570,7 +3510,7 @@ Final Answer: The prediction for x = 5 is y = 10.00.
 
 再次强调，这非常酷，但很难看到如何在没有更严格的工程支持的情况下扩展，类似于我们在第六章*开发软件*中所做的。如果我们想要用类别或地理信息丰富我们的数据，LLMs 和工具可能会很有用。例如，如果我们的公司从东京提供航班，并且我们想知道客户距离东京的距离，我们可以使用 Wolfram Alpha 作为工具。这是一个简单的例子：
 
-```
+```py
 from langchain.agents import load_tools, initialize_agent
 from langchain.llms import OpenAI
 from langchain.chains.conversation.memory import ConversationBufferMemory
@@ -3588,7 +3528,7 @@ agent.run(
 
 请确保您已经设置了 OPENAI_API_KEY 和 WOLFRAM_ALPHA_APPID 环境变量，如第三章*开始使用 LangChain*中所讨论的。这是输出：
 
-```
+```py
 > Entering new AgentExecutor chain...
 AI: The distance from New York City to Tokyo is 6760 miles. The distance from Madrid, Spain to Tokyo is 8,845 miles. The distance from Berlin, Germany to Tokyo is 6,845 miles.
 > Finished chain.
@@ -3602,14 +3542,14 @@ The distance from New York City to Tokyo is 6760 miles. The distance from Madrid
 
 数据探索是数据分析中至关重要且基础的一步，使研究人员能够全面了解其数据集并发现重要见解。随着像 ChatGPT 这样的 LLM 的出现，研究人员可以利用自然语言处理的力量促进数据探索。正如我们之前提到的生成式 AI 模型，如 ChatGPT，具有理解和生成类似人类响应的能力，使它们成为增强研究生产力的宝贵工具。用自然语言提出问题并获得易消化的回答可以极大地促进分析。LLM 不仅可以帮助探索文本数据，还可以帮助探索其他形式的数据，如数值数据集或多媒体内容。研究人员可以利用 ChatGPT 的能力提出关于数值数据集中统计趋势的问题，甚至查询图像分类任务的可视化。让我们加载一个数据集并开始处理。我们可以从 scikit-learn 快速获取一个数据集：
 
-```
+```py
 from sklearn.datasets import load_iris
 df = load_iris(as_frame=True)["data"]
 ```
 
 鸢尾花数据集是众所周知的 - 它是一个玩具数据集，但它将帮助我们展示使用生成式人工智能进行数据探索的能力。我们将在接下来使用 DataFrame。我们现在可以创建一个 Pandas dataframe 代理，看看完成简单任务有多容易！
 
-```
+```py
 from langchain.agents import create_pandas_dataframe_agent
 from langchain import PromptTemplate
 from langchain.llms.openai import OpenAI
@@ -3627,13 +3567,13 @@ agent = create_pandas_dataframe_agent(llm, df, verbose=True)
 
 我已经告诉模型在怀疑和逐步思考时说它不知道的指令，这样可以减少幻觉。现在我们可以针对 DataFrame 查询我们的代理：
 
-```
+```py
 agent.run(prompt.format(query="What's this dataset about?"))
 ```
 
 我们得到了答案“'这个数据集是关于某种花的测量。”'这是正确的。让我们展示如何获得一个可视化：
 
-```
+```py
 agent.run(prompt.format(query="Plot each column as a barplot!"))
 ```
 
@@ -3651,7 +3591,7 @@ agent.run(prompt.format(query="Plot each column as a barplot!"))
 
 我们可以要求图使用其他绘图后端，如 seaborn，但请注意这些必须已安装。我们还可以询问有关数据集的更多问题，比如哪一行的花瓣长度和花瓣宽度之间的差异最大。我们得到了带有中间步骤的答案如下（缩短）：
 
-```
+```py
 df['difference'] = df['petal length (cm)'] - df['petal width (cm)']
 df.loc[df['difference'].idxmax()]
 Observation: sepal length (cm)    7.7
@@ -3666,13 +3606,13 @@ Final Answer: Row 122 has the biggest difference between petal length and petal 
 
 我认为这值得表扬，LLM！下一步可能是在提示中添加更多关于绘图的指令，比如关于绘图大小的指令。在 streamlit 应用程序中实现相同的绘图逻辑有点困难，因为我们需要在相应的 streamlit 函数中使用绘图功能，例如，`st.bar_chart()`，但是这也是可以做到的。您可以在 Streamlit 博客中找到关于此的解释（“使用 ChatGPT 构建 Streamlit 和 scikit-learn 应用程序”）。统计测试呢？
 
-```
+```py
 agent.run(prompt.format(query="Validate the following hypothesis statistically: petal width and petal length come from the same distribution."))
 ```
 
 我们得到了这个回应：
 
-```
+```py
 Thought: I should use a statistical test to answer this question.
 Action: python_repl_ast 
 Action Input: from scipy.stats import ks_2samp
@@ -3687,7 +3627,7 @@ Final Answer: The p-value of 6.639808432803654e-32 indicates that the two variab
 
 '6.639808432803654e-32 的 p 值表明这两个变量来自不同的分布。'这是统计检验！这很酷。我们可以用简单的提示用普通英语提出相当复杂的关于数据集的问题。还有 pandas-ai 库，它在内部使用 LangChain 并提供类似的功能。以下是文档中的一个示例数据集：
 
-```
+```py
 import pandas as pd
 from pandasai import PandasAI
 df = pd.DataFrame({
@@ -3703,7 +3643,7 @@ pandas_ai(df, prompt='Which are the 5 happiest countries?')
 
 这将给我们提供类似于直接使用 LangChain 时的请求结果。请注意，pandas-ai 不是本书的设置的一部分，所以如果你想使用它，你需要单独安装它。对于 SQL 数据库中的数据，我们可以连接一个`SQLDatabaseChain`。LangChain 文档展示了这个例子：
 
-```
+```py
 from langchain.llms import OpenAI
 from langchain.utilities import SQLDatabase
 from langchain_experimental.sql import SQLDatabaseChain
@@ -3738,13 +3678,7 @@ db_chain.run("How many employees are there?")
 1.  我们如何让 LLM 与数据一起工作？
 
 
-# 8 自定义 LLMs 及其输出
-
-## 加入我们在 Discord 上的书籍社区
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![自动生成的二维码描述](img/genai-lngch-file54.png)
+# 八、自定义 LLMs 及其输出
 
 本章介绍了改进大型语言模型（LLMs）在复杂推理和问题解决任务等特定场景中的可靠性和性能的技术和最佳实践。通常，将模型调整到特定任务或确保模型输出符合我们期望的过程称为调节。在本章中，我们将讨论微调和提示作为调节方法。微调涉及在特定任务或数据集上对预训练基础模型进行训练，这些任务或数据集与所需应用相关。这个过程使模型能够适应并变得更准确和上下文对齐以用于预期的用例。同样，在推断时提供额外的输入或上下文，大型语言模型（LLMs）可以生成适合特定任务或风格的文本。提示设计对于释放 LLM 推理能力、未来模型和提示技术的潜力以及这些原则和技术对于与大型语言模型一起工作的研究人员和从业者来说是非常重要的工具包。了解 LLMs 如何逐个标记生成文本有助于创建更好的推理提示。提示仍然是一门经验艺术 - 经常需要尝试各种变化来看看哪种方法有效。但是一些提示工程的见解可以在模型和任务之间转移。我们将讨论 LangChain 中的工具，以实现高级提示工程策略，如少样本学习、动态示例选择和链式推理。在整个章节中，我们将使用 LLMs 进行微调和提示，您可以在书籍的 Github 存储库的`notebooks`目录中找到。主要章节包括：
 
@@ -3933,7 +3867,7 @@ LLM 在自然语言处理领域取得了令人印象深刻的成果，现在也�
 
 我们可以通过 Colab 笔记本安装这些库，如下所示：
 
-```
+```py
 !pip install -U accelerate bitsandbytes datasets transformers peft trl sentencepiece wandb langchain
 ```
 
@@ -3945,7 +3879,7 @@ LLM 在自然语言处理领域取得了令人印象深刻的成果，现在也�
 
 我们可以像这样从笔记本进行身份验证：
 
-```
+```py
 import notebook_login
 notebook_login()
 ```
@@ -3956,21 +3890,21 @@ notebook_login()
 
 Weights and Biases（W&B）是一个 MLOps 平台，可以帮助开发人员从头到尾监控和记录 ML 训练工作流程。正如前面提到的，我们将使用 W&B 来了解训练的效果如何，特别是模型是否随着时间的推移而改进。对于 W&B，我们需要为项目命名；或者，我们可以使用 wandb 的 `init()` 方法：
 
-```
+```py
 import os
 os.environ["WANDB_PROJECT"] = "finetuning"
 ```
 
 为了与 W&B 进行身份验证，您需要在他们这里创建一个免费帐户：[`www.wandb.ai`](https://www.wandb.ai) 您可以在授权页面上找到您的 API 密钥：[`wandb.ai/authorize`](https://wandb.ai/authorize)同样，我们需要粘贴我们的 API 令牌。如果之前的训练仍然处于活动状态 - 这可能是从笔记本的上一次执行中，如果您再次运行第二次 - 让我们确保我们开始一个新的！这将确保我们在 W&B 上获得新的报告和仪表板：
 
-```
+```py
 if wandb.run is not None:
     wandb.finish()
 ```
 
 接下来，我们需要选择一个数据集进行优化。我们可以使用许多不同的数据集，适用于编码、叙述、工具使用、SQL 生成、小学数学问题（GSM8k）或许多其他任务。HuggingFace 提供了丰富的数据集，可以在此网址查看：[`huggingface.co/datasets`](https://huggingface.co/datasets)这些数据集涵盖了许多不同的，甚至是最为专业的任务。我们也可以自定义我们自己的数据集。例如，我们可以使用 langchain 来设置训练数据。有许多可用的过滤方法可以帮助减少数据集中的冗余。在本章中展示数据收集作为一个实用的步骤可能会很吸引人。然而，由于复杂性，我将其排除在本书的范围之外。从网络数据中过滤出质量可能会更加困难，但有许多可能性。对于代码模型，我们可以应用代码验证技术来对段落进行评分作为质量过滤器。如果代码来自 Github，我们可以按星级或按存储库所有者的星级进行过滤。对于自然语言文本，质量过滤并不是一件简单的事情。搜索引擎排名可以作为一个流行度过滤器，因为它通常基于用户与内容的互动。此外，知识蒸馏技术可以通过事实密度和准确性进行调整作为一个过滤器。在这个步骤中，我们正在使用 Squad V2 数据集进行问答性能的微调。您可以在 HuggingFace 上查看详细的数据集描述：[`huggingface.co/spaces/evaluate-metric/squad_v2`](https://huggingface.co/spaces/evaluate-metric/squad_v2)
 
-```
+```py
 from datasets import load_dataset
 dataset_name = "squad_v2" 
 dataset = load_dataset(dataset_name, split="train")
@@ -3979,7 +3913,7 @@ eval_dataset = load_dataset(dataset_name, split="validation")
 
 我们同时采用训练和验证拆分。Squad V2 数据集有一个部分应该用于训练，另一个部分用于验证，正如我们可以在`load_dataset(dataset_name)`的输出中看到的：
 
-```
+```py
 DatasetDict({
     train: Dataset({
         features: ['id', 'title', 'context', 'question', 'answers'],
@@ -3994,7 +3928,7 @@ DatasetDict({
 
 我们将使用验证拆分进行早停。早停将允许我们在验证错误开始恶化时停止训练。Squad V2 数据集由各种特征组成，我们可以在这里看到：
 
-```
+```py
 {'id': Value(dtype='string', id=None), 
  'title': Value(dtype='string', id=None), 
  'context': Value(dtype='string', id=None), 
@@ -4005,14 +3939,14 @@ DatasetDict({
 
 训练中的基本思想是用一个问题提示模型，并将答案与数据集进行比较。我们希望有一个小型模型，可以在本地以合理的标记速率运行。LLaMa-2 模型需要使用您的电子邮件地址签署许可协议并得到确认（公平地说，这可能非常快），因为它受到商业使用的限制。像 OpenLLaMa 这样的 LLaMa 衍生产品在 HF 排行榜上表现相当不错：[`huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard`](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)OpenLLaMa 版本 1 不能用于编码任务，因为分词器的原因。因此，让我们使用 v2！我们将使用一个 30 亿参数的模型，即使在较旧的硬件上也能使用：
 
-```
+```py
 model_id = "openlm-research/open_llama_3b_v2" 
 new_model_name = f"openllama-3b-peft-{dataset_name}"
 ```
 
 我们甚至可以使用更小的模型，比如`EleutherAI/gpt-neo-125m`，这样可以在资源使用和性能之间取得很好的折衷。让我们加载模型：
 
-```
+```py
 import torch
 from transformers import AutoModelForCausalLM, BitsAndBytesConfig
 bnb_config = BitsAndBytesConfig(
@@ -4032,20 +3966,20 @@ base_model.config.use_cache = False
 
 Bits and Bytes 配置使我们能够将模型量化为 8、4、3 甚至 2 位，从而加速推理并减少内存占用，而不会在性能方面产生大的成本。我们将在谷歌云盘上存储模型检查点；您需要确认登录到您的谷歌账户：
 
-```
+```py
 from google.colab import drive
 drive.mount('/content/gdrive')
 ```
 
 我们需要通过谷歌进行身份验证才能使其工作。我们可以将模型检查点和日志的输出目录设置为我们的谷歌云盘：
 
-```
+```py
 output_dir = "/content/gdrive/My Drive/results"
 ```
 
 如果您不想使用谷歌云盘，只需将其设置为计算机上的一个目录。对于训练，我们需要设置一个分词器：
 
-```
+```py
 from transformers import AutoTokenizer
 tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token
@@ -4054,7 +3988,7 @@ tokenizer.padding_side = "right"
 
 现在我们将定义我们的训练配置。我们将设置 LORA 和其他训练参数：
 
-```
+```py
 from transformers import TrainingArguments, EarlyStoppingCallback
 from peft import LoraConfig
 # More info: https://github.com/huggingface/transformers/pull/24906
@@ -4085,7 +4019,7 @@ training_args = TrainingArguments(
 
 有一些参数需要解释一下。`push_to_hub`参数意味着我们可以在训练过程中定期将模型检查点推送到 HuggingSpace Hub。为了使其工作，你需要设置 HuggingSpace 身份验证（如上所述，需要写入权限）。如果我们选择这个选项，作为`output_dir`我们可以使用`new_model_name`。这将是模型在 HuggingFace 上可用的存储库名称：[`huggingface.co/models`](https://huggingface.co/models)或者，如我在这里所做的，我们可以将模型保存在本地或云端，例如谷歌云盘的一个目录。我将`max_steps`和`num_train_epochs`设置得非常高，因为我注意到训练仍然可以在许多步骤后改进。我们使用早停和较高数量的最大训练步数使模型收敛到更高的性能。对于早停，我们需要将`evaluation_strategy`设置为`"steps"`，并且`load_best_model_at_end=True`。`eval_steps`是两次评估之间的更新步数。`save_total_limit=5`意味着只保存最后 5 个模型。最后，`report_to="wandb"`意味着我们将发送训练统计数据、一些模型元数据和硬件信息到 W&B，我们可以在那里查看每次运行的图表和仪表板。然后训���可以使用我们的配置：
 
-```
+```py
 from trl import SFTTrainer
 trainer = SFTTrainer(
     model=base_model,
@@ -4109,7 +4043,7 @@ trainer.train()
 
 训练完成后，我们可以将最终检查点保存在磁盘上以便重新加载：
 
-```
+```py
 trainer.model.save_pretrained(
     os.path.join(output_dir, "final_checkpoint"),
 )
@@ -4117,7 +4051,7 @@ trainer.model.save_pretrained(
 
 现在，我们可以与朋友分享我们的最终模型，以炫耀我们通过手动推送到 HuggingFace 所取得的性能：
 
-```
+```py
 trainer.model.push_to_hub(
     repo_id=new_model_name
 )
@@ -4125,7 +4059,7 @@ trainer.model.push_to_hub(
 
 现在，我们可以使用我们的 HuggingFace 用户名和存储库名称（新模型名称）的组合来加载模型。让我们快速展示如何在 LangChain 中使用这个模型。通常，peft 模型存储为适配器，而不是完整模型，因此加载方式有点不同：
 
-```
+```py
 from peft import PeftModel, PeftConfig
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from langchain.llms import HuggingFacePipeline
@@ -4146,7 +4080,7 @@ llm = HuggingFacePipeline(pipeline=pipe)
 
 到目前为止，我们在 Google Colab 上完成了所有工作，但我们也可以在本地执行，只需注意你需要安装 huggingface peft 库！到目前为止，我们已经展示了如何对开源 LLM 进行微调和部署。一些商业模型也可以根据自定义数据进行微调。例如，OpenAI 的 GPT-3.5 和 Google 的 PaLM 模型都提供了这种能力。这已经与一些 Python 库集成。使用 Scikit-LLM 库，在任何情况下这只是几行代码：对文本分类进行 PaLM 模型的微调可以这样完成：
 
-```
+```py
 from skllm.models.palm import PaLMClassifier
 clf = PaLMClassifier(n_update_steps=100)
 clf.fit(X_train, y_train) # y_train is a list of labels
@@ -4155,7 +4089,7 @@ labels = clf.predict(X_test)
 
 同样，你可以这样对 GPT-3.5 模型进行文本分类的微调：
 
-```
+```py
 from skllm.models.gpt import GPTClassifier
 clf = GPTClassifier(
         base_model = "gpt-3.5-turbo-0613",
@@ -4225,14 +4159,14 @@ labels = clf.predict(X_test)
 
 提示是我们提供给语言模型的指令和示例，以引导它们的行为。提示模板化指的是创建可配置不同参数的提示的可重用模板。LangChain 提供了用 Python 创建提示模板的工具。模板允许使用变量输入动态生成提示。我们可以创建一个基本的提示模板如下：
 
-```
+```py
 from langchain import PromptTemplate
 prompt = PromptTemplate("Tell me a {adjective} joke about {topic}")
 ```
 
 这个模板有两个输入变量 - {形容词} 和 {主题}。我们可以用值格式化这些变量：
 
-```
+```py
 prompt.format(adjective="funny", topic="chickens")
 # Output: "Tell me a funny joke about chickens"
 ```
@@ -4243,7 +4177,7 @@ prompt.format(adjective="funny", topic="chickens")
 
 对于对话代理，我们需要聊天提示模板：
 
-```
+```py
 from langchain.prompts import ChatPromptTemplate 
 template = ChatPromptTemplate.from_messages([
   ("human", "Hello, how are you?"),
@@ -4263,7 +4197,7 @@ LangChain 提供了工具，以实现像少样本学习、动态示例选择和�
 
 `FewShotPromptTemplate`允许向模型展示任务的几个示例以引导它，而无需明确的指令。例如：
 
-```
+```py
 from langchain.prompts import FewShotPromptTemplate, PromptTemplate 
 example_prompt = PromptTemplate("{input} -> {output}")
 examples = [
@@ -4282,7 +4216,7 @@ prompt = FewShotPromptTemplate(
 
 为了选择针对每个输入量身定制的示例，`FewShotPromptTemplate`可以接受一个`ExampleSelector`而不是硬编码的示例：
 
-```
+```py
 from langchain.prompts import SemanticSimilarityExampleSelector
 selector = SemanticSimilarityExampleSelector(...) 
 prompt = FewShotPromptTemplate(
@@ -4297,7 +4231,7 @@ prompt = FewShotPromptTemplate(
 
 当要求 LLM 通过一个问题进行推理时，通常更有效的做法是在陈述最终答案之前让它解释其推理过程。例如：
 
-```
+```py
 from langchain.prompts import PromptTemplate
 reasoning_prompt = "Explain your reasoning step-by-step. Finally, state the answer: {question}"
 prompt = PromptTemplate(
@@ -4308,7 +4242,7 @@ prompt = PromptTemplate(
 
 这鼓励 LLM 首先通过逻辑方式思考问题，而不是仅仅猜测答案，然后试图在之后证明。这被称为**零射链思维**。要求 LLM 解释其思维过程与其核心能力非常契合。**少射链思维**提示是一个少射提示，其中推理作为示例解决方案的一部分进行解释，旨在鼓励 LLM 在做出决定之前解释其推理。已经证明这种提示可以导致更准确的结果，然而，这种性能提升发现与模型的大小成正比，而在较小的模型中，改进似乎是微不足道的，甚至是负面的。在**思维树（ToT）**提示中，我们生成多个解决问题的步骤或方法，然后使用 AI 模型对这些步骤进行批判。批判将基于模型对解决方案适应问题的判断。让我们通过使用 LangChain 实现 ToT 的更详细示例来走一遍。首先，我们将使用`PromptTemplates`定义我们的 4 个链组件。我们需要一个解决方案模板，一个评估模板，一个推理模板和一个排名模板。让我们首先生成解决方案：
 
-```
+```py
 solutions_template = """
 Generate {num_solutions} distinct solutions for {problem}. Consider factors like {factors}.
 Solutions:
@@ -4321,7 +4255,7 @@ solutions_prompt = PromptTemplate(
 
 让我们要求 LLM 评估这些解决方案：
 
-```
+```py
 evaluation_template = """
 Evaluate each solution in {solutions} by analyzing pros, cons, feasibility, and probability of success.
 Evaluations:
@@ -4334,7 +4268,7 @@ evaluation_prompt = PromptTemplate(
 
 现在我们将对它们进行更多的推理：
 
-```
+```py
 reasoning_template = """
 For the most promising solutions in {evaluations}, explain scenarios, implementation strategies, partnerships needed, and handling potential obstacles. 
 Enhanced Reasoning: 
@@ -4347,7 +4281,7 @@ reasoning_prompt = PromptTemplate(
 
 最后，根据我们迄今为止的推理，我们可以对这些解决方案进行排名：
 
-```
+```py
 ranking_template = """
 Based on the evaluations and reasoning, rank the solutions in {enhanced_reasoning} from most to least promising.
 Ranked Solutions:
@@ -4360,7 +4294,7 @@ ranking_prompt = PromptTemplate(
 
 接下来，我们在将所有内容放在一起之前从这些模板中创建链：
 
-```
+```py
 chain1 = LLMChain(
    llm=SomeLLM(),
    prompt=solutions_prompt,
@@ -4375,7 +4309,7 @@ chain2 = LLMChain(
 
 最后，我们将这些链连接成一个`SequentialChain`：
 
-```
+```py
 tot_chain = SequentialChain(
    chains=[chain1, chain2, chain3, chain4],
    input_variables=["problem", "factors", "num_solutions"], 
@@ -4417,13 +4351,7 @@ tot_chain.run(
 1.  解释一下思维树提示！
 
 
-# 9 生产中的生成式人工智能
-
-## 加入我们的书籍社区 Discord
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![自动生成的二维码描述](img/genai-lngch-file58.png)
+# 九、生产中的生成式人工智能
 
 在本书中，我们已经讨论了模型、代理和 LLM 应用程序以及不同的用例，但是在确保性能和监管要求时，模型和应用程序需要大规模部署，最终需要进行监控时，许多问题变得重要。在本章中，我们将讨论评估和可观察性，总结涵盖操作化人工智能和决策模型的治理和生命周期管理的广泛主题，包括生成式人工智能模型。虽然离线评估在受控环境中提供了对模型能力的初步理解，但在生产中的可观察性提供了对其在实时环境中性能的持续洞察。在模型生命周期的不同阶段，两者都至关重要，并相互补充，以确保大型语言模型的最佳运行和结果。我们将讨论一些工具，以及为每种情况提供示例。我们还将讨论围绕 LLMs 构建的模型和应用程序的部署，概述可用工具和使用 Fast API 和 Ray Serve 进行部署的示例。在本章中，我们将使用 LLMs 进行...，您可以在书的 GitHub 存储库中找到[`github.com/benman1/generative_ai_with_langchain`](https://github.com/benman1/generative_ai_with_langchain)。本章的主要部分包括：
 
@@ -4493,7 +4421,7 @@ tot_chain.run(
 
 这里有一个来自成对字符串比较文档的示例：
 
-```
+```py
 from langchain.evaluation import load_evaluator
 evaluator = load_evaluator("labeled_pairwise_string")
 evaluator.evaluate_string_pairs(
@@ -4506,7 +4434,7 @@ evaluator.evaluate_string_pairs(
 
 评估器的输出应如下所示：
 
-```
+```py
  {'reasoning': 'Both responses are relevant to the question asked, as they both provide a numerical answer to the question about the number of dogs in the park. However, Response A is incorrect according to the reference answer, which states that there are four dogs. Response B, on the other hand, is correct as it matches the reference answer. Neither response demonstrates depth of thought, as they both simply provide a numerical answer without any additional information or context. \n\nBased on these criteria, Response B is the better response.\n',
      'value': 'B',
      'score': 0}
@@ -4518,7 +4446,7 @@ evaluator.evaluate_string_pairs(
 
 LangChain 为不同的评估标准提供了几个预定义的评估器。这些评估器可以用于根据特定的规则或标准集来评估输出。一些常见的标准包括简洁性、相关性、正确性、连贯性、实用性和争议性。`CriteriaEvalChain`允许您根据自定义或预定义的标准评估模型输出。它提供了一种验证 LLM 或 Chain 的输出是否符合一组定义的标准的方法。您可以使用这个评估器来评估正确性、相关性、简洁性和生成输出的其他方面。`CriteriaEvalChain`可以配置为使用或不使用参考标签。没有参考标签时，评估器依赖于 LLM 的预测答案，并根据指定的标准对其进行评分。有了参考标签，评估器将预测答案与参考标签进行比较，并确定其是否符合标准。LangChain 中使用的评估 LLM 默认为 GPT-4。但是，您可以通过指定其他聊天模型（例如 ChatAnthropic 或 ChatOpenAI）以及所需的设置（例如温度）来配置评估 LLM。通过将 LLM 对象作为参数传递给`load_evaluator()`函数，可以加载自定义 LLM 的评估器。LangChain 支持自定义标准和预定义评估原则。可以使用`criterion_name: criterion_description`对的字典定义自定义标准。这些标准可以用于根据特定要求或规则评估输出。这里是一个简单的例子：
 
-```
+```py
 custom_criteria = {
     "simplicity": "Is the language straightforward and unpretentious?",
     "clarity": "Are the sentences clear and easy to understand?",
@@ -4538,7 +4466,7 @@ evaluator.evaluate_string_pairs(
 
 我们可以通过这个结果得到两个输出的非常微妙的比较：
 
-```
+```py
 {'reasoning': 'Response A is simple, clear, and precise. It uses straightforward language to convey a deep and sincere message about families. The metaphor of music is used effectively to suggest deeper meanings about the shared joys and unique sorrows of families.\n\nResponse B, on the other hand, is less simple and clear. The language is more complex and pretentious, with phrases like "domicile of happiness" and "abode of despair" instead of the simpler "household" used in Response A. The message is similar to that of Response A, but it is less effectively conveyed due to the unnecessary complexity of the language.\n\nTherefore, based on the criteria of simplicity, clarity, precision, truthfulness, and subtext, Response A is the better response.\n\n[[A]]', 'value': 'A', 'score': 1}
 ```
 
@@ -4548,7 +4476,7 @@ evaluator.evaluate_string_pairs(
 
 LangChain 支持字符串比较和距离度量，用于评估 LLM 输出。像 Levenshtein 和 Jaro 这样的字符串距离度量提供了预测和参考字符串之间相似性的定量度量。使用类似 SentenceTransformers 这样的模型的嵌入距离计算生成和预期文本之间的语义相似性。嵌入距离评估器可以使用嵌入模型，例如基于 GPT-4 或 Hugging Face 嵌入的模型，计算预测和参考字符串之间的向量距离。这测量了两个字符串之间的语义相似性，并可以提供有关生成文本质量的见解。以下是文档中的一个快速示例：
 
-```
+```py
 from langchain.evaluation import load_evaluator
 evaluator = load_evaluator("embedding_distance")
 evaluator.evaluate_strings(prediction="I shall go", reference="I shan't go")
@@ -4560,7 +4488,7 @@ evaluator.evaluate_strings(prediction="I shall go", reference="I shan't go")
 
 使用 LangSmith，我们可以评估模型在数据集上的性能。让我们通过一个示例来了解。首先，请确保您在 LangSmith 上创建一个帐户：[`smith.langchain.com/`](https://smith.langchain.com/) 您可以获取一个 API 密钥，并将其设置为环境中的`LANGCHAIN_API_KEY`。我们还可以为项目 id 和跟踪设置环境变量：
 
-```
+```py
 import os
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = "My Project"
@@ -4568,7 +4496,7 @@ os.environ["LANGCHAIN_PROJECT"] = "My Project"
 
 这将配置 LangChain 记录跟踪。如果我们不告诉 LangChain 项目 id，它将记录到`default`项目。设置完成后，当我们运行 LangChain 代理或链时，我们将能够在 LangSmith 上看到跟踪。让我们记录一个运行！
 
-```
+```py
 from langchain.chat_models import ChatOpenAI
 llm = ChatOpenAI()
 llm.predict("Hello, world!")
@@ -4576,7 +4504,7 @@ llm.predict("Hello, world!")
 
 我们将在 LangSmith 上看到这样：LangSmith 允许我们在 LangSmith 项目页面上列出到目前为止的所有运行：[`smith.langchain.com/projects`](https://smith.langchain.com/projects)
 
-```
+```py
 from langsmith import Client
 client = Client()
 runs = client.list_runs()
@@ -4585,14 +4513,14 @@ print(runs)
 
 我们可以按照特定项目或`run_type`列出运行，例如“chain”。每次运行都有输入和输出，就像我们在这里看到的一样：
 
-```
+```py
 print(f"inputs: {runs[0].inputs}")
 print(f"outputs: {runs[0]. outputs}")
 ```
 
 我们可以使用`create_example_from_run()`函数从现有代理运行创建数据集，或者从其他任何地方创建数据集。以下是如何使用一组问题创建数据集：
 
-```
+```py
 questions = [
     "A ship's parts are replaced over time until no original parts remain. Is it still the same ship? Why or why not?",  # The Ship of Theseus Paradox
     "If someone lived their whole life chained in a cave seeing only shadows, how would they react if freed and shown the real world?",  # Plato's Allegory of the Cave
@@ -4615,7 +4543,7 @@ for q in questions:
 
 然后我们可以像这样在数据集上运行 LLM 代理或链：
 
-```
+```py
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 llm = ChatOpenAI(model="gpt-4", temperature=0.0)
@@ -4628,7 +4556,7 @@ def construct_chain():
 
 我们使用构造函数为每个输入初始化。为了评估模型在这个数据集上的性能，我们需要像在前一节中看到的那样定义一个评估器。
 
-```
+```py
 from langchain.evaluation import EvaluatorType
 from langchain.smith import RunEvalConfig
 evaluation_config = RunEvalConfig(
@@ -4642,7 +4570,7 @@ evaluation_config = RunEvalConfig(
 
 我们将传递数据集和评估器给`run_on_dataset()`以生成指标和反馈：
 
-```
+```py
 from langchain.smith import run_on_dataset
 results = run_on_dataset(
   client=client,
@@ -4660,7 +4588,7 @@ results = run_on_dataset(
 
 点击任何一个评估项，我们可以查看一些详细信息，例如，对于仔细思考评估器，我们得到了这个提示，其中包括 LLM 的原始答案：
 
-```
+```py
 You are assessing a submitted answer on a given task or input based on a set of criteria. Here is the data:
 [BEGIN DATA]
 ***
@@ -4676,7 +4604,7 @@ Does the submission meet the Criteria? First, write out in a step by step manner
 
 我们得到了这个评估：
 
-```
+```py
 The criterion is whether the response is insightful and carefully thought out. 
 The submission provides a clear and concise explanation of the "appeal to nature" fallacy, demonstrating an understanding of the concept. It also provides examples to illustrate why this argument can be faulty, showing that the respondent has thought about the question in depth. The response is not just a simple yes or no, but a detailed explanation that shows careful consideration of the question. 
 Therefore, the submission does meet the criterion of being insightful and carefully thought out.
@@ -4748,7 +4676,7 @@ FastAPI 是部署网络服务器的非常受欢迎的选择。设计快速、易
 
 在库文档中，有几个示例，包括一个带有源链的检索 QA、一个对话检索应用程序和一个零射击代理。在另一个示例中，我们将使用 Lanarky 实现一个聊天机器人 Web 服务器。我们将使用 Lanarky 设置一个与 Gradio 集成的 Web 服务器，创建一个带有 LLM 模型和设置的`ConversationChain`实例，并定义用于处理 HTTP 请求的路由。首先，我们将导入必要的依赖项，包括用于创建 Web 服务器的 FastAPI，用于与 Gradio 集成的`mount_gradio_app`，用于处理 LLM 对话的`ConversationChain`和`ChatOpenAI`来自 Langchain 的模块，以及其他所需的模块：
 
-```
+```py
 from fastapi import FastAPI
 from lanarky.testing import mount_gradio_app
 from langchain import ConversationChain
@@ -4760,7 +4688,7 @@ from starlette.templating import Jinja2Templates
 
 请注意，您需要按照第三章中的说明设置您的环境变量。定义了一个`create_chain()`函数来创建`ConversationChain`的实例，指定 LLM 模型及其设置：
 
-```
+```py
 def create_chain():
     return ConversationChain(
         llm=ChatOpenAI(
@@ -4773,25 +4701,25 @@ def create_chain():
 
 我们将链设置为`ConversationChain`。
 
-```
+```py
 chain = create_chain()
 ```
 
 将 app 变量分配给`mount_gradio_app`，它创建了一个名为*ConversationChainDemo*的`FastAPI`实例，并将其与 Gradio 集成：
 
-```
+```py
 app = mount_gradio_app(FastAPI(title="ConversationChainDemo"))
 ```
 
 模板变量设置为`Jinja2Templates`类，指定了用于呈现模板的目录。这指定了网页将如何显示，允许各种自定义：
 
-```
+```py
 templates = Jinja2Templates(directory="webserver/templates")
 ```
 
 使用 FastAPI 装饰器`@app.get`定义了处理根路径（`/`）上的 HTTP GET 请求的端点。与此端点相关联的函数返回一个模板响应，用于呈现 index.xhtml 模板：
 
-```
+```py
 @app.get("/")
 async def get(request: Request):
     return templates.TemplateResponse("index.xhtml", {"request": request})
@@ -4799,7 +4727,7 @@ async def get(request: Request):
 
 创建了一个`LangchainRouter`类作为路由器对象。该对象负责定义和管理与`ConversationChain`实例相关的路由。我们可以为路由器添加额外的路由，用于处理基于 JSON 的聊天，甚至可以处理 WebSocket 请求：
 
-```
+```py
 langchain_router = LangchainRouter(
     langchain_url="/chat", langchain_object=chain, streaming_mode=1
 )
@@ -4812,7 +4740,7 @@ app.include_router(langchain_router)
 
 现在我们的应用程序知道如何处理发送到路由中指定的路由的请求，将它们指向适当的函数或处理程序进行处理。我们将使用 Uvicorn 来运行我们的应用程序。Uvicorn 擅长支持高性能、异步框架，如 FastAPI 和 Starlette。由于其异步特性，它能够处理大量并发连接，并在重负载下表现良好。我们可以像这样从终端运行 Web 服务器：
 
-```
+```py
 uvicorn webserver.chat:app –reload
 ```
 
@@ -4838,7 +4766,7 @@ Ray 提供了一个灵活的框架，通过在集群中扩展生成式 AI 工作
 
 我们将使用 LangChain 和 Ray 来构建一个简单的搜索引擎，用于 Ray 文档，这是根据 Waleed Kadous 在 anyscale 博客上实现的示例和在 Github 上的 langchain-ray 仓库中实现的。你可以将其视为 *Channel 5* 中示例的延伸。你可以在这里看到此示例的完整代码：[`github.com/benman1/generative_ai_with_langchain`](https://github.com/benman1/generative_ai_with_langchain)。你还将看到如何将其作为 FastAPI 服务器运行。首先，我们将摄取和索引 Ray 文档，以便快速找到相关段落以供搜索查询：
 
-```
+```py
 # Load the Ray docs using the LangChain loader
 loader = RecursiveUrlLoader("docs.ray.io/en/master/") 
 docs = loader.load()
@@ -4854,7 +4782,7 @@ db = FAISS.from_documents(chunks, embeddings)
 
 这将通过摄取文档、将其拆分为句子、嵌入句子并索引向量来构建我们的搜索索引。或者，我们可以通过并行化嵌入步骤来加速索引：
 
-```
+```py
 # Define shard processing task
 @ray.remote(num_gpus=1)  
 def process_shard(shard):
@@ -4873,13 +4801,13 @@ for result in results[1:]:
 
 通过在每个分片上并行运行嵌入，我们可以显著减少索引时间。我们将数据库索引保存到磁盘：
 
-```
+```py
 db.save_local(FAISS_INDEX_PATH)
 ```
 
 `FAISS_INDEX_PATH`是一个任意的文件名。我将其设置为`faiss_index.db`。接下来，我们将看到如何使用 Ray Serve 提供搜索查询。
 
-```
+```py
 # Load index and embedding
 db = FAISS.load_local(FAISS_INDEX_PATH)
 embedding = LocalHuggingFaceEmbeddings('multi-qa-mpnet-base-dot-v1')
@@ -4900,14 +4828,14 @@ serve.run(deployment)
 
 这让我们可以将搜索查询作为 Web 端点提供！运行这个给我这个输出：
 
-```
+```py
 Started a local Ray instance. 
 View the dashboard at 127.0.0.1:8265
 ```
 
 现在我们可以从 Python 中查询它：
 
-```
+```py
 import requests
 query = "What are the different components of Ray"
          " and how can they help with large language models (LLMs)?”
@@ -4981,7 +4909,7 @@ print(response.text)
 
 跟踪代理的轨迹可能具有挑战性，因为它们具有广泛的行动范围和生成能力。LangChain 具有轨迹跟踪和评估功能。实际上，查看代理的痕迹非常容易！您只需在初始化代理或 LLM 时将 return_`intermediate_steps`参数设置为`True`。让我们快速看一下这个。我会跳过导入和设置环境。您可以在此地址的 github 上找到完整的清单：[`github.com/benman1/generative_ai_with_langchain/`](https://github.com/benman1/generative_ai_with_langchain/)我们将定义一个工具。使用`@tool`装饰器非常方便，它将使用函数文档字符串作为工具的描述。第一个工具向网站地址发送一个 ping，并返回有关传输包和延迟或（在错误情况下）错误消息的信息：
 
-```
+```py
 @tool
 def ping(url: HttpUrl, return_error: bool) -> str:
     """Ping the fully specified url. Must include https:// in the url."""
@@ -4997,7 +4925,7 @@ def ping(url: HttpUrl, return_error: bool) -> str:
 
 现在我们设置一个使用此工具与 LLM 的代理，以根据提示进行调用：
 
-```
+```py
 llm = ChatOpenAI(model="gpt-3.5-turbo-0613", temperature=0)
 agent = initialize_agent(
     llm=llm,
@@ -5010,13 +4938,13 @@ result = agent("What's the latency like for https://langchain.com?")
 
 代理报告如下：
 
-```
+```py
 The latency for https://langchain.com is 13.773 ms
 ```
 
 在`results[`"`intermediate_steps`"`]`中，我们可以看到有关代理操作的大量信息：
 
-```
+```py
 [(_FunctionsAgentAction(tool='ping', tool_input={'url': 'https://langchain.com', 'return_error': False}, log="\nInvoking: `ping` with `{'url': 'https://langchain.com', 'return_error': False}`\n\n\n", message_log=[AIMessage(content='', additional_kwargs={'function_call': {'name': 'tool_selection', 'arguments': '{\n  "actions": [\n    {\n      "action_name": "ping",\n      "action": {\n        "url": "https://langchain.com",\n        "return_error": false\n      }\n    }\n  ]\n}'}}, example=False)]), 'PING langchain.com (35.71.142.77): 56 data bytes\n64 bytes from 35.71.142.77: icmp_seq=0 ttl=249 time=13.773 ms\n\n--- langchain.com ping statistics ---\n1 packets transmitted, 1 packets received, 0.0% packet loss\nround-trip min/avg/max/stddev = 13.773/13.773/13.773/0.000 ms\n')]
 ```
 
@@ -5097,7 +5025,7 @@ LangSmith 通过提供功能和能力来满足代理的 MLOps 要求，使开发
 
 PromptWatch 记录了此交互期间有关提示和生成输出的信息。让我们先处理输入。
 
-```
+```py
 from langchain import LLMChain, OpenAI, PromptTemplate
 from promptwatch import PromptWatch
 from config import set_environment
@@ -5106,14 +5034,14 @@ set_environment()
 
 如第三章所述，我已经在 set_environment()函数中将所有 API 密钥设置在环境中。
 
-```
+```py
 prompt_template = PromptTemplate.from_template("Finish this sentence {input}")
 my_chain = LLMChain(llm=OpenAI(), prompt=prompt_template)
 ```
 
 使用`PromptTemplate`类，将提示模板设置为一个变量`input`，指示用户输入应放置在提示中的位置。在`PromptWatch`块内，通过以输入提示作为示例调用`LLMChain`，演示了模型根据提供的提示生成响应的过程。
 
-```
+```py
 with PromptWatch() as pw:
     my_chain("The quick brown fox jumped over")
 ```
@@ -5149,13 +5077,7 @@ with PromptWatch() as pw:
 1.  什么是 LangSmith？
 
 
-# 10 生成模型的未来
-
-## 加入我们的书籍社区 Discord
-
-[`packt.link/EarlyAccessCommunity`](https://packt.link/EarlyAccessCommunity)
-
-![二维码描述自动生成](img/genai-lngch-file65.png)
+# 十、生成模型的未来
 
 在这本书中，到目前为止，我们已经讨论了用于构建应用程序的生成模型。我们探讨了 LLMs 和图像模型用于内容创作，工具使用，代理策略，检索增强生成的语义搜索，以及使用提示和微调来调节模型。此外，我们实现了一些简单的应用程序，例如为开发人员和数据科学家。在本章中，我们将讨论这给我们留下了什么，未来将引领我们走向何方。人工智能领域的进展速度在过去一年中急剧加快，像 DALL-E，Midjourney 和 ChatGPT 这样的突破性成果产生了惊人的结果。这些生成式人工智能模型可以创建逼真的图像，撰写文章和代码，并具有超越大多数人类的对话能力。2022 年，生成式人工智能初创公司的风险投资激增，几乎与前五年的总投资额相匹配。最近，像 Salesforce 和 Accenture 这样的主要参与者已经做出了数十亿美元的投资承诺。为特定用例定制基础模型被视为真正的价值创造机会。但目前尚不清楚哪些实体 - 大型科技公司，初创公司或基础模型开发者 - 将获得最大的上行空间。在技术层面上，像 ChatGPT 这样的生成模型通常作为黑匣子运作，对其决策过程的透明度有限。模型可解释性的缺乏使得完全理解模型行为或控制输出变得困难。还存在潜在偏见可能由于不完善的训练数据而出现的担忧。在实际层面上，生成模型需要大量的计算资源进行训练和部署。对于许多组织来说，获取基础设施以有效利用这些人工智能系统仍然是一道障碍。在积极的一面，人工智能可以使技能民主化，使业余爱好者能够在设计，写作等方面产生专业质量的输出。企业可以从更快，更便宜，按需的工作中受益。然而，人们对工作岗位流失存在重大担忧，特别是对于像平面设计师，律师和医生这样的专业中产阶级角色。他们的工作正在被自动化，而低技能工人则学会利用人工智能作为超能力。更令人不安的是，人工智能可能被军事，恐怖分子，犯罪分子和政府用于宣传和影响。实时生成的 Deepfakes 将促使欺诈活动泛滥，并侵蚀信任。前进的道路在热情和实用性之间取得平衡，优先考虑人类尊严。通过承认风险，促进开放讨论，并实施周到的政策，我们可以建立一个由人工智能激发的公平未来。本章的主要部分包括：
 

@@ -1,10 +1,11 @@
-# （一）
+# 释放 ChatGPT4 的威力
 
 
-
-
-
-
+> 原文：[Unleashing the Power of ChatGPT-4: Strategies for Building a Personal Income Stream](https://annas-archive.org/md5/1e61a9385b2937fc72728c60c696fb6c)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # I. 介绍
 

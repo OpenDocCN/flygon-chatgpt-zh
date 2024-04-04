@@ -1,6 +1,11 @@
-# （一）
+# AI 结对编程
 
 
+> 原文：[An Insider's Guide to using ChatGPT](https://annas-archive.org/md5/eacf51506eccd1f2b4cbf39d8ea048ff)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 

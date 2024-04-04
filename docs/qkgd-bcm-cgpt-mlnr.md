@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 百万富翁的快速启动指南
 
+> 原文：[A Quickstart Guide To Becoming A ChatGPT Millionaire](https://annas-archive.org/md5/c92c16816fc13bbb4c391cf17626af23)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 #### 序言

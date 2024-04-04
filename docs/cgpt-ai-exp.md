@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 之创造力与沟通的演化
 
+> 原文：[ChatGPT ... The Evolution of Creativity and Communication](https://annas-archive.org/md5/d4aef1996539a58304a4d2d390d31307)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 ## 作者注

@@ -1,9 +1,10 @@
-# （一）
+# ChatGPT 之成功的传奇之旅
 
-
-
-
-
+> 原文：[ChatGPT: Epic Journey of Success](https://annas-archive.org/md5/5a3fda8e2f64cc3a149664a03d962fa2)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 # ChatGPT 概述 - ChatGPT 是什么，其能力以及在各个领域的潜在应用
@@ -1921,5 +1922,3 @@ ChatGPT 可以生成有趣且不太为人知的各种主题事实，作为一个
 "为年轻人撰写一系列关于个人财务管理的信息性文章。"
 
 这个提示可以辅助生成关于预算、储蓄、投资和债务管理等主题的教育和实用文章，以满足年轻人的财务需求。
-
-页码 | 112

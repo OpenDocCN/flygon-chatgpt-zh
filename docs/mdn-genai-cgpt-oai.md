@@ -120,9 +120,7 @@ pip install --upgrade openai
 +   *第二章*，*OpenAI 和 ChatGPT 超越市场炒作*
 
 
-# 1
-
-# 生成式人工智能简介
+# 一、生成式人工智能简介
 
 你好！欢迎来到*ChatGPT 和 OpenAI 模型的现代生成式人工智能*！在本书中，我们将探索生成式**人工智能**（**AI**）及其开创性应用的迷人世界。生成式人工智能已经改变了我们与机器互动的方式，使计算机能够在没有明确人类指导的情况下创建、预测和学习。通过 ChatGPT 和 OpenAI，我们见证了自然语言处理、图像和视频合成等领域的前所未有的进步。无论您是一个好奇的初学者还是一个经验丰富的从业者，本指南将为您提供了解和掌握生成式人工智能激动人心的领域所需的知识和技能。让我们开始并从我们所处的背景的一些定义开始。
 
@@ -333,9 +331,7 @@ VAE 和 GAN 这两种模型旨在生成与原始样本无法区分的全新数�
 +   [`tcwang0509.github.io/vid2vid/`](https://tcwang0509.github.io/vid2vid/)
 
 
-# 2
-
-# OpenAI 和 ChatGPT – 超越市场炒作
+# 二、OpenAI 和 ChatGPT – 超越市场炒作
 
 本章概述了 OpenAI 及其最显著的发展—ChatGPT，重点介绍其历史、技术和能力。
 
@@ -893,9 +889,7 @@ ChatGPT 的架构和训练方法的不断发展和改进承诺将进一步推动
 +   *第八章*，*用 ChatGPT 重新定义研究*
 
 
-# 3
-
-# 熟悉 ChatGPT
+# 三、熟悉 ChatGPT
 
 本章让您设置 ChatGPT 账户并开始使用该服务。它还将介绍如何与 Web UI 交互，如何按主题组织聊天，以及如何构建对话。
 
@@ -1044,9 +1038,7 @@ ChatGPT 展示的节省时间功能是具有多个开放线程或聊天的可能
 +   [`www.datanami.com/2023/01/17/hallucinations-plagiarism-and-chatgpt/`](https://www.datanami.com/2023/01/17/hallucinations-plagiarism-and-chatgpt/)
 
 
-# 4
-
-# 理解提示设计
+# 四、理解提示设计
 
 在前几章中，我们多次提到“提示”这个术语，同时指的是 ChatGPT 和 OpenAI 模型中的用户输入。
 
@@ -1301,9 +1293,7 @@ ChatGPT 和 OpenAI 模型中的偏见和伦理概念在整个负责任人工智�
 +   [`twitter.com/spiantado/status/1599462375887114240?ref _src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1599462375887114240%7Ctwgr%5E1dc908b53fd4be487829472a6bc8590a9dc4aa2d%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fthestoryexchange.org%2Fchatgpt-and-the-hidden-bias-of-language-models%2F`](https://twitter.com/spiantado/status/1599462375887114240?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1599462375887114240%7Ctwgr%5E1dc908b53fd4be487829472a6bc8590a9dc4aa2d%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fthestoryexchange.org%2Fchatgpt-and-the-hidden-bias-of-language-models%2F)
 
 
-# 5
-
-# 通过 ChatGPT 提升日常工作效率
+# 五、通过 ChatGPT 提升日常工作效率
 
 在本章中，我们将介绍 ChatGPT 可以为普通用户每天执行的主要活动，以提高他们的生产力。本章将重点介绍写作辅助、决策制定、信息检索等具体示例，并提供建议和提示，以便您自行实施。
 
@@ -1550,9 +1540,7 @@ ChatGPT 在列举一些使我的书独特的好建议方面做得相当不错。
 在下一章中，我们将更深入地探讨 ChatGPT 正在改变游戏规则的三个主要领域——开发、营销和研究。
 
 
-# 6
-
-# 用 ChatGPT 开发未来
+# 六、用 ChatGPT 开发未来
 
 在本章中，我们将讨论开发人员如何利用 ChatGPT。本章关注 ChatGPT 在开发人员领域中解决的主要用例，包括代码审查和优化、文档生成和代码生成。本章将提供示例，并让您自行尝试提示。
 
@@ -1987,9 +1975,7 @@ ChatGPT 可以成为开发人员寻求提升技能和简化工作流程的宝贵
 在下一章中，我们将深入探讨另一个应用领域，ChatGPT 可能成为游戏改变者的地方：营销。
 
 
-# 7
-
-# 通过 ChatGPT 掌握营销技巧
+# 七、通过 ChatGPT 掌握营销技巧
 
 在本章中，我们将重点介绍营销人员如何利用 ChatGPT，在这一领域中查看 ChatGPT 的主要用例，以及营销人员如何将其作为有价值的助手。
 
@@ -2286,9 +2272,7 @@ ChatGPT 能够生成相当准确的分析，带有相关的评论和建议。总
 在下一章中，我们将看到本书涵盖的 ChatGPT 应用的第三个也是最后一个领域 - 研究。
 
 
-# 8
-
-# 用 ChatGPT 重新定义研究
+# 八、用 ChatGPT 重新定义研究
 
 在本章中，我们专注于希望利用 ChatGPT 的研究人员。本章将介绍 ChatGPT 可以解决的一些主要用例，以便您从具体示例中了解 ChatGPT 在研究中的应用。
 
@@ -2580,9 +2564,7 @@ ChatGPT 可以成为头脑风暴可能错过的引用的伟大助手。让我们
 +   *第十一章*，*结语和最终想法*
 
 
-# 9
-
-# 为企业介绍 Azure OpenAI 的 OpenAI 和 ChatGPT
+# 九、为企业介绍 Azure OpenAI 的 OpenAI 和 ChatGPT
 
 在本章中，我们将重点关注 OpenAI 模型在企业级的应用，并介绍 OpenAI 和 Microsoft 的合作伙伴关系以及**Azure OpenAI**（**AOAI**）服务。我们将介绍 Microsoft 在**人工智能**（**AI**）领域的里程碑和发展，并突出 Azure 云在 OpenAI 领域的发展历程，以及为何这对于大型组织来说是一个改变游戏规则的因素。最后，我们将考虑负责任的人工智能，并介绍如何确保您的 AI 系统符合道德标准。
 
@@ -2915,9 +2897,7 @@ AETHER 花时间倾听客户和内部专家的意见，然后与法律事务合�
 +   [`learn.microsoft.com/en-gb/azure/cognitive-services/openai/how-to/fine-tuning?pivots=programming-language-studio#openai-cli-data-preparation-tool`](https://learn.microsoft.com/en-gb/azure/cognitive-services/openai/how-to/fine-tuning?pivots=programming-language-studio#openai-cli-data-preparation-tool)
 
 
-# 10
-
-# 企业的热门用例
+# 十、企业的热门用例
 
 我们从概述当今市场上企业正在开发的 Azure OpenAI 最流行的用例开始本章。由于 Azure OpenAI 能够为复杂问题提供先进解决方案，因此它已被广泛应用于金融、医疗保健、零售和制造等各种行业。因此，我们必须了解 Azure OpenAI 模型对这些行业可能产生的影响程度，并保持竞争力。
 
@@ -3835,9 +3815,7 @@ Azure OpenAI 模型提升了企业级大型语言模型的能力，并有潜力�
 +   [`www.aroged.com/2023/02/17/chatgpt-ministry-of-justice-will-use-gpj-to-respond-to-citizens-in-portugal/`](https://www.aroged.com/2023/02/17/chatgpt-ministry-of-justice-will-use-gpj-to-respond-to-citizens-in-portugal/)
 
 
-# 11
-
-# 结语和最终思考
+# 十一、结语和最终思考
 
 你已经走到了这一步 - 恭喜！希望你觉得这本书有趣，并且它对你的目标有所帮助。
 

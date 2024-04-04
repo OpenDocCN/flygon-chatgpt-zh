@@ -1,8 +1,10 @@
-# （一）
+# 使用 ChatGPT 创建在线课程：一步一步指南与提示模板
 
-
-
-### 使用 ChatGPT 创建在线课程：一步一步指南与提示模板
+> 原文：[Creating Online Courses with ChatGPT](https://annas-archive.org/md5/b02728138c12a3b2189d7cd0c717aa20)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ![图片](img/crt-ol-crs-cgpt-image-9Y11PG23.png)
 
@@ -1752,29 +1754,3 @@ Play.ht 可以生成音频。
 
 去做出色的事情。那才是你应该做的。
 
-
-## 探索更多
-
-购买提示
-
-要购买转售提示，请查看我的提示商店
-
-@>>>>> https://ceaeliteportal.com/product-category/chatgptprompts/
-
-您可以购买一组结构良好的定制提示以供转售。
-
-cea@ceaeliteportal.com
-
-### 谢谢！
-
-如果您发现我的书籍有用，请花点时间留下评论。
-
-您的反馈帮助其他读者做出明智的决定，对我作为作者来说意义重大。
-
-感谢您的购买和支持。我非常感激。
-
-加入 Cea 门户，每周/每月免费获取赠品，请订阅@
-
-https://tinyurl.com/cea-ebooks
-
-![图片](img/crt-ol-crs-cgpt-image-24985505.png)

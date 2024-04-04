@@ -1,5 +1,11 @@
 # ChatGPT 达人迷
 
+> 原文：[ChatGPT For Dummies](https://annas-archive.org/md5/4e99a2f4543d3ddcace8d31b3eeed8ca)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 
 介绍
 

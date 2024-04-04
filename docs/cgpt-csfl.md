@@ -1,5 +1,10 @@
-# （一）
+# ChatGPT 之现金流
 
+> 原文：[ChatGPT For Cash Flow](https://annas-archive.org/md5/91b6e04e5002ec49041a844c9b9526bc)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 # 介绍

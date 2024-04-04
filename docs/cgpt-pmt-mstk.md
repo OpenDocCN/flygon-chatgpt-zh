@@ -1,10 +1,10 @@
-# （一）
+# 杀死你的创造力的 ChatGPT 提示词错误
 
-
-
-
-
-
+> 原文：[ChatGPT Prompting Mistakes That are Killing Your Productivity](https://annas-archive.org/md5/a9913c8f4773ac6dcf87521b9e2b9858)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # 接下来的页面
 
@@ -2543,43 +2543,3 @@ B: "提供一份使用[新鲜食材]在家制作[比萨]的逐步指南。"
 
 
 
-
-
-
-# 探索更多
-
-
-
-购买提示
-
-要购买转售的提示，请到我的提示商店选购
-
-@>>>>> [`ceaeliteportal.com/product-category/chatgptprompts/`](https://ceaeliteportal.com/product-category/chatgptprompts/)
-
-您可以购买一套结构良好的定制提示进行转售。
-
-![image](img/cgpt-pmt-mstk-image000.png)cea@ceaeliteportal.com
-
-![image](img/cgpt-pmt-mstk-image001.png)如果您有兴趣创建类似于这样的儿童单词书。我可以发送给您一个免费的结构良好的提示，以帮助您入门。其中有 3 种不同的游戏可以创建。
-
-联系我们。
-
-谢谢！
-
-如果您觉得我的书很有用，请花点时间留下评论。
-
-您的反馈有助于其他读者做出明智的决定，对我作为作者而言意义重大。
-
-感谢您的购买和支持。我非常感激。
-
-加入 Cea 门户网站，每周/每月免费订阅的福利 @
-
-https://tinyurl.com/cea-ebooks
-
-这些可能会对您感兴趣...
-
-![image](img/cgpt-pmt-mstk-image017.png)
-
-![image](img/cgpt-pmt-mstk-image011.png)![image](img/cgpt-pmt-mstk-image027.png)
-
-![image](img/cgpt-pmt-mstk-image014.png)

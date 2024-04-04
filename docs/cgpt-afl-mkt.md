@@ -1,6 +1,10 @@
-# （一）
+# ChatGPT 之联盟营销
 
-
+> 原文：[ChatGPT for Affiliate Marketing]()
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # 第二章
 

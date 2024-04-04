@@ -1,6 +1,10 @@
-# （一）
+# ChatGPT 提示词大师
 
-
+> 原文：[ChatGPT Prompts Mastering](https://annas-archive.org/md5/b4abfa59e9d5a5a4cb5863070c94e4a9)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## 前言
 

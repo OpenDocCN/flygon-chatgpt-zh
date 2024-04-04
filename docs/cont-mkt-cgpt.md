@@ -1,6 +1,10 @@
-# （一）
+# ChatGPT 之内容营销
 
-
+> 原文：[Content Marketing with ChatGPT](https://annas-archive.org/md5/c6bce61c775bca8a3caf2a0ff8c6046a)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## 简介
 

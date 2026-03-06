@@ -796,11 +796,13 @@
   id: totrans-140
   prefs: []
   type: TYPE_NORMAL
+  zh: 闭包使强大的编程模式成为可能，如数据封装、函数工厂以及在异步操作中维护状态。它们对于编写干净、高效和可维护的JavaScript代码至关重要。
 - en: How Closures Work
   id: totrans-141
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 闭包的工作原理
 - en: In JavaScript, when a function is defined, it retains access to its lexical
     scope, which is the scope in which it was declared. This means that the function
     can access variables that are in its own scope, as well as variables in the outer
@@ -808,249 +810,305 @@
   id: totrans-142
   prefs: []
   type: TYPE_NORMAL
+  zh: 在JavaScript中，当定义一个函数时，它保留了对其词法作用域的访问，即它被声明的范围。这意味着函数可以访问其自身的范围内的变量，以及外部封装作用域中的变量。
 - en: Example of a Closure
   id: totrans-143
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 闭包示例
 - en: 'Consider the following example:'
   id: totrans-144
   prefs: []
   type: TYPE_NORMAL
+  zh: 考虑以下示例：
 - en: function createCounter() {
   id: totrans-145
   prefs: []
   type: TYPE_NORMAL
+  zh: function createCounter() {
 - en: let count = 0;
   id: totrans-146
   prefs: []
   type: TYPE_NORMAL
+  zh: let count = 0;
 - en: return function() {
   id: totrans-147
   prefs: []
   type: TYPE_NORMAL
+  zh: return function() {
 - en: count++;
   id: totrans-148
   prefs: []
   type: TYPE_NORMAL
+  zh: count++;
 - en: return count;
   id: totrans-149
   prefs: []
   type: TYPE_NORMAL
+  zh: return count;
 - en: '};'
   id: totrans-150
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: '}'
   id: totrans-151
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: const counter = createCounter();
   id: totrans-152
   prefs: []
   type: TYPE_NORMAL
+  zh: const counter = createCounter();
 - en: 'console.log(counter()); // Output: 1'
   id: totrans-153
   prefs: []
   type: TYPE_NORMAL
+  zh: 'console.log(counter()); // 输出: 1'
 - en: 'console.log(counter()); // Output: 2'
   id: totrans-154
   prefs: []
   type: TYPE_NORMAL
+  zh: 'console.log(counter()); // 输出: 2'
 - en: In this example, the inner function returned by   createCounte r  forms a closure.
     It has access to the outer function's variable,   coun t , and can modify it each
     time it is called.
   id: totrans-155
   prefs: []
   type: TYPE_NORMAL
+  zh: 在此示例中，由createCounter返回的内层函数形成一个闭包。它可以访问外部函数的变量count，并且每次被调用时都可以修改它。
 - en: Common Use Cases for Closures
   id: totrans-156
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 闭包的常见用例
 - en: Data Encapsulation
   id: totrans-157
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 数据封装
 - en: Closures allow for encapsulating data, providing privacy for variables. This
     can be useful for creating modules or objects with private state.
   id: totrans-158
   prefs: []
   type: TYPE_NORMAL
+  zh: 闭包允许封装数据，为变量提供隐私。这可以用于创建具有私有状态的模块或对象。
 - en: function createPerson(name) {
   id: totrans-159
   prefs: []
   type: TYPE_NORMAL
+  zh: function createPerson(name) {
 - en: return {
   id: totrans-160
   prefs: []
   type: TYPE_NORMAL
+  zh: return {
 - en: 'getName: function() {'
   id: totrans-161
   prefs: []
   type: TYPE_NORMAL
+  zh: 'getName: function() {'
 - en: return name;
   id: totrans-162
   prefs: []
   type: TYPE_NORMAL
+  zh: return name;
 - en: '}'
   id: totrans-163
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: '};'
   id: totrans-164
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: '}'
   id: totrans-165
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: const person = createPerson('Alice');
   id: totrans-166
   prefs: []
   type: TYPE_NORMAL
+  zh: const person = createPerson('Alice');
 - en: 'console.log(person.getName()); // Output: Alice'
   id: totrans-167
   prefs: []
   type: TYPE_NORMAL
+  zh: 'console.log(person.getName()); // 输出: Alice'
 - en: Function Factories
   id: totrans-168
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 函数工厂
 - en: Closures can also be used to create function factories, which are functions
     that return other functions configured with specific behavior.
   id: totrans-169
   prefs: []
   type: TYPE_NORMAL
+  zh: 闭包也可以用于创建函数工厂，这些函数返回具有特定行为的其他函数。
 - en: function multiplier(factor) {
   id: totrans-170
   prefs: []
   type: TYPE_NORMAL
+  zh: function multiplier(factor) {
 - en: return function(number) {
   id: totrans-171
   prefs: []
   type: TYPE_NORMAL
+  zh: return function(number) {
 - en: return number * factor;
   id: totrans-172
   prefs: []
   type: TYPE_NORMAL
+  zh: return number * factor;
 - en: '};'
   id: totrans-173
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: '}'
   id: totrans-174
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: const double = multiplier(2);
   id: totrans-175
   prefs: []
   type: TYPE_NORMAL
+  zh: const double = multiplier(2);
 - en: 'console.log(double(5)); // Output: 10'
   id: totrans-176
   prefs: []
   type: TYPE_NORMAL
+  zh: 'console.log(double(5)); // 输出: 10'
 - en: Maintaining State in Asynchronous Operations
   id: totrans-177
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 维护异步操作中的状态
 - en: Closures are particularly useful in asynchronous programming, where they can
     be used to maintain state between asynchronous calls.
   id: totrans-178
   prefs: []
   type: TYPE_NORMAL
+  zh: 闭包在异步编程中特别有用，它们可以在异步调用之间维护状态。
 - en: function asyncOperation() {
   id: totrans-179
   prefs: []
   type: TYPE_NORMAL
+  zh: function asyncOperation() {
 - en: let state = 'initial';
   id: totrans-180
   prefs: []
   type: TYPE_NORMAL
+  zh: let state = 'initial';
 - en: setTimeout(() => {
   id: totrans-181
   prefs: []
   type: TYPE_NORMAL
+  zh: setTimeout(() => {
 - en: state = 'completed';
   id: totrans-182
   prefs: []
   type: TYPE_NORMAL
+  zh: state = 'completed';
 - en: console.log('State:', state);
   id: totrans-183
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log('State:', state);
 - en: '}, 1000);'
   id: totrans-184
   prefs: []
   type: TYPE_NORMAL
+  zh: '}, 1000);'
 - en: '}'
   id: totrans-185
   prefs: []
   type: TYPE_NORMAL
+  zh: '}'
 - en: asyncOperation();
   id: totrans-186
   prefs: []
   type: TYPE_NORMAL
+  zh: asyncOperation();
 - en: '// Output after 1 second: State: completed'
   id: totrans-187
   prefs: []
   type: TYPE_NORMAL
+  zh: // 1秒后的输出：状态：completed
 - en: Conclusion
   id: totrans-188
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: Closures are a powerful feature of JavaScript that provide numerous benefits
     in terms of code organization and functionality. Understanding how to effectively
     use closures can greatly enhance your ability to write robust JavaScript applications.
   id: totrans-189
   prefs: []
   type: TYPE_NORMAL
+  zh: 闭包是JavaScript的一个强大特性，它在代码组织和功能方面提供了许多好处。了解如何有效地使用闭包可以极大地提高你编写健壮JavaScript应用程序的能力。
 - en: Prompts for Brainstorming Ideas
   id: totrans-190
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 头脑风暴想法的提示
 - en: Understanding Brainstorming
   id: totrans-191
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 理解头脑风暴
 - en: Brainstorming is a creative process aimed at generating a multitude of ideas
     to solve a problem or explore an opportunity. It encourages thinking outside the
     box and welcomes all ideas, regardless of their feasibility at the initial stage.
   id: totrans-192
   prefs: []
   type: TYPE_NORMAL
+  zh: 头脑风暴是一个旨在生成大量想法以解决问题或探索机会的创造性过程。它鼓励跳出思维定式，并欢迎所有想法，无论它们在初始阶段是否可行。
 - en: Importance of Brainstorming in Software Development
   id: totrans-193
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 软件开发中头脑风暴的重要性
 - en: In software development, brainstorming can be crucial during the initial phases
     of project planning, architecture design, and feature development. It helps teams
     to explore various approaches and select the most effective solutions.
   id: totrans-194
   prefs: []
   type: TYPE_NORMAL
+  zh: 在软件开发中，头脑风暴在项目规划、架构设计和功能开发初期阶段可能至关重要。它帮助团队探索各种方法，并选择最有效的解决方案。
 - en: Effective Brainstorming Techniques
   id: totrans-195
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 有效的头脑风暴技巧
 - en: Mind Mapping
   id: totrans-196
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 思维导图
 - en: Mind mapping is a visual brainstorming technique that involves creating a diagram
     to represent ideas branching from a central concept.
   id: totrans-197
   prefs: []
   type: TYPE_NORMAL
+  zh: 思维导图是一种视觉化的头脑风暴技术，它涉及创建一个图表来表示从中心概念分支出来的想法。
 - en: function createMindMap(center, branches) { const mindMap = {}; mindMap[center]
     = branches; return mindMap; } const myMindMap = createMindMap('Project', ['Feature1',
     'Feature2', 'Feature3']); console.log(myMindMap);

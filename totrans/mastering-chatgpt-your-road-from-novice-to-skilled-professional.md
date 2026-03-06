@@ -1,4 +1,4 @@
-![图片](img/Image00000.jpg)
+![图片](img/mastering-chatgpt-your-road-from-novice-to-skilled-professiona-Image00000.jpg)
 
 人工智能聊天机器人简介
 

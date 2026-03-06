@@ -1,4 +1,4 @@
-![](img/Image00004.jpg)
+![](img/leadership-success-with-chatgp-Image00004.jpg)
 
 # 使用 ChatGPT 实现领导力成功
 
@@ -6,7 +6,7 @@
 
 **使用 ChatGPT 实现领导力成功**
 
-![image-placeholder](img/Image00002.jpg)
+![image-placeholder](img/leadership-success-with-chatgp-Image00002.jpg)
 
 版权 © 2025 by Zenson Tran
 
@@ -158,7 +158,7 @@
 
 ## 关于作者
 
-![image-placeholder](img/Image00003.jpg)
+![image-placeholder](img/leadership-success-with-chatgp-Image00003.jpg)
 
 Zenson Tran 是一位策略家、教育家和思想家，致力于帮助人们掌握最高水平的思考、解决问题和决策的艺术。作为一名企业家、作家和课程创建者，他通过将复杂的思想转化为清晰、可操作的框架而建立了声誉，这些框架挑战了传统智慧并促使进行深刻的智力突破。
 

@@ -76,7 +76,7 @@
 
 加入 PJ Chavaux 书友会与读者社区！
 
-![图片占位符](img/image_rsrc1S2.jpg)
+![图片占位符](img/the-big-ai-chatgpt-book-of-prompt-engineerin-image_rsrc1S2.jpg)
 
 感谢您选择这本书！如果您喜欢那些讲述真实生活、沟通和联系的故事，您并不孤单。我很乐意邀请您加入 PJ Chavaux 书友会——一个不断壮大的读者社区，我们在这里分享想法、留下评论，并提前获取新书发布。
 
@@ -84,11 +84,11 @@
 
 👉 留下评论或加入俱乐部
 
-![图片占位符](img/image_rsrc1S3.jpg)
+![图片占位符](img/the-big-ai-chatgpt-book-of-prompt-engineerin-image_rsrc1S3.jpg)
 
 👉 在 Facebook 上关注
 
-![图片占位符](img/image_rsrc1S4.jpg)
+![图片占位符](img/the-big-ai-chatgpt-book-of-prompt-engineerin-image_rsrc1S4.jpg)
 
 📬 或直接通过 paul.chavaux@gmail.com 联系作者
 

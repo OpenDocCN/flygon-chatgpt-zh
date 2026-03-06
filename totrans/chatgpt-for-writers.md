@@ -4,7 +4,7 @@
 
 Reactive Publishing
 
-![](img/image_rsrc3T3.jpg)
+![](img/chatgpt-for-writer-image_rsrc3T3.jpg)
 
 目录
 

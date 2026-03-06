@@ -1,4 +1,4 @@
-![](img/Image00012.jpg)
+![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-author-Image00012.jpg)
 
 # 伴侣工作手册：作者 ChatGPT AI 艺术优势
 
@@ -132,7 +132,7 @@
 
 [你还可以跟随在线挑战！](https://susanjagannath.gumroad.com/l/TCA-1)
 
-![](img/Image00002.jpg)
+![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-author-Image00002.jpg)
 
 # 1 作者的视觉策略与心态
 
@@ -196,7 +196,7 @@
 
 **挑战活动准备：** 理解受众的视觉语言有助于你为最大影响调整你的 AI 提示。在后续模块中制作提示时，考虑这些偏好。
 
-![](img/Image00003.jpg)
+![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-author-Image00003.jpg)
 
 # 2 精通提示对话
 
@@ -282,7 +282,7 @@
 
 哪些风格对你的提示最有效？
 
-![](img/Image00004.jpg)
+![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-author-Image00004.jpg)
 
 # 3 迭代和细化技术
 
@@ -364,7 +364,7 @@
 
 **挑战活动准备：** 带上你的前后图像（或只是最终精炼的图像及其迭代的故事）参加现场故障排除会议。
 
-![](img/Image00005.jpg)
+![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-author-Image00005.jpg)
 
 # 4 创建社交媒体和内容视觉
 
@@ -486,7 +486,7 @@
 
 **挑战活动准备：** 对于迷你活动创建活动，计划创建 3 个相关的社交媒体帖子，这些帖子可以一起推广您的书籍或免费优惠。
 
-![](img/Image00002.jpg)
+![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-author-Image00002.jpg)
 
 # 5 个书籍封面概念化
 
@@ -624,7 +624,7 @@
 
 +   **您不喜欢的封面示例：**
 
-![](img/Image00006.jpg)
+![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-author-Image00006.jpg)
 
 # 6 生成广告和促销图形
 
@@ -804,7 +804,7 @@
 
 在这里获取这份工作簿的印刷版。
 
-![](img/Image00009.jpg)
+![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-author-Image00009.jpg)
 
 # 9 个奖励
 
@@ -918,7 +918,7 @@
 
 当你这样做时，你可能会得到以下这样的结果作为起点来工作：
 
-![](img/Image00010.jpg)
+![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-author-Image00010.jpg)
 
 注意它如何正确地处理了一些细节，比如手部和对于喜马拉雅山脉和桌子上咖啡杯的特定要求。
 

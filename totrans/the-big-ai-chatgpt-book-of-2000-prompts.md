@@ -122,7 +122,7 @@ Also by PJ Chavaux
 
 ## 加入 PJ Chavaux 书友会与读者社区！
 
-![图片占位符](img/image_rsrc7R3.jpg)
+![图片占位符](img/the-big-ai-chatgpt-book-of-2000-prompt-image_rsrc7R3.jpg)
 
 感谢您选择这本书！如果您喜欢那些讲述真实生活、沟通和联系的故事，您并不孤单。我很乐意邀请您加入 PJ Chavaux 书友会——一个不断壮大的读者社区，我们在这里分享想法、留下评论，并提前获取新书发布。
 
@@ -130,11 +130,11 @@ Also by PJ Chavaux
 
 👉 留下评论或加入俱乐部
 
-![图片占位符](img/image_rsrc7R4.jpg)
+![图片占位符](img/the-big-ai-chatgpt-book-of-2000-prompt-image_rsrc7R4.jpg)
 
 👉 在 Facebook 上关注
 
-![图片占位符](img/image_rsrc7R5.jpg)
+![图片占位符](img/the-big-ai-chatgpt-book-of-2000-prompt-image_rsrc7R5.jpg)
 
 📬 或者直接通过电子邮件联系作者 paul.chavaux@gmail.com
 

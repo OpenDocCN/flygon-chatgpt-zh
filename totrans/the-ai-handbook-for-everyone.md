@@ -58,7 +58,7 @@
 
 加入 PJ Chavaux BookClub & 读者社区！
 
-![图片占位符](img/image_rsrc22U.jpg)
+![图片占位符](img/the-ai-handbook-for-everyon-image_rsrc22U.jpg)
 
 感谢您拿起这本书！如果您喜欢讲述真实生活、沟通和联系的故事，您并不孤单。我很乐意邀请您加入 PJ Chavaux Book Club——一个不断壮大的读者社区，我们分享想法、留下评论，并提前获得新书发布。
 
@@ -66,11 +66,11 @@
 
 👉 留下评论或加入俱乐部
 
-![图片占位符](img/image_rsrc22V.jpg)
+![图片占位符](img/the-ai-handbook-for-everyon-image_rsrc22V.jpg)
 
 👉 在 Facebook 上关注
 
-![图片占位符](img/image_rsrc22W.jpg)
+![图片占位符](img/the-ai-handbook-for-everyon-image_rsrc22W.jpg)
 
 📬 或直接通过 paul.chavaux@gmail.com 联系作者
 

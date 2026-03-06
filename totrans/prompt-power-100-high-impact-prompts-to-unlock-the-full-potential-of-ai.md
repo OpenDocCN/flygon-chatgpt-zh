@@ -1,4 +1,4 @@
-![](img/Image00001.jpg)
+![](img/prompt-power-100-high-impact-prompts-to-unlock-the-full-potential-of-a-Image00001.jpg)
 
 **提示词力量：100 个高影响力**
 

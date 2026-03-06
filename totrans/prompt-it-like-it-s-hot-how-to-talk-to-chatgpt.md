@@ -1,4 +1,4 @@
-![](img/Image00000.jpg)
+![](img/prompt-it-like-it-s-hot-how-to-talk-to-chatgp-Image00000.jpg)
 
 目录
 

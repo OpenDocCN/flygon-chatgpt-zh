@@ -1,4 +1,4 @@
-![图片](img/Image00000.jpg)
+![图片](img/30-chatgpt-hack-Image00000.jpg)
 
 ChatGPT 技巧入门
 

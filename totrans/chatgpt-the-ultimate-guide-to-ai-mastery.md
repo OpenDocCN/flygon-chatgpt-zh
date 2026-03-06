@@ -1,4 +1,4 @@
-![图片](img/image_rsrcBY.jpg)前言
+![图片](img/chatgpt-the-ultimate-guide-to-ai-master-image_rsrcBY.jpg)前言
 
 在人工智能正在重塑我们工作、创造和创新方式的时代，理解和掌握 ChatGPT 等 AI 工具已经成为一种必需，而非奢侈品。曾经属于科幻领域的领域现在已成为现实——AI 驱动的助手可以生成内容、解决复杂问题、简化业务流程，甚至激发创造力。
 
@@ -146,7 +146,7 @@ ChatGPT 之外的顶级人工智能工具：MidJourney, DALL·E, Claude 等.....
 
 www.chatgpt.com
 
-![](img/image_rsrcBZ.jpg)![](img/image_rsrcC0.jpg)第一部分：ChatGPT 与 AI 的基础
+![](img/chatgpt-the-ultimate-guide-to-ai-master-image_rsrcBZ.jpg)![](img/chatgpt-the-ultimate-guide-to-ai-master-image_rsrcC0.jpg)第一部分：ChatGPT 与 AI 的基础
 
 1. 简介：AI 革命 1.1 人工智能的兴起
 

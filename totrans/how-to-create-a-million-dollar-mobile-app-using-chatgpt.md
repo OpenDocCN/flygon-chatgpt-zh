@@ -152,7 +152,7 @@ ChatGPT 不仅仅是一个工具；它是你的创意合作伙伴。通过了解
 
 # 第一部分：了解格局
 
-![一本带有地球和图标的书  AI 生成的内容可能是不正确的。](img/image_rsrc332.jpg)
+![一本带有地球和图标的书  AI 生成的内容可能是不正确的。](img/how-to-create-a-million-dollar-mobile-app-using-chatgp-image_rsrc332.jpg)
 
 ## 第一章：应用经济
 
@@ -512,7 +512,7 @@ ChatGPT 可以：
 
 # 第二部分：创意和规划
 
-![图片资源 333](img/image_rsrc333.jpg)
+![图片资源 333](img/how-to-create-a-million-dollar-mobile-app-using-chatgp-image_rsrc333.jpg)
 
 ## 第四章：使用 ChatGPT 生成想法
 
@@ -976,7 +976,7 @@ ChatGPT 可以通过以下方式协助：
 
 # 第三部分：设计你的应用
 
-![image_rsrc334.jpg](img/image_rsrc334.jpg)
+![image_rsrc334.jpg](img/how-to-create-a-million-dollar-mobile-app-using-chatgp-image_rsrc334.jpg)
 
 ## 第七章：构建以用户为中心的应用
 
@@ -1314,7 +1314,7 @@ ChatGPT 是生成和优化应用内容的无价工具。例如：
 
 # 第四部分：开发和发布
 
-![image_rsrc335.jpg](img/image_rsrc335.jpg)
+![image_rsrc335.jpg](img/how-to-create-a-million-dollar-mobile-app-using-chatgp-image_rsrc335.jpg)
 
 ## 第九章：简化开发
 
@@ -1838,7 +1838,7 @@ ChatGPT 可以通过多种方式支持你的决策过程：
 
 # 第五部分：营销和增长
 
-![带有彩色箭头和符号的手机 AI 生成的内容可能不正确。](img/image_rsrc336.jpg)
+![带有彩色箭头和符号的手机 AI 生成的内容可能不正确。](img/how-to-create-a-million-dollar-mobile-app-using-chatgp-image_rsrc336.jpg)
 
 ## 第十二章：预发布炒作
 
@@ -2342,7 +2342,7 @@ Beta 发布允许您在全面发布之前在有限受众中测试您的应用。
 
 # 第六部分：最大化盈利能力
 
-![带有美元符号和一堆硬币的手机 AI 生成的内容可能不正确。](img/image_rsrc337.jpg)
+![带有美元符号和一堆硬币的手机 AI 生成的内容可能不正确。](img/how-to-create-a-million-dollar-mobile-app-using-chatgp-image_rsrc337.jpg)
 
 ## 第十五章：留存策略
 

@@ -1,4 +1,4 @@
-![目录 1.png](img/image_rsrc13F.jpg)
+![目录 1.png](img/chatgpt-millionaire-agen-image_rsrc13F.jpg)
 
 版权© 2025 by Matthew Christopher | Amplified Marketing LLC
 
@@ -76,7 +76,7 @@ Amplified Marketing - @AMPLIFIED.MKGT
 
 **免费赠品与工作表**
 
-![2025-01-12 上午 9:40:47 的截图.png](img/image_rsrc13G.jpg)
+![2025-01-12 上午 9:40:47 的截图.png](img/chatgpt-millionaire-agen-image_rsrc13G.jpg)
 
 “种树最好的时间是 20 年前，其次是现在。” —— 中国谚语
 

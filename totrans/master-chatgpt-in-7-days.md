@@ -2,7 +2,7 @@
 
 提高你的生产力和快速成功
 
-![](img/image_rsrcUW.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcUW.jpg)
 
 目录
 
@@ -118,7 +118,7 @@
 
 1.  访问官方网站：[`chat.openai.com`](https://chat.openai.com)
 
-    ![](img/image_rsrcUX.jpg)
+    ![](img/master-chatgpt-in-7-day-image_rsrcUX.jpg)
 
 1.  点击“注册”
 
@@ -134,17 +134,17 @@
 
 +   iOS：[`apps.apple.com/app/openai-chatgpt/id6448311069`](https://apps.apple.com/app/openai-chatgpt/id6448311069)
 
-    ![](img/image_rsrcUY.jpg)
+    ![](img/master-chatgpt-in-7-day-image_rsrcUY.jpg)
 
 +   安卓：[`play.google.com/store/apps/details?id=com.openai.chatgpt`](https://play.google.com/store/apps/details?id=com.openai.chatgpt)
 
-    ![](img/image_rsrcUZ.jpg)
+    ![](img/master-chatgpt-in-7-day-image_rsrcUZ.jpg)
 
 * * *
 
 第 3 步：了解界面
 
-![](img/image_rsrcV0.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV0.jpg)
 
 探索这些界面元素：
 
@@ -166,7 +166,7 @@
 
 “给我 3 个提高工作效率的建议。”
 
-![](img/image_rsrcV1.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV1.jpg)
 
 * * *
 
@@ -240,7 +240,7 @@ ChatGPT 的回答质量在很大程度上取决于你提示的清晰度和结构
 
 “写一封礼貌的客户服务电子邮件，为延迟交付道歉。”
 
-![](img/image_rsrcV2.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV2.jpg)
 
 * * *
 
@@ -282,7 +282,7 @@ ChatGPT 的回答质量在很大程度上取决于你提示的清晰度和结构
 
 “用 Markdown 格式为我写一篇文章草稿。”
 
-![](img/image_rsrcV3.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV3.jpg)
 
 * * *
 
@@ -300,7 +300,7 @@ ChatGPT 的回答质量在很大程度上取决于你提示的清晰度和结构
 
 小贴士：你可以创建一个文档或笔记集合，包含你最喜欢的提示。
 
-![](img/image_rsrcV4.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV4.jpg)
 
 * * *
 
@@ -362,7 +362,7 @@ ChatGPT 的回答质量在很大程度上取决于你提示的清晰度和结构
 
 “扮演生产力教练的角色。通过提问帮助我制定每周计划，然后以项目符号列表的形式总结。”
 
-![](img/image_rsrcV5.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV5.jpg)
 
 * * *
 
@@ -384,7 +384,7 @@ ChatGPT 在单个会话中记住上下文。你可以：
 
 这种迭代方法让你可以像与真正的助手一样与 ChatGPT 协作。
 
-![](img/image_rsrcV6.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV6.jpg)
 
 * * *
 
@@ -420,7 +420,7 @@ ChatGPT Plus 账户可能包括记忆功能：
 
 要了解更多信息，请查看：[`help.openai.com/en/articles/7730893`](https://help.openai.com/en/articles/7730893)
 
-![](img/image_rsrcV7.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV7.jpg)
 
 * * *
 
@@ -498,7 +498,7 @@ ChatGPT 最大的优势之一是自动化小型重复性任务。无论你是写
 
 “创建一个每周 5 个帖子的社交媒体日历，每个帖子都附有标题和表情符号。”
 
-![](img/image_rsrcV8.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV8.jpg)
 
 * * *
 
@@ -540,7 +540,7 @@ ChatGPT 最大的优势之一是自动化小型重复性任务。无论你是写
 
 “帮助我构建一个自动发布 LinkedIn 更新的 Zapier 工作流程。”
 
-![](img/image_rsrcV9.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcV9.jpg)
 
 * * *
 
@@ -626,7 +626,7 @@ ChatGPT 可以记录和优化流程：
 
 “扮演 D&D 地牢主，根据我的角色构建一个任务。”
 
-![](img/image_rsrcVA.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcVA.jpg)
 
 * * *
 
@@ -752,7 +752,7 @@ ChatGPT 可以共同创作：
 
 “我正在创业。根据以下标准，建议 3 个城市：低税率、技术人才、创业补助。以比较表格的形式呈现答案。”
 
-![](img/image_rsrcVB.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcVB.jpg)
 
 * * *
 
@@ -866,7 +866,7 @@ ChatGPT 的真正力量不仅在于单一任务，还在于帮助你创建可持
 
 第 1 步：设计每日 AI 常规
 
-![](img/image_rsrcVC.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcVC.jpg)
 
 ChatGPT 可以从头到尾支持你的日常：
 
@@ -912,7 +912,7 @@ ChatGPT 可以从头到尾支持你的日常：
 
 +   Trello/Notion：从提示中构建任务卡或笔记
 
-![](img/image_rsrcVD.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcVD.jpg)
 
 * * *
 
@@ -1044,7 +1044,7 @@ ChatGPT 可以引导反思和个人成长：
 
 从 GPT 构建社区中发现更多想法
 
-![](img/image_rsrcVE.jpg)
+![](img/master-chatgpt-in-7-day-image_rsrcVE.jpg)
 
 * * *
 

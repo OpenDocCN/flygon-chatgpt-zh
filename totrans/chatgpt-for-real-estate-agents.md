@@ -1,4 +1,4 @@
-![](img/Image00000.jpg)
+![](img/chatgpt-for-real-estate-agents-Image00000.jpg)
 
 ChatGPT 为房地产经纪人：卖出更多，压力更少
 

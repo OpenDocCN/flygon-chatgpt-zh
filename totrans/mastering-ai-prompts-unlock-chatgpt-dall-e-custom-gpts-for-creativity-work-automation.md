@@ -1,4 +1,4 @@
-![Image00000.jpg](img/Image00000.jpg)
+![Image00000.jpg](img/mastering-ai-prompts-unlock-chatgpt-dall-e-custom-gpts-for-creativity-work-automation-Image00000.jpg)
 
 掌握 AI 提示
 

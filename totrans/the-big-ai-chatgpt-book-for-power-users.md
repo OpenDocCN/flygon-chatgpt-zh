@@ -54,7 +54,7 @@ PJ Chavaux 的其他作品
 
 加入 PJ Chavaux 图书俱乐部与读者社区！
 
-![图片占位符](img/image_rsrc1DE.jpg)
+![图片占位符](img/the-big-ai-chatgpt-book-for-power-users-image_rsrc1DE.jpg)
 
 感谢您选择这本书！如果您喜欢讲述真实生活、沟通和联系的故事，您并不孤单。我很乐意邀请您加入 PJ Chavaux 图书俱乐部——一个不断壮大的读者社区，他们分享想法、留下评论，并提前获得新书发布。
 
@@ -62,11 +62,11 @@ PJ Chavaux 的其他作品
 
 👉 留下评论或加入俱乐部
 
-![图片占位符](img/image_rsrc1DF.jpg)
+![图片占位符](img/the-big-ai-chatgpt-book-for-power-users-image_rsrc1DF.jpg)
 
 👉 在 Facebook 上关注
 
-![图片占位符](img/image_rsrc1DG.jpg)
+![图片占位符](img/the-big-ai-chatgpt-book-for-power-users-image_rsrc1DG.jpg)
 
 📬 直接通过电子邮件作者在 paul.chavaux@gmail.com 联系
 
@@ -610,7 +610,7 @@ Grok 输出（是的，输出很冗长）
 
 在生成提示后，你只需要请求 AI（Grok）创建图像。（抱歉图像是黑白色的，但你应该能理解这个意思）
 
-![image-placeholder](img/image_rsrc1DH.jpg)![image-placeholder](img/image_rsrc1DJ.jpg)
+![image-placeholder](img/the-big-ai-chatgpt-book-for-power-users-image_rsrc1DH.jpg)![image-placeholder](img/the-big-ai-chatgpt-book-for-power-users-image_rsrc1DJ.jpg)
 
 第六章
 

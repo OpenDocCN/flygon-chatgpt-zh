@@ -254,7 +254,7 @@
 
 50. "中途旅程提示：'去中心化投票系统品牌标志'，简洁且象征性"
 
-![](img/image_rsrcGD.jpg)
+![](img/1001-midjourney-chatgpt-prompts-for-ai-designers-image_rsrcGD.jpg)
 
 🎨 第二部分
 

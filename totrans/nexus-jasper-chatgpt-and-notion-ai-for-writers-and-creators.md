@@ -1,4 +1,4 @@
-![](img/Image00000.jpg)
+![](img/nexus-jasper-chatgpt-and-notion-ai-for-writers-and-creators-Image00000.jpg)
 
 Nexus、Jasper、ChatGPT 和 Notion AI 为作家和创作者提供支持
 

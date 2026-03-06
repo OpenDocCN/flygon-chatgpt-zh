@@ -1,4 +1,4 @@
-![图片](img/Image00000.jpg)
+![图片](img/100-chatgpt-prompts-for-beginners-Image00000.jpg)
 
 提示基础介绍
 

@@ -1,4 +1,4 @@
-![Image00000.jpg](img/Image00000.jpg)
+![Image00000.jpg](img/ai-side-hustles-50-ways-to-use-chatgpt-Image00000.jpg)
 
 AI 副业：
 

@@ -1,6 +1,6 @@
-![](img/Image00002.jpg)
+![](img/ai-powered-passive-income-2025-Image00002.jpg)
 
-![](img/Image00000.jpg)
+![](img/ai-powered-passive-income-2025-Image00000.jpg)
 
 * * *
 

@@ -1,4 +1,4 @@
-![](img/from-broke-to-boss-how-to-make-money-with-a-Image00000.jpg)
+![](img/Image00000.jpg)
 
 # 从破产到老板：即使从零开始，如何用 AI 赚钱
 

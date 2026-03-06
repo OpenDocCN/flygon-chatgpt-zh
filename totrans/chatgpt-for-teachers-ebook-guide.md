@@ -87,7 +87,7 @@ ChatGPT 是基于截至 2023 年 9 月存在的知识进行训练的。然而，
 
 如果你是新用户，请点击“注册”按钮；如果你已有账户，请点击“登录”。
 
-![登录表单截图，自动生成描述](img/chatgpt-for-teachers-ebook-guid-image_rsrc2AJ.jpg)
+![登录表单截图，自动生成描述](img/image_rsrc2AJ.jpg)
 
 ChatGPT 提供免费计划和付费计划。以下是 ChatGPT 免费和付费之间差异的摘要 [1]。
 
@@ -116,7 +116,7 @@ ChatGPT 提供免费计划和付费计划。以下是 ChatGPT 免费和付费之
 
 按下“发送”按钮（或按 Enter 键）以接收响应。
 
-![聊天截图，自动生成描述](img/chatgpt-for-teachers-ebook-guid-image_rsrc2AK.jpg)
+![聊天截图，自动生成描述](img/image_rsrc2AK.jpg)
 
 第 4 步：了解模型
 

@@ -1,4 +1,4 @@
-![图片 1](img/mastering-chatgpt-unlocking-ai-powered-assistanc-image_rsrc63.jpg)
+![图片 1](img/image_rsrc63.jpg)
 
 掌握 ChatGPT：解锁 AI 辅助
 

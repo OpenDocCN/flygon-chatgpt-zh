@@ -1,4 +1,4 @@
-![图片](img/chatgpt-for-property-manager-Image00000.jpg)
+![图片](img/Image00000.jpg)
 
 ChatGPT 为物业管理员：脚本、通知和混乱中的平静
 

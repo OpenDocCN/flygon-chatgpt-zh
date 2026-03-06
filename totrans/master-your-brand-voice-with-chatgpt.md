@@ -520,7 +520,7 @@ ChatGPT 可以帮助你扩大内容创作努力，同时不牺牲质量。通过
 
 这个提示为 ChatGPT 提供了关于产品目标受众和期望语气的明确方向，确保描述将与正确的客户产生共鸣。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 2. 关于我们页面的品牌故事
 
@@ -532,7 +532,7 @@ ChatGPT 可以帮助你扩大内容创作努力，同时不牺牲质量。通过
 
 ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与您的观众建立情感上的联系。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 3. 社交媒体帖子 – 励志名言
 
@@ -544,7 +544,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 这个提示是为 Instagram 定制的，侧重于创建一个鼓舞和鼓励您受众的信息，这对于参与度至关重要。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 4. 客户服务响应
 
@@ -556,7 +556,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 提供一个结构化和富有同理心的快速解决问题的响应对于客户服务至关重要。ChatGPT 的提示确保客户感到受到重视。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 5. 新产品发布销售邮件
 
@@ -568,7 +568,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 这个提示明确定义了目标（新产品发布）和所需的语气，使得邮件更有可能促使立即采取行动。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 6. 登录页面文案
 
@@ -580,7 +580,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 通过强调价值和好处，这个提示确保登录页面通过解决客户痛点来鼓励注册。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 7. 博客文章标题想法
 
@@ -592,7 +592,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 这个提示为 ChatGPT 提供了关于目标受众和内容类型的方向，有助于生成吸引注意力和提高 SEO 的标题。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 8. 社交媒体标题
 
@@ -604,7 +604,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 社交媒体标题需要简短、吸引人且相关。这个提示针对寻找自我关爱灵感的受众，定位了正确的语气。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 9. 欢迎邮件序列
 
@@ -616,7 +616,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 一个温暖友好的介绍为新订阅者与未来的互动设定了基调。这个提示鼓励从一开始就进行互动。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 10. 关于克服商业挑战的博客文章
 
@@ -628,7 +628,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 励志内容是提供价值并与可能面临常见障碍的观众产生共鸣的绝佳方式。这个提示确保博客文章既提供鼓励又提供解决方案。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 11. 通讯稿公告
 
@@ -640,7 +640,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 清晰、简洁的公告确保您的观众了解新课程提供的内容以及为什么他们应该兴奋地报名。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 12. 社交媒体竞赛公告
 
@@ -652,7 +652,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 竞赛是提高参与度的好方法。这个提示有助于确保帖子清晰、吸引人且易于理解。
 
-![图片资源 15E](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片资源 15E](img/image_rsrc15E.jpg)
 
 13. 推荐信请求
 
@@ -664,7 +664,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 这个提示创建了一个礼貌而有效的请求，使客户分享他们的积极体验变得容易。
 
-![图片资源 15E](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片资源 15E](img/image_rsrc15E.jpg)
 
 14. 社交媒体互动帖
 
@@ -676,7 +676,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 与您的观众互动并邀请他们分享他们的想法可以增加互动并提供有价值的见解。
 
-![图片资源 15E](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片资源 15E](img/image_rsrc15E.jpg)
 
 15. 重新参与电子邮件
 
@@ -688,7 +688,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 这个提示通过提供价值和重新参与的有力理由，旨在重新吸引潜在客户的注意力。
 
-![图片资源 15E](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片资源 15E](img/image_rsrc15E.jpg)
 
 16. 新产品预告帖
 
@@ -700,7 +700,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 预告帖创造期待，使您的观众对即将发布的作品感到兴奋。这个提示有助于建立这种兴奋感，同时又不透露太多信息。
 
-![图片资源 15E](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片资源 15E](img/image_rsrc15E.jpg)
 
 17. 背后内容帖
 
@@ -712,7 +712,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 背后内容使您的品牌人性化，并与您的观众建立更深的联系。这个提示确保语气保持个人化和透明。
 
-![图片资源 15E](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片资源 15E](img/image_rsrc15E.jpg)
 
 18. 社会证明帖
 
@@ -724,7 +724,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 社会证明对于建立潜在客户的信任非常强大。这个提示强调了客户推荐在建立信誉中的价值。
 
-![图片资源 15E](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片资源 15E](img/image_rsrc15E.jpg)
 
 19. 季节性促销电子邮件
 
@@ -736,7 +736,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 季节性销售需要紧迫感和兴奋感。这个提示确保电子邮件包含所有必要细节，同时鼓励立即采取行动。
 
-![图片资源 15E](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片资源 15E](img/image_rsrc15E.jpg)
 
 20. 产品比较指南
 
@@ -748,7 +748,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 一份写得好的比较指南可以帮助客户做出明智的决定。此提示确保比较是客观的，并强调您产品的优势。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 21. 欢迎礼包信息
 
@@ -760,7 +760,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 此提示确保新客户感受到被重视，并欢迎加入您的品牌社区。语气应该是友好和有帮助的，鼓励进一步的互动。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 22. 月度通讯
 
@@ -772,7 +772,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 通讯是保持观众知情和参与的一种绝佳方式。此提示确保了专业和亲切沟通的平衡。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 23. 网络研讨会邀请
 
@@ -784,7 +784,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 一个强大、清晰的在线研讨会邀请可以推动出席率和参与度。此提示确保语气是激励性的，鼓励您的观众参与。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 24. 网站 CTA
 
@@ -796,7 +796,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 一个精心设计的 CTA 可以推动转化。此提示确保 CTA 具有吸引力，并为访客采取行动提供了明确的原因。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 25. 品牌价值观声明
 
@@ -808,7 +808,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 品牌价值观声明有助于阐明您的企业代表什么。此提示确保您的价值观与目标受众产生共鸣，并与您的品牌信息保持一致。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 26. 影响者合作请求
 
@@ -820,7 +820,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 此提示以专业和亲切的方式启动合作，增加了建立成功的网红合作伙伴关系的可能性。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 27. 客户反馈请求
 
@@ -832,7 +832,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 请求反馈表明您重视客户意见。此提示使您能够以非侵入性和感激的方式轻松请求反馈。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 28. 时间敏感的优惠
 
@@ -844,7 +844,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 限时优惠推动紧迫感。此提示为您提供一种电子邮件结构，可以鼓励客户迅速采取行动。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 29. 邮件中突出产品功能
 
@@ -856,7 +856,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 关注产品的独特卖点对于转化至关重要。此提示将确保邮件有效地强调价值和好处。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 30. 客户成功故事
 
@@ -868,7 +868,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 客户成功故事有助于建立信誉。此提示突出了您的产品在现实世界中的影响，在潜在客户中建立信任。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 31. 购买后的邮件跟进
 
@@ -880,7 +880,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 购买后的跟进建立积极的客户体验并鼓励忠诚度。此提示确保邮件既以感谢为导向，又以行动为导向。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 32. 销售漏斗培养型邮件
 
@@ -892,7 +892,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 培养型邮件有助于引导潜在客户通过您的销售漏斗。此提示确保了一种温和的方法，提供价值并鼓励采取行动。
 
-![图片](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![图片](img/image_rsrc15E.jpg)
 
 33. 忠诚度计划公告
 
@@ -988,7 +988,7 @@ ChatGPT 使用您提供的信息来构建与您的使命一致的故事，并与
 
 与分享你内容的人互动表示感激，并可以激励他们继续推广你的业务。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 41. 邮件销售公告
 
@@ -1000,7 +1000,7 @@ Prompt:
 
 闪购需要紧迫感，所以这个提示确保邮件包含所有必要的元素来产生兴奋感并鼓励立即采取行动。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 42. 社交媒体赠品
 
@@ -1012,7 +1012,7 @@ Prompt:
 
 赠品可以提高参与度和吸引注意力。这个提示确保你的帖子清晰，并鼓励追随者参与。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 43. 网络研讨会跟进邮件
 
@@ -1024,7 +1024,7 @@ Prompt:
 
 跟进邮件可以加强网络研讨会价值，并给你一个培养潜在客户的机会。这个提示帮助创建一个事后接触点，增加价值。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 44. 季节性内容策略
 
@@ -1036,7 +1036,7 @@ Prompt:
 
 提前规划季节性内容可以确保信息的一致性。这个提示帮助你组织和创建与季节相符的内容。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 45. 网红营销策略
 
@@ -1048,7 +1048,7 @@ Prompt:
 
 这个提示有助于构建有效的网红营销策略，确保你的网红合作伙伴与你的品牌和商业目标一致。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 46. 产品评论请求
 
@@ -1060,7 +1060,7 @@ Prompt:
 
 产品评论对于建立社会信任至关重要。这个提示确保你的请求是尊重的，并鼓励客户留下正面反馈。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 47. 被遗弃的购物车邮件
 
@@ -1072,7 +1072,7 @@ Prompt:
 
 被遗弃的购物车电子邮件通过提供温和的推动来恢复潜在销售。这个提示鼓励客户通过提供折扣来完成他们的购买。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 48. 分享评价帖子
 
@@ -1084,7 +1084,7 @@ Prompt:
 
 分享评价可以与你的受众建立信任。这个提示确保评价以真实的方式呈现，为你的品牌创造更多信誉。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 49. 专属优惠电子邮件
 
@@ -1096,7 +1096,7 @@ Prompt:
 
 专属优惠让客户感到被重视。这个提示强调了让优惠感觉个性化且独特的重要性。
 
-![](img/master-your-brand-voice-with-chatgp-image_rsrc15E.jpg)
+![](img/image_rsrc15E.jpg)
 
 50. 限时产品发布电子邮件
 

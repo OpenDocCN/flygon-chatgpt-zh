@@ -2780,143 +2780,176 @@
   id: totrans-484
   prefs: []
   type: TYPE_NORMAL
+  zh: 以下是如何使用 handlebars 创建动态电子邮件模板：
 - en: const handlebars = require('handlebars');
   id: totrans-485
   prefs: []
   type: TYPE_NORMAL
+  zh: const handlebars = require('handlebars');
 - en: // Sample template
   id: totrans-486
   prefs: []
   type: TYPE_NORMAL
+  zh: // 示例模板
 - en: const source = '
   id: totrans-487
   prefs: []
   type: TYPE_NORMAL
+  zh: const source = '
 - en: Hello, {{name}}! You have {{count}} new messages.
   id: totrans-488
   prefs: []
   type: TYPE_NORMAL
+  zh: Hello, {{name}}! You have {{count}} new messages.
 - en: ''';'
   id: totrans-489
   prefs: []
   type: TYPE_NORMAL
+  zh: ''';'
 - en: const template = handlebars.compile(source);
   id: totrans-490
   prefs: []
   type: TYPE_NORMAL
+  zh: const template = handlebars.compile(source);
 - en: // Data to inject into the template
   id: totrans-491
   prefs: []
   type: TYPE_NORMAL
+  zh: // 要注入模板的数据
 - en: const data = {
   id: totrans-492
   prefs: []
   type: TYPE_NORMAL
+  zh: const data = {
 - en: 'name: ''John'','
   id: totrans-493
   prefs: []
   type: TYPE_NORMAL
+  zh: 'name: ''John'','
 - en: 'count: 5'
   id: totrans-494
   prefs: []
   type: TYPE_NORMAL
+  zh: 'count: 5'
 - en: '};'
   id: totrans-495
   prefs: []
   type: TYPE_NORMAL
+  zh: '};'
 - en: // Generate HTML
   id: totrans-496
   prefs: []
   type: TYPE_NORMAL
+  zh: // 生成 HTML
 - en: const htmlToSend = template(data);
   id: totrans-497
   prefs: []
   type: TYPE_NORMAL
+  zh: const htmlToSend = template(data);
 - en: console.log(htmlToSend);
   id: totrans-498
   prefs: []
   type: TYPE_NORMAL
+  zh: console.log(htmlToSend);
 - en: Sending Messages via APIs
   id: totrans-499
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 通过 API 发送消息
 - en: For sending messages through APIs (e.g., SMS or chat services), you need to
     interact with the service's REST API. This usually involves making HTTP requests
     with the appropriate authentication and message payload.
   id: totrans-500
   prefs: []
   type: TYPE_NORMAL
+  zh: 要通过 API（例如，短信或聊天服务）发送消息，你需要与该服务的 REST API 进行交互。这通常涉及使用适当的身份验证和消息负载发起 HTTP 请求。
 - en: Example with Twilio for SMS
   id: totrans-501
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 使用 Twilio 发送短信的示例
 - en: 'Twilio is a popular service for sending SMS messages. Here’s how you can send
     an SMS using Twilio in Node.js:'
   id: totrans-502
   prefs: []
   type: TYPE_NORMAL
+  zh: Twilio 是一项流行的短信发送服务。以下是如何在 Node.js 中使用 Twilio 发送短信：
 - en: const twilio = require('twilio');
   id: totrans-503
   prefs: []
   type: TYPE_NORMAL
+  zh: const twilio = require('twilio');
 - en: const accountSid = 'your_account_sid';
   id: totrans-504
   prefs: []
   type: TYPE_NORMAL
+  zh: const accountSid = 'your_account_sid';
 - en: const authToken = 'your_auth_token';
   id: totrans-505
   prefs: []
   type: TYPE_NORMAL
+  zh: const authToken = 'your_auth_token';
 - en: const client = new twilio(accountSid, authToken);
   id: totrans-506
   prefs: []
   type: TYPE_NORMAL
+  zh: const client = new twilio(accountSid, authToken);
 - en: client.messages.create({
   id: totrans-507
   prefs: []
   type: TYPE_NORMAL
+  zh: client.messages.create({
 - en: 'body: ''Hello from Node.js!'','
   id: totrans-508
   prefs: []
   type: TYPE_NORMAL
+  zh: 'body: ''Hello from Node.js!'','
 - en: 'to: ''+1234567890'',  // Text this number'
   id: totrans-509
   prefs: []
   type: TYPE_NORMAL
+  zh: 'to: ''+1234567890'',  // 向此号码发送短信'
 - en: 'from: ''+0987654321'' // From a valid Twilio number'
   id: totrans-510
   prefs: []
   type: TYPE_NORMAL
+  zh: 'from: ''+0987654321'' // 来自一个有效的 Twilio 号码'
 - en: '})'
   id: totrans-511
   prefs: []
   type: TYPE_NORMAL
+  zh: '})'
 - en: .then((message) => console.log(message.sid))
   id: totrans-512
   prefs: []
   type: TYPE_NORMAL
+  zh: .then((message) => console.log(message.sid))
 - en: .catch((error) => console.error(error));
   id: totrans-513
   prefs: []
   type: TYPE_NORMAL
+  zh: .catch((error) => console.error(error));
 - en: Conclusion
   id: totrans-514
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 结论
 - en: Generating emails and messages programmatically is a powerful capability that
     can enhance user engagement and automate communication. By utilizing libraries
     and APIs, you can efficiently create and send personalized content to users.
   id: totrans-515
   prefs: []
   type: TYPE_NORMAL
+  zh: 以编程方式生成电子邮件和消息是一项强大的功能，可以增强用户参与度并实现通信自动化。通过利用库和 API，你可以高效地创建并向用户发送个性化内容。
 - en: Summarizing Text with ChatGPT
   id: totrans-516
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 使用 ChatGPT 总结文本
 - en: ChatGPT, a powerful language model developed by OpenAI, can be an effective
     tool for summarizing text. By leveraging its natural language processing capabilities,
     developers can generate concise summaries of lengthy documents or articles. This
@@ -2924,85 +2957,102 @@
   id: totrans-517
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 是由 OpenAI 开发的一个强大的语言模型，可以成为总结文本的有效工具。通过利用其自然语言处理能力，开发者可以生成长篇文档或文章的简洁摘要。这个过程涉及在保持原始上下文的同时提取关键信息。
 - en: Understanding Text Summarization
   id: totrans-518
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 理解文本摘要
 - en: 'Text summarization is the process of creating a brief version of a longer text
     that effectively conveys the main ideas. There are two primary approaches:'
   id: totrans-519
   prefs: []
   type: TYPE_NORMAL
+  zh: 文本摘要是创建较长文本的简短版本以有效传达主要思想的过程。主要有两种方法：
 - en: 'Extractive Summarization:  Involves selecting important sentences or phrases
     directly from the source text.'
   id: totrans-520
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 抽取式摘要：涉及直接从源文本中选择重要的句子或短语。
 - en: 'Abstractive Summarization:  Involves generating new sentences that capture
     the essence of the source, similar to how a human might summarize.'
   id: totrans-521
   prefs:
   - PREF_UL
   type: TYPE_NORMAL
+  zh: 抽象摘要：涉及生成能抓住原文精髓的新句子，类似于人类进行摘要的方式。
 - en: Using ChatGPT for Summarization
   id: totrans-522
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 使用 ChatGPT 进行文本摘要
 - en: 'ChatGPT can be utilized for both extractive and abstractive summarization.
     Here is a basic approach to using ChatGPT for this purpose:'
   id: totrans-523
   prefs: []
   type: TYPE_NORMAL
+  zh: ChatGPT 可用于抽取式和抽象式摘要。以下是使用 ChatGPT 实现此目的的基本方法：
 - en: 'Step 1: Input Preparation'
   id: totrans-524
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 步骤 1：输入准备
 - en: Prepare the input text by ensuring it is clean and pre-processed, if necessary.
     This might involve removing extraneous information such as metadata or formatting
     artifacts.
   id: totrans-525
   prefs: []
   type: TYPE_NORMAL
+  zh: 准备输入文本，确保其干净且在必要时经过预处理。这可能涉及移除元数据或格式伪影等无关信息。
 - en: 'Step 2: Prompt Design'
   id: totrans-526
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 步骤 2：提示设计
 - en: 'Design a prompt that instructs ChatGPT to summarize the text. A well-crafted
     prompt might look like:'
   id: totrans-527
   prefs: []
   type: TYPE_NORMAL
+  zh: 设计一个指示 ChatGPT 总结文本的提示。一个精心设计的提示可能如下所示：
 - en: 'Prompt: "Summarize the following text: [Your text here]"'
   id: totrans-528
   prefs: []
   type: TYPE_NORMAL
+  zh: 提示："总结以下文本：[你的文本在此]"
 - en: 'Step 3: API Integration'
   id: totrans-529
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 步骤 3：API 集成
 - en: 'Integrate with ChatGPT''s API to send the prompt and receive the summary. The
     following is a simple example using Python:'
   id: totrans-530
   prefs: []
   type: TYPE_NORMAL
+  zh: 与 ChatGPT 的 API 集成以发送提示并接收摘要。以下是一个使用 Python 的简单示例：
 - en: import openai
   id: totrans-531
   prefs: []
   type: TYPE_NORMAL
+  zh: import openai
 - en: openai.api_key = 'your-api-key'
   id: totrans-532
   prefs: []
   type: TYPE_NORMAL
+  zh: openai.api_key = 'your-api-key'
 - en: 'def summarize_text(text):'
   id: totrans-533
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def summarize_text(text):'
 - en: response = openai.Completion.create(
   id: totrans-534
   prefs: []

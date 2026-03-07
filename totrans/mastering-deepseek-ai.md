@@ -1,52 +1,10 @@
-掌握 DeepSeek AI：ChatGpt 挑战者的逐步指南
+# 精通 DeepSeek AI：ChatGpt 挑战者的逐步指南
 
-––––––––
-
-由
-
-––––––––
-
-阿克拉姆·阿克拉姆·曼达尔博士
-
-![](img/mastering-deepseek-ai-image_rsrc125.jpg)
-
-掌握 DeepSeek AI：ChatGpt 挑战者的逐步指南，由 NOBLE HOUSE PRESS 出版。版权所有 © Nobel House Press。未经出版者明确书面许可，本书的任何部分不得以任何形式或任何手段（电子、机械、影印、录音或其他方式）复制、存储或分享。
-
-# 目录
-
-扉页
-
-版权页
-
-献词
-
-前言
-
-引言
-
-第一章：引言 - DeepSeek 现象
-
-第二章：DeepSeek 的独特之处
-
-第三章：DeepSeek 背后的技术
-
-第四章：DeepSeek 与 ChatGpt：比较
-
-第五章：如何在移动和桌面设备上使用 DeepSeek
-
-第六章：DeepSeek-R1 模型及其开源优势
-
-第七章：对全球人工智能和科技产业的影响
-
-第八章：DeepSeek：中国人工智能革命
-
-第九章：DeepSeek 与 ChatGpt 对比
-
-第十章：如何使用 DeepSeek AI：2025 年逐步指南
-
-第十一章：如何用 AI 赚钱
-
-第十二章：结论 - 人工智能竞争的未来
+> 原文：[Mastering DeepSeek AI: Step-by-Step Guide to the ChatGPT Challenger ](https://annas-archive.gl/md5/4d1ffee7df2389a8577cb3b4be2f576d)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # 献词
 

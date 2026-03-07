@@ -1,46 +1,12 @@
 # 使用 ChatGPT 掌握你的品牌语调
 
+> 原文：[Master Your Brand Voice With ChatGPT](https://annas-archive.gl/md5/efc8fd77840212c18ed366de9a0b5aad)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ## 训练 AI 捕捉你的品牌语调进行真实的市场营销和内容创作——包括 50 个有效的额外提示
-
-## S.M. FARNSWORTH
-
-版权所有 © 2025 by S.M. Farnsworth
-
-所有权利保留。
-
-本书的任何部分不得以任何形式或通过任何电子或机械手段（包括信息存储和检索系统）进行复制，除非作者书面许可，但用于书评中的简要引用除外。
-
-# 目录
-
-简介
-
-1\. 理解你的品牌语调
-
-2\. 为什么选择 ChatGPT?
-
-3\. 为你的业务设置 ChatGPT
-
-4\. 训练 ChatGPT 的整体语调
-
-5\. 使用 ChatGPT 撰写博客文章
-
-6\. 制作社交媒体帖子
-
-7\. 创建电子邮件活动
-
-8\. 使用后续提示微调你的品牌语调
-
-9\. 使用 ChatGPT 进行客户服务沟通
-
-10\. 使用 ChatGPT 撰写销售文案
-
-11\. 使用 ChatGPT 扩展你的内容创作
-
-12\. 跟踪和衡量成功
-
-额外章节
-
-50 个针对小型企业主的有效提示
 
 # 简介
 

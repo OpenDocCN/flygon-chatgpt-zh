@@ -1,6 +1,13 @@
-![图片 1](img/mastering-chatgpt-unlocking-ai-powered-assistance-image_rsrc63.jpg)
 
-掌握 ChatGPT：解锁 AI 辅助
+# 精通 ChatGPT：解锁 AI 辅助
+
+> 原文：[Mastering ChatGPT: Unlocking AI-Powered Assistance](https://annas-archive.gl/md5/5c9c8733bc8f397a6c3d51f8eb24516e)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+![图片 1](img/mastering-chatgpt-unlocking-ai-powered-assistance-image_rsrc63.jpg)
 
 如何有效使用 ChatGPT 的全面指南
 

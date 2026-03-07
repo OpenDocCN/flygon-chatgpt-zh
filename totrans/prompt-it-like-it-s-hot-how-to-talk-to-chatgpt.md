@@ -1,26 +1,13 @@
+# 像热恋般与 ChatGPT 对话：如何与它交流
+
+> 原文：[Prompt It Like It’s Hot: How to Talk to ChatGPT](https://annas-archive.gl/md5/20358c36e599d8ac96fcaaeebb3e7297)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
 ![](img/prompt-it-like-it-s-hot-how-to-talk-to-chatgpt-Image00000.jpg)
-
-目录
-
-● 引言：为什么提示很重要
-
-● 第一章：了解 ChatGPT 擅长什么
-
-● 第二章：优秀提示的结构
-
-● 第三章：你可以借鉴的 10 个提示模板
-
-● 第四章：高级提示技巧
-
-● 第五章：常见的提示错误（以及如何修复它们）
-
-● 第六章：提示速查表
-
-● 奖励章节：50 个快速提示想法
-
-● 结论：成为提示大师
-
-● 最终清单：你的提示成功蓝图
 
 # 引言：为什么提示很重要
 

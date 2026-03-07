@@ -1,72 +1,13 @@
+# 精通 ChatGPT：你的从新手到熟练专家之路
+
+> 原文：[Mastering ChatGPT: Your Road from Novice to Skilled Professional ](https://annas-archive.gl/md5/f86ed8da993fb2124b9b5cba65103efd)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![图片](img/mastering-chatgpt-your-road-from-novice-to-skilled-professional-Image00000.jpg)
 
-人工智能聊天机器人简介
-
-理解 ChatGPT 及其功能
-
-设置您的 ChatGPT 账户
-
-理解 ChatGPT 界面
-
-ChatGPT 的基本功能
-
-理解提示
-
-结论
-
-使用 ChatGPT 处理日常任务
-
-异步 JavaScript：Promise 和 Async/Await
-
-与 ChatGPT 一起头脑风暴
-
-ChatGPT 学习指南
-
-结论
-
-ChatGPT 如何处理对话
-
-理解 JavaScript 中的闭包
-
-生成电子邮件和消息
-
-使用 ChatGPT 概括文本
-
-使用 ChatGPT 获取编码帮助
-
-探索 ChatGPT 插件和工具
-
-避免常见的提示错误
-
-提示写作的最佳实践
-
-ChatGPT 用于生产力和规划
-
-使用 ChatGPT 处理商业任务
-
-理解异步 JavaScript
-
-结论
-
-使用 ChatGPT 进行社交媒体操作
-
-微调提示风格
-
-ChatGPT 安全与道德使用
-
-局限性及其解决方案
-
-保存和组织您的聊天记录
-
-GPT 模型的演变
-
-语音和图像输入功能
-
-高级提示技巧
-
-结论
-
-人工智能聊天机器人的未来趋势
 
 # 人工智能聊天机器人简介
 

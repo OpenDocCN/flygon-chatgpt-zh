@@ -1,22 +1,16 @@
+# 三天内精通 ChatGPT
+
+> 原文：[MASTER CHATGPT IN 3 DAYS](https://annas-archive.gl/md5/96c119a7fc19f1b9d6b08f8125a07a69)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![图片](img/master-chatgpt-in-3-days-image_rsrc3PD.jpg)
 
-版权所有 © 2024 by Pablo Tapias Cantos
+![图片](img/master-chatgpt-in-3-days-image_rsrc3PE.jpg)
 
-版权所有。
-
-未经版权所有者书面许可，禁止以任何方式或过程复制本作品的部分或全部，包括影印和计算机处理，以及通过公共租赁或借阅分发副本，法律有规定。
-
-模型：9798391380542
-
-总是保持最新！
-
-扫描二维码加入我们的独家社区。
-
-获取书籍更新，
-
-额外内容和惊喜。
-
-![图片](img/master-chatgpt-in-3-days-image_rsrc3PE.jpg)![图片](img/master-chatgpt-in-3-days-image_rsrc3PF.jpg)
+![图片](img/master-chatgpt-in-3-days-image_rsrc3PF.jpg)
 
 人工智能今日
 

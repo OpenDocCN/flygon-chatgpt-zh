@@ -1,32 +1,12 @@
-掌握 ChatGPT
+# 精通 ChatGPT：解锁 AI 以提高生产力、创造力和成功
 
-解锁 AI 以提高生产力、创造力和成功
+> 原文：[Mastering ChatGPT: Unlocking AI for productivity, creativity and success](https://annas-archive.gl/md5/f82e29dd2acd2d39c7da1f55c66f9ac6)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 人工智能、深度学习、机器学习——无论你在做什么，如果你不理解它——就去学习它。因为否则，你将在三年内变成恐龙。
-
-作者：Mitthun
-
-章节目录
-
-### 1. 欢迎来到未来：理解 ChatGPT
-
-### 2. ChatGPT 101：像专业人士一样开始
-
-### 3. 提示工程的艺术：提出正确的问题
-
-### 4. 生产力超级能力：利用 ChatGPT 进行工作和商业
-
-### 5. 创意伴侣：写作、讲故事和内容创作
-
-### 6. 学习与成长：ChatGPT 作为你的个人导师
-
-### 7. 道德 AI：ChatGPT 的应做与不应做的事
-
-### 8. AI 的未来：ChatGPT 及其超越的未来是什么？
-
-9. AI 协作 - 如何将 ChatGPT 整合到你的日常工作中
-
-### 10. AI 与人类的长期未来：我们接下来去哪里？
 
 第一章：欢迎来到未来 - 理解 ChatGPT
 

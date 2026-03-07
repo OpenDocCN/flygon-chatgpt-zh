@@ -1,40 +1,17 @@
-7 天内掌握 ChatGPT
+# 7 天内精通 ChatGPT
+
+> 原文：[MASTER CHATGPT IN 7 DAYS](https://annas-archive.gl/md5/7557de4755bccdb0bb170798857a9118)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 
 提高你的生产力和快速成功
 
 ![](img/master-chatgpt-in-7-days-image_rsrcUW.jpg)
 
-目录
 
-简介 2
-
-第一天 – 开始使用 ChatGPT4
-
-第二天 – 提示工程基础 9
-
-第三天 – 为高级使用编写有效提示 13
-
-第四天 – 使用 ChatGPT 自动化任务 17
-
-第五天 – 深入探索 ChatGPT 的功能 21
-
-第六天 – 掌握复杂查询 25
-
-第七天 – 使用 ChatGPT 提高生产力和成功 29
-
-结论 – 掌握的开始 33
-
-致谢与资源 35
-
-7 天内掌握 ChatGPT
-
-## 提高你的生产力和快速成功
-
-* * *
-
-作者：Stefano Fanfaroni
-
-* * *
 
 这本指南提供的内容
 

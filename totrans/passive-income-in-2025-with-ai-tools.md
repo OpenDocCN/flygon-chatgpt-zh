@@ -1,4 +1,14 @@
-![](img/passive-income-in-2025-with-ai-tools-Image00000.jpg)**引言**
+# 2025 年的 AI 工具被动收入
+
+> 原文：[Passive Income in 2025 with AI Tools](https://annas-archive.gl/md5/e38a26828c5f2c7ad2eafdf8e8e203b9)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+![](img/passive-income-in-2025-with-ai-tools-Image00000.jpg)
+
+**引言**
 
 2025 年不再是未来——它就在现在。数字经济已经发展，人工智能（AI）不再是遥远的科幻梦想。它是你的个人助理、商业伙伴和赚钱机器——三者合一。这本电子书是指导你将人工智能转化为被动收入的实用指南，无论你的背景或经验如何。
 

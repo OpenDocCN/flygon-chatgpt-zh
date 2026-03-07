@@ -1,42 +1,18 @@
-![](img/mastering-ai-for-beginners-Image00003.jpg)
 
-**人工智能入门精通**
+# 人工智能初学者精通指南
+
+> 原文：[Mastering AI for Beginners:](https://annas-archive.gl/md5/9184dd99d26ef4a2cf2102ae2d13a482)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+![](img/mastering-ai-for-beginners-Image00003.jpg)
 
 青少年和成人学习 ChatGPT、提示写作和未来准备型 AI 工具的实用工作手册
 
 🔍 理解 AI | ✍️ 练习提示 | 🎨 使用 ChatGPT、Canva AI 等创作
 
-作者：Chauhan Vivek
-
-## ✅ 这里是所有内容的最终回顾：
-
-章节页面描述
-
-简介 & 欢迎第 1 页：关于本书目的和使用方法的清晰介绍
-
-什么是 AI？第 2-3 页：AI 的简单分解及其重要性
-
-人工智能的历史与未来第 4-5 页：时间线和未来趋势
-
-人工智能在日常生活中的应用第 6-7 页：青少年和成人可以相关联的实例
-
-如何思考 AI（ML/NLP）第 8-9 页：机器学习、神经网络、提示的介绍
-
-什么是提示？第 10-11 页：如何编写和使用提示的示例
-
-每日提示练习页面第 12-18 页：互动部分，有空间书写
-
-免费 AI 工具 + 链接第 19 页：Canva、ChatGPT、DALL·E、Gemini、Notion AI 等
-
-提示模板（可直接使用）第 20 页：用于学习、内容和工作的复制粘贴提示
-
-构建您的工具包页面第 21 页：个人目标设定、提示列表、工具选择
-
-进度跟踪器第 22 页：记录每周学习
-
-人工智能术语表第 23 页：10+个入门人工智能术语的清晰定义
-
-完成证书第 24 页：带有姓名和日期区域的可打印证书
 
 ## 第 1 页：欢迎来到您的 AI 之旅
 

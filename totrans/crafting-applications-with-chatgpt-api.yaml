@@ -468,6 +468,87 @@
   id: totrans-0
   prefs: []
   type: TYPE_NORMAL
+  zh: '![图片](image-ermfkvwp.jpg) 使用 ChatGPT API 制作应用程序 使用 Python Mike Gold 这本书可在 http://leanpub.com/craftingapplicationswithchatgptinnovatingacrossplatforms
+    购买。本版本于 2023-10-03 发布 ![图片](image-ixx4fu8m.png) *   *   *   *   * 这是 Leanpub 的一本书。Leanpub
+    通过精益出版流程赋予作者和出版商权力。精益出版是通过使用轻量级工具和多次迭代来发布处于进行中的电子书，以获取读者反馈，进行转型，直到拥有正确的书籍，并在成功后建立势头。*   *   *   *   * ©
+    2023 Mike Gold 献给我的妻子：编辑、母亲和最好的朋友  目录 什么是 ChatGPT？为什么使用它？简介背景ChatGPT优势和应用场景本书面向对象动物聊天从哪里开始设置
+    Python 安装 OpenAI 库设计 UI 介绍 Tkinter 用于 GUI 创建 UI 填充 UI 代码 运行应用程序 获取 API 密钥 集成 OpenAI
+    生成图像 从我们的故事生成 PDF 使用 python-dotenv 保护 API 密钥结论创建自己的 Babel Fish介绍库设置创建 Babel Fish
+    Shell 提交（记录）功能分析提交方法记录语音转录语音翻译语音发音三个成分食谱创造者准备好一场史诗般的烹饪冒险！启动我们的烹饪代码之旅激活虚拟厨房准备厨房主页在
+    Flask 中渲染模板 运行应用程序 美化主页在 Flask 中利用 ChatGPT 进行烹饪创造力 generate_recipe 函数解释选择菜系添加食物限制结论谜题书介绍设置虚拟环境用户界面谜题板创建器类将谜题放入图形文件创建
+    PDF 创建整本书 创建 batch_submit 函数 创建书籍 在 UI 中添加按钮结论附录请求审查源代码本书所需的 Python 概念消息结构示例消息获取令牌使用情况 什么是
+    ChatGPT？为什么使用它？简介在技术领域，很少有创新能像 ChatGPT 一样激发如此多的兴奋和潜力。想象一下，在一个机器不仅能理解我们，还能帮助我们创作富有想象力的故事、消除语言障碍和发明美味食谱的世界。这本书是您解锁
+    ChatGPT 独特功能的大门。我们将踏上一段旅程，将熟悉的领域变成一个充满无限可能性的游乐场，使用三个非凡的应用程序。系好安全带，让我们加速进入尚未开发的创造力和功能，利用想象、代码和可能性的协同作用。在接下来的章节中，您将见证尖端人工智能在应用程序开发中的巨大影响。我们将从在桌面应用程序中制作动物之间的彩色对话开始，然后发现如何无缝翻译语言，最后通过一个网络应用程序使用您手头的原料即时生成食谱。这本书是您在这个创新领域的指南。加入我们，在想象力和技术的交汇处，ChatGPT
+    API 将将大胆的想法转化为有形现实。无论您是寻求推动可能性的界限的资深开发者，还是对 AI 驱动的应用程序的未来充满好奇的爱好者，这次激动人心的探险都承诺将重塑我们与计算机的互动方式以及未来的可能性。准备好见证以
+    ChatGPT 为向导和灵感的应用程序开发新时代的曙光。在本章的开头，我们将揭示 ChatGPT 的本质，并探讨其在各个领域应用的令人信服的原因。ChatGPT
+    的背景在现代人工智能的前沿，生成式预训练转换器（GPT）已成为一项重大突破。由 OpenAI，一家领先的研究机构开发，GPT 代表了在自然语言处理（NLP）领域多年研究和创新的结晶。GPT
+    系列模型旨在理解和生成类似人类的文本，有效地弥合了人类沟通和机器理解之间的差距。OpenAI，一家成立于 2015 年的开创性机构，在人工智能领域树立了一座创新的灯塔。致力于为人类福祉推进人工智能，OpenAI
+    一直致力于推动人工智能所能达到的界限。GPT 代表“生成式预训练转换器”，是 OpenAI 的旗舰创新之一，每个版本都建立在其前身成功的基础上。这些模型以其非凡的生成连贯且与上下文相关的文本的能力而著称，从根本上改变了机器处理和生成语言的方式。通过研究论文、工具和
+    API 的民主化，包括备受赞誉的 ChatGPT API，展示了 OpenAI 致力于使开发者、研究人员和爱好者能够以曾经属于科幻小说领域的力量利用 AI。优势和用例ChatGPT
+    的吸引力超越了其技术复杂性，它为各种应用提供了大量有形的好处。以下是人们利用 OpenAI 的 ChatGPT 的力量的一些方式。客户支持和公司正在利用 ChatGPT
+    来彻底改变他们的客户支持系统。从回答查询和故障排除到指导用户通过复杂的过程，ChatGPT 正在重塑客户服务互动。内容生成在内容创作和营销领域，ChatGPT
+    证明是一个无价之宝。它有助于生成吸引人的博客文章、社交媒体内容和营销文案，释放创意资源并加快内容生产。编程在人工智能和编程领域，ChatGPT 作为一项有价值的工具出现，有可能彻底改变编码实践。通过将
+    AI 功能与编码任务无缝融合，ChatGPT 为开发者提供了一系列优势。它可以帮助完成从代码编写和阐明复杂的编程概念到解决编码难题的各种任务。在这样做的同时，ChatGPT
+    满足新手和熟练程序员的需求，营造了一个提高生产力和知识传播的环境。想法ChatGPT 在头脑风暴中的作用在于其激发创造力和拓宽视野的能力。通过利用其语言生成功能，API
+    可以激发独特想法，这些想法可能不会通过传统方法出现。它可以引入非传统的观点并挑战既定的思维模式，丰富您的头脑风暴过程。此外，无论您是在构思新的故事情节、构想视觉杰作、制定战略商业决策，还是通过突破性的创新来改变行业，ChatGPT
+    的适应性见解可以为这些不同领域提供宝贵的见解。将 ChatGPT 集成到您的头脑风暴活动中，使您能够充分利用 AI 驱动的创造力的全部潜力。语言学习ChatGPT
+    作为一种多才多艺的语言伙伴，具有增强词汇、纠正语法和促进互动语言实践的能力。这使得它适合所有水平的学习者。本书面向对象这本书是为那些渴望利用 AI 在日常应用中的变革性力量的好奇
+    minds 而编写的。无论您是希望将 ChatGPT 集成到项目中的新兴开发者，还是希望了解人工智能实用性的技术爱好者，或者只是对技术和想象力的结合感到着迷的人，这本指南都提供了适合所有人的见解。进入一个故事变得生动、语言无缝交织、食谱从简单的原料中产生的世界。不需要
+    AI 的专业知识，只需对探索其无限潜力的热情即可。ChatGPT 提供了数百种创新的可能性，无需再等待。让我们直接进入我们的第一个应用程序：一个基于 Python
+    的讲故事平台。动物聊天![图片](image-c6qx5dvy.png)图 1. 茶话会我们的第一个应用程序的设计以简单为主。我们将从从两个下拉菜单中选择两种动物开始。然后我们将被提示提供对话场景。这可以是任何我们想象的事情，例如两种动物就清理垃圾的责任进行激烈辩论。从哪里开始我们将从为我们的项目准备基础工具开始。首先，我们将向您介绍设置
+    Python 的步骤，Python 是我们应用程序的骨架编程语言。接下来，我们将指导您通过安装 OpenAI 库的过程，这对于将 ChatGPT 的功能集成到我们的应用程序中至关重要。设置
+    Python在我们开始我们的应用程序之前，请确保 Python 已正确安装在您的机器上。我们将提供安装 Python 的分步说明以及任何必要的依赖项，这样您就可以开始编码而不会遇到任何问题。步骤
+    1：下载 Python打开网络浏览器并导航到官方 Python 网站：https://www.python.org/在主页上，找到“下载”选项卡。点击它。步骤
+    2：选择 Python 版本在下载页面上，找到 Python 的最新版本。可能有两个版本可用——Python 2.x 和 Python 3.x。我们建议使用
+    Python 3.x，因为 Python 2.x 已不再积极维护。步骤 3：下载安装程序向下滚动以找到您要安装的版本（例如，Python 3.8、Python
+    3.9）。根据您的操作系统（Windows、macOS 或 Linux），单击相应的下载链接。步骤 4：运行安装程序找到已下载的安装程序文件（在 Windows
+    上应为 .exe 扩展名，在 macOS 上应为 .pkg）。双击安装程序以运行它。步骤 5：配置安装程序在安装窗口中，我们有各种选项。请确保已选中“将 Python
+    x.x 添加到 PATH”选项。这将使您能够从命令行运行 Python 更容易。如果需要，可以自定义安装目录，或将其保留为默认值。单击“现在安装”按钮开始安装过程。步骤
+    6：安装完成一旦安装完成，我们就会看到一个屏幕，表明 Python 已成功安装。我们将关闭安装程序。步骤 7：验证安装打开命令提示符（Windows）或终端（macOS/Linux）。键入：1
+    python --version并按 Enter。我们可以看到我们安装的版本号（例如，Python 3.11.4）。恭喜，Python 已安装！我们现在可以开始用
+    Python 编码，利用其强大的功能了。安装 OpenAI 库为了利用 ChatGPT 的功能，我们需要将 OpenAI 库集成到我们的项目中。我们将指导您安装库并设置必要的身份验证，以实现与
+    ChatGPT API 的无缝通信。在本节结束时，我们将拥有利用 ChatGPT 的语言生成功能将 ChatGPT 集成到讲故事应用程序中的所需工具。在 Python
+    中安装 OpenAI 库是一个简单的过程。以下是操作方法：步骤 1：打开终端或命令提示符对于 Windows：按 Windows 键，搜索“命令提示符”，然后打开它。对于
+    macOS 和 Linux：打开终端应用程序。步骤 2：使用 pip 安装 OpenAI 库在终端或命令提示符中，键入以下命令：1 pip install
+    openai并按 Enter 使用 pip 安装 OpenAI 库，这是 Python 的包管理器。要测试是否安装正确，只需在命令提示符中键入：1 python 在
+    python >>> 提示符下，键入：1 import openai 如果没有任何错误，则表示 openai 已正确安装。键入 ctrl-Z 退出 python。设计
+    UI首先，我们将专注于我们的讲故事应用程序的用户界面（UI）。一个用户友好且视觉上吸引人的界面对于积极的用户体验至关重要。我们将探讨 Tkinter 库，它是
+    Python 中创建图形用户界面（GUI）的流行选择。介绍 Tkinter 用于 GUITkinter 提供了一种简单而强大的方法来创建交互式 GUI 应用程序。我们将介绍
+    Tkinter 的基础知识，包括设置窗口、添加小部件和处理用户交互。在本节结束时，我们将深入了解 Tkinter 的功能以及如何利用它们来完成我们的项目。安装
+    Tkinter要为 Python 安装 TkInter，只需在命令提示符中键入以下命令并按 Enter：1 pip install tk现在我们已准备好创建一个具有用户输入和几个组件的对话框。创建
+    UI为了促进用户交互，我们将实现下拉菜单，允许用户选择他们偏好的动物。我们还将指导您将用户可以定义动物对话背景的输入字段纳入其中。通过结合这些元素，我们将为用户友好的界面奠定基础，使用户能够自定义他们的讲故事体验。创建主窗口现在我们需要导入
+    Tk 库以访问 UI 组件：1 # import toolkit2 import tkinter as tk3 # import the toolkit interface4
+    from tkinter import ttk我们现在已准备好设置应用程序。在 toolkit 中，这意味着构建 toolkit 应用程序并运行事件循环。事件循环是使应用程序保持运行并响应用户交互（如按钮点击）的东西。它将使“动物讨论场景”窗口保持打开状态，直到用户决定关闭它。1
+    import tkinter as tk2 from tkinter import ttk3 4 app = tk.Tk()5 app.title("Animal
+    Discussion Scenario")6 app.mainloop() # 事件循环这段代码将弹出一个空白窗口，直到我们填充其内容：![图片](image-rbixbtw0.png)图
+    9. 空白 Tk 窗口填充 UI 代码在建立主窗口之后，我们现在需要设计 UI 的内部组件。对于动物选择，我们正在创建两个下拉列表，其中包含各种动物名称。此外，我们提供了一个文本输入字段，用户可以在其中撰写动物之间的假设对话。为了最终确定用户的选项，我们还包括了一个“提交”按钮。点击提交将显示用户的选项。在本章的后面，我们将讨论与
+    OpenAI 的集成。请注意，每个组件（标签、组合框、文本和按钮）都具有一个网格方法，它有助于我们布局 UI 控件。![图片](image-101.png)运行应用程序运行我们创建的代码将显示讲故事窗口。让我们试试！首先创建一个名为
+    StoryTelling.py 的新 Python 文件，并将上面的代码粘贴到其中。然后在终端窗口中运行。![图片](image-11.png)1 python
+    -m StoryTelling 这将启动应用程序并自动在下拉菜单中显示默认动物，狮子和大象：![图片](image-12.png)图 12. 初始应用程序屏幕让我们输入狮子和大象的场景，然后点击提交按钮：![图片](image-13.png)图
+    13. 提交后现在，点击提交将在我们创建的结果文本框中显示我们做出的选择。现在我们已准备好采取下一步并集成 OpenAI。获取 API 密钥为了将 OpenAI
+    集成到我们的应用程序中，我们需要权限来调用 OpenAI API。我们通过使用 API 密钥来获取权限，该密钥是从 Open AI 生成的。转到 Open
+    AI 页面并单击获取。我们需要注册才能获取 API 密钥。注册并登录后，单击 API 部分：![图片](image-14.png)图 14. 登录到 ChatGPT注册后，您会注意到浏览器右上角有一个下拉菜单。在这里，我们可以生成或查看现有密钥：![图片](image-15.png)图
+    15. 查看 API 密钥当我们单击“查看 API 密钥”时，我们将看到以下屏幕，它允许我们生成 API 密钥：![图片](image-16.png)图 16.
+    密钥生成我们还可以直接登录后直接访问 API 密钥屏幕。注意：安全地存储密钥的备份并保密。每次 API 调用都会产生费用。费用根据我们使用的语言模型而异。例如，截至本出版物的日期，调用
+    GPT-3.5 Turbo 模型每调用一次的费用为 0.002 美元。我们可以通过在我们的帐户上提供使用限制来保护自己免受爆炸性费用的侵害。![图片](image-17.png)图
+    17. 使用限制集成 OpenAI现在我们已经为创建我们的动物讲故事应用程序创建了一个框架，并且有权调用 OpenAI，让我们创建一个有趣的应用程序，其中两只动物可以就我们选择的任何主题进行聊天。因为我们正在我们的桌面上运行
+    Python，所以可以暂时公开密钥。然后我们将向您展示如何隐藏它！现在，让我们添加对 opening OpenAI 的导入并分配我们的新密钥：1 import
+    openai2 3 # assign your api key4 openai.api_key = ''<place="" span="">your key
+    here>''</place>现在，让我们修改 submit 函数以调用 ChatGPT 并根据提示检索响应。这是真正的兴奋之处。我们将要求 ChatGPT
+    API 创建两个动物——大象和狮子——在茶话会上进行动态对话的对话。主要任务是创建适当的提示，我们将从两个动物的输入参数和所需的交互场景中提取提示。在下面的代码中，我们使用
+    OpenAI 库请求我们的动物对话的聊天完成。我们根据用户输入生成提示，并将其添加到 ChatGPT 的消息集合中进行处理。一旦我们调用 OpenAI 的
+    ChatCompletion 函数，它将在处理完成后返回响应（这可能需要几秒钟）。收到响应后，我们将将其添加到 result_text Tk 组件中。![图片](image-19.png)一些值得注意的事情是
+    OpenAPI 调用的某些参数及其含义。您可以随意调整这些参数以获得不同的结果。指定要使用哪个模型。在这种情况下，“gpt-3.5-turbo”表示您正在使用
+    GPT-3.5 Turbo 版本的模型。模拟对话的消息对象列表。每个消息都有一个“角色”（可以是“系统”、“用户”或“助手”）和“内容”（消息的内容）。模型按顺序读取消息并生成续集。在这种情况下，提示被格式化为用户消息。影响模型响应的随机性。值越高（如
+    1.0）使输出更随机，而值越低（如 0.1）则使输出更确定。在这种情况下，0.8 是一种平衡，允许一些创意而不会太随机。也称为核采样，用于控制随机性。值为
+    1.0 表示在生成响应时考虑所有标记。较低的值（例如 0.9）通过仅采样最可能的标记使输出更集中和更少随机。调整基于标记频率的标记的可能性。正值使模型更有可能使用频繁的标记，而负值则使模型不太可能使用频繁的标记。在
+    0.0 时，不根据频率应用任何惩罚。调整基于标记在上下文中的出现的可能性。正值鼓励模型使用新标记，而负值则阻止模型引入新概念。在这里，0.6 在一定程度上鼓励引入新标记。让我们使用以下命令运行应用程序：![图片](image-20.png)1
+    python -m StoryTelling.py 这将弹出一个对话框，就像我们创建的那样。让我们保留狮子和大象的选择，并选择茶话会场景。点击提交并等待几秒钟。您应该在底部文本中看到以下内容：![图片](image-21.png)图
+    21. 茶话会对话以下是大象和狮子之间生成的完整对话。大象和狮子的对话当然我们可以根据需要调整场景。让我们让大象不小心把茶洒在狮子的腿上。![图片](image-23.png)以下是
+    ChatGPT 完全生成的包括洒茶的对话：![图片](image-24.png]狮子：啊，这是一个多么愉快的茶话会！大象：确实，氛围相当迷人。狮子：小心不要洒了你的茶，大象。大象：别担心，狮子，我的长鼻子可以确保稳固的握住。狮子：我很高兴听到这一点。这茶很美味，你不这么认为吗？大象：绝对如此，狮子。这种混合物简直是神圣的。狮子：哦，不！我非常抱歉，大象，我把茶洒在你身上了。大象：没关系，狮子。意外总是难免的，这只是点茶。狮子：我还是感到非常抱歉。让我帮你清理一下。大象：那不是必要的，狮子。这只是一个小小的意外。狮子：谢谢你这么理解，大象。你真是一个亲切的朋友。当然，狮子警告大象不要洒他的茶，但然后他自己却洒在了大象身上！滚动另一个我们需要添加到
+    UI 中的功能是结果可以垂直滚动，这样用户就可以阅读完整的剧本。我们首先向应用程序中添加一个滚动条小部件：![图片](image-25.png]现在我们需要将滚动条放置在我们定义的网格布局中：![图片](image-26.png]滚动条小部件放置在应用程序小部件的网格布局中，在第
+    4 行和第 3 列。sticky=''ns'' 参数确保滚动条垂直填充其分配的网格单元。接下来，当我们在 result_text 中构建时，我们需要将 result_text
+    小部件内容的垂直移动与滚动条的 y 位置链接：![图片]('
 - en: ''' + dialog_text 26   dialog_text = dialog_text . replace ( '' \n '' , 27               '''
   id: totrans-1
   prefs: []
@@ -1643,6 +1724,156 @@
   id: totrans-4
   prefs: []
   type: TYPE_NORMAL
+  zh: ''' ) 38   `styles` = `getSampleStyleSheet()` 39   `paragraph` = `Paragraph`(
+    `puzzle_word_text`, `styles[ ''Normal'' ]`) 40   `contents`.append( `paragraph`)
+    41   42   43   # Build the PDF 44   `doc`.build( `contents`)  When we hit the
+    create pdf button, it runs the create_pdf function above and compiles together
+    the theme name, the generated theme picture, the puzzle and the list of puzzle
+    words into output.pdf and it produces the single page puzzle sheet shown below. ![](image-imrv4k6d.png)Figure
+    149\. Word Search in a pdf file Creating an Entire Book We now have all the pieces
+    available to create an entire word search book. What we’ll do is use the strategy
+    of two levels of indirection. We’ll use ChatGPT to generate a list of 10 topics
+    from our theme and then we’ll take those 10 topics and produce 10 puzzles, a puzzle
+    on each page of the book. Note this can easily be scaled out to 100 pages by asking
+    ChatGPT for more topics, but we’ll keep it small for the purpose of understanding
+    how this can all be done. Creating a batch_submit Function The goal of this project
+    is to ultimately create a 10-page puzzle book based on a particular theme. We’ll
+    pick the theme from the dropdown, but after that, we’ll use ChatGPT to produce
+    topics from that theme. Then we’ll loop through the topics and create puzzles.
+    We’ve already written all the code for doing the puzzle creation, we just need
+    to save the path of each puzzle image as we progress, as well as the path of the
+    theme image, and the list of puzzle words. The strategy here will be to have three
+    arrays that will remember everything we generate. When we are finished generating
+    all the components of every page of our books, we’ll send the whole thing to a
+    create_book function which will produce our entire book in a pdf file. The book
+    will be complete with page numbers as well as the topic of the theme listed in
+    the header. As stated, the batch_submit function is designed to automate the process
+    of generating word search puzzles based on themes and to compile these into a
+    book. Below is a step-by-step explanation of what the function does: Initializes
+    empty lists to store words for puzzles, images related to themes, images of puzzles,
+    and puzzle descriptions. Fetching Sets a wait cursor (indicating a loading state
+    in the UI), retrieves a selected theme from the combo box, and constructs a prompt
+    to request a list of 40 words related to this theme. First OpenAI Sends a message
+    to OpenAI’s GPT-3.5 Turbo with the constructed prompt to get a comma-delimited
+    list of 40 words related to the initial theme. Words Retrieval and Retrieves and
+    prints the response, then splits and cleans it into a list of words (topics).
+    Only 10 cleaned, viable words are selected from this list. Iterative Puzzle For
+    each topic in the cleaned list: Saving Saves the current topic as a puzzle description.
+    Subsequent OpenAI Calls: Constructs a new prompt with the current topic and gets
+    a new list of 40 words related to this topic using another OpenAI call. Words
+    Retrieves, splits, cleans, and selects words from the response, creating and displaying
+    a word search puzzle with these words, and updating the UI elements with the retrieved
+    words and created puzzle. Image Generation and Generates and displays images related
+    to the current topic, copying them to specific paths and storing these paths in
+    the lists initialized earlier. Book Creation: After iterating through all topics,
+    calls the create_book function with the lists of words, theme images, puzzle images,
+    and puzzle descriptions as arguments to compile and generate a book of word search
+    puzzles. batch_submit automates the process of creating word search puzzles. For
+    a given theme, it fetches related words using OpenAI, generates word search puzzles,
+    retrieves and stores images for each puzzle and theme, and finally compiles these
+    elements into a book. Each step involves interactions with the user interface,
+    file system, and OpenAI’s GPT-3.5 Turbo API. Figure 150 1 def batch_submit ():  2   `puzzle_words_list`
+    = []  3   `theme_images_list` = []  4   `puzzle_images_list` = []  5   `puzzle_descriptions`
+    = []  6  7   `set_wait_cursor()`  8   `theme` = `combo1.get()`  9 10   `prompt`
+    = f "Create a comma delimited \ 11        list of 40 words having to do \ 12        with
+    the theme { theme } . None of \ 13        the words in the list \ 14        should
+    repeat \n " 15 16   `messages` = [{ ''role'' : ''user'' , 17         ''content''
+    : prompt }] 18 19   `response` = `openai.ChatCompletion.create`( 20     model
+    = "gpt-3.5-turbo" , 21     messages = messages , 22     temperature = 0.8 , 23     top_p
+    = 1.0 , 24     frequency_penalty = 0.0 , 25     presence_penalty = 0.6 , 26   )
+    27 28   print( `prompt`) 29 30   # retrieve the list of words 31   # created by
+    ChatGPT 32   `chatGPTAnswer` = `response[ "choices" ][ 0 ][ "message" ]`[ "content"
+    ] 33   print( `chatGPTAnswer`) 34   # split the comma delimited list 35   # of
+    words into a list 36   `topics` = `chatGPTAnswer.split( '','')` 37   # pick out
+    a list of 10 viable words 38   `topics` = `clean_words( topics)`  39   print(
+    `topics`) 40   41   # now create a list of words 42   # from each of those words
+    43   for topic in topics : 44     print( `topic`) 45     # save puzzle description
+    46     `puzzle_descriptions`.append( `topic`) 47 48     `prompt` = f "Create a
+    comma delimited list of 52       40 words having to do with the theme 53       {
+    topic } . None of the words in the 54       list should repeat \n " 49     `messages`
+    = [{ ''role'' : ''user'' , ''content'' : 50             prompt }] 51     `response`
+    = `openai.ChatCompletion.create`( 52       model = "gpt-3.5-turbo" , 53       messages
+    = messages , 54       temperature = 0.8 , 55       top_p = 1.0 , 56       frequency_penalty
+    = 0.0 , 57       presence_penalty = 0.6 , 58     ) 59 60     print( `prompt`)
+    61 62     # retrieve the list of words created 63     # by ChatGPT 64     `chatGPTAnswer`
+    = `response[ "choices" ][ 0 ][ "message" ]`[ "content" ] 65     print( `chatGPTAnswer`)
+    66     # split the comma delimited 67     # list of words into a list 68     `words`
+    = `chatGPTAnswer.split( '','')` 69     # pick out a list of 10 viable words 70     `words`
+    = `clean_words( words)`  71     print( `words`) 72 73     # create word search
+    puzzle array 74     # from words 75     ( `board`, `words_to_remove`) = `puzzle_board_creator.create_word_search(
+    words)` 76     # remove words that could not be placed 77     `words` = [ word
+    for word in words 78           if word not in 79            `words_to_remove`
+    ] 80     `puzzle_words_list`.append( '', ''.join( words)) 81     # show the board
+    on the console 82     `puzzle_board_creator.display_board( board)` 83     `label_puzzle_words.config(
+    text = '', ''.join(words))` 84     # make result_text scrollable 85     `result_text.config(
+    state = "normal")` 86 87     # Clear any previous results 88     # and insert
+    the new result 89     `result_text.delete( 1.0, tk.END)` 90     `result_text.insert(
+    tk.END, chatGPTAnswer)` 91     `result_text.config( state = "disabled")` 92 93     #
+    generates a cartoon image of the theme 94     `image_url` = `generate_image( topic)`
+    95 96     # creates a grid of letters into an 97     # image for the puzzle 98     `create_grid_of_letters_image(
+    board)` 99 100     # add topic image to the 101     # topic image list   102     `display_image_from_url(
+    image_holder, 103                image_url)` 104     `dest_theme_image_path` =
+    `copy_image( pil_image_path, topic)` 105     `theme_images_list`.append( `dest_theme_image_path`)
+    106 107     # add puzzle image to puzzle image list 108     `display_image_from_path(
+    puzzle_holder, 109                puzzle_image_path)` 110     `dest_puzzle_image_path`
+    = `copy_image( puzzle_image_path, topic)` 111     `puzzle_images_list`.append(
+    `dest_puzzle_image_path`) 112 113     `puzzle_holder.config( width = 600, 114        height
+    = 600)` 115     `set_normal_cursor()` 116 117   # create entire book into a pdf
+    118   `create_book( puzzle_words_list, 119         theme_images_list, 120         puzzle_images_list,
+    121         puzzle_descriptions)` Once we’ve collected batches of topic images,
+    puzzle images, and puzzle key lists, we have everything we need to create our
+    book. Creating the Book The batch_submit function concludes by calling create_book
+    with generated content. create_book iteratively forms pages using the content
+    at corresponding indices from four arrays: puzzle_word_list, theme_images_list,
+    puzzle_image_list, and puzzle_descriptions. These arrays respectively contain
+    puzzle topics, related images, puzzle images, and keywords to be found in each
+    puzzle. The function processes these inputs to create a PDF book of word search
+    puzzles, each page showcasing a distinct puzzle with its related content. Below
+    is a breakdown of the create_book method: Initial It first checks if any of the
+    input lists are empty and whether all lists are of the same length. If not, it
+    shows an error message and exits the function. PDF After looping through all sets,
+    it builds and saves the PDF document. If successful, it shows a success message.
+    If an error occurs during this process, it catches the exception and displays
+    an error message. In essence, the function is creating a PDF book where each page
+    is dedicated to a word search puzzle with its associated images and words, formatted
+    and organized neatly for the reader. Figure 151 1 from reportlab.platypus import  2  SimpleDocTemplate
+    ,  3  Paragraph , Image as ReportLabImage ,  4  PageBreak ,  5  Spacer , Table
+    , TableStyle  6  7 def create_book ( puzzle_words_list ,  8        theme_images_list
+    ,  9        puzzle_images_list , 10        puzzle_descriptions ): 11  try : 12    print(
+    "creating the book...") 13    if not all ([ puzzle_words_list , 14     theme_images_list
+    , puzzle_images_list , 15     puzzle_descriptions ]): 16     `messagebox.showerror(
+    "Error", "Please provide non-empty lists \ 19        of puzzle words, \ 20        theme
+    images, puzzle images, \ 21        and puzzle descriptions!")` 22      return
+    23 24    if not len ( puzzle_words_list ) == 25        len ( theme_images_list
+    ) == 26        len ( puzzle_images_list ) == 27        len ( puzzle_descriptions
+    ): 28      `messagebox.showerror( "Error", "All input lists must be \ 31         of
+    the same length!")` 32      return 33 34    # prepare the 6x9 template 35    custom_page_size
+    = ( 6 * 72 , 9 * 72 ) 36    custom_margins = 0.5 * 72 37    `doc` = `SimpleDocTemplate(
+    "output.pdf", 38         pagesize = custom_page_size , 39         topMargin =
+    custom_margins , 40         bottomMargin = custom_margins , 41         leftMargin
+    = custom_margins , 42         rightMargin = custom_margins )` 43         44    `styles`
+    = `getSampleStyleSheet()` 45    `contents` = [] 46 47    headline_style = `styles[
+    ''Heading1'' ]` 48    normal_style = `styles[ ''Normal'' ]` 49 50    for i in
+    range ( len ( puzzle_words_list )): 51      header_data = [[ Paragraph ( f " 52      {
+    puzzle_descriptions [ i ]} ", 53              styles [ ''Normal'' ]), 54      Paragraph
+    ( f " { i + 1 } " , 55            styles [ ''Normal'' ])]] 56 57      # Create
+    a table for the header with 58      # spacer on the left, topic in the 59      #
+    middle, and page number 60      # on the right 61      margin_offset = 1 * 72
+    62      header_data = [[ '''' , 63 64        Paragraph ( f "Topic: { 65          puzzle_descriptions
+    [ i ] } " ,   66          styles [ ''Normal'' ]), 67 68        Paragraph ( f "Page
+    { i + 1 } " , 69              styles [ ''Normal'' ])]] 70 71      header_table
+    = Table 72        ( header_data , 73         colWidths = [         74             margin_offset
+    , 4 * 72 , 75             2 * 72 76              ] 77        ) 78 79      header_table
+    . setStyle ( 80        TableStyle ([ 81         ( ''ALIGN'' , ( 1 , 0 ), 82         (
+    2 , 0 ), ''RIGHT'' ), 83          ]) 84        ) 85 86      contents . append
+    ( header_table ) 87      # Add some space between header 88      # and content
+    89      contents . append ( Spacer ( 1 , .5 * 72 )) 90 91      img1 = ReportLabImage
+    ( 92        theme_images_list [ i ], 93        width = 1.5 * inch , height = 1.5
+    * inch ) 94      contents . append ( img1 ) 95 96      contents . append ( Spacer
+    ( 1 , .25 * 72 )) 97 98      img2 = ReportLabImage ( 99        puzzle_images_list
+    [ i ], 100        width = 4 * inch , 101        height = 4 * inch ) 102      contents
+    . append ( img2 ) 103 104      contents . append ( Spacer ( 1 , .25 * 72 )) 105
+    106      puzzle_word_text = '''
 - en: ''' + 107             puzzle_words_list [ i ] 108      puzzle_word_text = puzzle_word_text
     109          . replace ( '' \n '' , '''
   id: totrans-5
@@ -1857,3 +2088,81 @@
   id: totrans-6
   prefs: []
   type: TYPE_NORMAL
+  zh: ''' ) 110      段落 = 段落 ( 111        拼图单词文本 , 112        正常样式 ) 113      内容 .
+    添加 ( 段落 ) 114 115      # 在页面末尾添加分页符 116      # 如果我们不在最后一页 117      if i < len
+    ( 拼图单词列表 ) - 1 : 118        内容 . 添加 ( 分页符 () ) 119 120    # 将内容编译成PDF 121    doc
+    . 构建 ( 内容 ) 122    消息框 . 显示信息 ( "PDF 创建" , 123        "PDF 创建成功！" ) 124 125  except
+    Exception as e : 126    消息框 . 显示错误 ( "错误" , 127         f "创建PDF时出错: { e } " )  添加按钮到UI 剩余的任务是添加一种调用批量提交的方法，以便我们可以创建我们的书籍。在这里，我们简单地添加了一个名为“创建书籍”的新按钮，位于提交按钮之后。我们还需要调整布局，以确保一切排列正确： 图1521
+    app = tk . Tk () 2 app . 标题 ( "单词拼图书籍" ) 3 4 5 # 第一个动物的标签和ComboBox 6 标签1 = ttk
+    . 标签 ( app , 文本 = 7 "选择一个拼图主题 \ 8           ：" ) 9 标签1 . 网格 ( 列 = 0 , 行 = 0 ,
+    padx = 10 , pady = 5 ) 10 组合框1 = ttk . Combobox ( 11   app , values = [ "假日" ,
+    "科学" , "旅行" , 12   "AI" , "汽车" , "食物" , "娱乐" , 13   "体育" , "太空" , "工作" , 14   "学校"
+    , "动物" , "自然" , 15   "艺术" , "音乐" , 16   "电影" , "书籍" , "历史" , "数学" ,  17   "地理"
+    , "天气" , "时尚" , 18   "健康" , "家庭" , "金钱" , 19   "政治" , "宗教" , 20   "技术" , "游戏"
+    , 21   "商业" , "犯罪" , "法律" , "医学" , 22   "心理学" , "语言" , "文化" , 23   "关系" , "社交媒体"
+    , "新闻" , 24   "购物" , "交通" , 25   "建筑" , "设计" , "园艺" , 26   "爱好" , "幽默" , "文学"
+    , 27   "哲学" , "摄影" , 28   "写作" , "其他" ]) 29 组合框1 . 网格 ( 列 = 1 , 行 = 0 , padx =
+    10 , pady = 5 ) 30 组合框1 . 设置 ( "假日" ) 31 32 # 提交详细信息的按钮 33 提交按钮 = ttk . 按钮 ( app
+    , 文本 = "提交" , 34         命令 = 提交 ) 35 提交按钮 . 网格 ( 列 = 0 , 行 = 3 , padx = 10 ,
+    pady = 20 ) 36 37 # 提交详细信息的按钮 38 创建书籍按钮 = ttk . 按钮 ( app , 39  文本 = "创建书籍" , 命令
+    = 批量提交 ) 40 创建书籍按钮 . 网格 ( 列 = 2 , 行 = 3 , padx = 10 , pady = 20 ) 41 42 # 使其可滚动
+    43 # 创建滚动条小部件 44 滚动条 = tk . 滚动条 ( app ) 45 滚动条 . 网格 ( 行 = 4 , 列 = 3 , sticky =
+    ''ns'' ) 46 47 # 显示结果的文本小部件 48 结果文本 = tk . 文本 ( app , 宽度 = 50 , 高度 = 10 , 49            wrap
+    = tk . WORD , 50            yscrollcommand = 滚动条 . 设置 ) 51 结果文本 . 网格 ( 列 = 0 ,
+    行 = 4 , rowspan = 1 , 52         列span = 4 , padx = 10 , pady = 10 ) 53 结果文本 .
+    配置 ( 状态 = "禁用" ) 54 # result_text.pack(expand=True, fill=tk.BOTH) 55 56 图片持有者
+    = tk . 标签 ( app ) 57 图片持有者 . 网格 ( 列 = 0 , 行 = 5 , columnspan = 2 , 58          padx
+    = 10 , pady = 10 ) 59 60 拼图持有者 = tk . 标签 ( app ) 61 拼图持有者 . 网格 ( 列 = 5 , 行 = 0
+    , rowspan = 7 ,  62          padx = 2 , pady = 2 ) 63 64 标签键标题 = ttk . 标签 ( app
+    , 65               文本 = "拼图单词" ) 66 标签键标题 . 网格 ( 列 = 5 , 行 = 6 , padx = 10 , 67           pady
+    = 5 ) 68 69 标签拼图单词 = ttk . 标签 ( app , 文本 = "" ) 70 标签拼图单词 . 网格 ( 列 = 5 , 行 = 7
+    , 71              padx = 10 , pady = 10 ) 72 73 # 提交详细信息的按钮 74 创建PDF按钮 = ttk .
+    按钮 ( 75   app , 文本 = "创建Pdf" , 76   命令 = lambda : 77    create_pdf ( 标签拼图单词 [
+    ''text'' ])) 78 创建PDF按钮 . 网格 ( 列 = 1 , 行 = 3 , padx = 10 , pady = 20 ) 79 80 滚动条
+    . 配置 ( 命令 = 结果文本 . yview ) 81 82 83 # 将滚动条链接到文本小部件 84 # (这样滚动条就知道如何滚动 85 # 文本小部件)
+    86 87 88 app . 主循环 ()  这种新的布局产生了以下应用程序屏幕： ![](image-7x140yo8.png)图1521 新布局的UI 让我们按下“创建书籍”按钮，看看会发生什么。生成假日主题的书籍可能需要一点时间，但最终你将拥有一本10页的拼图书籍！以下是生成的假日主题书籍的一页示例： ![](image-q8mc6fzm.png)图1524
+    假日拼图书籍的一页 结论 总之，通过使用ChatGPT生成主题和单词列表来制作PDF单词搜索书籍，是游戏开发的下一个前沿。我们使用Python强大的拼图创建和组装功能，结合ReportLab创建PDF书籍。这种方法简化了各种有趣内容的制作，并为拼图爱好者提供了独特的价值主张。现在我们已经找到了生成完整可行产品的办法，你可能想考虑出售你创建的内容！对于货币化，一个战略性的举措是利用像亚马逊的Kindle
+    Direct Publishing (KDP)和LeanPub这样的平台。亚马逊的KDP允许简单的自我出版，为全球的亚马逊客户提供访问权限。你可以设置价格，从每次购买中获得版税，并保留对权利的控制。凭借亚马逊的广泛影响力，你的单词搜索书籍可以增加可见性，提高其销售潜力。另一方面，LeanPub提供了一个专门为作者设计的平台，你可以迭代发布，与读者互动并接收反馈，这使你能够不断改进书籍。LeanPub还提供有利的版税率，并允许你发布电子书和印刷版。从具有竞争力的价格点开始，也许提供初始折扣或捆绑销售可以刺激初始销售。利用社交媒体和其他数字营销策略在不同平台上推广书籍，可以进一步提高可见性和销量。请记住考虑法律和道德方面，确保通过AI生成的内容销售所需的必要权利，并遵守每个平台的政策和指南。 附录 审阅请求 我们希望您喜欢探索本书中ChatGPT的应用。您的反馈意义重大！如果“使用ChatGPT
+    API构建应用程序”对您有所帮助，请花点时间分享您的体验。您的推荐不仅有助于获得见解，还能指导其他爱好者在掌握ChatGPT API方面的追求。请在此链接下留下评论： https://www.amazon.com/Crafting-Applications-ChatGPT-API-Python/dp/B0CHL7H186 源代码 所有书籍项目的源代码——故事讲述应用程序、翻译应用程序和食谱创建网站——都位于github。您可以在此处克隆git存储库并运行应用程序。可能需要进行一些设置，例如安装Python库。每个章节中都有Python库安装说明。 https://github.com/microgold/ChatGPTAPIBook 本书所需的Python概念 我们在这本书中不使用很多高级Python。以下是您需要复习的Python语言结构，以便遵循本书中的示例。 导入：Python工具集的入口 在Python中，导入允许您从另一个脚本或库中引入预存在的函数、类或变量，使它们可用于您的程序。 图155 1
+    import math 2 print ( math . sqrt ( 16 ))  # 这将打印 "4.0"  为了保持组织结构，您还可以导入特定的函数。在下面的代码中，我们从math库中导入sqrt函数： 图156 1
+    from math import sqrt 2 print ( sqrt ( 16 ))  # 这也将打印 "4.0"  Python中的变量赋值 在Python中，变量不需要显式声明以保留内存空间。当您将值分配给变量时，声明会自动发生。等号用于将值分配给变量。 图157 1
+    # 将值分配给变量 2 my_variable = 10 3 name = "Alice" 4 pi = 3.141592653589793  在上面的示例中： my_variable
+    被分配了整数值 10\.name 被分配了字符串值 "Alice"。pi 被分配了约 3.141592653589793 的浮点值。 Python的作用域：关注变量的可见性“ 变量作用域决定了变量可以访问的程序部分。Python中变量的基本作用域如下： 局部作用域（局部变量）封装作用域（嵌套函数最近封装作用域中的变量）全局作用域（全局变量）内置作用域（预定义的内置模块中的名称） 1\.
+    局部作用域： 在函数内部定义的变量被称为局部作用域。它们只能在函数内部访问，不能在外部访问。 图158 1 def local_example (): 2   local_variable
+    = "我是局部的" 3   print ( local_variable ) 4 5 local_example ()  # 打印：我是局部的 6 # print(local_variable)
+    # 取消注释此行将引发错误  2\. 封装作用域： 在嵌套函数的情况下，外部函数中的变量对内部函数是可访问的，反之则不然。 图159 1 def outer_function
+    (): 2   outer_variable = "我在外部函数中" 3   4   def inner_function (): 5     print
+    ( outer_variable ) 6   7   inner_function ()  # 这将打印：我在外部函数中 8 9 outer_function
+    ()  3\. 全局作用域： 在所有函数外部声明的变量被称为全局作用域。只要我们告诉Python我们打算引用变量的全局版本，它们就可以在程序体中的所有函数中被访问。 图160 1
+    global_variable = "我是全局的" 2 3 def function_example (): 4   print ( global_variable
+    )  # 这将打印：我是全局的 5 6 function_example ()  要在函数内部修改全局变量，必须使用global关键字。 图161 1 counter
+    = 0 2 3 def increment_counter (): 4   global counter 5   counter += 1 6 7 increment_counter
+    () 8 print ( counter )  # 打印：1  4\. 内置作用域： 这些是始终在命名空间中可用的名称。例如，print()、id()等函数和int、float等数据类型都是内置作用域的一部分。 列表：你的灵活朋友 Python中的列表是灵活的，可以存储有序集合的项，这些项可以是任何类型。以下我们创建了一个水果列表，并向其中添加了一个日期。 图162 1
+    fruits = [ "apple" , "banana" , "cherry" ] 2 fruits . append ( "date" ) 3 print
+    ( fruits )  # [''apple'', ''banana'', ''cherry'', ''date'']  要访问列表项，请参考其索引： 图163 1
+    print ( fruits [ 0 ])  # ''apple''  字典：一本开放的书 在Python中，字典是一个无序集合，它将数据存储为键：值对。与只存储每个元素一个值的结构不同，字典允许我们将唯一的键映射到值，键可以是任何不可变类型（如字符串、数字或元组），值可以是任何类型，可以重复。 字典的主要特征如下： 字典中的项没有特定的顺序。字典可以在创建后进行修改。字典中的索引项不能通过位置访问，而是通过键访问。 从字典中读取值： 要访问字典中的值，请引用其键： 图164 1
+    # 定义字典 2 person = { 3   "name" : "Alice" , 4   "age" : 30 , 5   "city" : "New
+    York" 6 } 7 8 # 使用键访问值 9 print ( person [ "name" ])  # 输出：Alice  您还可以使用get()方法，它提供了一种在键不存在时设置默认值的方式： 图165 1
+    print ( person . get ( "name" ))  # 输出：Alice 2 print ( person . get ( "country"
+    , "USA" ))  # 输出：USA 3                   #(默认值， 4                   # 因为 ''country''
+    5                   # 键不在字典中)  检查键是否存在： 在访问键之前，通常最好检查它是否存在于字典中，以防止错误： 图166 1 if
+    "name" in person : 2   print ( f "Name is { person [ ''name'' ] } " ) 3 else :
+    4   print ( "Name not found" )  遍历字典： 要遍历字典中的键和值，可以使用for循环： 图167 1 for key , value
+    in person . items (): 2   print ( f " { key } : { value } " )  元组：列表不可变表亲 元组与列表类似，但其值在赋值后不能修改。它们用于存储不应更改的数据。 图168 1
+    coordinates = ( 4.0 , 5.0 )  元组也很有用，当你想从一个函数中返回多个值时。 图169 1 def rectangle_properties
+    ( length , width ): 2   area = length * width 3   perimeter = 2 * ( length + width
+    ) 4   5   # 作为元组返回面积和周长 6   return ( area , perimeter )  函数：可重用代码块 函数是可重用的代码块。它们在通过名称调用时执行，可以接受参数并返回数据。我们在代码示例中使用它们，以便使示例代码更易于阅读和重用。 图170 1
+    def greet ( name ): 2   return f "Hello, { name } !" 3 4 print ( greet ( "Alice"
+    ))  # Hello, Alice!  使用条件语句进行决策 使用if、elif和else，可以根据某些条件运行不同的代码块： 图171 1 def check_number
+    ( number ): 2   if number > 0 : 3     return "Positive" 4   elif number < 0 :
+    5     return "Negative" 6   else : 7     return "Zero" 8 9 print ( check_number
+    ( 5 ))  # Positive  循环：以风格迭代 Python中有两种主要的循环类型：for和while。for循环通常用于已知迭代次数的情况： for循环 图172 1
+    fruits = [ "apple" , "banana" , "cherry" , "date" , 2      "elderberry" ] 3 4
+    for fruit in fruits : 5   print ( fruit )  输出： 图173 1 apple 2 banana 3 cherry
+    4 date 5 elderberry  while循环 while循环，另一方面，用于未知迭代次数的情况： 图174 1 count = 3 2 while
+    count > 0 : 3   print ( count ) 4   count -= 1  提供的Python代码的输出为： 图175 1 3 2 2
+    3 1 循环开始时，count等于3。在循环的每次迭代中，打印count的值，然后将其减1。只要count大于0，循环就会继续。 总结 这些基本的Python概念为利用ChatGPT
+    API的强大功能并构建健壮的应用程序奠定了基础。随着本书的进展，您看到了这些概念在现实世界场景中的应用，提供了一种动手学习和实施的方法。 消息结构 OpenAI
+    ChatCompletion期望请求具有特定的消息结构。以下是该消息详细信息的概述。 消息中的角色 以下角色由API使用：“系统”、“用户”和“助手”。 此角色通常在对话开始时提供高级指令。例如，系统消息可能设置助手在对话开始时的行为：{"role":"system","content":"你是一个有用的助手。"}。 代表对话中的最终用户或开发者输入。它是模型响应的查询或问题：{"role":"user","content":"告诉我一个笑话。"}。 代表对话中的模型响应。当你从API收到回复时，包含助手角色的消息包含模型的输出：{"role":"assistant","content":"为什么鸡过马路？为了到达另一边！"}。 如果你想让OpenAI在对话中以某种特定方式行事，你可以在消息中使用系统角色： 消息中的内容 内容是提示的精髓。在这里，你想要构建提示以实现你的应用程序。 示例消息 图176 1
+    messages = [ 2   {"role":"system","content":"你是一个作家，以爱伦·坡的风格回答。"}, 3   {"role":"user","content":"为我写一首关于悲伤幽灵的非常短的诗。"},
+    4 ]  获取令牌使用情况 您还可以从API调用的响应中提取令牌使用情况，以跟踪您使用了多少令牌。 图177'

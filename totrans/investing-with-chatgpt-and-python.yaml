@@ -8924,251 +8924,309 @@
   id: totrans-1550
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本书的最后一部分，我们将探讨如何使用AI，特别是ChatGPT，来设计有效的交易工具。我们将研究开发跟踪股票、生成信号和自动进入或退出头寸的工具。我们将以一个使用ChatGPT设计工具的实用示例结束，随后进行测试以验证其操作。
 - en: Develop Value Monitoring Tools
   id: totrans-1551
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 开发价值监控工具
 - en: Stock tracking is a crucial step for traders wishing to monitor the performance
     of stocks, cryptocurrencies, or other financial assets in real time. ChatGPT can
     help develop scripts and applications to track these stocks efficiently.
   id: totrans-1552
   prefs: []
   type: TYPE_NORMAL
+  zh: 股票跟踪是希望实时监控股票、加密货币或其他金融资产表现的交易者的重要步骤。ChatGPT可以帮助开发高效的跟踪这些股票的脚本和应用程序。
 - en: '1\. Real-time data collection :'
   id: totrans-1553
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: '1. 实时数据收集 :'
 - en: To track stocks in real time, it's necessary to retrieve up-to-date market data.
     This can be done using APIs such as those from Yahoo Finance for equities, or
     Binance for cryptocurrencies.
   id: totrans-1554
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了实时跟踪股票，需要检索最新的市场数据。这可以通过使用Yahoo Finance的股票API或Binance的加密货币API来完成。
 - en: 'Example with Yahoo Finance (yfinance):'
   id: totrans-1555
   prefs: []
   type: TYPE_NORMAL
+  zh: '使用Yahoo Finance (yfinance) 的示例 :'
 - en: import yfinance as yf
   id: totrans-1556
   prefs: []
   type: TYPE_NORMAL
+  zh: import yfinance as yf
 - en: import time
   id: totrans-1557
   prefs: []
   type: TYPE_NORMAL
+  zh: import time
 - en: 'def follow_stock(symbol):'
   id: totrans-1558
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def follow_stock(symbol):'
 - en: 'while True:'
   id: totrans-1559
   prefs: []
   type: TYPE_NORMAL
+  zh: 'while True:'
 - en: data = yf.download(symbol, period='1d', interval='1m')
   id: totrans-1560
   prefs: []
   type: TYPE_NORMAL
+  zh: data = yf.download(symbol, period='1d', interval='1m')
 - en: print(data.tail(1))
   id: totrans-1561
   prefs: []
   type: TYPE_NORMAL
+  zh: print(data.tail(1))
 - en: 'time.sleep(60) # Wait one minute before retrieving new data'
   id: totrans-1562
   prefs: []
   type: TYPE_NORMAL
+  zh: 'time.sleep(60) # 等待一分钟以获取新数据'
 - en: Follow Apple shares in real time
   id: totrans-1563
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 实时跟踪苹果股票
 - en: follow_stock('AAPL')
   id: totrans-1564
   prefs: []
   type: TYPE_NORMAL
+  zh: follow_stock('AAPL')
 - en: 'Example with Binance (ccxt) :'
   id: totrans-1565
   prefs: []
   type: TYPE_NORMAL
+  zh: '使用Binance (ccxt) 的示例 :'
 - en: import ccxt
   id: totrans-1566
   prefs: []
   type: TYPE_NORMAL
+  zh: import ccxt
 - en: import time
   id: totrans-1567
   prefs: []
   type: TYPE_NORMAL
+  zh: import time
 - en: 'def follow_crypto(symbol):'
   id: totrans-1568
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def follow_crypto(symbol):'
 - en: exchange = ccxt.binance()
   id: totrans-1569
   prefs: []
   type: TYPE_NORMAL
+  zh: exchange = ccxt.binance()
 - en: 'while True:'
   id: totrans-1570
   prefs: []
   type: TYPE_NORMAL
+  zh: 'while True:'
 - en: ticker = exchange.fetch_ticker(symbol)
   id: totrans-1571
   prefs: []
   type: TYPE_NORMAL
+  zh: ticker = exchange.fetch_ticker(symbol)
 - en: print(ticker)
   id: totrans-1572
   prefs: []
   type: TYPE_NORMAL
+  zh: print(ticker)
 - en: 'time.sleep(60) # Wait one minute before retrieving new data'
   id: totrans-1573
   prefs: []
   type: TYPE_NORMAL
+  zh: 'time.sleep(60) # 等待一分钟以获取新数据'
 - en: Follow the BTC/USDT pair in real time
   id: totrans-1574
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 实时跟踪BTC/USDT对
 - en: follow_crypto('BTC/USDT')
   id: totrans-1575
   prefs: []
   type: TYPE_NORMAL
+  zh: follow_crypto('BTC/USDT')
 - en: '2\. Data storage :'
   id: totrans-1576
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: '2. 数据存储 :'
 - en: To analyze values over the long term, it is important to store the data collected.
     This can be done using a database or CSV files.
   id: totrans-1577
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了长期分析价值，重要的是存储收集到的数据。这可以通过使用数据库或CSV文件来完成。
 - en: 'Example of storage in a CSV file :'
   id: totrans-1578
   prefs: []
   type: TYPE_NORMAL
+  zh: 'CSV文件中的存储示例 :'
 - en: import csv
   id: totrans-1579
   prefs: []
   type: TYPE_NORMAL
+  zh: import csv
 - en: 'def store_data(symbol, data):'
   id: totrans-1580
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def store_data(symbol, data):'
 - en: 'with open(f''{symbol}_data.csv'', mode=''a'') as file:'
   id: totrans-1581
   prefs: []
   type: TYPE_NORMAL
+  zh: 'with open(f''{symbol}_data.csv'', mode=''a'') as file:'
 - en: writer = csv.writer(file)
   id: totrans-1582
   prefs: []
   type: TYPE_NORMAL
+  zh: writer = csv.writer(file)
 - en: writer.writerow([data['timestamp'], data['close']])
   id: totrans-1583
   prefs: []
   type: TYPE_NORMAL
+  zh: writer.writerow([data['timestamp'], data['close']])
 - en: 'def follow_crypto_with_storage(symbol):'
   id: totrans-1584
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def follow_crypto_with_storage(symbol):'
 - en: exchange = ccxt.binance()
   id: totrans-1585
   prefs: []
   type: TYPE_NORMAL
+  zh: exchange = ccxt.binance()
 - en: 'while True:'
   id: totrans-1586
   prefs: []
   type: TYPE_NORMAL
+  zh: 'while True:'
 - en: ticker = exchange.fetch_ticker(symbol)
   id: totrans-1587
   prefs: []
   type: TYPE_NORMAL
+  zh: ticker = exchange.fetch_ticker(symbol)
 - en: store_data(symbol, ticker)
   id: totrans-1588
   prefs: []
   type: TYPE_NORMAL
+  zh: store_data(symbol, ticker)
 - en: print(ticker)
   id: totrans-1589
   prefs: []
   type: TYPE_NORMAL
+  zh: print(ticker)
 - en: 'time.sleep(60) # Wait one minute before retrieving new data'
   id: totrans-1590
   prefs: []
   type: TYPE_NORMAL
+  zh: 'time.sleep(60) # 等待一分钟以获取新数据'
 - en: Track and store BTC/USDT pair data in real time
   id: totrans-1591
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 实时跟踪和存储BTC/USDT对数据
 - en: follow_crypto_with_storage('BTC/USDT')
   id: totrans-1592
   prefs: []
   type: TYPE_NORMAL
+  zh: follow_crypto_with_storage('BTC/USDT')
 - en: '3\. Data visualization :'
   id: totrans-1593
   prefs:
   - PREF_H4
   type: TYPE_NORMAL
+  zh: '3. 数据可视化 :'
 - en: Visualizing data in real time can help you make informed decisions. Use libraries
     like Matplotlib to create graphs and visualize trends in tracked values.
   id: totrans-1594
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用Matplotlib等库创建图表并可视化跟踪值中的趋势，可以实时可视化数据，帮助您做出明智的决策。
 - en: 'Example of data visualization :'
   id: totrans-1595
   prefs: []
   type: TYPE_NORMAL
+  zh: '数据可视化的示例 :'
 - en: import matplotlib.pyplot as plt
   id: totrans-1596
   prefs: []
   type: TYPE_NORMAL
+  zh: import matplotlib.pyplot as plt
 - en: 'def plot_data(symbol):'
   id: totrans-1597
   prefs: []
   type: TYPE_NORMAL
+  zh: 'def plot_data(symbol):'
 - en: data = pd.read_csv(f'{symbol}_data.csv')
   id: totrans-1598
   prefs: []
   type: TYPE_NORMAL
+  zh: data = pd.read_csv(f'{symbol}_data.csv')
 - en: plt.plot(data['timestamp'], data['close'])
   id: totrans-1599
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.plot(data['timestamp'], data['close'])
 - en: plt.xlabel('Time')
   id: totrans-1600
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.xlabel('时间')
 - en: plt.ylabel('Price')
   id: totrans-1601
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.ylabel('价格')
 - en: plt.title(f'{symbol} Price Over Time')
   id: totrans-1602
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.title(f'{symbol} Price Over Time')
 - en: plt.show()
   id: totrans-1603
   prefs: []
   type: TYPE_NORMAL
+  zh: plt.show()
 - en: View the stored data of the BTC/USDT pair
   id: totrans-1604
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 查看BTC/USDT对的存储数据
 - en: plot_data('BTC/USDT')
   id: totrans-1605
   prefs: []
   type: TYPE_NORMAL
+  zh: plot_data('BTC/USDT')
 - en: By following these steps, you can develop a comprehensive tool for tracking
     financial asset values in real time, storing data for later analysis, and visualizing
     trends to make informed trading decisions.
   id: totrans-1606
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过遵循这些步骤，您可以开发一个用于实时跟踪金融资产价值、存储数据以供后续分析和可视化趋势以做出明智交易决策的综合工具。
 - en: Developing Signal Generator Tools
   id: totrans-1607
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 开发信号生成工具
 - en: Signal-generating tools use technical indicators and mathematical models to
     identify trading opportunities. ChatGPT can help create scripts to generate buy
     and sell signals based on predefined criteria.

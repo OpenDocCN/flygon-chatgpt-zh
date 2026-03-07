@@ -1,0 +1,2505 @@
+- en: '![cover](OEBPS/images/cover.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '![image](images/cover.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Practical Java
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Programming with
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/line.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Develop, Prototype and Validate Java
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Applications by integrating OpenAI API and
+  prefs: []
+  type: TYPE_NORMAL
+- en: leveraging Generative AI and LLMs
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/line.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: Alan S. Bluck
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '![](images/logo.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '[www.orangeava.com](http://www.orangeava.com)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Copyright © 2023 Orange Education Pvt Ltd, AVA™
+  prefs: []
+  type: TYPE_NORMAL
+- en: All rights reserved. No part of this book may be reproduced, stored in a retrieval
+    system, or transmitted in any form or by any means, without the prior written
+    permission of the publisher, except in the case of brief quotations embedded in
+    critical articles or reviews.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Every effort has been made in the preparation of this book to ensure the accuracy
+    of the information presented. However, the information contained in this book
+    is sold without warranty, either express or implied. Neither the author nor **Orange
+    Education Pvt Ltd** or its dealers and distributors, will be held liable for any
+    damages caused or alleged to have been caused directly or indirectly by this book.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Orange Education Pvt Ltd** has endeavored to provide trademark information
+    about all of the companies and products mentioned in this book by the appropriate
+    use of capital. However, **Orange Education Pvt Ltd** cannot guarantee the accuracy
+    of this information. The use of general descriptive names, registered name, trademarks,
+    service marks, etc. in this publication does not imply, even in the absence of
+    a specific statement, that such name are exempt from the relevant protective laws
+    and regulation and therefore free for general use.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT® is the registered trademark of the OpenAI company
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**First published:** November 2023'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Published by:** Orange Education Pvt Ltd, AVA™'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Address:** 9, Daryaganj, Delhi, 110002'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**ISBN:** 978-81-19416-79-0'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[www.orangeava.com](http://www.orangeava.com)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Dedicated to
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '*My Beloved Wife, **Jenny***'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*My Children, **Julie** and **Rosalie**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: and their families*
+  prefs: []
+  type: TYPE_NORMAL
+- en: About the Author
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '**Alan S. Bluck** is the Director of ASB Software Development Limited and also,
+    provides consultancy as a systems architect, providing a broad range of services,
+    from high-level technical design, through mentoring for code development and installation
+    and configuration of FileNet’s core products.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Nominated as an IBM Champion in 2022 and re-elected in 2023, the Author has
+    already published 5 technical books and over 30 ResearchGate papers which are
+    available for free download.
+  prefs: []
+  type: TYPE_NORMAL
+- en: He is responsible for high-level analysis and configuration of existing and
+    new FileNet systems. He is also responsible for mentoring and troubleshooting
+    high-level systems and issues.
+  prefs: []
+  type: TYPE_NORMAL
+- en: He has over 45 years of Software Development experience in both business and
+    scientific systems; 5 years of experience as a Project Manager / Analyst Developer,
+    11 years as a Software Development Manager for a team of 12 Software Engineers,
+    11 years as a Technical Consultant and 20 years as a Solutions Architect.
+  prefs: []
+  type: TYPE_NORMAL
+- en: About the Reviewer
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '**Gil Metcalf** has had a long and varied career, initially qualifying as an
+    industrial microbiologist working for an oil company on projects relating to microbial
+    mining of heavy metals as well as enhanced oil recovery from spent wells. Following
+    this he worked for many years for a large pharmaceutical company where he fulfilled
+    several roles, including project manager, development team leader and network
+    administrator. During this time he developed software for clinical trials management,
+    as well as critical tools used in hospitals for the management of cancer patients.
+    During his many years working in the software industry as a solutions architect,
+    he has gained a wealth of experience in many fields and sectors, particularly
+    financial technologies, but also including manufacturing, logistics, and energy
+    markets. He has an in-depth knowledge of many software fields, including those
+    that relate to modern business practices. These include documents and content
+    management, case management, business process management and process automation,
+    document lifecycle management, identity management and online banking technologies.
+    He is widely regarded as an expert within the industry. Working with many well-known
+    banks and institutions, he brings a wide knowledge and keen eye for detail to
+    bear, whilst at the same time being able to see and understand the wider picture.
+    This enables him to successfully tackle problems that large financial organizations
+    have struggled with. His perceptive and innovative approach has been applied in
+    many cases and applications to deliver success across the industry.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: He is now a software architect with over 25 years of experience in the software
+    industry. He has been instrumental in designing and implementing solutions for
+    many blue-chip enterprises, and has spent the last ten years working mainly with
+    fintech solutions. He has many qualifications in the document capture, document
+    management, business automation and identity management fields. He has recently
+    been working on profile management and passwordless authentication methods for
+    mobile banking applications. Gil believes that the key to successful software
+    architecture rests on a number of primary skills; an understanding of the software
+    being just one of those. Also important are softer abilities such as being able
+    to explain complex software concepts to less technicallyminded audiences (such
+    as users and executives!), being able to see a broad picture of the solution (along
+    with the risks and pitfalls), and being able to tease out requirements from what
+    is often a vague wish list. He says that preparing for solution design is often
+    “an exercise in extrapolation and interpolation at the same time!”. He is a member
+    of several professional associations, including the Chartered Institute for IT,
+    the Identity Management Institute, and the International Association for Software
+    Architects.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Acknowledgement
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: There are a few people whom I want to thank for the continued and ongoing support
+    that they gave me while I wrote this book. First and foremost, I would like to
+    thank my wife, Jenny, for continuously encouraging me to write the book—I could
+    never have completed this book without her support.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I am grateful for the support of the ResearchGate website, which has held over
+    30 of my free publications since 2019, most of which I have referenced in this
+    book
+  prefs: []
+  type: TYPE_NORMAL
+- en: I also extend my gratitude to the team at AVA Orange for their support and dedication
+    allowing me to publish this book in such a short time and update the material
+    during the production process as AI Software is such a rapidly expanding area
+    covering a broad range of applications.
+  prefs: []
+  type: TYPE_NORMAL
+- en: I would also like to thank Giles Metcalf, the Technical Reviewer of this book,for
+    his diligence and helpful suggestions.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Preface
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The questions in this book, relating to Java program software development, were
+    posed to the ChatGPT android phone app. The questions were based on previous developments
+    (many algorithms originally took days to write). The responses were astonishing
+    and appeared in seconds!In this book, we take the example Java code supplied by
+    ChatGPT and implement it using the latest available Eclipse IDE. We have also
+    established that all the base code generated by ChatGPT is free to use!
+  prefs: []
+  type: TYPE_NORMAL
+- en: ChatGPT provides a fantastic opportunity for Java programmers to turbocharge
+    their code writing. Software developers, programmers and software engineers can
+    spend days writing code for applications. In this book we describe, using examples,
+    the prompts which can be used for ChatGPT to automate the process of ChatGPT Java
+    code generation.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This book contains questions relating to software development, which I posed
+    (in bold) to the ChatGPT Android phone app. We then describe the detailed steps
+    to implement the working Java code and validate the results.
+  prefs: []
+  type: TYPE_NORMAL
+- en: This book is divided into **13 chapters**, designed to provide examples for
+    use by Java Programmers, IT consultants, Systems and Solution Architects, with
+    basic general IT knowledge, The book provides working templates for the development
+    of Java programming solutions with examples using the OpenAI ChatGPT server system
+    and the front end AI systems to support the development of programs for use by
+    Developers for Data processing, Mathematical Analysis and Document Management,
+    for implementation for Manufacturing Industries, Banks and Insurance Companies.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 1](c01.xhtml)** covers questions relating to software development,
+    which were posed (in bold) to the ChatGPT 3.5 AskAI ‘phone app. We also cover
+    the installation of ChatGPT as a web application and the Android mobile ‘phone
+    application install. The issue of copyright of the responses and the basic use
+    of ChatGPTis described.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 2](c02.xhtml)** covers the ChatGPT prompt used to test its knowledge
+    of good programming practice. We asked it to define what it knew about the “SOLID”
+    principles, which it did almost instantaneously. The following output was just
+    the introduction:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: ”SOLID is a set of five principles for object-oriented programming that were
+    introduced by Robert C. Martin (also known as Uncle Bob). These principles aim
+    to make software designs more robust, flexible, and maintainable. Here’s a brief
+    overview of the SOLID principles and how they apply to Java:”
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 3](c03.xhtml)** covers the Java Code required to use the OpenAI
+    Java API to interface with the ChatGPT AI system. ChatGPT provided an example
+    of how to make a request to the API using the OkHttp library. In order to use
+    the API, we describe the method required to obtain the OpenAI API key.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 4](c04.xhtml)** covers the questions posed to provide a code for
+    a Java program for using Binary Search. The Binary Search method takes a sorted
+    array of integers and a target integer to search for. It returns the index of
+    the target integer in the array if it is found, or -1 if it is not found.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 5](c05.xhtml)** We cover the download and installation of the latest
+    Open-Source Eclipse Java IDE (Eclipse IDE 2023-06 R – Eclipse IDE for Java Developers)
+    and the step-by-step installation on MS Windows 10 and RedHat Enterprise Linux,
+    RHEL 8.x. We then describe the detailed implementation and validation of the Binary
+    Search program by creating the Java BinarySearch project and examining the Java
+    Program output.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 6](c06.xhtml)** covers the Fourier analysis of an MP4 music file
+    to separate instruments and vocals. This is a complex task, involving multiple
+    steps like decoding the MP4 file, performing signal processing, and applying source
+    separation techniques. ChatGPT provided an outline guide for the steps required
+    and suggested some libraries for each step. A simpler task, which ChatGPT did
+    provide the full working code for, was for the Fourier analysis of a sine wave
+    using Java code.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 7](c07.xhtml)** describes theChatGPT-generated Java code for the
+    Fast Fourier Transform. ChatGPT was asked to provide example Java code to demonstrate
+    the Fast Fourier transform. An example Java code was displayed that demonstrated
+    the Fast Fourier Transform (FFT) using the Apache Commons Math library.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 8](c08.xhtml)** covers an example Java code generated by ChatGPT,
+    for indexing a document with an output of a list of keywords with the associated
+    document page numbers. The code provided by ChatGPT created an index of documents
+    and their associated keywords using the Lucene library. It also allowed searching
+    for documents based on keywords and returned the document path.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 9](c09.xhtml)** describes how ChatGPT was prompted to provide a
+    Java code for the Saltikov determination of the size distribution of particles
+    in an opaque material from a measurement of the size distribution of their sections.
+    This code generated by ChatGPT prompted the user to input the number of sections
+    measured, the size of each section, and the area under the curve. It then calculated
+    the particle size distribution using the Saltikov determination and printed the
+    results.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 10](c10.xhtml)** explains how ChatGPT generated Java code to invert
+    a triangular matrix to obtain the coefficients of a polynomial.ChatGPT was prompted
+    for an example Java program with code to invert a triangular matrix to obtain
+    the coefficients of a polynomial as the result of a set of polynomial equations.
+    The Java code created prompted the user to input the degree of the polynomial
+    and the coefficients of a set of polynomial equations. It then used Gaussian elimination
+    to invert the resulting matrix and obtain the coefficients of the polynomial.
+    Finally, it printed the coefficients of the polynomial.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 11](c11.xhtml)** covers the use of ChatGPT to generate an example
+    Java code to store a document in the latest IBM FileNet Document Management system,
+    using the FileNet Java API. The code, generated by ChatGPT, after some additional
+    download libraries, established a connection to the FileNet server, created a
+    new document, set the document properties, added content to it, saved the document,
+    and then filed it in the specified Object Store folder.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 12](c12.xhtml)** covers the conclusions and the future of ChatGPT
+    for program development. We describe the ChatGPT 3.5 knowledge cutoff in September
+    2021, and the subsequent ongoing developments by the OpenAI Foundation to enhance
+    this knowledge base and therapid development of the beta ChatGPT 4.0 currently
+    released. We also give some indications for the road map of future versions of
+    ChatGPT 5.0.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[Chapter 13](c13.xhtml)** provides Appendices with references and additional
+    ChatGPT questions including information on other IBM systems supporting AI development,
+    including the impact of Quantum Computing developments on AI processing.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Downloading the code
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: bundles and colored images
+  prefs: []
+  type: TYPE_NORMAL
+- en: Please follow the link to download the
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Code Bundles** of the book:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[https://github.com/OrangeAVA/Practical-Java-Programming-with-ChatGPT](https://github.com/OrangeAVA/Practical-Java-Programming-with-ChatGPT)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: The code bundles and images of the book are also hosted on
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[*https://rebrand.ly/6821ed*](https://rebrand.ly/6821ed)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: In case there’s an update to the code, it will be updated on the existing GitHub
+    repository.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Errata
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'We take immense pride in our work at **Orange Education Pvt Ltd** and follow
+    best practices to ensure the accuracy of our content to provide an indulging reading
+    experience to our subscribers. Our readers are our mirrors, and we use their inputs
+    to reflect and improve upon human errors, if any, that may have occurred during
+    the publishing processes involved. To let us maintain the quality and help us
+    reach out to any readers who might be having difficulties due to any unforeseen
+    errors, please write to us at :'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[errata@orangeava.com](mailto:errata@orangeava.com)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Your support, suggestions, and feedback are highly appreciated.
+  prefs: []
+  type: TYPE_NORMAL
+- en: DID YOU KNOW
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Did you know that Orange Education Pvt Ltd offers eBook versions of every book
+    published, with PDF and ePub files available? You can upgrade to the eBook version
+    at [**www.orangeava.com**](http://www.orangeava.com) and as a print book customer,
+    you are entitled to a discount on the eBook copy. Get in touch with us at: **[info@orangeava.com](mailto:info@orangeava.com)**
+    for more details.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: At **[www.orangeava.com](http://www.orangeava.com)**, you can also read a collection
+    of free technical articles, sign up for a range of free newsletters, and receive
+    exclusive discounts and offers on AVA™ Books and eBooks.
+  prefs: []
+  type: TYPE_NORMAL
+- en: PIRACY
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: If you come across any illegal copies of our works in any form on the internet,
+    we would be grateful if you would provide us with the location address or website
+    name. Please contact us at **[info@orangeava.com](mailto:info@orangeava.com)**
+    with a link to the material.
+  prefs: []
+  type: TYPE_NORMAL
+- en: ARE YOU INTERESTED IN AUTHORING WITH US?
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: If there is a topic that you have expertise in, and you are interested in either
+    writing or contributing to a book, please write to us at [**business@orangeava.com**](mailto:business@orangeava.com).
+    We are on a journey to help developers and tech professionals to gain insights
+    on the present technological advancements and innovations happening across the
+    globe and build a community that believes Knowledge is best acquired by sharing
+    and learning with others. Please reach out to us to learn what our audience demands
+    and how you can be part of this educational reform. We also welcome ideas from
+    tech experts and help them build learning and development content for their domains.
+  prefs: []
+  type: TYPE_NORMAL
+- en: REVIEWS
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: Please leave a review. Once you have read and used this book, why not leave
+    a review on the site that you purchased it from? Potential readers can then see
+    and use your unbiased opinion to make purchase decisions. We at Orange Education
+    would love to know what you think about our products, and our authors can learn
+    from your feedback. Thank you!
+  prefs: []
+  type: TYPE_NORMAL
+- en: For more information about Orange Education, please visit **[www.orangeava.com](http://www.orangeava.com)**.
+  prefs: []
+  type: TYPE_NORMAL
+- en: Table of Contents
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[1\. Getting Started with ChatGPT](c01.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c01.xhtml#s1)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c01.xhtml#s2)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[AI Suggested book titles](c01.xhtml#s3)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Copyright laws for AI-Generated Java code](c01.xhtml#s4)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Creating an account for the Free ChatGPT V. 3.5](c01.xhtml#s5)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Installing and using the Android phone App, Ask AI](c01.xhtml#s6)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Creating an account for the Subscribed ChatGPT-4](c01.xhtml#s7)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c01.xhtml#s8)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](c01.xhtml#s9)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple choice questions](c01.xhtml#s10)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c01.xhtml#s11)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c01.xhtml#s12)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key terms](c01.xhtml#s13)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[2\. Java Programming – Best Practices as Stated by ChatGPT](c02.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c02.xhtml#s14)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c02.xhtml#s15)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[The principles of SOLID](c02.xhtml#s16)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Best Practice for Java code indentation](c02.xhtml#s17)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[SOLID Code Examples](c02.xhtml#s18)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Single Responsibility Principle (SRP)](c02.xhtml#s19)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Open/Closed Principle (OCP)](c02.xhtml#s20)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Liskov Substitution Principle (LSP)](c02.xhtml#s21)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Interface Segregation Principle (ISP)](c02.xhtml#s22)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Dependency Inversion Principle (DIP)](c02.xhtml#s23)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c02.xhtml#s24)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](c02.xhtml#s25)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple choice questions](c02.xhtml#s26)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c02.xhtml#s27)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c02.xhtml#s28)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key terms](c02.xhtml#s29)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[3\. Developing Java Code for Utilizing the ChatGPT API](c03.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c03.xhtml#s30)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c03.xhtml#s31)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[The ChatGPT API overview](c03.xhtml#s32)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Validation of the suggested API Code](c03.xhtml#s33)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Accessing the ChatGPT-referenced OkHttp Java Library Jar files](c03.xhtml#s34)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Accessing the ChatGPT Secret API Key](c03.xhtml#s35)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using ChatGPT Model Ids](c03.xhtml#s36)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c03.xhtml#s37)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to Remember](c03.xhtml#s38)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple Choice Questions](c03.xhtml#s39)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c03.xhtml#s40)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c03.xhtml#s41)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key Terms](c03.xhtml#s42)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[4\. Java Program for Using Binary Search](c04.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c04.xhtml#s43)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c04.xhtml#s44)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[AI prompt and response](c04.xhtml#s45)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Java code validation using Eclipse Java code](c04.xhtml#s46)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c04.xhtml#s47)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](c04.xhtml#s48)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple choice questions](c04.xhtml#s49)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c04.xhtml#s50)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c04.xhtml#s51)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key terms](c04.xhtml#s52)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[5\. Installation of the Latest Open-source Eclipse Java IDE](c05.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c05.xhtml#s53)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c05.xhtml#s54)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Downloading the Eclipse Java IDE](c05.xhtml#s55)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Eclipse IDE validation of the Binary Search code](c05.xhtml#s56)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Perplexity](c05.xhtml#s57)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Creating the Java BinarySearch class](c05.xhtml#s58)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Running the Eclipse Java Program](c05.xhtml#s59)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Binary Search Validation Java Program Output](c05.xhtml#s60)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c05.xhtml#s61)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to Remember](c05.xhtml#s62)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple Choice Questions](c05.xhtml#s63)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c05.xhtml#s64)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c05.xhtml#s65)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key Terms](c05.xhtml#s66)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[6\. ChatGPT Generated Java Code for Fourier Analysis](c06.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c06.xhtml#s67)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c06.xhtml#s68)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[MP4 Fourier Analysis Java Code](c06.xhtml#s69)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[MP4 Fourier Analysis Java Code – according to OpenAI ChatGPT](c06.xhtml#s70)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Fourier Analysis for MP4 java code validation using an Eclipse Java Program
+    Project](c06.xhtml#s71)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT generated Java code for Fourier Analysis of a Sine wave](c06.xhtml#s72)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Sine wave Fourier Analysis java code validation using an Eclipse Java](c06.xhtml#s73)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c06.xhtml#s74)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](c06.xhtml#s75)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple choice questions](c06.xhtml#s76)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c06.xhtml#s77)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c06.xhtml#s78)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key terms](c06.xhtml#s79)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[7\. ChatGPT Generated Java Code for the Fast Fourier Transform](c07.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c07.xhtml#s80)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c07.xhtml#s81)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[AI Fast Fourier Transform Java code ChatGPT prompted Java Program](c07.xhtml#s82)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Fast Fourier Transform Java code validation using an Eclipse Java Program
+    Project](c07.xhtml#s83)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c07.xhtml#s84)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to Remember](c07.xhtml#s85)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple Choice Questions](c07.xhtml#s86)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c07.xhtml#s87)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Question](c07.xhtml#s88)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key Terms](c07.xhtml#s89)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[8\. ChatGPT Generated Java Code for Indexing a Document](c08.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c08.xhtml#s90)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c08.xhtml#s91)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT generated Java code for indexing a document giving keywords and page
+    numbers](c08.xhtml#s92)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Document Indexing Java code validation using an Eclipse Java Program Project](c08.xhtml#s93)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c08.xhtml#s94)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](c08.xhtml#s95)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple choice questions](c08.xhtml#s96)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c08.xhtml#s97)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c08.xhtml#s98)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key terms](c08.xhtml#s99)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[9\. ChatGPT-generated Java Code for Saltikov Particle Distribution](c09.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c09.xhtml#s100)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c09.xhtml#s101)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT-generated Java code for the Saltikov determination of the size distribution
+    of particles](c09.xhtml#s102)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Saltikov determination of the particle’s size distribution - Java code validation
+    using a new Eclipse IDE Project](c09.xhtml#s103)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c09.xhtml#s104)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](c09.xhtml#s105)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple choice questions](c09.xhtml#s106)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c09.xhtml#s107)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c09.xhtml#s108)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key terms](c09.xhtml#s109)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[10\. ChatGPT-generated Java Code to Invert a Triangular Matrix](c10.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c10.xhtml#s110)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c10.xhtml#s111)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT-generated Java code to invert a triangular matrix to obtain the coefficients
+    of a polynomial](c10.xhtml#s112)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Triangular matrix inversion to obtain the coefficients of a polynomial - Java
+    code validation using an Eclipse Java Program Project](c10.xhtml#s113)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Validation Test 1](c10.xhtml#s114)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Validation Test 2](c10.xhtml#s115)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[MagicSquare example](c10.xhtml#s116)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c10.xhtml#s117)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to Remember](c10.xhtml#s118)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple Choice Questions](c10.xhtml#s119)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c10.xhtml#s120)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c10.xhtml#s121)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key Terms](c10.xhtml#s122)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[11\. ChatGPT Generated Java Code to Store a Document in the IBM FileNet System](c11.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c11.xhtml#s123)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c11.xhtml#s124)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT generated Java code to store a document in the latest IBM FileNet
+    Document Management system](c11.xhtml#s125)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Store a document in the latest IBM FileNet Document Management system – Java
+    code validation using an Eclipse Java Program Project](c11.xhtml#s126)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c11.xhtml#s127)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to Remember](c11.xhtml#s128)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple Choice Questions](c11.xhtml#s129)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c11.xhtml#s130)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c11.xhtml#s131)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key terms](c11.xhtml#s132)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[12\. Conclusions and the Future of ChatGPT for Program Development](c12.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c12.xhtml#s133)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c12.xhtml#s134)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusions and the future of ChatGPT for program development](c12.xhtml#s135)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[The future of AI and ChatGPT](c12.xhtml#s136)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[AI Bias effects on the responses](c12.xhtml#s137)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[ChatGPT taking Jobs from People](c12.xhtml#s138)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Building a Custom ChatGPT with Your Own Additional Data](c12.xhtml#s139)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Using AI Transfer Learning](c12.xhtml#s140)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[IBM and Generative AI With Watsonx](c12.xhtml#s141)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Security Threats and Privacy Concerns](c12.xhtml#s142)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Alternative Code Assistant AI Software - ChatGPT Alternatives for Coding Programs
+    Automatically](c12.xhtml#s143)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Llama 2 code AI free use](c12.xhtml#s144)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Setting up Jupyter Notebook environment](c12.xhtml#s145)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[GPT4All and How It Works](c12.xhtml#s146)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[GitHub Copilot](c12.xhtml#s147)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Google Duet AI](c12.xhtml#s148)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Codeium](c12.xhtml#s149)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[CodeWhisperer](c12.xhtml#s150)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Falcon-180B](c12.xhtml#s151)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c12.xhtml#s152)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to Remember](c12.xhtml#s153)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple Choice Questions](c12.xhtml#s154)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c12.xhtml#s155)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c12.xhtml#s156)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key Terms](c12.xhtml#s157)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[13\. Appendices for Additional Questions](c13.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Introduction](c13.xhtml#s158)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](c13.xhtml#s159)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Appendix A – Further AI questions for ChatGPT](c13.xhtml#s160)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Appendix B - FAQs and answers for ChatGPT](c13.xhtml#s161)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[FAQs (from the website)](c13.xhtml#s162)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Appendix C – ASB Software Development Limited Publication’s](c13.xhtml#s163)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Molecular Biology Installations – ASB Software Development Limited Publications](c13.xhtml#s164)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[IBM Installations – ASB Software Development Limited Publications](c13.xhtml#s165)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Contact Details](c13.xhtml#s166)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Conclusion](c13.xhtml#s167)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Points to remember](c13.xhtml#s168)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Multiple choice questions](c13.xhtml#s169)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Related](c13.xhtml#s170)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Answers](c13.xhtml#s171)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Questions](c13.xhtml#s172)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Key terms](c13.xhtml#s173)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[References](c13.xhtml#s174)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Index](ind.xhtml)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[CHAPTER 1](toc.xhtml#c01)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Getting Started with ChatGPT](toc.xhtml#c01)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: '[Introduction](toc.xhtml#s1a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: This book features questions relating to Java software development which were
+    posed (in bold) to the **OpenAI** organization, **AI** software, **ChatGPT 3.5**,
+    using the Android phone app, **Ask AI**.
+  prefs: []
+  type: TYPE_NORMAL
+- en: The questions were based on my previous developments (many algorithms originally
+    taking days to write, and most were written in the **Fortran IV** language).
+  prefs: []
+  type: TYPE_NORMAL
+- en: The responses were astonishing and appeared in seconds!
+  prefs: []
+  type: TYPE_NORMAL
+- en: In this chapter, we cover the installation of **ChatGPT** as a web application
+    and also use the **Ask AI** **ChatGPT** front-end interface application, installed
+    on an Android mobile ‘phone.
+  prefs: []
+  type: TYPE_NORMAL
+- en: We also cover the current legal copyright ownership of the responses and the
+    basic use of **ChatGPT**.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Structure](toc.xhtml#s2a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'In this chapter, we will discuss the following topics:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: AI Suggested book titles
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Current copyright laws for AI-Generated Java code
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Create an account for the Free ChatGPT 3.5 version
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: Create an account for the Subscribed ChatGPT-4 Version
+  prefs:
+  - PREF_UL
+  type: TYPE_NORMAL
+- en: '[AI Suggested book titles](toc.xhtml#s3a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: To illustrate the prompts and responses of the mobile phone Application, **Ask
+    AI**, which uses **ChatGPT 3.5** (which has an internet knowledgebase cut-off
+    of September 2021), the following question was asked. (All questions are in bold
+    and the **ChatGPT AI** responses are in italics)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**I want to write a book about using ChatGPT to assist Java programmers. Can
+    you suggest a book title which would be of interest to them?**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*Certainly! Here are a few book title suggestions for a book about using ChatGPT
+    to assist Java programmers:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*"Java Mastery with ChatGPT: Unleashing AI to Enhance Your Programming Skills"*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*"ChatGPT for Java Programmers: Revolutionizing Your Coding Experience"*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*"The AI-Driven Java Developer: Unleashing the Power of ChatGPT"*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*"Java Programming Made Smarter: Harnessing ChatGPT for Efficiency and Productivity"*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*"ChatGPT Companion: Empowering Java Programmers with AI-Powered Assistance"*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*"Conversational Coding: Mastering Java with ChatGPT''s Intelligent Guidance"*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**"Enhancing Java Development with ChatGPT: Your AI-Powered Programming Assistant"**'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*"The Intelligent Java Developer: Leveraging ChatGPT for Enhanced Efficiency"*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*"AI-Assisted Java Programming: Unlocking New Frontiers with ChatGPT"*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*"Java Programming in the Age of AI: Harnessing ChatGPT for Success"*'
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '*Feel free to customize these suggestions or let me know if you need more options!*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The title in bold was selected (the seventh title suggested by the **Ask AI**
+    app). This title was selected because it emphasizes the role of the human programmer.
+    Care should be taken to validate the code produced by the AI software. (It has
+    been known to produce results with mistakes!)
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Copyright laws for AI-Generated Java code](toc.xhtml#s4a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: There is some controversy in the media over the legal status of the responses
+    provided by **ChatGPT**. There are a number of specific areas where the legality
+    of the **AI** responses is currently being challenged, for example, authors who
+    think their copyright may have been broken from the reproduction of response data
+    obtained during the web “scraping” which was used to train **ChatGPT** in 2021.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This position is complicated by the current legal status of **AI** software
+    output in **UK** copyright law:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “*UK law would currently prohibit an AI from owning copyright (or even recognising
+    that an AI created it), as it is not a human and therefore cannot be treated as
+    an author or owner under the Copyright, Designs and Patents Act. It is also unlikely
+    that this position is going to change anytime soon, given the UK government’s
+    response to the AI consultation*”
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**See: [https://www.port.ac.uk/news-events-and-blogs/blogs/security-and-risk/chatgpt-what-the-law-says-about-who-owns-the-copyright-of-ai-generated-content](https://www.port.ac.uk/news-events-and-blogs/blogs/security-and-risk/chatgpt-what-the-law-says-about-who-owns-the-copyright-of-ai-generated-content)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*A number of other websites were found which discussed the legal requirements
+    with reference to copyright, as follows:*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**WIPO**, the World Intellectual Property Organisation, currently states (amongst
+    many other statements and even more relevant questions!) that:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “*AI applications are increasingly capable of generating literary and artistic
+    works. This capacity raises major policy questions for the copyright system, which
+    has always been intimately associated with the **human creative spirit** and with
+    respect and reward for, and the encouragement of, the expression of **human creativity**.
+    The policy positions adopted in relation to the attribution of copyright to AI-generated
+    works will go to the heart of the social purpose for which the copyright system
+    exists. **If AI-generated works were excluded from eligibility for copyright protection,
+    the copyright system would be seen as an instrument for encouraging and favoring
+    the dignity of human creativity over machine creativity**. If copyright protection
+    were accorded to AI-generated works, the copyright system would tend to be seen
+    as an instrument favoring the availability for the consumer of the largest number
+    of creative works and of placing an equal value on human and machine creativity*.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The full paper is freely available for download from **WIPO** covering many
+    aspects of the **AI** intellectual property rights, and asking many more additional,
+    and very interesting questions. This can be downloaded as a pdf file (**wipo_ip_ai_2_ge_20_1_rev.pdf**)
+    from:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://www.wipo.int/edocs/mdocs/mdocs/en/wipo_ip_ai_2_ge_20/wipo_ip_ai_2_ge_20_1_rev.pdf](https://www.wipo.int/edocs/mdocs/mdocs/en/wipo_ip_ai_2_ge_20/wipo_ip_ai_2_ge_20_1_rev.pdf)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The following reference **[https://sprintlaw.com.au/articles/chatgpt-copyright-issues/](https://sprintlaw.com.au/articles/chatgpt-copyright-issues/)**
+    has the following statement concerning the law on Copyright in **Australia** as
+    far as **AI**-generated content is concerned:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*"Australian case law has ruled that an AI system cannot own intellectual property
+    (IP) as it is not a natural person. This was discussed extensively in the case
+    of Thaler v Commissioner Of Patents [2021] – we’ve written more about the case
+    here.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*So, when it comes to copyright, the general rule is that AI-generated content
+    is not protected by copyright laws."*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The Journal of Intellectual Property Law Practice has an article at the following
+    link:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'See: (**Volume 17, Issue 3, March 2022, Pages 321–326, https://doi.org/10.1093/jiplp/jpac013**)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Also, at **https://academic.oup.com/jiplp/article/17/3/321/6550465**
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Has the following paragraph:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: “The European Patent Office (EPO), for example, has recently confirmed on appeal
+    the rejection of the DABUS applications EP 18 275 163 and EP 18 275 174\. While
+    the decision has yet to be made publicly available, **the EPO made it clear that
+    ‘only a human inventor could be an inventor’ and ‘a machine could not transfer
+    any rights to the applicant.**’^(23)Unless harmonization is sought—and hopefully
+    achieved—via international law, interventions at the national level will only
+    risk inconsistency. Rather, the current UK position, following the Court of Appeal’s
+    judgement in *Thaler v Comptroller General of Patents*,^(24)is one of relative
+    legal certainty—**we do know that AI *cannot* be named as inventor and, empirically,
+    nothing suggests there is a pressing need for this to be changed**.”
+  prefs: []
+  type: TYPE_NORMAL
+- en: To get the **AI** view on the copyright issue, the following question of content
+    ownership was asked to **Ask AI**, which uses **ChatGPT 3.5**, for its opinion
+    on the use of **AI**-generated content for commercial purposes.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Can I use output from ChatGPT for commercial uses?**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The **Ask AI** mobile ‘phone app, using **ChatGPT 3.5,** gave the following
+    response to this question:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*“The use of output from OpenAI''s GPT models, such as ChatGPT, for commercial
+    purposes may be subject to certain restrictions and require appropriate licensing
+    or permission from OpenAI.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*OpenAI''s GPT models are covered by several licenses, including the Creative
+    Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+    license.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*This license allows for non-commercial use and distribution of the output
+    generated by the models, as long as appropriate attribution is given and the resulting
+    work is distributed under the same or a similar license.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*If you intend to use the output from ChatGPT for commercial purposes, you
+    should consult with OpenAI or a legal professional to ensure that you have the
+    appropriate licenses and permissions to do so. Additionally, you should be aware
+    of any potential ethical or legal concerns surrounding the use of AI-generated
+    content in commercial applications.”*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The ***CC BY-NC-SA 4.0 Creative Commons,*** **Attribution-ShareAlike 4.0** license
+    lets others modify and build upon the licensed material, even for commercial purposes,
+    as long as the author is credited and the material is published under identical
+    terms. This license is effectively “copyright” free and an open-source software
+    license.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[Creating an account for the Free ChatGPT V. 3.5](toc.xhtml#s5a)'
+  prefs:
+  - PREF_H1
+  type: TYPE_NORMAL
+- en: 'Having established that the Java code output from **ChatGPT** is free to use,
+    as far as **UK** law and the **OpenAI** organization is concerned, we need to
+    sign up for the free account access to **ChatGPT V3.5**, so the following steps
+    were used:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Use a web browser to go to the **ChatGPT** website at **[https://chat.openai.com/auth/login](https://chat.openai.com/auth/login)**
+    to give the Welcome Login prompt as shown in *[Figure 1.1](#fig1_1)***:**![](images/Figure-1.01.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 1.1:** The ***ChatGPT*** Login web page'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: First, we need to select the **Sign up** button highlighted above, in *[Figure
+    1.1](#fig1_1)*.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Next, we have to provide an email address, choose a strong password, and accept
+    the terms of service, as shown in *[Figures 1.2](#fig1_2)* and *[1.3](#fig1_3)*
+    following:![](images/Figure-1.02.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 1.2:** The ***ChatGPT*** account creation web page'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: A valid email address, that you have access to, is required because OpenAI uses
+    a two-factor authentication mechanism, which requires you to click on a verification
+    link in the email that is sent to you. A strong password must be entered, as requested
+    in *[Figure 1.3](#fig1_3)*.
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.03.jpg)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: '**Figure 1.3:** The ChatGPT account password is entered'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: As explained earlier, you are then prompted to verify the email you have been
+    sent to complete the account creation, as shown in *[Figure 1.4](#fig1_4)***:**
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.04.jpg)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: '**Figure 1.4:** The ChatGPT account must be verified'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Next, you need to check your email inbox for a verification message and click
+    the link to verify your email address, as shown in *[Figure 1.5](#fig1_5)*.![](images/Figure-1.05.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 1.5:** The ChatGPT account is verified using the Verify email address
+    button'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'After the **Verify email address** button is clicked you will get a message
+    as shown in *[Figure 1.6](#fig1_6)*, as follows:'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.06.jpg)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: '**Figure 1.6:** The ***ChatGPT*** account verification is confirmed'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'The following web page is shown as displayed in *[Figure 1.7](#fig1_7)*:'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.07.jpg)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: '**Figure 1.7:** The verified page is now displayed'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: Fill in your first and last names on the sign-up page, then click the `**Continue**`
+    button, as shown in *[Figure 1.8](#fig1_8)*.![](images/Figure-1.08.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 1.8:** The Login page is now shown for logging into the new account'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: The new account requires additional **GDPR** protected (General Data Protection
+    Regulations) biographical information as shown in *[Figure 1.9](#fig1_9)*.
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.09.jpg)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: '**Figure 1.9:** The ChatGPT account prompts for further specific information'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: To verify your phone number, you have to enter a 6-digit OTP (One-Time Password)
+    code that will be sent to your phone.
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: Developing Java Code for Utilizing the ChatGPT API
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.10.jpg)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: '**Figure 1.10:** The ChatGPT account prompts for the user’s mobile phone number'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: You mobile ‘phone should be switched on and connected to your service provider,
+    since an **SMS** text message is sent to the ‘phone number you enter. Remember
+    to select your country of residence from the drop-down list. The text message
+    you receive will contain the code you are prompted to enter, as shown in *[Figure
+    1.11](#fig1_11)***.**
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.11.jpg)'
+  prefs:
+  - PREF_IND
+  type: TYPE_IMG
+- en: '**Figure 1.11:** The ***ChatGPT*** account, two-factor code, is entered from
+    the ***SMS*** text'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: After completing these steps, you will have successfully signed up for **ChatGPT**
+    and can begin using it with the dashboard, as shown in *[Figure 1.12](#fig1_12)*.![](images/Figure-1.12.jpg)
+  prefs:
+  - PREF_OL
+  type: TYPE_NORMAL
+- en: '**Figure 1.12:** The ***ChatGPT*** Dashboard is displayed on successfully logging
+    in'
+  prefs:
+  - PREF_IND
+  type: TYPE_NORMAL
+- en: 'It is recommended to start by running the **Quickstart** tutorial:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://platform.openai.com/docs/quickstart](https://platform.openai.com/docs/quickstart)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: By following the instructions, you will be able to create an account and start
+    using **ChatGPT** successfully.
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Using the playground:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://platform.openai.com/playground/p/default-qa?model=gpt-3.5-turbo-0301](https://platform.openai.com/playground/p/default-qa?model=gpt-3.5-turbo-0301)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '*I found that over time the model (currently chosen as **gpt-3.5-turbo-0301**)
+    which can be used will change, so you may have to select another from the available
+    dropdown list.*'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.13.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 1.13:** The ChatGPT OpenAI playground for questions.'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'So, the following question was asked, using the text:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**“Have you got a java code method for a binary search program”**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.14.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 1.14:** The ChatGPT response example for Binary Search java code'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'Or, select the following link which takes you to **ChatGPT**:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**[https://chat.openai.com/](https://chat.openai.com/)**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.15.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 1.15:** The message window is displayed for entry (contains ***Send
+    a message***, by default)'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'The `**Send a message**` grey font text, indicates where you need to type your
+    question, as shown in *[Figure 1.16](#fig1_16)*:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.16.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 1.16:** The message window can be used, as shown above, click the
+    white arrow icon'
+  prefs: []
+  type: TYPE_NORMAL
+- en: Clicking the white arrow (on a green background as shown in *[Figure 1.16](#fig1_16)*),
+    gives the display as shown in *[Figure 1.17](#fig1_17)***:**
+  prefs: []
+  type: TYPE_NORMAL
+- en: '![](images/Figure-1.17.jpg)'
+  prefs: []
+  type: TYPE_IMG
+- en: '**Figure 1.17:** The ***ChatGPT*** code generated is copied using the ***Copy
+    code*** button'
+  prefs: []
+  type: TYPE_NORMAL
+- en: 'This gives the output code and text description (for the code, click on **Copy
+    code** top right in the inset window, shown in *[Figure 1.17](#fig1_17)*.) The
+    code generated is as follows:'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '**Note**'
+  prefs: []
+  type: TYPE_NORMAL
+- en: The actual code generated may very well change over time. As an example, we
+    have emboldened some of the additions made from an earlier response given.
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`public class BinarySearch {`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**/****`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`** * Binary search method to find the target element in a sorted array.**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`** ***`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`** * @param arr The sorted array to search in.**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`** * @param target The element to search for.**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`** * @return The index of the target element if found; otherwise, -1.**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`** */**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`public static int binarySearch(int[] arr, int target) {`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`int left = 0;`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`int right = arr.length - 1;`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`while (left <= right) {`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**// If the middle element is the target, return its index**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if (arr[mid] == target) {`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`return mid;`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`}`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`**// If the target is in the left half, discard the right half**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`if (arr[mid] > target) {`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`right = mid - 1;`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`} else { **// If the target is in the right half, discard the left half**`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`left = mid + 1;`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`}`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '`}`'
+  prefs: []
+  type: TYPE_NORMAL
+- en: '[PRE0]` `public static void main(String[] args) {`    `int[] arr = {2, 5, 8,
+    12, 16, 23, 38, **45,** 56, 72, 91};`    `int target = 23;`   [PRE1] [PRE2]``  [PRE3][PRE4][PRE5][PRE6][PRE7][PRE8][PRE9][PRE10][PRE11]``
+    [PRE12][PRE13][PRE14][PRE15][PRE16][PRE17][PRE18][PRE19][PRE20]` # [CHAPTER 2](toc.xhtml#c02)    #
+    [Java Programming – Best Practices as Stated by ChatGPT](toc.xhtml#c02)    # [Introduction](toc.xhtml#s14a)    In
+    this chapter, we prompt ChatGPT to test its knowledge of good programming practice.
+    We asked it to define what it knew about the “SOLID” principles which it did almost
+    instantaneously, the following output was just the introduction:    “*SOLID is
+    a set of five principles for object-oriented programming that were introduced
+    by Robert C. Martin (also known as Uncle Bob). These principles aim to make software
+    designs more robust, flexible, and maintainable. Here''s a brief overview of the
+    SOLID principles and how they apply to Java*:”    # [Structure](toc.xhtml#s15a)    In
+    this chapter, we will discuss the following topics:    *   The principles of SOLID
+    *   Best Practice for Java code indentation *   SOLID Code Examples     *   Single
+    Responsibility Principle (SRP)     *   Open/Closed Principle (OCP)     *   Liskov
+    Substitution Principle (LSP)     *   Interface Segregation Principle (ISP)     *   Dependency
+    Inversion Principle (DIP)    # [The principles of SOLID](toc.xhtml#s16a)    The
+    response from ChatGPT on the five principles for using Object-Oriented Programming
+    were numbered as follows, when we asked the question    “**What are the principles
+    of SOLID for Java program development?”**    1.  **Single Responsibility Principle
+    (SRP):** A class should have only one reason to change. This means that a class
+    should have only one responsibility or job to do. If a class has multiple responsibilities,
+    it becomes difficult to change, test, and maintain. In Java, you can apply SRP
+    by creating smaller, more focused classes that do one thing well. 2.  **Open/Closed
+    Principle (OCP):** Software entities (classes, modules, functions) should be open
+    for extension but closed for modification. This means that you should be able
+    to add new functionality to a program without modifying existing code. In Java,
+    you can apply OCP by using interfaces and abstract classes to provide a stable
+    interface for clients while allowing implementation details to vary. 3.  **Liskov
+    Substitution Principle (LSP):** Subtypes should be substitutable for their base
+    types. This means that any subclass should be able to be used in place of its
+    parent class without causing problems. In Java, you can apply LSP by following
+    the "is-a" relationship between classes and ensuring that subclass methods do
+    not violate the contracts of their parent class. 4.  **Interface Segregation Principle
+    (ISP):** Clients should not be forced to depend on interfaces they do not use.
+    This means that you should design interfaces that are specific to the needs of
+    their clients. In Java, you can apply ISP by creating smaller interfaces that
+    have a clear purpose and only contain the methods that are relevant to their clients.
+    5.  **Dependency Inversion Principle (DIP):** High-level modules should not depend
+    on low-level modules. Both should depend on abstractions. Abstractions should
+    not depend on details. Details should depend on abstractions. This means that
+    you should design your code so that high-level modules are decoupled from low-level
+    modules, and both depend on abstractions. In Java, you can apply DIP by using
+    dependency injection to provide objects with their dependencies, and by programming
+    to interfaces rather than concrete classes.    # [Best Practice for Java code
+    indentation](toc.xhtml#s17a)    In the following question, we used the **ChatGPT
+    3.5** available using the web-based link:    **[https://chat.openai.com/](https://chat.openai.com/)
+    :**    **Can you describe the best practice for Java code indentation?**    Proper
+    code indentation is essential for writing clean, readable, and maintainable Java
+    code. Consistent and well-formatted code improves collaboration among developers
+    and reduces the chances of introducing errors. Here are some best practices for
+    Java code indentation:    *   **Use Consistent Indentation Style:** Choose a specific
+    indentation style (e.g., 2 spaces, 4 spaces, or tabs) and stick to it throughout
+    your codebase. Consistency is key to readability. *   **Indentation for Blocks:**
+    Indent each block of code (such as classes, methods, loops, and conditionals)
+    to visually indicate their hierarchy. The contents of the block should be indented
+    one level further.w![](images/Figure-2.1.jpg)          **Figure 2.1:** The ChatGPT
+    Java code indentation example           *   **Vertical Alignment:** Align similar
+    elements vertically to improve readability. This is particularly useful for assignments,
+    method calls, or multiple variable declarations.![](images/Figure-2.2.jpg)          **Figure
+    2.2:** The ChatGPT Java code vertical alignment example           *   **Chaining
+    and Method Calls:** When chaining method calls, align the dots for better clarity.
+    You can also align parameters if they don''t fit comfortably on a single line.![](images/Figure-2.3.jpg)          **Figure
+    2.3:** The ChatGPT Java code vertical alignment example           *   **Indentation
+    for Wrapped Lines:** When a line is too long and wrapped onto multiple lines,
+    the subsequent lines should be indented to indicate their continuation.![](images/Figure-2.4.jpg)          **Figure
+    2.4:** The ChatGPT Java code Indentation for Wrapped Lines example           *   **Indentation
+    for Nested Constructs:** When dealing with nested constructs, increase the indentation
+    level accordingly to show their nesting level.![](images/Figure-2.5.jpg)          **Figure
+    2.5:** The ChatGPT Java code Indentation for Nested Constructs example           *   **Comments
+    and Annotations:** Comments and annotations should typically share the same indentation
+    level as the code they''re associated with.![](images/Figure-2.6.jpg)          **Figure
+    2.6:** The ChatGPT Java code Indentation for Comments and Annotations example           *   **Aligning
+    Parameters:** For method calls with multiple parameters, consider aligning the
+    parameters for improved readability.![](images/Figure-2.7.jpg)          **Figure
+    2.7:** The ChatGPT Java code Indentation for Aligning Parameters example           *   **Indentation
+    in Switch Statements:** Indent the case labels within a switch statement, and
+    indent the code inside each case block.![](images/Figure-2.8.jpg)          **Figure
+    2.8:** The ChatGPT Java code Indentation for Switch Statements example           *   **Use
+    an IDE''s Formatting Tools:** Most modern Integrated Development Environments
+    (IDEs) provide automatic code formatting tools. Configure your IDE''s settings
+    to follow your preferred indentation style, and use the auto-formatting feature
+    regularly. *   By following these best practices, you can create Java code that
+    is easy to read, understand, and maintain, leading to a more efficient and collaborative
+    development process.    # [SOLID Code Examples](toc.xhtml#s18a)    The five “**SOLID**”,
+    best practice Java Coding for Object-Oriented programming principles, were examined
+    in detail, by asking the **ChatGPT Ask AI** mobile ‘phone app the following questions
+    for each of the principles it listed as shown in the following sections:    #
+    [Single Responsibility Principle (SRP)](toc.xhtml#s19a)    **Do you have a Java
+    Code example that illustrates the SOLID Single Responsibility Principle?**    Certainly!
+    The Single Responsibility Principle (SRP) states that a class should have only
+    one reason to change, meaning it should have a single responsibility. Here''s
+    a Java code example that demonstrates the SRP:    [PRE21]java [PRE22][PRE23][PRE24][PRE25][PRE26][PRE27]``
+    `*public void **resetPassword**(String username) {*`    `*// logic for resetting
+    a user''s password*`    `*}*`   [PRE28][PRE29][PRE30][PRE31][PRE32][PRE33]``py[PRE34]py[PRE35]py[PRE36]`
+    [PRE37]`    In the above example, we have two classes: **UserService** and **EmailService**.
+    The **UserService** class is responsible for user-related operations such as user
+    registration, authentication, and password reset. It follows the SRP because it
+    has a single responsibility of managing user-related operations.    On the other
+    hand, the **EmailService** class is responsible for sending emails. It follows
+    the SRP because it has a single responsibility of managing email-related operations.    By
+    separating the concerns into two separate classes, we adhere to the SRP and achieve
+    better maintainability and flexibility in our code. If there are changes required
+    in user-related operations, we only need to modify the **UserService** class without
+    affecting the **EmailService** class, and vice versa.    # [Open/Closed Principle
+    (OCP)](toc.xhtml#s20a)    Do you have a Java Code example that illustrates the
+    SOLID Open/Closed Principle?    Certainly! The Open/Closed Principle (OCP) states
+    that classes should be open for extension but closed for modification. In other
+    words, you should be able to add new functionality to a class without modifying
+    its existing code. Here''s a Java code example that demonstrates the OCP:    [PRE38]java
+    [PRE39][PRE40][PRE41][PRE42][PRE43][PRE44][PRE45][PRE46][PRE47][PRE48][PRE49][PRE50][PRE51][PRE52][PRE53][PRE54][PRE55][PRE56][PRE57][PRE58]``
+    `*public double **getHeight**() {*`    `not`    `*return height;*`    `}`   [PRE59][PRE60][PRE61][PRE62][PRE63][PRE64][PRE65][PRE66][PRE67]
+    `*// **Circle** class implementing the Shape interface*`    `*public class **Circle**
+    implements Shape {*`    `private double radius;`   [PRE68][PRE69][PRE70][PRE71]``
+    `*public **Circle**(double radius) {*`    `this.radius = radius;`    `}`    `*public
+    double **getRadius**() {*`    `return radius;`    `}`   [PRE72][PRE73][PRE74][PRE75]`
+    `*public double **calculateAre**a() {*`    `return Math.PI * radius * radius;`    `}`    `}`   [PRE76][PRE77][PRE78][PRE79]
+    `*// **AreaCalculator** class responsible for calculating the total area of shapes*`    `*public
+    class **AreaCalculator** {*`    `*public double **calculateTotalArea**(Shape[]
+    shapes) {*`    `double totalArea = 0;`    `for (Shape shape : shapes) {`    `totalArea
+    += shape.calculateArea();`    `}`    `return totalArea;`    `}`    `}`    [PRE80]
+    [PRE81]` [PRE82]`    `// Shape interface representing a geometric shape`    `public
+    interface Shape {`    `double calculateArea();`    `}`   [PRE83][PRE84][PRE85][PRE86]``py[PRE87]py[PRE88]`py[PRE89]py`
+    `public double getWidth() {`    `return width;`    `}`   [PRE90]`py[PRE91]py[PRE92]py[PRE93]py[PRE94]py[PRE95]py[PRE96]`py[PRE97]py[PRE98][PRE99][PRE100]py[PRE101]py[PRE102][PRE103]
+    `Worker robot = new Robot();`    `robot.work();`    `robot.eat(); // This call
+    doesn''t make sense for a Robot and may cause errors.`    `robot.sleep(); // This
+    call doesn''t make sense for a Robot and may cause errors.`    `}`    `}`    In
+    this example, the Worker interface violates the Interface Segregation Principle
+    because it forces all implementing classes to provide implementations for methods
+    like eat() and sleep(), even though those methods are not relevant for all types
+    of workers (such as robots).    To adhere to the Interface Segregation Principle,
+    you would need to break down the monolithic Worker interface into smaller, more
+    focused interfaces based on the specific responsibilities of each type of worker,
+    such as Workable, Eatable, and Sleepable. This way, each class would only need
+    to implement the interfaces that are relevant to its behavior.    # [Dependency
+    Inversion Principle (DIP)](toc.xhtml#s23a)    In the following question, we also
+    used the **ChatGPT 3.5** available using the web-based link:    **[https://chat.openai.com/](https://chat.openai.com/)**
+    :    **Do you have a Java Code example that illustrates the SOLID Dependency Inversion
+    Principle?**    Certainly! The Dependency Inversion Principle (DIP) is one of
+    the SOLID principles that states that high-level modules should not depend on
+    low-level modules. Both should depend on abstractions. Additionally, abstractions
+    should not depend on details; details should depend on abstractions. In simpler
+    terms, this principle encourages the use of interfaces or abstract classes to
+    define high-level structures and relationships between components, promoting loose
+    coupling and flexibility.    Here''s a Java code example that illustrates the
+    Dependency Inversion Principle:    In this example, the Dependency Inversion Principle
+    is demonstrated by introducing the Switchable interface. Both the LightBulb and
+    Fan classes implement the Switchable interface. The Switch class depends on the
+    Switchable abstraction rather than concrete implementations. This allows you to
+    easily switch between different types of devices (light bulbs, fans, and more)
+    without modifying the Switch class.    `// Dependency Inversion Principle Example`    `//
+    High-level module that depends on an abstraction.`    `class LightBulb {`    `void
+    turnOn() {`    `System.out.println("LightBulb: Bulb turned on.");`    `}`   [PRE104]
+    `void turnOff() {`    `System.out.println("LightBulb: Bulb turned off.");`    `}`    `}`   [PRE105][PRE106]``py[PRE107]``
+    `void turnOn() {`    `System.out.println("Switch: Turning on…");`    `device.turnOn();`    `}`   [PRE108]``
+    `void turnOff() {`    `System.out.println("Switch: Turning off…");`    `device.turnOff();`    `}`    `}`   [PRE109]`
+    `// Abstraction (interface) that both high-level modules depend on.`    `interface
+    Switchable {`    `void turnOn();`    `void turnOff();`    `}`   [PRE110] `// Low-level
+    module that implements the abstraction.`    `class Fan implements Switchable {`    `@Override`    `public
+    void turnOn() {`    `System.out.println("Fan: Fan turned on.");`    `}`   [PRE111]`py
+    [PRE112]py`` [PRE113]py[PRE114][PRE115][PRE116][PRE117]py[PRE118]py` [PRE119]`py``
+    [PRE120]`py[PRE121][PRE122][PRE123] [PRE124][PRE125][PRE126][PRE127][PRE128]``
+    [PRE129][PRE130][PRE131] [PRE132]`py[PRE133]py[PRE134]py[PRE135]py[PRE136]py[PRE137]py`
+    [PRE138]`py[PRE139]py[PRE140]py[PRE141][PRE142][PRE143][PRE144][PRE145]``py[PRE146]py[PRE147]py[PRE148]py[PRE149][PRE150][PRE151][PRE152][PRE153]
+    [PRE154][PRE155][PRE156][PRE157][PRE158][PRE159][PRE160][PRE161][PRE162]`` [PRE163][PRE164][PRE165][PRE166][PRE167]
+    [PRE168]`py[PRE169]py[PRE170]py[PRE171]py[PRE172]py[PRE173]py[PRE174]py[PRE175]py[PRE176]py[PRE177]py[PRE178]py`  [PRE179]`py[PRE180]py[PRE181]py[PRE182]py[PRE183]py[PRE184]py[PRE185]py[PRE186]py[PRE187]py
+    `*public static String getResponseFromGPT(String prompt) throws Exception {*`    `OkHttpClient
+    client = new OkHttpClient().newBuilder().build();`    `MediaType mediaType = MediaType.parse("application/json");`    `RequestBody
+    body = RequestBody.create(mediaType, "{\"prompt\": \"" + prompt + "\",\"temperature\":0.7,\"max_tokens\":60}");`    `Request
+    request = new Request.Builder()`    `.url(API_URL)`    `.method("POST", body)`    `.addHeader("Content-Type",
+    "application/json")`    `.addHeader("Authorization", "Bearer " + API_KEY)`    `.build();`    `Response
+    response = client.newCall(request).execute();`    `String responseJson = response.body().string();`    `response.close();`    `return
+    responseJson;`    `}`   [PRE188] [PRE189]  [PRE190]`py[PRE191]py[PRE192]py[PRE193]py[PRE194]``py[PRE195]py[PRE196]py[PRE197]py[PRE198]py[PRE199]py[PRE200]`py[PRE201]py[PRE202]``py[PRE203]py[PRE204][PRE205][PRE206][PRE207]
+    `if (index != -1) {`    `System.out.println("Element found at index: " + index);`    `}
+    else {`    `System.out.println("Element not found in the array.");`    `}`    `}`    `}`    We
+    can scroll down past the code window to show the **ChatGPT AI** description, as
+    follows:    *In this example, we have a sorted array **arr**, and we''re searching
+    for the target element using the **binarySearch** method. If the target element
+    is found, the method will return its index; otherwise, it will return -1 to indicate
+    that the element is not present in the array. The provided main method demonstrates
+    how to use the **binarySearch** method with a sample array.*    # [Java code validation
+    using Eclipse Java code](toc.xhtml#s46a)    One requirement that we need to supply
+    in order to fully validate the algorithm for the Binary Search, is a sorted array.
+    So, we posed the question for the **ChatGPT** web application ( **[https://chat.openai.com](https://chat.openai.com)).**
+    This question and the response are as follows:    **Do you have an example of
+    an efficient sort algorithm using a Java program to sort an array of integer values
+    into ascending numeric order?**    We get the response as follows:    “Certainly!
+    One efficient sorting algorithm is the QuickSort algorithm. It''s a divide-and-conquer
+    algorithm that works by selecting a ''pivot'' element and partitioning the array
+    into two sub-arrays, one containing elements less than the pivot and the other
+    containing elements greater than the pivot. The sub-arrays are then recursively
+    sorted.    Here''s a Java program that implements the QuickSort algorithm to sort
+    an array of integer values into ascending numeric order:    `public class QuickSort
+    {`    `public static void main(String[] args) {`    `int[] arr = { 9, 7, 5, 11,
+    12, 2, 14, 3, 10, 6 };`   [PRE208]`py[PRE209]py[PRE210]py` `quickSort(arr, 0,
+    arr.length - 1);`   [PRE211]`py[PRE212]py[PRE213]py[PRE214]py[PRE215]py[PRE216]py[PRE217]`py[PRE218]py[PRE219][PRE220][PRE221]py[PRE222]py[PRE223][PRE224]
+    `while (i < n1 && j < n2) {`    `if (leftArray[i] <= rightArray[j]) {`    `arr[k++]
+    = leftArray[i++];`    `} else {`    `arr[k++] = rightArray[j++];`    `}`    `}`   [PRE225]
+    `while (i < n1) {`    `arr[k++] = leftArray[i++];`    `}`   [PRE226][PRE227]``py[PRE228]``
+    `merge(arr, left, mid, right);`    `}`    `}`   [PRE229]`` `public static void
+    main(String[] args) {`    `int[] arr = {12, 11, 13, 5, 6, 7};`   [PRE230]` `System.out.println("Original
+    array: " + Arrays.toString(arr));`   [PRE231] `long startTime = System.currentTimeMillis();`    `mergeSort(arr,
+    0, arr.length - 1);`    `long endTime = System.currentTimeMillis();`   [PRE232]`py
+    [PRE233]py`` [PRE234]py[PRE235][PRE236][PRE237][PRE238]py[PRE239]py` [PRE240]`py``
+    [PRE241]`py[PRE242][PRE243][PRE244] [PRE245][PRE246][PRE247][PRE248][PRE249]``
+    [PRE250][PRE251][PRE252] [PRE253]`py[PRE254]py[PRE255]py[PRE256]py[PRE257]py[PRE258]py`
+    [PRE259]`py[PRE260]py[PRE261]py[PRE262][PRE263][PRE264][PRE265][PRE266]``py[PRE267]py[PRE268]py[PRE269]py[PRE270][PRE271][PRE272][PRE273][PRE274][PRE275][PRE276][PRE277][PRE278]``py[PRE279]py[PRE280]py[PRE281]py[PRE282]py[PRE283]py[PRE284]py[PRE285]py[PRE286][PRE287][PRE288][PRE289][PRE290][PRE291][PRE292][PRE293][PRE294]py[PRE295]py[PRE296]py[PRE297]py[PRE298]py[PRE299]py[PRE300]py[PRE301]py[PRE302]py[PRE303]py[PRE304]py[PRE305]py[PRE306]py[PRE307]py[PRE308]py[PRE309]py[PRE310]py[PRE311]py[PRE312]py[PRE313]py[PRE314]py[PRE315]py[PRE316]`py[PRE317]py[PRE318]py[PRE319]py
+    `// Construct the command to execute the Python script`    `String[] command =
+    {"python", pythonScriptPath, inputFile, outputDirectory};`   [PRE320]py`` `Process
+    process = processBuilder.start();`   [PRE321]py `// Wait for the process to complete`    `int
+    exitCode = process.waitFor();`    `System.out.println("Python script exited with
+    code: " + exitCode);`   [PRE322] [PRE323] [PRE324]py`` [PRE325]py[PRE326]` *   ***Python
+    Script (`**spleeter_separate.py**`)**:*          ``Create a Python script named
+    `spleeter_separate.py` that uses the Spleeter library to perform audio source
+    separation. Here''s a simplified example of the script:``                    [PRE327]*python*
+    [PRE328]` [PRE329]` [PRE330][PRE331][PRE332][PRE333][PRE334][PRE335][PRE336][PRE337]
+    [PRE338][PRE339][PRE340][PRE341][PRE342][PRE343]`` Remember to replace `''spleeter:2stems''`
+    with the appropriate separation model depending on how many sources you want to
+    separate. You can find more information about Spleeter and its available models
+    in the [official Spleeter documentation] (**[https://github.com/deezer/spleeter](https://github.com/deezer/spleeter)**
+    ).    Please note that this example demonstrates the basic process of calling
+    a Python script from Java to perform source separation using Spleeter. You might
+    need to adapt the code to your specific use case and handle error cases more robustly.
+    Additionally, make sure that both your Java and Python environments are properly
+    configured.    # [Fourier Analysis for MP4 java code validation using an Eclipse
+    Java Program Project](toc.xhtml#s71a)    So, we have several separate Java programs
+    to validate, including **Java** calls to a **python** library.    First, as suggested
+    by **ChatGPT**, we installed the **Spleeter** **python** libraries, which it referenced
+    as:    1.  ****Install Spleeter**:**          We used the command as follows:                    `pip
+    install Spleeter`              We noted later, that the **Spleeter** upper-case
+    “**S**” did not seem to cause an issue (we should have used **spleeter** with
+    the lower-case “**s**”).    This first attempt gave:    `bash: pip: command not
+    found…`    So, we realized that we have to use the **Python** **pip** installer
+    on our **RHEL 8.8** Linux server first, this is actually referenced as either
+    **pip2** or **pip3**, as the major versions can co-exist on **RHEL** Linux. So,
+    either can be used, as demonstrated below:    `[root@ECMUKDEMO22 eclipse]# pip3
+    --version`    `pip 9.0.3 from /usr/lib/python3.6/site-packages (python 3.6)`    `[root@ECMUKDEMO22
+    eclipse]# pip2 --version`    `pip 9.0.3 from /usr/lib/python2.7/site-packages
+    (python 2.7)`    `[root@ECMUKDEMO22 eclipse]#`    So, then we used:    `pip3 install
+    Spleeter`    This gave an error indicating there was a missing dependency called
+    **tensorflow 2.5.0**, as shown in *[Figure 6.6](#fig6_6)*:  ![](images/Figure6.6.jpg)  **Figure
+    6.6:** The first attempt at installing using pip3 gave an error on ***tensorflow
+    2.5.0***    So, we installed it first, using:    `pip3 install tensorflow`    But,
+    this also (eventually) gave the error:    ``You''re on RHEL/Fedora and haven''t
+    run `**yum install python3-devel**` or``    `` `**dnf install python3-devel**`
+    (make sure you also have **redhat-rpm-config** installed) ``    So, we repeated,
+    again, using:    `yum install redhat-rpm-config`  ![](images/Figure6.7.jpg)  **Figure
+    6.7:** The ***redhat-rpm-config*** is installed    Then we need to install the
+    **python3-devel** package as advised:    `yum install python3-devel`    The installation
+    of the `**python3-devel**` libraries were successful, as shown in *[Figure 6.8](#fig6_8):*  ![](images/Figure6.8.jpg)  **Figure
+    6.8:** The `**python3-devel**` libraries are installed    Now we try the missing
+    tensorflow package libraries installation, as shown in *[Figure 6.9](#fig6_9)***.**    `pip3
+    install tensorflow`  ![](images/Figure6.9.jpg)  **Figure 6.9:** The `**pip3 install
+    tensorflow**` command is used and libraries are installed    This also installs
+    the `**tensorflow-2.5.0**` as shown in *[Figure 6.10](#fig6_10)*:  ![](images/Figure6.10.jpg)  **Figure
+    6.10:** The `**tensorflow-2.5.0**` libraries are installed    We also needed to
+    run the pip3 upgrade:    (A link here helped; **[https://qiita.com/palao/items/699f4148249481c64ad7](https://qiita.com/palao/items/699f4148249481c64ad7)**
+    Although the description language used is in Japanese! The commands can still
+    be followed as they are standard Linux.)    `cd /usr/local/lib64/python3.6/site-packages`    `pip3
+    install --upgrade pip`    Then we tried to run the installation for **Spleeter**,
+    note here that we use lowercase for the **spleeter** name.    `pip3 install spleeter`    So,
+    then we use the command line process to get a test MP3 as in the Japanese link
+    to try the package out.    `wget **https://github.com/deezer/spleeter/raw/master/audio_example.mp3**`    Next,
+    we also installed the following library, as suggested in the Japanese blog:    `**pip3
+    install -U urllib3**`    These installs are shown in *[Figure 6.11](#fig6_11)***,**
+    with the commands as highlighted:  ![](images/Figure6.11.jpg)  **Figure 6.11:**
+    The audio_example.mp3 file is downloaded as the test input and the `urllib3`    Then,
+    we try to run the **spleeter** command from the **Linux** command window:    `spleeter
+    separate -p spleeter:2stems -o output audio_example.mp3`    First, we got the
+    error:    `[root@ECMUKDEMO22 site-packages]# spleeter separate -p spleeter:2stems
+    -o output audio_example.mp3`    `**ERROR:spleeter:ffmpeg binary not found**`    Searching
+    the error in Google, we get a recommendation from the link: **[https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/](https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/)**    We
+    need to run the command as follows:    `dnf -y install **https://download.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm**`    So,
+    scrolling back up the Japanese blog, I find an install for this too:    `dnf install
+    **http://rpmfind.net/linux/epel/7/x86_64/Packages/s/SDL2-2.0.14-2.el7.x86_64.rpm**`  ![](images/Figure6.12.jpg)  **Figure
+    6.12:** We need to install the ***EPEL*** packages to support the ***Spleeter
+    python*** program    We run the command as follows to install the recommended
+    CRB repository, as recommended in *[Figure 6.12](#fig6_12)*.    `subscription-manager
+    repos --enable codeready-builder-for-rhel-8-x86_64-rpms`    This repository is
+    enabled as expected as shown in *[Figure 6.13](#fig6_13)***:**  ![](images/Figure6.13.jpg)  **Figure
+    6.13:** We install the recommended CRB repository    We now need to update the
+    subscription rpm package file, using the command as follows:    `dnf install -y
+    **https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm**`    During
+    the installation, we get prompted to import two **GPG** security keys, as shown
+    in *[Figure 6.14](#fig6_14)*    (The **GPG** security keys are used for public/private
+    key encryption to ensure that the data is transferred securely in an encrypted
+    format).  ![](images/Figure6.14.jpg)  **Figure 6.14:** We confirm the use of the
+    two ***GPG*** security keys using the highlighted lines    The output from running
+    this rpm package installation is shown in *[Figure 6.15](#fig6_15)*:  ![](images/Figure6.15.jpg)  **Figure
+    6.15:** We update the subscription rpm package file, highlighted above    Then
+    we run the recommended ffmpeg and ffmpeg-devel package installations as shown
+    in *[Figure 6.16](#fig6_16)*:    `yum install ffmpeg ffmpeg-devel`  ![](images/Figure6.16.jpg)  **Figure
+    6.16:** We install 29 package libraries, using `yum install ffmpeg ffmpeg-devel`    The
+    installed **ffmpeg** packages we need are shown successfully installed as shown
+    in *[Figure 6.17](#fig6_17)*:  ![](images/Figure6.17.jpg)  **Figure 6.17:** The
+    installed ***ffmpeg*** packages we need are shown successfully installed    This
+    now installs ok and so we retry the command as shown in *[Figure 6.18](#fig6_18)*:    `spleeter
+    separate -p spleeter:2stems -o output audio_example.mp3`  ![](images/Figure6.18.jpg)  **Figure
+    6.18:** `spleeter separate -p spleeter:2stems -o output audio_example.mp3` command    Which
+    now runs without any errors, as demonstrated in *[Figure 6.18](#fig6_18)*.    Notice
+    that this program uses a training model, which it downloads, as indicated by **ChatGPT**.    So,
+    finally, we have achieved a working result, but we had to put a great deal of
+    additional effort into achieving this result and we don’t need a **Java** program
+    to do it.    The two split files are output as accompaniment.wav and vocals.wav
+    and listening to the original audio_example.mp3 file and the split files that
+    are output, it can be heard as an amazing split of the original sound, (the .wav
+    files played are listed in *[Figure 6.19](#fig6_19)*).  ![](images/Figure6.19.jpg)  **Figure
+    6.19:** The two split files are output as `accompaniment.wav` and `vocals.wav.`    However,
+    we do want to validate the **Java** program we asked **ChatGPT** to supply, so
+    we create a new class, SpleeterCaller under the com.asb **Java** package, using
+    the **Eclipse IDE** as shown in *[Figure 6.20](#fig6_20)*:  ![](images/Figure6.20.jpg)  **Figure
+    6.20:** The SpleeterCaller Java class is created under the com.asb package    First,
+    as advised, we created the spleeter_separate.py python script file as shown in
+    *[Figure 6.21](#fig6_21)*:  ![](images/Figure6.21.jpg)  **Figure 6.21:** The `spleeter_separate.py`
+    python script file    After pasting the suggested code from **ChatGPT** we save
+    the class file, `**SpleeterCaller.java**`, and run the application main Java class
+    as shown in *[Figure 6.22](#fig6_22)***:**  ![](images/Figure6.22.jpg)  **Figure
+    6.22:** The SpleeterCaller.java, the main Java class application is run    At
+    first, we get an error relating to the python which we try to fix by upgrading
+    to the latest python version 3.9 using the yum install python39 command, as shown
+    in *[Figure 6.23](#fig6_23)*:  ![](images/Figure6.23.jpg)  **Figure 6.23:** We
+    try upgrading to the latest Python version 3.9 using `yum install python39` com    We
+    finally discovered that there were a number of issues with the code given by **ChatGPT**.
+    The most important issue was that **ChatGPT** gave the command line code defined
+    as a **Java String** array, which does not work (at least with the **ProcessBuilder**
+    class used to launch the **spleeter** program **python** script). The second issue
+    was the call to the **python** script, which we realise was not necessary at all,
+    as the **spleeter** call could be made on the command line itself.    So, we updated
+    the code and our first attempt ran as expected below, as shown in *[Figure 6.24](#fig6_24)*:  ![](images/Figure6.24.jpg)  **Figure
+    6.24:** The first successful run of the spleeter program from a ***Java*** code
+    program    The files are split as expected, however, in a strange directory path
+    with a space as shown in *[Figure 6.25](#fig6_25)*.  ![](images/Figure6.25.jpg)  **Figure
+    6.25:** The two wav output files are created but in an unexpected sub-folder path    The
+    code was updated as highlighted in *[Figure 6.26](#fig6_26)* and the program re-run:  ![](images/Figure6.26.jpg)  **Figure
+    6.26:** The program was rerun and now creates the split files in the expected
+    path    The files output can now be seen in the expected path, as shown in *[Figure
+    6.27](#fig6_27):*  ![](images/Figure6.27.jpg)  **Figure 6.27:** The output files
+    now appear as expected in the expected path    The final working code we updated
+    is now shown in *[Figure 6.26](#fig6_26)*, which is listed as follows:    `package
+    **com.asb;**`    `import **java.io.BufferedReader;**`    `import **java.io.IOException;**`    `import
+    **java.io.InputStreamReader;**`    `import **java.util.ArrayList;** // ASB added
+    for the correct call for the Java ProcessBuilder`    `import **java.util.List;**
+    // ASB added for the correct call for the Java ProcessBuilder`    `public class
+    **SpleeterCaller {**`    `public static void **main(String[]** args**) {**`    `try
+    **{**`    `//String pythonScriptPath = "path/to/spleeter_separate.py"; // Replace
+    with actual path`    `**String** pythonScriptPath **=** "/usr/local/lib64/python3.6/site-packages/spleeter_separate.py"**;**
+    //ASB Our Path to the python script`    `//String inputFile = "path/to/input.mp4";
+    // Replace with actual input file path`    `**String** inputFile **=** "/usr/local/lib64/python3.6/site-packages/audio_example.mp3"**;**
+    // ASB Our input file path`    `//String outputDirectory = "path/to/output/";
+    // Replace with desired output directory`    `**String** outputDirectory **=**
+    "ASBoutput"**;** // ASB our output directory`   [PRE344][PRE345][PRE346][PRE347][PRE348][PRE349]`
+    `// Construct the command to execute the Python script`    `/* ASB Software Development
+    Limited - This section of Java code, suggested by ChatGPT is incorrect`    `*
+    The String[] array is not acceptable to ProcessBuilder, it requires an ArrayList`    `*/`    `//String[]
+    command = {"python", pythonScriptPath, inputFile, outputDirectory};`    `//`    `//ASB
+    We don''t need the python script file suggested by ChatGPT, we can call spleeter
+    directly using the command`    `// spleeter separate -p spleeter:2stems -o output
+    audio_example.mp3`   [PRE350][PRE351][PRE352][PRE353][PRE354][PRE355] `**List<String>**
+    command **=** new **ArrayList<String>();** // ASB we actually need a List interface,
+    rather than a String array`    `command**.add (**"/usr/local/bin/spleeter"**);**
+    // ASB command name`    `command**.add (**"separate"**);** // ASB arguments are
+    added as separate list items`    `command**.add (**"-p"**);**`    `command**.add(**"spleeter:2stems"**);**`    `command**.add
+    (**"-o" **+** outputDirectory**);**`    `command**.add (**inputFile**);**`   [PRE356][PRE357][PRE358][PRE359][PRE360][PRE361]``py[PRE362]py[PRE363]py[PRE364]`py[PRE365]py[PRE366]py`
+    `// Wait for the process to complete`    `int exitCode **=** process**.waitFor();**`    `**System.**out**.println(**"Python
+    script exited with code: " **+** exitCode**);**`   [PRE367]`py[PRE368]py[PRE369]py[PRE370]py[PRE371]py[PRE372]py[PRE373]py[PRE374]py[PRE375]py[PRE376]py[PRE377]py[PRE378]py[PRE379]py[PRE380]py[PRE381]py[PRE382]py[PRE383]py[PRE384]py[PRE385][PRE386][PRE387][PRE388][PRE389]``py[PRE390]py[PRE391]py[PRE392]py
+    `// Define the sine wave`    `double[] signal = new double[1024];`    `for (int
+    i = 0; i < signal.length; i++) {`    `signal[i] = Math.*sin*(2 * Math.*PI* * i
+    / 32);`    `}`   [PRE393]`py[PRE394]py[PRE395]py` `// Print the spectrum`    `for
+    (int i = 0; i < spectrum.length; i++) {`    `System.*out*.println(i + "\t" + spectrum[i]);`    `}`    `//`    `//ASB
+    Additional code to Graph the results of the Sine Curve Fourier Analysis`    `//`    `XYSeries
+    series = new XYSeries("XYGraph");`    `for (int i = 0; i < signal.length; i++)
+    {`    `series.add(i + 1, signal[i]); //`    `}`    `XYSeriesCollection dataset
+    = new XYSeriesCollection();`    `dataset.addSeries(series);`    `JFreeChart chart
+    = ChartFactory.*createXYLineChart*(`    `"Fourier Analysis of a Sine Curve - signal
+    plot",`    `"X-Axis",`    `"Y-Axis",`    `dataset);`    `ChartFrame frame = new
+    ChartFrame("Using ChatGPT FourierAnalysis.java", chart);`    `frame.pack();`    `frame.setVisible(true);`    `//`    `//ASB
+    Now display the Fourier Transform array`    `//`    `XYSeries series2 = new XYSeries("XYGraph");`    `for
+    (int i = 0; i < spectrum.length; i++) {`    `series2.add(i + 1, spectrum[i]);
+    // The Fourier Transform data set is added for the Graph`    `}`    `XYSeriesCollection
+    dataset2 = new XYSeriesCollection();`    `dataset2.addSeries(series2);`    `JFreeChart
+    chart2 = ChartFactory.*createXYLineChart*(`    `"Fourier Analysis of a Sine Curve
+    - Transform plot",`    `"X-Axis",`    `"Y-Axis",`    `dataset2);`    `ChartFrame
+    frame2 = new ChartFrame("Using ChatGPT FourierAnalysis.java", chart2);`    `frame2.pack();`    `frame2.setVisible(true);`   [PRE396]`py[PRE397]py[PRE398]py[PRE399]py[PRE400]py[PRE401]py[PRE402]`py[PRE403]py[PRE404][PRE405][PRE406]py[PRE407]py[PRE408][PRE409]
+    `audioInputStream.close();`    `} catch (Exception e) {`    `e.printStackTrace();`    `}`    `}`   [PRE410]
+    `private static float[] convertBytesToFloats(byte[] bytes) {`    `float[] floats
+    = new float[bytes.length / 2];`    `for (int i = 0; i < floats.length; i++) {`    `floats[i]
+    = (float) ((bytes[2 * i] & 0xFF) | (bytes[2 * i + 1] << 8));`    `}`    `return
+    floats;`    `}`    `}`    We downloaded a small mp4 file to test with:    **[https://file-examples.com/index.php/sample-video-files/sample-mp4-files/](https://file-examples.com/index.php/sample-video-files/sample-mp4-files/)**
+    and used the 1.5 Mbyte example file:    **[https://file-examples.com/wp-content/storage/2017/04/file_example_MP4_480_1_5MG.mp4](https://file-examples.com/wp-content/storage/2017/04/file_example_MP4_480_1_5MG.mp4)**    This
+    downloaded file was then copied for testing as follows:    `[root@ECMUKDEMO22
+    site-packages]# pwd`    `/usr/local/lib64/python3.6/site-packages`    `[root@ECMUKDEMO22
+    site-packages]# cp /mnt/hgfs/Installs/file_example_MP4_480_1_5MG.mp4 .`    `[root@ECMUKDEMO22
+    site-packages]#`    Unfortunately, this mp4 file gave the error:    `javax.sound.sampled.UnsupportedAudioFileException:
+    File of unsupported format at java.desktop/javax.sound.sampled.AudioSystem.getAudioInputStream(AudioSystem.java:1066)`    `at
+    FourierAnalysis_ExampleChapter6/com.asb.AudioAnalysis.main(AudioAnalysis.java:17)`    Next,
+    we get:    `java.lang.IllegalArgumentException: rows and columns must be greater
+    than 1`    `at JTransforms@3.1-with-dependencies/org.jtransforms.fft.FloatFFT_2D.<init>(FloatFFT_2D.java:76)`    `at
+    FourierAnalysis_ExampleChapter6/com.asb.AudioAnalysis.main(AudioAnalysis.java:24)`    So,
+    we adjusted the code line:    We found that the Java Sound Technology only supports
+    the following:    `Audio file formats: AIFF, AU and WAV.`    `Music file formats:
+    MIDI Type 0, MIDI Type 1, and Rich Music Format (RMF)`    `Sound formats: 8-bit
+    and 16-bit audio data, in mono and stereo, with sample rates from 8 kHz to 48
+    kHz.`    `Linear, a-law, and mu-law encoded data in any of the supported audio
+    file formats.`    `So, we tried with the **vocals.wav** file we created earlier,
+    but this still gave code errors later on:`    `java.lang.ArrayIndexOutOfBoundsException:
+    Index 1024 out of bounds for length 1024`    `at JTransforms@3.1-with-dependencies/org.jtransforms.utils.CommonUtils.cftf081(CommonUtils.java:10538)`    `at
+    JTransforms@3.1-with-dependencies/org.jtransforms.utils.CommonUtils.cftfsub(CommonUtils.java:5924)`    `at
+    JTransforms@3.1-with-dependencies/org.jtransforms.fft.FloatFFT_1D.realForward(FloatFFT_1D.java:537)`    `at
+    JTransforms@3.1-with-dependencies/org.jtransforms.fft.FloatFFT_2D.realForwardFull(FloatFFT_2D.java:959)`    `at
+    FourierAnalysis_ExampleChapter6/com.asb.AudioAnalysis.main(AudioAnalysis.java:33)`    This
+    was the code line throwing the above Exception error, as follows:    `fft.realForwardFull(spectrum);`    Next,
+    we loaded the test class using the link as follows:    `**[https://github.com/wendykierp/JTransforms/blob/master/src/test/java/org/jtransforms/fft/FloatFFT_2DTest.java](https://github.com/wendykierp/JTransforms/blob/master/src/test/java/org/jtransforms/fft/FloatFFT_2DTest.java)**`    We
+    tested the jar with the test set we downloaded:    We then update the project
+    with **junit 4** for the test and download:  ![](images/Figure6.47.jpg)  **Figure
+    6.47:** The JUNIT 4 library is added to the project build path    Updating the
+    code as follows:    `/**`    ` *`    ` */`    `/**`    ` *`    ` */`    `module
+    FourierAnalysis_ExampleChapter6 {`    `requires org.jfree.jfreechart;`    `requires
+    javax.sound;`    `requires JTransforms;`    `requires java.desktop;`    `requires
+    junit;`    `}`    Next, we need the JTransforms source jar:    **[http://search.maven.org/remotecontent?filepath=com/github/wendykierp/JTransforms/3.1/JTransforms-3.1-sources.jar](http://search.maven.org/remotecontent?filepath=com/github/wendykierp/JTransforms/3.1/JTransforms-3.1-sources.jar)**    We
+    added the source jar to assist with debugging as this will load the java on clicking
+    on the stack trace:  ![](images/Figure6.48.jpg)  **Figure 6.48:** The JTransforms
+    source jar, **JTransforms-3.1-sources.jar** file was added    The final code we
+    created for the **AudioAnalysis.java**, did show that we were correctly reading
+    the .wav file, and code was added to graph the chunks of data displaying up to
+    five graphs with an example as in the following code list:    `package com.asb;`   [PRE411][PRE412]``py[PRE413]``
+    `// Read and process audio data in chunks`    `int chunkSize = 2048; // Adjust
+    as needed //ASB Adjusted Chunk size down from 2048`    `byte[] audioData = new
+    byte[chunkSize];`    `// final float[] actual = new float[2 * numRows * numCols];`    `FloatFFT_2D
+    fft = new FloatFFT_2D(chunkSize, 2); //ASB need to increase the columns parameter
+    to greater than 1 as this errors in the FloatFFT_2D constructor!`   [PRE414]``
+    `// Process each chunk of audio data`    `Boolean nodata = true; //ASB We added
+    a flag so that all zero sections were ignored`    `int screen_count = 0;`    `//ASB
+    We added a screen_count limit of 5 pop-up windows`    `while (audioInputStream.read(audioData)
+    != -1 & screen_count < 5 ) {`    `int bytes = audioInputStream.read(audioData);`    `System.*out*.println("Byte
+    size:" + bytes) ;`    `float[] audioSamples = *convertBytesToFloats*(audioData);`    `System.*out*.println("Array
+    size:" + audioSamples.length) ;`    `// Apply FFT`    `float[] spectrum = new
+    float[chunkSize/2]; //Changed from 2*chunksize array must be of size rows*2*columns,
+    with only the first rows*columns`    `for (int j=0; j < audioSamples.length; j++)
+    {`    `spectrum[j] = audioSamples[j];`    `if (audioSamples[j] > 0.0f) {`    `nodata
+    = false;`    `}`   [PRE415]` `}`    `//System.arraycopy(audioSamples, 0, spectrum,
+    0, chunkSize); //ASB changed to chunkSize/2`    `//ASB Now display the Fourier
+    Transform array`    `if(!nodata) {`    `// fft.realForwardFull(spectrum); //ASB
+    Gives OutOfBounds Exception Index 1024 out of bounds for length 1024`   [PRE416]
+    `// Process the spectrum data (e.g., separate sources)`   [PRE417]`py [PRE418]py``
+    [PRE419]py[PRE420][PRE421][PRE422][PRE423]py[PRE424]py` [PRE425]`py`` [PRE426]`py[PRE427][PRE428][PRE429]
+    [PRE430][PRE431][PRE432][PRE433][PRE434]`` [PRE435][PRE436][PRE437] [PRE438]`py[PRE439]py[PRE440]py[PRE441]py[PRE442]py[PRE443]py`
+    [PRE444]`py[PRE445]py[PRE446]py[PRE447][PRE448][PRE449][PRE450][PRE451]``py[PRE452]py[PRE453]py[PRE454]py[PRE455][PRE456][PRE457][PRE458][PRE459]
+    [PRE460][PRE461][PRE462][PRE463][PRE464][PRE465][PRE466][PRE467][PRE468]`` [PRE469][PRE470][PRE471][PRE472][PRE473]
+    [PRE474]`py[PRE475]py[PRE476]py[PRE477]py[PRE478]py[PRE479]py[PRE480]py[PRE481]py[PRE482]py[PRE483]py[PRE484]py`
+    [PRE485]`py[PRE486]py[PRE487]py[PRE488]py[PRE489]py[PRE490][PRE491][PRE492][PRE493][PRE494][PRE495][PRE496]``py[PRE497]py[PRE498]py[PRE499]py[PRE500]py[PRE501]py[PRE502][PRE503][PRE504][PRE505][PRE506][PRE507][PRE508]
+    [PRE509][PRE510][PRE511][PRE512][PRE513][PRE514][PRE515][PRE516][PRE517][PRE518][PRE519][PRE520][PRE521]``
+    [PRE522][PRE523][PRE524][PRE525][PRE526][PRE527][PRE528] [PRE529]`py[PRE530]py[PRE531]py[PRE532]py[PRE533]py[PRE534]py[PRE535]py[PRE536]py[PRE537]py[PRE538]py[PRE539]py[PRE540]py[PRE541]py[PRE542]py[PRE543]py[PRE544]py`
+    [PRE545]`py[PRE546]py[PRE547]py[PRE548]py[PRE549]py[PRE550]py[PRE551]py[PRE552][PRE553][PRE554][PRE555][PRE556][PRE557][PRE558][PRE559][PRE560]``py[PRE561]py[PRE562]py[PRE563]py[PRE564]py[PRE565]py[PRE566]py[PRE567]py[PRE568]py[PRE569]py[PRE570]py`
+    # [CHAPTER 8](toc.xhtml#c08)    # [ChatGPT Generated Java Code for Indexing a
+    Document](toc.xhtml#c08)    # [Introduction](toc.xhtml#s90a)    The **OpenAI ChatGPT**
+    program was asked for example **Java** code for indexing a document with output
+    of a list of keywords with the associated document page numbers.    The code provided
+    by **ChatGPT** created an index of documents and their associated keywords using
+    the **Lucene** library. It also allowed searching for documents based on keywords
+    and returned the document path.    # [Structure](toc.xhtml#s91a)    In this chapter,
+    we will discuss the following topics:    *   **ChatGPT** generated **Java** code
+    for indexing a document giving keywords and page numbers *   Document Indexing
+    Java code validation using an **Eclipse IDE** Java Program Project    # [ChatGPT
+    generated Java code for indexing a document giving keywords and page numbers](toc.xhtml#s92a)    I
+    used the **Ask AI** mobile ‘phone app the following question and the **Open AI
+    ChatGPT 3.5** response was as listed in the quoted italics**:**    **Is there
+    example java code for indexing a document so listing keywords with the document
+    page numbers**.    ““Yes, there is example Java code for indexing a document and
+    listing keywords with the document page numbers. Here is an example implementation
+    using the Apache Lucene library:    [PRE571]    `import java.io.IOException;`    `import
+    java.nio.file.Paths;`    `import org.apache.lucene.analysis.standard.StandardAnalyzer;`    `import
+    org.apache.lucene.document.Document;`    `import org.apache.lucene.document.Field;`    `import
+    org.apache.lucene.document.TextField;`    `import org.apache.lucene.index.DirectoryReader;`    `import
+    org.apache.lucene.index.IndexReader;`    `import org.apache.lucene.index.IndexWriter;`    `import
+    org.apache.lucene.index.IndexWriterConfig;`    `import org.apache.lucene.index.Term;`    `import
+    org.apache.lucene.queryparser.classic.MultiFieldQueryParser;`    `import org.apache.lucene.queryparser.classic.QueryParser;`    `import
+    org.apache.lucene.search.IndexSearcher;`    `import org.apache.lucene.search.Query;`    `import
+    org.apache.lucene.search.ScoreDoc;`    `import org.apache.lucene.search.TopDocs;`    `import
+    org.apache.lucene.store.Directory;`    `import org.apache.lucene.store.FSDirectory;`    `public
+    class DocumentIndexer {`    `private Directory indexDir;`    `public DocumentIndexer(String
+    indexDirectoryPath) throws IOException {`    `indexDir = FSDirectory.open(Paths.get(indexDirectoryPath));`    `}`   [PRE572][PRE573][PRE574][PRE575][PRE576]``py[PRE577]py`
+    `TopDocs topDocs = indexSearcher.search(query, 10);`   [PRE578]`py `for (ScoreDoc
+    scoreDoc : topDocs.scoreDocs) {`    `Document document = indexSearcher.doc(scoreDoc.doc);`    `System.out.println("Page:
+    " + document.get("path"));`    `}`    `indexReader.close();`    `}`   [PRE579]
+    `public static void main(String[] args) throws Exception {`    `String indexDirectoryPath
+    = "/path/to/index/directory";`    `DocumentIndexer indexer = new DocumentIndexer(indexDirectoryPath);`   [PRE580][PRE581]``py[PRE582]``py[PRE583][PRE584][PRE585]`
+    [PRE586]`    In this code, the `indexDocument` method takes a document (as a `String`)
+    and a page number, splits the document into words, and adds the page number to
+    the list of page numbers for each word. The `getPageNumbers` method then allows
+    you to retrieve the list of page numbers for a given word [Source 1**]([https://codereview.stackexchange.com/questions/122675/program-to-index-a-book](https://codereview.stackexchange.com/questions/122675/program-to-index-a-book)).**    This
+    is a very basic example and may not be efficient for large documents or large
+    numbers of documents. For more advanced use cases, you might want to consider
+    using a search library like Apache Lucene.    Apache Lucene is a powerful Java
+    library used for implementing full-text search on a corpus of text. With it, you
+    can add searchable fields to your documents and then build an index of those fields.
+    Here''s a basic example of how you might do this:    [PRE587]java [PRE588][PRE589]`
+    [PRE590]`    In this code, we create a `Directory` to hold the index (in this
+    case, a `RAMDirectory` which holds the index in memory), create an `IndexWriter`
+    to add documents to the index, create a `Document`, add fields to the document
+    for the text and the page number, and then add the document to the index [Source
+    2](**[https://howtodoinjava.com/lucene/lucene-index-search-examples/](https://howtodoinjava.com/lucene/lucene-index-search-examples/)).**    To
+    search the index for a particular keyword, you can use Lucene''s `IndexSearcher`
+    class:    [PRE591]java [PRE592]`` `public class LuceneSearcher {`    `public TopDocs
+    searchIndex(Directory indexDirectory, String keyword) throws Exception {`    `IndexReader
+    reader = DirectoryReader.open(indexDirectory);`    `IndexSearcher searcher = new
+    IndexSearcher(reader);`    `QueryParser parser = new QueryParser("text", new StandardAnalyzer());`    `Query
+    query = parser.parse(keyword);`    `TopDocs results = searcher.search(query, 10);`    `return
+    results;`    `}`    `}`    [PRE593]*[PRE594]`` [PRE595] [PRE596]py`` [PRE597]py[PRE598][PRE599][PRE600][PRE601]py[PRE602]py`
+    [PRE603]`py`` [PRE604]`py[PRE605][PRE606][PRE607]  [PRE608][PRE609][PRE610][PRE611][PRE612][PRE613][PRE614][PRE615]``py[PRE616]py[PRE617]py[PRE618]py[PRE619]`
+    [PRE620]`    `import java.util.Scanner;`    `public class Saltikov {`    `public
+    static void main(String[] args) {`    `Scanner scanner = new Scanner(System.in);`   [PRE621][PRE622][PRE623][PRE624][PRE625][PRE626][PRE627]``
+    `// Get the number of sections measured`    `System.out.print("Enter the number
+    of sections measured: ");`    `int n = scanner.nextInt();`   [PRE628][PRE629][PRE630][PRE631][PRE632][PRE633][PRE634]`
+    `// Get the section size measurements`    `double[] sizes = new double[n];`    `for
+    (int i = 0; i < n; i++) {`    `System.out.print("Enter the size of section " +
+    (i+1) + " in micrometers: ");`    `sizes[i] = scanner.nextDouble();`    `}`   [PRE635][PRE636][PRE637][PRE638][PRE639][PRE640][PRE641]
+    `// Get the area under the curve`    `System.out.print("Enter the area under the
+    curve: ");`    `double area = scanner.nextDouble();`   [PRE642]`py[PRE643]py[PRE644]py[PRE645]`py[PRE646]py[PRE647]py[PRE648]py[PRE649]py[PRE650]py[PRE651]py[PRE652]py[PRE653]py[PRE654][PRE655][PRE656][PRE657][PRE658][PRE659][PRE660]``py[PRE661]py[PRE662]py[PRE663]py[PRE664]py[PRE665]py
+    `/**`    `* Calculates the particle size distribution based on the Saltikov determination.`    `*`    `*
+    @param sectionSizes   List of section sizes`    `* @param thickness      Thickness
+    of the material`    `* @param shapeFactor    Shape factor for the particles`    `*
+    @return List of particle sizes`    `*/`    `public static List<Double> calculateParticleSizes(List<Double>
+    sectionSizes, double thickness, double shapeFactor) {`    `List<Double> particleSizes
+    = new ArrayList<>();`   [PRE666]`py[PRE667]py[PRE668]py[PRE669]py[PRE670]py` `return
+    particleSizes;`    `}`    `}”`    This was an improvement on the first response,
+    since it does include the section thickness and the particle shape factors and
+    supplies some example test data to use. However, from having written a real-world
+    application in **Fortran,** we were aware that a triangular matrix inversion of
+    the polynomial coefficients was required to obtain a solution, so we asked **Ask
+    AI** the following question in the same thread:    **Does the Java program code
+    suggested include a matrix inversion to obtain the particle size distribution?**    This
+    additional question prompted **Ask AI** to extend the code given with the response:    “Apologies
+    for the confusion. The Java program code provided in the previous response does
+    not include a matrix inversion step. It simply calculates the particle sizes based
+    on the Saltikov determination formula.    If you need to perform matrix inversion
+    as part of your particle size distribution analysis, you would need to incorporate
+    additional code to handle the matrix inversion operation. Java does not have a
+    built-in matrix inversion method in its standard library, so you would either
+    need to implement the matrix inversion algorithm yourself or use a third-party
+    library that provides matrix manipulation capabilities.    Here''s an example
+    of how you could modify the code to include a matrix inversion step using the
+    Apache Commons Math library:    [PRE671]    `import org.apache.commons.math3.linear.Array2DRowRealMatrix;`    `import
+    org.apache.commons.math3.linear.MatrixUtils;`    `import org.apache.commons.math3.linear.RealMatrix;`    `import
+    org.apache.commons.math3.linear.SingularMatrixException;`    `import java.util.ArrayList;`    `import
+    java.util.List;`    `public class SaltikovParticleSizeAnalysis {`   [PRE672][PRE673][PRE674][PRE675][PRE676][PRE677]``py[PRE678]py[PRE679]py[PRE680][PRE681][PRE682][PRE683][PRE684][PRE685][PRE686][PRE687][PRE688][PRE689][PRE690][PRE691][PRE692][PRE693][PRE694][PRE695][PRE696][PRE697][PRE698][PRE699]``
+    `// Create the matrix A`    `double[][] aData = new double[n][n];`    `for (int
+    i = 0; i < n; i++) {`    `for (int j = 0; j < n; j++) {`    `aData[i][j] = Math.pow(sectionSizes.get(i),
+    2 * j + 1);`    `}`    `}`    `RealMatrix aMatrix = new Array2DRowRealMatrix(aData);`   [PRE700][PRE701][PRE702][PRE703][PRE704][PRE705][PRE706][PRE707][PRE708]
+    `try {`    `// Perform matrix inversion to solve for x`    `RealMatrix xMatrix
+    = MatrixUtils.inverse(aMatrix).multiply(bVector);`   [PRE709][PRE710][PRE711][PRE712]``
+    `// Extract the particle sizes from the solution vector x`    `double[] x`    This
+    is all very impressive, but unfortunately the **Java** code was clearly truncated,
+    so we guessed that we had reached a cut-off of the free tokens available.    We
+    then tried the question as follows:    **The code stopped just after the comment**    **//Extract
+    the particle sizes from the solution vector X**    **Is there any more**    Which,
+    unfortunately, was the fourth question for the day, so we got the response as
+    shown in *[Figure 9.2](#fig9_2):*  ![](images/Figure9.2.jpg)  **Figure 9.2:**
+    The response after the 3^(rd) question from our free version of ***Ask AI***    Fortunately,
+    **Ask AI** keeps a list of the previous conversation threads, so the next day,
+    the first question of the previous day’s response was selected and we just asked
+    the previous day’s fourth question again and we were rewarded with the rest of
+    the missing **Java** code, as in the following dialogue:    **The code stopped
+    just after the comment**    **//Extract the particle sizes from the solution vector
+    X**    **Is there any more**    Apologies for the incomplete response. Here''s
+    the complete code snippet, including the extraction of particle sizes from the
+    solution vector `xMatrix`:    [PRE713]java [PRE714][PRE715][PRE716][PRE717][PRE718]
+    [PRE719]`    `import java.util.ArrayList;`    `import java.util.List;`    `public
+    class ParticleSizeAnalysis {`    `public static void main(String[] args) {`    `//
+    Simulated observed section sizes`    `List<Double> observedSectionSizes = new
+    ArrayList<>();`    `observedSectionSizes.add(10.0);`    `observedSectionSizes.add(15.0);`    `observedSectionSizes.add(20.0);`    `//
+    … Add more observed section sizes`   [PRE720][PRE721][PRE722][PRE723] `// Calculate
+    the observed section size distribution (histogram)`    `int[] observedDistribution
+    = calculateHistogram(observedSectionSizes);`   [PRE724][PRE725][PRE726][PRE727]``py[PRE728]py[PRE729]`py[PRE730]py`
+    `// Print or analyze the results`    `for (int i = 0; i < trueParticleSizeDistribution.length;
+    i++) {`    `System.out.println("Particle Size: " + i + ", Distribution: " + trueParticleSizeDistribution[i]);`    `}`    `}`   [PRE731]`py[PRE732]py[PRE733]py[PRE734]py[PRE735]py[PRE736]py[PRE737]`py[PRE738]py[PRE739]py[PRE740][PRE741][PRE742]``py[PRE743]py
+    `// Get the area under the curve`    `System.*out*.print("Enter the area under
+    the curve: ");`    `double area = scanner.nextDouble();`    `System.*out*.println("Enter
+    the area under the curve: =" + area);`    `// Calculate the particle size distribution`    `double[]
+    distribution = new double[n];`    `for (int i = 0; i < n; i++) {`    `double x
+    = sizes[i];`    `double y = area / sizes[i]; //ASB This makes 2 * x * y which
+    is used later a constant value of 2 * area`    `double z = 2.0f * y * x; //ASB
+    Which makes the calculated distribution a constant value independent of`    `//ASB
+    each of the section particle sizes.`    `//ASB The distribution is therefore a
+    constant value just dependent on the area entered`    `System.*out*.println("y
+    =" + y + ", x=" + x + " 2.0f * y * x =" +z ); //ASB Debug added here`    `distribution[i]
+    = Math.*exp*(-2.0f * y * x);`    `}`   [PRE744] `// Print the particle size distribution`    `System.*out*.println("\nParticle
+    size distribution:");`    `for (int i = 0; i < n; i++) {`    `System.*out*.println(String.*format*("%.2f",
+    sizes[i]) + " um: " + String.*format*("%.8f", distribution[i]));`    `}`    `//ASB
+    We correct the warning by closing the scanner input`    `scanner.close();`    `}`    `}`    We
+    tested the code above by entering the values as follows, highlighted in green:    `Enter
+    the number of sections measured: **6**`    `Enter the size of section 1 in micrometers:
+    **0.5**`    `Enter the size of section 2 in micrometers: **1.0**`    `Enter the
+    size of section 3 in micrometers: **1.5**`    `Enter the size of section 4 in
+    micrometers: **2.0**`    `Enter the size of section 5 in micrometers: **2.5**`    `Enter
+    the size of section 6 in micrometers: **3.0**`    `Enter the area under the curve:
+    **0.001**`    `Enter the area under the curve: =0.001`    `y =0.002, x=0.5 2.0f
+    * y * x =0.002`    `y =0.001, x=1.0 2.0f * y * x =0.002`    `y =6.666666666666666E-4,
+    x=1.5 2.0f * y * x =0.002`    `y =5.0E-4, x=2.0 2.0f * y * x =0.002`    `y =4.0E-4,
+    x=2.5 2.0f * y * x =0.002`    `y =3.333333333333333E-4, x=3.0 2.0f * y * x =0.002`    `Particle
+    size distribution:`    `0.50 um: 0.99800200`    `1.00 um: 0.99800200`    `1.50
+    um: 0.99800200`    `2.00 um: 0.99800200`    `2.50 um: 0.99800200`    `3.00 um:
+    0.99800200`    We repeated the **Eclipse IDE** class creation for the second **Java**
+    code example given, as shown in *[Figure 9.8](#fig9_8)* through to *[Figure 9.11](#fig9_11)*,
+    for the `**SaltikovParticleSizeAnalysis**` class.    This second Java example
+    code ran without any errors, giving the output of the particle size distribution
+    from input values as follows:    `// Example input data - section size distribution`    `List<Double>
+    sectionSizes = new ArrayList<>();`    `sectionSizes.add(0.5);`    `sectionSizes.add(1.0);`    `sectionSizes.add(1.5);`    `sectionSizes.add(2.0);`    `sectionSizes.add(2.5);`    `sectionSizes.add(3.0);`   [PRE745][PRE746]``py[PRE747]``
+    `// Parameters for Saltikov determination`    `double thickness = 0.1; // Thickness
+    of the material`    `double shapeFactor = 0.9; // Shape factor for the particles`   [PRE748]``
+    `// Perform Saltikov determination`    `List<Double> particleSizes = *calculateParticleSizes*(sectionSizes,
+    thickness, shapeFactor);`   [PRE749]` `// Output the results`    `System.*out*.println("Particle
+    Size Distribution:");`    `for (double size : particleSizes) {`    `System.*out*.println(size);`    `}`    `//ASB
+    Now display the Particle Distribution array`    `XYSeries series = new XYSeries("XYGraph");`    `for
+    (int i = 0; i < particleSizes.size(); i++) {`    `series.add(i + 1, particleSizes.get(i));
+    // The Saltikov data set is added for the Graph`    `}`    `XYSeriesCollection
+    dataset = new XYSeriesCollection();`    `dataset.addSeries(series);`    `JFreeChart
+    chart = ChartFactory.*createXYLineChart*(`    `"Saltikov Particle Distribution
+    - Using Matrix Calculation",`    `"X-Axis - Size in µmetres",`    `"Y-Axis - Number
+    of particles",`    `dataset);`    `ChartFrame frame = new ChartFrame("Using ChatGPT
+    SaltykovParticleAnalysisV2.java", chart);`    `frame.pack();`    `frame.setVisible(true);`    `}`   [PRE750]
+    `/**`    `* Calculates the particle size distribution based on the Saltikov determination.`    `*`    `*
+    **@param** sectionSizes List of section sizes`    `* **@param** thickness Thickness
+    of the material`    `* **@param** shapeFactor Shape factor for the particles`    `*
+    **@return** List of particle sizes`    `*/`    `public static List<Double> calculateParticleSizes(List<Double>
+    sectionSizes, double thickness, double shapeFactor) {`    `int n = sectionSizes.size();`   [PRE751]`py
+    [PRE752]py`` [PRE753]py[PRE754][PRE755][PRE756][PRE757]py[PRE758]py` [PRE759]`py``
+    [PRE760]`py[PRE761][PRE762][PRE763] [PRE764][PRE765][PRE766][PRE767][PRE768]``
+    [PRE769][PRE770][PRE771] [PRE772]`py[PRE773]py[PRE774]py[PRE775]py[PRE776]py[PRE777]py`
+    [PRE778]`py[PRE779]py[PRE780]py[PRE781][PRE782][PRE783][PRE784][PRE785]``py[PRE786]py[PRE787]py[PRE788]py[PRE789][PRE790][PRE791][PRE792][PRE793]
+    [PRE794][PRE795][PRE796][PRE797][PRE798][PRE799][PRE800][PRE801][PRE802]`` [PRE803][PRE804][PRE805][PRE806][PRE807]
+    [PRE808]`py[PRE809]py[PRE810]py[PRE811]py[PRE812]py[PRE813]py[PRE814]py[PRE815]py[PRE816]py[PRE817]py[PRE818]py`
+    [PRE819]`py[PRE820]py[PRE821]py[PRE822]py[PRE823]py[PRE824][PRE825][PRE826][PRE827][PRE828][PRE829][PRE830]``py[PRE831]py[PRE832]py[PRE833]py[PRE834]py[PRE835]py[PRE836][PRE837][PRE838][PRE839][PRE840][PRE841][PRE842]
+    [PRE843][PRE844][PRE845][PRE846][PRE847][PRE848][PRE849][PRE850][PRE851][PRE852][PRE853][PRE854][PRE855]``
+    [PRE856][PRE857][PRE858][PRE859][PRE860][PRE861][PRE862] [PRE863]`py[PRE864]py[PRE865]py[PRE866]py[PRE867]py[PRE868]py[PRE869]py[PRE870]py[PRE871]py
+    `// Get the degree of the polynomial`    `System.out.print("Enter the degree of
+    the polynomial: ");`    `int n = scanner.nextInt();`   [PRE872]py`` `// Invert
+    the matrix`    `for (int i = n; i >= 0; i--) {`    `double divisor = matrix[i][i];`    `for
+    (int j = 0; j <= n+1; j++) {`    `matrix[i][j] /= divisor;`    `}`    `for (int
+    j = i-1; j >= 0; j--) {`    `double factor = matrix[j][i];`    `for (int k = 0;
+    k <= n+1; k++) {`    `matrix[j][k] -= factor * matrix[i][k];`    `}`    `}`    `}`   [PRE873]py
+    `// Create a matrix from the coefficients`    `Matrix A = new Matrix(coefficients);`   [PRE874]
+    [PRE875] [PRE876]py`` [PRE877]py[PRE878][PRE879][PRE880]``py[PRE881]py[PRE882][PRE883][PRE884]py[PRE885]py[PRE886][PRE887]
+    `// Get the target folder`    `Folder targetFolder = Factory.Folder.fetchInstance(objectStore,
+    documentPath, null);`   [PRE888] `// Create a new document`    `Document document
+    = Factory.Document.createInstance(objectStore, null);`   [PRE889][PRE890]``py[PRE891]``
+    `// Create a content transfer object`    `ContentTransfer contentTransfer = Factory.ContentTransfer.createInstance();`    `//
+    Set the content of the document`    `contentTransfer.setCaptureSource(documentContent);`    `contentTransfer.set_ContentType("text/plain");`    `contentTransfer.set_RetrievalName(documentName);`    `contentList.add(contentTransfer);`   [PRE892]``
+    `// Set the content of the document`    `document.set_ContentElements(contentList);`   [PRE893]`
+    `// Save the document`    `document.save(RefreshMode.REFRESH);`   [PRE894] `//
+    File the document in the target folder`    `document.file(targetFolder, null,
+    null, null);`   [PRE895] [PRE896] [PRE897]py`` [PRE898]py[PRE899][PRE900][PRE901][PRE902]py[PRE903]py`
+    [PRE904]`py`` [PRE905]`py[PRE906][PRE907][PRE908]  [PRE909] # [CHAPTER 12](toc.xhtml#c12)    #
+    [Conclusions and the Future of ChatGPT for Program Development](toc.xhtml#c12)    #
+    [Introduction](toc.xhtml#s133a)    The knowledge cutoff for **ChatGPT 3.5** was
+    in September 2021\. As a result, there are ongoing developments by the **OpenAI**
+    Foundation to enhance this knowledge base, and there is rapid development of the
+    currently released beta **ChatGPT 4.0**. Additionally, there is a ChatGPT version
+    5.0 in the pipeline (**[https://www.youtube.com/watch?v=Bb_tIsyB9YY](https://www.youtube.com/watch?v=Bb_tIsyB9YY)**
+    ).    This version may be available sometime in December 2023 or early 2024 (according
+    to the “leaks”).    # [Structure](toc.xhtml#s134a)    In this chapter, we will
+    discuss the following topics:    *   Conclusions and the future of ChatGPT for
+    program development     *   The Future of AI and ChatGPT     *   AI Bias Effects
+    on the Responses     *   ChatGPT taking Jobs from People     *   Building a Custom
+    ChatGPT with Your Own Additional Data     *   Using AI Transfer Learning *   IBM
+    and Generative AI With Watsonx *   GPT4All and How It Works *   Security Threats
+    and Privacy Concerns *   Alternative Code Assistant AI Software - ChatGPT Alternatives
+    for Coding Programs Automatically     *   Llama 2 code AI free use     *   Setting
+    up the Jupyter Notebook environment     *   GPT4All and How It Works     *   GitHub
+    Copilot     *   Google Duet AI     *   Codeium     *   CodeWhisperer     *   Falcon-180B    #
+    [Conclusions and the future of ChatGPT for program development](toc.xhtml#s135a)    The
+    momentum and the potential revenues from the use of Artificial Intelligence systems
+    for a broad range of applications, which has also been widely discussed in the
+    world’s media, mean that **ChatGPT**, or one of the many rival systems challenging
+    its dominant position, is sure to produce significant improvements in the capabilities
+    of the systems for software development.    The software industry is one area
+    that has always faced a shortage of skilled labor, and the use of **AI** systems
+    for enhancing the productivity of the development of programs and systems is already
+    a significant factor in helping to resolve this issue. One thing that can be guaranteed
+    is that there will be even greater use of AI systems for program and system development,
+    driven by large corporate enterprises, such as **IBM, Microsoft, Google (Alphabet
+    Inc.,), Amazon,** and **Meta**. The founding organizations of the **OpenAI** foundation
+    have board members, including Sam Altman and Elon Musk, and have received funding
+    from other investments such as **Microsoft**, **Reid Hoffman, Khosla Ventures,
+    Andreessen Horowitz, Sequoia,** and other financial institutes.    # [The future
+    of AI and ChatGPT](toc.xhtml#s136a)    We asked **Perplexity AI** the question:    **What
+    is the future of AI and ChatGPT for enhancing Java code development?**    *“AI
+    and ChatGPT have the potential to revolutionize the way we approach coding and
+    make it easier and more accessible for people of all skill levels[1]. ChatGPT
+    is a conversational model of AI that can answer follow-up questions and write
+    code for users[3]. It can write simple webpages and applications in programming
+    languages such as JavaScript, Python, and React, find bugs in code, and help create
+    new programming languages[6]. However, according to experts, AI will not replace
+    developers but rather enhance their productivity[2][6]. Developers can use AI
+    to create basic code and enhance it according to the requirements using their
+    own skills[2]. In 2023, we expect to see even more AI-driven resources available
+    to assist with coding tasks[5]. With the advancement of ChatGPT, this tool could
+    be of great help in the future[3]. The future of ChatGPT and other language models
+    like it is likely to involve continued advancements in their capacity to comprehend
+    and produce text that appears human-like, as well as increased use in a variety
+    of applications like customer service, language translation, and content creation[3].*    Citations:    **[1]
+    [https://neuroflash.com/blog/chatgpt-code-interpreter-future-programming/](https://neuroflash.com/blog/chatgpt-code-interpreter-future-programming/)**    **[2]
+    [https://www.turing.com/blog/will-generative-ai-replace-software-developers/](https://www.turing.com/blog/will-generative-ai-replace-software-developers/)**    **[3]
+    [https://www.edureka.co/blog/chatgpt-for-coding-unleash-the-power-of-chatgpt/](https://www.edureka.co/blog/chatgpt-for-coding-unleash-the-power-of-chatgpt/)**    **[4]
+    [https://hackbrightacademy.com/blog/use-chatgpt-to-code-will-ai-replace-programmers/](https://hackbrightacademy.com/blog/use-chatgpt-to-code-will-ai-replace-programmers/)**    **[5]
+    [https://itnext.io/the-future-is-now-how-ai-driven-development-will-make-developers-life-easier-in-2023-f2a26a85cbbe](https://itnext.io/the-future-is-now-how-ai-driven-development-will-make-developers-life-easier-in-2023-f2a26a85cbbe)**    **[6]
+    [https://www.techtarget.com/searchsoftwarequality/news/252528379/ChatGPT-writes-code-but-wont-replace-developers”](https://www.techtarget.com/searchsoftwarequality/news/252528379/ChatGPT-writes-code-but-wont-replace-developers”)**    See
+    also,    **[https://aicontentfy.com/en/blog/future-of-chatgpt-predictions-and-opportunities-1](https://aicontentfy.com/en/blog/future-of-chatgpt-predictions-and-opportunities-1)**    From
+    Meta (the Code Llama developers):    **“The future of generative AI for coding**    **Code
+    Llama** is designed to support software engineers in all sectors – including research,
+    industry, open-source projects, NGOs, and businesses. But there are still many
+    more use cases to support than what our base and instruct models can serve.    We
+    hope that Code Llama will inspire others to leverage Llama 2 to create new innovative
+    tools for research and commercial products.”    For further discussions on possible
+    AI future functionality and next-generation capabilities, you can watch the following
+    videos:    *   The next release of AI from Google, Project Gemini, is discussed
+    in the following **YouTube** video link:          **[https://www.youtube.com/watch?v=SEhk67R4R9g](https://www.youtube.com/watch?v=SEhk67R4R9g)**           *   The
+    following **YouTube** video link is an interview of a robot called **Sophia**
+    created by **Hanson Robotics** (**[https://www.hansonrobotics.com/](https://www.hansonrobotics.com/)**)
+    based in **Tsuen Wan, Hong Kong**, with **Al Jazeera** interviewer, **Heidi Zhou-Castro**:          **[https://www.youtube.com/watch?v=bJjXq6Pj0_c](https://www.youtube.com/watch?v=bJjXq6Pj0_c)**              #
+    [AI Bias effects on the responses](toc.xhtml#s137a)    The quote from the following
+    blog link states "*ChatGPT''s odds of getting code questions correct are worse
+    than a coin flip*"    They analyzed the ChatGPT responses as follows:    *"52
+    percent of ChatGPT answers are incorrect and 77 percent are verbose”*    See **[https://www.theregister.com/AMP/2023/08/07/chatgpt_stack_overflow_ai/](https://www.theregister.com/AMP/2023/08/07/chatgpt_stack_overflow_ai/)**    The
+    preceding link also describes how the AI response language style is very convincing,
+    making even the incorrect responses sound plausible.    The preceding article
+    references a research paper available at the following link, which concludes:    “*These
+    findings underscore the need for meticulous error correction in ChatGPT while
+    also raising awareness among users about the potential risks associated with seemingly
+    accurate answers*.”    See **[https://arxiv.org/abs/2308.02312](https://arxiv.org/abs/2308.02312)**    (Or,
+    download the paper from **[https://arxiv.org/pdf/2308.02312.pdf](https://arxiv.org/pdf/2308.02312.pdf))**    **Note:**    We
+    have used a number of references and free pdf downloads from **arXiv:**    **“***This
+    is a community of volunteer authors, readers, moderators, advisory board members,
+    supporting members, donors, and third-party collaborators that are supported by
+    staff at **Cornell University**.*”    # [ChatGPT taking Jobs from People](toc.xhtml#s138a)    The
+    following article lists the 10 jobs most likely to be replaced by AI technology:    **[https://www.businessinsider.com/chatgpt-jobs-at-risk-replacement-artificial-intelligence-ai-labor-trends-2023-02?r=US&IR=T](https://www.businessinsider.com/chatgpt-jobs-at-risk-replacement-artificial-intelligence-ai-labor-trends-2023-02?r=US&IR=T)**    They
+    stated the findings of an earlier study, in 2013, by the University of Oxford
+    (see: **[https://www.oxfordmartin.ox.ac.uk/downloads/academic/future-of-employment.pdf](https://www.oxfordmartin.ox.ac.uk/downloads/academic/future-of-employment.pdf)).**    This
+    study found that 47% of US jobs could be eliminated by AI over the next 20 years.    This
+    estimate appears to have been completely revised, so a more recent estimate from
+    Goldman Sachs estimated that generative AI tools could impact 300 million full-time
+    jobs worldwide! (see: **[https://www.businessinsider.com/generative-ai-chatpgt-300-million-full-time-jobs-goldman-sachs-2023-3](https://www.businessinsider.com/generative-ai-chatpgt-300-million-full-time-jobs-goldman-sachs-2023-3))**    #
+    [Building a Custom ChatGPT with Your Own Additional Data](toc.xhtml#s139a)    CodeProject
+    AI is a local server-based free Open-Source AI server for any platform and any
+    language. It claims to be sandboxed, so does not upload any data. It is self-contained
+    with no dependencies, running either as a Windows Service or a Docker container.    For
+    further information, you can refer to the following sources:    **CodeProject.AI
+    Server**: AI the easy way - CodeProject (3 Aug 2023)    Version 2.1.10\. Our fast,
+    free, self-hosted Artificial Intelligence Server for any platform and any language    **[https://www.codeproject.com/Article.aspx?tag=2.NTMyMjU1NzowOjYzODI3MjY1OTkxNDgyNDcyNw&_z=534](https://www.codeproject.com/Article.aspx?tag=2.NTMyMjU1NzowOjYzODI3MjY1OTkxNDgyNDcyNw&_z=534)**    For
+    a Docker container, we can run:    docker run -p 32168:32168 --name CodeProject.AI-Server
+    -d codeproject/ai-server    Then select the last repo option, using the down arrow
+    key and press return:    docker.io/codeproject/ai-server:latest    Using:    **http://localhost:32168**    From
+    their website:    *“CodeProject.AI Server is a locally installed, self-hosted,
+    fast, free and Open Source Artificial Intelligence server for any platform, any
+    language. No off-device or out of network data transfer, no messing around with
+    dependencies, and able to be used from any platform, any language. Runs as a Windows
+    Service or a Docker container.”*    # [Using AI Transfer Learning](toc.xhtml#s140a)    Transfer
+    learning is the term used in AI machine learning to describe the process of reusing
+    a pre-trained model on a new problem. In transfer learning, an **AI** program
+    uses the knowledge gained from a previous **LLM** model starting point and augments
+    it for a new and similar task to generate an improved **LLM** model.    # [IBM
+    and Generative AI With Watsonx](toc.xhtml#s141a)    IBM also has collaborations
+    with other specialist AI-based companies, and **SingleStore** is active in this
+    area:    [https://www.singlestore.com/blog/ibm-data-replication-and-singlestoredb-real-time-applications/?utm_source=thenewstack&utm_medium=website](https://www.singlestore.com/blog/ibm-data-replication-and-singlestoredb-real-time-applications/?utm_source=thenewstack&utm_medium=website)    The
+    blog describes the use of the **IBM Data Replication CDC** (Change Data Capture)
+    tool and the Cloud-based **SingleStore** system **([https://docs.singlestore.com/managed-service/en/getting-started-with-singlestoredb-cloud.html](https://docs.singlestore.com/managed-service/en/getting-started-with-singlestoredb-cloud.html))**,
+    supported by **IBM InfoSphere** Data Replication (**[https://www.ibm.com/products/data-replication](https://www.ibm.com/products/data-replication)**).    The
+    SingleStore company’s **About** webpage states:    “A business’ ability to operate
+    with true intelligence at speed can be the deciding factor in success or failure.
+    SingleStore helps companies deliver value at higher velocity so they can make
+    the most of every moment.    SingleStore handles transactions and analytics, effortlessly,
+    at the same time. Structured, semi-structured or unstructured. Streaming and historical
+    alike. Unified through a single-pane-of-glass experience to make timely, accurate
+    insight accessible for every worker and every workload.    Giving you a business
+    intelligence ecosystem to develop products and services with real-time analytics,
+    machine learning, AI — breaking down data silos that stifle innovation. The pace
+    of business is only accelerating.”    # [Security Threats and Privacy Concerns](toc.xhtml#s142a)    There
+    is a perceived (and possibly real) issue with the impact of AI systems on personal
+    user security and the issue of fraud.    There are several publicized cases of
+    AI systems used to simulate a video message using a celebrity (for example, Martin
+    Lewis) to fraudulently suggest investments in spoof Financial Institutions.    *   For
+    further information, you can refer to the following links: **[https://www.moneysavingexpert.com/news/2023/07/beware-terrifying-new--deepfake--martin-lewis-video-scam-promoti/](https://www.moneysavingexpert.com/news/2023/07/beware-terrifying-new--deepfake--martin-lewis-video-scam-promoti/)**
+    *   [https://zapier.com/blog/ai-security-risks/](https://zapier.com/blog/ai-security-risks/)    #
+    [Alternative Code Assistant AI Software - ChatGPT Alternatives for Coding Programs
+    Automatically](toc.xhtml#s143a)    Here are some alternative code assistant AI
+    software options that serve as alternatives to ChatGPT for automatically coding
+    programs:    # [Llama 2 code AI free use](toc.xhtml#s144a)    **Code Llama** is
+    a programming language **AI** version of **Llama 2,** introduced by **Meta** (formerly,
+    **Facebook** Inc., co-founded by **Mark Zuckerberg**). The **Llama 2, Code Llama**
+    system (**[https://ai.meta.com/llama/](https://ai.meta.com/llama/))**, was created
+    by using **Llama 2** as the starting **LLM** (large Language Model), with Meta’s
+    code-specific datasets and by training more code-based data    (**Llama 2** Version
+    Release Date: July 18, 2023).    **Code Llama**, built on top of **Llama 2**,
+    has enhanced coding capabilities. It generates program code and describes the
+    code produced using an input of program code and the normal prompts (e.g., “Have
+    you got a Java program for demonstrating the Binary Search algorithm?”).    It
+    can also be used for code syntax checking, code completion, and debugging. Some
+    of the key features of **Code Llama** are as follows:    *   Allows commercial
+    use *   Uses a 4096 default context window (can be expanded) (Context length refers
+    to the number of tokens a language model can process as input for a response.
+    LLMs process text by breaking it down into tokens and average 4 characters with
+    many words being a single token). *   Trained on 2 trillion tokens of text data
+    *   The 70B model uses the grouped-query attention (GQA) architecture *   Available
+    on Hugging Face Hub    **Note:**    **Perplexity** has both the 7B and 13B LLaMA
+    2 models accessible through the conversational AI demo.    **Code Llama** supports
+    most of the common modern programming languages, including Java, Python, C++,
+    C#, PHP, JavaScript, and Linux Bash script.    For more information, please refer
+    to “Introducing Code Llama, a state-of-the-art large language model for coding
+    (meta.com)”    **[https://ai.meta.com/blog/code-llama-large-language-model-coding/](https://ai.meta.com/blog/code-llama-large-language-model-coding/)**    The
+    **Llama2** **LLM** models can be downloaded locally, as shown in *[Figure 12.1](#fig12_1):*    **[https://ai.meta.com/llama/](https://ai.meta.com/llama/)**  ![](images/Figure12.1.jpg)  **Figure
+    12.1:** Download the Model button is selected to load the Llama 2 LLM models    The
+    next Meta webpage displays the form to be filled to get the required access, as
+    shown in *[Figure 12.2](#fig12_2):*  ![](images/Figure12.2.jpg)  **Figure 12.2:**
+    **Meta Llama 2** form to be filled in to get the required access to the LLMs    Next,
+    we select the **LLM** models we can use, as shown in *[Figure 12.3](#fig12_3):*  ![](images/Figure12.3.jpg)  **Figure
+    12.3:** We select the ***LLM*** models we can use, by ticking the options    We
+    need to scroll down and read the **Meta AI** terms and conditions, then tick **I
+    accept the terms and conditions,** and finally, click the **Accept and Continue**
+    button as shown in *[Figure 12.4](#fig12_4):*  ![](images/Figure12.4.jpg)  **Figure
+    12.4:** Tick the ***I accept the terms and conditions,*** and click the ***Accept
+    and Continue***    After accepting the terms and conditions, we can select the
+    **Subscribe for updates** button. This will allow emails to be sent to the email
+    account we set up for **Meta AI** and allow them to send updated information on
+    the latest Llama developments, as shown in *[Figure 12.5](#fig12_5):*  ![](images/Figure12.5.jpg)  **Figure
+    12.5:** Select the ***Subscribe for updates*** button to allow emails to be sent
+    for updates    A pop-up window then appears, as illustrated in *[Figure 12.6](#fig12_6),*
+    which prompts us for a second sign-up procedure:  ![](images/Figure12.6.jpg)  **Figure
+    12.6:** The second sign-up steps are initiated by clicking on the Sign up button    The
+    user’s name, company details, and interest areas are entered and a **Submit**
+    button is selected, as shown in *[Figure 12.7](#fig12_7)***:**  ![](images/Figure12.7.jpg)  **Figure
+    12.7:** The user’s name, company details, and interests are entered    Successful
+    subscription to Meta AI news is acknowledged with a pop-up window displayed, as
+    shown in *[Figure 12.8](#fig12_8):*  ![](images/Figure12.8.jpg)  **Figure 12.8:**
+    Successful subscription to Meta AI news is acknowledged    The main license can
+    be found on GitHub using the following link:    **[https://github.com/facebookresearch/llama/blob/main/LICENSE](https://github.com/facebookresearch/llama/blob/main/LICENSE)**    To
+    gain full access to publish **Meta AI Llama 2** responses and materials, we have
+    to display the license text, as highlighted in the boxed text below. We have highlighted
+    the most relevant areas of this license as follows:    (License dated, Llama 2
+    Version Release Date: July 18, 2023)    We now receive an email with the following
+    information on the available commercial license we have been granted:    “Code
+    Llama commercial license **You’re all set to start building with Code Llama.**    The
+    models listed below are now available to you as a commercial license holder. By
+    downloading a model, you are agreeing to the terms and conditions of the license,
+    acceptable use policy, and Meta’s privacy policy **([https://www.facebook.com/privacy/policy/](https://www.facebook.com/privacy/policy/)).**    **Model
+    weights available:**    *   CodeLlama-7b *   CodeLlama-13b *   CodeLlama-34b *   CodeLlama-7b-Python
+    *   CodeLlama-13b-Python *   CodeLlama-34b-Python *   CodeLlama-7b-Instruct *   CodeLlama-13b-Instruct
+    *   CodeLlama-34b-Instruct”    With each model download, you’ll receive a copy
+    of the **License** and **Acceptable Use Policy,** and you can find all other information
+    about the model and code on **GitHub.**    # [Setting up Jupyter Notebook environment](toc.xhtml#s145a)    To
+    install the **Jupyter Notebook** docker container, there is a free download from
+    **ResearchGate** using the following link:    **https://doi.org/10.13140/RG.2.2.15264.12807**    (Jupyter
+    notebook and its Docker Container Installation on Linux RedHat RHEL 8.0 using
+    VMware 15.5.2)    (This downloads the MS Word document: `**JupyternotebookInstallationonLinuxRedHatRHEL8.docx)**`    This
+    document has a step-by-step set of screenshots describing the installation and
+    the main Jupyter Notebook menu items.    To see the full install info and tutorials
+    go to:    **[https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook)**    **Here’s
+    how to download the models:**    1.  Visit the Code Llama repository on GitHub
+    and follow the instructions in the **README ([https://github.com/facebookresearch/codellama/blob/main/README.md](https://github.com/facebookresearch/codellama/blob/main/README.md)).**
+    2.  Follow the link below to run the **download.sh** script.          This file
+    is in the list of files at the following link, so check for the latest version,
+    as this is likely to change:                    **[http://github.com/facebookresearch/codellama](http://github.com/facebookresearch/codellama)**                    Either
+    edit the above shell script into a **download.sh** file using the vi Linux editor
+    or (**recommended**) just download the latest version:                    `[root@ECMUKDEMO22
+    opt]# mkdir /opt/llama2`                    `[root@ECMUKDEMO22 opt]# cd /opt/llama2`                    `[root@ECMUKDEMO22
+    llama2]# vi download.sh`                    The `**download.sh**` script has `**wget**`
+    commands, as shown in *[Figure 12.9](#fig12_9):*          ![](images/Figure12.9.jpg)          **Figure
+    12.9:** The ***download.sh*** shell script file                    Change the
+    security to allow the shell script, `**download.sh**` file to be run:                    `[root@ECMUKDEMO22
+    llama2]# chmod 775 download.sh`                    `[root@ECMUKDEMO22 llama2]#
+    ./download.sh`           3.  When asked for your unique custom URL, please insert
+    the following:          **Note:**                    This is an example with a
+    24-hour time limit, as we found out when we went over the time limit (So, don’t
+    bother trying to use this one!).                    `https://download2.llamameta.net/*?Policy=eyJTdGF0ZW1lbnQiOlt7InVuaXF1ZV9oYXNoIjoianN3dGQxZ2FzZmMydmFuaDdpenpnYmZvIiwiUmVzb3VyY2UiOiJodHRwczpcL1wvZG93bmxvYWQyLmxsYW1hbWV0YS5uZXRcLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2OTQwMDQxNjh9fX1dfQ__&Signature=X5Cd-Q1DPm1aj5xMR9EJEVGcJnAnz7eUZjHeyiKT5gZMb391eG6Pp8mjX5dlOSMMoX-kKWuSlExBzhMi%7ESIU1Q4W1za4VTphxvTS-N5wZ6t3emGjTHTpb0qgnl6oAtyiz%7EFxPvsIqBcRrPVb2THgSdTLd0R5v4NdC1iToqMQCyIo8JGwSNrfwx36ZS%7EEIeFvWzt3FXQ11j%7EVokPXyMo68xdH4BaNs69ojg-SiAiCJ-ohHfVYs8BvG34lLYqViILKTpxIr3g%7EWlg-9RrfCV5Gw1ofopaPL89nx4yxsqtRjAieoD2IlA3ar%7E6Ul4o4hJ1bS7iCWk7ck7ODiyoG9%7E8kgg__&Key-Pair-Id=K15QRJLYKIFSLZ&Download-Request-ID=1222855335055319`                    (The
+    unique custom URL provided will remain valid for model downloads for 24 hours,
+    and requests can be submitted multiple times.).           4.  Choose the model
+    weights to download (or simply hit return to download them all).          The
+    downloaded **Meta AI Llama 2** **LLM Code Llama** model directories can now be
+    seen in the `**/opt/llama2**` directory we created, as shown in *[Figure 12.10](#fig12_10)*:          ![](images/Figure12.10.jpg)          **Figure
+    12.10:** The downloaded **Meta AI Llama 2** **LLM** model directories           5.  Install
+    **conda**:          `yum install conda`                    The list of the **Python**
+    **conda** Linux installer libraries is shown in *[Figure 12.11](#fig12_11)**:*          ![](images/Figure12.11.jpg)          **Figure
+    12.11:** The list of the ***Python*** ***conda*** Linux installer libraries              Install
+    git:    `yum install git`    For using the GitHub **gh** command line, we first
+    need to retrieve the GitHub client, which requires a GitHub account to be used:    **[https://cli.github.com/](https://cli.github.com/)**    and
+    select the download button to see and copy the installation instructions:    `dnf
+    install ''dnf-command(config-manager)''`    `dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo`    `dnf
+    install gh`    Then, if required:    `**pip3 install -U pip setuptools**`    `**pip3
+    install jupyter**`    Finally, log in to the docker system (this will require
+    the setup of a docker account, see **[https://hub.docker.com](https://hub.docker.com)**
+    to create one), as shown in *[Figure 12.12](#fig12_12)*:  ![](images/Figure12.12.jpg)  **Figure
+    12.12:** The login to the docker system (this will require the setup of a ***docker***
+    account)    You will notice that in the **RedHat Linux 8.8** system, we are using
+    the **docker** command, but this system is emulated by **podman**, which is now
+    pre-installed in **RedHat** for the container management system command.    `docker
+    run --rm -it -p 8888:8888 -v "$(pwd):/notebooks" jupyter/datascience-notebook`    `Emulate
+    Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.`    Select
+    the following from the list of repos:    `**✔ docker.io/jupyter/datascience-notebook:latest**`    Trying
+    to pull `**docker.io/jupyter/datascience-notebook:latest…**`    At the end of
+    the installation, we get the following instructions:    `Read the migration plan
+    to Notebook 7 to learn about the new features and the actions to take if you are
+    using extensions.`    `[https://jupyter-notebook.readthedocs.io/en/latest/migrate_to_notebook7.html](https://jupyter-notebook.readthedocs.io/en/latest/migrate_to_notebook7.html)`    `Please
+    note that updating to Notebook 7 might break some of your extensions.`    `[I
+    2023-09-07 17:16:29.247 ServerApp] nbclassic | extension was successfully loaded.`    `[I
+    2023-09-07 17:16:29.338 ServerApp] nbdime | extension was successfully loaded.`    `[I
+    2023-09-07 17:16:29.348 ServerApp] notebook | extension was successfully loaded.`    `[I
+    2023-09-07 17:16:29.349 ServerApp] Serving notebooks from local directory: /home/jovyan`    `[I
+    2023-09-07 17:16:29.349 ServerApp] Jupyter Server 2.7.3 is running at:`    `[I
+    2023-09-07 17:16:29.349 ServerApp] http://fe0a306dffdc:8888/lab?token=283646b2056c5eeadc51620ca63cc493f34d437def682f33`    `[I
+    2023-09-07 17:16:29.349 ServerApp] http://127.0.0.1:8888/lab?token=283646b2056c5eeadc51620ca63cc493f34d437def682f33`    `[I
+    2023-09-07 17:16:29.349 ServerApp] Use Control-C to stop this server and shut
+    down all kernels (twice to skip confirmation).`    `[C 2023-09-07 17:16:29.355
+    ServerApp]`   [PRE910]`py [PRE911]`py[PRE912]``py[PRE913]py[PRE914]py[PRE915]py[PRE916]py[PRE917]py[PRE918]py[PRE919]py[PRE920]py[PRE921]py[PRE922]py[PRE923]py[PRE924]py`
+    [PRE925]`py[PRE926]py[PRE927]py[PRE928]py[PRE929]py[PRE930]py[PRE931]py[PRE932][PRE933][PRE934][PRE935][PRE936][PRE937][PRE938][PRE939][PRE940]``py[PRE941]py[PRE942]py[PRE943]py[PRE944]py[PRE945]py[PRE946]py[PRE947]py[PRE948][PRE949][PRE950][PRE951][PRE952][PRE953][PRE954][PRE955][PRE956]
+    [PRE957][PRE958][PRE959][PRE960][PRE961][PRE962][PRE963][PRE964][PRE965][PRE966][PRE967][PRE968][PRE969][PRE970][PRE971][PRE972][PRE973]``
+    [PRE974][PRE975][PRE976][PRE977][PRE978][PRE979][PRE980][PRE981][PRE982] [PRE983]`py[PRE984]py[PRE985]py[PRE986]py[PRE987]py[PRE988]py[PRE989]py[PRE990]py[PRE991]'
+  prefs: []
+  type: TYPE_NORMAL

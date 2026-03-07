@@ -1,8 +1,13 @@
-100 ChatGPT 提示词：
+# 100 个 ChatGPT 提示词：在线赚钱：通过 AI 创建和销售
 
-在线赚钱：通过 AI 创建和销售
 
-* * *
+> 原文：[100 ChatGPT Prompts](https://annas-archive.gl/md5/f239024d1b87093b1a5bddeaae91b6ad)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
 
 # 引言
 

@@ -1,74 +1,13 @@
+
+# 100 个入门者的 ChatGPT 提示词
+
+> 原文：[100 ChatGPT Prompts for Beginners](https://annas-archive.gl/md5/54e6d3b20d36c21533fc559868888bce)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![图片](img/100-chatgpt-prompts-for-beginners-Image00000.jpg)
-
-提示基础介绍
-
-理解清晰提示的重要性
-
-结论
-
-使用提示进行每日规划
-
-理解 JavaScript 闭包
-
-用于头脑风暴想法的提示
-
-为开发者编写电子邮件草稿
-
-异步 JavaScript：理解承诺
-
-理解 JavaScript 闭包
-
-JavaScript 中的有效错误处理
-
-理解 JavaScript 中的承诺
-
-理解 JavaScript 中的闭包
-
-使用编程技术总结文章
-
-理解 JavaScript 中的闭包
-
-日记和反思提示
-
-编程中的时间管理
-
-编程中的健康习惯简介
-
-结论
-
-旅行计划优化简介
-
-购物和预算简介
-
-结论
-
-理解 JavaScript 承诺
-
-健身和锻炼：简介
-
-软件开发中的目标设定
-
-理解商业中的自动化
-
-理解 JavaScript 中的承诺
-
-介绍
-
-结论
-
-精通异步 JavaScript
-
-理解 JavaScript 中的承诺
-
-书籍和电影建议提示
-
-编程中的任务组织
-
-结论
-
-编程中的思维导图
-
-JavaScript 中的错误处理
 
 # 提示基础介绍
 

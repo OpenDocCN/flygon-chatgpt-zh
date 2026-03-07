@@ -1,18 +1,17 @@
-![](img/50-proven-ways-to-make-money-with-chatgpt-ai-tools-Image00368.jpg)
 
-50 种使用 ChatGPT 和 AI 工具赚钱的验证方法
+# 50 种使用 ChatGPT 和 AI 工具赚钱的验证方法
+
+> 原文：[50 Proven Ways to Make Money with ChatGPT & AI Tools](https://annas-archive.gl/md5/35b049e93f02421089c46b887cbbdce8)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+![](img/50-proven-ways-to-make-money-with-chatgpt-ai-tools-Image00368.jpg)
 
 解锁人工智能的力量，构建被动收入来源并启动盈利的数字副业
 
 作者：沙亚·普拉萨
-
-## ©️ 版权页
-
-版权所有 © 2025 沙亚·普拉萨。本书的任何部分不得以任何形式或通过任何手段（包括电子、机械、影印、录音或其他方式）进行复制、存储在检索系统中或进行传输，除非事先获得作者书面许可，但用于评论或学术工作的简要引用除外。
-
-本出版物仅用于信息目的。尽管已尽一切努力确保内容的准确性和可靠性，但作者不保证收入或成功。结果将根据努力、技能和市场条件而有所不同。
-
-第一版：2025 印刷/出版于印度
 
 ## 为什么这本书很重要
 

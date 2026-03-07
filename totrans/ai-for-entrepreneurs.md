@@ -1,38 +1,11 @@
-AI FOR ENTREPRENEURS
+# 企业家的人工智能：7 个必备工具自动化你的业务，每周节省 10 小时并提升销售
 
-7 个必备工具自动化你的业务，每周节省 10 小时并提升销售
+> 原文：[AI for Entrepreneurs](https://annas-archive.gl/md5/2bf5a5533634284e758d5492103e5665)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-（包含 ChatGPT、Canva、MidJourney、Synthesia 等 – 以及免费模板）
-
-NonoCP
-
-* * *
-
-目录
-
-1.  引言：为什么 AI 是你在 2024 年的秘密武器
-
-1.  第一章：每个创业者都需要的前 5 个 AI 工具
-
-1.  第二章：像专业人士一样自动化客户服务
-
-1.  第三章：10 倍快速创建内容
-
-1.  第四章：AI 驱动的财务管理
-
-1.  第五章：由 AI 驱动的营销策略
-
-1.  第六章：利用预测分析扩展你的业务
-
-1.  第七章：避免常见的 AI 陷阱
-
-1.  奖励部分：现成模板与提示
-
-1.  结论：你的 AI 驱动未来
-
-注意：在 Kindle Create 中，使用“标题 1”作为章节标题，使用“标题 2”作为子节标题。将目录条目超链接到文档中的相应部分。
-
-* * *
 
 <a name="introduction"></a>
 

@@ -1,48 +1,14 @@
+
+
+# AI 电子书帝国：在 7 天内编写和销售电子书
+
+> 原文：[AI eBook Empire: Write and Sell eBooks in 7 Days with ChatGPT and Canva](https://annas-archive.gl/md5/9a6d3f6547eb9947dcc48d585b2a60f0)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![](img/ai-ebook-empire-write-and-sell-ebooks-in-7-days-with-chatgpt-and-canva-Image00003.jpg)
-
-AI 电子书帝国
-
-在 7 天内编写和销售电子书
-
-使用 ChatGPT 和 Canva
-
-布鲁斯·戈德韦尔
-
-© 2025 布鲁斯·戈德韦尔
-
-版权所有。
-
-本出版物任何部分不得以任何形式或通过任何手段复制、分发或传播，包括影印、录音或其他电子或机械方法，除非事先获得作者的书面许可，但包括版权法允许的简要引用在内的评论和其他某些非商业用途除外。
-
-目录
-
-引言 – 在 7 天内建立您的第一本电子书              3
-
-第一章：为什么 AI 电子书是被动收入的大功率引擎              5
-
-第二章：使用 ChatGPT 编写您的电子书               8
-
-第三章：使用 Canva 设计和发布您的电子书              12
-
-第四章：营销和扩展您的电子书销售              16
-
-第五章：将一本电子书变成系列或捆绑包              20
-
-奖励章节 – ChatGPT 15 个提示以加速您的写作              23
-
-结论 – 本周建立您的帝国               26
-
-资源               28
-
-付费工具               28
-
-出版平台               28
-
-额外阅读推荐书籍               30
-
-A.I. 微训练书籍               32
-
-关于作者               33
 
 ## 引言 – 在 7 天内建立您的第一本电子书
 

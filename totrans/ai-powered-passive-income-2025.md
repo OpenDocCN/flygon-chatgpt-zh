@@ -1,12 +1,19 @@
+# AI 驱动的被动收入 2025
+
+
+> 原文：[AI-Powered Passive Income 2025](https://annas-archive.gl/md5/c9f67ae4ef48c5517e0d0bc2d3ebc43a)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
+
+
 ![](img/ai-powered-passive-income-2025-Image00002.jpg)
 
 ![](img/ai-powered-passive-income-2025-Image00000.jpg)
 
-* * *
-
-目录
-
-* * *
 
 # 第一章：2025 年 AI 淘金热——为什么按需印刷是你轻松赚钱的入场券
 

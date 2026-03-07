@@ -1,6 +1,13 @@
-![](img/25-ai-side-hustles-you-can-start-today-Image00000.jpg)
 
-你可以今天开始的 25 个 AI 副业：无需技术。无需资金。
+# 你可以今天开始的 25 个 AI 副业：无需技术。无需资金。
+
+> 原文：[25 AI Side Hustles You Can Start Today No Tech. No Money.](https://annas-archive.gl/md5/169f1671cae05b41d2ff3e0dfc74cb0d)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+![](img/25-ai-side-hustles-you-can-start-today-Image00000.jpg)
 
 没问题。使用 ChatGPT、Canva、Notion 和其他免费 AI 工具在线赚钱
 

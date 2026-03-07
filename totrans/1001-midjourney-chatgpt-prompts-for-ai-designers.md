@@ -1,4 +1,12 @@
-1001 个 Midjourney + ChatGPT 为 AI 设计师提供的提示
+# 1001 个 Midjourney + ChatGPT 为 AI 设计师提供的提示
+
+
+> 原文：[1001 Midjourney + ChatGPT Prompts for AI Designers](https://annas-archive.gl/md5/e1b07006e969a94cdfa579a82854459c)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 
 🧠第一部分：ChatGPT 为 AI 设计师提供的提示（50 个）
 

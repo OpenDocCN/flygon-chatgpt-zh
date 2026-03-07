@@ -1,3 +1,14 @@
+# 为所有互联网市场营销者设计的 1000 个 ChatGPT 提示词
+
+> 原文：[1000+ ChatGPT Prompts Designed for all Internet Marketers](https://annas-archive.gl/md5/ff14c7ea33298dd9f74198a8ed430cc5)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
+
+
 ## 1. ChatGPT 简介
 
 ### 如何掌握 ChatGPT

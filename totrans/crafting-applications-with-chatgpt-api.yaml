@@ -465,11 +465,14 @@
     19   img = ReportLabImage ( pil_image_path , 20    width = 2.5 * inch , 21    height
     = 2.5 * inch ) 22   contents . append ( img ) 23 24   # Add some text 25   dialog_text
     = '''
+  id: totrans-0
   prefs: []
   type: TYPE_NORMAL
 - en: ''' + dialog_text 26   dialog_text = dialog_text . replace ( '' \n '' , 27               '''
+  id: totrans-1
   prefs: []
   type: TYPE_NORMAL
+  zh: ''' + 对话文本 26   对话文本 = 对话文本 . 替换 ( '' \n '' , 27               '''
 - en: ''' ) 28   styles = getSampleStyleSheet () 29   paragraph = Paragraph ( dialog_text
     , 30              styles [ ''Normal'' ]) 31   contents . append ( paragraph )
     32 33   # Build the PDF 34   doc . build ( contents ) 35 36   # message box saying
@@ -1474,12 +1477,15 @@
     img1 ) 28 29   # Add the puzzle image 30   img2 = ReportLabImage ( puzzle_image_path
     , 31        width = 5 * inch , height = 5 * inch ) 32   contents . append ( img2
     ) 33 34   # Add the puzzle words 35   puzzle_word_text = '''
+  id: totrans-2
   prefs: []
   type: TYPE_NORMAL
 - en: ''' + puzzle_word_text 36   puzzle_word_text = puzzle_word_text . replace (
     37              '' \n '' , '''
+  id: totrans-3
   prefs: []
   type: TYPE_NORMAL
+  zh: ''' + 拼图单词文本 36   拼图单词文本 = 拼图单词文本 . 替换 ( 37              '' \n '' , '''
 - en: ''' ) 38   styles = getSampleStyleSheet () 39   paragraph = Paragraph ( puzzle_word_text
     , 40              styles [ ''Normal'' ]) 41   contents . append ( paragraph )
     42 43   # Build the PDF 44   doc . build ( contents )  When we hit the create
@@ -1634,12 +1640,16 @@
     [ i ], 100        width = 4 * inch , 101        height = 4 * inch ) 102      contents
     . append ( img2 ) 103 104      contents . append ( Spacer ( 1 , .25 * 72 )) 105
     106      puzzle_word_text = '''
+  id: totrans-4
   prefs: []
   type: TYPE_NORMAL
 - en: ''' + 107             puzzle_words_list [ i ] 108      puzzle_word_text = puzzle_word_text
     109          . replace ( '' \n '' , '''
+  id: totrans-5
   prefs: []
   type: TYPE_NORMAL
+  zh: ''' + 107             puzzle_words_list [ i ] 108      puzzle_word_text = puzzle_word_text
+    109          . replace ( '' \n '' , '''
 - en: ''' ) 110      paragraph = Paragraph ( 111        puzzle_word_text , 112        normal_style
     ) 113      contents . append ( paragraph ) 114 115      # add page breaks at the
     end 116      # of the page 117      # if we are not on the last page 118      if
@@ -1844,5 +1854,6 @@
     177 1 token_dictionary = { 2   ''prompt_tokens'':response[''usage''] 3   [''prompt_tokens''],    4   ''completion_tokens'':response[''usage'']
     5   [''completion_tokens''],    6   ''total_tokens'':response[''usage''] 7   [''total_tokens''],    8
     }'
+  id: totrans-6
   prefs: []
   type: TYPE_NORMAL

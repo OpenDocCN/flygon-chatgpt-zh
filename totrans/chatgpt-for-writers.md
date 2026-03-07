@@ -1,60 +1,10 @@
-**ChatGPT 作家指南**
+# ChatGPT 作家指南
 
-詹姆斯·阿德勒
-
-Reactive Publishing
-
-![](img/chatgpt-for-writers-image_rsrc3T3.jpg)
-
-目录
-
-扉页
-
-版权 © 2025 Reactive Publishing。保留所有权利。
-
-欢迎开启您的下一段精彩阅读之旅
-
-主题预览：ChatGPT 作家指南
-
-1. 使用 ChatGPT 构建写作流程
-
-2. 自动化批量书籍创作
-
-3. 使用 ChatGPT 撰写封面与营销文案
-
-4. 精炼与扩展
-
-前言
-
-第一章：引言
-
-第二章：提升写作效率
-
-第三章：头脑风暴与创意生成
-
-第四章详解
-
-第五章：对话与角色发展
-
-第六章：世界观构建与场景创作
-
-第七章：编辑与校对
-
-第八章：协作写作中的人工智能
-
-附录 A：教程
-
-附录 B：术语表
-
-附录 C：附加资源
-
-版权 © 2025 Reactive Publishing。保留所有权利。
-
-未经出版商事先书面许可，本书的任何部分均不得以任何形式或通过任何方式（电子、机械、影印、录音或其他方式）进行复制、存储在检索系统中或传播，但用于评论或文章的简短引用除外。
-
-由 Reactive Publishing 出版
-
-本书提供的信息仅供教育和参考之用。作者和出版商对其中可能存在的错误、遗漏或对主题的相反解释不承担任何责任。
+> 原文：[ChatGPT for Writers](https://annas-archive.gl/md5/cac554c2227aec28aa681002945fd1ea)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 欢迎开启您的下一段精彩阅读之旅
 

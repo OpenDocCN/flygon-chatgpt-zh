@@ -1,4 +1,15 @@
-![图片](img/chatgpt-the-ultimate-guide-to-ai-mastery-image_rsrcBY.jpg)前言
+# ChatGPT AI 大师终极指南
+
+> 原文：[ChatGPT : The Ultimate Guide to AI Mastery](https://annas-archive.gl/md5/1a5be362bf83ed7185035ff50aa353d5)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
+![图片](img/chatgpt-the-ultimate-guide-to-ai-mastery-image_rsrcBY.jpg)
+
+前言
 
 在人工智能正在重塑我们工作、创造和创新方式的时代，理解和掌握 ChatGPT 等 AI 工具已经成为一种必需，而非奢侈品。曾经属于科幻领域的领域现在已成为现实——AI 驱动的助手可以生成内容、解决复杂问题、简化业务流程，甚至激发创造力。
 

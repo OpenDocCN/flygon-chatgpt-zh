@@ -1,6 +1,13 @@
-![](img/from-broke-to-boss-how-to-make-money-with-ai-Image00000.jpg)
 
 # 从破产到老板：即使从零开始，如何用 AI 赚钱
+
+> 原文：[From Broke to Boss: How to Make Money with AI Even If You’re Starting with $0](https://annas-archive.gl/md5/74dbbbaed0e2837324daedf4782e3953)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+![](img/from-broke-to-boss-how-to-make-money-with-ai-Image00000.jpg)
 
 使用 ChatGPT 和其他 AI 工具赚取在线收入的分步方法——无需经验。
 
@@ -13,26 +20,6 @@
 你不仅仅是在读一本书——你正在解锁一个全新的未来。
 
 让我们开始吧。
-
-# 目录
-
-### 引言：你的旅程从这里开始
-
-### 第一章：心态转变 - 为什么 AI 是你的金票
-
-### 第二章：用 AI 自由职业 - 为简单技能赚钱
-
-### 第三章：按需印刷 - 不持有库存也能销售设计
-
-### 第四章：AI 驱动的博客 - 睡觉时也能获得被动收入
-
-### 第五章：YouTube 自动化 - 不用出镜也能制作视频
-
-### 第六章：AI 推广营销 - 没有网站也能赚取佣金
-
-### 第七章：销售 AI 服务 - 终极副业
-
-### 结论：你的未来从这里开始
 
 # 引言：你的旅程从这里开始
 

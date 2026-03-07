@@ -1,3 +1,13 @@
+# 利用 ChatGPT 简化教学
+
+> 原文：[Simplifying Teaching with ChatGPT](https://annas-archive.gl/md5/04432ca3e33f9db03c199b0609fdbab4)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
+
 ### 简介
 
 教学既是艺术也是科学，需要创造力、适应性和持续创新。在今天的数字世界中，教育者正在探索一个前所未有的技术进步时代。在这些创新中，人工智能（AI）已经崛起为一个强大的工具，提供了简化任务、增强学生参与度和培养有意义学习体验的新方法。

@@ -1,90 +1,14 @@
+
+
+# 伙伴工作手册：作者的 ChatGPT AI 艺术优势
+
+> 原文：[Companion Workbook: The ChatGPT AI Art Advantage for Authors](https://annas-archive.gl/md5/f5592d994f155694507e450dd18c5943)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![](img/companion-workbook-the-chatgpt-ai-art-advantage-for-authors-Image00012.jpg)
-
-# 伴侣工作手册：作者 ChatGPT AI 艺术优势
-
-## PRACTICE PROMPTS, AI HACKS & VISUAL PLANNING PAGES FOR WRITERS WHO'D RATHER JUST WRITE
-
-## 苏珊·贾甘纳特
-
-版权所有 © 2025 苏珊·贾甘纳特
-
-所有权利保留。
-
-本书任何部分不得以任何形式或通过任何电子或机械手段（包括信息存储和检索系统）复制，除非作者书面许可，但用于书评中的简要引用除外。
-
-[`<wbr> susanjagannath.<wbr> com/<wbr> tcaaaa-<wbr> bonus/`](https://susanjagannath.com/tcaaaa-bonus/)
-
-[`<wbr> linktr.<wbr> ee/<wbr> susanjagannath`](https://linktr.ee/susanjagannath)
-
-# 目录
-
-引言
-
-1. 作者视觉策略和心态
-
-练习 1.1：定义你的书籍视觉翻译的核心信息
-
-练习 1.2：你的受众喜欢什么
-
-2. 掌握提示对话
-
-练习 2.1：分析书中的提示
-
-练习 2.2：为你的书籍主题制作基本提示
-
-练习 2.3：尝试风格关键词
-
-3. 迭代和优化技巧
-
-练习 3.1：优化提供的图像（引导示例）
-
-练习 3.2：迭代你自己的生成图像
-
-4. 创建社交媒体和内容视觉
-
-练习 4.1：为你的书籍主题生成博客帖子标题
-
-练习 4.2：从你的书中创建可分享的引言图形
-
-练习 4.3：设计免费章节/引诱物的促销图形
-
-5. 构思书籍封面
-
-练习 5.1：为你的书籍头脑风暴封面概念
-
-练习 5.2：提示书籍封面草图
-
-6. 生成广告和促销图形
-
-练习 6.1：为你的书籍生成 Facebook 广告图形
-
-练习 6.2：创建简单的视觉清单/提示表
-
-7. 对文字的热爱
-
-练习 7.1：生成文本视觉
-
-8. 整合与下一步
-
-练习 7.1：回顾你的作者视觉工具包
-
-练习 7.2：规划你的视觉内容策略
-
-9. 奖励
-
-继续前进
-
-关于作者
-
-苏珊·贾甘纳特的其他作品
-
-作者 ChatGPT AI 艺术优势
-
-1. 为什么 AI 艺术是你书籍的最佳朋友
-
-2. 在 ChatGPT 4o 中开始图像生成
-
-设置成功：图像生成基础
 
 # **引言**
 

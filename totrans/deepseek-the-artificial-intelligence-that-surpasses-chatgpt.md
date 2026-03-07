@@ -1,124 +1,14 @@
-DeepSeek，超越 ChatGPT 的人工智能：
+DeepSeek，超越 ChatGPT 的人工智能
+
+
+> 原文：[DeepSeek, the Artificial Intelligence that surpasses ChatGPT:](https://annas-archive.gl/md5/a679a3a57c8a4de9c4a7e3ef4611a606)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 掌握 AI 的终极指南；利用这场革命在线赚钱
 
-Léo Raphaël Pineda
-
-DeepSeek，超越 ChatGPT 的人工智能：
-
-掌握 AI 的终极指南；利用这场革命在线赚钱
-
-版权所有 © 2025 Léo Raphaël Pineda
-
-保留所有权利。
-
-© 2025 Léo Raphaël Pineda
-
-保留所有权利。未经出版商或版权所有者事先书面许可，本书的任何部分不得以任何形式或通过任何手段（包括影印、录音或其他电子或机械方法）进行复制、分发或传播，但评论中的简要引用和版权法允许的某些其他非商业用途除外。
-
-如需许可请求，请联系出版商或版权所有者。
-
-由亚马逊编辑
-
-目录
-
-引言
-
-第一章：发现 DeepSeek
-
-I.​什么是 DeepSeek？
-
-II.​DeepSeek 的主要功能：
-
-III.​DeepSeek 模型的功能是什么？
-
-IV.​DeepSeek 是如何工作的
-
-V.​如何使用 DeepSeek
-
-VI.​为什么 DeepSeek 优于其他模型？
-
-第二章：DeepSeek 与 ChatGPT 的区别
-
-I.​设计和架构
-
-II.​开源与专有
-
-III.​成本和可访问性
-
-IV.​性能和专业化
-
-V.​应用和用例
-
-VI.​局限性和挑战
-
-VII.​功能
-
-VIII.​技术
-
-IX.​机遇和挑战
-
-X.​未来前景
-
-第三章：掌握 DeepSeek 以满足日常需求
-
-I.​安装和第一步
-
-II.​利用关键功能
-
-III.​根据您的特定需求定制 DeepSeek
-
-第四章：DeepSeek 提示
-
-I.​理解提示的作用
-
-II.​编写有效提示的技术
-
-III.​DeepSeek 有效提示的示例
-
-1\. 内容创作
-
-2\. 编程辅助
-
-3\. 数据分析
-
-4\. 教育和培训
-
-IV.​优化您的提示的技巧
-
-迭代
-
-使用上下文
-
-期望的澄清
-
-V.​避免常见错误
-
-第五章：用 DeepSeek 赚钱
-
-I.​利用 AI 赚钱
-
-II.​借助 DeepSeek 获得技术支持和咨询
-
-1. 解决方案个性化
-
-2. 复杂流程自动化
-
-3. 深度数据分析
-
-4. 定位为创新专家
-
-5. 各个领域的应用案例
-
-6. 成本和时间优化
-
-7. 与客户合作
-
-III. 围绕 DeepSeek 开发服务
-
-IV. 利用开源力量进行创新
-
-结论
 
 引言
 

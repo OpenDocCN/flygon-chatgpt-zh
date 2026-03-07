@@ -1,3 +1,12 @@
+# 如何使用 ChatGPT：你的终极指南
+
+> 原文：[How To Use ChatGPT: Your Ultimate Guide](https://annas-archive.gl/md5/85cfd05e84542a784eb53916f5647807)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
 简介
 
 近年来，人工智能（AI）取得了重大进展，改变了我们

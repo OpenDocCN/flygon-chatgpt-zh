@@ -1,34 +1,13 @@
-## 目录
 
-第一章：ChatGPT 与被动收入的介绍
 
-第二章：探索创意非虚构
+# ChatGPT 作家提示技巧：10 步找到成功与生成被动收入
 
-第三章：写作提示的基础
+> 原文：[ChatGPT Prompt Hacks for Writers:](https://annas-archive.gl/md5/b883a6c97c146fe193c5e109f89f8954)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-第四章：通过写作生成收入
-
-第五章：ChatGPT 创意非虚构提示
-
-第六章：创作引人入胜的故事
-
-第七章：推广您的写作
-
-第八章：建立可持续的写作实践
-
-第九章：成功作家的案例研究
-
-第十章：结论与下一步
-
-关于作者
-
-## ChatGPT 为作家提供的提示技巧
-
-## 10 步找到成功与生成被动收入
-
-## SANGITA GUPTA
-
-“版权所有 © 2025 Sangita Gupta。保留所有权利。未经出版者书面许可，本出版物的任何部分不得以任何形式或任何手段（电子、机械、影印、录音、扫描或其他方式）进行复制、存储或传输。未经许可复制此书、将其发布到网站或以任何其他方式分发均为非法。第一版《ChatGPT 提示技巧：找到成功与生成被动收入》摘自 Sangita Gupta。此材料可能受版权保护。”
 
 ## 第一章：ChatGPT 与被动收入的介绍
 

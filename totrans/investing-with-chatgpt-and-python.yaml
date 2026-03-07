@@ -8621,16 +8621,20 @@
   id: totrans-1487
   prefs: []
   type: TYPE_NORMAL
+  zh: 选择交易平台，无论是传统证券交易所还是加密货币，取决于您特定的算法交易需求。像Interactive Brokers、TD Ameritrade和Alpaca这样的股票经纪人提供强大的证券交易API。对于加密货币交易，像Binance、Coinbase
+    Pro和Kraken这样的交易所提供强大且可靠的API。使用像CCXT这样的库，您可以轻松地将您的交易策略集成和自动化到多个加密货币交易所，简化交易算法的开发和管理。
 - en: Data sources and their practical use
   id: totrans-1488
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 数据源及其实际用途
 - en: Introduction
   id: totrans-1489
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 简介
 - en: In algorithmic trading, access to accurate, up-to-date financial data is essential
     for developing and optimizing trading strategies. Data sources can be free or
     paid for, with each type having its advantages and disadvantages. Paid services
@@ -8641,147 +8645,180 @@
   id: totrans-1490
   prefs: []
   type: TYPE_NORMAL
+  zh: 在算法交易中，访问准确、最新的金融数据对于开发和优化交易策略至关重要。数据源可以是免费的或付费的，每种类型都有其优缺点。付费服务通常提供更详细的数据和更长的历史时期，这对于复杂的交易策略可能是至关重要的。本章探讨了股票市场和加密货币交易可用的不同数据源，并提供了免费和付费API的示例。
 - en: Free Data Sources
   id: totrans-1491
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 免费数据源
 - en: Free data sources are ideal for novice traders or those wishing to experiment
     without incurring costs. However, they may have limitations in terms of data granularity
     and the historical period available.
   id: totrans-1492
   prefs: []
   type: TYPE_NORMAL
+  zh: 免费数据源对于新手交易者或希望在不承担成本的情况下进行实验的人来说是理想的。然而，它们在数据粒度和可用的历史时期方面可能有限制。
 - en: 'Yahoo Finance (Yahoo Finance Python API) :'
   id: totrans-1493
   prefs: []
   type: TYPE_NORMAL
+  zh: 'Yahoo Finance (Yahoo Finance Python API) :'
 - en: 'Overview: Yahoo Finance offers free financial data for stocks, indices, currencies,
     and cryptocurrencies. Data includes historical prices, volumes, and other financial
     indicators.'
   id: totrans-1494
   prefs: []
   type: TYPE_NORMAL
+  zh: 概述：Yahoo Finance为股票、指数、货币和加密货币提供免费金融数据。数据包括历史价格、成交量和其他金融指标。
 - en: 'API: yfinance is a Python library that provides easy access to Yahoo Finance
     data.'
   id: totrans-1495
   prefs: []
   type: TYPE_NORMAL
+  zh: API：yfinance是一个Python库，它提供了访问Yahoo Finance数据的简单方式。
 - en: 'Example of use:'
   id: totrans-1496
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用示例：
 - en: import yfinance as yf
   id: totrans-1497
   prefs: []
   type: TYPE_NORMAL
+  zh: import yfinance as yf
 - en: Recovering historical data for Apple shares
   id: totrans-1498
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 恢复苹果股票的历史数据
 - en: data = yf.download('AAPL', start='2022-01-01', end='2023-01-01')
   id: totrans-1499
   prefs: []
   type: TYPE_NORMAL
+  zh: data = yf.download('AAPL', start='2022-01-01', end='2023-01-01')
 - en: print(data)
   id: totrans-1500
   prefs: []
   type: TYPE_NORMAL
+  zh: print(data)
 - en: 'Binance (API Binance):'
   id: totrans-1501
   prefs: []
   type: TYPE_NORMAL
+  zh: 'Binance (API Binance):'
 - en: 'Overview: Binance is one of the world''s largest cryptocurrency exchanges,
     offering a free API to access real-time and historical market data.'
   id: totrans-1502
   prefs: []
   type: TYPE_NORMAL
+  zh: 概述：Binance是世界上最大的加密货币交易所之一，提供免费API以访问实时和历史市场数据。
 - en: 'API: Binance''s API allows you to retrieve prices, volumes, orders, and other
     market data for a wide range of cryptocurrencies.'
   id: totrans-1503
   prefs: []
   type: TYPE_NORMAL
+  zh: API：Binance的API允许您检索各种加密货币的价格、成交量、订单和其他市场数据。
 - en: 'Example of use:'
   id: totrans-1504
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用示例：
 - en: import ccxt
   id: totrans-1505
   prefs: []
   type: TYPE_NORMAL
+  zh: import ccxt
 - en: binance = ccxt.binance()
   id: totrans-1506
   prefs: []
   type: TYPE_NORMAL
+  zh: binance = ccxt.binance()
 - en: ticker = binance.fetch_ticker('BTC/USDT')
   id: totrans-1507
   prefs: []
   type: TYPE_NORMAL
+  zh: ticker = binance.fetch_ticker('BTC/USDT')
 - en: print(ticker)
   id: totrans-1508
   prefs: []
   type: TYPE_NORMAL
+  zh: print(ticker)
 - en: 'Alpha Vantage:'
   id: totrans-1509
   prefs: []
   type: TYPE_NORMAL
+  zh: 'Alpha Vantage:'
 - en: 'Overview: Alpha Vantage offers free financial data for stocks, cryptocurrencies,
     and currencies. Data includes daily prices, technical indicators, and volume data.'
   id: totrans-1510
   prefs: []
   type: TYPE_NORMAL
+  zh: 概述：Alpha Vantage为股票、加密货币和货币提供免费金融数据。数据包括每日价格、技术指标和成交量数据。
 - en: 'API: Alpha Vantage offers a well-documented API with limited free calls.'
   id: totrans-1511
   prefs: []
   type: TYPE_NORMAL
+  zh: API：Alpha Vantage提供了一个文档齐全的API，但免费调用有限。
 - en: 'Example of use:'
   id: totrans-1512
   prefs: []
   type: TYPE_NORMAL
+  zh: 使用示例：
 - en: import requests
   id: totrans-1513
   prefs: []
   type: TYPE_NORMAL
+  zh: import requests
 - en: api_key = 'YOUR_API_KEY'
   id: totrans-1514
   prefs: []
   type: TYPE_NORMAL
+  zh: api_key = 'YOUR_API_KEY'
 - en: symbol = 'AAPL
   id: totrans-1515
   prefs: []
   type: TYPE_NORMAL
+  zh: symbol = 'AAPL'
 - en: url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={api_key}'
   id: totrans-1516
   prefs: []
   type: TYPE_NORMAL
+  zh: url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={api_key}'
 - en: response = requests.get(url)
   id: totrans-1517
   prefs: []
   type: TYPE_NORMAL
+  zh: response = requests.get(url)
 - en: data = response.json()
   id: totrans-1518
   prefs: []
   type: TYPE_NORMAL
+  zh: data = response.json()
 - en: print(data)
   id: totrans-1519
   prefs: []
   type: TYPE_NORMAL
+  zh: print(data)
 - en: Paid Data Sources
   id: totrans-1520
   prefs:
   - PREF_H3
   type: TYPE_NORMAL
+  zh: 支付数据源
 - en: Paid data services offer significant advantages in terms of data depth and granularity.
     They are often used by professional traders and financial institutions for more
     precise analysis and advanced trading strategies.
   id: totrans-1521
   prefs: []
   type: TYPE_NORMAL
+  zh: 支付数据服务在数据深度和粒度方面具有显著优势。它们通常被专业交易者和金融机构用于更精确的分析和高级交易策略。
 - en: 'Whenl :'
   id: totrans-1522
   prefs: []
   type: TYPE_NORMAL
+  zh: 当l：
 - en: 'Overview: Quandl offers a wide range of paid financial data, including stock
     prices, economic indices, alternative data and more. Paid subscriptions provide
     access to more granular, up-to-date data.'

@@ -1,3 +1,12 @@
+# 教师的 ChatGPT 电子书指南
+
+> 原文：[ChatGPT for Teachers eBook Guide](https://annas-archive.gl/md5/52dd7cddb9242c7f21b45522208e724b)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
 简介
 
 教育新时代

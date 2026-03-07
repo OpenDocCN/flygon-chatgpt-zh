@@ -1,7 +1,7 @@
 
 # AI 副业：50 种使用 ChatGPT 和其他工具在线赚取被动收入的方法
 
-> 原文：[AI PROMPT ENGINEERING MADE EASY:](https://annas-archive.gl/md5/e9b50ecfd565a5b8dcbf83582d5571ad)
+> 原文：[AI Side Hustles: 50 Ways to Use ChatGPT and Other Tools to Make Passive Income Online ](https://annas-archive.gl/md5/7185f99c5067784235c51903842fdc5f)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

@@ -1,3 +1,12 @@
+# ChatGPT 新手指南
+
+> 原文：[ChatGPT for Newbies](https://annas-archive.gl/md5/1d294c5abd64d4772c73fec3e0cda479)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
 感谢您阅读我的书！
 
 作为对您的感谢，我将免费赠送您另一本书：

@@ -1,50 +1,15 @@
+
+# ChatGPT：生成式 AI 入门指南
+
+> 原文：[ChatGPT: A Beginner’s Guide to Generative AI  ](https://annas-archive.gl/md5/6caf4105490416f13d1a876cae539fc4)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![封面图片](img/chatgpt-a-beginner-s-guide-to-generative-ai-cover.jpg)
 
-ChatGPT：生成式 AI 入门指南
 
-阿尔贝托·罗查
-
-由阿尔贝托·罗查出版，2025 年。
-
-尽管在本书的准备工作上已经采取了所有预防措施，但出版商不对错误、遗漏或因使用本书中包含的信息而造成的损害承担责任。
-
-CHATGPT：生成式 AI 入门指南
-
-**第一版。2025 年 1 月 7 日。**
-
-版权所有 © 2025 阿尔贝托·罗查。
-
-作者：阿尔贝托·罗查。
-
-10 9 8 7 6 5 4 3 2 1
-
-阿尔贝托·罗查的其他作品
-
-[掌握信息：学生和专业人士的 AI 驱动洞察力](https://www.draft2digital.com/catalog/2511505?distributor=kobo)
-
-[AI 代理革命：从智能手机到超级智能 2025-2035](https://www.draft2digital.com/catalog/2514500?distributor=kobo)
-
-ChatGPT：生成式 AI 入门指南
-
-# 目录
-
-扉页
-
-版权页
-
-阿尔贝托·罗查的其他作品
-
-献词
-
-引言
-
-ChatGPT：生成式 AI 入门指南
-
-注册阿尔贝托·罗查的邮件列表
-
-进一步阅读：AI 代理革命：从智能手机到超级智能 2025-2035
-
-阿尔贝托·罗查的其他作品
 
 # 献词
 

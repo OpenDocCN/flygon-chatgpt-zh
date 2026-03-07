@@ -1,54 +1,11 @@
-Chat gpt  AI 商业提示
+# ChatGPT AI 商业提示：500+ 可盈利的即用型人工智能模板，助力商业增长和自动化
 
-500+ 可盈利的即用型人工智能模板，助力商业增长和自动化
+> 原文：[CHATGPT AI BUSNESS PROMTS](https://annas-archive.gl/md5/9ff3e988459400f4f5eaf0fd30b0cd46)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-# 由 Alex Wright MBA 编著
-
-## 版权 © 2025  由  Alex Wright MBA 编著
-
-## 版权所有。未经出版者事先书面许可，本书的任何部分不得以任何形式或任何手段（包括影印、录音或其他电子或机械方法）进行复制、分发或传播，但版权法允许的简要引用和某些其他非商业用途除外
-
-##### 目录
-
-## [第一章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073354165&usg=AOvVaw2XFCxa3q24qrWItWArfXJi)
-
-[第二章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073354448&usg=AOvVaw2hZbr3PG2FDeT2EI8pre4T)
-
-[第三章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073354571&usg=AOvVaw3lzZnxyrVRYGkrCgXQBCy3)
-
-[第四章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073354658&usg=AOvVaw04yJ2tQenG0k1BA6_9NE4h)
-
-[第五章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073354741&usg=AOvVaw0tULPzEPmPHj0yba8UaMlA)
-
-[第六章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073354826&usg=AOvVaw03telWNJ_ojAWFN4PVq2yp)
-
-[第七章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073354907&usg=AOvVaw0UZ4P1t6g9dGthfYUW85eK)
-
-[第八章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073354985&usg=AOvVaw0ZCJk_M0TubffvJLRUred6)
-
-[第九章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073355065&usg=AOvVaw12yMHvd5zJ7atdaNVmG5Xx)
-
-[第十章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073355144&usg=AOvVaw1_FJTVGbGKlTs_OhqQJpcD)
-
-[第十一章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073355232&usg=AOvVaw3khTdPh2mokhG3UgK0a8HB)
-
-[第十二章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073355330&usg=AOvVaw2e_TG3YNWXCoMgzPitiqAJ)
-
-[第十三章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073355448&usg=AOvVaw31vQ1Nh18b709YsxBj58QU)
-
-[第十四章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073355569&usg=AOvVaw3-1fnTB6XK-W4nrIRn8Mkn)
-
-[第十五章](https://www.google.com/url?q=http://heafing&sa=D&source=editors&ust=1738442073355685&usg=AOvVaw2abQa5gS5J6mHSHxUOh6T4)
-
-[第十六章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073355806&usg=AOvVaw3NluenEGfOS6DKULxz44AV)
-
-[第十七章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073355932&usg=AOvVaw00bqqeUAnSUIvLvV3AjgvJ)
-
-[第十八章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073356081&usg=AOvVaw3w-iCqjHpG_sfD_nPGNVBN)
-
-[第十九章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073356178&usg=AOvVaw0qgNwudV-L8zzqgrz7xQPo)
-
-[第二十章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738442073356271&usg=AOvVaw38ZluDbHCyIOp7KQ6lpY7z)
 
 # # 第一章：
 
@@ -74,7 +31,15 @@ Chat gpt  AI 商业提示
 
 ### 结构良好的提示示例：
 
-```py You are a seasoned marketing consultant. Please produce interesting content for my company's social media accounts. [Platform] should be the material's target. [Description] is the name of my company. [Details] is the target audience. Please give me five post ideas that include hashtags. Set the tone [casual/formal].```
+
+
+```py
+
+ You are a seasoned marketing consultant. Please produce interesting content for my company's social media accounts. [Platform] should be the material's target. [Description] is the name of my company. [Details] is the target audience. Please give me five post ideas that include hashtags. Set the tone [casual/formal].
+
+```
+
+
 
 ## 提高成果的建议
 
@@ -144,7 +109,11 @@ Chat gpt  AI 商业提示
 
 ## 营销策略的关键问题
 
-### 无品牌声音的发展```py
+### 无品牌声音的发展
+
+```py
+
+
 
 Serve as a senior strategist for your brand. Assist me in creating a recognizable brand voice for [business name]. We target [client demography] in the [industry] sector. [Values] are our guiding principles. Make a thorough brand voice manual that contains:
 
@@ -158,7 +127,11 @@ Serve as a senior strategist for your brand. Assist me in creating a recognizabl
 
 5\. Avoid these communication blunders``.
 
-### Generator of Product Description ```
+### Generator of Product Description 
+
+```
+
+
 
 你作为产品专业文案撰写者，为[产品名称]撰写吸引人的产品描述。显著特点包括[特点]。[受众]是目标受众。优点包括[好处]。请撰写以下内容：
 
@@ -168,9 +141,17 @@ Serve as a senior strategist for your brand. Assist me in creating a recognizabl
 
 3. 三个主要卖点
 
-4. 优化的标题```py
+4. 优化的标题
 
-### Strategy for Content Marketing```
+```py
+
+
+
+### Strategy for Content Marketing
+
+```
+
+
 
 制作一份未来 30 天的详细内容策略，作为内容营销策略师。[描述]是我公司的名称。[细节]是目标受众。包括：1. 内容的主题和主题
 
@@ -180,11 +161,19 @@ Serve as a senior strategist for your brand. Assist me in creating a recognizabl
 
 4. 发布时间表
 
-5. 需要监控的重要指标```py
+5. 需要监控的重要指标
+
+```py
+
+
 
 ## Marketing on Social Media
 
-### Planning a Campaign```
+### Planning a Campaign
+
+```
+
+
 
 作为社交媒体营销的权威人士，创建一个为期两周的广告[产品/服务]的营销计划。[目标]是我们的目标。[细节]是目标受众。请提供以下内容：
 
@@ -196,9 +185,17 @@ Serve as a senior strategist for your brand. Assist me in creating a recognizabl
 
 4. 参与策略
 
-5. 成功衡量```py
+5. 成功衡量
 
-### Ideas for Viral Content```
+```py
+
+
+
+### Ideas for Viral Content
+
+```
+
+
 
 你专长于病毒性内容。为[平台]提供十个可能的病毒性内容概念，以补充我们的[行业]运营。[语气]是我们品牌的发声。[受众]是目标受众。每个想法包括以下内容：
 
@@ -210,11 +207,19 @@ Serve as a senior strategist for your brand. Assist me in creating a recognizabl
 
 4. 哈希标签
 
-5. 发布的理想时间```py
+5. 发布的理想时间
+
+```py
+
+
 
 ## Ideas for Content Creation
 
-### Creating Blog Posts```
+### Creating Blog Posts
+
+```
+
+
 
 作为一名专业博主，为[主题]制作一篇博客文章的详细大纲。[受众]是目标受众。包括以下内容：
 
@@ -226,9 +231,17 @@ Serve as a senior strategist for your brand. Assist me in creating a recognizabl
 
 4. 行动呼吁的建议
 
-5. 包含这些 SEO 关键词```py
+5. 包含这些 SEO 关键词
 
-### Content of Email Newsletters```
+```py
+
+
+
+### Content of Email Newsletters
+
+```
+
+
 
 作为电子邮件营销的专家，为[业务类型]提供有趣的邮件内容。[目标]是我们的目标。[细节]是目标受众。包括以下内容：
 
@@ -238,11 +251,19 @@ Serve as a senior strategist for your brand. Assist me in creating a recognizabl
 
 4. 行动请求
 
-5. P.S. 信息```py
+5. P.S. 信息
+
+```py
+
+
 
 ## Cutting-Edge Marketing Techniques
 
-### Development of Marketing Funnels```
+### Development of Marketing Funnels
+
+```
+
+
 
 作为漏斗优化专家，我希望能帮助为[服务/产品]开发营销漏斗。[受众]是目标受众。[金额]是预算。请提供概述：
 
@@ -252,9 +273,17 @@ Serve as a senior strategist for your brand. Assist me in creating a recognizabl
 
 4. 跟进步骤
 
-5. 每个阶段的重要指标```py
+5. 每个阶段的重要指标
 
-### Analysis of Competitors```
+```py
+
+
+
+### Analysis of Competitors
+
+```
+
+
 
 作为市场研究分析师，提供分析[行业]竞争对手的全面框架。专注于[特定竞争对手]。制作一份包含以下内容的报告：
 
@@ -1088,7 +1117,11 @@ AI 提示以开始讨论或辩论。
 
 22. 创建远程团队建设活动的沟通模板。
 
-23. ``` 为团队成员创建反馈模板。
+23. 
+
+```
+
+ 为团队成员创建反馈模板。
 
 24. 创建庆祝项目里程碑和认可团队成员的模板。
 
@@ -1106,7 +1139,11 @@ AI 提示以开始讨论或辩论。
 
 ## 项目管理（15 个提示）
 
-31. ```
+31. 
+
+```
+
+
 
 为[项目类型]创建一个全面的项目章程模板。
 
@@ -1132,7 +1169,11 @@ AI 提示以开始讨论或辩论。
 
 42. 创建项目团队的角色和责任矩阵。
 
-``` 创建一个项目风险登记模板。
+
+
+```
+
+ 创建一个项目风险登记模板。
 
 44. 创建项目沟通计划模板。
 
@@ -1140,7 +1181,11 @@ AI 提示以开始讨论或辩论。
 
 ## 流程优化（15 个提示）
 
-46. ``` 为[特定业务流程]创建流程映射模板。
+46. 
+
+```
+
+ 为[特定业务流程]创建流程映射模板。
 
 47. 创建工作流程效率分析框架。
 
@@ -1182,7 +1227,11 @@ AI 提示以开始讨论或辩论。
 
 65. 创建一个模板来记录会议纪要和行动项。
 
-``` 创建季度业务审查会议的模板。
+
+
+```
+
+ 创建季度业务审查会议的模板。
 
 67. 准备应急响应团队会议的议程。
 

@@ -1,16 +1,14 @@
-![Image00028.jpg]
 
-用 ChatGPT 和 MidJourney 实现 AImpact 内容创作飞跃 ![Image00000.jpg]
 
-目录
+# AImpact：用 ChatGPT 和 MidJourney 实现内容创作飞跃
 
-前言：您的 10 倍内容创作之旅
+> 原文：[AImpact: Skyrocketing Content Creation with ChatGPT & MidJourney](https://annas-archive.gl/md5/df2b9ded08be0e22e669fdc2724409c4)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-+   为什么 AI 是创造力的未来
 
-+   这本书将如何改变您的工作
-
-+   这本书适合谁
 
 # 第一章：AI 驱动内容创作的介绍
 

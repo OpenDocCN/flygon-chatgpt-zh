@@ -1,54 +1,13 @@
-人工智能学生用书
+# 人工智能学生用书：500+ AI 提示助力学术成功 
 
-500+ AI 提示助力学术成功 如何 Chatgpt 改变课堂学习（2025 年完整入门指南） 
+> 原文：[Artificial Intelligence For Students ](https://annas-archive.gl/md5/d3cf1a0f6e26facc1997f4db84547ca8)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-# 由  Alex Wright MBA
 
-### 版权所有 © 2025  由  Alex Wright  MBA
-
-### 所有权利保留。未经出版者事先书面许可，本书的任何部分不得以任何形式或任何手段（包括影印、录音或其他电子或机械方法）进行复制、分发或传播，但版权法允许的简要引用和某些其他非商业用途除外
-
-### 目录
-
-##### [第一章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771499718&usg=AOvVaw0zOlnKejQicIQ_mEu3EiTe)
-
-##### [第二章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771500001&usg=AOvVaw2GviSF82R9Tb9gR-QMbuQF)
-
-##### [第三章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771500243&usg=AOvVaw1UWDdoI5gl7OqbVZX-6Txg)
-
-##### [第四章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771500470&usg=AOvVaw1xljN9i0utoeEfMJrE8C6t)
-
-##### [第五章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771500698&usg=AOvVaw1KVkMvl3PocltpSYCi7Ye1)
-
-##### [第六章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771500968&usg=AOvVaw1Ycrg0CB3d56wxPGaJIYe8)
-
-##### [第七章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771501210&usg=AOvVaw3RDAmURNJhoUECbeWblIVJ)
-
-##### [第八章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771501466&usg=AOvVaw3sqvrnF8IDnWVDjjsuGHV3)
-
-##### [第九章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771501639&usg=AOvVaw1hQmGrGcJeELNYfoYEkt1c)
-
-##### [第十章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771501780&usg=AOvVaw0G8ClxafIFosGUIg_wGS0t)
-
-##### [第十一章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771501908&usg=AOvVaw27MN99Ash79TXX7ItRzwRZ)
-
-##### [第十二章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771502033&usg=AOvVaw2-fqmFX5hjVLJZYr1LwDEp)
-
-##### [第十三章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771502153&usg=AOvVaw1krVN16f-gygILjCfKZOnF)
-
-##### [第十四章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771502271&usg=AOvVaw3d3FjA3xTzesGsJX_VsNWk)
-
-##### [第十五章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771502384&usg=AOvVaw0c85hmsvchTRNXlbo4S6Vs)
-
-##### [第十六章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771502669&usg=AOvVaw3B_pkGncIf4_LjRlmzjtkH)
-
-##### [第十七章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771502900&usg=AOvVaw2b5PRJBKIyQ2alI032XeGC)
-
-##### [第十八章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771503094&usg=AOvVaw1Ut7siP7X0o40j4z1pVupF)
-
-##### [第十九章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771503298&usg=AOvVaw2B9mZK2HYQmQ_NgYzeTwLy)
-
-##### [第二十章](https://www.google.com/url?q=http://heading&sa=D&source=editors&ust=1738512771503532&usg=AOvVaw08U5GNmkVzoYnuFTIvP_wa)
+Chatgpt 如何改变课堂学习（2025 年完整入门指南） 
 
 # 第一章：
 

@@ -1,20 +1,15 @@
+
+# ChatGPT 数据科学速查表
+
+> 原文：[ChatGPT Cheat Sheet for Data Science by Datacamp](https://annas-archive.gl/md5/07bab648700d64ce7e12496c1e52d92b)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
 ![](img/chatgpt-cheat-sheet-for-data-science-by-datacamp-00033.png)
 
-ChatGPT
-
-速查表
-
-适用于数据科学
-
-在线学习数据科学
-
-www.DataCamp.com
-
-![](img/chatgpt-cheat-sheet-for-data-science-by-datacamp-00064.png)
-
-数据科学 ChatGPT 速查表
-
-如何使用这个速查表？
 
 1 什么是 ChatGPT？
 

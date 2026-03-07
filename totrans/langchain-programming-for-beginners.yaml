@@ -2602,188 +2602,230 @@
   id: totrans-475
   prefs: []
   type: TYPE_NORMAL
+  zh: 之后，使用if语句检查question变量是否包含问题。
 - en: When the question is not empty, we run the llm.invoke() method and write the
     returned response to Streamlit.
   id: totrans-476
   prefs: []
   type: TYPE_NORMAL
+  zh: 当问题不为空时，我们运行llm.invoke()方法并将返回的响应写入Streamlit。
 - en: 'To run a Streamlit application, you need to use streamlit instead of python
     on the command line:'
   id: totrans-477
   prefs: []
   type: TYPE_NORMAL
+  zh: 要运行Streamlit应用程序，你需要在命令行上使用streamlit而不是python：
 - en: streamlit run app.py
   id: totrans-478
   prefs: []
   type: TYPE_NORMAL
+  zh: streamlit run app.py
 - en: 'Streamlit will open your web browser and navigate to the localhost:8501, where
     the Streamlit application is running:'
   id: totrans-479
   prefs: []
   type: TYPE_NORMAL
+  zh: Streamlit将打开你的网络浏览器并导航到localhost:8501，那里运行着Streamlit应用程序：
 - en: '![5 streamlit running](image_rsrc1Z2.jpg)'
   id: totrans-480
   prefs: []
   type: TYPE_IMG
+  zh: '![5 streamlit running](image_rsrc1Z2.jpg)'
 - en: Figure 26\. Opening Streamlit in Web Browser
   id: totrans-481
   prefs: []
   type: TYPE_NORMAL
+  zh: 图26. 在网络浏览器中打开Streamlit
 - en: You can type your question in the box and press Enter.
   id: totrans-482
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以在框中输入你的问题并按Enter键。
 - en: 'The LLM response will be written below the question box:'
   id: totrans-483
   prefs: []
   type: TYPE_NORMAL
+  zh: LLM的响应将被写入问题框下方：
 - en: '![5 streamlit qna](image_rsrc1Z3.jpg)'
   id: totrans-484
   prefs: []
   type: TYPE_IMG
+  zh: '![5 streamlit qna](image_rsrc1Z3.jpg)'
 - en: Figure 27\. Streamlit Output Example
   id: totrans-485
   prefs: []
   type: TYPE_NORMAL
+  zh: 图27. Streamlit 输出示例
 - en: And that’s how you use Streamlit to create a simple interface for LLM-powered
     applications.
   id: totrans-486
   prefs: []
   type: TYPE_NORMAL
+  zh: 这样就是使用Streamlit为LLM驱动的应用程序创建简单界面的方法。
 - en: Summary
   id: totrans-487
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 摘要
 - en: The code for this chapter is available in the folder 05_Adding_Streamlit_GUI
     from the book source code.
   id: totrans-488
   prefs: []
   type: TYPE_NORMAL
+  zh: 本章的代码可在书籍源代码的05_Adding_Streamlit_GUI文件夹中找到。
 - en: In this chapter, you’ve learned how to use Streamlit to quickly create a web-based
     interface for interacting with a Large Language Model through LangChain.
   id: totrans-489
   prefs: []
   type: TYPE_NORMAL
+  zh: 在本章中，你学习了如何使用Streamlit快速创建一个基于Web的界面，通过LangChain与大型语言模型进行交互。
 - en: We’re going to explore Streamlit more as we build more advanced AI applications.
   id: totrans-490
   prefs: []
   type: TYPE_NORMAL
+  zh: 随着我们构建更高级的AI应用程序，我们将进一步探索Streamlit。
 - en: In the next chapter, you’re going to learn about prompt templates. See you there!
   id: totrans-491
   prefs: []
   type: TYPE_NORMAL
+  zh: 在下一章中，你将学习关于提示模板的内容。那里见！
 - en: 'Chapter 6: LangChain Prompt Templates'
   id: totrans-492
   prefs: []
   type: TYPE_NORMAL
+  zh: 第六章：LangChain提示模板
 - en: The LangChain prompt template is a Python class used to create a specific prompt
     (or instruction) to send to a Large Language Model.
   id: totrans-493
   prefs: []
   type: TYPE_NORMAL
+  zh: LangChain提示模板是一个Python类，用于创建发送给大型语言模型的特定提示（或指令）。
 - en: By using prompt templates, we can reproduce the same instruction while requiring
     minimal input from the user.
   id: totrans-494
   prefs: []
   type: TYPE_NORMAL
+  zh: 通过使用提示模板，我们可以在用户输入最少的情况下重复相同的指令。
 - en: To show you an example, suppose you are creating a simple AI application that
     only gives currency information of a specific country.
   id: totrans-495
   prefs: []
   type: TYPE_NORMAL
+  zh: 为了给你一个例子，假设你正在创建一个简单的AI应用程序，该应用程序只提供特定国家的货币信息。
 - en: 'Based on what we already know, the only way to do this is to keep repeating
     the question while changing the country as follows:'
   id: totrans-496
   prefs: []
   type: TYPE_NORMAL
+  zh: 根据我们已知的，唯一的方法是重复问题，同时更改国家如下：
 - en: question = "What is the currency of Thailand?"
   id: totrans-497
   prefs: []
   type: TYPE_NORMAL
+  zh: question = "What is the currency of Thailand?"
 - en: question = "What is the currency of Malaysia?"
   id: totrans-498
   prefs: []
   type: TYPE_NORMAL
+  zh: question = "What is the currency of Malaysia?"
 - en: question = "What is the currency of India?"
   id: totrans-499
   prefs: []
   type: TYPE_NORMAL
+  zh: question = "What is the currency of India?"
 - en: 'Instead of repeating the question, you can create a template for that question
     as follows:'
   id: totrans-500
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以创建一个模板来代替重复的问题，如下所示：
 - en: st.title("Currency Info")
   id: totrans-501
   prefs: []
   type: TYPE_NORMAL
+  zh: st.title("Currency Info")
 - en: country = st.text_input("Input Country")
   id: totrans-502
   prefs: []
   type: TYPE_NORMAL
+  zh: country = st.text_input("Input Country")
 - en: 'if country:'
   id: totrans-503
   prefs: []
   type: TYPE_NORMAL
+  zh: 'if country:'
 - en: question = "What is the currency of " + country + "?"
   id: totrans-504
   prefs: []
   type: TYPE_NORMAL
+  zh: question = "What is the currency of " + country + "?"
 - en: response = llm.invoke(question)
   id: totrans-505
   prefs: []
   type: TYPE_NORMAL
+  zh: response = llm.invoke(question)
 - en: st.write(response.content)
   id: totrans-506
   prefs: []
   type: TYPE_NORMAL
+  zh: st.write(response.content)
 - en: Now you only need to give the country name on the input box to run the prompt.
   id: totrans-507
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你只需要在输入框中输入国家名称来运行提示。
 - en: You can use a plain string or f-string to create a prompt template, but LangChain
     recommends you use the prompt template class for effective reuse. Let me show
     you how.
   id: totrans-508
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以使用纯字符串或f-string来创建提示模板，但LangChain建议你使用提示模板类以实现有效重用。让我给你展示一下。
 - en: Creating a Prompt Template
   id: totrans-509
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 创建提示模板
 - en: 'To create a prompt template, you need to import the PromptTemplate class from
     langchain.prompts as shown below:'
   id: totrans-510
   prefs: []
   type: TYPE_NORMAL
+  zh: 要创建一个提示模板，你需要从langchain.prompts导入PromptTemplate类，如下所示：
 - en: from langchain.prompts import PromptTemplate
   id: totrans-511
   prefs: []
   type: TYPE_NORMAL
+  zh: from langchain.prompts import PromptTemplate
 - en: The next step is to create the prompt itself.
   id: totrans-512
   prefs: []
   type: TYPE_NORMAL
+  zh: 下一步是创建提示本身。
 - en: 'You can create a variable named prompt, then pass the call to PromptTemplate()
     constructor to that variable:'
   id: totrans-513
   prefs: []
   type: TYPE_NORMAL
+  zh: 你可以创建一个名为prompt的变量，然后将调用PromptTemplate()构造函数传递给该变量：
 - en: prompt = PromptTemplate()
   id: totrans-514
   prefs: []
   type: TYPE_NORMAL
+  zh: prompt = PromptTemplate()
 - en: 'When calling the PromptTemplate() constructor, you need to pass two arguments:'
   id: totrans-515
   prefs: []
   type: TYPE_NORMAL
+  zh: 当调用PromptTemplate()构造函数时，你需要传递两个参数：
 - en: input_variables - A list of the names of the variables used in the template
   id: totrans-516
   prefs:
   - PREF_OL
   type: TYPE_NORMAL
+  zh: input_variables - 模板中使用的变量名称列表
 - en: template - A string for the prompt template itself
   id: totrans-517
   prefs:
@@ -6404,256 +6446,318 @@
   id: totrans-1190
   prefs: []
   type: TYPE_NORMAL
+  zh: 这个具有历史感知的检索器随后用于通过分析聊天历史来上下文化你最新的问题。
 - en: 'You need to import the create_history_aware_retriever chain, then create a
     history_aware_retriever object as follows:'
   id: totrans-1191
   prefs: []
   type: TYPE_NORMAL
+  zh: 你需要导入 create_history_aware_retriever 链，然后按照以下方式创建一个 history_aware_retriever
+    对象：
 - en: from langchain.chains import create_history_aware_retriever
   id: totrans-1192
   prefs: []
   type: TYPE_NORMAL
+  zh: from langchain.chains import create_history_aware_retriever
 - en: '... other code'
   id: totrans-1193
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '... 其他代码'
 - en: retriever = vector_store.as_retriever()
   id: totrans-1194
   prefs: []
   type: TYPE_NORMAL
+  zh: retriever = vector_store.as_retriever()
 - en: contextualize_system_prompt = """Given a chat history and the latest user question
     \
   id: totrans-1195
   prefs: []
   type: TYPE_NORMAL
+  zh: contextualize_system_prompt = """Given a chat history and the latest user question
+    \
 - en: which might reference context in the chat history, formulate a standalone question
     \
   id: totrans-1196
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可能引用聊天历史中的上下文，形成一个独立的问题
 - en: which can be understood without the chat history. Do NOT answer the question,
     \
   id: totrans-1197
   prefs: []
   type: TYPE_NORMAL
+  zh: 这可以在没有聊天历史的情况下理解。**不要回答问题**，
 - en: just reformulate it if needed and otherwise return it as is."""
   id: totrans-1198
   prefs: []
   type: TYPE_NORMAL
+  zh: 如果需要，重新表述它，否则按原样返回。”
 - en: contextualize_prompt = ChatPromptTemplate.from_messages(
   id: totrans-1199
   prefs: []
   type: TYPE_NORMAL
+  zh: contextualize_prompt = ChatPromptTemplate.from_messages(
 - en: '['
   id: totrans-1200
   prefs: []
   type: TYPE_NORMAL
+  zh: '['
 - en: ("system", contextualize_system_prompt),
   id: totrans-1201
   prefs: []
   type: TYPE_NORMAL
+  zh: ("system", contextualize_system_prompt),
 - en: MessagesPlaceholder("chat_history"),
   id: totrans-1202
   prefs: []
   type: TYPE_NORMAL
+  zh: MessagesPlaceholder("chat_history"),
 - en: ("human", "{input}"),
   id: totrans-1203
   prefs: []
   type: TYPE_NORMAL
+  zh: ("human", "{input}"),
 - en: ']'
   id: totrans-1204
   prefs: []
   type: TYPE_NORMAL
+  zh: ']'
 - en: )
   id: totrans-1205
   prefs: []
   type: TYPE_NORMAL
+  zh: )
 - en: history_aware_retriever = create_history_aware_retriever(
   id: totrans-1206
   prefs: []
   type: TYPE_NORMAL
+  zh: history_aware_retriever = create_history_aware_retriever(
 - en: llm, retriever, contextualize_prompt
   id: totrans-1207
   prefs: []
   type: TYPE_NORMAL
+  zh: llm, retriever, contextualize_prompt
 - en: )
   id: totrans-1208
   prefs: []
   type: TYPE_NORMAL
+  zh: )
 - en: 'After creating the history_aware_retriever object, you need to update the rag_chain
     to use the retriever as follows:'
   id: totrans-1209
   prefs: []
   type: TYPE_NORMAL
+  zh: 在创建 history_aware_retriever 对象后，你需要更新 rag_chain 以使用检索器，如下所示：
 - en: rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
   id: totrans-1210
   prefs: []
   type: TYPE_NORMAL
+  zh: rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
 - en: 'Now that you have an updated RAG chain, pass the chain to the RunnableWithMessageHistory()
     class like we did in Chapter 9:'
   id: totrans-1211
   prefs: []
   type: TYPE_NORMAL
+  zh: 现在你已经更新了 RAG 链，像第 9 章中那样将链传递给 RunnableWithMessageHistory() 类：
 - en: Add the imports
   id: totrans-1212
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: 添加导入
 - en: from langchain_community.chat_message_histories import StreamlitChatMessageHistory
   id: totrans-1213
   prefs: []
   type: TYPE_NORMAL
+  zh: from langchain_community.chat_message_histories import StreamlitChatMessageHistory
 - en: from langchain_core.runnables.history import RunnableWithMessageHistory
   id: totrans-1214
   prefs: []
   type: TYPE_NORMAL
+  zh: from langchain_core.runnables.history import RunnableWithMessageHistory
 - en: '... other code'
   id: totrans-1215
   prefs:
   - PREF_H1
   type: TYPE_NORMAL
+  zh: '... 其他代码'
 - en: rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
   id: totrans-1216
   prefs: []
   type: TYPE_NORMAL
+  zh: rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
 - en: history = StreamlitChatMessageHistory()
   id: totrans-1217
   prefs: []
   type: TYPE_NORMAL
+  zh: history = StreamlitChatMessageHistory()
 - en: conversational_rag_chain = RunnableWithMessageHistory(
   id: totrans-1218
   prefs: []
   type: TYPE_NORMAL
+  zh: conversational_rag_chain = RunnableWithMessageHistory(
 - en: rag_chain,
   id: totrans-1219
   prefs: []
   type: TYPE_NORMAL
+  zh: rag_chain,
 - en: 'lambda session_id: history,'
   id: totrans-1220
   prefs: []
   type: TYPE_NORMAL
+  zh: 'lambda session_id: history,'
 - en: input_messages_key="input",
   id: totrans-1221
   prefs: []
   type: TYPE_NORMAL
+  zh: input_messages_key="input",
 - en: history_messages_key="chat_history",
   id: totrans-1222
   prefs: []
   type: TYPE_NORMAL
+  zh: history_messages_key="chat_history",
 - en: output_messages_key="answer",
   id: totrans-1223
   prefs: []
   type: TYPE_NORMAL
+  zh: output_messages_key="answer",
 - en: )
   id: totrans-1224
   prefs: []
   type: TYPE_NORMAL
+  zh: )
 - en: 'To show the chat history to users, look for the message object in st.session_state
     like before:'
   id: totrans-1225
   prefs: []
   type: TYPE_NORMAL
+  zh: 要向用户显示聊天历史，像以前一样在 st.session_state 中查找消息对象：
 - en: st.title("Chat With Document")
   id: totrans-1226
   prefs: []
   type: TYPE_NORMAL
+  zh: st.title("与文档聊天")
 - en: 'for message in st.session_state["langchain_messages"]:'
   id: totrans-1227
   prefs: []
   type: TYPE_NORMAL
+  zh: 'for message in st.session_state["langchain_messages"]:'
 - en: role = "user" if message.type == "human" else "assistant"
   id: totrans-1228
   prefs: []
   type: TYPE_NORMAL
+  zh: role = "user" if message.type == "human" else "assistant"
 - en: 'with st.chat_message(role):'
   id: totrans-1229
   prefs: []
   type: TYPE_NORMAL
+  zh: 'with st.chat_message(role):'
 - en: st.markdown(message.content)
   id: totrans-1230
   prefs: []
   type: TYPE_NORMAL
+  zh: st.markdown(message.content)
 - en: 'As the last step, change the chain invoked when the application receives a
     question, and add the config parameter for the "session_id":'
   id: totrans-1231
   prefs: []
   type: TYPE_NORMAL
+  zh: 作为最后一步，更改应用程序接收到问题时调用的链，并添加 "session_id" 的配置参数：
 - en: 'if question:'
   id: totrans-1232
   prefs: []
   type: TYPE_NORMAL
+  zh: 'if question:'
 - en: 'with st.chat_message("user"):'
   id: totrans-1233
   prefs: []
   type: TYPE_NORMAL
+  zh: 'with st.chat_message("user"):'
 - en: st.markdown(question)
   id: totrans-1234
   prefs: []
   type: TYPE_NORMAL
+  zh: st.markdown(question)
 - en: response = conversational_rag_chain.stream(
   id: totrans-1235
   prefs: []
   type: TYPE_NORMAL
+  zh: response = conversational_rag_chain.stream(
 - en: '{"input": question}, config={"configurable": {"session_id": "any"}}'
   id: totrans-1236
   prefs: []
   type: TYPE_NORMAL
+  zh: '{"input": question}, config={"configurable": {"session_id": "any"}}'
 - en: )
   id: totrans-1237
   prefs: []
   type: TYPE_NORMAL
+  zh: )
 - en: 'with st.chat_message("assistant"):'
   id: totrans-1238
   prefs: []
   type: TYPE_NORMAL
+  zh: 'with st.chat_message("assistant"):'
 - en: st.write(response["answer"])
   id: totrans-1239
   prefs: []
   type: TYPE_NORMAL
+  zh: st.write(response["answer"])
 - en: Okay. Now we have a nice interface for interacting with the document, and the
     AI is aware of the chat history.
   id: totrans-1240
   prefs: []
   type: TYPE_NORMAL
+  zh: 好的。现在我们有一个很好的界面来与文档进行交互，AI 也知道聊天历史。
 - en: Streaming the Answer
   id: totrans-1241
   prefs:
   - PREF_H2
   type: TYPE_NORMAL
+  zh: 流式传输答案
 - en: 'So far, we still use the invoke() method to run the chain. Let’s try to stream
     the AI answer instead:'
   id: totrans-1242
   prefs: []
   type: TYPE_NORMAL
+  zh: 到目前为止，我们仍然使用 invoke() 方法来运行链。让我们尝试流式传输 AI 答案：
 - en: 'with st.chat_message("user"):'
   id: totrans-1243
   prefs: []
   type: TYPE_NORMAL
+  zh: 'with st.chat_message("user"):'
 - en: st.markdown(question)
   id: totrans-1244
   prefs: []
   type: TYPE_NORMAL
+  zh: st.markdown(question)
 - en: response = conversational_rag_chain.stream(
   id: totrans-1245
   prefs: []
   type: TYPE_NORMAL
+  zh: response = conversational_rag_chain.stream(
 - en: '{"input": question}, config={"configurable": {"session_id": "any"}}'
   id: totrans-1246
   prefs: []
   type: TYPE_NORMAL
+  zh: '{"input": question}, config={"configurable": {"session_id": "any"}}'
 - en: )
   id: totrans-1247
   prefs: []
   type: TYPE_NORMAL
+  zh: )
 - en: 'with st.chat_message("assistant"):'
   id: totrans-1248
   prefs: []
   type: TYPE_NORMAL
+  zh: 'with st.chat_message("assistant"):'
 - en: st.write_stream(response)
   id: totrans-1249
   prefs: []
   type: TYPE_NORMAL
+  zh: st.write_stream(response)
 - en: 'If you run the application and pass a question to the LLM, you’ll notice that
     the response is a dictionary with four keys: "input", "chat_history", "context",
     and "answer".'

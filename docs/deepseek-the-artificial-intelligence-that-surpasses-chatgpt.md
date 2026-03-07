@@ -1,4 +1,4 @@
-DeepSeek，超越 ChatGPT 的人工智能
+# DeepSeek，超越 ChatGPT 的人工智能
 
 
 > 原文：[DeepSeek, the Artificial Intelligence that surpasses ChatGPT:](https://annas-archive.gl/md5/a679a3a57c8a4de9c4a7e3ef4611a606)

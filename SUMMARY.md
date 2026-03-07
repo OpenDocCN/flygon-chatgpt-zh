@@ -73,7 +73,7 @@
 +   [使用 ChatGPT 创建在线课程：一步一步指南与提示模板](docs/crt-ol-crs-cgpt.md)
 +   [商业决策的数据分析](docs/data-analysis-for-business-decisions-case-studies-in-excel-r-and-chatgpt-3e.md)
 +   [DeepSeek：在 2025 年掌握人工智能](docs/deepseek-master-ai-in-2025.md)
-+   [1. 内容创作](docs/deepseek-the-artificial-intelligence-that-surpasses-chatgpt.md)
++   [DeepSeek，超越 ChatGPT 的人工智能](docs/deepseek-the-artificial-intelligence-that-surpasses-chatgpt.md)
 +   [三个故事方法：使用 ChatGPT 编辑你的场景](docs/edt-yr-scn-cgpt.md)
 +   [从破产到老板：即使从零开始，如何用 AI 赚钱](docs/from-broke-to-boss-how-to-make-money-with-ai.md)
 +   [从想法到收入：精通 ChatGPT 编写、编辑与开启你的图书帝国](docs/from-idea-to-income-mastering-chatgpt-to-write-edit-launch-your-book-empire.md)

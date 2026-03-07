@@ -1,24 +1,11 @@
-# 目录
+# 轻松使用 ChatGPT
 
-1. 简介
+> 原文：[USING CHATGPT: MADE EASY](https://annas-archive.gl/md5/2553725c58eaf8c51162b1941160f222)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-2. 什么是 ChatGPT？
-
-3. 入门：访问 ChatGPT
-
-4. 如何与 ChatGPT 对话
-
-5. 使用 ChatGPT 处理日常任务
-
-6. 如何使用 ChatGPT 在线安全
-
-7. ChatGPT 的有趣和创意用途
-
-8. 常见问题解答
-
-9. 礼物：20 个有用的提示尝试
-
-10. 结论和最终提示
 
 # 第一章：简介
 

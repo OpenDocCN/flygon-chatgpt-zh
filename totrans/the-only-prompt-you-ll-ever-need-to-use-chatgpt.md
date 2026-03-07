@@ -1,22 +1,13 @@
+
+# 你将永远需要的使用 ChatGPT 的唯一提示
+
+> 原文：[THE ONLY PROMPT you'll ever need to use ChatGPT:](https://annas-archive.gl/md5/f6e048127595e7b526fe04d3ad75f6cf)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![Image00001.jpg](img/the-only-prompt-you-ll-ever-need-to-use-chatgpt-Image00001.jpg)
-
-**使用 ChatGPT 的唯一提示**
-
-你将**永远需要**
-
-TO USE CHATGPT
-
-© ISMAR SOUZA
-
-所有权利保留
-
-**法律声明**
-
-版权所有 © Ismar Souza。所有权利保留，并受巴西法律 9.610/98 以及其他分发此作品的国家的版权法保护。
-
-本书任何部分不得以任何形式或任何手段（无论是印刷、数字、音频还是视觉）使用或复制，除非事先获得作者的书面许可。违反这些条款可能导致刑事处罚和民事责任。
-
-第二版 – 2025 年 4 月
 
 # **引言** **– 这本书为何存在**
 

@@ -1,56 +1,14 @@
-大型 AI ChatGPT 用户手册
+# 大型 AI ChatGPT 用户手册
+
+> 原文：[The Big AI ChatGPT Book for Power Users:](https://annas-archive.gl/md5/02f87d07d6c60a4ea58942ddb063e8cf)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### 掌握高级 ChatGPT 策略，组织您的职业、生产力和家庭生活
 
-## PJ Chavaux
-
-版权©2025 由 PJ Chavaux
-
-版权所有。
-
-本书的任何部分未经出版商或作者书面许可，不得以任何形式复制，除非美国版权法允许。
-
-## 目录
-
-加入我们的社区
-
-关于作者
-
-PJ Chavaux 的其他作品
-
-前言
-
-1. 大型 AI ChatGPT 用户手册
-
-2. 高级提示工程
-
-3. 7 种提示类型
-
-4. 最顶级的 7 个 AI 引擎
-
-5. 技术研讨会 - 掌握 AI 的想象力
-
-6. 利用 ChatGPT 提升职业发展
-
-7. 简化工作场所生产力
-
-8. 构建 AI 驱动的个人生产力系统
-
-9. 使用 ChatGPT 优化家庭生活
-
-10. 财务管理和目标设定
-
-11. 探索道德 AI 的使用
-
-12. 故障排除和克服技术障碍
-
-13. 探索未来趋势和创新
-
-14. 建立社区和持续学习
-
-15. 结论
-
-16. 参考文献
+## 加入我们的社区
 
 加入 PJ Chavaux 图书俱乐部与读者社区！
 

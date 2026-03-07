@@ -1,70 +1,16 @@
-![Cover.png](img/supercharged-coding-with-genai-Cover.png)
 
-超级增强的编码与 GenAI
+# 生成式人工智能与超级增强的编码
+
+> 原文：[Supercharged Coding with GenAI](https://annas-archive.gl/md5/49bb63b135396c349d7060cb08f2c9dc)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+![Cover.png](img/supercharged-coding-with-genai-Cover.png)
 
 从 vibe 编码到使用 GitHub Copilot、ChatGPT 和 OpenAI 的最佳实践
 
-Hila Paz Herszfang
-
-Peter V. Henstock
-
-![](img/supercharged-coding-with-genai-Packt_Logo_New.png)
-
-超级增强的编码与 GenAI
-
-版权所有 © 2025 Packt 出版公司
-
-*版权所有*。未经出版者事先书面许可，本书的任何部分不得以任何形式或任何方式复制、存储在检索系统中或通过任何手段传输，除非在评论或评论中嵌入的简短引用。 
-
-在准备本书的过程中，已尽一切努力确保所提供信息的准确性。然而，本书中的信息销售不附带任何明示或暗示的保证。作者、Packt 出版公司或其经销商和分销商不对由此书直接或间接造成的任何损害承担责任。 
-
-Packt 出版公司已尽力通过适当使用大写字母提供本书中提到的所有公司和产品的商标信息。然而，Packt 出版公司不能保证此信息的准确性。
-
-**投资组合总监：** Gebin George
-
-**关系负责人：** Sonia Chauhan
-
-**项目经理：** Prajakta Naik
-
-**内容工程师：** Aditi Chatterjee
-
-**技术编辑：** Irfa Ansari
-
-**编辑：** Safis Editing
-
-**索引者：** Pratik Shirodkar
-
-**校对：** Aditi Chatterjee
-
-**设计总监：** Vijay Kamble
-
-**增长负责人：** Nimisha Dua
-
-首次出版：2025 年 8 月
-
-生产参考：2220825
-
-由 Packt 出版公司有限公司出版
-
-格罗夫纳大厦
-
-11 St Paul’s Square
-
-伯明翰
-
-B3 1RB, 英国。
-
-ISBN 978-1-83664-529-0
-
-[www.packtpub.com](http://www.packtpub.com)
-
-*献给我的丈夫，Dvir，我的母亲，Yifat，我的父亲，Amos，我的兄弟，Roy，以及我的狗，Panda——感谢你们在这段旅程中的支持和鼓励。*
-
-*– Hila*
-
-*献给我的父亲，特别感谢我的母亲、兄弟，以及尤其是我的妻子对他们的支持。*
-
-*– Peter*
 
 # 前言
 

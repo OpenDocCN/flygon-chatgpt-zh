@@ -1,3 +1,12 @@
+# ChatGPT 心理学的统计数据分析
+
+> 原文：[Psychological Statistics Data Analysis with ChatGPT ](https://annas-archive.gl/md5/cb10b336e57c442c8881ad90ac315dbd)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
 ![](img/psychological-statistics-data-analysis-with-chatgpt-image_rsrc22Z.jpg)
 
 简介

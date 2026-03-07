@@ -1,58 +1,13 @@
-# 适用于每个人的 AI 手册
+# 每个人的 AI 手册
+
+
+> 原文：[The AI Handbook for Everyone](https://annas-archive.gl/md5/749ca21e05645f3d988edb6be771d26d)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### 使用 ChatGPT、Canva、Ideogram、MidJourney 和 Dall-e + 100 个提示的终极 AI 资源！
-
-## PJ Chavaux
-
-版权所有 © 2025 by PJ Chavaux
-
-所有权利保留。
-
-本书的任何部分未经出版商或作者书面许可，不得以任何形式复制，除非美国版权法允许。
-
-## 目录
-
-加入我们的社区
-
-关于作者
-
-引言
-
-1. 为普通用户揭秘 AI
-
-2. 日常生活中的实用 AI 应用
-
-3. 创意与艺术中的 AI
-
-4. 掌握 ChatGPT
-
-5. AI 驱动设计：用象形文字提升创造力
-
-6. Canva 教程：专业设计的完整指南
-
-7. 激发你内心的艺术家：DALL-E 2 教程，打造令人惊叹的商业图形
-
-8. 中途之旅教程：如何创建令人惊叹的 AI 生成图像
-
-9. 每日使用 100 个 ChatGPT 提示
-
-10. 工作中的 AI：提高生产力
-
-11. AI 的伦理和社会影响
-
-12. AI 用于个人成长和学习
-
-13. 工作中的 AI：提高生产力
-
-14. 创意与艺术中的 AI
-
-15. 案例研究：日常生活中的 AI 转型
-
-16. 日常生活中的实用 AI 应用
-
-17. 结论
-
-参考文献
 
 ## 加入我们的社区
 

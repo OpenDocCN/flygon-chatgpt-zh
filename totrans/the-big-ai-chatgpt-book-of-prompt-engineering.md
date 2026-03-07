@@ -1,76 +1,14 @@
-大型 AI ChatGPT 提示工程书籍
+# 大型 AI ChatGPT 提示工程书籍：
+
+> 原文：[The Big AI ChatGPT Book of Prompt Engineering: Optimize ChatGPT with Expert Prompt Engineering Techniques](https://annas-archive.gl/md5/9f90071212e05eedcec7f33735a89de9)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 
 ### 使用专家提示工程技巧优化 ChatGPT
 
-## PJ Chavaux
-
-版权 © 2025 by PJ Chavaux
-
-所有权利保留。
-
-本书的任何部分未经出版商或作者书面许可，不得以任何形式复制，除非美国版权法允许。
-
-## 目录
-
-加入我们的社区
-
-关于作者
-
-也由
-
-引言
-
-1. 提示工程的基础
-
-2. 制作完美提示
-
-3. 提示制作技巧
-
-4. 零样本提示——AI 交互的基础
-
-5. 单样本和少样本提示——用示例引导 AI
-
-6. 系统、情境和角色提示——定制 AI 响应
-
-7. 退后提示——激活更广泛的知识
-
-8. 思维链（CoT）提示——增强推理
-
-9. 自洽性——通过共识提高准确性
-
-10. 代码提示——利用 AI 进行编程任务
-
-11. ChatGPT 的创造性用途
-
-12. 人工智能中的伦理考量
-
-13. 克服技术术语
-
-14. 提高 AI 交互
-
-15. 行业特定应用
-
-16. 提示工程的高级技术
-
-17. 跟上 AI 进步
-
-18. 吸引人的写作技巧
-
-19. 伦理 AI 实践
-
-20. 可视化 AI 过程
-
-21. 互动和动手学习
-
-22. 围绕 AI 建立社区
-
-23. 人工智能中的定制和个人化
-
-24. 利用 AI 提高团队生产力
-
-25. 提示工程的未来
-
-26. 结论
 
 ## 加入我们的社区
 

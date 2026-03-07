@@ -1,122 +1,12 @@
-# 2000 个提示的大 AI ChatGPT 书籍
+# 2000 个提示的大型 AI ChatGPT 书籍
+
+> 原文：[The Big AI ChatGPT Book of 2000 Prompts](https://annas-archive.gl/md5/6c7c7928a9fed9a9988c306a7805d9c0)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### 使用 2000 个现成的提示解锁 AI 的无限潜能，适用于各行各业
-
-## PJ Chavaux
-
-## 目录
-
-加入我们的社区
-
-关于作者
-
-Also by PJ Chavaux
-
-前言
-
-序言
-
-版权
-
-第一部分：AI ChatGPT 提示参考书籍
-
-1. Introduction to AI and ChatGPT
-
-2. 动态 ChatGPT 提示的制作
-
-3. Everyday AI Applications
-
-4. AI in Education
-
-5. AI for Career Development
-
-6. AI and Creative Expression
-
-7. AI for Personal Growth
-
-8. AI 中的伦理考量
-
-9. AI for Seniors
-
-10. AI for High School Students
-
-11. AI and Small Business
-
-12. AI in Research and Exploration
-
-13. 克服 AI 学习障碍
-
-14. AI 在时间管理中的应用
-
-15. AI for Problem Solving
-
-16. AI 和数字通信
-
-17. AI for Technology Enthusiasts
-
-18. AI 在娱乐中的应用
-
-19. AI 和健康
-
-20. AI 和 ChatGPT 的未来
-
-21. 结论
-
-22. 参考文献
-
-第二部分 – 2000 个提示的 AI ChatGPT 书籍
-
-23. 100 ChatGPT Prompts for Educators and Trainers
-
-24. 100 ChatGPT Prompts for Salespeople
-
-25. 100 ChatGPT Prompts for Bartenders & Servers
-
-26. 100 ChatGPT Prompts for Contractors and Installers
-
-27. 100 ChatGPT Prompts for Ministers and Clergy
-
-28. 100 ChatGPT Prompts for Legal Documents for Everyday People
-
-29. 100 ChatGPT Prompts for Law Enforcement Professional
-
-30. 100 ChatGPT Prompts for Military
-
-31. 100 ChatGPT Prompts for Pregnant Women
-
-32. 100 ChatGPT Prompts for Caretakers and Home Health Workers
-
-33. 100 ChatGPT Prompts for Clerks and Managers
-
-34. 100 ChatGPT Prompts for Uber, DoorDash and Gig Economy Workers
-
-35. 100 ChatGPT Prompts for Medical Technicians & Nurses
-
-36. 100 ChatGPT Prompts for Doctors & Surgeons
-
-37. 100 ChatGPT Prompts for Authors & Writers
-
-38. 100 ChatGPT Prompts for Government Workers
-
-39. 100 ChatGPT Prompts for Mechanics & Automotive Technicians
-
-40. 100 ChatGPT Prompts for Chefs & Restaurant Workers
-
-41. 100 ChatGPT Prompts for Social Workers & Counselors
-
-42. 100 ChatGPT Prompts for Personal Trainers & Fitness Coaches
-
-43. 100 ChatGPT Prompts for Real Estate Agents & Property Managers
-
-44. 100 ChatGPT Prompts for IT Professionals & Cybersecurity Experts
-
-45. 100 ChatGPT Prompts for Event Planners & Wedding Coordinators
-
-46. 100 个适合摄影师和摄像师的 ChatGPT 提示
-
-47. 100 个适合空乘人员和航空机组人员的 ChatGPT 提示
-
-48. 100 个适合日内交易者的 ChatGPT 提示
 
 ## 加入我们的社区
 

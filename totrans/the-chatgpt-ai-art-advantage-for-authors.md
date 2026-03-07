@@ -1,80 +1,17 @@
+
+# CHATGPT 作者的人工智能艺术优势
+
+> 原文：[The ChatGPT AI Art Advantage for Authors:](https://annas-archive.gl/md5/67fcec0fe2a52845f162f2ac71620861)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![](img/the-chatgpt-ai-art-advantage-for-authors-Image00039.jpg)
 
-# CHATGPT 人工智能艺术优势为作者
 
 ## 几分钟内创建令人停下的书籍营销图像（即使您不会画画）
 
-人工智能作者优势
-
-第 1 本书
-
-## 苏珊·贾甘纳斯
-
-版权所有 © 2025 苏珊·贾甘纳斯
-
-版权所有。
-
-本书的任何部分不得以任何形式或通过任何电子或机械手段（包括信息存储和检索系统）进行复制，除非作者书面许可，但用于书评中的简要引用除外。
-
-下载您的免费赠品 - [`<wbr> susanjagannath.<wbr> com/<wbr> tcaaaa-<wbr> bonus/`](https://susanjagannath.com/tcaaaa-bonus/)
-
-[`<wbr> linktr.<wbr> ee/<wbr> susanjagannath`](https://linktr.ee/susanjagannath)
-
-送给我的家人
-
-# 目录
-
-前言
-
-1. 为什么 AI 艺术是您书籍的最佳朋友
-
-2. 在 ChatGPT 4o 中开始图像生成
-
-为成功做好准备：图像生成基础
-
-3. 掌握图像提示
-
-基本提示
-
-博客和社交媒体图片：视觉内容能立即吸引人
-
-4. 书籍封面和产品图形：无需设计师也能创建令人惊叹的封面
-
-5. 营销广告和信息图表：用引人入胜的图形吸引您的观众
-
-YouTube 品牌化：吸引注意力的缩略图
-
-提示的连续性
-
-6. 创建讲述您品牌故事的图片
-
-讲故事：讲述您品牌故事的图片
-
-隐喻：轻松制作强大的视觉隐喻
-
-幻灯片或在线课程
-
-7. 个性化：您的图片，您的品牌
-
-个性化库存图片
-
-生成个性化的 YouTube 图片
-
-8. 批量处理和一致性
-
-保持品牌视觉身份的一致性
-
-9. 热爱文字
-
-10. 道德考量
-
-11. 相关材料
-
-后记
-
-关于作者
-
-苏珊·贾甘纳斯的其它作品
 
 # 前言
 

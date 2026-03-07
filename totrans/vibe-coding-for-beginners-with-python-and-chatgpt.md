@@ -1,58 +1,11 @@
-Python & ChatGPT 入门 Vibe 编码
+# Python 和 ChatGPT 氛围编程入门
 
-Greg Lim 版权所有 © 2025 Greg Lim 保留所有权利。
 
-版权所有 © 2025 by Greg Lim 保留所有权利。
-
-本书的任何部分不得以任何形式或通过任何电子或机械手段（包括信息存储和检索系统）进行复制，除非作者书面许可。唯一例外是评论员，评论员可以在评论中引用短篇摘录。
-
-第一版：2025 年 4 月
-
-目录
-
-第一章 - 简介
-
-Vibe 编码入门
-
-使用 Python
-
-第二章 - 使用 Python 库进行简单项目
-
-下载 YouTube 内容
-
-通过 API 获取比特币价格
-
-通过网络爬虫获取比特币价格
-
-网络浏览自动化
-
-文本转语音
-
-更改声音
-
-使用 Elevenlabs API 生成声音克隆
-
-电子邮件自动化
-
-计算机视觉
-
-第三章 - 创建和托管网站
-
-改进我们的网站
-
-托管您的代码
-
-第四章 - 创建 Flappy Bird 游戏
-
-第五章 - 解锁 API 的力量
-
-使用 OpenAI API 进行语音到文本和摘要
-
-Telegram 机器人
-
-第六章 - 创建 RAG - 与 PDF 应用程序聊天
-
-关于作者
+> 原文：[USING CHATGPT: MADE EASY](https://annas-archive.gl/md5/2553725c58eaf8c51162b1941160f222)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## 前言
 

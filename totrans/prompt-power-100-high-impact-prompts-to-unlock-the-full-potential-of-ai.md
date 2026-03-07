@@ -1,10 +1,13 @@
+
+# 提示词力量：100 个高影响力提示词
+
+> 原文：[Prompt Power: 100 High-Impact Prompts](https://annas-archive.gl/md5/ccc5bc39cc46c16020b3037c717f6755)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ![](img/prompt-power-100-high-impact-prompts-to-unlock-the-full-potential-of-ai-Image00001.jpg)
-
-**提示词力量：100 个高影响力**
-
-**解锁全部潜力的提示词**
-
-**的 AI**
 
 ## **第一章：为什么提示词是新的数字货币**
 

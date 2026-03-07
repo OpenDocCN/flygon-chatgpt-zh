@@ -1,4 +1,10 @@
-无需费力的金钱公式：ChatGPT & DeepSeek 版
+# 无需费力的金钱公式：ChatGPT & DeepSeek 版
+
+> 原文：[The Effortless Money Formula: ChatGPT & DeepSeek Edition](https://annas-archive.gl/md5/798c1b85e3ac6ab9768c914cb3aae126)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 引言
 

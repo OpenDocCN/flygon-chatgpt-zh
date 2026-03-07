@@ -1,88 +1,10 @@
-您的 AI 写作助手：
+# 您的 AI 写作助手：如何与 ChatGPT 合作以创作更好的内容
 
-如何与 ChatGPT 合作以创作更好的内容
-
-版权所有 © 2025 by Randee Mathews
-
-版权所有。
-
-## 本书的任何部分未经出版商或作者书面许可，不得以任何形式复制，除非美国版权法允许。
-
-您的 AI 写作助手：
-
-如何与 ChatGPT 合作以创作更好的内容
-
-作者：Randee Mathews
-
-# 目录
-
-目录             1
-
-作者的其他书籍             3
-
-引言             5
-
-第一章：什么是 ChatGPT，它是如何工作的？             12
-
-第二章：为成功做好准备             18
-
-第三章：如何与 ChatGPT 交谈             24
-
-第四章：与 ChatGPT 头脑风暴             32
-
-第五章：更快地起草内容             41
-
-第六章：在 AI 帮助下编辑和改写             50
-
-第七章：研究和 SEO 内容帮助             60
-
-第八章：充分利用您的 AI 助手             72
-
-第九章：作家提示库             80
-
-第十章：作为数字作家您的下一步             90
-
-结论             98
-
-附录 A：未来学习阅读材料和资源             103
-
-附录 B：术语表             109
-
-附录 C：使用 ChatGPT 的清单和模板             117
-
-ChatGPT 写作工作表             123
-
-# 作者的其他书籍
-
-我在亚马逊的《数字营销初学者系列》中展示了所有书籍。
-
-1. 突破数字营销：初学者的实用指南
-
-2. 掌握关键词研究：解锁 SEO 对您业务的强大力量
-
-3. 写作如专业：有效内容创作的初学者手册
-
-4. 从本地到全球：掌握在线商业档案以实现增长
-
-5. 掌握 SEO 基础知识：在线排名提升的入门指南
-
-6. 从零到上线：构建您的第一个商业网站简易指南
-
-7. 社交成功蓝图：利用社交媒体扩大您的业务
-
-如果您有任何问题，请通过 author.randee.mathews@gmail.com 或社交媒体与我联系：
-
-Instagram: @randee.mathews23
-
-X (Twitter): @randee_mathews
-
-TikTok: @randeemathews
-
-亚马逊作者页面：[`www.amazon.com/stores/Randee-Mathews/author/B0BMBBC9F9`](https://www.amazon.com/stores/Randee-Mathews/author/B0BMBBC9F9?ref=ap_rdr&isDramIntegrated=true&shoppingPortalEnabled=true&ccs_id=9d7ee969-3198-456a-9b97-589911481a88)
-
-# ![](img/your-ai-writing-assistant-image_rsrc1FP.jpg)
-
-照片由 [](https://unsplash.com/@solenfeyissa?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) [Solen Feyissa](https://unsplash.com/@solenfeyissa?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) 在 [](https://unsplash.com/photos/a-close-up-of-a-cell-phone-with-an-ai-button-_XtH7BBRPtA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) [Unsplash](https://unsplash.com/photos/a-close-up-of-a-cell-phone-with-an-ai-button-_XtH7BBRPtA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) 提供
+> 原文：[Your AI Writing Assistant: How to Collaborate with ChatGPT for Better Content ](https://annas-archive.gl/md5/f0d77be87a4378fdafafc7084f6452b2)
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 # 引言
 
